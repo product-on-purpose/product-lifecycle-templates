@@ -1,0 +1,20 @@
+# Catalog meta for the PRD bundle. Describes the template as a library asset.
+# Never travels into a filled document (that is what instance frontmatter is for).
+id: prd
+title: Product Requirements Document
+summary: Defines what to build, for whom, and why, with scope and success criteria, so a team can design and build the right thing.
+doc_type: prd
+phase: deliver
+family: delivery-docs
+sizes_available: [lean, full]
+methodology: generic
+pairs_with: [deliver-prd]          # pm-skills skill ID this template serves
+status: beta
+template_version: 0.1.0
+tags: [requirements, delivery, prd, specification]
+related_templates: [user-stories, acceptance-criteria, release-notes, solution-brief]
+aliases: [product spec, product brief, feature spec, one-pager, product requirements]
+catalog_ref: 29                    # entry number in deep-research_master-catalog.md
+maintainer: "{{maintainer}}"
+last_reviewed: 2026-06-30
+license: Apache-2.0

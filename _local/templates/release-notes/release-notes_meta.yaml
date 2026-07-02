@@ -1,0 +1,20 @@
+# Catalog meta for the Release Notes bundle. Describes the template as a library asset.
+# Never travels into a filled document.
+id: release-notes
+title: Release Notes
+summary: Communicates what changed in a release to users and stakeholders, so people know what is new, what to do, and what to watch for.
+doc_type: release-notes
+phase: deliver
+family: delivery-docs
+sizes_available: [lean, full]
+methodology: methodology-agnostic
+pairs_with: [deliver-release-notes]   # pm-skills skill ID this template serves
+status: beta
+template_version: 0.1.0
+tags: [release, delivery, communication, changelog, devops]
+related_templates: [prd, user-stories, acceptance-criteria, launch-checklist]
+aliases: [changelog, what's new, release announcement, changelog entry]
+catalog_ref: 115                      # entry number in deep-research_master-catalog.md
+maintainer: "{{maintainer}}"
+last_reviewed: 2026-06-30
+license: Apache-2.0

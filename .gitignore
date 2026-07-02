@@ -1,0 +1,14 @@
+# The real work of this repo currently lives in _local/ (the template bundles, the
+# authoring methodology, planning and strategy docs, session logs, and the artifact atlas).
+# The user's global ~/.gitignore_global hides `_LOCAL/` everywhere; re-include it HERE so the
+# work is version-controlled in this repo. (The final templates/ home is a separate, still-open
+# decision; content stays under _local/ for now by choice.)
+!_local/
+!_local/**
+
+# Keep tool caches and OS junk out, even under _local/.
+.memsearch/
+**/.impeccable/
+.DS_Store
+Thumbs.db
+desktop.ini
