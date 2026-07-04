@@ -95,6 +95,16 @@ The thinking behind the library is documented, not implicit:
 
 ---
 
+## Quality gate
+
+The governance is enforceable, not aspirational. [`_local/tools/check-bundles.py`](_local/tools/check-bundles.py) runs the structural checks from the methodology's Definition of Done across every bundle in one command: the eight files are present, no em-dash or en-dash characters appear, the lean variant nests inside the full one, the worked example has no leftover placeholders, every cited companion reference resolves to its anchor, and the declared sizes match the files on disk.
+
+```
+python _local/tools/check-bundles.py
+```
+
+All four delivery-docs bundles currently pass. This is a local prototype of the continuous-integration gate planned for the repository.
+
 ## Conventions
 
 - **Placeholders** are `{{snake_case}}` everywhere, so a generator or agent can find substitution points deterministically.
