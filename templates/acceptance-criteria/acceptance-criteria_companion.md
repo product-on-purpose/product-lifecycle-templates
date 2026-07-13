@@ -201,4 +201,4 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 
 <a id="ref-7"></a>[7] Ranorex. "[When to Use Given-When-Then Acceptance Criteria](https://www.ranorex.com/blog/given-when-then-tests/)." ranorex.com (accessed 2026-06-30). [vendor]
 
-<a id="ref-8"></a>[8] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../initial-discovery/docs/deep-research_master-catalog.md)," entry 38 (Acceptance Criteria). Internal deep-research catalog, 2026. [internal]
+<a id="ref-8"></a>[8] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../_local/initial-discovery/docs/deep-research_master-catalog.md)," entry 38 (Acceptance Criteria). Internal deep-research catalog, 2026. [internal]
