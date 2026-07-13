@@ -21,7 +21,7 @@
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`. `_local/` now holds only internal working material. Decision HY-2 (scaffold graduation) closed 2026-07-12. |
 | **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
 | **Methodology** | v0.2.1 (`templates/methodology.md`), status draft. Governs authoring. |
-| **Audit corpus** | `_local/audit/2026-07-10_fable-audit/`. Start at its `INDEX.md`. |
+| **Audit corpus** | A seven-dimension audit (2026-07-10, 49 findings, verdict B-) drives the current roadmap. It is internal working material and is not published; its findings are cited by ID throughout this repo (E-01, G-01, D-03, and so on). |
 
 ## Not built (deliberately visible)
 
@@ -44,7 +44,7 @@ The gate automates roughly **half** the methodology's Definition of Done (audit 
 
 **M1, integrity and truth** (roughly one week). Citation integrity pass (findings A-01 through A-06), gate hardening, close decisions D2 and D3, a consumer quickstart in the README, then tag **v0.1.0** with a release note written using this library's own release-notes template, which makes it the first dogfood artifact.
 
-Full definition: [`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`](_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md).
+Full definition lives in the internal audit package (`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`), which is working material and not part of the published repository.
 
 ## Open decisions, with ages
 
