@@ -5,7 +5,7 @@ check-bundles.py - the governance gate for the template library.
 Runs the structural quality checks that the methodology's Definition of Done requires,
 across every bundle under _local/templates/. This turns the hand-verification done during
 authoring into one repeatable command. It is a local prototype of the CI gate planned in
-the implementation plan (P3).
+the implementation plan (P3, port the CI quality gate from pm-skills).
 
 Usage:
     python _local/tools/check-bundles.py            # check every bundle

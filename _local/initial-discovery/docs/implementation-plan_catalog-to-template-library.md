@@ -95,7 +95,7 @@ These four decisions are expensive to reverse once bundle content exists (strate
 
 ### Decision Gate
 
-**Blocking.** All four decisions must be `accepted` before P2-P4 start: P2 needs the name (manifests), P3 needs the placeholder + phase conventions (lints), P4 needs the variant model + family/bundle IDs. If any is left open, downstream phases inherit churn.
+**Blocking.** All four decisions must be `accepted` before P2-P4 start: P2 (the repo scaffold) needs the name (manifests), P3 (the CI gate) needs the placeholder + phase conventions (lints), P4 (the reference bundle) needs the variant model + family/bundle IDs. If any is left open, downstream phases inherit churn.
 
 ### Output Artifacts
 
@@ -127,12 +127,12 @@ Stand up the directory structure and root files from design spec §8, mirroring 
    - `.claude-plugin/`
    - `profiles/` with a `profiles/README.md` stating intent: "Reserved attach point for the optional Layer 1 generator (see template-system-layered-design.md). Empty by design; build nothing here until the decision gate D1 clears."
 2. Author root files, porting structure from the corresponding `pm-skills` files (`E:/Projects/product-on-purpose/pm-skills/`):
-   - `README.md` - positioning paragraph from design spec §1-§3; one-line "N bundles" count (start at 0, becomes 1 after P4).
+   - `README.md` - positioning paragraph from design spec §1-§3; one-line "N bundles" count (start at 0, becomes 1 after P4 (the reference bundle build)).
    - `AGENTS.md` - universal agent-discovery file (adapt `pm-skills/AGENTS.md` header + a templates catalog section).
    - `LICENSE` - Apache-2.0 (copy from `pm-skills/LICENSE`).
    - `CONTRIBUTING.md`, `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md` (adapt from `pm-skills` equivalents).
-   - `.gitignore` (include `_output-jp-library/`, `node_modules/`, `_local/`), `.gitattributes`, `.nvmrc` (copy `pm-skills/.nvmrc`), `package.json` (name `product-lifecycle-templates`, scripts wired in P3).
-3. Author `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` with the `name` from the P1 name ADR; align field names to `pm-skills/.claude-plugin/plugin.json` (verify the real schema there before writing). Leave `entries` empty until P5.
+   - `.gitignore` (include `_output-jp-library/`, `node_modules/`, `_local/`), `.gitattributes`, `.nvmrc` (copy `pm-skills/.nvmrc`), `package.json` (name `product-lifecycle-templates`, scripts wired in P3 (the CI gate port)).
+3. Author `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` with the `name` from the P1 (foundational ADRs) name ADR; align field names to `pm-skills/.claude-plugin/plugin.json` (verify the real schema there before writing). Leave `entries` empty until P5.
 4. Create `templates/.gitkeep` and `_families/.gitkeep` so the empty dirs commit.
 
 ### Verification
@@ -163,14 +163,14 @@ either - mostly mechanical porting; an LLM can do it, a human may prefer to hand
 
 **Addresses:** AC-1, AC-4, AC-5, AC-6, AC-7, AC-8, AC-9
 
-Build only the checks that protect a single bundle's contract (design spec §13 CI script list). Port each from its `pm-skills` analog so tooling lineage is shared. Defer the family validator to P6 and the catalog generator to P5.
+Build only the checks that protect a single bundle's contract (design spec §13 CI script list). Port each from its `pm-skills` analog so tooling lineage is shared. Defer the family validator to P6 (the delivery-docs family) and the catalog generator to P5 (distribution and v0.1 tag).
 
 ### Steps
 
 1. `scripts/check-emdash.mjs` - port from `E:/Projects/product-on-purpose/pm-skills/scripts/check-emdash-scars.mjs`; scan `templates/**` and root docs for U+2014 / U+2013; exit non-zero on any hit (AC-7).
 2. `scripts/lint-template-frontmatter.mjs` - adapt from `pm-skills/scripts/lint-skills-frontmatter.*` + `check-frontmatter-yaml.mjs`; validate that every `template.*.md` has parseable YAML frontmatter (AC-8) with required instance fields from design spec §9.2 (`title`, `doc_type`, `size`, `owner`, `status`, `doc_version`, `created`, `updated`, `source_template`, `source_template_version`).
 3. `scripts/validate-meta-schema.mjs` - validate `template.meta.yaml` against the catalog-meta field set in design spec §9.1 (`id`, `title`, `summary`, `doc_type`, `phase`, `sizes_available`, `methodology`, `pairs_with`, `status`, `template_version`, `last_reviewed`, `license`); enforce `sizes_available` matches the variant files present (AC-4).
-4. `scripts/check-size-nesting.mjs` - parse section IDs (HTML-comment anchors or heading slugs) from each variant; assert the smaller variant's set is a strict subset of the larger's (AC-1, per the P1 variant-model ADR nesting rule).
+4. `scripts/check-size-nesting.mjs` - parse section IDs (HTML-comment anchors or heading slugs) from each variant; assert the smaller variant's set is a strict subset of the larger's (AC-1, per the P1 (foundational ADRs) variant-model ADR nesting rule).
 5. `scripts/check-placeholder-convention.mjs` - assert every placeholder matches `{{snake_case}}` across variants (AC-5); flag camelCase or spaced placeholders.
 6. `scripts/check-guidance-comments.mjs` - assert author guidance is inside `<!-- ... -->` and that stripping comments leaves valid markdown (AC-6).
 7. `scripts/validate-pairs-with.mjs` - read a pinned ID list `scripts/known-skill-ids.txt` (seed it from `pm-skills/skill-manifest.json` skill names); assert each bundle's `pairs_with` entry is in the list or is explicitly `null` (AC-9).
@@ -229,7 +229,7 @@ The single most important phase: one bundle that exercises every pattern in the 
 
 ### Decision Gate
 
-N/A - the variant model and conventions were fixed in P1; this phase consumes them.
+N/A - the variant model and conventions were fixed in P1 (the foundational ADRs); this phase consumes them.
 
 ### Output Artifacts
 
@@ -288,13 +288,13 @@ either - generation and wiring are LLM-suitable; cutting the tag (release decisi
 
 **Addresses:** AC-12, AC-14
 
-Prove the family contract pattern (design spec §11, §16 v0.2) by completing the first family. Each new bundle is a repeat of P4 against the now-proven contract.
+Prove the family contract pattern (design spec §11, §16 v0.2) by completing the first family. Each new bundle is a repeat of P4 (the reference bundle pattern) against the now-proven contract.
 
 ### Steps
 
 1. `_families/delivery-docs.contract.md` - author the family contract per design spec §11: shared section vocabulary, required catalog-meta fields and allowed values for the family, the size-nesting expectation, and the shareable-boundary rule (body vs guidance vs example). Model it on a `pm-skills` family contract (e.g. `E:/Projects/product-on-purpose/pm-skills/site/src/content/docs/reference/skill-families/meeting-skills-contract.md`).
 2. Build three bundles, each a full P4 repeat (variants + example + guide + meta + HISTORY), sourced from the catalog:
-   - `templates/deliver-user-stories/` (catalog #30; `pairs_with: [deliver-user-stories]`; likely `sizes_available: [full]` only, since a user story is inherently small - let the type earn its variant count per P1 ADR).
+   - `templates/deliver-user-stories/` (catalog #30; `pairs_with: [deliver-user-stories]`; likely `sizes_available: [full]` only, since a user story is inherently small - let the type earn its variant count per the P1 (foundational ADRs) variant-model ADR).
    - `templates/deliver-acceptance-criteria/` (catalog #38; `pairs_with: [deliver-acceptance-criteria]`).
    - `templates/deliver-release-notes/` (catalog #115; `pairs_with: [deliver-release-notes]`; lean = customer-facing, full = customer + internal).
 3. `scripts/validate-template-family.mjs` - adapt from `pm-skills/scripts/validate-skill-family-registration.*` + `validate-meeting-skills-family.*`; enforce, for every member of a declared family: filename convention, manifest schema, declared sizes present, example + guide present, nesting integrity (AC-12).
@@ -312,7 +312,7 @@ Prove the family contract pattern (design spec §11, §16 v0.2) by completing th
 
 ### Decision Gate
 
-N/A - no decision blocks subsequent work; P7 is governance, not a build dependency.
+N/A - no decision blocks subsequent work; P7 (the demand-gated roadmap) is governance, not a build dependency.
 
 ### Output Artifacts
 
@@ -354,7 +354,7 @@ Convert the catalog's tiering into a governed, pull-driven backlog rather than a
 
 ### Decision Gate
 
-**D1 (open, deferred):** whether to build the Layer 1 generator. This phase records the gate; it does not resolve it. Resolution requires real usage evidence (is customization one-time or recurring?). Until resolved, `profiles/` stays empty (P2).
+**D1 (open, deferred):** whether to build the Layer 1 generator. This phase records the gate; it does not resolve it. Resolution requires real usage evidence (is customization one-time or recurring?). Until resolved, `profiles/` stays empty (P2, the repo scaffold).
 
 ### Output Artifacts
 
@@ -378,7 +378,7 @@ human - tiering, pull-prioritization, and the generator gate are sequencing/stra
 | D3 | Does agentskills.io define a non-skill "resource/template" type | (pending spec read) | Open | 2026-06-29 |
 | D4 | Regulated-tier (Tier 3) scope and appetite | (pending domain decision) | Open | 2026-06-29 |
 
-Resolved 2026-06-29 (recorded as ADRs in P1, listed here for traceability): repo/package name (`product-lifecycle-templates` everywhere, `pm-` handle dropped); variant model (descriptive lean/full + strict nesting, `s/m/l` only where a type earns three weights); phase vocabulary (lowercase, `<phase>-<doctype>`); first family/bundle (`delivery-docs` / `deliver-prd`).
+Resolved 2026-06-29 (recorded as ADRs in P1 (foundational decisions), listed here for traceability): repo/package name (`product-lifecycle-templates` everywhere, `pm-` handle dropped); variant model (descriptive lean/full + strict nesting, `s/m/l` only where a type earns three weights); phase vocabulary (lowercase, `<phase>-<doctype>`); first family/bundle (`delivery-docs` / `deliver-prd`).
 
 ### D1: Build the Layer 1 generator, or not (Open)
 
@@ -407,7 +407,7 @@ Resolved 2026-06-29 (recorded as ADRs in P1, listed here for traceability): repo
 
 **Summary.** Whether `npx skills add ...` installs a repo with no `SKILL.md`.
 
-**Context.** Determines whether the `use-template` companion skill (design spec §12) is *required* for CLI distribution or merely a convenience. Tested in P5 step 7.
+**Context.** Determines whether the `use-template` companion skill (design spec §12) is *required* for CLI distribution or merely a convenience. Tested in P5 (the distribution phase) step 7.
 
 **Recommendation.** Run the test in P5; if the CLI ignores the repo, schedule the `use-template` companion skill as the first post-v0.2 utility. Git clone and ZIP paths work regardless, so this does not block v0.1.
 

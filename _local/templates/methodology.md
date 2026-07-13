@@ -2,7 +2,7 @@
 title: "Template Bundle Methodology: Researching and Drafting a Best-in-Class Template"
 status: draft
 doc_version: 0.2.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 last_reviewed: 2026-06-30
 license: Apache-2.0
 applies_to: "every bundle under templates/ (provisionally _local/templates/)"
