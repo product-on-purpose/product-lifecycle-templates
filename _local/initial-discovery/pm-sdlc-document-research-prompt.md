@@ -2,7 +2,7 @@
 title: "Deep Research Prompt: Exhaustive PM and SDLC Document Catalog"
 status: ready
 doc_version: 1.0.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 last_reviewed: 2026-06-28
 purpose: "Drive a deep-research run that enumerates every PM and SDLC document/artifact type, as input to the template library."
 ---

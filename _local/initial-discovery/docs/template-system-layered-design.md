@@ -2,7 +2,7 @@
 title: "PM/SDLC Template System: Layered Architecture Design"
 status: draft
 doc_version: 0.1.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 last_reviewed: 2026-06-28
 license: Apache-2.0
 supersedes: none

@@ -2,7 +2,7 @@
 title: "Template Library: Concept, Architecture and Specification"
 status: draft
 doc_version: 0.1.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 last_reviewed: 2026-06-28
 license: Apache-2.0
 linked-strategy-brief: strategy-brief_catalog-to-template-library.md
@@ -11,7 +11,23 @@ linked-implementation-plan: implementation-plan_catalog-to-template-library.md
 
 # Template Library: Concept, Architecture and Specification
 
-> **Working name:** `pm-templates` (final name TBD; see [Naming](#15-naming)). This document uses `pm-templates` throughout as a placeholder.
+> **[SUPERSEDED IN PART. Read this before trusting anything below.]**
+>
+> This is the founding design document, written 2026-06-28 and preserved as the record of the original architecture. Several of its specifics were overturned by decisions taken during the build. Where it disagrees with the records in [`docs/decisions/`](../../../docs/decisions/), **the decision records win**; where it disagrees with the tree, [`STATE.md`](../../../STATE.md) wins.
+>
+> Known supersessions:
+>
+> | This document says | Actual decision |
+> |---|---|
+> | The name is `pm-templates` (working name, used throughout below) | `product-lifecycle-templates` everywhere, `pm-` prefix dropped. [ADR 20260629](../../../docs/decisions/20260629-repo-and-package-name.md) |
+> | Rigid S/M/L variants with abstract filenames (`template.s.md`) | lean/full with descriptive filenames; three weights only where a type earns them; the strict nesting rule is retained in full force. [ADR 20260629](../../../docs/decisions/20260629-variant-model.md) |
+> | `phase: Deliver` (capitalized) | Lowercase phase values, matching real pm-skills frontmatter. [ADR 20260629](../../../docs/decisions/20260629-phase-vocabulary.md) |
+> | Bundle IDs of the form `deliver-prd` | Bare doc-type handles (`prd`); phase lives in metadata, never in the path or ID. [ADR 20260630](../../../docs/decisions/20260630-bundle-ids-doctype-spine.md) |
+> | A six-file bundle | Eight files; the research log is a shipped artifact. [ADR 20260630](../../../docs/decisions/20260630-research-log-as-8th-file.md) |
+>
+> The `{{owner}}`-style placeholders in the schema examples below are intentional: this document *defines* the instance-frontmatter contract, so its examples show the placeholders rather than filled values.
+>
+> **Working name (historical):** `pm-templates`. This document uses it throughout. Read it as `product-lifecycle-templates`.
 >
 > **One-line positioning:** `pm-skills` teaches an agent *how to produce* a PM artifact. `pm-templates` provides *the artifact itself* as a multi-variant, self-describing markdown shape. They are siblings in the same marketplace, joined by an explicit metadata bridge.
 

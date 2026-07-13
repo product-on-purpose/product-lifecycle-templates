@@ -2,7 +2,7 @@
 title: "Strategy Brief: Turning the Master Catalog into a Template Library"
 status: draft
 doc_version: 0.1.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 last_reviewed: 2026-06-29
 license: Apache-2.0
 source_inputs:

@@ -3,7 +3,7 @@ title: "Raising the Ceiling: Quality, Vision, and Value Improvements for product
 doc_type: strategy-brief
 status: draft
 doc_version: 0.1.0
-owner: "{{owner}}"
+owner: "product-on-purpose"
 created: 2026-07-02
 last_reviewed: 2026-07-02
 additive_to:
