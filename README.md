@@ -87,16 +87,14 @@ Note on the directory layout: lifecycle phase is carried in bundle metadata, nev
 
 ---
 
-## State, decisions, and roadmap
+## Design and roadmap
 
-The thinking behind the library is documented, not implicit, and the honest current state is one file away.
+The thinking behind the library is documented, not implicit:
 
-- **[`STATE.md`](STATE.md)** is the single source of truth about what actually exists. It outranks every plan and brief in this repo, it lists what is deliberately *not* built, and it says plainly which of the front-door claims are earned and which are still on credit. If a document here disagrees with it, that document is wrong.
-- **[`docs/decisions/`](docs/decisions/)** holds the architecture decision records: why bundles are named by document type, why templates ship lean and full under a strict nesting rule, why the research log is a shipped artifact, and what the governance gate is and is not.
-
-The library grows **by pull**, not by speculation. The next family is built when a real team asks for one. What is coming, in order: verifiable citations and a first tagged release; a machine-readable metadata layer so an agent can select a bundle deterministically; then efficacy evaluations, so "best-in-class" becomes a measurement rather than an assertion.
-
-That last one is the honest gap. Nothing here yet proves a template produces a better document than a good prompt does. Until it does, the claim is a hypothesis, and `STATE.md` says so.
+- [`strategy-brief_catalog-to-template-library.md`](_local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md) - the approach and the resolved architecture decisions.
+- [`implementation-plan_catalog-to-template-library.md`](_local/initial-discovery/docs/implementation-plan_catalog-to-template-library.md) - the phased plan and acceptance criteria.
+- [`template-library-design-spec.md`](_local/initial-discovery/docs/template-library-design-spec.md) - the formal specification.
+- [`strategy-brief_raising-the-ceiling_2026-07-02.md`](_local/initial-discovery/docs/strategy-brief_raising-the-ceiling_2026-07-02.md) - where the library goes next: proving quality with evals, closing the usage loop, and serving templates to agents.
 
 ---
 
