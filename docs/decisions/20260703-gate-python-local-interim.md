@@ -6,12 +6,12 @@ Deciders: jprisant
 
 ## Context and problem statement
 
-The implementation plan's P3 committed to a suite of Node `.mjs` lint scripts under `scripts/` wired to GitHub Actions on push. When the four bundles were built ahead of that phase, the Definition of Done was being verified by hand. A single local Python script (`_local/tools/check-bundles.py`, six checks) was built 2026-07-03 to make that verification repeatable, explicitly self-described in its docstring and in the README as "a local prototype of the CI gate planned in the implementation plan (P3)."
+The implementation plan's P3 (port the CI quality gate from pm-skills) committed to a suite of Node `.mjs` lint scripts under `scripts/` wired to GitHub Actions on push. When the four bundles were built ahead of that phase, the Definition of Done was being verified by hand. A single local Python script (`_local/tools/check-bundles.py`, six checks) was built 2026-07-03 to make that verification repeatable, explicitly self-described in its docstring and in the README as "a local prototype of the CI gate planned in the implementation plan (P3)."
 
 ## Considered options
 
 * Option A: one local Python script now; CI wiring and the fuller check suite later.
-* Option B: execute P3 as planned (Node script suite plus ci.yml) before or alongside content.
+* Option B: execute P3 (the CI gate port) as planned (Node script suite plus ci.yml) before or alongside content.
 * Option C: no automation until P3 runs properly.
 
 ## Decision outcome

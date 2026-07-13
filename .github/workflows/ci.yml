@@ -3,6 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 jobs:
   gate:
     runs-on: ubuntu-latest
@@ -11,4 +12,53 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python _local/tools/check-bundles.py
+
+      # The bundle gate: six structural checks across every bundle.
+      - name: Bundle gate
+        run: python _local/tools/check-bundles.py
+
+      # The gate's dash check (check B) only scans inside bundles, but the house
+      # rule is repo-wide and the methodology advertises it as CI-enforced. Without
+      # this step an em-dash in the README, in STATE.md, or in any decision record
+      # passes green. Scans git-tracked files only: untracked local scratch is not
+      # the repo's problem.
+      - name: No em-dashes or en-dashes (repo-wide)
+        run: |
+          python - <<'PY'
+          import pathlib, subprocess, sys
+
+          EM, EN = chr(8212), chr(8211)
+          EXTS = {".md", ".yaml", ".yml", ".py", ".json"}
+
+          tracked = subprocess.run(
+              ["git", "ls-files"], capture_output=True, text=True, check=True
+          ).stdout.split("\n")
+
+          bad = []
+          for name in tracked:
+              if not name or pathlib.Path(name).suffix.lower() not in EXTS:
+                  continue
+              try:
+                  text = pathlib.Path(name).read_text(encoding="utf-8")
+              except (UnicodeDecodeError, OSError):
+                  continue
+              hits = [
+                  n for n, line in enumerate(text.splitlines(), 1)
+                  if EM in line or EN in line
+              ]
+              if hits:
+                  bad.append((name, hits))
+
+          for name, lines in bad:
+              shown = ", ".join(str(n) for n in lines[:10])
+              more = " ..." if len(lines) > 10 else ""
+              print(f"{name}: em/en-dash on line(s) {shown}{more}")
+
+          if bad:
+              print(f"\nFAIL: {len(bad)} tracked file(s) contain an em-dash or en-dash.")
+              print("House rule: use ' - ' (space hyphen space), or restructure the")
+              print("sentence with a comma, colon, or break. Ranges use plain hyphens.")
+              sys.exit(1)
+
+          print("OK: no em-dash or en-dash in any tracked text file.")
+          PY
