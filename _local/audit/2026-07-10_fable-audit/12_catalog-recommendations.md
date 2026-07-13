@@ -56,7 +56,7 @@ Rule of use: **demand is a gate, not just a weight.** A candidate with zero dema
 
 | Bundle | Catalog | pairs_with | Sizes | Note |
 |---|---|---|---|---|
-| adr | #64 | [develop-adr] | [s] | First; dogfoods docs/decisions/ (the repo's 7 pending ADRs become its worked-example material, with the fictional-example rule adapted: real decisions, no confidentiality issue) |
+| adr | #64 | [develop-adr] | [s] | First; dogfoods docs/internal/decisions/ (the repo's 7 pending ADRs become its worked-example material, with the fictional-example rule adapted: real decisions, no confidentiality issue) |
 | design-doc | #47 | [develop-design-rationale] | [lean, full] | Second; the RFC-vs-ADR-vs-design-doc contested boundary (catalog Caveats) is exactly the debate a companion exists to referee |
 | spike-summary | #67 | [develop-spike-summary] | [s] | Third; cheap |
 | rfc | #48 | null | [lean, full] | Fourth; pairs_with null is legitimate per the DoD |

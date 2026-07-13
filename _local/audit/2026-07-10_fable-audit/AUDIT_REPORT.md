@@ -60,7 +60,7 @@ Condensed from the full context sheet at [00_context-sheet.md](00_context-sheet.
 
 | Phase | Planned (G4, 2026-06-29) | Actual (2026-07-10) | Character |
 |---|---|---|---|
-| P1 four ADRs | `docs/decisions/` x4, **blocking** gate before P2-P4 | No ADR files anywhere; decisions made 2026-06-29 and recorded inline (G3 sec. 5, G4:374-381) | Decided in substance, undocumented in the mandated durable format; G4:381 falsely claims "recorded as ADRs in P1" |
+| P1 four ADRs | `docs/internal/decisions/` x4, **blocking** gate before P2-P4 | No ADR files anywhere; decisions made 2026-06-29 and recorded inline (G3 sec. 5, G4:374-381) | Decided in substance, undocumented in the mandated durable format; G4:381 falsely claims "recorded as ADRs in P1" |
 | P2 scaffold | Root `templates/`, `_families/`, `docs/`, `scripts/`, `.github/`, `.claude-plugin/`, `profiles/`, plus LICENSE/AGENTS/CONTRIBUTING/CHANGELOG | None of it; content lives under `_local/` | Location documented as deliberate; the missing root files (LICENSE above all) are silent drift |
 | P3 CI gate | 7 Node `.mjs` scripts + `ci.yml` on push/PR | One local Python script covering parts of 5-6 planned checks; no CI | Deviation self-documented as interim prototype; CI absence is live risk |
 | P4 reference bundle | `templates/deliver-prd/`, 6 files | `_local/templates/prd/`, **8** files (companion + research log added), `<type>_` naming | Built beyond plan per methodology v0.2.0; the rename and 6-to-8 growth have no decision record other than the methodology itself |
@@ -319,8 +319,8 @@ Why it matters: a documentation product that cannot onboard its own first user f
 Fix: a 30-minute "Quick start: use a template" section (clone, open lean template in an editor, read the preamble, replace placeholders, self-grade against the guide, delete comments), later graduating to `docs/quickstart-use-a-template.md`.
 
 **F-03 (mandated ADRs missing; decisions are undiscoverable prose; canonical for G-06). High, CONFIRMED, effort M.**
-What: plan P1 (lines 81-109) mandated four ADR files behind a blocking gate; G4:381 claims they were "recorded as ADRs in P1"; no `docs/decisions/` exists anywhere, so the traceability pointer asserts records that do not exist. Three further decisions have no durable record at all: Approach A guidance style, the research log as the 8th bundle file, and the Python/local gate as interim. Both external ADR references were fetched live (HTTP 200).
-Fix: transcribe seven ADRs (an hour's work; the content already exists in prose), or explicitly retire the ADR requirement and correct G4:381. Ready-to-commit `docs/decisions/TEMPLATE.md` (MADR-style, 22 lines):
+What: plan P1 (lines 81-109) mandated four ADR files behind a blocking gate; G4:381 claims they were "recorded as ADRs in P1"; no `docs/internal/decisions/` exists anywhere, so the traceability pointer asserts records that do not exist. Three further decisions have no durable record at all: Approach A guidance style, the research log as the 8th bundle file, and the Python/local gate as interim. Both external ADR references were fetched live (HTTP 200).
+Fix: transcribe seven ADRs (an hour's work; the content already exists in prose), or explicitly retire the ADR requirement and correct G4:381. Ready-to-commit `docs/internal/decisions/TEMPLATE.md` (MADR-style, 22 lines):
 
 ```markdown
 # [Short imperative title of the decision]
@@ -400,7 +400,7 @@ Sequencing thesis, defended: **floor, then wedge, then proof, then reach.** The 
 | 2 | Add `.github/workflows/ci.yml` running the existing gate (snippet in D-03) | D-03 (CI), G-02 partial (makes "enforceable" true for checks A-F) | 30 min |
 | 3 | CHANGELOG.md with [0.1.0]; tag `v0.1.0` | E-07 (version anchor) | 1 h |
 | 4 | Truth-up the plan progress table + dated Revisions row | G-01 (stale plan) | 30 min |
-| 5 | Transcribe 7 ADRs into `docs/decisions/` (template in F-03) | F-03, G-06, G-01 partial | 2 h |
+| 5 | Transcribe 7 ADRs into `docs/internal/decisions/` (template in F-03) | F-03, G-06, G-01 partial | 2 h |
 | 6 | Fix methodology "seven files" to eight (both occurrences + table row) | B-04, C-07, F-04 | 15 min |
 | 7 | Citation integrity pass: SVPG qualifiers, Ranorex replacement, Keep a Changelog 1.1.2, cite-or-remove refs 8/12 + retag 12, de-quote the Lenny phrase, split combined entries | A-01, A-02, A-03, A-04, A-05, A-06, B-03 | 2-3 h |
 | 8 | Gate: reverse-citation check (snippet in D-02) + placeholder scan over meta.yaml | D-02, part of B-02/C-05 | 30 min |
@@ -477,14 +477,14 @@ Target tree implementing progressive disclosure for both audiences. Compose from
 |---|---|---|
 | `CONTRIBUTING.md` | Authoring overview; pointers to methodology, contract, ADRs, gate | New (short) |
 | `docs/contributing/authoring-contract.md` | The single reference home: 8-file anatomy, citation standard, comment standard, nesting rule, gate checks A-F with known gaps, meta schema, family contract, 11-clause DoD | Composed index over methodology + design spec + gate source |
-| `docs/decisions/TEMPLATE.md` | MADR stub (22 lines, provided in F-03) | This report |
-| `docs/decisions/20260629-repo-and-package-name.md` | status: accepted | G3 sec. 5 item 1 |
-| `docs/decisions/20260629-variant-model.md` | status: accepted | G3 sec. 5 item 2 |
-| `docs/decisions/20260629-phase-vocabulary.md` | status: accepted | G3 sec. 5 item 3 |
-| `docs/decisions/20260629-first-family-and-bundle.md` | status: accepted | G3 sec. 5 item 4 |
-| `docs/decisions/20260630-guidance-style-approach-a.md` | status: accepted | `_working/README.md` (then delete the folder) |
-| `docs/decisions/20260630-research-log-as-8th-file.md` | status: accepted | DoD Research clause + gate ROLES |
-| `docs/decisions/20260703-gate-python-local-interim.md` | status: accepted (interim) | Gate docstring + README:106 |
+| `docs/internal/decisions/TEMPLATE.md` | MADR stub (22 lines, provided in F-03) | This report |
+| `docs/internal/decisions/0001-repo-and-package-name.md` | status: accepted | G3 sec. 5 item 1 |
+| `docs/internal/decisions/0002-variant-model.md` | status: accepted | G3 sec. 5 item 2 |
+| `docs/internal/decisions/0003-phase-vocabulary.md` | status: accepted | G3 sec. 5 item 3 |
+| `docs/internal/decisions/0004-first-family-and-bundle.md` | status: accepted | G3 sec. 5 item 4 |
+| `docs/internal/decisions/0006-guidance-style-approach-a.md` | status: accepted | `_working/README.md` (then delete the folder) |
+| `docs/internal/decisions/0007-research-log-as-bundle-artifact.md` | status: accepted | DoD Research clause + gate ROLES |
+| `docs/internal/decisions/0008-gate-python-local-interim.md` | status: accepted (interim) | Gate docstring + README:106 |
 | `docs/reference/gate-checks.md` | Checks A-F, scope, known gaps (one-way citations until patched, H2-only nesting) | check-bundles.py |
 | `docs/reference/metadata-schema.md` | Catalog meta + instance meta fields, allowed values, the two-tier rule | Design spec sec. 9 + meta.schema.json |
 | `docs/reference/family-contracts.md` (or `_families/delivery-docs.contract.md`) | The delivery-docs contract | B-01 fix |

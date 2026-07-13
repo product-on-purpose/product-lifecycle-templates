@@ -1,19 +1,21 @@
+---
+status: accepted
+date: 2026-06-29
+decision-makers: [jprisant]
+---
+
 # Use lowercase phase values matching pm-skills frontmatter
 
-Status: accepted (decided 2026-06-29; transcribed 2026-07-11 from strategy brief section 5; ratified 2026-07-12; **factually corrected 2026-07-12, see Correction below**)
-Date: 2026-06-29
-Deciders: jprisant
-
-## Context and problem statement
+## Context and Problem Statement
 
 The design spec wrote `phase: Deliver` (capitalized) while the live pm-skills repo uses lowercase `phase: deliver` in real skill frontmatter. The phase axis is the taxonomy seam between the two repos; the seam is only real if the vocabulary matches exactly.
 
-## Considered options
+## Considered Options
 
 * Option A: lowercase values matching pm-skills as built: `discover`, `define`, `develop`, `deliver`, `measure`, `iterate`.
 * Option B: the design spec's capitalized Triple Diamond labels.
 
-## Decision outcome
+## Decision Outcome
 
 Chosen option: A. The design spec's casing was corrected rather than propagated.
 
@@ -32,7 +34,7 @@ The phase enum is **six values**, verified 2026-07-12 by enumerating every `phas
 
 * Good: `pairs_with` and phase filtering resolve against pm-skills without a translation layer; one vocabulary across the ecosystem.
 * Accepted risk: none material. The **six** allowed values should be enforced by the metadata schema (see the machine-metadata spec in the audit package) so the vocabulary cannot drift.
-* Scope note: the plan's version of this decision also prescribed `<phase>-<doctype>` bundle IDs. That half was superseded by practice and is recorded separately in [20260630-bundle-ids-doctype-spine.md](20260630-bundle-ids-doctype-spine.md).
+* Scope note: the plan's version of this decision also prescribed `<phase>-<doctype>` bundle IDs. That half was superseded by practice and is recorded separately in [0005-bundle-ids-doctype-spine.md](0005-bundle-ids-doctype-spine.md).
 
 ## Correction (2026-07-12)
 
@@ -58,3 +60,7 @@ pm-skills needs a second axis because roughly half its skills have no lifecycle 
 It will not stay fine. Several catalog types plausibly have no lifecycle phase at all: a glossary, a team charter, a decision record. Forcing them to declare one would be the same category error this correction just fixed, one level up.
 
 This is now a live question, not an answered one, and it must be settled **before** the metadata schema hardens `phase` into a required six-value enum. "Required" is the wrong answer if some document types have nothing true to put there. Tracked for milestone M2 (roadmap WP-21, the metadata schema).
+
+## More Information
+
+Provenance: accepted (decided 2026-06-29; transcribed 2026-07-11 from strategy brief section 5; ratified 2026-07-12; **factually corrected 2026-07-12, see Correction below**)

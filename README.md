@@ -83,7 +83,7 @@ docs/
 STATE.md                    What is actually true today. Outranks every plan.
 ```
 
-Note on the directory layout: lifecycle phase is carried in bundle metadata, never in the path, so `templates/` is flat by document type rather than nested by phase. That is deliberate, and it means a type's phase can be reassigned without renaming anything. See [`docs/decisions/20260712-scaffold-graduation-flat-templates.md`](docs/decisions/20260712-scaffold-graduation-flat-templates.md).
+Note on the directory layout: lifecycle phase is carried in bundle metadata, never in the path, so `templates/` is flat by document type rather than nested by phase. That is deliberate, and it means a type's phase can be reassigned without renaming anything. See [`docs/internal/decisions/0009-scaffold-graduation-flat-templates.md`](docs/internal/decisions/0009-scaffold-graduation-flat-templates.md).
 
 ---
 

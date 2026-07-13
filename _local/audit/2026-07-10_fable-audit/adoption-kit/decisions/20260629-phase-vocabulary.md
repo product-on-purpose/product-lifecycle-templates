@@ -21,4 +21,4 @@ Chosen option: A, verified against the actual pm-skills frontmatter (`skills/del
 
 * Good: `pairs_with` and phase filtering resolve against pm-skills without a translation layer; one vocabulary across the ecosystem.
 * Accepted risk: none material; the eight allowed values should be enforced by the metadata schema (audit package, machine-metadata spec) so the vocabulary cannot drift.
-* Scope note: the plan's version of this decision also prescribed `<phase>-<doctype>` bundle IDs; that half was superseded by practice and is recorded separately in 20260630-bundle-ids-doctype-spine.md.
+* Scope note: the plan's version of this decision also prescribed `<phase>-<doctype>` bundle IDs; that half was superseded by practice and is recorded separately in 0005-bundle-ids-doctype-spine.md.

@@ -9,7 +9,7 @@ authoring into one repeatable command.
 This IS the gate, not a prototype of one: .github/workflows/ci.yml runs this same script
 on every push to main and every pull request. It supersedes the Node script suite that the
 implementation plan's P3 (port the CI quality gate from pm-skills) had intended; see
-docs/decisions/20260703-gate-python-local-interim.md.
+docs/internal/decisions/0008-gate-python-local-interim.md.
 
 Coverage is partial by acknowledgement, not by accident: these six checks automate roughly
 half the Definition of Done. The rest is human-verified. Do not read a green run as "the
@@ -21,7 +21,7 @@ Tier-1 catalog types are single-size, and a few may earn three (s/m/l). The gate
 to enforce that the files on disk match what the meta declares, in both directions: a
 declared variant that is missing is a failure, and a variant file sitting in the bundle
 that the meta never declared is also a failure. See
-docs/decisions/20260712-single-size-bundles.md.
+docs/internal/decisions/0010-meta-declares-size-contract.md.
 
 Usage:
     python tools/check-bundles.py            # check every bundle

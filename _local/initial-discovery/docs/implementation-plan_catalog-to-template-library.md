@@ -24,7 +24,7 @@ priority: P1
 >
 > This plan was written 2026-06-29 and is preserved as the historical record of what was intended. It is **not** authoritative for what exists today. **[`STATE.md`](../../../STATE.md) at the repo root is the single source of current truth**, and where this plan disagrees with it, STATE.md wins.
 >
-> Execution diverged from this plan in three material ways, each of which is now recorded as a decision rather than left as drift: bundle IDs became bare doc-type handles instead of `<phase>-<doctype>` ([ADR 20260630, bundle IDs are the doc-type spine](../../../docs/decisions/20260630-bundle-ids-doctype-spine.md)); the CI gate became a local Python script instead of a Node port ([ADR 20260703, Python local gate as interim](../../../docs/decisions/20260703-gate-python-local-interim.md)); and content was built ahead of scaffold, leaving the final directory path open as decision HY-2.
+> Execution diverged from this plan in three material ways, each of which is now recorded as a decision rather than left as drift: bundle IDs became bare doc-type handles instead of `<phase>-<doctype>` ([ADR 20260630, bundle IDs are the doc-type spine](../../../docs/internal/decisions/0005-bundle-ids-doctype-spine.md)); the CI gate became a local Python script instead of a Node port ([ADR 20260703, Python local gate as interim](../../../docs/internal/decisions/0008-gate-python-local-interim.md)); and content was built ahead of scaffold, leaving the final directory path open as decision HY-2.
 >
 > The live roadmap superseding this plan is [`10_roadmap-expanded.md`](../../audit/2026-07-10_fable-audit/10_roadmap-expanded.md) (milestones M0 through M6).
 >
@@ -49,10 +49,10 @@ Truthed-up 2026-07-12 against the actual tree. Every row now carries its evidenc
 
 | Phase | Goal | Owner | Status and evidence |
 |-------|------|-------|---------------------|
-| P1 | Settle + record the four foundational decisions as ADRs | human | **Done 2026-07-12.** The decisions were taken 2026-06-29 but went unrecorded for two weeks (audit finding F-03). They now live in [`docs/decisions/`](../../../docs/decisions/) (commit `653579a`). Eight ADRs landed, not four: three practice-settled decisions and the interim-gate decision were also outstanding. |
+| P1 | Settle + record the four foundational decisions as ADRs | human | **Done 2026-07-12.** The decisions were taken 2026-06-29 but went unrecorded for two weeks (audit finding F-03). They now live in [`docs/internal/decisions/`](../../../docs/internal/decisions/) (commit `653579a`). Eight ADRs landed, not four: three practice-settled decisions and the interim-gate decision were also outstanding. |
 | P2 | Scaffold repo skeleton, conventions, and the `profiles/` attach point | either | **Not started as a phase**, though four of its artifacts landed opportunistically along the way: `.gitignore` (`cd7c6bd`), `README.md` (`3f9c39a`), `LICENSE` (`5f1538d`, added by M0), and `.github/workflows/ci.yml` (`8d50ff4`, added by M0). Still absent: `profiles/`, `.claude-plugin/`, `package.json`, `.nvmrc`, `.gitattributes`, `scripts/`, `_families/`, and the canonical `templates/` path. Content was deliberately built ahead of scaffold; the final path is decision HY-2 (scaffold graduation), scheduled in milestone M2. |
-| P3 | Port the CI quality gate from `pm-skills` | LLM | **Superseded.** No Node scripts were ever written. A local Python gate (`_local/tools/check-bundles.py`, six checks) was built instead on 2026-07-03, and wired into GitHub Actions on 2026-07-12 (`8d50ff4`). Recorded in [ADR 20260703 (Python local gate as decided interim)](../../../docs/decisions/20260703-gate-python-local-interim.md). Whether the Node port ever happens is that ADR's open Step 2. |
-| P4 | Build the `deliver-prd` reference bundle end-to-end | either | **Done 2026-06-30.** `_local/templates/prd/` exists with all eight files and passes the gate. Note the bundle ID is `prd`, not `deliver-prd` as this plan assumed: see [ADR 20260630 (bundle IDs are the doc-type spine)](../../../docs/decisions/20260630-bundle-ids-doctype-spine.md). |
+| P3 | Port the CI quality gate from `pm-skills` | LLM | **Superseded.** No Node scripts were ever written. A local Python gate (`_local/tools/check-bundles.py`, six checks) was built instead on 2026-07-03, and wired into GitHub Actions on 2026-07-12 (`8d50ff4`). Recorded in [ADR 20260703 (Python local gate as decided interim)](../../../docs/internal/decisions/0008-gate-python-local-interim.md). Whether the Node port ever happens is that ADR's open Step 2. |
+| P4 | Build the `deliver-prd` reference bundle end-to-end | either | **Done 2026-06-30.** `_local/templates/prd/` exists with all eight files and passes the gate. Note the bundle ID is `prd`, not `deliver-prd` as this plan assumed: see [ADR 20260630 (bundle IDs are the doc-type spine)](../../../docs/internal/decisions/0005-bundle-ids-doctype-spine.md). |
 | P5 | Wire distribution (catalog/manifest, plugin + marketplace); tag v0.1 | either | **Not started.** Zero git tags exist; there is no manifest, plugin, or marketplace file. The v0.1.0 tag is roadmap WP-14 (milestone M1). Distribution proper is milestone M5, deliberately gated on a usage signal that does not yet exist. |
 | P6 | Complete the `delivery-docs` family + family contract + validator; tag v0.2 | either | **Partial.** All four bundles were built 2026-06-30 (`prd`, `user-stories`, `acceptance-criteria`, `release-notes`), eight files each, all gate-passing. Three things are missing. The **family contract** exists only as an audit artifact (`_local/audit/2026-07-10_fable-audit/adoption-kit/delivery-docs.contract.md`: tracked in git, but not adopted at a canonical path; adoption is roadmap WP-24, milestone M2). The **family validator** this phase names (`validate-template-family.mjs`) does not exist at all; `check-bundles.py` is a different tool that checks bundles individually and never checks family conformance. And there is no v0.2 tag. |
 | P7 | Stand up the demand-gated roadmap + generator decision-gate checkpoint | human | **Not started.** The pull queue is roadmap WP-32 (milestone M3). Decision D1 (build the Layer 1 generator or not) remains correctly gated on a usage signal, and is the one open decision the audit did not fault. |
@@ -92,16 +92,16 @@ These four decisions are expensive to reverse once bundle content exists (strate
 
 ### Steps
 
-1. Create `docs/decisions/` in the repo root (mirrors the `pm-skills` `develop-adr` / MADR convention; filename pattern `YYYYMMDD-title.md`).
-2. Write `docs/decisions/20260629-repo-and-package-name.md`: record that **`product-lifecycle-templates` is used everywhere** (resolved 2026-06-29) - the git repo, the plugin/marketplace `name` field, and the install command; the `pm-` family handle is dropped (the broader name ages better if the library spans general software docs beyond PM, design spec §15). State the install string `npx skills add product-on-purpose/product-lifecycle-templates` and `name: product-lifecycle-templates` in `.claude-plugin/plugin.json`.
-3. Write `docs/decisions/20260629-variant-model.md`: record the **descriptive-filename variant model** - ship the number of variants a type earns (most earn two: `template.lean.md` and `template.full.md`; use `template.s.md`/`template.m.md`/`template.l.md` only where three weights genuinely differ), keep the **strict nesting rule** (a smaller variant's section IDs are a subset of the larger's). This resolves the contradiction between design spec §6 (rigid S/M/L) and layered design §3 (lean/full, descriptive names) in favor of the latter. Note the residual open item in [D-resolved log].
-4. Write `docs/decisions/20260629-phase-vocabulary.md`: record that **`phase` frontmatter values are lowercase** (`discover`, `define`, `develop`, `deliver`, `measure`, `iterate`, plus `foundation`, `tool`) and **bundle IDs are `<phase>-<doctype>`** (e.g. `deliver-prd`), matching the real `pm-skills` frontmatter (verify against `E:/Projects/product-on-purpose/pm-skills/skills/deliver-prd/SKILL.md` line 6). This corrects the design spec's capitalized `phase: Deliver`.
-5. Write `docs/decisions/20260629-first-family-and-bundle.md`: record **first family = `delivery-docs`**, **first bundle = `deliver-prd`**, chosen because its `pairs_with` targets already exist in `pm-skills` (`deliver-prd`, `deliver-user-stories`, `deliver-acceptance-criteria`, `deliver-release-notes`).
+1. Create `docs/internal/decisions/` in the repo root (mirrors the `pm-skills` `develop-adr` / MADR convention; filename pattern `YYYYMMDD-title.md`).
+2. Write `docs/internal/decisions/0001-repo-and-package-name.md`: record that **`product-lifecycle-templates` is used everywhere** (resolved 2026-06-29) - the git repo, the plugin/marketplace `name` field, and the install command; the `pm-` family handle is dropped (the broader name ages better if the library spans general software docs beyond PM, design spec §15). State the install string `npx skills add product-on-purpose/product-lifecycle-templates` and `name: product-lifecycle-templates` in `.claude-plugin/plugin.json`.
+3. Write `docs/internal/decisions/0002-variant-model.md`: record the **descriptive-filename variant model** - ship the number of variants a type earns (most earn two: `template.lean.md` and `template.full.md`; use `template.s.md`/`template.m.md`/`template.l.md` only where three weights genuinely differ), keep the **strict nesting rule** (a smaller variant's section IDs are a subset of the larger's). This resolves the contradiction between design spec §6 (rigid S/M/L) and layered design §3 (lean/full, descriptive names) in favor of the latter. Note the residual open item in [D-resolved log].
+4. Write `docs/internal/decisions/0003-phase-vocabulary.md`: record that **`phase` frontmatter values are lowercase** (`discover`, `define`, `develop`, `deliver`, `measure`, `iterate`, plus `foundation`, `tool`) and **bundle IDs are `<phase>-<doctype>`** (e.g. `deliver-prd`), matching the real `pm-skills` frontmatter (verify against `E:/Projects/product-on-purpose/pm-skills/skills/deliver-prd/SKILL.md` line 6). This corrects the design spec's capitalized `phase: Deliver`.
+5. Write `docs/internal/decisions/0004-first-family-and-bundle.md`: record **first family = `delivery-docs`**, **first bundle = `deliver-prd`**, chosen because its `pairs_with` targets already exist in `pm-skills` (`deliver-prd`, `deliver-user-stories`, `deliver-acceptance-criteria`, `deliver-release-notes`).
 6. In each ADR, fill the standard sections: context, decision, consequences, status `accepted`.
 
 ### Verification
 
-- [ ] Four files exist under `docs/decisions/` with `YYYYMMDD-` prefixes and `status: accepted`.
+- [ ] Four files exist under `docs/internal/decisions/` with `YYYYMMDD-` prefixes and `status: accepted`.
 - [ ] Each ADR states a single decision with a concrete chosen value (name string, filename pattern, casing rule, family/bundle IDs).
 - [ ] The phase-vocabulary ADR's lowercase values match `pm-skills/skills/deliver-prd/SKILL.md` `metadata.phase`.
 
@@ -111,10 +111,10 @@ These four decisions are expensive to reverse once bundle content exists (strate
 
 ### Output Artifacts
 
-- `docs/decisions/20260629-repo-and-package-name.md` - created
-- `docs/decisions/20260629-variant-model.md` - created
-- `docs/decisions/20260629-phase-vocabulary.md` - created
-- `docs/decisions/20260629-first-family-and-bundle.md` - created
+- `docs/internal/decisions/0001-repo-and-package-name.md` - created
+- `docs/internal/decisions/0002-variant-model.md` - created
+- `docs/internal/decisions/0003-phase-vocabulary.md` - created
+- `docs/internal/decisions/0004-first-family-and-bundle.md` - created
 
 ### Suggested Owner
 
@@ -355,14 +355,14 @@ Convert the catalog's tiering into a governed, pull-driven backlog rather than a
 2. `docs/reference/pull-queue.md` - a lightweight intake: a team requesting a bundle adds a row (requested type, requesting team, methodology in use, target date); the next bundle to build is the top pulled row, not the next catalog number.
 3. `scripts/check-count-consistency.mjs` - extend to assert the Tier-1 "N of 28" progress count matches between `README.md` and `roadmap.md`.
 4. Add an **alias-index** stub `alias-index.json` (catalog Appendix; design spec discoverability): map known aliases to canonical bundle paths (seed from the catalog's alias entries for the four shipped bundles, e.g. `"product spec" -> "templates/deliver-prd"`). Wire a CI check that every alias target path exists.
-5. **Generator decision-gate checkpoint:** in `docs/decisions/`, open `docs/decisions/2026XXXX-generator-decision-gate.md` as `status: open` capturing the [D1](#d1-build-the-layer-1-generator-or-not-open) question (one-time fork vs recurring re-apply, layered design §9). Do not build the generator. Schedule a review against real usage after Tier 1 has two or more families shipped.
+5. **Generator decision-gate checkpoint:** in `docs/internal/decisions/`, open `docs/internal/decisions/2026XXXX-generator-decision-gate.md` as `status: open` capturing the [D1](#d1-build-the-layer-1-generator-or-not-open) question (one-time fork vs recurring re-apply, layered design §9). Do not build the generator. Schedule a review against real usage after Tier 1 has two or more families shipped.
 
 ### Verification
 
 - [ ] `docs/reference/roadmap.md` lists all three tiers; Tier 1 enumerates the 28 with IDs; `delivery-docs` marked done.
 - [ ] `docs/reference/pull-queue.md` exists with the intake table schema.
 - [ ] `alias-index.json` validates: every target path exists on disk for shipped bundles.
-- [ ] `docs/decisions/2026XXXX-generator-decision-gate.md` exists as `status: open` and references the layered design §9 gate.
+- [ ] `docs/internal/decisions/2026XXXX-generator-decision-gate.md` exists as `status: open` and references the layered design §9 gate.
 
 ### Decision Gate
 
@@ -372,7 +372,7 @@ Convert the catalog's tiering into a governed, pull-driven backlog rather than a
 
 - `docs/reference/roadmap.md`, `docs/reference/pull-queue.md` - created
 - `alias-index.json` - created
-- `docs/decisions/2026XXXX-generator-decision-gate.md` - created (status: open)
+- `docs/internal/decisions/2026XXXX-generator-decision-gate.md` - created (status: open)
 - `scripts/check-count-consistency.mjs` - modified (Tier-1 progress guard)
 
 ### Suggested Owner

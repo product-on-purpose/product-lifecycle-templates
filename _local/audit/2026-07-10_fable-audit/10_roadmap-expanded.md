@@ -62,11 +62,11 @@ Effort: S = under 1 hour, M = roughly half a day, L = one or more days. Traces: 
 | WP-02 | CI bridge | `.github/workflows/ci.yml` running `python _local/tools/check-bundles.py` on push and PR (snippet in AUDIT_REPORT.md finding D-03) | S | D-03, G-02 |
 | WP-03 | Hygiene sweep | Delete `_local/templates/_working/`; fill `maintainer`/`owner` placeholders in 4 metas + methodology; relabel dangling `related_templates` entries with `future:` prefix; sweep bare P1/P3 IDs in plan and gate docstring | S | B-08, C-05, B-05, F-07 |
 | WP-04 | Truth infrastructure | Plan progress table updated to actual; dated Revisions row recording the content-first re-sequencing; `STATE.md` at root (10 lines: built vs planned, counts, gate status, last-updated); superseded banner atop the design spec | S/M | G-01, G-04 |
-| WP-05 | Decision records | `docs/decisions/` with MADR TEMPLATE.md plus 7 transcribed ADRs (4 foundational from 2026-06-29; guidance style; research log as 8th file; Python/local gate as interim) | M | F-03, G-06 |
+| WP-05 | Decision records | `docs/internal/decisions/` with MADR TEMPLATE.md plus 7 transcribed ADRs (4 foundational from 2026-06-29; guidance style; research log as 8th file; Python/local gate as interim) | M | F-03, G-06 |
 | WP-06 | Rulebook consistency | methodology.md "seven files" corrected to eight in both places + research-log row added to the section 2 table + drafting step added | S | B-04, C-07, F-04 |
 
 **M0 acceptance criteria**
-- [ ] `git ls-files` shows LICENSE, STATE.md, `.github/workflows/ci.yml`, `docs/decisions/` with 8 files.
+- [ ] `git ls-files` shows LICENSE, STATE.md, `.github/workflows/ci.yml`, `docs/internal/decisions/` with 8 files.
 - [ ] CI run visible and green on GitHub for the merge commit.
 - [ ] `python _local/tools/check-bundles.py` still exits 0.
 - [ ] Grep for `{{maintainer}}` and `{{owner}}` returns only template-variant placeholder lines (none in metas or governance frontmatter).
