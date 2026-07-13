@@ -190,4 +190,4 @@ Tagged by reliability: `[primary]` standards body, regulator, or originating sou
 
 <a id="ref-12"></a>[12] Hustle Badger. "[12x PRD Examples and Real PRD Templates](https://www.hustlebadger.com/what-do-product-teams-do/prd-template-examples/)." hustlebadger.com (accessed 2026-06-30). [practitioner]
 
-<a id="ref-13"></a>[13] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../initial-discovery/docs/deep-research_master-catalog.md)," entry 29 (PRD). Internal deep-research catalog, 2026. [internal]
+<a id="ref-13"></a>[13] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../_local/initial-discovery/docs/deep-research_master-catalog.md)," entry 29 (PRD). Internal deep-research catalog, 2026. [internal]

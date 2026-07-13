@@ -1,16 +1,16 @@
 ---
 title: "Template Bundle Methodology: Researching and Drafting a Best-in-Class Template"
 status: draft
-doc_version: 0.2.1
+doc_version: 0.2.2
 owner: "product-on-purpose"
 last_reviewed: 2026-07-12
 license: Apache-2.0
 applies_to: "every bundle under templates/"
 related:
-  - ../initial-discovery/docs/template-library-design-spec.md
-  - ../initial-discovery/docs/strategy-brief_catalog-to-template-library.md
-  - ../initial-discovery/docs/implementation-plan_catalog-to-template-library.md
-  - ../initial-discovery/docs/deep-research_master-catalog.md
+  - ../_local/initial-discovery/docs/template-library-design-spec.md
+  - ../_local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md
+  - ../_local/initial-discovery/docs/implementation-plan_catalog-to-template-library.md
+  - ../_local/initial-discovery/docs/deep-research_master-catalog.md
 ---
 
 # Template Bundle Methodology
@@ -38,20 +38,33 @@ These govern every judgment call the process does not explicitly cover.
 
 ## 2. The Bundle (what we are producing)
 
-One document type produces one **bundle**: a folder named by the document-type handle (e.g. `prd/`), containing eight files. The doc-type handle prefixes every filename so a file is self-identifying if it is moved or attached out of context. Phase is recorded in metadata, never in the path, so the eventual directory scaffold (flat, nested-by-phase, or other) stays a deferred, derivable choice.
+One document type produces one **bundle**: a folder named by the document-type handle (e.g. `prd/`). The doc-type handle prefixes every filename so a file is self-identifying if it is moved or attached out of context. Phase is recorded in metadata, never in the path, so the directory scaffold stays a derivable choice.
+
+**A bundle is six core files, plus one blank-template file per size variant the type earns.** Most types earn two (`lean` and `full`), which makes eight files, the common case. A single-size type ships seven. A type that genuinely earns three weights (`s`/`m`/`l`) ships nine.
+
+**The meta declares the contract.** `sizes_available` in `<type>_meta.yaml` is not a description of what happens to be on disk; it is the declaration of what the bundle *is*, and the gate enforces the files against it in both directions. A declared variant that is missing fails. A variant file sitting in the bundle that the meta never declared also fails. See [`docs/decisions/20260712-single-size-bundles.md`](../docs/decisions/20260712-single-size-bundles.md).
+
+The blank-template variants:
 
 | File | Role | Reader | Length guide |
 |---|---|---|---|
 | `<type>_template-lean.md` | The blank shape, minimum useful | author filling a quick doc | short |
 | `<type>_template-full.md` | The blank shape, comprehensive (strict superset of lean) | author filling a thorough doc | medium |
+
+Ship only the variants the type earns. Do not pad out a `full` for a type whose lean version already says everything worth saying: an empty second variant is worse than an honest single one. Where a type earns three weights, use `s`/`m`/`l` instead; never mix the two vocabularies in one bundle.
+
+The six core files, present in every bundle at every size:
+
+| File | Role | Reader | Length guide |
+|---|---|---|---|
 | `<type>_companion.md` | The deep explainer: what it is, why, debates, exhaustive references | beginner learning + expert checking | long (2,000-5,000+ words) |
 | `<type>_guide.md` | The operator card: when-to-use, quality rubric, anti-patterns | someone deciding fast | short |
 | `<type>_example.md` | A real worked instance, no lorem, no fabricated metrics | author wanting a model to copy | medium |
-| `<type>_meta.yaml` | The machine manifest (catalog meta) | the repo, CI, agents | short |
+| `<type>_meta.yaml` | The machine manifest (catalog meta), including the size contract | the repo, CI, agents | short |
 | `<type>_history.md` | Per-bundle changelog by `template_version` | maintainers | grows over time |
 | `<type>_research-log.md` | The evidence trail: every source consulted, its tier, and its retrieval status | maintainers, auditors, freshness automation | grows during research |
 
-The research log is a committed bundle artifact, not disposable scaffolding: it is what makes "researched, not remembered" auditable rather than asserted. See [`docs/decisions/20260630-research-log-as-8th-file.md`](../../docs/decisions/20260630-research-log-as-8th-file.md).
+The research log is a committed bundle artifact, not disposable scaffolding: it is what makes "researched, not remembered" auditable rather than asserted. See [`docs/decisions/20260630-research-log-as-8th-file.md`](../docs/decisions/20260630-research-log-as-8th-file.md).
 
 The companion and the guide are deliberately separate (Diataxis split: explanation/reference vs how-to). The companion is the stable, research-backed artifact; the guide is a short derivative of it.
 
@@ -63,7 +76,7 @@ Do this fully before writing any bundle file. Output is a research log you keep 
 
 ### A1. Seed from the catalog
 
-Start at the document type's entry in [`deep-research_master-catalog.md`](../initial-discovery/docs/deep-research_master-catalog.md). Capture its canonical name, aliases, lifecycle phase, owner, purpose, typical sections, methodology, formality, rarity, relationships, and named sources. This is the hypothesis, not the answer.
+Start at the document type's entry in [`deep-research_master-catalog.md`](../_local/initial-discovery/docs/deep-research_master-catalog.md). Capture its canonical name, aliases, lifecycle phase, owner, purpose, typical sections, methodology, formality, rarity, relationships, and named sources. This is the hypothesis, not the answer.
 
 ### A2. Build the source set (tiered)
 
@@ -107,7 +120,7 @@ Keep a running list of every source consulted with its URL, tier, and the claims
 
 ## 4. Phase B: Drafting Protocol
 
-Draft the eight files in this order. Each draws on the research log, which B6 then finalizes and ships.
+Draft the bundle in this order (six core files plus each size variant). Each draws on the research log, which B6 then finalizes and ships.
 
 ### B1. The template variants (`_template-lean.md`, `_template-full.md`)
 
