@@ -1,5 +1,16 @@
 # Adoption Kit: Ready-to-Review Drafts for M0
 
+> **[ADOPTED 2026-07-12. THESE COPIES ARE HISTORICAL. DO NOT CITE THEM AS DECISION RECORDS.]**
+>
+> The canonical decision records now live at [`docs/decisions/`](../../../../docs/decisions/) and `STATE.md` is at the repo root. The copies in this folder are the **proposals as drafted on 2026-07-11**, preserved to show what was put forward before review.
+>
+> **They have already diverged from the canonical records**, deliberately. Review before adoption caught a material error and one staleness:
+>
+> - **`decisions/20260629-phase-vocabulary.md`**: the draft here claims the pm-skills phase enum has **eight** values, "plus `foundation` and `tool`". That is wrong. pm-skills has a two-axis taxonomy: six `phase:` values, and a separate `classification:` axis (`foundation`/`utility`/`tool`) carried by the 86 skills that have no phase at all. The canonical record states the correct enum and documents the error. Had the draft been adopted as written, it would have instructed the metadata schema to enforce a broken enum.
+> - **`decisions/20260703-gate-python-local-interim.md`**: the draft's accepted risk says "local-only means zero push protection", which stopped being true when M0 wired CI. The canonical record carries a dated Follow-up.
+>
+> Where this folder disagrees with `docs/decisions/`, **`docs/decisions/` wins**.
+
 Drafts of the judgment-bearing M0 artifacts (roadmap work packages WP-04 and WP-05), staged here rather than committed to the repo because the ADRs record the **maintainer's** decisions; you ratify, this kit only transcribes.
 
 ## How to adopt

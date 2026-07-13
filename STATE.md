@@ -26,7 +26,7 @@
 
 - **No version tags. No CHANGELOG.** v0.1.0 is roadmap WP-14, in milestone M1.
 - **No distribution surface** beyond `git clone`. No plugin manifest, no marketplace entry, no `manifest.json`.
-- **No family contract committed.** It is drafted (in the audit adoption kit) and lands with the scaffold decision, roadmap WP-24 in milestone M2.
+- **No family contract adopted.** One is drafted and tracked in git, but only as an audit artifact (`_local/audit/2026-07-10_fable-audit/adoption-kit/delivery-docs.contract.md`). It reaches a canonical path with the scaffold decision, roadmap WP-24 in milestone M2. Nothing validates family conformance today: the bundle gate checks bundles one at a time and never checks them as a set.
 - **No metadata schema**, so no machine-consumption path. An agent cannot yet select a bundle deterministically.
 - **No efficacy evals.** Template quality is currently argued, not measured. This is the gap the audit weighted most heavily (finding D-04).
 - **No real usage cycle. Zero fills by anyone but the author.** Every filled artifact in the repo is an authored example. The catalog's own tier rule gates Tier 2 on "survives one real usage cycle", so by its own standard nothing here has graduated.
@@ -54,6 +54,7 @@ Full definition: [`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`](
 | D3 | agentskills.io resource type for templates | 2026-06-29 | 1 hour | M1 |
 | D4 | Regulated-industry tier appetite | 2026-06-29 | n/a | Unscheduled |
 | HY-2 | Scaffold graduation (`_local/templates/` to its final path) | 2026-07-02 | n/a | M2 |
+| **TX-1** | **Does this library need a second taxonomy axis?** pm-skills carries 89 skills on `phase:` and 86 on a separate `classification:` axis (`foundation`/`utility`/`tool`) with no phase at all. Every bundle here declares a `phase:`, which has been fine only because all four are genuinely `deliver` artifacts. Types like a glossary or a team charter may have no phase to declare. **Must be settled before the metadata schema makes `phase` a required enum.** Surfaced 2026-07-12 by the correction to [ADR 20260629 (phase vocabulary)](docs/decisions/20260629-phase-vocabulary.md). | 2026-07-12 | ~1 hour | M2 (blocks WP-21) |
 | VL-1 | Business model | 2026-07-02 | n/a | Unscheduled |
 | VL-3 | Maintenance cadence | 2026-07-02 | n/a | M6 |
 

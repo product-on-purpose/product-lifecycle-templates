@@ -4,8 +4,16 @@ check-bundles.py - the governance gate for the template library.
 
 Runs the structural quality checks that the methodology's Definition of Done requires,
 across every bundle under _local/templates/. This turns the hand-verification done during
-authoring into one repeatable command. It is a local prototype of the CI gate planned in
-the implementation plan (P3, port the CI quality gate from pm-skills).
+authoring into one repeatable command.
+
+This IS the gate, not a prototype of one: .github/workflows/ci.yml runs this same script
+on every push to main and every pull request. It supersedes the Node script suite that the
+implementation plan's P3 (port the CI quality gate from pm-skills) had intended; see
+docs/decisions/20260703-gate-python-local-interim.md.
+
+Coverage is partial by acknowledgement, not by accident: these six checks automate roughly
+half the Definition of Done. The rest is human-verified. Do not read a green run as "the
+DoD is met"; read it as "the six structural checks pass." Gate hardening is roadmap WP-11.
 
 Usage:
     python _local/tools/check-bundles.py            # check every bundle

@@ -103,7 +103,9 @@ The governance is enforceable, not aspirational. [`_local/tools/check-bundles.py
 python _local/tools/check-bundles.py
 ```
 
-All four delivery-docs bundles currently pass. This is a local prototype of the continuous-integration gate planned for the repository.
+All four delivery-docs bundles currently pass. GitHub Actions runs this same script on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), so a bundle that breaks these checks cannot merge.
+
+Scope, stated honestly: the gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation yet and are human-verified. "Enforceable, not aspirational" is true of what CI runs, and only of that. Current coverage always lives in [`STATE.md`](STATE.md).
 
 ## Conventions
 
