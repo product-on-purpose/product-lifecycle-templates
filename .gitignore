@@ -1,17 +1,12 @@
-# _local/ is internal working material and is NOT part of the published library:
-# the 2026-07-10 audit package, the initial-discovery design docs and strategy
-# briefs, and session logs. It is deliberately untracked.
-#
-# This was not always true. Until 2026-07-12 the library itself lived under
-# _local/templates/ and this file re-included the directory against the user's
-# global `_LOCAL/` ignore rule so the work could be version-controlled while the
-# final scaffold stayed an open question. Decision HY-2 (scaffold graduation)
-# closed that question: the product now lives at templates/, tools/, and atlas/,
-# so _local/ finally means what its name says.
-# See docs/decisions/20260712-scaffold-graduation-flat-templates.md
-_local/
+# The real work of this repo currently lives in _local/ (the template bundles, the
+# authoring methodology, planning and strategy docs, session logs, and the artifact atlas).
+# The user's global ~/.gitignore_global hides `_LOCAL/` everywhere; re-include it HERE so the
+# work is version-controlled in this repo. (The final templates/ home is a separate, still-open
+# decision; content stays under _local/ for now by choice.)
+!_local/
+!_local/**
 
-# Tool caches and OS junk.
+# Keep tool caches and OS junk out, even under _local/.
 .memsearch/
 **/.impeccable/
 .DS_Store
