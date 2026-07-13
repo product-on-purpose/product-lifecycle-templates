@@ -12,3 +12,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# subagent-driven-development scratch ledger
+.superpowers/
