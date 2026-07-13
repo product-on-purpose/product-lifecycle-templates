@@ -46,13 +46,12 @@ Do not create for:
 | [0008](0008-gate-python-local-interim.md) | Ship the governance gate as a local Python script, as a decided interim | 2026-07-03 |
 | [0009](0009-scaffold-graduation-flat-templates.md) | Graduate the library out of `_local/` to a flat `templates/` scaffold | 2026-07-12 |
 | [0010](0010-meta-declares-size-contract.md) | The meta declares the size contract; single-size bundles are a legal shape | 2026-07-12 |
+| [0011](0011-madr-v4-at-docs-internal-decisions.md) | Adopt MADR v4, locate records here, and correct rather than supersede transcription errors | 2026-07-13 |
 
-## A note on 0003
+## Correction versus supersession
 
-[0003 (phase vocabulary)](0003-phase-vocabulary.md) carries a **Correction** section rather than being superseded. It is worth understanding why, because it tests the immutability rule.
+The rule, from [0011](0011-madr-v4-at-docs-internal-decisions.md):
 
-The record was transcribed with a factual error: it claimed the pm-skills phase enum has eight values, "plus `foundation` and `tool`", on the strength of a check that had read exactly one skill file. pm-skills actually has a two-axis taxonomy (six `phase:` values; a separate `classification:` axis for the 86 skills that have no phase at all).
+> A **factual error** in a record gets corrected in place, with the correction dated and the error named. A **change in the decision itself** gets a new number.
 
-The **decision** was never wrong: lowercase values matching pm-skills, which still stands. Only the transcription's claim about what those values *are* was defective. Superseding a record implies the decision changed. It did not. So the record is corrected in place, with the error named and dated rather than quietly edited, which is what MADR's immutability is really protecting: the version history shows exactly what was believed and when it was fixed.
-
-Correcting a transcription error is not the same as rewriting a decision. If the decision itself ever changes, it gets a new number.
+[0003 (phase vocabulary)](0003-phase-vocabulary.md) is the worked example. It was transcribed with a false claim about the pm-skills phase enum, but the decision it records (lowercase values matching pm-skills) never changed. Superseding it would tell a future reader that this project once believed something different about phase casing, which it never did. So it carries a dated Correction instead, and the version history shows exactly what was believed and when it was fixed. A record that silently rewrites itself is worth less than one that shows its scars.
