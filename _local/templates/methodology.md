@@ -1,9 +1,9 @@
 ---
 title: "Template Bundle Methodology: Researching and Drafting a Best-in-Class Template"
 status: draft
-doc_version: 0.2.0
+doc_version: 0.2.1
 owner: "product-on-purpose"
-last_reviewed: 2026-06-30
+last_reviewed: 2026-07-12
 license: Apache-2.0
 applies_to: "every bundle under templates/ (provisionally _local/templates/)"
 related:
@@ -38,7 +38,7 @@ These govern every judgment call the process does not explicitly cover.
 
 ## 2. The Bundle (what we are producing)
 
-One document type produces one **bundle**: a folder named by the document-type handle (e.g. `prd/`), containing seven files. The doc-type handle prefixes every filename so a file is self-identifying if it is moved or attached out of context. Phase is recorded in metadata, never in the path, so the eventual directory scaffold (flat, nested-by-phase, or other) stays a deferred, derivable choice.
+One document type produces one **bundle**: a folder named by the document-type handle (e.g. `prd/`), containing eight files. The doc-type handle prefixes every filename so a file is self-identifying if it is moved or attached out of context. Phase is recorded in metadata, never in the path, so the eventual directory scaffold (flat, nested-by-phase, or other) stays a deferred, derivable choice.
 
 | File | Role | Reader | Length guide |
 |---|---|---|---|
@@ -49,6 +49,9 @@ One document type produces one **bundle**: a folder named by the document-type h
 | `<type>_example.md` | A real worked instance, no lorem, no fabricated metrics | author wanting a model to copy | medium |
 | `<type>_meta.yaml` | The machine manifest (catalog meta) | the repo, CI, agents | short |
 | `<type>_history.md` | Per-bundle changelog by `template_version` | maintainers | grows over time |
+| `<type>_research-log.md` | The evidence trail: every source consulted, its tier, and its retrieval status | maintainers, auditors, freshness automation | grows during research |
+
+The research log is a committed bundle artifact, not disposable scaffolding: it is what makes "researched, not remembered" auditable rather than asserted. See [`docs/decisions/20260630-research-log-as-8th-file.md`](../../docs/decisions/20260630-research-log-as-8th-file.md).
 
 The companion and the guide are deliberately separate (Diataxis split: explanation/reference vs how-to). The companion is the stable, research-backed artifact; the guide is a short derivative of it.
 
@@ -104,7 +107,7 @@ Keep a running list of every source consulted with its URL, tier, and the claims
 
 ## 4. Phase B: Drafting Protocol
 
-Draft the seven files in this order. Each draws on the research log.
+Draft the eight files in this order. Each draws on the research log, which B6 then finalizes and ships.
 
 ### B1. The template variants (`_template-lean.md`, `_template-full.md`)
 
@@ -138,6 +141,14 @@ A single, realistic, fully worked instance, filled end to end. No `{{placeholder
 
 - `meta.yaml` carries catalog meta per the design spec: `id`, `title`, `summary`, `doc_type`, `phase` (lowercase), `family`, `sizes_available` (must match the variant files present), `methodology`, `pairs_with` (skill IDs, or null), `status`, `template_version`, `tags`, `related_templates`, `last_reviewed`, `license`.
 - `history.md` opens with an entry for the current `template_version` and the research date.
+
+### B6. The research log (`<type>_research-log.md`)
+
+The running log from [A6](#a6-research-log) is a shipped bundle file, not working material to be thrown away. Finalize it before the bundle is done, because two later systems read it: the Definition of Done's research clause, and the freshness automation that re-checks sources over time.
+
+- **Record retrieval status honestly, per source:** fetched (with the date), 403-blocked, paywalled, or corroborated only through search results. A blocked source recorded as blocked is worth more than a blocked source quietly presented as read, and it is the difference between a citation trail that survives an audit and one that collapses under it.
+- **Close the loop with the companion.** Every claim the companion cites traces to a logged entry. A source you logged but never cited may be dropped. A citation with no logged source is a defect, not a rounding error.
+- **Keep the tier tags** (`[primary]` / `[practitioner]` / `[vendor]`) so the source mix is visible at a glance and a companion leaning entirely on vendor material is obvious.
 
 ---
 
