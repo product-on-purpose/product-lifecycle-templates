@@ -42,7 +42,7 @@ One document type produces one **bundle**: a folder named by the document-type h
 
 **A bundle is six core files, plus one blank-template file per size variant the type earns.** Most types earn two (`lean` and `full`), which makes eight files, the common case. A single-size type ships seven. A type that genuinely earns three weights (`s`/`m`/`l`) ships nine.
 
-**The meta declares the contract.** `sizes_available` in `<type>_meta.yaml` is not a description of what happens to be on disk; it is the declaration of what the bundle *is*, and the gate enforces the files against it in both directions. A declared variant that is missing fails. A variant file sitting in the bundle that the meta never declared also fails. See [`docs/decisions/20260712-single-size-bundles.md`](../docs/decisions/20260712-single-size-bundles.md).
+**The meta declares the contract.** `sizes_available` in `<type>_meta.yaml` is not a description of what happens to be on disk; it is the declaration of what the bundle *is*, and the gate enforces the files against it in both directions. A declared variant that is missing fails. A variant file sitting in the bundle that the meta never declared also fails. See [`docs/internal/decisions/0010-meta-declares-size-contract.md`](../docs/internal/decisions/0010-meta-declares-size-contract.md).
 
 The blank-template variants:
 
@@ -64,7 +64,7 @@ The six core files, present in every bundle at every size:
 | `<type>_history.md` | Per-bundle changelog by `template_version` | maintainers | grows over time |
 | `<type>_research-log.md` | The evidence trail: every source consulted, its tier, and its retrieval status | maintainers, auditors, freshness automation | grows during research |
 
-The research log is a committed bundle artifact, not disposable scaffolding: it is what makes "researched, not remembered" auditable rather than asserted. See [`docs/decisions/20260630-research-log-as-8th-file.md`](../docs/decisions/20260630-research-log-as-8th-file.md).
+The research log is a committed bundle artifact, not disposable scaffolding: it is what makes "researched, not remembered" auditable rather than asserted. See [`docs/internal/decisions/0007-research-log-as-bundle-artifact.md`](../docs/internal/decisions/0007-research-log-as-bundle-artifact.md).
 
 The companion and the guide are deliberately separate (Diataxis split: explanation/reference vs how-to). The companion is the stable, research-backed artifact; the guide is a short derivative of it.
 

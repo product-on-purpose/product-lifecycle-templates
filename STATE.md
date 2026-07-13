@@ -17,7 +17,7 @@
 | **Bundles** | 4 of 27 Tier-1 catalog types: `prd`, `user-stories`, `acceptance-criteria`, `release-notes`. Eight files each. Family `delivery-docs`. Status `beta`, `template_version` 0.1.0. |
 | **License** | Apache-2.0, granted at the repo root. Copyright Jonathan Prisant. |
 | **Governance gate** | `tools/check-bundles.py`, six checks (files, dashes, nesting, clean example, citation resolution, meta sizes). **Runs in CI** on every push to `main` and every pull request. Passing. |
-| **Decision records** | `docs/decisions/`, nine ADRs plus a MADR template. All ratified 2026-07-12. |
+| **Decision records** | `docs/internal/decisions/`, ten ADRs in [MADR v4](https://github.com/adr/madr) format, plus a README documenting the convention. All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`. `_local/` now holds only internal working material. Decision HY-2 (scaffold graduation) closed 2026-07-12. |
 | **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
 | **Methodology** | v0.2.1 (`templates/methodology.md`), status draft. Governs authoring. |
@@ -34,7 +34,7 @@
 
 ## Open by choice, not by oversight
 
-- **B-08, the `_working/` folder.** `templates/_working/` still holds the A/B/C guidance-style prototypes, even though its own README line 6 orders its deletion once the decision was made, and the decision *was* made (Approach A, see [`docs/decisions/20260630-guidance-style-approach-a.md`](docs/decisions/20260630-guidance-style-approach-a.md)). The maintainer chose on 2026-07-12 to keep it. Recorded here so it reads as a decision rather than a miss.
+- **B-08, the `_working/` folder.** `templates/_working/` still holds the A/B/C guidance-style prototypes, even though its own README line 6 orders its deletion once the decision was made, and the decision *was* made (Approach A, see [`docs/internal/decisions/0006-guidance-style-approach-a.md`](docs/internal/decisions/0006-guidance-style-approach-a.md)). The maintainer chose on 2026-07-12 to keep it. Recorded here so it reads as a decision rather than a miss.
 
 ## Gate coverage, stated honestly
 
@@ -54,7 +54,7 @@ Full definition: [`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`](
 | D2 | Does `npx skills add` install this repo | 2026-06-29 | 30 min | M1 |
 | D3 | agentskills.io resource type for templates | 2026-06-29 | 1 hour | M1 |
 | D4 | Regulated-industry tier appetite | 2026-06-29 | n/a | Unscheduled |
-| **TX-1** | **Does this library need a second taxonomy axis?** pm-skills carries 89 skills on `phase:` and 86 on a separate `classification:` axis (`foundation`/`utility`/`tool`) with no phase at all. Every bundle here declares a `phase:`, which has been fine only because all four are genuinely `deliver` artifacts. Types like a glossary or a team charter may have no phase to declare. **Must be settled before the metadata schema makes `phase` a required enum.** Surfaced 2026-07-12 by the correction to [ADR 20260629 (phase vocabulary)](docs/decisions/20260629-phase-vocabulary.md). | 2026-07-12 | ~1 hour | M2 (blocks WP-21) |
+| **TX-1** | **Does this library need a second taxonomy axis?** pm-skills carries 89 skills on `phase:` and 86 on a separate `classification:` axis (`foundation`/`utility`/`tool`) with no phase at all. Every bundle here declares a `phase:`, which has been fine only because all four are genuinely `deliver` artifacts. Types like a glossary or a team charter may have no phase to declare. **Must be settled before the metadata schema makes `phase` a required enum.** Surfaced 2026-07-12 by the correction to [ADR 20260629 (phase vocabulary)](docs/internal/decisions/0003-phase-vocabulary.md). | 2026-07-12 | ~1 hour | M2 (blocks WP-21) |
 | VL-1 | Business model | 2026-07-02 | n/a | Unscheduled |
 | VL-3 | Maintenance cadence | 2026-07-02 | n/a | M6 |
 
