@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-12 (milestone M0, the credibility floor, executed)
+**Last updated:** 2026-07-12 (milestone M0, the credibility floor, executed; HY-2 scaffold graduation closed)
 
 ---
 
@@ -16,10 +16,11 @@
 |---|---|
 | **Bundles** | 4 of 27 Tier-1 catalog types: `prd`, `user-stories`, `acceptance-criteria`, `release-notes`. Eight files each. Family `delivery-docs`. Status `beta`, `template_version` 0.1.0. |
 | **License** | Apache-2.0, granted at the repo root. Copyright Jonathan Prisant. |
-| **Governance gate** | `_local/tools/check-bundles.py`, six checks (files, dashes, nesting, clean example, citation resolution, meta sizes). **Runs in CI** on every push to `main` and every pull request. Passing. |
-| **Decision records** | `docs/decisions/`, eight ADRs plus a MADR template. All ratified 2026-07-12. |
-| **Atlas** | 205-type interactive catalog map at `_local/atlas/atlas.html`. |
-| **Methodology** | v0.2.1 (`_local/templates/methodology.md`), status draft. Governs authoring. |
+| **Governance gate** | `tools/check-bundles.py`, six checks (files, dashes, nesting, clean example, citation resolution, meta sizes). **Runs in CI** on every push to `main` and every pull request. Passing. |
+| **Decision records** | `docs/decisions/`, nine ADRs plus a MADR template. All ratified 2026-07-12. |
+| **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`. `_local/` now holds only internal working material. Decision HY-2 (scaffold graduation) closed 2026-07-12. |
+| **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
+| **Methodology** | v0.2.1 (`templates/methodology.md`), status draft. Governs authoring. |
 | **Audit corpus** | `_local/audit/2026-07-10_fable-audit/`. Start at its `INDEX.md`. |
 
 ## Not built (deliberately visible)
@@ -33,7 +34,7 @@
 
 ## Open by choice, not by oversight
 
-- **B-08, the `_working/` folder.** `_local/templates/_working/` still holds the A/B/C guidance-style prototypes, even though its own README line 6 orders its deletion once the decision was made, and the decision *was* made (Approach A, see [`docs/decisions/20260630-guidance-style-approach-a.md`](docs/decisions/20260630-guidance-style-approach-a.md)). The maintainer chose on 2026-07-12 to keep it. Recorded here so it reads as a decision rather than a miss.
+- **B-08, the `_working/` folder.** `templates/_working/` still holds the A/B/C guidance-style prototypes, even though its own README line 6 orders its deletion once the decision was made, and the decision *was* made (Approach A, see [`docs/decisions/20260630-guidance-style-approach-a.md`](docs/decisions/20260630-guidance-style-approach-a.md)). The maintainer chose on 2026-07-12 to keep it. Recorded here so it reads as a decision rather than a miss.
 
 ## Gate coverage, stated honestly
 
@@ -53,7 +54,6 @@ Full definition: [`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`](
 | D2 | Does `npx skills add` install this repo | 2026-06-29 | 30 min | M1 |
 | D3 | agentskills.io resource type for templates | 2026-06-29 | 1 hour | M1 |
 | D4 | Regulated-industry tier appetite | 2026-06-29 | n/a | Unscheduled |
-| HY-2 | Scaffold graduation (`_local/templates/` to its final path) | 2026-07-02 | n/a | M2 |
 | **TX-1** | **Does this library need a second taxonomy axis?** pm-skills carries 89 skills on `phase:` and 86 on a separate `classification:` axis (`foundation`/`utility`/`tool`) with no phase at all. Every bundle here declares a `phase:`, which has been fine only because all four are genuinely `deliver` artifacts. Types like a glossary or a team charter may have no phase to declare. **Must be settled before the metadata schema makes `phase` a required enum.** Surfaced 2026-07-12 by the correction to [ADR 20260629 (phase vocabulary)](docs/decisions/20260629-phase-vocabulary.md). | 2026-07-12 | ~1 hour | M2 (blocks WP-21) |
 | VL-1 | Business model | 2026-07-02 | n/a | Unscheduled |
 | VL-3 | Maintenance cadence | 2026-07-02 | n/a | M6 |
@@ -65,7 +65,7 @@ Full definition: [`_local/audit/2026-07-10_fable-audit/10_roadmap-expanded.md`](
 The front door claims a **governed, best-in-class, agent-native reference implementation**. As of today:
 
 - **Earned:** researched, dual-reader, nesting-disciplined, provenance-stamped content that the named competitors (curated awesome-lists) do not attempt.
-- **Now true, as of M0:** licensed, CI-enforced, decision-recorded.
-- **Still on credit:** "agent-native" (no machine consumption path exists) and "reference implementation" (untagged, 4 of 205 types, still living in a directory named `_local`).
+- **Now true, as of M0:** licensed, CI-enforced, decision-recorded, and living at an address that describes it (`templates/`, not `_local/templates/`).
+- **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically) and "reference implementation" (untagged, 4 of 205 types, zero external users).
 
 Keep this section honest. It is the fastest way to tell whether the roadmap is working.

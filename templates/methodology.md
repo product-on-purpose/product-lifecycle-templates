@@ -5,7 +5,7 @@ doc_version: 0.2.1
 owner: "product-on-purpose"
 last_reviewed: 2026-07-12
 license: Apache-2.0
-applies_to: "every bundle under templates/ (provisionally _local/templates/)"
+applies_to: "every bundle under templates/"
 related:
   - ../initial-discovery/docs/template-library-design-spec.md
   - ../initial-discovery/docs/strategy-brief_catalog-to-template-library.md

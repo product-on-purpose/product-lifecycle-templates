@@ -6,7 +6,7 @@ Deciders: jprisant
 
 ## Context and problem statement
 
-Richer per-section author guidance had three candidate homes, prototyped side by side in `_local/templates/_working/`: hidden HTML comments (A), visible blockquote scaffolding the author deletes (B), or a hybrid with one visible prompt line (C). The choice interacts with two locked principles: guidance vanishes on render, and smallest useful default.
+Richer per-section author guidance had three candidate homes, prototyped side by side in `templates/_working/`: hidden HTML comments (A), visible blockquote scaffolding the author deletes (B), or a hybrid with one visible prompt line (C). The choice interacts with two locked principles: guidance vanishes on render, and smallest useful default.
 
 ## Considered options
 
