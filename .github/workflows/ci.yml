@@ -15,7 +15,7 @@ jobs:
 
       # The bundle gate: six structural checks across every bundle.
       - name: Bundle gate
-        run: python _local/tools/check-bundles.py
+        run: python tools/check-bundles.py
 
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
