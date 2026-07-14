@@ -13,17 +13,17 @@ linked-implementation-plan: implementation-plan_catalog-to-template-library.md
 
 > **[SUPERSEDED IN PART. Read this before trusting anything below.]**
 >
-> This is the founding design document, written 2026-06-28 and preserved as the record of the original architecture. Several of its specifics were overturned by decisions taken during the build. Where it disagrees with the records in [`docs/internal/decisions/`](../../../docs/internal/decisions/), **the decision records win**; where it disagrees with the tree, [`STATE.md`](../../../STATE.md) wins.
+> This is the founding design document, written 2026-06-28 and preserved as the record of the original architecture. Several of its specifics were overturned by decisions taken during the build. Where it disagrees with the records in [`docs/internal/decisions/`](decisions), **the decision records win**; where it disagrees with the tree, [`STATE.md`](../../STATE.md) wins.
 >
 > Known supersessions:
 >
 > | This document says | Actual decision |
 > |---|---|
-> | The name is `pm-templates` (working name, used throughout below) | `product-lifecycle-templates` everywhere, `pm-` prefix dropped. [ADR 20260629](../../../docs/internal/decisions/0001-repo-and-package-name.md) |
-> | Rigid S/M/L variants with abstract filenames (`template.s.md`) | lean/full with descriptive filenames; three weights only where a type earns them; the strict nesting rule is retained in full force. [ADR 20260629](../../../docs/internal/decisions/0002-variant-model.md) |
-> | `phase: Deliver` (capitalized) | Lowercase phase values, matching real pm-skills frontmatter. [ADR 20260629](../../../docs/internal/decisions/0003-phase-vocabulary.md) |
-> | Bundle IDs of the form `deliver-prd` | Bare doc-type handles (`prd`); phase lives in metadata, never in the path or ID. [ADR 20260630](../../../docs/internal/decisions/0005-bundle-ids-doctype-spine.md) |
-> | A six-file bundle | Eight files; the research log is a shipped artifact. [ADR 20260630](../../../docs/internal/decisions/0007-research-log-as-bundle-artifact.md) |
+> | The name is `pm-templates` (working name, used throughout below) | `product-lifecycle-templates` everywhere, `pm-` prefix dropped. [ADR 20260629](decisions/0001-repo-and-package-name.md) |
+> | Rigid S/M/L variants with abstract filenames (`template.s.md`) | lean/full with descriptive filenames; three weights only where a type earns them; the strict nesting rule is retained in full force. [ADR 20260629](decisions/0002-variant-model.md) |
+> | `phase: Deliver` (capitalized) | Lowercase phase values, matching real pm-skills frontmatter. [ADR 20260629](decisions/0003-phase-vocabulary.md) |
+> | Bundle IDs of the form `deliver-prd` | Bare doc-type handles (`prd`); phase lives in metadata, never in the path or ID. [ADR 20260630](decisions/0005-bundle-ids-doctype-spine.md) |
+> | A six-file bundle | Eight files; the research log is a shipped artifact. [ADR 20260630](decisions/0007-research-log-as-bundle-artifact.md) |
 >
 > The `{{owner}}`-style placeholders in the schema examples below are intentional: this document *defines* the instance-frontmatter contract, so its examples show the placeholders rather than filled values.
 >

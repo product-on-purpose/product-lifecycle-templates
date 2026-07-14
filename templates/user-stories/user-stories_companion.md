@@ -216,4 +216,4 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 
 <a id="ref-8"></a>[8] Ken Schwaber and Jeff Sutherland. "[The 2020 Scrum Guide](https://scrumguides.org/scrum-guide.html)." scrumguides.org, 2020 (accessed 2026-06-30). [primary]
 
-<a id="ref-9"></a>[9] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../_local/initial-discovery/docs/deep-research_master-catalog.md)," entry 30 (User Story). Internal deep-research catalog, 2026. [internal]
+<a id="ref-9"></a>[9] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 30 (User Story). Internal deep-research catalog, 2026. [internal]

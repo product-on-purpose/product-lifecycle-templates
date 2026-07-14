@@ -5,11 +5,11 @@ type: implementation-plan
 status: draft
 created: 2026-06-29
 updated: 2026-06-29
-linked-spec: _local/initial-discovery/docs/template-library-design-spec.md
+linked-spec: docs/internal/design-spec.md
 linked-specs:
-  - _local/initial-discovery/docs/template-system-layered-design.md
-linked-strategy-brief: _local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md
-linked-catalog: _local/initial-discovery/docs/deep-research_master-catalog.md
+  - docs/internal/design/layered-design.md
+linked-strategy-brief: docs/internal/strategy/catalog-to-template-library.md
+linked-catalog: docs/internal/catalog.md
 linked-effort: null
 linked-release: null
 phase-count: 7
@@ -22,15 +22,15 @@ priority: P1
 
 > **[STATUS: DATED PROJECTION, NOT CURRENT TRUTH. Read this first.]**
 >
-> This plan was written 2026-06-29 and is preserved as the historical record of what was intended. It is **not** authoritative for what exists today. **[`STATE.md`](../../../STATE.md) at the repo root is the single source of current truth**, and where this plan disagrees with it, STATE.md wins.
+> This plan was written 2026-06-29 and is preserved as the historical record of what was intended. It is **not** authoritative for what exists today. **[`STATE.md`](../../STATE.md) at the repo root is the single source of current truth**, and where this plan disagrees with it, STATE.md wins.
 >
-> Execution diverged from this plan in three material ways, each of which is now recorded as a decision rather than left as drift: bundle IDs became bare doc-type handles instead of `<phase>-<doctype>` ([ADR 20260630, bundle IDs are the doc-type spine](../../../docs/internal/decisions/0005-bundle-ids-doctype-spine.md)); the CI gate became a local Python script instead of a Node port ([ADR 20260703, Python local gate as interim](../../../docs/internal/decisions/0008-gate-python-local-interim.md)); and content was built ahead of scaffold, leaving the final directory path open as decision HY-2.
+> Execution diverged from this plan in three material ways, each of which is now recorded as a decision rather than left as drift: bundle IDs became bare doc-type handles instead of `<phase>-<doctype>` ([ADR 20260630, bundle IDs are the doc-type spine](decisions/0005-bundle-ids-doctype-spine.md)); the CI gate became a local Python script instead of a Node port ([ADR 20260703, Python local gate as interim](decisions/0008-gate-python-local-interim.md)); and content was built ahead of scaffold, leaving the final directory path open as decision HY-2.
 >
-> The live roadmap superseding this plan is [`10_roadmap-expanded.md`](../../audit/2026-07-10_fable-audit/10_roadmap-expanded.md) (milestones M0 through M6).
+> The live roadmap superseding this plan is [`10_roadmap-expanded.md`](roadmap.md) (milestones M0 through M6).
 >
 > This banner exists because of audit finding G-01: this plan's progress table said "Not started" for every phase while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan.
 
-> **Scope note (read first).** This plan implements the static **Layer 0** template library defined in [`template-library-design-spec.md`](template-library-design-spec.md), sequenced per the [strategy brief](strategy-brief_catalog-to-template-library.md) (Approach A: static library, one-bundle-first, mirror `pm-skills`). It covers the path from the [Master Catalog](deep-research_master-catalog.md) to a tagged **v0.2** (one reference bundle, then one complete family). The optional **Layer 1 generator** is deliberately out of scope and held behind the decision gate in [D1](#d1-build-the-layer-1-generator-or-not-open).
+> **Scope note (read first).** This plan implements the static **Layer 0** template library defined in [`template-library-design-spec.md`](design-spec.md), sequenced per the [strategy brief](strategy/catalog-to-template-library.md) (Approach A: static library, one-bundle-first, mirror `pm-skills`). It covers the path from the [Master Catalog](catalog.md) to a tagged **v0.2** (one reference bundle, then one complete family). The optional **Layer 1 generator** is deliberately out of scope and held behind the decision gate in [D1](#d1-build-the-layer-1-generator-or-not-open).
 >
 > **On acceptance criteria.** The "AC" referenced here are restated, condensed, from the design spec's **§13 Definition of Done** (AC-1..AC-10) and its **§10 / §11 / §12 / §14 / §16** system requirements (AC-11..AC-14). They are not introduced by this plan. To change a criterion, revise the design spec, not this plan.
 
@@ -38,7 +38,7 @@ priority: P1
 
 **Status:** superseded in part (see the banner above)
 **Last updated:** 2026-07-12 (M0 truth-up, closing audit finding G-01)
-**Linked spec:** `_local/initial-discovery/docs/template-library-design-spec.md`
+**Linked spec:** `docs/internal/design-spec.md`
 **Phases:** 7
 **AC coverage:** complete
 **Open questions:** 4 (see [Open Questions / Decisions](#open-questions--decisions))
@@ -49,15 +49,15 @@ Truthed-up 2026-07-12 against the actual tree. Every row now carries its evidenc
 
 | Phase | Goal | Owner | Status and evidence |
 |-------|------|-------|---------------------|
-| P1 | Settle + record the four foundational decisions as ADRs | human | **Done 2026-07-12.** The decisions were taken 2026-06-29 but went unrecorded for two weeks (audit finding F-03). They now live in [`docs/internal/decisions/`](../../../docs/internal/decisions/) (commit `653579a`). Eight ADRs landed, not four: three practice-settled decisions and the interim-gate decision were also outstanding. |
+| P1 | Settle + record the four foundational decisions as ADRs | human | **Done 2026-07-12.** The decisions were taken 2026-06-29 but went unrecorded for two weeks (audit finding F-03). They now live in [`docs/internal/decisions/`](decisions) (commit `653579a`). Eight ADRs landed, not four: three practice-settled decisions and the interim-gate decision were also outstanding. |
 | P2 | Scaffold repo skeleton, conventions, and the `profiles/` attach point | either | **Not started as a phase**, though four of its artifacts landed opportunistically along the way: `.gitignore` (`cd7c6bd`), `README.md` (`3f9c39a`), `LICENSE` (`5f1538d`, added by M0), and `.github/workflows/ci.yml` (`8d50ff4`, added by M0). Still absent: `profiles/`, `.claude-plugin/`, `package.json`, `.nvmrc`, `.gitattributes`, `scripts/`, `_families/`, and the canonical `templates/` path. Content was deliberately built ahead of scaffold; the final path is decision HY-2 (scaffold graduation), scheduled in milestone M2. |
-| P3 | Port the CI quality gate from `pm-skills` | LLM | **Superseded.** No Node scripts were ever written. A local Python gate (`_local/tools/check-bundles.py`, six checks) was built instead on 2026-07-03, and wired into GitHub Actions on 2026-07-12 (`8d50ff4`). Recorded in [ADR 20260703 (Python local gate as decided interim)](../../../docs/internal/decisions/0008-gate-python-local-interim.md). Whether the Node port ever happens is that ADR's open Step 2. |
-| P4 | Build the `deliver-prd` reference bundle end-to-end | either | **Done 2026-06-30.** `_local/templates/prd/` exists with all eight files and passes the gate. Note the bundle ID is `prd`, not `deliver-prd` as this plan assumed: see [ADR 20260630 (bundle IDs are the doc-type spine)](../../../docs/internal/decisions/0005-bundle-ids-doctype-spine.md). |
+| P3 | Port the CI quality gate from `pm-skills` | LLM | **Superseded.** No Node scripts were ever written. A local Python gate (`_local/tools/check-bundles.py`, six checks) was built instead on 2026-07-03, and wired into GitHub Actions on 2026-07-12 (`8d50ff4`). Recorded in [ADR 20260703 (Python local gate as decided interim)](decisions/0008-gate-python-local-interim.md). Whether the Node port ever happens is that ADR's open Step 2. |
+| P4 | Build the `deliver-prd` reference bundle end-to-end | either | **Done 2026-06-30.** `_local/templates/prd/` exists with all eight files and passes the gate. Note the bundle ID is `prd`, not `deliver-prd` as this plan assumed: see [ADR 20260630 (bundle IDs are the doc-type spine)](decisions/0005-bundle-ids-doctype-spine.md). |
 | P5 | Wire distribution (catalog/manifest, plugin + marketplace); tag v0.1 | either | **Not started.** Zero git tags exist; there is no manifest, plugin, or marketplace file. The v0.1.0 tag is roadmap WP-14 (milestone M1). Distribution proper is milestone M5, deliberately gated on a usage signal that does not yet exist. |
 | P6 | Complete the `delivery-docs` family + family contract + validator; tag v0.2 | either | **Partial.** All four bundles were built 2026-06-30 (`prd`, `user-stories`, `acceptance-criteria`, `release-notes`), eight files each, all gate-passing. Three things are missing. The **family contract** exists only as an audit artifact (`_local/audit/2026-07-10_fable-audit/adoption-kit/delivery-docs.contract.md`: tracked in git, but not adopted at a canonical path; adoption is roadmap WP-24, milestone M2). The **family validator** this phase names (`validate-template-family.mjs`) does not exist at all; `check-bundles.py` is a different tool that checks bundles individually and never checks family conformance. And there is no v0.2 tag. |
 | P7 | Stand up the demand-gated roadmap + generator decision-gate checkpoint | human | **Not started.** The pull queue is roadmap WP-32 (milestone M3). Decision D1 (build the Layer 1 generator or not) remains correctly gated on a usage signal, and is the one open decision the audit did not fault. |
 
-(See the design spec §13 for the source DoD. **This table is no longer the source of truth for progress: [`STATE.md`](../../../STATE.md) is.** Keep this table as the historical phase record, and tick `Done` only with evidence: a commit, a file, or a passing CI run.)
+(See the design spec §13 for the source DoD. **This table is no longer the source of truth for progress: [`STATE.md`](../../STATE.md) is.** Keep this table as the historical phase record, and tick `Done` only with evidence: a commit, a file, or a passing CI run.)
 
 ---
 
@@ -479,7 +479,7 @@ Types: `added`, `re-decomposed`, `phase-completed`, `truth-up`, `superseded`, `c
 
 ## Notes on this plan
 
-- **AC are sourced, not invented.** AC-1..AC-14 restate the design spec's §13 Definition of Done and its §10/§11/§12/§14/§16 system requirements. To change a criterion, revise [`template-library-design-spec.md`](template-library-design-spec.md), then re-run the AC-coverage lint.
+- **AC are sourced, not invented.** AC-1..AC-14 restate the design spec's §13 Definition of Done and its §10/§11/§12/§14/§16 system requirements. To change a criterion, revise [`template-library-design-spec.md`](design-spec.md), then re-run the AC-coverage lint.
 - **Round-trip links.** This plan's `linked-spec` points at the design spec; the design spec should carry a reciprocal `linked-implementation-plan` field (added alongside this plan) so the pair resolves both ways.
 - **Phase boundaries** are reviewable/resumable units: P1 (decisions), P2 (skeleton), P3 (gate), P4 (the one bundle), P5 (ship it), P6 (the one family), P7 (govern the rest). A cold-start agent can open any phase and execute from its Steps without re-reading the source docs.
 - **The 80/20 lives in P4.** If only one phase ships, it is P4 (plus the P1-P3 scaffolding it needs): a single fully-worked bundle is the v0.1 that proves the entire system (design spec §16; strategy brief §5).

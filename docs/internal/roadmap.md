@@ -1,9 +1,24 @@
 # Delivery Roadmap (Expanded): From Audited Prototype to Reference Implementation
 
 - **Date:** 2026-07-10
-- **Basis:** [AUDIT_REPORT.md](AUDIT_REPORT.md) (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
+- **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
 - **Status:** proposal for maintainer ratification (recommend recording the adopted version as an ADR)
-- **Companions:** [11_resources-and-sustainability.md](11_resources-and-sustainability.md) (who/what/how much), [12_catalog-recommendations.md](12_catalog-recommendations.md) (what to build next), [13_excellence-and-innovation.md](13_excellence-and-innovation.md) (differentiation plays), [specs/](specs/) (build specs referenced by work packages)
+- **Companions:** `11_resources-and-sustainability.md` (who/what/how much), `12_catalog-recommendations.md` (what to build next), `13_excellence-and-innovation.md` (differentiation plays), `specs/` (build specs referenced by work packages)
+
+> **A note on the references in this file.** This roadmap was written inside the 2026-07-10 audit
+> package and was promoted into `docs/internal/` on 2026-07-14, because `STATE.md` depends on it and
+> a living roadmap should not stay frozen inside a dated audit ([decision 0013](decisions/0013-local-split-and-going-public.md)).
+> The rest of that audit package stayed **private and untracked**, so the companion documents named
+> above (`AUDIT_REPORT.md`, the numbered sections, and `specs/`) are **not in this repository**. They
+> live at `_local/audit/2026-07-10_fable-audit/` on the maintainer's machine.
+>
+> They appear here as plain text rather than links, deliberately. A tracked file linking into
+> `_local/` resolves for exactly one person and 404s for everyone else, which is why
+> `tools/check-links.py` now fails the build on it. The honest cost, recorded in decision 0013's
+> consequences: several claims in this repo cite findings that an outside reader cannot follow to
+> their source.
+>
+> **`STATE.md` outranks this file.** This is a dated projection; that is the current truth.
 
 ---
 
@@ -59,8 +74,8 @@ Effort: S = under 1 hour, M = roughly half a day, L = one or more days. Traces: 
 | WP | Work package | Deliverables | Effort | Traces |
 |---|---|---|---|---|
 | WP-01 | License grant | `LICENSE` (Apache-2.0, copied from `pm-skills/LICENSE`) at repo root | S | E-01 |
-| WP-02 | CI bridge | `.github/workflows/ci.yml` running `python _local/tools/check-bundles.py` on push and PR (snippet in AUDIT_REPORT.md finding D-03) | S | D-03, G-02 |
-| WP-03 | Hygiene sweep | Delete `_local/templates/_working/`; fill `maintainer`/`owner` placeholders in 4 metas + methodology; relabel dangling `related_templates` entries with `future:` prefix; sweep bare P1/P3 IDs in plan and gate docstring | S | B-08, C-05, B-05, F-07 |
+| WP-02 | CI bridge | `.github/workflows/ci.yml` running `python tools/check-bundles.py` on push and PR (snippet in AUDIT_REPORT.md finding D-03) | S | D-03, G-02 |
+| WP-03 | Hygiene sweep | Delete `templates/_working/`; fill `maintainer`/`owner` placeholders in 4 metas + methodology; relabel dangling `related_templates` entries with `future:` prefix; sweep bare P1/P3 IDs in plan and gate docstring | S | B-08, C-05, B-05, F-07 |
 | WP-04 | Truth infrastructure | Plan progress table updated to actual; dated Revisions row recording the content-first re-sequencing; `STATE.md` at root (10 lines: built vs planned, counts, gate status, last-updated); superseded banner atop the design spec | S/M | G-01, G-04 |
 | WP-05 | Decision records | `docs/internal/decisions/` with MADR TEMPLATE.md plus 7 transcribed ADRs (4 foundational from 2026-06-29; guidance style; research log as 8th file; Python/local gate as interim) | M | F-03, G-06 |
 | WP-06 | Rulebook consistency | methodology.md "seven files" corrected to eight in both places + research-log row added to the section 2 table + drafting step added | S | B-04, C-07, F-04 |
@@ -68,7 +83,7 @@ Effort: S = under 1 hour, M = roughly half a day, L = one or more days. Traces: 
 **M0 acceptance criteria**
 - [ ] `git ls-files` shows LICENSE, STATE.md, `.github/workflows/ci.yml`, `docs/internal/decisions/` with 8 files.
 - [ ] CI run visible and green on GitHub for the merge commit.
-- [ ] `python _local/tools/check-bundles.py` still exits 0.
+- [ ] `python tools/check-bundles.py` still exits 0.
 - [ ] Grep for `{{maintainer}}` and `{{owner}}` returns only template-variant placeholder lines (none in metas or governance frontmatter).
 - [ ] The plan's Completion Status table matches the tree (spot-check P4 marked done with commit evidence).
 
@@ -96,7 +111,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
 | WP-20 | HY-2 decision + graduation | ADR deciding the final scaffold (recommended: flat `templates/<type>/`); migration checklist executed as one atomic commit (README links, methodology applies_to, gate TEMPLATES_DIR, session/audit docs get a pointer note); redirect note left in `_local/` | M | E-06, HY-2 |
-| WP-21 | Metadata schema | `tools/meta.schema.json`; gate check G validates every meta against it | M | B-02; [specs/spec_machine-metadata.md](specs/spec_machine-metadata.md) |
+| WP-21 | Metadata schema | `tools/meta.schema.json`; gate check G validates every meta against it | M | B-02; `specs/spec_machine-metadata.md` |
 | WP-22 | Machine catalog | `manifest.json` generated at root (script `tools/gen-manifest.py`); count-consistency check (README count == manifest count == bundle dirs) | M | C-03; machine-metadata spec |
 | WP-23 | Selection metadata | `sizing_guidance`, `default_size`, generated `approx_tokens` map per meta; regenerate manifest | S/M | C-04, C-06; machine-metadata spec |
 | WP-24 | Family contract | `_families/delivery-docs.contract.md` (modeled on the pm-skills meeting-skills contract); gate family check | M | B-01 |
@@ -106,7 +121,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 | WP-28 | Release v0.2.0 | CHANGELOG [0.2.0]; tag; release note dogfooded again. v0.2.0 semantics: the delivery-docs family complete WITH its rails (contract + validator), matching the original plan's AC-14 intent | S | E-07 lineage, plan AC-12/AC-14 |
 
 **M2 acceptance criteria**
-- [ ] `templates/` is the canonical path; zero content references to `_local/templates/` remain outside historical docs (grep-verified); gate runs from the new path.
+- [ ] `templates/` is the canonical path; zero content references to `templates/` remain outside historical docs (grep-verified); gate runs from the new path.
 - [ ] `python tools/check-bundles.py` now reports checks A through J (or however lettered) including schema, family, pairs_with, related_templates, link-status summary.
 - [ ] `manifest.json` validates against its own schema, lists 4 bundles, and regeneration is idempotent.
 - [ ] An agent given only manifest.json can answer: which bundle for each of the 3 audit test intents, which size by default, and what each fetch costs in approx tokens (re-run the Dimension C simulation; all 6 of 6 decisions should now be deterministic).
@@ -116,9 +131,9 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
-| WP-30 | LP-2 grade-my-doc | `skills/grade-doc/SKILL.md` + rubric extraction per spec; report-card output format; works on all 4 bundles | L | D-05 path, E-04; [specs/spec_lp2-grade-my-doc.md](specs/spec_lp2-grade-my-doc.md) |
+| WP-30 | LP-2 grade-my-doc | `skills/grade-doc/SKILL.md` + rubric extraction per spec; report-card output format; works on all 4 bundles | L | D-05 path, E-04; `specs/spec_lp2-grade-my-doc.md` |
 | WP-31 | First real usage cycle | One real internal document filled from the lean PRD (or user-stories) template; EV-3 five-question feedback form designed and completed; outcome recorded in the bundle history | M | D-05, EV-3 |
-| WP-32 | Demand capture | GitHub issue form as the pull queue (structured fields: requested type, requester context, methodology, urgency); atlas `catalog-data.json` gains a per-type `state` field (built / queued / pull-gated / out-of-scope) with an atlas legend | M | E-04, P7, VS-3; [12_catalog-recommendations.md](12_catalog-recommendations.md) section 5 |
+| WP-32 | Demand capture | GitHub issue form as the pull queue (structured fields: requested type, requester context, methodology, urgency); atlas `catalog-data.json` gains a per-type `state` field (built / queued / pull-gated / out-of-scope) with an atlas legend | M | E-04, P7, VS-3; `12_catalog-recommendations.md` section 5 |
 | WP-33 | Wedge outreach | LP-2 run against 3 to 5 real documents from real PMs (network, community); each produces a report card and an EV-3 form | M | D-05, E-04 |
 
 **M3 acceptance criteria**
@@ -131,7 +146,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
-| WP-40 | EV-1 efficacy evals | `evals/` with 12 scenarios (3 per bundle); with-template vs freehand arms; 3-judge blind rubric panel; baseline discrimination gap recorded per bundle | L | D-04; [specs/spec_ev1-efficacy-evals.md](specs/spec_ev1-efficacy-evals.md) |
+| WP-40 | EV-1 efficacy evals | `evals/` with 12 scenarios (3 per bundle); with-template vs freehand arms; 3-judge blind rubric panel; baseline discrimination gap recorded per bundle | L | D-04; `specs/spec_ev1-efficacy-evals.md` |
 | WP-41 | Quality scorecard | EV-2 scorecard fields in meta (research depth, citation mix, freshness, eval gap); badge line in each bundle landing and README table | M | EV-2, 13_excellence play 1 |
 | WP-42 | Conformance levels | Gate reports L1 (structure) / L2 (research integrity) / L3 (eval-proven) per bundle; levels shown in manifest and atlas | M | 13_excellence play 4 |
 | WP-43 | Second-domain example (conditional on usage signal) | One bundle (recommended: PRD) gains a second worked example from a different domain (regulated/health or consumer-mobile) plus a lean-variant example | L | CT-1, A dimension validity limit |
@@ -145,8 +160,8 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
-| WP-50 | LP-1 use-template flow | Interview-driven fill (skill first, CLI later) reusing ASK lines; stamps provenance; strips guidance; runs validation | L | C-01; [specs/spec_lp1-use-template-flow.md](specs/spec_lp1-use-template-flow.md) |
-| WP-51 | AG-2 MCP server | `product-lifecycle-templates-mcp` per spec: list/select/fetch/grade/fill tools, bundle-summary resources, token-budgeted responses | L+ | C-01 follow-on; [specs/spec_ag2-mcp-server.md](specs/spec_ag2-mcp-server.md) |
+| WP-50 | LP-1 use-template flow | Interview-driven fill (skill first, CLI later) reusing ASK lines; stamps provenance; strips guidance; runs validation | L | C-01; `specs/spec_lp1-use-template-flow.md` |
+| WP-51 | AG-2 MCP server | `product-lifecycle-templates-mcp` per spec: list/select/fetch/grade/fill tools, bundle-summary resources, token-budgeted responses | L+ | C-01 follow-on; `specs/spec_ag2-mcp-server.md` |
 | WP-52 | Distribution wiring | Per D2/D3 outcomes: `.claude-plugin/plugin.json`, marketplace entry, AGENTS.md; ZIP release artifact | M | E-02 remainder |
 | WP-53 | AG-1 section schema | Generated per-bundle section schema (required/optional, tables, columns) consumed by LP-1/LP-2 validation | M | AG-1; machine-metadata spec section 6 |
 | WP-54 | VL-1 positioning executed | Business-model ADR (recommended default: free and open, funnel for product-on-purpose, per VL-2); public README positioning updated accordingly | S | E-04, VL-1 |
@@ -160,7 +175,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 
 | WP | Work package | Deliverables | Traces |
 |---|---|---|---|
-| WP-60 | Next family (when pulled) | Per [12_catalog-recommendations.md](12_catalog-recommendations.md): decision-docs family (adr, design-doc, rfc, spike-summary), with the ADR bundle first (internal dogfood demand already exists) | 12_catalog sections 3-4 |
+| WP-60 | Next family (when pulled) | Per `12_catalog-recommendations.md`: decision-docs family (adr, design-doc, rfc, spike-summary), with the ADR bundle first (internal dogfood demand already exists) | 12_catalog sections 3-4 |
 | WP-61 | Maintenance cadence (VL-3) | ADR: quarterly freshness pass (re-verify flagged sources, refresh approx_tokens, re-run evals), monthly decision triage; calendar entries created | G-05, E-04 |
 | WP-62 | Contribution pipeline | CONTRIBUTING grows a bundle-proposal path (issue form to draft-by-agent to human review against DoD); AG-3 authoring kit formalized | E-04, AG-3 |
 | WP-63 | Tier-2/Tier-3 gates | Tier-2 methodology packs only on active-practice pull; Tier-3 regulated module only after D4 decision, with QMSR-current verification discipline | D4, catalog Rec 2-3 |

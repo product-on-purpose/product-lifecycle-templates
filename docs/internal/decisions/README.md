@@ -47,6 +47,8 @@ Do not create for:
 | [0009](0009-scaffold-graduation-flat-templates.md) | Graduate the library out of `_local/` to a flat `templates/` scaffold | 2026-07-12 |
 | [0010](0010-meta-declares-size-contract.md) | The meta declares the size contract; single-size bundles are a legal shape | 2026-07-12 |
 | [0011](0011-madr-v4-at-docs-internal-decisions.md) | Adopt MADR v4, locate records here, and correct rather than supersede transcription errors | 2026-07-13 |
+| [0012](0012-evidence-outranks-catalog-and-paired-skill.md) | Primary evidence outranks the catalog and the paired skill; conflicts are reported, not absorbed | 2026-07-14 |
+| [0013](0013-local-split-and-going-public.md) | Split `_local/`: promote what public docs cite into `docs/internal/`, untrack the rest, and go public | 2026-07-14 |
 
 ## Correction versus supersession
 

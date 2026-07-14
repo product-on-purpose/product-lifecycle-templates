@@ -16,9 +16,9 @@ related:
 
 # Strategy Brief: Turning the Master Catalog into a Template Library
 
-> **What this is.** A decision-ready analysis that takes the 205-type [Master Catalog](deep-research_master-catalog.md) as raw material and answers: which of these become templates, in what order, in what shape, and how does the resulting library relate to `pm-skills`. It reconciles the three design documents where they disagree and gives an opinionated 80/20 path to a shippable v0.1.
+> **What this is.** A decision-ready analysis that takes the 205-type [Master Catalog](../catalog.md) as raw material and answers: which of these become templates, in what order, in what shape, and how does the resulting library relate to `pm-skills`. It reconciles the three design documents where they disagree and gives an opinionated 80/20 path to a shippable v0.1.
 >
-> **Reading order.** This brief frames the strategy and resolves the open decisions. The companion [Implementation Plan](implementation-plan_catalog-to-template-library.md) turns the resolved decisions into an executable, phased build.
+> **Reading order.** This brief frames the strategy and resolves the open decisions. The companion [Implementation Plan](../plan.md) turns the resolved decisions into an executable, phased build.
 
 ---
 
@@ -189,4 +189,4 @@ But Approach A only works if you first **resolve the four expensive-to-reverse d
 - A quick scan of `pm-skills`' existing `overrides/` directory (the layered doc §12 flags it as "not yet inspected") - it may already be the generator attach point, or may be unrelated.
 - Confirming the exact `marketplace.json` schema in `pm-skills` so the template `marketplace.json` aligns field-for-field rather than structurally.
 
-**Suggested follow-up generation:** The natural next artifact is the **detailed implementation plan** (companion document, [`implementation-plan_catalog-to-template-library.md`](implementation-plan_catalog-to-template-library.md)), which turns the four resolved decisions and Approach A into a phased, task-level build with CI gates and acceptance criteria. After that, the logical artifacts are (a) four short decision notes capturing the Section 5 resolutions, and (b) the `delivery-docs` family contract once the first bundle is proven.
+**Suggested follow-up generation:** The natural next artifact is the **detailed implementation plan** (companion document, [`implementation-plan_catalog-to-template-library.md`](../plan.md)), which turns the four resolved decisions and Approach A into a phased, task-level build with CI gates and acceptance criteria. After that, the logical artifacts are (a) four short decision notes capturing the Section 5 resolutions, and (b) the `delivery-docs` family contract once the first bundle is proven.
