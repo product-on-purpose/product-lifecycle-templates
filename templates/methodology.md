@@ -7,10 +7,10 @@ last_reviewed: 2026-07-12
 license: Apache-2.0
 applies_to: "every bundle under templates/"
 related:
-  - ../_local/initial-discovery/docs/template-library-design-spec.md
-  - ../_local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md
-  - ../_local/initial-discovery/docs/implementation-plan_catalog-to-template-library.md
-  - ../_local/initial-discovery/docs/deep-research_master-catalog.md
+  - ../docs/internal/design-spec.md
+  - ../docs/internal/strategy/catalog-to-template-library.md
+  - ../docs/internal/plan.md
+  - ../docs/internal/catalog.md
 ---
 
 # Template Bundle Methodology
@@ -76,7 +76,7 @@ Do this fully before writing any bundle file. Output is a research log you keep 
 
 ### A1. Seed from the catalog
 
-Start at the document type's entry in [`deep-research_master-catalog.md`](../_local/initial-discovery/docs/deep-research_master-catalog.md). Capture its canonical name, aliases, lifecycle phase, owner, purpose, typical sections, methodology, formality, rarity, relationships, and named sources. This is the hypothesis, not the answer.
+Start at the document type's entry in [`deep-research_master-catalog.md`](../docs/internal/catalog.md). Capture its canonical name, aliases, lifecycle phase, owner, purpose, typical sections, methodology, formality, rarity, relationships, and named sources. This is the hypothesis, not the answer.
 
 ### A2. Build the source set (tiered)
 

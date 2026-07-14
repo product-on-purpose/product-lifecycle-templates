@@ -91,10 +91,10 @@ Note on the directory layout: lifecycle phase is carried in bundle metadata, nev
 
 The thinking behind the library is documented, not implicit:
 
-- [`strategy-brief_catalog-to-template-library.md`](_local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md) - the approach and the resolved architecture decisions.
-- [`implementation-plan_catalog-to-template-library.md`](_local/initial-discovery/docs/implementation-plan_catalog-to-template-library.md) - the phased plan and acceptance criteria.
-- [`template-library-design-spec.md`](_local/initial-discovery/docs/template-library-design-spec.md) - the formal specification.
-- [`strategy-brief_raising-the-ceiling_2026-07-02.md`](_local/initial-discovery/docs/strategy-brief_raising-the-ceiling_2026-07-02.md) - where the library goes next: proving quality with evals, closing the usage loop, and serving templates to agents.
+- [`strategy-brief_catalog-to-template-library.md`](docs/internal/strategy/catalog-to-template-library.md) - the approach and the resolved architecture decisions.
+- [`implementation-plan_catalog-to-template-library.md`](docs/internal/plan.md) - the phased plan and acceptance criteria.
+- [`template-library-design-spec.md`](docs/internal/design-spec.md) - the formal specification.
+- [`strategy-brief_raising-the-ceiling_2026-07-02.md`](docs/internal/strategy/raising-the-ceiling.md) - where the library goes next: proving quality with evals, closing the usage loop, and serving templates to agents.
 
 ---
 

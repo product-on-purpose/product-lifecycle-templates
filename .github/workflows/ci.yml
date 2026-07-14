@@ -17,6 +17,14 @@ jobs:
       - name: Bundle gate
         run: python tools/check-bundles.py
 
+      # The link gate. Bundle-scoped checks cannot see repo-wide breakage: the scaffold
+      # graduation (decision 0009) broke four companion links and the bundle gate passed
+      # green. This step also enforces the central rule of decision 0013 - no tracked file
+      # may link into the untracked _local/, because such a link resolves for exactly one
+      # person and 404s for every other reader.
+      - name: Link gate
+        run: python tools/check-links.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record

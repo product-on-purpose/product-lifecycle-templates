@@ -221,4 +221,4 @@ authority; `[vendor]` commercially motivated; `[internal]` this project. Researc
 
 <a id="ref-6"></a>[6] Appcues, "[Release notes examples](https://www.appcues.com/blog/release-notes-examples)," and AnnounceKit, "Release Notes Best Practices." appcues.com (accessed 2026-06-30). [vendor]
 
-<a id="ref-7"></a>[7] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../_local/initial-discovery/docs/deep-research_master-catalog.md)," entry 115 (Release Notes). Internal deep-research catalog, 2026. [internal]
+<a id="ref-7"></a>[7] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 115 (Release Notes). Internal deep-research catalog, 2026. [internal]

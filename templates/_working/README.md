@@ -90,7 +90,7 @@ scaffolding before shipping, and it departs from the "guidance vanishes on rende
 > **Strong:** "Saved Views lets an analyst capture a dashboard's filters as a named,
 >   reopenable view, so they spend time reading data, not rebuilding the lens to see it."
 > **Weak:** "We will add a Views menu with a dropdown and a save button." (mechanics, not outcome)
-> **Why / deep dive:** [companion section 1 (Orientation)](prd_companion.md#1-orientation).
+> **Why / deep dive:** [companion section 1 (Orientation)](../prd/prd_companion.md#1-orientation).
 > _Delete this block before shipping._
 
 {{summary}}
@@ -115,7 +115,7 @@ companion link. The heavier material (strong/weak, traps) stays in a hidden comm
 ## Summary
 
 _What is it, who is it for, and the single outcome it produces? One short paragraph._
-_Deep dive: [companion section 1 (Orientation)](prd_companion.md#1-orientation)._
+_Deep dive: [companion section 1 (Orientation)](../prd/prd_companion.md#1-orientation)._
 
 <!-- GOOD "Saved Views lets an analyst capture a dashboard's filters as a named, reopenable
           view, so they spend time reading data, not rebuilding the lens to see it."

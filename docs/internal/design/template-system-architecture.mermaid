@@ -1,0 +1,28 @@
+flowchart TB
+    USER["PM or AI agent"]
+
+    subgraph L0["Layer 0: Standard Library (static markdown, the noun)"]
+        STD["Standard template bundles<br/>variant files + example + guide + frontmatter"]
+    end
+
+    subgraph L1["Layer 1: Generator (optional, the verb that shapes)"]
+        PROFILE["Org profile / overrides<br/>house terms, required sections, tooling refs"]
+        GEN["template-builder skill<br/>standard + profile = tailored template"]
+        ORGT["Org-tailored templates<br/>(still blank, reusable)"]
+    end
+
+    subgraph L2["Layer 2: pm-skills (the verb that fills)"]
+        FILL["pm-skills<br/>template + context = finished document"]
+        DOCOUT["Finished document<br/>(one-off, filled, owned by author)"]
+    end
+
+    STD -->|input| GEN
+    PROFILE -->|input| GEN
+    GEN --> ORGT
+    STD -->|usable directly| FILL
+    ORGT -->|usable| FILL
+    FILL --> DOCOUT
+
+    USER --> STD
+    USER -.optional.-> GEN
+    USER --> FILL

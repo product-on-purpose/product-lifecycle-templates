@@ -1,12 +1,25 @@
-# The real work of this repo currently lives in _local/ (the template bundles, the
-# authoring methodology, planning and strategy docs, session logs, and the artifact atlas).
-# The user's global ~/.gitignore_global hides `_LOCAL/` everywhere; re-include it HERE so the
-# work is version-controlled in this repo. (The final templates/ home is a separate, still-open
-# decision; content stays under _local/ for now by choice.)
-!_local/
-!_local/**
+# _local/ is the maintainer's private working area, and it is NOT version-controlled.
+#
+# It holds the 2026-07-10 audit corpus, session logs, and working notes. Until 2026-07-14 it
+# was force-INCLUDED here (`!_local/`), because the library itself was still being built inside
+# it. That is no longer true: the templates graduated to templates/ (decision 0009), and the
+# planning and strategy docs the public README and methodology actually cite were promoted into
+# docs/internal/ (decision 0013).
+#
+# Do not re-include it. The audit's adoption-kit is the concrete reason: it carries a competing
+# STATE.md and eight superseded decision records in the bespoke pre-MADR format. Publishing them
+# would put a second source of truth, and a set of stale ADRs in the one format the org forbids,
+# into a public repo. See docs/internal/decisions/0011-madr-v4-at-docs-internal-decisions.md.
+#
+# The rule, so it does not have to be rediscovered: anything under _local/ that a tracked file
+# needs must be PROMOTED into docs/internal/, never linked across the boundary. A tracked file
+# linking into _local/ is a link that 404s for everyone but the maintainer, and CI fails on it.
+#
+# (Note: the maintainer's global gitignore already hides _LOCAL/ everywhere. This entry is
+# explicit anyway, so a fresh clone on any machine behaves the same way.)
+_local/
 
-# Keep tool caches and OS junk out, even under _local/.
+# Tool caches and OS junk.
 .memsearch/
 **/.impeccable/
 .DS_Store
