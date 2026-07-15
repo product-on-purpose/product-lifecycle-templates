@@ -32,6 +32,25 @@ So the gate is real, and "enforceable, not aspirational" is currently **false in
 
 This entry exists because until 2026-07-14 the row above claimed the gate "**Runs in CI** on every push to `main` and every pull request. Passing." That was false the day it was written. STATE.md exists because of audit finding G-01, *a plan that lies about the tree is worse than no plan*, and it had started doing precisely that. The fix is a visibility decision, not a code change.
 
+## PB-1: going public is blocked on one unmade decision
+
+The `_local/` split ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)) untracked the audit corpus and the session logs. **That protects nothing retroactively, and the ADR originally claimed otherwise. It was corrected the same day.**
+
+Two facts, both verified against the remote rather than the working tree:
+
+1. **`main` on the remote still contains `_local/` today**, including `_session-logs/`. The split lives on the `m0-credibility-floor` branch and takes effect only on merge.
+2. **Merging is not enough.** Publishing a repository publishes its **whole history**. `_local/` has been tracked since commit `cd7c6bd` (HY-1), so the audit corpus, the adoption-kit, the session log, and the pre-graduation template copies all stay reachable via `git log` no matter what the tip says.
+
+So the repo cannot go public safely until this is decided:
+
+| Option | Cost | Effect |
+|---|---|---|
+| **Purge `_local/` from history**, force-push, then flip to public | ~20 min. Rewrites SHAs; PR #1 must be recreated. Cheap because there are **5 commits on `main` and one contributor** | The boundary the `.gitignore` claims becomes actually true |
+| **Accept the exposure** and flip to public | Free | The audit and a 154-line session log are one `git log` away. Nothing here is a credential; it is candid working material |
+| **Stay private**, pay for Actions minutes | Money | Defers everything; CI works; nobody can use the library |
+
+**Until PB-1 is settled, do not change repository visibility.** ADR 0013 is `accepted` but **unconfirmed**: its success condition is "CI green on `main`," and that cannot happen without this call.
+
 ## Not built (deliberately visible)
 
 - **No version tags. No CHANGELOG.** v0.1.0 is roadmap WP-14, in milestone M1.

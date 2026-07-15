@@ -59,7 +59,24 @@ Option B fails the second driver outright. Option C is the only option with no i
 * Good: the roadmap and the family contract escape the dated audit package and reach canonical, maintainable addresses.
 * Bad: **the master catalog is now public, and it contains errors.** Finding EC-2 established that its size call for the ADR is wrong, and by extension that its other 26 Tier-1 size calls are unverified hypotheses. Publishing a document while knowing it contains at least one error is a real cost. It is accepted because the alternative was worse (the companions cite it, so a private catalog means broken citations in the public product), and because `STATE.md` now says plainly that the catalog's size calls are hypotheses. A public document with a published caveat beats a private document with a hidden defect.
 * Bad: history is now partly unreachable. The audit's findings are cited by `STATE.md`'s own framing (D-01, D-04, G-01, EC-*) and by several decision records, but a reader outside the maintainer's machine cannot follow those citations to their source. This is the price of keeping the adoption-kit out, and it is not free: it makes several claims in this repo unverifiable by outsiders.
-* Accepted risk: **going public is irreversible in practice.** Anything published can be assumed cached, forked, or indexed. The 29 untracked files were never pushed, so they were never exposed, but every commit in the existing history was made while the repo was private and has not been audited line by line for anything sensitive. The history is short (six commits) and is authored content, not secrets or credentials, which is why this risk is accepted rather than mitigated with a history rewrite.
+* Accepted risk: **going public is irreversible in practice.** Anything published can be assumed cached, forked, or indexed.
+
+### Correction, 2026-07-14 (same day, before going public)
+
+The consequence above originally read, in part:
+
+> The 29 untracked files were never pushed, so they were never exposed.
+
+**That is false, and it was the single most load-bearing sentence in this record.** It was written from the state of the working tree rather than the state of the remote, and it is wrong twice over:
+
+1. **The files were pushed.** `_local/` has been tracked and pushed since commit `cd7c6bd` (HY-1, version-controlling the working library). The remote's default branch **still contains `_local/_session-logs/` right now.** Untracking at the tip of a feature branch protects nothing until that branch merges.
+2. **Merging does not fix it either.** Making a repository public exposes its **entire history**, not just its tip. Every commit that ever tracked `_local/` remains reachable, so the audit corpus and the session logs would be readable by anyone willing to run `git log`.
+
+So the boundary this decision establishes is real going forward, and it does **nothing** retroactively. Deleting a file from the tip is not deletion; it is a rename to somewhere less obvious.
+
+The error is corrected rather than superseded, per [0011](0011-madr-v4-at-docs-internal-decisions.md): the *decision* (split `_local/`, promote what public docs cite, go public) has not changed. What was wrong was a claim of fact about exposure, and a record that silently rewrote it would hide the most useful thing here, which is that **the check that caught it was mechanical.** The claim was written from the working tree; one query against the remote falsified it. The lesson is the same one this repo learned about citations three hours earlier, in a different costume: *a statement about a system is not verified by the confidence of the person writing it.*
+
+**This correction blocks the decision's Confirmation.** Going public is now gated on a further choice, which belongs to the maintainer and is recorded as **PB-1** in `STATE.md`: accept the history exposure, or purge `_local/` from history with a rewrite before flipping visibility. This record does not decide it.
 
 ### Confirmation
 
