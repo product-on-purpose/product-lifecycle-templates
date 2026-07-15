@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-14 (ADR bundle shipped, opening the `decision-docs` family; M0 credibility floor executed; HY-2 scaffold graduation closed; gate size-contract rework; decision records conformed to MADR v4)
+**Last updated:** 2026-07-14 (ADR bundle shipped; `_local/` split and purged from history so the repo can go public safely; link gate added; M0 credibility floor executed; decision records conformed to MADR v4)
 
 ---
 
@@ -32,24 +32,18 @@ So the gate is real, and "enforceable, not aspirational" is currently **false in
 
 This entry exists because until 2026-07-14 the row above claimed the gate "**Runs in CI** on every push to `main` and every pull request. Passing." That was false the day it was written. STATE.md exists because of audit finding G-01, *a plan that lies about the tree is worse than no plan*, and it had started doing precisely that. The fix is a visibility decision, not a code change.
 
-## PB-1: going public is blocked on one unmade decision
+## PB-1: history purged (resolved 2026-07-14). One manual step remains: flip to public.
 
-The `_local/` split ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)) untracked the audit corpus and the session logs. **That protects nothing retroactively, and the ADR originally claimed otherwise. It was corrected the same day.**
+The `_local/` split ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)) untracked the audit corpus and the session logs, and the ADR originally claimed that made them safe. It did not: `_local/` had been tracked since HY-1, so it lived in the pushed history and would have been exposed by going public regardless of the tip. That claim was corrected in place, and the exposure was closed properly:
 
-Two facts, both verified against the remote rather than the working tree:
+- **History rewritten** to purge `_local/` from every commit on both `main` and `m0-credibility-floor`. Verified: **0 `_local/` paths in the full history of either branch.**
+- **Force-pushed** (with a lease pinned to the real remote SHA) and **verified against the remote**: `_local/` returns `Not Found` on both the default branch and the PR branch.
+- **The 29 `_local/` files are untouched on disk**, plus a backup at `E:/tmp/_local-backup-20260714`.
+- The rewrite auto-closed PR #1 (its commits no longer exist); the work continues in **PR #2**, same branch, clean history.
 
-1. **`main` on the remote still contains `_local/` today**, including `_session-logs/`. The split lives on the `m0-credibility-floor` branch and takes effect only on merge.
-2. **Merging is not enough.** Publishing a repository publishes its **whole history**. `_local/` has been tracked since commit `cd7c6bd` (HY-1), so the audit corpus, the adoption-kit, the session log, and the pre-graduation template copies all stay reachable via `git log` no matter what the tip says.
+**The one remaining step is the maintainer's:** flip repository visibility to **public**. That makes Actions free, and CI (which has never once run) goes green. ADR 0013 stays `accepted` but **unconfirmed** until that happens, because its success condition is "CI green on `main`," and only a human can change visibility.
 
-So the repo cannot go public safely until this is decided:
-
-| Option | Cost | Effect |
-|---|---|---|
-| **Purge `_local/` from history**, force-push, then flip to public | ~20 min. Rewrites SHAs; PR #1 must be recreated. Cheap because there are **5 commits on `main` and one contributor** | The boundary the `.gitignore` claims becomes actually true |
-| **Accept the exposure** and flip to public | Free | The audit and a 154-line session log are one `git log` away. Nothing here is a credential; it is candid working material |
-| **Stay private**, pay for Actions minutes | Money | Defers everything; CI works; nobody can use the library |
-
-**Until PB-1 is settled, do not change repository visibility.** ADR 0013 is `accepted` but **unconfirmed**: its success condition is "CI green on `main`," and that cannot happen without this call.
+Nothing else blocks it. The boundary the `.gitignore` claims is now actually true, and the link gate (`tools/check-links.py`, in CI) will keep it true by failing any future tracked link into `_local/`.
 
 ## Not built (deliberately visible)
 
