@@ -28,7 +28,7 @@
 
 **CI has never once run.** `.github/workflows/ci.yml` is correct (verified against a clean clone of the pushed commit), Actions are enabled, and the gate passes locally on all five bundles. But every run since 2026-07-13 has failed in 3-4 seconds with the `gate` job executing **zero steps**, which is the signature of a job that never got a runner: this repo is **private and out of Actions minutes**. `pm-skills`, public in the same org, runs its CI normally.
 
-So the gate is real, and "enforceable, not aspirational" is currently **false in CI and true only on a developer's machine.** Nothing stops a bad bundle from being merged. [PR #1 (M0: the credibility floor)](https://github.com/product-on-purpose/product-lifecycle-templates/pull/1) has been open and red since 2026-07-13 for this reason and no other.
+So the gate is real, and "enforceable, not aspirational" is currently **false in CI and true only on a developer's machine.** Nothing stops a bad bundle from being merged. [PR #2 (M0 + ADR bundle + `_local` purge)](https://github.com/product-on-purpose/product-lifecycle-templates/pull/2) carries the fix and is open; the single remaining action is [flipping visibility to public](#pb-1-history-purged-resolved-2026-07-14-one-manual-step-remains-flip-to-public), after which CI runs for free.
 
 This entry exists because until 2026-07-14 the row above claimed the gate "**Runs in CI** on every push to `main` and every pull request. Passing." That was false the day it was written. STATE.md exists because of audit finding G-01, *a plan that lies about the tree is worse than no plan*, and it had started doing precisely that. The fix is a visibility decision, not a code change.
 
