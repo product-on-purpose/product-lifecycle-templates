@@ -1,0 +1,36 @@
+id: rfc
+title: Request for Comments
+summary: >-
+  Proposes a change and gathers input before the decision is made: the motivation, the proposal,
+  the alternatives, the trade-offs, the open questions, and a place to record the outcome. The
+  pre-decision counterpart to the ADR, which records a decision after it is made.
+doc_type: rfc
+phase: develop
+family: decision-docs
+sizes_available: [lean, full]
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - decision
+  - proposal
+  - architecture
+  - engineering
+  - collaboration
+  - governance
+related_templates:
+  - adr
+  - future:design-doc
+  - future:solution-brief
+aliases:
+  - RFC
+  - request for comments
+  - design proposal
+  - engineering RFC
+  - eng RFC
+  - RFD
+catalog_ref: 48
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-16
+license: Apache-2.0

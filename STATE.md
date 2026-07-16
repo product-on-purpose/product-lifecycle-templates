@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-16 (repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014; EC-2 catalog fix)
+**Last updated:** 2026-07-16 (RFC bundle shipped, 6th type and 2nd in `decision-docs`; repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014; EC-2 catalog fix)
 
 ---
 
@@ -14,9 +14,9 @@
 
 | What | State |
 |---|---|
-| **Bundles** | 5 of 27 Tier-1 catalog types. Family `delivery-docs`: `prd`, `user-stories`, `acceptance-criteria`, `release-notes`. Family `decision-docs`: `adr`. Eight files each. Status `beta`, `template_version` 0.1.0. |
+| **Bundles** | 6 of 27 Tier-1 catalog types. Family `delivery-docs`: `prd`, `user-stories`, `acceptance-criteria`, `release-notes`. Family `decision-docs`: `adr`, `rfc`. Eight files each. Status `beta`, `template_version` 0.1.0. |
 | **License** | Apache-2.0, granted at the repo root. Copyright Jonathan Prisant. |
-| **Governance gate** | `tools/check-bundles.py`, seven checks (files, dashes, nesting, clean example, citation resolution, meta size contract, frontmatter YAML validity). Six are pure stdlib; the seventh (G) uses PyYAML and SKIPs locally if absent ([ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)). **Runs in CI** on every push and PR; branch protection on `main` requires it to pass before merge. Passing on all five bundles. |
+| **Governance gate** | `tools/check-bundles.py`, seven checks (files, dashes, nesting, clean example, citation resolution, meta size contract, frontmatter YAML validity). Six are pure stdlib; the seventh (G) uses PyYAML and SKIPs locally if absent ([ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)). **Runs in CI** on every push and PR; branch protection on `main` requires it to pass before merge. Passing on all six bundles. |
 | **Decision records** | `docs/internal/decisions/`, fourteen ADRs in [MADR v4](https://github.com/adr/madr) format, plus a README documenting the convention. All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`, and the planning, strategy, catalog, roadmap and decision records at `docs/internal/`. Decision HY-2 (scaffold graduation) closed 2026-07-12; the `_local/` split closed 2026-07-14 ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)). |
 | **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
@@ -50,13 +50,15 @@ The reason this section exists at all: STATE.md is here because of audit finding
 ## Findings the library raised about its own ecosystem
 
 Building a bundle turns out to be an audit of everything the bundle touches. The ADR bundle
-(2026-07-14) surfaced two defects outside this repo. Both are **recorded, not silently patched**,
-because a template library that quietly edits its neighbors is worse than one that reports.
+(2026-07-14) surfaced two defects outside this repo; the RFC bundle (2026-07-16) surfaced a third.
+All are **recorded, not silently patched**, because a template library that quietly edits its
+neighbors is worse than one that reports.
 
 | # | Finding | Where it lives | Status |
 |---|---|---|---|
 | **EC-1** | **`develop-adr` (pm-skills) ships a Nygard-format ADR template**, diverging from the MADR v4 convention the org standardized on for its own decision records (mandated by `jp-init-project`, adopted here by [ADR 0011](docs/internal/decisions/0011-madr-v4-at-docs-internal-decisions.md), in use by `agent-config-toolkit` and `thinking-framework-skills`). An agent invoking that skill inside an org repo produces records in the wrong format. This bundle follows MADR and ships a Nygard-to-MADR mapping table in `adr_guide.md` so the two interoperate. | `pm-skills`, `.claude/skills/develop-adr/references/TEMPLATE.md` | Open, for the pm-skills maintainer |
 | **EC-2** | ~~Master catalog entry 64 (ADR) classifies the type as single-size ("S only").~~ **RESOLVED 2026-07-16.** MADR ships a minimal and a full template, so the type earns two weights. The catalog entry is corrected (now `S/L`, with a dated correction note), and a catalog-header note now states that all size calls are hypotheses. The bundle ships `lean` + `full`. | [`docs/internal/catalog.md`](docs/internal/catalog.md), entry 64 | **Resolved** |
+| **EC-3** | **No `develop-rfc` skill exists in pm-skills.** The org ships `develop-adr` (a skill for the decision *record*) but nothing that generates an RFC (the *proposal* that precedes it), even though the RFC comes first in the sequence. An agent can be told to record a decision but not to propose one. The RFC bundle's `pairs_with` is therefore empty and the template is filled by hand. Not a defect in existing code, a gap in coverage. | `pm-skills` (absent skill) | Open, for the pm-skills maintainer |
 
 Worth noting what EC-2 implies: **the catalog's size calls are hypotheses, not facts.** One of the
 27 Tier-1 entries has now been checked against primary evidence and did not survive. The other 26
@@ -100,6 +102,6 @@ The front door claims a **governed, best-in-class, agent-native reference implem
 
 - **Earned:** researched, dual-reader, nesting-disciplined, provenance-stamped content that the named competitors (curated awesome-lists) do not attempt.
 - **Now true, as of M0:** licensed, decision-recorded, CI-enforced (the gate runs on every push and PR, and branch protection requires it before merge), and living at an address that describes it (`templates/`, not `_local/templates/`).
-- **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically) and "reference implementation" (untagged, 5 of 205 types, zero external users).
+- **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically) and "reference implementation" (untagged, 6 of 205 types, zero external users).
 
 Keep this section honest. It is the fastest way to tell whether the roadmap is working.
