@@ -49,6 +49,7 @@ Do not create for:
 | [0011](0011-madr-v4-at-docs-internal-decisions.md) | Adopt MADR v4, locate records here, and correct rather than supersede transcription errors | 2026-07-13 |
 | [0012](0012-evidence-outranks-catalog-and-paired-skill.md) | Primary evidence outranks the catalog and the paired skill; conflicts are reported, not absorbed | 2026-07-14 |
 | [0013](0013-local-split-and-going-public.md) | Split `_local/`: promote what public docs cite into `docs/internal/`, untrack the rest, and go public | 2026-07-14 |
+| [0014](0014-gate-may-use-pyyaml-for-frontmatter-validity.md) | The gate may use PyYAML for one check (frontmatter validity); the other six stay pure stdlib | 2026-07-16 |
 
 ## Correction versus supersession
 

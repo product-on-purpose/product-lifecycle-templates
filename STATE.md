@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-14 (ADR bundle shipped; `_local/` split and purged from history so the repo can go public safely; link gate added; M0 credibility floor executed; decision records conformed to MADR v4)
+**Last updated:** 2026-07-16 (repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014; EC-2 catalog fix)
 
 ---
 
@@ -16,34 +16,23 @@
 |---|---|
 | **Bundles** | 5 of 27 Tier-1 catalog types. Family `delivery-docs`: `prd`, `user-stories`, `acceptance-criteria`, `release-notes`. Family `decision-docs`: `adr`. Eight files each. Status `beta`, `template_version` 0.1.0. |
 | **License** | Apache-2.0, granted at the repo root. Copyright Jonathan Prisant. |
-| **Governance gate** | `tools/check-bundles.py`, six checks (files, dashes, nesting, clean example, citation resolution, meta size contract). **Passing locally** on all five bundles. **NOT running in CI** (see below). |
-| **Decision records** | `docs/internal/decisions/`, thirteen ADRs in [MADR v4](https://github.com/adr/madr) format, plus a README documenting the convention. All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
+| **Governance gate** | `tools/check-bundles.py`, seven checks (files, dashes, nesting, clean example, citation resolution, meta size contract, frontmatter YAML validity). Six are pure stdlib; the seventh (G) uses PyYAML and SKIPs locally if absent ([ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)). **Runs in CI** on every push and PR; branch protection on `main` requires it to pass before merge. Passing on all five bundles. |
+| **Decision records** | `docs/internal/decisions/`, fourteen ADRs in [MADR v4](https://github.com/adr/madr) format, plus a README documenting the convention. All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`, and the planning, strategy, catalog, roadmap and decision records at `docs/internal/`. Decision HY-2 (scaffold graduation) closed 2026-07-12; the `_local/` split closed 2026-07-14 ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)). |
 | **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
 | **Methodology** | v0.2.2 (`templates/methodology.md`), status draft. Governs authoring. |
 | **Master catalog** | [`docs/internal/catalog.md`](docs/internal/catalog.md). 205 types, 27 at Tier 1. Cited by the methodology and by every bundle companion. **Its size calls are hypotheses, not facts** (see EC-2 below). |
 | **Audit corpus** | `_local/audit/2026-07-10_fable-audit/` on the maintainer's disk. **Deliberately NOT in git** (see [ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)); its two load-bearing artifacts were promoted to [`docs/internal/roadmap.md`](docs/internal/roadmap.md) and [`docs/internal/contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md). |
 
-## Broken right now
+## Nothing broken right now
 
-**CI has never once run.** `.github/workflows/ci.yml` is correct (verified against a clean clone of the pushed commit), Actions are enabled, and the gate passes locally on all five bundles. But every run since 2026-07-13 has failed in 3-4 seconds with the `gate` job executing **zero steps**, which is the signature of a job that never got a runner: this repo is **private and out of Actions minutes**. `pm-skills`, public in the same org, runs its CI normally.
+For the first time in this repo's life, that heading is true. Recently closed:
 
-So the gate is real, and "enforceable, not aspirational" is currently **false in CI and true only on a developer's machine.** Nothing stops a bad bundle from being merged. [PR #2 (M0 + ADR bundle + `_local` purge)](https://github.com/product-on-purpose/product-lifecycle-templates/pull/2) carries the fix and is open; the single remaining action is [flipping visibility to public](#pb-1-history-purged-resolved-2026-07-14-one-manual-step-remains-flip-to-public), after which CI runs for free.
+- **CI runs, and is green.** The gate had never once run (private repo, out of Actions minutes; every run died in 3s with zero steps). The repo went **public** on 2026-07-16, and the first real CI run passed. `main` is **branch-protected**: direct pushes blocked, the `gate` check required (strict), force-pushes and deletions blocked, linear history required.
+- **M0 is merged.** PR #2 landed the credibility floor, the ADR bundle, and the `_local/` split. PR #1 was auto-closed by the history rewrite.
+- **PB-1 (history exposure) is resolved.** `_local/` was purged from every commit (verified 0 paths in history, and `Not Found` on the remote) before going public, so publishing did not expose the audit corpus or session logs. The 29 files remain on the maintainer's disk, backed up at `E:/tmp/_local-backup-20260714`. ADR 0013 is now `accepted` and **confirmed** (its success condition, CI green on `main`, is met).
 
-This entry exists because until 2026-07-14 the row above claimed the gate "**Runs in CI** on every push to `main` and every pull request. Passing." That was false the day it was written. STATE.md exists because of audit finding G-01, *a plan that lies about the tree is worse than no plan*, and it had started doing precisely that. The fix is a visibility decision, not a code change.
-
-## PB-1: history purged (resolved 2026-07-14). One manual step remains: flip to public.
-
-The `_local/` split ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)) untracked the audit corpus and the session logs, and the ADR originally claimed that made them safe. It did not: `_local/` had been tracked since HY-1, so it lived in the pushed history and would have been exposed by going public regardless of the tip. That claim was corrected in place, and the exposure was closed properly:
-
-- **History rewritten** to purge `_local/` from every commit on both `main` and `m0-credibility-floor`. Verified: **0 `_local/` paths in the full history of either branch.**
-- **Force-pushed** (with a lease pinned to the real remote SHA) and **verified against the remote**: `_local/` returns `Not Found` on both the default branch and the PR branch.
-- **The 29 `_local/` files are untouched on disk**, plus a backup at `E:/tmp/_local-backup-20260714`.
-- The rewrite auto-closed PR #1 (its commits no longer exist); the work continues in **PR #2**, same branch, clean history.
-
-**The one remaining step is the maintainer's:** flip repository visibility to **public**. That makes Actions free, and CI (which has never once run) goes green. ADR 0013 stays `accepted` but **unconfirmed** until that happens, because its success condition is "CI green on `main`," and only a human can change visibility.
-
-Nothing else blocks it. The boundary the `.gitignore` claims is now actually true, and the link gate (`tools/check-links.py`, in CI) will keep it true by failing any future tracked link into `_local/`.
+The reason this section exists at all: STATE.md is here because of audit finding G-01, *a plan that lies about the tree is worse than no plan*. Between 2026-07-13 and 2026-07-14 it had started doing exactly that (claiming CI passed when it had never run). That is fixed, and the section is kept, now empty of breakage, as the place the next breakage gets recorded first.
 
 ## Not built (deliberately visible)
 
@@ -67,22 +56,23 @@ because a template library that quietly edits its neighbors is worse than one th
 | # | Finding | Where it lives | Status |
 |---|---|---|---|
 | **EC-1** | **`develop-adr` (pm-skills) ships a Nygard-format ADR template**, diverging from the MADR v4 convention the org standardized on for its own decision records (mandated by `jp-init-project`, adopted here by [ADR 0011](docs/internal/decisions/0011-madr-v4-at-docs-internal-decisions.md), in use by `agent-config-toolkit` and `thinking-framework-skills`). An agent invoking that skill inside an org repo produces records in the wrong format. This bundle follows MADR and ships a Nygard-to-MADR mapping table in `adr_guide.md` so the two interoperate. | `pm-skills`, `.claude/skills/develop-adr/references/TEMPLATE.md` | Open, for the pm-skills maintainer |
-| **EC-2** | **Master catalog entry 64 (ADR) classifies the type as single-size ("S only"). It is wrong.** MADR itself ships a minimal template and a full template as separate files, which is decisive evidence from the standard's own maintainers that the type earns two weights. The bundle ships `lean` + `full`. The catalog should be corrected at the source. | [`docs/internal/catalog.md`](docs/internal/catalog.md), entry 64 | Open |
+| **EC-2** | ~~Master catalog entry 64 (ADR) classifies the type as single-size ("S only").~~ **RESOLVED 2026-07-16.** MADR ships a minimal and a full template, so the type earns two weights. The catalog entry is corrected (now `S/L`, with a dated correction note), and a catalog-header note now states that all size calls are hypotheses. The bundle ships `lean` + `full`. | [`docs/internal/catalog.md`](docs/internal/catalog.md), entry 64 | **Resolved** |
 
 Worth noting what EC-2 implies: **the catalog's size calls are hypotheses, not facts.** One of the
 27 Tier-1 entries has now been checked against primary evidence and did not survive. The other 26
 have not been checked. Expect more corrections as bundles get built, and treat the catalog's
-`size_variant` column as a starting guess rather than a specification.
+`size_variant` column as a starting guess rather than a specification. The catalog now says this
+about itself, in a header note.
 
 ## Gate coverage, stated honestly
 
-The gate automates roughly **half** the methodology's Definition of Done (audit finding D-01). Six checks run; the research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have **zero** automation and are human-verified. Gate hardening is roadmap WP-11 in milestone M1.
+The gate automates roughly **half** the methodology's Definition of Done (audit finding D-01). Seven checks run; the research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have **zero** automation and are human-verified. Gate hardening is roadmap WP-11 in milestone M1, now partly done (see below).
 
-Two honest qualifiers on that, and they compound. First, the gate covers half the DoD. Second, per [Broken right now](#broken-right-now), **it does not run in CI at all**, so even that half is enforced only when a human remembers to type the command. "Enforceable, not aspirational" is currently aspirational.
+One honest qualifier: the gate covers about half the DoD. Since M0 it **does** run in CI on every push and PR, and branch protection requires it to pass before merge, so for the half it covers, "enforceable, not aspirational" is finally true rather than aspirational.
 
-**A known gap, found the hard way on 2026-07-14.** The ADR bundle shipped with invalid YAML in both template frontmatters (`decision-makers: [{{decision_makers}}]` parses as a flow mapping with an unhashable key; the fix is to quote the placeholder). **The gate passed it green.** It reads `sizes_available` with a regular expression and never parses YAML as YAML, so "the frontmatter is well-formed" is a DoD clause with no automation behind it at all. The other four bundles were swept and are clean, so this was a one-off defect rather than a systemic one, but the hole is real.
+**The YAML gap is closed (2026-07-16).** The ADR bundle had shipped with invalid YAML in both template frontmatters (`decision-makers: [{{decision_makers}}]` parses as a flow mapping with an unhashable key) and **the gate passed it green**, because it read `sizes_available` with a regex and never parsed YAML as YAML. Check **G (frontmatter YAML)** now closes that: the meta and every template/example frontmatter must parse, which forces placeholders to be quoted. This needed a YAML parser, which the stdlib lacks, so [ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md) grants the gate one dependency (PyYAML) for this one check; the other six stay pure stdlib and G SKIPs (honestly, not as a pass) if PyYAML is absent locally. CI installs it, so G is enforced. Verified by reintroducing the original bug and watching G fail.
 
-The fix is not free, and the reason is worth understanding: [ADR 0008](docs/internal/decisions/0008-gate-python-local-interim.md) committed the gate to the pure standard library, so it cannot simply import a YAML parser. Adding this check means either taking a dependency (reopening 0008) or hand-rolling a parser (a bad idea). This tension is filed against **WP-11 (gate hardening)** and is exactly the cost that [ADR 0010](docs/internal/decisions/0010-meta-declares-size-contract.md) records as a "Bad, because" consequence of the pure-stdlib constraint. The decision record predicted this bill; it has now arrived.
+**What remains of WP-11 is the hard half: citation-tracing.** Check E confirms a companion's inline citations *resolve* to anchors; nothing checks that the anchored source *supports the claim*. That is the failure mode that produced ~15 defects in the ADR bundle across three review rounds, it is still entirely human-verified, and it may not be fully mechanizable. Tracked as the open remainder of WP-11.
 
 ## Next milestone
 
@@ -109,8 +99,7 @@ Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
 The front door claims a **governed, best-in-class, agent-native reference implementation**. As of today:
 
 - **Earned:** researched, dual-reader, nesting-disciplined, provenance-stamped content that the named competitors (curated awesome-lists) do not attempt.
-- **Now true, as of M0:** licensed, decision-recorded, and living at an address that describes it (`templates/`, not `_local/templates/`).
-- **Claimed too early:** "CI-enforced." The gate exists and passes, but it has never run in CI (see [Broken right now](#broken-right-now)). It is enforced on the maintainer's machine, which is a different and much weaker claim.
+- **Now true, as of M0:** licensed, decision-recorded, CI-enforced (the gate runs on every push and PR, and branch protection requires it before merge), and living at an address that describes it (`templates/`, not `_local/templates/`).
 - **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically) and "reference implementation" (untagged, 5 of 205 types, zero external users).
 
 Keep this section honest. It is the fastest way to tell whether the roadmap is working.

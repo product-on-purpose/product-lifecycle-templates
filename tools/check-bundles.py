@@ -11,9 +11,15 @@ on every push to main and every pull request. It supersedes the Node script suit
 implementation plan's P3 (port the CI quality gate from pm-skills) had intended; see
 docs/internal/decisions/0008-gate-python-local-interim.md.
 
-Coverage is partial by acknowledgement, not by accident: these six checks automate roughly
+Coverage is partial by acknowledgement, not by accident: these seven checks automate roughly
 half the Definition of Done. The rest is human-verified. Do not read a green run as "the
-DoD is met"; read it as "the six structural checks pass." Gate hardening is roadmap WP-11.
+DoD is met"; read it as "the structural checks pass." Gate hardening is roadmap WP-11.
+
+Six checks are pure standard library and always run. The seventh (G, frontmatter YAML)
+needs a real parser, which the stdlib does not provide; it uses PyYAML where available and
+SKIPS with a clear message otherwise, so a local run without the dependency still gates the
+other six. CI installs PyYAML, so G is enforced there, which since M0 is the enforcement
+point. See docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md.
 
 THE META IS THE CONTRACT. Every check keys off `sizes_available` in the bundle's meta.yaml
 rather than assuming a bundle ships lean and full. Most types earn two weights, but seven
@@ -41,6 +47,9 @@ Checks per bundle:
                          and no bare [n] citation is left unlinked in the companion body
     F. Meta contract     sizes_available exists, is non-empty, and uses one legal size
                          vocabulary rather than mixing them
+    G. Frontmatter YAML  the meta.yaml and every template/example frontmatter block parse
+                         as valid YAML (so placeholders must be quoted); needs PyYAML, and
+                         SKIPS with a message if it is not installed
 """
 
 import os
@@ -81,6 +90,7 @@ ALL_SIZES = [s for vocab in SIZE_VOCABULARIES for s in vocab]
 
 GREEN = "\033[32m"
 RED = "\033[31m"
+YELLOW = "\033[33m"
 DIM = "\033[2m"
 BOLD = "\033[1m"
 OFF = "\033[0m"
@@ -260,6 +270,55 @@ def check_meta_contract(name, d):
     return True, shape + ", vocabulary {" + "/".join(vocab) + "}, declares {" + ", ".join(sizes) + "}"
 
 
+def frontmatter(text):
+    """The YAML frontmatter block if the file opens with one, else None."""
+    if not text.startswith("---"):
+        return None
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n", text, re.S)
+    return m.group(1) if m else None
+
+
+def check_frontmatter_yaml(name, d):
+    """Every YAML in the bundle must actually parse as YAML.
+
+    Returns (None, ...) to SKIP when PyYAML is absent; the other five checks are pure
+    stdlib and always run, so a local run without the dependency still gates most of the DoD.
+
+    This check exists because of a real escape: on 2026-07-14 the ADR bundle shipped with
+    `decision-makers: [{{decision_makers}}]` in both template frontmatters, which is a flow
+    mapping with an unhashable key and therefore invalid YAML, and the gate passed it green.
+    The gate reads sizes_available with a regex and never parsed YAML as YAML, so "the
+    frontmatter is well-formed" was a Definition-of-Done clause with no automation behind it.
+    Placeholders must be quoted ("{{title}}") to parse, which is exactly the discipline that
+    would have caught the bug. The stdlib has no YAML parser; the one dependency is granted by
+    docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md.
+    """
+    try:
+        import yaml
+    except ImportError:
+        return None, "SKIPPED: PyYAML not installed (pip install pyyaml to run this check locally; CI enforces it)"
+
+    targets = []
+    meta = os.path.join(d, name + "_meta.yaml")
+    if os.path.isfile(meta):
+        targets.append((os.path.basename(meta), read(meta)))
+    for p in bundle_files(name, d):
+        if p.endswith(".md"):
+            block = frontmatter(read(p))
+            if block is not None:
+                targets.append((os.path.basename(p), block))
+
+    bad = []
+    for label, block in targets:
+        try:
+            yaml.safe_load(block)
+        except yaml.YAMLError as e:
+            bad.append(label + " (" + str(e).splitlines()[0] + ")")
+    if bad:
+        return False, "invalid YAML in " + "; ".join(bad[:3]) + (" ..." if len(bad) > 3 else "")
+    return True, str(len(targets)) + " YAML block(s) parse"
+
+
 CHECKS = [
     ("A files", check_files),
     ("B dashes", check_dashes),
@@ -267,6 +326,7 @@ CHECKS = [
     ("D example", check_example),
     ("E citations", check_citations),
     ("F meta", check_meta_contract),
+    ("G yaml", check_frontmatter_yaml),
 ]
 
 
@@ -287,9 +347,16 @@ def main():
         print(BOLD + name + OFF)
         for label, fn in CHECKS:
             ok, detail = fn(name, d)
-            if not ok:
+            # Three states: True = PASS, False = FAIL (counts against the build),
+            # None = SKIP (a check that could not run, e.g. an optional dependency is
+            # absent; reported honestly rather than silently counted as a pass).
+            if ok is False:
                 total_fail += 1
-            mark = (GREEN + "PASS" + OFF) if ok else (RED + "FAIL" + OFF)
+                mark = RED + "FAIL" + OFF
+            elif ok is None:
+                mark = YELLOW + "SKIP" + OFF
+            else:
+                mark = GREEN + "PASS" + OFF
             print("  " + mark + "  " + label.ljust(12) + DIM + detail + OFF)
         print("")
     n = len(bundles)
