@@ -18,7 +18,7 @@ Each document type produces one **bundle**. The blank template is only one file 
 - **Traceable.** Filled documents carry provenance frontmatter (`source_template`, `source_template_version`), and each bundle names the skill it `pairs_with`, so the library speaks the same language as the tools that fill it.
 - **Researched, not remembered.** Every non-obvious claim in a companion carries a numbered, reliability-tagged citation (`[primary]` / `[practitioner]` / `[vendor]`). Sources that could not be fetched directly are flagged honestly rather than dressed up.
 
-The full authoring process, the citation standard, and the per-bundle Definition of Done live in the methodology: [`_local/templates/methodology.md`](_local/templates/methodology.md).
+The full authoring process, the citation standard, and the per-bundle Definition of Done live in the methodology: [`templates/methodology.md`](templates/methodology.md).
 
 ---
 
@@ -28,16 +28,16 @@ The full authoring process, the citation standard, and the per-bundle Definition
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
-| [`prd`](_local/templates/prd/) | Product Requirements Document: what to build, for whom, and why | `deliver-prd` |
-| [`user-stories`](_local/templates/user-stories/) | User-centered stories that anchor work to user value | `deliver-user-stories` |
-| [`acceptance-criteria`](_local/templates/acceptance-criteria/) | The conditions that confirm a story is done | `deliver-acceptance-criteria` |
-| [`release-notes`](_local/templates/release-notes/) | The customer-facing announcement of a release | `deliver-release-notes` |
+| [`prd`](templates/prd/) | Product Requirements Document: what to build, for whom, and why | `deliver-prd` |
+| [`user-stories`](templates/user-stories/) | User-centered stories that anchor work to user value | `deliver-user-stories` |
+| [`acceptance-criteria`](templates/acceptance-criteria/) | The conditions that confirm a story is done | `deliver-acceptance-criteria` |
+| [`release-notes`](templates/release-notes/) | The customer-facing announcement of a release | `deliver-release-notes` |
 
 Beyond these four, the library grows **by pull** from a researched catalog of 205 artifact types across 19 categories. The "must-have core" is built first; specialized and regulated types are built when a real team asks for one, not speculatively.
 
 ### The map: Product Artifact Atlas
 
-[`_local/atlas/atlas.html`](_local/atlas/atlas.html) is a self-contained, interactive map of all 205 catalog types. Group them by category or lifecycle phase; filter by tier and by state; open any type to see its purpose, owner, methodology, and relationships. It doubles as a scoping tool: seeing the whole territory makes choosing what to build next a deliberate act rather than a guess. Open the file in any browser.
+[`atlas/atlas.html`](atlas/atlas.html) is a self-contained, interactive map of all 205 catalog types. Group them by category or lifecycle phase; filter by tier and by state; open any type to see its purpose, owner, methodology, and relationships. It doubles as a scoping tool: seeing the whole territory makes choosing what to build next a deliberate act rather than a guess. Open the file in any browser.
 
 ---
 
@@ -66,21 +66,24 @@ This library is the sibling of a skills repository. The division is clean: **a s
 
 ## Repository layout
 
-The working library currently lives under `_local/` (a provisional home; the final directory scaffold is a deliberate, deferred decision, since lifecycle phase is carried in metadata rather than the path).
+```
+templates/
+  methodology.md            The authoring process and Definition of Done
+  prd/                      \
+  user-stories/              }  the delivery-docs family (8 files each)
+  acceptance-criteria/       }
+  release-notes/            /
+tools/
+  check-bundles.py          The governance gate (runs locally and in CI)
+atlas/
+  atlas.html                Interactive map of all 205 catalog types
+  catalog-data.json         The atlas dataset
+docs/
+  decisions/                Architecture decision records
+STATE.md                    What is actually true today. Outranks every plan.
+```
 
-```
-_local/
-  templates/
-    methodology.md            The authoring process and Definition of Done
-    prd/                      \
-    user-stories/              }  the delivery-docs family (8 files each)
-    acceptance-criteria/       }
-    release-notes/            /
-  atlas/
-    atlas.html                Interactive map of all 205 catalog types
-    catalog-data.json         The atlas dataset
-  initial-discovery/docs/     Strategy briefs, implementation plan, design spec, catalog
-```
+Note on the directory layout: lifecycle phase is carried in bundle metadata, never in the path, so `templates/` is flat by document type rather than nested by phase. That is deliberate, and it means a type's phase can be reassigned without renaming anything. See [`docs/internal/decisions/0009-scaffold-graduation-flat-templates.md`](docs/internal/decisions/0009-scaffold-graduation-flat-templates.md).
 
 ---
 
@@ -88,22 +91,24 @@ _local/
 
 The thinking behind the library is documented, not implicit:
 
-- [`strategy-brief_catalog-to-template-library.md`](_local/initial-discovery/docs/strategy-brief_catalog-to-template-library.md) - the approach and the resolved architecture decisions.
-- [`implementation-plan_catalog-to-template-library.md`](_local/initial-discovery/docs/implementation-plan_catalog-to-template-library.md) - the phased plan and acceptance criteria.
-- [`template-library-design-spec.md`](_local/initial-discovery/docs/template-library-design-spec.md) - the formal specification.
-- [`strategy-brief_raising-the-ceiling_2026-07-02.md`](_local/initial-discovery/docs/strategy-brief_raising-the-ceiling_2026-07-02.md) - where the library goes next: proving quality with evals, closing the usage loop, and serving templates to agents.
+- [`strategy-brief_catalog-to-template-library.md`](docs/internal/strategy/catalog-to-template-library.md) - the approach and the resolved architecture decisions.
+- [`implementation-plan_catalog-to-template-library.md`](docs/internal/plan.md) - the phased plan and acceptance criteria.
+- [`template-library-design-spec.md`](docs/internal/design-spec.md) - the formal specification.
+- [`strategy-brief_raising-the-ceiling_2026-07-02.md`](docs/internal/strategy/raising-the-ceiling.md) - where the library goes next: proving quality with evals, closing the usage loop, and serving templates to agents.
 
 ---
 
 ## Quality gate
 
-The governance is enforceable, not aspirational. [`_local/tools/check-bundles.py`](_local/tools/check-bundles.py) runs the structural checks from the methodology's Definition of Done across every bundle in one command: the eight files are present, no em-dash or en-dash characters appear, the lean variant nests inside the full one, the worked example has no leftover placeholders, every cited companion reference resolves to its anchor, and the declared sizes match the files on disk.
+The governance is enforceable, not aspirational. [`tools/check-bundles.py`](tools/check-bundles.py) runs the structural checks from the methodology's Definition of Done across every bundle in one command: the eight files are present, no em-dash or en-dash characters appear, the lean variant nests inside the full one, the worked example has no leftover placeholders, every cited companion reference resolves to its anchor, and the declared sizes match the files on disk.
 
 ```
-python _local/tools/check-bundles.py
+python tools/check-bundles.py
 ```
 
-All four delivery-docs bundles currently pass. This is a local prototype of the continuous-integration gate planned for the repository.
+All four delivery-docs bundles currently pass. GitHub Actions runs this same script on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), so a bundle that breaks these checks cannot merge.
+
+Scope, stated honestly: the gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation yet and are human-verified. "Enforceable, not aspirational" is true of what CI runs, and only of that. Current coverage always lives in [`STATE.md`](STATE.md).
 
 ## Conventions
 

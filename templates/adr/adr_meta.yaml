@@ -1,0 +1,35 @@
+id: adr
+title: Architecture Decision Record
+summary: >-
+  Records one architecturally significant decision: the forces that made it necessary, the options
+  genuinely considered, the option chosen, and the consequences accepted. Immutable once accepted;
+  superseded by a new record rather than edited.
+doc_type: adr
+phase: develop
+family: decision-docs
+sizes_available: [lean, full]
+methodology: generic
+pairs_with: [develop-adr]
+status: beta
+template_version: 0.1.0
+tags:
+  - architecture
+  - decision
+  - rationale
+  - madr
+  - governance
+  - engineering
+related_templates:
+  - future:rfc
+  - future:technical-design-doc
+  - future:spike-report
+aliases:
+  - ADR
+  - decision record
+  - architectural decision record
+  - lightweight ADR
+  - MADR
+catalog_ref: 64
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-14
+license: Apache-2.0

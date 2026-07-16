@@ -1,0 +1,4774 @@
+{
+  "generated_from": "deep-research_master-catalog.md",
+  "categories": [
+    "Strategy / Vision",
+    "Market / Competitive",
+    "Research / Discovery",
+    "Requirements",
+    "Specification",
+    "Design / Architecture",
+    "Decision Records",
+    "Planning / Roadmapping",
+    "Estimation",
+    "Process / Ceremony Artifacts",
+    "QA / Test",
+    "Release / Deployment / Runbooks",
+    "Operations / Incident",
+    "Analytics / Measurement",
+    "Governance / Compliance / Audit",
+    "Stakeholder / Communication",
+    "Retrospective / Post-mortem",
+    "Knowledge / Enablement",
+    "Legal / Contractual"
+  ],
+  "phases": [
+    "ideation",
+    "discovery",
+    "market",
+    "strategy",
+    "feasibility",
+    "initiation",
+    "definition",
+    "requirements",
+    "specification",
+    "design",
+    "architecture",
+    "decision",
+    "planning",
+    "estimation",
+    "process",
+    "delivery",
+    "testing",
+    "release",
+    "gtm",
+    "operations",
+    "measurement",
+    "growth",
+    "governance",
+    "security",
+    "communication",
+    "retrospective",
+    "knowledge",
+    "enablement",
+    "legal",
+    "decommission"
+  ],
+  "types": [
+    {
+      "id": "product-vision",
+      "name": "Product Vision",
+      "aliases": [
+        "vision statement",
+        "product vision board (Pichler)",
+        "Vision FAQ (Cagan)"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "discovery",
+      "owner": "Product Manager (contrib: exec, design, eng)",
+      "purpose": "Articulate the long-term aspirational end-state the product serves",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Strategy",
+        "Roadmap"
+      ]
+    },
+    {
+      "id": "product-strategy",
+      "name": "Product Strategy",
+      "aliases": [
+        "strategy doc",
+        "strategy one-pager (Ramp)",
+        "product operating model strategy"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "Product Manager / CPO",
+      "purpose": "Define which problems matter most and the bets to win",
+      "methodology": "methodology-agnostic; OKR-friendly",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Vision",
+        "Roadmap",
+        "OKRs"
+      ]
+    },
+    {
+      "id": "business-case",
+      "name": "Business Case",
+      "aliases": [
+        "cost-benefit analysis",
+        "investment case",
+        "value case"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "initiation",
+      "owner": "PM / Program Manager",
+      "purpose": "Justify investment by weighing benefits, costs, risks, alignment",
+      "methodology": "PMBOK strategy artifact; methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Vision",
+        "Charter"
+      ]
+    },
+    {
+      "id": "business-model-canvas",
+      "name": "Business Model Canvas",
+      "aliases": [
+        "BMC (Osterwalder)"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "Founder / PM",
+      "purpose": "One-page model of how the business creates, delivers, captures value",
+      "methodology": "Lean Startup",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "MRD"
+      ]
+    },
+    {
+      "id": "lean-canvas",
+      "name": "Lean Canvas",
+      "aliases": [
+        "(Maurya adaptation of BMC)"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "ideation",
+      "owner": "Founder / PM",
+      "purpose": "Problem-focused one-pager for startups",
+      "methodology": "Lean Startup",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "BMC"
+      ]
+    },
+    {
+      "id": "okrs",
+      "name": "OKRs",
+      "aliases": [
+        "objectives and key results",
+        "V2MOM (Benioff variant)"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "Exec / PM",
+      "purpose": "Set measurable objectives and key results to align teams",
+      "methodology": "OKR-driven",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Strategy",
+        "Roadmap"
+      ]
+    },
+    {
+      "id": "product-operating-model-team-topology-doc",
+      "name": "Product Operating Model / Team Topology doc",
+      "aliases": [
+        "product operating model",
+        "empowered-team charter"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "CPO / Head of Product",
+      "purpose": "Define how product teams are structured and empowered",
+      "methodology": "SVPG/Cagan",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Team Charter"
+      ]
+    },
+    {
+      "id": "north-star-metric-definition",
+      "name": "North Star Metric definition",
+      "aliases": [
+        "NSM doc",
+        "North Star framework"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "PM / Data",
+      "purpose": "Define the single metric proxying delivered value plus input metrics",
+      "methodology": "growth/OKR",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Metric Tree",
+        "Dashboards"
+      ]
+    },
+    {
+      "id": "strategic-theme-portfolio-vision",
+      "name": "Strategic Theme / Portfolio Vision",
+      "aliases": [
+        "strategic themes (SAFe)",
+        "portfolio canvas"
+      ],
+      "category": "Strategy / Vision",
+      "phase": "strategy",
+      "owner": "Portfolio/Exec",
+      "purpose": "Connect enterprise strategy to portfolio investment",
+      "methodology": "SAFe/scaled",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI Objectives"
+      ]
+    },
+    {
+      "id": "market-requirements-document",
+      "name": "Market Requirements Document",
+      "aliases": [
+        "MRD"
+      ],
+      "category": "Market / Competitive",
+      "phase": "discovery",
+      "owner": "PM / PMM",
+      "purpose": "Capture market problem, size, and segment needs",
+      "methodology": "Waterfall/traditional",
+      "formality": "standard",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PRD"
+      ]
+    },
+    {
+      "id": "competitive-analysis",
+      "name": "Competitive Analysis",
+      "aliases": [
+        "competitive landscape",
+        "competitor matrix",
+        "benchmarking report"
+      ],
+      "category": "Market / Competitive",
+      "phase": "market",
+      "owner": "PMM / PM",
+      "purpose": "Map competitors' strengths, weaknesses, positioning",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Positioning",
+        "Battlecard"
+      ]
+    },
+    {
+      "id": "market-sizing-tam-sam-som-model",
+      "name": "Market Sizing / TAM-SAM-SOM model",
+      "aliases": [
+        "market opportunity analysis"
+      ],
+      "category": "Market / Competitive",
+      "phase": "feasibility",
+      "owner": "PM / Strategy / Finance",
+      "purpose": "Quantify addressable market opportunity",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Business Case"
+      ]
+    },
+    {
+      "id": "positioning-statement",
+      "name": "Positioning Statement",
+      "aliases": [
+        "positioning framework (Geoffrey Moore)",
+        "positioning map"
+      ],
+      "category": "Market / Competitive",
+      "phase": "strategy",
+      "owner": "PMM",
+      "purpose": "Define who the product is for and why it wins",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Messaging",
+        "Battlecard"
+      ]
+    },
+    {
+      "id": "messaging-framework",
+      "name": "Messaging Framework",
+      "aliases": [
+        "messaging house",
+        "value pillars",
+        "message map"
+      ],
+      "category": "Market / Competitive",
+      "phase": "gtm",
+      "owner": "PMM",
+      "purpose": "Establish consistent value narrative and proof points",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Positioning"
+      ]
+    },
+    {
+      "id": "win-loss-analysis",
+      "name": "Win/Loss Analysis",
+      "aliases": [
+        "deal win-loss report"
+      ],
+      "category": "Market / Competitive",
+      "phase": "growth",
+      "owner": "PMM / Sales",
+      "purpose": "Understand why deals are won or lost",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Positioning",
+        "Roadmap"
+      ]
+    },
+    {
+      "id": "pricing-packaging-document",
+      "name": "Pricing & Packaging document",
+      "aliases": [
+        "pricing strategy",
+        "packaging matrix"
+      ],
+      "category": "Market / Competitive",
+      "phase": "strategy",
+      "owner": "PMM / PM / Finance",
+      "purpose": "Define price tiers, packaging, and rationale",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "GTM Plan"
+      ]
+    },
+    {
+      "id": "voice-of-customer-report",
+      "name": "Voice of Customer report",
+      "aliases": [
+        "VoC",
+        "customer insight summary"
+      ],
+      "category": "Market / Competitive",
+      "phase": "discovery",
+      "owner": "PMM / UXR",
+      "purpose": "Aggregate customer signals from interviews, support, community",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Personas",
+        "Roadmap"
+      ]
+    },
+    {
+      "id": "user-research-report",
+      "name": "User Research Report",
+      "aliases": [
+        "UX research report",
+        "research readout",
+        "usability study report"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UX Researcher",
+      "purpose": "Synthesize research findings and recommendations",
+      "methodology": "design thinking/dual-track",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Personas",
+        "PRD"
+      ]
+    },
+    {
+      "id": "user-persona",
+      "name": "User Persona",
+      "aliases": [
+        "customer persona",
+        "buyer persona",
+        "proto-persona"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UX Researcher / PMM",
+      "purpose": "Represent a user segment's goals, behaviors, pains",
+      "methodology": "design thinking",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Journey Map",
+        "PRD"
+      ]
+    },
+    {
+      "id": "empathy-map",
+      "name": "Empathy Map",
+      "aliases": [
+        "(Gamestorming/XPLANE)"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UXR / Designer",
+      "purpose": "Capture what a user says, thinks, does, feels",
+      "methodology": "design thinking",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Persona"
+      ]
+    },
+    {
+      "id": "jobs-to-be-done-statement",
+      "name": "Jobs-to-be-Done statement",
+      "aliases": [
+        "JTBD",
+        "job story"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "PM / UXR",
+      "purpose": "Frame the progress a customer is trying to make",
+      "methodology": "JTBD",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "opportunity-solution-tree",
+      "name": "Opportunity Solution Tree",
+      "aliases": [
+        "OST (Teresa Torres)"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "PM / trio",
+      "purpose": "Map outcome to opportunities to solutions to experiments",
+      "methodology": "dual-track agile",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Experiment Design"
+      ]
+    },
+    {
+      "id": "customer-journey-map",
+      "name": "Customer Journey Map",
+      "aliases": [
+        "journey map",
+        "experience map"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UXR / Designer",
+      "purpose": "Visualize a persona's end-to-end experience and pain points",
+      "methodology": "design thinking",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Service Blueprint"
+      ]
+    },
+    {
+      "id": "service-blueprint",
+      "name": "Service Blueprint",
+      "aliases": [
+        "service design blueprint"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "Service Designer",
+      "purpose": "Map front-stage and back-stage processes supporting a journey",
+      "methodology": "design thinking",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Journey Map"
+      ]
+    },
+    {
+      "id": "interview-guide-discussion-guide",
+      "name": "Interview Guide / Discussion Guide",
+      "aliases": [
+        "research script",
+        "moderator guide"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UXR",
+      "purpose": "Standardize questions for user interviews",
+      "methodology": "design thinking",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Research Report"
+      ]
+    },
+    {
+      "id": "survey-instrument",
+      "name": "Survey Instrument",
+      "aliases": [
+        "questionnaire",
+        "survey design"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UXR / Data",
+      "purpose": "Collect structured quantitative/qualitative input",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Research Report"
+      ]
+    },
+    {
+      "id": "concept-test-validation-brief",
+      "name": "Concept Test / Validation Brief",
+      "aliases": [
+        "concept validation",
+        "smoke test plan"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "PM / UXR",
+      "purpose": "Validate a concept's desirability before build",
+      "methodology": "Lean Startup/dual-track",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PRD",
+        "Pitch"
+      ]
+    },
+    {
+      "id": "diary-study-field-study-plan",
+      "name": "Diary Study / Field Study plan",
+      "aliases": [
+        "ethnographic study",
+        "contextual inquiry plan"
+      ],
+      "category": "Research / Discovery",
+      "phase": "discovery",
+      "owner": "UXR",
+      "purpose": "Plan longitudinal/in-context observation",
+      "methodology": "design thinking",
+      "formality": "standard",
+      "rarity": "rare",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Research Report"
+      ]
+    },
+    {
+      "id": "product-requirements-document",
+      "name": "Product Requirements Document",
+      "aliases": [
+        "PRD",
+        "product spec",
+        "product brief",
+        "one-pager",
+        "feature spec"
+      ],
+      "category": "Requirements",
+      "phase": "definition",
+      "owner": "Product Manager",
+      "purpose": "Define what to build, for whom, and why, with scope and success criteria",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": true,
+      "relationships": []
+    },
+    {
+      "id": "user-story",
+      "name": "User Story",
+      "aliases": [
+        "story",
+        "story card",
+        "job story"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Product Owner",
+      "purpose": "Describe a feature from the user's perspective",
+      "methodology": "Agile/Scrum/XP",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": true,
+      "relationships": [
+        "Epic",
+        "Sprint Backlog"
+      ]
+    },
+    {
+      "id": "epic",
+      "name": "Epic",
+      "aliases": [
+        "epic",
+        "feature epic"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Product Owner / PM",
+      "purpose": "Group related stories under a larger body of work",
+      "methodology": "Agile/SAFe",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Stories",
+        "Initiative",
+        "Theme"
+      ]
+    },
+    {
+      "id": "software-requirements-specification",
+      "name": "Software Requirements Specification",
+      "aliases": [
+        "SRS (IEEE 830 / now ISO/IEC/IEEE 29148)"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Business Analyst / Systems Eng",
+      "purpose": "Document functional and non-functional requirements formally",
+      "methodology": "Waterfall/V-model",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SDD",
+        "Test Plan"
+      ]
+    },
+    {
+      "id": "functional-specification",
+      "name": "Functional Specification",
+      "aliases": [
+        "functional spec",
+        "FRS",
+        "functional requirements doc"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA / PM",
+      "purpose": "Detail required system behavior and functions",
+      "methodology": "Waterfall/hybrid",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SRS",
+        "SDD"
+      ]
+    },
+    {
+      "id": "non-functional-requirements-doc",
+      "name": "Non-Functional Requirements doc",
+      "aliases": [
+        "NFR spec",
+        "quality attributes spec"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Architect / BA",
+      "purpose": "Specify performance, security, scalability, reliability targets",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Architecture",
+        "Test Plan"
+      ]
+    },
+    {
+      "id": "use-case-specification",
+      "name": "Use Case specification",
+      "aliases": [
+        "use case",
+        "use case model"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA",
+      "purpose": "Describe actor-system interactions to achieve a goal",
+      "methodology": "Waterfall/UP/RUP",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "business-requirements-document",
+      "name": "Business Requirements Document",
+      "aliases": [
+        "BRD"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA",
+      "purpose": "Capture high-level business needs and objectives",
+      "methodology": "Waterfall/traditional",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "FRS",
+        "SRS"
+      ]
+    },
+    {
+      "id": "requirements-traceability-matrix",
+      "name": "Requirements Traceability Matrix",
+      "aliases": [
+        "RTM",
+        "trace matrix",
+        "traceability matrix"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA / QA",
+      "purpose": "Link requirements to design, code, tests, and risk controls",
+      "methodology": "regulated/Waterfall",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SRS to Tests",
+        "Risk"
+      ]
+    },
+    {
+      "id": "acceptance-criteria",
+      "name": "Acceptance Criteria",
+      "aliases": [
+        "AC",
+        "conditions of satisfaction"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Product Owner",
+      "purpose": "Define conditions a story must meet to be accepted",
+      "methodology": "Agile/BDD",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": true,
+      "relationships": [
+        "Story",
+        "DoD"
+      ]
+    },
+    {
+      "id": "definition-of-done",
+      "name": "Definition of Done",
+      "aliases": [
+        "DoD"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Scrum Team",
+      "purpose": "Shared quality standard for \"done\" increments",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Increment"
+      ]
+    },
+    {
+      "id": "definition-of-ready",
+      "name": "Definition of Ready",
+      "aliases": [
+        "DoR"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "Scrum Team",
+      "purpose": "Criteria a backlog item must meet to enter a sprint",
+      "methodology": "Scrum/Kanban",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Sprint Backlog"
+      ]
+    },
+    {
+      "id": "business-rules-catalog",
+      "name": "Business Rules catalog",
+      "aliases": [
+        "business rules spec",
+        "decision tables"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA",
+      "purpose": "Document operational rules and decision logic",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Spec",
+        "Design"
+      ]
+    },
+    {
+      "id": "data-requirements-data-model",
+      "name": "Data Requirements / Data Model",
+      "aliases": [
+        "data dictionary (reqs)",
+        "conceptual data model",
+        "ERD"
+      ],
+      "category": "Requirements",
+      "phase": "requirements",
+      "owner": "BA / Data Architect",
+      "purpose": "Define data entities, attributes, relationships",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Database Design"
+      ]
+    },
+    {
+      "id": "amazon-pr-faq",
+      "name": "Amazon PR/FAQ",
+      "aliases": [
+        "press release/FAQ",
+        "working-backwards doc"
+      ],
+      "category": "Specification",
+      "phase": "ideation",
+      "owner": "PM (Amazon-style orgs)",
+      "purpose": "Force customer-centric clarity before building by writing the launch announcement first",
+      "methodology": "Amazon working-backwards",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PRD"
+      ]
+    },
+    {
+      "id": "amazon-six-pager",
+      "name": "Amazon Six-Pager",
+      "aliases": [
+        "six-page narrative memo",
+        "narrative"
+      ],
+      "category": "Specification",
+      "phase": "strategy",
+      "owner": "PM / Lead",
+      "purpose": "Present a proposal or review as a dense 6-page prose narrative read silently in-meeting",
+      "methodology": "Amazon working-backwards",
+      "formality": "standard",
+      "rarity": "rare",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PR",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "shape-up-pitch",
+      "name": "Shape Up Pitch",
+      "aliases": [
+        "pitch",
+        "shaped work writeup"
+      ],
+      "category": "Specification",
+      "phase": "definition",
+      "owner": "Shaper (senior PM/designer/eng)",
+      "purpose": "Present a shaped bet with bounded appetite for the betting table",
+      "methodology": "Shape Up (Basecamp)",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "breadboard-fat-marker-sketch",
+      "name": "Breadboard / Fat-Marker Sketch",
+      "aliases": [
+        "breadboard",
+        "fat marker sketch"
+      ],
+      "category": "Specification",
+      "phase": "definition",
+      "owner": "Shaper",
+      "purpose": "Communicate solution shape at low fidelity to preserve team latitude",
+      "methodology": "Shape Up",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Pitch"
+      ]
+    },
+    {
+      "id": "software-design-document",
+      "name": "Software Design Document",
+      "aliases": [
+        "SDD",
+        "design doc",
+        "technical design doc",
+        "TDD",
+        "software design description (IEEE 1016)"
+      ],
+      "category": "Specification",
+      "phase": "design",
+      "owner": "Software Architect / Eng Lead",
+      "purpose": "Describe the technical design and how the system will be built",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "PRD",
+        "SRS"
+      ]
+    },
+    {
+      "id": "request-for-comments-engineering",
+      "name": "Request for Comments (engineering)",
+      "aliases": [
+        "RFC",
+        "design proposal",
+        "eng RFC"
+      ],
+      "category": "Specification",
+      "phase": "design",
+      "owner": "Engineer / Architect",
+      "purpose": "Propose a technical change for open discussion before deciding",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "ADR"
+      ]
+    },
+    {
+      "id": "api-specification",
+      "name": "API Specification",
+      "aliases": [
+        "API doc",
+        "OpenAPI/Swagger spec",
+        "API contract"
+      ],
+      "category": "Specification",
+      "phase": "specification",
+      "owner": "Engineer / Tech Writer",
+      "purpose": "Define API endpoints, schemas, auth, and contracts",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "interface-control-document",
+      "name": "Interface Control Document",
+      "aliases": [
+        "ICD",
+        "integration spec"
+      ],
+      "category": "Specification",
+      "phase": "specification",
+      "owner": "Systems Eng / Architect",
+      "purpose": "Define interfaces between systems/components",
+      "methodology": "Waterfall/systems eng",
+      "formality": "formal-auditable",
+      "rarity": "rare",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "API spec"
+      ]
+    },
+    {
+      "id": "configuration-environment-specification",
+      "name": "Configuration / Environment specification",
+      "aliases": [
+        "config spec",
+        "infra spec",
+        "IaC definition"
+      ],
+      "category": "Specification",
+      "phase": "specification",
+      "owner": "DevOps / SRE",
+      "purpose": "Define environment, configuration, and infrastructure requirements",
+      "methodology": "DevOps",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Deployment"
+      ]
+    },
+    {
+      "id": "wireframe",
+      "name": "Wireframe",
+      "aliases": [
+        "lo-fi mockup",
+        "schematic"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "UI/UX Designer",
+      "purpose": "Show layout and structure without visual styling",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Mockup",
+        "Prototype"
+      ]
+    },
+    {
+      "id": "high-fidelity-mockup",
+      "name": "High-Fidelity Mockup",
+      "aliases": [
+        "visual design comp",
+        "hi-fi mockup"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "UI Designer",
+      "purpose": "Present pixel-accurate visual design",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Wireframe",
+        "Prototype"
+      ]
+    },
+    {
+      "id": "interactive-prototype",
+      "name": "Interactive Prototype",
+      "aliases": [
+        "clickable prototype",
+        "hi-fi prototype"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "Designer",
+      "purpose": "Simulate interactions for testing and as specification",
+      "methodology": "design thinking/dual-track",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Mockup",
+        "Build",
+        "Test"
+      ]
+    },
+    {
+      "id": "design-system-ui-kit",
+      "name": "Design System / UI Kit",
+      "aliases": [
+        "component library",
+        "pattern library",
+        "style guide"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "Design Systems team",
+      "purpose": "Provide reusable components, tokens, and usage rules",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "information-architecture-sitemap",
+      "name": "Information Architecture / Sitemap",
+      "aliases": [
+        "site map",
+        "navigation map",
+        "IA diagram"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "IA / UX Designer",
+      "purpose": "Define content structure and navigation",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Wireframes"
+      ]
+    },
+    {
+      "id": "user-flow-task-flow",
+      "name": "User Flow / Task Flow",
+      "aliases": [
+        "flow diagram",
+        "wireflow"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "UX Designer",
+      "purpose": "Map the steps and decisions a user takes through a task",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Wireframes",
+        "Prototype"
+      ]
+    },
+    {
+      "id": "architecture-diagram-c4-model",
+      "name": "Architecture Diagram (C4 model)",
+      "aliases": [
+        "C4 diagrams",
+        "context/container/component/code diagrams"
+      ],
+      "category": "Design / Architecture",
+      "phase": "architecture",
+      "owner": "Software Architect",
+      "purpose": "Visualize architecture at hierarchical levels of detail",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SDD",
+        "ADR"
+      ]
+    },
+    {
+      "id": "arc42-architecture-documentation",
+      "name": "arc42 Architecture Documentation",
+      "aliases": [
+        "arc42 template"
+      ],
+      "category": "Design / Architecture",
+      "phase": "architecture",
+      "owner": "Architect",
+      "purpose": "Provide a comprehensive, structured architecture description",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "ADRs",
+        "C4 views"
+      ]
+    },
+    {
+      "id": "4-1-views-beyond-iso-42010-architecture-views",
+      "name": "4+1 / Views & Beyond / ISO 42010 architecture views",
+      "aliases": [
+        "architecture viewpoints",
+        "V&B (SEI)"
+      ],
+      "category": "Design / Architecture",
+      "phase": "architecture",
+      "owner": "Architect",
+      "purpose": "Document architecture via stakeholder-specific views",
+      "methodology": "methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "rare",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "C4"
+      ]
+    },
+    {
+      "id": "data-flow-diagram",
+      "name": "Data Flow Diagram",
+      "aliases": [
+        "DFD"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "Architect / Security Eng",
+      "purpose": "Model how data moves through processes, stores, and boundaries",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "STRIDE threat model"
+      ]
+    },
+    {
+      "id": "database-schema-data-model-physical",
+      "name": "Database Schema / Data Model (physical)",
+      "aliases": [
+        "schema design",
+        "ER diagram",
+        "physical data model"
+      ],
+      "category": "Design / Architecture",
+      "phase": "design",
+      "owner": "Data Architect / Engineer",
+      "purpose": "Define physical database structure",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Data Requirements"
+      ]
+    },
+    {
+      "id": "deployment-infrastructure-architecture",
+      "name": "Deployment / Infrastructure Architecture",
+      "aliases": [
+        "deployment diagram",
+        "network topology",
+        "cloud architecture"
+      ],
+      "category": "Design / Architecture",
+      "phase": "architecture",
+      "owner": "Architect / SRE",
+      "purpose": "Document runtime topology and infrastructure",
+      "methodology": "DevOps",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Runbook",
+        "Deployment"
+      ]
+    },
+    {
+      "id": "architecture-decision-record",
+      "name": "Architecture Decision Record",
+      "aliases": [
+        "ADR",
+        "decision record"
+      ],
+      "category": "Decision Records",
+      "phase": "decision",
+      "owner": "Engineer / Architect",
+      "purpose": "Capture a significant architectural decision with context and consequences",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "RFC"
+      ]
+    },
+    {
+      "id": "decision-log",
+      "name": "Decision Log",
+      "aliases": [
+        "decision register",
+        "decision matrix"
+      ],
+      "category": "Decision Records",
+      "phase": "decision",
+      "owner": "PM / PgM",
+      "purpose": "Track key decisions, rationale, owners, dates",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "trade-study-options-analysis",
+      "name": "Trade Study / Options Analysis",
+      "aliases": [
+        "trade-off analysis",
+        "decision analysis",
+        "weighted scoring matrix"
+      ],
+      "category": "Decision Records",
+      "phase": "decision",
+      "owner": "Architect / BA",
+      "purpose": "Evaluate options against weighted criteria",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "ADR",
+        "Business Case"
+      ]
+    },
+    {
+      "id": "spike-research-spike-report",
+      "name": "Spike / Research Spike report",
+      "aliases": [
+        "spike",
+        "technical investigation"
+      ],
+      "category": "Decision Records",
+      "phase": "decision",
+      "owner": "Engineer",
+      "purpose": "Time-boxed investigation to reduce uncertainty",
+      "methodology": "Agile/XP",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Story",
+        "ADR"
+      ]
+    },
+    {
+      "id": "product-roadmap",
+      "name": "Product Roadmap",
+      "aliases": [
+        "roadmap",
+        "now-next-later",
+        "outcome roadmap"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Product Manager",
+      "purpose": "Communicate sequence and timing of product outcomes/features",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Strategy",
+        "Backlog"
+      ]
+    },
+    {
+      "id": "release-plan",
+      "name": "Release Plan",
+      "aliases": [
+        "release roadmap",
+        "release schedule"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "PM / Release Manager",
+      "purpose": "Plan what ships in which release and when",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Deployment"
+      ]
+    },
+    {
+      "id": "project-charter",
+      "name": "Project Charter",
+      "aliases": [
+        "charter",
+        "project initiation document",
+        "PID"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "initiation",
+      "owner": "Project Manager",
+      "purpose": "Formally authorize the project and grant PM authority",
+      "methodology": "PMBOK/Waterfall",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Project Plan"
+      ]
+    },
+    {
+      "id": "project-brief",
+      "name": "Project Brief",
+      "aliases": [
+        "lightweight charter",
+        "project one-pager"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "initiation",
+      "owner": "PM",
+      "purpose": "Lightweight project definition for smaller efforts",
+      "methodology": "PMBOK 7 (new)",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Charter"
+      ]
+    },
+    {
+      "id": "project-management-plan",
+      "name": "Project Management Plan",
+      "aliases": [
+        "PMP",
+        "project plan"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Project Manager",
+      "purpose": "Define how the project is executed, monitored, controlled",
+      "methodology": "PMBOK/Waterfall",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "work-breakdown-structure",
+      "name": "Work Breakdown Structure",
+      "aliases": [
+        "WBS",
+        "product breakdown structure"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Project Manager",
+      "purpose": "Decompose project scope into manageable work packages",
+      "methodology": "PMBOK/Waterfall",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Schedule",
+        "Estimate"
+      ]
+    },
+    {
+      "id": "project-schedule-gantt-chart",
+      "name": "Project Schedule / Gantt Chart",
+      "aliases": [
+        "Gantt",
+        "milestone schedule",
+        "project timeline"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Project Manager",
+      "purpose": "Sequence activities with dependencies and dates",
+      "methodology": "PMBOK/Waterfall",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "WBS"
+      ]
+    },
+    {
+      "id": "product-backlog",
+      "name": "Product Backlog",
+      "aliases": [
+        "backlog",
+        "master backlog"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Product Owner",
+      "purpose": "Ordered, emergent list of all work to improve the product",
+      "methodology": "Scrum/Kanban/agile",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Sprint Backlog"
+      ]
+    },
+    {
+      "id": "sprint-backlog",
+      "name": "Sprint Backlog",
+      "aliases": [
+        "iteration backlog"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Developers",
+      "purpose": "Selected items plus plan for one sprint",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Product Backlog"
+      ]
+    },
+    {
+      "id": "safe-pi-objectives",
+      "name": "SAFe PI Objectives",
+      "aliases": [
+        "program increment objectives"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Agile Team / RTE",
+      "purpose": "Business-value-weighted goals each team commits to for a PI",
+      "methodology": "SAFe",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI Planning"
+      ]
+    },
+    {
+      "id": "safe-program-board-art-planning-board",
+      "name": "SAFe Program Board / ART Planning Board",
+      "aliases": [
+        "program board",
+        "ART planning board"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "RTE",
+      "purpose": "Visualize features, milestones, cross-team dependencies across a PI",
+      "methodology": "SAFe",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI Objectives"
+      ]
+    },
+    {
+      "id": "roam-board",
+      "name": "ROAM Board",
+      "aliases": [
+        "risk ROAM board (Resolved/Owned/Accepted/Mitigated)"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "RTE / Team",
+      "purpose": "Categorize and manage PI risks",
+      "methodology": "SAFe",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI Planning"
+      ]
+    },
+    {
+      "id": "team-charter",
+      "name": "Team Charter",
+      "aliases": [
+        "working agreement",
+        "team agreement"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "Team / Scrum Master",
+      "purpose": "Establish team purpose, norms, roles, working agreements",
+      "methodology": "Agile/PMBOK",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "capacity-resource-plan",
+      "name": "Capacity / Resource Plan",
+      "aliases": [
+        "resource management plan",
+        "capacity model"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "PM / PgM",
+      "purpose": "Plan people and capacity against demand",
+      "methodology": "PMBOK",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Schedule"
+      ]
+    },
+    {
+      "id": "dependency-map-dependency-log",
+      "name": "Dependency Map / Dependency Log",
+      "aliases": [
+        "dependency board",
+        "cross-team dependency matrix"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "PgM / RTE",
+      "purpose": "Track and visualize inter-team/inter-system dependencies",
+      "methodology": "SAFe/scaled",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Program Board"
+      ]
+    },
+    {
+      "id": "communication-management-plan",
+      "name": "Communication Management Plan",
+      "aliases": [
+        "comms plan",
+        "stakeholder communication plan"
+      ],
+      "category": "Planning / Roadmapping",
+      "phase": "planning",
+      "owner": "PM",
+      "purpose": "Define who receives what information, how, and when",
+      "methodology": "PMBOK",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Status Reports"
+      ]
+    },
+    {
+      "id": "estimate-story-point-estimate",
+      "name": "Estimate / Story Point Estimate",
+      "aliases": [
+        "sizing",
+        "planning poker output",
+        "t-shirt sizing"
+      ],
+      "category": "Estimation",
+      "phase": "estimation",
+      "owner": "Developers",
+      "purpose": "Quantify relative effort of work items",
+      "methodology": "Agile/Scrum",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Sprint",
+        "Release plan"
+      ]
+    },
+    {
+      "id": "appetite-statement",
+      "name": "Appetite statement",
+      "aliases": [
+        "(Shape Up)"
+      ],
+      "category": "Estimation",
+      "phase": "estimation",
+      "owner": "Shaper",
+      "purpose": "State fixed time the org will invest, constraining the solution",
+      "methodology": "Shape Up",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Pitch"
+      ]
+    },
+    {
+      "id": "cost-estimate-budget",
+      "name": "Cost Estimate / Budget",
+      "aliases": [
+        "budget baseline",
+        "cost baseline"
+      ],
+      "category": "Estimation",
+      "phase": "estimation",
+      "owner": "PM / Finance",
+      "purpose": "Estimate and baseline project costs",
+      "methodology": "PMBOK",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Business Case"
+      ]
+    },
+    {
+      "id": "velocity-throughput-report",
+      "name": "Velocity / Throughput report",
+      "aliases": [
+        "velocity chart",
+        "throughput metric"
+      ],
+      "category": "Estimation",
+      "phase": "estimation",
+      "owner": "Scrum Master",
+      "purpose": "Track historical delivery rate to inform forecasting",
+      "methodology": "Agile/Kanban",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Estimates"
+      ]
+    },
+    {
+      "id": "sprint-goal",
+      "name": "Sprint Goal",
+      "aliases": [
+        "iteration goal"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Scrum Team",
+      "purpose": "Single objective giving the sprint coherence",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Sprint Backlog"
+      ]
+    },
+    {
+      "id": "product-increment",
+      "name": "Product Increment",
+      "aliases": [
+        "increment",
+        "potentially shippable increment"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "delivery",
+      "owner": "Developers",
+      "purpose": "The sum of completed, done work delivered each sprint",
+      "methodology": "Scrum",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "varies",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Sprint Backlog"
+      ]
+    },
+    {
+      "id": "standup-notes-daily-scrum-update",
+      "name": "Standup Notes / Daily Scrum update",
+      "aliases": [
+        "daily standup notes",
+        "scrum board snapshot"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Team",
+      "purpose": "Capture daily progress, plan, impediments",
+      "methodology": "Scrum/Kanban",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Impediment Log"
+      ]
+    },
+    {
+      "id": "impediment-log-blocker-list",
+      "name": "Impediment Log / Blocker List",
+      "aliases": [
+        "impediment backlog",
+        "blocker register"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Scrum Master",
+      "purpose": "Track and resolve impediments",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Standup"
+      ]
+    },
+    {
+      "id": "sprint-review-notes-demo-record",
+      "name": "Sprint Review notes / Demo record",
+      "aliases": [
+        "review notes",
+        "demo summary"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Scrum Team",
+      "purpose": "Record stakeholder feedback on the increment",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Backlog"
+      ]
+    },
+    {
+      "id": "backlog-refinement-notes",
+      "name": "Backlog Refinement notes",
+      "aliases": [
+        "grooming notes"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Product Owner",
+      "purpose": "Capture refinement outcomes and clarifications",
+      "methodology": "Scrum",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Backlog"
+      ]
+    },
+    {
+      "id": "kanban-board",
+      "name": "Kanban Board",
+      "aliases": [
+        "task board",
+        "work board"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Team",
+      "purpose": "Visualize work-in-progress across workflow states",
+      "methodology": "Kanban",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "varies",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "cumulative-flow-diagram",
+      "name": "Cumulative Flow Diagram",
+      "aliases": [
+        "CFD"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Scrum Master / PM",
+      "purpose": "Visualize flow, WIP, and bottlenecks over time",
+      "methodology": "Kanban",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "burndown-burnup-chart",
+      "name": "Burndown / Burnup Chart",
+      "aliases": [
+        "sprint burndown",
+        "release burnup"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Scrum Master",
+      "purpose": "Track remaining/completed work against time",
+      "methodology": "Scrum (non-canonical)",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Velocity"
+      ]
+    },
+    {
+      "id": "kickoff-deck-project-kickoff-doc",
+      "name": "Kickoff Deck / Project Kickoff doc",
+      "aliases": [
+        "kickoff brief",
+        "kickoff agenda"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "PM / PgM",
+      "purpose": "Align team and stakeholders at project/cycle start",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Charter",
+        "Pitch"
+      ]
+    },
+    {
+      "id": "design-review-record",
+      "name": "Design Review record",
+      "aliases": [
+        "design critique notes",
+        "design review minutes"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Designer / Architect",
+      "purpose": "Document design review decisions and feedback",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "architecture-review-record",
+      "name": "Architecture Review record",
+      "aliases": [
+        "arch review",
+        "ARB minutes"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Architect",
+      "purpose": "Document architecture review board outcomes",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "ADR"
+      ]
+    },
+    {
+      "id": "working-agreement-ground-rules",
+      "name": "Working Agreement / Ground Rules",
+      "aliases": [
+        "team norms"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "Team",
+      "purpose": "Document agreed team behaviors and norms",
+      "methodology": "Agile",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Team Charter"
+      ]
+    },
+    {
+      "id": "confidence-vote-record",
+      "name": "Confidence Vote record",
+      "aliases": [
+        "fist-of-five record"
+      ],
+      "category": "Process / Ceremony Artifacts",
+      "phase": "process",
+      "owner": "RTE / Team",
+      "purpose": "Capture team confidence in committed plan",
+      "methodology": "SAFe",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI Objectives"
+      ]
+    },
+    {
+      "id": "test-plan",
+      "name": "Test Plan",
+      "aliases": [
+        "master test plan",
+        "MTP (IEEE 829 legacy)"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Lead",
+      "purpose": "Define test scope, approach, resources, schedule",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Requirements"
+      ]
+    },
+    {
+      "id": "test-strategy",
+      "name": "Test Strategy",
+      "aliases": [
+        "QA strategy",
+        "test approach"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Manager",
+      "purpose": "Define organization-wide testing approach and standards",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Test Plans"
+      ]
+    },
+    {
+      "id": "test-case",
+      "name": "Test Case",
+      "aliases": [
+        "test case specification",
+        "test script"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Engineer",
+      "purpose": "Define steps, data, and expected results to verify behavior",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Requirements"
+      ]
+    },
+    {
+      "id": "test-suite-test-scenario",
+      "name": "Test Suite / Test Scenario",
+      "aliases": [
+        "test scenario",
+        "test set"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Engineer",
+      "purpose": "Group related test cases under a scenario",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Test Cases"
+      ]
+    },
+    {
+      "id": "test-report-test-summary-report",
+      "name": "Test Report / Test Summary Report",
+      "aliases": [
+        "test results",
+        "test completion report"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Lead",
+      "purpose": "Summarize test execution outcomes and quality status",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "bug-report-defect-report",
+      "name": "Bug Report / Defect Report",
+      "aliases": [
+        "defect ticket",
+        "issue",
+        "test incident report"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA / Engineer",
+      "purpose": "Document a defect with reproduction and severity",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Backlog",
+        "Triage"
+      ]
+    },
+    {
+      "id": "defect-triage-log-bug-bash-notes",
+      "name": "Defect Triage log / Bug Bash notes",
+      "aliases": [
+        "triage log",
+        "defect register"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA Lead / PM",
+      "purpose": "Track, prioritize, and assign defects",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Bug Reports"
+      ]
+    },
+    {
+      "id": "test-automation-plan-framework-doc",
+      "name": "Test Automation Plan / Framework doc",
+      "aliases": [
+        "automation strategy"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "SDET",
+      "purpose": "Define automation scope, framework, and standards",
+      "methodology": "DevOps/agile",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "CI pipeline"
+      ]
+    },
+    {
+      "id": "user-acceptance-test-plan",
+      "name": "User Acceptance Test plan",
+      "aliases": [
+        "UAT plan",
+        "acceptance test spec"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "BA / Product Owner",
+      "purpose": "Plan validation by end users against business needs",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "software-verification-validation-plan",
+      "name": "Software Verification & Validation Plan",
+      "aliases": [
+        "SVVP",
+        "V&V plan (IEEE 1012)"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "V&V Engineer",
+      "purpose": "Define verification and validation activities formally",
+      "methodology": "Waterfall/V-model",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Verification",
+        "Validation reports"
+      ]
+    },
+    {
+      "id": "performance-load-test-plan",
+      "name": "Performance / Load Test plan",
+      "aliases": [
+        "performance test plan",
+        "stress test spec"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "Performance Engineer",
+      "purpose": "Plan performance, load, and stress testing",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "NFRs"
+      ]
+    },
+    {
+      "id": "security-test-plan-penetration-test-report",
+      "name": "Security Test plan / Penetration Test report",
+      "aliases": [
+        "pen test report",
+        "security assessment"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "Security Engineer",
+      "purpose": "Plan and report security testing and findings",
+      "methodology": "DevSecOps",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Remediation backlog"
+      ]
+    },
+    {
+      "id": "test-data-management-plan",
+      "name": "Test Data Management plan",
+      "aliases": [
+        "test data spec"
+      ],
+      "category": "QA / Test",
+      "phase": "testing",
+      "owner": "QA / Data",
+      "purpose": "Define test data needs, generation, and privacy",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Test Cases"
+      ]
+    },
+    {
+      "id": "release-notes",
+      "name": "Release Notes",
+      "aliases": [
+        "changelog",
+        "what's new",
+        "release announcement"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "PM / Release Manager",
+      "purpose": "Communicate what changed in a release to users/stakeholders",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": true,
+      "relationships": [
+        "Release Plan"
+      ]
+    },
+    {
+      "id": "runbook",
+      "name": "Runbook",
+      "aliases": [
+        "operational runbook",
+        "ops manual",
+        "SOP"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "operations",
+      "owner": "SRE / Ops",
+      "purpose": "Provide step-by-step procedures for routine and recovery operations",
+      "methodology": "DevOps/SRE",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "playbook",
+      "name": "Playbook",
+      "aliases": [
+        "incident playbook",
+        "response playbook"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "operations",
+      "owner": "SRE / Security",
+      "purpose": "Provide scenario-specific response procedures",
+      "methodology": "DevOps/SRE/security",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Runbook"
+      ]
+    },
+    {
+      "id": "deployment-plan",
+      "name": "Deployment Plan",
+      "aliases": [
+        "rollout plan",
+        "cutover plan",
+        "go-live plan"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Release Manager",
+      "purpose": "Plan the steps, sequencing, and rollback for a deployment",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Release Plan"
+      ]
+    },
+    {
+      "id": "rollback-back-out-plan",
+      "name": "Rollback / Back-out Plan",
+      "aliases": [
+        "back-out procedure",
+        "recovery plan"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Release Manager / SRE",
+      "purpose": "Define how to revert a failed deployment",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Deployment Plan"
+      ]
+    },
+    {
+      "id": "change-request",
+      "name": "Change Request",
+      "aliases": [
+        "RFC (ITIL)",
+        "change record",
+        "change ticket"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Change Manager",
+      "purpose": "Formally request and authorize a production change",
+      "methodology": "ITIL",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "CAB review"
+      ]
+    },
+    {
+      "id": "release-deployment-checklist",
+      "name": "Release / Deployment Checklist",
+      "aliases": [
+        "go-live checklist",
+        "pre-deploy checklist"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Release Manager",
+      "purpose": "Verify readiness criteria before deployment",
+      "methodology": "DevOps/ITIL",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Deployment Plan"
+      ]
+    },
+    {
+      "id": "feature-flag-rollout-configuration-record",
+      "name": "Feature Flag / Rollout configuration record",
+      "aliases": [
+        "flag config",
+        "experiment rollout config"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Engineer / PM",
+      "purpose": "Document feature flags and gradual rollout settings",
+      "methodology": "DevOps",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "release-calendar-release-schedule",
+      "name": "Release Calendar / Release Schedule",
+      "aliases": [
+        "forward schedule of change (ITIL)",
+        "release window plan"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Release Manager",
+      "purpose": "Communicate planned releases and windows",
+      "methodology": "ITIL/DevOps",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Release Plans"
+      ]
+    },
+    {
+      "id": "configuration-management-plan",
+      "name": "Configuration Management Plan",
+      "aliases": [
+        "SCM plan",
+        "CM plan",
+        "CMDB record"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Config Manager",
+      "purpose": "Define how configuration items are identified and controlled",
+      "methodology": "ITIL/IEEE",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "CMDB"
+      ]
+    },
+    {
+      "id": "production-readiness-review",
+      "name": "Production Readiness Review",
+      "aliases": [
+        "PRR",
+        "launch readiness review"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "SRE",
+      "purpose": "Assess whether a service is ready for production",
+      "methodology": "SRE",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "launch-coordination-checklist",
+      "name": "Launch Coordination Checklist",
+      "aliases": [
+        "launch checklist (SRE)"
+      ],
+      "category": "Release / Deployment / Runbooks",
+      "phase": "release",
+      "owner": "Launch Coordinator / SRE",
+      "purpose": "Coordinate cross-team launch readiness",
+      "methodology": "SRE",
+      "formality": "standard",
+      "rarity": "rare",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PRR"
+      ]
+    },
+    {
+      "id": "incident-postmortem",
+      "name": "Incident Postmortem",
+      "aliases": [
+        "postmortem",
+        "RCA",
+        "root cause analysis",
+        "after-action review"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE / IC",
+      "purpose": "Learn from an incident and prevent recurrence (blamelessly)",
+      "methodology": "SRE/DevOps",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Backlog"
+      ]
+    },
+    {
+      "id": "incident-report-incident-record",
+      "name": "Incident Report / Incident Record",
+      "aliases": [
+        "incident ticket",
+        "sev report"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "On-call / IC",
+      "purpose": "Record an active incident's status and response",
+      "methodology": "ITIL/SRE",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Postmortem"
+      ]
+    },
+    {
+      "id": "service-level-objective-document",
+      "name": "Service Level Objective document",
+      "aliases": [
+        "SLO doc",
+        "SLI/SLO spec"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE",
+      "purpose": "Define reliability targets and indicators",
+      "methodology": "SRE",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Error Budget Policy"
+      ]
+    },
+    {
+      "id": "error-budget-policy",
+      "name": "Error Budget Policy",
+      "aliases": [
+        "error budget doc"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE",
+      "purpose": "Define consequences when error budget is exhausted",
+      "methodology": "SRE",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SLO"
+      ]
+    },
+    {
+      "id": "service-level-agreement",
+      "name": "Service Level Agreement",
+      "aliases": [
+        "SLA"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "Account/Legal/SRE",
+      "purpose": "Contractual reliability commitment with penalties",
+      "methodology": "methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SLO underpins it"
+      ]
+    },
+    {
+      "id": "on-call-escalation-policy",
+      "name": "On-call / Escalation Policy",
+      "aliases": [
+        "on-call schedule",
+        "escalation matrix"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE / Eng Manager",
+      "purpose": "Define on-call rotation and escalation paths",
+      "methodology": "DevOps/SRE",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Incident response"
+      ]
+    },
+    {
+      "id": "monitoring-alerting-plan",
+      "name": "Monitoring / Alerting plan",
+      "aliases": [
+        "observability plan",
+        "alerting rules"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE",
+      "purpose": "Define what to monitor and when to alert",
+      "methodology": "SRE/DevOps",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SLO"
+      ]
+    },
+    {
+      "id": "capacity-plan-ops",
+      "name": "Capacity Plan (ops)",
+      "aliases": [
+        "capacity planning doc",
+        "scaling plan"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE / Infra",
+      "purpose": "Forecast and plan infrastructure capacity",
+      "methodology": "SRE/DevOps",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Infra Architecture"
+      ]
+    },
+    {
+      "id": "disaster-recovery-business-continuity-plan",
+      "name": "Disaster Recovery / Business Continuity Plan",
+      "aliases": [
+        "DR plan",
+        "BCP",
+        "RPO/RTO doc"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE / Risk",
+      "purpose": "Plan recovery from major disruptions",
+      "methodology": "ITIL/SOC2",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "production-meeting-minutes-ops-review",
+      "name": "Production Meeting Minutes / Ops Review",
+      "aliases": [
+        "production review",
+        "ops weekly notes"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "SRE",
+      "purpose": "Track ongoing operational health and actions",
+      "methodology": "SRE",
+      "formality": "lightweight",
+      "rarity": "rare",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "support-knowledge-base-article-faq",
+      "name": "Support Knowledge Base article / FAQ",
+      "aliases": [
+        "KB article",
+        "help doc",
+        "support macro"
+      ],
+      "category": "Operations / Incident",
+      "phase": "operations",
+      "owner": "Support / Tech Writer",
+      "purpose": "Provide self-service answers to common issues",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "maintenance-deprecation-plan",
+      "name": "Maintenance / Deprecation plan",
+      "aliases": [
+        "sunset plan",
+        "end-of-life plan",
+        "decommissioning plan"
+      ],
+      "category": "Operations / Incident",
+      "phase": "decommission",
+      "owner": "PM / SRE",
+      "purpose": "Plan the wind-down, migration, and retirement of a product/feature",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "kpi-dashboard",
+      "name": "KPI Dashboard",
+      "aliases": [
+        "metrics dashboard",
+        "executive dashboard",
+        "scorecard"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "PM / Data Analyst",
+      "purpose": "Visualize key metrics for monitoring and decisions",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "NSM",
+        "OKRs"
+      ]
+    },
+    {
+      "id": "tracking-plan",
+      "name": "Tracking Plan",
+      "aliases": [
+        "event tracking plan",
+        "analytics spec",
+        "instrumentation plan"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "PM / Data",
+      "purpose": "Define events, properties, and user traits to instrument",
+      "methodology": "growth/data",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Data Dictionary",
+        "Dashboards"
+      ]
+    },
+    {
+      "id": "data-dictionary",
+      "name": "Data Dictionary",
+      "aliases": [
+        "metric definitions",
+        "data catalog entry"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "Data / Analytics Eng",
+      "purpose": "Document the meaning and usage of events and metrics",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Tracking Plan"
+      ]
+    },
+    {
+      "id": "experiment-design-doc",
+      "name": "Experiment Design doc",
+      "aliases": [
+        "A/B test plan",
+        "experiment brief",
+        "test design"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "growth",
+      "owner": "PM / Data Scientist",
+      "purpose": "Define hypothesis, variants, metrics, and analysis for an experiment",
+      "methodology": "growth/dual-track",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Experiment Readout"
+      ]
+    },
+    {
+      "id": "experiment-readout-results-report",
+      "name": "Experiment Readout / Results report",
+      "aliases": [
+        "A/B test results",
+        "experiment analysis"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "growth",
+      "owner": "Data Scientist / PM",
+      "purpose": "Report experiment outcomes and decision",
+      "methodology": "growth",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Experiment Design"
+      ]
+    },
+    {
+      "id": "metric-tree",
+      "name": "Metric Tree",
+      "aliases": [
+        "driver tree",
+        "metric hierarchy",
+        "KPI tree"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "PM / Data",
+      "purpose": "Decompose a top metric into contributing input metrics",
+      "methodology": "growth/OKR",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "NSM to team metrics"
+      ]
+    },
+    {
+      "id": "cohort-retention-analysis",
+      "name": "Cohort / Retention analysis",
+      "aliases": [
+        "retention report",
+        "cohort analysis"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "growth",
+      "owner": "Data Analyst",
+      "purpose": "Analyze behavior and retention by cohort",
+      "methodology": "growth",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Roadmap"
+      ]
+    },
+    {
+      "id": "funnel-analysis",
+      "name": "Funnel Analysis",
+      "aliases": [
+        "conversion funnel report"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "growth",
+      "owner": "Data Analyst / PM",
+      "purpose": "Analyze conversion through a multi-step flow",
+      "methodology": "growth",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Experiment Design"
+      ]
+    },
+    {
+      "id": "analytics-requirements-measurement-plan",
+      "name": "Analytics Requirements / Measurement Plan",
+      "aliases": [
+        "measurement framework",
+        "success metrics doc"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "PM",
+      "purpose": "Define how a feature's success will be measured",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PRD or standalone"
+      ]
+    },
+    {
+      "id": "ml-experiment-tracking-record",
+      "name": "ML Experiment Tracking record",
+      "aliases": [
+        "model run log",
+        "MLOps experiment record"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "Data Scientist / ML Eng",
+      "purpose": "Log model hyperparameters, metrics, dataset/code versions",
+      "methodology": "MLOps",
+      "formality": "standard",
+      "rarity": "rare",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Model Card"
+      ]
+    },
+    {
+      "id": "model-card-datasheet-for-datasets",
+      "name": "Model Card / Datasheet for Datasets",
+      "aliases": [
+        "model card",
+        "dataset datasheet"
+      ],
+      "category": "Analytics / Measurement",
+      "phase": "measurement",
+      "owner": "ML / Data",
+      "purpose": "Document a model's intended use, performance, limitations",
+      "methodology": "MLOps/responsible AI",
+      "formality": "standard",
+      "rarity": "rare",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Compliance"
+      ]
+    },
+    {
+      "id": "risk-register",
+      "name": "Risk Register",
+      "aliases": [
+        "risk log",
+        "RAID log (risks portion)"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "PM / PgM / Risk",
+      "purpose": "Track risks with likelihood, impact, owner, mitigation",
+      "methodology": "PMBOK/methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "raid-log",
+      "name": "RAID Log",
+      "aliases": [
+        "RAID",
+        "DCARI variant"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "PM / PgM",
+      "purpose": "Consolidate Risks, Assumptions, Issues, Dependencies",
+      "methodology": "PMBOK",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "Risk",
+        "Issue logs"
+      ]
+    },
+    {
+      "id": "issue-log",
+      "name": "Issue Log",
+      "aliases": [
+        "issue register",
+        "issue tracker"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "PM",
+      "purpose": "Track active issues needing resolution",
+      "methodology": "PMBOK",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "RAID"
+      ]
+    },
+    {
+      "id": "assumption-log",
+      "name": "Assumption Log",
+      "aliases": [
+        "assumptions register"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "PM",
+      "purpose": "Track assumptions and constraints",
+      "methodology": "PMBOK",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "RAID"
+      ]
+    },
+    {
+      "id": "change-log-governance",
+      "name": "Change Log (governance)",
+      "aliases": [
+        "change register",
+        "change control log"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "PM / Change Manager",
+      "purpose": "Track requested and approved changes to baselines",
+      "methodology": "PMBOK/ITIL",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Change Requests"
+      ]
+    },
+    {
+      "id": "threat-model",
+      "name": "Threat Model",
+      "aliases": [
+        "STRIDE model",
+        "security threat model",
+        "LINDDUN (privacy)"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "security",
+      "owner": "Security Engineer",
+      "purpose": "Identify and prioritize security threats to a system",
+      "methodology": "DevSecOps",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DFD; feeds Security Backlog"
+      ]
+    },
+    {
+      "id": "software-bill-of-materials",
+      "name": "Software Bill of Materials",
+      "aliases": [
+        "SBOM",
+        "dependency inventory"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "security",
+      "owner": "Security / DevOps",
+      "purpose": "Inventory software components and dependencies",
+      "methodology": "DevSecOps",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Vulnerability mgmt"
+      ]
+    },
+    {
+      "id": "risk-management-file-iso-14971",
+      "name": "Risk Management File (ISO 14971)",
+      "aliases": [
+        "RMF",
+        "risk management report + plan"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Quality / Risk",
+      "purpose": "Provide traceable evidence of medical-device risk management",
+      "methodology": "regulated (ISO 14971)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "design-history-file",
+      "name": "Design History File",
+      "aliases": [
+        "DHF (FDA); aligns to Medical Device File under QMSR"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Quality / R&D",
+      "purpose": "Compile records demonstrating design developed per plan and regulation",
+      "methodology": "regulated (21 CFR 820.30)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "design-and-development-plan-regulated",
+      "name": "Design and Development Plan (regulated)",
+      "aliases": [
+        "DDP",
+        "design plan"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Quality",
+      "purpose": "Document/reference planned design activities and responsibilities",
+      "methodology": "regulated (820.30(b); ISO 13485 §7.3.2)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF"
+      ]
+    },
+    {
+      "id": "design-inputs-document",
+      "name": "Design Inputs document",
+      "aliases": [
+        "design input requirements"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Quality",
+      "purpose": "Capture required device characteristics from intended use and user needs",
+      "methodology": "regulated (820.30(c); ISO 13485 §7.3.3)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Outputs",
+        "Verification"
+      ]
+    },
+    {
+      "id": "design-outputs-document",
+      "name": "Design Outputs document",
+      "aliases": [
+        "design output specifications"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D",
+      "purpose": "Document design results enabling conformance evaluation to inputs",
+      "methodology": "regulated (820.30(d); ISO 13485 §7.3.4)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Inputs"
+      ]
+    },
+    {
+      "id": "design-review-records-regulated",
+      "name": "Design Review records (regulated)",
+      "aliases": [
+        "design review minutes"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Quality",
+      "purpose": "Record formal staged design reviews with independent reviewer",
+      "methodology": "regulated (820.30(e); ISO 13485 §7.3.5)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF"
+      ]
+    },
+    {
+      "id": "design-verification-protocol-report",
+      "name": "Design Verification protocol & report",
+      "aliases": [
+        "DV protocol/report"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / V&V",
+      "purpose": "Confirm design outputs meet design inputs",
+      "methodology": "regulated (820.30(f); ISO 13485 §7.3.6)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF"
+      ]
+    },
+    {
+      "id": "design-validation-protocol-report",
+      "name": "Design Validation protocol & report",
+      "aliases": [
+        "design validation report"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Clinical",
+      "purpose": "Confirm device meets user needs/intended use on production units",
+      "methodology": "regulated (820.30(g); ISO 13485 §7.3.7)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF"
+      ]
+    },
+    {
+      "id": "design-transfer-documentation",
+      "name": "Design Transfer documentation",
+      "aliases": [
+        "transfer to manufacturing records"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Manufacturing",
+      "purpose": "Ensure design is correctly translated into production specs",
+      "methodology": "regulated (820.30(h); ISO 13485 §7.3.8)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF",
+        "DMR",
+        "MDF"
+      ]
+    },
+    {
+      "id": "design-changes-record",
+      "name": "Design Changes record",
+      "aliases": [
+        "engineering change order",
+        "ECO",
+        "design change notice"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "R&D / Quality",
+      "purpose": "Identify, verify/validate, review, approve design changes before implementation",
+      "methodology": "regulated (820.30(i); ISO 13485 §7.3.9)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "S/M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DHF"
+      ]
+    },
+    {
+      "id": "device-master-record",
+      "name": "Device Master Record",
+      "aliases": [
+        "DMR; aligns to Medical Device File (MDF) under QMSR"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Manufacturing / Quality",
+      "purpose": "Compile all specs and procedures to manufacture the finished device",
+      "methodology": "regulated (21 CFR 820.181; ISO 13485 §4.2.3)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Design Transfer"
+      ]
+    },
+    {
+      "id": "device-history-record",
+      "name": "Device History Record",
+      "aliases": [
+        "DHR",
+        "batch/lot record"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Manufacturing / Quality",
+      "purpose": "Prove a batch/unit was manufactured per the DMR",
+      "methodology": "regulated (21 CFR 820.184; ISO 13485 §7.5.1)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DMR"
+      ]
+    },
+    {
+      "id": "installation-operational-performance-qualification-protocols",
+      "name": "Installation/Operational/Performance Qualification protocols",
+      "aliases": [
+        "IQ/OQ/PQ",
+        "process validation protocols"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Manufacturing / Quality",
+      "purpose": "Validate manufacturing processes/equipment with documented evidence",
+      "methodology": "regulated (21 CFR 820.75; ISO 13485 §7.5.6)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DMR"
+      ]
+    },
+    {
+      "id": "validation-master-plan",
+      "name": "Validation Master Plan",
+      "aliases": [
+        "VMP"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Quality",
+      "purpose": "Define overall validation strategy and scope across systems",
+      "methodology": "regulated (GxP/pharma)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "IQ",
+        "OQ",
+        "PQ"
+      ]
+    },
+    {
+      "id": "21-cfr-part-11-computer-system-validation-package",
+      "name": "21 CFR Part 11 / Computer System Validation package",
+      "aliases": [
+        "CSV doc",
+        "Part 11 compliance record"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Quality / IT",
+      "purpose": "Validate computerized systems and electronic records/signatures",
+      "methodology": "regulated (21 CFR Part 11)",
+      "formality": "formal-auditable",
+      "rarity": "rare-or-legacy",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "CSV",
+        "IQ-OQ-PQ"
+      ]
+    },
+    {
+      "id": "soc-2-system-description",
+      "name": "SOC 2 System Description",
+      "aliases": [
+        "system description"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Compliance / Security",
+      "purpose": "Describe in-scope infrastructure and how the system meets criteria",
+      "methodology": "compliance (AICPA)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "core SOC 2 doc"
+      ]
+    },
+    {
+      "id": "soc-2-management-assertion",
+      "name": "SOC 2 Management Assertion",
+      "aliases": [
+        "management assertion"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Management",
+      "purpose": "Assert how the system is designed, operates, and meets commitments",
+      "methodology": "compliance (AICPA)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "soc-2-control-matrix",
+      "name": "SOC 2 Control Matrix",
+      "aliases": [
+        "controls matrix",
+        "controls list"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Compliance",
+      "purpose": "Map controls to Trust Services Criteria with owners and evidence",
+      "methodology": "compliance (AICPA)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "core SOC 2 doc; maps to evidence"
+      ]
+    },
+    {
+      "id": "information-security-policy-set",
+      "name": "Information Security Policy set",
+      "aliases": [
+        "InfoSec policies (access control, acceptable use, change mgmt, data classification, incident response, etc.)"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "CISO / Compliance",
+      "purpose": "Document security governance for audits and operations",
+      "methodology": "compliance (SOC2/ISO 27001)",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "gdpr-records-of-processing-activities",
+      "name": "GDPR Records of Processing Activities",
+      "aliases": [
+        "RoPA",
+        "Article 30 record"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "DPO / Legal",
+      "purpose": "Document personal-data processing activities",
+      "methodology": "compliance (GDPR)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "DPIA"
+      ]
+    },
+    {
+      "id": "data-protection-impact-assessment",
+      "name": "Data Protection Impact Assessment",
+      "aliases": [
+        "DPIA",
+        "PIA",
+        "privacy impact assessment"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "DPO / Privacy",
+      "purpose": "Assess privacy risks of high-risk processing",
+      "methodology": "compliance (GDPR)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "RoPA"
+      ]
+    },
+    {
+      "id": "audit-report-compliance-evidence-package",
+      "name": "Audit Report / Compliance Evidence package",
+      "aliases": [
+        "audit findings",
+        "evidence binder"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Auditor / Compliance",
+      "purpose": "Compile evidence and findings for an audit",
+      "methodology": "compliance",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "accessibility-conformance-report",
+      "name": "Accessibility Conformance Report",
+      "aliases": [
+        "VPAT",
+        "WCAG conformance report"
+      ],
+      "category": "Governance / Compliance / Audit",
+      "phase": "governance",
+      "owner": "Designer / Accessibility",
+      "purpose": "Document accessibility conformance level",
+      "methodology": "compliance (WCAG/Section 508)",
+      "formality": "formal-auditable",
+      "rarity": "rare",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "status-report",
+      "name": "Status Report",
+      "aliases": [
+        "project status",
+        "weekly update",
+        "RAG report"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM / PgM",
+      "purpose": "Communicate progress, risks, and next steps to stakeholders",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": [
+        "RAID",
+        "Schedule"
+      ]
+    },
+    {
+      "id": "stakeholder-map-register",
+      "name": "Stakeholder Map / Register",
+      "aliases": [
+        "stakeholder analysis",
+        "power-interest grid"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM",
+      "purpose": "Identify and categorize stakeholders and engagement approach",
+      "methodology": "PMBOK/BABOK",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Comms Plan"
+      ]
+    },
+    {
+      "id": "raci-matrix",
+      "name": "RACI Matrix",
+      "aliases": [
+        "responsibility assignment matrix",
+        "RASCI"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM",
+      "purpose": "Clarify roles and responsibilities across activities",
+      "methodology": "PMBOK",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Team Charter"
+      ]
+    },
+    {
+      "id": "executive-briefing-steering-committee-deck",
+      "name": "Executive Briefing / Steering Committee deck",
+      "aliases": [
+        "exec update",
+        "steerco pack",
+        "QBR deck"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM / PgM",
+      "purpose": "Brief executives on status, decisions needed, asks",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "meeting-notes-minutes",
+      "name": "Meeting Notes / Minutes",
+      "aliases": [
+        "minutes",
+        "meeting summary",
+        "action items"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "Any",
+      "purpose": "Record decisions and action items from a meeting",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Decision",
+        "Action logs"
+      ]
+    },
+    {
+      "id": "faq-document",
+      "name": "FAQ document",
+      "aliases": [
+        "frequently asked questions"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM / Support",
+      "purpose": "Answer anticipated questions for an audience",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PR",
+        "FAQ",
+        "KB"
+      ]
+    },
+    {
+      "id": "announcement-internal-comms",
+      "name": "Announcement / Internal Comms",
+      "aliases": [
+        "internal memo",
+        "launch announcement",
+        "Slack canvas"
+      ],
+      "category": "Stakeholder / Communication",
+      "phase": "communication",
+      "owner": "PM / PMM",
+      "purpose": "Announce changes or launches to internal/external audiences",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Release Notes"
+      ]
+    },
+    {
+      "id": "sprint-retrospective-notes",
+      "name": "Sprint Retrospective notes",
+      "aliases": [
+        "retro notes",
+        "retrospective"
+      ],
+      "category": "Retrospective / Post-mortem",
+      "phase": "retrospective",
+      "owner": "Scrum Master",
+      "purpose": "Capture what went well, what to improve, and actions",
+      "methodology": "Scrum/agile",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 1,
+      "tier_inferred": false,
+      "must_have": true,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "project-milestone-retrospective",
+      "name": "Project / Milestone Retrospective",
+      "aliases": [
+        "lessons learned",
+        "post-project review",
+        "after-action review"
+      ],
+      "category": "Retrospective / Post-mortem",
+      "phase": "retrospective",
+      "owner": "PM / PgM",
+      "purpose": "Capture lessons at project/milestone close",
+      "methodology": "PMBOK/agile",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "pi-release-retrospective",
+      "name": "PI / Release Retrospective",
+      "aliases": [
+        "inspect & adapt (SAFe)",
+        "release retro"
+      ],
+      "category": "Retrospective / Post-mortem",
+      "phase": "retrospective",
+      "owner": "RTE / PM",
+      "purpose": "Reflect and improve at PI/release cadence",
+      "methodology": "SAFe/scaled",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "PI execution"
+      ]
+    },
+    {
+      "id": "premortem",
+      "name": "Premortem",
+      "aliases": [
+        "pre-mortem",
+        "prospective hindsight"
+      ],
+      "category": "Retrospective / Post-mortem",
+      "phase": "retrospective",
+      "owner": "PM / Team",
+      "purpose": "Anticipate failure modes before starting",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Risk Register"
+      ]
+    },
+    {
+      "id": "postmortem-action-item-tracker",
+      "name": "Postmortem Action Item tracker",
+      "aliases": [
+        "corrective action plan",
+        "CAPA (regulated)"
+      ],
+      "category": "Retrospective / Post-mortem",
+      "phase": "retrospective",
+      "owner": "SRE / Quality",
+      "purpose": "Track follow-through on postmortem/incident actions",
+      "methodology": "SRE/regulated",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Postmortem"
+      ]
+    },
+    {
+      "id": "readme",
+      "name": "README",
+      "aliases": [
+        "readme file",
+        "repo readme"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Engineer",
+      "purpose": "Orient developers to a repository/project",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "technical-documentation-developer-docs",
+      "name": "Technical Documentation / Developer Docs",
+      "aliases": [
+        "dev docs",
+        "technical guide",
+        "integration guide"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Tech Writer / Eng",
+      "purpose": "Provide technical reference for developers/integrators",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "API Spec"
+      ]
+    },
+    {
+      "id": "user-manual-help-documentation",
+      "name": "User Manual / Help Documentation",
+      "aliases": [
+        "user guide",
+        "help center",
+        "product docs"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Tech Writer",
+      "purpose": "Help end users accomplish tasks",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M/L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "onboarding-training-guide",
+      "name": "Onboarding / Training Guide",
+      "aliases": [
+        "enablement deck",
+        "training curriculum",
+        "playbook (sales/CS)"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Enablement / PMM",
+      "purpose": "Train internal teams or new hires on product/process",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Sales",
+        "CS readiness"
+      ]
+    },
+    {
+      "id": "sales-battlecard",
+      "name": "Sales Battlecard",
+      "aliases": [
+        "battlecard",
+        "competitive cheat sheet"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "enablement",
+      "owner": "PMM",
+      "purpose": "Equip sales to position against competitors",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Competitive Analysis"
+      ]
+    },
+    {
+      "id": "sales-playbook-demo-script",
+      "name": "Sales Playbook / Demo Script",
+      "aliases": [
+        "sales play",
+        "demo guide",
+        "talk track"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "enablement",
+      "owner": "PMM / Sales Enablement",
+      "purpose": "Provide repeatable sales motions and demo guidance",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "GTM appendix"
+      ]
+    },
+    {
+      "id": "runbook-knowledge-standard-operating-procedure",
+      "name": "Runbook (knowledge) / Standard Operating Procedure",
+      "aliases": [
+        "SOP",
+        "process doc"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Ops / Any",
+      "purpose": "Document a repeatable internal process",
+      "methodology": "methodology-agnostic",
+      "formality": "standard",
+      "rarity": "common",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "ops Runbook"
+      ]
+    },
+    {
+      "id": "style-guide-content-guidelines",
+      "name": "Style Guide / Content Guidelines",
+      "aliases": [
+        "voice & tone guide",
+        "editorial style guide"
+      ],
+      "category": "Knowledge / Enablement",
+      "phase": "knowledge",
+      "owner": "Content / Design",
+      "purpose": "Standardize content voice, tone, and conventions",
+      "methodology": "methodology-agnostic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S/M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Design System"
+      ]
+    },
+    {
+      "id": "statement-of-work",
+      "name": "Statement of Work",
+      "aliases": [
+        "SOW",
+        "work order"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "PM / Legal / Procurement",
+      "purpose": "Define deliverables, timeline, and terms for contracted work",
+      "methodology": "methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Contract"
+      ]
+    },
+    {
+      "id": "contract-agreement",
+      "name": "Contract / Agreement",
+      "aliases": [
+        "MSA",
+        "vendor contract",
+        "fixed-price/T&M/cost-reimbursable"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "Legal / Procurement",
+      "purpose": "Establish legally binding terms between parties",
+      "methodology": "PMBOK agreements",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "L",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SOW"
+      ]
+    },
+    {
+      "id": "data-processing-agreement",
+      "name": "Data Processing Agreement",
+      "aliases": [
+        "DPA"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "Legal / DPO",
+      "purpose": "Govern personal-data processing between controller and processor",
+      "methodology": "compliance (GDPR)",
+      "formality": "formal-auditable",
+      "rarity": "occasional",
+      "size_variant": "M",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "RoPA"
+      ]
+    },
+    {
+      "id": "service-level-agreement-contractual",
+      "name": "Service Level Agreement (contractual)",
+      "aliases": [
+        "SLA (contractual)"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "Legal / Account",
+      "purpose": "Define contractual service commitments and remedies",
+      "methodology": "methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SLO"
+      ]
+    },
+    {
+      "id": "terms-of-service-eula-privacy-policy",
+      "name": "Terms of Service / EULA / Privacy Policy",
+      "aliases": [
+        "ToS",
+        "EULA",
+        "privacy notice"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "Legal",
+      "purpose": "Define user terms and privacy commitments",
+      "methodology": "compliance",
+      "formality": "formal-auditable",
+      "rarity": "common",
+      "size_variant": "M/L",
+      "tier": 3,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": []
+    },
+    {
+      "id": "intellectual-property-licensing-record",
+      "name": "Intellectual Property / Licensing record",
+      "aliases": [
+        "license inventory",
+        "IP assignment",
+        "OSS license register"
+      ],
+      "category": "Legal / Contractual",
+      "phase": "legal",
+      "owner": "Legal / Eng",
+      "purpose": "Track IP ownership and software licenses",
+      "methodology": "methodology-agnostic",
+      "formality": "formal-auditable",
+      "rarity": "rare",
+      "size_variant": "M",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "SBOM"
+      ]
+    }
+  ]
+}
