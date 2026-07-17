@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-16 (WP-10 citation integrity pass complete: 28 defects across the four delivery-docs bundles, methodology 0.2.3 codifies the source conventions; RFC bundle shipped, 6th type and 2nd in `decision-docs`; repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014)
+**Last updated:** 2026-07-17 (WP-11 gate hardening: nine checks, and the new padding check immediately failed a bundle shipped the day before; WP-12: D2 and D3 both resolved, and they answer the same question. Earlier: WP-10 citation pass, 28 defects across four bundles, methodology 0.2.3)
 
 ---
 
@@ -37,7 +37,7 @@ The reason this section exists at all: STATE.md is here because of audit finding
 ## Not built (deliberately visible)
 
 - **No version tags. No CHANGELOG.** v0.1.0 is roadmap WP-14, in milestone M1.
-- **No distribution surface** beyond `git clone`. No plugin manifest, no marketplace entry, no `manifest.json`.
+- **No distribution surface** beyond `git clone`. No plugin manifest, no marketplace entry, no `manifest.json`. **As of D2/D3 (resolved 2026-07-17) the reason is precise, not vague:** both the skills CLI and agentskills.io take exactly one unit, the skill, and this repo ships no `SKILL.md`, so `npx skills add` clones it and installs nothing. One missing file, not an architecture problem.
 - **No family contract adopted.** One is drafted and now sits at a canonical path, [`docs/internal/contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md), but it is still only a draft: nothing *adopts* it and nothing *validates* against it. Adoption is roadmap WP-24 in milestone M2. The bundle gate checks bundles one at a time and never checks them as a set, so family conformance is unenforced today. (Note that `decision-docs`, opened by the ADR bundle, has no contract at all.)
 - **No metadata schema**, so no machine-consumption path. An agent cannot yet select a bundle deterministically.
 - **No efficacy evals.** Template quality is currently argued, not measured. This is the gap the audit weighted most heavily (finding D-04).
@@ -95,7 +95,7 @@ One honest qualifier: the gate covers about half the DoD. Since M0 it **does** r
 |---|---|---|
 | **WP-10** | Citation integrity pass (A-01..A-06) | **Done.** All four delivery-docs bundles verified against raw sources; 28 defects fixed; methodology 0.2.3 codifies the source conventions so the class does not recur. One WP-10 instruction was itself wrong and was withdrawn rather than executed. |
 | **WP-11** | Gate hardening v1 | **Done, except the half that may be impossible.** All six named items shipped 2026-07-17: reverse citation direction, meta placeholder scan, history-documents-version, `pairs_with` against a pinned skill list, `related_templates` resolution with the `future:` convention, and heading comparison on (level, text) tuples. Seven checks became nine, each adversarially tested to prove it fails when it should. **The first run of the new padding check failed the `rfc` bundle**, catching three uncited references the author had noticed and rationalised away the day before. Citation-tracing (does the source *support* the claim?) remains open and may not be mechanizable. |
-| **WP-12** | Decision closure (D2, D3) | **Not started.** Both are past the decision SLA. |
+| **WP-12** | Decision closure (D2, D3) | **Done 2026-07-17.** Both resolved by test and by reading the spec, and both answer the same question: **the ecosystem's unit is the skill, not the template.** The CLI installs nothing from this repo because it ships no `SKILL.md`; the spec has no template resource type at all. The pair took under an hour once attempted, having sat open 18 days against a three-day SLA. |
 | **WP-13** | Consumer quickstart | **Not started.** |
 | **WP-14** | Release v0.1.0 (dogfooded release note) | **Not started**, and correctly gated behind the above. |
 
@@ -106,14 +106,20 @@ Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
 | ID | Decision | Open since | Cost to resolve | Scheduled |
 |---|---|---|---|---|
 | D1 | Build the Layer 1 generator, or not | 2026-06-29 | n/a | Correctly gated on a usage signal |
-| D2 | Does `npx skills add` install this repo | 2026-06-29 | 30 min | M1 |
-| D3 | agentskills.io resource type for templates | 2026-06-29 | 1 hour | M1 |
+| ~~D2~~ | ~~Does `npx skills add` install this repo~~ **RESOLVED 2026-07-17: no.** Tested: the CLI clones the repo and installs **nothing**, reporting "No valid skills found. Skills require a SKILL.md with name and description." Verified against a control (`skills add product-on-purpose/pm-skills` succeeds), so the CLI and the org path both work; **this repo is the gap, because it ships no `SKILL.md`.** Unlock is known and cheap: ship one (roadmap LP-2). | 2026-06-29 | 30 min | **Resolved** |
+| ~~D3~~ | ~~agentskills.io resource type for templates~~ **RESOLVED 2026-07-17: there is no template resource type.** The [Agent Skills specification](https://agentskills.io/specification) defines exactly **one** unit: a skill, i.e. a directory containing `SKILL.md` (`name` and `description` required; `name` must match the parent directory). **Templates are explicitly an optional bundled asset inside a skill**, not a resource of their own: `assets/` "Contains static resources: Templates (document templates, configuration templates)". A template library is therefore only listable by being wrapped in a skill. | 2026-06-29 | 1 hour | **Resolved** |
 | D4 | Regulated-industry tier appetite | 2026-06-29 | n/a | Unscheduled |
 | **TX-1** | **Does this library need a second taxonomy axis?** pm-skills carries 89 skills on `phase:` and 86 on a separate `classification:` axis (`foundation`/`utility`/`tool`) with no phase at all. Every bundle here declares a `phase:`, which has been fine only because all four are genuinely `deliver` artifacts. Types like a glossary or a team charter may have no phase to declare. **Must be settled before the metadata schema makes `phase` a required enum.** Surfaced 2026-07-12 by the correction to [ADR 0003 (phase vocabulary)](docs/internal/decisions/0003-phase-vocabulary.md). | 2026-07-12 | ~1 hour | M2 (blocks WP-21) |
 | VL-1 | Business model | 2026-07-02 | n/a | Unscheduled |
 | VL-3 | Maintenance cadence | 2026-07-02 | n/a | M6 |
 
-**Decision SLA** (audit finding E-05): any open decision whose stated resolution cost is under two hours is resolved within three working days, or explicitly re-dated with a reason. **D2 (30 minutes) and D3 (1 hour) are both long past due.** That is why M1 leads with decision closure rather than with content.
+**Decision SLA** (audit finding E-05): any open decision whose stated resolution cost is under two hours is resolved within three working days, or explicitly re-dated with a reason. **This is the rule, and it lives here until a CONTRIBUTING.md exists to hold it.**
+
+**D2 and D3 are closed as of 2026-07-17**, 18 days after they were opened and long past the three-day SLA the rule states. Recording that plainly rather than quietly marking them done: the SLA was breached by a factor of six, and the pair took **under an hour** to settle once actually attempted. That is the lesson worth keeping. Both were cheap; both sat open for weeks; and both turned out to answer the same question.
+
+**What D2 and D3 turned out to share.** They were logged as two decisions and are really one fact: **the ecosystem's unit of distribution is the skill, not the template.** The CLI installs skills (`SKILL.md` required); the spec defines skills (templates are an *asset inside* one). This library ships no `SKILL.md`, so today it is **not installable or listable by either route**, and no amount of metadata changes that. The blocker is a single missing file, not an architecture problem, which makes the "agent-native" claim's remaining debt smaller and more concrete than it looked.
+
+**Consequence for the roadmap:** WP-52 (distribution wiring) was scheduled "per D2/D3 outcomes". The outcome is now known, so it is no longer research: it is "ship a `SKILL.md` that exposes the bundles as skill assets" (roadmap LP-2), whose name must be lowercase, hyphenated, and match its directory, with a description under 1024 characters. The reference validator `skills-ref validate ./my-skill` exists to check it.
 
 ## The claim, and what it is currently worth
 
@@ -121,6 +127,6 @@ The front door claims a **governed, best-in-class, agent-native reference implem
 
 - **Earned:** researched, dual-reader, nesting-disciplined, provenance-stamped content that the named competitors (curated awesome-lists) do not attempt.
 - **Now true, as of M0:** licensed, decision-recorded, CI-enforced (the gate runs on every push and PR, and branch protection requires it before merge), and living at an address that describes it (`templates/`, not `_local/templates/`).
-- **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically) and "reference implementation" (untagged, 6 of 205 types, zero external users).
+- **Still on credit:** "agent-native" (no machine consumption path exists, so no agent can select a bundle deterministically; and per D2/D3, resolved 2026-07-17, the library is not installable or listable by the skills CLI or agentskills.io either, because it ships no `SKILL.md`) and "reference implementation" (untagged, 6 of 205 types, zero external users).
 
 Keep this section honest. It is the fastest way to tell whether the roadmap is working.
