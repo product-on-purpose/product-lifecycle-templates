@@ -117,7 +117,26 @@ One honest qualifier: the gate covers about half the DoD. Since M0 it **does** r
 
 ## Next milestone
 
-**M1, integrity and truth** (roughly one week). Progress as of 2026-07-16:
+**M1 is complete (2026-07-17): [v0.1.0](CHANGELOG.md) is tagged.** All five work packages landed; the
+table below is the record. Two open questions that gated M2 were also closed the same day: TX-1 (the
+second taxonomy axis, [ADR 0015](docs/internal/decisions/0015-second-taxonomy-axis-phase-xor-classification.md))
+and TX-2 (the catalog `phase` -> `stage` rename). Plus DF-1, the first dogfood finding, found by use and
+fixed in `release-notes` 0.1.1.
+
+**Next up is M2, the machine layer**, and its first item is now fully unblocked:
+
+| WP | What | State |
+|---|---|---|
+| **WP-21** | Metadata schema (`tools/meta.schema.json`; a gate check validates every meta against it) | **Ready to start.** Both blockers cleared: TX-1 settles the shape (`phase` XOR `classification`, a verified 30/38 partition) and TX-2 removes the `phase`/`stage` name collision. The worked RFC example [RFC-0001](templates/rfc/rfc_example.md) *is* this proposal, so building the schema is implementing the library's own in-review RFC. |
+| **WP-20** | HY-2 graduation ADR | Scaffold already flat (ADR 0009); mostly a formalization. |
+| **WP-22..28** | Machine catalog, selection metadata, family contract, fill tooling, docs tree, v0.2.0 | Sequenced after the schema. |
+
+Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
+
+### M1 record
+
+| WP | What | State |
+|---|---|---|
 
 | WP | What | State |
 |---|---|---|
