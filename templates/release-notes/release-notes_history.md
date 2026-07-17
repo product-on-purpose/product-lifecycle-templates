@@ -2,6 +2,37 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.1 - 2026-07-17 - DF-1 fixed: a first-release mode
+
+**The dogfood loop closes.** DF-1 was found by using this template to write the library's own v0.1.0
+release note (below), recorded rather than patched at the time, and is now fixed as its own change.
+This is the first template change in the library driven by evidence from use rather than by review.
+
+- **Both variants gain a "FIRST RELEASE?" rule in the HOW TO FILL block.** On a `0.1.0` there is no
+  previous release, so "Improved" and "Fixed" (and, in full, "Changed", "Deprecated", "Removed", and
+  "Breaking changes") have nothing to be relative to. **Delete them rather than filling them.**
+- **It is stated as an explicit override**, because it contradicts the rule directly above it ("if a
+  section does not apply, write 'None in this release' rather than deleting it"). An exception that
+  does not announce itself as one just reads as a contradiction, and the author has to guess which
+  rule wins.
+- **The reasoning is given, not just the instruction:** "None in this release" under Improved and
+  Fixed reads as a product that improved nothing and fixed nothing, which is false about the work and
+  a poor first impression.
+- **The escape hatch is named too**, because it is the case this library itself hit: if real users
+  have been living on an untagged `main`, things *did* change for them, so the comparative sections
+  may carry that, provided the Summary says what "improved" is measured against. Without this, the
+  rule would have forbidden the very note that discovered the gap.
+- **`release-notes_guide.md` gains the matching rule**, under "Pick a variant", because the guide is
+  what an author reads before they copy a file, and a rule that lives only inside the template arrives
+  too late to change the choice.
+- Cites Keep a Changelog, which the bundle already referenced and whose guidance it had failed to
+  carry across: a first release is entirely "Added".
+
+**Not changed: [`docs/releases/v0.1.0.md`](../../docs/releases/v0.1.0.md) still stamps
+`source_template_version: 0.1.0`.** It was genuinely filled from 0.1.0, and provenance is a historical
+fact, not a label to keep current. The templates and the worked example move to 0.1.1 because they
+represent the current shape; the artifact does not, because it records what actually happened.
+
 ## 0.1.0, first dogfood 2026-07-17 - DF-1 recorded, template unchanged
 
 **This bundle became the first template in the library to be used for real.** The repository's own

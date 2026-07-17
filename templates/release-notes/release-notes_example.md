@@ -10,7 +10,7 @@ updated: "2026-06-30"
 related_links:
   - "PRD: Saved Views for Dashboards (prd_example.md)"
 source_template: release-notes
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--

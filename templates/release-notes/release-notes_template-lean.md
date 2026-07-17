@@ -9,7 +9,7 @@ created: "{{date}}"
 updated: "{{date}}"
 related_links: []
 source_template: release-notes
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -25,7 +25,15 @@ HOW TO FILL THIS IN
    example, and the TRAP to avoid.
 2. Replace each {{placeholder}} with your content.
 3. If a section does not apply, write "None in this release" rather than deleting it.
-4. Before you ship: self-grade against release-notes_guide.md, then DELETE every HTML comment. They
+4. FIRST RELEASE? Delete "Improved" and "Fixed" instead. They are defined against a previous release,
+   and a 0.1.0 has none: everything you shipped is New. Writing "None in this release" under them is
+   worse than deleting them, because it reads as "we improved nothing and fixed nothing," which is
+   false about the work and a bad first impression. This is the one case where rule 3 does not apply.
+   (Keep a Changelog treats a first release as entirely "Added"; same logic.) If your project has had
+   real users on an untagged main for a while, you may keep both sections and describe what changed
+   FOR THEM since they last pulled: say so in the Summary, so the reader knows what "improved" is
+   measured against.
+5. Before you ship: self-grade against release-notes_guide.md, then DELETE every HTML comment. They
    are guidance, not content.
 -->
 

@@ -9,7 +9,7 @@ created: "{{date}}"
 updated: "{{date}}"
 related_links: []
 source_template: release-notes
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -28,7 +28,16 @@ HOW TO FILL THIS IN
 3. Do not pre-fill a section out of diligence. Add a full-only section the moment it has real content
    (a behavior changed, something was deprecated, a breaking change needs upgrade steps). If a
    section does not apply, write "None in this release" and one line of why.
-4. Before you ship: self-grade against release-notes_guide.md, then DELETE every HTML comment.
+4. FIRST RELEASE? Delete Improved, Fixed, Changed, Deprecated, Removed, and Breaking changes rather
+   than filling them. Every one is defined against a previous release, and a 0.1.0 has none:
+   everything you shipped is New. "None in this release" under all six reads as a product that
+   improved nothing and fixed nothing, which is false about the work. This is the one case where rule
+   3 does not apply. Summary, Highlights, New, Security, and Known issues all still earn their place.
+   (Keep a Changelog treats a first release as entirely "Added"; same logic.) If your project has had
+   real users on an untagged main for a while, you may keep the comparative sections and describe
+   what changed FOR THEM since they last pulled: say so in the Summary, so the reader knows what
+   "improved" is measured against.
+5. Before you ship: self-grade against release-notes_guide.md, then DELETE every HTML comment.
 -->
 
 # {{product}} {{version}}
