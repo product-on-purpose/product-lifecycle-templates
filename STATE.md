@@ -58,9 +58,18 @@ template's own fill rule ("if a section does not apply, write 'None in this rele
 first release note declaring that nothing was improved and nothing was fixed, which is false in
 spirit: plenty was, it simply was never *released* before. The bundle already cites the source that
 solves this (Keep a Changelog treats a first release as entirely "Added") and failed to carry the
-guidance across. **The fix is deferred to 0.2.0 on purpose:** changing a template during its own
-release is how you end up with a template that does not match the artifact it just produced. Recorded
-in [`release-notes_history.md`](templates/release-notes/release-notes_history.md).
+guidance across.
+
+**FIXED 2026-07-17 in `release-notes` 0.1.1**, once v0.1.0 was tagged and the fix could no longer
+contradict the artifact that produced it. Both variants and the guide now carry an explicit
+first-release rule: delete the comparative sections rather than filling them, stated as an override
+(it contradicts the rule directly above it), with the reasoning given and the escape hatch named
+(real users on an untagged `main` did experience change, so the sections may carry that if the
+Summary says what "improved" is measured against). Recorded in
+[`release-notes_history.md`](templates/release-notes/release-notes_history.md).
+
+**This is the library's first template change driven by evidence from use rather than from review**,
+which is the entire argument for the usage loop, demonstrated on a sample size of one.
 
 The dogfood is worth more than the release. Six bundles have been argued to be good; this is the first
 evidence of one meeting a real task, and it took exactly one use to find a real gap. That is the case
