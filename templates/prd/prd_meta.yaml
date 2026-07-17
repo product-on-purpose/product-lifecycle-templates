@@ -16,5 +16,5 @@ related_templates: [user-stories, acceptance-criteria, release-notes, future:sol
 aliases: [product spec, product brief, feature spec, one-pager, product requirements]
 catalog_ref: 29                    # entry number in deep-research_master-catalog.md
 maintainer: "product-on-purpose"
-last_reviewed: 2026-06-30
+last_reviewed: 2026-07-16
 license: Apache-2.0

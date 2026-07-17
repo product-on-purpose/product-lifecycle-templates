@@ -10,9 +10,9 @@
 
 ## 1. Orientation
 
-A Product Requirements Document (PRD) is the artifact that says **what to build, for whom, and why, with enough scope and success criteria that a team can design and build the right thing.** It sits between problem understanding and implementation: discovery decides whether a problem is worth solving, and the PRD translates the chosen solution into something engineering, design, and QA can act on [[9]](#ref-9)[[13]](#ref-13).
+A Product Requirements Document (PRD) is the artifact that says **what to build, for whom, and why, with enough scope and success criteria that a team can design and build the right thing.** It sits between problem understanding and implementation: discovery decides whether a problem is worth solving, and the PRD translates the chosen solution into something engineering, design, and QA can act on [[9]](#ref-9)[[12]](#ref-12).
 
-It travels under many names. "Product spec," "product brief," "feature spec," "one-pager," and "product requirements" are the same artifact at different weights, not different documents [[13]](#ref-13). This bundle treats them as one type with size variants.
+It travels under many names. "Product spec," "product brief," "feature spec," "one-pager," and "product requirements" are the same artifact at different weights, not different documents [[12]](#ref-12). This bundle treats them as one type with size variants.
 
 **At a glance**
 - It communicates intent, not implementation. It says what must be true, and leaves engineering room on how.
@@ -31,7 +31,7 @@ The PRD is a descendant of the **waterfall and phase-gate era**, when product de
 Two shifts reshaped the artifact:
 
 - **Agile.** As teams moved to iterative delivery, the heavyweight PRD was widely criticized as slow and quickly outdated. The response was not to abolish the document everywhere but to **shrink it**: shorter, lighter, living PRDs that start as a one-pager and evolve in tools like Jira or Confluence as sprints progress [[10]](#ref-10)[[11]](#ref-11). Scrum went further and recognized no PRD at all; its Product Backlog absorbs the requirement-capturing job (see [§5](#5-methodology-lineage)) [[1]](#ref-1).
-- **Discovery-led product.** A second critique, from the Silicon Valley Product Group, holds that the real problem a spec must solve is communicating the intended experience precisely, and that **a high-fidelity prototype does this better than prose**. Cagan has argued since 2007 that "the majority of the product spec should be the high-fidelity prototype," a position he has only sharpened as prototyping tools improved [[2]](#ref-2)[[3]](#ref-3)[[4]](#ref-4).
+- **Discovery-led product.** A second critique, from the Silicon Valley Product Group, holds that the real problem a spec must solve is communicating the intended experience precisely, and that **a high-fidelity prototype does this better than prose**. Cagan has argued since 2006 that "the majority of the product spec should be the high-fidelity prototype," a position he has only sharpened as prototyping tools improved [[2]](#ref-2)[[3]](#ref-3)[[4]](#ref-4).
 
 The result today is a spectrum, not a single form: from a one-paragraph one-pager, through a living agile PRD, to a prototype-plus-companion-doc, to the still-heavyweight PRD that regulated and hardware contexts genuinely need.
 
@@ -45,7 +45,7 @@ What each section is, why it exists, and how to do it well. Beginner guidance is
 
 **Context and background (full).** The strategic thread the work hangs from, plus relevant history and what changed to make it timely. *Why:* without it, reviewers cannot judge whether the work should be built at all, only whether it is well-described. *Expert note:* tie this to a specific goal, OKR, or bet; a PRD that cannot name the strategy it serves is a candidate to kill, not to refine.
 
-**Problem (lean).** The user's problem, with evidence it is real and worth solving now. *Why:* the problem is the highest-leverage part of the document; nailing it is "the single most important step in solving any problem" [[7]](#ref-7). *Beginner trap:* writing a missing feature ("users cannot export to CSV") instead of the problem beneath it ("users rebuild reports by hand in another tool, losing an hour a week"). *Expert note:* high-performing templates deliberately separate problem from solution to force time on the problem [[7]](#ref-7).
+**Problem (lean).** The user's problem, with evidence it is real and worth solving now. *Why:* the problem is the highest-leverage part of the document. Lenny Rachitsky's widely-copied template makes crystallizing the problem the first step, and asks how you know the problem is real and worth solving before it asks what the thing is [[8]](#ref-8). *Beginner trap:* writing a missing feature ("users cannot export to CSV") instead of the problem beneath it ("users rebuild reports by hand in another tool, losing an hour a week"). *Expert note:* high-performing templates deliberately separate problem from solution to force time on the problem; that template's sections put Problem, Why, Success, and Audience ahead of "What does this look like in the product?" [[8]](#ref-8).
 
 **Goals and non-goals (lean).** The outcomes the work must achieve, and what you are deliberately not doing. *Why:* non-goals are where scope discipline lives. *Expert note:* the non-goals list is the most-skipped and most-valuable section; it is the cheapest scope-creep insurance you can write [[11]](#ref-11).
 
@@ -111,9 +111,9 @@ Where serious practitioners genuinely disagree. Presented as live arguments, wit
 
 **PRD vs PR/FAQ.** Amazon's PR/FAQ front-loads customer value before any spec; the press release forces you to justify *why it matters to a customer* before detailing *what gets built* [[5]](#ref-5). *Recommendation:* for genuinely new products, write the PR/FAQ first and let the PRD follow for implementation; for incremental features, a lean PRD alone is usually enough.
 
-**PRD vs user stories.** Many agile teams replace the PRD with a backlog of stories plus acceptance criteria [[1]](#ref-1)[[13]](#ref-13). *Recommendation:* stories scale well for delivery but scatter the problem, metrics, and non-goals across many cards; keep a thin PRD as the connective tissue that the stories implement.
+**PRD vs user stories.** Many agile teams replace the PRD with a backlog of stories plus acceptance criteria [[1]](#ref-1)[[12]](#ref-12). *Recommendation:* stories scale well for delivery but scatter the problem, metrics, and non-goals across many cards; keep a thin PRD as the connective tissue that the stories implement.
 
-**MRD vs PRD vs BRD.** These blur in practice. The clean split: MRD = market problem and why; BRD = business needs and objectives; PRD = the product's what and how [[6]](#ref-6)[[13]](#ref-13). *Recommendation:* most modern teams fold the MRD's "why" into the PRD's problem and context sections rather than maintaining three documents.
+**MRD vs PRD vs BRD.** These blur in practice. The clean split: MRD = market problem and why; BRD = business needs and objectives; PRD = the product's what and how [[6]](#ref-6)[[12]](#ref-12). *Recommendation:* most modern teams fold the MRD's "why" into the PRD's problem and context sections rather than maintaining three documents.
 
 **How long?** Waterfall says thorough; agile says one page. *Recommendation:* let the downside of a misunderstanding set the length. Low-stakes feature: one page. Multi-team, regulated, or irreversible: the full variant.
 
@@ -136,7 +136,7 @@ The recurring ways a PRD goes wrong.
 
 ## 8. Relationships to other artifacts
 
-The PRD sits in a natural document lineage [[13]](#ref-13):
+The PRD sits in a natural document lineage [[12]](#ref-12):
 
 - **Upstream (precede it):** product strategy and roadmap (set the bet), discovery research and personas (validate the problem and user), opportunity solution trees or a problem statement (frame what is worth solving), and for new products a PR/FAQ or solution brief.
 - **Sibling / inside it:** the high-fidelity prototype (often the real experiential spec the PRD points at), and analytics or measurement plans.
@@ -150,7 +150,7 @@ In this library the PRD pairs with the `deliver-prd` skill and relates to the `u
 
 - **Solo or early-stage.** Use the lean variant, often just summary, problem, solution, and success metric. The one-pager is the right default [[7]](#ref-7).
 - **Large or multi-team.** Use the full variant; the dependencies, risks, and rollout sections carry their weight when coordination is the hard part.
-- **Regulated (health, finance, safety-critical).** The PRD feeds, and must trace to, formal requirements artifacts (SRS per ISO/IEC/IEEE 29148, requirements traceability matrices, design controls). Keep requirement IDs stable so downstream traceability holds [[13]](#ref-13).
+- **Regulated (health, finance, safety-critical).** The PRD feeds, and must trace to, formal requirements artifacts (SRS per ISO/IEC/IEEE 29148, requirements traceability matrices, design controls). Keep requirement IDs stable so downstream traceability holds [[12]](#ref-12).
 - **Discovery-led teams.** Invert the center of gravity: prototype first, then a lean PRD that captures the why, metrics, scope, and open questions the prototype cannot [[2]](#ref-2)[[3]](#ref-3).
 - **Amazon-style orgs.** Write the PR/FAQ first; the PRD is the implementation follow-on, not the starting point [[5]](#ref-5).
 
@@ -168,19 +168,19 @@ Tagged by reliability: `[primary]` standards body, regulator, or originating sou
 
 <a id="ref-1"></a>[1] Ken Schwaber and Jeff Sutherland. "[The 2020 Scrum Guide](https://scrumguides.org/scrum-guide.html)." scrumguides.org, 2020 (accessed 2026-06-30). [primary]
 
-<a id="ref-2"></a>[2] Marty Cagan. "[Revisiting the Product Spec](https://www.svpg.com/revisiting-the-product-spec/)." Silicon Valley Product Group, 2007 (accessed 2026-06-30). [practitioner]
+<a id="ref-2"></a>[2] Marty Cagan. "[Revisiting the Product Spec](https://www.svpg.com/revisiting-the-product-spec/)." Silicon Valley Product Group, **2006-10-12** (**fetched and verified 2026-07-16**). Verbatim: "But the majority of the product spec should be the high-fidelity prototype, representing the functional requirements, the information architecture, the interaction design, and the visual design of the user experience." [practitioner]
 
-<a id="ref-3"></a>[3] Marty Cagan. "[How To Write a Good PRD](https://www.svpg.com/wp-content/uploads/2024/07/How-To-Write-a-Good-PRD.pdf)." Silicon Valley Product Group, 2024 (accessed 2026-06-30). [practitioner]
+<a id="ref-3"></a>[3] Marty Cagan. "[How To Write a Good PRD](https://www.svpg.com/wp-content/uploads/2024/07/How-To-Write-a-Good-PRD.pdf)." Silicon Valley Product Group, 2024. **PDF; URL confirmed live 2026-07-16 (a prior 403 no longer reproduces), but the body was not read in this pass. Cited only as corroboration for the position [[2]](#ref-2) states verbatim; no claim rests on it alone.** [practitioner]
 
-<a id="ref-4"></a>[4] Marty Cagan. "[Discovery vs. Documentation](https://www.svpg.com/discovery-vs-documentation/)." Silicon Valley Product Group (accessed 2026-06-30). [practitioner]
+<a id="ref-4"></a>[4] Marty Cagan. "[Discovery vs. Documentation](https://www.svpg.com/discovery-vs-documentation/)." Silicon Valley Product Group. **URL confirmed live 2026-07-16 (a prior 403 no longer reproduces); body not read claim by claim in this pass. Cited as corroboration only.** [practitioner]
 
 <a id="ref-5"></a>[5] Colin Bryar and Bill Carr. "[The Amazon Working Backwards PR/FAQ Process](https://workingbackwards.com/concepts/working-backwards-pr-faq-process/)." Working Backwards; see also Bryar and Carr, "Working Backwards: Insights, Stories, and Secrets from Inside Amazon," 2021 (accessed 2026-06-30). [practitioner]
 
 <a id="ref-6"></a>[6] Pragmatic Institute. "[Writing the Market Requirements Document](https://www.pragmaticinstitute.com/resources/articles/product/writing-the-market-requirements-document/)." pragmaticinstitute.com (accessed 2026-06-30). [practitioner]
 
-<a id="ref-7"></a>[7] Lenny Rachitsky. "[Examples and templates of 1-Pagers and PRDs](https://www.lennysnewsletter.com/p/prds-1-pagers-examples)." Lenny's Newsletter (accessed 2026-06-30). [practitioner]
+<a id="ref-7"></a>[7] Lenny Rachitsky. "[Examples and templates of 1-Pagers and PRDs](https://www.lennysnewsletter.com/p/prds-1-pagers-examples)." Lenny's Newsletter. **PAYWALLED: the page returns "This post is for paid subscribers" and the article body is not readable (checked 2026-06-30 and 2026-07-16). Nothing is quoted from it, and claims it is cited for are corroborated from the free portion and from [[8]](#ref-8), which reproduces the template itself.** [practitioner]
 
-<a id="ref-8"></a>[8] "[Lenny's Product Requirements template](https://www.atlassian.com/software/confluence/templates/lennys-product-requirements)." Atlassian Confluence Templates (accessed 2026-06-30). [vendor]
+<a id="ref-8"></a>[8] "[Lenny's Product Requirements template](https://www.atlassian.com/software/confluence/templates/lennys-product-requirements)." Atlassian Confluence Templates, created by Lenny Rachitsky (**fetched and verified 2026-07-16**). The freely readable rendering of the template whose source post [[7]](#ref-7) is paywalled: sections run Description, Problem, Why, Success, Audience, then "What does this look like in the product?", and step one is "Crystallize the problem you are solving". [vendor]
 
 <a id="ref-9"></a>[9] ProductPlan. "[Product Requirements Document (PRD)](https://www.productplan.com/glossary/product-requirements-document/)." ProductPlan Glossary (accessed 2026-06-30). [vendor]
 
@@ -188,6 +188,4 @@ Tagged by reliability: `[primary]` standards body, regulator, or originating sou
 
 <a id="ref-11"></a>[11] Figma. "[How To Create a Product Requirements Document](https://www.figma.com/resource-library/product-requirements-document/)." Figma Resource Library (accessed 2026-06-30). [vendor]
 
-<a id="ref-12"></a>[12] Hustle Badger. "[12x PRD Examples and Real PRD Templates](https://www.hustlebadger.com/what-do-product-teams-do/prd-template-examples/)." hustlebadger.com (accessed 2026-06-30). [practitioner]
-
-<a id="ref-13"></a>[13] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 29 (PRD). Internal deep-research catalog, 2026. [internal]
+<a id="ref-12"></a>[12] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 29 (PRD). Internal deep-research catalog, 2026. [internal]
