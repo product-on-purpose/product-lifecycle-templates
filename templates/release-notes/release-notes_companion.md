@@ -17,7 +17,7 @@ translate a set of changes into something a reader can act on.
 The single most important habit is **writing for the reader, not the shipper**. The classic failure is
 notes "written for the team that shipped the feature, not the person who needs to make sense of it":
 "Implemented enhanced data persistence layer for improved throughput" where the user needed to hear
-"Your reports now load twice as fast" [[5]](#ref-5)[[6]](#ref-6).
+"Your reports now load twice as fast" [[6]](#ref-6).
 
 **At a glance**
 - Group changes into scannable categories (new, improved, fixed) so readers find what matters fast [[6]](#ref-6).
@@ -42,7 +42,7 @@ three reference points:
 - **Conventional Commits (1.0.0).** A commit-message convention (`feat:`, `fix:`, `BREAKING CHANGE:`)
   that lets tools derive both the next version and a draft changelog automatically; `fix` maps to PATCH,
   `feat` to MINOR, a breaking change to MAJOR [[3]](#ref-3). Tooling such as conventional-changelog,
-  semantic-release, and Google's release-please automates the whole flow [[3]](#ref-3)[[4]](#ref-4).
+  semantic-release, and Google's release-please automates the whole flow [[3]](#ref-3)[[4]](#ref-4)[[8]](#ref-8)[[9]](#ref-9).
 
 The trajectory is from hand-written, ad hoc notes toward a structured, partly-automated pipeline: commits
 generate a changelog, and curated release notes are derived from it for the audience that needs them.
@@ -90,7 +90,8 @@ do not bury a security-relevant fix in the generic "Fixed" list; it deserves its
 concrete upgrade path, or the notes have failed their main job for that change.
 
 **Known issues (full).** Problems shipping in this release, with workarounds and expected fix timing.
-*Why:* transparency improves credibility; users prefer knowing in advance [[6]](#ref-6).
+*Why:* if something is not fully resolved, saying so costs less than letting users discover it. Users
+respect transparency more than they resent imperfection [[6]](#ref-6).
 
 ---
 
@@ -117,7 +118,7 @@ Keep a Changelog so the same notes can serve as a changelog entry [[1]](#ref-1).
 - **Open-source / Keep a Changelog.** The structured, six-type, human-first changelog, maintained by hand
   or semi-automated [[1]](#ref-1).
 - **DevOps / continuous delivery.** Automated generation from Conventional Commits via SemVer-aware
-  tooling, with human curation for the customer-facing layer [[2]](#ref-2)[[3]](#ref-3)[[4]](#ref-4).
+  tooling, with human curation for the customer-facing layer [[2]](#ref-2)[[3]](#ref-3)[[4]](#ref-4)[[8]](#ref-8)[[9]](#ref-9).
 - **Product / marketing.** Customer-facing release notes and "what's new" announcements, written for
   adoption and delight, often with screenshots and benefit framing [[5]](#ref-5)[[6]](#ref-6).
 
@@ -138,12 +139,13 @@ alias of release notes [[7]](#ref-7), but the canonical sources treat them as re
 not maintain two hand-written records that can disagree.
 
 **Hand-written vs automated.** Conventional Commits plus tooling can generate notes from commit messages
-[[3]](#ref-3)[[4]](#ref-4), but raw generated notes are often unreadable to users ("don't dump git logs") [[1]](#ref-1). *Recommendation:*
+[[3]](#ref-3)[[4]](#ref-4)[[8]](#ref-8)[[9]](#ref-9), but raw generated notes are often unreadable to users ("don't dump git logs") [[1]](#ref-1). *Recommendation:*
 automate the changelog, hand-curate the customer-facing notes; let the machine do the record-keeping and
 the human do the translation.
 
-**Customer-facing vs internal.** One audience wants benefits and plain language; the other wants exact
-behavior, breaking changes, and migration detail [[5]](#ref-5)[[6]](#ref-6). *Recommendation:* this bundle's lean variant is
+**Customer-facing vs internal.** One audience wants benefits and plain language [[5]](#ref-5)[[6]](#ref-6);
+the other wants exact behavior, breaking changes stated prominently rather than buried, and migration
+steps [[10]](#ref-10). *Recommendation:* this bundle's lean variant is
 the customer layer and the full variant the complete record; for a release that needs both, ship the full
 notes internally and the lean notes externally, derived from the same source.
 
@@ -160,7 +162,8 @@ benefit.
 - **"Various improvements and bug fixes."** A summary that communicates nothing.
 - **Hidden breaking changes.** Shipping a breaking change without flagging it or giving an upgrade path [[2]](#ref-2).
 - **Security buried in "Fixed."** A security fix with no separate visibility or severity [[1]](#ref-1).
-- **No known issues.** Omitting known problems, so users hit them unprepared [[6]](#ref-6).
+- **No known issues.** Staying silent about what is not fully resolved, when saying so is what earns
+  the reader's trust [[6]](#ref-6).
 - **Two diverging records.** A hand-written changelog and hand-written notes that drift out of sync;
   derive one from the other instead [[1]](#ref-1).
 - **Ambiguous dates.** Non-ISO dates that read differently across regions [[1]](#ref-1).
@@ -189,7 +192,7 @@ In this library Release Notes pairs with the `deliver-release-notes` skill and c
 - **Open-source library.** Maintain a Keep a Changelog-format CHANGELOG.md as the source of truth and tag
   releases to it [[1]](#ref-1).
 - **Continuous delivery.** Generate the changelog from Conventional Commits and SemVer tooling, then
-  hand-curate the customer-facing notes [[3]](#ref-3)[[4]](#ref-4).
+  hand-curate the customer-facing notes [[3]](#ref-3)[[4]](#ref-4)[[8]](#ref-8)[[9]](#ref-9).
 - **Regulated or enterprise.** Pair release notes with the formal change record and deployment evidence;
   the notes communicate, the change record audits [[7]](#ref-7).
 
@@ -215,10 +218,16 @@ authority; `[vendor]` commercially motivated; `[internal]` this project. Researc
 
 <a id="ref-3"></a>[3] "[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)." conventionalcommits.org (accessed 2026-06-30). [primary]
 
-<a id="ref-4"></a>[4] "[conventional-changelog, semantic-release, and release-please (Google) tooling](https://github.com/conventional-changelog/conventional-changelog)." github.com (accessed 2026-06-30). [vendor]
+<a id="ref-4"></a>[4] "[conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)." github.com (accessed 2026-07-16). [vendor]
 
 <a id="ref-5"></a>[5] ProductPlan. "[How to Write Release Notes Your Users Will Actually Read](https://www.productplan.com/learn/release-notes-best-practices)." productplan.com (accessed 2026-06-30). [vendor]
 
-<a id="ref-6"></a>[6] Appcues, "[Release notes examples](https://www.appcues.com/blog/release-notes-examples)," and AnnounceKit, "Release Notes Best Practices." appcues.com (accessed 2026-06-30). [vendor]
+<a id="ref-6"></a>[6] Appcues. "[Release notes examples](https://www.appcues.com/blog/release-notes-examples)." appcues.com (accessed 2026-07-16). [vendor]
 
 <a id="ref-7"></a>[7] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 115 (Release Notes). Internal deep-research catalog, 2026. [internal]
+
+<a id="ref-8"></a>[8] "[semantic-release](https://github.com/semantic-release/semantic-release)." github.com (accessed 2026-07-16). [vendor]
+
+<a id="ref-9"></a>[9] "[release-please](https://github.com/googleapis/release-please)." Google, github.com (accessed 2026-07-16). [vendor]
+
+<a id="ref-10"></a>[10] AnnounceKit. "[Release Notes Best Practices](https://announcekit.app/guides/release-notes-best-practices)." announcekit.app (accessed 2026-07-16). [vendor]

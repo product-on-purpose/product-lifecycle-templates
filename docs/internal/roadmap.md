@@ -91,9 +91,21 @@ Effort: S = under 1 hour, M = roughly half a day, L = one or more days. Traces: 
 
 | WP | Work package | Deliverables | Effort | Traces |
 |---|---|---|---|---|
-| WP-10 | Citation integrity pass | SVPG entries gain retrieval qualifiers; Ranorex claim re-sourced or labeled author judgment; Keep a Changelog corrected to 1.1.2 with root URL; PRD refs 8 and 12 cited or removed, ref 12 retagged; Lenny quote de-quoted to paraphrase or verified via subscription; combined entries split; methodology section 6 gains the blocked/paywalled-source convention and the book/pre-web format rule | M | A-01..A-06, B-03 |
+| WP-10 | Citation integrity pass | SVPG entries gain retrieval qualifiers; Ranorex claim re-sourced or labeled author judgment; ~~Keep a Changelog corrected to 1.1.2 with root URL~~ **(withdrawn 2026-07-16: this instruction was wrong, see note below)**; PRD refs 8 and 12 cited or removed, ref 12 retagged; Lenny quote de-quoted to paraphrase or verified via subscription; combined entries split; methodology section 6 gains the blocked/paywalled-source convention and the book/pre-web format rule | M | A-01..A-06, B-03 |
 | WP-11 | Gate hardening v1 | check-bundles.py adds: reverse citation direction (padded entries fail); meta placeholder scan; history entry for current template_version; `pairs_with` resolution against a pinned skill-ID list; `related_templates` resolution against local bundles + `future:` convention; heading check extended to (level, text) tuples | M | D-02, D-01 partial, D-06, B-05 |
 | WP-12 | Decision closure | D2 skills-CLI install test run and recorded (30 min); D3 agentskills.io spec read and recorded (1 h); both closed in the plan with dated outcomes; decision SLA rule written into CONTRIBUTING (or STATE.md until it exists) | M | E-03, E-05 |
+
+> **WP-10 correction, 2026-07-16: the "Keep a Changelog corrected to 1.1.2" instruction was itself
+> wrong and is withdrawn.** Verified at the source: `keepachangelog.com/en/` serves **1.1.0** and
+> advertises no other version; `/en/1.1.1/` and `/en/1.1.2/` return HTTP 200 but are 242-byte redirect
+> stubs whose entire body is a canonical link and meta-refresh pointing **back to 1.1.0** (nonsense
+> versions like `/en/9.9.9/` 404 properly, so those 200s are real routes, not a catch-all). The repo
+> does carry `v1.1.1` and `v1.1.2` tags, and its latest *release* is v1.1.1, but those are site/repo
+> releases, not published spec versions; the audit most likely read a tag and mistook it for the spec.
+> The `release-notes` companion's existing citation (version 1.1.0 at `/en/1.1.0/`) is correct and is
+> the site's own declared canonical URL, so it was left unchanged. Recorded here because an audit
+> finding that is wrong will otherwise be executed on faith: following this row would have *introduced*
+> the defect class WP-10 exists to remove. See `templates/release-notes/release-notes_research-log.md`.
 | WP-13 | Consumer quickstart | README gains "Quick start: use a template" (6 literal steps); README claim reconciliation ("enforceable" scoped to what CI now actually runs; "complete/verified" aligned with beta status) | M | F-01, F-05, G-02 |
 | WP-14 | Release v0.1.0 | CHANGELOG.md with [0.1.0] section; git tag v0.1.0; release notes written **using the library's own release-notes lean template** (first dogfood artifact) | S | E-07, dogfood play (13_excellence section 3) |
 
