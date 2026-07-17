@@ -21,7 +21,9 @@ criteria) [[2]](#ref-2)[[3]](#ref-3). A team that treats the one-liner as a comp
 
 **At a glance**
 - It reframes work from "what to build" to "who needs what, and why."
-- It is deliberately small: sized to fit inside one iteration [[4]](#ref-4).
+- It is deliberately small. Wake's guidance is "at most a few person-weeks worth of work," with some
+  teams restricting stories to a few person-days [[4]](#ref-4); "small enough to fit inside one
+  iteration" is the common working gloss rather than Wake's wording.
 - Its value lives in the conversation it triggers, not the sentence on the card [[2]](#ref-2)[[3]](#ref-3).
 - Detailed "done" conditions live in its acceptance criteria, a separate concern (see the
   [acceptance-criteria](../acceptance-criteria/acceptance-criteria_companion.md) bundle).
@@ -38,16 +40,16 @@ Three contributions turned the practice into the form used today:
 
 - **The Connextra template (2001).** The XP team at Connextra in London devised the "As a [role], I want
   [goal], so that [benefit]" format and shared it; it became the most common story shape [[5]](#ref-5)[[7]](#ref-7). Mike
-  Cohn credits Rachel Davies, who in turn credits the whole team [[2]](#ref-2).
+  Cohn credits Rachel Davies, who in turn credits the whole team [[10]](#ref-10)[[7]](#ref-7).
 - **The Three C's (2001).** Ron Jeffries named the three components that keep a story from becoming a
   mini-spec: **Card** (a short written token), **Conversation** (where the detail is worked out), and
   **Confirmation** (the tests or acceptance criteria that say it is done) [[2]](#ref-2)[[3]](#ref-3).
 - **User Stories Applied (2004).** Mike Cohn's book generalized the practice beyond index cards and
-  became the standard reference [[2]](#ref-2)[[7]](#ref-7).
+  became the standard reference [[10]](#ref-10)[[7]](#ref-7).
 
 A quality heuristic followed in 2003: Bill Wake's **INVEST** (Independent, Negotiable, Valuable,
 Estimable, Small, Testable), a checklist for a good story or backlog item [[4]](#ref-4). Later, Jeff Patton's
-2014 *User Story Mapping* added a way to arrange stories into a narrative of the whole product [[7]](#ref-7).
+2014 *User Story Mapping* added a way to arrange stories into a narrative of the whole product [[12]](#ref-12)[[7]](#ref-7).
 
 Scrum did not invent the user story but adopted it widely: stories are the most common form of Product
 Backlog item, though the Scrum Guide itself does not mandate the format [[8]](#ref-8).
@@ -74,8 +76,10 @@ anything with real behavior, push detailed criteria into the acceptance-criteria
 overloading the card.
 
 **INVEST check (full).** A self-test of story quality [[4]](#ref-4). *Why:* it catches the two failures that wreck
-sprints, stories that are not Independent and stories that are not Small. *Expert note:* "Negotiable"
-does not mean the need is up for debate, only the path to meeting it [[4]](#ref-4).
+sprints, stories that are not Independent and stories that are not Small. *Expert note:* Wake defines
+"Negotiable" as meaning a story "is not an explicit contract for features; rather, details will be
+co-created by the customer and programmer during development" [[4]](#ref-4). Reading that as *the need
+is fixed, the path is open* is this bundle's gloss, not Wake's wording.
 
 **Estimate and sizing (full).** The team's relative estimate and its confidence. *Why:* it informs
 planning. *Expert note:* an estimate is the output of a conversation, not a commitment; a precise number
@@ -126,10 +130,12 @@ stay light and lean on conversation [[2]](#ref-2).
 ## 6. Debates and contested boundaries
 
 **User story vs job story.** The sharpest live debate. Alan Klement, drawing on Jobs to be Done and an
-approach that originated at Intercom, argues the user story "contains too many assumptions and doesn't
-acknowledge causality," and that the "As a [role]" framing is engineering-driven rather than
-customer-driven [[6]](#ref-6). The job story replaces it with **"When [situation], I want [motivation], so I can
-[outcome]"**, emphasizing context over persona [[6]](#ref-6). *Recommendation:* use the user story as the default
+approach that originated at Intercom [[11]](#ref-11), argues that the user story carries too many
+assumptions and does not account for causality, and that the "As a [role]" framing is
+engineering-driven rather than customer-driven [[6]](#ref-6). *(Paraphrased, not quoted: the source is
+not retrievable from here, so nothing is presented as Klement's exact words.)* The job story replaces
+it with **"When [situation], I want [motivation], so I can [outcome]"**, emphasizing context over
+persona [[6]](#ref-6)[[11]](#ref-11). *Recommendation:* use the user story as the default
 (it is universally understood); reach for the job story when the user's situation and motivation are the
 crux and a generic role would flatten them.
 
@@ -200,19 +206,25 @@ INVEST check, and the same need expressed as a job story for contrast.
 Tagged by reliability: `[primary]` originating source or standards body; `[practitioner]` recognized
 authority; `[vendor]` commercially motivated; `[reference]` consolidated secondary. Researched 2026-06-30.
 
-<a id="ref-1"></a>[1] Kent Beck. "Extreme Programming Explained: Embrace Change." Addison-Wesley, 1999; user stories introduced on the Chrysler C3 project, 1997. [primary]
+<a id="ref-1"></a>[1] Kent Beck. *Extreme Programming Explained: Embrace Change.* Addison-Wesley, 1999. Print book; no URL. Cited from the book, not retrieved online. (For the dated C3/1997 and 1999 history, see [[7]](#ref-7), which was verified.) [primary]
 
-<a id="ref-2"></a>[2] Mike Cohn. "User Stories Applied: For Agile Software Development." Addison-Wesley, 2004; and "[User Stories and User Story Examples](https://www.mountaingoatsoftware.com/agile/user-stories)." Mountain Goat Software (accessed 2026-06-30). [practitioner]
+<a id="ref-2"></a>[2] Mike Cohn. "[User Stories and User Story Examples](https://www.mountaingoatsoftware.com/agile/user-stories)." Mountain Goat Software (**fetched and verified 2026-07-16**). Verbatim: "As a < WHO >, I want < WHAT > so that < WHY >."; "every user story is a placeholder for a future conversation"; "Ron Jeffries named in 2001 with the wonderful alliteration of card, conversation, and confirmation". [practitioner]
+
+<a id="ref-10"></a>[10] Mike Cohn. *User Stories Applied: For Agile Software Development.* Addison-Wesley, 2004. Print book; no URL. Cited from the book, not retrieved online. [practitioner]
 
 <a id="ref-3"></a>[3] Ron Jeffries. "[Essential XP: Card, Conversation, Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/)," 2001 (the Three C's). ronjeffries.com (accessed 2026-06-30). [practitioner]
 
 <a id="ref-4"></a>[4] Bill Wake. "[INVEST in Good Stories, and SMART Tasks](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/)." XP123, 2003 (accessed 2026-06-30). [practitioner]
 
-<a id="ref-5"></a>[5] Connextra team (credited to Rachel Davies and the team). The "As a [role], I want [goal], so that [benefit]" template, 2001. [practitioner]
+<a id="ref-5"></a>[5] The XP team at Connextra, London, 2001. The "As a [role], I want [goal], so that [benefit]" template. No primary source is online; the origin and its attribution are cited from [[7]](#ref-7), which records: "2001: The XP team at Connextra in London devised the user story format" and "Cohn names Rachel Davies as the inventor of user stories. While Davies was a team member at Connextra she credits the team as a whole with the invention." [practitioner]
 
-<a id="ref-6"></a>[6] Alan Klement. "[Replacing the User Story with the Job Story](https://jtbd.info/replacing-the-user-story-with-the-job-story-af7cdee10c27)." jtbd.info, 2013; and Intercom, "[How we accidentally invented Job Stories](https://www.intercom.com/blog/accidentally-invented-job-stories/)." intercom.com (accessed 2026-06-30). [practitioner]
+<a id="ref-6"></a>[6] Alan Klement. "[Replacing the User Story with the Job Story](https://jtbd.info/replacing-the-user-story-with-the-job-story-af7cdee10c27)." jtbd.info, 2013. **Not retrievable from this environment: the jtbd.info domain times out (connection timeout, 2026-07-16), as does the site root. The article is live and indexed elsewhere, so this is an access failure, not a dead link; claims are corroborated from search excerpts and from [[11]](#ref-11), not verified against the source text.** [practitioner]
 
-<a id="ref-7"></a>[7] Wikipedia. "[User story](https://en.wikipedia.org/wiki/User_story)." en.wikipedia.org (accessed 2026-06-30); see also Jeff Patton, "User Story Mapping," O'Reilly, 2014. [reference]
+<a id="ref-11"></a>[11] Intercom. "[How we accidentally invented Job Stories](https://www.intercom.com/blog/accidentally-invented-job-stories/)." intercom.com (accessed 2026-07-16). [practitioner]
+
+<a id="ref-7"></a>[7] Wikipedia. "[User story](https://en.wikipedia.org/wiki/User_story)." en.wikipedia.org (**fetched and verified 2026-07-16**). Verbatim: "1997: Kent Beck introduces user stories at the Chrysler C3 project in Detroit."; "1999: Kent Beck published the first edition of the book Extreme Programming Explained"; "2001: The XP team at Connextra in London devised the user story format". [reference]
+
+<a id="ref-12"></a>[12] Jeff Patton. *User Story Mapping: Discover the Whole Story, Build the Right Product.* O'Reilly, 2014. Print book; no URL. Cited from the book. ([[7]](#ref-7) records the 2014 publication of the technique.) [practitioner]
 
 <a id="ref-8"></a>[8] Ken Schwaber and Jeff Sutherland. "[The 2020 Scrum Guide](https://scrumguides.org/scrum-guide.html)." scrumguides.org, 2020 (accessed 2026-06-30). [primary]
 
