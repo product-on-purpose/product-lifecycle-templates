@@ -21,7 +21,8 @@ before work starts [[2]](#ref-2)[[4]](#ref-4).
 **At a glance**
 - They are **per-story** and **functional**: what this story must do for its user [[2]](#ref-2).
 - They come in two dominant forms: **rule-oriented** (a checklist of conditions) and **scenario-oriented**
-  (Given/When/Then), and the two mix freely [[4]](#ref-4)[[7]](#ref-7).
+  (Given/When/Then) [[4]](#ref-4)[[5]](#ref-5). *That the two mix freely, and should, is this bundle's
+  position rather than a sourced claim; see [section 6](#6-debates-and-contested-boundaries).*
 - They are written from the user's perspective, describing *what*, not *how* [[2]](#ref-2).
 - They are distinct from the **Definition of Done**, which is team-wide and applies to every increment
   (see [§6](#6-debates-and-contested-boundaries)) [[2]](#ref-2)[[6]](#ref-6).
@@ -34,13 +35,17 @@ Acceptance criteria grew out of two lineages that converged.
 
 The first is the **user story** itself. From the start, a story was incomplete without its Confirmation,
 the tests that say it is done; Jeffries named this the third C in 2001, and Cohn described the same idea
-as a story's "conditions of satisfaction" [[3]](#ref-3). In this lineage, AC are simply the testable half of a
+as a story's "conditions of satisfaction" [[10]](#ref-10). In this lineage, AC are simply the testable half of a
 good story.
 
-The second is **Behavior-Driven Development (BDD)**. Dan North created BDD in 2006 to move testing
-language away from developer-centric assertions and toward business-readable descriptions of behavior
-[[1]](#ref-1). In 2007 the **Gherkin** syntax formalized the **Given / When / Then** structure (precondition,
-trigger, outcome), giving AC a precise, executable shape that both humans and tools could read [[1]](#ref-1)[[5]](#ref-5).
+The second is **Behavior-Driven Development (BDD)**. Dan North introduced BDD in 2006 to move testing
+language away from developer-centric assertions and toward business-readable descriptions of behavior,
+framing it as *"Given some initial context (the givens), When an event occurs, Then ensure some
+outcomes"* [[1]](#ref-1). The structure was later given a name and a tool: in 2008 Aslak Hellesoy
+extracted the Given-When-Then parser from RSpec into **Cucumber**, and named the syntax **Gherkin**
+"to separate it from the tool" [[9]](#ref-9). Gherkin gave AC a precise, executable shape that both
+humans and tools could read, with `Given` putting the system in a known state, `When` describing an
+event or action, and `Then` describing an expected outcome [[5]](#ref-5).
 Given/When/Then turned acceptance criteria from a prose checklist into structured scenarios that could
 double as automated tests [[4]](#ref-4)[[5]](#ref-5).
 
@@ -59,14 +64,16 @@ story they gate; "accepted into what" must be unambiguous. *Beginner trap:* free
 no parent story.
 
 **Acceptance criteria (lean).** The rule-based conditions, as a checklist of observable, pass/fail
-outcomes [[2]](#ref-2)[[7]](#ref-7). *Why:* discrete rules ("must reject an empty name") are clearest as a list. *Expert
+outcomes [[2]](#ref-2). *Why:* discrete rules ("must reject an empty name") are clearest as a list; that
+is this bundle's judgment, not a sourced claim. *Expert
 note:* keep each criterion to a single, verifiable claim; a criterion you cannot mark pass or fail is
 not finished.
 
 **Scenarios, Given/When/Then (full).** Behavior expressed as context, action, outcome [[1]](#ref-1)[[5]](#ref-5). *Why:* flows
-are clearer as scenarios than as rules. *Beginner trap:* one scenario with ten "And" steps; split it so
-each scenario is one behavior [[5]](#ref-5). *Expert note:* Given/When/Then maps to precondition/trigger/outcome;
-keep "When" to a single action, or the scenario is testing two things [[1]](#ref-1).
+are clearer as scenarios than as rules. *Beginner trap:* one scenario with ten "And" steps. Cucumber's
+own guidance is to keep examples short, recommending 3-5 steps [[5]](#ref-5). *Expert note:*
+Given/When/Then maps to precondition/trigger/outcome [[1]](#ref-1)[[5]](#ref-5); keeping "When" to a
+single action, so the scenario tests one thing, is this bundle's rule rather than a sourced one.
 
 **Edge cases and negative paths (full).** The unhappy paths: empty input, permission denied, conflict,
 timeout, missing data. *Why:* most production defects live here, not on the happy path. *Expert note:*
@@ -99,7 +106,7 @@ when a flow is genuinely easier to read as Given/When/Then than as rules [[7]](#
 
 ## 5. Methodology lineage
 
-- **XP / user stories.** AC are the story's Confirmation, the testable conditions of satisfaction [[3]](#ref-3).
+- **XP / user stories.** AC are the story's Confirmation [[3]](#ref-3), the testable conditions of satisfaction [[10]](#ref-10).
 - **Scrum.** AC gate the individual Product Backlog item; the Scrum Guide does not name "acceptance
   criteria" as such but relies on them implicitly through the backlog and the Definition of Done [[2]](#ref-2)[[6]](#ref-6).
 - **BDD.** AC become Given/When/Then scenarios, often executable as Gherkin, blurring the line between a
@@ -119,7 +126,8 @@ written per story during refinement; the DoD is set once, up front, and revised 
 truly done only when it meets **both** its AC and the DoD [[2]](#ref-2). *Recommendation:* never duplicate DoD
 items into AC; if a check applies to every story, it belongs in the DoD.
 
-**Rule-oriented vs scenario-oriented.** Some teams default to checklists, others to Given/When/Then [[7]](#ref-7).
+**Rule-oriented vs scenario-oriented.** Some teams default to checklists, others to Given/When/Then.
+*(An observation from practice; no cited source surveys team defaults.)*
 Checklists are faster to write and read for discrete rules; scenarios are clearer for flows and convert
 to automated tests [[4]](#ref-4)[[5]](#ref-5)[[7]](#ref-7). *Recommendation:* mix them, rules for conditions, scenarios for behavior;
 do not force everything into Given/When/Then, which bloats simple criteria.
@@ -187,11 +195,13 @@ Given/When/Then scenarios, explicit edge cases (a missing filter), and a non-fun
 Tagged by reliability: `[primary]` originating source or standards body; `[practitioner]` recognized
 authority; `[vendor]` commercially motivated; `[reference]` consolidated secondary. Researched 2026-06-30.
 
-<a id="ref-1"></a>[1] Dan North. "[Introducing BDD](https://dannorth.net/introducing-bdd/)," 2006; Gherkin and Given/When/Then, 2007. dannorth.net (accessed 2026-06-30). [primary]
+<a id="ref-1"></a>[1] Dan North. "[Introducing BDD](https://dannorth.net/blog/introducing-bdd/)." First published in *Better Software* magazine, March 2006. dannorth.net (accessed 2026-07-16). [primary]
 
-<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org (accessed 2026-06-30). [primary]
+<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org. **Publicly readable but blocks automated retrieval (HTTP 403 on fetch, 2026-06-30 and 2026-07-16); claims below are corroborated from search excerpts and cross-checked against the Scrum Guide [[6]](#ref-6), not verified against this page's text.** [primary]
 
-<a id="ref-3"></a>[3] Ron Jeffries. "Card, Conversation, Confirmation," 2001; and Mike Cohn, "User Stories Applied," 2004 (conditions of satisfaction). [practitioner]
+<a id="ref-3"></a>[3] Ron Jeffries. "[Essential XP: Card, Conversation, Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/)." ronjeffries.com, 2001 (accessed 2026-07-16). [practitioner]
+
+<a id="ref-10"></a>[10] Mike Cohn. *User Stories Applied: For Agile Software Development.* Addison-Wesley, 2004 (conditions of satisfaction). Print book; no URL. Cited from the book, not retrieved online. [practitioner]
 
 <a id="ref-4"></a>[4] Thoughtworks. "[Applying BDD acceptance criteria in user stories](https://www.thoughtworks.com/en-us/insights/blog/applying-bdd-acceptance-criteria-user-stories)." thoughtworks.com (accessed 2026-06-30). [practitioner]
 
@@ -202,3 +212,5 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 <a id="ref-7"></a>[7] Ranorex. "[When to Use Given-When-Then Acceptance Criteria](https://www.ranorex.com/blog/given-when-then-tests/)." ranorex.com (accessed 2026-06-30). [vendor]
 
 <a id="ref-8"></a>[8] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 38 (Acceptance Criteria). Internal deep-research catalog, 2026. [internal]
+
+<a id="ref-9"></a>[9] Aslak Hellesoy, interviewed by Ben Linders. "[BDD Tool Cucumber is 10 Years Old: Q&A with its Founder Aslak Hellesoy](https://www.infoq.com/news/2018/04/cucumber-bdd-ten-years/)." InfoQ, 2018-04 (accessed 2026-07-16). Hellesoy: "I created Cucumber in 2008"; "I also decided to give the Given-When-Then syntax a name, to separate it from the tool. That's why it's called Gherkin (a small, pickled Cucumber)." [primary]
