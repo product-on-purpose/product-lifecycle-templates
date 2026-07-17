@@ -17,7 +17,9 @@
 ## Details
 
 ### How to read each entry
-Schema per item: **canonical_name** | aliases | lifecycle_phase | primary_owner | purpose | typical_sections | when_used | methodology | formality | rarity | relationships | notes | size_variant (S/M/L).
+Schema per item: **canonical_name** | aliases | stage | primary_owner | purpose | typical_sections | when_used | methodology | formality | rarity | relationships | notes | size_variant (S/M/L).
+
+> **Field renamed 2026-07-17 (finding TX-2):** this column was `lifecycle_phase`. It is a document *stage* (a compound value whose first segment the atlas shows), NOT the six-value lifecycle `phase` a bundle's meta declares and shares with pm-skills. The two were colliding in name, with near-collisions like `discovery`/`discover`, so the catalog's field is now `stage` and the name `phase` is reserved library-wide for the bundle axis. The prose uses of "phase" below (e.g. "design phase", "phased rollout") are ordinary English in the notes and when-used columns, not this field.
 
 ---
 
@@ -298,7 +300,7 @@ Staged, concrete next steps for building the template repository:
 ## Repo-Architecture Recommendation (Appendix)
 - **Folder taxonomy:** top-level folders mirror the 19 Matrix-E categories (`/01-strategy-vision`, `/02-market-competitive`, ... `/19-legal-contractual`). Within each, one folder per canonical artifact, containing `S/`, `M/`, `L/` variant files plus a `meta.yaml`.
 - **Naming convention:** `category-canonicalname-size.ext` (e.g., `requirements-prd-M.md`); regulated artifacts prefix with domain (`reg-fda-dhf-L.md`). Dated decision files follow `YYYYMMDD-title.md` (the MADR/ADR convention).
-- **Machine-readable manifest (frontmatter):** each template carries YAML frontmatter with `canonical_name`, `aliases[]`, `category`, `lifecycle_phase`, `primary_owner`, `methodology`, `formality`, `rarity`, `size_variant`, `relationships[]`, `source_refs[]`, `last_reviewed`.
+- **Machine-readable manifest (frontmatter):** each template carries YAML frontmatter with `canonical_name`, `aliases[]`, `category`, `stage` (renamed from `lifecycle_phase`, see the schema note above), `primary_owner`, `methodology`, `formality`, `rarity`, `size_variant`, `relationships[]`, `source_refs[]`, `last_reviewed`.
 - **Alias index format:** a single `alias-index.json` mapping every alias string to its canonical artifact path, enabling search and preventing duplicate creation. Example: `{"product spec": "requirements/prd", "product brief": "requirements/prd", "RCA": "operations-incident/postmortem"}`.
 - **Cross-references:** use the `relationships[]` field to render a dependency graph (e.g., Vision -> Strategy -> Roadmap -> PRD -> Design Doc -> ADR -> Test Plan), so authors can navigate the natural document lineage.
 

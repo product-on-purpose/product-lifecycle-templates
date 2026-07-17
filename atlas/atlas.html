@@ -355,7 +355,7 @@
   <div class="segmented" role="group" aria-label="Group by">
     <span class="ctl-label">Group</span>
     <button class="pill" id="grp-category" aria-pressed="true">Category</button>
-    <button class="pill" id="grp-phase" aria-pressed="false">Phase</button>
+    <button class="pill" id="grp-stage" aria-pressed="false">Stage</button>
   </div>
 
   <div class="chipset" role="group" aria-label="Filter by tier">
@@ -378,7 +378,7 @@
 
 <footer>
   <p><b>About this map.</b> Generated from the project's 205-type master catalog. Tier 1 is the must-have core (labelled "must-have 28" in the catalog; the enumerated list resolves to <b>27</b> distinct canonical types, not fabricated up to 28). Tier 3 flags artifacts whose methodology names a regulatory frame (FDA, ISO, SOC 2, GDPR, and similar). Most Tier 2 and Tier 3 assignments are inferred from the catalog's formality and methodology fields rather than stated per type; a type's drawer notes when its tier was inferred.</p>
-  <p><b>Data honesty.</b> Lifecycle phase is normalized to the first segment of the catalog's compound phase field, so a few tokens are really disciplines (architecture, security, enablement) rather than pure phases. Rarity carries four source values (common, occasional, rare, rare-or-legacy) preserved verbatim. Relationships were extracted from prose and may not all resolve to another named artifact in the set.</p>
+  <p><b>Data honesty.</b> The <b>stage</b> shown here is the catalog's own document-stage dimension, normalized to the first segment of a compound field, so a few tokens are really disciplines (architecture, security, enablement) rather than pure stages. It is deliberately NOT the same thing as a bundle's lifecycle <code>phase</code> (the six-value discover/define/develop/deliver/measure/iterate axis this library shares with pm-skills); this field was renamed from <code>phase</code> to <code>stage</code> so the two never get confused (finding TX-2). Rarity carries four source values (common, occasional, rare, rare-or-legacy) preserved verbatim. Relationships were extracted from prose and may not all resolve to another named artifact in the set.</p>
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -407,7 +407,7 @@
     "Knowledge / Enablement",
     "Legal / Contractual"
   ],
-  "phases": [
+  "stages": [
     "ideation",
     "discovery",
     "market",
@@ -449,7 +449,7 @@
         "Vision FAQ (Cagan)"
       ],
       "category": "Strategy / Vision",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "Product Manager (contrib: exec, design, eng)",
       "purpose": "Articulate the long-term aspirational end-state the product serves",
       "methodology": "methodology-agnostic",
@@ -474,7 +474,7 @@
         "product operating model strategy"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "Product Manager / CPO",
       "purpose": "Define which problems matter most and the bets to win",
       "methodology": "methodology-agnostic; OKR-friendly",
@@ -500,7 +500,7 @@
         "value case"
       ],
       "category": "Strategy / Vision",
-      "phase": "initiation",
+      "stage": "initiation",
       "owner": "PM / Program Manager",
       "purpose": "Justify investment by weighing benefits, costs, risks, alignment",
       "methodology": "PMBOK strategy artifact; methodology-agnostic",
@@ -523,7 +523,7 @@
         "BMC (Osterwalder)"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "Founder / PM",
       "purpose": "One-page model of how the business creates, delivers, captures value",
       "methodology": "Lean Startup",
@@ -545,7 +545,7 @@
         "(Maurya adaptation of BMC)"
       ],
       "category": "Strategy / Vision",
-      "phase": "ideation",
+      "stage": "ideation",
       "owner": "Founder / PM",
       "purpose": "Problem-focused one-pager for startups",
       "methodology": "Lean Startup",
@@ -568,7 +568,7 @@
         "V2MOM (Benioff variant)"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "Exec / PM",
       "purpose": "Set measurable objectives and key results to align teams",
       "methodology": "OKR-driven",
@@ -592,7 +592,7 @@
         "empowered-team charter"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "CPO / Head of Product",
       "purpose": "Define how product teams are structured and empowered",
       "methodology": "SVPG/Cagan",
@@ -615,7 +615,7 @@
         "North Star framework"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "PM / Data",
       "purpose": "Define the single metric proxying delivered value plus input metrics",
       "methodology": "growth/OKR",
@@ -639,7 +639,7 @@
         "portfolio canvas"
       ],
       "category": "Strategy / Vision",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "Portfolio/Exec",
       "purpose": "Connect enterprise strategy to portfolio investment",
       "methodology": "SAFe/scaled",
@@ -661,7 +661,7 @@
         "MRD"
       ],
       "category": "Market / Competitive",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "PM / PMM",
       "purpose": "Capture market problem, size, and segment needs",
       "methodology": "Waterfall/traditional",
@@ -685,7 +685,7 @@
         "benchmarking report"
       ],
       "category": "Market / Competitive",
-      "phase": "market",
+      "stage": "market",
       "owner": "PMM / PM",
       "purpose": "Map competitors' strengths, weaknesses, positioning",
       "methodology": "methodology-agnostic",
@@ -708,7 +708,7 @@
         "market opportunity analysis"
       ],
       "category": "Market / Competitive",
-      "phase": "feasibility",
+      "stage": "feasibility",
       "owner": "PM / Strategy / Finance",
       "purpose": "Quantify addressable market opportunity",
       "methodology": "methodology-agnostic",
@@ -731,7 +731,7 @@
         "positioning map"
       ],
       "category": "Market / Competitive",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "PMM",
       "purpose": "Define who the product is for and why it wins",
       "methodology": "methodology-agnostic",
@@ -756,7 +756,7 @@
         "message map"
       ],
       "category": "Market / Competitive",
-      "phase": "gtm",
+      "stage": "gtm",
       "owner": "PMM",
       "purpose": "Establish consistent value narrative and proof points",
       "methodology": "methodology-agnostic",
@@ -778,7 +778,7 @@
         "deal win-loss report"
       ],
       "category": "Market / Competitive",
-      "phase": "growth",
+      "stage": "growth",
       "owner": "PMM / Sales",
       "purpose": "Understand why deals are won or lost",
       "methodology": "methodology-agnostic",
@@ -802,7 +802,7 @@
         "packaging matrix"
       ],
       "category": "Market / Competitive",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "PMM / PM / Finance",
       "purpose": "Define price tiers, packaging, and rationale",
       "methodology": "methodology-agnostic",
@@ -825,7 +825,7 @@
         "customer insight summary"
       ],
       "category": "Market / Competitive",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "PMM / UXR",
       "purpose": "Aggregate customer signals from interviews, support, community",
       "methodology": "methodology-agnostic",
@@ -850,7 +850,7 @@
         "usability study report"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UX Researcher",
       "purpose": "Synthesize research findings and recommendations",
       "methodology": "design thinking/dual-track",
@@ -875,7 +875,7 @@
         "proto-persona"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UX Researcher / PMM",
       "purpose": "Represent a user segment's goals, behaviors, pains",
       "methodology": "design thinking",
@@ -898,7 +898,7 @@
         "(Gamestorming/XPLANE)"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UXR / Designer",
       "purpose": "Capture what a user says, thinks, does, feels",
       "methodology": "design thinking",
@@ -921,7 +921,7 @@
         "job story"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "PM / UXR",
       "purpose": "Frame the progress a customer is trying to make",
       "methodology": "JTBD",
@@ -941,7 +941,7 @@
         "OST (Teresa Torres)"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "PM / trio",
       "purpose": "Map outcome to opportunities to solutions to experiments",
       "methodology": "dual-track agile",
@@ -964,7 +964,7 @@
         "experience map"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UXR / Designer",
       "purpose": "Visualize a persona's end-to-end experience and pain points",
       "methodology": "design thinking",
@@ -986,7 +986,7 @@
         "service design blueprint"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "Service Designer",
       "purpose": "Map front-stage and back-stage processes supporting a journey",
       "methodology": "design thinking",
@@ -1009,7 +1009,7 @@
         "moderator guide"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UXR",
       "purpose": "Standardize questions for user interviews",
       "methodology": "design thinking",
@@ -1032,7 +1032,7 @@
         "survey design"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UXR / Data",
       "purpose": "Collect structured quantitative/qualitative input",
       "methodology": "methodology-agnostic",
@@ -1055,7 +1055,7 @@
         "smoke test plan"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "PM / UXR",
       "purpose": "Validate a concept's desirability before build",
       "methodology": "Lean Startup/dual-track",
@@ -1079,7 +1079,7 @@
         "contextual inquiry plan"
       ],
       "category": "Research / Discovery",
-      "phase": "discovery",
+      "stage": "discovery",
       "owner": "UXR",
       "purpose": "Plan longitudinal/in-context observation",
       "methodology": "design thinking",
@@ -1105,7 +1105,7 @@
         "feature spec"
       ],
       "category": "Requirements",
-      "phase": "definition",
+      "stage": "definition",
       "owner": "Product Manager",
       "purpose": "Define what to build, for whom, and why, with scope and success criteria",
       "methodology": "methodology-agnostic",
@@ -1127,7 +1127,7 @@
         "job story"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Product Owner",
       "purpose": "Describe a feature from the user's perspective",
       "methodology": "Agile/Scrum/XP",
@@ -1151,7 +1151,7 @@
         "feature epic"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Product Owner / PM",
       "purpose": "Group related stories under a larger body of work",
       "methodology": "Agile/SAFe",
@@ -1175,7 +1175,7 @@
         "SRS (IEEE 830 / now ISO/IEC/IEEE 29148)"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Business Analyst / Systems Eng",
       "purpose": "Document functional and non-functional requirements formally",
       "methodology": "Waterfall/V-model",
@@ -1200,7 +1200,7 @@
         "functional requirements doc"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA / PM",
       "purpose": "Detail required system behavior and functions",
       "methodology": "Waterfall/hybrid",
@@ -1224,7 +1224,7 @@
         "quality attributes spec"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Architect / BA",
       "purpose": "Specify performance, security, scalability, reliability targets",
       "methodology": "methodology-agnostic",
@@ -1248,7 +1248,7 @@
         "use case model"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA",
       "purpose": "Describe actor-system interactions to achieve a goal",
       "methodology": "Waterfall/UP/RUP",
@@ -1268,7 +1268,7 @@
         "BRD"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA",
       "purpose": "Capture high-level business needs and objectives",
       "methodology": "Waterfall/traditional",
@@ -1293,7 +1293,7 @@
         "traceability matrix"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA / QA",
       "purpose": "Link requirements to design, code, tests, and risk controls",
       "methodology": "regulated/Waterfall",
@@ -1317,7 +1317,7 @@
         "conditions of satisfaction"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Product Owner",
       "purpose": "Define conditions a story must meet to be accepted",
       "methodology": "Agile/BDD",
@@ -1340,7 +1340,7 @@
         "DoD"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Scrum Team",
       "purpose": "Shared quality standard for \"done\" increments",
       "methodology": "Scrum",
@@ -1362,7 +1362,7 @@
         "DoR"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "Scrum Team",
       "purpose": "Criteria a backlog item must meet to enter a sprint",
       "methodology": "Scrum/Kanban",
@@ -1385,7 +1385,7 @@
         "decision tables"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA",
       "purpose": "Document operational rules and decision logic",
       "methodology": "methodology-agnostic",
@@ -1410,7 +1410,7 @@
         "ERD"
       ],
       "category": "Requirements",
-      "phase": "requirements",
+      "stage": "requirements",
       "owner": "BA / Data Architect",
       "purpose": "Define data entities, attributes, relationships",
       "methodology": "methodology-agnostic",
@@ -1433,7 +1433,7 @@
         "working-backwards doc"
       ],
       "category": "Specification",
-      "phase": "ideation",
+      "stage": "ideation",
       "owner": "PM (Amazon-style orgs)",
       "purpose": "Force customer-centric clarity before building by writing the launch announcement first",
       "methodology": "Amazon working-backwards",
@@ -1456,7 +1456,7 @@
         "narrative"
       ],
       "category": "Specification",
-      "phase": "strategy",
+      "stage": "strategy",
       "owner": "PM / Lead",
       "purpose": "Present a proposal or review as a dense 6-page prose narrative read silently in-meeting",
       "methodology": "Amazon working-backwards",
@@ -1480,7 +1480,7 @@
         "shaped work writeup"
       ],
       "category": "Specification",
-      "phase": "definition",
+      "stage": "definition",
       "owner": "Shaper (senior PM/designer/eng)",
       "purpose": "Present a shaped bet with bounded appetite for the betting table",
       "methodology": "Shape Up (Basecamp)",
@@ -1501,7 +1501,7 @@
         "fat marker sketch"
       ],
       "category": "Specification",
-      "phase": "definition",
+      "stage": "definition",
       "owner": "Shaper",
       "purpose": "Communicate solution shape at low fidelity to preserve team latitude",
       "methodology": "Shape Up",
@@ -1527,7 +1527,7 @@
         "software design description (IEEE 1016)"
       ],
       "category": "Specification",
-      "phase": "design",
+      "stage": "design",
       "owner": "Software Architect / Eng Lead",
       "purpose": "Describe the technical design and how the system will be built",
       "methodology": "methodology-agnostic",
@@ -1552,7 +1552,7 @@
         "eng RFC"
       ],
       "category": "Specification",
-      "phase": "design",
+      "stage": "design",
       "owner": "Engineer / Architect",
       "purpose": "Propose a technical change for open discussion before deciding",
       "methodology": "methodology-agnostic",
@@ -1576,7 +1576,7 @@
         "API contract"
       ],
       "category": "Specification",
-      "phase": "specification",
+      "stage": "specification",
       "owner": "Engineer / Tech Writer",
       "purpose": "Define API endpoints, schemas, auth, and contracts",
       "methodology": "methodology-agnostic",
@@ -1597,7 +1597,7 @@
         "integration spec"
       ],
       "category": "Specification",
-      "phase": "specification",
+      "stage": "specification",
       "owner": "Systems Eng / Architect",
       "purpose": "Define interfaces between systems/components",
       "methodology": "Waterfall/systems eng",
@@ -1621,7 +1621,7 @@
         "IaC definition"
       ],
       "category": "Specification",
-      "phase": "specification",
+      "stage": "specification",
       "owner": "DevOps / SRE",
       "purpose": "Define environment, configuration, and infrastructure requirements",
       "methodology": "DevOps",
@@ -1644,7 +1644,7 @@
         "schematic"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "UI/UX Designer",
       "purpose": "Show layout and structure without visual styling",
       "methodology": "methodology-agnostic",
@@ -1668,7 +1668,7 @@
         "hi-fi mockup"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "UI Designer",
       "purpose": "Present pixel-accurate visual design",
       "methodology": "methodology-agnostic",
@@ -1692,7 +1692,7 @@
         "hi-fi prototype"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "Designer",
       "purpose": "Simulate interactions for testing and as specification",
       "methodology": "design thinking/dual-track",
@@ -1718,7 +1718,7 @@
         "style guide"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "Design Systems team",
       "purpose": "Provide reusable components, tokens, and usage rules",
       "methodology": "methodology-agnostic",
@@ -1740,7 +1740,7 @@
         "IA diagram"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "IA / UX Designer",
       "purpose": "Define content structure and navigation",
       "methodology": "methodology-agnostic",
@@ -1763,7 +1763,7 @@
         "wireflow"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "UX Designer",
       "purpose": "Map the steps and decisions a user takes through a task",
       "methodology": "methodology-agnostic",
@@ -1787,7 +1787,7 @@
         "context/container/component/code diagrams"
       ],
       "category": "Design / Architecture",
-      "phase": "architecture",
+      "stage": "architecture",
       "owner": "Software Architect",
       "purpose": "Visualize architecture at hierarchical levels of detail",
       "methodology": "methodology-agnostic",
@@ -1810,7 +1810,7 @@
         "arc42 template"
       ],
       "category": "Design / Architecture",
-      "phase": "architecture",
+      "stage": "architecture",
       "owner": "Architect",
       "purpose": "Provide a comprehensive, structured architecture description",
       "methodology": "methodology-agnostic",
@@ -1834,7 +1834,7 @@
         "V&B (SEI)"
       ],
       "category": "Design / Architecture",
-      "phase": "architecture",
+      "stage": "architecture",
       "owner": "Architect",
       "purpose": "Document architecture via stakeholder-specific views",
       "methodology": "methodology-agnostic",
@@ -1856,7 +1856,7 @@
         "DFD"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "Architect / Security Eng",
       "purpose": "Model how data moves through processes, stores, and boundaries",
       "methodology": "methodology-agnostic",
@@ -1880,7 +1880,7 @@
         "physical data model"
       ],
       "category": "Design / Architecture",
-      "phase": "design",
+      "stage": "design",
       "owner": "Data Architect / Engineer",
       "purpose": "Define physical database structure",
       "methodology": "methodology-agnostic",
@@ -1904,7 +1904,7 @@
         "cloud architecture"
       ],
       "category": "Design / Architecture",
-      "phase": "architecture",
+      "stage": "architecture",
       "owner": "Architect / SRE",
       "purpose": "Document runtime topology and infrastructure",
       "methodology": "DevOps",
@@ -1928,7 +1928,7 @@
         "decision record"
       ],
       "category": "Decision Records",
-      "phase": "decision",
+      "stage": "decision",
       "owner": "Engineer / Architect",
       "purpose": "Capture a significant architectural decision with context and consequences",
       "methodology": "methodology-agnostic",
@@ -1951,7 +1951,7 @@
         "decision matrix"
       ],
       "category": "Decision Records",
-      "phase": "decision",
+      "stage": "decision",
       "owner": "PM / PgM",
       "purpose": "Track key decisions, rationale, owners, dates",
       "methodology": "methodology-agnostic",
@@ -1973,7 +1973,7 @@
         "weighted scoring matrix"
       ],
       "category": "Decision Records",
-      "phase": "decision",
+      "stage": "decision",
       "owner": "Architect / BA",
       "purpose": "Evaluate options against weighted criteria",
       "methodology": "methodology-agnostic",
@@ -1997,7 +1997,7 @@
         "technical investigation"
       ],
       "category": "Decision Records",
-      "phase": "decision",
+      "stage": "decision",
       "owner": "Engineer",
       "purpose": "Time-boxed investigation to reduce uncertainty",
       "methodology": "Agile/XP",
@@ -2022,7 +2022,7 @@
         "outcome roadmap"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Product Manager",
       "purpose": "Communicate sequence and timing of product outcomes/features",
       "methodology": "methodology-agnostic",
@@ -2046,7 +2046,7 @@
         "release schedule"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "PM / Release Manager",
       "purpose": "Plan what ships in which release and when",
       "methodology": "methodology-agnostic",
@@ -2070,7 +2070,7 @@
         "PID"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "initiation",
+      "stage": "initiation",
       "owner": "Project Manager",
       "purpose": "Formally authorize the project and grant PM authority",
       "methodology": "PMBOK/Waterfall",
@@ -2093,7 +2093,7 @@
         "project one-pager"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "initiation",
+      "stage": "initiation",
       "owner": "PM",
       "purpose": "Lightweight project definition for smaller efforts",
       "methodology": "PMBOK 7 (new)",
@@ -2116,7 +2116,7 @@
         "project plan"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Project Manager",
       "purpose": "Define how the project is executed, monitored, controlled",
       "methodology": "PMBOK/Waterfall",
@@ -2137,7 +2137,7 @@
         "product breakdown structure"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Project Manager",
       "purpose": "Decompose project scope into manageable work packages",
       "methodology": "PMBOK/Waterfall",
@@ -2162,7 +2162,7 @@
         "project timeline"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Project Manager",
       "purpose": "Sequence activities with dependencies and dates",
       "methodology": "PMBOK/Waterfall",
@@ -2185,7 +2185,7 @@
         "master backlog"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Product Owner",
       "purpose": "Ordered, emergent list of all work to improve the product",
       "methodology": "Scrum/Kanban/agile",
@@ -2207,7 +2207,7 @@
         "iteration backlog"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Developers",
       "purpose": "Selected items plus plan for one sprint",
       "methodology": "Scrum",
@@ -2229,7 +2229,7 @@
         "program increment objectives"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Agile Team / RTE",
       "purpose": "Business-value-weighted goals each team commits to for a PI",
       "methodology": "SAFe",
@@ -2252,7 +2252,7 @@
         "ART planning board"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "RTE",
       "purpose": "Visualize features, milestones, cross-team dependencies across a PI",
       "methodology": "SAFe",
@@ -2274,7 +2274,7 @@
         "risk ROAM board (Resolved/Owned/Accepted/Mitigated)"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "RTE / Team",
       "purpose": "Categorize and manage PI risks",
       "methodology": "SAFe",
@@ -2297,7 +2297,7 @@
         "team agreement"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "Team / Scrum Master",
       "purpose": "Establish team purpose, norms, roles, working agreements",
       "methodology": "Agile/PMBOK",
@@ -2318,7 +2318,7 @@
         "capacity model"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "PM / PgM",
       "purpose": "Plan people and capacity against demand",
       "methodology": "PMBOK",
@@ -2341,7 +2341,7 @@
         "cross-team dependency matrix"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "PgM / RTE",
       "purpose": "Track and visualize inter-team/inter-system dependencies",
       "methodology": "SAFe/scaled",
@@ -2364,7 +2364,7 @@
         "stakeholder communication plan"
       ],
       "category": "Planning / Roadmapping",
-      "phase": "planning",
+      "stage": "planning",
       "owner": "PM",
       "purpose": "Define who receives what information, how, and when",
       "methodology": "PMBOK",
@@ -2388,7 +2388,7 @@
         "t-shirt sizing"
       ],
       "category": "Estimation",
-      "phase": "estimation",
+      "stage": "estimation",
       "owner": "Developers",
       "purpose": "Quantify relative effort of work items",
       "methodology": "Agile/Scrum",
@@ -2411,7 +2411,7 @@
         "(Shape Up)"
       ],
       "category": "Estimation",
-      "phase": "estimation",
+      "stage": "estimation",
       "owner": "Shaper",
       "purpose": "State fixed time the org will invest, constraining the solution",
       "methodology": "Shape Up",
@@ -2434,7 +2434,7 @@
         "cost baseline"
       ],
       "category": "Estimation",
-      "phase": "estimation",
+      "stage": "estimation",
       "owner": "PM / Finance",
       "purpose": "Estimate and baseline project costs",
       "methodology": "PMBOK",
@@ -2457,7 +2457,7 @@
         "throughput metric"
       ],
       "category": "Estimation",
-      "phase": "estimation",
+      "stage": "estimation",
       "owner": "Scrum Master",
       "purpose": "Track historical delivery rate to inform forecasting",
       "methodology": "Agile/Kanban",
@@ -2479,7 +2479,7 @@
         "iteration goal"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Scrum Team",
       "purpose": "Single objective giving the sprint coherence",
       "methodology": "Scrum",
@@ -2502,7 +2502,7 @@
         "potentially shippable increment"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "delivery",
+      "stage": "delivery",
       "owner": "Developers",
       "purpose": "The sum of completed, done work delivered each sprint",
       "methodology": "Scrum",
@@ -2525,7 +2525,7 @@
         "scrum board snapshot"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Team",
       "purpose": "Capture daily progress, plan, impediments",
       "methodology": "Scrum/Kanban",
@@ -2548,7 +2548,7 @@
         "blocker register"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Scrum Master",
       "purpose": "Track and resolve impediments",
       "methodology": "Scrum",
@@ -2571,7 +2571,7 @@
         "demo summary"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Scrum Team",
       "purpose": "Record stakeholder feedback on the increment",
       "methodology": "Scrum",
@@ -2593,7 +2593,7 @@
         "grooming notes"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Product Owner",
       "purpose": "Capture refinement outcomes and clarifications",
       "methodology": "Scrum",
@@ -2616,7 +2616,7 @@
         "work board"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Team",
       "purpose": "Visualize work-in-progress across workflow states",
       "methodology": "Kanban",
@@ -2636,7 +2636,7 @@
         "CFD"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Scrum Master / PM",
       "purpose": "Visualize flow, WIP, and bottlenecks over time",
       "methodology": "Kanban",
@@ -2657,7 +2657,7 @@
         "release burnup"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Scrum Master",
       "purpose": "Track remaining/completed work against time",
       "methodology": "Scrum (non-canonical)",
@@ -2680,7 +2680,7 @@
         "kickoff agenda"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "PM / PgM",
       "purpose": "Align team and stakeholders at project/cycle start",
       "methodology": "methodology-agnostic",
@@ -2704,7 +2704,7 @@
         "design review minutes"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Designer / Architect",
       "purpose": "Document design review decisions and feedback",
       "methodology": "methodology-agnostic",
@@ -2725,7 +2725,7 @@
         "ARB minutes"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Architect",
       "purpose": "Document architecture review board outcomes",
       "methodology": "methodology-agnostic",
@@ -2747,7 +2747,7 @@
         "team norms"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "Team",
       "purpose": "Document agreed team behaviors and norms",
       "methodology": "Agile",
@@ -2769,7 +2769,7 @@
         "fist-of-five record"
       ],
       "category": "Process / Ceremony Artifacts",
-      "phase": "process",
+      "stage": "process",
       "owner": "RTE / Team",
       "purpose": "Capture team confidence in committed plan",
       "methodology": "SAFe",
@@ -2792,7 +2792,7 @@
         "MTP (IEEE 829 legacy)"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Lead",
       "purpose": "Define test scope, approach, resources, schedule",
       "methodology": "methodology-agnostic",
@@ -2815,7 +2815,7 @@
         "test approach"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Manager",
       "purpose": "Define organization-wide testing approach and standards",
       "methodology": "methodology-agnostic",
@@ -2838,7 +2838,7 @@
         "test script"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Engineer",
       "purpose": "Define steps, data, and expected results to verify behavior",
       "methodology": "methodology-agnostic",
@@ -2861,7 +2861,7 @@
         "test set"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Engineer",
       "purpose": "Group related test cases under a scenario",
       "methodology": "methodology-agnostic",
@@ -2884,7 +2884,7 @@
         "test completion report"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Lead",
       "purpose": "Summarize test execution outcomes and quality status",
       "methodology": "methodology-agnostic",
@@ -2906,7 +2906,7 @@
         "test incident report"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA / Engineer",
       "purpose": "Document a defect with reproduction and severity",
       "methodology": "methodology-agnostic",
@@ -2930,7 +2930,7 @@
         "defect register"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA Lead / PM",
       "purpose": "Track, prioritize, and assign defects",
       "methodology": "methodology-agnostic",
@@ -2952,7 +2952,7 @@
         "automation strategy"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "SDET",
       "purpose": "Define automation scope, framework, and standards",
       "methodology": "DevOps/agile",
@@ -2975,7 +2975,7 @@
         "acceptance test spec"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "BA / Product Owner",
       "purpose": "Plan validation by end users against business needs",
       "methodology": "methodology-agnostic",
@@ -2996,7 +2996,7 @@
         "V&V plan (IEEE 1012)"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "V&V Engineer",
       "purpose": "Define verification and validation activities formally",
       "methodology": "Waterfall/V-model",
@@ -3020,7 +3020,7 @@
         "stress test spec"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "Performance Engineer",
       "purpose": "Plan performance, load, and stress testing",
       "methodology": "methodology-agnostic",
@@ -3043,7 +3043,7 @@
         "security assessment"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "Security Engineer",
       "purpose": "Plan and report security testing and findings",
       "methodology": "DevSecOps",
@@ -3065,7 +3065,7 @@
         "test data spec"
       ],
       "category": "QA / Test",
-      "phase": "testing",
+      "stage": "testing",
       "owner": "QA / Data",
       "purpose": "Define test data needs, generation, and privacy",
       "methodology": "methodology-agnostic",
@@ -3089,7 +3089,7 @@
         "release announcement"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "PM / Release Manager",
       "purpose": "Communicate what changed in a release to users/stakeholders",
       "methodology": "methodology-agnostic",
@@ -3113,7 +3113,7 @@
         "SOP"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / Ops",
       "purpose": "Provide step-by-step procedures for routine and recovery operations",
       "methodology": "DevOps/SRE",
@@ -3134,7 +3134,7 @@
         "response playbook"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / Security",
       "purpose": "Provide scenario-specific response procedures",
       "methodology": "DevOps/SRE/security",
@@ -3158,7 +3158,7 @@
         "go-live plan"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Release Manager",
       "purpose": "Plan the steps, sequencing, and rollback for a deployment",
       "methodology": "methodology-agnostic",
@@ -3181,7 +3181,7 @@
         "recovery plan"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Release Manager / SRE",
       "purpose": "Define how to revert a failed deployment",
       "methodology": "methodology-agnostic",
@@ -3205,7 +3205,7 @@
         "change ticket"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Change Manager",
       "purpose": "Formally request and authorize a production change",
       "methodology": "ITIL",
@@ -3228,7 +3228,7 @@
         "pre-deploy checklist"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Release Manager",
       "purpose": "Verify readiness criteria before deployment",
       "methodology": "DevOps/ITIL",
@@ -3251,7 +3251,7 @@
         "experiment rollout config"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Engineer / PM",
       "purpose": "Document feature flags and gradual rollout settings",
       "methodology": "DevOps",
@@ -3272,7 +3272,7 @@
         "release window plan"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Release Manager",
       "purpose": "Communicate planned releases and windows",
       "methodology": "ITIL/DevOps",
@@ -3296,7 +3296,7 @@
         "CMDB record"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Config Manager",
       "purpose": "Define how configuration items are identified and controlled",
       "methodology": "ITIL/IEEE",
@@ -3319,7 +3319,7 @@
         "launch readiness review"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "SRE",
       "purpose": "Assess whether a service is ready for production",
       "methodology": "SRE",
@@ -3339,7 +3339,7 @@
         "launch checklist (SRE)"
       ],
       "category": "Release / Deployment / Runbooks",
-      "phase": "release",
+      "stage": "release",
       "owner": "Launch Coordinator / SRE",
       "purpose": "Coordinate cross-team launch readiness",
       "methodology": "SRE",
@@ -3364,7 +3364,7 @@
         "after-action review"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / IC",
       "purpose": "Learn from an incident and prevent recurrence (blamelessly)",
       "methodology": "SRE/DevOps",
@@ -3387,7 +3387,7 @@
         "sev report"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "On-call / IC",
       "purpose": "Record an active incident's status and response",
       "methodology": "ITIL/SRE",
@@ -3410,7 +3410,7 @@
         "SLI/SLO spec"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE",
       "purpose": "Define reliability targets and indicators",
       "methodology": "SRE",
@@ -3432,7 +3432,7 @@
         "error budget doc"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE",
       "purpose": "Define consequences when error budget is exhausted",
       "methodology": "SRE",
@@ -3454,7 +3454,7 @@
         "SLA"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "Account/Legal/SRE",
       "purpose": "Contractual reliability commitment with penalties",
       "methodology": "methodology-agnostic",
@@ -3477,7 +3477,7 @@
         "escalation matrix"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / Eng Manager",
       "purpose": "Define on-call rotation and escalation paths",
       "methodology": "DevOps/SRE",
@@ -3500,7 +3500,7 @@
         "alerting rules"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE",
       "purpose": "Define what to monitor and when to alert",
       "methodology": "SRE/DevOps",
@@ -3523,7 +3523,7 @@
         "scaling plan"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / Infra",
       "purpose": "Forecast and plan infrastructure capacity",
       "methodology": "SRE/DevOps",
@@ -3547,7 +3547,7 @@
         "RPO/RTO doc"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE / Risk",
       "purpose": "Plan recovery from major disruptions",
       "methodology": "ITIL/SOC2",
@@ -3568,7 +3568,7 @@
         "ops weekly notes"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "SRE",
       "purpose": "Track ongoing operational health and actions",
       "methodology": "SRE",
@@ -3590,7 +3590,7 @@
         "support macro"
       ],
       "category": "Operations / Incident",
-      "phase": "operations",
+      "stage": "operations",
       "owner": "Support / Tech Writer",
       "purpose": "Provide self-service answers to common issues",
       "methodology": "methodology-agnostic",
@@ -3612,7 +3612,7 @@
         "decommissioning plan"
       ],
       "category": "Operations / Incident",
-      "phase": "decommission",
+      "stage": "decommission",
       "owner": "PM / SRE",
       "purpose": "Plan the wind-down, migration, and retirement of a product/feature",
       "methodology": "methodology-agnostic",
@@ -3634,7 +3634,7 @@
         "scorecard"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "PM / Data Analyst",
       "purpose": "Visualize key metrics for monitoring and decisions",
       "methodology": "methodology-agnostic",
@@ -3659,7 +3659,7 @@
         "instrumentation plan"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "PM / Data",
       "purpose": "Define events, properties, and user traits to instrument",
       "methodology": "growth/data",
@@ -3683,7 +3683,7 @@
         "data catalog entry"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "Data / Analytics Eng",
       "purpose": "Document the meaning and usage of events and metrics",
       "methodology": "methodology-agnostic",
@@ -3707,7 +3707,7 @@
         "test design"
       ],
       "category": "Analytics / Measurement",
-      "phase": "growth",
+      "stage": "growth",
       "owner": "PM / Data Scientist",
       "purpose": "Define hypothesis, variants, metrics, and analysis for an experiment",
       "methodology": "growth/dual-track",
@@ -3730,7 +3730,7 @@
         "experiment analysis"
       ],
       "category": "Analytics / Measurement",
-      "phase": "growth",
+      "stage": "growth",
       "owner": "Data Scientist / PM",
       "purpose": "Report experiment outcomes and decision",
       "methodology": "growth",
@@ -3754,7 +3754,7 @@
         "KPI tree"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "PM / Data",
       "purpose": "Decompose a top metric into contributing input metrics",
       "methodology": "growth/OKR",
@@ -3777,7 +3777,7 @@
         "cohort analysis"
       ],
       "category": "Analytics / Measurement",
-      "phase": "growth",
+      "stage": "growth",
       "owner": "Data Analyst",
       "purpose": "Analyze behavior and retention by cohort",
       "methodology": "growth",
@@ -3799,7 +3799,7 @@
         "conversion funnel report"
       ],
       "category": "Analytics / Measurement",
-      "phase": "growth",
+      "stage": "growth",
       "owner": "Data Analyst / PM",
       "purpose": "Analyze conversion through a multi-step flow",
       "methodology": "growth",
@@ -3822,7 +3822,7 @@
         "success metrics doc"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "PM",
       "purpose": "Define how a feature's success will be measured",
       "methodology": "methodology-agnostic",
@@ -3845,7 +3845,7 @@
         "MLOps experiment record"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "Data Scientist / ML Eng",
       "purpose": "Log model hyperparameters, metrics, dataset/code versions",
       "methodology": "MLOps",
@@ -3868,7 +3868,7 @@
         "dataset datasheet"
       ],
       "category": "Analytics / Measurement",
-      "phase": "measurement",
+      "stage": "measurement",
       "owner": "ML / Data",
       "purpose": "Document a model's intended use, performance, limitations",
       "methodology": "MLOps/responsible AI",
@@ -3891,7 +3891,7 @@
         "RAID log (risks portion)"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "PM / PgM / Risk",
       "purpose": "Track risks with likelihood, impact, owner, mitigation",
       "methodology": "PMBOK/methodology-agnostic",
@@ -3912,7 +3912,7 @@
         "DCARI variant"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "PM / PgM",
       "purpose": "Consolidate Risks, Assumptions, Issues, Dependencies",
       "methodology": "PMBOK",
@@ -3936,7 +3936,7 @@
         "issue tracker"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "PM",
       "purpose": "Track active issues needing resolution",
       "methodology": "PMBOK",
@@ -3958,7 +3958,7 @@
         "assumptions register"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "PM",
       "purpose": "Track assumptions and constraints",
       "methodology": "PMBOK",
@@ -3981,7 +3981,7 @@
         "change control log"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "PM / Change Manager",
       "purpose": "Track requested and approved changes to baselines",
       "methodology": "PMBOK/ITIL",
@@ -4005,7 +4005,7 @@
         "LINDDUN (privacy)"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "security",
+      "stage": "security",
       "owner": "Security Engineer",
       "purpose": "Identify and prioritize security threats to a system",
       "methodology": "DevSecOps",
@@ -4028,7 +4028,7 @@
         "dependency inventory"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "security",
+      "stage": "security",
       "owner": "Security / DevOps",
       "purpose": "Inventory software components and dependencies",
       "methodology": "DevSecOps",
@@ -4051,7 +4051,7 @@
         "risk management report + plan"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Quality / Risk",
       "purpose": "Provide traceable evidence of medical-device risk management",
       "methodology": "regulated (ISO 14971)",
@@ -4071,7 +4071,7 @@
         "DHF (FDA); aligns to Medical Device File under QMSR"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Quality / R&D",
       "purpose": "Compile records demonstrating design developed per plan and regulation",
       "methodology": "regulated (21 CFR 820.30)",
@@ -4092,7 +4092,7 @@
         "design plan"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Quality",
       "purpose": "Document/reference planned design activities and responsibilities",
       "methodology": "regulated (820.30(b); ISO 13485 §7.3.2)",
@@ -4114,7 +4114,7 @@
         "design input requirements"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Quality",
       "purpose": "Capture required device characteristics from intended use and user needs",
       "methodology": "regulated (820.30(c); ISO 13485 §7.3.3)",
@@ -4137,7 +4137,7 @@
         "design output specifications"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D",
       "purpose": "Document design results enabling conformance evaluation to inputs",
       "methodology": "regulated (820.30(d); ISO 13485 §7.3.4)",
@@ -4159,7 +4159,7 @@
         "design review minutes"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Quality",
       "purpose": "Record formal staged design reviews with independent reviewer",
       "methodology": "regulated (820.30(e); ISO 13485 §7.3.5)",
@@ -4181,7 +4181,7 @@
         "DV protocol/report"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / V&V",
       "purpose": "Confirm design outputs meet design inputs",
       "methodology": "regulated (820.30(f); ISO 13485 §7.3.6)",
@@ -4203,7 +4203,7 @@
         "design validation report"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Clinical",
       "purpose": "Confirm device meets user needs/intended use on production units",
       "methodology": "regulated (820.30(g); ISO 13485 §7.3.7)",
@@ -4225,7 +4225,7 @@
         "transfer to manufacturing records"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Manufacturing",
       "purpose": "Ensure design is correctly translated into production specs",
       "methodology": "regulated (820.30(h); ISO 13485 §7.3.8)",
@@ -4251,7 +4251,7 @@
         "design change notice"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "R&D / Quality",
       "purpose": "Identify, verify/validate, review, approve design changes before implementation",
       "methodology": "regulated (820.30(i); ISO 13485 §7.3.9)",
@@ -4273,7 +4273,7 @@
         "DMR; aligns to Medical Device File (MDF) under QMSR"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Manufacturing / Quality",
       "purpose": "Compile all specs and procedures to manufacture the finished device",
       "methodology": "regulated (21 CFR 820.181; ISO 13485 §4.2.3)",
@@ -4296,7 +4296,7 @@
         "batch/lot record"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Manufacturing / Quality",
       "purpose": "Prove a batch/unit was manufactured per the DMR",
       "methodology": "regulated (21 CFR 820.184; ISO 13485 §7.5.1)",
@@ -4319,7 +4319,7 @@
         "process validation protocols"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Manufacturing / Quality",
       "purpose": "Validate manufacturing processes/equipment with documented evidence",
       "methodology": "regulated (21 CFR 820.75; ISO 13485 §7.5.6)",
@@ -4341,7 +4341,7 @@
         "VMP"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Quality",
       "purpose": "Define overall validation strategy and scope across systems",
       "methodology": "regulated (GxP/pharma)",
@@ -4366,7 +4366,7 @@
         "Part 11 compliance record"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Quality / IT",
       "purpose": "Validate computerized systems and electronic records/signatures",
       "methodology": "regulated (21 CFR Part 11)",
@@ -4389,7 +4389,7 @@
         "system description"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Compliance / Security",
       "purpose": "Describe in-scope infrastructure and how the system meets criteria",
       "methodology": "compliance (AICPA)",
@@ -4411,7 +4411,7 @@
         "management assertion"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Management",
       "purpose": "Assert how the system is designed, operates, and meets commitments",
       "methodology": "compliance (AICPA)",
@@ -4432,7 +4432,7 @@
         "controls list"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Compliance",
       "purpose": "Map controls to Trust Services Criteria with owners and evidence",
       "methodology": "compliance (AICPA)",
@@ -4454,7 +4454,7 @@
         "InfoSec policies (access control, acceptable use, change mgmt, data classification, incident response, etc.)"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "CISO / Compliance",
       "purpose": "Document security governance for audits and operations",
       "methodology": "compliance (SOC2/ISO 27001)",
@@ -4475,7 +4475,7 @@
         "Article 30 record"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "DPO / Legal",
       "purpose": "Document personal-data processing activities",
       "methodology": "compliance (GDPR)",
@@ -4499,7 +4499,7 @@
         "privacy impact assessment"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "DPO / Privacy",
       "purpose": "Assess privacy risks of high-risk processing",
       "methodology": "compliance (GDPR)",
@@ -4522,7 +4522,7 @@
         "evidence binder"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Auditor / Compliance",
       "purpose": "Compile evidence and findings for an audit",
       "methodology": "compliance",
@@ -4543,7 +4543,7 @@
         "WCAG conformance report"
       ],
       "category": "Governance / Compliance / Audit",
-      "phase": "governance",
+      "stage": "governance",
       "owner": "Designer / Accessibility",
       "purpose": "Document accessibility conformance level",
       "methodology": "compliance (WCAG/Section 508)",
@@ -4565,7 +4565,7 @@
         "RAG report"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM / PgM",
       "purpose": "Communicate progress, risks, and next steps to stakeholders",
       "methodology": "methodology-agnostic",
@@ -4589,7 +4589,7 @@
         "power-interest grid"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM",
       "purpose": "Identify and categorize stakeholders and engagement approach",
       "methodology": "PMBOK/BABOK",
@@ -4612,7 +4612,7 @@
         "RASCI"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM",
       "purpose": "Clarify roles and responsibilities across activities",
       "methodology": "PMBOK",
@@ -4636,7 +4636,7 @@
         "QBR deck"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM / PgM",
       "purpose": "Brief executives on status, decisions needed, asks",
       "methodology": "methodology-agnostic",
@@ -4658,7 +4658,7 @@
         "action items"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "Any",
       "purpose": "Record decisions and action items from a meeting",
       "methodology": "methodology-agnostic",
@@ -4681,7 +4681,7 @@
         "frequently asked questions"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM / Support",
       "purpose": "Answer anticipated questions for an audience",
       "methodology": "methodology-agnostic",
@@ -4707,7 +4707,7 @@
         "Slack canvas"
       ],
       "category": "Stakeholder / Communication",
-      "phase": "communication",
+      "stage": "communication",
       "owner": "PM / PMM",
       "purpose": "Announce changes or launches to internal/external audiences",
       "methodology": "methodology-agnostic",
@@ -4730,7 +4730,7 @@
         "retrospective"
       ],
       "category": "Retrospective / Post-mortem",
-      "phase": "retrospective",
+      "stage": "retrospective",
       "owner": "Scrum Master",
       "purpose": "Capture what went well, what to improve, and actions",
       "methodology": "Scrum/agile",
@@ -4752,7 +4752,7 @@
         "after-action review"
       ],
       "category": "Retrospective / Post-mortem",
-      "phase": "retrospective",
+      "stage": "retrospective",
       "owner": "PM / PgM",
       "purpose": "Capture lessons at project/milestone close",
       "methodology": "PMBOK/agile",
@@ -4773,7 +4773,7 @@
         "release retro"
       ],
       "category": "Retrospective / Post-mortem",
-      "phase": "retrospective",
+      "stage": "retrospective",
       "owner": "RTE / PM",
       "purpose": "Reflect and improve at PI/release cadence",
       "methodology": "SAFe/scaled",
@@ -4796,7 +4796,7 @@
         "prospective hindsight"
       ],
       "category": "Retrospective / Post-mortem",
-      "phase": "retrospective",
+      "stage": "retrospective",
       "owner": "PM / Team",
       "purpose": "Anticipate failure modes before starting",
       "methodology": "methodology-agnostic",
@@ -4819,7 +4819,7 @@
         "CAPA (regulated)"
       ],
       "category": "Retrospective / Post-mortem",
-      "phase": "retrospective",
+      "stage": "retrospective",
       "owner": "SRE / Quality",
       "purpose": "Track follow-through on postmortem/incident actions",
       "methodology": "SRE/regulated",
@@ -4842,7 +4842,7 @@
         "repo readme"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Engineer",
       "purpose": "Orient developers to a repository/project",
       "methodology": "methodology-agnostic",
@@ -4864,7 +4864,7 @@
         "integration guide"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Tech Writer / Eng",
       "purpose": "Provide technical reference for developers/integrators",
       "methodology": "methodology-agnostic",
@@ -4888,7 +4888,7 @@
         "product docs"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Tech Writer",
       "purpose": "Help end users accomplish tasks",
       "methodology": "methodology-agnostic",
@@ -4910,7 +4910,7 @@
         "playbook (sales/CS)"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Enablement / PMM",
       "purpose": "Train internal teams or new hires on product/process",
       "methodology": "methodology-agnostic",
@@ -4934,7 +4934,7 @@
         "competitive cheat sheet"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "enablement",
+      "stage": "enablement",
       "owner": "PMM",
       "purpose": "Equip sales to position against competitors",
       "methodology": "methodology-agnostic",
@@ -4958,7 +4958,7 @@
         "talk track"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "enablement",
+      "stage": "enablement",
       "owner": "PMM / Sales Enablement",
       "purpose": "Provide repeatable sales motions and demo guidance",
       "methodology": "methodology-agnostic",
@@ -4981,7 +4981,7 @@
         "process doc"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Ops / Any",
       "purpose": "Document a repeatable internal process",
       "methodology": "methodology-agnostic",
@@ -5004,7 +5004,7 @@
         "editorial style guide"
       ],
       "category": "Knowledge / Enablement",
-      "phase": "knowledge",
+      "stage": "knowledge",
       "owner": "Content / Design",
       "purpose": "Standardize content voice, tone, and conventions",
       "methodology": "methodology-agnostic",
@@ -5027,7 +5027,7 @@
         "work order"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "PM / Legal / Procurement",
       "purpose": "Define deliverables, timeline, and terms for contracted work",
       "methodology": "methodology-agnostic",
@@ -5051,7 +5051,7 @@
         "fixed-price/T&M/cost-reimbursable"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "Legal / Procurement",
       "purpose": "Establish legally binding terms between parties",
       "methodology": "PMBOK agreements",
@@ -5073,7 +5073,7 @@
         "DPA"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "Legal / DPO",
       "purpose": "Govern personal-data processing between controller and processor",
       "methodology": "compliance (GDPR)",
@@ -5095,7 +5095,7 @@
         "SLA (contractual)"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "Legal / Account",
       "purpose": "Define contractual service commitments and remedies",
       "methodology": "methodology-agnostic",
@@ -5119,7 +5119,7 @@
         "privacy notice"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "Legal",
       "purpose": "Define user terms and privacy commitments",
       "methodology": "compliance",
@@ -5141,7 +5141,7 @@
         "OSS license register"
       ],
       "category": "Legal / Contractual",
-      "phase": "legal",
+      "stage": "legal",
       "owner": "Legal / Eng",
       "purpose": "Track IP ownership and software licenses",
       "methodology": "methodology-agnostic",
@@ -5167,7 +5167,7 @@
 
   var TYPES = (DATA.types || []).slice();
   var CATEGORIES = DATA.categories || [];
-  var PHASES = DATA.phases || [];
+  var STAGES = DATA.stages || [];
   var byId = {};
   var byName = {};
   TYPES.forEach(function (t) { byId[t.id] = t; byName[(t.name || "").toLowerCase()] = t; });
@@ -5204,7 +5204,7 @@
     if (state.built && !t.built) return false;
     if (state.search) {
       var q = state.search.toLowerCase();
-      var hay = (t.name + " " + (t.aliases || []).join(" ") + " " + t.category + " " + t.phase + " " + (t.purpose || "") + " " + (t.methodology || "")).toLowerCase();
+      var hay = (t.name + " " + (t.aliases || []).join(" ") + " " + t.category + " " + t.stage + " " + (t.purpose || "") + " " + (t.methodology || "")).toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
     return true;
@@ -5215,7 +5215,7 @@
     var badge = '<span class="badge tier' + t.tier + '">T' + t.tier + '</span>';
     var built = t.built ? '<span class="chip built">Built</span>' : "";
     var reg = (t.tier === 3) ? '<span class="chip reg">Regulated</span>' : "";
-    var sub = [cap(t.phase), cap(t.formality), cap(t.rarity)].filter(Boolean).map(esc);
+    var sub = [cap(t.stage), cap(t.formality), cap(t.rarity)].filter(Boolean).map(esc);
     return '<button class="card t' + t.tier + (t.built ? ' built' : '') + '" data-id="' + esc(t.id) + '">' +
       '<span class="name">' + stars + '<span>' + esc(t.name) + '</span></span>' +
       '<span class="markers">' + badge + built + reg + '</span>' +
@@ -5225,7 +5225,7 @@
 
   function render() {
     var atlas = document.getElementById("atlas");
-    var keys = state.group === "category" ? CATEGORIES.slice() : PHASES.slice();
+    var keys = state.group === "category" ? CATEGORIES.slice() : STAGES.slice();
     var field = state.group;
     var shown = 0, html = "";
 
@@ -5270,7 +5270,7 @@
     lastFocus = document.activeElement;
     var facts = [
       ["Category", cap(t.category)],
-      ["Phase", cap(t.phase)],
+      ["Stage", cap(t.stage)],
       ["Owner", t.owner],
       ["Methodology", t.methodology],
       ["Formality", cap(t.formality)],
@@ -5293,7 +5293,7 @@
 
     drawer.innerHTML =
       '<button class="dclose" id="dclose" aria-label="Close">&times;</button>' +
-      '<p class="deyebrow">' + esc(cap(t.phase)) + '</p>' +
+      '<p class="deyebrow">' + esc(cap(t.stage)) + '</p>' +
       '<h3 id="drawer-title">' + esc(t.name) + '</h3>' +
       ((t.aliases || []).length ? '<p class="aliases">also: ' + esc(t.aliases.join(", ")) + '</p>' : '') +
       '<div class="dmarkers">' + dm + '</div>' +
@@ -5334,11 +5334,11 @@
   function setGroup(g) {
     state.group = g;
     document.getElementById("grp-category").setAttribute("aria-pressed", g === "category");
-    document.getElementById("grp-phase").setAttribute("aria-pressed", g === "phase");
+    document.getElementById("grp-stage").setAttribute("aria-pressed", g === "stage");
     render();
   }
   document.getElementById("grp-category").addEventListener("click", function () { setGroup("category"); });
-  document.getElementById("grp-phase").addEventListener("click", function () { setGroup("phase"); });
+  document.getElementById("grp-stage").addEventListener("click", function () { setGroup("stage"); });
 
   document.querySelectorAll(".tier-filter").forEach(function (b) {
     b.addEventListener("click", function () {
