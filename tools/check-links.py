@@ -41,6 +41,31 @@ LINK_RE = re.compile(r"\[[^\]]*\]\(\s*([^)\s]+?)\s*\)")
 HEADING_RE = re.compile(r"^#{1,6}\s+(.*?)\s*$", re.MULTILINE)
 SKIP_PREFIXES = ("http://", "https://", "mailto:", "tel:", "data:", "#!")
 
+FENCE_RE = re.compile(r"^\s*(```|~~~)", re.MULTILINE)
+
+
+def strip_code(text):
+    """Drop fenced code blocks and inline code spans before looking for links.
+
+    A link inside a code fence is an EXAMPLE, not a link. This methodology documents the
+    citation format by showing `[Title](URL)` in a fenced block; without this, the gate reads
+    the literal word "URL" as a relative path and reports a broken link in a file whose links
+    are all fine. Found on 2026-07-16, when documenting the blocked-source convention tripped
+    the gate on its own worked example.
+
+    Inline spans matter for the same reason (`[[n]](#ref-n)` is written as prose in §6).
+    Fences are matched pairwise; an unterminated fence swallows the rest of the file, which is
+    the conservative direction for a checker (it under-reports rather than inventing failures).
+    """
+    out, in_fence = [], False
+    for line in text.split("\n"):
+        if FENCE_RE.match(line):
+            in_fence = not in_fence
+            continue
+        if not in_fence:
+            out.append(re.sub(r"`[^`]*`", "", line))
+    return "\n".join(out)
+
 GREEN = "\033[32m"
 RED = "\033[31m"
 DIM = "\033[2m"
@@ -98,7 +123,7 @@ def main():
             problems.append((f, "-", "unreadable: " + str(e)))
             continue
 
-        for raw in LINK_RE.findall(text):
+        for raw in LINK_RE.findall(strip_code(text)):
             if raw.startswith(SKIP_PREFIXES):
                 continue
             checked += 1
