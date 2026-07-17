@@ -1,0 +1,30 @@
+# Pinned pm-skills skill IDs that a bundle's `pairs_with` may reference.
+#
+# WHY PINNED, AND NOT DISCOVERED.
+# pm-skills is a separate repository. This gate must run in CI, on a clean checkout, with no
+# network and no sibling clone on disk, so it cannot resolve a skill ID by looking. A pinned
+# list is the honest alternative: it is a deliberate assertion about a neighbour, updated by a
+# human who checked, rather than a guess.
+#
+# THE FAILURE THIS PREVENTS.
+# `pairs_with` claims "an agent invoking this skill should reach for this template." A typo, or
+# a skill that never shipped, makes that claim silently false. Nothing else in the repo checks
+# it. Cross-repo resolution proper is out of scope (roadmap WP-11 notes it); this catches the
+# cheap half: a value that is not a known skill at all.
+#
+# HOW TO UPDATE.
+# Verify against the pm-skills repo before adding a line:
+#     git -C ../pm-skills ls-files --error-unmatch skills/<id>/SKILL.md
+# Note that `.claude/skills/` is gitignored in pm-skills; `skills/` is the tracked source.
+# Add the ID, and say in the commit message that you verified it and when.
+#
+# Verified present in product-on-purpose/pm-skills @ skills/<id>/SKILL.md on 2026-07-17.
+# A bundle with no paired skill declares `pairs_with: []`, which is legal and is not a gap to
+# paper over: the `rfc` bundle does exactly that, because no `develop-rfc` skill exists
+# (checked 2026-07-17; recorded as finding EC-3 in STATE.md).
+
+deliver-prd
+deliver-user-stories
+deliver-acceptance-criteria
+deliver-release-notes
+develop-adr

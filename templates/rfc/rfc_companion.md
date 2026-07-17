@@ -54,7 +54,9 @@ rule: *"Notes are encouraged to be timely rather than polished,"* and the series
 because *"we hope to promote the exchange and discussion of considerably less than authoritative
 ideas"* [[2]](#ref-2). The name "Request for Comments" was chosen precisely to avoid sounding
 authoritative, so that anyone would feel entitled to respond. In his own later reflections Crocker
-described even the word "proposal" as having felt too strong for what they were doing [[4]](#ref-4).
+described even the word "proposal" as having felt too strong for what they were doing [[4]](#ref-4);
+his best-known telling of the same story is a 2009 New York Times op-ed [[5]](#ref-5), which is
+paywalled and is cited here as a pointer rather than as evidence.
 
 **Then the IETF RFC became almost the opposite of that.** As the ARPANET conventions matured into the
 Internet Engineering Task Force, the RFC series became the **archival, official publication channel**
@@ -330,8 +332,10 @@ a comment thread cannot resolve, not a ceremony every RFC must pass through.
 
 The cleanest distinction in the practitioner literature is temporal and is worth memorizing: an
 **RFC proposes a decision and solicits feedback before it is finalized; an ADR records a decision
-after it is made** [[11]](#ref-11)[[20]](#ref-20). An accepted RFC can spawn several ADRs, one per
-concrete decision it settles [[11]](#ref-11). The **design doc** is the fuzziest term: at Google and
+after it is made** [[11]](#ref-11)[[20]](#ref-20). The ADR side of that line is Michael Nygard's, who
+introduced the form in 2011 as a short record of a decision with its context and consequences
+[[7]](#ref-7), and which Martin Fowler's write-up did much to spread [[8]](#ref-8). An accepted RFC
+can spawn several ADRs, one per concrete decision it settles [[11]](#ref-11). The **design doc** is the fuzziest term: at Google and
 Amazon it is the primary artifact and overlaps heavily with the RFC, and much of the industry uses
 "RFC" and "design doc" interchangeably [[10]](#ref-10). This bundle treats the RFC as the
 pre-decision proposal, the ADR as the post-decision record, and leaves "design doc" as a
@@ -436,7 +440,7 @@ Tagged by reliability: `[primary]` standards body, regulator, or originating sou
 
 <a id="ref-4"></a>[4] Steve Crocker. "[Today's Internet Still Relies on an ARPANET-Era Protocol: The Request for Comments](https://spectrum.ieee.org/todays-internet-still-relies-on-an-arpanetera-protocol-the-request-for-comments)." IEEE Spectrum, 2020-07-29 (accessed 2026-07-15). [primary]
 
-<a id="ref-5"></a>[5] Steve Crocker. "[How the Internet Got Its Rules](https://www.nytimes.com/2009/04/07/opinion/07crocker.html)." The New York Times, 2009-04-07 (paywalled; not fetched, see research log). [primary]
+<a id="ref-5"></a>[5] Steve Crocker. "[How the Internet Got Its Rules](https://www.nytimes.com/2009/04/07/opinion/07crocker.html)." The New York Times, 2009-04-07. **PAYWALLED: not fetched; only the lede was recoverable, via a mailing-list archive. Nothing is quoted from it and no claim rests on it; it is cited as a pointer to Crocker's best-known telling, and the claim it sits beside is carried by [[4]](#ref-4).** [primary]
 
 <a id="ref-6"></a>[6] Heather Flanagan and Sandy Ginoza. "[RFC Style Guide](https://www.rfc-editor.org/rfc/rfc7322)." RFC 7322, RFC Editor, 2014-09 (accessed 2026-07-15). [primary]
 
