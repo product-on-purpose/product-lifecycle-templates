@@ -50,6 +50,7 @@ Do not create for:
 | [0012](0012-evidence-outranks-catalog-and-paired-skill.md) | Primary evidence outranks the catalog and the paired skill; conflicts are reported, not absorbed | 2026-07-14 |
 | [0013](0013-local-split-and-going-public.md) | Split `_local/`: promote what public docs cite into `docs/internal/`, untrack the rest, and go public | 2026-07-14 |
 | [0014](0014-gate-may-use-pyyaml-for-frontmatter-validity.md) | The gate may use PyYAML for one check (frontmatter validity); the other six stay pure stdlib | 2026-07-16 |
+| [0015](0015-second-taxonomy-axis-phase-xor-classification.md) | A bundle declares a `phase` XOR a `classification`, never both, never neither (closes TX-1, unblocks the metadata schema) | 2026-07-17 |
 
 ## Correction versus supersession
 
