@@ -1,9 +1,9 @@
 ---
 title: "Template Bundle Methodology: Researching and Drafting a Best-in-Class Template"
 status: draft
-doc_version: 0.2.2
+doc_version: 0.2.3
 owner: "product-on-purpose"
-last_reviewed: 2026-07-12
+last_reviewed: 2026-07-16
 license: Apache-2.0
 applies_to: "every bundle under templates/"
 related:
@@ -202,11 +202,115 @@ References live at the bottom of the companion, numbered, and are cited inline b
 **Rules:**
 
 - Every inline citation number resolves to exactly one reference entry.
+- **One entry, one source.** Never bundle two sources under one number. See §6.1.
 - A quote carries the exact source and, where it matters, a locator (clause, page, section).
+- **Quote only what you fetched raw and compared.** See §6.2.
 - Prefer the primary source over a secondary description of it (cite the Scrum Guide, not a blog summarizing it), unless the secondary source is itself the claim's origin.
-- Do not pad the list with sources you did not actually use.
+- Do not pad the list with sources you did not actually use. **A reference that nothing cites is padding: cite it or delete it.**
 - **References are linked, not bare text.** Each entry begins with an anchor `<a id="ref-n"></a>`, and the source title is a Markdown hyperlink to its URL; the bare URL is dropped from the visible text. Internal sources link to their relative repo path where one exists.
 - **Inline citations are clickable.** Write each inline `[n]` as `[[n]](#ref-n)` so it renders as a bracketed number that jumps to the matching entry.
+
+### 6.1 One entry, one source (no combined entries)
+
+**Never write an entry that bundles two sources**, e.g. `[6] Appcues, "..." and AnnounceKit, "..."`, or
+`[3] Ron Jeffries, 2001; and Mike Cohn, 2004`. Give each source its own number.
+
+*Why this is a hard rule and not a style preference:* the 2026-07-16 citation pass found that **combined
+entries were the single largest root cause of defects across all four delivery-docs bundles**. They fail
+in three compounding ways:
+
+1. **They destroy traceability.** When two sources share a number, no reader (and no later auditor) can
+   tell which source supports which claim. In the `release-notes` bundle, Appcues and AnnounceKit
+   supported *different* claims under one number, and splitting them immediately exposed three
+   misattributions that had been invisible for weeks.
+2. **They launder unretrievable sources.** A combined entry lets a source with **no URL** hide behind a
+   sibling that has one, so the entry looks retrieved. Every print book found in this library was hiding
+   inside a combined entry.
+3. **They smuggle in unsupported claims.** An entry like "North, *Introducing BDD*, 2006; Gherkin and
+   Given/When/Then, 2007" attaches a claim to a source **that does not make it**. North's article never
+   mentions Gherkin, and the 2007 date was simply wrong.
+
+If two sources genuinely support the same claim, cite both numbers: `[[6]](#ref-6)[[10]](#ref-10)`.
+
+### 6.2 Retrieval status must be honest
+
+**State how a source was actually obtained.** The research log's Retrieval column is not a formality; it
+is the claim you are making about your own evidence. Three states, and never round up:
+
+- **Fetched and verified.** You retrieved the source text and compared the claim against it. **Only this
+  state permits a verbatim quotation.**
+- **URL confirmed live, body not read.** The link resolves to real content, but you did not check the
+  claims against it. Legitimate for corroborating sources; **no claim may rest on such a source alone.**
+- **Not retrieved.** Paywalled, blocked, unreachable, or print. See §6.3 and §6.4.
+
+Two failure modes this library has actually committed, both worth naming:
+
+- **"Confirmed" against the wrong thing.** A quote is not confirmed by a search excerpt, by a summary,
+  or by *this repository's own catalog*. It is confirmed by the source. A research-agent summary is a
+  summary; **a summary is not a quotation.**
+- **A URL that resolves is not a source that was read.** HTTP 200 proves a route exists, nothing more.
+
+**The redirect-stub trap.** A stale URL can return HTTP 200 and still be wrong. `dannorth.net/introducing-bdd/`
+returns 200 with a 318-byte body that meta-refreshes to `/blog/introducing-bdd/`; `keepachangelog.com/en/1.1.2/`
+returns 200 with a 242-byte body whose canonical points *back* to 1.1.0. Browsers follow these silently, so
+the link "works" for humans and nobody notices. **Check the body, not just the status code**, and cite the
+canonical URL the page itself declares.
+
+### 6.3 Blocked and paywalled sources
+
+A source you could not read is still citable, but **the reference itself must say so**, not just the
+research log. The reader weighing the claim is the one who needs the warning.
+
+**Format:** state the barrier, the observed evidence, the date(s) checked, and what the claim rests on
+instead.
+
+```
+<a id="ref-n"></a>[n] Author. "[Title](URL)." Site. **PAYWALLED: the page returns "This post is for paid
+subscribers" and the body is not readable (checked YYYY-MM-DD). Nothing is quoted from it; the claims it
+is cited for are corroborated by [[m]](#ref-m).** [tier-tag]
+```
+
+**Rules for a blocked or paywalled source:**
+
+- **Never quote it.** If the body is unreadable, any quotation is unverifiable by construction.
+- **Distinguish the barrier**, because they are not the same thing and the reader's recourse differs:
+  - **Paywalled** (a subscriber could read it): "This post is for paid subscribers".
+  - **Blocked to automation** (a human in a browser can read it): HTTP 403.
+  - **Unreachable from here** (an access failure, *not* a dead link, when the source is live and indexed
+    elsewhere): connection timeout.
+  - **Dead** (genuinely gone): a real 404, confirmed against a control URL, since some sites return 200
+    for everything.
+- **Prefer an accessible equivalent, and say that is what you did.** The strongest fix is not a better
+  disclaimer but a better source: when Lenny Rachitsky's PRD post proved paywalled, its claims moved to
+  Atlassian's freely readable rendering of the same template, which any reader can check.
+- **Never let a blocked source carry a claim alone** if the claim is load-bearing. If it must, label it
+  as the weakest evidence in the bundle and say a human should confirm it.
+
+### 6.4 Books and pre-web sources (no URL)
+
+Canonical books, magazine articles, and pre-web material have no URL and **must not be given one by
+association**. Do not hide a book inside a combined entry with a sibling's link.
+
+**Format:**
+
+```
+<a id="ref-n"></a>[n] Author. *Title.* Publisher, year. Print book; no URL. Cited from the book, not
+retrieved online. [tier-tag]
+```
+
+**Rules:**
+
+- Say **"Print book; no URL"** explicitly. An entry with no link and no explanation reads as an oversight.
+- Say whether you **cited it from the book** or are relying on a secondary source's report of it. If the
+  latter, cite that secondary source too: "Cohn names Rachel Davies as the inventor" was attributed to
+  Cohn's Mountain Goat *page*, which never mentions Davies; the claim is in his *book*, and Wikipedia
+  records it verbatim, so both are cited.
+- Where a **retrievable source carries the same dated fact**, cite it alongside the book for the parts it
+  covers. A print book's *existence and thesis* can be cited from the book; its *dates* are better cited
+  from something a reader can check.
+- The same rule covers **an article first published in print** (North's "Introducing BDD" appeared in
+  *Better Software*, March 2006, before it was online): give the original publication and date, and link
+  the canonical online copy if one exists.
 
 ---
 
@@ -222,6 +326,11 @@ A bundle is done only when every item holds. This is the gate.
 - [ ] **Guide:** when-to-use, quality rubric, and at least two named anti-patterns.
 - [ ] **Example:** genuinely worked, no placeholders, no fabricated metrics.
 - [ ] **References:** numbered, reliability-tagged, no orphan citations, no padded entries; each entry has an `<a id="ref-n"></a>` anchor and a hyperlinked title; every inline `[n]` is a working `[[n]](#ref-n)` jump.
+- [ ] **One entry, one source.** No entry bundles two sources ([§6.1](#61-one-entry-one-source-no-combined-entries)).
+- [ ] **Every quotation was fetched raw and compared** character for character. No quotation from a paywalled, blocked, unreachable, or print source ([§6.2](#62-retrieval-status-must-be-honest)).
+- [ ] **Retrieval status is honest per source**, and no load-bearing claim rests on an unread source alone. Blocked/paywalled sources say so **in the reference itself**, not only in the log ([§6.3](#63-blocked-and-paywalled-sources)).
+- [ ] **Every URL was checked for a redirect stub**, not just a 200, and the canonical URL is the one cited ([§6.2](#62-retrieval-status-must-be-honest)).
+- [ ] **Books carry "Print book; no URL"** and are not hidden inside a combined entry with a sibling's link ([§6.4](#64-books-and-pre-web-sources-no-url)).
 - [ ] **Meta:** valid YAML; `sizes_available` matches variant files; `pairs_with` resolves to a known skill ID or is null.
 - [ ] **History:** entry for the current `template_version` with research date.
 - [ ] **House style:** zero emdash/endash; reference IDs carry handles.
