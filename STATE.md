@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-16 (RFC bundle shipped, 6th type and 2nd in `decision-docs`; repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014; EC-2 catalog fix)
+**Last updated:** 2026-07-16 (WP-10 citation integrity pass complete: 28 defects across the four delivery-docs bundles, methodology 0.2.3 codifies the source conventions; RFC bundle shipped, 6th type and 2nd in `decision-docs`; repo public; CI green and branch-protected; M0 merged; gate hardened with YAML check G + ADR 0014)
 
 ---
 
@@ -20,7 +20,7 @@
 | **Decision records** | `docs/internal/decisions/`, fourteen ADRs in [MADR v4](https://github.com/adr/madr) format, plus a README documenting the convention. All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`, and the planning, strategy, catalog, roadmap and decision records at `docs/internal/`. Decision HY-2 (scaffold graduation) closed 2026-07-12; the `_local/` split closed 2026-07-14 ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)). |
 | **Atlas** | 205-type interactive catalog map at `atlas/atlas.html`. |
-| **Methodology** | v0.2.2 (`templates/methodology.md`), status draft. Governs authoring. |
+| **Methodology** | v0.2.3 (`templates/methodology.md`), status draft. Governs authoring. Section 6 now codifies the source conventions (one entry one source; honest retrieval; blocked/paywalled; books). |
 | **Master catalog** | [`docs/internal/catalog.md`](docs/internal/catalog.md). 205 types, 27 at Tier 1. Cited by the methodology and by every bundle companion. **Its size calls are hypotheses, not facts** (see EC-2 below). |
 | **Audit corpus** | `_local/audit/2026-07-10_fable-audit/` on the maintainer's disk. **Deliberately NOT in git** (see [ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)); its two load-bearing artifacts were promoted to [`docs/internal/roadmap.md`](docs/internal/roadmap.md) and [`docs/internal/contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md). |
 
@@ -76,9 +76,28 @@ One honest qualifier: the gate covers about half the DoD. Since M0 it **does** r
 
 **What remains of WP-11 is the hard half: citation-tracing.** Check E confirms a companion's inline citations *resolve* to anchors; nothing checks that the anchored source *supports the claim*. That is the failure mode that produced ~15 defects in the ADR bundle across three review rounds, it is still entirely human-verified, and it may not be fully mechanizable. Tracked as the open remainder of WP-11.
 
+**WP-10 (citation integrity pass) is done, 2026-07-16, and it is the strongest evidence yet for the paragraph above.** All four delivery-docs bundles were verified against raw sources; every one had been passing the gate green the whole time. **28 defects across four bundles**, including three the gate is structurally incapable of seeing:
+
+- **Two factual errors.** Gherkin is 2008 (Cucumber, Hellesoy), not 2007, and the word "Gherkin" appears nowhere in the Dan North article it was cited to. Cagan's "Revisiting the Product Spec" is 2006, not 2007, in a sentence whose whole point was how long he has held the position.
+- **Two unverifiable quotations**, both now de-quoted: one from a paywalled post ("This post is for paid subscribers"), one from a domain that times out. Neither could ever have been checked.
+- **Claims attributed to authors who do not make them.** Bill Wake does not say stories are "sized to fit inside one iteration" (he says "at most a few person-weeks"); Ranorex was cited five times and supports two.
+- **Uncited padding the gate cannot catch**, exactly as predicted: check E fails an inline citation with no anchor but **never an anchor with no citation**. PRD refs 8 and 12 had zero citations each.
+
+**The audit itself was wrong once.** WP-10 instructed "Keep a Changelog corrected to 1.1.2 with root URL". The spec site serves **1.1.0** as canonical and redirects `/en/1.1.1/` and `/en/1.1.2/` back to it; the repo tags the audit likely read are site releases, not spec versions. The existing citation was already correct. **Following the roadmap on faith would have introduced the defect class WP-10 exists to remove.** The roadmap row was withdrawn and corrected instead. A finding is a claim, and claims get checked.
+
+**The durable fix shipped with it:** methodology 0.2.3 codifies four source conventions ([§6.1](templates/methodology.md#61-one-entry-one-source-no-combined-entries) one entry one source, [§6.2](templates/methodology.md#62-retrieval-status-must-be-honest) honest retrieval, [§6.3](templates/methodology.md#63-blocked-and-paywalled-sources) blocked/paywalled, [§6.4](templates/methodology.md#64-books-and-pre-web-sources-no-url) books), and the Definition of Done gained five checks so they are conditions of shipping rather than advice. **Combined entries were the single largest root cause**: they destroy traceability, launder sources with no URL behind a sibling's link, and attach claims to sources that do not make them.
+
 ## Next milestone
 
-**M1, integrity and truth** (roughly one week). Citation integrity pass (findings A-01 through A-06), gate hardening, close decisions D2 and D3, a consumer quickstart in the README, then tag **v0.1.0** with a release note written using this library's own release-notes template, which makes it the first dogfood artifact.
+**M1, integrity and truth** (roughly one week). Progress as of 2026-07-16:
+
+| WP | What | State |
+|---|---|---|
+| **WP-10** | Citation integrity pass (A-01..A-06) | **Done.** All four delivery-docs bundles verified against raw sources; 28 defects fixed; methodology 0.2.3 codifies the source conventions so the class does not recur. One WP-10 instruction was itself wrong and was withdrawn rather than executed. |
+| **WP-11** | Gate hardening v1 | **Partly done.** The YAML half shipped (check G + [ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)). **None of the roadmap's named WP-11 items are done yet**, and WP-10 made two of them urgent: *reverse citation direction* (padded entries must fail; PRD shipped two uncited references the gate could not see) and *meta placeholder scan*. Citation-tracing remains the hard, possibly unmechanizable half. |
+| **WP-12** | Decision closure (D2, D3) | **Not started.** Both are past the decision SLA. |
+| **WP-13** | Consumer quickstart | **Not started.** |
+| **WP-14** | Release v0.1.0 (dogfooded release note) | **Not started**, and correctly gated behind the above. |
 
 Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
 
