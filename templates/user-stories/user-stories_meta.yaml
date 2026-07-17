@@ -16,5 +16,5 @@ related_templates: [prd, acceptance-criteria, release-notes]
 aliases: [story, story card, user story, job story, backlog item, PBI]
 catalog_ref: 30                      # entry number in deep-research_master-catalog.md
 maintainer: "product-on-purpose"
-last_reviewed: 2026-06-30
+last_reviewed: 2026-07-16
 license: Apache-2.0
