@@ -6,7 +6,7 @@
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 
-**Last updated:** 2026-07-17 (WP-11 gate hardening: nine checks, and the new padding check immediately failed a bundle shipped the day before; WP-12: D2 and D3 both resolved, and they answer the same question. Earlier: WP-10 citation pass, 28 defects across four bundles, methodology 0.2.3)
+**Last updated:** 2026-07-17 (**M1 complete: v0.1.0 tagged**, with its release note dogfooded from this library's own template, which immediately produced finding DF-1. WP-11 nine checks; WP-12 D2/D3 closed; WP-13 quickstart + claim reconciliation; WP-10 citation pass)
 
 ---
 
@@ -36,7 +36,7 @@ The reason this section exists at all: STATE.md is here because of audit finding
 
 ## Not built (deliberately visible)
 
-- **No version tags. No CHANGELOG.** v0.1.0 is roadmap WP-14, in milestone M1.
+- ~~No version tags. No CHANGELOG.~~ **Shipped 2026-07-17: [v0.1.0](CHANGELOG.md) is tagged**, with a [release note](docs/releases/v0.1.0.md) written by filling this library's own `release-notes` lean template. First dogfood artifact.
 - **No distribution surface** beyond `git clone`. No plugin manifest, no marketplace entry, no `manifest.json`. **As of D2/D3 (resolved 2026-07-17) the reason is precise, not vague:** both the skills CLI and agentskills.io take exactly one unit, the skill, and this repo ships no `SKILL.md`, so `npx skills add` clones it and installs nothing. One missing file, not an architecture problem.
 - **No family contract adopted.** One is drafted and now sits at a canonical path, [`docs/internal/contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md), but it is still only a draft: nothing *adopts* it and nothing *validates* against it. Adoption is roadmap WP-24 in milestone M2. The bundle gate checks bundles one at a time and never checks them as a set, so family conformance is unenforced today. (Note that `decision-docs`, opened by the ADR bundle, has no contract at all.)
 - **No metadata schema**, so no machine-consumption path. An agent cannot yet select a bundle deterministically.
@@ -46,6 +46,25 @@ The reason this section exists at all: STATE.md is here because of audit finding
 ## Open by choice, not by oversight
 
 - **B-08, the `_working/` folder.** `templates/_working/` still holds the A/B/C guidance-style prototypes, even though its own README line 6 orders its deletion once the decision was made, and the decision *was* made (Approach A, see [`docs/internal/decisions/0006-guidance-style-approach-a.md`](docs/internal/decisions/0006-guidance-style-approach-a.md)). The maintainer chose on 2026-07-12 to keep it. Recorded here so it reads as a decision rather than a miss.
+
+## Findings the library raised about itself, by using itself
+
+**DF-1, the first dogfood finding, 2026-07-17. The lean `release-notes` template has no first-release
+mode.** Found the only way this class of defect ever gets found: by filling the template for real, to
+write [this repository's own v0.1.0 release note](docs/releases/v0.1.0.md).
+
+"Improved" and "Fixed" are defined relative to a previous release, and a `0.1.0` has none. Worse, the
+template's own fill rule ("if a section does not apply, write 'None in this release'") would produce a
+first release note declaring that nothing was improved and nothing was fixed, which is false in
+spirit: plenty was, it simply was never *released* before. The bundle already cites the source that
+solves this (Keep a Changelog treats a first release as entirely "Added") and failed to carry the
+guidance across. **The fix is deferred to 0.2.0 on purpose:** changing a template during its own
+release is how you end up with a template that does not match the artifact it just produced. Recorded
+in [`release-notes_history.md`](templates/release-notes/release-notes_history.md).
+
+The dogfood is worth more than the release. Six bundles have been argued to be good; this is the first
+evidence of one meeting a real task, and it took exactly one use to find a real gap. That is the case
+for the usage loop (roadmap M3) in one data point.
 
 ## Findings the library raised about its own ecosystem
 
@@ -96,8 +115,8 @@ One honest qualifier: the gate covers about half the DoD. Since M0 it **does** r
 | **WP-10** | Citation integrity pass (A-01..A-06) | **Done.** All four delivery-docs bundles verified against raw sources; 28 defects fixed; methodology 0.2.3 codifies the source conventions so the class does not recur. One WP-10 instruction was itself wrong and was withdrawn rather than executed. |
 | **WP-11** | Gate hardening v1 | **Done, except the half that may be impossible.** All six named items shipped 2026-07-17: reverse citation direction, meta placeholder scan, history-documents-version, `pairs_with` against a pinned skill list, `related_templates` resolution with the `future:` convention, and heading comparison on (level, text) tuples. Seven checks became nine, each adversarially tested to prove it fails when it should. **The first run of the new padding check failed the `rfc` bundle**, catching three uncited references the author had noticed and rationalised away the day before. Citation-tracing (does the source *support* the claim?) remains open and may not be mechanizable. |
 | **WP-12** | Decision closure (D2, D3) | **Done 2026-07-17.** Both resolved by test and by reading the spec, and both answer the same question: **the ecosystem's unit is the skill, not the template.** The CLI installs nothing from this repo because it ships no `SKILL.md`; the spec has no template resource type at all. The pair took under an hour once attempted, having sat open 18 days against a three-day SLA. |
-| **WP-13** | Consumer quickstart | **Not started.** |
-| **WP-14** | Release v0.1.0 (dogfooded release note) | **Not started**, and correctly gated behind the above. |
+| **WP-13** | Consumer quickstart | **Done 2026-07-17.** Six literal steps, leading the README. Claim reconciliation found the front door claiming deterministic agent selection that does not exist, a family called "verified" days before 28 defects were found in it, a stale four-bundle list omitting all of `decision-docs`, and a `docs/decisions/` path that is both nonexistent and org-forbidden. |
+| **WP-14** | Release v0.1.0 (dogfooded release note) | **Done 2026-07-17.** CHANGELOG in Keep a Changelog 1.1.0, [release note](docs/releases/v0.1.0.md) filled from the library's own lean template, tag pushed. **The dogfood worked as intended: it produced DF-1 on its first use** (see below). |
 
 Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
 
