@@ -2,6 +2,17 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.0, reviewed 2026-07-17 - RFC-0001 accepted
+
+- **The worked example's decision landed.** RFC-0001, the metadata-schema proposal the example renders,
+  was accepted and implemented as roadmap WP-21
+  ([ADR 0016](../../docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md),
+  [ADR 0017](../../docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md)). The
+  example's status moved `in-review` to `accepted`, and its Outcome now records the decision and the ADR
+  written from it, so it demonstrates the complete RFC lifecycle instead of one frozen in flight.
+  Companion section 10 was updated to match. **Template unchanged**: `last_reviewed` bumped,
+  `template_version` still 0.1.0 (an example and companion edit is not a template change).
+
 ## 0.1.0 - 2026-07-16
 
 - Initial RFC bundle. Second bundle in the `decision-docs` family, alongside `adr`.
