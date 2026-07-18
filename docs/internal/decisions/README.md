@@ -51,6 +51,8 @@ Do not create for:
 | [0013](0013-local-split-and-going-public.md) | Split `_local/`: promote what public docs cite into `docs/internal/`, untrack the rest, and go public | 2026-07-14 |
 | [0014](0014-gate-may-use-pyyaml-for-frontmatter-validity.md) | The gate may use PyYAML for one check (frontmatter validity); the other six stay pure stdlib | 2026-07-16 |
 | [0015](0015-second-taxonomy-axis-phase-xor-classification.md) | A bundle declares a `phase` XOR a `classification`, never both, never neither (closes TX-1, unblocks the metadata schema) | 2026-07-17 |
+| [0016](0016-adopt-machine-checkable-metadata-schema.md) | A machine-checkable metadata schema (`tools/meta.schema.json`) is the meta contract, validated in CI (WP-21, from RFC-0001) | 2026-07-17 |
+| [0017](0017-gate-may-use-jsonschema-for-meta-validation.md) | The gate may use a JSON Schema validator for one more check (meta validation); the stdlib checks stay pure | 2026-07-17 |
 
 ## Correction versus supersession
 
