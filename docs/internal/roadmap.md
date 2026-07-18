@@ -123,7 +123,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
 | WP-20 | HY-2 decision + graduation | ADR deciding the final scaffold (recommended: flat `templates/<type>/`); migration checklist executed as one atomic commit (README links, methodology applies_to, gate TEMPLATES_DIR, session/audit docs get a pointer note); redirect note left in `_local/` | M | E-06, HY-2 |
-| WP-21 | Metadata schema | `tools/meta.schema.json`; gate check G validates every meta against it | M | B-02; `specs/spec_machine-metadata.md` |
+| WP-21 | Metadata schema | `tools/meta.schema.json`; gate check **J** validates every meta against it. **Done 2026-07-17 (#20): [ADR 0016](decisions/0016-adopt-machine-checkable-metadata-schema.md) adopts the schema (from the accepted RFC-0001), [ADR 0017](decisions/0017-gate-may-use-jsonschema-for-meta-validation.md) grants the jsonschema dependency.** | M | B-02; `specs/spec_machine-metadata.md` |
 | WP-22 | Machine catalog | `manifest.json` generated at root (script `tools/gen-manifest.py`); count-consistency check (README count == manifest count == bundle dirs) | M | C-03; machine-metadata spec |
 | WP-23 | Selection metadata | `sizing_guidance`, `default_size`, generated `approx_tokens` map per meta; regenerate manifest | S/M | C-04, C-06; machine-metadata spec |
 | WP-24 | Family contract | `_families/delivery-docs.contract.md` (modeled on the pm-skills meeting-skills contract); gate family check | M | B-01 |

@@ -1,10 +1,10 @@
 ---
 title: "A metadata schema so agents can select bundles deterministically"
-status: in-review
+status: accepted
 authors: ["jprisant"]
 reviewers: ["jprisant", "claude"]
 created: "2026-07-16"
-updated: "2026-07-16"
+updated: "2026-07-17"
 review_by: "2026-07-30"
 rfc_id: "RFC-0001"
 doc_type: rfc
@@ -167,12 +167,24 @@ meta can merge that violates the schema.
 
 ## Outcome
 
-**Status: in review. No decision has been made.** Decision owner: jprisant. Target decision date:
-2026-07-30.
+**Status: accepted (2026-07-17).** Decision owner: jprisant. Decided ahead of the 2026-07-30 target.
 
-This is a genuine, currently-open proposal, included as this library's worked RFC example precisely
-because an RFC in flight is what the template is for. When a decision is reached it will be recorded
-here (accepted, rejected, or deferred, with the one-line why), the status updated, and, if accepted,
-the resulting decisions written as ADRs (the metadata schema itself, and separately the resolution of
-TX-1 if this RFC forces it). Until then, the honest Outcome of this RFC is that it is doing its job:
-gathering comment before anyone commits.
+Accepted, and implemented. `tools/meta.schema.json` (JSON Schema draft 2020-12) now validates every
+bundle's `<type>_meta.yaml` in CI, via the gate's new check J. The decision is recorded as
+[ADR 0016](../../docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md), written from
+this Outcome exactly as the bundle teaches that an accepted RFC's Outcome is what an ADR is written from,
+and the second gate dependency it needs is recorded as
+[ADR 0017](../../docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md). The one
+hard blocker, whether `phase` could be required, had already been settled by
+[ADR 0015](../../docs/internal/decisions/0015-second-taxonomy-axis-phase-xor-classification.md): a meta
+declares `phase` XOR `classification`, which the schema encodes.
+
+Three of this RFC's open questions were answered in the deciding. The schema lives in `tools/`, beside
+the gate that reads it, not a new `schema/` directory. The per-meta `meta_schema_version` field is
+deferred until a real v2 migration needs it, rather than added speculatively. And the JSON Schema
+validator dependency is covered by ADR 0014's precedent, as the Detailed Design assumed, now confirmed by
+ADR 0017. The proposal's second artifact, the generated `index.json`, is deferred to roadmap WP-22
+(machine catalog); the schema, the half that keeps the metas honest, ships first.
+
+This example is left standing at `accepted` on purpose. An RFC that records its own outcome, and whose
+outcome became an ADR, is the complete lifecycle the template exists to demonstrate.

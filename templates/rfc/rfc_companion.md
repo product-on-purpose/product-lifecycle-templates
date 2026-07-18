@@ -415,16 +415,17 @@ locally-defined near-synonym for the RFC rather than a fourth distinct type.
 
 ## 10. Worked example
 
-[`rfc_example.md`](rfc_example.md) is a full-variant RFC for a **real, currently-open decision in this
-repository**: whether and how the library should ship a machine-readable metadata schema so that an
-agent could select a bundle deterministically (roadmap item WP-21).
+[`rfc_example.md`](rfc_example.md) is a full-variant RFC for a **real decision in this repository**:
+whether and how the library should ship a machine-readable metadata schema so that an agent could
+select a bundle deterministically (roadmap item WP-21).
 
-It is deliberately a *live* proposal, not a settled one, because that is what an RFC is. Its status is
-`in-review` and its Outcome section records that no decision has been made yet, with a decision owner
-and a date. This is the honest state of an RFC in flight, and it demonstrates the thing the format is
-for: the argument is on the page, the alternatives are real, the open questions are genuinely open,
-and the decision, when it comes, will be recorded here and then carried into an ADR. It is the first
-example in this library whose Outcome is, correctly, "not yet decided."
+It was circulated as a live `in-review` proposal and has since been **accepted**. Its Outcome section now
+records the decision, notes which open questions were settled in the deciding, and points to the
+[ADR](../adr/adr_companion.md) written from it. That full arc, a real argument with real alternatives and
+genuinely open questions, carried to a recorded decision and then into a decision record, is exactly what
+the format is for, and it is why this bundle makes Outcome a required section at every size: the example
+demonstrates the bridge to the ADR, it does not merely assert it. An RFC caught mid-flight would show the
+question; this one shows the whole loop closing.
 
 ---
 
