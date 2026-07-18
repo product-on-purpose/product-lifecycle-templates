@@ -13,13 +13,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      # PyYAML is the gate's one dependency, used only by check G (frontmatter validity).
-      # The other six checks are pure stdlib. Installing it here is what makes G enforced in
-      # CI; locally it SKIPs if absent. See decision 0014.
-      - name: Install gate dependency
-        run: pip install pyyaml
+      # The gate's two dependencies: PyYAML (check G, frontmatter validity) and jsonschema
+      # (check J, meta-schema validation). The other eight checks are pure stdlib. Installing
+      # both here is what makes G and J enforced in CI; locally each SKIPs if its dependency is
+      # absent. See decisions 0014 (PyYAML) and 0017 (jsonschema).
+      - name: Install gate dependencies
+        run: pip install pyyaml jsonschema
 
-      # The bundle gate: seven structural checks across every bundle.
+      # The bundle gate: ten structural checks across every bundle.
       - name: Bundle gate
         run: python tools/check-bundles.py
 

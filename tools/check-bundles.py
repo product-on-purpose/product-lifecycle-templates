@@ -11,15 +11,17 @@ on every push to main and every pull request. It supersedes the Node script suit
 implementation plan's P3 (port the CI quality gate from pm-skills) had intended; see
 docs/internal/decisions/0008-gate-python-local-interim.md.
 
-Coverage is partial by acknowledgement, not by accident: these nine checks automate roughly
+Coverage is partial by acknowledgement, not by accident: these ten checks automate roughly
 half the Definition of Done. The rest is human-verified. Do not read a green run as "the
 DoD is met"; read it as "the structural checks pass." Gate hardening is roadmap WP-11.
 
-Eight checks are pure standard library and always run. The ninth (G, frontmatter YAML)
-needs a real parser, which the stdlib does not provide; it uses PyYAML where available and
-SKIPS with a clear message otherwise, so a local run without the dependency still gates the
-other eight. CI installs PyYAML, so G is enforced there, which since M0 is the enforcement
-point. See docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md.
+Eight checks are pure standard library and always run. Two need a real parser the stdlib
+does not provide, and both SKIP with a clear message when their dependency is absent, so a
+bare-Python local run still gates the other eight: G (frontmatter YAML) uses PyYAML, and J
+(meta schema) uses PyYAML plus a JSON Schema validator. CI installs both, so G and J are
+enforced there, which since M0 is the enforcement point. See
+docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md (G) and
+docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md (J).
 
 WHAT THE GATE STILL CANNOT DO, STATED PLAINLY.
 Check E proves a citation RESOLVES. It cannot prove the cited source SUPPORTS the claim. The
@@ -62,6 +64,10 @@ Checks per bundle:
     H. History           the history has an entry for the template_version the meta claims
     I. Refs resolve      pairs_with names a skill on the pinned list (tools/known-skills.txt);
                          related_templates names a bundle that exists, or uses future:
+    J. Meta schema       the meta.yaml validates against tools/meta.schema.json: required
+                         fields present, enums legal, and exactly one of phase / classification
+                         (the ADR 0015 XOR). Needs PyYAML and a JSON Schema validator; SKIPS
+                         if either is absent
 """
 
 import os
@@ -70,6 +76,7 @@ import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, "..", "templates"))
+SCHEMA_PATH = os.path.join(SCRIPT_DIR, "meta.schema.json")
 
 # en-dash (U+2013) and em-dash (U+2014), built from codepoints so no glyph sits in this file
 DASH_RE = re.compile("[" + chr(0x2013) + chr(0x2014) + "]")
@@ -509,6 +516,137 @@ def check_frontmatter_yaml(name, d):
     return True, str(len(targets)) + " YAML block(s) parse"
 
 
+def load_yaml_unique(yaml, text):
+    """Parse YAML like safe_load, but raise on a duplicate mapping key.
+
+    yaml.safe_load silently keeps the last of duplicate keys, so a meta with
+    `phase: something-bogus` on one line and `phase: deliver` on the next parses to
+    phase=deliver, and the bogus first value is invisible to every check. A duplicate key is an
+    authoring error, and a duplicate `phase` would quietly defeat the very XOR check J exists to
+    enforce. This loader rejects the duplication. (Check G's safe_load shares the blind spot;
+    tightening it there is tracked as a follow-up.)
+    """
+    class UniqueKeyLoader(yaml.SafeLoader):
+        pass
+
+    def construct_mapping(loader, node, deep=False):
+        mapping = {}
+        for key_node, value_node in node.value:
+            key = loader.construct_object(key_node, deep=deep)
+            if key in mapping:
+                raise yaml.YAMLError("duplicate key " + repr(key) + " in mapping")
+            mapping[key] = loader.construct_object(value_node, deep=deep)
+        return mapping
+
+    UniqueKeyLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_mapping)
+    return yaml.load(text, Loader=UniqueKeyLoader)
+
+
+def check_meta_schema(name, d):
+    """Every meta.yaml must validate against tools/meta.schema.json, the metadata contract.
+
+    Check G proves the meta is well-formed YAML; this proves it is a well-formed META. Where G
+    accepts `status: banana`, or a meta missing `license` entirely, or one carrying both a
+    `phase` and a `classification`, J rejects them, because the schema names what a meta must
+    contain and which values are legal, not merely that it parses. The XOR is the point: ADR
+    0015 settled that a bundle declares exactly one of `phase` (a lifecycle artifact) or
+    `classification` (a standing, cross-phase artifact), never both and never neither, and the
+    schema is where that rule finally has automation. See
+    docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md.
+
+    Two dependencies, both SKIPped honestly when absent (the ADR 0014 pattern, extended to a
+    second check by docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md):
+    PyYAML to parse the meta, and a JSON Schema validator to check it. The stdlib has neither.
+    CI installs both, so J is enforced there; a bare-Python local run SKIPs it and still gets
+    the eight pure-stdlib checks.
+
+    YAML dates need care. `last_reviewed: 2026-07-16` parses to a datetime.date, which a JSON
+    Schema validator (a JSON tool) rejects against `type: string`. The parsed meta is passed
+    through a JSON round-trip (json.dumps(..., default=str)) first, so the validator sees the
+    six JSON types the schema is written against, and the date is checked as the ISO string it
+    is on disk.
+    """
+    try:
+        import yaml
+    except ImportError:
+        return None, "SKIPPED: PyYAML not installed (pip install pyyaml jsonschema to run this check locally; CI enforces it)"
+    try:
+        import jsonschema
+    except ImportError:
+        return None, "SKIPPED: jsonschema not installed (pip install jsonschema to run this check locally; CI enforces it)"
+    import json
+
+    if not os.path.isfile(SCHEMA_PATH):
+        return False, "tools/meta.schema.json is missing; the metadata contract has no schema to validate against"
+    try:
+        schema = json.loads(read(SCHEMA_PATH))
+    except json.JSONDecodeError as e:
+        return False, "tools/meta.schema.json is not valid JSON: " + str(e).splitlines()[0]
+    try:
+        jsonschema.Draft202012Validator.check_schema(schema)
+    except jsonschema.exceptions.SchemaError as e:
+        return False, "tools/meta.schema.json is not a valid Draft 2020-12 schema: " + str(e).splitlines()[0]
+
+    mp = os.path.join(d, name + "_meta.yaml")
+    if not os.path.isfile(mp):
+        return False, "meta.yaml missing"
+    try:
+        raw = load_yaml_unique(yaml, read(mp))
+    except (yaml.YAMLError, ValueError, OverflowError) as e:
+        # ValueError/OverflowError cover a bare invalid calendar date such as
+        # `last_reviewed: 2026-13-01`, which PyYAML tries to build with datetime.date() and
+        # which raises before validation. Catch it so the gate reports a failure, not a crash.
+        return False, "meta.yaml is not valid YAML: " + str(e).splitlines()[0]
+    # Normalize YAML-native scalars (dates especially) to JSON types before validating, so the
+    # JSON Schema validator sees the JSON the schema is written against. allow_nan=False turns a
+    # non-finite float (YAML .inf / .nan) into a controlled failure instead of non-standard JSON.
+    try:
+        data = json.loads(json.dumps(raw, default=str, allow_nan=False))
+    except ValueError:
+        return False, "meta.yaml contains a non-finite number (Infinity or NaN), which is not a legal value"
+    if not isinstance(data, dict):
+        return False, "meta.yaml is not a mapping at the top level"
+
+    # format_checker enforces `format: date`, so an impossible calendar date like 2026-02-30
+    # (which the structural pattern alone accepts) is rejected.
+    validator = jsonschema.Draft202012Validator(schema, format_checker=jsonschema.FormatChecker())
+    errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
+    if not errors:
+        # JSON Schema `type: integer` admits an integral float (29.0), because the spec defines
+        # integer mathematically, not by representation. A catalog_ref should be a real int.
+        cref = data.get("catalog_ref")
+        if isinstance(cref, float):
+            return False, "does not match meta.schema.json - catalog_ref must be a whole integer, not the float " + repr(cref)
+        axis = "phase" if "phase" in data else "classification"
+        return True, "validates against meta.schema.json (" + axis + " axis)"
+
+    has_p, has_c = "phase" in data, "classification" in data
+    msgs = []
+    for err in errors[:4]:
+        path = list(err.path)
+        if err.validator == "oneOf" and not path:
+            # The top-level XOR. jsonschema's default message dumps the whole meta; say what is
+            # actually wrong instead. The final else is a safety net for a future tightening of
+            # the branches; it is unreachable while exactly-one-present satisfies exactly one branch.
+            if has_p and has_c:
+                msgs.append("declares both phase and classification; exactly one is allowed (ADR 0015)")
+            elif not has_p and not has_c:
+                msgs.append("declares neither phase nor classification; exactly one is required (ADR 0015)")
+            else:
+                msgs.append("phase/classification: " + err.message)
+        elif err.validator == "oneOf" and path == ["sizes_available"]:
+            sizes = data.get("sizes_available")
+            if isinstance(sizes, list) and not sizes:
+                msgs.append("sizes_available is empty; declare at least one size from lean/full or s/m/l")
+            else:
+                msgs.append("sizes_available mixes size vocabularies; use lean/full OR s/m/l, never both")
+        else:
+            loc = "/".join(str(p) for p in path) or "(meta root)"
+            msgs.append(loc + ": " + err.message)
+    more = " ..." if len(errors) > 4 else ""
+    return False, "does not match meta.schema.json - " + "; ".join(msgs) + more
+
+
 CHECKS = [
     ("A files", check_files),
     ("B dashes", check_dashes),
@@ -519,6 +657,7 @@ CHECKS = [
     ("G yaml", check_frontmatter_yaml),
     ("H history", check_history),
     ("I refs", check_refs),
+    ("J schema", check_meta_schema),
 ]
 
 

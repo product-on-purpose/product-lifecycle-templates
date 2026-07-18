@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/product-on-purpose/product-lifecycle-templates/main/tools/meta.schema.json",
+  "title": "Bundle metadata (<type>_meta.yaml)",
+  "description": "The machine-checkable contract for a bundle's catalog meta. Every templates/<type>/<type>_meta.yaml must validate against this. It describes the template as a library asset and never travels into a filled document. Encodes ADR 0015: a meta declares phase XOR classification, never both, never neither. Adopted by ADR 0016 (from RFC-0001); enforced by check-bundles.py check J, which may use a JSON Schema validator per ADR 0017. Adding, removing, or loosening a field is a deliberate change to this file, reviewed as such - that is the contract working, not a burden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "doc_type",
+    "title",
+    "summary",
+    "family",
+    "sizes_available",
+    "methodology",
+    "pairs_with",
+    "status",
+    "template_version",
+    "tags",
+    "related_templates",
+    "aliases",
+    "catalog_ref",
+    "maintainer",
+    "last_reviewed",
+    "license"
+  ],
+  "oneOf": [
+    {
+      "title": "lifecycle artifact",
+      "required": ["phase"],
+      "not": { "required": ["classification"] }
+    },
+    {
+      "title": "standing (cross-phase) artifact",
+      "required": ["classification"],
+      "not": { "required": ["phase"] }
+    }
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "The bundle's stable identifier and folder name. Canonical kebab-case (lowercase, single hyphens between alphanumeric segments, no leading/trailing/double hyphen). Equals doc_type."
+    },
+    "doc_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "The document type this bundle produces. Equals id (a JSON Schema cannot assert cross-field equality; check J does not enforce it, but they must match by convention)."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "Human-readable name of the document type, e.g. 'Product Requirements Document'. Must contain a non-whitespace character."
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "One or two sentences: what the document is for, so an agent or reader can select it from this field alone. Must contain a non-whitespace character."
+    },
+    "phase": {
+      "description": "The lifecycle phase this artifact belongs to (ADR 0003). Present on lifecycle artifacts; mutually exclusive with classification (ADR 0015).",
+      "enum": ["discover", "define", "develop", "deliver", "measure", "iterate"]
+    },
+    "classification": {
+      "description": "The standing-artifact class for a cross-phase document with no single lifecycle phase (ADR 0015, matching pm-skills). Present on standing artifacts; mutually exclusive with phase.",
+      "enum": ["foundation", "utility", "tool"]
+    },
+    "family": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "The bundle family this type belongs to, e.g. delivery-docs, decision-docs. The controlled family vocabulary is WP-24's job; this field only requires a canonical kebab-case token for now."
+    },
+    "sizes_available": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "The size contract (ADR 0010): the variants this bundle ships, using exactly one of the two legal vocabularies, never mixed. A single-size bundle declares one value.",
+      "items": { "enum": ["lean", "full", "s", "m", "l"] },
+      "oneOf": [
+        { "title": "lean/full vocabulary", "items": { "enum": ["lean", "full"] } },
+        { "title": "s/m/l vocabulary", "items": { "enum": ["s", "m", "l"] } }
+      ]
+    },
+    "methodology": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "The methodology the template leans on, e.g. generic, agile-scrum-xp, agile-bdd, methodology-agnostic. Free token, no closed vocabulary yet. Must contain a non-whitespace character."
+    },
+    "pairs_with": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "pm-skills skill IDs this template serves. May be empty (a bundle with no paired skill, e.g. rfc). Shape only; cross-repo resolution is check I's job against tools/known-skills.txt.",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$" }
+    },
+    "status": {
+      "description": "Maturity of the bundle as a library asset (adopted from RFC-0001, with draft added for pre-review authoring). draft: under authoring, not yet offered for use. beta: offered for use, gathering feedback. stable: settled. deprecated: no longer recommended.",
+      "enum": ["draft", "beta", "stable", "deprecated"]
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "description": "Semantic version (MAJOR.MINOR.PATCH) of the template itself, no leading zeros in any segment. check H requires a matching history entry. Bumped only on a real template change."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Free-text discovery tags. May be empty, though most bundles carry several.",
+      "items": { "type": "string", "minLength": 1, "pattern": "\\S" }
+    },
+    "related_templates": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Sibling bundle ids this type relates to. Each must name a bundle that exists, or carry the future: prefix for one not built yet (check I resolves them). May be empty.",
+      "items": { "type": "string", "pattern": "^(future:)?[a-z][a-z0-9]*(-[a-z0-9]+)*$" }
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Other names a reader or agent might use for this document type. Free text (may contain spaces and capitals). May be empty.",
+      "items": { "type": "string", "minLength": 1, "pattern": "\\S" }
+    },
+    "catalog_ref": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Entry number in the deep-research master catalog."
+    },
+    "maintainer": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "Who maintains this bundle. Must contain a non-whitespace character."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO date (YYYY-MM-DD) the bundle was last reviewed. The pattern guards structure; format: date (enforced by check J's format checker) rejects impossible calendar dates like 2026-02-30. Quote it in YAML or leave it bare; check J normalizes YAML dates to strings before validating."
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "SPDX license identifier for the bundle, e.g. Apache-2.0. Must contain a non-whitespace character."
+    }
+  }
+}
