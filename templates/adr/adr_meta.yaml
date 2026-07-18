@@ -8,6 +8,8 @@ doc_type: adr
 phase: develop
 family: decision-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a straightforward decision; use full for an architecturally significant one with several options weighed and detailed consequences."
 methodology: generic
 pairs_with: [develop-adr]
 status: beta

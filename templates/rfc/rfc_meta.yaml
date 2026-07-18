@@ -8,6 +8,8 @@ doc_type: rfc
 phase: develop
 family: decision-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a focused, low-blast-radius proposal; use full for a significant decision that needs goals and non-goals, detailed design, alternatives, and a rollout plan."
 methodology: generic
 pairs_with: []
 status: beta
