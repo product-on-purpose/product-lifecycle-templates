@@ -32,6 +32,12 @@ jobs:
       - name: Link gate
         run: python tools/check-links.py
 
+      # The machine catalog. manifest.json is generated from the metas and committed; this
+      # step regenerates it in memory and fails if the committed copy has drifted, and if the
+      # README bundle-count marker disagrees with reality (decision 0018, roadmap WP-22).
+      - name: Manifest freshness
+        run: python tools/gen-manifest.py --check
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record

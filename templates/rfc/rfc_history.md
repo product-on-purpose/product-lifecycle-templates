@@ -12,6 +12,9 @@ Per-bundle changelog, by `template_version`. Newest first.
   written from it, so it demonstrates the complete RFC lifecycle instead of one frozen in flight.
   Companion section 10 was updated to match. **Template unchanged**: `last_reviewed` bumped,
   `template_version` still 0.1.0 (an example and companion edit is not a template change).
+- **Follow-on the same day: the manifest landed.** RFC-0001's second proposed artifact shipped as
+  `manifest.json` in WP-22 ([ADR 0018](../../docs/internal/decisions/0018-machine-catalog-generated-manifest.md)),
+  and the example's Outcome had its artifact name reconciled from `index.json` to `manifest.json`.
 
 ## 0.1.0 - 2026-07-16
 

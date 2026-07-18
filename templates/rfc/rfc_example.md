@@ -183,8 +183,10 @@ Three of this RFC's open questions were answered in the deciding. The schema liv
 the gate that reads it, not a new `schema/` directory. The per-meta `meta_schema_version` field is
 deferred until a real v2 migration needs it, rather than added speculatively. And the JSON Schema
 validator dependency is covered by ADR 0014's precedent, as the Detailed Design assumed, now confirmed by
-ADR 0017. The proposal's second artifact, the generated `index.json`, is deferred to roadmap WP-22
-(machine catalog); the schema, the half that keeps the metas honest, ships first.
+ADR 0017. The proposal's second artifact, a generated catalog, followed in roadmap WP-22: it ships as
+`manifest.json` ([ADR 0018](../../docs/internal/decisions/0018-machine-catalog-generated-manifest.md)),
+the name reconciled from this RFC's `index.json`. The schema, the half that keeps the metas honest,
+shipped first.
 
 This example is left standing at `accepted` on purpose. An RFC that records its own outcome, and whose
 outcome became an ADR, is the complete lifecycle the template exists to demonstrate.

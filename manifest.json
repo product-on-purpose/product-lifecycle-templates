@@ -1,0 +1,170 @@
+{
+  "_generated": "by tools/gen-manifest.py from templates/*/*_meta.yaml; do not edit by hand",
+  "bundles": [
+    {
+      "aliases": [
+        "AC",
+        "conditions of satisfaction",
+        "acceptance tests",
+        "gherkin scenarios"
+      ],
+      "doc_type": "acceptance-criteria",
+      "family": "delivery-docs",
+      "id": "acceptance-criteria",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Defines the conditions a user story must satisfy to be accepted, so \"done\" is verifiable and shared rather than left to interpretation.",
+      "tags": [
+        "requirements",
+        "delivery",
+        "agile",
+        "bdd",
+        "testing",
+        "quality"
+      ],
+      "title": "Acceptance Criteria"
+    },
+    {
+      "aliases": [
+        "ADR",
+        "decision record",
+        "architectural decision record",
+        "lightweight ADR",
+        "MADR"
+      ],
+      "doc_type": "adr",
+      "family": "decision-docs",
+      "id": "adr",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Records one architecturally significant decision: the forces that made it necessary, the options genuinely considered, the option chosen, and the consequences accepted. Immutable once accepted; superseded by a new record rather than edited.",
+      "tags": [
+        "architecture",
+        "decision",
+        "rationale",
+        "madr",
+        "governance",
+        "engineering"
+      ],
+      "title": "Architecture Decision Record"
+    },
+    {
+      "aliases": [
+        "product spec",
+        "product brief",
+        "feature spec",
+        "one-pager",
+        "product requirements"
+      ],
+      "doc_type": "prd",
+      "family": "delivery-docs",
+      "id": "prd",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Defines what to build, for whom, and why, with scope and success criteria, so a team can design and build the right thing.",
+      "tags": [
+        "requirements",
+        "delivery",
+        "prd",
+        "specification"
+      ],
+      "title": "Product Requirements Document"
+    },
+    {
+      "aliases": [
+        "changelog",
+        "what's new",
+        "release announcement",
+        "changelog entry"
+      ],
+      "doc_type": "release-notes",
+      "family": "delivery-docs",
+      "id": "release-notes",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Communicates what changed in a release to users and stakeholders, so people know what is new, what to do, and what to watch for.",
+      "tags": [
+        "release",
+        "delivery",
+        "communication",
+        "changelog",
+        "devops"
+      ],
+      "title": "Release Notes"
+    },
+    {
+      "aliases": [
+        "RFC",
+        "request for comments",
+        "design proposal",
+        "engineering RFC",
+        "eng RFC",
+        "RFD"
+      ],
+      "doc_type": "rfc",
+      "family": "decision-docs",
+      "id": "rfc",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Proposes a change and gathers input before the decision is made: the motivation, the proposal, the alternatives, the trade-offs, the open questions, and a place to record the outcome. The pre-decision counterpart to the ADR, which records a decision after it is made.",
+      "tags": [
+        "decision",
+        "proposal",
+        "architecture",
+        "engineering",
+        "collaboration",
+        "governance"
+      ],
+      "title": "Request for Comments"
+    },
+    {
+      "aliases": [
+        "story",
+        "story card",
+        "user story",
+        "job story",
+        "backlog item",
+        "PBI"
+      ],
+      "doc_type": "user-stories",
+      "family": "delivery-docs",
+      "id": "user-stories",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "status": "beta",
+      "summary": "Describes a unit of work from the user's perspective (\"as a [user], I want [goal], so that [benefit]\") so a team can build and verify the right thing.",
+      "tags": [
+        "requirements",
+        "delivery",
+        "agile",
+        "scrum",
+        "backlog"
+      ],
+      "title": "User Story"
+    }
+  ],
+  "count": 6
+}
