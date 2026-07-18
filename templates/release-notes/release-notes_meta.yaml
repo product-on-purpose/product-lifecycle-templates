@@ -7,6 +7,8 @@ doc_type: release-notes
 phase: deliver
 family: delivery-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a routine release; use full for a major launch with breaking changes, migration steps, and audience-specific sections."
 methodology: methodology-agnostic
 pairs_with: [deliver-release-notes]   # pm-skills skill ID this template serves
 status: beta

@@ -8,6 +8,11 @@
         "acceptance tests",
         "gherkin scenarios"
       ],
+      "approx_tokens": {
+        "full": 1950,
+        "lean": 1000
+      },
+      "default_size": "lean",
       "doc_type": "acceptance-criteria",
       "family": "delivery-docs",
       "id": "acceptance-criteria",
@@ -16,6 +21,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a handful of criteria on one story; use full for a complex feature with many scenarios, edge cases, and quality attributes.",
       "status": "beta",
       "summary": "Defines the conditions a user story must satisfy to be accepted, so \"done\" is verifiable and shared rather than left to interpretation.",
       "tags": [
@@ -36,6 +42,11 @@
         "lightweight ADR",
         "MADR"
       ],
+      "approx_tokens": {
+        "full": 3300,
+        "lean": 2000
+      },
+      "default_size": "lean",
       "doc_type": "adr",
       "family": "decision-docs",
       "id": "adr",
@@ -44,6 +55,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a straightforward decision; use full for an architecturally significant one with several options weighed and detailed consequences.",
       "status": "beta",
       "summary": "Records one architecturally significant decision: the forces that made it necessary, the options genuinely considered, the option chosen, and the consequences accepted. Immutable once accepted; superseded by a new record rather than edited.",
       "tags": [
@@ -64,6 +76,11 @@
         "one-pager",
         "product requirements"
       ],
+      "approx_tokens": {
+        "full": 4100,
+        "lean": 1750
+      },
+      "default_size": "lean",
       "doc_type": "prd",
       "family": "delivery-docs",
       "id": "prd",
@@ -72,6 +89,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a single feature or a one-pager; use full for a substantial product area that needs detailed scope, success metrics, and a rollout plan.",
       "status": "beta",
       "summary": "Defines what to build, for whom, and why, with scope and success criteria, so a team can design and build the right thing.",
       "tags": [
@@ -89,6 +107,11 @@
         "release announcement",
         "changelog entry"
       ],
+      "approx_tokens": {
+        "full": 3050,
+        "lean": 1550
+      },
+      "default_size": "lean",
       "doc_type": "release-notes",
       "family": "delivery-docs",
       "id": "release-notes",
@@ -97,6 +120,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a routine release; use full for a major launch with breaking changes, migration steps, and audience-specific sections.",
       "status": "beta",
       "summary": "Communicates what changed in a release to users and stakeholders, so people know what is new, what to do, and what to watch for.",
       "tags": [
@@ -117,6 +141,11 @@
         "eng RFC",
         "RFD"
       ],
+      "approx_tokens": {
+        "full": 3200,
+        "lean": 2300
+      },
+      "default_size": "lean",
       "doc_type": "rfc",
       "family": "decision-docs",
       "id": "rfc",
@@ -125,6 +154,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a focused, low-blast-radius proposal; use full for a significant decision that needs goals and non-goals, detailed design, alternatives, and a rollout plan.",
       "status": "beta",
       "summary": "Proposes a change and gathers input before the decision is made: the motivation, the proposal, the alternatives, the trade-offs, the open questions, and a place to record the outcome. The pre-decision counterpart to the ADR, which records a decision after it is made.",
       "tags": [
@@ -146,6 +176,11 @@
         "backlog item",
         "PBI"
       ],
+      "approx_tokens": {
+        "full": 2100,
+        "lean": 1000
+      },
+      "default_size": "lean",
       "doc_type": "user-stories",
       "family": "delivery-docs",
       "id": "user-stories",
@@ -154,6 +189,7 @@
         "lean",
         "full"
       ],
+      "sizing_guidance": "Use lean for a single, well-understood story; use full when the story needs detailed context, edge cases, and explicit non-functional notes.",
       "status": "beta",
       "summary": "Describes a unit of work from the user's perspective (\"as a [user], I want [goal], so that [benefit]\") so a team can build and verify the right thing.",
       "tags": [

@@ -89,6 +89,7 @@ INLINE_CITE_RE = re.compile(r"\(#ref-(\d+)\)")
 ANCHOR_RE = re.compile(r'id="ref-(\d+)"')
 BARE_CITE_RE = re.compile(r"(?<!\[)\[(\d+)\](?!\()")
 SIZES_RE = re.compile(r"^sizes_available:\s*(.*)$", re.MULTILINE)
+DEFAULT_SIZE_RE = re.compile(r"^default_size:\s*(.+?)\s*$", re.MULTILINE)
 VERSION_RE = re.compile(r"^template_version:\s*(.+?)\s*$", re.MULTILINE)
 PAIRS_RE = re.compile(r"^pairs_with:\s*(.*)$", re.MULTILINE)
 RELATED_RE = re.compile(r"^related_templates:\s*(.*)$", re.MULTILINE)
@@ -356,13 +357,25 @@ def check_meta_contract(name, d):
     # meta is the bundle's own description of itself, so an unfilled placeholder there is an
     # authoring miss that ships as a false claim about the bundle.
     p = os.path.join(d, name + "_meta.yaml")
-    left = PLACEHOLDER_RE.findall(read(p))
+    text = read(p)
+    left = PLACEHOLDER_RE.findall(text)
     if left:
         return False, "meta has unfilled placeholder(s): " + ", ".join(sorted(set(left)))
 
+    # default_size must name one of the declared sizes. The schema (check J) constrains it to a
+    # legal size value and requires it, but a JSON Schema cannot express "is a member of THIS
+    # meta's sizes_available"; that cross-field rule lives here.
+    m = DEFAULT_SIZE_RE.search(text)
+    default = m.group(1).strip().strip("\"'") if m else None
+    if default is not None and default not in sizes:
+        return False, "default_size " + default + " is not one of sizes_available {" + ", ".join(sizes) + "}"
+
     vocab = next(v for v in SIZE_VOCABULARIES if set(sizes) <= set(v))
     shape = "single-size" if len(sizes) == 1 else str(len(sizes)) + "-variant"
-    return True, shape + ", vocabulary {" + "/".join(vocab) + "}, declares {" + ", ".join(sizes) + "}"
+    detail = shape + ", vocabulary {" + "/".join(vocab) + "}, declares {" + ", ".join(sizes) + "}"
+    if default is not None:
+        detail += ", default " + default
+    return True, detail
 
 
 def check_history(name, d):

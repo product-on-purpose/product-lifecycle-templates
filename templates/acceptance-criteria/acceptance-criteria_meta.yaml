@@ -7,6 +7,8 @@ doc_type: acceptance-criteria
 phase: deliver
 family: delivery-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a handful of criteria on one story; use full for a complex feature with many scenarios, edge cases, and quality attributes."
 methodology: agile-bdd
 pairs_with: [deliver-acceptance-criteria]   # pm-skills skill ID this template serves
 status: beta

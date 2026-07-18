@@ -7,6 +7,8 @@ doc_type: user-stories
 phase: deliver
 family: delivery-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a single, well-understood story; use full when the story needs detailed context, edge cases, and explicit non-functional notes."
 methodology: agile-scrum-xp
 pairs_with: [deliver-user-stories]   # pm-skills skill ID this template serves
 status: beta

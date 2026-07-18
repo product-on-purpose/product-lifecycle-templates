@@ -15,10 +15,12 @@ generate-and-check discipline the dashes and links gates already use.
 Naming: RFC-0001 called this artifact "index.json"; WP-22 builds it as "manifest.json" per the
 roadmap, which also names this script. ADR 0018 records the reconciliation.
 
-Selectable subset per RFC-0001's Detailed Design: id, doc_type, title, summary, family, the taxonomy
-axis (phase XOR classification, whichever the meta declares), sizes_available, status, tags, aliases.
-Provenance fields (template_version, last_reviewed, catalog_ref, maintainer, license) are deliberately
-omitted: they are not selection inputs.
+Selectable subset per RFC-0001's Detailed Design, extended by WP-23: id, doc_type, title, summary,
+family, the taxonomy axis (phase XOR classification, whichever the meta declares), sizes_available,
+default_size, sizing_guidance, status, tags, aliases. Plus a generated approx_tokens map (per size
+variant) so an agent can budget context before fetching; see ADR 0019. Provenance fields
+(template_version, last_reviewed, catalog_ref, maintainer, license) are deliberately omitted: they are
+not selection inputs.
 
 Dependency: PyYAML, to parse the metas. The gate's check J already validates every meta against the
 schema, so this generator trusts the metas are well-formed and only reads them. Unlike the gate, a
@@ -54,6 +56,8 @@ SELECT_FIELDS = [
     "phase",
     "classification",
     "sizes_available",
+    "default_size",
+    "sizing_guidance",
     "status",
     "tags",
     "aliases",
@@ -83,14 +87,39 @@ def find_bundles(root):
     return out
 
 
+def variant_file(name, size):
+    return name + "_template-" + size + ".md"
+
+
+def estimate_tokens(path):
+    """A deliberately rough token estimate: characters / 4, rounded to the nearest 50.
+
+    It is a budgeting hint (how much context loading this variant costs), not an exact count, so it
+    takes no tokenizer dependency and stays model-agnostic. See ADR 0019. Because it is computed from
+    the file, it cannot drift from the template it measures: edit the template and `--check` flags the
+    manifest as stale until it is regenerated.
+    """
+    chars = len(open(path, encoding="utf-8").read())
+    return round(chars / 4 / 50) * 50
+
+
 def build_manifest(yaml):
-    """The manifest as a Python dict, built fresh from the metas on disk."""
+    """The manifest as a Python dict, built fresh from the metas and the template variant files."""
     bundles = []
     for name in find_bundles(TEMPLATES_DIR):
-        meta_path = os.path.join(TEMPLATES_DIR, name, name + "_meta.yaml")
-        with open(meta_path, encoding="utf-8") as f:
+        bundle_dir = os.path.join(TEMPLATES_DIR, name)
+        with open(os.path.join(bundle_dir, name + "_meta.yaml"), encoding="utf-8") as f:
             meta = yaml.safe_load(f.read())
         entry = {k: meta[k] for k in SELECT_FIELDS if k in meta}
+        # approx_tokens is GENERATED from the template variant files, never read from the meta, so it
+        # cannot drift from the templates it measures.
+        tokens = {}
+        for size in meta.get("sizes_available", []):
+            vpath = os.path.join(bundle_dir, variant_file(name, size))
+            if os.path.isfile(vpath):
+                tokens[size] = estimate_tokens(vpath)
+        if tokens:
+            entry["approx_tokens"] = tokens
         bundles.append(entry)
     bundles.sort(key=lambda b: b.get("id", ""))
     return {

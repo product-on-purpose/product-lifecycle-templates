@@ -12,6 +12,8 @@
     "summary",
     "family",
     "sizes_available",
+    "default_size",
+    "sizing_guidance",
     "methodology",
     "pairs_with",
     "status",
@@ -82,6 +84,16 @@
         { "title": "lean/full vocabulary", "items": { "enum": ["lean", "full"] } },
         { "title": "s/m/l vocabulary", "items": { "enum": ["s", "m", "l"] } }
       ]
+    },
+    "default_size": {
+      "description": "The recommended starting size for this bundle. The schema constrains it to a legal size value; check F enforces the cross-field rule that it must be one of sizes_available (which a JSON Schema cannot express).",
+      "enum": ["lean", "full", "s", "m", "l"]
+    },
+    "sizing_guidance": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "One sentence on when to pick each size, so an agent or author chooses a weight deliberately rather than defaulting blindly."
     },
     "methodology": {
       "type": "string",

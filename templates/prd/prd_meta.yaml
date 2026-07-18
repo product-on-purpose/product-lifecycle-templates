@@ -7,6 +7,8 @@ doc_type: prd
 phase: deliver
 family: delivery-docs
 sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean for a single feature or a one-pager; use full for a substantial product area that needs detailed scope, success metrics, and a rollout plan."
 methodology: generic
 pairs_with: [deliver-prd]          # pm-skills skill ID this template serves
 status: beta
