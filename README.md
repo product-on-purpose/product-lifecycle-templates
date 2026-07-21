@@ -77,8 +77,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 6 -->
-**Six bundles, in two families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 7 -->
+**Seven bundles, in two families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 **`delivery-docs`** (four bundles). Their examples chain on one fictional "Saved Views" feature, so the family reads as one traceable set: a PRD leads to user stories, which lead to acceptance criteria, which ship in a release note.
 
@@ -89,14 +89,15 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 | [`acceptance-criteria`](templates/acceptance-criteria/) | The conditions that confirm a story is done | `deliver-acceptance-criteria` |
 | [`release-notes`](templates/release-notes/) | The customer-facing announcement of a release | `deliver-release-notes` |
 
-**`decision-docs`** (two bundles). A sequence, not a choice: **RFC to decide, ADR to record.**
+**`decision-docs`** (three bundles). Three distinct jobs: an **RFC** proposes a decision, an **ADR** records it, and an **SDD** describes how the thing gets built.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`rfc`](templates/rfc/) | The proposal circulated *before* a decision, to gather input | (none: no `develop-rfc` skill exists) |
 | [`adr`](templates/adr/) | The record of a decision *after* it is made, in [MADR v4](https://github.com/adr/madr) | `develop-adr` |
+| [`sdd`](templates/sdd/) | The software design document: how a system will be built, before the code | (none: no `develop-sdd` skill exists) |
 
-Beyond these six, the library grows **by pull** from a researched catalog of 205 artifact types across 19 categories. The "must-have core" is built first; specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these seven, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** still governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 *A word on "complete".* This README used to call `delivery-docs` complete and verified. Both words were doing more work than they had earned, so they are gone. The family has all four intended bundles, but no family contract is adopted or validated ([roadmap WP-24](docs/internal/roadmap.md)), and "verified" did not survive contact with evidence: a citation pass on 2026-07-16 found **28 defects across those four bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated in [Quality gate](#quality-gate).
 
@@ -138,8 +139,9 @@ templates/
   user-stories/              }  the delivery-docs family (8 files each)
   acceptance-criteria/       }
   release-notes/            /
-  rfc/                      \  the decision-docs family (8 files each)
-  adr/                      /
+  rfc/                      \
+  adr/                       }  the decision-docs family (8 files each)
+  sdd/                      /
 tools/
   check-bundles.py          The governance gate (runs locally and in CI)
   check-links.py            The link gate (no tracked file may link into _local/)
@@ -179,7 +181,7 @@ python tools/check-bundles.py     # the eleven bundle checks
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-All six bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All seven bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 
