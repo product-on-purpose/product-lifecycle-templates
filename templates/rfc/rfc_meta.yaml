@@ -21,10 +21,7 @@ tags:
   - engineering
   - collaboration
   - governance
-related_templates:
-  - adr
-  - future:design-doc
-  - future:solution-brief
+related_templates: [adr, sdd, future:solution-brief]
 aliases:
   - RFC
   - request for comments
