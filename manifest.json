@@ -102,6 +102,39 @@
     },
     {
       "aliases": [
+        "backlog",
+        "master backlog",
+        "product backlog",
+        "the backlog"
+      ],
+      "approx_tokens": {
+        "full": 2700,
+        "lean": 1850
+      },
+      "default_size": "lean",
+      "doc_type": "product-backlog",
+      "family": "delivery-docs",
+      "id": "product-backlog",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Product Goal, ordered items, ordering rationale, refinement and readiness) for a single team with one clear goal; use full when multiple teams or stakeholders dispute the order, there are real cross-team dependencies, or the backlog is large enough to need an explicit prioritization framework and health metrics.",
+      "status": "beta",
+      "summary": "The single, ordered, emergent list of work for a product, in service of a Product Goal: what the team might do next, sequenced so the most valuable and most informative work sits at the top. The tactical, output-focused counterpart to the roadmap, and the source the sprint backlog is drawn from.",
+      "tags": [
+        "agile",
+        "scrum",
+        "backlog",
+        "prioritization",
+        "planning",
+        "delivery"
+      ],
+      "title": "Product Backlog"
+    },
+    {
+      "aliases": [
         "changelog",
         "what's new",
         "release announcement",
@@ -238,5 +271,5 @@
       "title": "User Story"
     }
   ],
-  "count": 7
+  "count": 8
 }
