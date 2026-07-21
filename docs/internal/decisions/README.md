@@ -56,6 +56,7 @@ Do not create for:
 | [0018](0018-machine-catalog-generated-manifest.md) | The machine catalog is a generated `manifest.json`, committed to VC and kept fresh by the gate (WP-22, delivers RFC-0001's second artifact) | 2026-07-17 |
 | [0019](0019-selection-metadata-and-approx-tokens.md) | Selection metadata: authored `default_size` + `sizing_guidance`, and a generated heuristic `approx_tokens` (no tokenizer dependency) (WP-23) | 2026-07-18 |
 | [0020](0020-adopt-delivery-docs-family-contract.md) | Adopt the delivery-docs family contract, enforced by gate check K; methodology is descriptive, not a membership rule (WP-24) | 2026-07-20 |
+| [0021](0021-complete-the-tier-1-floor.md) | Complete the Tier-1 floor on a schedule; grow-by-pull governs Tier-2/Tier-3 only (adopts the buildout plan) | 2026-07-20 |
 
 ## Correction versus supersession
 
