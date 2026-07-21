@@ -1,0 +1,36 @@
+id: sdd
+title: Software Design Document
+summary: >-
+  Describes how a system will be built: the technical design, its structure, the alternatives weighed,
+  and the cross-cutting concerns, so the design can be reviewed before the code exists. Describes an
+  implementation, as distinct from an RFC (which proposes a decision) and an ADR (which records one).
+doc_type: sdd
+phase: develop
+family: decision-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean, the Google-style five-section mini design doc, for most changes worth a design doc at all; use full when the design is hard to reverse, crosses teams, or has real non-functional targets, which adds the structural, runtime, interface, and deployment views plus quality attributes and risks."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - decision
+  - design
+  - architecture
+  - engineering
+  - technical-design
+  - specification
+related_templates: [rfc, adr, prd]
+aliases:
+  - SDD
+  - design doc
+  - design document
+  - technical design document
+  - technical design doc
+  - software design description
+  - TDD
+catalog_ref: 47
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-20
+license: Apache-2.0
