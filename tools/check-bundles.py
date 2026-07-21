@@ -11,13 +11,13 @@ on every push to main and every pull request. It supersedes the Node script suit
 implementation plan's P3 (port the CI quality gate from pm-skills) had intended; see
 docs/internal/decisions/0008-gate-python-local-interim.md.
 
-Coverage is partial by acknowledgement, not by accident: these ten checks automate roughly
+Coverage is partial by acknowledgement, not by accident: these eleven checks automate roughly
 half the Definition of Done. The rest is human-verified. Do not read a green run as "the
 DoD is met"; read it as "the structural checks pass." Gate hardening is roadmap WP-11.
 
-Eight checks are pure standard library and always run. Two need a real parser the stdlib
+Nine checks are pure standard library and always run. Two need a real parser the stdlib
 does not provide, and both SKIP with a clear message when their dependency is absent, so a
-bare-Python local run still gates the other eight: G (frontmatter YAML) uses PyYAML, and J
+bare-Python local run still gates the other nine: G (frontmatter YAML) uses PyYAML, and J
 (meta schema) uses PyYAML plus a JSON Schema validator. CI installs both, so G and J are
 enforced there, which since M0 is the enforcement point. See
 docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md (G) and
@@ -68,6 +68,11 @@ Checks per bundle:
                          fields present, enums legal, and exactly one of phase / classification
                          (the ADR 0015 XOR). Needs PyYAML and a JSON Schema validator; SKIPS
                          if either is absent
+    K. Family            a bundle declaring a family conforms to that family's contract: the
+                         family-specific values (delivery-docs requires phase deliver, a beta/stable
+                         status, and a lean/full size shape; methodology is descriptive, not gated)
+                         and the contract file resolves. Families with no ratified contract yet pass
+                         with a note
 """
 
 import os
@@ -93,6 +98,9 @@ DEFAULT_SIZE_RE = re.compile(r"^default_size:\s*(.+?)\s*$", re.MULTILINE)
 VERSION_RE = re.compile(r"^template_version:\s*(.+?)\s*$", re.MULTILINE)
 PAIRS_RE = re.compile(r"^pairs_with:\s*(.*)$", re.MULTILINE)
 RELATED_RE = re.compile(r"^related_templates:\s*(.*)$", re.MULTILINE)
+FAMILY_RE = re.compile(r"^family:\s*(.+?)\s*$", re.MULTILINE)
+PHASE_RE = re.compile(r"^phase:\s*(.+?)\s*$", re.MULTILINE)
+STATUS_RE = re.compile(r"^status:\s*(.+?)\s*$", re.MULTILINE)
 
 # The files every bundle carries regardless of how many size variants it ships.
 CORE_ROLES = [
@@ -113,6 +121,22 @@ SIZE_VOCABULARIES = [
     ["s", "m", "l"],
 ]
 ALL_SIZES = [s for vocab in SIZE_VOCABULARIES for s in vocab]
+
+# Family contracts: for a declared family, the metadata constraints its members must meet (the
+# contract's Section 2 allowed-values table) and the contract document that spells them out. A family
+# narrows the general schema: any legal phase is fine by check J, but a delivery-docs member's phase
+# must be `deliver`. Methodology is descriptive, not a membership criterion, so it is not gated here
+# (ADR 0020). Only families with a ratified contract appear here; a bundle in a family with no contract
+# yet passes check K with a note, so adding a family does not fail the gate before its contract exists.
+# See docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md.
+FAMILY_CONTRACTS = {
+    "delivery-docs": {
+        "contract": "docs/internal/contracts/delivery-docs.md",
+        "phase": "deliver",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
+}
 
 GREEN = "\033[32m"
 RED = "\033[31m"
@@ -660,6 +684,62 @@ def check_meta_schema(name, d):
     return False, "does not match meta.schema.json - " + "; ".join(msgs) + more
 
 
+def check_family(name, d):
+    """A bundle that declares a family must conform to that family's contract.
+
+    Where check J validates a meta against the general schema (any legal phase, any legal status), a
+    family narrows those to its own values: a delivery-docs member's phase must be `deliver`, not
+    merely a legal phase, and its status and size shape must match the family's. Methodology is
+    descriptive (what the template leans on), not a membership criterion, so it is not gated here: a
+    user-stories bundle honestly declaring `agile-scrum-xp` is still a delivery-docs member (ADR 0020).
+    This enforces the mechanical half of the contract, its Section 2 allowed-values table. The
+    structural obligations (Section 3) are checks A through E; the shared-example and shareable-boundary
+    rules (Sections 4 and 5) are review obligations, not mechanically checkable. See
+    docs/internal/contracts/delivery-docs.md and
+    docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md.
+
+    Only families with a ratified contract are enforced. A bundle in a family that has none yet (e.g.
+    decision-docs) passes with a note, so adding a family does not silently fail the gate before its
+    contract is written.
+    """
+    p = os.path.join(d, name + "_meta.yaml")
+    text = read(p)
+    fm = FAMILY_RE.search(text)
+    family = fm.group(1).strip().strip("\"'") if fm else None
+    if family is None:
+        return True, "no family declared"
+    contract = FAMILY_CONTRACTS.get(family)
+    if contract is None:
+        return True, "family " + family + " has no ratified contract yet; not enforced"
+
+    def field(rx):
+        m = rx.search(text)
+        return m.group(1).strip().strip("\"'") if m else None
+
+    problems = []
+    cpath = os.path.normpath(os.path.join(SCRIPT_DIR, "..", contract["contract"]))
+    if not os.path.isfile(cpath):
+        problems.append("contract file missing at " + contract["contract"])
+
+    phase = field(PHASE_RE)
+    if phase != contract["phase"]:
+        problems.append("phase is " + repr(phase) + ", " + family + " requires " + contract["phase"])
+    status = field(STATUS_RE)
+    if status not in contract["status"]:
+        problems.append("status is " + repr(status) + ", " + family + " allows " + "/".join(contract["status"]))
+
+    sizes, err = parse_sizes(name, d)
+    if err:
+        problems.append(err)
+    elif sizes not in contract["size_shapes"]:
+        allowed = " or ".join("[" + ", ".join(s) + "]" for s in contract["size_shapes"])
+        problems.append("sizes_available is [" + ", ".join(sizes) + "], " + family + " allows " + allowed)
+
+    if problems:
+        return False, "out of " + family + " contract: " + "; ".join(problems)
+    return True, "conforms to " + family + " contract (phase, status, sizes)"
+
+
 CHECKS = [
     ("A files", check_files),
     ("B dashes", check_dashes),
@@ -671,6 +751,7 @@ CHECKS = [
     ("H history", check_history),
     ("I refs", check_refs),
     ("J schema", check_meta_schema),
+    ("K family", check_family),
 ]
 
 

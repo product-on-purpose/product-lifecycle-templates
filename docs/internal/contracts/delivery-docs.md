@@ -1,10 +1,10 @@
 # Family Contract: delivery-docs
 
-Status: draft for adoption (fulfills plan AC-12 and design spec section 11; audit finding B-01)
+Status: adopted 2026-07-20 ([ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md); fulfills plan AC-12 and design spec section 11; audit finding B-01)
 Applies to: every bundle declaring `family: delivery-docs` in its meta
 Members at adoption: prd, user-stories, acceptance-criteria, release-notes
 Modeled on: the pm-skills family-contract pattern
-Version: 0.1.0 (changes to this contract require a decision record)
+Version: 0.1.1 (changes to this contract require a decision record; see the change note at the end)
 
 ## 1. Membership
 
@@ -18,7 +18,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the meta
 |---|---|
 | family | `delivery-docs` |
 | phase | `deliver` (if a candidate member's phase differs, it belongs in another family) |
-| methodology | `generic` (methodology-specific delivery variants belong in Tier-2 packs, not this family) |
+| methodology | **Descriptive, not gated (amended 2026-07-20, see change note).** Each member declares the methodology it honestly leans on (`generic`, `agile-scrum-xp`, `agile-bdd`, `methodology-agnostic`, ...). Some delivery artifacts are inherently methodology-bound (a user story is an agile/XP form), so a single required value would be a fiction. Methodology-specific *collections* (a Scrum pack, an XP pack) are a future **Tier-2** concept, a separate family, not a variant of a member here. |
 | sizes_available | `[lean, full]`, or `[lean]` for types the catalog marks single-size |
 | status | `beta` until one real usage cycle is recorded; then `stable` eligible |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `null`; every non-null value must resolve against the pinned skill-ID list |
@@ -43,4 +43,8 @@ Template body (headings, placeholders, tables) is the reusable shape; guidance l
 
 ## 6. Enforcement
 
-The gate enforces sections 2 and 3 mechanically (checks per the gate alphabet; family check letter M validates this contract's constraints for every declared member). Sections 4 and 5 are review obligations at authoring time and audit obligations thereafter. A member failing this contract is not "in the family with issues"; it is out of the family until green, and the catalog count reflects that.
+The gate enforces section 2 and the mechanical part of section 3. **Family check letter K** validates section 2's family-specific values for every declared member (`phase`, `status`, and size shape) and that this contract file resolves; methodology is descriptive and is not gated (see section 2). Of section 3's obligations, the eight files (3.1), nesting (3.2), citations (3.6), and the clean example (3.7) are enforced by checks A, C, E, and D respectively; guidance comments (3.3), the companion skeleton (3.4), and guide shape (3.5) have no mechanical check yet and are review obligations at authoring time. Sections 4 and 5 are likewise review obligations at authoring time and audit obligations thereafter. A member failing this contract is not "in the family with issues"; it is out of the family until green, and the catalog count reflects that.
+
+## Change note
+
+**0.1.1 (2026-07-20, [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md)):** adopted (was "draft for adoption") and enforced by new gate check K. Two corrections were made in the same pass. The enforcement letter was **M** in the 0.1.0 draft, a forward-guess made before the gate alphabet was settled; the family check landed at **K** (the next free letter after J, the metadata schema), and the reference is corrected. And the `methodology` field, which the 0.1.0 draft required to be `generic`, is now descriptive: on first enforcement, check K found that three of the four members honestly declared methodology-specific values (`agile-scrum-xp`, `agile-bdd`, `methodology-agnostic`), because some delivery artifacts are inherently methodology-bound. Forcing `generic` would have made the metadata less true, so the constraint was dropped rather than the values changed.

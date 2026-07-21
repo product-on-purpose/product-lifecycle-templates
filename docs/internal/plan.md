@@ -132,7 +132,7 @@ Stand up the directory structure and root files from design spec §8, mirroring 
 
 1. Create the top-level tree from design spec §8:
    - `templates/` (bundles live here)
-   - `_families/` (family contracts)
+   - `_families/` (family contracts) *(location superseded by [ADR 0020](decisions/0020-adopt-delivery-docs-family-contract.md): family contracts live at `docs/internal/contracts/`)*
    - `docs/reference/` and `docs/guides/`
    - `scripts/` (lint + validate + generate)
    - `.github/workflows/`
@@ -304,7 +304,7 @@ Prove the family contract pattern (design spec §11, §16 v0.2) by completing th
 
 ### Steps
 
-1. `_families/delivery-docs.contract.md` - author the family contract per design spec §11: shared section vocabulary, required catalog-meta fields and allowed values for the family, the size-nesting expectation, and the shareable-boundary rule (body vs guidance vs example). Model it on a `pm-skills` family contract (e.g. `E:/Projects/product-on-purpose/pm-skills/site/src/content/docs/reference/skill-families/meeting-skills-contract.md`).
+1. `docs/internal/contracts/delivery-docs.md` (the plan first said `_families/delivery-docs.contract.md`; relocated by [ADR 0020](decisions/0020-adopt-delivery-docs-family-contract.md)) - author the family contract per design spec §11: shared section vocabulary, required catalog-meta fields and allowed values for the family, the size-nesting expectation, and the shareable-boundary rule (body vs guidance vs example). Model it on a `pm-skills` family contract (e.g. `E:/Projects/product-on-purpose/pm-skills/site/src/content/docs/reference/skill-families/meeting-skills-contract.md`).
 2. Build three bundles, each a full P4 repeat (variants + example + guide + meta + HISTORY), sourced from the catalog:
    - `templates/deliver-user-stories/` (catalog #30; `pairs_with: [deliver-user-stories]`; likely `sizes_available: [full]` only, since a user story is inherently small - let the type earn its variant count per the P1 (foundational ADRs) variant-model ADR).
    - `templates/deliver-acceptance-criteria/` (catalog #38; `pairs_with: [deliver-acceptance-criteria]`).
@@ -328,7 +328,7 @@ N/A - no decision blocks subsequent work; P7 (the demand-gated roadmap) is gover
 
 ### Output Artifacts
 
-- `_families/delivery-docs.contract.md` - created
+- `docs/internal/contracts/delivery-docs.md` - created (relocated from `_families/` by [ADR 0020](decisions/0020-adopt-delivery-docs-family-contract.md))
 - `templates/deliver-user-stories/`, `templates/deliver-acceptance-criteria/`, `templates/deliver-release-notes/` (full bundles) - created
 - `scripts/validate-template-family.mjs` - created
 - `catalog.md`, `manifest.json`, `README.md`, `CHANGELOG.md`, `package.json`, `.github/workflows/ci.yml` - modified
