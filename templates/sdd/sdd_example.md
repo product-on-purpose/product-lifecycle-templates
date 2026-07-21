@@ -5,7 +5,7 @@ authors: ["Marcus Bell (Staff Engineer, Reporting)"]
 reviewers: ["Priya Nair (PM, Reporting)", "Dana Osei (Staff Engineer, Platform)"]
 created: "2026-07-02"
 updated: "2026-07-09"
-related: ["prd_example.md (Saved Views for Dashboards PRD)", "future ADR: saved-view storage model"]
+related: ["../prd/prd_example.md (Saved Views for Dashboards PRD)", "future ADR: saved-view storage model"]
 doc_type: sdd
 size: full
 source_template: sdd
@@ -25,7 +25,7 @@ it as a model of shape and tone, not as a source of facts.
 ## Context and Scope
 
 Today, a dashboard's filters, date range, and visible columns live only in the page's ephemeral state and
-reset to the dashboard default every time it is opened. The [Saved Views PRD](prd_example.md) established
+reset to the dashboard default every time it is opened. The [Saved Views PRD](../prd/prd_example.md) established
 the need: Recurring Analysts rebuild the same filter set several times a day, and Team Leads want their
 team looking at one agreed view. This design describes how we build saved, reusable, and shareable views
 on top of the dashboard-service and the per-user preferences storage that shipped in Q1.
