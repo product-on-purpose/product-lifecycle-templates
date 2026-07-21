@@ -172,10 +172,10 @@ The thinking behind the library is documented, not implicit:
 
 ## Quality gate
 
-The governance is enforceable, not aspirational. [`tools/check-bundles.py`](tools/check-bundles.py) runs ten structural checks from the methodology's Definition of Done across every bundle in one command: the eight files are present, no em-dash or en-dash characters appear, the lean variant nests inside the full one (comparing heading *level* as well as text), the worked example has no leftover placeholders, citations resolve **in both directions** (no inline citation without a reference, and no reference nothing cites), the declared sizes match the files on disk and the meta carries no unfilled placeholder, every YAML block parses, the history documents the version the meta claims, `pairs_with` / `related_templates` point at things that exist, and every meta validates against the [metadata schema](tools/meta.schema.json) (`phase` XOR `classification`, legal enums, no stray fields).
+The governance is enforceable, not aspirational. [`tools/check-bundles.py`](tools/check-bundles.py) runs eleven structural checks from the methodology's Definition of Done across every bundle in one command: the eight files are present, no em-dash or en-dash characters appear, the lean variant nests inside the full one (comparing heading *level* as well as text), the worked example has no leftover placeholders, citations resolve **in both directions** (no inline citation without a reference, and no reference nothing cites), the declared sizes match the files on disk and the meta carries no unfilled placeholder, every YAML block parses, the history documents the version the meta claims, `pairs_with` / `related_templates` point at things that exist, every meta validates against the [metadata schema](tools/meta.schema.json) (`phase` XOR `classification`, legal enums, no stray fields), and each bundle conforms to its [family contract](docs/internal/contracts/delivery-docs.md) (a delivery-docs member is in the `deliver` phase, `beta`/`stable`, and lean/full).
 
 ```
-python tools/check-bundles.py     # the ten bundle checks
+python tools/check-bundles.py     # the eleven bundle checks
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
