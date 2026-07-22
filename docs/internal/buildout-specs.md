@@ -6,13 +6,15 @@ front-loads the per-type judgment (family, phase/classification, sizes, catalog_
 each bundle is a spec-driven execution rather than an open-ended design task, and it is the durable
 reference a future session reads to continue.
 
-> **Status of the calls below: provisional, pending maintainer ratification.** Phase/classification
+> **Status: D-A, D-B, D-C and D-D are all resolved as of 2026-07-22** ([ADR 0023](decisions/0023-resolve-the-tier-1-family-taxonomy.md)
+> for the taxonomy; D-C landed in the gate; D-D is arithmetic). The per-type specs below remain
+> provisional in the same sense they always were. Phase/classification
 > assignments especially are hypotheses (like the catalog's own size calls, EC-2). The definitive call for
 > each family is made when its contract is written, against its actual members. Where the phase-XOR-
 > classification axis does not cleanly fit a family, it is **flagged** rather than forced.
 >
-> **Exception: D-C was authorized without waiting on D-A/D-B** (it adds a capability to the gate and commits
-> to no taxonomy) and **landed 2026-07-22**. D-A and D-B still gate all bundle work.
+> D-C was authorized without waiting on D-A/D-B (it added a gate capability and committed to no taxonomy)
+> and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
 
@@ -27,24 +29,24 @@ reference a future session reads to continue.
 | 7 | rfc | decision-docs | phase: develop | **done** (**Tier 2**, not floor; see D-D) | - |
 | 8 | sdd | decision-docs | phase: develop | **done** | #26 |
 | 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
-| 10 | product-vision | strategy-docs | *see flag* | planned | - |
-| 11 | product-strategy | strategy-docs | *see flag* | planned | - |
-| 12 | business-case | strategy-docs | phase: discover | planned | - |
-| 13 | okrs | strategy-docs | *see flag* | planned | - |
-| 14 | product-roadmap | strategy-docs | *see flag* | planned | - |
+| 10 | product-vision | strategy-docs | class: foundation | planned | - |
+| 11 | product-strategy | strategy-docs | class: foundation | planned | - |
+| 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
+| 13 | okrs | strategy-docs | class: utility | planned | - |
+| 14 | product-roadmap | strategy-docs | class: utility | planned | - |
 | 15 | test-plan | qa-docs | phase: develop | planned | - |
 | 16 | test-case | qa-docs | phase: develop | planned | - |
 | 17 | bug-report | qa-docs | phase: develop | planned | - |
 | 18 | risk-register | governance-docs | class: utility | planned | - |
 | 19 | raid-log | governance-docs | class: utility | planned | - |
-| 20 | kpi-dashboard | governance-docs | *see flag* | planned | - |
+| 20 | kpi-dashboard | governance-docs | class: utility *(TBD at contract)* | planned | - |
 | 21 | user-persona | discovery-docs | phase: discover | planned | - |
 | 22 | wireframe | design-docs | phase: develop | planned | - |
 | 23 | interactive-prototype | design-docs | phase: develop | planned | - |
-| 24 | runbook | ops-docs | class: tool | planned | - |
-| 25 | incident-postmortem | ops-docs | *see flag* | planned | - |
+| 24 | runbook | **standing-standards** (moved, D-B) | class: tool | planned | - |
+| 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | planned | - |
 | 26 | status-report | communication-docs | class: utility | planned | - |
-| 27 | definition-of-done | **standing-standards (reassigned)** | class: foundation | planned | - |
+| 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
 **Count:** 9 bundles done (both existing families complete), **19 planned** (the 19 rows above). Those sum to
@@ -59,7 +61,7 @@ while `sprint-retrospective-notes` **is** one. So the honest reading is **8 of 2
 These are the judgment calls that affect multiple bundles. **They are the highest-value thing to review
 now**, because building 18 bundles on a wrong call is expensive to unwind.
 
-### D-A. definition-of-done is reassigned out of delivery-docs
+### D-A. definition-of-done is reassigned out of delivery-docs (RATIFIED 2026-07-22)
 
 The buildout-plan lists `definition-of-done` under delivery-docs, but a DoD is a **standing quality
 standard** (one DoD applies to every increment), which is `classification: foundation`, not
@@ -70,9 +72,14 @@ anti-pattern [ADR 0020](decisions/0020-adopt-delivery-docs-family-contract.md) w
 **Proposed resolution:** delivery-docs **completes at sprint-backlog** (six phase-`deliver` members).
 definition-of-done moves to a **standing-standards** family (with definition-of-ready and similar
 "agreed-once, applied-repeatedly" standards) built later, or to governance-docs. This keeps every family
-coherent on the phase/classification axis. **Needs maintainer ratification.**
+coherent on the phase/classification axis.
 
-### D-B. Several proposed families are not phase/classification-coherent
+**RATIFIED 2026-07-22 as proposed ([ADR 0023](decisions/0023-resolve-the-tier-1-family-taxonomy.md)).**
+definition-of-done anchors **standing-standards** as `classification: foundation`; delivery-docs completes
+at six phase-`deliver` members. `runbook` joins the same family as `classification: tool` (see D-B), because
+both are *agreed once, applied every time*.
+
+### D-B. Several proposed families are not phase/classification-coherent (RATIFIED 2026-07-22)
 
 The check-K family contract currently expresses one `phase` per family. Families flagged *see flag* above
 mix the axis and will each need a decision when their contract is written:
@@ -89,6 +96,21 @@ mix the axis and will each need a decision when their contract is written:
   event artifact. **Ratify at contract time.**
 - **kpi-dashboard**: standing measurement tool (`class: utility`/`tool`) vs. phase `measure`. Leaning
   `class: utility` to keep governance-docs classification-coherent.
+
+**RATIFIED 2026-07-22 ([ADR 0023](decisions/0023-resolve-the-tier-1-family-taxonomy.md)), option (a) for
+both:**
+
+- **strategy-docs** becomes a **classification** family: product-vision and product-strategy
+  (`foundation`), product-roadmap and okrs (`utility`). **business-case moves to discovery-docs**
+  (`phase: discover`), which stops being a one-member family.
+- **ops-docs dissolves.** **incident-postmortem moves to process-docs** (`phase: iterate`, with
+  sprint-retrospective-notes; the postmortem-vs-retro distinction becomes a teaching point inside one
+  family). **runbook moves to standing-standards** (`classification: tool`, with definition-of-done).
+- **kpi-dashboard stays unresolved on purpose**, decided at governance-docs' contract-writing step against
+  its real siblings. If it lands `phase: measure`, governance-docs is a two-member family and it moves.
+- Ratifying this exposed that check K compared the axis to a **single** value, so the two families spanning
+  two classifications would have failed. Contracts now accept a **set** on the axis key, as `status` always
+  has. Axis coherence was always one axis, never one value.
 
 ### D-C. check-K supports classification-axis families (LANDED 2026-07-22)
 
@@ -298,10 +320,12 @@ class foundation, sizes [lean], methodology agile-scrum.
    (risk-register, raid-log, kpi-dashboard): the first classification family, now clean on the gate side and
    waiting only on D-A/D-B ratification and its own contract.
 3. **qa-docs** (test-plan, test-case, bug-report): coherent phase-develop family.
-4. **strategy-docs** once D-B is resolved (family shape decided): the biggest, highest-visibility family.
-5. **The small families**: discovery-docs (user-persona), design-docs (wireframe, interactive-prototype),
-   ops-docs (runbook, incident-postmortem - after D-B), communication-docs (status-report), process-docs
-   (sprint-retrospective-notes), and the standing-standards family (definition-of-done).
+4. **strategy-docs** (product-vision, product-strategy, product-roadmap, okrs): the biggest,
+   highest-visibility family, and the first to span two classification values.
+5. **The small families**: discovery-docs (user-persona, business-case), design-docs (wireframe,
+   interactive-prototype), process-docs (sprint-retrospective-notes, incident-postmortem),
+   standing-standards (definition-of-done, runbook), communication-docs (status-report). ops-docs no longer
+   exists; D-B dissolved it.
 
 Rationale for reordering from the buildout-plan: do the **axis-coherent** families (governance classification,
 qa develop) early to exercise and settle the classification-axis machinery (D-C) before the **mixed-axis**

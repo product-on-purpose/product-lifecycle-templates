@@ -135,7 +135,28 @@ def main():
     check("registry entry naming no axis is rejected", not ok, detail)
     check("  message says neither", "declares neither phase nor classification" in detail, detail)
 
-    print("\n" + DIM + "4. Unchanged: a family with no ratified contract still passes" + OFF)
+    print("\n" + DIM + "4. Set-valued axis: a family spanning two classes (ADR 0023)" + OFF)
+    # strategy-docs holds foundation artifacts (vision, strategy) and utility ones (roadmap, okrs).
+    # Axis coherence is one AXIS, not one value; `status` has always worked this way.
+    spanning = {"strategy-docs": {
+        "contract": REAL_CONTRACT,
+        "classification": ["foundation", "utility"],
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    }}
+    ok, detail = run("product-vision", "strategy-docs", "classification: foundation", spanning)
+    check("first allowed value conforms", ok, detail)
+    ok, detail = run("product-roadmap", "strategy-docs", "classification: utility", spanning)
+    check("second allowed value conforms", ok, detail)
+    ok, detail = run("runbook", "strategy-docs", "classification: tool", spanning)
+    check("a value outside the set is rejected", not ok, detail)
+    check("  message lists the allowed set", "allows foundation/utility" in detail, detail)
+    ok, detail = run("business-case", "strategy-docs", "phase: discover", spanning)
+    check("wrong axis is still rejected against a set", not ok, detail)
+    check("  message lists the set, not a bare value",
+          "requires classification: foundation/utility" in detail, detail)
+
+    print("\n" + DIM + "5. Unchanged: a family with no ratified contract still passes" + OFF)
     ok, detail = run("wireframe", "design-docs", "phase: develop", CLASSIFICATION_FAMILY)
     check("uncontracted family passes with a note",
           ok and "no ratified contract" in detail, detail)

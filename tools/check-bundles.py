@@ -109,6 +109,18 @@ STATUS_RE = re.compile(r"^status:\s*(.+?)\s*$", re.MULTILINE)
 AXIS_KEYS = ("phase", "classification")
 AXIS_RE = {"phase": PHASE_RE, "classification": CLASSIFICATION_RE}
 
+
+def axis_values(declared):
+    """A contract's axis constraint, as a list. Accepts one value or a set of them.
+
+    A phase family is usually one value (delivery-docs is `deliver`, full stop), but a
+    classification family legitimately spans several: strategy-docs holds `foundation` artifacts
+    (vision, strategy) and `utility` ones (roadmap, okrs), and both are equally standing. Axis
+    coherence is the claim that a family uses ONE AXIS, never that it uses one value on it; `status`
+    has worked this way since ADR 0020 and the axis constraint reads the same.
+    """
+    return [declared] if isinstance(declared, str) else list(declared)
+
 # The files every bundle carries regardless of how many size variants it ships.
 CORE_ROLES = [
     "companion.md",
@@ -140,7 +152,9 @@ ALL_SIZES = [s for vocab in SIZE_VOCABULARIES for s in vocab]
 # AXIS: each entry declares exactly ONE of `phase` or `classification`, naming the axis that family is
 # coherent on (ADR 0015). Both families below are phase-axis; a standing family such as governance-docs
 # declares `"classification": "utility"` instead. Declaring both, or neither, is a registry error and
-# check K reports it rather than silently gating nothing.
+# check K reports it rather than silently gating nothing. The value may be a single string or a list of
+# allowed values, exactly as `status` is: strategy-docs spans `["foundation", "utility"]` because a
+# vision and a roadmap are both standing artifacts of different classes (ADR 0023).
 FAMILY_CONTRACTS = {
     "delivery-docs": {
         "contract": "docs/internal/contracts/delivery-docs.md",
@@ -767,11 +781,14 @@ def check_family(name, d):
                 "declares no " + axis
                 + (" (found " + other + ": " + found + ")" if found else "")
                 + "; " + family + " is a " + axis + "-axis family and requires "
-                + axis + ": " + contract[axis]
+                + axis + ": " + "/".join(axis_values(contract[axis]))
             )
-        elif value != contract[axis]:
+        elif value not in axis_values(contract[axis]):
+            allowed = axis_values(contract[axis])
             problems.append(
-                axis + " is " + repr(value) + ", " + family + " requires " + contract[axis]
+                axis + " is " + repr(value) + ", " + family
+                + (" requires " + allowed[0] if len(allowed) == 1
+                   else " allows " + "/".join(allowed))
             )
     status = field(STATUS_RE)
     if status not in contract["status"]:
