@@ -6,9 +6,9 @@ Status: **adopted 2026-07-20 ([ADR 0021](decisions/0021-complete-the-tier-1-floo
 in [`buildout-specs.md`](buildout-specs.md); the reusable per-bundle process lives in
 [`bundle-pipeline.md`](bundle-pipeline.md). This plan is the strategy; those two are the execution.
 
-## What is left to build (21 types)
+## What is left to build (22 types, as written 2026-07-20)
 
-Six are built (prd, user-stories, acceptance-criteria, release-notes, rfc, adr). The 21 remaining, grouped into the families they form:
+Six bundles were built when this plan was adopted (prd, user-stories, acceptance-criteria, release-notes, rfc, adr), but **only five of those are Tier-1**: `rfc` is catalog 48, Tier 2. The **22** remaining Tier-1 types, grouped into the families they form (this heading said "21", corrected 2026-07-22; see [D-D](buildout-specs.md) for the reconciliation):
 
 | Family | Types | New contract? |
 |---|---|---|
@@ -22,6 +22,8 @@ Six are built (prd, user-stories, acceptance-criteria, release-notes, rfc, adr).
 | discovery-docs | user-persona | yes |
 | communication-docs | status-report | yes |
 | process-docs | sprint-retrospective-notes | yes |
+
+**Live count:** three of these landed 2026-07-20/21 (sdd, product-backlog, sprint-backlog), so **19 Tier-1 types remain**. This table is the plan as adopted; [`buildout-specs.md`](buildout-specs.md) carries the live progress.
 
 Two notes: **governance-docs** and the standing types (definition-of-done, status-report) use `classification`, not `phase` (ADR 0015). Each **new family needs a short contract first** (on the ADR 0020 pattern) before its members pass gate check K.
 
