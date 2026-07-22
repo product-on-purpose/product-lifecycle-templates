@@ -20,9 +20,17 @@ jobs:
       - name: Install gate dependencies
         run: pip install pyyaml jsonschema
 
-      # The bundle gate: ten structural checks across every bundle.
+      # The bundle gate: eleven structural checks across every bundle.
       - name: Bundle gate
         run: python tools/check-bundles.py
+
+      # Check K's classification-axis branch has no live subject until governance-docs lands,
+      # so running the gate cannot exercise it. This fixture-based test proves it accepts a
+      # conforming standing member and, more importantly, that it FAILS on a wrong value, a
+      # wrong axis in either direction, and a misconfigured registry entry. Covers check K
+      # only; the rest of the gate is exercised by the real bundles above.
+      - name: Check K self-test
+        run: python tools/test-check-k.py
 
       # The link gate. Bundle-scoped checks cannot see repo-wide breakage: the scaffold
       # graduation (decision 0009) broke four companion links and the bundle gate passed
