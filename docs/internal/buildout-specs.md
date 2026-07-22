@@ -10,6 +10,9 @@ reference a future session reads to continue.
 > assignments especially are hypotheses (like the catalog's own size calls, EC-2). The definitive call for
 > each family is made when its contract is written, against its actual members. Where the phase-XOR-
 > classification axis does not cleanly fit a family, it is **flagged** rather than forced.
+>
+> **Exception: D-C is authorized to proceed** without waiting on D-A/D-B. It adds a capability to the gate
+> and commits to no taxonomy; see D-C for why the distinction matters.
 
 ## Progress
 
@@ -21,7 +24,7 @@ reference a future session reads to continue.
 | 4 | release-notes | delivery-docs | phase: deliver | **done** | - |
 | 5 | product-backlog | delivery-docs | phase: deliver | **done** | #28 |
 | 6 | adr | decision-docs | phase: develop | **done** | - |
-| 7 | rfc | decision-docs | phase: develop | **done** | - |
+| 7 | rfc | decision-docs | phase: develop | **done** (**Tier 2**, not floor; see D-D) | - |
 | 8 | sdd | decision-docs | phase: develop | **done** | #26 |
 | 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
 | 10 | product-vision | strategy-docs | *see flag* | planned | - |
@@ -44,9 +47,10 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards (reassigned)** | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 9 done (both existing families complete), 18 planned. (The catalog's 27-type Tier-1 set plus
-sprint-retrospective-notes, which the buildout-plan includes; final count reconciled when the last family
-lands.)
+**Count:** 9 bundles done (both existing families complete), **19 planned** (the 19 rows above). Those sum to
+28 against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`)
+while `sprint-retrospective-notes` **is** one. So the honest reading is **8 of 27 Tier-1 types built, plus
+`rfc`; 19 Tier-1 types remain.** See **D-D** below; it corrects the "18 planned" this line used to claim.
 
 ---
 
@@ -92,6 +96,44 @@ Every family contract so far (delivery-docs, decision-docs) gates on `phase`. go
 **classification**-axis family. Before it lands, check-K's `FAMILY_CONTRACTS` and `check_family` must
 accept a `classification` constraint (a member declares phase XOR classification; the contract should gate
 whichever axis the family uses). Small, adversarially-tested gate change, sequenced before governance-docs.
+
+**This one is not blocked by D-A/D-B, and should not be treated as if it were.** D-A and D-B decide taxonomy
+and therefore shape 19 bundles, which is why building on them unratified is expensive to unwind. D-C decides
+no taxonomy at all: it teaches check K a capability it currently lacks (today `FAMILY_CONTRACTS` and
+`check_family` compare only `phase`), and that capability is correct whichever way D-A and D-B land. If no
+family ends up classification-axis, the new code path is simply unused. **Authorized to proceed as its own
+small PR** while D-A and D-B wait on the maintainer, so an autonomous run is never left with zero authorized
+work.
+
+### D-D. Floor count reconciled: 8 of 27 Tier-1 built, 19 remain (not 18)
+
+**Not a judgment call, an arithmetic error, now traced to its cause.** This table lists 19 planned rows while
+its count line claimed "18 planned", and STATE.md, the 2026-07-21 session log and its continuation prompt all
+inherited "18 to go" from it. A run that built 18 and then met row 19 would have hit a scope question with no
+answer, against an instruction that only the Tier-1 floor is authorized.
+
+The cause is a **conflation of bundles with Tier-1 types**, verified against
+[`catalog-data.json`](../../atlas/catalog-data.json), which carries exactly 27 entries with `tier: 1` and
+`must_have: true`:
+
+- **`rfc` is not a Tier-1 type.** Catalog entry 48, `tier: 2`, `must_have: false`. It was built early because
+  `decision-docs` had an internal pull for it. Counting it toward the floor is what produced "9 of 27".
+- **`sprint-retrospective-notes` is one of the 27** (catalog 187). It is not an extra 28th row; it belongs in
+  the work list.
+- The two errors nearly cancel, which is why this surfaced as a quiet off-by-one rather than an obvious break.
+
+**Therefore: 8 of 27 Tier-1 types are built** (prd, user-stories, acceptance-criteria, release-notes,
+product-backlog, adr, sdd, sprint-backlog), **plus `rfc` as a ninth non-floor bundle, and 19 Tier-1 types
+remain** - exactly the 19 rows above.
+
+**The arithmetic needs no ratification.** Two adjacent items do want a maintainer glance:
+
+- [`catalog.md`](catalog.md) prose says "core **28**-type must-have tier" (lines 6 and 293) against its own
+  machine data's 27. Every ADR that cites the figure says 27, so the prose is the outlier; correct it at the
+  catalog's next edit rather than in a correction PR.
+- [ADR 0021](decisions/0021-complete-the-tier-1-floor.md) says "6 of the catalog's 27 Tier-1 types" where it
+  meant 5 of 27 plus `rfc`. Accepted ADRs are records, not living documents, so it stays as written and is
+  noted here instead.
 
 ---
 
