@@ -1,0 +1,32 @@
+id: sprint-backlog
+title: Sprint Backlog
+summary: >-
+  The Developers' living plan for a single Sprint: the Sprint Goal (why), the Product Backlog items
+  selected for it (what), and the plan for delivering them (how). A forecast, not a contract; the one thing
+  committed to is the Sprint Goal. Drawn as a Sprint-sized subset from the product backlog.
+doc_type: sprint-backlog
+phase: deliver
+family: delivery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Sprint Goal, Selected Items, Delivery Plan) for most sprints; use full when the team is still calibrating its capacity, the forecast and tracking must be legible beyond the team, or the sprint carries real dependencies and carry-over risk, which adds capacity and forecast, progress and tracking, and risks and carry-over."
+methodology: agile-scrum
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - scrum
+  - sprint
+  - planning
+  - delivery
+  - forecast
+related_templates: [product-backlog, user-stories, future:definition-of-done]
+aliases:
+  - iteration backlog
+  - sprint plan
+  - sprint commitment
+catalog_ref: 76
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-21
+license: Apache-2.0

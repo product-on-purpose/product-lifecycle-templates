@@ -77,16 +77,17 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 8 -->
-**Eight bundles, in two families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 9 -->
+**Nine bundles, in two families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
-**`delivery-docs`** (five bundles). Their examples chain on one fictional "Saved Views" feature, so the family reads as one traceable set: a PRD leads to user stories, ordered in a product backlog, which lead to acceptance criteria, which ship in a release note.
+**`delivery-docs`** (six bundles, the family complete). Their examples chain on one fictional "Saved Views" feature, so the family reads as one traceable set: a PRD leads to user stories, ordered in a product backlog and pulled into a sprint backlog, which lead to acceptance criteria, which ship in a release note.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`prd`](templates/prd/) | Product Requirements Document: what to build, for whom, and why | `deliver-prd` |
 | [`user-stories`](templates/user-stories/) | User-centered stories that anchor work to user value | `deliver-user-stories` |
 | [`product-backlog`](templates/product-backlog/) | The ordered, goal-anchored list of work the team draws from | (none: no `deliver-product-backlog` skill exists) |
+| [`sprint-backlog`](templates/sprint-backlog/) | One sprint's forecast of work, drawn from the product backlog | (none: no `deliver-sprint-backlog` skill exists) |
 | [`acceptance-criteria`](templates/acceptance-criteria/) | The conditions that confirm a story is done | `deliver-acceptance-criteria` |
 | [`release-notes`](templates/release-notes/) | The customer-facing announcement of a release | `deliver-release-notes` |
 
@@ -98,7 +99,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 | [`adr`](templates/adr/) | The record of a decision *after* it is made, in [MADR v4](https://github.com/adr/madr) | `develop-adr` |
 | [`sdd`](templates/sdd/) | The software design document: how a system will be built, before the code | (none: no `develop-sdd` skill exists) |
 
-Beyond these eight, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** still governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these nine, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** still governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 *A word on "complete".* This README used to call `delivery-docs` complete and verified. Both words were doing more work than they had earned, so they are gone. The family now has five bundles and a family contract adopted and validated by the gate ([ADR 0020](docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md), check K), and it is still growing under the floor build-out. But "verified" did not survive contact with evidence: a citation pass on 2026-07-16 found **28 defects across the original four bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated in [Quality gate](#quality-gate).
 
@@ -138,9 +139,10 @@ templates/
   methodology.md            The authoring process and Definition of Done
   prd/                      \
   user-stories/              \
-  product-backlog/            }  the delivery-docs family (8 files each)
-  acceptance-criteria/       /
-  release-notes/            /
+  product-backlog/            \
+  sprint-backlog/              }  the delivery-docs family (8 files each)
+  acceptance-criteria/        /
+  release-notes/             /
   rfc/                      \
   adr/                       }  the decision-docs family (8 files each)
   sdd/                      /
@@ -183,7 +185,7 @@ python tools/check-bundles.py     # the eleven bundle checks
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-All eight bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All nine bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 
