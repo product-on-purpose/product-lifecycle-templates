@@ -136,6 +136,12 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    "decision-docs": {
+        "contract": "docs/internal/contracts/decision-docs.md",
+        "phase": "develop",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"
@@ -698,9 +704,9 @@ def check_family(name, d):
     docs/internal/contracts/delivery-docs.md and
     docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md.
 
-    Only families with a ratified contract are enforced. A bundle in a family that has none yet (e.g.
-    decision-docs) passes with a note, so adding a family does not silently fail the gate before its
-    contract is written.
+    Only families with a ratified contract are enforced. A bundle in a family that has none yet (a
+    future family such as strategy-docs, before its contract is written) passes with a note, so adding a
+    family does not silently fail the gate before its contract exists.
     """
     p = os.path.join(d, name + "_meta.yaml")
     text = read(p)

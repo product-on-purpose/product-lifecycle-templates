@@ -21,10 +21,7 @@ tags:
   - madr
   - governance
   - engineering
-related_templates:
-  - future:rfc
-  - future:technical-design-doc
-  - future:spike-report
+related_templates: [rfc, sdd, future:spike-report]
 aliases:
   - ADR
   - decision record
