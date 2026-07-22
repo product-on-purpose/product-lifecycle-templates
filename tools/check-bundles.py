@@ -100,7 +100,14 @@ PAIRS_RE = re.compile(r"^pairs_with:\s*(.*)$", re.MULTILINE)
 RELATED_RE = re.compile(r"^related_templates:\s*(.*)$", re.MULTILINE)
 FAMILY_RE = re.compile(r"^family:\s*(.+?)\s*$", re.MULTILINE)
 PHASE_RE = re.compile(r"^phase:\s*(.+?)\s*$", re.MULTILINE)
+CLASSIFICATION_RE = re.compile(r"^classification:\s*(.+?)\s*$", re.MULTILINE)
 STATUS_RE = re.compile(r"^status:\s*(.+?)\s*$", re.MULTILINE)
+
+# A meta declares `phase` XOR `classification` (ADR 0015); the schema's oneOf enforces the exclusivity
+# in check J. Check K gates whichever of the two its family's contract names, so a classification-axis
+# family (governance-docs, standing-standards) is one registry entry, not new check code.
+AXIS_KEYS = ("phase", "classification")
+AXIS_RE = {"phase": PHASE_RE, "classification": CLASSIFICATION_RE}
 
 # The files every bundle carries regardless of how many size variants it ships.
 CORE_ROLES = [
@@ -129,6 +136,11 @@ ALL_SIZES = [s for vocab in SIZE_VOCABULARIES for s in vocab]
 # (ADR 0020). Only families with a ratified contract appear here; a bundle in a family with no contract
 # yet passes check K with a note, so adding a family does not fail the gate before its contract exists.
 # See docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md.
+#
+# AXIS: each entry declares exactly ONE of `phase` or `classification`, naming the axis that family is
+# coherent on (ADR 0015). Both families below are phase-axis; a standing family such as governance-docs
+# declares `"classification": "utility"` instead. Declaring both, or neither, is a registry error and
+# check K reports it rather than silently gating nothing.
 FAMILY_CONTRACTS = {
     "delivery-docs": {
         "contract": "docs/internal/contracts/delivery-docs.md",
@@ -698,6 +710,14 @@ def check_family(name, d):
     merely a legal phase, and its status and size shape must match the family's. Methodology is
     descriptive (what the template leans on), not a membership criterion, so it is not gated here: a
     user-stories bundle honestly declaring `agile-scrum-xp` is still a delivery-docs member (ADR 0020).
+
+    A family is coherent on ONE taxonomy axis (ADR 0015): lifecycle families on `phase`, standing
+    families on `classification`. The registry entry names which, and this check gates that one. The
+    two are mutually exclusive on a meta, and check J's schema `oneOf` is what proves a bundle declares
+    exactly one; check K's job is narrower, proving it declared the one its family requires. A member
+    that brings the wrong axis entirely (a `phase: measure` bundle in a classification family) is
+    reported as such rather than as a bare "phase is None", because the fix differs: one is a typo,
+    the other means the bundle or the family is misfiled.
     This enforces the mechanical half of the contract, its Section 2 allowed-values table. The
     structural obligations (Section 3) are checks A through E; the shared-example and shareable-boundary
     rules (Sections 4 and 5) are review obligations, not mechanically checkable. See
@@ -727,9 +747,32 @@ def check_family(name, d):
     if not os.path.isfile(cpath):
         problems.append("contract file missing at " + contract["contract"])
 
-    phase = field(PHASE_RE)
-    if phase != contract["phase"]:
-        problems.append("phase is " + repr(phase) + ", " + family + " requires " + contract["phase"])
+    # Gate the axis this family is coherent on: phase for a lifecycle family, classification for a
+    # standing one. A member declares one or the other (ADR 0015); check J proves it declares exactly
+    # one, check K proves it is the one this family requires, with the value the contract names.
+    declared_axes = [a for a in AXIS_KEYS if a in contract]
+    axis = declared_axes[0] if len(declared_axes) == 1 else None
+    if axis is None:
+        problems.append(
+            "registry entry for " + family + " declares "
+            + ("both phase and classification" if declared_axes else "neither phase nor classification")
+            + "; a family contract gates exactly one axis (ADR 0015)"
+        )
+    else:
+        other = "classification" if axis == "phase" else "phase"
+        value = field(AXIS_RE[axis])
+        if value is None:
+            found = field(AXIS_RE[other])
+            problems.append(
+                "declares no " + axis
+                + (" (found " + other + ": " + found + ")" if found else "")
+                + "; " + family + " is a " + axis + "-axis family and requires "
+                + axis + ": " + contract[axis]
+            )
+        elif value != contract[axis]:
+            problems.append(
+                axis + " is " + repr(value) + ", " + family + " requires " + contract[axis]
+            )
     status = field(STATUS_RE)
     if status not in contract["status"]:
         problems.append("status is " + repr(status) + ", " + family + " allows " + "/".join(contract["status"]))
@@ -743,7 +786,7 @@ def check_family(name, d):
 
     if problems:
         return False, "out of " + family + " contract: " + "; ".join(problems)
-    return True, "conforms to " + family + " contract (phase, status, sizes)"
+    return True, "conforms to " + family + " contract (" + axis + ", status, sizes)"
 
 
 CHECKS = [

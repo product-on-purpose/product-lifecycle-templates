@@ -11,8 +11,8 @@ reference a future session reads to continue.
 > each family is made when its contract is written, against its actual members. Where the phase-XOR-
 > classification axis does not cleanly fit a family, it is **flagged** rather than forced.
 >
-> **Exception: D-C is authorized to proceed** without waiting on D-A/D-B. It adds a capability to the gate
-> and commits to no taxonomy; see D-C for why the distinction matters.
+> **Exception: D-C was authorized without waiting on D-A/D-B** (it adds a capability to the gate and commits
+> to no taxonomy) and **landed 2026-07-22**. D-A and D-B still gate all bundle work.
 
 ## Progress
 
@@ -90,7 +90,7 @@ mix the axis and will each need a decision when their contract is written:
 - **kpi-dashboard**: standing measurement tool (`class: utility`/`tool`) vs. phase `measure`. Leaning
   `class: utility` to keep governance-docs classification-coherent.
 
-### D-C. check-K may need to support classification-axis families
+### D-C. check-K supports classification-axis families (LANDED 2026-07-22)
 
 Every family contract so far (delivery-docs, decision-docs) gates on `phase`. governance-docs is the first
 **classification**-axis family. Before it lands, check-K's `FAMILY_CONTRACTS` and `check_family` must
@@ -104,6 +104,18 @@ no taxonomy at all: it teaches check K a capability it currently lacks (today `F
 family ends up classification-axis, the new code path is simply unused. **Authorized to proceed as its own
 small PR** while D-A and D-B wait on the maintainer, so an autonomous run is never left with zero authorized
 work.
+
+**Landed 2026-07-22 (PR #31).** A `FAMILY_CONTRACTS` entry now declares exactly one of `phase` or
+`classification`, and check K gates whichever the family names. A member bringing the wrong axis entirely is
+reported as such (`declares no classification (found phase: measure); governance-docs is a
+classification-axis family and requires classification: utility`) rather than as a bare "phase is None",
+because the two mean different fixes. Registry entries naming both axes or neither are reported as
+configuration errors instead of silently gating nothing. `gen-manifest.py` and check J already handled both
+axes, so check K was the only gap, as this decision predicted. Because the new branch has no live subject
+until governance-docs lands, it carries a fixture-based self-test ([`tools/test-check-k.py`](../../tools/test-check-k.py),
+31 assertions, run in CI); the test was mutation-checked, so it is known to fail when the code is wrong.
+**governance-docs is unblocked on the gate side; it still waits on D-A/D-B ratification and on its own
+contract.**
 
 ### D-D. Floor count reconciled: 8 of 27 Tier-1 built, 19 remain (not 18)
 
@@ -282,8 +294,9 @@ class foundation, sizes [lean], methodology agile-scrum.
 ## Build order (revised from buildout-plan, pending ratification)
 
 1. **Finish delivery-docs**: sprint-backlog. (decision-docs already complete.)
-2. **The check-K classification-axis change** (D-C), then **governance-docs** (risk-register, raid-log,
-   kpi-dashboard): the first classification family, clean once D-C lands.
+2. ~~**The check-K classification-axis change** (D-C)~~ **done 2026-07-22**, then **governance-docs**
+   (risk-register, raid-log, kpi-dashboard): the first classification family, now clean on the gate side and
+   waiting only on D-A/D-B ratification and its own contract.
 3. **qa-docs** (test-plan, test-case, bug-report): coherent phase-develop family.
 4. **strategy-docs** once D-B is resolved (family shape decided): the biggest, highest-visibility family.
 5. **The small families**: discovery-docs (user-persona), design-docs (wireframe, interactive-prototype),
