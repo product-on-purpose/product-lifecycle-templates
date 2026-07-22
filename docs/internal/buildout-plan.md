@@ -2,6 +2,10 @@
 
 Status: **adopted 2026-07-20 ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md))**. Goal: take the library from 6 bundles to the full 27 Tier-1 "must-have" set, at the same gate-green, cited standard as the six built so far.
 
+**Execution companions (2026-07-21):** the per-type specs, taxonomy decisions, and live progress table live
+in [`buildout-specs.md`](buildout-specs.md); the reusable per-bundle process lives in
+[`bundle-pipeline.md`](bundle-pipeline.md). This plan is the strategy; those two are the execution.
+
 ## What is left to build (21 types)
 
 Six are built (prd, user-stories, acceptance-criteria, release-notes, rfc, adr). The 21 remaining, grouped into the families they form:
