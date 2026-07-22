@@ -238,6 +238,38 @@
     },
     {
       "aliases": [
+        "iteration backlog",
+        "sprint plan",
+        "sprint commitment"
+      ],
+      "approx_tokens": {
+        "full": 2250,
+        "lean": 1450
+      },
+      "default_size": "lean",
+      "doc_type": "sprint-backlog",
+      "family": "delivery-docs",
+      "id": "sprint-backlog",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Sprint Goal, Selected Items, Delivery Plan) for most sprints; use full when the team is still calibrating its capacity, the forecast and tracking must be legible beyond the team, or the sprint carries real dependencies and carry-over risk, which adds capacity and forecast, progress and tracking, and risks and carry-over.",
+      "status": "beta",
+      "summary": "The Developers' living plan for a single Sprint: the Sprint Goal (why), the Product Backlog items selected for it (what), and the plan for delivering them (how). A forecast, not a contract; the one thing committed to is the Sprint Goal. Drawn as a Sprint-sized subset from the product backlog.",
+      "tags": [
+        "agile",
+        "scrum",
+        "sprint",
+        "planning",
+        "delivery",
+        "forecast"
+      ],
+      "title": "Sprint Backlog"
+    },
+    {
+      "aliases": [
         "story",
         "story card",
         "user story",
@@ -271,5 +303,5 @@
       "title": "User Story"
     }
   ],
-  "count": 8
+  "count": 9
 }

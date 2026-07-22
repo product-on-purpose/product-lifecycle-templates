@@ -23,7 +23,7 @@ reference a future session reads to continue.
 | 6 | adr | decision-docs | phase: develop | **done** | - |
 | 7 | rfc | decision-docs | phase: develop | **done** | - |
 | 8 | sdd | decision-docs | phase: develop | **done** | #26 |
-| 9 | sprint-backlog | delivery-docs | phase: deliver | **in progress** | - |
+| 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
 | 10 | product-vision | strategy-docs | *see flag* | planned | - |
 | 11 | product-strategy | strategy-docs | *see flag* | planned | - |
 | 12 | business-case | strategy-docs | phase: discover | planned | - |
@@ -44,7 +44,7 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards (reassigned)** | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 8 done, 1 in progress, 18 planned. (The catalog's 27-type Tier-1 set plus
+**Count:** 9 done (both existing families complete), 18 planned. (The catalog's 27-type Tier-1 set plus
 sprint-retrospective-notes, which the buildout-plan includes; final count reconciled when the last family
 lands.)
 
