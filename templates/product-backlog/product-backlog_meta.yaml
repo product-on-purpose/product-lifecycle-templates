@@ -1,0 +1,33 @@
+id: product-backlog
+title: Product Backlog
+summary: >-
+  The single, ordered, emergent list of work for a product, in service of a Product Goal: what the team
+  might do next, sequenced so the most valuable and most informative work sits at the top. The tactical,
+  output-focused counterpart to the roadmap, and the source the sprint backlog is drawn from.
+doc_type: product-backlog
+phase: deliver
+family: delivery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Product Goal, ordered items, ordering rationale, refinement and readiness) for a single team with one clear goal; use full when multiple teams or stakeholders dispute the order, there are real cross-team dependencies, or the backlog is large enough to need an explicit prioritization framework and health metrics."
+methodology: agile-scrum
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - scrum
+  - backlog
+  - prioritization
+  - planning
+  - delivery
+related_templates: [user-stories, prd, acceptance-criteria, future:sprint-backlog, future:product-roadmap]
+aliases:
+  - backlog
+  - master backlog
+  - product backlog
+  - the backlog
+catalog_ref: 75
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-21
+license: Apache-2.0
