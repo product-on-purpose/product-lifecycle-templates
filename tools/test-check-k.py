@@ -156,7 +156,17 @@ def main():
     check("  message lists the set, not a bare value",
           "requires classification: foundation/utility" in detail, detail)
 
-    print("\n" + DIM + "5. Unchanged: a family with no ratified contract still passes" + OFF)
+    print("\n" + DIM + "5. Real registry: every ratified entry declares exactly one axis" + OFF)
+    # Guards the live FAMILY_CONTRACTS, not a fixture: a registry typo (both axes, or neither) is a
+    # configuration error that would otherwise surface only when some member happened to trip it.
+    for fam, spec in gate.FAMILY_CONTRACTS.items():
+        axes = [a for a in gate.AXIS_KEYS if a in spec]
+        check(fam + " declares exactly one axis (" + (axes[0] if len(axes) == 1 else "?") + ")",
+              len(axes) == 1, "declares axes: " + str(axes))
+        cpath = os.path.join(ROOT, spec["contract"])
+        check(fam + " contract file resolves", os.path.isfile(cpath), spec["contract"])
+
+    print("\n" + DIM + "6. Unchanged: a family with no ratified contract still passes" + OFF)
     ok, detail = run("wireframe", "design-docs", "phase: develop", CLASSIFICATION_FAMILY)
     check("uncontracted family passes with a note",
           ok and "no ratified contract" in detail, detail)

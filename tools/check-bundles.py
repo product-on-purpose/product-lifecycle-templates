@@ -168,6 +168,15 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # The first classification-axis family (ADR 0024). It gates `classification`, not `phase`, which
+    # the axis logic above reads from the key present. Adopted contract-first, before any member is
+    # built, so this entry is latent until risk-register lands: check K only fires per declared member.
+    "governance-docs": {
+        "contract": "docs/internal/contracts/governance-docs.md",
+        "classification": "utility",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"
