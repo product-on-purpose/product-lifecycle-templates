@@ -97,7 +97,9 @@ def main():
         ok, detail = gate.check_family(b, os.path.join(tdir, b))
         check(b, ok, detail)
         if "no ratified contract" not in detail:
-            check(b + " reports the phase axis", "(phase," in detail, detail)
+            # A real bundle conforms on whichever axis its family gates (phase for delivery/decision,
+            # classification for governance). The detail line names it either way.
+            check(b + " reports its axis", "(phase," in detail or "(classification," in detail, detail)
 
     print("\n" + DIM + "2. The new capability: a classification family accepts a member" + OFF)
     ok, detail = run("risk-register", "governance-docs", "classification: utility",

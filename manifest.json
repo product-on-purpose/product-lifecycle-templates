@@ -202,6 +202,38 @@
     },
     {
       "aliases": [
+        "risk register",
+        "risk log",
+        "risk tracker"
+      ],
+      "approx_tokens": {
+        "full": 3300,
+        "lean": 2250
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "risk-register",
+      "family": "governance-docs",
+      "id": "risk-register",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (purpose and scope, an anchored scoring scale, the risks table, review and ownership) when one team tracks and acts on its own risks. Use full when a steering committee, auditor, or board consumes the register, when you must demonstrate control effectiveness (which needs inherent-vs-residual scoring), or when regulation prescribes fields; full adds dual scoring, escalation and risk appetite, and a closed/materialized audit trail.",
+      "status": "beta",
+      "summary": "The single, maintained record of the risks to an objective: what could happen, how likely and how damaging, who owns it, the response, and whether that response is working. A standing governance instrument, scored against anchored scales and reviewed on a cadence, that survives the \"risk theater\" and heat-map critiques by staying living, owned, and objective-anchored.",
+      "tags": [
+        "governance",
+        "risk",
+        "risk-management",
+        "register",
+        "assurance",
+        "pmbok"
+      ],
+      "title": "Risk Register"
+    },
+    {
+      "aliases": [
         "SDD",
         "design doc",
         "design document",
@@ -303,5 +335,5 @@
       "title": "User Story"
     }
   ],
-  "count": 9
+  "count": 10
 }
