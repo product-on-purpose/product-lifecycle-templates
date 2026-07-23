@@ -1,0 +1,35 @@
+id: raid-log
+title: RAID Log
+summary: >-
+  One working document that tracks the four kinds of open item on a project: Risks (might happen),
+  Assumptions (believed true without proof), Issues (have happened), and Dependencies (structural
+  relationships). A standing governance instrument whose value is the consolidated view - seeing an
+  assumption become an issue, or a dependency become a risk - and whose defining failure is being set up at
+  kickoff and never reviewed.
+doc_type: raid-log
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (purpose and scope, the four quadrant tables, review and ownership) for one team on one project, often as a single combined table. Use full when a larger or multi-team program needs richer per-quadrant fields, a steering-group escalation-and-aging view, or cross-quadrant migration tracking; full adds those two sections and splits naturally onto four tabs."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - risk
+  - raid
+  - issues
+  - dependencies
+  - assumptions
+related_templates: [risk-register, future:kpi-dashboard, future:status-report]
+aliases:
+  - raid
+  - raid log
+  - raaidd log
+  - risks assumptions issues dependencies
+catalog_ref: 151
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-22
+license: Apache-2.0
