@@ -77,8 +77,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 10 -->
-**Ten bundles, in three families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 11 -->
+**Eleven bundles, in three families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 **`delivery-docs`** (six bundles, the family complete). Their examples chain on one fictional "Saved Views" feature, so the family reads as one traceable set: a PRD leads to user stories, ordered in a product backlog and pulled into a sprint backlog, which lead to acceptance criteria, which ship in a release note.
 
@@ -99,13 +99,14 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 | [`adr`](templates/adr/) | The record of a decision *after* it is made, in [MADR v4](https://github.com/adr/madr) | `develop-adr` |
 | [`sdd`](templates/sdd/) | The software design document: how a system will be built, before the code | (none: no `develop-sdd` skill exists) |
 
-**`governance-docs`** (one bundle, the first on the `classification` axis; family building out). Standing governance instruments a PM maintains across the whole lifecycle, gated on `classification: utility` rather than a lifecycle phase.
+**`governance-docs`** (two bundles, the first family on the `classification` axis; family building out). Standing governance instruments a PM maintains across the whole lifecycle, gated on `classification: utility` rather than a lifecycle phase. Their examples chain on one program (Reporting Platform Modernization): the risk register is the RAID log's deepened "R".
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`risk-register`](templates/risk-register/) | The maintained, owned record of risks to an objective, scored and reviewed | (none: no governance skill exists yet) |
+| [`raid-log`](templates/raid-log/) | One log for the four kinds of open item: Risks, Assumptions, Issues, Dependencies | (none: no governance skill exists yet) |
 
-Beyond these ten, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** still governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these eleven, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** still governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 *A word on "complete".* This README used to call `delivery-docs` complete and verified. Both words were doing more work than they had earned, so they are gone. The family now has five bundles and a family contract adopted and validated by the gate ([ADR 0020](docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md), check K), and it is still growing under the floor build-out. But "verified" did not survive contact with evidence: a citation pass on 2026-07-16 found **28 defects across the original four bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated in [Quality gate](#quality-gate).
 
@@ -152,7 +153,8 @@ templates/
   rfc/                      \
   adr/                       }  the decision-docs family (8 files each)
   sdd/                      /
-  risk-register/            }  the governance-docs family (classification axis)
+  risk-register/            \
+  raid-log/                  }  the governance-docs family (classification axis)
 tools/
   check-bundles.py          The governance gate (runs locally and in CI)
   check-links.py            The link gate (no tracked file may link into _local/)
@@ -192,7 +194,7 @@ python tools/check-bundles.py     # the eleven bundle checks
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-All ten bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All eleven bundles currently pass. GitHub Actions runs both scripts on every push to `main` and on every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 

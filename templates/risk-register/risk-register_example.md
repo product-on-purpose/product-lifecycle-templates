@@ -7,7 +7,7 @@ last_reviewed: "2026-07-20"
 review_cadence: "Fortnightly with owners; residual 15+ escalated to the steering group monthly"
 risk_appetite: "Up to a two-week schedule slip and up to GBP 100k of unplanned cost are acceptable; no PII-exposure or data-loss risk above residual 6"
 status: active
-related: ["../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "raid-log (forthcoming: the program RAID log, whose R column is this register)", "kpi-dashboard (forthcoming: the program KPI dashboard, tracking the outcomes these risks threaten)"]
+related: ["../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "../raid-log/raid-log_example.md (the program RAID log; its R quadrant summarizes this register)", "kpi-dashboard (forthcoming: the program KPI dashboard, tracking the outcomes these risks threaten)"]
 doc_type: risk-register
 size: full
 source_template: risk-register
@@ -78,9 +78,9 @@ any PII/data risk above the appetite line (residual 6), is escalated to the **st
 meeting; the **board** sees only risks over appetite, quarterly, as an exception summary. Owners update their
 own rows before each review; the register owner reconciles and re-orders.
 
-A risk that **materializes** moves to the program issue log (the RAID log's Issues column, a forthcoming
-sibling) the day its trigger fires, and its row here is marked **Materialized** with a link (see R-03 below).
-Last reviewed **2026-07-20**; next review **2026-08-03**.
+A risk that **materializes** moves to the program issue log (the
+[RAID log's Issues quadrant](../raid-log/raid-log_example.md)) the day its trigger fires, and its row here is
+marked **Materialized** with a link (see R-03 below). Last reviewed **2026-07-20**; next review **2026-08-03**.
 
 ## Escalation and Risk Appetite
 
@@ -103,7 +103,7 @@ Kept as the audit trail and the scoring feedback loop; not deleted.
 
 | ID | Category | Outcome | Note and lesson |
 |---|---|---|---|
-| R-03 | Key-person | **Materialized 2026-06-14** -> issue ISS-11 (program issue log) | The engineer holding the query-engine knowledge left. Had been scored **residual 6** (amber-low) on an assumption of a long notice period; that was optimistic. Lesson: owner-departure risks are now floored at **residual 9** until a documented handover exists. The materialized issue is tracked on the RAID log, not here. |
+| R-03 | Key-person | **Materialized 2026-06-14** -> issue [ISS-11](../raid-log/raid-log_example.md) (program issue log) | The engineer holding the query-engine knowledge left. Had been scored **residual 6** (amber-low) on an assumption of a long notice period; that was optimistic. Lesson: owner-departure risks are now floored at **residual 9** until a documented handover exists. The materialized issue is tracked on the RAID log, not here. |
 | R-08 | Performance | **Closed 2026-05-30** | Early concern that the new query engine could not meet the 500ms budget at all. **Mitigated:** a load test at 3x target passed; the risk was retired and the residual concern narrowed to view-list rendering, which is now the active R-06. A closed risk that narrowed rather than vanished. |
 
 *(All IDs, dates, scores, and names are illustrative.)*
