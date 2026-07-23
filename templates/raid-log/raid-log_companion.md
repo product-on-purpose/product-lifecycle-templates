@@ -272,8 +272,9 @@ transferring the whole log [[2]](#ref-2). The forthcoming `status-report` bundle
 it.
 
 **RAID log vs KPI dashboard.** Both are standing governance instruments in this family, but the RAID tracks
-**open items to resolve** while the dashboard tracks **performance against targets**. In the worked example
-they cover the same program; a dependency that slips on the RAID shows up as a dip on the dashboard it feeds.
+**open items to resolve** while the [`kpi-dashboard`](../kpi-dashboard/kpi-dashboard_guide.md) tracks
+**performance against targets**. In the worked example they cover the same program; a dependency that slips on
+the RAID shows up as a dip on the dashboard it feeds.
 
 ---
 

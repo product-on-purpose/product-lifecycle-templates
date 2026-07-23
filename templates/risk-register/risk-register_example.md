@@ -7,7 +7,7 @@ last_reviewed: "2026-07-20"
 review_cadence: "Fortnightly with owners; residual 15+ escalated to the steering group monthly"
 risk_appetite: "Up to a two-week schedule slip and up to GBP 100k of unplanned cost are acceptable; no PII-exposure or data-loss risk above residual 6"
 status: active
-related: ["../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "../raid-log/raid-log_example.md (the program RAID log; its R quadrant summarizes this register)", "kpi-dashboard (forthcoming: the program KPI dashboard, tracking the outcomes these risks threaten)"]
+related: ["../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "../raid-log/raid-log_example.md (the program RAID log; its R quadrant summarizes this register)", "../kpi-dashboard/kpi-dashboard_example.md (the program KPI dashboard, tracking the outcomes these risks threaten)"]
 doc_type: risk-register
 size: full
 source_template: risk-register

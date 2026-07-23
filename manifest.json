@@ -70,6 +70,39 @@
     },
     {
       "aliases": [
+        "kpi dashboard",
+        "metrics dashboard",
+        "executive dashboard",
+        "scorecard"
+      ],
+      "approx_tokens": {
+        "full": 3050,
+        "lean": 1750
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "kpi-dashboard",
+      "family": "governance-docs",
+      "id": "kpi-dashboard",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (purpose and audience, the KPI table, review and ownership) for one team to agree what it watches and act on it. Use full when the dashboard feeds governance, when multiple teams must agree what a metric means, or when someone other than the author builds it on a BI platform; full adds locked metric definitions (formula, inclusions/exclusions, data steward), layout and RAG thresholds, and data sources and refresh.",
+      "status": "beta",
+      "summary": "The defined set of key performance indicators an organization watches to know whether it is making progress toward its objectives, plus the specification of how each is measured, targeted, owned, and reviewed. A standing governance instrument and a platform-agnostic dashboard definition (not a live BI tool) that survives Goodhart's Law and the vanity-metric trap by keeping metrics actionable, precisely defined, owned, and reviewed on a cadence.",
+      "tags": [
+        "governance",
+        "metrics",
+        "kpi",
+        "dashboard",
+        "measurement",
+        "reporting"
+      ],
+      "title": "KPI Dashboard"
+    },
+    {
+      "aliases": [
         "product spec",
         "product brief",
         "feature spec",
@@ -368,5 +401,5 @@
       "title": "User Story"
     }
   ],
-  "count": 11
+  "count": 12
 }
