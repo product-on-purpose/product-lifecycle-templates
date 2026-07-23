@@ -1,0 +1,33 @@
+id: risk-register
+title: Risk Register
+summary: >-
+  The single, maintained record of the risks to an objective: what could happen, how likely and how
+  damaging, who owns it, the response, and whether that response is working. A standing governance
+  instrument, scored against anchored scales and reviewed on a cadence, that survives the "risk theater"
+  and heat-map critiques by staying living, owned, and objective-anchored.
+doc_type: risk-register
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (purpose and scope, an anchored scoring scale, the risks table, review and ownership) when one team tracks and acts on its own risks. Use full when a steering committee, auditor, or board consumes the register, when you must demonstrate control effectiveness (which needs inherent-vs-residual scoring), or when regulation prescribes fields; full adds dual scoring, escalation and risk appetite, and a closed/materialized audit trail."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - risk
+  - risk-management
+  - register
+  - assurance
+  - pmbok
+related_templates: [future:raid-log, future:kpi-dashboard, future:status-report]
+aliases:
+  - risk register
+  - risk log
+  - risk tracker
+catalog_ref: 150
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-22
+license: Apache-2.0

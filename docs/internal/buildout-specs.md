@@ -37,7 +37,7 @@ reference a future session reads to continue.
 | 15 | test-plan | qa-docs | phase: develop | planned | - |
 | 16 | test-case | qa-docs | phase: develop | planned | - |
 | 17 | bug-report | qa-docs | phase: develop | planned | - |
-| 18 | risk-register | governance-docs | class: utility | planned (contract adopted) | - |
+| 18 | risk-register | governance-docs | class: utility | **done** | #34 |
 | 19 | raid-log | governance-docs | class: utility | planned (contract adopted) | - |
 | 20 | kpi-dashboard | governance-docs | class: utility *(resolved at contract, ADR 0024)* | planned (contract adopted) | - |
 | 21 | user-persona | discovery-docs | phase: discover | planned | - |
@@ -49,10 +49,11 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 9 bundles done (both existing families complete), **19 planned** (the 19 rows above). Those sum to
-28 against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`)
-while `sprint-retrospective-notes` **is** one. So the honest reading is **8 of 27 Tier-1 types built, plus
-`rfc`; 19 Tier-1 types remain.** See **D-D** below; it corrects the "18 planned" this line used to claim.
+**Count:** 10 bundles done (delivery-docs and decision-docs complete; governance-docs building out with
+`risk-register` landed), **18 planned** (the remaining rows above). Those sum to 28 against a 27-type floor
+because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
+`sprint-retrospective-notes` **is** one. So the honest reading is **9 of 27 Tier-1 types built, plus `rfc`;
+18 Tier-1 types remain.** See **D-D** below.
 
 ---
 
