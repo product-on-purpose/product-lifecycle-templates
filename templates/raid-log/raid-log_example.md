@@ -6,7 +6,7 @@ log_owner: "Marta Reyes (Program Manager)"
 last_reviewed: "2026-07-20"
 review_cadence: "Weekly with workstream leads; monthly deep dive at the program board"
 status: active
-related: ["../risk-register/risk-register_example.md (the program risk register; this log's R quadrant summarizes it)", "../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "kpi-dashboard (forthcoming: the program KPI dashboard, tracking the outcomes these items threaten)"]
+related: ["../risk-register/risk-register_example.md (the program risk register; this log's R quadrant summarizes it)", "../prd/prd_example.md (Saved Views for Dashboards PRD)", "../sdd/sdd_example.md (Saved Views design)", "../kpi-dashboard/kpi-dashboard_example.md (the program KPI dashboard, tracking the outcomes these items threaten)"]
 doc_type: raid-log
 size: full
 source_template: raid-log

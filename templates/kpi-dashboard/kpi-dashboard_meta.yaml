@@ -1,0 +1,35 @@
+id: kpi-dashboard
+title: KPI Dashboard
+summary: >-
+  The defined set of key performance indicators an organization watches to know whether it is making
+  progress toward its objectives, plus the specification of how each is measured, targeted, owned, and
+  reviewed. A standing governance instrument and a platform-agnostic dashboard definition (not a live BI
+  tool) that survives Goodhart's Law and the vanity-metric trap by keeping metrics actionable, precisely
+  defined, owned, and reviewed on a cadence.
+doc_type: kpi-dashboard
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (purpose and audience, the KPI table, review and ownership) for one team to agree what it watches and act on it. Use full when the dashboard feeds governance, when multiple teams must agree what a metric means, or when someone other than the author builds it on a BI platform; full adds locked metric definitions (formula, inclusions/exclusions, data steward), layout and RAG thresholds, and data sources and refresh."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - metrics
+  - kpi
+  - dashboard
+  - measurement
+  - reporting
+related_templates: [risk-register, raid-log, future:okrs]
+aliases:
+  - kpi dashboard
+  - metrics dashboard
+  - executive dashboard
+  - scorecard
+catalog_ref: 139
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-22
+license: Apache-2.0

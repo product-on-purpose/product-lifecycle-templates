@@ -326,7 +326,7 @@ prompt completeness. Its categories become the **category** field on the registe
 **Risk register vs KPI dashboard.** Both are standing governance instruments in this family, but they face
 opposite directions: the register tracks **threats to** an objective, the dashboard tracks **progress toward**
 it. In the worked example they cover the same program, and a risk that materializes shows up as a dip on the
-dashboard it threatened. The `kpi-dashboard` sibling is a forthcoming governance-docs member.
+dashboard it threatened. See the sibling [`kpi-dashboard`](../kpi-dashboard/kpi-dashboard_guide.md).
 
 ---
 
