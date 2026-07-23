@@ -57,6 +57,9 @@ Do not create for:
 | [0019](0019-selection-metadata-and-approx-tokens.md) | Selection metadata: authored `default_size` + `sizing_guidance`, and a generated heuristic `approx_tokens` (no tokenizer dependency) (WP-23) | 2026-07-18 |
 | [0020](0020-adopt-delivery-docs-family-contract.md) | Adopt the delivery-docs family contract, enforced by gate check K; methodology is descriptive, not a membership rule (WP-24) | 2026-07-20 |
 | [0021](0021-complete-the-tier-1-floor.md) | Complete the Tier-1 floor on a schedule; grow-by-pull governs Tier-2/Tier-3 only (adopts the buildout plan) | 2026-07-20 |
+| [0022](0022-adopt-decision-docs-family-contract.md) | Adopt the decision-docs family contract (rfc, adr, sdd), enforced by gate check K; the second family contract | 2026-07-21 |
+| [0023](0023-resolve-the-tier-1-family-taxonomy.md) | Resolve the Tier-1 family taxonomy (D-A, D-B): definition-of-done, strategy-docs, and ops-docs; a family is coherent on one axis, and a contract may gate a set of axis values | 2026-07-22 |
+| [0024](0024-adopt-governance-docs-family-contract.md) | Adopt the governance-docs family contract, the first on the classification axis; resolves kpi-dashboard to classification: utility | 2026-07-22 |
 
 ## Correction versus supersession
 

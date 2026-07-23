@@ -37,9 +37,9 @@ reference a future session reads to continue.
 | 15 | test-plan | qa-docs | phase: develop | planned | - |
 | 16 | test-case | qa-docs | phase: develop | planned | - |
 | 17 | bug-report | qa-docs | phase: develop | planned | - |
-| 18 | risk-register | governance-docs | class: utility | planned | - |
-| 19 | raid-log | governance-docs | class: utility | planned | - |
-| 20 | kpi-dashboard | governance-docs | class: utility *(TBD at contract)* | planned | - |
+| 18 | risk-register | governance-docs | class: utility | planned (contract adopted) | - |
+| 19 | raid-log | governance-docs | class: utility | planned (contract adopted) | - |
+| 20 | kpi-dashboard | governance-docs | class: utility *(resolved at contract, ADR 0024)* | planned (contract adopted) | - |
 | 21 | user-persona | discovery-docs | phase: discover | planned | - |
 | 22 | wireframe | design-docs | phase: develop | planned | - |
 | 23 | interactive-prototype | design-docs | phase: develop | planned | - |
@@ -106,8 +106,10 @@ both:**
 - **ops-docs dissolves.** **incident-postmortem moves to process-docs** (`phase: iterate`, with
   sprint-retrospective-notes; the postmortem-vs-retro distinction becomes a teaching point inside one
   family). **runbook moves to standing-standards** (`classification: tool`, with definition-of-done).
-- **kpi-dashboard stays unresolved on purpose**, decided at governance-docs' contract-writing step against
-  its real siblings. If it lands `phase: measure`, governance-docs is a two-member family and it moves.
+- **kpi-dashboard's axis was resolved at contract time to `classification: utility`**
+  ([ADR 0024](decisions/0024-adopt-governance-docs-family-contract.md)): a KPI dashboard is a standing,
+  continuously-maintained instrument (catalog "measurement / ongoing"), not a `phase: measure` output.
+  governance-docs is a coherent three-member classification-utility family.
 - Ratifying this exposed that check K compared the axis to a **single** value, so the two families spanning
   two classifications would have failed. Contracts now accept a **set** on the axis key, as `status` always
   has. Axis coherence was always one axis, never one value.
@@ -241,7 +243,7 @@ aliases: defect report, defect ticket, issue. Lean: Summary; Steps to Reproduce;
 Severity and Environment. Key sources: practitioner defect-reporting guides; severity-vs-priority
 distinction is the teaching point.
 
-### governance-docs (new family; classification-axis; needs D-C gate change first)
+### governance-docs (contract adopted 2026-07-22, ADR 0024; classification-axis, class utility)
 
 **risk-register** (catalog 150) - governance-docs, **class utility**, sizes [lean, full], methodology
 methodology-agnostic (PMBOK), aliases: risk log. Lean: Risks (table: risk, likelihood, impact, owner,
@@ -253,7 +255,7 @@ DCARI variant. Lean: Risks; Assumptions; Issues; Dependencies (one table or four
 Dates; Cross-links; Review Cadence. Key sources: PMBOK, PMI. Teaching point: RAID is a superset of the risk
 register; when to use which.
 
-**kpi-dashboard** (catalog 139) - governance-docs, class utility *(TBD; measure)*, sizes [lean, full],
+**kpi-dashboard** (catalog 139) - governance-docs, **class utility** (resolved, ADR 0024), sizes [lean, full],
 methodology-agnostic, aliases: metrics dashboard, scorecard. Lean: Metrics (table: KPI, target, current,
 trend). Full adds: Segments; Alerting/Thresholds; Data Sources. Key sources: NSM/OKR-derived metrics,
 Croll/Yoskovitz (*Lean Analytics*). Note: this is a document *template* for a dashboard's definition, not a
