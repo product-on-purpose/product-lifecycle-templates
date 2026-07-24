@@ -60,6 +60,7 @@ Do not create for:
 | [0022](0022-adopt-decision-docs-family-contract.md) | Adopt the decision-docs family contract (rfc, adr, sdd), enforced by gate check K; the second family contract | 2026-07-21 |
 | [0023](0023-resolve-the-tier-1-family-taxonomy.md) | Resolve the Tier-1 family taxonomy (D-A, D-B): definition-of-done, strategy-docs, and ops-docs; a family is coherent on one axis, and a contract may gate a set of axis values | 2026-07-22 |
 | [0024](0024-adopt-governance-docs-family-contract.md) | Adopt the governance-docs family contract, the first on the classification axis; resolves kpi-dashboard to classification: utility | 2026-07-22 |
+| [0025](0025-executable-tests-for-gate-logic.md) | Executable tests complement the structural gate for logic with no live subject; they live in tools/, run in CI, and block merge | 2026-07-23 |
 
 ## Correction versus supersession
 

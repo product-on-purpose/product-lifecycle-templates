@@ -46,6 +46,19 @@ jobs:
       - name: Manifest freshness
         run: python tools/gen-manifest.py --check
 
+      # The atlas built flags. atlas/catalog-data.json and the inline copy in atlas/atlas.html
+      # both carry a per-type `built` boolean, which drifted (advertised 4 built while 12 existed).
+      # This regenerates both from the bundles on disk and fails on drift (same discipline as the
+      # manifest; ADR 0018). Closes the atlas half of the same failure class PR #30 corrected.
+      - name: Atlas freshness
+        run: python tools/gen-atlas.py --check
+
+      # The decision-record index. docs/internal/decisions/README.md is a hand-maintained table;
+      # 0022 and 0023 both landed without an index row and sat missing. This fails if any NNNN-*.md
+      # ADR file has no index row, or an index row points at no file.
+      - name: ADR index
+        run: python tools/check-adr-index.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
