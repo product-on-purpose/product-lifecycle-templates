@@ -1151,7 +1151,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "PRD",
         "SRS"
@@ -1176,7 +1176,7 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
         "ADR"
       ]
@@ -1552,7 +1552,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "RFC"
       ]
@@ -1809,7 +1809,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "Sprint Backlog"
       ]
@@ -1831,7 +1831,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "Product Backlog"
       ]
@@ -3258,7 +3258,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "NSM",
         "OKRs"
@@ -3515,7 +3515,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": []
     },
     {
@@ -3536,7 +3536,7 @@
       "tier": 1,
       "tier_inferred": false,
       "must_have": true,
-      "built": false,
+      "built": true,
       "relationships": [
         "Risk",
         "Issue logs"

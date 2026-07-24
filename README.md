@@ -210,6 +210,8 @@ The governance is enforceable, not aspirational. [`tools/check-bundles.py`](tool
 python tools/check-bundles.py     # the eleven bundle checks
 python tools/test-check-k.py      # the family-contract check's own test suite
 python tools/gen-manifest.py --check   # manifest and README count are fresh
+python tools/gen-atlas.py --check      # the atlas built flags match the bundles
+python tools/check-adr-index.py        # the decision-record index lists every ADR
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
@@ -235,8 +237,8 @@ All twelve bundles currently pass. GitHub Actions runs these on every push to `m
 | **Bundles** | 12, across 3 complete families (delivery-docs, decision-docs, governance-docs) |
 | **Tier-1 floor** | 11 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
-| **Gate** | 11 checks in CI, plus link, manifest-freshness, and family-contract tests; `main` branch-protected |
-| **Decision records** | 24 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
+| **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, and family-contract-test steps; `main` branch-protected |
+| **Decision records** | 25 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
 
@@ -259,9 +261,11 @@ templates/
   kpi-dashboard/            /
 tools/
   check-bundles.py          The governance gate (runs locally and in CI)
-  test-check-k.py           The family-contract check's own test suite
+  test-check-k.py           The family-contract check's own test suite (ADR 0025)
   check-links.py            The link gate (no tracked file may link into _local/)
+  check-adr-index.py        Fails if the decision-record index omits an ADR
   gen-manifest.py           Generates manifest.json and checks README freshness
+  gen-atlas.py              Derives the atlas built flags from the bundles on disk
   known-skills.txt          Pinned skill IDs that pairs_with may name
 atlas/
   atlas.html                Interactive map of all 205 catalog types
