@@ -197,7 +197,15 @@ commitment is the Sprint Goal.
 **definition-of-done** (catalog 39) - **reassigned** (see D-A). class foundation, sizes [lean], methodology
 agile-scrum, aliases: DoD, done criteria. Build with the standing-standards family, not delivery-docs.
 
-### strategy-docs (new family; contract first; see D-B)
+### strategy-docs (contract adopted 2026-07-25, ADR 0027; classification axis, set [foundation, utility])
+
+The phase/class *TBD* markers below are **resolved** ([ADR 0027](decisions/0027-adopt-strategy-docs-family-contract.md)):
+**product-vision and product-strategy are `foundation`**, **product-roadmap and okrs are `utility`**, on the
+distinction argued-and-durable versus maintained-and-periodic. This is the first family to gate a **set** on
+the axis key, and the first live use of the set support ADR 0023 added ahead of its subject. `business-case`
+is confirmed out of the family (moved to discovery-docs, D-B). Real skill pairings exist here, unlike in
+qa-docs: `foundation-okr-writer`, `measure-okr-grader` and `foundation-lean-canvas` are pinned. Examples chain
+onto the Acme Analytics thread **upward**, via the FY26 "Time to Insight" goal the PRD example already cites.
 
 **product-vision** (catalog 1) - strategy-docs, phase/class *TBD (foundation leaning)*, sizes [lean, full],
 methodology methodology-agnostic, aliases: vision statement, product vision board (Pichler), Vision FAQ
@@ -337,7 +345,8 @@ class foundation, sizes [lean], methodology agile-scrum.
    hypotheses after EC-2. The family's examples form the library's first cross-family chain and run end to
    end: risk R-05 to a test plan row to TC-047 to DEF-2291 to the regression test that guards it.
 4. **strategy-docs** (product-vision, product-strategy, product-roadmap, okrs): the biggest,
-   highest-visibility family, and the first to span two classification values.
+   highest-visibility family, and the first to span two classification values. **Contract adopted 2026-07-25
+   ([ADR 0027](decisions/0027-adopt-strategy-docs-family-contract.md)), members next.**
 5. **The small families**: discovery-docs (user-persona, business-case), design-docs (wireframe,
    interactive-prototype), process-docs (sprint-retrospective-notes, incident-postmortem),
    standing-standards (definition-of-done, runbook), communication-docs (status-report). ops-docs no longer

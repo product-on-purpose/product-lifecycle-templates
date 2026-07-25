@@ -36,3 +36,14 @@ develop-adr
 # plans". Enumerating all 68 tracked skills the same day found no testing or QA skill at all, which is
 # finding EC-4 in STATE.md.
 deliver-edge-cases
+
+# Added 2026-07-25 for the strategy-docs family. All three verified present at skills/<id>/SKILL.md in
+# product-on-purpose/pm-skills (tracked source, not the gitignored .claude/skills/ build copy).
+# foundation-okr-writer drafts and reviews OKR sets; measure-okr-grader scores them at cycle close; both
+# address the `okrs` bundle directly. foundation-lean-canvas describes itself as serving "framing a new
+# product thesis, stress-testing an existing strategy", which is the `product-strategy` bundle's job.
+# Worth noting against finding EC-4: pm-skills is strong at the strategy end and absent at the
+# verification end, so the gap found by qa-docs is a coverage SHAPE, not a uniform absence.
+foundation-okr-writer
+measure-okr-grader
+foundation-lean-canvas

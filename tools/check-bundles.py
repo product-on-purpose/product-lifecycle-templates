@@ -186,6 +186,18 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # The first family to gate a SET of axis values rather than one (ADR 0027). Vision and strategy are
+    # foundation (argued, durable, changing over years); roadmap and OKRs are utility (maintained,
+    # periodic, valuable only while current). The set support this relies on landed in ADR 0023, ahead of
+    # its subject, and test-check-k.py has carried a strategy-docs fixture for it ever since. Note the
+    # limit: check K enforces that a member picks a value FROM the set, never that it picked the right one
+    # -- that assignment is a review obligation against the contract's section 2.
+    "strategy-docs": {
+        "contract": "docs/internal/contracts/strategy-docs.md",
+        "classification": ["foundation", "utility"],
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"
