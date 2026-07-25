@@ -70,6 +70,39 @@
     },
     {
       "aliases": [
+        "bug report",
+        "defect report",
+        "anomaly report",
+        "test incident report"
+      ],
+      "approx_tokens": {
+        "full": 3800,
+        "lean": 2150
+      },
+      "default_size": "lean",
+      "doc_type": "bug-report",
+      "family": "qa-docs",
+      "id": "bug-report",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (summary, steps to reproduce, expected and actual behavior, environment and reproducibility) for anything a non-tester will fill in; this is the one artifact in the family written by support agents, salespeople and users, and every extra field costs you reports. Use full when the defect is tracked formally: a release gate reads its severity, ownership crosses teams, or the closed record is audit evidence. Full adds evidence, the severity and priority pair with owners named, the triage decision, and the resolution with its regression guard - and three of those four are filled in by someone other than the reporter, after filing.",
+      "status": "beta",
+      "summary": "The document that gets one defect fixed by someone who was not there: what you did, what you expected, what happened instead, and where. Written as an anomaly report rather than a diagnosis, because at the moment of writing nobody yet knows whether the cause is a code flaw, a configuration, or a misunderstanding.",
+      "tags": [
+        "qa",
+        "testing",
+        "defect-management",
+        "triage",
+        "severity",
+        "quality"
+      ],
+      "title": "Bug Report"
+    },
+    {
+      "aliases": [
         "kpi dashboard",
         "metrics dashboard",
         "executive dashboard",
@@ -466,5 +499,5 @@
       "title": "User Story"
     }
   ],
-  "count": 14
+  "count": 15
 }

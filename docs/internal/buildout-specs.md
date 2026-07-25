@@ -36,7 +36,7 @@ reference a future session reads to continue.
 | 14 | product-roadmap | strategy-docs | class: utility | planned | - |
 | 15 | test-plan | qa-docs | phase: develop | **done** | #40 |
 | 16 | test-case | qa-docs | phase: develop | **done** (ships `[lean, full]` against the catalog's S) | #41 |
-| 17 | bug-report | qa-docs | phase: develop | planned | - |
+| 17 | bug-report | qa-docs | phase: develop | **done** (qa-docs complete) | #42 |
 | 18 | risk-register | governance-docs | class: utility | **done** | #34 |
 | 19 | raid-log | governance-docs | class: utility | **done** | #35 |
 | 20 | kpi-dashboard | governance-docs | class: utility *(resolved at contract, ADR 0024)* | **done** | #36 |
@@ -49,11 +49,10 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 14 bundles done (delivery-docs, decision-docs and **governance-docs all complete**, plus two
-`qa-docs` members), **14 planned** (the remaining rows above). Those sum to 28 against a 27-type floor because
-**`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`
-**is** one. So the honest reading is **13 of 27 Tier-1 types built, plus `rfc`; 14 Tier-1 types remain.**
-See **D-D** below.
+**Count:** 15 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**),
+**13 planned** (the remaining rows above). Those sum to 28 against a 27-type floor because **`rfc` is not a
+Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes` **is** one. So the
+honest reading is **14 of 27 Tier-1 types built, plus `rfc`; 13 Tier-1 types remain.** See **D-D** below.
 
 ---
 
@@ -165,9 +164,10 @@ remain** - exactly the 19 rows above.
 
 **The arithmetic needs no ratification.** Two adjacent items do want a maintainer glance:
 
-- [`catalog.md`](catalog.md) prose says "core **28**-type must-have tier" (lines 6 and 293) against its own
-  machine data's 27. Every ADR that cites the figure says 27, so the prose is the outlier; correct it at the
-  catalog's next edit rather than in a correction PR.
+- ~~[`catalog.md`](catalog.md) prose says "core **28**-type must-have tier" (lines 6 and 293) against its own
+  machine data's 27.~~ **Corrected 2026-07-25**, in both places, with a dated note explaining why the prose
+  was the outlier. It rode along with the qa-docs family-boundary change rather than taking its own PR, as
+  this line recommended.
 - [ADR 0021](decisions/0021-complete-the-tier-1-floor.md) says "6 of the catalog's 27 Tier-1 types" where it
   meant 5 of 27 plus `rfc`. Accepted ADRs are records, not living documents, so it stays as written and is
   noted here instead.
@@ -331,8 +331,11 @@ class foundation, sizes [lean], methodology agile-scrum.
 2. ~~**The check-K classification-axis change** (D-C)~~ **done 2026-07-22**, then **governance-docs**
    (risk-register, raid-log, kpi-dashboard): the first classification family, now clean on the gate side and
    waiting only on D-A/D-B ratification and its own contract.
-3. **qa-docs** (test-plan, test-case, bug-report): coherent phase-develop family. **Contract adopted
-   2026-07-25 ([ADR 0026](decisions/0026-adopt-qa-docs-family-contract.md)), members next.**
+3. ~~**qa-docs** (test-plan, test-case, bug-report)~~ **COMPLETE 2026-07-25.** Contract
+   ([ADR 0026](decisions/0026-adopt-qa-docs-family-contract.md)) plus all three members landed the same day.
+   Two members ship `[lean, full]` against catalog size calls of S, the second and third tested size
+   hypotheses after EC-2. The family's examples form the library's first cross-family chain and run end to
+   end: risk R-05 to a test plan row to TC-047 to DEF-2291 to the regression test that guards it.
 4. **strategy-docs** (product-vision, product-strategy, product-roadmap, okrs): the biggest,
    highest-visibility family, and the first to span two classification values.
 5. **The small families**: discovery-docs (user-persona, business-case), design-docs (wireframe,
