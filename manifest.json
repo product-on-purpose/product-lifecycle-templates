@@ -368,6 +368,39 @@
     },
     {
       "aliases": [
+        "test plan",
+        "master test plan",
+        "MTP",
+        "test planning document"
+      ],
+      "approx_tokens": {
+        "full": 4550,
+        "lean": 2650
+      },
+      "default_size": "lean",
+      "doc_type": "test-plan",
+      "family": "qa-docs",
+      "id": "test-plan",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (scope and non-scope, a risk-ranked approach, entry and exit criteria, environment and ownership, schedule and deliverables) when one team verifies one feature or release. Use full when the work is regulated or audited, when several teams or vendors test the same release, when a formal gate sits inside the cycle, or when your process requires an approved artifact; full adds test levels and types, suspension and resumption criteria, risks to the test effort, and approvals with change control.",
+      "status": "beta",
+      "summary": "The prospective document that scopes and prioritizes a testing effort: what is being tested and what is explicitly not, which areas carry the most product risk and therefore earn the deepest coverage, the measurable conditions that start and end the work, and who runs it where. Written to be read, not to be complete: the plan is the thinking, not the page count.",
+      "tags": [
+        "qa",
+        "testing",
+        "test-planning",
+        "risk-based-testing",
+        "verification",
+        "quality"
+      ],
+      "title": "Test Plan"
+    },
+    {
+      "aliases": [
         "story",
         "story card",
         "user story",
@@ -401,5 +434,5 @@
       "title": "User Story"
     }
   ],
-  "count": 12
+  "count": 13
 }
