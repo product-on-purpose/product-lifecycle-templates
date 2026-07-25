@@ -1,0 +1,32 @@
+id: test-case
+title: Test Case
+summary: >-
+  The specification of one verification: what must be true before it runs, what is done, and what must happen
+  as a result, written so that someone who is not its author can ask the same question tomorrow and get the
+  same answer. A design artifact, not a record of a run: it carries no actual result and no pass or fail.
+doc_type: test-case
+phase: develop
+family: qa-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (identification and traceability, preconditions and test data, steps and expected results, postconditions and teardown) for everyday cases written and run by one team; a test case is written hundreds of times over a project, so every extra field is paid for hundreds of times. Use full when the work is regulated or audited, when cases are reviewed as artifacts rather than just executed, when the case is configuration-sensitive, or when the suite is large enough that knowing why a case exists is what lets you retire it; full adds design rationale, environment and configuration, automation status, and version and approval."
+methodology: generic
+pairs_with: [deliver-edge-cases]
+status: beta
+template_version: 0.1.0
+tags:
+  - qa
+  - testing
+  - test-design
+  - verification
+  - traceability
+  - quality
+related_templates: [test-plan, acceptance-criteria, prd, future:bug-report]
+aliases:
+  - test case
+  - test case specification
+  - test script
+catalog_ref: 104
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-25
+license: Apache-2.0
