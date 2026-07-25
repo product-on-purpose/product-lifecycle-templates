@@ -1,0 +1,34 @@
+id: test-plan
+title: Test Plan
+summary: >-
+  The prospective document that scopes and prioritizes a testing effort: what is being tested and what is
+  explicitly not, which areas carry the most product risk and therefore earn the deepest coverage, the
+  measurable conditions that start and end the work, and who runs it where. Written to be read, not to be
+  complete: the plan is the thinking, not the page count.
+doc_type: test-plan
+phase: develop
+family: qa-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (scope and non-scope, a risk-ranked approach, entry and exit criteria, environment and ownership, schedule and deliverables) when one team verifies one feature or release. Use full when the work is regulated or audited, when several teams or vendors test the same release, when a formal gate sits inside the cycle, or when your process requires an approved artifact; full adds test levels and types, suspension and resumption criteria, risks to the test effort, and approvals with change control."
+methodology: generic
+pairs_with: [deliver-edge-cases]
+status: beta
+template_version: 0.1.0
+tags:
+  - qa
+  - testing
+  - test-planning
+  - risk-based-testing
+  - verification
+  - quality
+related_templates: [prd, acceptance-criteria, risk-register, future:test-case, future:bug-report]
+aliases:
+  - test plan
+  - master test plan
+  - MTP
+  - test planning document
+catalog_ref: 102
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-25
+license: Apache-2.0
