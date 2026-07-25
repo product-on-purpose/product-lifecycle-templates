@@ -35,7 +35,7 @@ reference a future session reads to continue.
 | 13 | okrs | strategy-docs | class: utility | planned | - |
 | 14 | product-roadmap | strategy-docs | class: utility | planned | - |
 | 15 | test-plan | qa-docs | phase: develop | **done** | #40 |
-| 16 | test-case | qa-docs | phase: develop | planned | - |
+| 16 | test-case | qa-docs | phase: develop | **done** (ships `[lean, full]` against the catalog's S) | #41 |
 | 17 | bug-report | qa-docs | phase: develop | planned | - |
 | 18 | risk-register | governance-docs | class: utility | **done** | #34 |
 | 19 | raid-log | governance-docs | class: utility | **done** | #35 |
@@ -49,10 +49,10 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 13 bundles done (delivery-docs, decision-docs and **governance-docs all complete**, plus the first
-`qa-docs` member), **15 planned** (the remaining rows above). Those sum to 28 against a 27-type floor because
+**Count:** 14 bundles done (delivery-docs, decision-docs and **governance-docs all complete**, plus two
+`qa-docs` members), **14 planned** (the remaining rows above). Those sum to 28 against a 27-type floor because
 **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`
-**is** one. So the honest reading is **12 of 27 Tier-1 types built, plus `rfc`; 15 Tier-1 types remain.**
+**is** one. So the honest reading is **13 of 27 Tier-1 types built, plus `rfc`; 14 Tier-1 types remain.**
 See **D-D** below.
 
 ---

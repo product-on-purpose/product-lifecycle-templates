@@ -368,6 +368,38 @@
     },
     {
       "aliases": [
+        "test case",
+        "test case specification",
+        "test script"
+      ],
+      "approx_tokens": {
+        "full": 3750,
+        "lean": 2200
+      },
+      "default_size": "lean",
+      "doc_type": "test-case",
+      "family": "qa-docs",
+      "id": "test-case",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (identification and traceability, preconditions and test data, steps and expected results, postconditions and teardown) for everyday cases written and run by one team; a test case is written hundreds of times over a project, so every extra field is paid for hundreds of times. Use full when the work is regulated or audited, when cases are reviewed as artifacts rather than just executed, when the case is configuration-sensitive, or when the suite is large enough that knowing why a case exists is what lets you retire it; full adds design rationale, environment and configuration, automation status, and version and approval.",
+      "status": "beta",
+      "summary": "The specification of one verification: what must be true before it runs, what is done, and what must happen as a result, written so that someone who is not its author can ask the same question tomorrow and get the same answer. A design artifact, not a record of a run: it carries no actual result and no pass or fail.",
+      "tags": [
+        "qa",
+        "testing",
+        "test-design",
+        "verification",
+        "traceability",
+        "quality"
+      ],
+      "title": "Test Case"
+    },
+    {
+      "aliases": [
         "test plan",
         "master test plan",
         "MTP",
@@ -434,5 +466,5 @@
       "title": "User Story"
     }
   ],
-  "count": 13
+  "count": 14
 }
