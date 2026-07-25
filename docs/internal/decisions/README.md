@@ -61,6 +61,7 @@ Do not create for:
 | [0023](0023-resolve-the-tier-1-family-taxonomy.md) | Resolve the Tier-1 family taxonomy (D-A, D-B): definition-of-done, strategy-docs, and ops-docs; a family is coherent on one axis, and a contract may gate a set of axis values | 2026-07-22 |
 | [0024](0024-adopt-governance-docs-family-contract.md) | Adopt the governance-docs family contract, the first on the classification axis; resolves kpi-dashboard to classification: utility | 2026-07-22 |
 | [0025](0025-executable-tests-for-gate-logic.md) | Executable tests complement the structural gate for logic with no live subject; they live in tools/, run in CI, and block merge | 2026-07-23 |
+| [0026](0026-adopt-qa-docs-family-contract.md) | Adopt the qa-docs family contract (test-plan, test-case, bug-report) at phase develop; two families may share a phase, and examples may chain across a family boundary | 2026-07-25 |
 
 ## Correction versus supersession
 

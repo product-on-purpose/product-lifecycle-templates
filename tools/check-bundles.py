@@ -177,6 +177,15 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # The second family on `phase: develop` (ADR 0026). Two families sharing a phase value is not a
+    # collision: `phase` and `family` are separate fields and this check gates per declared family, so
+    # phase coherence constrains a family internally and never claims a phase for one family.
+    "qa-docs": {
+        "contract": "docs/internal/contracts/qa-docs.md",
+        "phase": "develop",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"

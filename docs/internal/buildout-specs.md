@@ -227,9 +227,18 @@ Now-Next-Later (table). Full adds: Timeframes; Dependencies; Status/Confidence. 
 vs feature roadmaps), Lombardo (*Roadmaps Relaunched*), the product-backlog bundle (roadmap-vs-backlog).
 Teaching point: outcome roadmap over feature-list roadmap; the roadmap scopes the backlog.
 
-### qa-docs (new family; contract first; see D-B)
+### qa-docs (contract adopted 2026-07-25, ADR 0026; phase axis, phase develop)
 
-**test-plan** (catalog 102) - qa-docs, **phase develop** *(TBD; QA may be utility)*, sizes [lean, full],
+The *TBD (QA may be utility)* flag below is **resolved: `phase: develop`** ([ADR 0026](decisions/0026-adopt-qa-docs-family-contract.md)).
+None of the three members is a standing instrument (each is authored at a stage and finished), the
+catalog independently gives all three the same `stage` value (`testing/QA`), and being an instance
+artifact does not imply a classification, as `decision-docs` already established. Two families now
+share `phase: develop`, which is not a collision: `phase` and `family` are separate fields and check K
+gates per family. The family's examples chain onto the **existing delivery-docs Saved Views thread**
+rather than a new scenario, because the acceptance-criteria-versus-test-case boundary can only be
+taught by showing both.
+
+**test-plan** (catalog 102) - qa-docs, **phase develop** *(resolved, ADR 0026)*, sizes [lean, full],
 methodology methodology-agnostic, aliases: master test plan, MTP. Lean: Scope and Approach; Test Items;
 Entry/Exit Criteria. Full adds: Environments and Data; Schedule and Resources; Risks. Key sources:
 ISO/IEC/IEEE 29119-3 (supersedes IEEE 829), practitioner test-strategy writing. Note recency: 829 is legacy.
@@ -321,7 +330,8 @@ class foundation, sizes [lean], methodology agile-scrum.
 2. ~~**The check-K classification-axis change** (D-C)~~ **done 2026-07-22**, then **governance-docs**
    (risk-register, raid-log, kpi-dashboard): the first classification family, now clean on the gate side and
    waiting only on D-A/D-B ratification and its own contract.
-3. **qa-docs** (test-plan, test-case, bug-report): coherent phase-develop family.
+3. **qa-docs** (test-plan, test-case, bug-report): coherent phase-develop family. **Contract adopted
+   2026-07-25 ([ADR 0026](decisions/0026-adopt-qa-docs-family-contract.md)), members next.**
 4. **strategy-docs** (product-vision, product-strategy, product-roadmap, okrs): the biggest,
    highest-visibility family, and the first to span two classification values.
 5. **The small families**: discovery-docs (user-persona, business-case), design-docs (wireframe,

@@ -28,3 +28,11 @@ deliver-user-stories
 deliver-acceptance-criteria
 deliver-release-notes
 develop-adr
+
+# Added 2026-07-25 for the qa-docs family. Verified present at skills/deliver-edge-cases/SKILL.md in
+# product-on-purpose/pm-skills (tracked source, not the gitignored .claude/skills/ build copy). It is
+# the only pm-skills skill any qa-docs member can honestly pair with: its own description names
+# "during QA planning to identify boundary and limit scenarios to test" and "when preparing QA test
+# plans". Enumerating all 68 tracked skills the same day found no testing or QA skill at all, which is
+# finding EC-4 in STATE.md.
+deliver-edge-cases
