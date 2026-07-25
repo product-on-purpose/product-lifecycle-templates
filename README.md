@@ -117,7 +117,7 @@ The pitch above is the ambition. Here is the same thing with the credit separate
 
 - **Earned today.** Researched, dual-reader, nesting-disciplined, provenance-stamped bundles, with citations verified against raw sources and every correction recorded in the open. A gate that runs in CI and blocks merges. Decision records for every non-obvious choice.
 - **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**: per decisions D2/D3 (resolved 2026-07-17), the library is **not installable via `npx skills add` nor listable on agentskills.io**, because both take exactly one unit, the *skill*, and this repo ships no `SKILL.md`. That is one missing file, not an architecture problem, and it is scheduled ([roadmap LP-2](docs/internal/roadmap.md)).
-- **Still on credit: "reference implementation".** Fourteen of 205 catalog types (13 of the 27 Tier-1 floor), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated.
+- **Still on credit: "reference implementation".** Fifteen of 205 catalog types (14 of the 27 Tier-1 floor), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated.
 
 If that reads harsher than a README usually does, that is the point: [`STATE.md`](STATE.md) is the source of truth, it outranks this file, and it is kept honest on purpose.
 
@@ -127,8 +127,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 14 -->
-**Fourteen bundles, in four families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 15 -->
+**Fifteen bundles, in four complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -163,16 +163,17 @@ The first family gated on the `classification` axis rather than a lifecycle phas
 | [`raid-log`](templates/raid-log/) | One log for the four kinds of open item: Risks, Assumptions, Issues, Dependencies | (none exists yet) |
 | [`kpi-dashboard`](templates/kpi-dashboard/) | The definition of the KPIs that show whether objectives are being met | (none exists yet) |
 
-### `qa-docs` (two of three bundles; the family is being built)
+### `qa-docs` (three bundles, the family complete)
 
-The verification family: one member plans the testing, one specifies a single verification, one records a verification that failed. Its examples are the library's first **cross-family** chain, continuing the delivery-docs "Saved Views" thread rather than starting a new scenario, because the sharpest thing this family has to teach (acceptance criteria are not test cases) can only be shown by putting both side by side.
+The verification family: one member plans the testing, one specifies a single verification, one records a verification that failed. Its examples are the library's first **cross-family** chain, continuing the delivery-docs "Saved Views" thread rather than starting a new scenario, because the sharpest thing this family has to teach (acceptance criteria are not test cases) can only be shown by putting both side by side. Read end to end, the three examples trace one program risk into a test plan row, into the case designed from it, into the defect that case found, and back into the regression test that now guards it.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`test-plan`](templates/test-plan/) | What is being tested and what is not, ranked by risk, with criteria someone can check | `deliver-edge-cases` |
 | [`test-case`](templates/test-case/) | The specification of one verification, written so a stranger gets the same answer tomorrow | `deliver-edge-cases` |
+| [`bug-report`](templates/bug-report/) | One anomaly, reproducible by the reader, with severity and priority kept apart | `deliver-edge-cases` |
 
-Beyond these fourteen, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these fifteen, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -224,7 +225,7 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-All fourteen bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All fifteen bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >
@@ -243,8 +244,8 @@ All fourteen bundles currently pass. GitHub Actions runs these on every push to 
 |  |  |
 |---|---|
 | **Current version** | [v0.1.0](CHANGELOG.md) |
-| **Bundles** | 14: 3 complete families (delivery-docs, decision-docs, governance-docs) plus qa-docs in progress |
-| **Tier-1 floor** | 13 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
+| **Bundles** | 15, across 4 complete families (delivery-docs, decision-docs, governance-docs, qa-docs) |
+| **Tier-1 floor** | 14 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, and family-contract-test steps; `main` branch-protected |
 | **Decision records** | 25 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
@@ -268,8 +269,9 @@ templates/
   risk-register/            \
   raid-log/                  }  the governance-docs family (classification axis)
   kpi-dashboard/            /
-  test-plan/                \  the qa-docs family (in progress)
-  test-case/                /
+  test-plan/                \
+  test-case/                 }  the qa-docs family
+  bug-report/               /
 tools/
   check-bundles.py          The governance gate (runs locally and in CI)
   test-check-k.py           The family-contract check's own test suite (ADR 0025)
