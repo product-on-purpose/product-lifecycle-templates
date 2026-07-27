@@ -65,6 +65,14 @@ stayed fresh, and the ones it does not gate drifted.
   files rather than eight. A fourth shape, the positioning sentence, was researched and excluded on
   attribution grounds. Its example opens the Acme Analytics chain that runs down through the PRD to a
   regression test.
+- **A machine-checkable research-log contract**
+  ([ADR 0029](docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md)), closing finding
+  DF-2 (research-log format drift). The honest-retrieval standard, this library's central quality claim, had
+  never been verified by the gate in sixteen bundles: it was enforced on the research workflow's JSON schema
+  and never on the markdown that schema produces. The gate now enforces the **contract** (per-source number,
+  title, author, url, tier, retrieval status, `Supports:`) and accepts either of the two numbered layouts,
+  exactly as `sizes_available` has accepted two vocabularies since ADR 0010. `Quotable:` and
+  `Contested/time-bound:` remain optional, because the written standard says so.
 - **Build-out documentation**: `docs/internal/buildout-specs.md` (the per-type spec sheet and progress
   tracker) and `docs/internal/bundle-pipeline.md` (the six-phase runbook, including the honest-retrieval
   standard and the adversarial four-lens review).

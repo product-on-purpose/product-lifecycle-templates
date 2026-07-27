@@ -78,6 +78,40 @@ entry per source, **never combine two sources**), tier and status each, list quo
 source, and collect a "Claims flagged contested or time-bound" section. Add a "Notes for the companion"
 block naming the honest framing, the load-bearing sections, and the sharpest teaching points.
 
+### The research-log contract (gated since ADR 0029)
+
+`tools/check-research-logs.py` runs in CI and fails the build if any entry is missing a required field.
+**Required per source:** a contiguous unique number, title, author or organisation, `url`, tier, retrieval
+status, and `Supports:`. **Optional:** `Quotable:` and `Contested/time-bound:` - both are optional in the
+phase 1 schema above, and an earlier audit that treated them as mandatory reported 76 defects where there
+were 2. Verify the rule before enforcing it.
+
+**Two layouts are legal**, and the check accepts either:
+
+```
+**[7] Author - Title.** practitioner. **fetched-and-verified.**
+`https://example.com/page`
+Supports: what this is relied on for.
+Quotable: "an exact phrase"        <- optional
+Contested/time-bound: ...           <- optional
+```
+
+```
+| # | Source | Tier | Retrieval | Claims it supports |
+| 7 | Author, "Title" | practitioner | **Fetched and verified 2026-07-16** | ... |
+```
+
+A third shape that groups sources under `###` headings with no per-source retrieval status is **not** legal:
+the contract cannot be read out of it.
+
+**Print-source exemption.** A physical book that was not retrieved has no URL, and inventing a bookseller
+link would manufacture the appearance of retrieval. Such an entry states the absence and why, instead of a
+URL. See `risk-register` [33] (Hubbard) for the worked form.
+
+**What the check does not do:** it proves the fields are present, never that a retrieval status is truthful,
+that a `Supports:` clause is accurate, or that a quoted phrase appears in the source. Those are phase 4's
+job, and the check says so in its own output.
+
 ## Phase 3: Draft (in this order)
 
 1. **companion** (`<type>_companion.md`): 11-section skeleton (methodology section 5), dual-reader, every
