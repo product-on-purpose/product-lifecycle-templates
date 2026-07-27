@@ -219,7 +219,7 @@ Quotable: "11 key factors that might lead a reported bug to non-reproducibility"
 reports might help improve the reproducibility of a reported bug"
 Contested/time-bound: Empirical Software Engineering, 2022.
 
-**[17] Soltani, Hermans and Back - The significance of bug report elements.** primary. **not retrieved.**
+**[17] Soltani, Hermans and Back - The significance of bug report elements.** primary. **not-retrieved.**
 `https://link.springer.com/article/10.1007/s10664-020-09882-z`
 Supports: nothing on its own. Listed because it is the modern replication of [11] and a reader may expect it.
 Quotable: none. **The page was not retrieved (paywalled), and the author list could not be confirmed from a
