@@ -62,26 +62,32 @@ is decoration, however good the prose. See companion section 1.
 
 ## The rubric
 
-Grade each row **Strong / Adequate / Weak**. Any Weak is worth another pass. Three or more Adequates usually
-means the vision is describing a direction rather than a destination.
+Score each 0, 1 or 2. **Under 17 out of 24 and this will not be cited in an argument.** It will be pasted
+into an onboarding deck, admired once, and never opened again, which is the documented failure mode for this
+document type.
 
 **Rows 9 and 10 do not apply to the lean canvas**, which omits Horizon and Review and Leaps of Faith by
-design. Skip them and grade the other ten.
+design. Grade the other ten and score against 14 out of 20.
 
-| # | Criterion | Strong | Weak |
-|---|---|---|---|
-| 1 | **It refuses something** | Names concrete work it declines, at least one of which a reasonable colleague argued for | "We will stay focused"; nothing anyone would ever contest |
-| 2 | **It is picturable** | A reader can see a specific person doing a specific thing they cannot do today | Abstractions stacked on abstractions; nothing to visualise |
-| 3 | **Imagery outweighs values** | Concrete detail dominates; few abstract values, deliberately chosen | Value words throughout, imagery absent (the documented common error) |
-| 4 | **It excludes someone** | The target group is narrow enough that a real reader would say "not me" | "Business users", "our customers", "teams" |
-| 5 | **It gives a reason to believe** | Says what this team knows, has, or bets that others do not | Credentials, ambition, or "world-class team" |
-| 6 | **It is not a mission** | Describes a future state that is currently untrue | Would read identically after ten years of no progress |
-| 7 | **It is not a roadmap** | No features, no dates beyond the horizon, no sequence | Named capabilities; quarters; a delivery order |
-| 8 | **It is not a positioning statement** | Says what future is being created | Says how the product compares to alternatives today |
-| 9 | **It has a horizon and a trigger** *(not lean canvas)* | A year, plus what would prompt a rewrite and who reviews it | "We will revisit periodically" |
-| 10 | **Its assumptions are named** *(not lean canvas)* | States what must be true, including the one that worries the author, with an early signal | "There are risks we will manage" |
-| 11 | **It is short enough to recall** | The core can be recited from memory in about half a minute | Needs re-reading to summarise |
-| 12 | **It survives its own authors** | An incoming leader could act on it without the meeting that produced it | Only makes sense with verbal context |
+| # | Criterion | 0 | 1 | 2 |
+|---|---|---|---|---|
+| 1 | **It refuses something** | Nothing is declined | Exclusions named, all uncontroversial | An exclusion someone actually proposed, and you can say who and when |
+| 2 | **It is picturable** | No person, no scene | A generic user doing a generic thing | A named person in a specific hour, doing what they cannot do today |
+| 3 | **Imagery outweighs values** | Value words only | Concrete detail present but buried under abstractions | Concrete detail dominates; the abstract value words fit on one hand |
+| 4 | **It excludes someone** | "Business users", "our customers" | A segment named, but nobody is ruled out | A real reader would read it and conclude "not me" |
+| 5 | **It gives a reason to believe** | Credentials or ambition | An asset named that a competitor could also claim | Something a well-funded competitor could not copy next quarter, and it says why |
+| 6 | **It is not a mission** | Would read identically after ten years of no progress | Future-facing, but describes the company rather than a changed world | Describes a state of the world that is currently untrue and would be visibly true if reached |
+| 7 | **It is not a roadmap** | Named features or delivery dates | No features, but the horizon reads as a plan | Destination and horizon only; no sequence, no capability list |
+| 8 | **It is not a positioning statement** | Compares the product to alternatives for a customer today | Mixes future state with present competitive claims | States the future; competitive material sits separately as context |
+| 9 | **It has a horizon and a trigger** *(not lean canvas)* | No date, no review | A date, but no trigger and no owner | A date, a named review point, and what would prompt a rewrite as distinct from a strategy change |
+| 10 | **Its assumptions are named** *(not lean canvas)* | "Risks will be managed" | Assumptions listed, all comfortable | The assumption the author is most worried about, with the earliest signal that would disprove it |
+| 11 | **It is short enough to recall** | Needs re-reading to summarise | Summarisable, but not from memory | Someone who read it once can state the destination without opening it |
+| 12 | **It survives its own authors** | Only makes sense with verbal context | Understandable, but a new reader could not act on it | An incoming leader could use it to decline something without asking anyone |
+
+Every cell above describes **evidence, not a count**. That is deliberate: a threshold you can clear by adding
+items will be cleared by adding items. This library's own `bug-report` research documents the mechanism for
+defect counts, and a rubric row is the same kind of target. If you can satisfy a cell without improving the
+document, the cell is written wrong.
 
 **Rows 6, 7 and 8 exist because these are the three artifacts a product vision is most often confused with**,
 and each confusion has a different tell. Companion section 8 has the boundaries.
