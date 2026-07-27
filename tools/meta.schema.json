@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/product-on-purpose/product-lifecycle-templates/main/tools/meta.schema.json",
   "title": "Bundle metadata (<type>_meta.yaml)",
-  "description": "The machine-checkable contract for a bundle's catalog meta. Every templates/<type>/<type>_meta.yaml must validate against this. It describes the template as a library asset and never travels into a filled document. Encodes ADR 0015: a meta declares phase XOR classification, never both, never neither. Adopted by ADR 0016 (from RFC-0001); enforced by check-bundles.py check J, which may use a JSON Schema validator per ADR 0017. Adding, removing, or loosening a field is a deliberate change to this file, reviewed as such - that is the contract working, not a burden.",
+  "description": "The machine-checkable contract for a bundle's catalog meta. Every templates/<type>/<type>_meta.yaml must validate against this. It describes the template as a library asset and never travels into a filled document. Encodes ADR 0015: a meta declares phase XOR classification, never both, never neither. Adopted by ADR 0016 (from RFC-0001); enforced by check-bundles.py check J, which may use a JSON Schema validator per ADR 0017. ADR 0028 added the optional format axis (default_format, additional_formats), orthogonal to the size axis: size is how much of a document you fill in, format is what shape the document takes. Adding, removing, or loosening a field is a deliberate change to this file, reviewed as such - that is the contract working, not a burden.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -38,6 +38,9 @@
       "not": { "required": ["phase"] }
     }
   ],
+  "dependentRequired": {
+    "additional_formats": ["default_format", "default_format_guidance"]
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -94,6 +97,54 @@
       "minLength": 1,
       "pattern": "\\S",
       "description": "One sentence on when to pick each size, so an agent or author chooses a weight deliberately rather than defaulting blindly."
+    },
+    "default_format": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "description": "Optional (ADR 0028). Names the format the plain template files (<id>_template-<size>.md) are written in, e.g. canvas, madr, narrative. Format is orthogonal to size: size is how much you fill in, format is what shape the document takes. A single-format bundle may still declare this, and that is the point - fifteen bundles chose a format silently before this key existed, and declaring it says what was picked and implies what was not. Required whenever additional_formats is present.",
+      "examples": ["canvas", "madr", "narrative"]
+    },
+    "default_format_guidance": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "Optional (ADR 0028), required whenever additional_formats is present. One sentence on when to reach for the DEFAULT format, so every format a bundle ships carries guidance and not just the non-default ones. Without this the machine catalog describes when to use the narrative and the PR/FAQ but says nothing about the canvas, which is two options out of three. Pairs with default_format exactly as sizing_guidance pairs with default_size.",
+      "examples": ["Reach for the canvas when the job is to orient a team quickly and be cited in a prioritisation argument."]
+    },
+    "additional_formats": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Optional (ADR 0028). Formats this bundle ships BEYOND the default one, each as its own template file(s) named <id>_template-<format>-<size>.md. A format earns an entry only when it is structurally distinct from the default AND in circulation with a named source; a stylistic preference is a companion paragraph, not a file. That rule is what keeps the floor buildable. Strict nesting (check C) applies WITHIN each format and is never asserted across formats, because two formats are siblings rather than parent and child.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sizes", "guidance"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+            "description": "The format's stable token, used in its filenames. Must differ from default_format and from every other entry's id; check A enforces those cross-field rules, which a JSON Schema cannot express."
+          },
+          "sizes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "The sizes this format ships, independent of sizes_available: a narrative may ship only [full] while the default canvas ships [lean, full]. Uses exactly one of the two legal vocabularies, never mixed, exactly as sizes_available does.",
+            "items": { "enum": ["lean", "full", "s", "m", "l"] },
+            "oneOf": [
+              { "title": "lean/full vocabulary", "items": { "enum": ["lean", "full"] } },
+              { "title": "s/m/l vocabulary", "items": { "enum": ["s", "m", "l"] } }
+            ]
+          },
+          "guidance": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "One sentence on when to reach for this format instead of the default, so a reader picks a shape deliberately rather than taking whichever file they opened first."
+          }
+        }
+      }
     },
     "methodology": {
       "type": "string",
