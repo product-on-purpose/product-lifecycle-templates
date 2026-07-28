@@ -78,6 +78,44 @@ entry per source, **never combine two sources**), tier and status each, list quo
 source, and collect a "Claims flagged contested or time-bound" section. Add a "Notes for the companion"
 block naming the honest framing, the load-bearing sections, and the sharpest teaching points.
 
+### The research-log contract (adopted in ADR 0029; the gate is NOT built yet)
+
+**Status, 2026-07-27: this is the authoring rule now, enforced by review.** `tools/check-research-logs.py`
+does not exist and no CI step runs it. Writing a log to this contract is what makes the check cheap to add
+later; writing one that ignores it is a defect the gate will find the day it lands. When it does, it fails
+the build if any entry is missing a required field.
+**Required per source:** a contiguous unique number, title, author or organisation, `url`, tier, retrieval
+status, and `Supports:`. **Optional:** `Quotable:` and `Contested/time-bound:` - both are optional in the
+phase 1 schema above, and an earlier audit that treated them as mandatory reported 76 defects where there
+were 2. Verify the rule before enforcing it.
+
+**Two layouts are legal**, and the check accepts either:
+
+```
+**[7] Author - Title.** practitioner. **fetched-and-verified.**
+`https://example.com/page`
+Supports: what this is relied on for.
+Quotable: "an exact phrase"        <- optional
+Contested/time-bound: ...           <- optional
+```
+
+```
+| # | Source | Tier | Retrieval | Claims it supports |
+| 7 | Author, "Title" | practitioner | **Fetched and verified 2026-07-16** | ... |
+```
+
+A third shape that groups sources under `###` headings with no per-source retrieval status is **not** legal:
+the contract cannot be read out of it. Three logs still use it (`product-backlog`, `sdd`, `sprint-backlog`)
+and are converted as part of building the check.
+
+**Print-source exemption.** A physical book that was not retrieved has no URL, and inventing a bookseller
+link would manufacture the appearance of retrieval. Such an entry states the absence and why, instead of a
+URL. See `risk-register` [33] (Hubbard) for the worked form.
+
+**What the check will not do, once it exists:** it proves the fields are present, never that a retrieval
+status is truthful, that a `Supports:` clause is accurate, or that a quoted phrase appears in the source.
+Those are phase 4's job, and the check is required to say so in its own output.
+
 ## Phase 3: Draft (in this order)
 
 1. **companion** (`<type>_companion.md`): 11-section skeleton (methodology section 5), dual-reader, every

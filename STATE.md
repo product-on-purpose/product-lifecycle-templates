@@ -109,8 +109,19 @@ number is **2**. The checker demanded `Contested/time-bound` and `Quotable` on e
 standard makes both **optional**. Trusting it would have meant editing 74 entries that were already correct,
 in a diff that would have looked like diligence. Two rules earned: **verify the rule before enforcing it**,
 and **a check that finds no subject must say so rather than pass** - the nine table-format logs reported
-"complete" when they meant "nothing to check". **Open**: gating this needs the three-format question settled
-first.
+"complete" when they meant "nothing to check".
+
+**DECIDED 2026-07-27, [ADR 0029](docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md)
+(gate the research log's contract, not its layout).** The framing that settled it: "three layouts" was the
+symptom, not the defect. Two of the three carry every required field and differ only in presentation; the
+real gap is that **three bundles record no per-source retrieval status in any readable form**, so for those
+the central claim is not merely unverified but unverifiable. So the gate will enforce the **contract**
+(number, title, author, url, tier, retrieval status, `Supports:`) and accept either numbered layout, exactly
+as `sizes_available` has accepted two vocabularies since [ADR 0010](docs/internal/decisions/0010-meta-declares-size-contract.md).
+`Quotable:` and `Contested/time-bound:` stay optional, because the written standard says so. Cost: convert
+**three** logs (`product-backlog`, `sdd`, `sprint-backlog`), not nine or ten. A print-source exemption is
+documented for unfetchable books, taken from the `risk-register` [33] case. **Remaining work is tracked, not
+done:** `tools/check-research-logs.py`, its fixture tests, its CI wiring, and the three conversions.
 
 **DF-3, 2026-07-26. The documents this repo gates for freshness stayed fresh; the ones it does not gate
 drifted.** Found by checking whether the roadmap and release plan had been updated with the format-axis
