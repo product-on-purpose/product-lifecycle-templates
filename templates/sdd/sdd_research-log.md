@@ -28,7 +28,7 @@ Retrieval status legend: **fetched-and-verified** (the page body was read), **ur
 
 ### Methodology lineage and fit
 
-13. **[Tier 2] Ubl, Malte (Google), "Design Docs at Google"** (as source 10) - **fetched-and-verified** - Additional support: design docs are agile-compatible pre-coding documents; adopting agile does not remove the need for them; prototyping is compatible with, not opposed to, a design doc.
+13. **[Tier 2] Ubl, Malte (Google), "Design Docs at Google"** (the same page as source 10, listed twice because two dimensions of the fan-out returned it) https://www.industrialempathy.com/posts/design-docs-at-google/ - **fetched-and-verified** - Supports: design docs are agile-compatible pre-coding documents; adopting agile does not remove the need for them; prototyping is compatible with, not opposed to, a design doc.
 14. **[Tier 2] Brooker, Marc (AWS), "Spec Driven Development isn't Waterfall."** https://brooker.co.za/blog/2026/04/09/waterfall-vs-spec.html - **fetched-and-verified** - Supports: a specification can be a living, iterative artifact; making a design explicit does not require it to be frozen up front.
 15. **[Tier 2] Orosz, Gergely (The Pragmatic Engineer), "Companies Using RFCs or Design Docs and Examples of These."** https://blog.pragmaticengineer.com/rfcs-and-design-docs/ - **fetched-and-verified** - Supports: 80-plus companies use RFCs or design docs; a spectrum from minimal to RFC2119-formal; Uber's evolution from lightweight documents to full RFCs as it scaled.
 16. **[Tier 3] Working Backwards, "The Amazon Working Backwards PR/FAQ Process."** https://workingbackwards.com/concepts/working-backwards-pr-faq-process/ - **fetched-and-verified** - Supports: the PR/FAQ (under six pages) is a customer-facing product artifact, not a technical design specification; it precedes engineering design.
@@ -45,7 +45,7 @@ Retrieval status legend: **fetched-and-verified** (the page body was read), **ur
 ### Regulated-industry persistence (treated as contested)
 
 23. **[Tier 2] Wikipedia, "DO-178C."** https://en.wikipedia.org/wiki/DO-178C - **fetched-and-verified** (Wikipedia tier) - Supports: DO-178C is objective-based and requires requirement-to-design-to-code-to-test traceability; documentation rigor scales with Development Assurance Level. **Contested:** a specific mandated "SDD" document format is not confirmed from the primary standard.
-24. **[Tier 3] Parasoft, "DO-178C Software Compliance for Aerospace and Defense."** https://www.parasoft.com/learning-center/do-178c/ - **url-confirmed-not-read** - A vendor claim that an SDD is a required artifact under DO-178C; not verified against the primary standard.
+24. **[Tier 3] Parasoft, "DO-178C Software Compliance for Aerospace and Defense."** https://www.parasoft.com/learning-center/do-178c/ - **url-confirmed-not-read** - Supports: a vendor claim that an SDD is a required artifact under DO-178C, and nothing else. Not verified against the primary standard, so no claim in the bundle rests on it alone.
 
 ## Claims flagged contested or time-bound
 

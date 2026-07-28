@@ -76,6 +76,21 @@ jobs:
       - name: Changelog freshness
         run: python tools/check-changelog.py
 
+      # The research-log contract (ADR 0029). The honest-retrieval standard is this library's
+      # central quality claim and nothing checked it across sixteen bundles: the requirement bound
+      # the research workflow's JSON schema, not the markdown that schema produces. This gates the
+      # contract (number, identity, url or a stated exemption, tier, enum retrieval status,
+      # Supports) and accepts all three numbered layouts. Six table-layout logs are exempt BY NAME
+      # with a measured reason, and the check prints the exemption on every run.
+      - name: Research-log contract
+        run: python tools/check-research-logs.py
+
+      # Same argument as the other two self-tests: most of the contract check's failure branches
+      # have no live subject once the tree is clean, so the only way to know it fails when it should
+      # is a fixture. Mutation-checked against three deliberate breakages.
+      - name: Research-log contract self-test
+        run: python tools/test-check-research-logs.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record

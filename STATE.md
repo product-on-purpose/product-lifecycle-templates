@@ -16,7 +16,7 @@
 |---|---|
 | **Bundles** | **Sixteen bundles: 15 of the 27 Tier-1 catalog types, plus `rfc`** (catalog 48, Tier 2, `must_have: false`, built early as the third `decision-docs` member). **12 Tier-1 types remain**, per the floor build-out; see D-D in [`buildout-specs.md`](docs/internal/buildout-specs.md) for the reconciliation. Family `strategy-docs` (**first member**, classification axis): `product-vision`. Family `qa-docs` (**complete**): `test-plan`, `test-case`, `bug-report`. Family `governance-docs` (**complete**, classification axis): `risk-register`, `raid-log`, `kpi-dashboard`. Family `delivery-docs` (**complete**): `prd`, `user-stories`, `product-backlog`, `sprint-backlog`, `acceptance-criteria`, `release-notes`. Family `decision-docs` (**complete**): `adr`, `rfc`, `sdd`. Eight files each, except `product-vision` at ten: its two additional formats ship one template file each ([ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md)). Status `beta`, `template_version` 0.1.0. |
 | **License** | Apache-2.0, granted at the repo root. Copyright Jonathan Prisant. |
-| **Governance gate** | `tools/check-bundles.py`, **eleven checks** (files, dashes, nesting incl. heading level, clean example, citations **in both directions**, meta contract + placeholder scan, frontmatter YAML validity, history-documents-version, pairs_with/related_templates resolution, **meta-schema validation**, and **family-contract conformance on either taxonomy axis**). Check K gates whichever of `phase` or `classification` a family's contract names (ADR 0015), so a standing family is one registry entry, not new check code; because that branch had no live subject until governance-docs landed, it carries a fixture-based self-test ([`tools/test-check-k.py`](tools/test-check-k.py), **61 assertions**, mutation-checked) run in CI. A second self-test, [`tools/test-check-formats.py`](tools/test-check-formats.py) (**60 assertions**), covers the format axis ([ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md)) on the same reasoning: two formats with unrelated outlines must pass, an undeclared `_template-*.md` must fail **and** be scanned, and a size word inside a guidance sentence must not invent a variant. Two further CI steps guard documents rather than bundles: [`check-adr-index.py`](tools/check-adr-index.py) and [`check-changelog.py`](tools/check-changelog.py). Nine are pure stdlib; G uses PyYAML ([ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)) and J uses PyYAML plus jsonschema ([ADR 0017](docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md)), each SKIPping locally if its dependency is absent. **Runs in CI** on every push and PR; branch protection on `main` requires it to pass before merge. Passing on all **sixteen** bundles (verified by running it 2026-07-27; the "nine" this line carried before 2026-07-25 was stale from the governance-docs build). **Both self-test counts scale with the live tree** (a landing bundle adds registry and format assertions), so they are re-read from the tools rather than assumed: the pair moved 59/58 to 61/60 when `product-vision` landed. |
+| **Governance gate** | `tools/check-bundles.py`, **eleven checks** (files, dashes, nesting incl. heading level, clean example, citations **in both directions**, meta contract + placeholder scan, frontmatter YAML validity, history-documents-version, pairs_with/related_templates resolution, **meta-schema validation**, and **family-contract conformance on either taxonomy axis**). Check K gates whichever of `phase` or `classification` a family's contract names (ADR 0015), so a standing family is one registry entry, not new check code; because that branch had no live subject until governance-docs landed, it carries a fixture-based self-test ([`tools/test-check-k.py`](tools/test-check-k.py), **61 assertions**, mutation-checked) run in CI. A second self-test, [`tools/test-check-formats.py`](tools/test-check-formats.py) (**60 assertions**), covers the format axis ([ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md)) on the same reasoning: two formats with unrelated outlines must pass, an undeclared `_template-*.md` must fail **and** be scanned, and a size word inside a guidance sentence must not invent a variant. Three further CI steps guard documents rather than bundles: [`check-adr-index.py`](tools/check-adr-index.py), [`check-changelog.py`](tools/check-changelog.py) and [`check-research-logs.py`](tools/check-research-logs.py) (ADR 0029, with its own 48-assertion self-test; gates 10 of 16 research logs, 6 exempt and named, see DF-4). Nine are pure stdlib; G uses PyYAML ([ADR 0014](docs/internal/decisions/0014-gate-may-use-pyyaml-for-frontmatter-validity.md)) and J uses PyYAML plus jsonschema ([ADR 0017](docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md)), each SKIPping locally if its dependency is absent. **Runs in CI** on every push and PR; branch protection on `main` requires it to pass before merge. Passing on all **sixteen** bundles (verified by running it 2026-07-27; the "nine" this line carried before 2026-07-25 was stale from the governance-docs build). **Both self-test counts scale with the live tree** (a landing bundle adds registry and format assertions), so they are re-read from the tools rather than assumed: the pair moved 59/58 to 61/60 when `product-vision` landed. |
 | **Machine catalog** | [`manifest.json`](manifest.json) at the repo root: every bundle's selectable fields (`id`, `title`, `summary`, `doc_type`, `phase` or `classification`, `family`, `sizes_available`, `default_size`, `sizing_guidance`, `status`, `tags`, `aliases`) plus a generated `approx_tokens` estimate per size variant, as one structured surface an agent selects a bundle *and a size* from. **Generated** by [`tools/gen-manifest.py`](tools/gen-manifest.py) from the metas and the template files, committed, and kept fresh by CI (`gen-manifest.py --check` fails on drift or a stale README count marker). WP-22 + WP-23, [ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md), [ADR 0019](docs/internal/decisions/0019-selection-metadata-and-approx-tokens.md). |
 | **Decision records** | `docs/internal/decisions/`, twenty-seven ADRs (through 0027) in [MADR v4](https://github.com/adr/madr) format, plus a README index (drift-checked by `tools/check-adr-index.py`). All accepted. Matches the org standard used by `agent-config-toolkit` and scaffolded by `jp-init-project`. |
 | **Layout** | The library lives at `templates/` (flat, by document type), the gate at `tools/`, the atlas at `atlas/`, and the planning, strategy, catalog, roadmap and decision records at `docs/internal/`. Decision HY-2 (scaffold graduation) closed 2026-07-12; the `_local/` split closed 2026-07-14 ([ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)). |
@@ -91,6 +91,7 @@ evidence of one meeting a real task, and it took exactly one use to find a real 
 for the usage loop (roadmap M3) in one data point.
 
 **DF-2, 2026-07-25. The research log has three formats, and the gate has never checked any of them.**
+**CLOSED 2026-07-28 for the ten logs the check covers, after the finding itself was corrected.**
 Found by auditing whether every source in every log carries its annotation. Of the fifteen bundles in the
 tree on that date, six use numbered prose entries; six use a numbered markdown table; three
 (`product-backlog`, `sdd`, `sprint-backlog`) group sources under `###` subsections with no per-source
@@ -120,8 +121,46 @@ the central claim is not merely unverified but unverifiable. So the gate will en
 as `sizes_available` has accepted two vocabularies since [ADR 0010](docs/internal/decisions/0010-meta-declares-size-contract.md).
 `Quotable:` and `Contested/time-bound:` stay optional, because the written standard says so. Cost: convert
 **three** logs (`product-backlog`, `sdd`, `sprint-backlog`), not nine or ten. A print-source exemption is
-documented for unfetchable books, taken from the `risk-register` [33] case. **Remaining work is tracked, not
-done:** `tools/check-research-logs.py`, its fixture tests, its CI wiring, and the three conversions.
+documented for unfetchable books, taken from the `risk-register` [33] case.
+
+**BUILT 2026-07-28, and building it proved the finding above wrong.**
+[`tools/check-research-logs.py`](tools/check-research-logs.py) runs in CI with 48 mutation-checked fixture
+assertions ([`tools/test-check-research-logs.py`](tools/test-check-research-logs.py)). Writing it required
+reading every source in the tree, and **the three bundles this finding accused of carrying no retrieval
+status carry it in full.** They use a **third numbered layout** (`n. **[Tier N] Author. "Title."** url -
+**status** - Supports: ...`) under `###` dimension headings, and each of their 73 sources has the same
+three-token enum the prose logs use. All three open with a retrieval-status legend. **The audit matched two
+regexes, found neither, and wrote down the absence as a fact** - against the rule this same section had
+already earned: an unverified absence is a to-do, not a finding. That makes three times this class has
+appeared here, and the first two were caught by review rather than by measurement.
+
+Measured across all **430** sources on 2026-07-28: prose 7 logs / 271 sources, list 3 logs / 73 sources,
+table 6 logs / 86 sources. Prose and list carry url, tier, enum status and `Supports:` throughout, minus six
+entries that said `Corroborates` or `Additional support:` and one cross-reference missing its URL, all now
+relabelled without changing a claim. **The table logs carry neither a URL nor an enum token, for any
+source.** So the gap was the opposite of the record: no conversions were needed, and the six logs the
+finding never mentioned are the ones that fail. See **DF-4**.
+
+The check gates 10 of 16 logs and 344 of 430 sources, accepts all three numbered layouts, fails a log it
+cannot parse rather than passing it quietly, and prints both its exemptions and its own limits every run.
+
+**DF-4, 2026-07-28. Six research logs cannot satisfy the retrieval contract, and it took writing the check
+to find out.** `acceptance-criteria` (10 sources), `adr` (22), `prd` (12), `release-notes` (10), `rfc` (20)
+and `user-stories` (12) use the numbered-table layout. **Not one of those 86 sources carries a URL**, and no
+retrieval cell carries an enum token; the column holds prose such as "Fetched and verified 2026-07-16",
+"URL confirmed live 2026-07-16; body not re-verified claim by claim" and "BLOCKED. HTTP 403 to automated
+fetch". The prose is often *more* informative than a token. It is also unparseable, and without a URL the
+source is not traceable at all: a reader cannot get from the log to the thing it cites.
+
+These six are the library's oldest bundles, and they predate the honest-retrieval conventions that
+methodology 0.2.3 codified after the WP-10 citation pass. That is the same shape as DF-3: the parts of the
+tree written before a rule existed are the parts that do not follow it.
+
+**Exempted by name in [`tools/check-research-logs.py`](tools/check-research-logs.py), with the measured
+reason and the date, and printed on every run.** Not weakened away: the contract stays whole and these six
+are visibly outside it. **Closing DF-4 means re-fetching 85 sources**, because a URL cannot be invented and
+a retrieval status cannot be claimed for a fetch nobody performed. That is a research job of roughly one
+bundle's cost, and it is deliberately not being done in the same change that ships the gate.
 
 **DF-3, 2026-07-26. The documents this repo gates for freshness stayed fresh; the ones it does not gate
 drifted.** Found by checking whether the roadmap and release plan had been updated with the format-axis
