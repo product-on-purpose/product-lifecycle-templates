@@ -71,7 +71,7 @@ be nodded at, filed, and quietly ignored while the roadmap decides what actually
 | 3 | **Constraining policy** | Restates the goal | An approach, but nothing is ruled out by it | You can name a reasonable option the policy forbids, and someone wanted that option |
 | 4 | **Coherent action** | A list of unrelated work | Actions that each serve the policy | You can say which two actions make each other stronger, and what breaks if one is dropped |
 | 5 | **Refusals with a cost** | Nothing declined | Declines things nobody asked for | Declines something a named person wanted, and they have been told |
-| 6 | **Not a roadmap** | Dates and feature names throughout | Some deliverables leak in | No date could be lifted from this document; sequence lives in the roadmap |
+| 6 | **Not a roadmap** | Delivery dates and feature names throughout | Some named deliverables leak in | No delivery commitment could be lifted from this document; sequence lives in the roadmap. A measurement deadline in row 8 and a review backstop in row 10 are **not** roadmap dates and do not count against this row |
 | 7 | **Not interchangeable** | A competitor's name fits unchanged | Mostly generic, one specific claim | You can point at the sentence a competitor could not write, and say what they would have to give up to write it |
 | 8 | **Falsifiable outcome** *(kernel-full, one-pager)* | No measure | A measure with no baseline or date | A leading indicator with a baseline, a date, and a stated result that would make you abandon the strategy |
 | 9 | **Assumptions exposed** *(kernel-full only)* | None stated | Risks listed generically | The assumption the strategy would die without is named, with the evidence you have and the evidence you lack |

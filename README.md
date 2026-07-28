@@ -172,6 +172,13 @@ The verification family: one member plans the testing, one specifies a single ve
 | [`test-plan`](templates/test-plan/) | What is being tested and what is not, ranked by risk, with criteria someone can check | `deliver-edge-cases` |
 | [`test-case`](templates/test-case/) | The specification of one verification, written so a stranger gets the same answer tomorrow | `deliver-edge-cases` |
 | [`bug-report`](templates/bug-report/) | One anomaly, reproducible by the reader, with severity and priority kept apart | `deliver-edge-cases` |
+
+### `strategy-docs` (two of four bundles, the family in progress)
+
+The direction family, on the **classification** axis rather than a phase. Its members answer, in order, where we are trying to get to, which problems we will solve to get there, in what order, and what measurable change we expect. Two are built; `product-roadmap` and `okrs` complete it. It is also the only family whose members ship more than one **format**.
+
+| Bundle | What it is | Pairs with |
+|---|---|---|
 | [`product-vision`](templates/product-vision/) | The future this product is trying to create, and what that rules out. Ships three formats: canvas, narrative, PR/FAQ | (none exists yet) |
 | [`product-strategy`](templates/product-strategy/) | Which problems this product will solve to get there, and which it will not. Ships two formats: kernel, one-pager | `foundation-lean-canvas` |
 
