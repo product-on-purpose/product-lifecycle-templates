@@ -53,12 +53,18 @@ stayed fresh, and the ones it does not gate drifted.
   ([ADR 0019](docs/internal/decisions/0019-selection-metadata-and-approx-tokens.md)).
 - **Executable tests for gate logic that has no live subject**
   ([ADR 0025](docs/internal/decisions/0025-executable-tests-for-gate-logic.md)): `tools/test-check-k.py`
-  (59 assertions) and `tools/test-check-formats.py` (58 assertions). Both run in CI and block merge.
+  (61 assertions) and `tools/test-check-formats.py` (60 assertions). Both run in CI and block merge. Both
+  counts scale with the live tree, so they are read from the tools rather than quoted from memory.
 - **Freshness gates** for the generated artifacts: `gen-manifest.py --check`, `gen-atlas.py --check`, and
   `check-adr-index.py`, each added after the corresponding drift was found in the tree rather than in theory.
 - **A scope commitment**: complete the catalog's 27-type Tier-1 floor on a schedule, with grow-by-pull
   reserved for Tier 2 and Tier 3
-  ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 14 of the 27 are built.
+  ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 15 of the 27 are built.
+- **`product-vision`**, the sixteenth bundle, the first `strategy-docs` member, and the first bundle to ship
+  more than one format: canvas lean and full (the default), plus a narrative and a PR/FAQ at full only. Ten
+  files rather than eight. A fourth shape, the positioning sentence, was researched and excluded on
+  attribution grounds. Its example opens the Acme Analytics chain that runs down through the PRD to a
+  regression test.
 - **Build-out documentation**: `docs/internal/buildout-specs.md` (the per-type spec sheet and progress
   tracker) and `docs/internal/bundle-pipeline.md` (the six-phase runbook, including the honest-retrieval
   standard and the adversarial four-lens review).

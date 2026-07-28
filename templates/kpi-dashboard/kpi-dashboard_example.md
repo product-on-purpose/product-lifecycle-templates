@@ -33,9 +33,11 @@ it as a model of shape, definition discipline, and tone, not as a source of fact
 ## Purpose and Audience
 
 Monitors **progress toward the Reporting Platform Modernization program's value goal**: cut the median Time to
-Insight for Recurring Analysts by 30% by the end of Q3 (the goal set in the
-[Saved Views PRD](../prd/prd_example.md)). **Audience:** the program steering group (strategic tier) - a
-handful of headline metrics, reviewed monthly. Owned by the program manager (Marta Reyes).
+Insight for Recurring Analysts by 30% by the end of Q3. The program set that target; the
+[Saved Views PRD](../prd/prd_example.md) tracks the same metric but deliberately leaves its magnitude "to be
+set with the data team", so this dashboard is where the number lives. **Audience:** the program steering group
+(strategic tier) - a handful of headline metrics, reviewed monthly. Owned by the program manager
+(Marta Reyes).
 
 **This document is the metric source of truth**; the live dashboard is implemented in the Acme BI workspace
 (Amplitude for product events, Looker for the executive view). Where the live dashboard and this spec

@@ -200,6 +200,60 @@
       "title": "Product Backlog"
     },
     {
+      "additional_formats": [
+        {
+          "guidance": "Reach for the narrative when the vision has to persuade rather than orient: a hiring conversation, a board, a team that has lost the thread. It is the form Marty Cagan argues for and the one he says a canvas cannot reach, because a filled grid states a future while prose can make someone want it.",
+          "id": "narrative",
+          "sizes": [
+            "full"
+          ]
+        },
+        {
+          "guidance": "Reach for the PR/FAQ when the argument is about whether the future is worth having at all. Writing the launch announcement first, dated years out, forces the benefit to be stated in customer language before any engineering path exists, and the FAQ forces the objections into the open while they are still cheap.",
+          "id": "prfaq",
+          "sizes": [
+            "full"
+          ]
+        }
+      ],
+      "aliases": [
+        "vision statement",
+        "product vision statement",
+        "product vision board",
+        "vision document",
+        "north star statement"
+      ],
+      "approx_tokens": {
+        "full": 4000,
+        "lean": 2450,
+        "narrative-full": 2900,
+        "prfaq-full": 2100
+      },
+      "classification": "foundation",
+      "default_format": "canvas",
+      "default_format_guidance": "Reach for the canvas when the job is to orient people fast and give them something citable: a filled grid can be read in a minute, argued with in a meeting, and quoted back when someone proposes work that does not serve it. It is the form most teams expect, and it is the one Marty Cagan argues is insufficient on its own, which is why the other two exist rather than replacing it.",
+      "default_size": "lean",
+      "doc_type": "product-vision",
+      "family": "strategy-docs",
+      "id": "product-vision",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (the vision, who it is for and what they need, why us, and what it rules out) when a small team needs a shared destination it can actually cite in a prioritisation argument; four sections is enough to do that job. Use full when the vision has to survive contact with people who were not in the room: it adds the competitive context that explains why this future is not already someone else's, the business goals that keep it from being borrowed grandeur, an explicit horizon with a review trigger so it cannot quietly become wallpaper, and the leaps of faith it rests on. Full is also the right size when the vision will be handed to an incoming leader, cited in a funding conversation, or used to justify saying no to something expensive.",
+      "status": "beta",
+      "summary": "The document that says what future this product is trying to create, for whom, and why this team is the one to build it. It is judged not by how it reads but by whether it can be used to refuse something: a vision nobody has ever cited to say no is decoration.",
+      "tags": [
+        "strategy",
+        "vision",
+        "direction",
+        "alignment",
+        "foundation",
+        "prioritisation"
+      ],
+      "title": "Product Vision"
+    },
+    {
       "aliases": [
         "raid",
         "raid log",
@@ -499,5 +553,5 @@
       "title": "User Story"
     }
   ],
-  "count": 15
+  "count": 16
 }
