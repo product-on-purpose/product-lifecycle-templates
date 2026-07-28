@@ -30,7 +30,7 @@ reference a future session reads to continue.
 | 8 | sdd | decision-docs | phase: develop | **done** | #26 |
 | 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
 | 10 | product-vision | strategy-docs | class: foundation | **done** (first bundle with more than one format) | #46 |
-| 11 | product-strategy | strategy-docs | class: foundation | planned | - |
+| 11 | product-strategy | strategy-docs | class: foundation | **done** (kernel + one-pager formats) | #51 |
 | 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
 | 13 | okrs | strategy-docs | class: utility | planned | - |
 | 14 | product-roadmap | strategy-docs | class: utility | planned | - |
@@ -49,11 +49,11 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 16 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
-`strategy-docs` open at one member), **12 planned** (the remaining rows above). Those sum to 28 against a
-27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
-`sprint-retrospective-notes` **is** one. So the honest reading is **15 of 27 Tier-1 types built, plus `rfc`;
-12 Tier-1 types remain.** See **D-D** below.
+**Count:** 17 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
+`strategy-docs` open at two of four members), **11 planned** (the remaining rows above). Those sum to 28
+against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
+`sprint-retrospective-notes` **is** one. So the honest reading is **16 of 27 Tier-1 types built, plus `rfc`;
+11 Tier-1 types remain.** See **D-D** below.
 
 ---
 
@@ -196,13 +196,23 @@ stray detection and `bundle_files()` both iterated known size tokens, so a file 
 |---|---|
 | Capability (ADR, schema, checks A and C, test, CI, manifest) | **done 2026-07-25** |
 | `product-vision` ships canvas + narrative + PR/FAQ | **done 2026-07-27** (ten files; canvas is the default format) |
-| Decide whether `product-roadmap` and `product-strategy` need a second format | **open**, answered by their own research |
-| Backfill `default_format` on the other 15 bundles | **open**, deliberately deferred |
+| Decide whether `product-strategy` needs a second format | **answered YES, 2026-07-28**: ships kernel (default) + one-pager |
+| Decide whether `product-roadmap` needs a second format | **open**, answered by its own research |
+| Backfill `default_format` on the other 15 bundles | **open**, one of two evidence points now in |
 
-**Why the backfill waits.** Declaring a format for 15 bundles is a 27-type commitment, and the only researched
-evidence today is one type. Roadmap and strategy are built next and will say whether format variation is
-common or peculiar to vision. Deferring costs one known inconsistency, recorded in the ADR: product-vision
-names its format and `adr` does not, despite both having made the same kind of choice.
+**Why the backfill waited, and what the first evidence says.** Declaring a format for 15 bundles is a 27-type
+commitment, and until 2026-07-28 the only researched evidence was one type. **`product-strategy` is the
+second, and it says format variation is not peculiar to vision.** Its research found named, structurally
+distinct shapes in circulation with no shared section list, and the ADR's own rule (structurally distinct AND
+in circulation with a named source) admitted two of them: the Rumelt kernel and a Playing-to-Win one-pager.
+Three further candidates were researched and rejected under the same rule, which is the more useful result:
+the rule discriminates rather than waving everything through.
+
+**That is one of the two evidence points this backfill was waiting on.** `product-roadmap` is the other, and
+it is the sharper test: roadmaps have a *notorious* proliferation of named shapes (now-next-later, timeline,
+outcome, GO), so if the rule admits all of them the rule is too loose. Hold the backfill until it has run.
+Deferring still costs the one known inconsistency recorded in the ADR: `product-vision` and `product-strategy`
+name their formats and `adr` does not, despite all three having made the same kind of choice.
 
 **The governing rule, without which this is unbuildable:** a format is shipped only when it is **structurally
 distinct** from the default **and** in circulation **with a named source**. A stylistic preference is a

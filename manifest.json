@@ -202,6 +202,52 @@
     {
       "additional_formats": [
         {
+          "guidance": "Reach for the one-pager when the problem is understood and the hard part is choosing where to compete. It opens with a winning aspiration and cascades through where to play, how to win, and the capabilities that requires, so the argument is about the choice rather than the diagnosis. If you cannot fill in where you will play because the team is still arguing about what is wrong, use the kernel instead.",
+          "id": "one-pager",
+          "sizes": [
+            "full"
+          ]
+        }
+      ],
+      "aliases": [
+        "strategy doc",
+        "product strategy document",
+        "strategy one-pager",
+        "strategy kernel",
+        "product strategy brief"
+      ],
+      "approx_tokens": {
+        "full": 3350,
+        "lean": 2650,
+        "one-pager-full": 2550
+      },
+      "classification": "foundation",
+      "default_format": "kernel",
+      "default_format_guidance": "Reach for the kernel when the hard part is that nobody agrees what the problem is. Diagnosis, guiding policy and coherent action force the obstacle to be named before any choice is made, which is why it is the default: the most common defect in a strategy document is that it never says what makes the goal hard.",
+      "default_size": "lean",
+      "doc_type": "product-strategy",
+      "family": "strategy-docs",
+      "id": "product-strategy",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (diagnosis, guiding policy, coherent action, and what that rules out) when a team that already shares the context needs to settle what to work on; four sections is enough to end the argument and be cited later. Use full when the strategy has to survive people who were not in the room: it adds who the strategy is and is not for, a falsifiable way to tell whether it is working, the assumptions it would die without, and an event that brings the team back to it. Full is also the right size when the strategy will be handed to an incoming leader, read alongside a funding decision, or used to decline something expensive.",
+      "status": "beta",
+      "summary": "The document that says which problems this product will solve to reach its vision, and which it will not. It is judged by whether a competitor's name could be swapped in without the document becoming false: a strategy nobody could disagree with has not chosen anything.",
+      "tags": [
+        "strategy",
+        "direction",
+        "prioritisation",
+        "trade-offs",
+        "foundation",
+        "decision-making"
+      ],
+      "title": "Product Strategy"
+    },
+    {
+      "additional_formats": [
+        {
           "guidance": "Reach for the narrative when the vision has to persuade rather than orient: a hiring conversation, a board, a team that has lost the thread. It is the form Marty Cagan argues for and the one he says a canvas cannot reach, because a filled grid states a future while prose can make someone want it.",
           "id": "narrative",
           "sizes": [
@@ -553,5 +599,5 @@
       "title": "User Story"
     }
   ],
-  "count": 16
+  "count": 17
 }
