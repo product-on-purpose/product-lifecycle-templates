@@ -30,10 +30,37 @@ mutually incompatible layouts in the tree:
 | Numbered markdown table (`\| # \| Source \| Tier \| Retrieval \|`) | 6 | yes |
 | `###` subsections, sources as ungrouped prose | 3 (`product-backlog`, `sdd`, `sprint-backlog`) | **no** |
 
-**The framing that decides this.** "Three layouts" is the visible symptom and not the defect. Two of the
-three carry every required field; they differ in presentation. The actual gap is that **three bundles record
-no per-source retrieval status in any form a checker could read**, so for those three the library's central
-claim is not merely unverified, it is unverifiable.
+> **Correction, 2026-07-28, before the check was built. The third row of that table is false, and so is
+> the paragraph that followed it.** `product-backlog`, `sdd` and `sprint-backlog` do not record sources as
+> ungrouped prose. They use a **third numbered layout**, `n. **[Tier N] Author. "Title."** url - **status**
+> - Supports: ...`, grouped under `###` dimension headings, and each of their 73 sources carries the full
+> contract including the same three-token retrieval enum. All three even open with a retrieval-status
+> legend. The audit that produced DF-2 matched two regexes, found neither, and recorded the absence as a
+> finding. **An unverified absence is a to-do, not a finding**, which is the rule this repository had
+> already written down and then broke in the act of writing it down.
+>
+> Measured against every one of the 430 sources in the tree on 2026-07-28, the real distribution is:
+>
+> | Layout | Bundles | Sources | Carries url | Carries the retrieval enum |
+> |---|---|---|---|---|
+> | Numbered prose `**[n]**` | 7 | 271 | all but the documented print exemption | all |
+> | Numbered list `n. **[Tier N]**` | 3 | 73 | all but one cross-reference, since fixed | all |
+> | Numbered table | 6 | 86 | **none** | **none** |
+>
+> So the gap is the opposite of the record: the three "status-less" logs need no conversion, and the six
+> **table** logs are the ones that cannot satisfy the contract. Their retrieval column is prose
+> ("Fetched and verified 2026-07-16", "BLOCKED. HTTP 403") and no row carries a URL at all. The cost claim
+> below ("three log conversions") was therefore wrong in both directions.
+>
+> **The decision itself stands and is strengthened**: gate the contract, not the layout. There are three
+> legal layouts rather than two, which is what a contract-shaped rule is for. Corrected in place rather
+> than superseded, per [ADR 0011](0011-madr-v4-at-docs-internal-decisions.md): the facts under the
+> decision were wrong, the decision was not.
+
+**The framing that decides this.** "Three layouts" is the visible symptom and not the defect. What matters
+is whether each source carries a record a checker can read, which is why this ADR gates fields and not
+presentation. (As corrected above: all three numbered layouts carry that record; the table layout does not
+carry a URL.)
 
 A second lesson came out of the same audit and belongs in this record. The first pass of that audit reported
 **76 defects**. The real number was **2**. The checker demanded `Contested/time-bound` and `Quotable` on
@@ -85,16 +112,28 @@ not the presentation.**
 | `Quotable:` | **no** | optional, per the phase 1 schema |
 | `Contested/time-bound:` | **no** | optional, per the phase 1 schema |
 
-**Two numbered layouts are legal**, the prose-entry form and the table form. A third form with no per-source
-status is not, because the contract cannot be read out of it.
+**Three numbered layouts are legal** (corrected 2026-07-28): the prose-entry form, the numbered-list form,
+and the table form. Any form that carries no per-source record is not, because the contract cannot be read
+out of it, and a log the check cannot parse fails rather than passing quietly.
 
 **The print-source exemption.** A source that is a physical book, not retrieved, legitimately has no URL, and
 inventing a bookseller link would manufacture the appearance of retrieval. Such an entry must instead state
 the absence explicitly and say why, as `risk-register` [33] (Hubbard, *The Failure of Risk Management*) now
 does. The check accepts an entry with no URL only when it carries that explicit statement.
 
-**Three logs are converted** as part of adopting this: `product-backlog`, `sdd` and `sprint-backlog`. Nothing
-else changes.
+**No log is converted** (corrected 2026-07-28, replacing "three logs are converted"). The three the original
+record named already carry the contract. Six entries across them said `Corroborates`, `Additional support:`
+or nothing where the contract says `Supports:`, and one carried no URL because it duplicates an earlier
+entry; those six lines are relabelled without changing a claim.
+
+**Six logs are exempt, by name, with a measured reason and a date.** `acceptance-criteria`, `adr`, `prd`,
+`release-notes`, `rfc` and `user-stories` use the table layout and carry no URL for any of their 86 sources
+and no enum token in any retrieval cell. They are listed in the check's `EXEMPT` map, skipped, and **printed
+on every run** with the reason. This follows the `GRANDFATHERED` precedent in
+[`check-changelog.py`](../../../tools/check-changelog.py). It is deliberately loud, because the alternative
+was weakening the contract until they happened to pass, and because backfilling them means fetching 85
+sources again: a URL cannot be invented and a retrieval status cannot be claimed for a fetch nobody
+performed. Tracked as **DF-4** in [`STATE.md`](../../../STATE.md).
 
 **The check states its own limits on every run.** It verifies that each entry carries the required fields.
 It does **not** verify that a retrieval status is truthful, that a `Supports:` clause is accurate, or that a
@@ -103,14 +142,19 @@ rather than letting a green run be read as more than it is.
 
 ### Consequences
 
-* Good: the library's central quality claim becomes machine-verified for the first time, in all bundles.
-* Good: the fix costs three files rather than nine or ten, and touches no bundle that is already correct.
-* Good: the rule generalises. A future bundle may use either legal layout, and a future third layout is
-  legal the moment it carries the contract.
+* Good: the library's central quality claim becomes machine-verified for the first time, in **10 of 16**
+  bundles covering 344 of 430 sources (corrected 2026-07-28 from "in all bundles").
+* Good: the fix costs six relabelled lines rather than nine or ten rewritten files, and touches no bundle
+  that is already correct.
+* Good: the rule generalises. A bundle may use any of the three legal layouts, and a fourth is legal the
+  moment it carries the contract.
 * Good: the print-source exemption turns an awkward edge case into a documented convention, so the next
   unfetchable book is handled rather than argued about.
-* Neutral: two legal layouts persist, so a reader moving between bundles still meets two presentations. This
+* Neutral: three legal layouts persist, so a reader moving between bundles meets three presentations. This
   is the same trade `sizes_available` already makes and it has not caused a problem there.
+* Bad, and the price of shipping today: **six logs are exempt, so a third of the library's sources stay
+  unverified.** Naming them in code with a printed reason is better than a contract weakened to fit them,
+  but it is debt either way, and DF-4 says so.
 * Bad, and worth stating: **a green run proves the fields are present, not that they are honest.** A source
   mislabelled `fetched-and-verified` passes. The check narrows the failure surface from "anything" to
   "deliberate or careless mislabelling", and the review remains the only thing that catches the rest.
@@ -120,27 +164,29 @@ rather than letting a green run be read as more than it is.
 
 ### Confirmation
 
-**Not yet built. This record decides the rule; nothing enforces it as of 2026-07-27.** The decision is
-confirmed when, and only when, all four of these exist:
+**Built and enforced 2026-07-28.** [`tools/check-research-logs.py`](../../../tools/check-research-logs.py)
+runs in CI alongside the other document gates (`check-adr-index.py`, `check-changelog.py`) and fails the
+build when any checked log contains an entry missing a required field, or contains no parseable source
+entries at all. It reports **10 logs checked, 344 sources, 6 exempt** and prints both the exemption list and
+its own limits on every run.
 
-A new `tools/check-research-logs.py`, run in CI alongside the other document gates
-(`check-adr-index.py`, `check-changelog.py`), failing the build when any bundle's research log contains an
-entry missing a required field, or contains sources in a layout carrying no per-source retrieval status;
-its fixture tests; its CI step; and the three converted logs. Until then the contract is an authoring rule
-enforced by review, which is exactly the seam this record exists to close, so the gap is stated here rather
-than left to be discovered.
-
-Because the check has branches no live bundle exercises once the three conversions land (a missing tier, an
-invalid status token, a URL-less entry without the exemption statement), it carries fixture-based tests per
-[ADR 0025](0025-executable-tests-for-gate-logic.md).
+Because most of its failure branches have no live subject once the tree is clean (a missing tier, an invalid
+status token, a URL-less entry without its exemption, a gap or duplicate in the numbering, a table header
+that does not declare the contract columns), it carries fixture-based tests per
+[ADR 0025](0025-executable-tests-for-gate-logic.md):
+[`tools/test-check-research-logs.py`](../../../tools/test-check-research-logs.py), 48 assertions,
+**mutation-checked** against three deliberate breakages of the check to prove each is caught.
 
 ## More Information
 
-This **decides** finding **DF-2** (research-log format drift) in [`STATE.md`](../../../STATE.md) and closes it
-only when the check, its tests, its CI step and the three conversions land. STATE.md also records
-the two real defects the audit surfaced and fixed on the way: `bug-report` [17] wrote its status as
-`not retrieved` where the enum token is `not-retrieved`, and `risk-register` [33] carried no URL for a print
-book, now documented as a deliberate absence and the basis of the exemption above.
+This **closes** finding **DF-2** (research-log format drift) in [`STATE.md`](../../../STATE.md) for the ten
+logs the check covers, having first corrected what DF-2 actually was: see the correction above. It **opens**
+**DF-4**, the six table-layout logs that carry no URL and no enum token for any of their 86 sources.
+
+STATE.md also records the two real defects the original audit surfaced and fixed on the way: `bug-report`
+[17] wrote its status as `not retrieved` where the enum token is `not-retrieved`, and `risk-register` [33]
+carried no URL for a print book, now documented as a deliberate absence and the basis of the exemption
+above. The check has a fixture for each, so neither can return unnoticed.
 
 The authoring rule is written into [`bundle-pipeline.md`](../bundle-pipeline.md) phase 2, so the next bundle
 inherits it rather than rediscovering it.

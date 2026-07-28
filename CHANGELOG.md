@@ -65,16 +65,21 @@ stayed fresh, and the ones it does not gate drifted.
   files rather than eight. A fourth shape, the positioning sentence, was researched and excluded on
   attribution grounds. Its example opens the Acme Analytics chain that runs down through the PRD to a
   regression test.
-- **A research-log contract, decided but not yet gated**
-  ([ADR 0029](docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md)), against finding
-  DF-2 (research-log format drift). The honest-retrieval standard, this library's central quality claim, has
-  never been verified by the gate in sixteen bundles: it is enforced on the research workflow's JSON schema
-  and never on the markdown that schema produces. The decision is that the check will enforce the **contract**
-  (per-source number, title, author, url, tier, retrieval status, `Supports:`) and accept either of the two
-  numbered layouts, exactly as `sizes_available` has accepted two vocabularies since ADR 0010. `Quotable:` and
-  `Contested/time-bound:` remain optional, because the written standard says so. **`tools/check-research-logs.py`
-  is not built and no CI step runs it**, so DF-2 stays open until it, its fixture tests and the three log
-  conversions land.
+- **The research-log contract, now gated** by `tools/check-research-logs.py` (ADR 0029, built 2026-07-28).
+  Every source in a checked log must carry a contiguous unique number, an identity, a URL or an explicit
+  statement of why there is none, a tier, a retrieval status from the three-token enum, and a `Supports:`
+  clause. All three numbered layouts are legal, because the contract is the rule and presentation is not.
+  Covered by `tools/test-check-research-logs.py` (48 assertions, mutation-checked against three deliberate
+  breakages). **10 of 16 logs and 344 of 430 sources are gated**; the six table-layout logs are exempt by
+  name with a measured reason printed on every run, and tracked as finding DF-4.
+  **Building it disproved the finding it was built for:** the three logs ADR 0029 called status-less carry
+  the contract in full, in a third numbered layout the original audit's regexes did not match. The ADR
+  carries a dated correction rather than a silent edit.
+  The honest-retrieval standard is this library's central quality claim, and until this landed nothing
+  verified it: the requirement bound the research workflow's JSON schema, never the markdown that schema
+  produces ([ADR 0029](docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md),
+  finding DF-2). `Quotable:` and `Contested/time-bound:` remain optional, because the written standard says
+  so.
 - **Build-out documentation**: `docs/internal/buildout-specs.md` (the per-type spec sheet and progress
   tracker) and `docs/internal/bundle-pipeline.md` (the six-phase runbook, including the honest-retrieval
   standard and the adversarial four-lens review).

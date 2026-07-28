@@ -30,7 +30,7 @@ Retrieval status legend: **fetched-and-verified** (the page body was read), **ur
 
 12. **[Tier 2] Calabrese, Jake. "Scrum Commitment or Forecast."** https://helpingimprove.com/scrum-commitment-or-forecast/ - **fetched-and-verified** - Supports the version-by-version history of the commitment-to-forecast language shift and the practitioner view that "commitment" retains a specific meaning (team-to-team) despite the official change. [practitioner]
 
-13. **[Tier 3] Scrum.org. "What is a Sprint Backlog?"** https://www.scrum.org/resources/what-is-a-sprint-backlog - **url-confirmed-not-read** (the URL resolves but WebFetch returned an empty body, 2026-07-21) - a general vendor definition; carries no claim in this bundle.
+13. **[Tier 3] Scrum.org. "What is a Sprint Backlog?"** https://www.scrum.org/resources/what-is-a-sprint-backlog - **url-confirmed-not-read** (the URL resolves but WebFetch returned an empty body, 2026-07-21) - Supports: nothing in this bundle. A general vendor definition, listed because it was consulted.
 
 ## Claims flagged contested or time-bound
 
