@@ -29,7 +29,7 @@ reference a future session reads to continue.
 | 7 | rfc | decision-docs | phase: develop | **done** (**Tier 2**, not floor; see D-D) | - |
 | 8 | sdd | decision-docs | phase: develop | **done** | #26 |
 | 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
-| 10 | product-vision | strategy-docs | class: foundation | planned | - |
+| 10 | product-vision | strategy-docs | class: foundation | **done** (first bundle with more than one format) | #46 |
 | 11 | product-strategy | strategy-docs | class: foundation | planned | - |
 | 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
 | 13 | okrs | strategy-docs | class: utility | planned | - |
@@ -49,10 +49,11 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 15 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**),
-**13 planned** (the remaining rows above). Those sum to 28 against a 27-type floor because **`rfc` is not a
-Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes` **is** one. So the
-honest reading is **14 of 27 Tier-1 types built, plus `rfc`; 13 Tier-1 types remain.** See **D-D** below.
+**Count:** 16 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
+`strategy-docs` open at one member), **12 planned** (the remaining rows above). Those sum to 28 against a
+27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
+`sprint-retrospective-notes` **is** one. So the honest reading is **15 of 27 Tier-1 types built, plus `rfc`;
+12 Tier-1 types remain.** See **D-D** below.
 
 ---
 
@@ -184,7 +185,8 @@ because the field's most-cited authority attacks the shape we would otherwise pi
 **[ADR 0028](decisions/0028-adopt-a-format-axis.md) landed the capability**: optional `default_format` and
 `additional_formats` keys, nesting enforced within a format and never across formats, the default format
 keeping the plain filenames so adoption is a metadata addition rather than a rename. Covered by
-`tools/test-check-formats.py` (58 assertions). It also closed a real gate gap found on the way: check A's
+`tools/test-check-formats.py` (60 assertions once `product-vision` landed; 58 before it, since the count
+scales with the live tree). It also closed a real gate gap found on the way: check A's
 stray detection and `bundle_files()` both iterated known size tokens, so a file such as
 `x_template-narrative-full.md` failed no check **and was read by no scan**.
 
@@ -193,7 +195,7 @@ stray detection and `bundle_files()` both iterated known size tokens, so a file 
 | Item | Status |
 |---|---|
 | Capability (ADR, schema, checks A and C, test, CI, manifest) | **done 2026-07-25** |
-| `product-vision` ships canvas + narrative + PR/FAQ | in progress |
+| `product-vision` ships canvas + narrative + PR/FAQ | **done 2026-07-27** (ten files; canvas is the default format) |
 | Decide whether `product-roadmap` and `product-strategy` need a second format | **open**, answered by their own research |
 | Backfill `default_format` on the other 15 bundles | **open**, deliberately deferred |
 
