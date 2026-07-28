@@ -60,6 +60,14 @@ stayed fresh, and the ones it does not gate drifted.
 - **A scope commitment**: complete the catalog's 27-type Tier-1 floor on a schedule, with grow-by-pull
   reserved for Tier 2 and Tier 3
   ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 15 of the 27 are built.
+- **`product-strategy`**, the seventeenth bundle and the second `strategy-docs` member. Ships the Rumelt
+  kernel (diagnosis, guiding policy, coherent action) as its default format at lean and full, plus a
+  Playing-to-Win one-pager. Its honest core is a **tested negative**: no study measures whether writing a
+  product strategy document improves product outcomes, and the bundle shows the search that establishes it
+  rather than assuming either direction. Three further formats were researched and rejected under ADR 0028's
+  rule, which is the first evidence that the rule discriminates rather than admitting everything.
+  **It is also half the evidence the `default_format` backfill was waiting on**: format variation is not
+  peculiar to `product-vision`.
 - **`product-vision`**, the sixteenth bundle, the first `strategy-docs` member, and the first bundle to ship
   more than one format: canvas lean and full (the default), plus a narrative and a PR/FAQ at full only. Ten
   files rather than eight. A fourth shape, the positioning sentence, was researched and excluded on
