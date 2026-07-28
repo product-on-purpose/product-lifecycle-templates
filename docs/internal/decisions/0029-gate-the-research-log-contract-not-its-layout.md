@@ -174,8 +174,27 @@ Because most of its failure branches have no live subject once the tree is clean
 status token, a URL-less entry without its exemption, a gap or duplicate in the numbering, a table header
 that does not declare the contract columns), it carries fixture-based tests per
 [ADR 0025](0025-executable-tests-for-gate-logic.md):
-[`tools/test-check-research-logs.py`](../../../tools/test-check-research-logs.py), 48 assertions,
-**mutation-checked** against three deliberate breakages of the check to prove each is caught.
+[`tools/test-check-research-logs.py`](../../../tools/test-check-research-logs.py), 78 assertions,
+**mutation-checked** against seven deliberate breakages of the check to prove each is caught.
+
+**An adversarial review rewrote this check before it shipped, and the reason is worth recording.** The first
+implementation asked whether a required token appeared **anywhere in the entry block**. An external review
+reproduced **nine false negatives** against a green run: a status sitting in a quotation, in a legend, in the
+title or in the wrong table column all satisfied the status requirement; `not-retrieved-ish` satisfied
+`not-retrieved`; `presupportscondition` satisfied `Supports:`; the same source under two numbers passed; and
+a stray malformed entry was silently discarded by a layout heuristic that counted markdown shapes across the
+whole file. It also found **three false positives**, including a valid concise `No URL: print-only book.`
+failing an undocumented 40-character threshold the contract never set.
+
+The rewrite reads every field **from its own position in the entry grammar**, scopes source parsing to
+sections whose heading names sources, maps table columns through the header rather than fixed indexes, and
+matches the enum by whole token. All twenty reproductions from that review are now regression fixtures.
+
+Two of the review's findings were **declined on purpose and moved into the check's printed output instead**:
+whether a URL belongs to the source it sits with (unknowable without a source registry this library does not
+have) and whether an identity carries both an author and a title (real correct entries name a document whose
+author is the organisation, such as `The Scrum Guide (November 2020)`). Naming them as unchecked is honest;
+enforcing them would fail correct work, which is the 76-defects-against-2 mistake in a new costume.
 
 ## More Information
 
