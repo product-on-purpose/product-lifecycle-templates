@@ -64,9 +64,9 @@ The test for a cell: **could someone satisfy this without improving the document
 
 ## 4. Scope and sequencing
 
-**Item 1, do first and separately: `product-vision`.** It is the only deviation and it is currently in an
-open PR, so it can be converged before merge rather than after. Convert its 12-row Strong/Adequate/Weak table
-to 0/1/2 with a threshold. Its rows 9 and 10 already carry a "(not lean canvas)" scope marker; preserve it.
+**Item 1, `product-vision`: DONE 2026-07-27**, converged inside PR #46 before that PR merged rather than
+left to a follow-up. Its 12-row Strong/Adequate/Weak table is now 0/1/2 scored with a threshold stated as a
+consequence, and the "(not lean canvas)" scope markers on rows 9 and 10 are preserved.
 
 **Item 2: the four checklist guides** (`acceptance-criteria`, `prd`, `release-notes`, `user-stories`). These
 need a decision before conversion, recorded here as an open question rather than assumed:
