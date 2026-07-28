@@ -120,9 +120,15 @@ rather than letting a green run be read as more than it is.
 
 ### Confirmation
 
+**Not yet built. This record decides the rule; nothing enforces it as of 2026-07-27.** The decision is
+confirmed when, and only when, all four of these exist:
+
 A new `tools/check-research-logs.py`, run in CI alongside the other document gates
 (`check-adr-index.py`, `check-changelog.py`), failing the build when any bundle's research log contains an
-entry missing a required field, or contains sources in a layout carrying no per-source retrieval status.
+entry missing a required field, or contains sources in a layout carrying no per-source retrieval status;
+its fixture tests; its CI step; and the three converted logs. Until then the contract is an authoring rule
+enforced by review, which is exactly the seam this record exists to close, so the gap is stated here rather
+than left to be discovered.
 
 Because the check has branches no live bundle exercises once the three conversions land (a missing tier, an
 invalid status token, a URL-less entry without the exemption statement), it carries fixture-based tests per
@@ -130,7 +136,8 @@ invalid status token, a URL-less entry without the exemption statement), it carr
 
 ## More Information
 
-This closes finding **DF-2** (research-log format drift) in [`STATE.md`](../../../STATE.md), which also records
+This **decides** finding **DF-2** (research-log format drift) in [`STATE.md`](../../../STATE.md) and closes it
+only when the check, its tests, its CI step and the three conversions land. STATE.md also records
 the two real defects the audit surfaced and fixed on the way: `bug-report` [17] wrote its status as
 `not retrieved` where the enum token is `not-retrieved`, and `risk-register` [33] carried no URL for a print
 book, now documented as a deliberate absence and the basis of the exemption above.
