@@ -217,6 +217,29 @@ def variant_file(name, size):
     return name + "_template-" + size + ".md"
 
 
+def format_variant_file(name, fmt, size):
+    """A non-default format's variant file (ADR 0028).
+
+    The DEFAULT format deliberately keeps the plain `<name>_template-<size>.md` filenames, so
+    adopting the format axis in an existing bundle is a one-key metadata addition and never a
+    rename. Only additional formats carry a compound token.
+    """
+    return name + "_template-" + fmt + "-" + size + ".md"
+
+
+def template_files_on_disk(name, d):
+    """Every `<name>_template-*.md` actually present, whatever its token.
+
+    Deliberately pattern-based rather than derived from a vocabulary. Before ADR 0028 both the
+    stray check and bundle_files() iterated ALL_SIZES, so a file whose token was not a known size
+    (`product-vision_template-narrative-full.md`) was invisible to BOTH: it failed no check and no
+    whole-bundle scan ever read it, meaning it was never checked for dashes, citations, or links.
+    Scanning by pattern and letting check A decide what is legal closes that.
+    """
+    prefix = name + "_template-"
+    return [f for f in sorted(os.listdir(d)) if f.startswith(prefix) and f.endswith(".md")]
+
+
 def find_bundles(root):
     out = []
     for name in sorted(os.listdir(root)):
@@ -247,16 +270,114 @@ def parse_sizes(name, d):
     declared = set(re.findall(r"\b(" + "|".join(ALL_SIZES) + r")\b", region))
     if not declared:
         return None, "sizes_available is empty or unparseable: " + m.group(1).strip()
+    return normalize_sizes(declared, "sizes_available")
 
+
+def normalize_sizes(declared, where):
+    """Order a set of declared size tokens, or explain why they are not a legal contract.
+
+    Shared by the size axis (sizes_available) and the format axis (an additional format's own
+    sizes), because a format's size list obeys exactly the same one-vocabulary rule.
+    """
     for vocab in SIZE_VOCABULARIES:
         if declared <= set(vocab):
             return [s for s in vocab if s in declared], None
 
     return None, (
-        "sizes_available mixes size vocabularies {"
+        where
+        + " mixes size vocabularies {"
         + ", ".join(sorted(declared))
         + "}; use lean/full OR s/m/l, never both"
     )
+
+
+def sizes_in_region(text, start_match):
+    """The size tokens declared by an inline list or a following YAML block list.
+
+    Scoped to the value region on purpose. Searching a whole entry for size tokens would match
+    the word "lean" inside a guidance sentence and silently invent a variant.
+    """
+    region = start_match.group(1)
+    for line in text[start_match.end():].splitlines():
+        if re.match(r"\s*-\s+", line):
+            region += " " + line
+        elif line.strip():
+            break
+    return set(re.findall(r"\b(" + "|".join(ALL_SIZES) + r")\b", region))
+
+
+# The format axis (ADR 0028). Both keys are optional: a bundle authored before that ADR declares
+# neither and behaves exactly as it always did. `default_format` alone is legal and useful, since
+# it records which shape the plain files are - a choice fifteen bundles made silently before the
+# key existed. `additional_formats` without `default_format` is not legal, and check A says so.
+DEFAULT_FORMAT_RE = re.compile(r"^default_format:\s*([^\s#]+)\s*$", re.M)
+ADDITIONAL_FORMATS_RE = re.compile(r"^additional_formats:\s*$", re.M)
+FORMAT_ID_RE = re.compile(r"^\s*-?\s*id:\s*([^\s#]+)\s*$", re.M)
+FORMAT_SIZES_RE = re.compile(r"^\s*sizes:\s*(.*)$", re.M)
+
+
+def parse_formats(name, d):
+    """The format contract, read from the meta. Returns (default_format, additional, error).
+
+    `additional` is a list of (format_id, ordered_sizes) in declared order. A bundle with no
+    format keys returns (None, [], None): absence is the pre-ADR-0028 shape, not an error.
+
+    Parsed with the same stdlib regex walk parse_sizes uses. ADR 0014 confines PyYAML to check J,
+    so checks A and C must read the meta without it.
+    """
+    p = os.path.join(d, name + "_meta.yaml")
+    if not os.path.isfile(p):
+        return None, [], "meta.yaml missing, so the bundle declares no format contract"
+    text = read(p)
+
+    dm = DEFAULT_FORMAT_RE.search(text)
+    default = dm.group(1).strip("\"'") if dm else None
+
+    fm = ADDITIONAL_FORMATS_RE.search(text)
+    if not fm:
+        return default, [], None
+
+    # The block is every indented line after the key; the first non-indented, non-blank line ends it.
+    block = []
+    for line in text[fm.end():].splitlines():
+        if not line.strip():
+            continue
+        if not line.startswith((" ", "\t")):
+            break
+        block.append(line)
+    if not block:
+        return default, [], "additional_formats is declared but empty; omit the key instead"
+
+    # Entry starts are the "-" lines at the SHALLOWEST indent in the block. A nested "- full"
+    # under a `sizes:` block list sits deeper, so it is never mistaken for a new entry.
+    dashes = [i for i, l in enumerate(block) if re.match(r"\s*-\s", l)]
+    if not dashes:
+        return default, [], "additional_formats has no list entries"
+    entry_indent = min(len(block[i]) - len(block[i].lstrip()) for i in dashes)
+    starts = [i for i in dashes if len(block[i]) - len(block[i].lstrip()) == entry_indent]
+
+    out = []
+    for n, s in enumerate(starts):
+        entry = "\n".join(block[s:starts[n + 1] if n + 1 < len(starts) else len(block)])
+
+        im = FORMAT_ID_RE.search(entry)
+        if not im:
+            return default, [], "an additional_formats entry declares no id"
+        fid = im.group(1).strip("\"'")
+
+        sm = FORMAT_SIZES_RE.search(entry)
+        if not sm:
+            return default, [], "additional format '" + fid + "' declares no sizes"
+        declared = sizes_in_region(entry, sm)
+        if not declared:
+            return default, [], "additional format '" + fid + "' has an empty or unparseable sizes list"
+        sizes, err = normalize_sizes(declared, "additional format '" + fid + "' sizes")
+        if err:
+            return default, [], err
+
+        out.append((fid, sizes))
+
+    return default, out, None
 
 
 def check_files(name, d):
@@ -264,32 +385,63 @@ def check_files(name, d):
     if err:
         return False, err
 
-    expected = [variant_file(name, s) for s in sizes] + [name + "_" + r for r in CORE_ROLES]
+    default_fmt, additional, ferr = parse_formats(name, d)
+    if ferr:
+        return False, ferr
+
+    # A bundle shipping more than one shape must say which shape the plain files are, or a reader
+    # cannot tell what they have opened (ADR 0028).
+    if additional and not default_fmt:
+        return False, (
+            "additional_formats declared without default_format; a reader cannot tell which "
+            "format the plain template files are"
+        )
+
+    ids = [f for f, _ in additional]
+    if default_fmt and default_fmt in ids:
+        return False, (
+            "format '" + default_fmt + "' is declared both as default_format and in "
+            "additional_formats; it is one or the other"
+        )
+    dupes = sorted({f for f in ids if ids.count(f) > 1})
+    if dupes:
+        return False, "duplicate additional_formats id(s): " + ", ".join(dupes)
+
+    expected = [variant_file(name, s) for s in sizes]
+    for fid, fsizes in additional:
+        expected += [format_variant_file(name, fid, s) for s in fsizes]
+    expected += [name + "_" + r for r in CORE_ROLES]
+
     missing = [f for f in expected if not os.path.isfile(os.path.join(d, f))]
     if missing:
         return False, "missing: " + ", ".join(missing)
 
-    # The contract runs both ways: a variant file the meta never declared is drift, not a
+    # The contract runs both ways: a template file the meta never declared is drift, not a
     # bonus. Without this, a stale template-full.md could linger in a bundle the meta says
-    # is lean-only, and nothing would ever notice.
-    stray = [
-        variant_file(name, s)
-        for s in ALL_SIZES
-        if s not in sizes and os.path.isfile(os.path.join(d, variant_file(name, s)))
-    ]
+    # is lean-only, and nothing would ever notice. Since ADR 0028 this compares against every
+    # `_template-*.md` on disk rather than only known size tokens, so a file with an
+    # unrecognised token fails here instead of sitting in the bundle unread by every scan.
+    stray = [f for f in template_files_on_disk(name, d) if f not in expected]
     if stray:
-        return False, "undeclared variant file(s) present: " + ", ".join(sorted(set(stray)))
+        return False, "undeclared template file(s) present: " + ", ".join(stray)
 
-    return True, str(len(expected)) + " files present, variants {" + ", ".join(sizes) + "}"
+    note = str(len(expected)) + " files present, variants {" + ", ".join(sizes) + "}"
+    if default_fmt:
+        note += ", format " + default_fmt
+    if additional:
+        note += " + " + ", ".join(f + " {" + ", ".join(s) + "}" for f, s in additional)
+    return True, note
 
 
 def bundle_files(name, d):
-    """Every file the bundle actually owns, for whole-bundle scans."""
-    out = []
-    for s in ALL_SIZES:
-        p = os.path.join(d, variant_file(name, s))
-        if os.path.isfile(p):
-            out.append(p)
+    """Every file the bundle actually owns, for whole-bundle scans.
+
+    Permissive by design, and paired with a strict check A: this returns every template file
+    PRESENT, while check A guarantees nothing undeclared is present. Together they mean every
+    file in a bundle is both declared and scanned. Deriving this list from a vocabulary instead
+    was the bug ADR 0028 closed.
+    """
+    out = [os.path.join(d, f) for f in template_files_on_disk(name, d)]
     for r in CORE_ROLES:
         p = os.path.join(d, name + "_" + r)
         if os.path.isfile(p):
@@ -359,24 +511,54 @@ def check_nesting(name, d):
     if err:
         return False, err
 
-    if len(sizes) == 1:
-        # Not a pass by omission. A single-size bundle has nothing to nest INTO, so the
-        # rule is vacuous rather than skipped. Saying so out loud keeps a green run honest.
-        return True, "single-variant bundle {" + sizes[0] + "}; nesting rule not applicable"
+    default_fmt, additional, ferr = parse_formats(name, d)
+    if ferr:
+        return False, ferr
 
-    # Every variant must nest in the next one up: lean in full, or s in m in l.
-    for small, big in zip(sizes, sizes[1:]):
-        sp = os.path.join(d, variant_file(name, small))
-        bp = os.path.join(d, variant_file(name, big))
-        if not (os.path.isfile(sp) and os.path.isfile(bp)):
-            return False, "cannot compare " + small + " to " + big + ": a variant file is missing"
-        if not is_ordered_subset(headings(sp), headings(bp)):
-            extra = [h for h in headings(sp) if h not in headings(bp)]
-            detail = "; ".join(fmt_heading(h) for h in extra) if extra else "same sections, wrong order"
-            return False, small + " does not nest in " + big + ": " + detail
+    # (label, ordered sizes, filename builder). The nesting rule runs WITHIN each format and is
+    # never asserted ACROSS formats: two formats are siblings, not parent and child, so neither
+    # outline need contain the other. A canvas and a press release share no section spine, and
+    # demanding one was exactly the constraint ADR 0028 lifted.
+    groups = [(default_fmt or "default", sizes, lambda s: variant_file(name, s))]
+    for fid, fsizes in additional:
+        groups.append((fid, fsizes, lambda s, f=fid: format_variant_file(name, f, s)))
 
-    counts = ", ".join(s + "=" + str(len(headings(os.path.join(d, variant_file(name, s))))) for s in sizes)
-    return True, "nests " + " < ".join(sizes) + " (" + counts + ")"
+    # A bundle that declares no format keys is every bundle authored before ADR 0028, and its
+    # output stays byte-identical: a capability change should not churn the report for bundles
+    # it does not touch. The format label appears only once a format is actually in play.
+    labelled = bool(default_fmt or additional)
+
+    notes = []
+    for label, gsizes, fname in groups:
+        tag = label + " " if labelled else ""
+
+        if len(gsizes) == 1:
+            # Not a pass by omission. A single-variant format has nothing to nest INTO, so the
+            # rule is vacuous rather than skipped. Saying so out loud keeps a green run honest.
+            notes.append(
+                tag + "{" + gsizes[0] + "}: single variant, rule not applicable"
+                if labelled
+                else "single-variant bundle {" + gsizes[0] + "}; nesting rule not applicable"
+            )
+            continue
+
+        # Every variant must nest in the next one up: lean in full, or s in m in l.
+        for small, big in zip(gsizes, gsizes[1:]):
+            sp = os.path.join(d, fname(small))
+            bp = os.path.join(d, fname(big))
+            if not (os.path.isfile(sp) and os.path.isfile(bp)):
+                return False, tag + "cannot compare " + small + " to " + big + ": a variant file is missing"
+            if not is_ordered_subset(headings(sp), headings(bp)):
+                extra = [h for h in headings(sp) if h not in headings(bp)]
+                detail = "; ".join(fmt_heading(h) for h in extra) if extra else "same sections, wrong order"
+                return False, tag + small + " does not nest in " + big + ": " + detail
+
+        counts = ", ".join(s + "=" + str(len(headings(os.path.join(d, fname(s))))) for s in gsizes)
+        notes.append(tag + "nests " + " < ".join(gsizes) + " (" + counts + ")")
+
+    if additional:
+        notes.append("no nesting asserted across formats")
+    return True, "; ".join(notes)
 
 
 def check_example(name, d):

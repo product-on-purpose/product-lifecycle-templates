@@ -32,6 +32,15 @@ jobs:
       - name: Check K self-test
         run: python tools/test-check-k.py
 
+      # The format axis (ADR 0028). Same argument as the check K self-test: most of this logic
+      # has no live subject, since one bundle ships a second format and none ships two. The
+      # load-bearing assertions are that two formats with unrelated outlines PASS (nesting is
+      # within a format, never across), that a `_template-*.md` file the meta never declared
+      # FAILS and is also scanned rather than sitting unread, and that a size word inside a
+      # guidance sentence does not invent a variant.
+      - name: Format axis self-test
+        run: python tools/test-check-formats.py
+
       # The link gate. Bundle-scoped checks cannot see repo-wide breakage: the scaffold
       # graduation (decision 0009) broke four companion links and the bundle gate passed
       # green. This step also enforces the central rule of decision 0013 - no tracked file

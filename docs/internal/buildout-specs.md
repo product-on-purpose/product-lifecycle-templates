@@ -172,6 +172,41 @@ remain** - exactly the 19 rows above.
   meant 5 of 27 plus `rfc`. Accepted ADRs are records, not living documents, so it stays as written and is
   noted here instead.
 
+### D-E. The format axis, and the 15-bundle backfill it defers (CAPABILITY LANDED 2026-07-25)
+
+Building `product-vision` surfaced a document type whose real variation is not size. Four shapes circulate
+(canvas, narrative, PR/FAQ, positioning sentence) and they are **siblings, not parent and child**, so no
+ordering of them satisfies the strict nesting rule that defines the size axis. **The library had already been
+making this choice silently fifteen times**: `adr` ships MADR and never says so, `test-plan` ships one shape
+from a field with several. product-vision is simply the first type where the silent default is uncomfortable,
+because the field's most-cited authority attacks the shape we would otherwise pick.
+
+**[ADR 0028](decisions/0028-adopt-a-format-axis.md) landed the capability**: optional `default_format` and
+`additional_formats` keys, nesting enforced within a format and never across formats, the default format
+keeping the plain filenames so adoption is a metadata addition rather than a rename. Covered by
+`tools/test-check-formats.py` (58 assertions). It also closed a real gate gap found on the way: check A's
+stray detection and `bundle_files()` both iterated known size tokens, so a file such as
+`x_template-narrative-full.md` failed no check **and was read by no scan**.
+
+**Adoption is deliberately narrow, and the rest is tracked here rather than assumed:**
+
+| Item | Status |
+|---|---|
+| Capability (ADR, schema, checks A and C, test, CI, manifest) | **done 2026-07-25** |
+| `product-vision` ships canvas + narrative + PR/FAQ | in progress |
+| Decide whether `product-roadmap` and `product-strategy` need a second format | **open**, answered by their own research |
+| Backfill `default_format` on the other 15 bundles | **open**, deliberately deferred |
+
+**Why the backfill waits.** Declaring a format for 15 bundles is a 27-type commitment, and the only researched
+evidence today is one type. Roadmap and strategy are built next and will say whether format variation is
+common or peculiar to vision. Deferring costs one known inconsistency, recorded in the ADR: product-vision
+names its format and `adr` does not, despite both having made the same kind of choice.
+
+**The governing rule, without which this is unbuildable:** a format is shipped only when it is **structurally
+distinct** from the default **and** in circulation **with a named source**. A stylistic preference is a
+companion paragraph, not a file. Expected shape under that rule is roughly 5 to 10 additional format files
+library-wide, not 27 times 3.
+
 ---
 
 ## Per-type specs
@@ -207,12 +242,31 @@ is confirmed out of the family (moved to discovery-docs, D-B). Real skill pairin
 qa-docs: `foundation-okr-writer`, `measure-okr-grader` and `foundation-lean-canvas` are pinned. Examples chain
 onto the Acme Analytics thread **upward**, via the FY26 "Time to Insight" goal the PRD example already cites.
 
-**product-vision** (catalog 1) - strategy-docs, phase/class *TBD (foundation leaning)*, sizes [lean, full],
-methodology methodology-agnostic, aliases: vision statement, product vision board (Pichler), Vision FAQ
-(Cagan). Section sketch - Lean: The Vision (aspirational end-state); Target Customer and Needs; Why Us
-(differentiation). Full adds: Business Goals; Guardrails/Principles; Time Horizon. Key sources: Pichler
-Product Vision Board, Cagan Product Vision FAQ, Moore (positioning). Teaching point: a vision is an
-enduring aspiration, not a roadmap or a feature list.
+**product-vision** (catalog 1) - strategy-docs, **classification foundation** (resolved, ADR 0027), sizes
+[lean, full], methodology methodology-agnostic, aliases: vision statement, product vision board (Pichler),
+Vision FAQ (Cagan). **First bundle to use the format axis (D-E, ADR 0028):** `default_format: canvas` plus
+`additional_formats` narrative and prfaq.
+
+- Canvas (default), lean: The Vision; Who It Is For, and What They Need; Why Us; What This Rules Out.
+- Canvas, full adds: Market and Competitive Context; Business Goals; Horizon and Review; Leaps of Faith.
+- Narrative (full only): the Cagan-tradition prose form. A lean narrative is just a short narrative, not a
+  distinct artifact, so it ships one size.
+- PR/FAQ (full only): press release dated forward, plus the anticipated questions.
+
+**The fourth circulating shape, Moore's positioning sentence, is deliberately NOT shipped.** The research
+could not verify the template verbatim in any source read, and no page named a chapter or edition; separately,
+a positioning statement answers a different question than a vision does. It is described in the companion with
+its attribution problem named, which is the honest treatment.
+
+Key sources: Pichler Product Vision Board (2011, five sections, verified at source), Cagan Product Vision FAQ
+and Vision vs Strategy (svpg.com, fetched). **All Cagan quotations come from his own pages, never from a
+reader summary of *Inspired*** - the research log records why.
+
+Teaching points: (1) a vision is an enduring aspiration, not a roadmap or a feature list; (2) **the test is
+whether it can refuse something** - "if your vision can't kill a feature request from an influential
+stakeholder, it isn't doing its job"; (3) the dominant failure mode is disuse, not bad prose; (4) vision
+versus strategy is settled, vision versus mission is not; (5) no study measures product-level vision documents
+against product outcomes, so the bundle claims no performance benefit.
 
 **product-strategy** (catalog 2) - strategy-docs, phase/class *TBD*, sizes [lean, full], methodology-agnostic
 (OKR-friendly), aliases: strategy doc, strategy one-pager. Lean: Focus (which problems matter); Insights;

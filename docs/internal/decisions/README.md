@@ -63,6 +63,7 @@ Do not create for:
 | [0025](0025-executable-tests-for-gate-logic.md) | Executable tests complement the structural gate for logic with no live subject; they live in tools/, run in CI, and block merge | 2026-07-23 |
 | [0026](0026-adopt-qa-docs-family-contract.md) | Adopt the qa-docs family contract (test-plan, test-case, bug-report) at phase develop; two families may share a phase, and examples may chain across a family boundary | 2026-07-25 |
 | [0027](0027-adopt-strategy-docs-family-contract.md) | Adopt the strategy-docs family contract (product-vision, product-strategy, product-roadmap, okrs); the first to gate a set of axis values, and the first live use of a capability built ahead of its subject | 2026-07-25 |
+| [0028](0028-adopt-a-format-axis.md) | Adopt a format axis orthogonal to size: a bundle may ship a document in more than one shape, nesting applies within a format and never across formats | 2026-07-25 |
 
 ## Correction versus supersession
 

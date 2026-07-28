@@ -58,6 +58,9 @@ SELECT_FIELDS = [
     "sizes_available",
     "default_size",
     "sizing_guidance",
+    "default_format",
+    "default_format_guidance",
+    "additional_formats",
     "status",
     "tags",
     "aliases",
@@ -91,6 +94,11 @@ def variant_file(name, size):
     return name + "_template-" + size + ".md"
 
 
+def format_variant_file(name, fmt, size):
+    """A non-default format's variant file (ADR 0028). The default format keeps plain filenames."""
+    return name + "_template-" + fmt + "-" + size + ".md"
+
+
 def estimate_tokens(path):
     """A deliberately rough token estimate: characters / 4, rounded to the nearest 50.
 
@@ -118,6 +126,14 @@ def build_manifest(yaml):
             vpath = os.path.join(bundle_dir, variant_file(name, size))
             if os.path.isfile(vpath):
                 tokens[size] = estimate_tokens(vpath)
+        # Additional formats (ADR 0028) are keyed "<format>-<size>", matching their filename
+        # token. A plain lean/full bundle's map is therefore unchanged, and an agent budgeting
+        # context can price a narrative separately from the canvas sitting beside it.
+        for fmt in meta.get("additional_formats") or []:
+            for size in fmt.get("sizes", []):
+                fpath = os.path.join(bundle_dir, format_variant_file(name, fmt["id"], size))
+                if os.path.isfile(fpath):
+                    tokens[fmt["id"] + "-" + size] = estimate_tokens(fpath)
         if tokens:
             entry["approx_tokens"] = tokens
         bundles.append(entry)
