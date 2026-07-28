@@ -217,13 +217,13 @@
         "product strategy brief"
       ],
       "approx_tokens": {
-        "full": 3350,
-        "lean": 2650,
-        "one-pager-full": 2550
+        "full": 3400,
+        "lean": 2700,
+        "one-pager-full": 3050
       },
       "classification": "foundation",
       "default_format": "kernel",
-      "default_format_guidance": "Reach for the kernel when the hard part is that nobody agrees what the problem is. Diagnosis, guiding policy and coherent action force the obstacle to be named before any choice is made, which is why it is the default: the most common defect in a strategy document is that it never says what makes the goal hard.",
+      "default_format_guidance": "Reach for the kernel when the hard part is that nobody agrees what the problem is. Diagnosis, guiding policy and coherent action force the obstacle to be named before any choice is made, which is why it is the default: the defect this bundle's sources converge on is a strategy that never says what makes the goal hard.",
       "default_size": "lean",
       "doc_type": "product-strategy",
       "family": "strategy-docs",

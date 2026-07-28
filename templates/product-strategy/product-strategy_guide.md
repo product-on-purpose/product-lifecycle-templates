@@ -18,6 +18,10 @@ deck".
 | a **PRD** | one specific thing is agreed and needs specifying |
 | a **business case** | the question is whether to fund it at all |
 
+**Write nothing at all if** the team already agrees, the agreement is holding, and nobody has asked it to
+justify a refusal. A document produced to have a document is the cheapest way to make a real strategy harder
+to write later, because the next one has to argue with this one first.
+
 **A warning worth taking seriously.** No study measures whether writing this document improves product
 outcomes. What is measured is adjacent and mixed, and one study found managers believed planning was helping
 when the financial data did not agree. If you cannot say what argument this document is going to settle,
@@ -41,11 +45,9 @@ the kernel.
 - **full** for readers who were not in the argument: a new leader, another function, a board, or your own
   team in six months.
 
-**A named variant worth stealing from, in either format.** Ramp's published strategy template asks seven
-questions: goal, hypothesis, right to win, metric, initiatives, risks, and long-term outcomes. Two of them
-are unusual and useful: **right to win** ("why are we uniquely positioned to do this?") and **risks** ("why
-would we fail and what should we do about it?"). It is one company's document rather than a named reusable
-format, which is why this bundle describes it rather than shipping it.
+**A named variant worth stealing from, in either format.** Ramp's published template adds two questions
+this bundle does not ship as sections: **right to win** and **risks**. See
+`product-strategy_companion.md` section 9.
 
 ## The one test that outranks the rest
 
@@ -70,19 +72,31 @@ be nodded at, filed, and quietly ignored while the roadmap decides what actually
 | 4 | **Coherent action** | A list of unrelated work | Actions that each serve the policy | You can say which two actions make each other stronger, and what breaks if one is dropped |
 | 5 | **Refusals with a cost** | Nothing declined | Declines things nobody asked for | Declines something a named person wanted, and they have been told |
 | 6 | **Not a roadmap** | Dates and feature names throughout | Some deliverables leak in | No date could be lifted from this document; sequence lives in the roadmap |
-| 7 | **Not interchangeable** | A competitor's name fits unchanged | Mostly generic, one specific claim | Specific enough that a competitor's name makes at least two sentences false |
-| 8 | **Falsifiable outcome** *(full, one-pager)* | No measure | A measure with no baseline or date | A leading indicator with a baseline, a date, and a stated result that would make you abandon the strategy |
-| 9 | **Assumptions exposed** *(full)* | None stated | Risks listed generically | The assumption the strategy would die without is named, with the evidence you have and the evidence you lack |
-| 10 | **Owned and triggered** *(full)* | No review, no owner | "Reviewed quarterly" | An event that triggers review, a backstop date, and a named person |
+| 7 | **Not interchangeable** | A competitor's name fits unchanged | Mostly generic, one specific claim | You can point at the sentence a competitor could not write, and say what they would have to give up to write it |
+| 8 | **Falsifiable outcome** *(kernel-full, one-pager)* | No measure | A measure with no baseline or date | A leading indicator with a baseline, a date, and a stated result that would make you abandon the strategy |
+| 9 | **Assumptions exposed** *(kernel-full only)* | None stated | Risks listed generically | The assumption the strategy would die without is named, with the evidence you have and the evidence you lack |
+| 10 | **Owned and triggered** *(kernel-full only)* | No review, no owner | "Reviewed quarterly" | An event that triggers review, a backstop date, and a named person |
 
-Rows 8 to 10 do not apply to the lean kernel variant. Grade the other seven, where the maximum is 14, and
-**score against 9**: the same proportion of the available points as 13 out of 20.
+**Which rows apply to what.** The rubric is written for the kernel, which is the default format. Scope, in
+full:
+
+| Document | Rows that apply | Maximum | Score against |
+|---|---|---|---|
+| kernel, full | all 10 | 20 | **13** |
+| kernel, lean | 1-7 (it has no measure, assumptions or trigger section) | 14 | **9** |
+| one-pager | 3-8 (it starts from the choice, so rows 1-2 have no diagnosis to grade, and it carries no assumptions or review-trigger section) | 12 | **8** |
+
+Every threshold is the same proportion of the available points. **Rows 1 and 2 do not apply to the
+one-pager on purpose**, not by oversight: that format deliberately opens from the choice rather than the
+obstacle, which is exactly why the guide tells you to use the kernel instead when the team is still arguing
+about what is wrong. Row 8 does apply to it, because the one-pager carries its own "How We Will Know We Have
+Won" section.
 
 ## Format-specific checks
 
 **Kernel.** Read the diagnosis and the guiding policy alone, in that order. Does the policy obviously answer
 the diagnosis? If a reader could not tell which obstacle the policy is for, the two sections were written
-independently, which is the most common way this format fails.
+independently, which is the failure this format is most prone to.
 
 **One-pager.** Read "Where We Will Play" and "How We Will Win" alone. Does the second explain why you win in
 the first, against alternatives that exist there? A "how we will win" that would be true anywhere means the

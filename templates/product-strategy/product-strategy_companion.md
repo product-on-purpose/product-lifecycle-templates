@@ -5,10 +5,21 @@ research actually says, and where the field disagrees with itself.
 
 ## 1. Orientation
 
-A product strategy says **which problems this product will solve to reach its vision, and which it will
-not** [[4]](#ref-4). It sits below the business strategy, which decides where the company invests
-[[5]](#ref-5), and above the roadmap, which decides in what order the chosen work happens
-[[8]](#ref-8).
+A product strategy says **which problems this product will solve to reach its vision** [[4]](#ref-4), **and
+which it will not** [[20]](#ref-20)[[21]](#ref-21).
+
+At a glance:
+
+- It is the set of choices between a vision and a roadmap, and it is revisited far more often than the
+  vision above it [[6]](#ref-6).
+- Its one test: swap in a competitor's name, and see whether anything becomes false [[23]](#ref-23).
+- **Nothing measures whether writing it helps.** That is a tested negative, not an oversight; see below.
+- Two formats ship here. The kernel starts from the obstacle; the one-pager starts from the choice.
+- The way it most often goes wrong, in this bundle's judgment, is that it turns out to be a roadmap
+  [[8]](#ref-8) or a goal list [[1]](#ref-1).
+
+It sits below the business strategy, which decides where the company invests [[5]](#ref-5), and above the
+roadmap, which decides in what order the chosen work happens [[8]](#ref-8).
 
 **The one thing worth knowing before you write a word:** nobody has measured whether writing this
 document helps. There is a real literature on whether strategic *planning as a process* correlates with
@@ -19,13 +30,13 @@ makes no performance claim for the document, and the section you are reading is 
 that rather than assume it.
 
 What *is* well-established is the failure mode. From Porter in 1996 [[3]](#ref-3) to practitioners writing
-in 2026 [[23]](#ref-23), authors who are not citing each other converge on one test: **a real strategy names
+today [[23]](#ref-23), authors who are not citing each other converge on one test: **a real strategy names
 what you will not do.** That convergence is the strongest claim in this document.
 
 ## 2. Origins and evolution
 
-Strategy as a business discipline traces to Harvard's Business Policy course and to Kenneth Andrews, who
-defined corporate strategy as "the pattern of decisions in a company that determines and reveals its
+Strategy as a business discipline traces to Harvard's Business Policy course and to Kenneth Andrews. As Roger Martin renders
+Andrews's definition, corporate strategy is "the pattern of decisions in a company that determines and reveals its
 objectives, purposes, or goals" [[22]](#ref-22). The classical hierarchy that followed has **three** levels,
 corporate, business and functional [[37]](#ref-37).
 
@@ -53,7 +64,8 @@ analyze the obstacles, you don't have a strategy. Instead, you have either a str
 list of things you wish would happen" [[1]](#ref-1). A diagnosis names the *one* thing making the goal hard,
 not the situation in general.
 
-The most common substitute is a summary of the market that names no obstacle at all. Rumelt calls that
+A frequent substitute, in this bundle's judgment rather than on any published count, is a summary of the
+market that names no obstacle at all. Rumelt calls that
 fluff: "A hallmark of true expertise and insight is making a complex subject understandable. A hallmark of
 mediocrity and bad strategy is unnecessary complexity - a flurry of fluff masking an absence of substance"
 [[1]](#ref-1).
@@ -82,8 +94,8 @@ refuse anything.
 
 ### What We Are Not Doing
 
-**In the lean variant, deliberately.** This is the section that makes the other three usable, and it is the
-one most often missing. Traynor's formulation is the practical one: a team with a strategy can say "This is
+**In the lean variant, deliberately.** This is the section that makes the other three usable, and every quality
+test found in this bundle's research turns on it. Traynor's formulation is the practical one: a team with a strategy can say "This is
 a really great idea...But we're not going to build it" [[20]](#ref-20). Kantus states the consequence: "If
 your strategy doesn't make some stakeholders uncomfortable, you don't have a strategy. You have a wish list"
 [[23]](#ref-23).
@@ -99,7 +111,7 @@ objectives were worth setting [[12]](#ref-12)[[34]](#ref-34).
 What has to be true for this to work, and what would falsify it. Ramp's published template makes risk an
 explicit section, asking "Risks -> Why would we fail & what should we do about it?" [[17]](#ref-17). The
 discipline behind it is McGrath and MacMillan's: in uncertainty, write down assumptions to be tested rather
-than projections to be met [[32]](#ref-32).
+than projections to be met [[43]](#ref-43).
 
 ### Review Trigger (full)
 
@@ -112,6 +124,38 @@ Be careful to distinguish scheduled review from reactive rewriting. Quarterly *r
 practitioners [[10]](#ref-10)[[38]](#ref-38); quarterly *pivots triggered by a competitor's announcement*
 appear on a list of theater symptoms [[23]](#ref-23). The two look alike in a calendar and are opposites in
 practice.
+
+### The one-pager cascade: its own five sections
+
+The one-pager format asks a different opening question, so four of its sections have no counterpart above.
+They are treated here rather than in the kernel's anatomy because a reader filling that template needs them.
+
+**Winning Aspiration.** What winning means for this product, specific enough that the choices below become
+consequential. An aspiration any competitor would also claim produces a cascade any competitor would also
+make. It is not the vision: it is the part of the vision this period is chasing.
+
+**How We Will Know We Have Won.** The published cascade puts this **second**, before any choice is made, and
+the ordering is the argument: an aspiration you cannot tell you are reaching gets reinterpreted at the end of
+the period to match whatever happened. Same discipline as the kernel's "How We Will Know It Is Working", and
+the same warning applies about OKRs [[12]](#ref-12)[[34]](#ref-34).
+
+**Where We Will Play.** The segments, use cases and channels in scope, and explicitly those out of it.
+"Where to play" without a "where not to play" is a description of your current customer list.
+
+**How We Will Win.** Why you win where you have chosen, against the alternatives that exist there. Porter's
+standard applies directly: durability comes from performing activities differently rather than better, since
+"the essence of strategy is choosing to perform activities differently than rivals do" [[3]](#ref-3).
+
+**Capabilities and Systems.** What the team must be able to do, and what has to exist, for the above to hold.
+This is where a cascade stops being aspirational, because it names the gap between the strategy and the
+organisation you actually have.
+
+**Product Principles.** Rules that resolve a recurring trade-off the same way every time, so the team can
+decide without asking. A principle that rules nothing out is a value, not a principle.
+
+**One section is this bundle's addition.** "What We Are Not Doing" is not in the published cascade. It is
+added because every quality test in the research turns on naming refusals, and a cascade can otherwise say
+where it will play without ever saying what it declines [[20]](#ref-20)[[23]](#ref-23).
 
 ## 4. Variants and sizing
 
@@ -138,23 +182,25 @@ rather than being replaced by them [[12]](#ref-12)[[34]](#ref-34).
 
 ## 6. Debates and contested boundaries
 
-**Is planning worth anything?** Two meta-analyses find that formal planning correlates positively with
-performance, moderated heavily by context [[28]](#ref-28)[[35]](#ref-35). A study of 77 listed firms found
+**Is planning worth anything?** One meta-analysis reports that planning correlates positively with growth
+and profitability [[28]](#ref-28), though its publisher blocked retrieval and that characterisation comes
+from a secondary summary [[29]](#ref-29). A second finds the relationship real but heavily moderated by firm
+age and national culture [[35]](#ref-35). A study of 77 Australian listed firms found
 no correlation with objective financial performance, but did find one with *subjective* measures: managers
 believed planning was helping when the financial data did not show it [[30]](#ref-30). That last result is
 the most useful thing in the literature for a document author, because it means "everyone felt it helped" is
 not evidence.
 
 **Mintzberg's critique** targets formalised planning: prediction, detachment and formalization as fallacies,
-with the claim that "less than ten percent of intended strategies are successfully implemented"
-[[32]](#ref-32). It was contested at the time by other serious scholars and is still argued over, so it is
+and, as the summary that carries his argument renders it, the claim that "less than ten percent of intended
+strategies are successfully implemented" [[32]](#ref-32). The summary was read; the book was not. It was reportedly contested at the time by other serious scholars, and the debate is reported to continue [[41]](#ref-41)[[42]](#ref-42); both records were confirmed to exist but blocked before their text could be read. Either way it is
 not a settled verdict on writing strategy down.
 
 **The lean critique** is sharper and narrower. Blank: "Unless you have tested the assumptions in your
 business model first, outside the building, your business plan is just creative writing" [[33]](#ref-33).
 Note what he is attacking: untested assumptions presented as fact, not documentation as such.
 
-**The plan/strategy confusion** is the one that most often produces a bad document. Martin's distinction is
+**The plan/strategy confusion** is a reliable producer of bad documents. Martin's distinction is
 that a plan allocates resources within your control while a strategy bets on behaviour that is not, and that
 "conflating them undermines performance" [[24]](#ref-24). Rumelt made the same complaint about corporate
 practice years before the book that made him famous: "Most corporate strategic plans have little to do with
@@ -163,12 +209,12 @@ projection" [[2]](#ref-2).
 
 **A harder test than any in this document, if you want one.** Martin argues that "the only strategies worth
 investing in are those that pass the can't/won't test": could a competitor copy this, and would they want to?
-[[25]](#ref-25) Most product strategies fail the first half, which is why the interchangeability test in the
+[[25]](#ref-25) In this bundle's judgment the first half is the harder bar, which is why the interchangeability test in the
 guide is the practical version of the same question.
 
 **"Strategy theater" is one author's coinage, not a field-wide critique.** It was searched for as an
-established term and not found; the nearest academic work studies the ritualization of strategy *workshops*,
-not documents. Use it as a vivid label with a name attached [[23]](#ref-23), not as received wisdom.
+established term and not found; on the strength of a search snippet rather than a page anyone here read, the
+nearest academic work appears to study the ritualization of strategy *workshops* rather than documents. Use it as a vivid label with a name attached [[23]](#ref-23), not as received wisdom.
 
 ## 7. Anti-patterns and failure modes
 
@@ -179,7 +225,7 @@ not documents. Use it as a vivid label with a name attached [[23]](#ref-23), not
 | **The roadmap in disguise** | Dated features under strategy headings | Confuses sequence with choice; the hard question was skipped | [[8]](#ref-8)[[13]](#ref-13) |
 | **The OKR substitute** | Objectives and numbers, no reasoning for choosing them | Measures execution of a strategy nobody wrote | [[12]](#ref-12)[[34]](#ref-34) |
 | **Straddling** | Two incompatible positions held at once | Porter's Continental Lite: it "lost hundreds of millions of dollars, and the CEO lost his job" | [[3]](#ref-3) |
-| **Rah-rah** | "World-class", "delightful", "best-in-class" | Doshi's "Apple Pie positions": nobody could disagree, so nothing was chosen | [[21]](#ref-21) |
+| **Rah-rah** | World-class, delightful, best-in-class | What Doshi calls "Apple Pie positions": nobody could disagree, so nothing was chosen | [[21]](#ref-21) |
 | **Interchangeable** | Swap in a competitor's name and it still reads true | It describes an industry, not a position | [[23]](#ref-23) |
 | **Feature-team mode** | Teams handed features rather than problems | The document exists but changes nothing about what the team is asked to do | [[7]](#ref-7)[[9]](#ref-9) |
 | **Vision-plus-roadmap** | Where we are going, then when things ship, nothing between | The choices are exactly what is missing | [[15]](#ref-15) |
@@ -205,13 +251,13 @@ document is one rung. It presumes something above it and produces something belo
 useful than a vision statement nobody cites.
 
 **If you are pre-product-market-fit**, keep the assumptions section and shorten everything else. The lean
-critique lands hardest here [[33]](#ref-33), and the discovery-driven answer is to write down what you are
-testing rather than what you are predicting [[32]](#ref-32).
+critique lands hardest here [[33]](#ref-33), and the discovery-driven answer [[43]](#ref-43) is to write down what you are
+testing rather than what you are predicting.
 
 **If your organisation runs a portfolio**, expect a layer above this one, and expect it to be contested
 [[10]](#ref-10).
 
-**If the document has to be presented**, consider Amazon's practice of a narrative read in silence at the
+**If the document has to be presented**, consider Amazon's practice of a narratively written memo, read before discussion begins at the
 start of the meeting [[26]](#ref-26), which is a different artifact from a deck and produces different
 arguments.
 
@@ -219,8 +265,14 @@ arguments.
 theme [[40]](#ref-40). Note what that example does not tell you: who writes it, on what cadence, or who
 approves it are not stated on the page.
 
+**A named real-world variant worth stealing from.** Ramp's published strategy template asks seven questions:
+goal, hypothesis, right to win, metric, initiatives, risks, and long-term outcomes [[17]](#ref-17). Two are
+unusual and portable to either format here: **right to win** ("Why are we uniquely positioned to do this?")
+and **risks** ("Why would we fail & what should we do about it?"). It is one company's document rather than a
+named reusable format, which is why this bundle borrows from it rather than shipping it.
+
 **How the decision gets made** varies and is not standardised. Basecamp's betting table reviews written
-pitches in a cool-down period between cycles, and the pitch is the unit of commitment: "We post pitches as
+pitches, and the pitch is the unit of commitment: "We post pitches as
 Messages in Basecamp" [[39]](#ref-39).
 
 ## 10. Worked example
@@ -294,7 +346,7 @@ which is what makes it a strategy rather than a summary.
 
 <a id="ref-31"></a>[31] Nataliya Wright. "[Where Strategy Matters: Evidence from a Global Startup Field Study](https://www.hbs.edu/ris/Publication%20Files/23-041_8159740e-8862-49be-a07c-2e4916de9212.pdf)." Harvard Business School working paper 23-041. [academic] Measures interview-scored strategic coherence, not a document.
 
-<a id="ref-32"></a>[32] Henry Mintzberg. "[The Rise and Fall of Strategic Planning](https://coco-net.org/wp-content/uploads/2012/08/risefall.pdf)" (1994), read via a page-cited academic summary. [reference] The summary was read, not the book. The discovery-driven-planning position is summarised at [Wikipedia](https://en.wikipedia.org/wiki/Discovery-driven_planning).
+<a id="ref-32"></a>[32] Henry Mintzberg. "[The Rise and Fall of Strategic Planning](https://coco-net.org/wp-content/uploads/2012/08/risefall.pdf)" (1994), read via a page-cited academic summary. [reference] The summary was read, not the book.
 
 <a id="ref-33"></a>[33] Steve Blank. "[No Business Plan Survives First Contact With Customers](https://steveblank.com/2010/04/08/no-plan-survives-first-contact-with-customers-%E2%80%93-business-plans-versus-business-models/)." [practitioner]
 
@@ -311,3 +363,9 @@ which is what makes it a strategy rather than a summary.
 <a id="ref-39"></a>[39] Ryan Singer. "[The Betting Table](https://basecamp.com/shapeup/1.5-chapter-06)," Shape Up. Basecamp. [practitioner]
 
 <a id="ref-40"></a>[40] GitLab. "[Product Direction](https://about.gitlab.com/direction/)." [primary]
+
+<a id="ref-41"></a>[41] H. Igor Ansoff. "[Critique of Henry Mintzberg's 'The Design School'](https://sms.onlinelibrary.wiley.com/doi/abs/10.1002/smj.4250120605)." Strategic Management Journal 12(6), 1991. [academic] **Not read**: blocked on every attempt. Cited only for the fact that a rebuttal exists.
+
+<a id="ref-42"></a>[42] Nicolai Foss, Matthew McCaffrey and Carmen-Elena Dorobat. "[When Henry Met Fritz](https://journals.sagepub.com/doi/10.1177/10564926211031290)." Journal of Management Inquiry, 2022. [academic] **Not read**: blocked. Cited only for the fact that the debate continues.
+
+<a id="ref-43"></a>[43] Rita Gunther McGrath and Ian MacMillan. "Discovery-Driven Planning" (HBR 1995), read via [an encyclopedia summary](https://en.wikipedia.org/wiki/Discovery-driven_planning). [reference] The summary was read, not the article.

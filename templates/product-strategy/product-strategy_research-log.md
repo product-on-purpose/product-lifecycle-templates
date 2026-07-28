@@ -129,7 +129,7 @@ Contested/time-bound: measures business planning as an activity, not a document.
 
 **[17] Peter Devenish and Tom Fisher - "Is Strategic Planning Worth the Effort? A Study of Firm Performance versus Planning Comprehensiveness in Australia," Journal of Management and Organization.** academic. **fetched-and-verified.**
 `https://www.cambridge.org/core/journals/journal-of-management-and-organization/article/is-strategic-planning-worth-the-effort-a-study-of-firm-performance-versus-planning-comprehensiveness-in-australia/752CF2F9DDF0B2B809E41DC01D871808`
-Supports: the counter-finding, and the self-report hazard that matters most to this bundle.
+Supports: the counter-finding, and the self-report hazard that matters most to this bundle. The study surveyed **77 listed Australian firms**.
 Quotable: "A range of statistical tests did not reveal any significant correlation between strategic planning at any of the three levels and the financial performance of the firm."
 Quotable: "However, positive correlations were found with several subjective performance measures, suggesting that respondents generally believe that strategic planning is helping their company."
 

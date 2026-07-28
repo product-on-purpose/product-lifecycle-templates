@@ -11,7 +11,7 @@ sizes_available: [lean, full]
 default_size: lean
 sizing_guidance: "Use lean (diagnosis, guiding policy, coherent action, and what that rules out) when a team that already shares the context needs to settle what to work on; four sections is enough to end the argument and be cited later. Use full when the strategy has to survive people who were not in the room: it adds who the strategy is and is not for, a falsifiable way to tell whether it is working, the assumptions it would die without, and an event that brings the team back to it. Full is also the right size when the strategy will be handed to an incoming leader, read alongside a funding decision, or used to decline something expensive."
 default_format: kernel
-default_format_guidance: "Reach for the kernel when the hard part is that nobody agrees what the problem is. Diagnosis, guiding policy and coherent action force the obstacle to be named before any choice is made, which is why it is the default: the most common defect in a strategy document is that it never says what makes the goal hard."
+default_format_guidance: "Reach for the kernel when the hard part is that nobody agrees what the problem is. Diagnosis, guiding policy and coherent action force the obstacle to be named before any choice is made, which is why it is the default: the defect this bundle's sources converge on is a strategy that never says what makes the goal hard."
 additional_formats:
   - id: one-pager
     sizes: [full]

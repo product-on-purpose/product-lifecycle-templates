@@ -46,8 +46,8 @@ section 4.
 WHAT A PRODUCT STRATEGY IS, AND IS NOT
 It is the set of choices that gets you from where you are to the vision. It is NOT a vision (that is the
 destination), NOT a roadmap (that is sequence and timing), NOT OKRs (those measure a period's execution),
-and NOT a business strategy (that decides where the company invests). The strategy/roadmap boundary is the
-one teams get wrong most often: the moment dates and feature names appear, you are writing the next document
+and NOT a business strategy (that decides where the company invests). The strategy/roadmap boundary is the one this
+bundle's sources return to most often: the moment dates and feature names appear, you are writing the next document
 down. See product-strategy_companion.md section 8.
 
 HOW TO FILL THIS IN
@@ -77,13 +77,13 @@ HOW TO FILL THIS IN
      ASK   What is actually stopping us? If this obstacle disappeared overnight, would the goal become easy?
            Is this a cause or a symptom? Would a competitor recognise this as their obstacle too, and if so,
            have we named ours?
-     GOOD  "Analysts can answer any question we support, but only by asking us. Every self-serve path we
-           have shipped assumes the user already knows which table to start from, and 70 percent of new
-           accounts never build a second view. Our growth problem is not acquisition, it is that the product
-           requires expertise we cannot ship."
+     GOOD  "Dispatchers build a route in under a minute, but only once someone has told them which jobs are
+           genuinely urgent. Urgency lives in the free-text notes field: in the 200 jobs we sampled, three of
+           every five emergencies were caught by a human reading it. Our scheduling engine is fast and it is
+           scheduling the wrong things first."
            (one obstacle, evidenced, and it rules some responses out)
-     WEAK  "The market is increasingly competitive and customers expect more from analytics tools. We need
-           to keep innovating to stay ahead."
+     WEAK  "The market is increasingly competitive and customers expect more from field-service software.
+           We need to keep innovating to stay ahead."
            (true of every company in the category; names nothing that could be wrong)
      TRAP  Writing the goal here instead of the obstacle. "We need to grow self-serve revenue" is a target.
            The diagnosis is why that has not already happened. -->
@@ -101,11 +101,12 @@ HOW TO FILL THIS IN
      ASK   What does this rule out? Which team's current plan changes because of this? If someone disagreed
            with us, what would they be arguing for instead? Is this an approach, or a restatement of the
            goal?
-     GOOD  "We will make the product usable without product expertise, rather than making expertise easier
-           to acquire. Where we have a choice between teaching the user and removing the need to know, we
-           remove the need to know."
-           (an approach with a real alternative it rejects: better documentation and training)
-     WEAK  "We will focus on delivering an excellent user experience and driving self-serve growth."
+     GOOD  "We will infer urgency from the job record rather than asking dispatchers to encode it. Given a
+           choice between a better form for entering priority and a model that reads what is already
+           written, we read what is already written."
+           (an approach with a real alternative it rejects: redesigning the intake form)
+     WEAK  "We will focus on delivering an excellent dispatcher experience and driving scheduling
+           efficiency."
            (names no alternative, so it forbids nothing)
      TRAP  Listing several policies. If you have three, you have not chosen; you have deferred the choice to
            whoever reads this next, and they will pick the one that suits them. -->
@@ -123,13 +124,13 @@ HOW TO FILL THIS IN
      ASK   Does each action serve the policy, or just seem generally good? Which two of these make each
            other stronger? If we dropped one, would the others still work? Are these kinds of work, or
            are they release dates wearing a disguise?
-     GOOD  "1. Ship question-first entry points, so the first interaction is a question rather than a
-           schema. 2. Move our modelling work into defaults, so a new account has useful views on day one.
-           3. Instrument the second-view moment as our leading indicator, so every team can see the same
-           obstacle we diagnosed. The first two remove the need for expertise; the third keeps us honest
-           about whether we did."
+     GOOD  "1. Extract urgency signals from the notes field at ingest, so priority exists before a human
+           reads anything. 2. Show the inferred priority beside the dispatcher's own, so disagreement is
+           visible rather than silent. 3. Track the override rate as our leading indicator. The first two
+           make the inference usable; the third is how we learn whether it is any good."
            (each serves the policy, and they compound)
-     WEAK  "Launch AI assistant in Q3. Redesign onboarding. Hire two designers. Improve documentation."
+     WEAK  "Launch AI assistant in Q3. Redesign the intake form. Hire two data scientists. Improve the
+           mobile app."
            (a dated to-do list; nothing here reinforces anything else)
      TRAP  Writing the roadmap. If a reader could build a Gantt chart directly from this section, it has
            stopped being strategy. Sequence and timing belong in the roadmap, which is downstream of this
@@ -141,17 +142,18 @@ HOW TO FILL THIS IN
 
 <!-- WHAT  The things you are explicitly declining this period, and one line each on why. Two to five. Name
            real options, not straw ones.
-     WHY   This is the section that makes the other three usable, and the one most often missing. The test
+     WHY   This is the section that makes the other three usable, and the one every quality
+           test in this bundle's research turns on. The test
            practitioners actually apply is whether the team can say "this is a really great idea... but
            we're not going to build it" and mean it. A strategy that makes nobody uncomfortable is a wish
            list. Deep dive: product-strategy_companion.md section 3 (What We Are Not Doing) and section 7.
      ASK   What has been asked for repeatedly that we are now refusing? Which of these would a competitor
            happily do? Who will be unhappy when they read this, and have we told them? If nothing here
            costs us anything, have we actually chosen?
-     GOOD  "1. We are not building a mobile authoring experience this year. Mobile is 4 percent of authoring
-           sessions and it competes for the same design capacity as question-first entry. 2. We are not
-           pursuing the enterprise data-governance RFPs. They are winnable but they pull us toward the
-           expertise-heavy product we are trying to stop being."
+     GOOD  "1. We are not shipping the customer-facing arrival-window feature this year. It is the most
+           requested item in our backlog and it depends on scheduling accuracy we do not yet have. 2. We are
+           not taking on national facilities-management contractors. They are winnable and they buy on
+           compliance reporting, which pulls us back toward the forms-and-fields product."
            (both were live options; both have a named cost)
      WEAK  "We are not going to compromise on quality or lose focus on the customer."
            (nobody was proposing either; refusing nothing)

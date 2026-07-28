@@ -26,10 +26,12 @@ source_template_version: 0.1.0
 
 ## Diagnosis
 
-Acme can answer almost any question an analyst has, but only if the analyst already knows how to ask it. Every
+Acme can answer almost any question an unaccompanied analyst has, but only if they already know how to ask it. Every
 self-serve path we have shipped begins at the schema: pick a dataset, pick a join, pick a measure. Our own
-telemetry says that is where new users stop. **70 percent of new accounts never build a second view**, and
-session recordings put the drop at the dataset picker, not at sign-up and not at sharing.
+telemetry says that is where new users stop: **only 31 percent of new accounts build a second view within
+14 days**, and session recordings put the drop
+at the dataset picker rather than at sign-up or at sharing. Of the accounts that stall there, two thirds
+never return to authoring at all.
 
 The consequence is that our growth depends on a resource we cannot ship: expertise. Accounts that succeed
 either arrive with a data analyst or buy our services team's time. Both convert well and neither scales,
@@ -41,8 +43,9 @@ the user does not have, and we have been treating that as a documentation proble
 ## Target Segments, and Non-Targets
 
 **Target: the unaccompanied analyst.** Someone at a 50-500 person company who owns a number, answers
-questions about it weekly, and has no data team behind them. They are 61 percent of new accounts and 22
-percent of revenue, and the gap between those two numbers is this strategy's whole subject.
+questions about it weekly, and has no data team behind them. This is the same person the
+[PRD example](../prd/prd_example.md) calls the **Recurring Analyst**; that document names them by behaviour
+and this one by what they lack. They are 61 percent of new accounts and 22 percent of revenue, and the gap between those two numbers is this strategy's whole subject.
 
 **Non-target this period: enterprise data-platform teams.** They buy on governance, lineage and modelling
 depth. We win some of these deals and they are profitable. They are still out of scope for FY26, because
@@ -77,6 +80,10 @@ happens before anyone reads anything.
 4. **Move services capacity from custom modelling to defaults.** The same people, the same skill, applied
    once per vertical instead of once per account.
 
+All four serve the vision's claim that Acme belongs **inside the operational context where the question
+occurred** rather than being a destination people travel to. Question-first entry is that claim made
+concrete: the question arrives where the work is, not after a modelling step.
+
 Actions 1 and 2 reinforce each other directly: question-first entry is only credible if there is a modelled
 default underneath it to answer against, and defaults are only discoverable if the user does not have to
 name them. Action 4 is what pays for action 2. Action 3 is what tells us whether the diagnosis was right,
@@ -97,11 +104,13 @@ which is why it ships first.
 
 ## How We Will Know It Is Working
 
-**Leading indicator:** share of new accounts that build a second view within 14 days. Baseline 30 percent
-(Q4 FY25), target **55 percent by the end of Q3 FY26**.
+**Leading indicator:** share of new accounts that build a second view within 14 days. Baseline 31 percent
+(Q4 FY25), target **50 percent by the end of Q3 FY26**.
 
-**Lagging:** self-serve net revenue retention, and the FY26 "Time to Insight" company goal (median time from
-opening a report to answering the question that prompted it), which this strategy is the product half of.
+**Lagging:** self-serve net revenue retention, and the FY26 "Time to Insight" company goal, which the PRD
+states as the median time
+from opening a report to **acting on it** and the KPI dashboard operationalises as a logged action. Those
+are deliberate narrowings of the same goal, not three different goals; this strategy is its product half.
 
 **The falsifier, stated in advance:** if the second-view rate has not moved by the end of Q3, we treat the
 diagnosis as wrong rather than the execution as insufficient. The alternative diagnosis we would test next is
@@ -111,7 +120,7 @@ that the drop-off is about trust in the numbers, not about how they are construc
 
 | Assumption | Evidence we have | Evidence we lack | Test |
 |---|---|---|---|
-| Analysts stop at the schema because they lack context, not intent | 12 of 15 session recordings show a return to documentation before abandoning | We have not spoken to anyone who abandoned and never returned | 10 interviews with lapsed trials, by 15 March |
+| Analysts stop at the schema because they lack context, not intent | 9 of 14 session recordings show a return to documentation before abandoning | We have not spoken to anyone who abandoned and never returned | 12 interviews with lapsed trials, by 20 March |
 | A question-first entry point can be accurate enough to be trusted | Prototype resolved 71 percent of test questions to the right dataset | No production data; no measure of what happens after a wrong answer | Ship to 5 percent of new accounts in Q2, measure correction rate |
 | Per-vertical defaults generalise | Services team reports 4 of 6 recent implementations were near-identical | The other 2 were not, and we do not know why | Build defaults for the 2 largest verticals first and measure fill rate |
 | Holding enterprise does not break the number | Enterprise is 31 percent of revenue and under contract through FY26 | We do not know the renewal impact of two years of no governance investment | Reviewed at the Q3 renewal cycle, with the CRO |
@@ -122,11 +131,12 @@ obstacle.
 
 ## Review Trigger
 
-Reviewed when **any** of these happens, and on **30 September 2026** regardless:
+Reviewed when **any** of these happens, and on **15 October 2026** regardless:
 
-- the second-view rate moves 10 points in either direction;
+- the second-view rate moves 8 points in either direction;
 - the lapsed-trial interviews contradict the first assumption;
-- a target-segment win rate drops in two consecutive quarters.
+- a target-segment win rate drops in two consecutive quarters;
+- the services team reports that per-vertical defaults are not generalising.
 
 **Owner: Dana Okoro, VP Product.** A competitor announcement is explicitly *not* a trigger. If we rewrite
 this document every time someone else ships something, we will have a series of reactions rather than a

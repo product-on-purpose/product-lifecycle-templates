@@ -58,11 +58,11 @@ HOW TO FILL THIS IN
            happen". Deep dive: product-strategy_companion.md section 3 (Diagnosis).
      ASK   What is actually stopping us? If this obstacle disappeared overnight, would the goal become easy?
            Is this a cause or a symptom? Would a competitor recognise this as their obstacle too?
-     GOOD  "Analysts can answer any question we support, but only by asking us. Every self-serve path we
-           have shipped assumes the user already knows which table to start from, and 70 percent of new
-           accounts never build a second view. Our growth problem is not acquisition, it is that the product
-           requires expertise we cannot ship."
-     WEAK  "The market is increasingly competitive and customers expect more from analytics tools."
+     GOOD  "Dispatchers build a route in under a minute, but only once someone has told them which jobs are
+           genuinely urgent. Urgency lives in the free-text notes field: in the 200 jobs we sampled, three of
+           every five emergencies were caught by a human reading it. Our scheduling engine is fast and it is
+           scheduling the wrong things first."
+     WEAK  "The market is increasingly competitive and customers expect more from field-service software."
            (true of every company in the category; names nothing that could be wrong)
      TRAP  Writing the goal here instead of the obstacle. "We need to grow self-serve revenue" is a target;
            the diagnosis is why that has not already happened. -->
@@ -80,12 +80,11 @@ HOW TO FILL THIS IN
      ASK   Who do we win with today, and is that who we are aiming at? Which segment are we declining, and
            who inside the company will object? If we optimised entirely for the target, which current
            customer would be worse off?
-     GOOD  "Target: analysts at 50-500 person companies with no dedicated data team, who own a number and
-           answer questions about it weekly. Non-target this period: enterprise data platform teams. They
-           buy on governance and lineage, which pulls us toward the expertise-heavy product we are trying to
-           stop being."
+     GOOD  "Target: dispatchers at 10-80 vehicle operators who schedule the same day work arrives.
+           Non-target this period: national facilities-management contractors. They buy on compliance
+           reporting, which pulls us back toward the forms-and-fields product we are trying to stop being."
            (both named, with the cost of the refusal stated)
-     WEAK  "Target: growing companies that value data-driven decision making."
+     WEAK  "Target: growing service businesses that value operational efficiency."
            (excludes nobody, so it is not a segmentation)
      TRAP  Listing every segment you sell to. A target list that matches your customer list is a description
            of the past, not a choice about the future. -->
@@ -102,10 +101,11 @@ HOW TO FILL THIS IN
            Policy).
      ASK   What does this rule out? Which team's current plan changes because of this? If someone disagreed,
            what would they argue for instead?
-     GOOD  "We will make the product usable without product expertise, rather than making expertise easier
-           to acquire. Where we have a choice between teaching the user and removing the need to know, we
-           remove the need to know."
-     WEAK  "We will focus on delivering an excellent user experience and driving self-serve growth."
+     GOOD  "We will infer urgency from the job record rather than asking dispatchers to encode it. Given a
+           choice between a better form for entering priority and a model that reads what is already
+           written, we read what is already written."
+     WEAK  "We will focus on delivering an excellent dispatcher experience and driving scheduling
+           efficiency."
      TRAP  Listing several policies. If you have three, you have deferred the choice to whoever reads this
            next. -->
 
@@ -120,10 +120,10 @@ HOW TO FILL THIS IN
            Deep dive: product-strategy_companion.md section 3 (Coherent Action).
      ASK   Does each action serve the policy, or just seem generally good? Which two make each other
            stronger? Are these kinds of work, or release dates wearing a disguise?
-     GOOD  "1. Ship question-first entry points. 2. Move our modelling work into defaults. 3. Instrument the
-           second-view moment as our leading indicator. The first two remove the need for expertise; the
-           third keeps us honest about whether we did."
-     WEAK  "Launch AI assistant in Q3. Redesign onboarding. Hire two designers."
+     GOOD  "1. Extract urgency signals from the notes field at ingest. 2. Show the inferred priority beside
+           the dispatcher's own, so disagreement is visible. 3. Track the override rate as our leading
+           indicator. The first two make the inference usable; the third is how we learn whether it works."
+     WEAK  "Launch AI assistant in Q3. Redesign the intake form. Hire two data scientists."
            (a dated to-do list; nothing reinforces anything else)
      TRAP  Writing the roadmap. If a reader could build a Gantt chart from this section, it has stopped
            being strategy. -->
@@ -134,14 +134,15 @@ HOW TO FILL THIS IN
 
 <!-- WHAT  The things you are explicitly declining this period, and one line each on why. Two to five. Name
            real options.
-     WHY   This is the section that makes the others usable. The test practitioners apply is whether the
+     WHY   This is the section that makes the others usable, and the one every quality test
+           in this bundle's research turns on. The test practitioners apply is whether the
            team can say "this is a really great idea... but we're not going to build it" and mean it. A
            strategy that makes nobody uncomfortable is a wish list. Deep dive:
            product-strategy_companion.md section 3 (What We Are Not Doing) and section 7.
      ASK   What has been asked for repeatedly that we are now refusing? Who will be unhappy when they read
            this, and have we told them? If nothing here costs us anything, have we chosen?
-     GOOD  "We are not building a mobile authoring experience this year. Mobile is 4 percent of authoring
-           sessions and it competes for the same design capacity as question-first entry."
+     GOOD  "We are not shipping the customer-facing arrival-window feature this year. It is the most
+           requested item in our backlog and it depends on scheduling accuracy we do not yet have."
      WEAK  "We are not going to compromise on quality or lose focus on the customer."
      TRAP  Listing only things nobody wanted. A refusal that costs nothing proves nothing. -->
 
@@ -157,9 +158,9 @@ HOW TO FILL THIS IN
            product-strategy_companion.md section 3 (How We Will Know) and section 8.
      ASK   What number moves first if this is working? What would we see in eight weeks, not eight months?
            What result would make us abandon this strategy rather than try harder at it?
-     GOOD  "Leading: share of new accounts that build a second view within 14 days, from 30 percent to 55
-           percent by end of Q3. Lagging: self-serve net revenue retention. If the leading indicator has not
-           moved by the end of Q3 we treat the diagnosis as wrong, not the execution."
+     GOOD  "Leading: dispatcher override rate on inferred priority, from 48 percent to under 20 percent by
+           the end of Q2. Lagging: emergency jobs completed within the promised window. If the override rate
+           has not moved by the end of Q2 we treat the diagnosis as wrong, not the execution."
            (one leading, one lagging, and a stated falsifier)
      WEAK  "Increase engagement and drive revenue growth."
            (no baseline, no date, nothing that could come back negative)
@@ -178,10 +179,9 @@ HOW TO FILL THIS IN
            product-strategy_companion.md section 3 (Assumptions and Risks) and section 6.
      ASK   What are we assuming about users that we have not checked? Which assumption, if wrong, breaks the
            whole strategy rather than one action? What is the cheapest test of that one?
-     GOOD  "We assume analysts abandon at the schema step because they lack context, not because they lack
-           intent. Evidence: 12 of 15 session recordings show a return to the docs. Counter-evidence: we
-           have not talked to anyone who abandoned and did not come back. Test: 10 interviews with lapsed
-           trials by 15 March."
+     GOOD  "We assume urgency is recoverable from the notes field. Evidence: three of five sampled
+           emergencies had it there in plain language. Counter-evidence: we never looked at the two that did
+           not, and they may be the expensive ones. Test: read the 40 most costly late jobs by 15 March."
            (falsifiable, with the gap in the evidence stated)
      WEAK  "Risk: competitors may launch similar features."
            (generic, not tied to this strategy, and no test)
@@ -200,8 +200,8 @@ HOW TO FILL THIS IN
            announcement are a symptom. Deep dive: product-strategy_companion.md section 3 (Review Trigger).
      ASK   What would have to happen for this to be wrong? Who is responsible for noticing? What is the date
            we look again even if nothing happens?
-     GOOD  "Reviewed when the second-view rate moves 10 points in either direction, when a target segment's
-           win rate drops two quarters running, or on 30 September, whichever comes first. Owner: the head
+     GOOD  "Reviewed when the override rate moves 10 points in either direction, when a target-segment
+           renewal is lost on scheduling accuracy, or on 31 August, whichever comes first. Owner: the head
            of product."
            (an event, a backstop, and a name)
      WEAK  "Reviewed quarterly."
