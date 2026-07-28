@@ -104,7 +104,7 @@ patched because the asymmetry was in the decision, not just the implementation.
 
 **The default format keeps the plain filenames.** `<id>_template-lean.md` is the default format's lean
 variant, exactly as today. Additional formats take a compound token, `<id>_template-<format>-<size>.md`. This
-is the design choice that makes adoption cheap: migrating the other 18 bundles is **adding one key**, with no
+is the design choice that makes adoption cheap: migrating the other 15 bundles is **adding one key**, with no
 file renames and no broken paths.
 
 **Strict nesting moves inside a format.** For each format, its smaller variants must nest in its larger ones.
@@ -124,7 +124,7 @@ tonally wrong for the audience). `output_formats` is **reserved** for file types
 collide.
 
 **Adoption is incremental and deliberately narrow.** This ADR lands the capability and adopts it for
-`product-vision` only. The other 18 bundles are **not** backfilled now. They will be backfilled once
+`product-vision` only. The other 15 bundles are **not** backfilled now. They will be backfilled once
 `product-roadmap` and `product-strategy` have shown whether their format variation is as real as vision's,
 which is the evidence that should drive a 27-type commitment rather than a single researched data point.
 
@@ -187,4 +187,11 @@ Three formats ship; the fourth is described in the companion with its attributio
 
 The build order consequence is recorded in
 [docs/internal/buildout-specs.md](../buildout-specs.md): the strategy-docs family is built with this
-capability available, and the 18-bundle backfill is tracked there rather than assumed.
+capability available, and the 15-bundle backfill is tracked there rather than assumed.
+
+**Correction, 2026-07-27, before this record merged.** Three sentences above said the backfill covers
+**18** bundles. It covers **15**: sixteen bundles exist once `product-vision` lands and `product-vision`
+is the one that declares a format, so fifteen do not. The 18 came from counting directories under
+`templates/`, which holds two that are not bundles (`_working` and `.impeccable`). Corrected in place
+rather than left standing, because unlike the `default_format_guidance` correction above this was an
+error in a count, not in the decision.

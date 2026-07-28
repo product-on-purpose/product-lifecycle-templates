@@ -172,7 +172,7 @@ remain** - exactly the 19 rows above.
   meant 5 of 27 plus `rfc`. Accepted ADRs are records, not living documents, so it stays as written and is
   noted here instead.
 
-### D-E. The format axis, and the 18-bundle backfill it defers (CAPABILITY LANDED 2026-07-25)
+### D-E. The format axis, and the 15-bundle backfill it defers (CAPABILITY LANDED 2026-07-25)
 
 Building `product-vision` surfaced a document type whose real variation is not size. Four shapes circulate
 (canvas, narrative, PR/FAQ, positioning sentence) and they are **siblings, not parent and child**, so no
@@ -195,9 +195,9 @@ stray detection and `bundle_files()` both iterated known size tokens, so a file 
 | Capability (ADR, schema, checks A and C, test, CI, manifest) | **done 2026-07-25** |
 | `product-vision` ships canvas + narrative + PR/FAQ | in progress |
 | Decide whether `product-roadmap` and `product-strategy` need a second format | **open**, answered by their own research |
-| Backfill `default_format` on the other 18 bundles | **open**, deliberately deferred |
+| Backfill `default_format` on the other 15 bundles | **open**, deliberately deferred |
 
-**Why the backfill waits.** Declaring a format for 18 bundles is a 27-type commitment, and the only researched
+**Why the backfill waits.** Declaring a format for 15 bundles is a 27-type commitment, and the only researched
 evidence today is one type. Roadmap and strategy are built next and will say whether format variation is
 common or peculiar to vision. Deferring costs one known inconsistency, recorded in the ADR: product-vision
 names its format and `adr` does not, despite both having made the same kind of choice.
