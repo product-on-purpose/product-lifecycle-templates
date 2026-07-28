@@ -12,6 +12,81 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Backfilled 2026-07-26 covering 28 commits since 0.1.0. This section was empty while nine bundles, five
+family contracts and fourteen decision records landed, which is recorded as finding DF-3 (gated documents stay fresh, ungated ones drift) in
+[`STATE.md`](STATE.md) rather than quietly corrected: the documents this repository gates for freshness
+stayed fresh, and the ones it does not gate drifted.
+
+### Added
+
+- **Nine bundles, taking the library from 6 to 15**, and completing three families:
+  - `delivery-docs` completed: `product-backlog`, `sprint-backlog`.
+  - `decision-docs` completed: `sdd`.
+  - `governance-docs`, a new family and the first on the **classification** axis: `risk-register`,
+    `raid-log`, `kpi-dashboard`.
+  - `qa-docs`, a new family at phase `develop`: `test-plan`, `test-case`, `bug-report`. Their examples form
+    the library's first **cross-family** chain, running from a risk to a test plan row to a test case to a
+    defect to the regression that guards it.
+- **Five family contracts**, each ratified before its members were built and enforced by gate check K:
+  [delivery-docs](docs/internal/decisions/0020-adopt-delivery-docs-family-contract.md) (ADR 0020),
+  [decision-docs](docs/internal/decisions/0022-adopt-decision-docs-family-contract.md) (ADR 0022),
+  [governance-docs](docs/internal/decisions/0024-adopt-governance-docs-family-contract.md) (ADR 0024),
+  [qa-docs](docs/internal/decisions/0026-adopt-qa-docs-family-contract.md) (ADR 0026),
+  [strategy-docs](docs/internal/decisions/0027-adopt-strategy-docs-family-contract.md) (ADR 0027, the first
+  to gate a **set** of axis values).
+- **A second taxonomy axis**: a bundle declares `phase` XOR `classification`, never both, never neither
+  ([ADR 0015](docs/internal/decisions/0015-second-taxonomy-axis-phase-xor-classification.md)). The Tier-1
+  family map was resolved against it in
+  [ADR 0023](docs/internal/decisions/0023-resolve-the-tier-1-family-taxonomy.md).
+- **A format axis, orthogonal to size** ([ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md)):
+  optional `default_format` and `additional_formats` keys let one bundle ship a document in several shapes.
+  Strict nesting now applies **within** a format and is never asserted across formats, because a canvas and a
+  press release are siblings rather than parent and child. The default format keeps the plain filenames, so
+  adopting it in an existing bundle is a metadata addition with no renames.
+- **A machine-checkable metadata schema**, `tools/meta.schema.json`, validated in CI as gate check J
+  ([ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md),
+  [ADR 0017](docs/internal/decisions/0017-gate-may-use-jsonschema-for-meta-validation.md)).
+- **A generated machine catalog**, `manifest.json`, committed to version control and kept fresh by the gate
+  ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)), plus a generated atlas.
+- **Selection metadata** for agents budgeting context: authored `default_size` and `sizing_guidance`, and a
+  generated heuristic `approx_tokens` with no tokenizer dependency
+  ([ADR 0019](docs/internal/decisions/0019-selection-metadata-and-approx-tokens.md)).
+- **Executable tests for gate logic that has no live subject**
+  ([ADR 0025](docs/internal/decisions/0025-executable-tests-for-gate-logic.md)): `tools/test-check-k.py`
+  (59 assertions) and `tools/test-check-formats.py` (58 assertions). Both run in CI and block merge.
+- **Freshness gates** for the generated artifacts: `gen-manifest.py --check`, `gen-atlas.py --check`, and
+  `check-adr-index.py`, each added after the corresponding drift was found in the tree rather than in theory.
+- **A scope commitment**: complete the catalog's 27-type Tier-1 floor on a schedule, with grow-by-pull
+  reserved for Tier 2 and Tier 3
+  ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 14 of the 27 are built.
+- **Build-out documentation**: `docs/internal/buildout-specs.md` (the per-type spec sheet and progress
+  tracker) and `docs/internal/bundle-pipeline.md` (the six-phase runbook, including the honest-retrieval
+  standard and the adversarial four-lens review).
+
+### Changed
+
+- The gate grew from nine checks to **eleven** (adding check J, meta-schema validation, and check K, family
+  contract conformance).
+- Check A now rejects **any** undeclared `_template-*.md` file, and `bundle_files()` scans by pattern rather
+  than by size vocabulary. Previously both iterated known size tokens, so a file such as
+  `x_template-narrative-full.md` failed no check **and was read by no scan**, meaning it could ship without
+  ever being checked for dashes, citations, or links (ADR 0028).
+- The catalog's `phase` field was renamed to `stage`, to stop it colliding with the bundle metadata's own
+  `phase` (TX-2).
+- The README was restyled without changing its claims.
+
+### Fixed
+
+- `release-notes` gained a first-release mode, so the template no longer assumes a previous version exists
+  (DF-1, template 0.1.1).
+- The catalog's prose said "core 28-type must-have tier" against its own machine data's 27, in two places.
+  Corrected with a dated note; the Tier-1 floor count and two stale gate counts were reconciled at the same
+  time.
+- `bug-report` research log entry [17] declared its retrieval status as `not retrieved` rather than the
+  schema's enum token `not-retrieved`.
+- `risk-register` research log entry [33] carried no URL. It is a print book, and the absence is now
+  documented as deliberate rather than left looking like an omission.
+
 ## [0.1.0] - 2026-07-17
 
 First tagged release. Status `beta`: gate-green and cited to raw sources, with zero fills by anyone

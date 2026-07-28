@@ -1,5 +1,23 @@
 # Delivery Roadmap (Expanded): From Audited Prototype to Reference Implementation
 
+> **Currency note, added 2026-07-26. This file is a dated projection; [`STATE.md`](../../STATE.md) outranks
+> it wherever they disagree.** That is not a criticism of the roadmap, it is the rule STATE.md was created to
+> enforce. Read this banner before trusting any sequencing below.
+>
+> **Still live:** the milestone and work-package numbering. STATE.md's "Next milestone" section still tracks
+> WP-25 through WP-28 against this file, and sections 5 (non-goals), 6 (risks) and 7 (traceability) have not
+> been overtaken.
+>
+> **Overtaken:** everything about bundle sequencing, family composition, and what gets built next. That is
+> now governed by [`buildout-specs.md`](buildout-specs.md) (per-type specs, the taxonomy decisions D-A
+> through D-E, and the live progress table) and executed per
+> [`bundle-pipeline.md`](bundle-pipeline.md). This file was written 2026-07-10 and last cites **ADR 0020**;
+> there are now **28** decision records, and eight of them (0021 through 0028) postdate it and change the
+> plan it describes. Do not read section 3's work packages as the current build order.
+>
+> Recorded as finding **DF-3** in STATE.md: the documents this repository gates for freshness stayed fresh,
+> and the ones it does not gate drifted. This file is one of the latter.
+
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
 - **Status:** proposal for maintainer ratification (recommend recording the adopted version as an ADR)

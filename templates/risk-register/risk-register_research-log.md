@@ -287,6 +287,9 @@ probable magnitude.
 Quotable: "probable frequency and probable magnitude of future loss".
 
 **[33] Douglas W. Hubbard - The Failure of Risk Management (Wiley, 2009; 2nd ed. 2019).** primary (book). **not-retrieved.**
+No URL, deliberately: this is a print book that was not fetched, identified by publisher, year and edition
+rather than by link. Inventing a bookseller URL nobody opened would add the appearance of retrieval without
+the fact of it, which is the opposite of what the retrieval status is for.
 Supports: the book-length argument that popular scoring methods (heat maps, 1-5 likelihood x impact) can be
 worse than doing nothing by creating false confidence. Named here as the canonical source of that argument;
 not fetched, so it carries no verbatim quote. The specific mechanism is cited via [24] and secondary

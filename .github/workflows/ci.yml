@@ -68,6 +68,14 @@ jobs:
       - name: ADR index
         run: python tools/check-adr-index.py
 
+      # Changelog freshness (DF-3). The three generated artifacts above are gated for drift and stayed
+      # fresh; the changelog was not gated and went 28 commits, nine bundles and fourteen decision records
+      # without an entry. This fails if any post-0.1.0 decision record is absent from CHANGELOG.md. It is
+      # deliberately shallow: it proves nothing is missing, not that what is there is any good, and it says
+      # so in its own output.
+      - name: Changelog freshness
+        run: python tools/check-changelog.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
