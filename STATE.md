@@ -91,9 +91,10 @@ evidence of one meeting a real task, and it took exactly one use to find a real 
 for the usage loop (roadmap M3) in one data point.
 
 **DF-2, 2026-07-25. The research log has three formats, and the gate has never checked any of them.**
-Found by auditing whether every source in every log carries its annotation. Seven bundles use numbered prose
-entries; five use a numbered markdown table; three (`product-backlog`, `sdd`, `sprint-backlog`) group sources
-under `###` subsections with no per-source retrieval status a checker can see. The honest-retrieval standard
+Found by auditing whether every source in every log carries its annotation. Of the fifteen bundles in the
+tree on that date, six use numbered prose entries; six use a numbered markdown table; three
+(`product-backlog`, `sdd`, `sprint-backlog`) group sources under `###` subsections with no per-source
+retrieval status a checker can see. The honest-retrieval standard
 ([`bundle-pipeline.md`](docs/internal/bundle-pipeline.md) phase 1) requires `title, author_or_org, url, tier,
 retrieval_status, supports` for each source, but that contract binds **the research workflow's JSON schema**,
 not the markdown log the workflow produces. Nothing carried it across, and fifteen bundles shipped without
