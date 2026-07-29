@@ -17,6 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
+<!-- counts: bundles=18, tier1=17, tier1remaining=10, checkformats=64 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -185,8 +186,8 @@ because the field's most-cited authority attacks the shape we would otherwise pi
 **[ADR 0028](decisions/0028-adopt-a-format-axis.md) landed the capability**: optional `default_format` and
 `additional_formats` keys, nesting enforced within a format and never across formats, the default format
 keeping the plain filenames so adoption is a metadata addition rather than a rename. Covered by
-`tools/test-check-formats.py` (60 assertions once `product-vision` landed; 58 before it, since the count
-scales with the live tree). It also closed a real gate gap found on the way: check A's
+`tools/test-check-formats.py` (64 assertions as of `product-roadmap`; it was 58 when the axis landed, since
+the count scales with the live tree and every bundle adds to it). It also closed a real gate gap found on the way: check A's
 stray detection and `bundle_files()` both iterated known size tokens, so a file such as
 `x_template-narrative-full.md` failed no check **and was read by no scan**.
 

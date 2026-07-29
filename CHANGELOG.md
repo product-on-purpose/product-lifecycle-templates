@@ -53,13 +53,13 @@ stayed fresh, and the ones it does not gate drifted.
   ([ADR 0019](docs/internal/decisions/0019-selection-metadata-and-approx-tokens.md)).
 - **Executable tests for gate logic that has no live subject**
   ([ADR 0025](docs/internal/decisions/0025-executable-tests-for-gate-logic.md)): `tools/test-check-k.py`
-  (61 assertions) and `tools/test-check-formats.py` (60 assertions). Both run in CI and block merge. Both
+  (65 assertions) and `tools/test-check-formats.py` (64 assertions). Both run in CI and block merge. Both
   counts scale with the live tree, so they are read from the tools rather than quoted from memory.
 - **Freshness gates** for the generated artifacts: `gen-manifest.py --check`, `gen-atlas.py --check`, and
   `check-adr-index.py`, each added after the corresponding drift was found in the tree rather than in theory.
 - **A scope commitment**: complete the catalog's 27-type Tier-1 floor on a schedule, with grow-by-pull
   reserved for Tier 2 and Tier 3
-  ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 15 of the 27 are built.
+  ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 17 of the 27 are built.
 - **`product-roadmap`**, the eighteenth bundle and the third `strategy-docs` member. Ships three formats
   from eight researched: `now-next-later` (default), the GO goal-and-metric grid, and the themes format that
   carries vision and objectives inside the document. **The five rejections matter more than the three
@@ -86,8 +86,8 @@ stayed fresh, and the ones it does not gate drifted.
   Every source in a checked log must carry a contiguous unique number, an identity, a URL or an explicit
   statement of why there is none, a tier, a retrieval status from the three-token enum, and a `Supports:`
   clause. All three numbered layouts are legal, because the contract is the rule and presentation is not.
-  Covered by `tools/test-check-research-logs.py` (48 assertions, mutation-checked against three deliberate
-  breakages). **10 of 16 logs and 344 of 430 sources are gated**; the six table-layout logs are exempt by
+  Covered by `tools/test-check-research-logs.py` (80 assertions, mutation-checked against seven deliberate
+  breakages). **12 of 18 logs and 472 of 558 sources are gated**; the six table-layout logs are exempt by
   name with a measured reason printed on every run, and tracked as finding DF-4.
   **Building it disproved the finding it was built for:** the three logs ADR 0029 called status-less carry
   the contract in full, in a third numbered layout the original audit's regexes did not match. The ADR

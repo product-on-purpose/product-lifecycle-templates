@@ -12,11 +12,17 @@
 > now governed by [`buildout-specs.md`](buildout-specs.md) (per-type specs, the taxonomy decisions D-A
 > through D-E, and the live progress table) and executed per
 > [`bundle-pipeline.md`](bundle-pipeline.md). This file was written 2026-07-10 and last cites **ADR 0020**;
-> there are now **28** decision records, and eight of them (0021 through 0028) postdate it and change the
+> there are now **29** decision records, and nine of them (0021 through 0029) postdate it and change the
 > plan it describes. Do not read section 3's work packages as the current build order.
 >
-> Recorded as finding **DF-3** in STATE.md: the documents this repository gates for freshness stayed fresh,
-> and the ones it does not gate drifted. This file is one of the latter.
+> Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
+> one of the ungated. **The banner you are reading drifted too**, which is finding **DF-5 (prose counts
+> drift)**: it was added on 2026-07-26 to manage staleness and its own decision-record count was wrong
+> within two days. Since 2026-07-28 the counts marker below is compared against the tree by
+> [`tools/check-counts.py`](../../tools/check-counts.py), so a changed number now fails CI instead of
+> ageing quietly here.
+
+<!-- counts: adrs=29, adrmax=29, bundles=18 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
@@ -56,15 +62,19 @@ This ordering was adversarially stress-tested during the audit (finding G-03, ro
 
 ## 2. Milestone overview
 
-| Milestone | Goal | Duration (est.) | Exit act | Closes (primary) |
-|---|---|---|---|---|
-| M0 Credibility floor | A fresh clone survives the five-minute sniff test | 1 day | CI green on main | E-01, D-03, G-01, F-03, B-04, C-05, B-08, F-07 |
-| M1 Integrity and truth | Content claims verifiable; decisions closed; first release | 1 week | Tag v0.1.0 with a dogfooded release note | A-01..A-06, D-02, E-03 (D2), D3, F-01, F-05, G-02 |
-| M2 Machine layer, contract, graduation | The library is machine-consumable and lives at its final path | 2 weeks | Tag v0.2.0 | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
-| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | D-05, E-04 partial, E-02 partial |
-| M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | D-04, EV-2, CT-1 (conditional) |
-| M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | MCP + fill flow live; distribution per D2/D3 outcomes | C-01, E-02 remainder, AG-1, AG-2 |
-| M6 Scale by pull | Next family by demand; sustainable cadence | ongoing | Quarterly freshness pass #1 completed | E-04, G-05, VL-1/VL-3 |
+**Status column added 2026-07-28.** The milestone names below are still the live vocabulary, but two of
+them no longer describe what actually happened, so the real state is recorded here rather than inferred.
+[`STATE.md`](../../STATE.md) remains authoritative wherever this disagrees.
+
+| Milestone | Goal | Duration (est.) | Exit act | **Status (2026-07-28)** | Closes (primary) |
+|---|---|---|---|---|---|
+| M0 Credibility floor | A fresh clone survives the five-minute sniff test | 1 day | CI green on main | **Done** | E-01, D-03, G-01, F-03, B-04, C-05, B-08, F-07 |
+| M1 Integrity and truth | Content claims verifiable; decisions closed; first release | 1 week | Tag v0.1.0 with a dogfooded release note | **Done 2026-07-17** | A-01..A-06, D-02, E-03 (D2), D3, F-01, F-05, G-02 |
+| **M2 Machine layer, contract, and the Tier-1 floor** | The library is machine-consumable, lives at its final path, and covers the catalog's must-have set | 2 weeks as estimated; **materially longer in practice** | Tag v0.2.0 | **In progress.** The machine layer shipped (schema, manifest, atlas, freshness gates). The Tier-1 floor build-out ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md)) was adopted **after** this roadmap was written and folded into this milestone rather than given its own; 17 of 27 types are built and `okrs` is the last of the current family. **v0.2.0 is the exit act and is the next release.** | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
+| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | **Not started.** Still **zero real fills**; this is the milestone the library has been deferring, and coverage does not substitute for it | First external doc graded + EV-3 form banked | D-05, E-04 partial, E-02 partial |
+| M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | **Not started** | D-04, EV-2, CT-1 (conditional) |
+| M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | **Not started**, correctly gated on M3 | MCP + fill flow live; distribution per D2/D3 outcomes | C-01, E-02 remainder, AG-1, AG-2 |
+| M6 Scale by pull | Next family by demand; sustainable cadence | ongoing | Quarterly freshness pass #1 completed | **Not started** | E-04, G-05, VL-1/VL-3 |
 
 Dependency spine:
 
