@@ -17,6 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
+<!-- counts: bundles=18, tier1=17, tier1remaining=10, checkformats=64 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -33,7 +34,7 @@ reference a future session reads to continue.
 | 11 | product-strategy | strategy-docs | class: foundation | **done** (kernel + one-pager formats) | #51 |
 | 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
 | 13 | okrs | strategy-docs | class: utility | planned | - |
-| 14 | product-roadmap | strategy-docs | class: utility | planned | - |
+| 14 | product-roadmap | strategy-docs | class: utility | **done** (three formats; 5 of 8 candidates rejected) | #52 |
 | 15 | test-plan | qa-docs | phase: develop | **done** | #40 |
 | 16 | test-case | qa-docs | phase: develop | **done** (ships `[lean, full]` against the catalog's S) | #41 |
 | 17 | bug-report | qa-docs | phase: develop | **done** (qa-docs complete) | #42 |
@@ -49,11 +50,11 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 17 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
-`strategy-docs` open at two of four members), **11 planned** (the remaining rows above). Those sum to 28
+**Count:** 18 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
+`strategy-docs` open at three of four members), **10 planned** (the remaining rows above). Those sum to 28
 against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
-`sprint-retrospective-notes` **is** one. So the honest reading is **16 of 27 Tier-1 types built, plus `rfc`;
-11 Tier-1 types remain.** See **D-D** below.
+`sprint-retrospective-notes` **is** one. So the honest reading is **17 of 27 Tier-1 types built, plus `rfc`;
+10 Tier-1 types remain.** See **D-D** below.
 
 ---
 
@@ -185,8 +186,8 @@ because the field's most-cited authority attacks the shape we would otherwise pi
 **[ADR 0028](decisions/0028-adopt-a-format-axis.md) landed the capability**: optional `default_format` and
 `additional_formats` keys, nesting enforced within a format and never across formats, the default format
 keeping the plain filenames so adoption is a metadata addition rather than a rename. Covered by
-`tools/test-check-formats.py` (60 assertions once `product-vision` landed; 58 before it, since the count
-scales with the live tree). It also closed a real gate gap found on the way: check A's
+`tools/test-check-formats.py` (64 assertions as of `product-roadmap`; it was 58 when the axis landed, since
+the count scales with the live tree and every bundle adds to it). It also closed a real gate gap found on the way: check A's
 stray detection and `bundle_files()` both iterated known size tokens, so a file such as
 `x_template-narrative-full.md` failed no check **and was read by no scan**.
 
@@ -197,8 +198,8 @@ stray detection and `bundle_files()` both iterated known size tokens, so a file 
 | Capability (ADR, schema, checks A and C, test, CI, manifest) | **done 2026-07-25** |
 | `product-vision` ships canvas + narrative + PR/FAQ | **done 2026-07-27** (ten files; canvas is the default format) |
 | Decide whether `product-strategy` needs a second format | **answered YES, 2026-07-28**: ships kernel (default) + one-pager |
-| Decide whether `product-roadmap` needs a second format | **open**, answered by its own research |
-| Backfill `default_format` on the other 15 bundles | **open**, one of two evidence points now in |
+| Decide whether `product-roadmap` needs a second format | **answered YES, 2026-07-28**: ships three formats, and rejected five |
+| Backfill `default_format` on the other 15 bundles | **UNBLOCKED 2026-07-28**, both evidence points in; the rule discriminated twice |
 
 **Why the backfill waited, and what the first evidence says.** Declaring a format for 15 bundles is a 27-type
 commitment, and until 2026-07-28 the only researched evidence was one type. **`product-strategy` is the
@@ -208,9 +209,15 @@ in circulation with a named source) admitted two of them: the Rumelt kernel and 
 Three further candidates were researched and rejected under the same rule, which is the more useful result:
 the rule discriminates rather than waving everything through.
 
-**That is one of the two evidence points this backfill was waiting on.** `product-roadmap` is the other, and
-it is the sharper test: roadmaps have a *notorious* proliferation of named shapes (now-next-later, timeline,
-outcome, GO), so if the rule admits all of them the rule is too loose. Hold the backfill until it has run.
+**Both evidence points are now in, and the rule discriminated in both.** `product-strategy` admitted 2 of 5
+candidates; `product-roadmap`, the sharper test, admitted **3 of 8** and rejected five on three distinct
+grounds, including two well-known frameworks whose own authors say they are not roadmaps. A rule that
+rejects five of eight on the artifact most prone to format proliferation is a real filter, not a formality.
+
+**The backfill is therefore unblocked.** What remains is a decision about its shape, not about whether the
+rule is safe: whether to declare `default_format` on the 15 bundles that carry none, or to leave the key
+optional and absent where a type has only ever had one shape. That is a cheaper question than the one this
+was waiting on, and it should be settled in its own change rather than inside a bundle PR.
 Deferring still costs the one known inconsistency recorded in the ADR: `product-vision` and `product-strategy`
 name their formats and `adr` does not, despite all three having made the same kind of choice.
 

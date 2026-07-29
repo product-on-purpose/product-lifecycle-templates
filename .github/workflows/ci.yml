@@ -91,6 +91,15 @@ jobs:
       - name: Research-log contract self-test
         run: python tools/test-check-research-logs.py
 
+      # The numbers this repository states about itself (finding DF-5, prose counts drift). Five times a
+      # count retyped into prose went stale within hours: the bundle inventory, two self-test assertion
+      # counts, the gated-log count, a README badge stuck at 11 of 27 while the real figure reached 17, and
+      # the freshness banners added to manage staleness which then went stale themselves. Every GENERATED
+      # count in this repo stays fresh; every RETYPED one drifts. This compares a marker in each document
+      # against the tree, and says plainly that it cannot read the prose around it.
+      - name: Self-reported counts
+        run: python tools/check-counts.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
