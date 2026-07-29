@@ -71,9 +71,9 @@ them no longer describe what actually happened, so the real state is recorded he
 | M0 Credibility floor | A fresh clone survives the five-minute sniff test | 1 day | CI green on main | **Done** | E-01, D-03, G-01, F-03, B-04, C-05, B-08, F-07 |
 | M1 Integrity and truth | Content claims verifiable; decisions closed; first release | 1 week | Tag v0.1.0 with a dogfooded release note | **Done 2026-07-17** | A-01..A-06, D-02, E-03 (D2), D3, F-01, F-05, G-02 |
 | **M2 Machine layer, contract, and the Tier-1 floor** | The library is machine-consumable, lives at its final path, and covers the catalog's must-have set | 2 weeks as estimated; **materially longer in practice** | Tag v0.2.0 | **In progress.** The machine layer shipped (schema, manifest, atlas, freshness gates). The Tier-1 floor build-out ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md)) was adopted **after** this roadmap was written and folded into this milestone rather than given its own; 17 of 27 types are built and `okrs` is the last of the current family. **v0.2.0 is the exit act and is the next release.** | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
-| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | **Not started.** Still **zero real fills**; this is the milestone the library has been deferring, and coverage does not substitute for it | First external doc graded + EV-3 form banked | D-05, E-04 partial, E-02 partial |
+| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | **Not started.** Still **zero real fills**; this is the milestone the library has been deferring, and coverage does not substitute for it | D-05, E-04 partial, E-02 partial |
 | M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | **Not started** | D-04, EV-2, CT-1 (conditional) |
-| M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | **Not started**, correctly gated on M3 | MCP + fill flow live; distribution per D2/D3 outcomes | C-01, E-02 remainder, AG-1, AG-2 |
+| M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | MCP + fill flow live; distribution per D2/D3 outcomes | **Not started**, correctly gated on M3 | C-01, E-02 remainder, AG-1, AG-2 |
 | M6 Scale by pull | Next family by demand; sustainable cadence | ongoing | Quarterly freshness pass #1 completed | **Not started** | E-04, G-05, VL-1/VL-3 |
 
 Dependency spine:
@@ -144,7 +144,7 @@ Effort: S = under 1 hour, M = roughly half a day, L = one or more days. Traces: 
 - [ ] A newcomer following only the README quickstart can produce a filled lean PRD (test this literally with one person or one agent run).
 - [ ] `git tag` lists v0.1.0; the GitHub release body is the filled release-notes template with provenance frontmatter.
 
-### M2: Machine layer, contract, graduation (weeks 2-3)
+### M2: Machine layer, contract, and the Tier-1 floor (weeks 2-3)
 
 Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, manifest, MCP later) is built against final paths, not `_local/` paths that would need re-stamping.
 

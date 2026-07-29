@@ -53,7 +53,8 @@ month and next year?** If so, it is claiming knowledge nobody has.
 
 ## The rubric
 
-Score each 0, 1 or 2. **Under 12 out of 18 and this roadmap will be read as a commitment you did not make.**
+Score each 0, 1 or 2. **Under 12 out of 18, and a now-next-later full roadmap will be read as a commitment
+you did not make.** The other variants score against fewer rows; see the scope table below.
 That is the failure that costs trust, and it is not recoverable by explaining afterwards that it was only
 ever indicative.
 
@@ -65,18 +66,23 @@ ever indicative.
 | 4 | **Exclusions with a cost** | Nothing excluded | Excludes things nobody asked for | Excludes a named request someone wanted, with a reason, and they have been told |
 | 5 | **Not a Gantt chart** | Bars, dependencies, dated features | Some dated deliverables leak in | No delivery commitment could be lifted from it, or the ones that exist are marked as commitments |
 | 6 | **Not a backlog** | Assembled from accumulated requests | Mostly top-down, some drift | Every item traces to the outcome above, and you can name something in the backlog that is deliberately absent here |
-| 7 | **Dependencies named** *(full)* | None | Categories listed ("engineering capacity") | Named dependencies, each with the reordering it would trigger |
-| 8 | **Owned and triggered** *(full)* | No review, no owner | "Reviewed quarterly" | An event that triggers review, a backstop date, and a named person |
+| 7 | **Dependencies named** *(full, now-next-later only)* | None | Categories listed ("engineering capacity") | Named dependencies, each with the reordering it would trigger |
+| 8 | **Owned and triggered** *(full, now-next-later only)* | No review, no owner | "Reviewed quarterly" | An event that triggers review, a backstop date, and a named person |
 | 9 | **Audience-honest** *(full)* | Same document for everyone | Vaguely aware it may be shared | States who reads it, and if external, has been stripped and coarsened deliberately |
 
-**Which rows apply to what.** Every threshold is the same proportion of the available points.
+**Which rows apply to what.** Every threshold is two thirds of the available points, rounded down.
 
 | Document | Rows | Maximum | Score against |
 |---|---|---|---|
 | now-next-later, full | all 9 | 18 | **12** |
 | now-next-later, lean | 1-6 | 12 | **8** |
-| go, full | all 9 (row 5 judged on whether dates are marked as commitments, not on their presence) | 18 | **12** |
-| themes, full | all 9 | 18 | **12** |
+| go, full | 1-6 and 9 (row 5 judged on whether dates are marked as commitments, not on their presence) | 14 | **9** |
+| themes, full | 1-6 and 9 | 14 | **9** |
+
+**Rows 7 and 8 are scored only against now-next-later.** Neither the GO format nor the themes format ships a
+Dependencies section or a Review Trigger section, so grading either on those rows would penalise the choice
+of format rather than the quality of the document. Row 9 does apply to all three, because every format's
+frontmatter carries an `audience` field.
 
 ## Format-specific checks
 

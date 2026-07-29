@@ -12,44 +12,49 @@ certain it is at each horizon. It sits below the strategy, which decides which p
 At a glance:
 
 - Its lanes or timeframes are **confidence levels**, not dates in disguise [[7]](#ref-7).
-- The sentence that settles most arguments about it: **"The roadmap shows the plan. The OKRs carry the
-  commitment"** [[7]](#ref-7).
+- The sentence to reach for when a roadmap is mistaken for a commitment: **"The roadmap shows the plan. The
+  OKRs carry the commitment"** [[7]](#ref-7).
 - **Nothing measures whether any roadmap practice improves outcomes.** That is a confirmed gap, searched
   for, and it is the most important thing on this page.
-- Three formats ship here, from eight researched. Five were rejected, two of them because their own authors
+- Three formats ship here, from nine considered. Six were rejected, two of them because their own authors
   say they are not roadmaps.
 - The word "roadmap" appears **nowhere** in the Scrum Guide [[21]](#ref-21).
 
 **On evidence, plainly.** Two separate literatures use this word. Technology roadmapping has a documented,
-peer-reviewed tradition going back to Motorola in the 1980s and formalised at Cambridge
+peer-reviewed tradition going back to Motorola in the 1980s and later packaged at Cambridge
 [[1]](#ref-1)[[2]](#ref-2), and it studies organisation-level R&D planning. Software product roadmaps have a
 much smaller, newer research thread [[3]](#ref-3)[[4]](#ref-4). **Neither measures whether a roadmap improves
 outcomes**, and the first is not evidence for the second. Searching arXiv, Semantic Scholar and the general
 web for a causal link between roadmap format, cadence or confidence device and product results returned
 nothing.
 
-What does exist is a convergence: Perri [[26]](#ref-26), Cagan [[15]](#ref-15), Bastow [[7]](#ref-7) and
-Torres [[27]](#ref-27) arrive independently at the same design principle, **express less certainty further
-out**. Four people reaching one conclusion without citing each other is worth following. It is still a
-convergence of prescription, not a measurement, and this bundle will not dress it up as one.
+What does exist is a convergence: Cagan [[15]](#ref-15), Bastow [[7]](#ref-7) and Torres [[27]](#ref-27)
+arrive independently at the same design principle, **express less certainty further out**. Three people
+reaching one conclusion without citing each other is worth following. It is still a convergence of
+prescription, not a measurement, and this bundle will not dress it up as one. Perri belongs to the same camp
+on problems-over-features [[26]](#ref-26), but nothing read from her states the confidence gradient, so she is
+not counted here.
 
 ## 2. Origins and evolution
 
 **The origin is genuinely unresolved, and this bundle reports that rather than picking a story.**
 
-Technology roadmapping has real history. The first journal paper is credited to Willyard and McClees in 1987
-on Motorola's process, Robert Galvin supplied the definition everyone quotes, EIRMA formalised a generic
-method in 1997, and Cambridge's T-Plan packaged it in the late 1990s [[1]](#ref-1)[[2]](#ref-2). Even that
-account is contested by its own historians, who argue it under-credits earlier work at NASA, Boeing, GE,
-Lockheed and elsewhere [[1]](#ref-1). Note what EIRMA already understood in 1997: a roadmap "is a living
-document and is constantly evolving as circumstances change. It is quite different from a project plan"
-[[1]](#ref-1).
+Technology roadmapping has real history. Credit for the first journal paper goes to Willyard and McClees in
+1987 on Motorola's process, and a named set of organisations - "Motorola, BP, Philips, EIRMA, Lucent
+Technologies and the Semiconductor Industry Association" - is credited with the contributions that led to the
+modern form [[1]](#ref-1). Cambridge's T-Plan is a later packaging of that practice rather than its origin
+[[2]](#ref-2). Even this account is contested by its own historians, who argue it under-credits earlier work
+at NASA, Boeing, GE, Lockheed and elsewhere [[1]](#ref-1). Those same historians describe the artifact in
+terms this bundle keeps: "a TRM is a living document and is constantly evolving as circumstances change. It
+is quite different from a project plan" [[1]](#ref-1).
 
 **No transmission chain from that tradition into software product management was found.** The encyclopedia
-article that would assert one does not [[5]](#ref-5). And the creator of one of the most widely used modern
-formats describes inventing it in 2012 as a reaction to Gantt charts, with no reference to any of the
-industrial lineage [[6]](#ref-6). The two practices share a name and a rough shape; whether one descends from
-the other is **not verified**, and calling it settled either way would be inventing history.
+article that would assert one does not [[5]](#ref-5). And the now-next-later format was invented as a
+reaction to Gantt charts with no reference to any of the industrial lineage [[6]](#ref-6). Its own publisher
+credits **two** creators, Janna Bastow and Simon Cast, not the one most secondary write-ups name, and dates it
+to 2012 in a retrospective account that could not be checked against a period source [[7]](#ref-7). The two
+practices share a name and a rough shape; whether one descends from the other is **not verified**, and calling
+it settled either way would be inventing history.
 
 ## 3. Anatomy (section by section)
 
@@ -68,7 +73,7 @@ a theme "commits to solving a specific customer problem" instead of promising a 
 
 ### Next
 
-Problems being sharpened, expected to change. This is where roadmaps most often go dishonest, because Next is
+Problems being sharpened, expected to change. This is the lane where dishonesty creeps in, because Next is
 close enough that people want dates and far enough that estimates do not hold. The whole reason to sort by
 confidence is that "the further away something is, the more uncertain it is. Your roadmap should reflect
 that" [[27]](#ref-27).
@@ -96,7 +101,7 @@ cannot defend.
 
 ### Dependencies and What Could Move It (full)
 
-Most slippage is not estimation error, it is a dependency nobody wrote down. A dependency with no stated
+A dependency nobody wrote down produces slippage that reads afterwards as estimation error. A dependency with no stated
 consequence is decoration; say what it would reorder.
 
 ### Review Trigger (full)
@@ -130,7 +135,8 @@ commitment. Its limit is worth stating in the same breath: a disclaimer does not
 conversation. **Full** adds what a reader outside the team needs: how confidence decays, what could move
 things, and what brings the team back.
 
-**Three formats ship, from eight researched.** The rule they had to clear is ADR 0028's: structurally
+**Three formats ship, from nine considered.** The rule they had to clear is
+[ADR 0028 (the format-axis rule)](../../docs/internal/decisions/0028-adopt-a-format-axis.md): structurally
 distinct **and** in circulation with a named source.
 
 | Format | Why it ships |
@@ -139,13 +145,24 @@ distinct **and** in circulation with a named source.
 | **go** | A measurable goal per release, which the other two deliberately do not force [[9]](#ref-9)[[10]](#ref-10) |
 | **themes** | The only one carrying vision and objectives inside the document, so it can argue for itself [[16]](#ref-16) |
 
-**Five were rejected**, and the rejections are the more useful result. The timeline form has no named
-product-management practitioner defending it, despite a search aimed at finding one [[28]](#ref-28). The
-release plan is a different artifact by the account of the person who named both [[12]](#ref-12). The
-"release roadmap" is a relabel, and the Kanban board has no named source [[29]](#ref-29). Most importantly,
-the **opportunity solution tree** [[18]](#ref-18) and **Cagan's OKR-based alternative** [[14]](#ref-14) were
-excluded because their own authors present them as, respectively, a discovery artifact and an alternative
-*to* roadmaps.
+**Six were rejected**, and the rejections are the more useful result. No named product-management
+practitioner defending the timeline form as a roadmap was found; this bundle searched for one and records
+that as **a research gap rather than a confirmed absence**, because an unverified absence is a to-do and not
+a finding. The nearest positions located are qualified ones, and the strongest published argument against
+committing to dates rests on estimate reliability instead [[28]](#ref-28). The release plan is a different
+artifact by the account of the person who named both [[12]](#ref-12). The "release roadmap" is this bundle's
+own reading of the same shape under vendor terminology, and the Kanban board has no named source
+[[29]](#ref-29). Most importantly, the **opportunity solution tree** [[18]](#ref-18) and **Cagan's five-part
+alternative** [[14]](#ref-14) were excluded because their own authors present them as, respectively, a
+discovery artifact and an alternative *to* roadmaps.
+
+**One limit, stated rather than hidden.** That last ground is a **third** test, and ADR 0028 does not contain
+it: the written rule is structural distinctness plus circulation with a named source, and "does the author
+call this a roadmap" is this bundle's own reading of what "in circulation" must mean for a format *of a given
+type*. The reading has not been applied backwards. `product-vision` ships a PR/FAQ admitted under the two
+written criteria alone, and Amazon does not present the PR/FAQ as a product vision. Either the rule gains a
+third criterion explicitly or this bundle is stricter than its siblings; that belongs in the `default_format`
+backfill decision, not here.
 
 ## 5. Methodology lineage
 
@@ -162,20 +179,20 @@ framework you run, this artifact sits outside it and having one is a choice.
 your customers" [[25]](#ref-25). Both are vendors, both have published the argument, and this bundle teaches
 the disagreement rather than quietly siding.
 
-**Do committed dates belong?** The most date-committed enterprise framework commits only its current
-increment and calls the following two a forecast [[13]](#ref-13). The strongest critics say estimates for
+**Do committed dates belong?** The most date-committed enterprise framework read for this bundle commits only
+its current increment and calls the following two a forecast [[13]](#ref-13). The strongest critics say estimates for
 undiscovered work are unreliable [[28]](#ref-28). Notice these are closer than the rhetoric suggests: both
 accept that certainty decays.
 
-**The fight is narrower than it looks.** The most-cited critic of feature roadmaps names the two legitimate
+**The fight is narrower than it looks.** Cagan, who argues against feature roadmaps, names the two legitimate
 reasons management wants them, that leadership needs the highest-value work first and that businesses
 sometimes must make date-based commitments [[14]](#ref-14), and writes that "product roadmaps are one of my
 favorite tools. When done right, they are incredibly useful" [[15]](#ref-15). Torres says outright: "I want
 to clarify that my issue is not with roadmaps altogether" [[28]](#ref-28). A bundle quoting only the attacks
 would misrepresent the people it was quoting.
 
-**The credible case for dates**, stated fairly: enterprise frameworks need them for regulatory and
-cross-department coordination [[13]](#ref-13); enterprise sales genuinely needs committed windows, managed
+**The credible case for dates**, stated fairly: enterprise frameworks use them to forecast and communicate
+planned deliverables across a time horizon [[13]](#ref-13); enterprise sales genuinely needs committed windows, managed
 with a deliberate buffer, since "delivery dates should be a quarter later than engineering dates,
 anticipating slippage" [[20]](#ref-20); and hardware development has externally imposed validation gates
 that no amount of theme language removes [[32]](#ref-32).
@@ -200,7 +217,7 @@ that no amount of theme language removes [[32]](#ref-32).
 | roadmap | [product strategy](../product-strategy/) | Strategy decides which problems are worth solving; the roadmap orders them. The roadmap "takes the strategy as input" [[24]](#ref-24) |
 | roadmap | [product backlog](../product-backlog/) | The backlog is "the single source of work undertaken by the Scrum Team" [[21]](#ref-21); the roadmap scopes what becomes backlog. "The roadmap conveys your strategy vs. the backlog conveys your plan to implement it" [[19]](#ref-19) |
 | roadmap | release plan | A release plan is "a type of project plan - albeit an agile one" covering one release [[12]](#ref-12) |
-| roadmap | OKRs | Neither governs the other; both descend from strategy [[24]](#ref-24). "The roadmap shows the plan. The OKRs carry the commitment" [[7]](#ref-7) |
+| roadmap | OKRs | Neither governs the other; the roadmap takes the strategy as input [[24]](#ref-24). "The roadmap shows the plan. The OKRs carry the commitment" [[7]](#ref-7) |
 | roadmap | Gantt chart | "A Gantt chart can help a team set a plan that details how they will complete a project. On the other hand, a roadmap will help them define and communicate why they should complete it" [[34]](#ref-34) |
 | internal roadmap | public roadmap | Different obligations entirely. See section 9 |
 
@@ -208,7 +225,7 @@ that no amount of theme language removes [[32]](#ref-32).
 
 **If it will be seen by customers, it is a different document.** Assume permanent visibility: "everyone will
 see your customer-facing roadmap as soon as you share it: industry analysts, your company's toughest media
-critics, even your competitors" [[23]](#ref-23). Strip competitive and technical-debt detail, use coarse time
+critics, even your competitors" [[23]](#ref-23). Strip product detail such as user stories, use coarse time
 frames [[11]](#ref-11), and understand the trap a public roadmap creates, put memorably by one practitioner
 quoting another: "Either I'm going to disappoint you by giving you exactly what we thought six months ahead
 of time was the best solution when it's not, or by changing course and having lied to you"

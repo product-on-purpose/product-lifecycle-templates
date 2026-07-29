@@ -9,9 +9,9 @@ First release. Status `beta`: gate-green and cited to raw sources, with no fills
 
 **The bundle that tested the format rule hardest, and the rule held.**
 [ADR 0028](../../docs/internal/decisions/0028-adopt-a-format-axis.md) admits a format only when it is
-**structurally distinct AND in circulation with a named source**. Roadmap shapes proliferate more than any
-other product artifact, so this was the case most likely to expose a rule that waves everything through.
-Eight candidates were researched. **Three qualify and five were rejected**, on three different grounds:
+**structurally distinct AND in circulation with a named source**. Roadmap shapes proliferate, so this was the
+case most likely to expose a rule that waves everything through.
+Nine candidates were considered. **Three qualify and six were rejected**, on three different grounds:
 
 | Rejected | Ground |
 |---|---|
@@ -19,11 +19,17 @@ Eight candidates were researched. **Three qualify and five were rejected**, on t
 | Release plan | A different artifact category, by the account of the person who named both |
 | Release roadmap | A relabel of the timeline form, vendor terminology, no named champion |
 | Kanban board | No named practitioner publishes it as a roadmap format |
-| **Opportunity solution tree, and Cagan's OKR-based alternative** | **Their own authors do not present them as roadmaps.** One is a discovery artifact, the other is explicitly an alternative *to* roadmaps |
+| **Opportunity solution tree** | **Its own author presents it as a discovery artifact**, not a time-horizon one |
+| **Cagan's five-part alternative** | **Its own author presents it as an alternative *to* roadmaps**, not a roadmap variant |
 
-That last row is the most useful result in this bundle. The rule rejected two well-known, well-structured
-frameworks that a careless author would have shipped as roadmap variants, on the grounds that their creators
-say they are something else.
+Those last two rows are the most useful result in this bundle. The rule rejected two well-known,
+well-structured frameworks that a careless author would have shipped as roadmap variants, on the grounds
+that their creators say they are something else.
+
+**A correction to an earlier draft of this file.** It said "eight candidates, five rejected" while naming
+six distinct rejections, and merged the last two into one table row to make the arithmetic look right. The
+error came from the research itself and propagated into the companion, the research log and STATE.md before
+anyone added it up. Three plus six is nine.
 
 **Three formats ship.** `now-next-later` is the default: its lanes are confidence levels rather than dates,
 which makes it the only one showable to a customer without implying a schedule. `go` ships for teams whose
@@ -52,8 +58,8 @@ this type will meet them too.
 only the critics would have been easy and wrong. Three credible defences of dated roadmaps are carried:
 an enterprise framework that commits its nearest increment while labelling the next two a forecast, an
 enterprise-sales argument for buffered committed dates, and hardware validation gates that impose real lead
-times. The critics concede more than their reputations suggest, and the bundle records that: the most-cited
-opponent of feature roadmaps also writes that roadmaps are "one of my favorite tools. When done right."
+times. The critics concede more than their reputations suggest, and the bundle records that: Cagan, who
+argues against feature roadmaps, also writes that roadmaps are "one of my favorite tools. When done right."
 
 **Attribution corrections carried into the bundle.** Now/Next/Later has **two** named creators, not the one
 most secondary sources credit, and its 2012 date rests on a retrospective account that could not be checked

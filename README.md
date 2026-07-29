@@ -12,9 +12,9 @@ A curated library of product-management and software-lifecycle document template
   <img src="https://img.shields.io/badge/status-beta-yellow?style=flat-square" alt="Status: beta">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
   <img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat-square" alt="Version 0.1.0">
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-12-brightgreen?style=flat-square" alt="Bundles: 12"></a>
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-17%20%2F%2027-orange?style=flat-square" alt="Tier-1 floor: 11 of 27"></a>
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-3-brightgreen?style=flat-square" alt="Families: 3"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-18-brightgreen?style=flat-square" alt="Bundles: 18"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-17%20%2F%2027-orange?style=flat-square" alt="Tier-1 floor: 17 of 27"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-5-brightgreen?style=flat-square" alt="Families: 5"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/gate-11%20checks%20in%20CI-success?style=flat-square" alt="Gate: 11 checks in CI"></a>
   <a href="#the-claim-and-what-it-is-worth"><img src="https://img.shields.io/badge/real%20fills-0%20(honest)-lightgrey?style=flat-square" alt="Real fills: 0"></a>
 </p>
@@ -258,8 +258,8 @@ All eighteen bundles currently pass. GitHub Actions runs these on every push to 
 | **Bundles** | 18, across 4 complete families (delivery-docs, decision-docs, governance-docs, qa-docs) plus `product-vision`, `product-strategy` and `product-roadmap`, three of the four strategy-docs member and the first bundle to ship more than one format |
 | **Tier-1 floor** | 17 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
-| **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, and family-contract-test steps; `main` branch-protected |
-| **Decision records** | 25 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
+| **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, changelog, research-log-contract, self-reported-counts and family-contract-test steps; `main` branch-protected |
+| **Decision records** | 29 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
 

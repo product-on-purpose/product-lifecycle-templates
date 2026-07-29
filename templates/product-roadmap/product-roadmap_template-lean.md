@@ -25,7 +25,7 @@ problem area nobody has shaped yet. Its creators are explicit that the point is 
 100% sure all the time." If your Later lane reads like a dated plan, you have rebuilt the thing this format
 exists to replace.
 
-THE ONE SENTENCE THAT SETTLES MOST ARGUMENTS about this document, from the same source: "The roadmap shows
+THE ONE SENTENCE TO REACH FOR WHEN THIS IS MISTAKEN FOR A COMMITMENT, from the same source: "The roadmap shows
 the plan. The OKRs carry the commitment." When someone asks this roadmap for a delivery guarantee, they are
 asking the wrong artifact.
 
@@ -34,7 +34,7 @@ roadmap. The distinction that survives even when a roadmap carries dates is that
 work gets done, while a roadmap communicates why it is worth doing.
 
 WHAT THE EVIDENCE ACTUALLY SAYS, SO YOU ARE NOT MISLED. No study links any roadmap format, cadence or
-confidence device to product or business outcomes. What exists is a strong convergence of PRESCRIPTION: four
+confidence device to product or business outcomes. What exists is a strong convergence of PRESCRIPTION: three
 named practitioners, arguing independently, all arrive at "express less certainty, further out". That is
 worth following and it is not proof. See product-roadmap_companion.md section 1.
 
@@ -107,7 +107,7 @@ HOW TO FILL THIS IN
 ## Next
 
 <!-- WHAT  Problems being sharpened, expected to change. Two to five. Less detail than Now, deliberately.
-     WHY   Next is where most roadmaps quietly become dishonest, because it is close enough that people
+     WHY   Next is the lane where dishonesty creeps in, because it is close enough that people
            want dates and far enough that estimates do not hold. The whole reason to sort by confidence is
            that "the further away something is, the more uncertain it is. Your roadmap should reflect
            that." Deep dive: product-roadmap_companion.md section 3 (Next).
@@ -126,8 +126,8 @@ HOW TO FILL THIS IN
 ## Later
 
 <!-- WHAT  Problem areas nobody has shaped yet. Two to five, deliberately coarse. One line each.
-     WHY   Later exists to show direction without implying a plan, and it is the lane that most often gets
-           deleted by people who find it too vague. That vagueness is the honest content: a roadmap that
+     WHY   Later exists to show direction without implying a plan, and it is the lane readers are quickest to
+           delete for being too vague. That vagueness is the honest content: a roadmap that
            looks equally certain at every horizon is claiming knowledge it does not have. Deep dive:
            product-roadmap_companion.md section 3 (Later).
      ASK   Is this a direction or a decision? Would we be embarrassed if this never happened? Is it here
@@ -146,7 +146,7 @@ HOW TO FILL THIS IN
 
 <!-- WHAT  Things asked for, considered, and deliberately excluded this horizon, with one line each on why.
            Two to five. Name real requests.
-     WHY   This is the section that makes the lanes usable, and the one most often missing. A roadmap
+     WHY   This is the section that makes the lanes usable, and the one easiest to leave out. A roadmap
            without exclusions cannot be used to refuse anything, which means it settles no arguments and
            changes no behaviour. It is also what stops Later becoming a graveyard. Deep dive:
            product-roadmap_companion.md section 3 (What Is Not On Here) and section 7.

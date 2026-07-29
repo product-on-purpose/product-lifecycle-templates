@@ -11,14 +11,14 @@ sizes_available: [lean, full]
 default_size: lean
 sizing_guidance: "Use lean (the outcome it serves, three confidence lanes, and what is deliberately excluded) when the team shares the context and needs one view of what is in flight and what is coming; five sections is enough to end the weekly what-are-we-doing conversation. Use full when the roadmap will be read by someone outside the team: it adds an explicit statement of how confidence decays across the lanes, the dependencies that could reorder them, and an event that brings the team back to it. Full is also the right size when the roadmap will be shown to a board, handed to an incoming leader, or used to set another function's plans."
 default_format: now-next-later
-default_format_guidance: "Reach for now-next-later when the honest answer to when is it depends. Its three lanes are levels of confidence rather than dates in disguise, which makes it the only one of the three formats that can be shown to a customer without implying a schedule. It is also the least work to keep current, because moving an item between lanes is a smaller act than rewriting a date."
+default_format_guidance: "Reach for now-next-later when the honest answer to when is it depends. Its three lanes are levels of confidence rather than dates in disguise, which makes it the only one of the three formats that can be shown to a customer without implying a schedule. It is also less work to keep current than the other two formats here, because moving an item between lanes is a smaller act than rewriting a date."
 additional_formats:
   - id: go
     sizes: [full]
     guidance: "Reach for the GO format when releases are real events in your world, whether shipped versions, regulated milestones or hardware gates, and each one needs to answer what it is for and how you will know it worked. Its five columns (date, name, goal, features, metrics) force a measurable goal per release, which now-next-later deliberately does not. Do not reach for it if nobody can name the next release: a goal grid with invented releases is a timeline roadmap."
   - id: themes
     sizes: [full]
-    guidance: "Reach for the themes format when the roadmap has to travel and argue for itself: to a board, to a new leader, or to a function that has never read the strategy. It is the only one of the three that carries the vision and the business objectives inside the document, so a reader can judge whether the work serves them rather than taking it on trust. It is also the most expensive to keep current, because five sections drift rather than one."
+    guidance: "Reach for the themes format when the roadmap has to travel and argue for itself: to a board, to a new leader, or to a function that has never read the strategy. It is the only one of the three that carries the vision and the business objectives inside the document, so a reader can judge whether the work serves them rather than taking it on trust. It is also the most expensive of the three formats here to keep current, because five sections drift rather than one."
 methodology: methodology-agnostic
 pairs_with: []
 status: beta

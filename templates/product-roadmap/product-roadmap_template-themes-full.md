@@ -59,7 +59,7 @@ HOW TO FILL THIS IN
            exists, summarise it and link it rather than rewriting it.
      WHY   This format exists to let the roadmap argue for itself, and the argument starts here. A reader
            who does not know where the product is going cannot judge whether these themes move it there.
-           Deep dive: product-roadmap_companion.md section 3 (Product Vision) and section 8.
+           Deep dive: product-roadmap_companion.md section 3 (themes format) and section 8.
      ASK   Does a vision document already exist, and does this match it? Would the person who wrote it
            recognise this summary? Is this a destination, or a restatement of what we already do?
      GOOD  "Dispatchers send the right van to the right job without reading a note, and trust the order the
@@ -79,7 +79,7 @@ HOW TO FILL THIS IN
            Published guidance on alignment is explicit that a vision has to be "transformed into a strategy
            with clear goals that can be integrated into a product roadmap and communicated across the
            organization" - this section is that integration point. Deep dive:
-           product-roadmap_companion.md section 3 (Business Objectives).
+           product-roadmap_companion.md section 3 (themes format).
      ASK   Whose objectives are these, and did they agree? Which one would each theme below move? Is there
            an objective here that no theme serves, and if so, why is it here?
      GOOD  "1. Cut median emergency response time by a third by end of FY26. 2. Hold support cost per
@@ -97,7 +97,7 @@ HOW TO FILL THIS IN
            Problems, not features.
      WHY   The theme is the unit that makes this format honest: it commits to solving a customer problem
            rather than to shipping a named thing, which is what lets the team change its mind about the
-           solution without breaking its word. Deep dive: product-roadmap_companion.md section 3 (Themes)
+           solution without breaking its word. Deep dive: product-roadmap_companion.md section 3 (themes format)
            and section 7.
      ASK   Is each of these a problem or a solution? Which objective does it serve, and how would we know
            it moved? If we solved this a completely different way than we expect, would the theme still be
@@ -120,7 +120,7 @@ HOW TO FILL THIS IN
            genuine disagreement here: some named practitioners hold that a roadmap should carry no firm
            dates at all, while others argue dates are fine for internal planning and one widely used
            enterprise framework commits the nearest increment outright. Choose deliberately and say which
-           you chose. Deep dive: product-roadmap_companion.md section 3 (Timeframes) and section 6.
+           you chose. Deep dive: product-roadmap_companion.md section 3 (themes format) and section 6.
      ASK   Is this precision honest, or borrowed from a planning tool? Would we bet on the furthest item?
            Does a reader know which of these are commitments and which are forecasts?
      GOOD  "Theme 1: in progress now. Theme 2: starts once theme 1's first cohort reports, expected this
@@ -158,7 +158,7 @@ HOW TO FILL THIS IN
      WHY   It is part of the published structure, and it exists because a roadmap that travels gets read as
            a commitment. State its limit honestly too: a disclaimer does not undo the effect. Once a date
            has been read by a customer, they will hold you to it regardless of the wording underneath. Deep
-           dive: product-roadmap_companion.md section 3 (Disclaimer) and section 9.
+           dive: product-roadmap_companion.md section 3 (themes format) and section 9.
      ASK   Who will read this, and what will they do with it? If someone planned a budget around the Later
            items, would this paragraph have stopped them? Is anything here a commitment, and is it marked?
      GOOD  "This roadmap states our current intent, not a delivery commitment. Items in progress are

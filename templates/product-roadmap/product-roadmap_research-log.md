@@ -23,9 +23,13 @@ Now/Next/Later, and a "38 percent of best-performing companies" correlation. The
 bundle, and their absence is the point.
 
 **3. The practitioner consensus is real, and it is a consensus of prescription rather than measurement.**
-Perri [37], Cagan [22], Bastow [12] and Torres [31] arrive independently at the same design principle:
+Cagan [22], Bastow [12] and Torres [31] arrive independently at the same design principle:
 **express less certainty, further out.** That convergence, from people who are not citing each other, is the
 strongest thing this bundle can teach. It is still not evidence.
+**Corrected on review:** this line originally read "Perri [37]" as a fourth voice. Entry [37] is ProductPlan
+on roadmap versus release plan, not Perri; Perri is [27] and [28], and neither states the confidence
+gradient. She belongs to the problems-over-features camp [27], which is a different claim. Three voices, not
+four.
 
 **4. The fight about dates is narrower than it looks.** Cagan names the two legitimate reasons management
 wants roadmaps [21]; Torres says outright that her issue "is not with roadmaps altogether" [32]; and SAFe,
@@ -405,10 +409,12 @@ exclusions is a wish list with dates.
 confidence lanes, no false precision, and it works internally and externally without modification. **GO
 Product Roadmap** [16][17] ships as an additional format for teams that need an explicit goal-to-metric grid
 tied to releases. **The themes format** [25][26] ships for teams that need the strategic context, vision and
-objectives in the same document. Five candidates were rejected: the timeline form has no named
-product-management defender, the release plan and the release roadmap are a different artifact and a
-relabel, the Kanban board has no named source, and the opportunity solution tree [24] and Cagan's
-alternative [23] are excluded because **their own authors do not present them as roadmaps**.
+objectives in the same document. **Six candidates were rejected**, out of nine considered: the timeline form
+has no named product-management defender found, the release plan is a different artifact, the release
+roadmap is a relabel, the Kanban board has no named source, and the opportunity solution tree [24] and
+Cagan's alternative [23] are excluded because **their own authors do not present them as roadmaps**.
+**Corrected on review:** this line said "five" while naming six. Three ship and six were rejected, so nine
+were considered, not eight.
 
 **What the example must chain onto.** The Acme Analytics thread. The roadmap sits between the
 `product-strategy` example and the Saved Views PRD, so it must contain the work that PRD describes.
