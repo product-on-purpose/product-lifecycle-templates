@@ -60,6 +60,15 @@ stayed fresh, and the ones it does not gate drifted.
 - **A scope commitment**: complete the catalog's 27-type Tier-1 floor on a schedule, with grow-by-pull
   reserved for Tier 2 and Tier 3
   ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). 15 of the 27 are built.
+- **`product-roadmap`**, the eighteenth bundle and the third `strategy-docs` member. Ships three formats
+  from eight researched: `now-next-later` (default), the GO goal-and-metric grid, and the themes format that
+  carries vision and objectives inside the document. **The five rejections matter more than the three
+  admissions**: the timeline form has no named product-management defender, the release plan is a different
+  artifact, the release roadmap and Kanban board are a relabel and a source-less glossary entry, and the
+  opportunity solution tree and Cagan's OKR alternative were excluded because their own authors do not
+  present them as roadmaps. **This closes the evidence question the `default_format` backfill was waiting
+  on** (D-E): ADR 0028's rule has now discriminated twice, 2 of 5 and 3 of 8. Its honest core is a confirmed
+  evidence gap, and two circulating statistics were found and deliberately excluded as untraceable.
 - **`product-strategy`**, the seventeenth bundle and the second `strategy-docs` member. Ships the Rumelt
   kernel (diagnosis, guiding policy, coherent action) as its default format at lean and full, plus a
   Playing-to-Win one-pager. Its honest core is a **tested negative**: no study measures whether writing a

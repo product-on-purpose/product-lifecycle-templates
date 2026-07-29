@@ -202,6 +202,60 @@
     {
       "additional_formats": [
         {
+          "guidance": "Reach for the GO format when releases are real events in your world, whether shipped versions, regulated milestones or hardware gates, and each one needs to answer what it is for and how you will know it worked. Its five columns (date, name, goal, features, metrics) force a measurable goal per release, which now-next-later deliberately does not. Do not reach for it if nobody can name the next release: a goal grid with invented releases is a timeline roadmap.",
+          "id": "go",
+          "sizes": [
+            "full"
+          ]
+        },
+        {
+          "guidance": "Reach for the themes format when the roadmap has to travel and argue for itself: to a board, to a new leader, or to a function that has never read the strategy. It is the only one of the three that carries the vision and the business objectives inside the document, so a reader can judge whether the work serves them rather than taking it on trust. It is also the most expensive to keep current, because five sections drift rather than one.",
+          "id": "themes",
+          "sizes": [
+            "full"
+          ]
+        }
+      ],
+      "aliases": [
+        "roadmap",
+        "now-next-later",
+        "outcome roadmap",
+        "product plan",
+        "release roadmap"
+      ],
+      "approx_tokens": {
+        "full": 3750,
+        "go-full": 1950,
+        "lean": 2550,
+        "themes-full": 2850
+      },
+      "classification": "utility",
+      "default_format": "now-next-later",
+      "default_format_guidance": "Reach for now-next-later when the honest answer to when is it depends. Its three lanes are levels of confidence rather than dates in disguise, which makes it the only one of the three formats that can be shown to a customer without implying a schedule. It is also the least work to keep current, because moving an item between lanes is a smaller act than rewriting a date.",
+      "default_size": "lean",
+      "doc_type": "product-roadmap",
+      "family": "strategy-docs",
+      "id": "product-roadmap",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (the outcome it serves, three confidence lanes, and what is deliberately excluded) when the team shares the context and needs one view of what is in flight and what is coming; five sections is enough to end the weekly what-are-we-doing conversation. Use full when the roadmap will be read by someone outside the team: it adds an explicit statement of how confidence decays across the lanes, the dependencies that could reorder them, and an event that brings the team back to it. Full is also the right size when the roadmap will be shown to a board, handed to an incoming leader, or used to set another function's plans.",
+      "status": "beta",
+      "summary": "The document that says in what order this product intends to solve the problems its strategy chose, and how certain it is at each horizon. It is judged by whether the uncertainty in it is visible: a roadmap that looks equally confident about next month and next year is claiming knowledge nobody has.",
+      "tags": [
+        "strategy",
+        "roadmap",
+        "planning",
+        "prioritisation",
+        "communication",
+        "uncertainty"
+      ],
+      "title": "Product Roadmap"
+    },
+    {
+      "additional_formats": [
+        {
           "guidance": "Reach for the one-pager when the problem is understood and the hard part is choosing where to compete. It opens with a winning aspiration and cascades through where to play, how to win, and the capabilities that requires, so the argument is about the choice rather than the diagnosis. If you cannot fill in where you will play because the team is still arguing about what is wrong, use the kernel instead.",
           "id": "one-pager",
           "sizes": [
@@ -599,5 +653,5 @@
       "title": "User Story"
     }
   ],
-  "count": 17
+  "count": 18
 }
