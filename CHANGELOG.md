@@ -19,6 +19,22 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **`okrs` (2026-07-30), the nineteenth bundle and the fourth `strategy-docs` member, completing that
+  family** and with it one continuous worked thread from a product vision down to a bug report. One format
+  ships: six candidates examined individually and five rejected, then nine further named goal-setting
+  frameworks checked for a counterexample. Its honest core is a tested negative, that no study measures
+  whether the OKR artifact improves outcomes, and that neither the goal-setting literature nor its published
+  critics mention OKRs at all.
+- **`tools/check-example-independence.py`, wired into CI**, gating a defect that had recurred four times and
+  survived the convention adopted to prevent it. It failed 16 of 19 bundles on first run with **zero false
+  positives on triage**, which is recorded as finding **DF-6 (worked examples reuse their own template's
+  guidance text)** in [`STATE.md`](STATE.md). The 16 are grandfathered at measured ceilings that may only
+  shrink, with 132 copied passages outstanding.
+- **Catalog entry 6 corrected**: it had listed V2MOM as "Salesforce's named variant" of OKRs since the
+  catalog was written, and Salesforce's own training material defines all five V2MOM components without
+  mentioning OKRs once. Corrected with a dated note in the EC-2 pattern, across `catalog.md`,
+  `catalog-data.json` and `buildout-specs.md`.
+
 - **Nine bundles, taking the library from 6 to 15**, and completing three families:
   - `delivery-docs` completed: `product-backlog`, `sprint-backlog`.
   - `decision-docs` completed: `sdd`.

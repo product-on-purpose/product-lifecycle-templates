@@ -100,6 +100,18 @@ jobs:
       - name: Self-reported counts
         run: python tools/check-counts.py
 
+      # A worked example that is its own template's GOOD/WEAK hints reworded demonstrates nothing to a
+      # reader who has already read the comments. This defect recurred FOUR times: product-strategy (7 of
+      # 8 sections), product-roadmap (3 of 8, one sentence verbatim) after the "use a different scenario"
+      # convention was adopted to prevent it, and okrs AGAIN with the different scenario actually in
+      # place, because the reuse lives in the sentence skeleton and survives swapping every noun.
+      # Convention cannot hold this line; a string check can. Triage on 2026-07-30 read all 16 flagged
+      # bundles against their raw comment blocks and found zero false positives, so the 16 are
+      # grandfathered at a measured ceiling that may only shrink, and a new or edited bundle fails on its
+      # first copied passage.
+      - name: Example independence
+        run: python tools/check-example-independence.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record

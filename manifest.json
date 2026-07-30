@@ -136,6 +136,40 @@
     },
     {
       "aliases": [
+        "objectives and key results",
+        "okr",
+        "okr set",
+        "quarterly goals",
+        "goal setting"
+      ],
+      "approx_tokens": {
+        "full": 4150,
+        "lean": 2400
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "okrs",
+      "family": "strategy-docs",
+      "id": "okrs",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (the period and its parent, one Objective, two to four Key Results, and what the set deliberately excludes) when the team shares context and reviews the set together; that is the whole artifact and the extra sections are operating scaffolding rather than content. Use full when the set will be read by people who were not in the room, when more than one team's work feeds the same measure, or when this is a team's first cycle and the operating rules genuinely need writing down: it adds Initiatives (which make a Key Result nobody is working on visible), Confidence and check-in (a weekly forecast, distinct from the end-of-cycle score), and Scoring and close-out (which forces the question of whether scores touch pay before anyone can avoid it).",
+      "status": "beta",
+      "summary": "The document that states what measurable change a team expects in this period and whether it got it. One qualitative Objective plus a small set of Key Results that are outcomes rather than activities. It is judged by a single test: could you finish every piece of work on the list and still have failed?",
+      "tags": [
+        "strategy",
+        "goals",
+        "okrs",
+        "measurement",
+        "alignment",
+        "accountability"
+      ],
+      "title": "OKRs"
+    },
+    {
+      "aliases": [
         "product spec",
         "product brief",
         "feature spec",
@@ -653,5 +687,5 @@
       "title": "User Story"
     }
   ],
-  "count": 18
+  "count": 19
 }

@@ -1,0 +1,34 @@
+id: okrs
+title: OKRs
+summary: >-
+  The document that states what measurable change a team expects in this period and whether it got it. One
+  qualitative Objective plus a small set of Key Results that are outcomes rather than activities. It is
+  judged by a single test: could you finish every piece of work on the list and still have failed?
+doc_type: okrs
+classification: utility
+family: strategy-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (the period and its parent, one Objective, two to four Key Results, and what the set deliberately excludes) when the team shares context and reviews the set together; that is the whole artifact and the extra sections are operating scaffolding rather than content. Use full when the set will be read by people who were not in the room, when more than one team's work feeds the same measure, or when this is a team's first cycle and the operating rules genuinely need writing down: it adds Initiatives (which make a Key Result nobody is working on visible), Confidence and check-in (a weekly forecast, distinct from the end-of-cycle score), and Scoring and close-out (which forces the question of whether scores touch pay before anyone can avoid it)."
+methodology: OKR-driven
+pairs_with: [foundation-okr-writer, measure-okr-grader]
+status: beta
+template_version: 0.1.0
+tags:
+  - strategy
+  - goals
+  - okrs
+  - measurement
+  - alignment
+  - accountability
+related_templates: [product-strategy, product-roadmap, product-vision, kpi-dashboard, prd]
+aliases:
+  - objectives and key results
+  - okr
+  - okr set
+  - quarterly goals
+  - goal setting
+catalog_ref: 6
+maintainer: "product-on-purpose"
+last_reviewed: 2026-07-30
+license: Apache-2.0
