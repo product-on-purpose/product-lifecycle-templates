@@ -314,6 +314,7 @@ The thinking behind the library is documented, not implicit:
 - [`implementation-plan_catalog-to-template-library.md`](docs/internal/plan.md) - the phased plan and acceptance criteria.
 - [`template-library-design-spec.md`](docs/internal/design-spec.md) - the formal specification.
 - [`buildout-plan.md`](docs/internal/buildout-plan.md) and [`buildout-specs.md`](docs/internal/buildout-specs.md) - the Tier-1 floor build-out plan and per-type specs.
+- [`decision-procedures.md`](docs/internal/decision-procedures.md) - how to decide the judgment calls that keep recurring. Not an ADR: an ADR records what was decided, this records how to decide. Every procedure names the precedent that earned it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
