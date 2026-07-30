@@ -23,7 +23,7 @@ tags:
   - dashboard
   - measurement
   - reporting
-related_templates: [risk-register, raid-log, future:okrs]
+related_templates: [risk-register, raid-log, okrs]
 aliases:
   - kpi dashboard
   - metrics dashboard

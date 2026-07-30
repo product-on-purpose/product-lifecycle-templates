@@ -27,7 +27,7 @@ tags:
   - trade-offs
   - foundation
   - decision-making
-related_templates: [product-vision, prd, future:product-roadmap, future:okrs]
+related_templates: [product-vision, prd, product-roadmap, okrs]
 aliases:
   - strategy doc
   - product strategy document

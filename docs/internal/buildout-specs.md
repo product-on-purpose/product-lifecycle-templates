@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=18, tier1=17, tier1remaining=10, checkformats=64 -->
+<!-- counts: bundles=19, tier1=18, tier1remaining=9, checkformats=66 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -33,8 +33,8 @@ reference a future session reads to continue.
 | 10 | product-vision | strategy-docs | class: foundation | **done** (first bundle with more than one format) | #46 |
 | 11 | product-strategy | strategy-docs | class: foundation | **done** (kernel + one-pager formats) | #51 |
 | 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
-| 13 | okrs | strategy-docs | class: utility | planned | - |
-| 14 | product-roadmap | strategy-docs | class: utility | **done** (three formats; 5 of 8 candidates rejected) | #52 |
+| 13 | okrs | strategy-docs | class: utility | **done** (strategy-docs complete; one format, 5 of 6 candidates rejected plus 9 frameworks checked) | #53 |
+| 14 | product-roadmap | strategy-docs | class: utility | **done** (three formats; 6 of 9 candidates rejected) | #52 |
 | 15 | test-plan | qa-docs | phase: develop | **done** | #40 |
 | 16 | test-case | qa-docs | phase: develop | **done** (ships `[lean, full]` against the catalog's S) | #41 |
 | 17 | bug-report | qa-docs | phase: develop | **done** (qa-docs complete) | #42 |
@@ -50,18 +50,27 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 18 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
-`strategy-docs` open at three of four members), **10 planned** (the remaining rows above). Those sum to 28
+**Count:** 19 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
+and `strategy-docs` complete at four members), **9 planned** (the remaining rows above). Those sum to 28
 against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
-`sprint-retrospective-notes` **is** one. So the honest reading is **17 of 27 Tier-1 types built, plus `rfc`;
-10 Tier-1 types remain.** See **D-D** below.
+`sprint-retrospective-notes` **is** one. So the honest reading is **18 of 27 Tier-1 types built, plus `rfc`;
+9 Tier-1 types remain.** See **D-D** below.
+
+**Every one of those 9 belongs to a family with no adopted contract.** `discovery-docs` (business-case,
+user-persona), `standing-standards` (runbook, definition-of-done, and it needs a **set** on the classification
+axis spanning `tool` and `foundation`), `process-docs` (incident-postmortem, sprint-retrospective-notes),
+`communication-docs` (status-report) and `design-docs` (wireframe, interactive-prototype). Per
+[`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes members
+unenforced. **The remaining work is therefore five contracts and then seven bundles**, not nine bundles, and
+`design-docs` is blocked on a prior question: neither a wireframe nor an interactive prototype is a prose
+document, so what those bundles even are is a scope decision nobody has made.
 
 ---
 
 ## Cross-cutting decisions to ratify before the mass build
 
 These are the judgment calls that affect multiple bundles. **They are the highest-value thing to review
-now**, because building 18 bundles on a wrong call is expensive to unwind.
+now**, because building 19 bundles on a wrong call is expensive to unwind.
 
 ### D-A. definition-of-done is reassigned out of delivery-docs (RATIFIED 2026-07-22)
 
@@ -298,7 +307,7 @@ Lean: Problem and Opportunity; Options Considered; Recommendation. Full adds: Co
 Financials. Key sources: PMBOK 7 (Strategy artifact), standard cost-benefit/NPV practice. Formal-auditable.
 
 **okrs** (catalog 6) - strategy-docs, phase/class *TBD (utility/periodic leaning)*, sizes [lean, full],
-methodology OKR-driven, aliases: objectives and key results, V2MOM (Benioff variant). Lean: Objective(s);
+methodology OKR-driven, aliases: objectives and key results, okr set, quarterly goals. **V2MOM was removed from this alias list on 2026-07-30**, because Salesforce's own training material does not present it as an OKR variant; see the catalog entry 6 correction. Lean: Objective(s);
 Key Results (measurable, table). Full adds: Initiatives; Owners; Confidence/Check-in. Key sources: Doerr
 (*Measure What Matters*), Grove (origin at Intel), Google re:Work OKR guide. Teaching point: key results
 are measurable outcomes, not a task list; separate committed vs aspirational.

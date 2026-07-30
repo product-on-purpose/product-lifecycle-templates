@@ -12,8 +12,8 @@ A curated library of product-management and software-lifecycle document template
   <img src="https://img.shields.io/badge/status-beta-yellow?style=flat-square" alt="Status: beta">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
   <img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat-square" alt="Version 0.1.0">
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-18-brightgreen?style=flat-square" alt="Bundles: 18"></a>
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-17%20%2F%2027-orange?style=flat-square" alt="Tier-1 floor: 17 of 27"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-19-brightgreen?style=flat-square" alt="Bundles: 19"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-18%20%2F%2027-orange?style=flat-square" alt="Tier-1 floor: 18 of 27"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-5-brightgreen?style=flat-square" alt="Families: 5"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/gate-11%20checks%20in%20CI-success?style=flat-square" alt="Gate: 11 checks in CI"></a>
   <a href="#the-claim-and-what-it-is-worth"><img src="https://img.shields.io/badge/real%20fills-0%20(honest)-lightgrey?style=flat-square" alt="Real fills: 0"></a>
@@ -117,7 +117,7 @@ The pitch above is the ambition. Here is the same thing with the credit separate
 
 - **Earned today.** Researched, dual-reader, nesting-disciplined, provenance-stamped bundles, with citations verified against raw sources and every correction recorded in the open. A gate that runs in CI and blocks merges. Decision records for every non-obvious choice.
 - **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**: per decisions D2/D3 (resolved 2026-07-17), the library is **not installable via `npx skills add` nor listable on agentskills.io**, because both take exactly one unit, the *skill*, and this repo ships no `SKILL.md`. That is one missing file, not an architecture problem, and it is scheduled ([roadmap LP-2](docs/internal/roadmap.md)).
-- **Still on credit: "reference implementation".** Eighteen of 205 catalog types (17 of the 27 Tier-1 floor), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated.
+- **Still on credit: "reference implementation".** Nineteen of 205 catalog types (18 of the 27 Tier-1 floor), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated.
 
 If that reads harsher than a README usually does, that is the point: [`STATE.md`](STATE.md) is the source of truth, it outranks this file, and it is kept honest on purpose.
 
@@ -127,9 +127,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 18 -->
-<!-- counts: bundles=18, tier1=17, adrs=29 -->
-**Eighteen bundles, in four complete families plus three of the four strategy-docs members.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 19 -->
+<!-- counts: bundles=19, tier1=18, adrs=29 -->
+**Nineteen bundles, in five complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -174,7 +174,7 @@ The verification family: one member plans the testing, one specifies a single ve
 | [`test-case`](templates/test-case/) | The specification of one verification, written so a stranger gets the same answer tomorrow | `deliver-edge-cases` |
 | [`bug-report`](templates/bug-report/) | One anomaly, reproducible by the reader, with severity and priority kept apart | `deliver-edge-cases` |
 
-### `strategy-docs` (three of four bundles, the family in progress)
+### `strategy-docs` (complete, four bundles)
 
 The direction family, on the **classification** axis rather than a phase. Its members answer, in order, where we are trying to get to, which problems we will solve to get there, in what order, and what measurable change we expect. Three are built; `okrs` completes it. It is also the only family whose members ship more than one **format**.
 
@@ -184,7 +184,7 @@ The direction family, on the **classification** axis rather than a phase. Its me
 | [`product-strategy`](templates/product-strategy/) | Which problems this product will solve to get there, and which it will not. Ships two formats: kernel, one-pager | `foundation-lean-canvas` |
 | [`product-roadmap`](templates/product-roadmap/) | In what order those problems get solved, and how certain that is at each horizon. Ships three formats: now-next-later, GO, themes | (none exists yet) |
 
-Beyond these eighteen, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these nineteen, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -236,7 +236,7 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-All eighteen bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All nineteen bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >
@@ -255,8 +255,8 @@ All eighteen bundles currently pass. GitHub Actions runs these on every push to 
 |  |  |
 |---|---|
 | **Current version** | [v0.1.0](CHANGELOG.md) |
-| **Bundles** | 18, across 4 complete families (delivery-docs, decision-docs, governance-docs, qa-docs) plus `product-vision`, `product-strategy` and `product-roadmap`, three of the four strategy-docs member and the first bundle to ship more than one format |
-| **Tier-1 floor** | 17 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
+| **Bundles** | 19, across 5 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs member and the first bundle to ship more than one format |
+| **Tier-1 floor** | 18 of the 27 "must-have" types built ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)) |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, changelog, research-log-contract, self-reported-counts and family-contract-test steps; `main` branch-protected |
 | **Decision records** | 29 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
