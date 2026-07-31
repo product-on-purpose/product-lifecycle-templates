@@ -65,6 +65,7 @@ Do not create for:
 | [0027](0027-adopt-strategy-docs-family-contract.md) | Adopt the strategy-docs family contract (product-vision, product-strategy, product-roadmap, okrs); the first to gate a set of axis values, and the first live use of a capability built ahead of its subject | 2026-07-25 |
 | [0028](0028-adopt-a-format-axis.md) | Adopt a format axis orthogonal to size: a bundle may ship a document in more than one shape, nesting applies within a format and never across formats | 2026-07-25 |
 | [0029](0029-gate-the-research-log-contract-not-its-layout.md) | Gate the research log's contract (per-source retrieval record), not its layout; three numbered layouts are legal. Closes DF-2 for 10 of 16 logs; opens DF-4, the six table logs that carry no URL. Carries a dated correction: the premise that three logs were status-less was false | 2026-07-27 |
+| [0030](0030-templating-scope-markdown-documents.md) | This library templates Markdown documents; artifacts whose primary form is visual, executable or a live data surface are named out of scope rather than left silently unbuilt. Applies to catalog 52 (wireframe) and 54 (interactive prototype), adds `prototype-brief` as a new type in `discovery-docs`, and reports the floor as 25 of 27 templatable | proposed | 2026-07-30 |
 
 ## Correction versus supersession
 

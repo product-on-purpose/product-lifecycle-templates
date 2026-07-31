@@ -19,6 +19,25 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **A templating-scope rule** ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md),
+  **proposed**): this library templates artifacts whose primary form is a written document, and names the ones
+  it will not template rather than leaving them silently unbuilt. Applied to catalog 52 (`wireframe`) and 54
+  (`interactive-prototype`), both out of scope because their artifacts are visual and executable. Adds
+  **`prototype-brief`** as a new type in `discovery-docs`: the brief that commissions a prototype is a
+  document even though the prototype is not. Generalises ADR 0028's format-admission test from formats to
+  types. Two counts follow and are kept apart: the **catalog floor** is 18 of 25 templatable, and the **build backlog** is 8 bundles (the 7 remaining originals plus `prototype-brief`, which is not one of the 27).
+  `design-docs` is therefore never created.
+- **Four family contracts, drafted and pending maintainer review**:
+  [`discovery-docs`](docs/internal/contracts/discovery-docs.md) (business-case, user-persona,
+  prototype-brief; `phase: discover`), [`standing-standards`](docs/internal/contracts/standing-standards.md)
+  (definition-of-done, runbook; **a set** on `classification`, `foundation` or `tool`, the second family to
+  need one), [`process-docs`](docs/internal/contracts/process-docs.md) (sprint-retrospective-notes,
+  incident-postmortem; `phase: iterate`), and
+  [`communication-docs`](docs/internal/contracts/communication-docs.md) (status-report;
+  `classification: utility`, one Tier-1 member, stated rather than hidden).
+- **[`decision-procedures.md`](docs/internal/decision-procedures.md)**, ten recurring judgment calls with the
+  precedent that earned each one. Not an ADR: an ADR records what was decided, this records how to decide.
+
 - **`okrs` (2026-07-30), the nineteenth bundle and the fourth `strategy-docs` member, completing that
   family** and with it one continuous worked thread from a product vision down to a bug report. One format
   ships: six candidates examined individually and five rejected, then nine further named goal-setting
