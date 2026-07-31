@@ -42,28 +42,35 @@ reference a future session reads to continue.
 | 19 | raid-log | governance-docs | class: utility | **done** | #35 |
 | 20 | kpi-dashboard | governance-docs | class: utility *(resolved at contract, ADR 0024)* | **done** | #36 |
 | 21 | user-persona | discovery-docs | phase: discover | planned | - |
-| 22 | wireframe | design-docs | phase: develop | planned | - |
-| 23 | interactive-prototype | design-docs | phase: develop | planned | - |
+| 22 | wireframe | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
+| 23 | interactive-prototype | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
+| - | prototype-brief | discovery-docs | phase: discover | planned (**new type**, ADR 0030; no catalog entry until that record is accepted) | - |
 | 24 | runbook | **standing-standards** (moved, D-B) | class: tool | planned | - |
 | 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | planned | - |
 | 26 | status-report | communication-docs | class: utility | planned | - |
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 19 bundles done (**delivery-docs, decision-docs, governance-docs and qa-docs all complete**, and
-and `strategy-docs` complete at four members), **9 planned** (the remaining rows above). Those sum to 28
-against a 27-type floor because **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while
-`sprint-retrospective-notes` **is** one. So the honest reading is **18 of 27 Tier-1 types built, plus `rfc`;
-9 Tier-1 types remain.** See **D-D** below.
+**Count:** 19 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs and strategy-docs all
+complete**). Those 19 sum against a 27-type floor oddly because **`rfc` is not a Tier-1 type** (catalog 48,
+Tier 2, `must_have: false`) while `sprint-retrospective-notes` **is** one, so the tree holds **18 of the 27
+Tier-1 types, plus `rfc`**. See **D-D** below.
 
-**Every one of those 9 belongs to a family with no adopted contract.** `discovery-docs` (business-case,
-user-persona), `standing-standards` (runbook, definition-of-done, and it needs a **set** on the classification
-axis spanning `tool` and `foundation`), `process-docs` (incident-postmortem, sprint-retrospective-notes),
-`communication-docs` (status-report) and `design-docs` (wireframe, interactive-prototype). Per
-[`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes members
-unenforced. **The remaining work is therefore five contracts and then seven bundles**, not nine bundles, and
-`design-docs` is blocked on a prior question: neither a wireframe nor an interactive prototype is a prose
-document, so what those bundles even are is a scope decision nobody has made.
+**Two counts, and they are not the same count.** Conflating them is the arithmetic defect this repository has
+caught three times, so they are kept apart here:
+
+| Metric | Value | What it counts |
+|---|---|---|
+| **Catalog floor** | **18 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **7 of the original set remain** |
+| **Build backlog** | **8 bundles** | What must actually be authored: those 7, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
+
+**Every one of the 8 belongs to a family with no adopted contract.** `discovery-docs` (business-case,
+user-persona, prototype-brief), `standing-standards` (runbook, definition-of-done, needing a **set** on the
+classification axis spanning `tool` and `foundation`), `process-docs` (incident-postmortem,
+sprint-retrospective-notes) and `communication-docs` (status-report). **`design-docs` is never created**, its
+two candidate members having been ruled out of scope. Per [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4,
+the contract comes first or check K passes members unenforced, so **the remaining work is four contracts and
+then eight bundles.**
 
 ---
 
