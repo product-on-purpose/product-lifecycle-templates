@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-07-30
 decision-makers: [jprisant]
 consulted: [claude]
@@ -126,12 +126,27 @@ record is pending:
   and carries a `prototype-brief` row under `discovery-docs`.
 * No `design-docs` contract exists.
 
-**Deferred to acceptance, deliberately:**
+**Deferred, and the reason was sharpened on ratification (2026-07-31):**
 
-* **A catalog entry for `prototype-brief`.** The catalog currently asserts **205 types across 30 places in
-  the repository**, and adding a 206th cascades to all of them. That churn should follow a ratified decision,
-  not a proposed one. Until it lands, `prototype-brief` exists in the build plan and in the `discovery-docs`
-  contract but **not** in the catalog, and that gap is stated here rather than left for a reader to notice.
+* **A catalog entry for `prototype-brief` waits for the bundle's own research, not merely for this record to
+  be accepted.** The original deferral cited churn: the catalog asserts **205 types across 30 places in the
+  repository**, and a 206th cascades to all of them. That is true and it is the weaker reason.
+
+  **The stronger reason is that `prototype-brief` has not yet passed the test this record establishes.** The
+  admission rule above says a type is templatable when *a named source publishes it as a written document*.
+  That test was applied rigorously to reject `wireframe`. It was **not** applied with equal rigour to admit
+  `prototype-brief`, which rests on Cagan's "the prototype is the majority of the spec" plus reasoning about
+  what a brief is for. Reasoning is not research, and this library's own repeated finding is that a plausible
+  claim is not a sourced one.
+
+  So the order is: **build the bundle, run its research pass against the admission test, and add the catalog
+  entry only if a named source is found.** If none is, the type does not ship and there is no catalog entry to
+  retract. Until then `prototype-brief` exists in the build plan and in the
+  [`discovery-docs` contract](../contracts/discovery-docs.md) but **not** in the catalog, and that gap is
+  stated here rather than left for a reader to discover.
+
+  **This is a live risk to the plan, not a formality.** If the research finds no named source, the build
+  backlog drops from 8 bundles to 7 and `discovery-docs` loses a member.
 
 ## More Information
 
