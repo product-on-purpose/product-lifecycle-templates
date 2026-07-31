@@ -30,9 +30,13 @@ is a **standing instrument revised on a cadence** belongs to a `classification` 
 phase-bound by construction: every member is written once for a decision, and is finished when that decision
 is made.
 
-**On `prototype-brief`.** It is a **new type**, added by
+**On `prototype-brief`, and it is provisional.** It is a **new type**, added by
 [ADR 0030 (templating scope)](../decisions/0030-templating-scope-markdown-documents.md), not a rename of
-catalog 54. Catalog 54 (`interactive-prototype`) is out of scope for templating because its artifact is
+catalog 54. **Its membership is conditional on its own research passing ADR 0030's admission test**: a named
+source must publish this as a written document. That test was applied rigorously to reject `wireframe` and
+has not yet been applied with equal rigour to admit this. **If the research finds no named source, the type
+does not ship and this family has two members**, which is a legitimate outcome and not a failure of the
+contract. Catalog 54 (`interactive-prototype`) is out of scope for templating because its artifact is
 executable; the brief that **commissions** the prototype is a document, and that is what ships. The
 distinction matters and must be stated in the bundle: renaming an out-of-scope artifact to claim its slot is
 the defect this library rejected when it excluded V2MOM.

@@ -20,7 +20,7 @@ stayed fresh, and the ones it does not gate drifted.
 ### Added
 
 - **A templating-scope rule** ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md),
-  **proposed**): this library templates artifacts whose primary form is a written document, and names the ones
+  **accepted 2026-07-31**): this library templates artifacts whose primary form is a written document, and names the ones
   it will not template rather than leaving them silently unbuilt. Applied to catalog 52 (`wireframe`) and 54
   (`interactive-prototype`), both out of scope because their artifacts are visual and executable. Adds
   **`prototype-brief`** as a new type in `discovery-docs`: the brief that commissions a prototype is a
