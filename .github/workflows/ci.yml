@@ -112,6 +112,15 @@ jobs:
       - name: Example independence
         run: python tools/check-example-independence.py
 
+      # The library's differentiator is one continuous worked thread from a product vision down to a bug
+      # report, and it only holds if the artifacts could have existed in the order the documents claim.
+      # On 2026-07-29 the product-roadmap example, dated February, described work as "Specified in the
+      # Saved Views PRD; in build" while that PRD is dated June and status in-review. Four months of time
+      # travel in the file whose job is to demonstrate the thread holds together, past every gate check.
+      # On its first run this found the same defect in product-strategy, 135 days wide.
+      - name: Example chronology
+        run: python tools/check-example-chronology.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
