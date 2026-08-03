@@ -43,9 +43,9 @@ the user does not have, and we have been treating that as a documentation proble
 ## Target Segments, and Non-Targets
 
 **Target: the unaccompanied analyst.** Someone at a 50-500 person company who owns a number, answers
-questions about it weekly, and has no data team behind them. This is the same person the
-[PRD example](../prd/prd_example.md) calls the **Recurring Analyst**; that document names them by behaviour
-and this one by what they lack. They are 61 percent of new accounts and 22 percent of revenue, and the gap between those two numbers is this strategy's whole subject.
+questions about it weekly, and has no data team behind them. This strategy names them by what they lack;
+downstream delivery documents should call the same person the **Recurring Analyst**, by behaviour, and one
+name per person is the point. They are 61 percent of new accounts and 22 percent of revenue, and the gap between those two numbers is this strategy's whole subject.
 
 **Non-target this period: enterprise data-platform teams.** They buy on governance, lineage and modelling
 depth. We win some of these deals and they are profitable. They are still out of scope for FY26, because
