@@ -18,12 +18,13 @@ bundles per focused run.
 ## The pipeline (6 phases)
 
 ```
-1 Research fan-out (parallel sonnet, real web, honest retrieval)
-2 Synthesize the research log (dedupe, tier, contested flags)
-3 Draft (research-log -> companion -> templates -> guide -> example -> meta -> history)
-4 Adversarial four-lens review (parallel sonnet)
-5 Apply findings + re-verify (verify each finding against the source first)
-6 Gate + land (stage, gate, manifest, README, STATE, PR)
+1   Research fan-out (parallel sonnet, real web, honest retrieval)
+2   Synthesize the research log (dedupe, tier, contested flags)
+3   Draft (research-log -> companion -> templates -> guide -> example -> meta -> history)
+3.5 Machine pre-read (two report-only lints; seconds, and it aims phase 4)
+4   Adversarial four-lens review (parallel sonnet)
+5   Apply findings + re-verify (verify each finding against the source first)
+6   Gate + land (stage, gate, manifest, README, STATE, PR)
 ```
 
 Phases 1 and 4 are Workflow fan-outs (sonnet, per the model-routing rule). Phases 2, 3, 5, 6 are main-loop
@@ -151,6 +152,30 @@ job, and the check says so in its own output on every run.
 5. **meta.yaml**: the 20 fields; `related_templates` as an **inline** list (see gotcha 2); catalog_ref from
    the spec.
 6. **history.md**: open at 0.1.0 with the research date.
+
+## Phase 3.5: Machine pre-read
+
+Two report-only lints. Neither is in CI and neither blocks anything, because both have a legitimate-usage
+rate too high to gate on. They run in seconds and their output is an input to phase 4.
+
+```
+python tools/lint-number-provenance.py <type>              # numbers and proper nouns vs the research log
+python tools/lint-unsourced-confidence.py <type> --uncited # frequency and superlative claims, uncited first
+```
+
+**Why before the review and not instead of it.** The library's dominant defect class is a plausible
+specific claim that no logged source supports, and the four-lens review finds these reliably but
+expensively, by reading everything. These lints do the enumeration mechanically so the lenses spend their
+attention judging rather than hunting. `lint-unsourced-confidence` was calibrated against all 19 shipped
+bundles and, on its first run, found two in the merged `adr` bundle: a failure mode ranked "the single most
+common substantive failure" in two files with no frequency measurement anywhere in its log, and a write-only
+phenomenon called "universally acknowledged" when that log records both relevant sources as unretrieved.
+
+**Neither output is a defect list.** A flagged line is a candidate. `lint-number-provenance` cannot tell
+whether a matched log string actually supports the sentence, and `lint-unsourced-confidence` cannot tell a
+sourced frequency claim from an unsourced one, because whether a cited source *measured* the frequency is
+the judgement phase 4 exists to make. Fix a confirmed one by **deleting the claim or labelling it honestly,
+never by hunting for a citation that would justify it** (the `review-finds-unsourced-confidence` memory).
 
 ## Phase 4: Adversarial four-lens review
 

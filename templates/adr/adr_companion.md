@@ -409,11 +409,12 @@ word "RFC" for different artifacts rather than actually disagreeing about anythi
 
 ### 6.4 Why do so many ADR collections become write-only?
 
-The phenomenon is universally acknowledged. The **cause** is contested. One camp argues the failure
-is *structural*: records stored outside the codebase, in a wiki or Confluence, are guaranteed not to
-be read, and the fix is purely a matter of location. The other argues it is *cultural*: records get
-written for uncontentious decisions after the fact, as a gesture toward documentation discipline, and
-no change of location saves a practice nobody believes in.
+The phenomenon is widely asserted and, as far as this research found, never measured. The **cause**
+is contested. One camp argues the failure is *structural*: records stored outside the codebase, in a
+wiki or Confluence, are guaranteed not to be read, and the fix is purely a matter of location. The
+other argues it is *cultural*: records get written for uncontentious decisions after the fact, as a
+gesture toward documentation discipline, and no change of location saves a practice nobody believes
+in.
 
 *Read:* the structural claim is specific and falsifiable, and it is the one ThoughtWorks endorses in
 practice by telling teams to keep records in source control [[9]](#ref-9). The cultural claim is
@@ -472,9 +473,9 @@ because nothing ever told it they were settled.
 2. **The CYA record.** Written to dilute accountability rather than to inform. Pureur and Bittner
    name the mechanism precisely: safety in numbers, protecting the team from blame
    [[8]](#ref-8). The tell is passive voice and an empty or crowded `decision-makers` field.
-3. **The decision without the alternatives.** The single most common substantive failure. It leaves
-   the record unable to answer the only question it will ever be asked, which is "did you consider
-   X?", and it guarantees the next team re-litigates from zero.
+3. **The decision without the alternatives.** The costliest of these, whatever its frequency. It
+   leaves the record unable to answer the only question it will ever be asked, which is "did you
+   consider X?", and it guarantees the next team re-litigates from zero.
 4. **The stale status.** A record that still reads `accepted` for a choice long since abandoned. A
    record justifying a technology you ripped out two years ago is not merely useless to whoever finds
    it next; it actively misleads them, because its status field asserts that the decision still holds
