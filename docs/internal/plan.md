@@ -36,7 +36,7 @@ priority: P1
 > a historical record only. The reason it is kept at all is audit finding **G-01 (the plan that lied about
 > the tree)**: deleting a plan that went stale hides the fact that it went stale, and this repository would
 > rather show the scar.
-<!-- counts: adrs=30, adrmax=30 -->
+<!-- counts: adrs=31, adrmax=31 -->
 >
 > This banner exists because of audit finding G-01: this plan's progress table said "Not started" for every phase while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan.
 
