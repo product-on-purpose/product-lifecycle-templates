@@ -1,5 +1,12 @@
 # Bundle pipeline: the reusable per-bundle runbook
 
+> **This runbook is executable.** [`.claude/skills/build-bundle/`](../../.claude/skills/build-bundle/SKILL.md)
+> drives it, and [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) runs its two
+> fan-outs: `{stage:"research", type, dimensions}` and `{stage:"review", type, family}`. The script enforces
+> in a schema what this document states in prose - the retrieval enum, source ownership, grounded findings -
+> so an agent cannot return a quote without having claimed it read the body. The prose here remains the
+> authority; the script is one way of executing it.
+
 The executable process for building one Tier-1 bundle to the best-in-class, source-referenced standard,
 proven on `sdd` and `product-backlog` (2026-07-20/21). This operationalizes methodology section 8 and the
 buildout-plan pipeline, and it is the durable reference a future session (or an autonomous loop) follows.
