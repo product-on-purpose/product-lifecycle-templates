@@ -70,8 +70,8 @@ The scaling signal is the **contestedness of the decision**, not the importance 
    looks disciplined. They bury the records that matter.
 2. **The CYA record.** Written to spread accountability rather than inform. The tells are passive
    voice and a `decision-makers` field that is either empty or lists the entire org chart.
-3. **Decision without alternatives.** The most common substantive failure. The record cannot answer
-   the only question it will ever be asked.
+3. **Decision without alternatives.** The costliest of these, whatever its frequency. The record
+   cannot answer the only question it will ever be asked.
 4. **Stale status.** A record still marked `accepted` for something ripped out two years ago is not
    merely useless; it actively misleads whoever finds it.
 5. **Scope bloat.** Everything becomes an ADR, and the architecture gets *harder* to see. The
