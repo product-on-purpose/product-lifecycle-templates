@@ -121,6 +121,15 @@ jobs:
       - name: Example chronology
         run: python tools/check-example-chronology.py
 
+      # A rubric row that grades a section the variant does not ship penalises the CHOICE OF VARIANT rather
+      # than the quality of the document. Three occurrences, all found by human review: product-strategy
+      # graded its one-pager on sections it lacks; product-roadmap scored rows 7 and 8 against go and themes,
+      # which ship neither; product-vision scored a horizon row against a PR/FAQ that has no horizon section,
+      # and carried no scope table at all. Enforces the arithmetic and the presence of a scope table; the
+      # section match itself is a heuristic and only warns.
+      - name: Rubric scope
+        run: python tools/check-rubric-scope.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
