@@ -79,10 +79,25 @@ design. Grade the other ten and score against 14 out of 20.
 | 6 | **It is not a mission** | Would read identically after ten years of no progress | Future-facing, but describes the company rather than a changed world | Describes a state of the world that is currently untrue and would be visibly true if reached |
 | 7 | **It is not a roadmap** | Named features or delivery dates | No features, but the horizon reads as a plan | Destination and horizon only; no sequence, no capability list |
 | 8 | **It is not a positioning statement** | Compares the product to alternatives for a customer today | Mixes future state with present competitive claims | States the future; competitive material sits separately as context |
-| 9 | **It has a horizon and a trigger** *(not lean canvas)* | No date, no review | A date, but no trigger and no owner | A date, a named review point, and what would prompt a rewrite as distinct from a strategy change |
-| 10 | **Its assumptions are named** *(not lean canvas)* | "Risks will be managed" | Assumptions listed, all comfortable | The assumption the author is most worried about, with the earliest signal that would disprove it |
+| 9 | **It has a horizon and a trigger** *(canvas full only)* | No date, no review | A date, but no trigger and no owner | A date, a named review point, and what would prompt a rewrite as distinct from a strategy change |
+| 10 | **Its assumptions are named** *(canvas full and narrative)* | "Risks will be managed" | Assumptions listed, all comfortable | The assumption the author is most worried about, with the earliest signal that would disprove it |
 | 11 | **It is short enough to recall** | Needs re-reading to summarise | Summarisable, but not from memory | Someone who read it once can state the destination without opening it |
 | 12 | **It survives its own authors** | Only makes sense with verbal context | Understandable, but a new reader could not act on it | An incoming leader could use it to decline something without asking anyone |
+
+**Which rows apply to what.** This bundle ships four variants and two rows grade a section that only some
+of them contain, so scoring every variant against all twelve would penalise the **choice of format** rather
+than the quality of the document. Row 9 needs a Horizon and Review section, which only the canvas full
+variant has. Row 10 needs a place where assumptions are named: `Leaps of Faith` in canvas full, `What Has to
+Be True` in the narrative. The PR/FAQ has neither, by design.
+
+| Document | Rows that apply | Maximum | Score against |
+|---|---|---|---|
+| canvas, full | all 12 | 24 | **17** |
+| canvas, lean | 1-8, 11-12 (it carries no horizon or assumptions section) | 20 | **14** |
+| narrative, full | 1-8, 10-12 (it names assumptions but sets no dated horizon) | 22 | **16** |
+| prfaq, full | 1-8, 11-12 (its horizon and its assumptions live inside the FAQ answers, not as sections) | 20 | **14** |
+
+Every threshold above is the same proportion of the available points as the headline 17 of 24.
 
 Every cell above describes **evidence, not a count**. That is deliberate: a threshold you can clear by adding
 items will be cleared by adding items. This library's own `bug-report` research documents the mechanism for
