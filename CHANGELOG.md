@@ -19,6 +19,19 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **The `discovery-docs` family contract, adopted**
+  ([ADR 0031](docs/internal/decisions/0031-adopt-discovery-docs-family-contract.md), **accepted 2026-08-04**):
+  `business-case`, `user-persona` and `prototype-brief` on `phase: discover`, registered in check K and
+  latent until the first member lands. Two firsts. It is the first family to extend the library's worked
+  thread **backward** in time rather than adding new ground: its persona defines the **Recurring Analyst**
+  that sixteen files across the library already reference and no bundle has ever described. And it is the
+  first contract ratified with a **provisional member** - `prototype-brief` ships only if its own research
+  finds a named source publishing it as a written document, and the contract pre-commits to a two-member
+  family being a legitimate outcome rather than a failure. Ratifying with the condition stated is the point:
+  deciding membership after the research is when a negative answer is easiest to rationalise away. The
+  contract also carries a chronology obligation, since every member points forward and the `product-roadmap`
+  February-citing-June defect is easiest to repeat here, and it waives example-independence grandfathering
+  entirely.
 - **A templating-scope rule** ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md),
   **accepted 2026-07-31**): this library templates artifacts whose primary form is a written document, and names the ones
   it will not template rather than leaving them silently unbuilt. Applied to catalog 52 (`wireframe`) and 54

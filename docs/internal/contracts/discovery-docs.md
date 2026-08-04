@@ -1,6 +1,7 @@
 # Family Contract: discovery-docs
 
-**Status:** proposed, pending maintainer review.
+**Status:** **adopted 2026-08-04**, [ADR 0031](../decisions/0031-adopt-discovery-docs-family-contract.md).
+Registered in check K, which now gates `phase: discover` on every member.
 **Axis:** `phase`, single value `discover`.
 **Members:** `business-case`, `user-persona`, `prototype-brief`.
 

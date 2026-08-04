@@ -198,6 +198,18 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # ADR 0031. Adopted contract-first like governance-docs, so this entry is latent until business-case
+    # lands. `phase: discover` is a single value by construction: every member is written once for a
+    # decision and is finished when that decision is made, so no member can be a standing instrument.
+    # One member, `prototype-brief`, is provisional: its membership is conditional on its own research
+    # passing ADR 0030's admission test, and a two-member outcome is a legitimate result rather than a
+    # failure. This registry gates whatever ships and is indifferent to how many that turns out to be.
+    "discovery-docs": {
+        "contract": "docs/internal/contracts/discovery-docs.md",
+        "phase": "discover",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"
