@@ -193,6 +193,13 @@ Run a Workflow of four parallel sonnet lenses over the drafted bundle:
 
 Each returns structured findings (`{severity, file, location, issue, fix}`). Use `model:'sonnet'`.
 
+**Give every lens exactly two files to read for its standards: [`review-standards.md`](review-standards.md)
+and its family contract.** The brief states what the eleven gate checks and the CI steps have already
+proved, so a lens does not re-count files, re-follow links or re-hunt placeholders; it names the seven
+defect classes no machine catches; and its lens table assigns each lens only the bundle files it needs, so
+the bundle is not read four times over. It also supersedes `design-spec.md` section 13 as the Definition of
+Done, because that section names CI scripts and a contract path the build never adopted.
+
 ## Phase 5: Apply findings + re-verify
 
 **Every finding is a claim; verify it against the source before applying.** The review reliably catches

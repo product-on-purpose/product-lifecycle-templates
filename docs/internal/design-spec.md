@@ -24,6 +24,7 @@ linked-implementation-plan: implementation-plan_catalog-to-template-library.md
 > | `phase: Deliver` (capitalized) | Lowercase phase values, matching real pm-skills frontmatter. [ADR 20260629](decisions/0003-phase-vocabulary.md) |
 > | Bundle IDs of the form `deliver-prd` | Bare doc-type handles (`prd`); phase lives in metadata, never in the path or ID. [ADR 20260630](decisions/0005-bundle-ids-doctype-spine.md) |
 > | A six-file bundle | Eight files; the research log is a shipped artifact. [ADR 20260630](decisions/0007-research-log-as-bundle-artifact.md) |
+> | CI as named shell scripts (`validate-template-family.sh`, `lint-template-frontmatter`), and family contracts at `_families/<family>.contract.md` (§11, §13) | One Python gate, `tools/check-bundles.py`, eleven lettered checks, plus further CI steps; contracts live in `contracts/`. The enforced Definition of Done is [`review-standards.md`](review-standards.md). |
 >
 > The `{{owner}}`-style placeholders in the schema examples below are intentional: this document *defines* the instance-frontmatter contract, so its examples show the placeholders rather than filled values.
 >
@@ -291,6 +292,8 @@ CI (`validate-template-family.sh` / `.ps1`) enforces conformance: filename conve
 ---
 
 ## 13. Quality Bar / Definition of Done
+
+> **Superseded by [`review-standards.md`](review-standards.md).** The DoD *intent* below held; the CI architecture named at the end of this section did not survive the build. There is no `validate-template-family.sh`, no `lint-template-frontmatter`, and no `_families/<family>.contract.md`. The gate is `tools/check-bundles.py`, eleven lettered checks, plus the further CI steps listed in the brief; family contracts live in `contracts/`. Read the brief for the enforced standard, and this section for the original reasoning.
 
 This section is the heart of "best in class." A bundle is **done** only when every item holds. CI blocks merges otherwise.
 
