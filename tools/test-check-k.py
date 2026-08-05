@@ -158,6 +158,28 @@ def main():
     check("  message lists the set, not a bare value",
           "requires classification: foundation/utility" in detail, detail)
 
+    print("\n" + DIM + "4b. The foundation+tool set (ADR 0032), a combination no earlier family used" + OFF)
+    # standing-standards is the first family to pair `foundation` with `tool`. strategy-docs proved a set
+    # WORKS; it did not prove THIS set works, because it spans foundation/utility and the check reports
+    # back whichever allowed values it was given. The contract asks for this fixture before its first
+    # member lands, so the combination is exercised while it still has no live subject.
+    standing = {"standing-standards": {
+        "contract": REAL_CONTRACT,
+        "classification": ["foundation", "tool"],
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    }}
+    ok, detail = run("definition-of-done", "standing-standards", "classification: foundation", standing)
+    check("a standard you are judged against conforms", ok, detail)
+    ok, detail = run("runbook", "standing-standards", "classification: tool", standing)
+    check("an instrument you execute conforms", ok, detail)
+    ok, detail = run("status-report", "standing-standards", "classification: utility", standing)
+    check("utility is rejected: it belongs to a periodic family", not ok, detail)
+    check("  message lists foundation/tool, not foundation/utility",
+          "allows foundation/tool" in detail, detail)
+    ok, detail = run("sprint-retrospective-notes", "standing-standards", "phase: iterate", standing)
+    check("a phase-axis member is rejected against this set", not ok, detail)
+
     print("\n" + DIM + "5. Real registry: every ratified entry declares exactly one axis" + OFF)
     # Guards the live FAMILY_CONTRACTS, not a fixture: a registry typo (both axes, or neither) is a
     # configuration error that would otherwise surface only when some member happened to trip it.

@@ -1,6 +1,7 @@
 # Family Contract: process-docs
 
-**Status:** proposed, pending maintainer review.
+**Status:** **adopted 2026-08-05**, [ADR 0033](../decisions/0033-adopt-process-docs-family-contract.md).
+Registered in check K, which now gates `phase: iterate` on every member.
 **Axis:** `phase`, single value `iterate`.
 **Members:** `sprint-retrospective-notes`, `incident-postmortem`.
 

@@ -1,6 +1,7 @@
 # Family Contract: standing-standards
 
-**Status:** proposed, pending maintainer review.
+**Status:** **adopted 2026-08-05**, [ADR 0032](../decisions/0032-adopt-standing-standards-family-contract.md).
+Registered in check K, which now gates `classification: foundation or tool` on every member.
 **Axis:** `classification`, **a set**: `foundation` or `tool`.
 **Members:** `definition-of-done`, `runbook`.
 

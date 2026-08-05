@@ -19,6 +19,20 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **The last three family contracts, adopted** ([ADR 0032](docs/internal/decisions/0032-adopt-standing-standards-family-contract.md),
+  [ADR 0033](docs/internal/decisions/0033-adopt-process-docs-family-contract.md),
+  [ADR 0034](docs/internal/decisions/0034-adopt-communication-docs-family-contract.md), **accepted 2026-08-05**):
+  `standing-standards` (definition-of-done, runbook) on a **set** of `foundation` or `tool`, the first family to
+  pair those two values; `process-docs` (sprint-retrospective-notes, incident-postmortem) on `phase: iterate`;
+  and `communication-docs` (status-report) on `classification: utility`. **Every family in the library now has a
+  ratified contract**, which is what unblocks the remaining eight bundles: a contract is a hard maintainer stop,
+  so an unattended run would previously have stalled at the fourth bundle. Each carries a family-specific
+  obligation that is genuinely distinct rather than boilerplate - a **review trigger** with a named owner and a
+  condition for standing-standards, **teaching by contrast** for process-docs, and the **no-new-facts rule** for
+  communication-docs, where every figure in an example must be read from an artifact already in the library and
+  disagreeing with it is a contract failure rather than a rounding difference. `tools/test-check-k.py` gains the
+  fixture ADR 0032 requires for the foundation+tool combination, before its first member lands; the suite goes
+  from 69 to 80 assertions.
 - **The `discovery-docs` family contract, adopted**
   ([ADR 0031](docs/internal/decisions/0031-adopt-discovery-docs-family-contract.md), **accepted 2026-08-04**):
   `business-case`, `user-persona` and `prototype-brief` on `phase: discover`, registered in check K and
