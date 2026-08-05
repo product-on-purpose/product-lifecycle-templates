@@ -111,13 +111,29 @@ def is_exempt(bundle):
 
 
 def logs_on_disk():
-    """Every <type>_research-log.md under templates/, as (bundle, path)."""
+    """Every <type>_research-log.md in a real bundle, as (bundle, path).
+
+    A real bundle is a directory carrying <name>_meta.yaml, the same test check-bundles.py,
+    gen-manifest.py and check-counts.py use. Four tools, one definition.
+
+    They did not always agree. On 2026-08-04 a half-built business-case holding only its research log
+    was counted by check-counts as a built Tier-1 type, reported by check-bundles as "no matching
+    bundle", ignored by gen-manifest, and gated here. Three different answers to "is this a bundle",
+    and the counts gate went red for something that was not a defect. During a long build run every
+    partially-drafted bundle would do the same.
+
+    NOTHING IS LOST by waiting for the meta. A bundle cannot merge without one: check A requires all
+    eight files, so every research log is still gated before it reaches main. The only logs skipped are
+    ones in directories that are work in progress, which is what they are.
+    """
     out = []
     if not os.path.isdir(TEMPLATES):
         return out
     for bundle in sorted(os.listdir(TEMPLATES)):
         d = os.path.join(TEMPLATES, bundle)
         if not os.path.isdir(d) or bundle.startswith((".", "_")):
+            continue
+        if not os.path.isfile(os.path.join(d, bundle + "_meta.yaml")):
             continue
         path = os.path.join(d, bundle + "_research-log.md")
         if os.path.isfile(path):

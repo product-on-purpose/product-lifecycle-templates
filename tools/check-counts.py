@@ -68,9 +68,19 @@ def live_facts():
     bundles_out = _run("tools/check-bundles.py")
     logs_out = _run("tools/check-research-logs.py")
 
+    # A bundle is a directory carrying <name>_meta.yaml, which is the SAME test check-bundles.py and
+    # gen-manifest.py use. This once read "any directory not starting with . or _", and the three tools
+    # then disagreed about what a bundle is: on 2026-08-04 a half-built business-case holding only its
+    # research log was counted here as a built Tier-1 type while check-bundles reported "no matching
+    # bundle" and gen-manifest ignored it, so the counts gate went red for something that was not a
+    # defect. During a long build run every partially-drafted bundle would do the same. The meta is the
+    # right marker because it is the file that declares a bundle's identity; a directory without one is
+    # work in progress, not a bundle.
     templates = os.path.join(ROOT, "templates")
     bundle_dirs = [d for d in sorted(os.listdir(templates))
-                   if os.path.isdir(os.path.join(templates, d)) and not d.startswith((".", "_"))]
+                   if os.path.isdir(os.path.join(templates, d))
+                   and not d.startswith((".", "_"))
+                   and os.path.isfile(os.path.join(templates, d, d + "_meta.yaml"))]
 
     decisions = os.path.join(ROOT, "docs", "internal", "decisions")
     adrs = [f for f in os.listdir(decisions) if re.match(r"^\d{4}-.+\.md$", f)]
