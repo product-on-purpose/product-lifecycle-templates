@@ -38,8 +38,13 @@ Then read the type's spec in [`buildout-specs.md`](../../../docs/internal/buildo
 one research log. Honest retrieval is not negotiable: three tokens, and only `fetched-and-verified` may be
 quoted. See the runbook.
 
-**Phase 3, draft.** research log -> companion -> templates -> guide -> example -> meta -> history, in that
-order, because each is built from the one before.
+**Phase 3, draft.** Run `{stage:"draft", type, family}`. Seven files in dependency order: companion ->
+both templates -> guide -> example -> meta and history, because each is built from the one before.
+
+**Each stage writes its file and returns only a summary.** That is the point, not an implementation
+detail: a stage returning its 600 lines through the schema would push the whole bundle through your
+context and save nothing. One agent writes BOTH templates, because the lean-subset-of-full nesting rule
+is the easiest thing here to get wrong and a split would break it.
 
 **Phase 3.5, machine pre-read.** Two report-only lints, seconds each. Their output aims phase 4.
 
