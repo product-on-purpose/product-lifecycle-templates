@@ -11,8 +11,22 @@ export const meta = {
 // Two stages, one file, because they share the source-ownership and finding schemas but are separated in
 // time by main-loop drafting. A workflow runs to completion and cannot pause for that, so the skill calls
 // this twice. A phases entry with no matching phase() call simply does not appear in the progress tree.
-const stage = args?.stage
-const type = args?.type
+// args may arrive as a real object or as a JSON STRING, depending on how the caller serialised it. The
+// first run of this script died on exactly that: every field read as undefined and the script threw
+// "args.type is required" while the caller had supplied it. Parse defensively rather than making every
+// future invocation remember which form to use.
+let input = args
+if (typeof input === 'string') {
+  try {
+    input = JSON.parse(input)
+  } catch (e) {
+    throw new Error(`args was a string but not valid JSON: ${e.message}`)
+  }
+}
+input = input || {}
+
+const stage = input.stage
+const type = input.type
 if (!type) throw new Error('args.type is required (the bundle handle, e.g. "business-case")')
 
 const RUNBOOK = 'docs/internal/bundle-pipeline.md'
@@ -115,7 +129,7 @@ will converge on the same canonical sources unless you follow this.
 `
 
 if (stage === 'research') {
-  const dimensions = args?.dimensions
+  const dimensions = input.dimensions
   if (!Array.isArray(dimensions) || !dimensions.length) {
     throw new Error('args.dimensions must be a non-empty array for stage "research"')
   }
@@ -170,7 +184,7 @@ a winner.`,
 }
 
 if (stage === 'review') {
-  const family = args?.family
+  const family = input.family
   if (!family) throw new Error('args.family is required for stage "review"')
 
   const b = `templates/${type}/${type}`
