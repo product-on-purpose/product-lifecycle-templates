@@ -210,6 +210,36 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # ADR 0032. The SECOND family to gate a set on the axis key, and the first to combine `foundation`
+    # with `tool`. The cut is: is it a standard you are judged AGAINST (foundation, definition-of-done)
+    # or an instrument you EXECUTE (tool, runbook)? That is a different cut from strategy-docs' set,
+    # which split foundation from utility on argued-and-durable versus maintained-and-periodic. Both are
+    # legitimate because the axis has three legal values. Check K enforces membership OF the set and can
+    # never enforce that a member picked the RIGHT value; that stays a review obligation.
+    "standing-standards": {
+        "contract": "docs/internal/contracts/standing-standards.md",
+        "classification": ["foundation", "tool"],
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
+    # ADR 0033. The second family on `phase: iterate` is not a collision for the same reason qa-docs and
+    # decision-docs both sit on `develop`: this check gates per declared family, so a phase value is
+    # never claimed by one family.
+    "process-docs": {
+        "contract": "docs/internal/contracts/process-docs.md",
+        "phase": "iterate",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
+    # ADR 0034. One Tier-1 member, stated rather than hidden. A status report is produced throughout on a
+    # cadence and is valuable only while current, which is `utility` by the same reasoning governance-docs
+    # used.
+    "communication-docs": {
+        "contract": "docs/internal/contracts/communication-docs.md",
+        "classification": "utility",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"

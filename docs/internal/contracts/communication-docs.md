@@ -1,6 +1,7 @@
 # Family Contract: communication-docs
 
-**Status:** proposed, pending maintainer review.
+**Status:** **adopted 2026-08-05**, [ADR 0034](../decisions/0034-adopt-communication-docs-family-contract.md).
+Registered in check K, which now gates `classification: utility` on every member.
 **Axis:** `classification`, single value `utility`.
 **Members:** `status-report`.
 
