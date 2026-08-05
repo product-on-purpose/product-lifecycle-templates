@@ -1,0 +1,8 @@
+# Workflow scripts are read from disk and passed through a permission dialog that rejects control
+# characters, so a CRLF checkout makes them unrunnable. Keep them LF on every platform.
+*.js text eol=lf
+
+# The gate and its tools are executed by CI on Linux and locally on Windows; LF everywhere avoids
+# a class of shebang and heredoc breakage that only shows up on one of the two.
+*.py text eol=lf
+*.sh text eol=lf

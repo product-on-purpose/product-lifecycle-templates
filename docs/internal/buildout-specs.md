@@ -64,13 +64,21 @@ caught three times, so they are kept apart here:
 | **Catalog floor** | **18 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **7 of the original set remain** |
 | **Build backlog** | **8 bundles** | What must actually be authored: those 7, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
 
-**Every one of the 8 belongs to a family with no adopted contract.** `discovery-docs` (business-case,
-user-persona, prototype-brief), `standing-standards` (runbook, definition-of-done, needing a **set** on the
-classification axis spanning `tool` and `foundation`), `process-docs` (incident-postmortem,
-sprint-retrospective-notes) and `communication-docs` (status-report). **`design-docs` is never created**, its
-two candidate members having been ruled out of scope. Per [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4,
-the contract comes first or check K passes members unenforced, so **the remaining work is four contracts and
-then eight bundles.**
+**All four families now have a drafted contract, and one is adopted.** Per
+[`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
+unenforced, so this is the gating work rather than a formality.
+
+| Family | Members | Contract |
+|---|---|---|
+| `discovery-docs` | business-case, user-persona, prototype-brief | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover` |
+| `standing-standards` | runbook, definition-of-done | Proposed. Needs a **set** on the classification axis spanning `tool` and `foundation` |
+| `process-docs` | incident-postmortem, sprint-retrospective-notes | Proposed |
+| `communication-docs` | status-report | Proposed |
+
+**`design-docs` is never created**, its two candidate members having been ruled out of scope by
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is three
+ratifications and eight bundles**, and the bundle count drops to seven if `prototype-brief`'s research finds
+no named source publishing it as a written document, which ADR 0031 records as a legitimate outcome.
 
 ---
 
@@ -308,7 +316,7 @@ against product outcomes, so the bundle claims no performance benefit.
 Strategic Bets. Full adds: Target Segments; Principles; What We Are Not Doing. Key sources: Cagan
 (strategy as "which problems matter most"), Rumelt (good vs bad strategy), Ramp/Reforge strategy formats.
 
-**business-case** (catalog 3) - strategy-docs (or reassign), **phase discover**, sizes [lean, full],
+**business-case** (catalog 3) - **discovery-docs** ([ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), contract adopted 2026-08-04), **phase discover**, sizes [lean, full],
 methodology methodology-agnostic (PMBOK), aliases: cost-benefit analysis, investment case, value case.
 Lean: Problem and Opportunity; Options Considered; Recommendation. Full adds: Costs; Benefits; Risks;
 Financials. Key sources: PMBOK 7 (Strategy artifact), standard cost-benefit/NPV practice. Formal-auditable.
