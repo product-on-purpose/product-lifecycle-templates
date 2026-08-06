@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=21, tier1=20, tier1remaining=7, checkformats=70 -->
+<!-- counts: bundles=23, tier1=22, tier1remaining=5, checkformats=74 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -45,24 +45,24 @@ reference a future session reads to continue.
 | 22 | wireframe | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | 23 | interactive-prototype | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | - | prototype-brief | discovery-docs | phase: discover | **DOES NOT SHIP.** Failed ADR 0030's admission test on its own research: 29 sources, no named source publishes it as a written document ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) | - |
-| 24 | runbook | **standing-standards** (moved, D-B) | class: tool | planned | - |
+| 24 | runbook | **standing-standards** (moved, D-B) | class: tool | **done** (incident-scoped shape chosen on evidence; the canon calls it a playbook) | #72 |
 | 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | planned | - |
 | 26 | status-report | communication-docs | class: utility | planned | - |
-| 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | planned | - |
+| 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | **done** (standing-standards complete; first live use of the foundation+tool set) | #72 |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
 
-**Count:** 19 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs and strategy-docs all
-complete**). Those 19 sum against a 27-type floor oddly because **`rfc` is not a Tier-1 type** (catalog 48,
-Tier 2, `must_have: false`) while `sprint-retrospective-notes` **is** one, so the tree holds **18 of the 27
-Tier-1 types, plus `rfc`**. See **D-D** below.
+**Count:** 23 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
+discovery-docs and standing-standards all complete**). Those 23 sum against a 27-type floor oddly because
+**`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`
+**is** one, so the tree holds **22 of the 27 Tier-1 types, plus `rfc`**. See **D-D** below.
 
 **Two counts, and they are not the same count.** Conflating them is the arithmetic defect this repository has
 caught three times, so they are kept apart here:
 
 | Metric | Value | What it counts |
 |---|---|---|
-| **Catalog floor** | **20 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **5 of the original set remain** |
-| **Build backlog** | **5 bundles** | What must actually be authored: exactly those 5. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
+| **Catalog floor** | **22 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **3 of the original set remain** |
+| **Build backlog** | **3 bundles** | What must actually be authored: exactly those 3. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 
 **All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
@@ -71,15 +71,15 @@ unenforced, so this is the gating work rather than a formality.
 | Family | Members | Contract |
 |---|---|---|
 | `discovery-docs` | business-case, user-persona (**complete**) | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover`. Closed at two members 2026-08-05: the provisional third failed the admission test ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
-| `standing-standards` | runbook, definition-of-done | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool` |
+| `standing-standards` | runbook, definition-of-done (**complete**) | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool`. Both members landed 2026-08-06, the first live use of that set |
 | `process-docs` | incident-postmortem, sprint-retrospective-notes | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
 | `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
-[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is six bundles
-and no ratifications**. `prototype-brief`'s research found no named source publishing it as a written
-document, so it does not ship and the backlog is five rather than six, which ADR 0031 recorded in advance as
-a legitimate outcome ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)).
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is three bundles
+and no ratifications**: `incident-postmortem`, `sprint-retrospective-notes` and `status-report`.
+`prototype-brief`'s research found no named source publishing it as a written document, so it does not ship,
+which ADR 0031 recorded in advance as a legitimate outcome ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)).
 
 ---
 
@@ -273,8 +273,26 @@ commitment is the Sprint Goal.
   contract, and it derives from (not duplicates) the product backlog. Chains with the delivery-docs Saved
   Views example (the sprint that pulls the top Saved Views items).
 
-**definition-of-done** (catalog 39) - **reassigned** (see D-A). class foundation, sizes [lean], methodology
-agile-scrum, aliases: DoD, done criteria. Build with the standing-standards family, not delivery-docs.
+**definition-of-done** (catalog 39) - **reassigned** (see D-A). class foundation, **sizes [lean, full]**,
+methodology agile-scrum, aliases: DoD, done criteria. Build with the standing-standards family, not
+delivery-docs. **Section design and size call set 2026-08-06 on research evidence; the reasoning is the
+format verdict in [`definition-of-done_research-log.md`](../../templates/definition-of-done/definition-of-done_research-log.md).**
+Lean: Scope and Ownership; Done Criteria; Review Trigger. Full adds Criteria by Level, What This Excludes,
+and When Work Does Not Meet It, inserted so lean stays a strict ordered subset.
+
+**Two departures from this spec as originally written, both on evidence.** (1) **`sizes` becomes
+`[lean, full]`**, not `[lean]`. Published DoDs vary by nearly an order of magnitude, and the variance tracks
+**scope rather than formality**: GitLab's real shipping engineering DoD runs 41 items across six labelled
+subsections and gates a merge to production, while practitioner story-level checklists run 6 to 7 flat
+items. Scrum Alliance names three levels (feature, sprint, release) with a sorting rule rather than a fixed
+list. That is a genuine second weight, and the catalog's size calls are hypotheses rather than facts
+(finding EC-2). (2) **A named `Review Trigger` section is required in both variants**, discharging the
+family's staleness obligation structurally rather than by convention. **Key sources:** the 2020 Scrum Guide
+read directly (the DoD is a *commitment* on the Increment, not an artifact; organisational standards are a
+**minimum** teams may exceed; **the Developers** conform), the 2017 Guide for the wording that changed, and
+Kopczynska et al. (JSS 2022), the only controlled study found. **Citation hazard, per the family contract:**
+the Guide never uses the word "checklist", never says the DoD "evolves over time", and never calls it a
+contract. All three are folklore.
 
 ### strategy-docs (contract adopted 2026-07-25, ADR 0027; classification axis, set [foundation, utility])
 
@@ -416,10 +434,36 @@ Purpose and Scope; Flows and Interactions; States. Full adds: Test Plan/Usage; F
 
 ### ops-docs (new family; see D-B, mixed axis)
 
-**runbook** (catalog 116) - ops-docs, **class tool**, sizes [lean, full], methodology DevOps/SRE, aliases:
-operational runbook, SOP. Lean: Purpose and Prerequisites; Procedure (steps); Verification and Rollback.
-Full adds: Triggers/Alerts; Escalation; Related Runbooks. Key sources: Google SRE book, PagerDuty runbook
-guidance.
+**runbook** (catalog 116) - **standing-standards** (moved, D-B), **class tool**, sizes [lean, full],
+methodology DevOps/SRE, aliases: operational runbook, SOP. **Section design revised 2026-08-06 on research
+evidence; the reasoning is the format verdict in
+[`runbook_research-log.md`](../../templates/runbook/runbook_research-log.md).**
+Lean: Purpose and Trigger; Procedure; Validation; Review Trigger. Full adds Prerequisites and Access,
+Remediation and Cleanup, and When This Does Not Apply, inserted so lean stays a strict ordered subset.
+
+**Which of the two circulating shapes this is, decided by the family contract.** The sources split sharply:
+PagerDuty (7 sections) and Skelton Thatcher (65 headers) publish a **standing service-operations manual**,
+while Emmer (6 sections) and Microsoft (4 components) publish an **incident-scoped procedure**. Atlassian
+publishes two mutually inconsistent templates. This bundle ships the **incident-scoped** shape, because the
+`standing-standards` contract defines a runbook as "the procedure executed when a known situation occurs",
+and the SRE Workbook's model is one playbook entry per alert. The service-operations manual is a different
+artifact and is taught as a boundary.
+
+**Four departures from this spec as originally written, all on evidence.** (1) **The alert trigger moves
+into `lean`.** PagerDuty and Atlassian both place alert context in what would be the lean core, and the SRE
+Workbook states that "whenever an alert is created, a corresponding playbook entry is usually created". A
+runbook with no trigger is a wiki page. (2) **Prerequisites moves out of `lean`**, appearing as its own
+named section in only one source read. (3) **"Verification and Rollback" is dropped as a pairing**: neither
+word titles a section in any of the six templates read. The closest recorded analogue is Microsoft's
+Checklist; the bundle names its own sections Validation and Remediation and Cleanup rather than lifting a
+title from one publisher. (4)
+**"Escalation" and "Related Runbooks" are dropped entirely**, appearing in no source read in full. A named
+`Review Trigger` section is required in both variants, discharging the family's staleness obligation, and
+**no source read carries one**, so it is the bundle's own contribution and must be labelled as such. **Key sources:** Google's SRE Workbook chapter 8 (On-Call), which carries essentially all of
+the canon's substantive treatment, plus PagerDuty, Atlassian and Microsoft templates. **Citation hazard,
+per the family contract, and it is sharper than expected:** Google's canon says **playbook**, not runbook.
+Across seven chapters read, "runbook" appears three times and every occurrence is inside a contributed
+third-party case study. The bundle keeps the catalog's name and says so plainly.
 
 **incident-postmortem** (catalog 127) - ops-docs, **phase iterate** *(event-driven learning)*, sizes
 [lean, full], methodology SRE/DevOps, aliases: postmortem, RCA, after-action review. Lean: Summary and

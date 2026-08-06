@@ -137,6 +137,38 @@
     },
     {
       "aliases": [
+        "DoD",
+        "done criteria",
+        "definition of done"
+      ],
+      "approx_tokens": {
+        "full": 3200,
+        "lean": 1650
+      },
+      "classification": "foundation",
+      "default_size": "lean",
+      "doc_type": "definition-of-done",
+      "family": "standing-standards",
+      "id": "definition-of-done",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Scope and Ownership, Done Criteria, Review Trigger) for the honest minimum most teams should be running: who the standard binds, what it requires, and what would make it stale. Reach for full, which inserts Criteria by Level, What This Excludes, and When Work Does Not Meet It, when the Definition of Done has to gate more than one cadence at once (feature, sprint, and release), when it needs to disclaim its boundary against a neighbor like Definition of Ready or a quality gate, or when the cost of an ambiguous does-not-meet-it moment is high enough to write the consequence down in advance.",
+      "status": "beta",
+      "summary": "The standard every increment is judged against, agreed once by a team and then consulted repeatedly rather than rewritten per occasion. A commitment attached to the Increment, not an artifact of its own, and a floor an organizational standard sets that a team may raise but never lower.",
+      "tags": [
+        "agile",
+        "scrum",
+        "quality",
+        "standing-standards",
+        "done-criteria",
+        "increment"
+      ],
+      "title": "Definition of Done"
+    },
+    {
+      "aliases": [
         "kpi dashboard",
         "metrics dashboard",
         "executive dashboard",
@@ -555,6 +587,41 @@
     },
     {
       "aliases": [
+        "playbook",
+        "operational runbook",
+        "ops manual",
+        "standard operating procedure",
+        "SOP"
+      ],
+      "approx_tokens": {
+        "full": 4350,
+        "lean": 2600
+      },
+      "classification": "tool",
+      "default_size": "lean",
+      "doc_type": "runbook",
+      "family": "standing-standards",
+      "id": "runbook",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Purpose and Trigger, Procedure, Validation, Review Trigger) for a runbook a responder must be able to read in the middle of an incident, which is close to the smallest published templates this bundle's research found; use full when the runbook needs to stand up to something beyond the moment it executes, adding Prerequisites and Access, Remediation and Cleanup, and When This Does Not Apply, for a regulated environment where Validation doubles as an audit trail, cross-team ownership, or a service complex enough that its boundary needs stating rather than assumed.",
+      "status": "beta",
+      "summary": "The document a responder opens when a known alert fires, so that the response does not depend on who is awake. Scoped to one situation rather than one service: the trigger that invokes it, the steps that resolve it, and the check that confirms it worked.",
+      "tags": [
+        "operations",
+        "on-call",
+        "incident-response",
+        "sre",
+        "devops",
+        "procedure",
+        "standing-standards"
+      ],
+      "title": "Runbook"
+    },
+    {
+      "aliases": [
         "SDD",
         "design doc",
         "design document",
@@ -754,5 +821,5 @@
       "title": "User Story"
     }
   ],
-  "count": 21
+  "count": 23
 }

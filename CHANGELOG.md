@@ -17,6 +17,35 @@ family contracts and fourteen decision records landed, which is recorded as find
 [`STATE.md`](STATE.md) rather than quietly corrected: the documents this repository gates for freshness
 stayed fresh, and the ones it does not gate drifted.
 
+### Added
+
+- **`definition-of-done` and `runbook` bundles, completing `standing-standards`** (2026-08-06). The
+  twenty-second and twenty-third bundles, landed together because they share a contract and because the
+  family's set-valued gating only means something with both members present. **The first family whose two
+  members take different values on the same axis**: `classification: foundation` for the standard you are
+  judged against, `classification: tool` for the instrument you execute. That set has carried only a check-K
+  fixture since ADR 0023; this is its first live subject.
+  **Both members ship a named Review Trigger section** with an owner and a condition rather than a calendar,
+  and the research established that obligation twice over independently: neither the Scrum literature nor
+  the SRE literature supplies a condition-based trigger, and both reach for cadences.
+  **`definition-of-done`** was researched against the 2020 Scrum Guide directly, because the family contract
+  names "folklore presented as standard" as this type's citation hazard. Three things everyone says about a
+  Definition of Done are **not in the Guide**: that it is a checklist, that it is the team's contract, and
+  that it gets stricter over time. What the Guide does say is that the **Developers** conform, and that an
+  organisational standard is a **floor** teams may raise and never lower. It ships `[lean, full]` against a
+  spec that called for one size, because published DoDs vary about sevenfold and the variance tracks scope.
+  **`runbook`** ships the incident-scoped shape rather than the 65-header service-operations manual, on the
+  family contract's own definition. Its sharpest finding is that **Google's SRE canon does not use the word
+  runbook**: across seven chapters searched by full text it appears three times, every one inside a
+  contributed third-party case study, and four of the chapters most likely to discuss it contain zero
+  occurrences of either word. The four circulating MTTR statistics for runbooks are quarantined, none
+  traceable to a method, including the percentage figures widely attributed to Google, which do not exist in
+  its text.
+- **A correction to the merged `acceptance-criteria` bundle.** It stated that "the development team owns the
+  DoD, with the Product Owner having final say", citing a Scrum.org page its own reference entry records as
+  HTTP 403 and never read. The 2020 Guide does not support it, and "development team" is vocabulary that
+  edition retired.
+
 ### Changed
 
 - **`prototype-brief` does not ship, and `discovery-docs` closes at two members**

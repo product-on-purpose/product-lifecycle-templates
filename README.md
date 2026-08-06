@@ -127,9 +127,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 21 -->
-<!-- counts: bundles=21, tier1=20, adrs=35 -->
-**Twenty-one bundles, in six complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 23 -->
+<!-- counts: bundles=23, tier1=22, adrs=35 -->
+**Twenty-three bundles, in seven complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -196,7 +196,18 @@ It was ratified with a third, provisional member, `prototype-brief`, on the cond
 | [`user-persona`](templates/user-persona/) | Who we are building for, grounded in research rather than imagination, with the evidence tier stated on the document | (none exists yet) |
 | [`business-case`](templates/business-case/) | Whether an investment is worth making, and what it is being compared against including doing nothing | (none exists yet) |
 
-Beyond these twenty-one, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+### `standing-standards` (complete, two bundles)
+
+The family of documents **agreed once and applied every time**. Not written per increment, not revised on a calendar: written when a team decides how it will work, then consulted repeatedly without being rewritten. Both members fail the same way, by drifting quietly out of date while everyone still believes they are current, so **both ship a review trigger with a named owner and a condition** rather than a calendar reminder. Neither literature this library researched supplies one, which is why the family exists.
+
+It is the first family whose two members take **different values on the same axis**: a definition of done is a standard you are judged against (`foundation`), a runbook is an instrument you execute (`tool`).
+
+| Bundle | What it is | Pairs with |
+|---|---|---|
+| [`definition-of-done`](templates/definition-of-done/) | The one standard every increment is judged against, so "done" stops being an opinion | (none exists yet) |
+| [`runbook`](templates/runbook/) | The procedure executed when a known situation occurs, so the response does not depend on who is awake | (none exists yet) |
+
+Beyond these twenty-three, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -267,8 +278,8 @@ All nineteen bundles currently pass. GitHub Actions runs these on every push to 
 |  |  |
 |---|---|
 | **Current version** | [v0.1.0](CHANGELOG.md) |
-| **Bundles** | 21, across 6 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs) |
-| **Tier-1 floor** | **20 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and 5 remain to build |
+| **Bundles** | 23, across 7 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards) |
+| **Tier-1 floor** | **22 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and 3 remain to build |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, changelog, research-log-contract, self-reported-counts and family-contract-test steps; `main` branch-protected |
 | **Decision records** | 35 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |

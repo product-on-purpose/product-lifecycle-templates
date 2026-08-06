@@ -121,7 +121,7 @@ when a flow is genuinely easier to read as Given/When/Then than as rules [[7]](#
 **Acceptance criteria vs Definition of Done.** The most important distinction to get right. AC are
 **story-specific and functional** (what this story must do); the **Definition of Done is universal and
 applies to every increment** (coded, reviewed, tested, documented, accessible) [[2]](#ref-2)[[6]](#ref-6). The Product Owner
-typically owns AC; the development team owns the DoD, with the Product Owner having final say [[2]](#ref-2). AC are
+typically owns AC. **Corrected 2026-08-06:** this line previously said the development team owns the DoD with the Product Owner having final say, citing [[2]](#ref-2), a page this bundle's own reference entry records as never read. The 2020 Scrum Guide does not support it and retired "development team" as a role; the sourced treatment now lives in the [`definition-of-done` companion](../definition-of-done/definition-of-done_companion.md). AC are
 written per story during refinement; the DoD is set once, up front, and revised rarely [[2]](#ref-2). A story is
 truly done only when it meets **both** its AC and the DoD [[2]](#ref-2). *Recommendation:* never duplicate DoD
 items into AC; if a check applies to every story, it belongs in the DoD.
