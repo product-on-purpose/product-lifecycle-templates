@@ -103,6 +103,40 @@
     },
     {
       "aliases": [
+        "cost-benefit analysis",
+        "investment case",
+        "value case",
+        "funding case",
+        "project justification"
+      ],
+      "approx_tokens": {
+        "full": 4750,
+        "lean": 2200
+      },
+      "default_size": "lean",
+      "doc_type": "business-case",
+      "family": "discovery-docs",
+      "id": "business-case",
+      "phase": "discover",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Problem and Opportunity, Options Considered, Recommendation) to scope a decision and name what it is being compared against, before a financial model exists. Use full when real money and procurement commitments are at stake and a reader needs Costs, Benefits, Risks and Financials to actually fund the thing, mirroring the shift from a Strategic Outline Case to an Outline or Full Business Case in the UK government staging.",
+      "status": "beta",
+      "summary": "The document that justifies an investment before anyone commits to making it: what problem it solves, what it is being compared against including doing nothing, and why the preferred option wins. Lean scopes the decision; full adds the costs, benefits, risks and financials a real funding gate needs.",
+      "tags": [
+        "discovery",
+        "business-case",
+        "investment",
+        "funding",
+        "options",
+        "financials"
+      ],
+      "title": "Business Case"
+    },
+    {
+      "aliases": [
         "kpi dashboard",
         "metrics dashboard",
         "executive dashboard",
@@ -687,5 +721,5 @@
       "title": "User Story"
     }
   ],
-  "count": 19
+  "count": 20
 }
