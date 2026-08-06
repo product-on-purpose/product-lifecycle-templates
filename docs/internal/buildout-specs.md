@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=20, tier1=19, tier1remaining=8, checkformats=68 -->
+<!-- counts: bundles=21, tier1=20, tier1remaining=7, checkformats=70 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ reference a future session reads to continue.
 | 18 | risk-register | governance-docs | class: utility | **done** | #34 |
 | 19 | raid-log | governance-docs | class: utility | **done** | #35 |
 | 20 | kpi-dashboard | governance-docs | class: utility *(resolved at contract, ADR 0024)* | **done** | #36 |
-| 21 | user-persona | discovery-docs | phase: discover | planned | - |
+| 21 | user-persona | discovery-docs | phase: discover | **done** (defines the Recurring Analyst; section design revised on research evidence) | #70 |
 | 22 | wireframe | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | 23 | interactive-prototype | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | - | prototype-brief | discovery-docs | phase: discover | planned (**new type**, ADR 0030; no catalog entry until that record is accepted) | - |
@@ -61,8 +61,8 @@ caught three times, so they are kept apart here:
 
 | Metric | Value | What it counts |
 |---|---|---|
-| **Catalog floor** | **19 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **6 of the original set remain** |
-| **Build backlog** | **7 bundles** | What must actually be authored: those 6, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
+| **Catalog floor** | **20 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **5 of the original set remain** |
+| **Build backlog** | **6 bundles** | What must actually be authored: those 5, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
 
 **All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
@@ -76,8 +76,8 @@ unenforced, so this is the gating work rather than a formality.
 | `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
-[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is seven bundles
-and no ratifications**, and the bundle count drops to six if `prototype-brief`'s research finds
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is six bundles
+and no ratifications**, and the bundle count drops to five if `prototype-brief`'s research finds
 no named source publishing it as a written document, which ADR 0031 records as a legitimate outcome.
 
 ---
@@ -379,10 +379,26 @@ live dashboard.
 ### discovery-docs (new family; single member for now)
 
 **user-persona** (catalog 19) - discovery-docs, **phase discover**, sizes [lean, full], methodology design
-thinking, aliases: customer persona, buyer persona, proto-persona. Lean: Who They Are; Goals; Pains and
-Behaviors. Full adds: Scenarios; Quotes/Evidence; Anti-persona. Key sources: Cooper (personas origin),
-design-thinking practice, proto-persona (Gothelf). Teaching point: evidence-based vs invented personas;
-proto-persona as the lean form.
+thinking, aliases: customer persona, user profile, proto-persona. **Section design revised 2026-08-05 on
+research evidence; the reasoning is the format verdict in
+[`user-persona_research-log.md`](../../templates/user-persona/user-persona_research-log.md).**
+Lean: Who They Are; Goals and Motivations; Pains and Barriers. Full adds: Context of Use; Scenarios;
+Evidence Basis. Key sources: Cooper (origin, though none of his books could be retrieved), Pruitt and
+Grudin (the original research-versus-focus split), Chapman and Milham (the academic critique), Nielsen
+Norman Group (the three-tier evidence ladder), Gothelf (proto-persona). Teaching point: evidence-based
+versus invented personas, and the curse of dimensionality, where every attribute added shrinks the
+population the persona actually describes.
+
+**Four departures from this spec as originally written, each on evidence and each recorded in the research
+log's contested register.** (1) **Anti-persona is not a section.** The one source addressing its packaging
+publishes it as a separate document, so it is named in the companion's Relationships section instead of
+folded into `full`. (2) **"Pains and Behaviors" splits.** Behaviour is folded into Context of Use, which is
+how five of the six published formats read handle it; only one uses a standalone behaviour heading. (3)
+**"Quotes/Evidence" becomes Evidence Basis.** No format read carries a bounded multi-quote block, while a
+single representative quote sits inside the identity block in the two strongest formats, and the evidence
+tier a persona rests on is what the library's own honest-retrieval standard actually cares about. (4)
+**`buyer persona` is removed from the aliases.** It is a different artifact scoped to the purchase decision
+rather than to product use, and the bundle teaches that boundary rather than claiming the name.
 
 ### design-docs (new family; see D-B)
 

@@ -1,0 +1,34 @@
+id: user-persona
+title: User Persona
+summary: >-
+  The document that says who a product is being built for, grounded in user research rather than in
+  invention. Lean names a specific person's identity, goals and pains; full adds how they behave in context,
+  a scenario, and the evidence tier a reader needs to know how much research actually stands behind the
+  picture.
+doc_type: user-persona
+phase: discover
+family: discovery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Who They Are, Goals and Motivations, Pains and Barriers) to name a specific person and ground a design conversation in someone other than the designer, which is the near-universal baseline across published formats. Use full when a reader needs to see how the persona actually behaves and how much research stands behind it: it adds Context of Use, a Scenario with a beginning, middle and end, and an Evidence Basis section that declares the persona's evidence tier, proto, qualitative, or statistical, as a checkable field rather than an unstated assumption."
+methodology: design-thinking
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discovery
+  - user-persona
+  - research
+  - user-experience
+  - design
+related_templates: [product-vision, prd, acceptance-criteria, kpi-dashboard, user-stories, future:prototype-brief]
+aliases:
+  - persona
+  - user profile
+  - proto-persona
+  - qualitative persona
+  - target user profile
+catalog_ref: 19
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-05
+license: Apache-2.0

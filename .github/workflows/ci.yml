@@ -130,6 +130,16 @@ jobs:
       - name: Rubric scope
         run: python tools/check-rubric-scope.py
 
+      # The workflow scripts hold their agent prompts in backtick-delimited template literals, so a
+      # backtick written as markdown inside that prose closes the literal and the Workflow runtime
+      # cannot load the script at all. Measured 2026-08-05: exactly that shipped through a green PR
+      # and passed `node --check` with exit 0, because the stray backticks rebalanced into
+      # expressions Node tolerates. Nothing in this repository parsed the workflow before this step,
+      # so a broken harness was invisible until someone tried to run it. Second failure of this kind
+      # after CRLF made a syntactically perfect script unrunnable, which .gitattributes now prevents.
+      - name: Workflow prompt strings
+        run: python tools/check-workflow-prompts.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record

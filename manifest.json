@@ -688,6 +688,39 @@
     },
     {
       "aliases": [
+        "persona",
+        "user profile",
+        "proto-persona",
+        "qualitative persona",
+        "target user profile"
+      ],
+      "approx_tokens": {
+        "full": 3800,
+        "lean": 2150
+      },
+      "default_size": "lean",
+      "doc_type": "user-persona",
+      "family": "discovery-docs",
+      "id": "user-persona",
+      "phase": "discover",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Who They Are, Goals and Motivations, Pains and Barriers) to name a specific person and ground a design conversation in someone other than the designer, which is the near-universal baseline across published formats. Use full when a reader needs to see how the persona actually behaves and how much research stands behind it: it adds Context of Use, a Scenario with a beginning, middle and end, and an Evidence Basis section that declares the persona's evidence tier, proto, qualitative, or statistical, as a checkable field rather than an unstated assumption.",
+      "status": "beta",
+      "summary": "The document that says who a product is being built for, grounded in user research rather than in invention. Lean names a specific person's identity, goals and pains; full adds how they behave in context, a scenario, and the evidence tier a reader needs to know how much research actually stands behind the picture.",
+      "tags": [
+        "discovery",
+        "user-persona",
+        "research",
+        "user-experience",
+        "design"
+      ],
+      "title": "User Persona"
+    },
+    {
+      "aliases": [
         "story",
         "story card",
         "user story",
@@ -721,5 +754,5 @@
       "title": "User Story"
     }
   ],
-  "count": 20
+  "count": 21
 }

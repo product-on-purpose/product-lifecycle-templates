@@ -431,9 +431,9 @@ validity, manifest agreement and em-dashes. If one were broken the branch would 
 nothing to review. Every token you spend re-checking those is a token not spent on the seven defect classes
 in section 2, which is the only reason you exist.
 
-Ground every finding. `location` is REQUIRED and is your grounding: a line number or an exact quoted
-phrase. For any claim of FACT, ALSO fill the separate `grounds` field with the log line or file line that
-proves it; leave `grounds` empty for a judgement against the brief, which has no proof line to give. A
+Ground every finding. The "location" field is REQUIRED and is your grounding: a line number or an exact
+quoted phrase. For any claim of FACT, ALSO fill the separate "grounds" field with the log line or file line
+that proves it; leave "grounds" empty for a judgement against the brief, which has no proof line to give. A
 finding the main loop cannot locate will be rejected, because it verifies every one against the source
 before applying it.
 
