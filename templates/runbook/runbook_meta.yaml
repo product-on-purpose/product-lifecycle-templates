@@ -1,0 +1,35 @@
+id: runbook
+title: Runbook
+summary: >-
+  The document a responder opens when a known alert fires, so that the response does not depend on who is
+  awake. Scoped to one situation rather than one service: the trigger that invokes it, the steps that
+  resolve it, and the check that confirms it worked.
+doc_type: runbook
+classification: tool
+family: standing-standards
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Purpose and Trigger, Procedure, Validation, Review Trigger) for a runbook a responder must be able to read in the middle of an incident, which is close to the smallest published templates this bundle's research found; use full when the runbook needs to stand up to something beyond the moment it executes, adding Prerequisites and Access, Remediation and Cleanup, and When This Does Not Apply, for a regulated environment where Validation doubles as an audit trail, cross-team ownership, or a service complex enough that its boundary needs stating rather than assumed."
+methodology: DevOps/SRE-lineage
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - operations
+  - on-call
+  - incident-response
+  - sre
+  - devops
+  - procedure
+  - standing-standards
+related_templates: [sdd, test-plan, future:definition-of-done, future:incident-postmortem]
+aliases:
+  - playbook
+  - operational runbook
+  - ops manual
+  - standard operating procedure
+  - SOP
+catalog_ref: 116
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-06
+license: Apache-2.0

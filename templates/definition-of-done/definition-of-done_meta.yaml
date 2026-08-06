@@ -1,0 +1,32 @@
+id: definition-of-done
+title: Definition of Done
+summary: >-
+  The standard every increment is judged against, agreed once by a team and then consulted repeatedly
+  rather than rewritten per occasion. A commitment attached to the Increment, not an artifact of its own,
+  and a floor an organizational standard sets that a team may raise but never lower.
+doc_type: definition-of-done
+classification: foundation
+family: standing-standards
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Scope and Ownership, Done Criteria, Review Trigger) for the honest minimum most teams should be running: who the standard binds, what it requires, and what would make it stale. Reach for full, which inserts Criteria by Level, What This Excludes, and When Work Does Not Meet It, when the Definition of Done has to gate more than one cadence at once (feature, sprint, and release), when it needs to disclaim its boundary against a neighbor like Definition of Ready or a quality gate, or when the cost of an ambiguous does-not-meet-it moment is high enough to write the consequence down in advance."
+methodology: agile-scrum
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - scrum
+  - quality
+  - standing-standards
+  - done-criteria
+  - increment
+related_templates: [sprint-backlog, acceptance-criteria, bug-report, test-plan, runbook]
+aliases:
+  - DoD
+  - done criteria
+  - definition of done
+catalog_ref: 39
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-06
+license: Apache-2.0
