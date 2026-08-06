@@ -431,9 +431,11 @@ validity, manifest agreement and em-dashes. If one were broken the branch would 
 nothing to review. Every token you spend re-checking those is a token not spent on the seven defect classes
 in section 2, which is the only reason you exist.
 
-Ground every finding: give a line number or an exact quoted phrase, and for any claim of fact give the log
-line or file line that proves it. A finding without grounds will be rejected by the main loop, which
-verifies each one against the source before applying it.
+Ground every finding. `location` is REQUIRED and is your grounding: a line number or an exact quoted
+phrase. For any claim of FACT, ALSO fill the separate `grounds` field with the log line or file line that
+proves it; leave `grounds` empty for a judgement against the brief, which has no proof line to give. A
+finding the main loop cannot locate will be rejected, because it verifies every one against the source
+before applying it.
 
 Return the schema. Set checked_nothing_else honestly.`,
         { label: `lens:${l.key}`, phase: 'Review', schema: FINDINGS_SCHEMA, model: 'sonnet', effort: 'high' },
@@ -443,10 +445,15 @@ Return the schema. Set checked_nothing_else honestly.`,
 
   const ok = reviews.filter(Boolean)
   const all = ok.flatMap((r) => (r.findings || []).map((f) => ({ ...f, lens: r.lens })))
-  const ungrounded = all.filter((f) => !f.grounds)
+  // `grounds` is optional BY DESIGN and this count says less than its old name claimed. `location` is
+  // required and is the grounding for every finding; `grounds` is the extra proof line a CLAIM OF FACT
+  // needs, and a schema cannot tell a claim of fact from a judgement against the brief. On the first real
+  // run all four lenses put their proof inline in `issue`, every finding was well grounded, and this
+  // printed "11 ungrounded". A number that cries wolf gets ignored, so it now says what it measures.
+  const noGroundsField = all.filter((f) => !f.grounds)
   const order = { blocking: 0, major: 1, minor: 2 }
 
-  log(`${ok.length}/4 lenses returned, ${all.length} finding(s), ${ungrounded.length} ungrounded`)
+  log(`${ok.length}/4 lenses returned, ${all.length} finding(s), ${noGroundsField.length} with no separate grounds field`)
 
   return {
     stage: 'review',
@@ -456,7 +463,7 @@ Return the schema. Set checked_nothing_else honestly.`,
     // Sorted, never filtered. Every finding is a CLAIM the main loop verifies against the source before
     // applying: the review reliably finds real defects and occasionally proposes a fix that is wrong.
     findings: all.sort((x, y) => (order[x.severity] ?? 3) - (order[y.severity] ?? 3)),
-    ungrounded_count: ungrounded.length,
+    findings_without_grounds_field: noGroundsField.length,
     strayed: ok.filter((r) => r.checked_nothing_else === false).map((r) => r.lens),
   }
 }
