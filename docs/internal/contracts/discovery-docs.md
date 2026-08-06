@@ -3,7 +3,16 @@
 **Status:** **adopted 2026-08-04**, [ADR 0031](../decisions/0031-adopt-discovery-docs-family-contract.md).
 Registered in check K, which now gates `phase: discover` on every member.
 **Axis:** `phase`, single value `discover`.
-**Members:** `business-case`, `user-persona`, `prototype-brief`.
+**Members:** `business-case`, `user-persona`. **The family is closed at two.**
+
+> **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
+> `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing
+> [ADR 0030](../decisions/0030-templating-scope-markdown-documents.md)'s admission test. **It failed.** Six
+> research dimensions and 29 sources found no named source publishing a prototype brief as a written
+> document: GOV.UK's prototyping guidance is a code toolkit, Google Ventures' Sprint Brief scopes an entire
+> five-day sprint, Strategyzer's Test Card is a card, and every assumption-test ancestor stops at a canvas or
+> a worksheet. Section 1 below anticipated this outcome and named it legitimate; that is what happened, and
+> the contract holds. The conditions that would reopen it are listed in ADR 0035.
 
 This contract is written **before any member is built**, following the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern

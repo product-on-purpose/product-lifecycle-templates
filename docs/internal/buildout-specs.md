@@ -44,7 +44,7 @@ reference a future session reads to continue.
 | 21 | user-persona | discovery-docs | phase: discover | **done** (defines the Recurring Analyst; section design revised on research evidence) | #70 |
 | 22 | wireframe | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | 23 | interactive-prototype | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
-| - | prototype-brief | discovery-docs | phase: discover | planned (**new type**, ADR 0030; no catalog entry until that record is accepted) | - |
+| - | prototype-brief | discovery-docs | phase: discover | **DOES NOT SHIP.** Failed ADR 0030's admission test on its own research: 29 sources, no named source publishes it as a written document ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) | - |
 | 24 | runbook | **standing-standards** (moved, D-B) | class: tool | planned | - |
 | 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | planned | - |
 | 26 | status-report | communication-docs | class: utility | planned | - |
@@ -62,7 +62,7 @@ caught three times, so they are kept apart here:
 | Metric | Value | What it counts |
 |---|---|---|
 | **Catalog floor** | **20 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **5 of the original set remain** |
-| **Build backlog** | **6 bundles** | What must actually be authored: those 5, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
+| **Build backlog** | **5 bundles** | What must actually be authored: exactly those 5. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 
 **All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
@@ -70,15 +70,16 @@ unenforced, so this is the gating work rather than a formality.
 
 | Family | Members | Contract |
 |---|---|---|
-| `discovery-docs` | business-case, user-persona, prototype-brief | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover` |
+| `discovery-docs` | business-case, user-persona (**complete**) | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover`. Closed at two members 2026-08-05: the provisional third failed the admission test ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 | `standing-standards` | runbook, definition-of-done | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool` |
 | `process-docs` | incident-postmortem, sprint-retrospective-notes | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
 | `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
 [ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is six bundles
-and no ratifications**, and the bundle count drops to five if `prototype-brief`'s research finds
-no named source publishing it as a written document, which ADR 0031 records as a legitimate outcome.
+and no ratifications**. `prototype-brief`'s research found no named source publishing it as a written
+document, so it does not ship and the backlog is five rather than six, which ADR 0031 recorded in advance as
+a legitimate outcome ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)).
 
 ---
 

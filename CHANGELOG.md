@@ -17,6 +17,24 @@ family contracts and fourteen decision records landed, which is recorded as find
 [`STATE.md`](STATE.md) rather than quietly corrected: the documents this repository gates for freshness
 stayed fresh, and the ones it does not gate drifted.
 
+### Changed
+
+- **`prototype-brief` does not ship, and `discovery-docs` closes at two members**
+  ([ADR 0035](docs/internal/decisions/0035-prototype-brief-fails-the-admission-test.md), **accepted
+  2026-08-05**). The type was ratified as a **provisional** member by ADR 0031, conditional on its own
+  research passing ADR 0030's admission test that a named source must publish it as a written document. **It
+  failed.** Six research dimensions and 29 sources found prototyping practice everywhere and a commissioning
+  document nowhere: GOV.UK's guidance is built around a code toolkit, which is structurally why `wireframe`
+  was rejected; Google Ventures' Sprint Brief is real and named but scopes an entire five-day sprint, with
+  the prototype's own plan produced mid-sprint as a storyboard; Strategyzer's Test Card is a card for
+  business-model assumptions; and every assumption-test ancestor, Lean UX included, stops at a canvas or a
+  worksheet. All six dimensions converged although only the first was asked the admission question.
+  Shipping it anyway would have meant presenting an adjacent artifact under this type's name, the defect
+  that got V2MOM rejected. The backlog drops to five, the Tier-1 floor is unchanged because this type was
+  never one of the 27, and catalog entry 54's note is corrected from asserting the brief ships. The evidence
+  is preserved in [`prototype-brief-admission-evidence.md`](docs/internal/prototype-brief-admission-evidence.md)
+  and the record states four falsifiable conditions that would reopen it.
+
 ### Added
 
 - **`user-persona` bundle, the twenty-first and the second `discovery-docs` member** (2026-08-05). Eight
