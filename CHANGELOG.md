@@ -19,6 +19,25 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **`user-persona` bundle, the twenty-first and the second `discovery-docs` member** (2026-08-05). Eight
+  files, 45 researched sources of which 33 were read in full, `phase: discover`, sizes `[lean, full]`,
+  `pairs_with: []`. **It defines the Recurring Analyst**, referenced across 19 files in this repository with
+  no bundle having defined her, and its example is now the earliest document in the library. **The research
+  changed the build spec in four places**: the anti-persona ships as a separate document rather than a
+  section, "Behaviors" gets no standalone heading because none of the six published formats read carries
+  one, a bounded "Quotes/Evidence" block appears in none of them, and `buyer persona` leaves the aliases
+  because it is a different artifact scoped to the purchase decision. **The type's own canon could not be
+  read**: *The Inmates Are Running the Asylum* chapter 9, *About Face* and *The Persona Lifecycle* were all
+  unreachable, so the bundle states nothing about what they say, and Cooper is quoted from his own later
+  essays instead, including that he gave the term away. The template carries a declared **evidence tier**,
+  following Nielsen Norman Group's three-tier ladder, and the circulated 900 percent persona statistic is
+  taught as an example of a number that traces to one uncontrolled case study isolating nothing.
+- **`check-workflow-prompts.py`, gating a harness failure nothing else could see** (2026-08-05). A backtick
+  written as markdown inside a workflow prompt closes the prompt's own template literal and makes the script
+  unloadable. It shipped through a green PR and passed `node --check` with exit 0, because the stray
+  backticks rebalanced into expressions Node tolerates. Nothing in CI parsed the workflow scripts before
+  this. The check says in its own output that it cannot prove a script loads, because only invoking the
+  Workflow tool proves that. Second failure of this shape after CRLF, and recorded as gotcha 7.
 - **`business-case` bundle, the twentieth and the first `discovery-docs` member** (2026-08-05). Eight files,
   43 researched sources, `phase: discover`, sizes `[lean, full]`, `pairs_with: []` because no pm-skills skill
   serves this type. **One format ships**: the Five Case Model, with the SAFe Lean Business Case **deferred on a

@@ -247,6 +247,16 @@ the maintainer read at the family boundary (batch review), then merge and pull. 
    PR (30-second STATE.md "Last updated" reconciliation).
 6. **`## References` must stay literally that** - check E splits the companion body on that exact heading;
    numbering it breaks the split and floods the bare-citation check.
+7. **Never write a backtick inside a workflow prompt.** The prompts in
+   [`build-bundle.js`](../../.claude/workflows/build-bundle.js) live in backtick-delimited template
+   literals, so marking up a field name the way you would in markdown closes the literal and the Workflow
+   runtime refuses to load the script. Use double quotes. **`node --check` does not catch this**: on
+   2026-08-05 a two-word edit of exactly this kind shipped through a green PR, passed `node --check` with
+   exit 0, and died at load, because the stray backticks rebalanced into expressions Node tolerates.
+   [`check-workflow-prompts.py`](../../tools/check-workflow-prompts.py) now gates the shape in CI, and says
+   in its own output that it cannot prove the script loads. **Only invoking the workflow proves that**,
+   which is the same lesson CRLF taught: a script can be correct and not loadable, and reading it again
+   will never tell you which.
 
 ## check E verification snippet (run after drafting the companion)
 

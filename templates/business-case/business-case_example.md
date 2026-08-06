@@ -14,8 +14,9 @@ source_template_version: 0.1.0
 
 > **Worked example.** A filled `business-case`, full variant, for Acme Analytics, the same product used
 > throughout this library's examples. Per the discovery-docs family contract, this document sits near the
-> **start** of the shared timeline, behind only the product vision it builds on: it is dated 2026-01-20, six
-> days before the leadership review it asks for and eight days before the
+> **start** of the shared timeline, ahead of everything except its sibling
+> [user persona](../user-persona/user-persona_example.md) and the product vision it builds on: it is dated
+> 2026-01-20, six days before the leadership review it asks for and eight days before the
 > [FY26 product strategy](../product-strategy/product-strategy_example.md) whose Guiding Policy and Coherent
 > Action sections spend the investment argued for below. Nothing in the body cites the strategy, the
 > [roadmap](../product-roadmap/product-roadmap_example.md), or any later document, because none of them

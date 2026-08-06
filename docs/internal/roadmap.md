@@ -22,7 +22,7 @@
 > [`tools/check-counts.py`](../../tools/check-counts.py), so a changed number now fails CI instead of
 > ageing quietly here.
 
-<!-- counts: adrs=34, adrmax=34, bundles=20 -->
+<!-- counts: adrs=34, adrmax=34, bundles=21 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
