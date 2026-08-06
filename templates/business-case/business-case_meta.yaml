@@ -1,0 +1,34 @@
+id: business-case
+title: Business Case
+summary: >-
+  The document that justifies an investment before anyone commits to making it: what problem it solves,
+  what it is being compared against including doing nothing, and why the preferred option wins. Lean scopes
+  the decision; full adds the costs, benefits, risks and financials a real funding gate needs.
+doc_type: business-case
+phase: discover
+family: discovery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Problem and Opportunity, Options Considered, Recommendation) to scope a decision and name what it is being compared against, before a financial model exists. Use full when real money and procurement commitments are at stake and a reader needs Costs, Benefits, Risks and Financials to actually fund the thing, mirroring the shift from a Strategic Outline Case to an Outline or Full Business Case in the UK government staging."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discovery
+  - business-case
+  - investment
+  - funding
+  - options
+  - financials
+related_templates: [product-vision, product-strategy, product-roadmap]
+aliases:
+  - cost-benefit analysis
+  - investment case
+  - value case
+  - funding case
+  - project justification
+catalog_ref: 3
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-05
+license: Apache-2.0

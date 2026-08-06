@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=19, tier1=18, tier1remaining=9, checkformats=66 -->
+<!-- counts: bundles=20, tier1=19, tier1remaining=8, checkformats=68 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -32,7 +32,7 @@ reference a future session reads to continue.
 | 9 | sprint-backlog | delivery-docs | phase: deliver | **done** (delivery-docs complete) | kickoff PR |
 | 10 | product-vision | strategy-docs | class: foundation | **done** (first bundle with more than one format) | #46 |
 | 11 | product-strategy | strategy-docs | class: foundation | **done** (kernel + one-pager formats) | #51 |
-| 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | planned | - |
+| 12 | business-case | **discovery-docs** (moved, D-B) | phase: discover | **done** (first `discovery-docs` member; first bundle drafted by the pipeline) | #68 |
 | 13 | okrs | strategy-docs | class: utility | **done** (strategy-docs complete; one format, 5 of 6 candidates rejected plus 9 frameworks checked) | #53 |
 | 14 | product-roadmap | strategy-docs | class: utility | **done** (three formats; 6 of 9 candidates rejected) | #52 |
 | 15 | test-plan | qa-docs | phase: develop | **done** | #40 |
@@ -61,23 +61,23 @@ caught three times, so they are kept apart here:
 
 | Metric | Value | What it counts |
 |---|---|---|
-| **Catalog floor** | **18 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **7 of the original set remain** |
-| **Build backlog** | **8 bundles** | What must actually be authored: those 7, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
+| **Catalog floor** | **19 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **6 of the original set remain** |
+| **Build backlog** | **7 bundles** | What must actually be authored: those 6, **plus `prototype-brief`**, a new type added by ADR 0030 that is not one of the 27 |
 
-**All four families now have a drafted contract, and one is adopted.** Per
+**All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
 unenforced, so this is the gating work rather than a formality.
 
 | Family | Members | Contract |
 |---|---|---|
 | `discovery-docs` | business-case, user-persona, prototype-brief | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover` |
-| `standing-standards` | runbook, definition-of-done | Proposed. Needs a **set** on the classification axis spanning `tool` and `foundation` |
-| `process-docs` | incident-postmortem, sprint-retrospective-notes | Proposed |
-| `communication-docs` | status-report | Proposed |
+| `standing-standards` | runbook, definition-of-done | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool` |
+| `process-docs` | incident-postmortem, sprint-retrospective-notes | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
+| `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
-[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is three
-ratifications and eight bundles**, and the bundle count drops to seven if `prototype-brief`'s research finds
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is seven bundles
+and no ratifications**, and the bundle count drops to six if `prototype-brief`'s research finds
 no named source publishing it as a written document, which ADR 0031 records as a legitimate outcome.
 
 ---

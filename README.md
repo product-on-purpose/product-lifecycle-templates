@@ -127,9 +127,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 19 -->
-<!-- counts: bundles=19, tier1=18, adrs=34 -->
-**Nineteen bundles, in five complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 20 -->
+<!-- counts: bundles=20, tier1=19, adrs=34 -->
+**Twenty bundles: five complete families, and the first member of a sixth.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -176,15 +176,24 @@ The verification family: one member plans the testing, one specifies a single ve
 
 ### `strategy-docs` (complete, four bundles)
 
-The direction family, on the **classification** axis rather than a phase. Its members answer, in order, where we are trying to get to, which problems we will solve to get there, in what order, and what measurable change we expect. Three are built; `okrs` completes it. It is also the only family whose members ship more than one **format**.
+The direction family, on the **classification** axis rather than a phase. Its members answer, in order, where we are trying to get to, which problems we will solve to get there, in what order, and what measurable change we expect. It is also the only family whose members ship more than one **format**.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`product-vision`](templates/product-vision/) | The future this product is trying to create, and what that rules out. Ships three formats: canvas, narrative, PR/FAQ | (none exists yet) |
 | [`product-strategy`](templates/product-strategy/) | Which problems this product will solve to get there, and which it will not. Ships two formats: kernel, one-pager | `foundation-lean-canvas` |
 | [`product-roadmap`](templates/product-roadmap/) | In what order those problems get solved, and how certain that is at each horizon. Ships three formats: now-next-later, GO, themes | (none exists yet) |
+| [`okrs`](templates/okrs/) | What measurable change a team expects this period, and whether it got it | `foundation-okr-writer`, `measure-okr-grader` |
 
-Beyond these nineteen, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+### `discovery-docs` (one of three bundles)
+
+The family that runs *before* the decision to build. Its members answer whether the investment is worth making, who it is for, and what to build cheaply first to find out whether we are right. Its examples extend the shared Acme Analytics thread **backward**, to before the commitments the other families describe: the business case below is dated eight days before the FY26 product strategy whose plans spend the money it argues for. `user-persona` and `prototype-brief` remain to build.
+
+| Bundle | What it is | Pairs with |
+|---|---|---|
+| [`business-case`](templates/business-case/) | Whether an investment is worth making, and what it is being compared against including doing nothing | (none exists yet) |
+
+Beyond these twenty, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -255,8 +264,8 @@ All nineteen bundles currently pass. GitHub Actions runs these on every push to 
 |  |  |
 |---|---|
 | **Current version** | [v0.1.0](CHANGELOG.md) |
-| **Bundles** | 19, across 5 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs member and the first bundle to ship more than one format |
-| **Tier-1 floor** | **18 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and 7 remain to build |
+| **Bundles** | 20, across 5 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs), plus the first member of discovery-docs |
+| **Tier-1 floor** | **19 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and 6 remain to build |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, changelog, research-log-contract, self-reported-counts and family-contract-test steps; `main` branch-protected |
 | **Decision records** | 34 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |

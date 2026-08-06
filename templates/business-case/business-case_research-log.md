@@ -58,7 +58,7 @@ named alternative as non-optional in substance. **A business case naming no alte
 **5. The most repeated "fact" about IRR is a documented fallacy, and the source a business-case author is
 most likely to consult states it as settled.** Magni and Martin: "There are no reinvestment rate
 assumptions built into, or implicit to, the computation and use of either the IRR or NPV" [11]. Corporate
-Finance Institute states the opposite as IRR's "critical flaw": it "assumes all positive cash flows of a
+Finance Institute states the opposite as a defining flaw: it "assumes all positive cash flows of a
 project will be reinvested at the same rate as the project" [14]. This is a genuine academic-versus-
 practitioner split running through the same tier of sources a reader will meet, and the bundle must present
 it as contested rather than picking the version it prefers. See the contested register.
@@ -274,7 +274,7 @@ Quotable: "Return on investment (ROI) is a financial ratio used to calculate the
 receive in relation to their investment cost." / "disregards the factor of time" / "an investor needs to
 consider the true ROI, which accounts for all possible costs incurred"
 
-**[17] HM Treasury. "The Green Book: UK Government Guidance on Appraisal" (2026 edition).** primary. **fetched-and-verified.**
+**[17] HM Treasury. "The Green Book: UK Government Guidance on Appraisal" (2022 edition).** primary. **fetched-and-verified.**
 `https://assets.publishing.service.gov.uk/media/6645c709bd01f5ed32793cbc/Green_Book_2022__updated_links_.pdf`
 Supports: the social time preference discount rate and its term structure, the definition of optimism bias,
 the four summary metrics, the explicit warning against BCR-threshold decision rules, the spurious-accuracy
@@ -296,6 +296,10 @@ benefit would need to be for the proposal's NPSV to be greater than zero. They s
 this value is likely or unlikely, based on past evidence." / "The benefit-cost ratio is the social return
 of a proposal. It captures the monetisable social benefits that are generated for each pound sterling of
 monetisable social costs."
+Contested/time-bound: this entry first recorded a "2026 edition" label. Corrected during the bundle review:
+the asset's own filename reads `Green_Book_2022__updated_links_`, and the GOV.UK collection page that lists
+it carries no edition label at all, so nothing supported the later year. The quoted material above is
+unaffected; only the edition attached to it was wrong.
 
 **[18] VX Technology. "Intangible Benefits Are Not Nonexistent - How to Quantify What Seems Unquantifiable".** vendor. **fetched-and-verified.**
 `https://www.vx-technology.com/en/insights/intangible-benefits-are-not-nonexistent`
@@ -512,7 +516,7 @@ in this section.**
 **[36] PMI. *A Guide to the Project Management Body of Knowledge* (PMBOK Guide) 7th edition, 2021.** standards. **not-retrieved.**
 `https://www.pmi.org/`
 Supports: nothing in this bundle. Sought for: PMBOK 7's own text classifying Business Case as a Strategy artifact alongside Project Charter
-and Roadmap, and its stated components. **Paywalled to PMI members; no free PMI.org page states this
+and Roadmap, and its stated components. **Available only to PMI members; no free PMI.org page states this
 directly.** Third-party summaries agree on the classification but were not read in full, and one candidate
 verification site returned HTTP 503 while another had been updated to PMBOK 8 content.
 **This bundle's own build spec names PMBOK 7 as a key source. It could not be read, and this bundle
@@ -564,8 +568,8 @@ Recorded rather than resolved. Where sources genuinely disagree, the bundle pres
 
 **1. Does IRR assume reinvestment at the IRR rate?** Magni and Martin [11], academic and primary, say the
 claim is a documented fallacy with no basis in the mathematics. Corporate Finance Institute [14],
-practitioner tier and the source a business-case author is far more likely to consult, states it as IRR's
-"critical flaw" and recommends MIRR as the fix. This is a real split running through the tier of sources
+practitioner tier and the source a business-case author is far more likely to consult, states it as a
+defining flaw of the method. This is a real split running through the tier of sources
 readers will actually meet. **Present both.** The practitioner warning against comparing IRRs across
 projects of different scale is independently sound; the "implicit assumption" framing specifically is what
 finance academics dispute.

@@ -19,6 +19,17 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Added
 
+- **`business-case` bundle, the twentieth and the first `discovery-docs` member** (2026-08-05). Eight files,
+  43 researched sources, `phase: discover`, sizes `[lean, full]`, `pairs_with: []` because no pm-skills skill
+  serves this type. **One format ships**: the Five Case Model, with the SAFe Lean Business Case **deferred on a
+  stated retrieval gap** rather than rejected, since only a practitioner mirror was read and not Scaled Agile's
+  own page. Its central teaching point is that every standard readable in full treats the case as a **living
+  document** while most use is a one-time gate, and its honest core is that **product-management literature is
+  hostile or silent**: no product source found makes a positive case for the artifact. **PMBOK 7 could not be
+  retrieved** despite being named a key source for this type, so the bundle states nothing about it, and the
+  circulated benefits-realisation statistics (McKinsey, KPMG, PMI, Standish) are **quarantined, not cited**.
+  Its worked example is the first to extend the Acme Analytics thread **backward**, dated eight days before the
+  FY26 product strategy whose plans spend the investment it argues for.
 - **The last three family contracts, adopted** ([ADR 0032](docs/internal/decisions/0032-adopt-standing-standards-family-contract.md),
   [ADR 0033](docs/internal/decisions/0033-adopt-process-docs-family-contract.md),
   [ADR 0034](docs/internal/decisions/0034-adopt-communication-docs-family-contract.md), **accepted 2026-08-05**):
@@ -177,6 +188,15 @@ stayed fresh, and the ones it does not gate drifted.
 
 ### Fixed
 
+- **Three documentation-drift defects found while landing `business-case`**, each shipped by an earlier PR
+  that updated a count without re-reading the prose around it. The README's headline statistics table had a
+  fragment of **PR #46's own commit message** spliced into it ("strategy-docs member and the first bundle to
+  ship more than one format"), leaving a sentence that never closed its parenthesis; `okrs` landed in PR #53
+  with **no row in its family table** while the table's heading already claimed four bundles, and the prose
+  still read "Three are built; `okrs` completes it"; and both `STATE.md` and `buildout-specs.md` still said
+  the remaining work included **family-contract ratifications** after PR #65 adopted the last three. This is
+  the defect class `check-counts.py` names in its own output: it compares markers and cannot read the
+  sentences that quote them.
 - `release-notes` gained a first-release mode, so the template no longer assumes a previous version exists
   (DF-1, template 0.1.1).
 - The catalog's prose said "core 28-type must-have tier" against its own machine data's 27, in two places.
