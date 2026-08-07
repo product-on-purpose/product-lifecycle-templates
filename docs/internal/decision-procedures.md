@@ -160,6 +160,50 @@ deliberately unresolved by [ADR 0023](decisions/0023-resolve-the-tier-1-family-t
 
 ---
 
+## 11. A family contract asserts something about the world
+
+**Measured 2026-08-07.** Three contracts were drafted in one batch on 2026-08-05, each for a family with no
+built members. When their members were finally researched, one contract's central claim was **vindicated**
+(`standing-standards`: neither literature supplies a condition-based review trigger, confirmed twice
+independently) and two carried assertions no source supports. Three failing claims, from two contracts.
+
+**The mechanism is not the ordering.** Contract-first stays: a family without an adopted contract has its
+members pass check K *unenforced*, which is why [ADR 0020](decisions/0020-adopt-delivery-docs-family-contract.md)
+established it and why gotcha 4 depends on it. Trading a gate hole for a citation problem is a bad trade.
+
+**The mechanism is mood.** The six contracts written before that batch contain no assertions about the
+outside world at all; they are obligation documents. The batch of three is the first to *argue*, and it
+argues in the same voice it legislates in. A contract sentence does one of three things:
+
+| Mood | What it is | Needs a source? |
+|---|---|---|
+| **OBLIGATION** | A rule the library sets and the gate can check: "members declare `phase: iterate`" | **No.** The library's to decide |
+| **CLAIM** | An assertion about the world: "the common real-world error is X" | **Yes.** Without one it does not go in |
+| **POSITION** | The library's own reasoning, said so: "this library holds that ..." | **No, but it must read as the library's view** |
+
+**The procedure.**
+
+1. **Writing a contract:** every sentence about anything outside this repository either carries a source or
+   is rewritten as a POSITION. If you cannot cite it and will not own it, cut it.
+2. **When a family's first member is researched**, test the contract's CLAIM sentences against that
+   member's research log, and add a dated confirmation line to the contract's change note recording what
+   survived. A vindicated claim is as worth recording as a refuted one, because it is the evidence that
+   drafting blind is not automatically wrong.
+3. **A refuted or unsourced CLAIM is corrected in place**, dated, in the EC-2 pattern
+   (see [procedure 1](#1-a-catalog-call-loses-to-research)), not by a superseding decision record, unless
+   it changes an obligation. None of the three found so far changed one.
+
+**Two of the three failures were labelling, not error.** The risk-register destination was true of this
+library and misleading about practice; the no-new-facts rule was a good rule written as a discovered
+property of the field. Correct content, wrong voice. Only one was factually wrong. That ratio is the
+argument for this procedure being about mood rather than about rigour: the authors were mostly right and
+mostly failed to say whose view they were stating.
+
+**This is the library's dominant defect class, one level up.** In a bundle it reads as "a plausible specific
+claim no logged source supports", and [`review-standards.md`](review-standards.md) section 5 already governs
+it. Contracts had no equivalent rule because nothing reviewed contracts against evidence until the research
+dimensions started pointing at them.
+
 ## What always stops for the maintainer
 
 These are not judgment calls with a procedure. They are decisions that belong to the person who owns the
