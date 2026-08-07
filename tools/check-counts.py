@@ -106,7 +106,20 @@ def live_facts():
 
 
 def marked_files():
-    """Tracked markdown carrying a counts marker, as (path, {fact: claimed})."""
+    """Tracked markdown carrying counts markers, as (label, {fact: claimed}) per MARKER found.
+
+    EVERY marker in a file is read, not just the first. Until 2026-08-07 this used `search`, so a
+    document could carry only one gated claim no matter how many numbers it stated, and the check's own
+    declared blind spot (it compares markers, never the prose around them) had no remedy available to an
+    author who wanted one. The DF-5 defect recurred eight times, and the geometry was the same every
+    time: a stale sentence sitting a hundred or more lines from the single marker at the top of its file.
+    README.md line 273 was found saying "All nineteen bundles currently pass" against a tree of 25, 142
+    lines below a marker that was green and correct.
+
+    With `finditer`, a marker can sit beside the sentence it governs. That does not make the check able to
+    read prose, which is still impossible and still stated in its own output. It makes the blind spot
+    ADDRESSABLE: an author who knows a sentence quotes a number can now pin it, one line above.
+    """
     tracked = subprocess.run(["git", "ls-files", "*.md"], cwd=ROOT,
                              capture_output=True, text=True).stdout.split()
     out = []
@@ -116,19 +129,21 @@ def marked_files():
             text = open(path, encoding="utf-8").read()
         except OSError:
             continue
-        m = MARKER.search(text)
-        if not m:
-            continue
-        claimed = {}
-        for pair in m.group("body").split(","):
-            if "=" not in pair:
-                continue
-            k, v = pair.split("=", 1)
-            try:
-                claimed[k.strip().lower()] = int(v.strip())
-            except ValueError:
-                claimed[k.strip().lower()] = None
-        out.append((rel, claimed))
+        markers = list(MARKER.finditer(text))
+        for n, m in enumerate(markers, 1):
+            claimed = {}
+            for pair in m.group("body").split(","):
+                if "=" not in pair:
+                    continue
+                k, v = pair.split("=", 1)
+                try:
+                    claimed[k.strip().lower()] = int(v.strip())
+                except ValueError:
+                    claimed[k.strip().lower()] = None
+            # Label a second or later marker by line, so a failure names WHICH claim went stale.
+            label = rel if len(markers) == 1 else "%s (marker %d, line %d)" % (
+                rel, n, text.count("\n", 0, m.start()) + 1)
+            out.append((label, claimed))
     return out
 
 

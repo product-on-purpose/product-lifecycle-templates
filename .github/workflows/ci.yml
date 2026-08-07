@@ -153,6 +153,13 @@ jobs:
       - name: Workflow prompt strings
         run: python tools/check-workflow-prompts.py
 
+      # The research-log generator's own fixture test, on the ADR 0025 argument: its merge path has no
+      # live subject once a run is clean, because a collision only happens when two dimensions own the
+      # same source. That is precisely how its two predecessor bugs hid. Both are now pinned by fixtures
+      # and every assertion is mutation-checked against a deliberately broken implementation.
+      - name: Research-log generator self-test
+        run: python tools/test-gen-research-log.py
+
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without
       # this step an em-dash in the README, in STATE.md, or in any decision record
