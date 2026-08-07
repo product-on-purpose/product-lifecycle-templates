@@ -1,0 +1,33 @@
+id: sprint-retrospective-notes
+title: Sprint Retrospective Notes
+summary: >-
+  The written record of a Sprint Retrospective: what the team says went well, what it says needs to
+  improve, and which of those improvements someone actually owns. The Scrum Guide names only an event, never
+  a document; this bundle exists to make one owned, dated change survive past the meeting that produced it.
+doc_type: sprint-retrospective-notes
+phase: iterate
+family: process-docs
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the whole document: Sprint and Participants, Previous Actions, What Went Well, What To Improve, Action Items. No source this research read publishes a heavier version of this document; the real variation in the field is across occasions, a release or project retrospective is a different document, not a bigger size of this sprint-scoped one."
+methodology: agile-scrum
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - scrum
+  - retrospective
+  - iterate
+  - action items
+  - continuous improvement
+related_templates: [sprint-backlog, bug-report, definition-of-done, sdd, test-plan, future:incident-postmortem]
+aliases:
+  - sprint retro
+  - retro notes
+  - retrospective notes
+  - iteration retrospective
+catalog_ref: 187
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-07
+license: Apache-2.0

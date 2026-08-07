@@ -1,0 +1,36 @@
+id: incident-postmortem
+title: Incident Postmortem
+summary: >-
+  The document a team writes after an incident to explain why it happened and what will change so it does
+  not happen the same way again, triggered by an agreed-in-advance criterion rather than improvised after
+  the fact. It is judged by whether its Action Items land as owned, tracked tickets in the team's existing
+  backlog, not by whether the write-up reads well.
+doc_type: incident-postmortem
+phase: iterate
+family: process-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Summary, Impact, Timeline, Root Causes, and Action Items) for the incident a team can walk through in one sitting; those five sections are attested across the widest span of the corpus and are what a reader needs even from a one-off, freeform report. Use full when the event crossed a named trigger criterion worth recording for its own sake, when the discovery path matters as much as the fix, or when the write-up must stand on its own for readers who were not on the call: it adds Detection (how the incident was found), Trigger (the specific agreed-in-advance criterion that fired), Resolution (what technically ended the incident, distinct from future Action Items), and Lessons Learned (what the team concludes it should change)."
+methodology: SRE-lineage
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - postmortem
+  - incident
+  - root cause analysis
+  - after-action review
+  - blameless
+  - reliability
+related_templates: [bug-report, test-plan, test-case, sdd, risk-register, raid-log, product-backlog, sprint-retrospective-notes]
+aliases:
+  - postmortem
+  - post-mortem
+  - RCA
+  - root cause analysis
+  - after-action review
+  - incident report
+catalog_ref: 127
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-07
+license: Apache-2.0

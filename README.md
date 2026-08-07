@@ -127,9 +127,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 23 -->
-<!-- counts: bundles=23, tier1=22, adrs=35 -->
-**Twenty-three bundles, in seven complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 25 -->
+<!-- counts: bundles=25, tier1=24, adrs=35 -->
+**Twenty-five bundles, in eight complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -207,7 +207,18 @@ It is the first family whose two members take **different values on the same axi
 | [`definition-of-done`](templates/definition-of-done/) | The one standard every increment is judged against, so "done" stops being an opinion | (none exists yet) |
 | [`runbook`](templates/runbook/) | The procedure executed when a known situation occurs, so the response does not depend on who is awake | (none exists yet) |
 
-Beyond these twenty-three, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+### `process-docs` (complete, two bundles)
+
+The family of documents that **look back at what happened and change what happens next**. Its two members are the two occasions a team does that, and they exist to be contrasted: a retrospective looks back on a **period**, on a cadence, at how the team worked; a postmortem looks back on an **event**, triggered by it, at why a specific thing failed. The shared failure is producing a document that records feelings or a timeline and commits nobody to anything, which is why every member carries owned actions with a place they are tracked.
+
+Both bundles turned on a full-text check of their own canon. The word "timeline" appears **zero** times in the SRE book chapter everyone cites for postmortems; it exists only as a heading in a separately linked appendix. The 2020 Scrum Guide contains **zero** occurrences of "action item", "retrospective notes" or "notes", requires no written output at all, and in 2020 **softened** the 2017 requirement that an improvement travel into the next Sprint Backlog into a permission.
+
+| Bundle | What it is | Pairs with |
+|---|---|---|
+| [`incident-postmortem`](templates/incident-postmortem/) | The learning document written after one event, whose trigger is a criterion the team published in advance | (none exists yet) |
+| [`sprint-retrospective-notes`](templates/sprint-retrospective-notes/) | The written record that turns a retrospective discussion into one owned, dated change | (none exists yet) |
+
+Beyond these twenty-five, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
