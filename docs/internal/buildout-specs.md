@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=25, tier1=24, tier1remaining=3, checkformats=78 -->
+<!-- counts: bundles=26, tier1=25, tier1remaining=2, checkformats=80 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -47,23 +47,23 @@ reference a future session reads to continue.
 | - | prototype-brief | discovery-docs | phase: discover | **DOES NOT SHIP.** Failed ADR 0030's admission test on its own research: 29 sources, no named source publishes it as a written document ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) | - |
 | 24 | runbook | **standing-standards** (moved, D-B) | class: tool | **done** (incident-scoped shape chosen on evidence; the canon calls it a playbook) | #72 |
 | 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | **done** (five of six spec section titles were unattested; sections retaken from the canon's own worked example) | #75 |
-| 26 | status-report | communication-docs | class: utility | planned | - |
+| 26 | status-report | communication-docs | class: utility | **done** (completes the Tier-1 floor; four of six spec titles unattested) | #78 |
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | **done** (standing-standards complete; first live use of the foundation+tool set) | #72 |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | **done** (process-docs complete; first spec in five bundles the research confirmed rather than corrected) | #75 |
 
-**Count:** 25 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
-discovery-docs, standing-standards and process-docs all complete**). Those 25 sum against a 27-type floor
+**Count:** 26 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
+discovery-docs, standing-standards and process-docs all complete**). Those 26 sum against a 27-type floor
 oddly because
 **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`
-**is** one, so the tree holds **24 of the 27 Tier-1 types, plus `rfc`**. See **D-D** below.
+**is** one, so the tree holds **25 of the 27 Tier-1 types, plus `rfc`**. See **D-D** below.
 
 **Two counts, and they are not the same count.** Conflating them is the arithmetic defect this repository has
 caught three times, so they are kept apart here:
 
 | Metric | Value | What it counts |
 |---|---|---|
-| **Catalog floor** | **24 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **1 of the original set remains**, `status-report` |
-| **Build backlog** | **1 bundle** | What must actually be authored: exactly that one, `status-report`. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
+| **Catalog floor** | **25 of 25, COMPLETE** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **None remain** |
+| **Build backlog** | **0 bundles** | Nothing remains to be authored. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 
 **All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
@@ -74,7 +74,7 @@ unenforced, so this is the gating work rather than a formality.
 | `discovery-docs` | business-case, user-persona (**complete**) | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover`. Closed at two members 2026-08-05: the provisional third failed the admission test ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 | `standing-standards` | runbook, definition-of-done (**complete**) | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool`. Both members landed 2026-08-06, the first live use of that set |
 | `process-docs` | incident-postmortem, sprint-retrospective-notes (**complete**) | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
-| `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
+| `communication-docs` | status-report (**complete**) | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
 [ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is one bundle

@@ -129,7 +129,14 @@ def marked_files():
             text = open(path, encoding="utf-8").read()
         except OSError:
             continue
-        markers = list(MARKER.finditer(text))
+        # A marker wrapped in backticks is an ILLUSTRATION, not a claim. STATE.md's own DF-5 write-up
+        # quotes a specimen marker in prose to explain the mechanism, and reading it as live was a
+        # regression introduced with finditer on 2026-08-07: the specimen names counts from July and
+        # would fail forever. An inline code span is how markdown says "this is an example of a thing",
+        # so it is skipped, and the skip is narrow enough that a real marker cannot hide behind it.
+        markers = [m for m in MARKER.finditer(text)
+                   if not (text[max(0, m.start() - 1):m.start()] == "`"
+                           and text[m.end():m.end() + 1] == "`")]
         for n, m in enumerate(markers, 1):
             claimed = {}
             for pair in m.group("body").split(","):
