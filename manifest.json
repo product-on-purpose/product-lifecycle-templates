@@ -169,6 +169,41 @@
     },
     {
       "aliases": [
+        "postmortem",
+        "post-mortem",
+        "RCA",
+        "root cause analysis",
+        "after-action review",
+        "incident report"
+      ],
+      "approx_tokens": {
+        "full": 5250,
+        "lean": 3350
+      },
+      "default_size": "lean",
+      "doc_type": "incident-postmortem",
+      "family": "process-docs",
+      "id": "incident-postmortem",
+      "phase": "iterate",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Summary, Impact, Timeline, Root Causes, and Action Items) for the incident a team can walk through in one sitting; those five sections are attested across the widest span of the corpus and are what a reader needs even from a one-off, freeform report. Use full when the event crossed a named trigger criterion worth recording for its own sake, when the discovery path matters as much as the fix, or when the write-up must stand on its own for readers who were not on the call: it adds Detection (how the incident was found), Trigger (the specific agreed-in-advance criterion that fired), Resolution (what technically ended the incident, distinct from future Action Items), and Lessons Learned (what the team concludes it should change).",
+      "status": "beta",
+      "summary": "The document a team writes after an incident to explain why it happened and what will change so it does not happen the same way again, triggered by an agreed-in-advance criterion rather than improvised after the fact. It is judged by whether its Action Items land as owned, tracked tickets in the team's existing backlog, not by whether the write-up reads well.",
+      "tags": [
+        "postmortem",
+        "incident",
+        "root cause analysis",
+        "after-action review",
+        "blameless",
+        "reliability"
+      ],
+      "title": "Incident Postmortem"
+    },
+    {
+      "aliases": [
         "kpi dashboard",
         "metrics dashboard",
         "executive dashboard",
@@ -690,6 +725,37 @@
     },
     {
       "aliases": [
+        "sprint retro",
+        "retro notes",
+        "retrospective notes",
+        "iteration retrospective"
+      ],
+      "approx_tokens": {
+        "lean": 2800
+      },
+      "default_size": "lean",
+      "doc_type": "sprint-retrospective-notes",
+      "family": "process-docs",
+      "id": "sprint-retrospective-notes",
+      "phase": "iterate",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Use lean, the whole document: Sprint and Participants, Previous Actions, What Went Well, What To Improve, Action Items. No source this research read publishes a heavier version of this document; the real variation in the field is across occasions, a release or project retrospective is a different document, not a bigger size of this sprint-scoped one.",
+      "status": "beta",
+      "summary": "The written record of a Sprint Retrospective: what the team says went well, what it says needs to improve, and which of those improvements someone actually owns. The Scrum Guide names only an event, never a document; this bundle exists to make one owned, dated change survive past the meeting that produced it.",
+      "tags": [
+        "agile",
+        "scrum",
+        "retrospective",
+        "iterate",
+        "action items",
+        "continuous improvement"
+      ],
+      "title": "Sprint Retrospective Notes"
+    },
+    {
+      "aliases": [
         "test case",
         "test case specification",
         "test script"
@@ -821,5 +887,5 @@
       "title": "User Story"
     }
   ],
-  "count": 23
+  "count": 25
 }

@@ -17,7 +17,7 @@ reference a future session reads to continue.
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
 ## Progress
-<!-- counts: bundles=23, tier1=22, tier1remaining=5, checkformats=74 -->
+<!-- counts: bundles=25, tier1=24, tier1remaining=3, checkformats=78 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -46,23 +46,24 @@ reference a future session reads to continue.
 | 23 | interactive-prototype | **out of scope for templating** ([ADR 0030](decisions/0030-templating-scope-markdown-documents.md)) | - | **excluded** | - |
 | - | prototype-brief | discovery-docs | phase: discover | **DOES NOT SHIP.** Failed ADR 0030's admission test on its own research: 29 sources, no named source publishes it as a written document ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) | - |
 | 24 | runbook | **standing-standards** (moved, D-B) | class: tool | **done** (incident-scoped shape chosen on evidence; the canon calls it a playbook) | #72 |
-| 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | planned | - |
+| 25 | incident-postmortem | **process-docs** (moved, D-B) | phase: iterate | **done** (five of six spec section titles were unattested; sections retaken from the canon's own worked example) | #75 |
 | 26 | status-report | communication-docs | class: utility | planned | - |
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | **done** (standing-standards complete; first live use of the foundation+tool set) | #72 |
-| - | sprint-retrospective-notes | process-docs | phase: iterate | planned | - |
+| - | sprint-retrospective-notes | process-docs | phase: iterate | **done** (process-docs complete; first spec in five bundles the research confirmed rather than corrected) | #75 |
 
-**Count:** 23 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
-discovery-docs and standing-standards all complete**). Those 23 sum against a 27-type floor oddly because
+**Count:** 25 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
+discovery-docs, standing-standards and process-docs all complete**). Those 25 sum against a 27-type floor
+oddly because
 **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`
-**is** one, so the tree holds **22 of the 27 Tier-1 types, plus `rfc`**. See **D-D** below.
+**is** one, so the tree holds **24 of the 27 Tier-1 types, plus `rfc`**. See **D-D** below.
 
 **Two counts, and they are not the same count.** Conflating them is the arithmetic defect this repository has
 caught three times, so they are kept apart here:
 
 | Metric | Value | What it counts |
 |---|---|---|
-| **Catalog floor** | **22 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **3 of the original set remain** |
-| **Build backlog** | **3 bundles** | What must actually be authored: exactly those 3. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
+| **Catalog floor** | **24 of 25** | Original Tier-1 types this library will template. 27 named; **wireframe and interactive-prototype are excluded** by [ADR 0030 (templating scope)](decisions/0030-templating-scope-markdown-documents.md) because their artifacts are visual and executable. **1 of the original set remains**, `status-report` |
+| **Build backlog** | **1 bundle** | What must actually be authored: exactly that one, `status-report`. `prototype-brief` was to have been a sixth, a new type added by ADR 0030 outside the 27, but it **failed that record's own admission test** and does not ship ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 
 **All four families now have an adopted contract.** Per
 [`bundle-pipeline.md`](bundle-pipeline.md) gotcha 4, the contract comes first or check K passes its members
@@ -72,12 +73,12 @@ unenforced, so this is the gating work rather than a formality.
 |---|---|---|
 | `discovery-docs` | business-case, user-persona (**complete**) | **Adopted 2026-08-04**, [ADR 0031](decisions/0031-adopt-discovery-docs-family-contract.md), registered in check K on `phase: discover`. Closed at two members 2026-08-05: the provisional third failed the admission test ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)) |
 | `standing-standards` | runbook, definition-of-done (**complete**) | **Adopted 2026-08-05**, [ADR 0032](decisions/0032-adopt-standing-standards-family-contract.md), registered in check K on a **set** of `foundation` or `tool`. Both members landed 2026-08-06, the first live use of that set |
-| `process-docs` | incident-postmortem, sprint-retrospective-notes | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
+| `process-docs` | incident-postmortem, sprint-retrospective-notes (**complete**) | **Adopted 2026-08-05**, [ADR 0033](decisions/0033-adopt-process-docs-family-contract.md), registered in check K on `phase: iterate` |
 | `communication-docs` | status-report | **Adopted 2026-08-05**, [ADR 0034](decisions/0034-adopt-communication-docs-family-contract.md), registered in check K |
 
 **`design-docs` is never created**, its two candidate members having been ruled out of scope by
-[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is three bundles
-and no ratifications**: `incident-postmortem`, `sprint-retrospective-notes` and `status-report`.
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md). So **the remaining work is one bundle
+and no ratifications**: `status-report`.
 `prototype-brief`'s research found no named source publishing it as a written document, so it does not ship,
 which ADR 0031 recorded in advance as a legitimate outcome ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)).
 
@@ -465,12 +466,35 @@ per the family contract, and it is sharper than expected:** Google's canon says 
 Across seven chapters read, "runbook" appears three times and every occurrence is inside a contributed
 third-party case study. The bundle keeps the catalog's name and says so plainly.
 
-**incident-postmortem** (catalog 127) - ops-docs, **phase iterate** *(event-driven learning)*, sizes
-[lean, full], methodology SRE/DevOps, aliases: postmortem, RCA, after-action review. Lean: Summary and
-Impact; Timeline; Root Causes and Action Items. Full adds: Contributing Factors; Detection/Response
-analysis; Prevention. Key sources: Google SRE (blameless postmortem, every user-affecting outage gets a
-P0/P1 action item), Etsy/Allspaw. Teaching point: blameless; the sharpest distinction is postmortem
-(learning) vs incident report (live record).
+**incident-postmortem** (catalog 127) - **process-docs** (this line said `ops-docs`, a family
+[ADR 0023](decisions/0023-resolve-the-tier-1-family-taxonomy.md) dissolved; the progress table above was
+already correct), **phase iterate** *(event-driven learning)*, sizes [lean, full], methodology SRE/DevOps,
+aliases: postmortem, RCA, after-action review.
+
+**REVISED 2026-08-07 against the research, and this is the largest spec correction the pipeline has made.**
+The original spec proposed lean *Summary and Impact; Timeline; Root Causes and Action Items*, with full
+adding *Contributing Factors; Detection/Response analysis; Prevention*. Measured against five published
+templates read in full (PagerDuty, Atlassian, GitLab, incident.io, Elastic), **five of those six titles
+title nothing verbatim in any of them**; only Timeline is attested, in 4 of 5. Worse, the concept everyone
+calls "action items" is written three ways that never converge: *Action Items*, *Corrective actions*,
+*Follow-up actions*. The sections are therefore taken from the **section set of the canon's own worked
+example** (SRE book Appendix D), reordered for reading:
+
+- Lean: Summary; Impact; Timeline; Root Causes; Action Items.
+- Full adds in place: Detection; Trigger; Resolution; Lessons Learned.
+
+Every title is now attested in a primary source and in at least one vendor template. **The two-size
+packaging remains this bundle's own decision**: all five published templates are single-size, and what the
+corpus supports is that depth varies by severity (incident.io ships dynamic template selection) rather than
+a named lean/full pair.
+
+**Key sources, with one correction.** Google SRE book ch.15 (blameless postmortem, and it publishes explicit
+**trigger criteria**), SRE Workbook ch.10, SRE Appendix D, Allspaw's 2012 Etsy post. The spec's claim that
+Google SRE says "every user-affecting outage gets a P0/P1 action item" is **misattributed and misworded**:
+it is not in ch.15 at all, it is Workbook ch.10, and it says "at least one P[01] **bug**". Teaching points:
+blameless; the trigger is a criterion a team publishes in advance; "root cause" is contested by a named
+community and defended by almost nobody by name; and the postmortem-versus-incident-report distinction this
+spec called "the sharpest" is grounded only in a vendor blog, so the bundle does not present it as canon.
 
 ### communication-docs (new family; single member for now)
 
@@ -482,9 +506,30 @@ artifact, practitioner status-update writing. Teaching point: RAG honesty; audie
 ### process-docs / standing-standards (single members; small families or reassignments)
 
 **sprint-retrospective-notes** (catalog 187) - process-docs, **phase iterate**, sizes [lean], methodology
-Scrum/agile, aliases: retro notes, retrospective. Lean: What Went Well; What To Improve; Action Items. Key
-sources: Derby and Larsen (*Agile Retrospectives*), Scrum Guide. Teaching point: distinct from an incident
-postmortem; action items with owners are the point.
+Scrum/agile, aliases: retro notes, retrospective.
+
+**CONFIRMED 2026-08-07, and this is the first spec in five bundles the research confirms rather than
+corrects.** The single-size call survives on evidence, not by default. No source publishes two weights of a
+*sprint* retrospective notes document. The genuine counter-argument was tested and answered: Derby and
+Larsen scope their activities to "an iteration, release, or project retrospective" and give release and
+project retrospectives their own chapter, but that is variation across **occasions**, not weights of one
+document, and a source in the same corpus treats sprint and release retrospectives as different things
+rather than sizes of one.
+
+**Sections revised, with one addition the bundle owns.** Lean: Sprint and Participants; **Previous
+Actions**; What Went Well; What To Improve; Action Items. The three folk headings stay because practitioners
+use them, but the research is clear that **"What Went Well / What To Improve / Action Items" traces to no
+primary source**: Derby and Larsen's book is five phases and roughly thirty activities, and the 2020 Scrum
+Guide contains `action item` **zero** times. Previous Actions is carried by **no** published template and is
+this bundle's own answer to a documented anti-pattern, labelled as such.
+
+**Key sources.** Scrum Guide 2020 and its revision-history page, Derby and Larsen via the publisher excerpt,
+Kerth (2001), Hundhausen et al. (ICSE-SEET 2024), Wolpers, Cohn. Teaching points: **Scrum does not ask you
+to write this down, and in 2020 it downgraded the one requirement that carried an improvement into the next
+Sprint from "includes at least one" to "may"**; owned, dated actions are the point; Start/Stop/Continue and
+Mad/Sad/Glad are untraceable to any named originator; and the family's own claim that confusing a retro with
+a postmortem causes specific harms is **unsourced**, with named counterexamples (Honeycomb, FireHydrant)
+running what they call retrospectives on incidents deliberately.
 
 **definition-of-done** - see D-A. Likely anchors a **standing-standards** family (with definition-of-ready).
 class foundation, sizes [lean], methodology agile-scrum.
