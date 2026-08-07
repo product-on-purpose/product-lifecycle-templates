@@ -32,6 +32,16 @@ in its Relationships section, what the **other** member is for and when a team i
 The common real-world error is running a retro on an incident, which produces a blameless discussion of a
 thing that needed a causal analysis, or running a postmortem on a sprint, which pathologises ordinary work.
 
+**That last sentence is this library's own reasoning, not received practice** (corrected 2026-08-07; see the
+change note). The research behind both members found named sources drawing the retro/postmortem line by
+purpose and timing, but **none** framing the confusion of the two as a documented failure mode. It also found
+live counterexamples worth carrying rather than filtering out: Honeycomb calls its incident process an
+"incident retrospective", uses "retrospective" and "incident review" interchangeably, never uses
+"postmortem", and declines even "blameless" in favour of "blame-aware"; FireHydrant, an incident-management
+vendor, titles its material "Blameless Retrospectives" and splits *retrospective* into an incident-triggered
+type and a post-project type. Naming practice in the wild is less settled than this contrast implies, and a
+member may teach the distinction only as the library's own, never as consensus.
+
 **Likely future members**, if pulled: `project-milestone-retrospective` and `pi-release-retrospective`, both
 Tier 2 and both grow-by-pull.
 
@@ -75,7 +85,11 @@ a triage disagreement left visible.
 
 - the **incident postmortem** example analyses a real event from the existing thread rather than a new one,
   and its actions must land somewhere the library already models: the `risk-register`, the `raid-log`, or the
-  `product-backlog`;
+  `product-backlog`. **Of those three, only the `product-backlog` reflects published practice** (noted
+  2026-08-07): two independent sources place postmortem actions in the team's ordinary ticket tracker and
+  explicitly not in the postmortem document, and **neither names a risk register or a RAID log**. The menu is
+  unchanged, because both remain artifacts this library models and a real programme does escalate a risk. A
+  member using either must say that it is this library's convention rather than received postmortem practice;
 - the **retrospective notes** example covers a sprint from the `sprint-backlog` example's own scenario, and
   must **not** be about the incident, because the two members exist to be contrasted and an example that
   blurs them teaches the opposite of the family's teaching point.
@@ -103,6 +117,23 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 authoring time and audit obligations thereafter.
 
 ## Change note
+
+**0.1.1 (2026-08-07):** two claims corrected against the research that built both members, in the dated
+in-place pattern this library uses for the catalog (finding EC-2) rather than by a superseding decision
+record. Neither correction changes an obligation, and no member is out of contract.
+
+- **The "common real-world error" framing in section 1 is this library's own reasoning.** No source read in
+  full states it. Two named organisations do the opposite deliberately: Honeycomb runs what it calls an
+  "incident retrospective" and prefers "blame-aware" to "blameless"; FireHydrant splits "retrospective" into
+  incident-triggered and post-project types. Both are recorded in section 1.
+- **Section 4's destination menu is unchanged, but published practice names only the ticket tracker.** The
+  `product-backlog` option is the one practice describes; `risk-register` and `raid-log` are this library's
+  own convention, and a member using them must say so.
+
+Both corrections were already carried by `incident-postmortem` and `sprint-retrospective-notes` when they
+landed (PR #75). This amendment closes the gap between what those bundles say and what this contract asserted,
+which is the drift class the repository tracks: a governing document should not state as fact what the
+documents it governs disclaim.
 
 **0.1.0 (proposed 2026-07-30):** drafted, pending maintainer review. The eighth family contract and the fourth
 on the `phase` axis. Both members arrive by
