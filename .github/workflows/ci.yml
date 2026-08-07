@@ -1,7 +1,20 @@
 name: bundle-gate
 on:
+  # `push` covers every branch, not only `main`. Measured 2026-08-06: PR #73 opened at 22:38 and its
+  # `pull_request` run did not dispatch until 23:01, so for twenty-three minutes the required `gate`
+  # check did not exist on the head commit and the PR could not merge on its own authority. It was
+  # merged with `--admin` instead, overriding the runbook's own no-admin-merge rule, and the decision
+  # was taken inside that blind window. Pushes dispatched normally throughout, including the push to
+  # `main` seconds after that merge, so a push trigger puts a green required check on a feature branch
+  # in about thirty seconds rather than whenever the `pull_request` event happens to arrive.
+  #
+  # The cost is a duplicate run per push to a PR branch. Actions minutes are free on a public
+  # repository and the gate runs in well under a minute, so the duplicate is cheaper than one blocked
+  # merge. Deliberately NOT solved with a `concurrency` group: the push and pull_request runs share a
+  # ref, so cancel-in-progress would let them cancel each other and could leave the required check in
+  # a cancelled state, which is the failure this trigger exists to prevent.
   push:
-    branches: [main]
+    branches: ["**"]
   pull_request:
   workflow_dispatch:
 jobs:
