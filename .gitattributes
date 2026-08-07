@@ -6,3 +6,13 @@
 # a class of shebang and heredoc breakage that only shows up on one of the two.
 *.py text eol=lf
 *.sh text eol=lf
+
+# Prose and data files were left unpinned until 2026-08-07, so on Windows every `git add` printed a
+# "LF will be replaced by CRLF" warning for each one: dozens per bundle PR, enough that a real warning
+# would have been lost in them. The gate and the CI steps read these files on Linux and locally on
+# Windows, and the repo-wide dash sweep reads them byte by byte, so one ending everywhere is also one
+# fewer difference between what CI sees and what an author sees.
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
