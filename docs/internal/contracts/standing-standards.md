@@ -152,6 +152,24 @@ obligation at authoring time; it is a section-presence rule and could later be g
 
 ## Change note
 
+**Research confirmation, 2026-08-07**, per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). This
+contract was drafted on 2026-08-05 for a family with no built members, in the same batch as `process-docs`
+and `communication-docs`. Its members were researched on 2026-08-06 and **its central claim held**.
+
+The contract asserted that both members fail the same way, by drifting quietly out of date while everyone
+still believes they are current, and that neither literature supplies a condition-based review trigger.
+**Both halves were confirmed independently**: every Scrum source reached for the retrospective, every SRE
+source reached for a cadence or a 90-day heuristic, and neither supplied a condition. Both members ship a
+named Review Trigger section labelled as the bundle's own contribution rather than as received practice.
+
+**This is recorded because a vindicated claim is worth as much as a refuted one.** Two of the three
+contracts in that batch carried assertions no source supports; this one did not. Drafting a contract before
+its members exist is therefore not automatically wrong, which is why procedure 11 governs the **mood** a
+sentence is written in rather than the order contracts are written in.
+
+### Earlier
+
 **0.1.0 (proposed 2026-07-30):** drafted, pending maintainer review. The seventh family contract, the third on
 the `classification` axis, and the **second to gate a set**, after `strategy-docs`. The membership was
 ratified in principle by [ADR 0023 (the Tier-1 family taxonomy)](../decisions/0023-resolve-the-tier-1-family-taxonomy.md),

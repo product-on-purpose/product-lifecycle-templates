@@ -22,7 +22,7 @@ elsewhere, and its value expires.
 - a **status report** says where a piece of work stands, what changed, what is at risk, and what is needed
   from the reader.
 
-The defining property is that **the document owns none of its own facts**. Every number in a status report is
+**POSITION, not a claim about the field** (labelled 2026-08-07; see the change note). This library holds that the defining property is that **the document owns none of its own facts**. The `status-report` research searched for a named source stating it and found none: PMBOK's work-performance chain supports "compiled from elsewhere" and stops well short of a prohibition. The rule is kept because it is a good rule and because the failure it prevents is measured, not because the field defines the artifact this way. Every number in a status report is
 read from somewhere with more authority: a KPI dashboard, a risk register, a roadmap, a backlog. That makes
 its failure mode specific and different from every other family's: not being wrong, but being **stale, or
 disagreeing with the source it summarises**. A status report that contradicts the dashboard is worse than no
@@ -111,6 +111,25 @@ that disagrees with its source, that is the trigger to build the check rather th
 ([`decision-procedures.md`](../decision-procedures.md) section 9).
 
 ## Change note
+
+**0.1.1 (2026-08-07):** one claim relabelled after its first member was researched, per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). No
+obligation changed and `status-report` is not out of contract.
+
+- **The no-new-facts rule is a POSITION, not a CLAIM.** Section 1 stated it as the artifact's defining
+  property, which reads as a fact about the field. No source states it. It is this library's own rule and
+  section 1 now says so.
+
+**Research confirmation, 2026-08-07**, against `status-report`: the no-new-facts rule is UNSOURCED and now
+labelled; the family's obligations are unaffected. Two findings from that research strengthen the contract
+rather than weakening it, and are worth recording here because they are what the rule is *for*: across the
+records of 56 experienced project managers, reports were biased 60 percent of the time and more than twice
+as likely to be optimistic as pessimistic; and the most detailed published RAG scheme in circulation
+explicitly declines to define its two intermediate colours. **The rule has no pedigree and a strong reason.**
+
+### Earlier
+
+**0.1.0
 
 **0.1.0 (proposed 2026-07-30):** drafted, pending maintainer review. The ninth family contract and the fourth
 on the `classification` axis. Drafted for a single Tier-1 member, with the category it belongs to named in

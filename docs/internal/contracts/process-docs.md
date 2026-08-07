@@ -118,6 +118,9 @@ authoring time and audit obligations thereafter.
 
 ## Change note
 
+**Research confirmation, 2026-08-07**, per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world), against `incident-postmortem` and `sprint-retrospective-notes`: of this contract's assertions about the world, **the retro-versus-postmortem harm claim is REFUTED** (no source states it, and named organisations do the opposite deliberately) and **the risk-register destination is UNSOURCED** (practice names only the ticket tracker). Obligations unaffected; both corrected below.
+
 **0.1.1 (2026-08-07):** two claims corrected against the research that built both members, in the dated
 in-place pattern this library uses for the catalog (finding EC-2) rather than by a superseding decision
 record. Neither correction changes an obligation, and no member is out of contract.
