@@ -127,9 +127,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 25 -->
-<!-- counts: bundles=25, tier1=24, adrs=35 -->
-**Twenty-five bundles, in eight complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- bundle-count: 26 -->
+<!-- counts: bundles=26, tier1=25, adrs=35 -->
+**Twenty-six bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -218,7 +218,15 @@ Both bundles turned on a full-text check of their own canon. The word "timeline"
 | [`incident-postmortem`](templates/incident-postmortem/) | The learning document written after one event, whose trigger is a criterion the team published in advance | (none exists yet) |
 | [`sprint-retrospective-notes`](templates/sprint-retrospective-notes/) | The written record that turns a retrospective discussion into one owned, dated change | (none exists yet) |
 
-Beyond these twenty-five, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+### `communication-docs` (complete, one bundle)
+
+The family whose defining property is that **the document owns none of its own facts**. Every number in a status report is read from somewhere with more authority, which makes its failure mode specific: not being wrong, but being stale, or quietly disagreeing with the system of record. Exactly one methodology specifies this document at all (PRINCE2's Highlight Report); the UK government's own project standard looks at it and deliberately declines to. And it is the one type here whose central weakness is **measured** rather than argued: across 56 experienced managers, reports were biased 60 percent of the time, and optimistically biased more than twice as often as pessimistically.
+
+| Bundle | What it is | Pairs with |
+|---|---|---|
+| [`status-report`](templates/status-report/) | The periodic report that narrates what happened against metrics defined elsewhere, and invents no figure of its own | (none exists yet) |
+
+Beyond these twenty-six, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -270,8 +278,8 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-<!-- counts: bundles=25 -->
-All twenty-five bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+<!-- counts: bundles=26 -->
+All twenty-six bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >

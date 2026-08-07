@@ -1,0 +1,35 @@
+id: status-report
+title: Status Report
+summary: >-
+  The periodic document that tells people who are not doing the work where a piece of work stands: what
+  changed, what is at risk, and what is needed from the reader. It owns none of its own facts; every number
+  in it is read from something with more authority, a KPI dashboard, a risk register, a RAID log, and the
+  document's job is to narrate what those sources mean for one audience in one period.
+doc_type: status-report
+classification: utility
+family: communication-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Summary and Status, Accomplishments, Risks and Issues, Next Steps) for a recurring internal update to a reader who trusts the narration and does not need the supporting numbers restated. Use full when the reader is a governance body, a sponsor, or anyone who needs the record on file even though they were not in the room: it adds Metrics (the numbers behind the RAG call, each with its source), Milestones (the schedule against the plan) and Decisions Needed (the asks that would otherwise get buried in narrative)."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - communication
+  - status-report
+  - reporting
+  - rag-status
+  - stakeholder-update
+  - governance
+related_templates: [kpi-dashboard, risk-register, raid-log, incident-postmortem, definition-of-done, okrs, product-roadmap]
+aliases:
+  - project status
+  - weekly update
+  - RAG report
+  - status update
+  - highlight report
+catalog_ref: 180
+maintainer: "product-on-purpose"
+last_reviewed: 2026-08-07
+license: Apache-2.0
