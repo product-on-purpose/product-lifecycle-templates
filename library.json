@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "26 researched document-template bundles covering the complete Tier-1 floor of a 205-type product-artifact catalog. Each bundle ships a lean and a full template, a worked example, an operator guide with a self-grade rubric, a companion, and the research log every claim traces to.",
   "standard": "0.12",
-  "tier": "convergent",
+  "tier": "advanced",
   "prefix": "plt-",
   "agent-targets": [
     "claude"
@@ -14,8 +14,8 @@
         "name": "plt-fill-template",
         "path": "skills/plt-fill-template/SKILL.md",
         "version": "0.2.1",
-        "tier": "convergent",
-        "status": "beta"
+        "tier": "advanced",
+        "status": "experimental"
       }
     ],
     "subagents": [],

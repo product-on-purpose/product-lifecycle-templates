@@ -180,7 +180,44 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 - [ ] At least one filled document exists whose author is not the library author, or whose content is a real work artifact (not an authored example); its provenance frontmatter is stamped and its EV-3 form is stored.
 - [ ] LP-2 grades a never-seen PRD in under 3 minutes of wall-clock agent time and its report card cites specific rubric line items.
 - [ ] The pull queue has at least one genuine external entry OR a documented outreach log showing five attempts.
-- [ ] Because LP-2 ships as a SKILL.md in this repo, the D2 question is retested with the skill present: record whether `npx skills add product-on-purpose/product-lifecycle-templates` now installs (this is the distribution unlock the audit predicted).
+- [x] Because LP-2 ships as a SKILL.md in this repo, the D2 question is retested with the skill present: record whether `npx skills add product-on-purpose/product-lifecycle-templates` now installs (this is the distribution unlock the audit predicted). **Run 2026-08-08 against `skills@1.5.22`. It installs. It is not yet the unlock the audit predicted, and the reasons are below.**
+
+**D2 retest, 2026-08-08, recorded in full because it has been open since 2026-07-17 and because two of its three findings are unwelcome.**
+
+| Probe | Command | Result |
+|---|---|---|
+| Discovery | `skills add <repo> --list` | **Found 2 skills**, not 1 |
+| Install | `skills add <repo>` | **Succeeds**, exit 0, project scope |
+| Payload | inspect the install | **12 KB**, two files, no library |
+| Old layout | same CLI against a `v0.2.1` worktree | **Found 1 skill** |
+| Ref pinning | `skills add <repo>@v0.1.0 --list` | returns skills that exist only on `main` |
+
+**1. It installs, and that closes the question as asked.** The layout adopted in ADR 0036 is discoverable
+and installable. Nothing about the file's location is wrong.
+
+**2. It installs two skills, and the second one should not ship.** `.claude/skills/build-bundle` is
+maintainer-internal and says so in its own description. The CLI's search path includes `.claude/skills`
+deliberately (`AGENT_PROJECT_SKILL_DIRS`), its `SKIP_DIRS` is
+`["node_modules", ".git", "dist", "build", "__pycache__"]`, and it reads no ignore file. **There is no
+supported way to exclude it**, so this is recorded as open rather than fixed.
+
+**3. The installed skill is inert, and this is the finding that matters.** What lands is `SKILL.md` and
+`README.md`. `manifest.json` is absent, all 26 bundles are absent, and every `../../` link in the skill
+is dangling. The skill's own step 1 is "Read `manifest.json` at the repository root", and after an
+install there is no repository. **The Claude Code plugin channel clones the whole repository and does
+not have this problem**, so the library has two distribution channels and only one of them delivers a
+working artifact.
+
+**What this refutes.** The 2026-08-08 session log's finding #8 concluded the old root `SKILL.md` "was
+probably never installable". For this consumer that is **wrong**: the CLI found it, and found exactly one
+skill, because a root `SKILL.md` short-circuits the subdirectory search. The relocation was still correct
+(the plugin loader and the Standard both require `skills/<name>/`), but it **regressed** this channel by
+removing the thing that was suppressing the `build-bundle` leak. The finding's other half, about the
+Claude Code plugin loader, was not tested here and may still hold.
+
+**An upstream defect worth knowing about.** `skills add <repo>@<ref>` prints the ref and clones the
+default branch anyway. Asked for `v0.1.0`, a tree containing no `SKILL.md` whatsoever, it returned the two
+skills that exist only on `main`. Anyone pinning a version through this CLI is not getting one.
 
 ### M4: Proof (weeks 5-6)
 

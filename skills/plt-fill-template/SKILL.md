@@ -7,7 +7,7 @@ metadata:
   updated: 2026-08-07
   category: documentation
   author: product-on-purpose
-  status: beta
+  status: experimental
 ---
 <!-- product-lifecycle-templates | https://github.com/product-on-purpose/product-lifecycle-templates | Apache 2.0 -->
 
@@ -96,19 +96,24 @@ below it. Grade honestly; the rubric asks for evidence you can point at, not for
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
 does not.
 
-**Enforced by CI, on every push and pull request:** 20 steps, including an 11-check gate per bundle - all
+**Enforced by CI, on every push and pull request:** 23 steps, including an 11-check gate per bundle - all
 files present, no em-dash or en-dash, lean nests strictly inside full, no unfilled placeholder in any
 example, every citation anchored and none padded, metadata valid against a schema, and conformance to the
 bundle's family contract. Separately: every relative link resolves, every research log carries a
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=20, logsgated=20, sourcesgated=796 -->
-20 CI steps; 20 research logs gated, covering 796 sources.
+<!-- counts: cisteps=23, logsgated=20, sourcesgated=796 -->
+23 CI steps; 20 research logs gated, covering 796 sources.
 
 **Not proved by anything:**
 
-- **Template quality is argued, not measured.** There are no efficacy evaluations.
+- **Template quality was measured on 2026-08-08, and the measurement was inconclusive.** Two blinded
+  runs over three of the 26 bundles both returned **VOID**: the templates score well above a strong
+  generic-prompt control on the bundles' *own* rubric criteria, and no better than it on
+  decision-usefulness criteria drawn from neither the template nor its guide. Read the results before
+  quoting anything from them, in [`evals/results/`](../../evals/results/). **No number from either run
+  is a quality claim, and none may be repeated without linking the protocol's stated limits.**
 - **No template here has been filled by anyone but the author.** The catalog's own rule gates Tier 2 on
   "survives one real usage cycle", so by the library's own standard nothing has graduated.
 - **The gate proves structure, never that a citation supports its claim.** That is what the four-lens
