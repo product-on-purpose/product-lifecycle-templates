@@ -282,7 +282,7 @@ marker wrapped in backticks is treated as an illustration rather than a live cla
 ## The build pipeline, phase by phase
 
 The runbook for building one bundle is [`docs/internal/bundle-pipeline.md`](../internal/bundle-pipeline.md),
-executable via [`.claude/skills/build-bundle/SKILL.md`](../../.claude/skills/build-bundle/SKILL.md), which
+executable via [`.claude/commands/build-bundle.md`](../../.claude/commands/build-bundle.md), which
 drives [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) for its two parallel
 fan-out stages. The prose in the runbook remains the authority; the script is one way of executing it.
 

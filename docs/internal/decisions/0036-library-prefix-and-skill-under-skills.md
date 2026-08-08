@@ -13,6 +13,22 @@ consulted: [claude]
   repository root to `skills/plt-fill-template/SKILL.md`, renamed from `product-lifecycle-templates` to
   `plt-fill-template` so the skill's `name` matches its parent directory. The **plugin** keeps the name
   `product-lifecycle-templates`; only the component inside it is prefixed.
+> **Correction, 2026-08-08.** The "Why" bullet below claims the root `SKILL.md` "was almost certainly
+> never discoverable by either consumer that matters". **That is false for the skills CLI**, and the word
+> "almost certainly" is doing work no evidence supported. Tested on 2026-08-08 against a `v0.2.1`
+> worktree, `npx skills add` reports **"Found 1 skill"** for the old layout: it looks for a root
+> `SKILL.md` **by design**, and finding one short-circuits its entire subdirectory search.
+>
+> The claim about the **Agent Skills specification** and the **Claude Code plugin loader** is untested and
+> may well hold; only the CLI half is refuted. **The decision itself does not change** - the move was
+> required by the Standard at convergent tier regardless, and this record is corrected rather than
+> superseded.
+>
+> The error had a consequence. Because the root file was believed inert, nobody predicted that removing it
+> would switch the CLI's subdirectory search on, which is what caused the maintainer-internal build
+> harness to start shipping. That is recorded in
+> [ADR 0037 (keep the build harness off the published skill surface)](0037-keep-the-build-harness-off-the-published-skill-surface.md).
+
 - **Why:** the move is not a compliance chore. The root `SKILL.md` was almost certainly never discoverable
   by either consumer that matters: the Agent Skills specification defines a skill as a directory whose
   `SKILL.md` carries a `name` matching that directory, and the Claude Code plugin loader scans `skills/`.

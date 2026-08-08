@@ -99,21 +99,28 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   if they ever diverge the arms stop being comparable while every check still passes and every number
   still looks reasonable. This is the one step in the list that guards a *measurement* rather than a
   document.
+- **The published skill surface** (`tools/check-export-surface.py`). Every other step in this list
+  validates the **tree**. This one asks what a **stranger receives**, and those turned out to be
+  different things: on 2026-08-08 the first ever run of `npx skills add` installed two skills, the second
+  being the maintainer-internal build harness. Nothing here could see it, because nothing here was
+  looking outward. It asserts that the set of skills the installer would export equals exactly the set
+  `library.json` declares, in both directions: an undeclared skill that ships is a leak, and a declared
+  skill that does not ship is a broken install.
 - **The Standard's conformance gate** (`node scripts/check.mjs`, from a pinned checkout of
   `agent-skills-toolkit`). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=23 -->
-Twenty-three CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Eighteen** prove the tree is
+<!-- counts: cisteps=24 -->
+Twenty-four CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Nineteen** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The twenty-third is the only one that can surprise anybody**, because it is the only one this
+**The twenty-fourth is the only one that can surprise anybody**, because it is the only one this
 repository did not write. It runs the Advanced Skill Library Standard's conformance gate from a pinned
 checkout of a separate repository, so it can report that this library has stopped meeting a published
 external standard. Every other step can only report that this library disagrees with itself.
 
-None of the twenty-three, individually or together, can tell you whether a sentence in a companion is true.
+None of the twenty-four, individually or together, can tell you whether a sentence in a companion is true.
 
 ## What no machine checks
 
