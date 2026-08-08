@@ -20,9 +20,9 @@ definition-of-done_template-full.md), ADD sections; never rename or reorder the 
 full variant is a strict superset of this one.
 
 A DEFINITION OF DONE IS A COMMITMENT ATTACHED TO THE INCREMENT, NOT A STANDALONE ARTIFACT. That is a 2020
-Scrum Guide change from how a lot of circulating material still describes it. An organizational standard,
-where one exists, is a floor: the team may strengthen it and may never weaken it. Where none exists, the
-team creates its own. Nobody owns this document alone: conformance sits with the Developers collectively,
+Scrum Guide change from how a lot of circulating material still describes it. Where an organizational
+standard exists the Guide binds every team to it "as a minimum"; where none exists, the team creates its
+own. Treating that minimum as a floor the team may raise is this library's reading, not Guide wording. Nobody owns this document alone: conformance sits with the Developers collectively,
 and no source this library checked names a single accountable role. See definition-of-done_companion.md
 sections 1 and 3.
 

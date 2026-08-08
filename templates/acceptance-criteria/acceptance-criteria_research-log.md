@@ -154,14 +154,17 @@ live claims, each narrowed to the clause [2] is recorded as supporting and marke
 it is made. The Guide entry [6] above was expanded in the same pass, because moving six claims onto a
 `Supports:` clause that did not yet describe them would have recreated the defect one reference to the left.
 
-**Two defects of the same class were confirmed outside this pass's scope and are recorded, not fixed here,
-because scope discipline is what makes this diff auditable against the verdicts file.** First, [7] Ranorex
-is cited in section 4 and again in section 6 for a **comparison** between rule checklists and
-Given/When/Then, while its `Supports:` row states it "**does NOT** compare GWT to rule checklists". The
-2026-07-16 pass de-cited three [7] claims but abstracted a fourth in a way that kept the comparison under
-the citation. Second, the [3] Jeffries entry supports the three C's and nothing about observable outcomes,
-which is why line 14 was re-grounded rather than left to [3]; no other [3] citation was audited in this
-pass.
+**Two defects of the same class were confirmed outside that pass's scope, recorded rather than fixed at
+the time so the diff stayed auditable against the verdicts file, and CLOSED 2026-08-08 in a follow-up.**
+First, [7] Ranorex was cited in section 4 and again in section 6 for a **comparison** between rule
+checklists and Given/When/Then, while its `Supports:` row states it "**does NOT** compare GWT to rule
+checklists". The 2026-07-16 pass de-cited three [7] claims but abstracted a fourth in a way that kept the
+comparison under the citation. The fix was **not** to cut [7], which would have stripped it from the half
+it genuinely carries and manufactured the defect one reference to the left; both sentences are now split so
+[7] sits on "Given/When/Then suits user-behaviour cases" alone, and the comparison and the default are
+labelled this bundle's. Second, the [3] Jeffries entry supports the three C's and nothing about observable
+outcomes, which is why line 14 was re-grounded rather than left to [3]; no other [3] citation was audited
+in either pass, and that remains open.
 
 - **[2] Scrum.org is the load-bearing source for the AC-vs-DoD distinction and is the most-cited
   reference in this bundle (16 citations), yet it has never been read at source.** It returns HTTP 403
