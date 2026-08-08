@@ -21,8 +21,10 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # Bumped 2026-08-07: v4/v5 target Node 20, which GitHub deprecated and is force-running on Node 24.
+      # A forced runtime is a warning today and a failure whenever the forcing stops.
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
