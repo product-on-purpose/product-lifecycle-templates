@@ -12,6 +12,76 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.2.0] - 2026-08-07
+
+**The Tier-1 floor is complete.** 26 bundles covering all 25 templatable Tier-1 document types, nine
+families, 20 CI steps, 20 gated research logs across 796 sources. This release also gives the library a
+front door: its first user-facing documentation and its first installable surface.
+
+### Added
+
+- **`incident-postmortem` and `sprint-retrospective-notes` bundles, completing `process-docs`**
+  (2026-08-07, #75). Landed together because the family contract says they exist to be contrasted. **Both
+  turned on a full-text count of their own canon, and both counts were zeros**: the word "timeline" appears
+  **0 times** in Google's SRE book chapter 15, existing only as a heading in a separately linked appendix
+  (re-verified against the live page, not taken from the research pass); and the 2020 Scrum Guide contains
+  **0** occurrences of "action item", "retrospective notes" and "notes", requires no written output at all,
+  and in 2020 **softened** the 2017 requirement that an improvement reach the next Sprint Backlog into a
+  permission. A requirement became a permission, which is the argument for the retrospective notes document
+  existing.
+- **`status-report` bundle, completing the Tier-1 floor** (2026-08-07, #78). The twenty-sixth bundle and
+  the last Tier-1 type. **Exactly one methodology specifies this document** (PRINCE2's Highlight Report);
+  GovS 002, the UK's live cross-government project standard, looks at it and deliberately declines to.
+  Its weakness is **measured rather than argued**: across the records of 56 experienced project managers,
+  reports were biased 60 percent of the time and more than twice as likely to be optimistic as
+  pessimistic. **The build backlog is now empty.**
+- **`SKILL.md` and `.claude-plugin/plugin.json`** (2026-08-07). The library becomes installable rather
+  than clone-only. Until now `npx skills add` cloned the repository and installed nothing, because both
+  the skills CLI and agentskills.io take exactly one unit, the skill, and this repository shipped no
+  `SKILL.md`. One missing file, not an architecture problem.
+- **The first user-facing documentation this repository has had.** `docs/getting-started.md`,
+  `docs/choosing-a-template.md`, `docs/filling-a-template.md`, `docs/what-the-gate-proves.md`,
+  `CONTRIBUTING.md` and `AGENTS.md`. Before this, all 62 documentation files lived under `docs/internal/`:
+  the library documented how it governs itself far better than how to use it.
+- **[`tools/gen-research-log.py`](tools/gen-research-log.py) and its 38-assertion self-test** (2026-08-07,
+  #77), CI step 20. Generates a research log's source entries from the fan-out's own output, fixing two
+  bugs that **destroyed evidence silently**: dedup on raw URLs filed one source under two numbers, and a
+  merge that replaced rather than unioned left one entry holding 4 of its 10 verified quotes. Every
+  assertion is mutation-checked, and the mutation was run rather than asserted.
+- **Decision procedure 11, "a family contract asserts something about the world"** (2026-08-07, #79). A
+  contract sentence is an OBLIGATION, a CLAIM or a POSITION, and must read as which. Contracts now carry a
+  dated research-confirmation line recording what survived contact with their members' research.
+
+### Changed
+
+- **CI runs the gate on every branch, not only `main`** (2026-08-07, #74). PR #73 opened at 22:38 and its
+  `pull_request` run did not dispatch until 23:01, so for twenty-three minutes the required check did not
+  exist and the PR was merged with `--admin`, overriding the repository's own no-admin-merge rule. A push
+  dispatches immediately, so a feature branch now has a green required check in about thirty seconds.
+- **`check-counts.py` reads every marker in a file, not just the first** (2026-08-07, #77). An author who
+  knew a sentence quoted a number previously had no way to pin it, which is why prose-count drift (finding
+  DF-5) recurred eight times with identical geometry. It found a defect on its first run: `README.md` said
+  "All nineteen bundles currently pass" against a tree of 25, 142 lines below a green and correct marker.
+- **CI actions bumped to `checkout@v5` and `setup-python@v6`** (2026-08-07). The previous versions target
+  Node 20, which GitHub deprecated and is force-running on Node 24.
+- **`.gitattributes` pins `*.md`, `*.yaml`, `*.yml` and `*.json` to LF** (2026-08-07, #77).
+
+### Fixed
+
+- **Eight unsourced claims across seven family contracts** (2026-08-07, #76, #79, #80), each relabelled in
+  place under procedure 11, **none changing an obligation**. Two of three failures were labelling rather
+  than error: correct content stated as though the field had discovered it. `decision-docs` was the one
+  contract found clean, and clean properly, with all eight of its assertions traced to named log entries.
+  **The defect has a signature phrase**: "the most common real-world failure/confusion is", unsourced in
+  all three contracts that used it.
+- **A stale count in `README.md`** that no marker was tracking, and a self-contradicting cell plus a stale
+  ADR count in `STATE.md` (2026-08-07, #74, #77). All were the DF-5 pattern: a sentence a hundred or more
+  lines from the marker at the top of its file.
+
+### Earlier in this release
+
 Backfilled 2026-07-26 covering 28 commits since 0.1.0. This section was empty while nine bundles, five
 family contracts and fourteen decision records landed, which is recorded as finding DF-3 (gated documents stay fresh, ungated ones drift) in
 [`STATE.md`](STATE.md) rather than quietly corrected: the documents this repository gates for freshness
