@@ -42,6 +42,28 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 
 MARKER = re.compile(r"<!--\s*counts:\s*(?P<body>[^>]*?)\s*-->", re.I)
 
+# A fenced code block is a SPECIMEN, not a claim. The inline-code case was fixed on 2026-08-07 and the
+# fenced case was never covered, so writing docs/explanation/architecture-detailed.md hit it twice:
+# first with real-looking values copied from this file's own docstring, then with a KEY=VALUE
+# placeholder that failed as an unknown fact name. Any future document explaining the marker syntax
+# hits it again. The sibling folder-readme check calls stripFences for exactly this reason, so until
+# now the two checks disagreed about whether a documented example is data.
+FENCE = re.compile(r"^(?P<f>```+|~~~+).*?^(?P=f)[ \t]*$", re.M | re.S)
+
+# Documents whose numbers describe a MOMENT, not the tree as it stands. A release note states what was
+# true at that release; a v0.2.0 note saying "the gate grew from 15 CI steps to 20" is correct forever
+# and becomes false the moment this check forces it to say 22. Gating a dated snapshot against current
+# truth does not prevent drift, it manufactures it. Exempted by directory rather than by name because a
+# new release note appears on every release and an exemption nobody remembers to extend is not one.
+# The exemption is PRINTED on every run, following check-research-logs.py, so it stays visible rather
+# than becoming a quiet hole.
+FROZEN_PREFIXES = ("docs/releases/",)
+
+
+def blank_fences(text):
+    """Replace fenced-block bodies with spaces, preserving length so offsets stay valid."""
+    return FENCE.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
+
 
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
 
@@ -123,12 +145,18 @@ def marked_files():
     tracked = subprocess.run(["git", "ls-files", "*.md"], cwd=ROOT,
                              capture_output=True, text=True).stdout.split()
     out = []
+    frozen = []
     for rel in tracked:
+        if rel.replace(os.sep, "/").startswith(FROZEN_PREFIXES):
+            frozen.append(rel)
+            continue
         path = os.path.join(ROOT, rel)
         try:
             text = open(path, encoding="utf-8").read()
         except OSError:
             continue
+        # A marker inside a fenced block documents the syntax; it does not assert anything.
+        text = blank_fences(text)
         # A marker wrapped in backticks is an ILLUSTRATION, not a claim. STATE.md's own DF-5 write-up
         # quotes a specimen marker in prose to explain the mechanism, and reading it as live was a
         # regression introduced with finditer on 2026-08-07: the specimen names counts from July and
@@ -151,12 +179,12 @@ def marked_files():
             label = rel if len(markers) == 1 else "%s (marker %d, line %d)" % (
                 rel, n, text.count("\n", 0, m.start()) + 1)
             out.append((label, claimed))
-    return out
+    return out, frozen
 
 
 def main():
     facts = live_facts()
-    files = marked_files()
+    files, frozen = marked_files()
 
     if not files:
         print(RED + "FAIL" + OFF + "  no document carries a counts marker. At least STATE.md should.")
@@ -179,6 +207,14 @@ def main():
                 print("        " + p)
 
     print("\nself-reported counts: %d document(s) carry a marker" % len(files))
+    if frozen:
+        print(DIM + "      %d dated snapshot(s) exempt, by directory, and named here so the hole stays"
+              % len(frozen) + OFF)
+        print(DIM + "      visible: %s" % ", ".join(frozen) + OFF)
+        print(DIM + "      A release note states what was true AT that release. Gating it against the"
+              + OFF)
+        print(DIM + "      tree as it stands today would force a correct record to become a false one."
+              + OFF)
 
     if bad:
         print("\n" + RED + "FAIL" + OFF + "  a number this repository states about itself has changed.")

@@ -28,13 +28,37 @@ template literals (`templates/${type}/${type}`, log(`...${n}...`)) from being re
 It does NOT prove the script loads. Only invoking the Workflow tool proves that, and no check in
 this repository can stand in for it. This catches the one shape that has actually broken the
 harness, which is worth more than a check that aspires to prove loadability and cannot.
+
+WHY THE SEARCH PATH WIDENED, 2026-08-08.
+
+This check originally globbed `.claude/workflows/*.js` and found exactly one script. The EV-1 eval
+harness at evals/harness/output-eval.workflow.mjs is a workflow script by every definition that
+matters here - it holds agent prompts, it is loaded by the same runtime, and it dies the same way -
+and it sat outside both the directory and the extension this check looked for. So a tool written
+because a broken harness is invisible until someone runs it was not looking at the harness that had
+most recently been written.
+
+The lesson is not "remember to add new files". It is that a check scoped by a hardcoded directory
+silently narrows every time the tree grows. Discovery is now by shape (a workflows directory, or a
+*.workflow.* name) across the tracked tree, and the script count is printed on every run so a
+scope that collapses to one file is visible rather than reassuring.
 """
 import pathlib
 import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-WORKFLOWS = ROOT / ".claude" / "workflows"
+
+# Discovery is by shape, not by one hardcoded path. Both patterns are load-bearing: the first is
+# the conventional home, the second catches a harness that lives beside the thing it tests.
+SCRIPT_GLOBS = (
+    ".claude/workflows/*.js",
+    ".claude/workflows/*.mjs",
+    "**/*.workflow.js",
+    "**/*.workflow.mjs",
+)
+
+SKIP_PARTS = {"node_modules", "_local", ".git"}
 
 # `word` or `word-with-dashes` in prose. Short on purpose: a long backticked span is far more
 # likely to be a real template literal than a markdown code span.
@@ -59,14 +83,23 @@ def suspect_lines(text):
     return out
 
 
-def main():
-    if not WORKFLOWS.is_dir():
-        print("workflow prompts: no .claude/workflows/ directory, nothing to check")
-        return 0
+def discover():
+    found = set()
+    for pattern in SCRIPT_GLOBS:
+        for path in ROOT.glob(pattern):
+            if not path.is_file():
+                continue
+            if SKIP_PARTS & set(path.relative_to(ROOT).parts):
+                continue
+            found.add(path)
+    return sorted(found)
 
-    scripts = sorted(WORKFLOWS.glob("*.js"))
+
+def main():
+    scripts = discover()
     if not scripts:
-        print("workflow prompts: no scripts found, nothing to check")
+        print("workflow prompts: no workflow scripts found, nothing to check")
+        print("      searched: %s" % ", ".join(SCRIPT_GLOBS))
         return 0
 
     failures = 0

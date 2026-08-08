@@ -93,11 +93,27 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   The generator's own self-test runs 88 assertions.
 - **A repo-wide dash sweep.** Check B only scans inside bundles; this step scans every tracked
   `.md`, `.yaml`, `.yml`, `.py`, and `.json` file in the repository for an em-dash or en-dash.
+- **Eval arm parity** (`tools/check-eval-arm-parity.py`). The efficacy eval's treatment and control arms
+  must be handed a byte-identical block of general writing advice, so that the only difference between
+  them is whether one of them also got a template. That identity lives in two hand-maintained files, and
+  if they ever diverge the arms stop being comparable while every check still passes and every number
+  still looks reasonable. This is the one step in the list that guards a *measurement* rather than a
+  document.
+- **The Standard's conformance gate** (`node scripts/check.mjs`, from a pinned checkout of
+  `agent-skills-toolkit`). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=20 -->
-Twenty CI steps run in total. Every one of them proves the tree is *structurally* consistent with itself:
-files exist, links resolve, generated artifacts match their source, a marker matches a count. None of
-them, individually or together, can tell you whether a sentence in a companion is true.
+<!-- counts: cisteps=23 -->
+Twenty-three CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Eighteen** prove the tree is
+*structurally* consistent with itself: files exist, links resolve, generated artifacts match their
+source, a marker matches a count.
+
+**The twenty-third is the only one that can surprise anybody**, because it is the only one this
+repository did not write. It runs the Advanced Skill Library Standard's conformance gate from a pinned
+checkout of a separate repository, so it can report that this library has stopped meeting a published
+external standard. Every other step can only report that this library disagrees with itself.
+
+None of the twenty-three, individually or together, can tell you whether a sentence in a companion is true.
 
 ## What no machine checks
 

@@ -28,6 +28,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Node is here for one step only: the Advanced Skill Library Standard's conformance gate at
+      # the bottom of this file, which is a Node program in a different repository. Every check in
+      # between is Python, and none of them gained a dependency.
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
       # The gate's two dependencies: PyYAML (check G, frontmatter validity) and jsonschema
       # (check J, meta-schema validation). The other eight checks are pure stdlib. Installing
       # both here is what makes G and J enforced in CI; locally each SKIPs if its dependency is
@@ -155,6 +162,17 @@ jobs:
       - name: Workflow prompt strings
         run: python tools/check-workflow-prompts.py
 
+      # The efficacy eval's two arm prompts must share a byte-identical discipline block. The 2026-08-08
+      # pilot could not interpret its own headline number because the control arm was told to produce
+      # decision-usefulness and the treatment arm was not, while held-out criteria scored exactly that.
+      # The fix gave both arms the identical instruction, and "identical" is the entire load: a paraphrase
+      # would leave open the argument that one arm got better-worded advice. That identity now lives in
+      # two hand-maintained files, which is the shape that has drifted every previous time this repository
+      # has held one fact in two places without a check. Drift here would silently un-match the arms and
+      # invalidate every number produced afterwards, with nothing failing and nothing looking wrong.
+      - name: Eval arm parity
+        run: python tools/check-eval-arm-parity.py
+
       # The research-log generator's own fixture test, on the ADR 0025 argument: its merge path has no
       # live subject once a run is clean, because a collision only happens when two dimensions own the
       # same source. That is precisely how its two predecessor bugs hid. Both are now pinned by fixtures
@@ -207,3 +225,48 @@ jobs:
 
           print("OK: no em-dash or en-dash in any tracked text file.")
           PY
+
+      # The Advanced Skill Library Standard's own conformance gate (requirement G2, "self-hosting
+      # CI"). Every other step above validates this repository against rules this repository wrote.
+      # This one validates it against rules it did not write, which is the only kind of check that
+      # can tell the maintainer something the maintainer did not already believe.
+      #
+      # THREE THINGS HERE LOOK LIKE THEY COULD BE SIMPLIFIED AND CANNOT.
+      #
+      # 1. THE PIN IS LOAD-BEARING. Cloning the toolkit's default branch would put a foreign
+      #    repository's HEAD in front of every merge to this one: a stricter check landing over
+      #    there would turn this repository red without a line changing here, and the failure would
+      #    arrive attached to whichever innocent PR happened to be open. Pinned, a bump is a commit
+      #    with a diff and a reason. This is the same discipline the marketplace registry uses when
+      #    it pins a commit SHA rather than tracking a branch.
+      #
+      # 2. THE CHECKOUT MUST LAND OUTSIDE THE WORKSPACE, and actions/checkout cannot do that: its
+      #    `path` is required to be inside $GITHUB_WORKSPACE. That is not a style preference. The
+      #    toolkit's own folder-readme check (G8) builds a folder's expected child set with
+      #    readdirSync, which sees untracked directories. A toolkit checked out to ./.toolkit would
+      #    appear as a child of this repository's root that templates/README.md does not list, and
+      #    G8 would fail on a directory that exists only while CI is running. That exact shape, an
+      #    untracked directory readdirSync can see and a clean checkout cannot, is what made G8
+      #    unsatisfiable here until the stale hook cache producing it was deleted on 2026-08-08.
+      #    Putting the toolkit in RUNNER_TEMP is what stops this step from recreating that bug.
+      #
+      # 3. THE CHECKOUT IS SPARSE because only scripts/ is ever executed. It is also the difference
+      #    between a clone that works and one that does not: the toolkit's test fixtures nest deeply
+      #    enough to exceed MAX_PATH, so a full clone fails outright on a Windows contributor's
+      #    machine while succeeding on this Linux runner. A recipe a maintainer cannot run locally
+      #    is a recipe that gets debugged in CI.
+      #
+      # The gate exits non-zero only on findings AT or BELOW the declared tier; anything above it is
+      # printed as informational and cannot affect the exit code. So this step going red means this
+      # repository stopped meeting the tier it claims, which is exactly when it should go red.
+      - name: Standard conformance gate (G2, self-hosting)
+        env:
+          TOOLKIT_REF: v1.10.0
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch "$TOOLKIT_REF" --filter=blob:none --sparse \
+            https://github.com/product-on-purpose/agent-skills-toolkit.git "$RUNNER_TEMP/toolkit"
+          git -C "$RUNNER_TEMP/toolkit" sparse-checkout set scripts
+          npm --prefix "$RUNNER_TEMP/toolkit" ci --omit=dev
+          echo "toolkit $TOOLKIT_REF at $(git -C "$RUNNER_TEMP/toolkit" rev-parse --short HEAD)"
+          node "$RUNNER_TEMP/toolkit/scripts/check.mjs" "$GITHUB_WORKSPACE"

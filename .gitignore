@@ -32,3 +32,6 @@ desktop.ini
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Cygwin crash dumps. One was committed in #53 and shipped in v0.2.0 and v0.2.1.
+*.stackdump
