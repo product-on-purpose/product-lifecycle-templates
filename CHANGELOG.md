@@ -14,6 +14,28 @@ people who want every change, release notes are for people who want to know what
 
 Nothing yet.
 
+## [0.2.1] - 2026-08-08
+
+### Added
+
+- **`library.json`**, binding the Advanced Skill Library Standard at version `0.12` and declaring conformance
+  at tier **universal (Bronze)**. Required by clause **L3** of the Product on Purpose marketplace listing
+  contract: a repository with no `library.json` is "loose components" under the Standard and **is not
+  eligible for a new listing**. The tier is not self-declared: the Standard's own gate
+  (`agent-skills-toolkit/scripts/check.mjs`) was run against this repository and exits 0 at universal, with
+  the remaining findings belonging to the convergent tier above the declared ceiling.
+
+### Changed
+
+- **`.claude-plugin/plugin.json` version to 0.2.1**, because listing clause **L4** requires the registry
+  entry version, the release tag, `library.json` and every native manifest to agree.
+
+### Why this is a separate release
+
+`v0.2.0` was tagged before the listing contract was read, and its commit does not contain `library.json`.
+A published tag is not moved to fix that. This patch adds the manifest and re-cuts, so the version the
+registry pins sits on a tag whose tree actually contains what the tag claims.
+
 ## [0.2.0] - 2026-08-07
 
 **The Tier-1 floor is complete.** 26 bundles covering all 25 templatable Tier-1 document types, nine
