@@ -1,0 +1,614 @@
+[
+  {
+    "key": "v2:b9511c899c0acbca584068065da7ab81abf69346ff97561761968d3d1b10df45",
+    "result": {
+      "text_len": 2800
+    }
+  },
+  {
+    "key": "v2:9ad78244e9bd72203266889f240748d504f4712122aa31a39901d3fd14a54191",
+    "result": {
+      "text_len": 4258
+    }
+  },
+  {
+    "key": "v2:4bd0b725187eaf741c0bb5432f6bb908ae047d355b00f54dbb37d35e7a39fcde",
+    "result": {
+      "text_len": 4454
+    }
+  },
+  {
+    "key": "v2:3eac6a0e39152d42bd6fe182890203dcde867358e8f2bcfccbfce44b6a687ef7",
+    "result": {
+      "text_len": 4278
+    }
+  },
+  {
+    "key": "v2:49bf180cfa7b0ad75d92c1482184fe40f60e0ed920b50ca352a9e3c6b92ae879",
+    "result": {
+      "text_len": 5286
+    }
+  },
+  {
+    "key": "v2:07a65cb92bff8d8e11376f9ef0bff2f6132684a68b3afc8d5e3700f65825dd3c",
+    "result": {
+      "text_len": 5375
+    }
+  },
+  {
+    "key": "v2:6cf6d4a8f7b0c327c257e5fc971b7dc112e666870b7f61973b8878311dd3acc9",
+    "result": {
+      "text_len": 5897
+    }
+  },
+  {
+    "key": "v2:9eed2936b1051a8e9328f915bdb85c7921354a14646960a1acb18bd1dee35abb",
+    "result": {
+      "text_len": 5756
+    }
+  },
+  {
+    "key": "v2:5f41a926b16abda8713944c0fe44c4a6f92c6c9052e903a2df3305282903f350",
+    "result": {
+      "text_len": 6708
+    }
+  },
+  {
+    "key": "v2:66abcc19e2061a2fbb62363fa4c96a00a2aff2f8ae72c8b179169bb55e9ec135",
+    "result": {
+      "text_len": 6061
+    }
+  },
+  {
+    "key": "v2:7d946746f5e1f91f9e45e56f4e974c8896471acdfaf3585307ac7a398268c7ba",
+    "result": {
+      "text_len": 4437
+    }
+  },
+  {
+    "key": "v2:20ef6120ce76f6c28a6c1b87ebb69ccad5e40aabd56df87ee2e6eebc1993e253",
+    "result": {
+      "text_len": 6224
+    }
+  },
+  {
+    "key": "v2:3da5a470bda991da0d3de8edd50c371b589f5b99cbbe791f452519a055df7ecc",
+    "result": {
+      "text_len": 5482
+    }
+  },
+  {
+    "key": "v2:faa9776d0290cac434819d946f58a3981e5f4d52b87fe778933fb85087cd1750",
+    "result": {
+      "text_len": 5343
+    }
+  },
+  {
+    "key": "v2:1c549207d8d44267e98ff1b09a8986413b6b1217316975b7a57c51164468b50e",
+    "result": {
+      "text_len": 6120
+    }
+  },
+  {
+    "key": "v2:a9d913becae40f663e8b8cbff09f432c1420cfa2bba04de66c591ddbdc962039",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 1,
+          "heldOutMean": 1.5,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Template shell with an unfilled {{title}} token and pure boilerplate ('will meet the needs of the relevant stakeholders,' 'appropriate and expected manner'). Every checklist item, scenario, and non-functional bullet is a restated Definition-of-Done truism with no story-specific content: no dollar amounts, no reset timing, no override window, no decline-visibility bar, no estimated-authorization edge case. None of the five probes are answerable from this document; a reader cannot scope a single hour of work from it. Held-out internal-consistency scored a non-zero 3 only because the document is too vacuous to contain an actual contradiction, not because it demonstrates coherence."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 4.5,
+          "heldOutMean": 2.5,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Specific, well-scoped, and clean of the distractor facts (no OS versions, marketing, microservices ownership, or Legal/joint-account note). Numbers are concrete and measurable throughout (limit range/increment, 90 percent threshold, 5-minute override, 2-minute decline visibility), scenarios are single-behavior, and Out of scope is specific. But the one edge case the brief most cared about, an estimated card-present authorization later pushing the customer over the limit, is not actually resolved: the bullet says 'the criteria specify how the estimated hold is tracked against the limit and what happens at settlement' without ever stating what that treatment is, which is circular rather than an answer. That is why probe 2 fails from this document alone. Given the ask explicitly demanded this exact case be airtight, that gap is more than a nitpick, it is the central deliverable left unresolved, which is what caps this at 3 despite a high rubric mean. No stop/kill signal and no decision-vs-told marking; every claim reads as a flat declarative regardless of whether it was a given constraint or an authored choice."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 4.83,
+          "heldOutMean": 3.75,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Answers all five probes cleanly, including the estimated-authorization edge case that B ducks: items 7 and 8 state the authorization-time rule and the settlement-time rule separately and explicitly (declined at authorization if it would exceed; not retroactively declined at settlement, logged and surfaced as informational instead), and item 8 names this as the story's core requirement per Support's complaint volume rather than leaving it implicit, which is real decision-vs-told marking. The Open Question section models scoping without a meeting well: it flags an ambiguity (mid-period limit change and retroactive re-evaluation) as a product decision to confirm rather than silently assuming an answer. Clean of all four distractor facts. The one structural nitpick against the rubric's literal shape: there is no separate 'Scenarios' or 'Non-functional criteria' heading, everything is folded into one numbered Given/When/Then list, so the measurable bars (2-minute, 5-minute) are present but not gathered under a labeled non-functional section, and there's still no explicit stop/kill condition anywhere. That is enough to hold this at 4 rather than 5 under the reserved-for-untouchable-work reading of the anchor scale."
+        }
+      ],
+      "strongest": "Artifact C",
+      "rationale": "Artifact A is a generic template shell (including an unfilled {{title}} token) whose every line is DoD-style boilerplate ('appropriate manner,' 'as needed'); it answers none of the five probes and cannot be used to scope work. Artifacts B and C are both specific, numerically grounded, and free of the four planted distractor facts (OS versions, marketing campaign, microservices ownership, Legal/joint-account note), so neither wins or loses on padding. The deciding difference is substantive: the scenario's central ask was an airtight treatment of the estimated-authorization-then-settlement edge case, and Artifact B names that edge case but never actually resolves it (the bullet is circular: 'the criteria specify how...' without saying how), which fails retrieval probe 2 and undercuts the one thing the requester most cared about. Artifact C resolves that same case explicitly across two linked criteria (decline at authorization if it would exceed; do not retroactively decline at settlement, log and surface as informational) and goes further by flagging that this is the story's known pain point rather than an assumption, and by surfacing one genuine open question (mid-period limit change re-evaluation) as a decision for product rather than quietly picking an answer. That is exactly the decision-vs-told and scopeable-without-meeting behavior the held-out criteria are checking for, and it is why C's held-out mean pulls further ahead of B's than the rubric mean alone would suggest, consistent with the eval's own circularity check (a large rubric gap next to a comparatively larger held-out gap here signals a genuine document-quality difference, not template-teaches-rubric). Neither B nor C states a stop/kill condition anywhere, so both score floor (1) on that single held-out criterion."
+    }
+  },
+  {
+    "key": "v2:569529b97cb8346b14c73720a89ccbdc3590d01ce6b117f1d7d90963faf2e0e8",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 4,
+          "heldOutMean": 3,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric: clean, well-formed document. observable-verifiable=4 (all checklist items testable; Ask to Buy routing borders on implementation-naming but is itself the platform requirement). unhappy-paths-named=4 (dedicated Edge cases section with four concrete conditions: multi-child, Android delivery lag, offline/uninstalled device, retry-after-denial, each with a stated outcome). no-dod-duplication=4 (all criteria are story-specific to this purchase-approval flow). measurable-nonfunctional=2 (the 30-second delivery target is explicitly hedged as 'not a guarantee', and the one actual timeout-duration number needed to test the default-deny behavior is punted to an open question in Out of scope -- the central measurable bar for this story's most contested NFC is missing). single-behavior-scenarios=5 (three clean GWT scenarios, one action/outcome each). scope-boundary-stated=5 (names the COPPA/age-gate gap specifically as pre-existing and out of scope, plus backend and timeout-duration exclusions; no placeholders). Held-out: scopeable-without-meeting=3 (most of the story is scopeable, but the un-set timeout number is a real gap an engineer would have to chase down). stop-kill-signal=1 (no condition stated under which the team would stop or reconsider the story; the COPPA gap is filed as 'out of scope' with no urgency attached). internal-consistency=4 (no contradictions found). decision-vs-told=4 (marks reasoning behind the no-threshold and default-deny calls, e.g. 'Finance's proposed exemption is rejected because...', though it reads more as settled position than a flagged personal call). Probes: all 5 answerable directly from the document (default-deny with reasoning, no threshold, iOS/Android Ask to Buy split, 90-day retention, COPPA/age-gate carve-out named as out of scope). No distractor facts (button color, Java/Kotlin refactor, marketing campaign) appear. Overall 4: professional, disciplined, avoids distractors and DoD-filler, but ships with the one number the team most needs (the timeout duration) left as a blank rather than a committed default, and never says what would make the team stop."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.83,
+          "heldOutMean": 4.25,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric: memo-style, no dedicated Edge cases/Scenarios/Non-functional headings, but content is still checkable. observable-verifiable=4 (the closing numbered AC list is GWT-structured and testable). unhappy-paths-named=2 (no dedicated Edge cases section; failure conditions are folded into narrative 'Decision' prose, and it covers fewer named conditions than A -- no offline-device case, no retry-after-denial case -- so a reader has to extract edge cases from paragraphs rather than point to a checklist). no-dod-duplication=4 (story-specific throughout). measurable-nonfunctional=4 (commits to a concrete number: 'minimum 15-minute window on Android,' derived from the 5-minute delivery-lag floor, and is honest that the number is an estimate rather than measured data -- more decisive than A's punted timeout, though not in a formal Non-functional section). single-behavior-scenarios=4 (the seven GWT-style ACs are each single action/outcome, including the timeout item with its parenthetical detail). scope-boundary-stated=5 (Out of scope names the COPPA gap with a specific Legal citation, notification infra, and UI visual design; clean, no placeholders). Held-out: scopeable-without-meeting=4 (concrete platform split, a committed timeout number, retention, and exclusions give real boundaries to size against). stop-kill-signal=4 ('Unresolved, uncomfortable to say' section names the COPPA/age-gate gap as a concrete pre-ship risk and recommends it be surfaced to Legal explicitly before shipping -- closer to a genuine pause condition than A's plain out-of-scope note). internal-consistency=4 (no contradictions found). decision-vs-told=5 (explicit 'Decision:' headers and repeated 'flagging this as my call, not a team consensus' language make author-decided calls unmistakably distinct from handed-down facts like Apple's Ask to Buy mandate or the 5-minute Android delivery lag). Probes: all 5 answerable directly from the document. No distractor facts appear. Overall 4: less structurally tidy than A and thinner on named edge cases, but more decision-useful -- it commits to the timeout number the brief asked for rather than leaving it blank, and marks its own provenance (decision vs. given constraint) more clearly than A does."
+        }
+      ],
+      "strongest": "Artifact B, marginally, on decision-usefulness (held-out mean 4.25 vs 3.0): it commits to a specific timeout number instead of leaving it as an open question, and explicitly marks which calls are the author's own judgment versus handed-down constraints. Both tie on rubric-adjacent quality (holistic 4) and both answer all 5 probes; A is more disciplined in document structure (dedicated Edge cases section with more named failure conditions) but leaves the single most contested number in the brief unresolved and never states a stop/kill condition, which is the more consequential gap given the scenario's explicit ask to \"commit to an answer and flag it, not leave a blank.\"",
+      "rationale": "Scored each artifact against the rubric's six criteria and the four held-out decision-usefulness criteria independently, using the anchor scale (5 reserved for untouchable work, ties broken downward), then separately verified each of the scenario's five retrieval probes could be answered from that document alone, and checked both documents against the three named distractor facts (button color, Java/Kotlin refactor, marketing campaign) -- neither included any, so no penalty applied there. The two documents differ mainly on where they spend their discipline: A is cleaner and names more edge cases in a dedicated section but explicitly defers the one number (timeout duration) the scenario most needed resolved and never states a kill/stop condition; B lacks a dedicated edge-case section and covers fewer failure conditions but commits to a concrete timeout number, marks decision-provenance explicitly throughout, and comes closest to a genuine stop signal via its Legal-escalation note. Per the anti-form instruction, B's narrative structure was not penalized as a proxy for quality beyond where the rubric's own criteria specifically require a named section (unhappy-paths-named), where the gap reflects a real content shortfall (fewer named conditions), not mere formatting."
+    }
+  },
+  {
+    "key": "v2:b0267ac022eae58fc36583d4c3ca3eca3c693dae0ae8d445ef72589ea09de366",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 4.67,
+          "heldOutMean": 4.25,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Resolves the story's central 'airtight' edge case explicitly and correctly (item 8: estimate settles over limit -> not retroactively declined, logged, surfaced as informational), which is the single most load-bearing content decision in this scenario and the only artifact to actually commit to an answer rather than punt on it. All five probes answerable with exact figures ($100-$10,000/$50 increments, statement-date reset per account, 5-min override, 2-min decline-reason visibility, per-category limits explicitly out of scope with rationale). No distractor facts (iOS/Android versions, marketing campaign, microservices ownership, Legal's joint-account stance) leak in. Held-out signal is real, not circular: the 'Open question' section flags an unresolved mid-period-limit-change edge case as a product decision needing confirmation before sprint planning closes (partial stop-signal/decision-vs-told marking), and the compliance-driven vs. author-inferred distinction is called out explicitly in item 8's parenthetical. Nitpicks that keep this off a 5: no dedicated 'Non-functional criteria' section (measurable bars like the 2-minute and once-per-period figures live inside narrative prose under other headings rather than a labeled section), and items 7-8 each bundle an if/then compound rather than a single clean assertion."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 1.17,
+          "heldOutMean": 1.25,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Contains an unfilled {{title}} placeholder and is entirely templated boilerplate: every checklist item and scenario is a content-free generic statement ('will meet the needs of the relevant stakeholders', 'system will respond in an appropriate and expected manner') that would paste unchanged into any story in any backlog. Zero dollar figures, zero timing windows, zero mention of the spending limit, the reset date, the override window, or the estimated-authorization edge case. None of the five retrieval probes are answerable from this document; a reader learns nothing about the actual story. Well-organized headings (Story reference, Acceptance criteria, Scenarios, Edge cases, Non-functional, Out of scope) are exactly the kind of structural mimicry the anti-form instruction warns against: the shape of a good document with none of the substance."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 4,
+          "heldOutMean": 2,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Clean template-shaped document with correct frontmatter, four genuinely single-behavior Given/When/Then scenarios, and most facts stated with exact figures (increments, min/max, reset-on-statement-date, 90% notification, 5-min override, 2-min decline visibility). But on the one edge case the ask explicitly called out as the story's core 'airtight' requirement (estimated authorization later settling over the limit), the document does not actually state an outcome: 'the criteria specify how the estimated hold is tracked... and what happens at settlement' is a meta-statement pointing at criteria that should exist, not a criterion itself. Retrieval probe 2 is therefore not answerable from this document alone -- a reader cannot say what actually happens at settlement, only that it needs to be decided. A neighboring edge case ('declines or flags it consistently... not inconsistently based on merchant type') is similarly non-committal between two different observable outcomes. This is exactly the kind of gap the anti-form instruction singles out: organized and confident-sounding, but silent on the one fact that mattered most to the ask. No distractor facts included. Non-functional section restates the acceptance-criteria and decline-visibility figures rather than adding a new measurable dimension, a mild duplication nitpick. Held-out score is pulled down hard by scopeable-without-meeting (an engineer still needs a conversation to build the settlement-overage path) and by the complete absence of any stop/kill signal or decided-vs-told marking anywhere in the document."
+        }
+      ],
+      "strongest": "Artifact A",
+      "rationale": "Scored blind, in document order, using the rubric's six criteria plus the four held-out criteria and the five retrieval probes, checking each against the scenario file's exact facts and distractor list. Artifact A is the only one that actually resolves the story's stated central concern (the estimated-authorization-settles-over-limit edge case) with a committed, specific outcome rather than naming the case and deferring the answer; it also answers all five probes correctly and carries the strongest (though still partial) held-out signal, particularly an explicit flag distinguishing a compliance-driven fact from an author-made interpretive call, and a genuine open question that reads as a stop-before-proceeding signal rather than vague hedging. Artifact C is well-organized and template-correct, and its rubric-criteria score is respectably close to A's, but it fails the exact probe the scenario was built to test (probe 2, the estimated-hold settlement case) by only gesturing at the need for criteria rather than stating them; that single gap, on the ask's explicitly-named priority, is why its held-out mean and overall score are markedly lower than A's despite comparable surface polish -- consistent with the anti-form instruction that organization and confident tone should not be rewarded independent of substance. Artifact B is unambiguous boilerplate: every line is a generic, story-agnostic placeholder (including a literal unfilled {{title}} token), no retrieval probe is answerable, and it exists as the clearest illustration of the anti-form warning, a fully-headed document shape with no content inside it. None of the three artifacts pulled in any of the four listed distractor facts (OS versions, marketing campaign, microservices ownership, Legal's joint-account stance), so no distractor penalty was applied to any of them."
+    }
+  },
+  {
+    "key": "v2:c1b9527c44d57ba9886ea0f2c299fbe73eec8224a9ec19593a0caa5213b3af5f",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.17,
+          "heldOutMean": 3.25,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric: summary_stands_alone=4 (Summary states cause status, duration, and resolved-vs-not in one place). impact_is_measured=4 (impact table has system, duration, magnitude, all checkable). timeline_is_checkable=3 (a 4-row timestamped table exists, but the document itself flags that clock times beyond start/duration have not been reconciled against logs, undercutting checkability even as it keeps the gap visible rather than hiding it). root_causes_evidenced=4 (two specific causes, each with named evidence -- vendor status page, open support case, failed reproduction attempt -- and no cause is a person). trigger_is_own=2 (names the thresholds actually met but explicitly declines to cite where the criteria are published, deferring that to an action item; honest but does not satisfy the criterion). actions_are_tracked=2 (owners are role titles, not tracked; every ticket is 'TBD', so nothing is yet checkable in a tracker). Held-out: scopable_without_meeting=3, names_a_stop_kill_condition=1 (no fix has shipped and no rollback/stop condition is stated for any action), no_internal_contradiction=5 (Summary, Resolution, and Action Items agree consistently that cause and recovery mechanism are unconfirmed), decision_vs_information_distinguishable=4 (theory is explicitly attributed to 'on-call engineer's working theory' throughout, separated from confirmed facts). All 5 probes answerable from the document alone. Correctly includes none of the three distractors (no social sentiment, no billing incident, no churn data). Holistic 3: honest and disciplined, but a senior practitioner would still send this back for real ticket IDs, named owners, and a reconciled timeline before circulation."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 2.5,
+          "heldOutMean": 3.5,
+          "probesAnswered": 5,
+          "overall": 2,
+          "notes": "Rubric: summary_stands_alone=3 ('What happened' covers timing/scope/magnitude and implies resolution, but root-cause status lives only in a one-line header above it and in a later, separate 'What we know' section, so cause is scattered rather than contained in one stand-alone block). impact_is_measured=4 (same checkable numbers as the scenario provides). timeline_is_checkable=2 (there is no timeline structure at all -- only a start time and two narrative durations; no discrete, timestamped events, and no table, so little here is checkable against a log). root_causes_evidenced=4 (clear confidence-graded causes with named evidence, matching A's quality). trigger_is_own=1 (no trigger section or published-criterion reference of any kind). actions_are_tracked=1 (five narrative action items, no owner named for any of them beyond the author's own voice, no ticket IDs, explicitly defers owner/date assignment to a future meeting). Held-out: scopable_without_meeting=3, names_a_stop_kill_condition=1 (no stop/rollback condition stated), no_internal_contradiction=5, decision_vs_information_distinguishable=5 (the 'Confirmed, high confidence' / 'Unconfirmed, low confidence' labeling is a stronger, more systematic separation of reported fact from author judgment than Artifact A's). All 5 probes answerable from the document alone. Distractor discipline fails: the 'What is explicitly out of scope' section names all three distractors (social sentiment, churn data, unrelated billing incident) verbatim, bringing them into the document even while disclaiming them -- the instructed penalty applies. Holistic 2: strong confidence-labeling prose, but missing an entire timeline section and an entire trigger section (two of six rubric criteria essentially unaddressed), no trackable actions, and explicit distractor inclusion put this below Artifact A despite its more polished voice and exec framing."
+        }
+      ],
+      "strongest": "Artifact A, on rubric-weighted substance, though neither clears a 4.",
+      "rationale": "Both documents are honest about the unconfirmed root cause, both explicitly refuse to assert a link to the February incident, and both answer all five retrieval probes from their own text -- so the probe count does not separate them. The separation comes from rubric coverage and distractor discipline. Artifact A has a timeline table (even if it self-flags reconciliation gaps) and at least attempts to address the trigger criterion and gives action items a role-owner and 'Open' status with placeholder tickets; Artifact B has no timeline structure and no trigger section at all, and its action items name no owner and no ticket at all, only a promise to assign them later. Artifact B's prose is more polished and its confidence-labeling ('Confirmed, high confidence' vs 'Unconfirmed, low confidence') is genuinely the stronger execution of separating reported fact from author judgment, which is why its held-out mean edges out A's. But per the anti-form instruction, that polish does not offset missing two of six rubric sections outright, and B actively re-introduces all three scenario distractors in an 'out of scope' section, which the scenario and instructions explicitly penalize regardless of the disclaiming frame. Weighing rubric substance over exec-memo tone, A scores higher overall, though both stop short of a 4 given untracked actions and, in A's case, an unaddressed trigger citation."
+    }
+  },
+  {
+    "key": "v2:1d18676781431b6c075a171b7cfe662740747fd35e3225d1acb58c803a8d8934",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.67,
+          "heldOutMean": 2.5,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Clean, well-organized, story-specific document with correct figures throughout (min $100 / max $10,000 / $50 increments, statement-date reset varying per account, 5-minute override, 2-minute decline-reason visibility, per-category limits explicitly out of scope). No distractor facts leaked in. However the single edge case the scenario's ask most emphasized (a card-present estimated authorization that later settles over the limit) is not actually resolved: the criterion reads 'the criteria specify how the estimated hold is tracked... and what happens at settlement' - a self-referential placeholder for an answer, not an observable outcome. That fails probe 2 and weakens observable-verifiable and unhappy-paths-named for the one edge case that mattered most. A second edge case ('declines or flags it consistently... not inconsistently based on merchant type') is similarly non-determinate. No stop/kill signal anywhere. No marking of decision-vs-told beyond one 'per the existing dispute-resolution policy' reference. Internally consistent, no contradictions found."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 4.5,
+          "heldOutMean": 4,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "The only document that actually resolves the estimated-authorization edge case with a stated outcome and reasoning (counted against the limit at authorization time; if it settles higher later, not retroactively declined, logged and surfaced as informational) - directly answers the ask's 'airtight, not just happy path' emphasis and probe 2. Explicitly separates what's decided from what remains open: the closing 'Open question' section names a real unresolved product decision (mid-period limit change retroactivity) and says it needs confirmation before sprint planning rather than silently assuming an answer - strong decision-vs-told and scopeable-without-meeting evidence. Scope section is specific (per-category, dispute-policy changes, joint accounts) with reasons, not just a list. All five probes answerable from the document alone, no distractors present. Held back from a 5 by structural/content softness: no separate 'Non-functional criteria' section (measurable bars for timing exist but aren't grouped as such), item 8 chains multiple outcomes ('not retroactively declined... logged and surfaced... not as a decline') rather than asserting one clean Then, and no stop/kill condition anywhere in the document."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 1.17,
+          "heldOutMean": 1.25,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Generic templated boilerplate with an unfilled {{title}} placeholder left in the shipped heading - an explicit disqualifier under scope-boundary-stated's 'no unfilled placeholder tokens' clause. Every checklist item is a content-free universal statement ('will meet the needs of the relevant stakeholders in a manner consistent with expectations', 'will perform adequately under expected conditions') that would paste unchanged into any story's AC document - the textbook no-dod-duplication failure. Zero story-specific facts appear: no limit range, no reset-date behavior, no override window, no decline-reason timing, no scope exclusion naming per-category limits. None of the five retrieval probes are answerable from this document. Contains no contradictions only because it contains no real content to contradict. Organizationally it mimics the other two documents' headings, which is exactly the form-over-substance case the anti-form instruction warns against: it looks like a document and delivers nothing."
+        }
+      ],
+      "strongest": "Artifact B",
+      "rationale": "All three share the same section skeleton, so structure carries no signal here per the anti-form instruction. What separates them is whether the central edge case the scenario's ask explicitly flagged as the priority ('airtight on the edge cases... Support has been getting complaints for months') actually gets a stated, observable resolution. Artifact B is the only one that resolves it: estimated card-present authorizations are counted against the limit at authorization time and declined if they'd exceed it, and a later-settling overage is explicitly not retroactively declined but logged and surfaced to the customer - a reasoned, specific answer to probe 2. Artifact A poses the same edge case but answers it with a criterion that says the criteria will specify the answer, which is not itself an answer; everything else in A is competent and correctly sourced (figures, reset behavior, override window, decline-reason timing, scope exclusion all check out), so it scores well but not top. B further distinguishes itself on the held-out, decision-usefulness axis by explicitly flagging one unresolved question (mid-period limit-change retroactivity) as a product decision that needs confirming rather than quietly assuming an answer, which is exactly the decided-vs-told and scopeable-without-meeting behavior the held-out criteria are checking for. Artifact C is not a real contender: it is boilerplate with an unfilled {{title}} placeholder and zero facts from the scenario, answering none of the five probes and duplicating a generic Definition-of-Done rather than this story's criteria. None of the three states a stop/kill condition, and none leaked any of the four distractor facts (OS versions, marketing campaign, microservices ownership, joint-account/Legal note) into the document."
+    }
+  },
+  {
+    "key": "v2:ccfd4ee50a66652b5df009f48582ca973612f1bab29becb4df255f442433b3a9",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.5,
+          "heldOutMean": 4.75,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric detail: observable-verifiable=4 (all 7 numbered ACs are Given/When/Then and testable, though AC7's 'routes through Ask to Buy rather than a custom flow' brushes against implementation phrasing); unhappy-paths-named=2 (no dedicated Edge cases section; only denial and timeout are covered as failure conditions, folded into the numbered ACs, so coverage is thin next to what the criterion expects); no-dod-duplication=5 (every criterion is tied to this story's specific facts, none reads as generic DoD); measurable-nonfunctional=2 (no Non-functional criteria section exists at all; the one number that exists, the 15-minute Android floor, is buried inside AC4 rather than stated as a testable NFR bar); single-behavior-scenarios=3 (5 of 7 ACs are clean single-action/single-outcome; AC3 and AC6 each chain two assertions with 'and'); scope-boundary-stated=5 (three specific, reasoned exclusions: COPPA/age-gate work, notification infra, visual design; no placeholders or leftover comments). Held-out: scopeable-without-meeting=5 (concrete numbers, named exclusions, and explicit platform split give an engineer real boundaries); stop-kill-signal=4 ('Unresolved, uncomfortable to say' names the COPPA gap concretely and recommends surfacing it to Legal before shipping, close to but not a formal go/no-go threshold); internal-consistency=5 (no contradictions found across sections, the no-threshold and deny-on-timeout decisions are applied uniformly); decision-vs-told=5 (explicitly separates stakeholder positions, e.g. 'Finance wants... CS has argued...', from the author's own calls, twice flagged in so many words as 'a call I'm making without full team agreement, not a settled decision'). All 5 probes answerable directly from the text. No distractor facts (button color, Java-to-Kotlin refactor, Family Pilot campaign) appear. Notably, this document commits to a concrete number for the disputed timeout window (15 minutes minimum) with reasoning and an explicit 'this is an estimate, revisit' flag, matching the brief's instruction to commit and flag rather than leave a blank."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 4.17,
+          "heldOutMean": 3.5,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric detail: observable-verifiable=4 (acceptance criteria, scenarios, and edge cases are consistently phrased as observable states); unhappy-paths-named=5 (a dedicated Edge cases section names four distinct, concrete failure conditions - unnamed child, delivery lag, offline/uninstalled device, retry-after-denial - each with a stated outcome); no-dod-duplication=5 (all entries are story-specific); measurable-nonfunctional=5 (a dedicated Non-functional criteria section states two testable bars: a 30-second delivery target with its Android caveat, and a one-tap reachability standard); single-behavior-scenarios=2 (all three of its formal Given/When/Then scenarios chain multiple assertions in the Then clause with 'and' - e.g. the deny scenario asserts blocked, message shown, AND logged as three joined outcomes - which is the more severe version of the fault A shows only twice); scope-boundary-stated=4 (specific, reasoned exclusions for COPPA/age-verification and payments backend, but the frontmatter's 'owner: TBD' and unresolved timeout-duration open question leave a template-scaffold residue). Held-out: scopeable-without-meeting=5; stop-kill-signal=1 (no condition anywhere under which the team would stop, reconsider, or kill the story; the COPPA gap is mentioned only descriptively as a pre-existing gap, not as a recommendation or threshold); internal-consistency=5 (no contradictions, the unresolved timeout-duration point is flagged openly rather than left as a silent inconsistency); decision-vs-told=3 (states resolutions like the threshold rejection and the deny-on-timeout default as flat declaratives with reasoning attached, but without the explicit first-person marking that separates 'stakeholder position' from 'my call' the way Artifact A does). All 5 probes answerable directly from the text; no distractor facts appear. Notably, the brief asked for a committed answer where the team lacks agreement rather than a blank; this document explicitly punts the specific timeout duration to an 'open question for follow-up,' which is honest but is a smaller commitment than the brief asked for on that specific disputed point."
+        }
+      ],
+      "strongest": "Artifact A",
+      "rationale": "Both documents clear the rubric floor comfortably and both answer all five retrieval probes with no distractor contamination, so the deciding weight falls on the held-out, harder-to-game criteria and on which document is more decision-useful, per the anti-form instruction. Artifact A is a messier, less template-shaped document (no dedicated Edge Cases or Non-functional Criteria section, a couple of compound Then-clauses) which cost it on two rubric cells, but it substantially outperforms Artifact B on the held-out set: it marks every load-bearing claim as either a stakeholder-given constraint or the author's own contested call (twice explicitly flagged as such), it surfaces a genuine near-stop-signal on the COPPA gap with a recommendation to escalate before shipping, and it commits to a concrete number for the disputed timeout window exactly as the brief asked ('I'd rather you commit to an answer and flag it than leave a blank') rather than deferring it. Artifact B is the more polished, template-conforming document, which is exactly what earns it a higher rubric mean (it has the sections the guide teaches, and executes them cleanly) but its held-out mean drops meaningfully below its rubric mean, the pattern the rubric itself calls out as a sign a document is teaching its own rubric rather than teaching genuine decision-usefulness: it has zero stop/kill signal anywhere in the text, its decision-vs-told marking is present but weaker and unmarked, and its three formal Given/When/Then scenarios each chain multiple outcomes with 'and,' a more uniform violation of the single-behavior criterion than Artifact A shows. Weighing the held-out gap as the more diagnostic signal per the rubric's own circularity framing, Artifact A is the stronger document."
+    }
+  },
+  {
+    "key": "v2:ac74825e10a36c89f56d04465bcf1117f2d2571bdb525aaa11c37c6b1eac6a43",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.67,
+          "heldOutMean": 4.5,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Complete PRD structure: Context/Problem/Goals-Nongoals/Target users/Solution/FR table with Must-Should priorities/NFR/UX with one explicit edge case/Success metrics with labeled Primary, Guardrail, and measurement window/Dependencies table with owner+status/Risks table/Rollout plan/Open Questions table with named owners and needed-by milestones/Appendix sourcing. All 5 probes answerable directly: Oct 1 date with Q1 explicitly superseded, guardrail-triggered pause condition, 45k-vs-61k gap resolved via patient-owned-device, Carla Nguyen's sign-off authority, Epic-per-IT with athenahealth flagged as a discrepancy pending confirmation. Weaknesses against the rubric: the Problem section itself (3 sentences) is not clearly more developed than the Solution overview section (4 sentences, including the EHR-discrepancy aside) -- the load-bearing evidence (40%, $18, 22 min) actually lives in the separate Context section, which a strict reading of the criterion does not credit; UX unhappy-path coverage is a single edge case, not the full empty/loading/error trio the held-out and rubric criteria look for. Distractor discipline is good: only one of three scenario distractors (voice-to-text) appears, and it is used correctly and briefly as a genuinely-reasoned non-goal (paired with the real budget-driven kiosk exclusion), not dwelt on. Decision-vs-input traceability is explicit in three places (EHR naming call, budget resolution, timeline supersession) though phrased slightly more as reporting a directive than owning a judgment call compared to B."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 2.83,
+          "heldOutMean": 4.25,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Strong, well-evidenced Problem section with inline named sourcing (Denise Ruiz, Billing) that reads as more developed than anything resembling a solution overview, since B has no dedicated Solution overview section at all. Goal/success-criteria section states three outcome-oriented metrics and an explicit, forcefully-stated kill criterion ('not a soft target...tracked from day one'), and Decision authority and Timeline sections are the clearest, most confidently-argued decision-vs-input reasoning of the two documents (Epic-vs-athenahealth resolved with an explicit ownership rationale, Q1-vs-Oct1 explicitly superseded). All 5 probes answerable directly from the document. But B is missing, entirely, several rubric-load-bearing structures: no Functional Requirements table (so no MoSCoW priority marked anywhere), no NFR section, no dedicated UX/design section (no empty, loading, or error states at all, happy-path only by omission since there is no flow description), no dedicated Target users section (the primary segment is never named as a persona, only inferred from bullets under Scope), no Dependencies table, no Rollout/release plan, and no Open Questions table with owner+date -- open items are buried as prose inside Risks and unknowns with informal attribution, not a scoped table. This directly weakens scopable_without_a_meeting: an engineer cannot pull a sized, owned row for any requirement because no requirement rows exist. B also engages at length with all three scenario distractors (GDPR, voice-to-text, no-show halving) as dedicated 'out of scope' bullets with justifying prose, versus A's single brief, purpose-fitted mention -- this is the kind of inclusion the scenario explicitly marks as making a document less disciplined, not more complete, since none of those three facts belong in a document of this type at all. Net effect: excellent narrative reasoning wrapped around a document that is not, as delivered, ready to hand to an engineering team without a follow-up conversation to get FRs, priorities, and edge cases -- which is exactly what the ask asked for."
+        }
+      ],
+      "strongest": "Artifact A is the stronger document. It is structurally complete against everything the rubric checks for (FR table with MoSCoW priorities, NFR section, UX edge case, Open Questions table with named owners and dates, Dependencies table, Rollout plan) and handles the scenario's five conflicting-stakeholder facts and three distractor facts with more discipline, including only one distractor and using it correctly as a reasoned non-goal rather than an aside to dwell on. Artifact B has the best decision-vs-input reasoning and the most forceful, explicit kill criterion of the two, and both documents answer all five retrieval probes correctly, but B omits several rubric-required structures entirely (no FR table or priorities, no NFR section, no UX/edge-state coverage, no dedicated Target users section, no Open Questions table) and spends real estate elaborating on all three distractors rather than one, which the scenario explicitly flags as a discipline failure rather than added completeness. B reads as a strong strategic narrative; A reads as the more complete, more handoff-ready PRD, which is what this scenario's ask calls for.",
+      "rationale": "Rationale is embedded in the per-artifact notes above; both scored well below a 5 per the hardened anchor scale (ties broken downward, 5 reserved for work a senior practitioner would not touch), and neither artifact's organization or confident tone was credited independent of whether the load-bearing content (evidenced problem, named primary+guardrail+window, owned/dated open questions, prioritized and unhappy-path-covered requirements) was actually present on the page."
+    }
+  },
+  {
+    "key": "v2:fcf62cf381f1d1465ef7eeddf5f5a04dbd1d4046354bcc6f876b94034b2476f0",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 2.83,
+          "heldOutMean": 4,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Strongest problem section on the panel: names a specific person (Renata Okafor), a specific rebuild time, a repeated named failure, and the 12 percent reassignment stat, and is visibly longer/more developed than the solution section. Has a real, explicit stop condition tied to the peak-season deadline and the rest-day rule, and a named ownership line for rest-day rule validation, distinguishing what was told (VP's public target, ops managers' request) from what the author concluded (e.g. 'That is a signal, not a settled conclusion' about the failed SaaS purchase). All 5 probes answerable from the document alone. Where it loses ground: no Goals section separate from Success criteria, no non-goals beyond the trucking exclusion, and critically no Functional requirements table, no NFRs, no UX/design section with unhappy-path states, and no Open questions table with owners/dates -- an engineer could not size this without a follow-up conversation despite the ask explicitly requesting that. Correctly avoids the $50k budget-review distractor; mentions long-haul trucking only briefly, as required to answer probe 1, not as padding."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 1,
+          "heldOutMean": 1.25,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Templated placeholder document -- literal '{{title}}' unfilled, every section restates its own heading in generic corporate filler ('a meaningful improvement,' 'the relevant users,' 'an appropriate period of time') with zero facts from the scenario: no Renata, no 12 percent, no DriverGo, no union rule, no VP commitment. Tables exist (FR, NFR, dependencies, risks, open questions) but every cell is a placeholder ('The appropriate team,' 'In due course'), so the document has full document shape and zero document content -- exactly the case the anti-form instruction warns against rewarding. None of the 5 retrieval probes can be answered from this document; it could describe literally any initiative. No internal contradiction only because there is nothing concrete enough to contradict, which is not a virtue here."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 4,
+          "heldOutMean": 2.75,
+          "probesAnswered": 4,
+          "overall": 4,
+          "notes": "The most complete and engineering-usable document: explicit Goals/non-goals with reasons (including declining to rebuild DriverGo and deferring end-to-end swap automation), a specific target-user segment, a Functional requirements table with MoSCoW priority on every row, an NFR table with numeric targets, a Dependencies table with named owning teams, and an Open questions table with real owners (regional ops managers, VP of Operations) and real milestones ('before pilot launch'). Problem section is evidenced and specific and edges out the solution section in length. Weaknesses: no dedicated Success metrics section with a clearly labeled primary/guardrail pair (the closest content lives inside Goals, which blurs the distinction); no UX and design section at all, so the unhappy-path half of that rubric criterion fails outright despite the FR table being well prioritized; and no explicit stop/kill condition anywhere -- Rollout describes a phased pilot but never states what result would halt it, so probe 2 fails. The document also reads in a flat, undifferentiated voice throughout, rarely marking which calls are the author's own scoping judgment versus a constraint handed down (e.g., the SaaS-cancellation rationale is stated as settled fact, not flagged as inference). Avoids both distractors; the trucking mention is a single non-goal line, not padding."
+        }
+      ],
+      "strongest": "Artifact C, on balance -- it is the only one of the three that actually satisfies the brief's explicit request ('enough scope and success criteria that engineering can size it and design can start sketching without coming back to ask what we meant'): prioritized, ID'd functional requirements, NFR targets, owned dependencies, and an open-questions table with real owners and dates. Artifact A is a close second and wins on the held-out criteria specifically (it has the only genuine stop condition on the panel, and it is the only document that visibly distinguishes what the author was told from what the author concluded), but its complete absence of a requirements table, NFRs, or an open-questions section leaves real scoping gaps that a senior practitioner would send back for another pass. Artifact B is not competitive; it is a filled-in shape with no content.",
+      "rationale": "Scored each artifact against the rubric's six treatment-favoring criteria and the four held-out decision-usefulness criteria from evals/rubrics/prd.md, checked all 5 retrieval probes and both named distractors from evals/scenarios/prd-001.md against each document in isolation (no speculation about provenance), and applied the anchor scale conservatively (ties broken down, 5 reserved for work with no nitpick). Artifact B is a templated non-answer and scores at the floor on every axis. Between A and C, the anti-form instruction was applied literally: C's superior organization was not credited beyond what its content actually delivers, and it was penalized specifically for the two held-out gaps a well-organized document could otherwise hide -- no explicit stop condition, and a voice that does not separate stakeholder input from author judgment. A was credited for having those two things despite messier structure, but was held to the same standard on requirements-level scopability, where its narrative form genuinely lacks the FR/NFR/dependency detail engineering would need, so it does not get rewarded for prose sounding rigorous. Both A and C clear the bar for shippable-with-nitpicks in different dimensions; neither reaches a 5, since a senior practitioner would send A back for a scoping pass and would send C back for a stop-condition line and a UX-states pass."
+    }
+  },
+  {
+    "key": "v2:bef8645201ce408078d55f2a2d54d9493f84456856188ccaa68292907f643188",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 2.3,
+          "heldOutMean": 3.5,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric criteria (2/4/2/4/1/1): problem_weight scores low because Scope is by far the longest, most developed section while Problem is a tight two-paragraph summary, so problem does not out-weigh solution. goals/non-goals score well: Goal section states outcome-phrased goals and the Out-of-scope list gives three excluded items each with a stated reason. target_user scores low: there is no dedicated Target users section naming a segment and their situation; the 72%/35% figures appear only as a Scope bullet, not a persona. metrics scores well: a primary (illegible rate) and guardrail (intake time/complaints, tied to a first-month go/no-go) are both present, though the primary/guardrail split has to be inferred rather than being labeled outright. open_questions scores lowest possible: there is no Open questions table at all, only a Risks and unknowns list with no owners or dates. unhappy_paths scores lowest possible: no Functional requirements table, no MoSCoW priority markers, no UX section with empty/loading/error states. Held-out (2/4/4/4): weak on scopable_without_a_meeting since there is no FR table, no per-item owner/status rows an engineer could size against; strong on kill condition (explicit, bolded, in Goal section), no internal contradiction found, and decision-vs-input is unusually well handled: the ops-director timeline conflict, the Epic/athenahealth conflict, and the budget shortfall are each explicitly marked as the author's own reasoned call with a stated rationale. All 5 retrieval probes answered correctly from the document alone. Notable discipline issue: this document surfaces and explicitly rebuts all three scenario distractors (GDPR, voice-to-text, no-show claim) in the Out-of-scope list; two of those (GDPR, no-show) are facts a disciplined document would simply omit rather than devote a bullet to dismissing, which reads as padding rather than completeness."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.8,
+          "heldOutMean": 3.5,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric criteria (3/4/4/4/4/4): problem_weight is a near-miss, not a pass: the Problem section (~56 words) is actually slightly shorter than the Solution overview paragraph (~77 words) by a literal word count, even though a separate Context and background section carries more of the quantified evidence. goals/non-goals, target_user, metrics, open_questions, and unhappy_paths all score solidly: named Target users section with a primary segment and a load-bearing secondary segment (65+ patients) described by situation; explicit primary metric plus guardrail plus measurement window; an Open questions table with named owners and needed-by milestones (not TBD, not blank); an FR table with MoSCoW priorities and a UX section that names an explicit edge case (patient arrives without completing intake remotely) alongside the fallback path, though it does not enumerate empty/loading states in the software sense. Held-out (4/4/3/3): scores well ahead of Artifact A on scopable_without_a_meeting because the FR table, NFR table, and Dependencies table (with owner and status columns) let an engineer actually size and locate blockers for most rows without a clarifying conversation. Kill condition is explicit and reinforced in three places (Success metrics, Risks table, Rollout/rollback). Two minor deductions: a genuine internal tension between FR-6 (pre-visit link marked only 'Should') and the Solution overview / UX sections, which both describe the pre-visit link as the primary flow, not an optional one, which a careful reader could point to as a scoping inconsistency; and decision-vs-input traceability is present but slightly thinner than Artifact A's, stating conclusions ('this document treats Epic as...', 'resolve via patient-owned-device intake') without always attributing whose authority or reasoning drove the call. All 5 retrieval probes answered correctly from the document alone. More disciplined on distractors than Artifact A: omits GDPR and the no-show claim entirely, and only retains voice-to-text as a Non-goal, which is the one distractor plausibly tied to a real (if unscoped) feature request rather than pure noise."
+        }
+      ],
+      "strongest": "Artifact B",
+      "rationale": "Both documents correctly resolve all three stakeholder conflicts (timeline, EHR system, decision authority) and answer all five retrieval probes from the text alone, so neither fails the basic fact-handling test the scenario is built around. They diverge sharply on the rubric criteria, which mostly track structural elements the guide teaches directly: Artifact B has a genuine Target users section, an Open questions table with owners and dates, an FR table with MoSCoW priorities, and an explicit primary/guardrail/window split, none of which Artifact A provides (A substitutes a Risks and unknowns list and a Scope section that does the same descriptive work without the accountability structure). That gap is real, not cosmetic, since a document meant to be handed to a build team needs sizeable, owned rows, and Artifact A's prose is not sizeable without a follow-up conversation. The held-out means come out equal (3.5 each), which is the more interesting number: Artifact A's decision-vs-input attribution is if anything more explicit than B's (it says outright whose authority resolved each conflict and why), while B loses a point there and picks up a genuine, pointable internal tension between FR-6's 'Should' priority and the Solution overview's framing of the pre-visit link as the primary flow. So the rubric gap is not just the template teaching its own checklist against a null underlying difference; B is doing more real, decision-useful work (a scopable FR/dependency structure), but it is not uniformly cleaner, and A is not simply structure-less. On the anti-form/distractor check, A is measurably less disciplined: it spends bullets explicitly rebutting GDPR and the no-show claim, two facts the scenario source flags as not belonging in a document of this type at all, while B omits both and keeps only the more defensible voice-to-text mention. Weighing the rubric gap, the roughly equal held-out performance, the equal probe recall, and B's better distractor discipline against B's own two nitpicks, B is the stronger of the two, at a 'solid, shippable with a nitpick' level, while A reads as a fluent, well-reasoned narrative that a senior practitioner would send back for the missing FR/open-questions structure before calling it ready to hand off."
+    }
+  },
+  {
+    "key": "v2:bd40d1ef7f7b4c2ac0141bd5c5cb1a0fa0dfbb4a68c35e9dcd10118c6b12057c",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 2.5,
+          "heldOutMean": 4.25,
+          "probesAnswered": 4,
+          "overall": 2.5,
+          "notes": "Rubric scores: summary_stands_alone=2 (no Summary section; 'What happened' omits magnitude and resolution status, which live only in the separate Impact section and an even later 'what isn't fixed yet' aside -- exactly the scattering the criterion penalizes), impact_is_measured=4 (checkable numbers throughout: 2,300 merchants, 180 tickets, $500k threshold, 6h40m delay), timeline_is_checkable=3 (has real timestamps 01:40/02:14/04:50/05:30 but no dedicated timeline and the detection gap is given as 'roughly two and a half hours' rather than the checkable 2h36m, and final recovery time is never stated as a timestamp), root_causes_evidenced=4 (three causes, each with named evidence, explicitly reframed away from individual blame), trigger_is_own=1 (no Trigger section and no pre-published criterion cited anywhere), actions_are_tracked=1 (five recommendations, zero owners named, zero ticket IDs -- 'assign a named owner' is itself unassigned). Held-out scores: scopable_without_meeting=3, names_a_stop_kill_condition=4 (the 'second SLA miss in six months auto-escalates to VP review' rule is a genuine stated threshold, the strongest instance of this across all three documents), no_internal_contradiction=5 (explicitly flags its own unconfirmed claim -- 'this is the best current explanation, not a verified one' -- and separates confirmed from unconfirmed status in its own section), decision_vs_information_distinguishable=5 (the closing section visibly separates the observed facts from the author's own judgment -- 'I don't think the evidence supports one-off' -- versus what is explicitly left to the VP to decide). Probes: 4/5 answered from the document alone; it never states the 48-hour deadline for the VP's decision, only that the decision is the VP's to make. No distractor facts (cost, next-quarter migration date) appear. This is the most epistemically honest of the three, and the only one that cleanly separates reported fact from authored judgment, but it is missing entire required sections (no real Timeline, no Trigger) and its action items are wholly unowned and unticketed, which are substantive rubric failures, not formatting nitpicks."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 1,
+          "heldOutMean": 1,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Every section is generic filler with no incident-specific content: no timestamp, no failure mode, no numbers, no named cause, no ticket. The Impact 'table' literally reads 'a subset of users... for a period of time... noticeable... appropriate.' All six rubric criteria fail outright since there is nothing to verify against any record. All four held-out criteria fail for the same reason: there is no distinguishable decision, no stated kill condition, nothing to check for contradiction, and no separable fact from judgment because there is no fact. 0/5 probes answerable from this document alone -- a reader cannot even recover what system failed. It has the shape of a postmortem (headings, tables) and nothing else, which is exactly the anti-form trap: no reward for looking like a document."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 3.67,
+          "heldOutMean": 3,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric scores: summary_stands_alone=5 (the Summary alone gives cause, timestamp, both delay mechanisms, magnitude, and an explicit resolution state -- 'Resolved as of final recovery' -- the strongest instance of this criterion across all three), impact_is_measured=5 (a two-row table with system, duration, and checkable magnitude, including the finance ledger consequence), timeline_is_checkable=4 (a real timestamped table, docked one point for 'Later that morning' standing in for the actual completion timestamp), root_causes_evidenced=4 (four causes, each with named evidence, matching Artifact A's rigor in table form), trigger_is_own=2 (names three criteria -- user-visible downtime, on-call intervention, repeated-failure -- but never cites where any of them was published before the incident, so it reads as a borrowed generic list dressed as the team's own), actions_are_tracked=2 (owners are named by role and every single ticket field reads 'TBD' with status 'Not started' -- structurally present but substantively unticketed, the same core failure as Artifact A, just with better bookkeeping around it). Held-out scores: scopable_without_meeting=4 (Root Causes give enough mechanism detail to size most actions cold), names_a_stop_kill_condition=2 (no stated rollback/kill condition for any action), no_internal_contradiction=4 (Summary, Resolution, and Root Causes agree throughout), decision_vs_information_distinguishable=2 (the whole document reads as one flat authoritative narrative; it never marks which claims are observed versus inferred, though the 'assess within 48 hours and report to the VP' action item does implicitly defer the vendor-vs-systemic judgment rather than asserting it). Probes: 5/5 answered, including the 48-hour VP deadline, which lives inside its action-item table rather than a dedicated Trigger/decision statement. No distractor facts included. This is the most complete and independently checkable of the three on the primary rubric, but its Trigger and Action Items sections have the same substantive gaps as Artifact A (no citation, no real ticket), which keeps it below the 'shippable with a nitpick' bar."
+        }
+      ],
+      "strongest": "Artifact C is the strongest overall: its Summary and Impact sections meet their rubric criteria cleanly and independently (self-contained resolution status, fully checkable numbers), its Timeline is checkable against a record, and it is the only document from which all five retrieval probes are answerable without gaps. Artifact A is a close second and is the more epistemically honest document -- it is the only one that visibly separates reported fact from the author's own judgment and states a real threshold/escalation condition -- but it omits entire required sections (no Timeline, no Trigger) and its action items carry neither owner nor ticket, which are substantive rubric failures. Artifact C shares the same Action Items weakness (every ticket is \"TBD\") and a Trigger section that names criteria without citing where they were published, so neither document clears the bar a senior practitioner would let pass untouched. Artifact B is boilerplate with no incident-specific content whatsoever and fails every criterion and every probe; its polished section headings are the clearest instance in this set of structure without substance.",
+      "rationale": "Scored the rubric's six criteria and four held-out criteria literally against the anchor scale (5 reserved for untouchable work, 4 for shippable-with-a-nitpick, ties broken downward), then separately verified each document against the scenario's five retrieval probes and its two named distractors (incident cost ~$42,000; next-quarter reconciliation-engine migration schedule). Neither Artifact A nor C included either distractor, so that check does not differentiate them; Artifact B contains no facts at all, so distractors are moot there. The rubric-vs-held-out split is informative on its own: Artifact A shows a large gap in the opposite direction from what the rubric's circularity-control note warns about (low rubric mean, high held-out mean) -- meaning it is unusually good at actual decision-usefulness (separating fact from judgment, stating a real escalation threshold) while structurally incomplete against the six named rubric sections. Artifact C shows the more expected pattern (higher rubric mean, lower held-out mean) -- it satisfies the six named sections well but reads as one flat authoritative narrative without marking inference versus observation, and states no kill/rollback condition. Both A and C fail the same two rubric items in substance (Trigger without a cited published criterion; Action Items without real ticket IDs), which kept both out of the 4-5 range despite their real strengths elsewhere. Artifact B was scored at the floor on every dimension because it substitutes placeholder language for every fact the scenario provides, including the timestamp, the cause, the magnitude, and any named action."
+    }
+  },
+  {
+    "key": "v2:6c1a664fd1e8da5d0649258c269a4b1d6866a607e9a65a3991a3e7110c9037f6",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 1,
+          "heldOutMean": 1.5,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Every section is templated filler with no scenario facts: no scheduler name, no 12 percent figure, no DriverGo, no union rest-day rule, no VP target, no hub/driver counts. Target users is 'the relevant users,' goals are 'deliver an outcome... in a meaningful way,' success metrics say 'relevant metrics will be tracked.' Zero probes answerable from this document alone, since it contains no facts to answer them with. Not a PRD about this scenario at all; it is a mad-libs shell that would read identically for any product. Correctly avoids the two distractors only because it avoids every fact. Anchors to the floor of the scale."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 4,
+          "heldOutMean": 3.5,
+          "probesAnswered": 4,
+          "overall": 4,
+          "notes": "Concrete and structured: Problem section carries the 12 percent figure, the Denver double-booking recurrence, and the texted-swap decay, and is longer than Solution overview. Goals are outcome-phrased with a stated VP target and date; Non-goals name three explicit exclusions with reasons, including long-haul (needed for probe 1). Target users is specific with counts (9 hubs, 340 drivers). FR table and Dependencies/Risks tables carry MoSCoW priorities and owner/status columns that are genuinely sizable without a meeting. Open questions has two rows with real owners and dated milestones. Weaknesses: no dedicated Success metrics section with an explicit guardrail/window (the metric-like content is folded into Goals, which softens the primary/guardrail distinction); no UX and design section at all, so unhappy paths (empty/loading/error states) are entirely absent; and no explicit stop/kill condition, only an implicit pilot gate ('expand once confirmed stable'). Answers 4 of 5 probes (misses the stop-condition probe cleanly); no internal contradiction found. A senior practitioner would send this back for the missing UX states and an explicit stop trigger, but the rest is close to shippable."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 3.67,
+          "heldOutMean": 4,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Strongest problem section of the three: names Renata Okafor, explicitly flags her data point as anecdotal versus the 12 percent company number, and separates signal from conclusion on the cancelled SaaS vendor and the HR data quality unknown. Success criteria names a primary metric with a measurement window and a compliance guardrail (zero rest-day violations). Has an explicit, well-formed Stop condition section and an Ownership section naming regional ops managers for rule validation, which together make all 5 probes answerable directly from the text, including the two hardest ones (stop trigger, riskiest dependency named outright as DriverGo). Decision-vs-input is unusually well handled: the document repeatedly marks which conclusions are the author's judgment versus a fact handed to them. Real weaknesses: there is no Functional requirements table at all, so nothing carries a MoSCoW priority; no NFR table; no UX/error-state section; and no Open questions table with owner-plus-date (Ownership settles one item but nothing is left open with a date). The document even admits the gap itself ('Whatever the interface looks like...'), which directly cuts against the brief's ask that design be able to start sketching without a follow-up conversation. Excellent narrative PRD, but an engineer could not size several load-bearing pieces from this document alone."
+        }
+      ],
+      "strongest": "Artifact B, by a narrow margin over C. Both A is disqualified outright: it is a content-free template shell that answers zero probes and states no fact from the scenario. Between B and C, C has the better problem section, the only explicit stop/kill condition, full probe coverage (5/5 vs B's 4/5), and unusually disciplined separation of author judgment from stakeholder input. But the brief's actual ask was a document with 'enough scope and success criteria that engineering can size it and design can start sketching without coming back to ask what we meant,' and on that literal test B delivers where C does not: B has a Functional requirements table with MoSCoW priorities, an NFR table with measurable targets, and Dependencies/Risks rows with owners and status that a reader could size without a meeting. C lacks all of those structures and at one point explicitly punts on the interface ('whatever the interface looks like'), which is the opposite of what was asked. B also has real gaps of its own (no UX/error-state section, no dedicated success-metrics block, only an implicit rather than explicit stop condition), so this is not a clean win, but B is the one that actually functions as an engineering-and-design-ready PRD rather than a very well-argued problem memo.",
+      "rationale": "I read the rubric and scenario in full, including the five retrieval probes and the two named distractors, before opening any artifact. Scores follow the anchor scale conservatively per instruction: no artifact received a 5 on any criterion, since each has at least one identifiable, specific gap a senior practitioner would flag, and ties were broken downward throughout (e.g., B's near-miss on metrics_primary_and_guardrail landed at 3, not 4, because the guardrail is not framed as a metric distinct from the primary). I treated the anti-form instruction as binding: Artifact A is the most conventionally 'complete' looking document of the three, with every section a real PRD template would have, and it scored the floor because every sentence is a placeholder that could apply to any product; organization bought it nothing. Neither B nor C included the two scenario distractors (the $50,000 budget review threshold, and treating the long-haul division as a topic in its own right rather than a one-line exclusion), so that check did not differentiate between them; both showed the discipline of leaving the budget-review fact out entirely. Probe-answerability was checked strictly from each document's own text with no inference from the scenario brief. The two real, non-format defects that separated B and C were: B's total absence of a UX/unhappy-path section and explicit stop condition, versus C's total absence of a prioritized Functional/Non-functional requirements structure and a dated Open questions table. Both are substantive content gaps, not stylistic ones, since both are exactly what the rubric's held-out and rubric criteria are built to catch."
+    }
+  },
+  {
+    "key": "v2:28e28b09e6e14b6d5112af00ac9aeefc0ba978dd230585febbbf2cbefec67882",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 4,
+          "heldOutMean": 3.25,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric: observable-verifiable 4, unhappy-paths-named 5 (dedicated Edge cases section names four concrete failure conditions each with a stated outcome: multi-child ambiguity, delayed push within the window, offline/uninstalled device, retry after denial), no-dod-duplication 4, measurable-nonfunctional 4 (30s target with an honest caveat, one-tap operability bar), single-behavior-scenarios 2 (all three dedicated Given/When/Then scenarios chain two or three Then-assertions with 'and' - purchase state plus UI message plus log entry in one Then - a literal violation of the criterion despite each scenario reading cleanly), scope-boundary-stated 5 (specific COPPA/age-verification exclusion, payments-backend exclusion, clean document, no placeholders). Held-out: scopeable-without-meeting 3 (most boundaries are concrete, but the brief said 'commit to an answer... rather than leave a blank' and this document explicitly declines to pick a timeout duration, parking it as an open question needing a decision owner - a real punt against the stated instruction), stop-kill-signal 1 (nothing in the document names a condition under which the team would stop or reconsider the story; the closest line, 'revisit only with new data,' guards a decision from relitigation rather than stating a kill trigger), internal-consistency 5 (no contradiction found; the 30s target vs Android-lag caveat vs timeout-not-shortened-by-lag edge case all cohere), decision-vs-told 4 (clearly separates stakeholder positions from the author's ruling via language like 'is rejected because,' 'as required by,' 'is a target, not a guarantee,' though without first-person framing). All five probes answerable from the document alone: default-deny with reasoning, no dollar threshold, iOS Ask to Buy vs Android, 90-day retention, COPPA/age-verification named out of scope. No distractor facts (brand color, Kotlin refactor, Marketing campaign) appear. Overall: a rigorous, disciplined document; its two real flaws are letter-of-the-rubric scenario chaining and explicitly leaving the timeout number unset despite an instruction to commit rather than leave a blank."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.33,
+          "heldOutMean": 4,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric: observable-verifiable 4 (the closing numbered AC list is pass/fail testable), unhappy-paths-named 2 (no dedicated Edge cases section; only denial and timeout are covered, and those are core flows rather than named unhappy paths - missing content any senior reviewer would flag: offline/uninstalled device, retry-after-denial independence, delivery-delay-within-window handling, all present in the sibling document, are absent here), no-dod-duplication 4, measurable-nonfunctional 2 (no dedicated Non-functional section; the only quantified bar is the 15-minute Android timeout embedded in an AC item - no accessibility or interaction-reach bar comparable to A's one-tap requirement), single-behavior-scenarios 3 (better than A proportionally - 2 of 7 AC items chain assertions with 'and' rather than 3 of 3 - but still not clean), scope-boundary-stated 5 (very specific, sources the COPPA exclusion to Legal by name, clean document). Held-out: scopeable-without-meeting 5 (goes further than A by actually computing a timeout number from stated inputs - 5-minute worst-case delivery plus buffer = 15 minutes - directly answering the brief's 'commit to an answer... rather than leave a blank' instruction, while still flagging it as an estimate to instrument post-launch), stop-kill-signal 2 (weak but present: recommends surfacing the unresolved COPPA gap to Legal before shipping so it is a known, accepted risk rather than a silent one - closer to a gate than A has, but still not a hard stop/kill trigger tied to a metric), internal-consistency 4 (no factual contradiction, but mild tension between calling the 15-minute number 'a starting estimate, not a measured one' in prose while asserting it as a committed AC criterion), decision-vs-told 5 (explicitly and repeatedly marks which calls are the author's own judgment versus a given constraint - 'I'm siding with CS,' 'flagging this as a call I'm making without full team agreement, not a settled decision,' 'my call, not a team consensus' - directly matching what the held-out criterion asks a reader to be able to tell). All five probes answerable from the document alone, same coverage as A. No distractor facts appear. Overall: stronger on decision transparency and honesty about unresolved risk, genuinely more decision-useful in places, but has real content gaps rather than just presentational looseness - missing edge cases and a missing non-functional section are things an engineer would actually need before scoping, not nitpicks."
+        }
+      ],
+      "strongest": "Neither artifact is a clean win: Artifact A leads on the rubric (rubricMean 4.0 vs 3.33) with a dedicated, specific Edge Cases section and measurable non-functional bars that B lacks outright, while Artifact B leads on the held-out, decision-usefulness criteria (heldOutMean 4.0 vs 3.25), most notably by committing to an actual timeout number instead of leaving it open against the brief's explicit instruction, and by marking author judgment calls versus given constraints far more explicitly. Both answered all five retrieval probes correctly and both avoided all three distractor facts. On balance Artifact A is the stronger document: its rubric gaps are largely a scenario-formatting nitpick (chained Then-assertions) plus one deliberate, well-labeled punt, whereas Artifact B's rubric gaps are missing substantive content (no real edge-case coverage beyond deny/timeout, no non-functional section) that a senior practitioner would ask to see filled in before treating this as ready.",
+      "rationale": "Scored per the rubric at evals/rubrics/acceptance-criteria.md and the scenario/probes at evals/scenarios/acceptance-criteria-002.md. Applied the anti-form instruction by scoring content substance over structure - Artifact B's narrative, less-checklisted format was not penalized in itself (its held-out scores are actually higher than A's), but its genuine missing content (edge cases, non-functional bars) was penalized on the relevant rubric cells regardless of how organized the rest of the document looked. Checked both documents against the scenario's three distractor facts (brand teal color, Java-to-Kotlin backend refactor, Family Pilot marketing campaign) - neither artifact included any of them, so no penalty applied either direction. Held ties to the lower score per the anchor-scale instruction where genuinely torn (e.g., A's single-behavior-scenarios criterion, where the letter of the rubric is violated by all three dedicated GWT scenarios despite the outcomes being closely related)."
+    }
+  },
+  {
+    "key": "v2:dd4a3179e19c1ad936612cf8110f973d4502325cc65e672685b5f2c8582667ab",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 1,
+          "heldOutMean": 1,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Every section is templated filler with the specific facts sanded off: no timestamps, no numbers, no named evidence, no real owners or tickets ('The appropriate team', 'To be determined'). Impact table literally reads 'A subset of users... for a period of time... noticeable' with zero checkable figures. Timeline entries are 'Early in the sequence of events' / 'Shortly thereafter' rather than any UTC time. Root Causes offer no evidence, just restated generality. Trigger cites a vague 'threshold the team generally uses' with no pointer to where it was published. None of the five retrieval probes are answerable from this document; nothing about the 02:14 failure, the stale alert route, the failed failover, the VP's 48-hour ask, or the ownership gap survives. On held-out criteria it is uninformative rather than actively contradictory, so no_internal_contradiction is trivially true but empty; the rest score floor. This is organized like a postmortem and contains none of the content of one."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.17,
+          "heldOutMean": 2.75,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Strongest on checkable specifics: every impact row, timeline entry (bar one 'Later that morning'), and root cause carries a real number or named piece of evidence, and root causes correctly avoid pinning blame on the departed engineer or the non-owner who ran the failover. Cleanly avoids both distractors (no $42k cost figure, no reconciliation-migration detail beyond what's needed to answer the ask via an action item). All five probes answerable, including the VP/48-hour question via the 'assess... report to VP within 48 hours' action item. Two real gaps: Trigger restates thresholds ('meets the team's threshold for user-visible downtime') without citing where any such criterion was published beforehand, so it reads as a borrowed generic list dressed in this incident's numbers; and every action item's Ticket field is literally 'TBD' with Status 'Not started', so despite naming role-owners, none of these are actually tracked outside the document as the criterion requires. On held-out: no stated stop/rollback/escalation condition anywhere, and the narrative voice mostly flattens observed fact and author judgment together rather than separating them (e.g. root-cause claims about what the failover procedure 'lacks' are asserted, not marked as inference)."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 2.17,
+          "heldOutMean": 3.5,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Best on decision-usefulness: explicitly flags what is observed record versus the author's own inference ('this is the best current explanation, not a verified one'), states a real escalation threshold ('after the second SLA miss in six months, the incident automatically escalates to VP-level review'), and directly reasons through the VP's actual question rather than deferring it to an action item, while being honest that the final call belongs to the VP. Avoids both distractors (no cost figure; references the migration only insofar as the ask requires answering the VP's question, without importing the next-quarter scheduling detail). But it is weak on the rubric fundamentals: there is no Trigger section at all, so nothing points to a pre-published criterion; the Recommended Changes are prose bullets with zero named owners and zero ticket IDs anywhere, worse than Artifact B's placeholder tracking; the opening incident line ('01:40 to ~06:00+90min UTC') does not arithmetically reconcile with the Impact section's stated 6h40m delay, a checkable internal inconsistency; and 'What happened' doesn't carry impact magnitude or a clear resolved/not-resolved statement in one place, so it doesn't fully stand alone the way the criterion wants. Four of five probes answered; the 48-hour deadline for the VP's decision is never stated anywhere in the document, so that probe fails on this document alone even though 'the VP decides' is well covered."
+        }
+      ],
+      "strongest": "Artifact B, by a narrow margin over Artifact C, with Artifact A a distant last.",
+      "rationale": "Artifact A is content-free templating: every field that should carry a checkable fact (a timestamp, a number, an owner, a ticket, a cited trigger criterion) is replaced with a placeholder phrase, so zero of the five probes are answerable and it scores at or near floor on every rubric and held-out criterion alike. It is disqualified on substance, not on tone.\n\nArtifacts B and C are both clearly working from the same real incident facts, both avoid the two planted distractors (the $42k cost figure and the reconciliation-migration scheduling detail), and both are far more useful than A. They fail in different places. B is stronger on the rubric criteria that were taught to the treatment arm: fully checkable impact and timeline numbers, evidenced root causes that don't name a person, and full retrieval-probe recall (5/5). Its two real weaknesses are a Trigger section that restates generic thresholds without citing where they were published, and an Action Items table whose owners are real roles but whose tickets are uniformly 'TBD' -- so nothing is actually trackable outside the document yet. C is stronger on the held-out, harder-to-fake criteria: it is the only artifact that visibly separates what the author was told from what the author concluded, it states a genuine escalation/kill threshold, and it directly engages the VP's actual decision rather than parking it in a future action item. But C pays for that with real rubric losses that matter operationally: no Trigger section at all, literally no named owner or ticket anywhere in its recommended changes, one fewer probe answered (the 48-hour deadline is never stated), and an internal arithmetic inconsistency between its opening time span and its own Impact section. Because a postmortem's job is to be both honest and actionable-without-a-meeting, and C sacrifices trackability entirely while B only weakens it, B edges out as the marginally stronger document overall, with both landing at the same holistic tier: real, specific, distractor-free work that a senior practitioner would still send back for concrete fixes (name the trigger source and file real tickets, in B's case; add a trigger section and assign real owners, in C's case) rather than ship as-is."
+    }
+  },
+  {
+    "key": "v2:42a01eb14108f8ff26616f3823902b06f4a8e4ef101519431c5d985c466efd95",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 2.33,
+          "heldOutMean": 3,
+          "probesAnswered": 5,
+          "overall": 2,
+          "notes": "Strong on epistemic labeling (Confirmed/Unconfirmed/Unresolved tags let a reader cleanly separate what was observed from what is theorized - this is the document's best feature and drives a high decision_vs_information score). All 5 probes answerable: no root cause asserted, both duration figures given, February relation explicitly called an open question, CDN SLA miss stated (35 vs 15 min), Android update explicitly neither ruled in nor out. But it fails two rubric criteria badly: there is no Trigger section at all (nothing names a pre-published threshold that made this postmortem-worthy), and the action items have no owners, no ticket IDs, and no status field ('Owner and target date to be assigned at the exec meeting' is a placeholder, not tracking). The 'What happened' section also defers cause status entirely to a later section, so it does not stand alone per the rubric's literal requirement. Most consequentially, it contains a dedicated section naming the three scenario distractors (social sentiment, billing incident, churn data) in order to exclude them - this still surfaces topics the scenario explicitly flags as not belonging in a document of this type, and per the eval's anti-distractor instruction that counts against completeness/discipline, not for it. No stop/rollback/kill condition is stated anywhere."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.5,
+          "heldOutMean": 3,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Summary section is the strongest instance of summary_stands_alone across the two: cause status, both duration figures, and explicit resolution state ('The incident is resolved. Root cause is not confirmed...') are all co-located, satisfying the rubric criterion literally rather than deferring cause elsewhere. Has an explicit Timeline table with clock-time estimates (while honestly flagging they are not yet reconciled against logs) and a Trigger section that names the specific threshold values met, though it admits it cannot yet cite where those criteria were published - a real but partial attempt, better than Artifact A's total absence of a Trigger section. Action items carry named owners and a status column, but every ticket field reads 'TBD', so actions_are_tracked is only half-satisfied (owner+status present, no real ticket ID as the rubric requires). All 5 probes answerable directly and correctly: no confirmed cause, both durations, February relation explicitly unresolved, SLA miss stated, Android update explicitly neither ruled in nor out. Contains zero mention of any of the three scenario distractors, which is a real discipline advantage over Artifact A given the eval's explicit instruction to penalize inclusion of those facts. No stop/rollback/kill condition is stated anywhere, same gap as Artifact A. The gain over Artifact A here is substantive content (a real summary that stands alone, a timeline with checkable timestamps, an attempted trigger citation, tracked owners/status) rather than mere formatting, so it is not simply rewarded for looking organized."
+        }
+      ],
+      "strongest": "Artifact B",
+      "rationale": "Both documents are honest about the unconfirmed root cause and both answer all five retrieval probes correctly, so neither loses ground on the eval's core no-overclaiming requirement. The separation comes from the rubric criteria: Artifact B's Summary section literally co-locates cause status, duration, and resolution state (Artifact A's equivalent section omits cause entirely and defers it), B attempts a Trigger citation where A has none, B's Timeline gives checkable clock-time estimates where A gives only relative durations, and B's action items carry named owners and a status column where A's carry neither (both fall short of real ticket IDs, so actions_are_tracked is a genuine gap for both, worse for A). On held-out criteria the two are tied: both distinguish observation from theory reasonably well, both are internally consistent, and neither states a stop/rollback/kill condition. The deciding factor beyond the rubric numbers is discipline: Artifact A devotes a full section to naming the scenario's three distractor facts (social sentiment, the unrelated billing incident, pending churn data) in order to declare them out of scope, which still surfaces content the eval explicitly instructs judges to penalize; Artifact B never raises any of them. B's structural advantages here reflect actual added information (a stand-alone summary, real timestamps, tracked owners) rather than cosmetic organization, so rewarding it does not violate the anti-form instruction."
+    }
+  },
+  {
+    "key": "v2:4f83c02cbb085ca000ce1439aae84e6d212a4371dcb74ffd9d0b94d998e16f3c",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.83,
+          "heldOutMean": 3.75,
+          "probesAnswered": 5,
+          "overall": 4,
+          "notes": "Rubric per-criterion: problem_weight_and_evidence=4 (Context+Problem sections together, including the 40%/$18/22-min figures and the FTE shortfall, outweigh the Solution overview; evidence is real but split across two sections rather than concentrated in one, which is the nitpick). goals_measurable_nongoals_explicit=4 (two clean outcome goals plus a date goal; non-goals give reasons, though the kiosk one is stronger-reasoned than the voice-to-text one). target_user_specificity=4 (names primary/secondary segments with percentages and situations - 72% of 214 surveyed prefer phone/tablet, 35% of 65+ need staffed fallback - plus front desk/billing as internal users). metrics_primary_and_guardrail=4 (explicit Primary / Guardrail / Measurement window labels, textbook shape). open_questions_owned_and_dated=4 (three rows, each with a named owner and a milestone-based needed-by date, no TBDs). unhappy_paths_and_prioritized_requirements=3 (FR table has a MoSCoW column on every row, but UX and design gives only one edge case, not a full empty/loading/error triad). Held-out: scopable_without_a_meeting=4 (FR/NFR/Dependencies tables carry owner and status, including an honestly-flagged 'needs confirmation' row). explicit_stop_or_kill_condition=4 (guardrail plus an explicit rollback clause in the rollout plan). no_internal_contradiction=3 (FR-3 asserts Epic integration as a flat 'Must' while Open Questions still lists Epic-vs-athenahealth as unresolved and needed before build - a real, pointable tension, softened but not eliminated by the Solution overview's 'pending confirmation' hedge). decision_vs_input_traceable=4 (explicitly narrates that the ops director's newer verbal direction supersedes the June email, and that Carla Nguyen, not the medical director, owns sequencing). Distractor discipline: includes only one of the three scenario distractors (voice-to-text, one line, correctly parked as a non-goal) and correctly omits the GDPR and no-show tangents entirely. All five probes answerable from the document alone."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 2.5,
+          "heldOutMean": 3.5,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric per-criterion: problem_weight_and_evidence=4 (all the quantified evidence - 22 min, 40%, $18, Denise Ruiz by name, the Riverside FTE gap - sits concentrated in one dense Problem section). goals_measurable_nongoals_explicit=3 (three well-phrased outcome goals with numeric thresholds, but the Out-of-scope list spends a full paragraph each on GDPR and the no-show claim - two of the scenario's three named distractors, reproduced almost verbatim - which is exactly the over-inclusion the task instructions say to penalize, not credit as thoroughness). target_user_specificity=2 (no Target users section exists at all; the 72%/35% figures appear only inside Scope as a feature justification, not as a named 'who is this for' segment with their situation - a reader cannot point to the section the criterion asks for). metrics_primary_and_guardrail=3 (three goal metrics are listed as coequals and the kill-criterion prose only afterward singles out two of them as the go/no-go pair; nothing is labeled 'primary' vs 'guardrail' the way the criterion expects, so a reader has to infer the split). open_questions_owned_and_dated=2 (no Open questions section exists; owner/timing information for the EHR conflict and the budget decision is embedded in Risks-and-unknowns prose without a dated needed-by). unhappy_paths_and_prioritized_requirements=1 (no functional requirements list of any kind, so nothing carries a MoSCoW marker, and no UX/design section, so there are no empty, loading, or error states - this is the criterion's clearest failure mode, not a partial credit case). Held-out: scopable_without_a_meeting=2 (no FR/dependency table with owner+status; an engineer would need to extract build items from narrative paragraphs and would still need to ask who owns closing the $16k hardware gap). explicit_stop_or_kill_condition=4 (states the kill criterion in bold and names it as such - very explicit). no_internal_contradiction=4 (consistently caveats the Epic/athenahealth conflict everywhere it appears, no flat assertion contradicting a still-open question). decision_vs_input_traceable=4 (explains its reasoning, not just its conclusion - e.g. 'IT owns the technical integration decision' as the reason Epic wins, and walks through why the June email is superseded). Distractor discipline: includes all three scenario distractors (voice-to-text, GDPR, no-show), two of them elaborated at paragraph length with no functional need - the task instructions call this a completeness illusion, not thoroughness. All five probes answerable from the document alone, but the missing FR/UX/target-user/open-questions sections mean the document could not actually be handed to a builder as-is despite the ask asking for exactly that."
+        }
+      ],
+      "strongest": "Artifact A",
+      "rationale": "Both documents correctly resolve every conflict the scenario poses (Epic over athenahealth, October 1 over the stale Q1 email, Carla Nguyen over the medical director on sequencing, patient-owned-device over full kiosk buildout) and both let a judge answer all five retrieval probes from the document alone, so neither fails on the scenario's core ask. The split is on document discipline and completeness. Artifact A carries the full PRD skeleton the rubric checks for - a dedicated, quantified Target users section, an FR table with a MoSCoW column on every row, an Open questions table with named owners and dated milestones, and an explicit Primary/Guardrail/Measurement-window split in Success metrics - and it stays disciplined about distractors, including only one of the scenario's three (voice-to-text, one line) and omitting GDPR and the no-show claim entirely. Artifact B is well-argued prose with slightly stronger held-out decision-traceability (it narrates *why* it decided things, not just what), but it drops three rubric-load-bearing sections outright - no Target users section, no FR list with priorities, no UX/unhappy-path content, no dated Open questions table - and it reproduces two of the scenario's three named distractors (GDPR, the no-show claim) at paragraph length, which the task instructions explicitly flag as a false-completeness signal to penalize rather than reward. The rubric-mean gap (3.83 vs 2.5) is a real content gap, not a structure-vs-substance illusion: the held-out mean gap runs the opposite direction (3.75 vs 3.5, roughly flat), which is exactly the circularity-control pattern the rubric describes as meaningful - A's rubric advantage reflects genuine missing deliverable content in B (no buildable FR list, no UX error states), not merely A performing the rubric's own checklist better."
+    }
+  },
+  {
+    "key": "v2:48d11e4037ca7e791375b730e8f2588b80f7aa447e349f30c1419205fe44c32b",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.5,
+          "heldOutMean": 3,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Strong structural completeness: FR table with MoSCoW priority, NFR table, Dependencies table with owner/status, Rollout plan, Open questions with named owners and milestone dates. Problem section is evidenced (12% reassignment rate, Denver double-booking recurrence) and outweighs the shorter Solution overview. Goals mix outcome metrics (build-time cut, delay cut in half) with a guardrail-flavored goal (zero rest-day violations), though there is no dedicated Success metrics section pairing a primary metric with a named guardrail and measurement window the way the rubric wants -- it has to be assembled from the Goals list. Target users section names the specific segment (regional scheduler, 9 hubs, 340 drivers) with situation. Two real weaknesses pull this down: (1) no UX and design section at all, so the unhappy-path half of that criterion is unmet even though FR priorities are present; (2) no explicit stop or kill condition anywhere in Risks or Rollout -- probe 2 is unanswerable from this document. It also includes one of the two scenario distractors (the long-haul trucking division non-goal), which the anti-form instruction says to penalize as reduced discipline rather than credit as thoroughness. Decision-vs-input traceability is middling: the VP's delay-cut target is attributed, but most other calls (DriverGo scope-out, pilot sequencing) are stated in flat authorial voice without marking them as the author's own judgment versus a stakeholder instruction."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 3.33,
+          "heldOutMean": 4,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "The strongest problem section of the three: names the scheduler (Renata Okafor), gives the 3-4 hour and 12% figures, and explicitly flags its own evidence quality ('a single data point from one region, not a company-wide measurement... worth treating as representative until we have more') rather than overstating certainty -- genuinely senior instinct. Target user section is equally specific, naming the same scheduler by name plus her situation. This document is the only one of the three with an explicit, named Stop condition section, and the only one with a dedicated Ownership section naming who validates the rest-day rule -- both held-out criteria the rubric and guide never teach, so their presence here is a real (not rubric-taught) signal. It is also the clearest at separating decision from input: it repeatedly marks facts as 'a signal, not a settled conclusion' and distinguishes what the VP set as a target from what the author is proposing as supporting metrics. Where it falls short of the ask is engineering-sizing scaffolding: there is no functional-requirements table with per-row MoSCoW priority, no dependencies table with owner and status columns (DriverGo and HR risk are discussed narratively but not tracked as sized, owned line items), no UX and design section with empty/loading/error states, and no Open Questions section at all -- so a reader cannot point to an owned, dated open question, which is a clean miss on that rubric criterion. It also carries the same long-haul-trucking distractor as Artifact A in its out-of-scope paragraph."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 1,
+          "heldOutMean": 1,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Unfilled template: the title itself is a literal {{title}} placeholder, and every section is generic filler ('a meaningful improvement', 'the relevant users', 'as appropriate') with zero domain content -- no mention of drivers, schedulers, DriverGo, the union rest-day rule, the VP's target, or any number from the brief. Every rubric criterion fails outright: the single Goal is not a measurable outcome, the single Non-goal is a blank placeholder, the FR row and NFR row are untestable, the Open Questions row literally reads 'Certain aspects of this work remain to be finalized' with owner 'The appropriate owner' and date 'In due course', and there are no empty/loading/error states, just a paragraph asserting the UX 'has been designed with the user in mind.' None of the five retrieval probes are answerable from this document. It technically contains no internal contradiction and no distractor content, but only because it contains no actual claims to contradict or distinguish -- that is vacuous compliance, not quality, so it does not earn credit on the held-out criteria either."
+        }
+      ],
+      "strongest": "Artifact B, on balance, though it is close with Artifact A and neither reaches a 4. B has the most evidenced problem section, the only explicit stop/kill condition, the only explicit ownership statement for the union rest-day rule, the clearest separation of stakeholder input from author judgment, and it is the only artifact that lets a judge answer all five retrieval probes from the document alone. A wins on engineering-sizing scaffolding (a prioritized FR table and an owner/status dependencies table that B lacks entirely), which matters for the ask's explicit 'engineering can size it' requirement, and that is the main thing keeping A competitive. Both A and B include the same long-haul-trucking distractor and are penalized for it. Artifact C is an unfilled template with zero domain content and fails every criterion and every probe.",
+      "rationale": "I read the rubric (six rubric criteria drawn from the guide's self-grade checklist, four held-out criteria confirmed absent from the template/guide) and the full scenario, including its five retrieval probes and its two named distractors (the $50k finance budget-review trigger, and the long-haul trucking division exclusion). I scored each artifact by locating pointable evidence for each criterion directly in the text, checked each of the five probes against each document in isolation, and applied the anti-form instruction by treating structural completeness (tables, headings) as neutral and instead weighing whether specific facts, owners, dates, and metrics were actually present and non-vacuous. Artifact C was scored near-floor because it is a generic unfilled template with a literal {{title}} placeholder and no scenario-specific content at all -- it fails every criterion by absence, not by a close call. Artifacts A and B trade off: A is more complete as an engineering-sizing document (FR priorities, dependency owners/status, dated open questions) but omits a stop condition entirely and has a thinner, unlabeled success-metrics story; B is stronger on evidence discipline, ownership, stop condition, and decision-vs-input traceability (all held-out, non-taught criteria) and answers all five probes, but supplies no FR table, no dependencies table, and no open questions section at all, which are real gaps against the ask's 'engineering can size it' requirement. Both include the same long-haul-trucking distractor, which I penalized in both rather than crediting either for 'more complete' scoping. Neither reached a 4 (solid, shippable with a nitpick) because each has more than one substantive, non-trivial gap rather than a single nitpick, and per the rubric's tie-breaking instruction I broke toward the lower anchor level in each case."
+    }
+  },
+  {
+    "key": "v2:017a4f15bd3df0a9a59fb791a4ced6f0fcdef26f3213d84b9772f6cc8f5917a6",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.5,
+          "heldOutMean": 3,
+          "probesAnswered": 4,
+          "overall": 3,
+          "notes": "Strongest on the six named rubric axes: precise timestamps in a real timeline table, root causes each backed by named evidence (stale distribution list, orphaned code ownership, dead Slack route, unsafe failover procedure) with no cause pinned to a person, and an impact table with mostly hard numbers. Correctly omits both distractors (the $42k cost figure and the 'migration scheduled next quarter' detail never appear). Real gaps keep it off a 4: Action Items has no actual ticket IDs (all 'TBD') and owners are roles, not people; Trigger asserts three published criteria were met but never says where any of them were published, so it reads asserted rather than sourced. On the held-out axes it is notably weaker than its rubric score suggests: it names no stop/rollback/kill condition anywhere, and on the VP's actual question (one-off vendor problem or systemic) it does not render a judgment, it opens a 48-hour action item to 'assess... and report that judgment to the VP,' which ducks the analytical work the ask explicitly requested rather than doing it. Probe 4 (who decides, by when) is only half-answerable: the 48-hour window is present but the document assigns the assessment to the Payments Eng lead, not the VP, so 'who decides' is not cleanly recoverable from the text."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 2.7,
+          "heldOutMean": 4.5,
+          "probesAnswered": 4,
+          "overall": 4,
+          "notes": "Weakest of the three on named structure: there is no Trigger section at all (the closest it gets is restating 'third SLA miss in five months' twice without citing a pre-published criterion), and Action Items is prose bullets with no owner name, no ticket, no status field, so actions_are_tracked scores as low as Artifact C's. Timeline is embedded in narrative rather than a discrete checkable list and never states a completion time. But it is the only artifact that does the actual hard job the ask demanded: a dedicated section directly answers the VP's one-off-vs-systemic question with a reasoned position ('two of the three contributing failures... are decayed internal maturity, not vendor behavior') rather than deferring it to a future ticket, explicitly separates what is confirmed from what is not ('I do not yet have a confirmed root-cause writeup... the best current explanation, not a verified one'), and states a genuine escalation/kill threshold ('after the second SLA miss in six months, the incident automatically escalates to VP-level review... rather than waiting for a third'). Root causes are evidenced (channel rename, stale distribution list, four-month ownership gap) even though the evidence lives partly in the narrative section rather than restated per-row. Correctly excludes both distractors: no cost figure, and it engages the migration question the ask requires without importing the 'scheduled next quarter' distractor detail. Probe 4 is half-answerable: it clearly names the VP as decision-maker but never states the 48-hour deadline."
+        },
+        {
+          "label": "Artifact C",
+          "rubricMean": 1,
+          "heldOutMean": 1,
+          "probesAnswered": 0,
+          "overall": 1,
+          "notes": "Uniformly generic boilerplate: every section substitutes vague placeholder phrasing ('a subset of users and systems,' 'a period of time consistent with the severity,' 'a combination of factors') for any of the incident's actual facts. Contains zero timestamps, zero named systems, zero magnitudes, zero named root causes, zero real owners or tickets. It happens to avoid stating either distractor, but only because it states no facts at all, which is not discipline, it is absence of content. None of the five retrieval probes are answerable from this document; a reader given only this file could not reconstruct what happened, when, why detection was slow, what made it worse, or who owns the follow-up. This is the reference case for the anti-form warning: it has the same section headings as Artifact A but none of the substance, and should not be scored anywhere near it on that basis."
+        }
+      ],
+      "strongest": "Artifact B, on balance, though the panel result is genuinely split by axis. Artifact A wins cleanly on the six rubric criteria (checkable timeline table, evidenced multi-cause root-cause table, measured impact), but Artifact B wins decisively on the held-out decision-usefulness criteria: it is the only document that renders an actual judgment on the VP's one-off-vs-systemic question instead of deferring it to a future ticket, the only one that states a concrete escalation/kill threshold, and the only one that consistently distinguishes reported fact from author judgment and flags what remains unconfirmed. Artifact A's Trigger section asserts published criteria without citing them and its Action Items table is tracking-shaped but empty (TBD tickets, role-not-person owners); Artifact B's Trigger section is simply absent and its Action Items are untracked prose. Both fall short of a 4 on strict rubric terms, but B does more of the job the ask actually specified.",
+      "rationale": "Scored each artifact independently against the rubric's six named criteria and four held-out criteria on the 1-5 anchor scale (5 = a senior practitioner would not touch it, 4 = solid with a nitpick, ties broken downward), then separately verified each of the scenario's five retrieval probes against the document text alone, and checked for the presence of either seeded distractor (the $42,000 cost figure; the 'migration scheduled next quarter' detail). All three artifacts correctly withheld both distractors, so no scores were adjusted for distractor inclusion. Per the anti-form instruction, Artifact A's clean section-by-section structure (which it shares with Artifact C, the empty boilerplate document) was deliberately not treated as evidence of quality on its own; where Artifact A filled in a labeled section with real information it was credited, and where it filled a section with unsourced assertion (Trigger) or empty-but-shaped tracking fields (Action Items: TBD tickets, role owners) it was scored on the literal rubric text, not the presence of the table. Artifact B's lack of a labeled Trigger section and its untracked prose Action Items were scored as genuine rubric misses, not merely a style difference, since those are named rubric criteria; but its narrative sections were credited in full for the specific, evidenced content they contain even though it isn't formatted as a table. Artifact C was scored near-uniformly at the floor because every section substitutes generic template language for the incident's actual facts, leaving zero of the five probes answerable from the document alone."
+    }
+  },
+  {
+    "key": "v2:392da4246e030fa51972d2ede41e1ab7f614aa57b827b8a2af433728717af23d",
+    "result": {
+      "artifacts": [
+        {
+          "label": "Artifact A",
+          "rubricMean": 3.67,
+          "heldOutMean": 3,
+          "probesAnswered": 5,
+          "overall": 3,
+          "notes": "Rubric detail: summary_stands_alone=4 (cause, duration, resolution state all present in Summary, appropriately hedged); impact_is_measured=5 (clean table, every row has system/duration/magnitude); timeline_is_checkable=4 (table with approximate but derived timestamps, honestly flags itself as needing log reconciliation rather than presenting false precision); root_causes_evidenced=4 (table with two candidate causes each backed by named evidence -- vendor status page, open support case, failed repro -- no person blamed); trigger_is_own=3 (names the actual numeric thresholds met but explicitly declines to cite which published doc they live in, deferring to an action item -- partial credit, not full); actions_are_tracked=2 (six rows have Type/Owner/Status columns but every Ticket cell is 'TBD', so none is actually checkable against a tracker yet, which is the criterion's central ask). Held-out: scopable_without_meeting=3 (several items, e.g. the Android repro line, are sizeable cold; others like 'confirm and cite trigger criteria' are process busywork); names_a_stop_kill_condition=1 (no rollback/kill condition anywhere); no_internal_contradiction=5 (rigorously consistent -- every section restates 'not confirmed' rather than drifting toward certainty); decision_vs_information_distinguishable=3 (attributes the theory to 'the on-call engineer's working theory' and separately flags its own refusal to assert a citation, a real but partial separation of report vs. judgment). Cleanly avoids all three scenario distractors (no social sentiment, no billing incident, no churn-data mention). All 5 probes answerable correctly from this document alone, including the SLA miss and the Android ruled-in/out status. Holistic 3: disciplined and honest, but the all-TBD ticket column and the unresolved trigger citation are more than a nitpick for a document type whose whole job is checkable follow-through."
+        },
+        {
+          "label": "Artifact B",
+          "rubricMean": 2.33,
+          "heldOutMean": 3.25,
+          "probesAnswered": 5,
+          "overall": 2,
+          "notes": "Rubric detail: summary_stands_alone=2 ('What happened' states duration and implies resolution but never mentions cause status at all -- that's pushed entirely into the next section, which is exactly the deferral the criterion penalizes); impact_is_measured=4 (population/duration/magnitude numbers present in prose for both playback and tickets, just not tabulated); timeline_is_checkable=2 (no discrete timestamped event list at all -- only the start time plus two duration figures restated in prose, nothing a reader could check entry-by-entry against a log); root_causes_evidenced=4 (confidence-graded bullets -- confirmed/unconfirmed -- each with named evidence, arguably the clearest causal reasoning of the two documents); trigger_is_own=1 (no Trigger section or published-criterion citation anywhere, the criterion is simply untouched); actions_are_tracked=1 (five numbered action items, none has a named owner or ticket in the document itself -- owner/date assignment is explicitly deferred to 'the exec meeting', so nothing here is yet checkable outside the document). Held-out: scopable_without_meeting=3 (comparable specificity to A on a couple of items, e.g. the Android repro ask); names_a_stop_kill_condition=1 (no stop/rollback condition stated); no_internal_contradiction=4 (internally consistent, though the header status line never actually confirms the incident itself is resolved, only that root cause is unconfirmed -- a minor ambiguity, not a contradiction); decision_vs_information_distinguishable=5 (the explicit 'Confirmed, high confidence' / 'Unconfirmed, low confidence' labeling is the strongest report-vs-judgment separation of either document). All 5 probes answerable correctly, including the explicit 'we don't know' on the February linkage. Notably, B's 'explicitly out of scope' section names all three scenario distractors (social sentiment, the unrelated billing incident, pending churn data) by name in order to exclude them -- under the anti-form instruction this still counts as including distractor content rather than simply omitting it, and costs discipline points even though the intent was hygienic. Holistic 2: excellent exec-facing epistemic honesty, but three of six rubric rows (timeline, trigger, actions) fail outright rather than merely falling short, which is a structural problem for this document type, not a style choice."
+        }
+      ],
+      "strongest": "Neither document is unambiguously stronger; they fail in different registers. Artifact A is the stronger document under this rubric (rubric mean 3.67 vs 2.33) because it attempts every required section -- timeline table, trigger sourcing, a structured action-tracking table -- even where it has to admit a gap (TBD tickets, no citation for the trigger doc), and it never touches any of the three distractors. Artifact B reads better as exec prose and wins on the held-out judgment-separation criterion by a wide margin (its confirmed/unconfirmed confidence labeling is genuinely the best writing of the two), but it omits the timeline and trigger sections entirely, never assigns an owner or ticket to a single action item inside the document, and undermines its own discipline by naming all three distractor facts in order to wave them off. If forced to pick one to ship as the actual postmortem record (as opposed to the Thursday narrative memo), Artifact A is closer to usable as-is.",
+      "rationale": "Scored strictly against the rubric's six criteria and the four held-out decision-usefulness criteria, with anchors applied conservatively (ties broken downward) per the eval protocol. Checked all five retrieval probes against each document in isolation and cross-checked both documents against the scenario's three named distractors, penalizing any document that surfaced them even under a hygienic 'out of scope' framing, per the anti-form instruction. Table-based presentation in Artifact A was not credited beyond what its cells actually contained (e.g. its Ticket column of all-TBD entries was scored as failing actions_are_tracked despite the table's professional appearance), and Artifact B's prose-only sections were not penalized for lacking table structure where the underlying numbers were still checkable (impact) but were penalized where genuinely absent (timeline, trigger, action ownership).\""
+    }
+  }
+]
