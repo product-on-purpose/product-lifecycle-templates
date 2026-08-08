@@ -6,6 +6,12 @@ decision-makers: [jprisant, claude]
 
 # Graduate the library out of `_local/` to a flat `templates/` scaffold
 
+## TL;DR
+
+- **Decision:** move the library from `_local/templates/` to a flat `templates/` at the repo root, with `tools/` and `atlas/` alongside it; `_local/` keeps only genuinely internal material. Historical documents that cite the old `_local/templates/...` paths were deliberately left unrewritten, since a historical document edited to describe the present is a forgery.
+- **Why:** the repository is going public, and `_local/` reads as "working scratch, not for you" to a visitor, which would misdescribe the product at its own address; going public is also what makes CI (and so the M0 credibility floor exit) reachable at all. Nesting by phase (Option B) was precluded by [0005-bundle-ids-doctype-spine.md (the doctype spine)](0005-bundle-ids-doctype-spine.md), which already decided phase lives in metadata, never in the path.
+- **Status:** accepted 2026-07-12; no supersession. Closes HY-2 (scaffold graduation, open since 2026-07-02); leaves where family-level artifacts live (roadmap WP-24) unsettled.
+
 ## Context and Problem Statement
 
 The library was built under `_local/templates/`, an admittedly provisional address. The repo's `.gitignore` carries a comment explaining the arrangement: the user's global ignore rule hides `_LOCAL/` everywhere, and this repo deliberately re-includes it so the work could be version-controlled while the final scaffold stayed an open question (decision HY-2, scaffold graduation, open since 2026-07-02).

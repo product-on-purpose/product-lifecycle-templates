@@ -7,7 +7,11 @@ consulted: [claude]
 
 # Adopt a format axis: a bundle may ship a document in more than one shape, and the gate checks each
 
-## Context and Problem Statement
+## TL;DR
+
+- **Decision:** Adopt a format axis orthogonal to the existing size axis, via new optional metadata keys (`default_format`, `default_format_guidance`, `additional_formats`), so a bundle can ship a document as several structurally distinct shapes, each with a named source in circulation; adopted now for `product-vision` only (canvas, narrative, PR/FAQ), with the other 15 existing bundles left un-backfilled pending evidence from product-roadmap and product-strategy.
+- **Why:** the product-vision research found four named formats that are siblings, not parent and child, so no ordering of them could satisfy the existing strict-nesting rule for sizes; shipping only the canvas would also have contradicted the field's most-cited authority (Cagan), who argues against a fill-in-the-blanks canvas approach.
+- **Status:** accepted 2026-07-25, corrected twice in place before shipping (per ADR 0011, the correction procedure adopted with MADR v4, at 0011-madr-v4-at-docs-internal-decisions.md): on 2026-07-26 to require `default_format_guidance` whenever `additional_formats` is present (originally the default format alone carried no guidance sentence), and on 2026-07-27 to fix the backfill count from 18 bundles to 15.
 
 The variant model ([ADR 0002](0002-variant-model.md)) gives a bundle exactly one axis of variation: **size**.
 `lean` and `full` are the same document at two depths, and gate check C enforces that with a **strict

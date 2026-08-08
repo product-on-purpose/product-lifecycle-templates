@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Use product-lifecycle-templates as the name everywhere
 
+## TL;DR
+
+- **Decision**: Use `product-lifecycle-templates` as the name everywhere (the git repo, the plugin and marketplace `name` fields, and the install string), dropping the `pm-` prefix family handle.
+- **Why**: The broader name ages better if the library outgrows pure product management into general software-lifecycle documents; coherence with the sibling pm-skills repo is carried by shared conventions and the `pairs_with` seam, not by a shared name prefix.
+- **Status**: Accepted 2026-06-29, ratified 2026-07-12. No correction or supersession recorded.
+
 ## Context and Problem Statement
 
 The design spec used the working name `pm-templates` and recommended keeping the `pm-` prefix for coherence with `pm-skills`, while the repo on disk was already named `product-lifecycle-templates`. Manifests, install commands, and READMEs need one identity before content accretes around it.

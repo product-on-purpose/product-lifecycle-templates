@@ -7,6 +7,12 @@ consulted: [claude]
 
 # The gate may use a JSON Schema validator for one more check (meta validation); the stdlib checks stay pure
 
+## TL;DR
+
+- **Decision:** Grant the gate one more dependency, `jsonschema`, confined to a new check J that validates each meta against ADR 0016's schema (the metadata-schema contract); J SKIPs with a clear message if PyYAML or jsonschema is missing locally, and CI installs both so it is enforced there.
+- **Why:** A schema nobody enforces is a suggestion, and a hand-rolled JSON Schema validator would trade a known gap for confident wrong answers on real draft-2020-12 subtleties.
+- **Status:** Accepted 2026-07-17. Extends ADR 0014 (PyYAML dependency for check G)'s precedent to a second check; does not supersede ADR 0008 (pure-stdlib gate) or ADR 0014, but grows the stdlib exception from one check to two.
+
 ## Context and Problem Statement
 
 [ADR 0016](0016-adopt-machine-checkable-metadata-schema.md) adopts `tools/meta.schema.json` as the meta

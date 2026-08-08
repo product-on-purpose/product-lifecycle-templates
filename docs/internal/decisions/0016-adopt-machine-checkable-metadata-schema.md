@@ -7,6 +7,12 @@ consulted: [claude]
 
 # A machine-checkable metadata schema is the meta contract, validated in CI
 
+## TL;DR
+
+- **Decision:** Adopt `tools/meta.schema.json`, a JSON Schema (draft 2020-12), as the mandatory contract for every `<type>_meta.yaml`; a bundle's meta must validate against it, enforced by gate check J and branch protection on `main`.
+- **Why:** Drift is cheap to prevent at six bundles and expensive to retrofit at twenty-seven, and the library's "agent-native" claim needed a real mechanism, not a slogan.
+- **Status:** Accepted 2026-07-17. Written from the accepted RFC-0001; the required-field shape depends on ADR 0015 (the phase XOR classification taxonomy axis), and the validator dependency itself is decided separately in ADR 0017 (jsonschema as a gate dependency).
+
 ## Context and Problem Statement
 
 Every bundle ships a `<type>_meta.yaml`, but nothing defines what a valid one is. No field is required

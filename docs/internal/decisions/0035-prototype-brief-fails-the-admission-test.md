@@ -7,6 +7,20 @@ consulted: [claude]
 
 # `prototype-brief` fails ADR 0030's admission test and does not ship, closing `discovery-docs` at two members
 
+## TL;DR
+
+- **Decision:** `prototype-brief` fails ADR 0030 (the templating-scope admission test)'s admission test, no
+  named source publishes it as a written document, and it does not ship. `discovery-docs` closes at two
+  members, `business-case` and `user-persona`.
+- **Why:** the test must bite symmetrically with its earlier rejection of `wireframe`, and six independent
+  research dimensions across 29 sources, 23 of them fetched and verified and 6 URL-confirmed but not read,
+  converged on the same negative finding: every candidate
+  examined turned out to be a neighbouring document type (a code-based prototyping kit, a sprint-wide brief, a
+  hypothesis card, or vendor blog content) presented under another name.
+- **Status:** accepted 2026-08-05. This record resolves the provisional membership that ADR 0031 (the
+  discovery-docs family contract) granted `prototype-brief` as *not admitted*, and corrects catalog entry 54's
+  note that the brief "ships instead, as `prototype-brief` in `discovery-docs`."
+
 ## Context and Problem Statement
 
 [ADR 0030 (templating scope)](0030-templating-scope-markdown-documents.md) admits a candidate type when

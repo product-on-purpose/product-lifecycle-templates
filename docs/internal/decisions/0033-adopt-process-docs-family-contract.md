@@ -7,6 +7,16 @@ consulted: [claude]
 
 # Adopt the process-docs family contract (sprint-retrospective-notes, incident-postmortem), the family that exists to be taught by contrast
 
+## TL;DR
+
+- **Decision:** Adopt the process-docs family contract with `sprint-retrospective-notes` and
+  `incident-postmortem`, and register the family in check K on `phase: iterate`, single value.
+- **Why:** the family exists to teach, by contrast, the distinction between a retrospective (looks back on a
+  period, on a cadence, at how the team worked) and a postmortem (looks back on an event, triggered by it, at
+  why a specific thing failed); each member's companion must state what the other is for and when a team is
+  reaching for the wrong one.
+- **Status:** accepted 2026-08-05.
+
 ## Context and Problem Statement
 
 Two Tier-1 types look backward in order to change what happens next. A **sprint retrospective** looks back on

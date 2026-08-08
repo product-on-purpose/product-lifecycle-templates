@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # The research log is a committed bundle artifact (the 8th file)
 
+## TL;DR
+
+- **Decision:** every shipped bundle commits `<type>_research-log.md` as its 8th canonical file, and the governance gate requires it (check A).
+- **Why:** the log is the evidence trail the freshness gate and the audit-grade citation pass both need, recording per-source retrieval state (fetched, blocked, paywalled, corroborated) that the reader-facing reference list should summarize but not carry in full; the 2026-07-10 audit confirmed this by using the logs' retrieval honesty to diagnose citation-integrity findings.
+- **Status:** accepted, practice settled 2026-06-30, ratified 2026-07-12; no supersession. The methodology's own anatomy table still said "seven files" at audit time and needs correcting (audit finding B-04, roadmap work package WP-06).
+
 ## Context and Problem Statement
 
 The design spec and implementation plan defined a six-file bundle; the methodology's research protocol produces a source log as working material. The open call was whether that log is disposable scaffolding, folded into the companion, or a committed artifact. Practice settled it: every shipped bundle carries `<type>_research-log.md`, the gate requires it (ROLES, check A), and the DoD's research clause depends on it, but the methodology's own anatomy table still said "seven files" at audit time.

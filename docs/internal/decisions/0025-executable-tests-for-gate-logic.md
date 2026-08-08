@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Executable tests complement the structural gate; they live in `tools/`, run in CI, and block merge
 
+## TL;DR
+
+- **Decision:** Gate logic with no live subject in the real bundles earns an executable, stdlib test in `tools/` named `test-<subject>.py`, covering positive and negative cases, mutation-checked when load-bearing, and run as its own blocking CI step alongside the gate.
+- **Why:** The check K classification-axis branch (from ADR 0023, resolving the Tier-1 family taxonomy) had no live subject to exercise it until governance-docs landed, so the gate alone could not have caught it failing.
+- **Status:** Accepted 2026-07-23. No supersession noted, though the record anticipates that Option C (a pytest framework) would supersede rather than correct this ADR if the test surface grows past a handful of files.
+
 ## Context and Problem Statement
 
 Until 2026-07-22 this repo had **no automated tests**, only the structural gate (`check-bundles.py` and

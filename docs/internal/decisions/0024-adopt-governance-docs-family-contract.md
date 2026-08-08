@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Adopt the governance-docs family contract (risk-register, raid-log, kpi-dashboard), the first on the classification axis
 
+## TL;DR
+
+- **Decision:** Adopt the governance-docs family contract (risk-register, raid-log, kpi-dashboard), version 0.1.0, the first contract gated on the classification axis, with kpi-dashboard resolved as classification: utility rather than phase: measure, adopted before any member exists.
+- **Why:** Every new family gets a ratified contract before its members are built, and ADR 0023 (resolving the Tier-1 family taxonomy) had deliberately deferred kpi-dashboard's axis call to be decided against real members at this step.
+- **Status:** Accepted 2026-07-22. Resolves the kpi-dashboard question ADR 0023 (resolving the Tier-1 family taxonomy) left open; no supersession of this record noted.
+
 ## Context and Problem Statement
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `governance-docs`, the family of standing governance instruments: a risk register, a RAID log, and a KPI dashboard. Every new family gets a ratified contract before its members are built ([ADR 0020](0020-adopt-delivery-docs-family-contract.md) pattern), so a member is born into an enforced family rather than joining an honor system.

@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Adopt the decision-docs family contract (rfc, adr, sdd), enforced by gate check K
 
+## TL;DR
+
+- **Decision:** Adopt the decision-docs family contract (rfc, adr, sdd), version 0.1.0, enforced by the existing gate check K through a new registry entry, with methodology left descriptive rather than gated.
+- **Why:** The family had grown to three members sharing the same phase, status, and size shape but had no ratified contract, leaving membership an honor system that a drifting bundle could silently escape.
+- **Status:** Accepted 2026-07-21. No supersession or amendment of this record noted; the same change corrects stale `future:` cross-references in the `adr` and `rfc` bundles. This is the second family contract, following ADR 0020 (the delivery-docs family contract).
+
 ## Context and Problem Statement
 
 The `decision-docs` family had two members (`rfc`, `adr`) and no ratified contract, so its members passed

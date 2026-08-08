@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Complete the Tier-1 floor on a schedule; grow-by-pull governs Tier-2 and Tier-3 only
 
+## TL;DR
+
+- **Decision:** Build the 21 remaining Tier-1 bundles on a schedule set by docs/internal/buildout-plan.md, amending grow-by-pull for the Tier-1 floor only; Tier-2 and Tier-3 stay strictly demand-gated.
+- **Why:** The library covered only 6 of the catalog's 27 Tier-1 must-have types, a credibility-floor gap that risked a chicken-and-egg trap where the library stays too thin to ever earn a pull.
+- **Status:** Accepted 2026-07-20. Amends the grow-by-pull framing in the audit's Catalog Recommendation 1, the roadmap, and STATE.md for the Tier-1 floor only; no other supersession noted.
+
 ## Context and Problem Statement
 
 The repo's standing rule is **grow by pull, not speculation**: no bundle gets built until a real request or a named internal need pulls it (audit Catalog Recommendation 1, "demand is a gate, not just a weight"). The rule exists for a good reason: building templates nobody uses is easy busywork that substitutes for the hard work of finding real users, and zero real usage is the library's most weighted weakness.

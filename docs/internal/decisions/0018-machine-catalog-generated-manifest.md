@@ -7,6 +7,12 @@ consulted: [claude]
 
 # The machine catalog is a generated manifest.json, committed to VC and kept fresh by the gate
 
+## TL;DR
+
+- **Decision:** Generate `manifest.json` at the repo root from the six bundle metas via `tools/gen-manifest.py`, commit it to version control, and fail CI (`--check`) if it drifts from the metas or if the README's bundle-count marker disagrees with reality.
+- **Why:** Agents need one structured selection surface instead of opening every meta, and the README's bundle count had already drifted once (the WP-13 audit found four advertised bundles when six existed).
+- **Status:** Accepted 2026-07-17. Builds on ADR 0016 (the metadata-schema contract) for trustworthy inputs; renames the proposed `index.json` of RFC-0001 (the accepted RFC proposing the schema and generated catalog) to `manifest.json` to match the roadmap, reconciling the RFC's reference.
+
 ## Context and Problem Statement
 
 [ADR 0016](0016-adopt-machine-checkable-metadata-schema.md) made every bundle's meta trustworthy: it

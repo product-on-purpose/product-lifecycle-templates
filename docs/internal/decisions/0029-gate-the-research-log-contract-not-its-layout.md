@@ -7,7 +7,11 @@ consulted: [claude]
 
 # Gate the research log's contract, not its layout
 
-## Context and Problem Statement
+## TL;DR
+
+- **Decision:** Adopt a machine-checkable research-log contract, enforced by a new CI check (`tools/check-research-logs.py`), requiring every source entry across any of three legal layouts (numbered prose, numbered list, or table) to carry an identifier, title and author or organization, URL (with a documented print-source exemption), tier, retrieval status, and a `Supports:` clause; six table-layout logs (acceptance-criteria, adr, prd, release-notes, rfc, user-stories) are named and exempted rather than converted, tracked as finding DF-4.
+- **Why:** the library's central honest-retrieval claim, that only a `fetched-and-verified` source may be quoted verbatim, had never actually been checked by the gate across any of sixteen bundles; the fix gates the contract's fields rather than forcing every log onto one presentation, so ten already-correct logs need only six relabelled lines rather than a rewrite.
+- **Status:** accepted 2026-07-27. Corrected in place on 2026-07-28, per ADR 0011 (the correction procedure at 0011-madr-v4-at-docs-internal-decisions.md): the original finding (DF-2, three status-less logs needing conversion) was itself wrong, an unverified absence recorded as a finding; the real gap is the opposite, the six table-layout logs carry no URL and no retrieval-status token for any of their 86 sources, which is what the decision (gate the contract, not the layout) already resolves.
 
 The honest-retrieval standard is this library's central quality claim: a source is tagged with how it was
 actually retrieved, and **only a source marked `fetched-and-verified` may be quoted verbatim**. Every bundle

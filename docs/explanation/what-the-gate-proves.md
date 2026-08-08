@@ -1,8 +1,19 @@
+---
+title: "What the gate proves"
+description: "The honest scope of this library's quality claim, and what it deliberately does not claim"
+audience: "both"
+level: "intermediate"
+tags:
+  - explanation
+  - governance
+  - evidence
+---
+
 # What the gate proves
 
 This is the honest scope of the quality claim behind this library, written for a reader who has not
 seen the repository before and is deciding whether to trust it. Every factual claim below points at a
-file you can open. Every number carries a marker that [`tools/check-counts.py`](../tools/check-counts.py)
+file you can open. Every number carries a marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 checks in CI: if the number in this file ever drifts from the tree, the build fails, not the sentence.
 
 The short version: a machine proves structure. A human, or an agent doing a human's job, has to judge
@@ -10,9 +21,9 @@ content. This document draws that line as precisely as the tree allows, then sta
 
 ## What the gate proves
 
-The gate is [`tools/check-bundles.py`](../tools/check-bundles.py). It runs eleven checks against every
+The gate is [`tools/check-bundles.py`](../../tools/check-bundles.py). It runs eleven checks against every
 bundle in the library (a "bundle" is the full set of files that make up one document type, such as
-`prd` or `bug-report`; see [`README.md`](../README.md#anatomy-of-a-bundle) for the anatomy). Each check
+`prd` or `bug-report`; see [`README.md`](../../README.md#anatomy-of-a-bundle) for the anatomy). Each check
 is structural: it can be answered by parsing text, never by judging whether the text is right.
 
 | Check | Name | What it guarantees |
@@ -26,12 +37,12 @@ is structural: it can be answered by parsing text, never by judging whether the 
 | G | Frontmatter YAML | Every YAML frontmatter block in the bundle parses |
 | H | History | A history entry exists for the template version the meta claims |
 | I | Refs resolve | `pairs_with` names a skill on the pinned list, and `related_templates` names a bundle that exists or is marked `future:` |
-| J | Meta schema | The meta validates against [`tools/meta.schema.json`](../tools/meta.schema.json): required fields present, enums legal, exactly one of `phase` or `classification` |
-| K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](internal/contracts/) |
+| J | Meta schema | The meta validates against [`tools/meta.schema.json`](../../tools/meta.schema.json): required fields present, enums legal, exactly one of `phase` or `classification` |
+| K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](../internal/contracts/) |
 
 <!-- counts: bundles=26 -->
 All twenty-six bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
-pull request ([`.github/workflows/ci.yml`](../.github/workflows/ci.yml)), and `main` is branch-protected
+pull request ([`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)), and `main` is branch-protected
 on it, so a bundle that fails a check cannot merge. That is what "enforced" means here: not a convention
 anyone is trusted to remember, but a script with an exit code.
 
@@ -53,10 +64,10 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   enforces that no tracked file links into the untracked `_local/` directory, which would resolve for
   one person and 404 for everyone else.
 - **Manifest and atlas freshness** (`tools/gen-manifest.py --check`, `tools/gen-atlas.py --check`).
-  [`manifest.json`](../manifest.json) and the atlas dataset are generated from the bundle metas and
+  [`manifest.json`](../../manifest.json) and the atlas dataset are generated from the bundle metas and
   committed; these steps regenerate both in memory and fail if the committed copy has drifted.
 - **The ADR index** (`tools/check-adr-index.py`). Fails if any decision record under
-  [`docs/internal/decisions/`](internal/decisions/) is missing from its own index, or the index points
+  [`docs/internal/decisions/`](../internal/decisions/) is missing from its own index, or the index points
   at a file that does not exist.
 - **Changelog freshness** (`tools/check-changelog.py`). Fails if a decision record since the last release
   has no entry in `CHANGELOG.md`. It proves nothing is missing from the log, not that what is there is
@@ -91,7 +102,7 @@ them, individually or together, can tell you whether a sentence in a companion i
 ## What no machine checks
 
 This is the review surface, and it is the most important section in this document. It is drawn directly
-from [`docs/internal/review-standards.md`](internal/review-standards.md), the brief a review agent reads
+from [`docs/internal/review-standards.md`](../internal/review-standards.md), the brief a review agent reads
 before judging a bundle, and every item on it has shipped past a green gate at least once.
 
 **1. A claim no logged source supports.** This is the dominant defect class the library has found in
@@ -170,14 +181,14 @@ as they stand today, stated without softening:
 - **No template has been filled by anyone but the author.** Every worked example in every bundle was
   written by the same person who wrote the template. Independent usage, the strongest test of whether a
   template's shape actually holds up in someone else's hands, has not happened yet.
-- **By the library's own tier rule, nothing here has graduated.** [`README.md`](../README.md#the-claim-and-what-it-is-worth)
+- **By the library's own tier rule, nothing here has graduated.** [`README.md`](../../README.md#the-claim-and-what-it-is-worth)
   states the rule directly: a document type graduates from Tier 1 to Tier 2 when it "survives one real
   usage cycle."
   <!-- counts: tier1=25 -->
   Twenty-five of the 25 templatable Tier-1 types are now built, which closes the library's coverage
   floor. It does not close the graduation question. Every one of those 25 is still Tier 1, and every
   bundle in the library carries a `status: beta` in its meta (see, for example,
-  [`templates/prd/prd_meta.yaml`](../templates/prd/prd_meta.yaml)), because none has cleared that bar.
+  [`templates/prd/prd_meta.yaml`](../../templates/prd/prd_meta.yaml)), because none has cleared that bar.
 - **A green gate has been wrong before, at scale.** A manual citation pass in July 2026 found 28 defects
   across four bundles that had been passing the gate green for weeks, including wrong dates, quotations
   from sources that could not be read, and claims attributed to people who do not make them. Every one of

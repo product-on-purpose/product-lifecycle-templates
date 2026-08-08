@@ -7,7 +7,11 @@ consulted: [claude]
 
 # Adopt the qa-docs family contract (test-plan, test-case, bug-report) at phase develop, resolving the "QA may be utility" flag
 
-## Context and Problem Statement
+## TL;DR
+
+- **Decision:** Adopt the qa-docs family contract (test-plan, test-case, bug-report) at `phase: develop`, enforced by gate check K, closing the "QA may be utility" flag as no; qa-docs examples chain onto the existing delivery-docs scenario across the family boundary so acceptance criteria and test cases are taught side by side.
+- **Why:** none of the three document types is maintained in place indefinitely the way a governance-docs instrument is; each is authored once at a stage and then finished (a test plan closes at its exit criteria, a test case is written once, a bug report is opened and closed), and the catalog independently gives all three the same stage, `testing/QA`.
+- **Status:** accepted 2026-07-25. No correction or supersession is recorded against this decision.
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `qa-docs`, the family of verification artifacts: a test plan, a test case, and a bug report. Every new family gets a ratified contract before its members are built ([ADR 0020](0020-adopt-delivery-docs-family-contract.md) pattern), so a member is born into an enforced family rather than joining an honor system.
 

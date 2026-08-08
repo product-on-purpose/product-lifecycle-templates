@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Selection metadata: authored default_size and sizing_guidance, plus a generated heuristic approx_tokens
 
+## TL;DR
+
+- **Decision:** Add authored `default_size` and `sizing_guidance` fields to each meta, plus a generated per-variant `approx_tokens` estimate (`characters / 4`, computed by `tools/gen-manifest.py` and kept fresh by `--check`), so an agent can pick a size and budget context from the manifest alone.
+- **Why:** A real tokenizer (`tiktoken`) would add a third gate dependency and a model-specific bias for a value that only needs to be roughly right for budgeting, not billing.
+- **Status:** Accepted 2026-07-18. Builds on ADR 0018 (the generated manifest); check F enforces that `default_size` is one of the meta's own `sizes_available`.
+
 ## Context and Problem Statement
 
 [ADR 0018](0018-machine-catalog-generated-manifest.md) shipped `manifest.json` so an agent can find the

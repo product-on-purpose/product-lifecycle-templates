@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Ship the governance gate as a local Python script, as a decided interim
 
+## TL;DR
+
+- **Decision:** ship the governance gate as one local Python script, `tools/check-bundles.py` with six checks, rather than the Node `.mjs` suite the implementation plan's P3 called for, and document it as an explicit interim.
+- **Why:** it converted hand-verification into one repeatable command on the day it was needed, at a fraction of P3's cost, and its docstring records its interim status honestly.
+- **Status:** accepted as interim, decided 2026-07-03, ratified 2026-07-12. Partially superseded: the 2026-07-12 follow-up confirms Step 1 of the recorded supersession condition is satisfied, `.github/workflows/ci.yml` now runs this same script on every push and pull request, so the original "zero push protection" risk is historical, not current. Step 2 (whether the Node port ever happens) remains open by design, and finding D-01 (the six checks cover roughly half the Definition of Done) is untouched.
+
 ## Context and Problem Statement
 
 The implementation plan's P3 (port the CI quality gate from pm-skills) committed to a suite of Node `.mjs` lint scripts under `scripts/` wired to GitHub Actions on push. When the four bundles were built ahead of that phase, the Definition of Done was being verified by hand. A single local Python script (`tools/check-bundles.py`, six checks) was built 2026-07-03 to make that verification repeatable, explicitly self-described in its docstring and in the README as "a local prototype of the CI gate planned in the implementation plan (P3)."

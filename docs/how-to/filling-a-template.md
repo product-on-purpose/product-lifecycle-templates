@@ -1,20 +1,32 @@
+---
+title: "Filling a template"
+description: "The loop that takes a copied blank template to a document you would ship"
+audience: "both"
+level: "intermediate"
+tags:
+  - how-to
+  - authoring
+  - variants
+  - rubric
+---
+
 # Filling a template
 
-You have picked a document type, opened its folder under [`templates/`](../templates/), and copied
+You have picked a document type, opened its folder under [`templates/`](../../templates/), and copied
 the variant you need into your own project. This page is the next step: the loop that gets you from
 that blank file to a document you would actually ship.
 
-If you have not done this before, [`docs/getting-started.md`](getting-started.md) walks the whole path
+If you have not done this before, [`docs/getting-started.md`](../tutorials/getting-started.md) walks the whole path
 end to end in about fifteen minutes; this page goes deeper on the fill loop specifically. If you have
-not chosen a bundle yet, [`docs/choosing-a-template.md`](choosing-a-template.md) turns "what am I trying
-to do" into a bundle name, and [`atlas/atlas.html`](../atlas/atlas.html) maps the whole catalog. Each
+not chosen a bundle yet, [`docs/choosing-a-template.md`](../reference/choosing-a-template.md) turns "what am I trying
+to do" into a bundle name, and [`atlas/atlas.html`](../../atlas/atlas.html) maps the whole catalog. Each
 bundle's own `_guide.md` states when its type applies and, just as important, when it does not; if the
 guide tells you not to use this type here, that is the guide working, not a wrong turn on your part.
 
 ## Read the worked example first
 
 Before you write a single word into the template, open the bundle's `_example.md`. For the PRD bundle
-that is [`templates/prd/prd_example.md`](../templates/prd/prd_example.md); every bundle has one at the
+that is [`templates/prd/prd_example.md`](../../templates/prd/prd_example.md); every bundle has one at the
 same place, named `<type>_example.md`.
 
 This is worth doing even though it feels like the slow way in. The example and the guidance comments
@@ -25,7 +37,7 @@ substance independently of those hints: a complete, real document where every se
 together and carry one consistent story, filled by someone who is not simply restating the comment
 underneath each heading. That independence is a named convention here, not just a hope: the library's
 gate runs a check
-([`tools/check-example-independence.py`](../tools/check-example-independence.py)) specifically to catch
+([`tools/check-example-independence.py`](../../tools/check-example-independence.py)) specifically to catch
 an example that turns out to be a template's own GOOD or WEAK snippets reworded, because that has
 shipped here before and it teaches a reader nothing they had not already read once. The check catches
 verbatim reuse; it cannot catch the same point paraphrased in different words, and it says so in its own
@@ -167,14 +179,14 @@ product. This library has not been filled in anger by anyone but the author, so 
 record yet of these bundles being used on a real team's real work, and no evaluation of whether a
 document that passes its own rubric performs any better than one that does not. The gate that runs in
 this repository checks that a bundle's structure holds; it has no way to check that your filled-in
-content is right, and [`docs/what-the-gate-proves.md`](what-the-gate-proves.md) is the full, honest
+content is right, and [`docs/what-the-gate-proves.md`](../explanation/what-the-gate-proves.md) is the full, honest
 account of that boundary. That judgment stays yours.
 
 ## Where to go next
 
-- [`docs/getting-started.md`](getting-started.md) - the fifteen-minute path, start to finished document
-- [`docs/choosing-a-template.md`](choosing-a-template.md) - from a job to be done to a bundle name
-- [`docs/what-the-gate-proves.md`](what-the-gate-proves.md) - what is enforced, what is argued, and what
+- [`docs/getting-started.md`](../tutorials/getting-started.md) - the fifteen-minute path, start to finished document
+- [`docs/choosing-a-template.md`](../reference/choosing-a-template.md) - from a job to be done to a bundle name
+- [`docs/what-the-gate-proves.md`](../explanation/what-the-gate-proves.md) - what is enforced, what is argued, and what
   is not measured at all
-- [`STATE.md`](../STATE.md) - what is actually true of this repository today; it outranks every other
+- [`STATE.md`](../../STATE.md) - what is actually true of this repository today; it outranks every other
   document, including this one
