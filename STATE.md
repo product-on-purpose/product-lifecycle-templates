@@ -28,9 +28,31 @@
 | **Master catalog** | [`docs/internal/catalog.md`](docs/internal/catalog.md). 205 types, 27 at Tier 1. Cited by the methodology and by every bundle companion. **Its size calls are hypotheses, not facts** (see EC-2 below). |
 | **Audit corpus** | `_local/audit/2026-07-10_fable-audit/` on the maintainer's disk. **Deliberately NOT in git** (see [ADR 0013](docs/internal/decisions/0013-local-split-and-going-public.md)); its two load-bearing artifacts were promoted to [`docs/internal/roadmap.md`](docs/internal/roadmap.md) and [`docs/internal/contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md). |
 
-## Nothing broken right now
+## Two things are broken, both found on 2026-08-08 by running the install nobody had run
 
-That heading is true again as of 2026-07-23. The atlas drift recorded here on 2026-07-22 is fixed.
+**This heading said "Nothing broken right now" from 2026-07-23 until 2026-08-08.** It was replaced the
+first time anyone executed `npx skills add` against this repository. Neither defect was visible to any
+check in this tree, and neither would have been found by reading anything.
+
+**B-1. The install ships a maintainer-internal skill.** `npx skills add` reports **2 skills** and
+installs both. The second is [`.claude/skills/build-bundle`](.claude/skills/build-bundle/SKILL.md), whose
+own description ends "Maintainer-internal; it builds this repository, it is not shipped to library users."
+The `skills` CLI searches `.claude/skills` deliberately, its skip list is
+`["node_modules", ".git", "dist", "build", "__pycache__"]`, and it reads no ignore file, so **there is no
+supported way to exclude a skill from that scan.** The old root-`SKILL.md` layout suppressed it by
+accident, because a root skill short-circuits the subdirectory search; moving the skill to `skills/` to
+satisfy ADR 0036 and the Standard removed that accident. **Open, and it stops for the maintainer**,
+because every fix trades against something real: moving `build-bundle` out of `.claude/skills/` costs the
+maintainer their own tooling ergonomics, and documenting a `--skill plt-fill-template` workaround leaves
+the default install wrong.
+
+**B-2. The installed skill cannot do what it says.** The install places **12 KB**: `SKILL.md` and
+`README.md`. It does not place `manifest.json`, any of the 26 bundles, or any file the skill's own
+relative links point at. The skill's step 1 is "Read `manifest.json` at the repository root", and after an
+install there is no repository. **The Claude Code plugin channel clones the whole tree and is unaffected**,
+so of the library's two distribution channels, one delivers a working artifact and one delivers
+instructions for reading files that are not there. Recorded in
+[`docs/internal/roadmap.md`](docs/internal/roadmap.md) with the full retest.
 
 Recently closed:
 
@@ -41,6 +63,13 @@ Recently closed:
 - **PB-1 (history exposure) is resolved.** `_local/` was purged from every commit (verified 0 paths in history, and `Not Found` on the remote) before going public, so publishing did not expose the audit corpus or session logs. The 29 files remain on the maintainer's disk, backed up at `E:/tmp/_local-backup-20260714`. ADR 0013 is now `accepted` and **confirmed** (its success condition, CI green on `main`, is met).
 
 The reason this section exists at all: STATE.md is here because of audit finding G-01, *a plan that lies about the tree is worse than no plan*. Between 2026-07-13 and 2026-07-14 it had started doing exactly that (claiming CI passed when it had never run). That is fixed, and the section is kept as the place the next breakage gets recorded first. On 2026-07-22 it earned its keep: the atlas drift was found by checking this file's own claims against the tree, written down here rather than left quietly wrong, and then closed on 2026-07-23 by a generator and a `--check` so it cannot recur silently.
+
+**On 2026-08-08 it earned its keep in the opposite direction, and the lesson is sharper.** The two defects
+above were found by *running the install*, not by checking this file against the tree. Every check was
+green and every marker matched while the section three headings down claimed the library shipped no
+`SKILL.md` and was not installable. **Checking a document against the tree finds drift; it cannot find a
+thing that has never been executed.** The install had sat unrun for three weeks, and it took thirty
+minutes and produced two real defects and one refuted finding.
 
 ## Not built (deliberately visible)
 
