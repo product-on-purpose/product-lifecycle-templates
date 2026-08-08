@@ -26,8 +26,13 @@ At a glance:
   confirms it: "the Increment has the Definition of Done (now without the quotes)"
   [[2]](#ref-2). Material written before 2020, and a great deal of circulating material, describes it
   the older way.
-- An organizational standard is a **floor, never a ceiling**, and the rule has two branches depending
-  on whether one exists [[1]](#ref-1).
+- An organizational standard binds every team **as a minimum**, and the rule has two branches depending
+  on whether one exists [[1]](#ref-1). *"A floor, never a ceiling" is this bundle's gloss on the Guide's
+  "as a minimum", not Guide vocabulary: the Guide never says in so many words that a team may add
+  criteria stricter than an organisational standard. The one-directional ratchet is stated explicitly only
+  at the multi-team level, and only through a secondary account of the Nexus Guide [[22]](#ref-22). LeSS's
+  product-level Definition of Done, which teams share and may expand within their own teams
+  [[18]](#ref-18), has the same shape but states no prohibition on loosening it.*
 - **Nobody owns it.** Every source this research read makes conformance collective or contingent; no
   source names a single accountable role [[1]](#ref-1). This bundle corrects a citation error elsewhere
   in this library on exactly that point (see [section 8](#8-relationships-to-other-artifacts)).
@@ -90,9 +95,10 @@ product, the Guide is unambiguous that there is **one** Definition of Done betwe
 mutually define and comply with the same Definition of Done" [[1]](#ref-1).
 
 *Beginner note:* write down who is bound (usually the whole delivery team) and what standard, if any,
-was inherited from above the team. If an organizational standard exists, name it and treat it as a
-floor you may raise, never lower. If none exists, say so plainly; a silent absence reads as an
-oversight later.
+was inherited from above the team. If an organizational standard exists, name it and follow it as a
+minimum you never fall below [[1]](#ref-1); that you may also raise it above the inherited standard is
+this bundle's reading rather than something the Guide states (see [section 1](#1-orientation)). If none
+exists, say so plainly; a silent absence reads as an oversight later.
 
 *Expert note:* resist naming a single owner even though it is tempting and common in practice. Every
 source this research read makes ownership collective or contingent, and no source names a sole
