@@ -1,5 +1,5 @@
 ---
-name: product-lifecycle-templates
+name: plt-fill-template
 description: Selects and fills a researched product-document template from a 26-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
 license: Apache-2.0
 metadata:
@@ -127,9 +127,9 @@ postmortems, and the 2020 Scrum Guide contains no occurrence of "action item".
 
 ## Where to go next
 
-- [`docs/getting-started.md`](docs/tutorials/getting-started.md) - fill your first template in fifteen minutes
-- [`docs/choosing-a-template.md`](docs/reference/choosing-a-template.md) - from a job to be done to a bundle
-- [`docs/filling-a-template.md`](docs/how-to/filling-a-template.md) - the fill loop in detail
-- [`docs/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) - the honest scope of the quality claim
-- [`AGENTS.md`](AGENTS.md) - the machine-consumption path
-- [`STATE.md`](STATE.md) - what is true of this repository today, and it outranks every other document
+- [`docs/getting-started.md`](../../docs/tutorials/getting-started.md) - fill your first template in fifteen minutes
+- [`docs/choosing-a-template.md`](../../docs/reference/choosing-a-template.md) - from a job to be done to a bundle
+- [`docs/filling-a-template.md`](../../docs/how-to/filling-a-template.md) - the fill loop in detail
+- [`docs/what-the-gate-proves.md`](../../docs/explanation/what-the-gate-proves.md) - the honest scope of the quality claim
+- [`AGENTS.md`](../../AGENTS.md) - the machine-consumption path
+- [`STATE.md`](../../STATE.md) - what is true of this repository today, and it outranks every other document

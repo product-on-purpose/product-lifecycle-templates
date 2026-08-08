@@ -2,7 +2,7 @@
 
 This file is the entry point for an LLM agent operating on this repository directly (cloned, opened in
 an editor, or handed a working directory), as distinct from [`README.md`](README.md), which is written
-for a human reader, and [`SKILL.md`](SKILL.md), which packages the same library for an agent framework
+for a human reader, and [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md), which packages the same library for an agent framework
 that loads skills by convention. If you are an agent and you are reading this file first, everything
 below is enough to select a bundle, size it to your context budget, and fill it correctly without
 reading anything else first.
@@ -154,7 +154,7 @@ Markdown, YAML, or JSON, readable with nothing more than a file-read tool.
 
 - [`README.md`](README.md) - the human-facing entry point: quick start, what makes a bundle
   best-in-class, and the full library table by family.
-- [`SKILL.md`](SKILL.md) - the same library packaged for an agent framework that discovers and loads
+- [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md) - the same library packaged for an agent framework that discovers and loads
   skills by convention, with a fill-and-grade workflow.
 - [`templates/methodology.md`](templates/methodology.md) - the authoring process and per-bundle
   Definition of Done that every bundle in this library is held to.
