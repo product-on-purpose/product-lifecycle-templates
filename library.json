@@ -1,0 +1,29 @@
+{
+  "name": "product-lifecycle-templates",
+  "version": "0.2.1",
+  "description": "26 researched document-template bundles covering the complete Tier-1 floor of a 205-type product-artifact catalog. Each bundle ships a lean and a full template, a worked example, an operator guide with a self-grade rubric, a companion, and the research log every claim traces to.",
+  "standard": "0.12",
+  "tier": "universal",
+  "agent-targets": [
+    "claude"
+  ],
+  "components": {
+    "skills": [
+      {
+        "name": "product-lifecycle-templates",
+        "path": ".",
+        "version": "0.2.1",
+        "tier": "universal",
+        "status": "active"
+      }
+    ],
+    "subagents": [],
+    "commands": []
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Jonathan Prisant"
+  },
+  "repository": "https://github.com/product-on-purpose/product-lifecycle-templates",
+  "homepage": "https://github.com/product-on-purpose/product-lifecycle-templates"
+}
