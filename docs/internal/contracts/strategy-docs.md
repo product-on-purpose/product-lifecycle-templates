@@ -5,7 +5,9 @@ Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
+Version: 0.1.1 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
+see the change note at the end)
 
 ## 1. Membership
 
@@ -20,8 +22,12 @@ any single deliverable**. Its members answer, in order, four questions a product
 The chain is the family's teaching value, and it runs downhill: a strategy that does not serve the vision is
 drift, a roadmap that does not implement the strategy is a wishlist, and OKRs that do not measure progress
 against the roadmap are a reporting exercise. Each member must state its position against the other three in
-its companion's Relationships section, because the most common real-world failure here is producing all four
-and having them contradict each other.
+its companion's Relationships section. That requirement is this library's own reasoning, not received
+practice (corrected 2026-08-07; see the change note): no source read across any of the four members' research
+logs documents teams producing all four and having them contradict each other as a real-world failure mode,
+only named authors and sources disagreeing with each other about how each document should be shaped. The
+library still holds that a chain asserted once, at the top, and never rechecked from each member's side is the
+most likely way for the four to drift apart, which is the reasoning behind the requirement.
 
 A candidate type whose job is to specify, decompose or verify a **unit of work** belongs to `delivery-docs`
 or `qa-docs`, not here. A candidate that is a **one-time, phase-bound** artifact belongs elsewhere too: this
@@ -133,6 +139,17 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**0.1.1 (2026-08-07), per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world):** section 1's
+"most common real-world failure" sentence corrected in the dated in-place pattern this library uses for the
+catalog (finding EC-2), not by a superseding decision record. Searching all four members' research logs
+(`product-vision`, `product-strategy`, `product-roadmap`, `okrs`) for evidence of teams producing all four
+artifacts and having them contradict each other found none; every relevant hit was named authors or sources
+disagreeing with each other about how a single document type should be shaped, not evidence about multi-document
+drift in practice. The obligation is unchanged: every member still states its position against the other three
+in its companion's Relationships section. Only the reason given for that obligation is relabelled, from an
+unsourced claim about the world to this library's own reasoning.
 
 **0.1.0 (2026-07-25, [ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)):** adopted,
 enforced by gate check K, the fifth family contract and **the first to gate a set of axis values rather than

@@ -30,9 +30,10 @@ decision:
 - a **prototype brief** says what to build cheaply first, in order to find out whether we are right.
 
 The thread runs *toward* commitment rather than away from it. A business case that names no alternative is a
-proposal; a persona assembled from opinion is a stereotype; a prototype brief that specifies a finished
-product is a PRD wearing a smaller name. Each member must say, in its companion's Relationships section, what
-it is **not** and which document takes over when the decision is made.
+proposal; this library treats a persona assembled from opinion, not research, as a stereotype; a prototype
+brief that specifies a finished product is a PRD wearing a smaller name. Each member must say, in its
+companion's Relationships section, what it is **not** and which document takes over when the decision is
+made.
 
 A candidate whose job is to **set direction over time** belongs to `strategy-docs`. A candidate that
 **specifies, decomposes or verifies a unit of work** belongs to `delivery-docs` or `qa-docs`. A candidate that
@@ -153,3 +154,12 @@ added by [ADR 0030 (templating scope)](../decisions/0030-templating-scope-markdo
 from `strategy-docs` by [ADR 0023 (the Tier-1 family taxonomy)](../decisions/0023-resolve-the-tier-1-family-taxonomy.md),
 which moved it on the reasoning that a one-time, phase-bound artifact does not belong in a family of standing
 instruments.
+
+**Corrected 2026-08-07, [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world).**
+Section 1's "a persona assembled from opinion is a stereotype" was flagged as an unsourced CLAIM and
+re-verified against `user-persona`'s research log. The log's nearest entry, [21] Marriott ("Beware of Persona
+Bias"), supports a narrower claim, naming, imagery and accessibility as bias vectors, not the general
+proposition that opinion-built personas are stereotypes. No source in the log carries the general claim.
+Relabelled as a POSITION ("this library treats ... as a stereotype") rather than deleted, because the
+distinction it draws (opinion versus research, already stated in section 1's membership question) is this
+library's own reasoning and not something that needed a citation to hold. No obligation changed.
