@@ -36,13 +36,55 @@ number is worth.
 
 ## 2. The arms
 
-Three, not two. The third is what makes the first two believable.
+Four, as of 2026-08-08. It was three, and three was not enough to attribute a result.
 
 | Arm | What it receives | What it tests |
 |---|---|---|
-| **T, treatment** | Scenario, context pack, the blank template with guidance comments intact, and the guide | The thing being measured |
+| **T, treatment** | Scenario, context pack, the blank template with guidance comments intact, and the guide | The thing being measured, as the pilot measured it |
+| **T+, matched treatment** | All of T, **plus the identical discipline instruction the control receives** | The thing being measured, with the arms matched |
 | **C, control** | Scenario, context pack, and a strong generic instruction to write an excellent document of that type | The counterfactual |
 | **H, hollow** | The template filled with fluent, generic, low-information filler | Whether the rubric measures substance or form |
+
+### Why T+ exists, which is a mistake worth keeping written down
+
+**The pilot's arms differed in two things at once.** C received seven discipline points, two of which name
+decision-usefulness properties. T received a template and a guide and **no discipline instruction at all**.
+The held-out criteria then scored exactly those properties. A difference across two variables cannot be
+attributed to one of them, so the pilot's headline held-out gap of -0.81 was not a weak finding. It was
+not a finding.
+
+**The error is easy to make and hard to see.** Both prompts were written carefully, the control was
+deliberately made strong, length was matched, and the arms were still not comparable, because "what does
+the treatment get that the control does not" was answered as *the template* when the true answer was
+*the template, and also nothing else while the control got a paragraph of advice*.
+
+**T+ closes it by matching upward.** The discipline block is byte-identical across
+[`control-prompt.md`](../../evals/harness/control-prompt.md) and
+[`treatment-prompt.md`](../../evals/harness/treatment-prompt.md), enforced by
+[`tools/check-eval-arm-parity.py`](../../tools/check-eval-arm-parity.py) in CI. A paraphrase would leave
+open the argument that one arm was handed better-worded advice.
+
+**Matching downward was rejected on the control prompt's own design rule.** Deleting the two lines from
+the control would also have matched the arms, and would have inflated every gap thereafter. *If making the
+control stronger erases the gap, that is a finding about the templates.*
+
+**T is kept, unchanged, alongside T+.** A re-run that replaced the old comparison would produce a number
+nobody could set beside the one it was correcting.
+
+### Judging is session-split, and this is not cosmetic
+
+Each scenario is judged by **two panels**: session A sees `{T, C, H}`, session B sees `{T+, C, H}`.
+**Every gap is computed within one session, never across one.**
+
+The obvious alternative, one panel seeing all four arms, silently breaks the comparison a re-run exists to
+make. If the pilot's judges weighed three documents and a later run's judges weigh four, then any movement
+in the T-versus-C gap may be caused by the changed comparison set rather than by the change under test, and
+a confound has been swapped rather than removed.
+
+The split also buys a measurement available no other way. **The identical control documents are scored by
+two independent panels**, so the spread between them estimates judging noise directly rather than through
+the within-panel agreement gate. Measured 2026-08-08: **0.14**. Any gap smaller than that is not
+distinguishable from the judges disagreeing with themselves, and no reading may rest on one.
 
 **The control is not a strawman, and this is the single easiest way to fake a good result.** The C-arm
 prompt is versioned in this repository so anyone can inspect its fairness, names the standard advice a
@@ -131,6 +173,11 @@ managed out of sight.
 
 - **Report the gap with its scenario count and a bootstrap interval**, never a bare point estimate.
   Regression thresholds operate on the interval's lower bound, not the point.
+  [`evals/harness/analyze.mjs`](../../evals/harness/analyze.mjs) computes them, and it lives outside the
+  harness because workflow scripts may not call `Math.random`: a resumed run must replay identically, and
+  a bootstrap is nothing but random draws. **It resamples scenarios, not judge-artifact rows.** Three
+  judges scoring one document are not three independent observations, and resampling rows would return a
+  tight, confident interval the data does not support.
 - **Never rank bundles against each other.** Scenario difficulty differs, so a cross-bundle comparison is
   meaningless and any published surface that invites one is a defect.
 - **The scorecard names the generation model, the judge models, and the run date.** The gap is a property of
