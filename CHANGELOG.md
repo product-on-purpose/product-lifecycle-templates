@@ -52,6 +52,21 @@ people who want every change, release notes are for people who want to know what
   `SKILL.md` at a repository root was almost certainly never discoverable by either. Whether
   `npx skills add` now succeeds remains untested, and the README says so rather than claiming otherwise.
 
+- **The first efficacy measurement, and it returned VOID.** `evals/` now holds a three-arm blind eval
+  harness, a scenario bank authored blind to the templates, per-type rubrics split into rubric criteria and
+  held-out criteria, and [the protocol](docs/internal/eval-protocol.md) written before any number existed.
+  The pilot ran six scenarios across three bundles.
+
+  **The instrument works and the result is not flattering.** The hollow arm, a template filled with fluent
+  generic filler, scored 1.00 overall and answered zero of five retrieval probes, so the rubric measures
+  substance rather than shape. Judge agreement and control sanity both passed. But the overall gap was
+  **+0.19** against a 1.0 discrimination gate, so the run is **void**, and the held-out gap was
+  **negative at -0.81**: the treatment arm wins on criteria drawn from the template's own guide and loses on
+  decision-usefulness criteria the template never mentions. That is the circularity signature the protocol
+  was built to detect. A confound this run introduced is stated in
+  [the results](evals/results/2026-08-08_pilot.md) rather than left for a reader to find. **No number from
+  the pilot appears in the README, a badge, or any bundle's metadata.**
+
 ### Known gaps
 
 - **`check-counts.py` does not strip fenced code blocks** before scanning for count markers, so a
