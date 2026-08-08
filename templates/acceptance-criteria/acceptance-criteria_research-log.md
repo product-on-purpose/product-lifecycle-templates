@@ -74,6 +74,28 @@ recommend 3-5 steps per example"). Corrected above.
 
 ## Notes and limitations
 
+**RESOLUTION ATTEMPT, 2026-08-08.** The remedy this note proposed was to read the page or re-source its
+claims to the Scrum Guide. **The page still cannot be read**: a third attempt returned HTTP 202 with an
+empty body behind a bot challenge. So the second path was taken, and it produced a finding larger than the
+bundle.
+
+**The 2020 Scrum Guide contains zero occurrences of "acceptance criteria", and zero of "acceptance" in any
+form.** Counted programmatically over the full body text. The Guide therefore draws **no boundary at all**
+between the Definition of Done and acceptance criteria: there is no sentence relating the two concepts. Any
+claim in this library that cites the Scrum Guide for that boundary is unsupported by the primary text, and
+the boundary is this library's own.
+
+What the Guide **does** support, verbatim and re-confirmed: "The Developers are required to conform to the
+Definition of Done", and "all Scrum Teams must follow it as a minimum" where an organisational Definition
+of Done exists. **One correction to this library's own gloss**: "floor", "raise" and "never lower" are not
+Guide vocabulary. "As a minimum" is. The paraphrase is faithful and must not be presented as a quotation.
+
+Reference [2] is now marked unread at the point of every claim resting on it. A per-claim pass classifying
+all sixteen citations (re-source, keep-labelled, or cut) was run in duplicate and its verdicts are recorded
+at `_local/plans/2026-08-07_autonomous/F2-ac-403-verdicts.json`; the two passes agreed on six re-sourcings
+and split on cut-versus-keep, so applying them is deliberately left as a reviewed pass rather than done on
+the strength of a split verdict.
+
 - **[2] Scrum.org is the load-bearing source for the AC-vs-DoD distinction and is the most-cited
   reference in this bundle (16 citations), yet it has never been read at source.** It returns HTTP 403
   to automated retrieval. Its claims are corroborated by search excerpts and are consistent with the
