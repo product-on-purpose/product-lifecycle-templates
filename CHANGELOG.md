@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-08
+
 ### Added
 
 - **A `## TL;DR` block on every decision record.** Each is derived from the record's own decision section
@@ -25,6 +27,32 @@ people who want every change, release notes are for people who want to know what
   columns cannot drift from the tree.
 - **`RELEASE-NOTES.md`** at the repository root: the curated user-facing read, distinct from this file,
   which stays the full record.
+
+- **The efficacy eval gained a matched treatment arm, and the pilot's headline finding was withdrawn.**
+  The pilot's arms differed in **two** things at once: the control received seven discipline points, two
+  naming decision-usefulness properties, and the treatment received a template and a guide and no
+  discipline instruction at all, while held-out criteria scored exactly those properties. A two-variable
+  difference cannot be attributed to one variable. The new **T+** arm receives the identical discipline
+  block, byte-identical rather than paraphrased and held that way in CI, and judging is split into two
+  panels per scenario so every gap is computed inside one comparison set.
+
+  **Run twice, independently. The held-out gap goes from -0.51 unmatched to -0.03 matched**, with the
+  matched interval spanning zero, and the two runs agree within 0.13 on every quantity. The alarming
+  finding was the harness. **What replaces it is the circularity signature, now measured**: +0.85 on the
+  templates' own rubric criteria beside nothing at all on criteria drawn from neither. Both runs remain
+  **VOID** on discrimination. [The result](evals/results/2026-08-08_matched-rerun.md).
+- **Bootstrap confidence intervals** ([`evals/harness/analyze.mjs`](evals/harness/analyze.mjs)), closing a
+  protocol requirement the pilot recorded as unmet. It resamples **scenarios rather than judge-artifact
+  rows**, because three judges scoring one document are not three independent observations.
+- **`tools/check-export-surface.py`**, asserting that the set of skills an installer would export equals
+  exactly what `library.json` declares, in both directions. See the install finding under Fixed.
+- **`tools/check-eval-arm-parity.py`**, holding the two eval arm prompts byte-identical on their shared
+  discipline block.
+- **[`docs/how-to/installing.md`](docs/how-to/installing.md)**, the first real install guide: three routes,
+  what each one actually delivers, and how to verify each worked.
+- **[ADR 0037](docs/internal/decisions/0037-keep-the-build-harness-off-the-published-skill-surface.md)**,
+  keeping the build harness off the published skill surface and gating the surface rather than trusting the
+  layout.
 
 ### Changed
 
@@ -49,8 +77,11 @@ people who want every change, release notes are for people who want to know what
   **This changes the installed skill's name** from `product-lifecycle-templates` to `plt-fill-template`;
   the plugin keeps its name. The move is not a compliance chore: the Agent Skills specification requires a
   skill's `name` to match its parent directory and the Claude Code plugin loader scans `skills/`, so a
-  `SKILL.md` at a repository root was almost certainly never discoverable by either. Whether
-  `npx skills add` now succeeds remains untested, and the README says so rather than claiming otherwise.
+  `SKILL.md` at a repository root is not discoverable by either. **Corrected before release:** the
+  "never discoverable" inference was tested on 2026-08-08 and is **false for the skills CLI**, which looks
+  for a root `SKILL.md` by design and short-circuits its subdirectory search on finding one. The move was
+  still required by the Standard. `npx skills add` was run for the first time on 2026-08-08 and
+  **succeeds**; what it found is below.
 
 - **The first efficacy measurement, and it returned VOID.** `evals/` now holds a three-arm blind eval
   harness, a scenario bank authored blind to the templates, per-type rubrics split into rubric criteria and
@@ -61,21 +92,56 @@ people who want every change, release notes are for people who want to know what
   generic filler, scored 1.00 overall and answered zero of five retrieval probes, so the rubric measures
   substance rather than shape. Judge agreement and control sanity both passed. But the overall gap was
   **+0.19** against a 1.0 discrimination gate, so the run is **void**, and the held-out gap was
-  **negative at -0.81**: the treatment arm wins on criteria drawn from the template's own guide and loses on
-  decision-usefulness criteria the template never mentions. That is the circularity signature the protocol
-  was built to detect. A confound this run introduced is stated in
+  **negative at -0.81**. **That -0.81 was withdrawn before this released**, in the same development cycle:
+  see the matched re-run below. A confound this run introduced is stated in
   [the results](evals/results/2026-08-08_pilot.md) rather than left for a reader to find. **No number from
   the pilot appears in the README, a badge, or any bundle's metadata.**
 
+### Fixed
+
+- **The install shipped a maintainer-internal skill, and now cannot.** `npx skills add` was run for the
+  first time on 2026-08-08 and reported **two** skills, installing both. The second was the build harness,
+  whose own description says it is not for library users. Nothing was done wrong to cause it: a root
+  `SKILL.md` short-circuits the installer's subdirectory search, this repository had one until v0.2.0, and
+  removing it switched the search on. The harness is now a slash command at
+  [`.claude/commands/build-bundle.md`](.claude/commands/build-bundle.md), invisible to the installer and to
+  the Standard's component discovery, verified against the real repository. **The relocation is the small
+  half**; `check-export-surface.py` is what stops the next one, most likely in `.codex/skills`, which is on
+  the same hardcoded scan list.
+- **The `npx skills add` route installed a skill that could not do what it said.** Twelve kilobytes land:
+  the skill and its README, and none of `manifest.json`, the 26 bundles, or any file the skill's own links
+  point at. Its step 1 is "Read `manifest.json` at the repository root", and after an install there is no
+  repository. An agent in that position usually produces a fluent document anyway, from the skill's
+  description rather than from a bundle, which is exactly the artifact this library exists to replace. The
+  skill now **stops and says the library is absent** rather than improvising, and can fetch the manifest
+  plus the one template it needs from the release tag matching its own declared version. The Claude Code
+  plugin route clones the whole repository and never had this problem.
+- **`check-counts.py` read fenced code blocks as live claims** and gated dated release notes against the
+  current tree, which would have forced the v0.2.0 note's true sentence "the gate grew from 15 CI steps to
+  20" to become false. Fences are now blanked and `docs/releases/` is exempt by directory, printed on every
+  run.
+- **`check-workflow-prompts.py` was not looking at the eval harness.** It globbed `.claude/workflows/*.js`
+  and found one file, so the tool written because a broken harness is invisible until it runs was not
+  reading the most recently written harness. Discovery is now by shape.
+- **`STATE.md` was false in the section that ends "Keep this section honest".** Five clauses had been wrong
+  for three weeks: no machine-consumption path, ships no `SKILL.md`, not installable, untagged, and 6 of 205
+  types against a real 26. Every marker in the file was green throughout, because none of those clauses sits
+  near a marker.
+- **Stale README badges.** version 0.1.0, bundles 19, Tier-1 floor 18 of 25, families 5. The counts check
+  cannot see numbers inside shields.io URL parameters, and its own docstring names this exact recurrence.
+- **`bash.exe.stackdump`**, a 539-byte Cygwin crash dump committed in #53, was tracked at the repository
+  root and shipped inside v0.2.0 and v0.2.1. Deleted and gitignored.
+
 ### Known gaps
 
-- **`check-counts.py` does not strip fenced code blocks** before scanning for count markers, so a
-  documented example of the marker syntax is read as a live claim. The same bug was fixed once for inline
-  code spans; the fenced case was never covered. `docs/explanation/architecture-detailed.md` therefore
-  describes the syntax in prose and says why.
-- **Two Gold requirements stay open pending a cross-repository decision.** `G2` (CI runs the Standard's own
-  conformance gate) and `G4` (a generated `INDEX.md`) both require `agent-skills-toolkit` to be reachable
-  from this repository's CI, and that package is currently private with no published entry point.
+- **Nothing from the efficacy eval may be quoted as a quality claim.** Two runs, both **VOID**. The
+  templates score well above a strong generic-prompt control on the bundles' own rubric criteria and no
+  better than it on criteria drawn from neither, which is the circularity signature. Three of 26 bundles.
+- **The probe instrument is saturated.** The control answered 5.00 of 5 in both sessions of both runs, so
+  the probe gap can now show harm and not help. Harder probes come before the next run.
+- **`check-export-surface.py` copies an upstream constant.** The installer's scanned-prefix list is
+  hardcoded in a package that ships often. If it grows, the check goes stale by continuing to pass. Its own
+  output says so, and the honest mitigation is to re-read the list when the installer majors.
 
 ## [0.2.1] - 2026-08-08
 

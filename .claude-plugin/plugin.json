@@ -1,7 +1,7 @@
 {
   "name": "product-lifecycle-templates",
-  "version": "0.2.1",
-  "description": "26 researched document-template bundles across the full product lifecycle, covering the complete Tier-1 floor of a 205-type catalog. Each bundle ships a lean and a full template, a worked example on one continuous scenario, an operator guide with a self-grade rubric, a deep companion, and the research log every claim traces to. 20 CI steps enforce structure, citation integrity and honest retrieval. Status beta: quality is argued and gate-enforced, not measured, and no template has yet been filled by anyone but the author.",
+  "version": "0.3.0",
+  "description": "26 researched document-template bundles across the full product lifecycle, covering the complete Tier-1 floor of a 205-type catalog. Each bundle ships a lean and a full template, a worked example on one continuous scenario, an operator guide with a self-grade rubric, a deep companion, and the research log every claim traces to. 24 CI steps enforce structure, citation integrity and honest retrieval. Status experimental: efficacy was measured on 2026-08-08 and the result was VOID, and no template has yet been filled by anyone but the author.",
   "homepage": "https://github.com/product-on-purpose/product-lifecycle-templates",
   "repository": "https://github.com/product-on-purpose/product-lifecycle-templates",
   "license": "Apache-2.0",

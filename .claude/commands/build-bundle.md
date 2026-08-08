@@ -1,15 +1,32 @@
 ---
-name: build-bundle
-description: Build one governed template bundle for this library end to end, from research fan-out through the four-lens review to a merged PR. Use when adding a new document type from the build backlog, when asked to "build the <type> bundle", "do the next bundle", or "process through the remaining bundles". Maintainer-internal; it builds this repository, it is not shipped to library users.
-metadata:
-  version: 0.1.0
-  updated: 2026-08-03
-  tier: advanced
-  audience: advanced
-  category: governance
-  agent-targets: [claude]
-  status: active
+description: Build one governed template bundle end to end, from research fan-out through the four-lens review to a merged PR. Maintainer-internal; it builds this repository and is not shipped to library users.
+argument-hint: "<document-type> (a catalog type not yet built, e.g. status-report)"
 ---
+
+<!--
+  WHY THIS IS A COMMAND AND NOT A SKILL.
+
+  It was a skill at .claude/skills/build-bundle/SKILL.md until 2026-08-08, and being a skill made it
+  ship. The vercel-labs skills CLI scans a hardcoded list of about twenty agent-config directories,
+  .claude/skills among them, so `npx skills add` on this repository reported two skills and installed
+  both, including this one, whose own description says it is not for library users.
+
+  Nothing was done wrong to cause that. A root SKILL.md short-circuits the CLI's subdirectory search,
+  and this repository had one until ADR 0036 correctly moved the public skill to skills/. Removing the
+  root file removed a protection nobody knew was there.
+
+  The CLI has no ignore mechanism: its skip list is hardcoded to node_modules, .git, dist, build and
+  __pycache__. A command is invisible to it because it globs SKILL.md specifically, and invisible to
+  the Advanced Skill Library Standard too, whose listCommandFiles reads <root>/commands/ rather than
+  .claude/commands/. Both were verified rather than assumed, and the reasoning is ADR 0037.
+
+  A command is also the more honest model. A skill is model-invoked; this runs research fan-outs and
+  opens pull requests, and should only ever run because someone typed it.
+
+  tools/check-export-surface.py is what actually keeps this closed. Relocating one file fixes one leak;
+  the check fails if ANY discoverable skill stops matching what library.json declares, which is what
+  catches the next one - most likely .codex/skills, which is on the same hardcoded scan list.
+-->
 
 # Build one bundle
 
@@ -19,10 +36,10 @@ You are building one bundle for `product-lifecycle-templates`: eight files, gate
 
 | File | What it settles |
 |---|---|
-| [`docs/internal/bundle-pipeline.md`](../../../docs/internal/bundle-pipeline.md) | The six-phase runbook, the gotchas, the check E snippet, model routing |
-| [`docs/internal/review-standards.md`](../../../docs/internal/review-standards.md) | What CI already proves, the seven defect classes it cannot, the standards, the lens scoping |
+| [`docs/internal/bundle-pipeline.md`](../../docs/internal/bundle-pipeline.md) | The six-phase runbook, the gotchas, the check E snippet, model routing |
+| [`docs/internal/review-standards.md`](../../docs/internal/review-standards.md) | What CI already proves, the seven defect classes it cannot, the standards, the lens scoping |
 
-Then read the type's spec in [`buildout-specs.md`](../../../docs/internal/buildout-specs.md) and its family contract in
+Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-specs.md) and its family contract in
 `docs/internal/contracts/<family>.md`. That is your whole reading list.
 
 ## Before you start
@@ -83,7 +100,7 @@ So each dimension **owns** sources, and ownership is declared, not assumed:
 
 ## What always stops for the maintainer
 
-From [`decision-procedures.md`](../../../docs/internal/decision-procedures.md). These are not judgment calls.
+From [`decision-procedures.md`](../../docs/internal/decision-procedures.md). These are not judgment calls.
 
 - **Scope.** Whether a type is in scope at all. ADR 0030 governs; a new type needs a named source
   publishing it as a written document.

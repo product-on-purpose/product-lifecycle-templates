@@ -9,13 +9,14 @@ A curated library of product-management and software-lifecycle document template
 [**Quick start**](#quick-start) &nbsp;·&nbsp; [**What a bundle is**](#what-makes-a-bundle-best-in-class) &nbsp;·&nbsp; [**The claim**](#the-claim-and-what-it-is-worth) &nbsp;·&nbsp; [**Library**](#what-is-in-the-library-today) &nbsp;·&nbsp; [**Quality gate**](#quality-gate) &nbsp;·&nbsp; [**Status**](#project-status)
 
 <p>
-  <img src="https://img.shields.io/badge/status-beta-yellow?style=flat-square" alt="Status: beta">
+  <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
-  <img src="https://img.shields.io/badge/version-0.1.0-blue?style=flat-square" alt="Version 0.1.0">
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-19-brightgreen?style=flat-square" alt="Bundles: 19"></a>
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-18%20%2F%2025-orange?style=flat-square" alt="Tier-1 floor: 18 of 25 templatable"></a>
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-5-brightgreen?style=flat-square" alt="Families: 5"></a>
+  <img src="https://img.shields.io/badge/version-0.3.0-blue?style=flat-square" alt="Version 0.3.0">
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-26-brightgreen?style=flat-square" alt="Bundles: 26"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-9-brightgreen?style=flat-square" alt="Families: 9"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/gate-11%20checks%20in%20CI-success?style=flat-square" alt="Gate: 11 checks in CI"></a>
+  <a href="#quality-gate"><img src="https://img.shields.io/badge/Skill%20Library%20Standard-Gold%20(advanced)-success?style=flat-square" alt="Advanced Skill Library Standard: Gold, measured in CI"></a>
   <a href="#the-claim-and-what-it-is-worth"><img src="https://img.shields.io/badge/real%20fills-0%20(honest)-lightgrey?style=flat-square" alt="Real fills: 0"></a>
 </p>
 
@@ -52,11 +53,26 @@ Six steps, start to finished document. No install, no tooling, no account.
 > done to a bundle. [`docs/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) is the sceptic's
 > version: what is enforced, and what is only argued. Agents should start at [`AGENTS.md`](AGENTS.md).
 
-**1. Get the library.**
+**1. Get the library.** Three routes, and **they do not give you the same thing**. Full comparison, and how to check that it worked, in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 ```bash
+# Clone it. Everything: 26 bundles, the research logs, the gate. Best for reading.
 git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 cd product-lifecycle-templates
+```
+
+```
+# Or install it into Claude Code. The plugin clones the repository, so the
+# templates come with the skill. This is the route that just works.
+/plugin marketplace add product-on-purpose/agent-plugins
+/plugin install product-lifecycle-templates
+```
+
+```bash
+# Or install just the skill, for a non-Claude agent. NOTE: this installs the
+# skill and NOT the 26 bundles, so the skill fetches what it needs on demand
+# and stops rather than improvising if it cannot reach them.
+npx skills add product-on-purpose/product-lifecycle-templates
 ```
 
 **2. Pick your document type.** One folder per type under [`templates/`](templates/). Not sure which? Open [`atlas/atlas.html`](atlas/atlas.html) in a browser, or read the one-line descriptions in [the table below](#what-is-in-the-library-today).
@@ -85,7 +101,7 @@ Each section carries an HTML comment with what it wants, why it matters, guiding
 
 Strip the `<!-- ... -->` blocks once each section is written. Keep the `source_template` and `source_template_version` frontmatter: it is how anyone (including you, in six months) can tell where the document came from and which version of the shape it used.
 
-> **Filling one with an agent?** Point it at the bundle folder, not just the template. The `_guide.md` tells it when the type applies; the `_example.md` shows it what good looks like. To pick the right bundle in the first place, an agent reads [`manifest.json`](manifest.json), the machine catalog of every bundle's selectable fields (phase or classification, family, tags, sizes, aliases), generated from the metas and kept fresh by the gate. What is not yet possible is *installing* the library as a unit; see [The claim](#the-claim-and-what-it-is-worth).
+> **Filling one with an agent?** Point it at the bundle folder, not just the template. The `_guide.md` tells it when the type applies; the `_example.md` shows it what good looks like. To pick the right bundle in the first place, an agent reads [`manifest.json`](manifest.json), the machine catalog of every bundle's selectable fields (phase or classification, family, tags, sizes, aliases), generated from the metas and kept fresh by the gate. Installing the library as a unit **is** possible, and which route you pick decides whether the bundles come with it: see [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,7 +137,7 @@ The full authoring process, the citation standard, and the per-bundle Definition
 The pitch above is the ambition. Here is the same thing with the credit separated from the cash, which is the fastest way to judge whether this library is worth your time:
 
 - **Earned today.** Researched, dual-reader, nesting-disciplined, provenance-stamped bundles, with citations verified against raw sources and every correction recorded in the open. A gate that runs in CI and blocks merges. Decision records for every non-obvious choice.
-- **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**, though less than it was. Decisions D2/D3 (resolved 2026-07-17) established that both `npx skills add` and agentskills.io take exactly one unit, the *skill*, and that this repo shipped none. It now ships one, at [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md), in the location the Agent Skills specification and the Claude Code plugin loader both read ([ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)). **Nobody has run the install since**, so treat this as a corrected layout rather than a verified install; the retest is still open on the [roadmap](docs/internal/roadmap.md).
+- **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**, though less than it was. Decisions D2/D3 (resolved 2026-07-17) established that both `npx skills add` and agentskills.io take exactly one unit, the *skill*, and that this repo shipped none. It now ships one, at [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md), in the location the Agent Skills specification and the Claude Code plugin loader both read ([ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)). **The install was finally run on 2026-08-08, and it works** - which closed the oldest open question here and immediately opened two smaller ones. It shipped a maintainer-internal skill alongside the real one (fixed, and now gated by [`tools/check-export-surface.py`](tools/check-export-surface.py) so it cannot recur), and **the `npx skills add` route installs the skill without the 26 bundles it indexes**, so the skill now checks for the library and stops rather than improvising. The plugin route clones the whole repository and never had that problem. Both routes, and how to verify each, are in [`docs/how-to/installing.md`](docs/how-to/installing.md); the retest is recorded in full on the [roadmap](docs/internal/roadmap.md).
 - **Still on credit: "reference implementation".** Twenty-six of 205 catalog types (all 25 templatable Tier-1 types, plus one Tier-2 type built early), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated. The floor being complete is a statement about coverage, not about use.
 
 If that reads harsher than a README usually does, that is the point: [`STATE.md`](STATE.md) is the source of truth, it outranks this file, and it is kept honest on purpose.
@@ -133,7 +149,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 26 -->
-<!-- counts: bundles=26, tier1=25, adrs=36 -->
+<!-- counts: bundles=26, tier1=25, adrs=37 -->
 **Twenty-six bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
@@ -307,7 +323,7 @@ All twenty-six bundles currently pass. GitHub Actions runs these on every push t
 | **Tier-1 floor** | **22 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and 3 remain to build |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 11 bundle checks in CI, plus link, manifest / atlas freshness, ADR-index, changelog, research-log-contract, self-reported-counts and family-contract-test steps; `main` branch-protected |
-| **Decision records** | 36 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
+| **Decision records** | 37 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)) |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
 

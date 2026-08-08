@@ -3,7 +3,7 @@ name: plt-fill-template
 description: Selects and fills a researched product-document template from a 26-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
 license: Apache-2.0
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   updated: 2026-08-07
   category: documentation
   author: product-on-purpose
@@ -37,6 +37,45 @@ shape, a worked example, and a rubric for judging the result.
   do not supply it.
 
 ## How to use it
+
+### 0. Confirm the library is present, and STOP if it is not
+
+**This skill is a wrapper. The 26 bundles it indexes are not inside it.** Whether they are on disk
+depends entirely on how this skill was installed:
+
+| Install route | What you have |
+|---|---|
+| **Claude Code plugin** | the whole repository. Everything below works |
+| **`npx skills add`** | this file and its README, about 12 KB. **No bundles, no `manifest.json`** |
+
+**Before doing anything else, check that `manifest.json` is readable.**
+
+**If it is not, STOP and say so.** Tell the reader the library is not installed alongside the skill, and
+offer the two options in the next section.
+
+**Do not proceed from memory. Do not write a document that resembles what a template might have asked
+for.** A fluent document produced without the bundle is exactly the artifact this library exists to
+replace, and delivering one under this library's name is worse than declining. The library's own eval
+measured what that looks like: a template filled with confident generic prose scored **1.00 out of 5**
+and answered **zero of five** retrieval probes.
+
+### 0b. If the library is absent, fetch only what you need
+
+Two files, not a repository. This skill's whole design is that an agent loads **one** bundle file.
+
+Fetch from the tag matching this skill's own `metadata.version`, so the templates you read are the ones
+this skill was written against:
+
+```
+https://raw.githubusercontent.com/product-on-purpose/product-lifecycle-templates/v<metadata.version>/manifest.json
+https://raw.githubusercontent.com/product-on-purpose/product-lifecycle-templates/v<metadata.version>/templates/<type>/<type>_template-<size>.md
+```
+
+That is **two requests**: the manifest to select with, and the one template you chose. Add the guide
+only if you are grading or choosing a variant.
+
+**If you cannot reach the network either, stop.** Say the library is unavailable rather than
+substituting for it.
 
 ### 1. Select
 
@@ -96,15 +135,15 @@ below it. Grade honestly; the rubric asks for evidence you can point at, not for
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
 does not.
 
-**Enforced by CI, on every push and pull request:** 23 steps, including an 11-check gate per bundle - all
+**Enforced by CI, on every push and pull request:** 24 steps, including an 11-check gate per bundle - all
 files present, no em-dash or en-dash, lean nests strictly inside full, no unfilled placeholder in any
 example, every citation anchored and none padded, metadata valid against a schema, and conformance to the
 bundle's family contract. Separately: every relative link resolves, every research log carries a
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=23, logsgated=20, sourcesgated=796 -->
-23 CI steps; 20 research logs gated, covering 796 sources.
+<!-- counts: cisteps=24, logsgated=20, sourcesgated=796 -->
+24 CI steps; 20 research logs gated, covering 796 sources.
 
 **Not proved by anything:**
 

@@ -173,6 +173,19 @@ jobs:
       - name: Eval arm parity
         run: python tools/check-eval-arm-parity.py
 
+      # What this repository PUBLISHES must equal what it DECLARES. Measured 2026-08-08 by running the
+      # install for the first time: `npx skills add` reported two skills and installed both, the second
+      # being the maintainer-internal build harness, whose own description says it is not for library
+      # users. Nothing here could see it. Every other check in this file validates the tree; none of them
+      # asks what a stranger receives.
+      #
+      # The CLI scans thirty-one directory prefixes, twenty-seven of them agent-config directories
+      # including .claude/skills, .codex/skills and .github/skills, and it reads no ignore file. So
+      # relocating one file fixed one leak and this step is what keeps it fixed: the next one is most
+      # likely .codex/skills, in a repository whose maintainer also uses Codex. ADR 0037.
+      - name: Published skill surface
+        run: python tools/check-export-surface.py
+
       # The research-log generator's own fixture test, on the ADR 0025 argument: its merge path has no
       # live subject once a run is clean, because a collision only happens when two dimensions own the
       # same source. That is precisely how its two predecessor bugs hid. Both are now pinned by fixtures
