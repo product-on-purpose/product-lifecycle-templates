@@ -24,8 +24,9 @@ The full variant is a strict superset of the lean one: Scope and Ownership, Done
 Trigger keep their names and order, and this file only ADDS Criteria by Level, What This Excludes, and
 When Work Does Not Meet It, inserted between Done Criteria and Review Trigger.
 
-A DEFINITION OF DONE IS A COMMITMENT ATTACHED TO THE INCREMENT, NOT A STANDALONE ARTIFACT. An
-organizational standard, where one exists, is a floor: the team may strengthen it and may never weaken it.
+A DEFINITION OF DONE IS A COMMITMENT ATTACHED TO THE INCREMENT, NOT A STANDALONE ARTIFACT. Where an
+organizational standard exists the Guide binds every team to it "as a minimum"; treating that minimum as a
+floor the team may raise is this library's reading, not Guide wording.
 Nobody owns this document alone: conformance sits with the Developers collectively, and no source this
 library checked names a single accountable role. See definition-of-done_companion.md sections 1 and 3.
 

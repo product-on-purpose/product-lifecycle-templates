@@ -105,8 +105,10 @@ The two variants differ by how much **behavioral precision** the story needs.
   behavior-heavy, risky, or integration-sensitive stories, and where AC will seed automated tests.
 
 The nesting rule holds: the lean checklist's sections are a strict subset of the full document's, so a
-checklist can grow into scenario-based criteria in place. Default to the checklist; reach for scenarios
-when a flow is genuinely easier to read as Given/When/Then than as rules [[7]](#ref-7).
+checklist can grow into scenario-based criteria in place. Reach for scenarios when a flow is genuinely a
+user-behaviour case, which is what Given/When/Then suits [[7]](#ref-7). *That the checklist is the better
+default, and that such a flow reads more easily as scenarios than as rules, are this bundle's position:
+[[7]](#ref-7) does not compare the two forms, and no source read for this bundle does.*
 
 ---
 
@@ -146,8 +148,11 @@ items into AC; if a check applies to every story, it belongs in the DoD.
 
 **Rule-oriented vs scenario-oriented.** Some teams default to checklists, others to Given/When/Then.
 *(An observation from practice; no cited source surveys team defaults.)*
-Checklists are faster to write and read for discrete rules; scenarios are clearer for flows and convert
-to automated tests [[4]](#ref-4)[[5]](#ref-5)[[7]](#ref-7). *Recommendation:* mix them, rules for conditions, scenarios for behavior;
+Scenarios suit user-behaviour flows and convert to automated tests
+[[4]](#ref-4)[[5]](#ref-5)[[7]](#ref-7). That checklists are faster to write and read for discrete rules
+is this bundle's judgment on the same footing as the observation above: the 2026-07-16 pass de-cited that
+exact claim from [[7]](#ref-7), which does not compare the two forms.
+*Recommendation:* mix them, rules for conditions, scenarios for behavior;
 do not force everything into Given/When/Then, which bloats simple criteria.
 
 **How much detail.** Too little leaves "done" ambiguous; too much turns AC into an exhaustive spec that
