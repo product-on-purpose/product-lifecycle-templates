@@ -7,6 +7,15 @@ consulted: [claude]
 
 # Adopt the communication-docs family contract (status-report), a one-member family whose members own none of their own facts
 
+## TL;DR
+
+- **Decision:** Adopt the communication-docs family contract with `status-report` as its sole Tier-1 member,
+  and register the family in check K on `classification: utility`, single value.
+- **Why:** a status report owns none of its own facts, every figure is read from an artifact of greater
+  authority elsewhere in the library, so its real failure mode is being stale or disagreeing with the source
+  it summarises rather than being wrong outright; the contract's no-new-facts rule enforces exactly that.
+- **Status:** accepted 2026-08-05.
+
 ## Context and Problem Statement
 
 One Tier-1 type exists to tell people who are **not** doing the work what is happening with it. A **status

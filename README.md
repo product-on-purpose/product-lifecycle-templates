@@ -47,9 +47,9 @@ The north star is simple and demanding: be the indisputable best-in-class refere
 
 Six steps, start to finished document. No install, no tooling, no account.
 
-> **New here?** [`docs/getting-started.md`](docs/getting-started.md) walks one bundle end to end in about
-> fifteen minutes. [`docs/choosing-a-template.md`](docs/choosing-a-template.md) gets you from a job to be
-> done to a bundle. [`docs/what-the-gate-proves.md`](docs/what-the-gate-proves.md) is the sceptic's
+> **New here?** [`docs/getting-started.md`](docs/tutorials/getting-started.md) walks one bundle end to end in about
+> fifteen minutes. [`docs/choosing-a-template.md`](docs/reference/choosing-a-template.md) gets you from a job to be
+> done to a bundle. [`docs/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) is the sceptic's
 > version: what is enforced, and what is only argued. Agents should start at [`AGENTS.md`](AGENTS.md).
 
 **1. Get the library.**

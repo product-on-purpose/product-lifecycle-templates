@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Carry section guidance as enriched HTML comments (Approach A)
 
+## TL;DR
+
+- **Decision:** Author guidance (WHAT / WHY / ASK / GOOD / WEAK / TRAP, plus PRIORITY and ROW HINT for tables) is carried entirely in hidden HTML comments, invisible once the template renders; this is applied across all eight variant files.
+- **Why:** it is the only candidate that keeps both locked principles intact (guidance vanishes on render, smallest useful default), since a template is filled in an editor where comments are fully visible, and it carries the most guidance per section at zero render cost.
+- **Status:** accepted 2026-06-30 (ratified 2026-07-12); no supersession or amendment recorded. One follow-on stays open: the comment-field grammar should be gate-enforced once LP-1 (the use-a-template flow) depends on it.
+
 ## Context and Problem Statement
 
 Richer per-section author guidance had three candidate homes, prototyped side by side in `templates/_working/`: hidden HTML comments (A), visible blockquote scaffolding the author deletes (B), or a hybrid with one visible prompt line (C). The choice interacts with two locked principles: guidance vanishes on render, and smallest useful default.

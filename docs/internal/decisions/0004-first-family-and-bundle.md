@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Build delivery-docs first, starting with the PRD bundle
 
+## TL;DR
+
+- **Decision**: Build the delivery-docs family first (PRD, user stories, acceptance criteria, release notes), with the PRD bundle as the reference bundle, rather than starting from pm-skills coverage gaps or going coverage-first across the must-have tier.
+- **Why**: Its `pairs_with` targets already existed as live pm-skills skills, so the compatibility seam was proven real rather than asserted, and the four artifacts form a natural traceable chain (PRD to stories to acceptance criteria to release note) that one shared worked example can demonstrate.
+- **Status**: Accepted 2026-06-29, ratified 2026-07-12; the family completed 2026-06-30. No correction or supersession recorded.
+
 ## Context and Problem Statement
 
 With 205 catalog types and a must-have tier of roughly 28, the first family choice sets the pattern every later bundle follows, and determines whether the pm-skills seam is exercised from day one or remains theoretical.

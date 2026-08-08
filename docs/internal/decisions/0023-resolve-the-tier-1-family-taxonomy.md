@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Resolve the Tier-1 family taxonomy: definition-of-done, strategy-docs, and ops-docs
 
+## TL;DR
+
+- **Decision:** Resolve three broken family groupings in the Tier-1 taxonomy: definition-of-done moves to a new standing-standards family, strategy-docs becomes a classification family with business-case moving to discovery-docs, and ops-docs dissolves with incident-postmortem joining process-docs and runbook joining standing-standards; check K is also extended to gate a set of axis values instead of only one.
+- **Why:** Three proposed families mixed lifecycle-phase and standing-classification members, which honest metadata cannot support and which a single-axis contract cannot gate; domain similarity was not a valid substitute for axis coherence.
+- **Status:** Accepted 2026-07-22. Leaves kpi-dashboard's axis unresolved by design, deferred to the governance-docs contract step, later settled by ADR 0024 (the governance-docs family contract). It supersedes the family-grouping table in `buildout-plan.md`, which its own Consequences section reclassifies as a dated projection rather than truth.
+
 ## Context and Problem Statement
 
 [ADR 0015](0015-second-taxonomy-axis-phase-xor-classification.md) gave every bundle exactly one taxonomy

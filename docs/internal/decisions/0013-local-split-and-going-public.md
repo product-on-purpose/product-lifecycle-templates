@@ -8,6 +8,12 @@ informed: []
 
 # Split `_local/`: promote what public docs cite into `docs/internal/`, untrack the rest, and go public
 
+## TL;DR
+
+- **Decision:** Split `_local/`: promote the ten files that public docs (README, methodology, companions, `STATE.md`) actually cite into `docs/internal/`, leave the remaining 29 files (the audit corpus, session logs) untracked on disk, and make the repository public so CI can actually run.
+- **Why:** the governance gate had never once run in CI because the private repo was out of Actions minutes, so the library's "enforceable, not aspirational" claim was false in the one place it mattered; going public fixes that permanently, but only after the boundary between public and private content was made real instead of nominal.
+- **Status:** accepted, 2026-07-14, and corrected the same day: an earlier consequence claiming the untracked files "were never pushed, so they were never exposed" was false (they have been pushed and tracked since commit `cd7c6bd`, and a public repo exposes its full history, not just its tip). The correction is in place per ADR 0011 (correct rather than supersede), and it blocks this decision's own confirmation: going public is now gated on a further, unmade maintainer choice tracked as PB-1 (accept the history exposure, or purge `_local/` from history first).
+
 ## Context and Problem Statement
 
 The governance gate has **never run**. Not once. `.github/workflows/ci.yml` is correct, Actions are enabled, and the gate passes locally on all five bundles, but every run since 2026-07-13 dies in 3-4 seconds with the `gate` job executing **zero steps**. That is a job that never got a runner: the repository is private and out of Actions minutes. `pm-skills`, public in the same organization, runs its CI normally.

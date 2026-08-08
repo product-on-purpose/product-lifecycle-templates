@@ -6,6 +6,12 @@ decision-makers: [jprisant, claude]
 
 # Primary evidence outranks the catalog and the paired skill; conflicts are reported, not absorbed
 
+## TL;DR
+
+- **Decision:** When authoring a bundle, primary evidence and the org's own standing conventions outrank both the master catalog and a paired pm-skills skill; any conflict is filed as a named finding in `STATE.md` and left for its owner to fix, never silently absorbed and never unilaterally patched in the sibling repo.
+- **Why:** the library's whole claim is that its content is researched rather than asserted, so a template that conformed to a catalog entry or a paired skill known to be wrong would manufacture the exact drift it exists to prevent.
+- **Status:** accepted, 2026-07-14. Not superseded; it builds on ADR 0011 (MADR v4 adoption) and records two open findings, EC-1 (the develop-adr format divergence) and EC-2 (the catalog's wrong size call for the ADR entry), rather than resolving them.
+
 ## Context and Problem Statement
 
 Authoring a bundle means reconciling three inputs that were never checked against each other:

@@ -6,6 +6,12 @@ decision-makers: [jprisant, claude]
 
 # Adopt MADR v4, locate records at docs/internal/decisions/, and correct rather than supersede transcription errors
 
+## TL;DR
+
+- **Decision:** Decision records adopt MADR v4 and move to `docs/internal/decisions/`, matching the org standard exactly; going forward, a factual error in an accepted record is corrected in place with a dated, named correction, while a genuine change of decision gets a new record number.
+- **Why:** the repo's own bespoke format and `docs/decisions/` path had already been superseded by an org-wide decision, and re-adopting it here would mean silently re-litigating a settled question, with a clean public repo root as a second driver.
+- **Status:** accepted, 2026-07-13. This record itself is not superseded; it establishes the correct-in-place rule that it then applies to fix a factual error in ADR 0003 (phase vocabulary).
+
 ## Context and Problem Statement
 
 Milestone M0 (the credibility floor) closed audit finding F-03 (no decision records) by creating a decision-record directory. It created `docs/decisions/`, with a bespoke plain-text header (`Status:` / `Date:` / `Deciders:` lines) and date-prefixed filenames (`20260629-variant-model.md`).

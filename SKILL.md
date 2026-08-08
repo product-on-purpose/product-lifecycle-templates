@@ -127,9 +127,9 @@ postmortems, and the 2020 Scrum Guide contains no occurrence of "action item".
 
 ## Where to go next
 
-- [`docs/getting-started.md`](docs/getting-started.md) - fill your first template in fifteen minutes
-- [`docs/choosing-a-template.md`](docs/choosing-a-template.md) - from a job to be done to a bundle
-- [`docs/filling-a-template.md`](docs/filling-a-template.md) - the fill loop in detail
-- [`docs/what-the-gate-proves.md`](docs/what-the-gate-proves.md) - the honest scope of the quality claim
+- [`docs/getting-started.md`](docs/tutorials/getting-started.md) - fill your first template in fifteen minutes
+- [`docs/choosing-a-template.md`](docs/reference/choosing-a-template.md) - from a job to be done to a bundle
+- [`docs/filling-a-template.md`](docs/how-to/filling-a-template.md) - the fill loop in detail
+- [`docs/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) - the honest scope of the quality claim
 - [`AGENTS.md`](AGENTS.md) - the machine-consumption path
 - [`STATE.md`](STATE.md) - what is true of this repository today, and it outranks every other document

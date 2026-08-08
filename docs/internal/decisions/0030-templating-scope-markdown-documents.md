@@ -7,7 +7,11 @@ consulted: [claude]
 
 # This library templates Markdown documents, and says which catalog types it will not
 
-## Context and Problem Statement
+## TL;DR
+
+- **Decision:** This library templates only artifacts whose primary form is a written document; catalog types 52 (wireframe) and 54 (interactive prototype) are declared out of scope and named as such, rather than built as invented wrapper documents; a new type, `prototype-brief`, is added to the discovery-docs family as the forward-looking document that commissions a prototype.
+- **Why:** honesty over coverage, applying the same in-circulation-with-a-named-source admission test that ADR 0028 (the format-axis rule, 0028-adopt-a-format-axis.md) used for formats: no named source publishes a "wireframe specification" as a written document, so shipping one would invent a document type nobody actually writes just to fill a catalog slot.
+- **Status:** accepted 2026-07-30, ratified 2026-07-31 with the deferral reason sharpened: `prototype-brief`'s own catalog entry is withheld until the bundle's research pass confirms a named source publishes it as a document, since the admission test was reasoned about but not yet rigorously applied to that type; if no source is found, the build backlog drops from 8 bundles to 7. No supersession is recorded.
 
 Two of the 27 Tier-1 "must-have" types are **not documents**. `wireframe` (catalog 52) is "layout blocks,
 content hierarchy, navigation"; `interactive-prototype` (catalog 54) is "flows, interactions, states,

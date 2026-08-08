@@ -8,6 +8,12 @@ informed: []
 
 # The gate may use PyYAML for one check (frontmatter validity); the other six stay pure stdlib
 
+## TL;DR
+
+- **Decision:** The gate gains exactly one dependency, PyYAML, used only by a new frontmatter validity check that parses every `meta.yaml` and template frontmatter block as real YAML and fails the build on anything invalid; if PyYAML is absent the check reports a distinct SKIP rather than a false pass, and the other six checks stay pure standard library.
+- **Why:** the ADR bundle had shipped with invalid YAML in its own template frontmatter and the gate passed it green, because it checked fields by regular expression and never parsed YAML at all; a hand rolled validator was rejected as a worse trap, so closing the hole honestly required a real parser.
+- **Status:** accepted, 2026-07-16. Amends rather than supersedes ADR 0008 (gate stays local Python, pure stdlib as interim): the gate is still local Python and still overwhelmingly stdlib, but "pure stdlib" is now the default for six checks rather than an absolute for all seven.
+
 ## Context and Problem Statement
 
 On 2026-07-14 the ADR bundle shipped with invalid YAML in both template frontmatters: `decision-makers: [{{decision_makers}}]`, which YAML reads as a flow sequence containing a flow mapping with an unhashable key. **The gate passed it green.** It reads `sizes_available` with a regular expression and never parses YAML as YAML, so "the frontmatter is well-formed" was a Definition-of-Done clause with zero automation behind it. The defect was caught by a separate ad-hoc script, not the gate, and only because someone thought to run one.

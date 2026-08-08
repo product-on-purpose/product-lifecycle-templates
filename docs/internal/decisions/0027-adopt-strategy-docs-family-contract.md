@@ -7,7 +7,11 @@ consulted: [claude]
 
 # Adopt the strategy-docs family contract (product-vision, product-strategy, product-roadmap, okrs), the first to gate a set of axis values
 
-## Context and Problem Statement
+## TL;DR
+
+- **Decision:** Adopt the strategy-docs family contract for product-vision, product-strategy, product-roadmap, and okrs, gating `classification` as a two-value set (`foundation` or `utility`) via a new set-valued `FAMILY_CONTRACTS` entry in gate check K; `business-case` is confirmed out of this family and into discovery-docs.
+- **Why:** the four members split on what they actually are, not on convenience: product-vision and product-strategy are argued-and-durable (`foundation`), while product-roadmap and okrs are maintained-and-periodic, valuable only while current (`utility`); splitting the family instead would have broken the vision-to-measurement cascade that is the family's teaching content.
+- **Status:** accepted 2026-07-25. No correction or supersession is recorded against this decision.
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `strategy-docs`: the
 family that sets and tracks product direction above the level of any single deliverable. Every new family gets

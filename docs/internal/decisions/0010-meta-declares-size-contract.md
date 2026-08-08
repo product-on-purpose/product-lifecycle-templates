@@ -6,6 +6,12 @@ decision-makers: [jprisant, claude]
 
 # The meta declares the size contract; single-size bundles are a legal shape
 
+## TL;DR
+
+- **Decision:** `sizes_available` in the bundle meta is the binding size contract; the gate enforces the files on disk match it exactly in both directions (a declared variant that's missing fails, and now also a variant file present but never declared fails), nesting is checked transitively across declared sizes and is vacuous rather than waived for single-size bundles, and a bundle is no longer always eight files, it is six core files plus one per declared size.
+- **Why:** the alternative of waiving the file and nesting checks whenever a variant is absent was rejected because it would make the gate unable to distinguish a deliberately single-size bundle from a half-built one, which is the one thing a governance gate exists to do.
+- **Status:** accepted 2026-07-12; no supersession. Resolves the open refinement note left in [0002-variant-model.md (the variant model)](0002-variant-model.md) for single-size types, and updates the "eight files" framing that [0007-research-log-as-bundle-artifact.md (the research log as bundle artifact)](0007-research-log-as-bundle-artifact.md) established as the common case.
+
 ## Context and Problem Statement
 
 [0002-variant-model.md](0002-variant-model.md) settled that a type ships the number of variants it earns, and it left a loose end in its own consequences:

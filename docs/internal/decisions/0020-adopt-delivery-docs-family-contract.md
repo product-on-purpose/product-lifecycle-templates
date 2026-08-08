@@ -7,6 +7,12 @@ consulted: [claude]
 
 # Adopt the delivery-docs family contract, enforced by gate check K; methodology is descriptive, not a membership rule
 
+## TL;DR
+
+- **Decision:** Adopt the delivery-docs family contract (status moved from draft to adopted, version 0.1.1), enforced by new gate check K, which requires every `family: delivery-docs` bundle to declare `phase: deliver`, a `beta` or `stable` status, and an allowed size shape; the contract's `methodology` field is dropped as an enforced membership rule and left descriptive.
+- **Why:** Check K's first run found three of four family members honestly declaring a non-generic methodology (agile-scrum-xp, agile-bdd, methodology-agnostic), and forcing them to `generic` would have laundered true information out of the metadata to satisfy the rule.
+- **Status:** Accepted 2026-07-20. The contract's own change note records the same methodology amendment from its side (version 0.1.1); this is the first family contract adopted, decision-docs (rfc, adr) does not have one yet.
+
 ## Context and Problem Statement
 
 The `delivery-docs` family contract has existed as a complete document marked "draft for adoption"

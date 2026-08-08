@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Use lowercase phase values matching pm-skills frontmatter
 
+## TL;DR
+
+- **Decision**: Use lowercase phase values that match pm-skills frontmatter exactly: `discover`, `define`, `develop`, `deliver`, `measure`, `iterate`, a six-value enum verified by enumerating the `phase:` field across every tracked pm-skills `SKILL.md`.
+- **Why**: The phase axis is the taxonomy seam between this library and pm-skills, and that seam only holds if the vocabulary matches exactly, so the design spec's capitalized casing was corrected rather than propagated.
+- **Status**: Accepted 2026-06-29, ratified 2026-07-12, but the record was factually corrected the same day: its original claim of an eight-value enum ("plus `foundation` and `tool`") was wrong, those two belong to a separate `classification:` axis, not `phase`. A second correction on 2026-07-17 fixed inflated skill counts in that first correction. The open question the first correction raised was closed by [ADR 0015](0015-second-taxonomy-axis-phase-xor-classification.md) (a bundle declares phase XOR classification). Separately, this record's bundle-ID guidance was superseded by [ADR 0005](0005-bundle-ids-doctype-spine.md) (bundle IDs are bare doctype handles).
+
 ## Context and Problem Statement
 
 The design spec wrote `phase: Deliver` (capitalized) while the live pm-skills repo uses lowercase `phase: deliver` in real skill frontmatter. The phase axis is the taxonomy seam between the two repos; the seam is only real if the vocabulary matches exactly.

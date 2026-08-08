@@ -7,6 +7,16 @@ consulted: [claude]
 
 # Adopt the standing-standards family contract (definition-of-done, runbook), the first family to pair foundation with tool
 
+## TL;DR
+
+- **Decision:** Adopt the standing-standards family contract with `definition-of-done` and `runbook`, and
+  register the family in check K on the `classification` axis with the set `foundation` or `tool`.
+- **Why:** `definition-of-done` is a standard a team is judged against, so it sits at `foundation`; `runbook`
+  is an instrument executed under time pressure, so it sits at `tool`. The distinguishing test is whether a
+  document is a standard you judge against or an instrument you execute, using the `classification:tool`
+  vocabulary ADR 0015 (the phase-or-classification axis) adopted because pm-skills already uses it.
+- **Status:** accepted 2026-08-05.
+
 ## Context and Problem Statement
 
 Two Tier-1 types are neither phase-bound nor periodic. A **definition of done** is agreed by a team and then

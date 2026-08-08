@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Ship lean/full variants with descriptive filenames and a strict nesting rule
 
+## TL;DR
+
+- **Decision**: Ship lean/full variants with descriptive filenames rather than rigid S/M/L letters, ship only as many variants as a given type earns, and keep the nesting rule in full force so a smaller variant's section IDs stay a strict ordered subset of the larger's.
+- **Why**: The catalog's own size_variant column shows most types vary in two weights, not three, descriptive filenames are self-documenting, and deterministic agent selection already runs off the `sizes_available` metadata field rather than the filename.
+- **Status**: Accepted 2026-06-29, ratified 2026-07-12. No correction or supersession recorded; the record flags a follow-up refinement (a `sizes_available: [lean]` convention for single-size types) as still to be decided separately.
+
 ## Context and Problem Statement
 
 The design spec mandated rigid S/M/L variants with abstract filenames (`template.s.md`); the later layered-design doc softened this to "default lean/full, descriptive filenames, S/M/L only where a type earns three weights." The two positions produce different repositories, and the choice is expensive to reverse once bundle content exists.

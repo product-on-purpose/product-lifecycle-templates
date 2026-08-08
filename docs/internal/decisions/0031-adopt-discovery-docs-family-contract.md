@@ -7,6 +7,17 @@ consulted: [claude]
 
 # Adopt the discovery-docs family contract (business-case, user-persona, prototype-brief), the first family to extend the worked thread backward and the first ratified with a provisional member
 
+## TL;DR
+
+- **Decision:** Adopt the discovery-docs family contract with `business-case`, `user-persona`, and a
+  provisional third member `prototype-brief`, and register the family in check K on the `phase` axis at the
+  single value `discover`.
+- **Why:** the persona is checkable rather than asserted (`Recurring Analyst` appears in sixteen files and no
+  bundle has ever defined it), and ratifying `prototype-brief`'s membership now, with its admission-test
+  outcome pre-committed, avoids deciding membership after the research runs, when a negative answer is harder
+  to accept.
+- **Status:** accepted 2026-08-04.
+
 ## Context and Problem Statement
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `discovery-docs`:

@@ -7,6 +7,12 @@ consulted: [claude]
 
 # A bundle declares a phase XOR a classification, never both, never neither
 
+## TL;DR
+
+- **Decision:** A bundle's metadata declares exactly one of a lifecycle `phase` or a standing `classification`, never both and never neither, so the metadata schema (roadmap WP-21) can encode this as an XOR instead of forcing every document type into a fictional phase.
+- **Why:** several catalog document types (Risk Register, RAID Log, Status Report, Definition of Done) have no honest lifecycle phase, and this mirrors a clean, already proven partition in pm-skills (30 skills with a phase, 38 with a classification, zero with both or neither, verified across all 68 tracked skills).
+- **Status:** accepted, 2026-07-17. Not superseded; it corrects a factual error in ADR 0003 (phase vocabulary), which had cited "175 SKILL.md files" when the canonical, deduplicated count is 68, and ADR 0003 now carries a dated correction for that.
+
 ## Context and Problem Statement
 
 Every bundle's `<type>_meta.yaml` currently declares a lifecycle `phase` (one of the six from

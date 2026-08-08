@@ -12,7 +12,45 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- **A `## TL;DR` block on every decision record.** Each is derived from the record's own decision section
+  rather than its title, and the Status bullet carries any correction, amendment or supersession the record
+  contains, so a reader who stops at the summary cannot walk away with a superseded decision.
+- **An architecture pair under `docs/explanation/`**: [`architecture.md`](docs/explanation/architecture.md)
+  for a reader who wants the shape in one sitting, and
+  [`architecture-detailed.md`](docs/explanation/architecture-detailed.md) for someone extending the library.
+- **Folder READMEs** for `templates/`, `.github/workflows/`, `docs/releases/` and each Diataxis quadrant.
+  The `templates/` inventory is generated from each bundle's own `*_meta.yaml`, so its axis and variant
+  columns cannot drift from the tree.
+- **`RELEASE-NOTES.md`** at the repository root: the curated user-facing read, distinct from this file,
+  which stays the full record.
+
+### Changed
+
+- **The four user-facing pages moved into the Diataxis quadrants** the Advanced Skill Library Standard
+  requires, and every inbound link was updated. Anyone linking the old paths should re-point:
+
+  | Was | Now |
+  |---|---|
+  | `docs/getting-started.md` | [`docs/tutorials/getting-started.md`](docs/tutorials/getting-started.md) |
+  | `docs/filling-a-template.md` | [`docs/how-to/filling-a-template.md`](docs/how-to/filling-a-template.md) |
+  | `docs/choosing-a-template.md` | [`docs/reference/choosing-a-template.md`](docs/reference/choosing-a-template.md) |
+  | `docs/what-the-gate-proves.md` | [`docs/explanation/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) |
+
+- **Every published `docs/**` page now carries the Standard's section 8.4 frontmatter taxonomy**
+  (`title`, `description`, `audience`, `level`), including the two release notes, which keep their
+  `release-notes` template frontmatter alongside it.
+
+### Known gaps
+
+- **`check-counts.py` does not strip fenced code blocks** before scanning for count markers, so a
+  documented example of the marker syntax is read as a live claim. The same bug was fixed once for inline
+  code spans; the fenced case was never covered. `docs/explanation/architecture-detailed.md` therefore
+  describes the syntax in prose and says why.
+- **Two Gold requirements stay open pending a cross-repository decision.** `G2` (CI runs the Standard's own
+  conformance gate) and `G4` (a generated `INDEX.md`) both require `agent-skills-toolkit` to be reachable
+  from this repository's CI, and that package is currently private with no published entry point.
 
 ## [0.2.1] - 2026-08-08
 

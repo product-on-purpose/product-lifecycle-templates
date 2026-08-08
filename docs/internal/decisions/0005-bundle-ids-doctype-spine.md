@@ -6,6 +6,12 @@ decision-makers: [jprisant]
 
 # Bundle IDs are bare document-type handles; phase lives in metadata, never in path or ID
 
+## TL;DR
+
+- **Decision**: Bundle IDs are bare document-type handles (for example `prd`, not `deliver-prd`); phase is recorded only as a `phase:` metadata field, never in the directory path or the ID itself, and the mapping to pm-skills skill IDs is carried explicitly by the `pairs_with` field instead.
+- **Why**: Encoding phase into the ID would materialize a second taxonomy lens into the identity itself, the exact move the lens framework forbids, and would force renames whenever a type's phase assignment is later refined.
+- **Status**: Accepted; practice settled 2026-06-30 in methodology v0.2.0, transcribed 2026-07-11, ratified 2026-07-12. This record itself exists to close a gap: the implementation plan's P1 step originally called for phase-prefixed IDs (`deliver-prd`), and that divergence from the plan had never been recorded as a decision until now. No further correction or supersession of this record is noted, but a housekeeping follow-up is still open: the implementation plan's P1 text and any document still teaching `deliver-prd`-style IDs need a superseded note pointing here.
+
 ## Context and Problem Statement
 
 The implementation plan's P1 (settle and record the four foundational decisions) intended bundle IDs of the form `<phase>-<doctype>` (for example `deliver-prd`, matching pm-skills skill IDs). The library as actually built uses bare doc-type handles: the folder is `prd/`, the meta `id` is `prd`, and `phase: deliver` is a metadata field. This divergence was real, deliberate, and reasoned in the methodology ("Phase is recorded in metadata, never in the path, so the eventual directory scaffold stays a deferred, derivable choice"), but it was never recorded as a decision against the plan's stated intent. This record closes that gap.
