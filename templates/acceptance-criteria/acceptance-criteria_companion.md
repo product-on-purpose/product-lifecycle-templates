@@ -11,21 +11,27 @@
 ## 1. Orientation
 
 Acceptance criteria (AC) are **the conditions a user story must satisfy to be accepted as done, stated
-as observable outcomes from the user's point of view** [[2]](#ref-2)[[3]](#ref-3). They are the "Confirmation" in Ron
-Jeffries' three C's of a user story: the part that turns a conversation into something verifiable [[3]](#ref-3).
+as observable outcomes from the user's point of view**. That AC are written from the user's view is
+Thoughtworks' framing [[4]](#ref-4); the definition assembled around it is this bundle's. They are the
+"Confirmation" in Ron Jeffries' three C's of a user story: the part that turns a conversation into
+something verifiable [[3]](#ref-3).
 
 AC answer one question precisely: *how will we know this specific story is done and correct?* They make
 "done" a shared fact rather than an interpretation, and they give QA and engineering a concrete target
-before work starts [[2]](#ref-2)[[4]](#ref-4).
+before work starts. *That last point is this bundle's reading rather than a sourced claim: no source read
+for this bundle states it, though [[4]](#ref-4) records that scenarios convert into automated tests.*
 
 **At a glance**
-- They are **per-story** and **functional**: what this story must do for its user [[2]](#ref-2).
+- They are **per-story** [[2]](#ref-2) *(never read at source; see the reference note)*. That they are
+  also **functional**, stating what this story must do for its user, is this bundle's framing rather than
+  a sourced claim.
 - They come in two dominant forms: **rule-oriented** (a checklist of conditions) and **scenario-oriented**
   (Given/When/Then) [[4]](#ref-4)[[5]](#ref-5). *That the two mix freely, and should, is this bundle's
   position rather than a sourced claim; see [section 6](#6-debates-and-contested-boundaries).*
-- They are written from the user's perspective, describing *what*, not *how* [[2]](#ref-2).
+- They are written from the user's perspective [[4]](#ref-4). That this means describing *what*, not
+  *how*, is this bundle's framing: no source read for this bundle states it.
 - They are distinct from the **Definition of Done**, which is team-wide and applies to every increment
-  (see [§6](#6-debates-and-contested-boundaries)) [[2]](#ref-2)[[6]](#ref-6).
+  (see [§6](#6-debates-and-contested-boundaries)) [[6]](#ref-6).
 
 ---
 
@@ -64,7 +70,7 @@ story they gate; "accepted into what" must be unambiguous. *Beginner trap:* free
 no parent story.
 
 **Acceptance criteria (lean).** The rule-based conditions, as a checklist of observable, pass/fail
-outcomes [[2]](#ref-2). *Why:* discrete rules ("must reject an empty name") are clearest as a list; that
+outcomes. *Why:* discrete rules ("must reject an empty name") are clearest as a list; that
 is this bundle's judgment, not a sourced claim. *Expert
 note:* keep each criterion to a single, verifiable claim; a criterion you cannot mark pass or fail is
 not finished.
@@ -82,7 +88,7 @@ the negative criteria are often more valuable than the positive ones, and the mo
 **Non-functional criteria (full).** Story-specific quality gates: performance, accessibility, security,
 privacy thresholds. *Why:* a story can pass every functional check and still be unacceptable if it is
 slow or inaccessible. *Expert note:* keep these story-specific; universal quality bars belong in the
-Definition of Done, not here [[2]](#ref-2)[[6]](#ref-6).
+Definition of Done, not here [[6]](#ref-6).
 
 **Out of scope and notes (lean).** What the criteria deliberately do not cover, plus assumptions. *Why:*
 it lets a reviewer tell an omission from a decision.
@@ -107,8 +113,9 @@ when a flow is genuinely easier to read as Given/When/Then than as rules [[7]](#
 ## 5. Methodology lineage
 
 - **XP / user stories.** AC are the story's Confirmation [[3]](#ref-3), the testable conditions of satisfaction [[10]](#ref-10).
-- **Scrum.** AC gate the individual Product Backlog item; the Scrum Guide does not name "acceptance
-  criteria" as such but relies on them implicitly through the backlog and the Definition of Done [[2]](#ref-2)[[6]](#ref-6).
+- **Scrum.** AC gate the individual Product Backlog item. The Scrum Guide never uses the term "acceptance
+  criteria" [[6]](#ref-6); that AC are nonetheless implicit in how the Product Backlog and the Definition
+  of Done work together is a reading this bundle supplies, not a connection the Guide draws.
 - **BDD.** AC become Given/When/Then scenarios, often executable as Gherkin, blurring the line between a
   criterion and an automated acceptance test [[1]](#ref-1)[[4]](#ref-4)[[5]](#ref-5).
 - **Traditional / regulated.** AC echo formal acceptance testing (UAT) and trace to requirements; the
@@ -120,10 +127,21 @@ when a flow is genuinely easier to read as Given/When/Then than as rules [[7]](#
 
 **Acceptance criteria vs Definition of Done.** The most important distinction to get right. AC are
 **story-specific and functional** (what this story must do); the **Definition of Done is universal and
-applies to every increment** (coded, reviewed, tested, documented, accessible) [[2]](#ref-2)[[6]](#ref-6). The Product Owner
+applies to every increment** [[6]](#ref-6) (illustrative examples: coded, reviewed, tested, documented,
+accessible). The Product Owner
 typically owns AC. **Corrected 2026-08-06:** this line previously said the development team owns the DoD with the Product Owner having final say, citing [[2]](#ref-2), a page this bundle's own reference entry records as never read. The 2020 Scrum Guide does not support it and retired "development team" as a role; the sourced treatment now lives in the [`definition-of-done` companion](../definition-of-done/definition-of-done_companion.md). AC are
-written per story during refinement; the DoD is set once, up front, and revised rarely [[2]](#ref-2). A story is
-truly done only when it meets **both** its AC and the DoD [[2]](#ref-2). *Recommendation:* never duplicate DoD
+written per story during refinement *(this bundle's framing; the Guide names no acceptance-criteria
+concept at all, see [§5](#5-methodology-lineage))*, while the Definition of Done is defined for the
+product at the team or organizational level rather than per story [[6]](#ref-6).
+**Corrected 2026-08-08:** that sentence also said the DoD is "set once, up front, and revised
+rarely", citing [[2]](#ref-2). Nothing read for this bundle supports a creation count or a revision
+cadence, and the
+[`definition-of-done` companion](../definition-of-done/definition-of-done_companion.md) names the opposite
+as a measured failure mode: 15 of 137 surveyed practitioners reported a Definition of Done that had "never
+been updated". The cadence claim is cut rather than relabelled. A story is
+truly done only when it meets **both** its AC and the DoD; that combination is this bundle's own, resting
+on the Guide for the DoD half [[6]](#ref-6) and on Jeffries' Confirmation for the AC half [[3]](#ref-3).
+*Recommendation:* never duplicate DoD
 items into AC; if a check applies to every story, it belongs in the DoD.
 
 **Rule-oriented vs scenario-oriented.** Some teams default to checklists, others to Given/When/Then.
@@ -136,18 +154,20 @@ do not force everything into Given/When/Then, which bloats simple criteria.
 duplicates the design. *Recommendation:* cover the behaviors that matter and the edges that bite, and
 stop; AC are a quality gate, not a test plan.
 
-**Who writes them.** Conventionally the Product Owner, but the strongest AC are written collaboratively
-in refinement so engineering and QA can flag risky assumptions before the sprint [[2]](#ref-2). *Recommendation:*
-draft as PO, refine as a team.
+**Who writes them.** Conventionally the Product Owner, drafting during refinement [[2]](#ref-2) *(never
+read at source; see the reference note. The Scrum Guide sets out no process for writing or approving
+acceptance criteria, so there is nothing to re-source this to)*. *Recommendation:*
+draft as PO, refine as a team, so engineering and QA can flag risky assumptions before the sprint.
 
 ---
 
 ## 7. Anti-patterns and failure modes
 
 - **Implementation, not behavior.** "Uses a Redis cache" instead of "results load in under one second."
-  AC describe observable outcomes, not how they are achieved [[2]](#ref-2).
+  AC describe observable outcomes, not how they are achieved (see [§1](#1-orientation), where that
+  principle is stated and labelled as this bundle's framing).
 - **Duplicating the Definition of Done.** Restating universal checks (code reviewed, tests pass) as
-  story AC; they belong in the DoD [[2]](#ref-2)[[6]](#ref-6).
+  story AC; they belong in the DoD [[6]](#ref-6).
 - **Happy path only.** No edge or negative cases, so error behavior is invented during build.
 - **Unverifiable criteria.** A condition that cannot be marked pass or fail, failing the story's
   "Testable" requirement.
@@ -161,7 +181,7 @@ draft as PO, refine as a team.
 ## 8. Relationships to other artifacts
 
 - **Parent:** the user story (AC are its Confirmation) [[3]](#ref-3) and, above it, the PRD that sets scope.
-- **Sibling / gate:** the Definition of Done (universal quality gate that AC sit alongside) [[2]](#ref-2)[[6]](#ref-6).
+- **Sibling / gate:** the Definition of Done (universal quality gate that AC sit alongside) [[6]](#ref-6).
 - **Downstream:** test cases and automated acceptance tests (AC, especially Given/When/Then, seed them)
   [[4]](#ref-4)[[5]](#ref-5), and User Acceptance Testing for business sign-off [[8]](#ref-8).
 
@@ -197,7 +217,7 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 
 <a id="ref-1"></a>[1] Dan North. "[Introducing BDD](https://dannorth.net/blog/introducing-bdd/)." First published in *Better Software* magazine, March 2006. dannorth.net (accessed 2026-07-16). [primary]
 
-<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org. **NEVER READ AT SOURCE, across three attempts in three sessions: HTTP 403 on 2026-06-30 and 2026-07-16, and HTTP 202 with an empty body behind a bot challenge on 2026-08-08.** It is the most-cited reference in this bundle and the weakest evidence in it. **Every claim resting on it alone is marked unverified at the point it is made.** A 2026-08-08 re-read of the 2020 Scrum Guide against these claims established something this reference cannot be used to bridge: the Guide contains **zero occurrences of "acceptance criteria"**, and zero of "acceptance" in any form, so it draws no boundary between the Definition of Done and acceptance criteria at all. Where this bundle states such a boundary, the boundary is this library's own and is now labelled as such. [primary, unread]
+<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org. **NEVER READ AT SOURCE, across three attempts in three sessions: HTTP 403 on 2026-06-30 and 2026-07-16, and HTTP 202 with an empty body behind a bot challenge on 2026-08-08.** A 2026-08-08 re-read of the 2020 Scrum Guide against these claims established something this reference cannot be used to bridge: the Guide contains **zero occurrences of "acceptance criteria"**, and zero of "acceptance" in any form, so it draws no boundary between the Definition of Done and acceptance criteria at all. Where this bundle states such a boundary, the boundary is this library's own and is labelled as such. **Resolved 2026-08-08.** This reference carried sixteen citations and was the most-cited source in the bundle. Each was classified in duplicate, then adjudicated, then adversarially re-checked; the verdicts and the adjudication are recorded in [the research log](acceptance-criteria_research-log.md). Six moved to the Guide [[6]](#ref-6), which supports them directly; seven were cut, either because nothing read carries the claim or because the sentence is this bundle's own reasoning; one is the §6 correction note of 2026-08-06, which already disclosed the problem and is unchanged; and **two remain as live claims, each narrowed to the clause this reference is recorded as supporting and marked unverified at the point it is made** (§1 once, §6 once). No claim in this bundle rests silently on an unread page. [primary, unread]
 
 <a id="ref-3"></a>[3] Ron Jeffries. "[Essential XP: Card, Conversation, Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/)." ronjeffries.com, 2001 (accessed 2026-07-16). [practitioner]
 

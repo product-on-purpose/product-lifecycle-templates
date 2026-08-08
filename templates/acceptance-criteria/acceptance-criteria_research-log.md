@@ -13,7 +13,7 @@ claims that cite it.** Corrections below, including one factual error.
 | 3 | Ron Jeffries, "Essential XP: Card, Conversation, Confirmation," 2001 | practitioner | **Fetched and verified 2026-07-16** | The three C's, verbatim: "User stories have three critical aspects. We can call these Card, Conversation, and Confirmation." Confirmation as the acceptance test: "This component is the acceptance test". **Does NOT use "conditions of satisfaction"** |
 | 4 | Thoughtworks, "BDD acceptance criteria in user stories" | practitioner | URL confirmed live 2026-07-16; body not re-verified claim by claim | AC as scenarios; scenarios convert to automated tests; written from the user's view |
 | 5 | Cucumber / SmartBear, Gherkin reference | vendor | **Fetched and verified 2026-07-16** | Gherkin keywords; Given "put the system in a known state", When "describe an event, or an action", Then "describe an expected outcome, or result"; recommends 3-5 steps per example. **Gives no Gherkin origin date and does NOT say "one behavior per scenario"** |
-| 6 | Scrum Guide 2020 | primary | Verified (prior bundle); URL confirmed live 2026-07-16 | Definition of Done as a Scrum commitment; AC not separately named |
+| 6 | Scrum Guide 2020 | primary | **Fetched and verified 2026-08-08**, body read in full and counted programmatically (also verified for the `definition-of-done` bundle 2026-08-06) | Definition of Done as a Scrum commitment; DoD is "a formal description of the state of the Increment when it meets the quality measures required for the product"; an organisational DoD binds every team, verbatim "all Scrum Teams must follow it as a minimum", otherwise "the Scrum Team must create a Definition of Done appropriate for the product"; multiple teams on one product "must mutually define and comply with the same Definition of Done"; "The Developers are required to conform to the Definition of Done"; an item that does not meet it "cannot be released or even presented at the Sprint Review". **Zero occurrences of "acceptance criteria" and zero of "acceptance" in any form**, so the Guide names no AC concept and draws no AC-to-DoD boundary. **Does NOT state that a team may add criteria stricter than an organisational standard** (that is an inference from "as a minimum"), and says nothing about how often a DoD is revised |
 | 7 | Ranorex, "When to Use Given-When-Then" | vendor | **Fetched and verified 2026-07-16** | Given-When-Then suits user-behavior cases; scenarios automate via Cucumber/Selenium. **Does NOT compare GWT to rule checklists, does not discuss team defaults, and does not say discrete rules belong in a list** |
 | 8 | Master catalog entry 38 (Acceptance Criteria) | internal | On disk | Canonical form, aliases, Gherkin/BDD note, relationships |
 | 9 | Aslak Hellesoy / Ben Linders, "Cucumber is 10 Years Old" (InfoQ, 2018) | primary | **Fetched and verified 2026-07-16** | Gherkin's real origin, in the creator's words: "I created Cucumber in 2008"; "I also decided to give the Given-When-Then syntax a name, to separate it from the tool. That's why it's called Gherkin"; "I extracted the Given-When-Then parser from RSpec" |
@@ -90,11 +90,78 @@ Definition of Done", and "all Scrum Teams must follow it as a minimum" where an 
 of Done exists. **One correction to this library's own gloss**: "floor", "raise" and "never lower" are not
 Guide vocabulary. "As a minimum" is. The paraphrase is faithful and must not be presented as a quotation.
 
-Reference [2] is now marked unread at the point of every claim resting on it. A per-claim pass classifying
-all sixteen citations (re-source, keep-labelled, or cut) was run in duplicate and its verdicts are recorded
-at `_local/plans/2026-08-07_autonomous/F2-ac-403-verdicts.json`; the two passes agreed on six re-sourcings
-and split on cut-versus-keep, so applying them is deliberately left as a reviewed pass rather than done on
-the strength of a split verdict.
+**PER-CLAIM PASS APPLIED 2026-08-08.** The duplicate classification of all sixteen [2] citations
+(re-source, keep-labelled, or cut) is at `_local/plans/2026-08-07_autonomous/F2-ac-403-verdicts.json`. The
+two passes agreed on six re-sourcings and split four-ways on cut-versus-keep, so the split was adjudicated
+against this log's own `Supports:` clauses rather than settled on one pass's authority.
+
+**The adjudication overturned two verdicts the passes agreed on, and the disagreement is the useful part.**
+Both passes read lines 14 and 19 as safe cuts because each sentence was dual-cited: drop the unread [2] and
+the co-citation carries the claim. It does not.
+
+| Line | Claim after the proposed cut | Remaining citation | What that source's `Supports:` clause actually carries |
+|---|---|---|---|
+| 14 | "observable outcomes from the user's point of view" | [3] Jeffries | The three C's, and "This component is the acceptance test". The entry records an explicit negative, "**Does NOT** use 'conditions of satisfaction'" |
+| 19 | "give QA and engineering a concrete target before work starts" | [4] Thoughtworks | AC as scenarios; scenarios convert to automated tests; written from the user's view. Nothing about a pre-work target |
+
+Applying either cut as proposed would have left a claim resting on a source that does not support it,
+which is this library's dominant defect class manufactured by the fix rather than caught by it. Both are
+instead re-grounded: line 14 attributes the user's-view half to [4], which does carry it, and labels the
+surrounding definition as this bundle's; line 19 is labelled this bundle's reading outright. This is
+[decision procedure 4](../../docs/internal/decision-procedures.md) - a review finding can be right while
+its proposed fix is wrong - and it is the second time this bundle has produced that exact shape, after the
+WP-10 pass proposed substituting one Jeffries/Cohn entry for another that carried the claim no better.
+
+**The four genuine splits, and how each was settled.** (A fifth line, 140, was not split but was
+narrowed on the same principle; it is listed last.)
+
+- **Line 67** (lean-variant field description): **cut**. Section 3 describes this bundle's own template
+  sections and every other field description there is uncited; the clause immediately after this one
+  already says "that is this bundle's judgment, not a sourced claim". A citation on a sentence that
+  disclaims being sourced two clauses later is incoherent either way.
+- **Line 125** ("the DoD is set once, up front, and revised rarely"): **cut**, and on stronger grounds than
+  unsourcedness. This library's own [`definition-of-done` bundle](../definition-of-done/definition-of-done_companion.md)
+  names the opposite as a measured failure mode twice: anti-pattern 2, "the DoD written once and never
+  revisited", carrying 15 of 137 surveyed practitioners whose DoD "have never been updated"; and
+  anti-pattern 8, "the static DoD, read as a strength". A companion contradicting a sibling companion is a
+  defect the gate cannot see and [`review-standards.md`](../../docs/internal/review-standards.md) section 2
+  names it directly.
+- **Line 126** ("done only when it meets both"): **citation cut, sentence kept as labelled synthesis**. The
+  DoD half is Guide-sourced and the AC half is Jeffries'; marking the sentence "per unread source" would
+  have understated its support in the opposite direction.
+- **Line 148** (anti-pattern restating the what-not-how principle): **cut, and deliberately not
+  re-cited to [3]**, which one pass proposed. [3] does not carry that principle either. The line now points
+  back to section 1, where the principle is stated and labelled as this bundle's framing.
+- **Line 140** ("who writes them"): **kept, but narrowed.** [2]'s `Supports:` clause carries "PO owns AC"
+  and "AC at refinement" and nothing else. The collaborative-authorship rationale, that engineering and QA
+  should flag risky assumptions before the sprint, was never recorded as [2]'s, so it moved into the
+  sentence's own *Recommendation*, which is already this bundle's voice.
+
+**An adversarial pass over this adjudication then caught four more, three of them introduced by the fix
+itself.** Five independent lenses re-read the change against these `Supports:` clauses; eight findings
+survived an opus-level judging pass, and the useful ones were all of one kind: **a citation left carrying
+more of its sentence than the log grants it.** Line 22 read "per-story **and functional**" under [2], whose
+clause carries the per-story contrast only. Line 26's "describing *what*, not *how*" had no home in [2] at
+all and is now labelled. And line 125's replacement, written in this pass, said the DoD "is created
+**once**" under [6], reintroducing as a creation count exactly the cadence claim the same sentence's
+correction note had just cut, against a `Supports:` clause that says outright the Guide "says nothing about
+how often a DoD is revised". **Writing a fix is not exempt from the rule the fix enforces**, and three of
+eight confirmed findings were defects this pass created rather than found.
+
+**Disposition of all sixteen:** six re-sourced to the Guide [6], seven cut, one unchanged (the 2026-08-06
+correction note in the companion's section 6, which already disclosed that [2] was never read), two kept as
+live claims, each narrowed to the clause [2] is recorded as supporting and marked unverified at the point
+it is made. The Guide entry [6] above was expanded in the same pass, because moving six claims onto a
+`Supports:` clause that did not yet describe them would have recreated the defect one reference to the left.
+
+**Two defects of the same class were confirmed outside this pass's scope and are recorded, not fixed here,
+because scope discipline is what makes this diff auditable against the verdicts file.** First, [7] Ranorex
+is cited in section 4 and again in section 6 for a **comparison** between rule checklists and
+Given/When/Then, while its `Supports:` row states it "**does NOT** compare GWT to rule checklists". The
+2026-07-16 pass de-cited three [7] claims but abstracted a fourth in a way that kept the comparison under
+the citation. Second, the [3] Jeffries entry supports the three C's and nothing about observable outcomes,
+which is why line 14 was re-grounded rather than left to [3]; no other [3] citation was audited in this
+pass.
 
 - **[2] Scrum.org is the load-bearing source for the AC-vs-DoD distinction and is the most-cited
   reference in this bundle (16 citations), yet it has never been read at source.** It returns HTTP 403
