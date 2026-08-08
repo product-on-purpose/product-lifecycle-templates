@@ -212,7 +212,10 @@ library, and an autonomous run stops at each one:
 - **Scope.** What this library is willing to template, and what it declares out of scope.
 - **Family contracts.** Drafted autonomously, **adopted only after a maintainer read.** A contract binds
   every future member of a family, and it is the batch-review boundary the pipeline already names.
-- **Releases.** Version tags, release notes, and anything the release note asserts.
+- **Releases.** Version tags, release notes, and anything the release note asserts. The mechanics, and
+  the one ordering mistake that has already cost a release, are in
+  [`release-process.md`](release-process.md). **Merge permission is not release permission**; the two
+  have been granted separately every time.
 - **Any change to what the library claims about itself**, including the credibility claims in the README and
   the honesty claims in STATE.md.
 
