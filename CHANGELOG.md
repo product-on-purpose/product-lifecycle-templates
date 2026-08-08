@@ -42,6 +42,16 @@ people who want every change, release notes are for people who want to know what
   (`title`, `description`, `audience`, `level`), including the two release notes, which keep their
   `release-notes` template frontmatter alongside it.
 
+- **Convergent tier on the Advanced Skill Library Standard**, measured rather than declared. The library
+  takes the component prefix `plt-` and its skill moves from the repository root to
+  `skills/plt-fill-template/SKILL.md`, per
+  [ADR 0036 (the library prefix and the skill's path)](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md).
+  **This changes the installed skill's name** from `product-lifecycle-templates` to `plt-fill-template`;
+  the plugin keeps its name. The move is not a compliance chore: the Agent Skills specification requires a
+  skill's `name` to match its parent directory and the Claude Code plugin loader scans `skills/`, so a
+  `SKILL.md` at a repository root was almost certainly never discoverable by either. Whether
+  `npx skills add` now succeeds remains untested, and the README says so rather than claiming otherwise.
+
 ### Known gaps
 
 - **`check-counts.py` does not strip fenced code blocks** before scanning for count markers, so a
