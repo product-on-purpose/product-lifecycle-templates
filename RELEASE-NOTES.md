@@ -69,6 +69,7 @@ release tag whose tree contains the manifest. `v0.2.0` was tagged before its lis
 its tree has no `library.json`, and a published tag is not moved. The cost of reading a downstream contract
 late is one extra release, and the lesson is now written down in
 [`release-process.md`](docs/internal/release-process.md).
+[The full note](docs/releases/v0.2.1.md), backfilled 2026-08-09 and dated as such.
 
 ## v0.2.0
 
