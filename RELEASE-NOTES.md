@@ -8,6 +8,25 @@ Newest first.
 
 ---
 
+## v0.3.1
+
+**A documentation patch, cut because the previous tag denied the evidence it shipped with.**
+
+The doc-honesty sweep landed one commit after `v0.3.0` was tagged. So the tree the marketplace pins told
+readers in four places that **"there are no efficacy evaluations"** while carrying two of them in
+`evals/results/`. A published tag is not moved, so the correction is a release.
+
+Two more of the same defect were found on the way and fixed here. **This file** said template quality
+"has not been measured" in its standing closing section, three headings below its own `v0.3.0` entry
+reporting two VOID runs. And [ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)
+still called the install retest one that "has never been run", after it had been run and its consequences
+written into the next record.
+
+**Nothing you use changes.** No template, no bundle, no gate check.
+[The full note](docs/releases/v0.3.1.md).
+
+---
+
 ## v0.3.0
 
 **Gold tier, a withdrawn finding, and two defects found by running the install nobody had run.**
@@ -84,7 +103,12 @@ checks were written before the bundles were.
 
 ## What this library does not claim
 
-Every release above describes coverage and governance, both of which are checkable. None of them claims
-the templates are **good**, because that has not been measured. No template in this library has been
-filled in anger by anyone but its author, and the honest scope of the quality claim is written up in
+Every release above describes coverage and governance, both of which are checkable. **None of them claims
+the templates are good.** That was measured for the first time on 2026-08-08, on three of the 26 bundles,
+and both independent runs returned **VOID**: nothing here shows a document written with one of these
+templates leads to a better outcome than one written without it, and nothing here shows the reverse. What
+the runs do show is the **circularity signature** - a clear gap on criteria drawn from the templates' own
+guide, beside nothing at all on criteria drawn from neither
+([the result](evals/results/2026-08-08_matched-rerun.md)). No template in this library has been filled in
+anger by anyone but its author, and the honest scope of the quality claim is written up in
 [what the gate proves](docs/explanation/what-the-gate-proves.md).
