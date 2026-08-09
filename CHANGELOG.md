@@ -12,6 +12,33 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **`tools/check-version-agreement.py`**, CI step 22, gating the version across `library.json` (library and
+  every declared component), `.claude-plugin/plugin.json` and each declared skill's `metadata.version`.
+  Listing clause **L4** requires them to agree and names its verification method as "review"; cutting
+  `v0.3.1` meant hand-editing that string in six places, one of which is half of a URL. Mutation-checked
+  three ways. Two of the six are deliberately not duplicated: `INDEX.md` is the Standard's own **G4**
+  (verified by mutation rather than assumed), and the README badge is `check-readme-version.mjs`, which
+  ships in `agent-skills-toolkit` and which CI **cloned and then never invoked**. It is now invoked.
+  **CI steps: 24 to 25.**
+- **[ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md), `proposed` and not
+  accepted** - the first record in this library to sit unaccepted. What the measured circularity signature
+  obliges. It proposes a decision procedure rather than a template edit, states that **"the eval said so"
+  is not an admissible reason** for changing a template, and surfaces a gap in the library's own rules:
+  ADR 0030's admission test governs document *types* and has no element-level form, so it does not reach
+  "should this template ask for X".
+
+### Fixed
+
+- **A claim this repository published about someone else's software was wrong.**
+  [`roadmap.md`](docs/internal/roadmap.md) recorded that `skills add <repo>@<ref>` "prints the ref and
+  clones the default branch anyway", concluding that nobody pinning a version through that CLI gets one.
+  **`@` is not the ref separator. `#` is, and it works**, shown by a five-cell probe in which `#v0.2.1`
+  returns a skill existing only at that tag and `#v0.1.0` correctly finds nothing in a tree with no
+  `SKILL.md`. Withdrawn, and nothing was filed upstream because there was nothing to file. It is the third
+  finding withdrawn in two days for the same reason: **one observation with no control beside it**.
+
 ## [0.3.1] - 2026-08-08
 
 A documentation patch. No bundle content changed, no structure changed, and no gate check was added.

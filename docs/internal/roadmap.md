@@ -12,7 +12,7 @@
 > now governed by [`buildout-specs.md`](buildout-specs.md) (per-type specs, the taxonomy decisions D-A
 > through D-E, and the live progress table) and executed per
 > [`bundle-pipeline.md`](bundle-pipeline.md). This file was written 2026-07-10 and last cites **ADR 0020**;
-> there are now **37** decision records, and seventeen of them (0021 through 0037) postdate it and change the
+> there are now **38** decision records, and eighteen of them (0021 through 0038) postdate it and change the
 > plan it describes. Do not read section 3's work packages as the current build order.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
@@ -22,7 +22,7 @@
 > [`tools/check-counts.py`](../../tools/check-counts.py), so a changed number now fails CI instead of
 > ageing quietly here.
 
-<!-- counts: adrs=37, bundles=26 -->
+<!-- counts: adrs=38, bundles=26 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
