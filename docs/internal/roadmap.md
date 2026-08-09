@@ -190,7 +190,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 | Install | `skills add <repo>` | **Succeeds**, exit 0, project scope |
 | Payload | inspect the install | **12 KB**, two files, no library |
 | Old layout | same CLI against a `v0.2.1` worktree | **Found 1 skill** |
-| Ref pinning | `skills add <repo>@v0.1.0 --list` | returns skills that exist only on `main` |
+| Ref pinning | `skills add <repo>@v0.1.0 --list` | returns skills that exist only on `main` **(true, but the inference drawn from it was wrong: see the withdrawal below)** |
 
 **1. It installs, and that closes the question as asked.** The layout adopted in ADR 0036 is discoverable
 and installable. Nothing about the file's location is wrong.
@@ -215,9 +215,37 @@ skill, because a root `SKILL.md` short-circuits the subdirectory search. The rel
 removing the thing that was suppressing the `build-bundle` leak. The finding's other half, about the
 Claude Code plugin loader, was not tested here and may still hold.
 
-**An upstream defect worth knowing about.** `skills add <repo>@<ref>` prints the ref and clones the
-default branch anyway. Asked for `v0.1.0`, a tree containing no `SKILL.md` whatsoever, it returned the two
-skills that exist only on `main`. Anyone pinning a version through this CLI is not getting one.
+**An upstream defect worth knowing about. WITHDRAWN 2026-08-08 on a controlled retest, and the error was
+ours.** This paragraph claimed that `skills add <repo>@<ref>` "prints the ref and clones the default
+branch anyway", and that "anyone pinning a version through this CLI is not getting one". **That is
+false.**
+
+**`@` is not the ref separator. `#` is, and it works.** Re-probed against `skills@1.5.22`, the latest
+published version, each run in a fresh directory:
+
+| Command | Skills returned | Tree actually used |
+|---|---|---|
+| `add <repo> --list` | `plt-fill-template` | default branch |
+| `add '<repo>#v0.2.1' --list` | `product-lifecycle-templates` | **`v0.2.1`, correctly** |
+| `add '<repo>#v0.1.0' --list` | none, exit 1 | **`v0.1.0`, correctly** |
+| `add <repo>@v0.2.1 --list` | `plt-fill-template` | default branch |
+| `add <repo>@v9.9.9 --list` | `plt-fill-template` | default branch, no error |
+
+The two middle rows carry the proof. `#v0.2.1` returns a skill that exists **only** at that tag and
+nowhere on `main`, and `#v0.1.0` correctly finds nothing in a tree that contains no `SKILL.md` at all.
+Ref pinning works, and a version pinned through this CLI is honoured.
+
+**What survives is a UX wrinkle rather than a defect, and it is not worth a third party's triage time.**
+`@<anything>` is accepted silently, including a ref that does not exist, and echoed into the Source line
+as `.git @v9.9.9`, which is one space away from the working syntax's `.git @ v9.9.9`. Someone who typed
+`@` where they meant `#` gets no error and a confirmation line that reads like success. Deliberately not
+filed upstream.
+
+**This is written out at length because of the methodological point, not the CLI.** The original claim
+rested on one command with no comparison run beside it. It is the **third** finding withdrawn in two days
+for that same reason, after the efficacy pilot's -0.81 and finding #8's "probably never installable". A
+single observation with no control cannot distinguish *the tool ignored my input* from *I used the wrong
+input*, and all three times the second was true.
 
 ### M4: Proof (weeks 5-6)
 
