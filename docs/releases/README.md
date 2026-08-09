@@ -24,3 +24,9 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 - [`v0.1.0.md`](v0.1.0.md) - the first tagged release: four bundles and the governance gate that admits them
 - [`v0.2.0.md`](v0.2.0.md) - the Tier-1 floor completed, and the library's first user-facing documentation
 - [`v0.3.0.md`](v0.3.0.md) - Gold tier measured in CI, the pilot's held-out finding withdrawn, and two install defects found by running the install
+- [`v0.3.1.md`](v0.3.1.md) - a documentation patch: the `v0.3.0` tag shipped four documents denying the efficacy evaluations that shipped beside them
+
+**`v0.2.1` has no page here.** It was cut as a listing-contract patch and its curated read lives in
+[`RELEASE-NOTES.md`](../../RELEASE-NOTES.md) only. That is a gap against
+[`release-process.md`](../internal/release-process.md), which names a release note as one of four required
+artifacts per release, and it is recorded rather than quietly tolerated.

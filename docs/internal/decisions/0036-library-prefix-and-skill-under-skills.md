@@ -29,6 +29,13 @@ consulted: [claude]
 > harness to start shipping. That is recorded in
 > [ADR 0037 (keep the build harness off the published skill surface)](0037-keep-the-build-harness-off-the-published-skill-surface.md).
 
+> **Second correction, same date.** The Context and Consequences sections below call the roadmap's install
+> retest one that "has never been run" and say it "stays open". **It was run later the same day.** The
+> install succeeds, and running it produced two real defects. The retest is recorded in full in
+> [the roadmap](../roadmap.md)'s D2 block; what it obliged is in
+> [ADR 0037](0037-keep-the-build-harness-off-the-published-skill-surface.md). Both statements were true
+> when written, so they are marked in place rather than rewritten.
+
 - **Why:** the move is not a compliance chore. The root `SKILL.md` was almost certainly never discoverable
   by either consumer that matters: the Agent Skills specification defines a skill as a directory whose
   `SKILL.md` carries a `name` matching that directory, and the Claude Code plugin loader scans `skills/`.
@@ -70,7 +77,8 @@ the same way, and neither was checked when the file was added:
 
 The retest that would have caught this is written into
 [the roadmap](../roadmap.md) and **has never been run**: "record whether
-`npx skills add product-on-purpose/product-lifecycle-templates` now installs." The control in the original
+`npx skills add product-on-purpose/product-lifecycle-templates` now installs." **[Run later the same day.
+See the second correction at the top of this record.]** The control in the original
 D2 test, `skills add product-on-purpose/pm-skills`, **succeeded**, and `pm-skills` uses the
 `skills/<name>/SKILL.md` layout. So the layout this record adopts is the one with a passing test behind it,
 and the layout it replaces is the one with no test at all.
@@ -126,6 +134,8 @@ name-matches-directory rule means the two copies could not even carry the same `
   record improves the odds on documented spec behaviour and a passing control, and it does not claim the
   install works. The roadmap retest stays open, and the README's installability paragraph is corrected in
   this change from a stale "ships no `SKILL.md`" to an accurate "ships one, untested".
+  **[Closed later the same day: the retest was run and the install succeeds. See the second correction at
+  the top of this record.]**
 * The registry listing pins `v0.2.1`, whose tree has the old layout, and is unaffected until deliberately
   re-pinned. Re-pinning is a cross-repository action and stops for the maintainer, per
   [decision procedures](../decision-procedures.md).

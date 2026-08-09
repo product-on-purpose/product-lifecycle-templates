@@ -12,6 +12,49 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-08-08
+
+A documentation patch. No bundle content changed, no structure changed, and no gate check was added.
+
+### Fixed
+
+- **The `v0.3.0` tag shipped documentation that its own contents contradicted.** The doc-honesty sweep
+  landed one commit *after* the tag, so the tagged tree the marketplace pins carried `AGENTS.md`,
+  [`what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md),
+  [`getting-started.md`](docs/tutorials/getting-started.md) and `STATE.md` all still telling readers
+  **"there are no efficacy evaluations"**, inside a tree that contains `evals/results/` holding two of
+  them. Those corrections are unchanged from `main`; this release is what publishes them.
+- **`RELEASE-NOTES.md` still said template quality "has not been measured"** in its standing *"What this
+  library does not claim"* section, three headings below its own `v0.3.0` entry reporting that two
+  independent runs returned VOID. The sweep edited this file and missed its trailer.
+- **[ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md) called the install
+  retest one that "has never been run", and said it "stays open"**, in two places, after that retest had
+  been run and its consequences written into the adjacent
+  [ADR 0037](docs/internal/decisions/0037-keep-the-build-harness-off-the-published-skill-surface.md).
+  Marked in place with a dated correction rather than rewritten, because both statements were true when
+  written.
+- **Three of the four version headings in this file were not links.** `## [0.3.0]`, `## [0.2.1]` and
+  `## [0.2.0]` are shortcut reference links with no matching definition, so they render as literal
+  bracketed text, while `## [0.1.0]` renders as a link. `[Unreleased]` also still compared against
+  `v0.1.0`. Nothing caught it: `check-links.py`'s `LINK_RE` matches inline `[text](url)` only, so a
+  reference-style link is invisible to it.
+
+### Changed
+
+- **Version to `0.3.1` in all six places it is written**: `library.json` twice (the library and its one
+  component), `.claude-plugin/plugin.json`, `skills/plt-fill-template/SKILL.md` `metadata.version`,
+  `INDEX.md` (regenerated, not hand-edited), and the `README.md` shields.io badge. Listing clause **L4**
+  requires the registry entry, the release tag, `library.json` and every native manifest to agree. The
+  skill's `metadata.version` is **not cosmetic**: the skill fetches its templates from the release tag
+  matching it, so a stale value points every installed copy at the wrong tree.
+
+### Why this is a separate release
+
+A published tag is not moved. The precedent is `v0.2.0` to `v0.2.1`, cut for exactly this shape and
+recorded in [`release-process.md`](docs/internal/release-process.md). The alternative was leaving every
+plugin user installing a tree that disagrees with itself about the one property this library is most
+careful about.
+
 ## [0.3.0] - 2026-08-08
 
 ### Added
@@ -555,5 +598,9 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.2.1...v0.3.0
+[0.2.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/product-on-purpose/product-lifecycle-templates/releases/tag/v0.1.0
