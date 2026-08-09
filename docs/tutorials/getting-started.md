@@ -128,8 +128,9 @@ Every one of them is gate-green: [`tools/check-bundles.py`](../../tools/check-bu
 citation resolution, size nesting, and metadata schema conformance on every push.
 
 None of that is the same claim as "these templates work." **Zero of these bundles have been filled in
-anger by anyone but the library's author.** There are no efficacy evaluations, no completed real usage
-cycle, and no evidence yet that a lean PRD produces a better outcome than a blank page would have. The
+anger by anyone but the library's author.** Efficacy was measured for the first time on 2026-08-08 and
+the result was **VOID**, twice, so there is still no evidence that a lean PRD produces a better outcome
+than a blank page would have, and no completed real usage cycle. The
 gate proves a bundle's structure holds and its citations resolve; it cannot prove the guidance inside a
 bundle is right, only that nobody has changed the underlying facts without the check noticing. If you fill
 one of these templates for a real project, you will be doing something this library has not yet had done
