@@ -84,6 +84,7 @@ Every claim below was verified rather than reasoned about.
 | A command is invisible to the **Standard** too | The toolkit's `listCommandFiles` reads `<root>/commands/`, not `.claude/commands/`, so the file never becomes a declared component and never triggers `command-contract` (S7) |
 | Gold tier survives | Gate run with the move applied: `DECLARED: advanced, MEASURED: advanced, BLOCKED: nothing, 0 error(s), 0 warning(s)` |
 | No Codex obligation is created | `per-target-presence` (S6) returns early for undeclared targets, and `library.json` declares `agent-targets: ["claude"]` only |
+| **Claude Code actually loads it as `/build-bundle`** | **Added 2026-08-09.** The maintainer typed `/build-bundle` in a live session and it resolved, rendering the command body with its intended description. Until then this row did not exist, and it is the load-bearing one: the option was chosen partly because "it keeps `/build-bundle` working", which was **reasoned about rather than verified** while sitting three lines under a heading that says every claim here was verified. Nothing about the file could establish it, because the only instrument is a human typing the command. The fallback in option 2, `tools/build-bundle/SKILL.md`, is therefore **not needed** and stays recorded as the tested alternative rather than a pending action. |
 
 **Why option 1 over option 2 or 3.** It keeps `/build-bundle` working with **no per-machine setup**, and
 it keeps the harness in `.claude/`, where a repository's own agent configuration belongs. Option 2 buys
