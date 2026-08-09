@@ -106,21 +106,31 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   looking outward. It asserts that the set of skills the installer would export equals exactly the set
   `library.json` declares, in both directions: an undeclared skill that ships is a leak, and a declared
   skill that does not ship is a broken install.
+- **Version agreement** (`tools/check-version-agreement.py`). The library's version is written in six
+  places, and listing clause L4 requires them to agree while naming its own verification method as
+  "review". One of the six is not metadata: the skill's body says it fetches templates from the release
+  tag matching its own `metadata.version`, so that field is half of a URL, and a stale value points every
+  installed copy at a tree it did not ship with while nothing fails. Two of the six are deliberately left
+  to checks that already exist rather than duplicated here.
 - **The Standard's conformance gate** (`node scripts/check.mjs`, from a pinned checkout of
-  `agent-skills-toolkit`). See below: it is the only step whose rules were written elsewhere.
+  `agent-skills-toolkit`, which also supplies the README version-badge guard `check-readme-version.mjs`
+  run in the same step). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=24 -->
-Twenty-four CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Nineteen** prove the tree is
+<!-- counts: cisteps=25 -->
+Twenty-five CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Twenty** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The twenty-fourth is the only one that can surprise anybody**, because it is the only one this
-repository did not write. It runs the Advanced Skill Library Standard's conformance gate from a pinned
-checkout of a separate repository, so it can report that this library has stopped meeting a published
-external standard. Every other step can only report that this library disagrees with itself.
+**The twenty-fifth is the only one that can surprise anybody**, because it is the only one whose rules
+this repository did not write. It runs the Advanced Skill Library Standard's conformance gate, and the
+toolkit's README version-badge guard, from a pinned checkout of a separate repository, so it can report
+that this library has stopped meeting a published external standard. Every other step can only report
+that this library disagrees with itself. On 2026-08-08 it earned that description twice over: it caught a
+frontmatter violation in a release note that all twelve local checks, four self-tests and both generators
+had passed.
 
-None of the twenty-four, individually or together, can tell you whether a sentence in a companion is true.
+None of the twenty-five, individually or together, can tell you whether a sentence in a companion is true.
 
 ## What no machine checks
 

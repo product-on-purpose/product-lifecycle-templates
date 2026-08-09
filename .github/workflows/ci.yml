@@ -186,6 +186,20 @@ jobs:
       - name: Published skill surface
         run: python tools/check-export-surface.py
 
+      # Listing clause L4 requires the registry entry, the release tag, library.json and every native
+      # manifest to carry the same version, and names its verification method as "review". A human.
+      # Cutting v0.3.1 on 2026-08-08 meant hand-editing that string in six places, and one of them is
+      # not metadata at all: the skill's own body says it fetches templates from the tag matching its
+      # metadata.version, so that field is half of a URL. A stale value there points every installed
+      # copy at a tree it did not ship with, and nothing fails.
+      #
+      # Two of the six are deliberately NOT checked here, because they are already covered and a second
+      # copy of a rule is the shape this check exists to prevent: INDEX.md by the Standard's own G4
+      # (mutation-verified 2026-08-08), and the README badge by the toolkit's check-readme-version.mjs,
+      # which is invoked in the conformance step at the bottom of this file.
+      - name: Version agreement
+        run: python tools/check-version-agreement.py
+
       # The research-log generator's own fixture test, on the ADR 0025 argument: its merge path has no
       # live subject once a run is clean, because a collision only happens when two dimensions own the
       # same source. That is precisely how its two predecessor bugs hid. Both are now pinned by fixtures
@@ -283,3 +297,10 @@ jobs:
           npm --prefix "$RUNNER_TEMP/toolkit" ci --omit=dev
           echo "toolkit $TOOLKIT_REF at $(git -C "$RUNNER_TEMP/toolkit" rev-parse --short HEAD)"
           node "$RUNNER_TEMP/toolkit/scripts/check.mjs" "$GITHUB_WORKSPACE"
+          # The README's version lives inside a shields.io URL parameter, which is the one place
+          # check-counts.py states in its own docstring that it cannot reach, and DF-5 recurred there on
+          # 2026-08-07 with a badge two releases behind. The toolkit already ships the guard
+          # (check-readme-version.mjs, library.json vs the badge, no dependencies) and this job already
+          # has the toolkit cloned, so the honest fix was to invoke the tool that exists rather than
+          # write a second copy of the same rule here.
+          node "$RUNNER_TEMP/toolkit/scripts/check-readme-version.mjs" "$GITHUB_WORKSPACE"

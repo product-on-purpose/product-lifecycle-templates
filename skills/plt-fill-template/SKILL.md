@@ -135,15 +135,15 @@ below it. Grade honestly; the rubric asks for evidence you can point at, not for
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
 does not.
 
-**Enforced by CI, on every push and pull request:** 24 steps, including an 11-check gate per bundle - all
+**Enforced by CI, on every push and pull request:** 25 steps, including an 11-check gate per bundle - all
 files present, no em-dash or en-dash, lean nests strictly inside full, no unfilled placeholder in any
 example, every citation anchored and none padded, metadata valid against a schema, and conformance to the
 bundle's family contract. Separately: every relative link resolves, every research log carries a
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=24, logsgated=20, sourcesgated=796 -->
-24 CI steps; 20 research logs gated, covering 796 sources.
+<!-- counts: cisteps=25, logsgated=20, sourcesgated=796 -->
+25 CI steps; 20 research logs gated, covering 796 sources.
 
 **Not proved by anything:**
 
