@@ -8,6 +8,32 @@ Newest first.
 
 ---
 
+## v0.3.0
+
+**Gold tier, a withdrawn finding, and two defects found by running the install nobody had run.**
+
+The library reached **Gold (advanced)** on the Advanced Skill Library Standard, measured by the
+Standard's own gate running in this repository's CI rather than declared.
+
+**The efficacy pilot's headline was withdrawn.** Its held-out gap of -0.81, which read as evidence these
+templates suppress decision-usefulness, was an artifact of the measurement: the control arm had been told
+to produce decision-usefulness and the treatment arm had not. With the arms matched it is **-0.03**. What
+replaces it is quieter and harder to dismiss, and is now measured across two independent runs: **+0.85 on
+criteria drawn from the templates' own guide, beside nothing at all on criteria drawn from neither.** Both
+runs remain **VOID**. Nothing here is evidence that the templates improve documents.
+
+**`npx skills add` was executed for the first time**, three weeks after the skill shipped, and produced
+two defects. It installed a **maintainer-internal build harness** alongside the real skill, because
+removing the root `SKILL.md` in v0.2.0 removed a short-circuit that had been suppressing the installer's
+subdirectory search. And it installed **12 KB with none of the 26 bundles**, so the skill was reachable
+and inert. Both are fixed: the harness is no longer a skill, a check now asserts that what ships equals
+what the manifest declares, and the skill stops rather than writing a document it has no template for.
+
+**If you install this library, read [`docs/how-to/installing.md`](docs/how-to/installing.md).** There are
+two routes and they do not give you the same thing.
+
+---
+
 ## v0.2.1
 
 **The library became listable.** The Product on Purpose plugin registry refuses to list a repository that

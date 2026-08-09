@@ -9,7 +9,7 @@ reading anything else first.
 
 The one fact to hold onto while reading the rest of this file: **nothing here has been proven to work.**
 Every bundle is researched and gate-green, but zero of them have been filled in anger by anyone but the
-library's author, and there are no efficacy evaluations. See
+library's author, and the one efficacy measurement that exists returned **VOID** twice. See
 [What this library has not proven](#what-this-library-has-not-proven) before you trust a claim here more
 than it has earned.
 
@@ -129,8 +129,14 @@ agent selecting a bundle should not read more confidence into it than the librar
 - **No template here has been filled by anyone but the library's author.** The catalog's own graduation
   rule requires a type to "survive one real usage cycle" before it is considered proven; by that standard,
   nothing in this library has graduated.
-- **There are no efficacy evaluations.** Whether a filled document produced from one of these templates
-  performs better than one written without it has not been measured.
+- **Efficacy was measured on 2026-08-08, and the result does not support a quality claim.** Two blinded
+  runs over three of the 26 bundles both returned **VOID** on the discrimination gate. What the runs show
+  consistently is the circularity signature: documents written with these templates score well above a
+  strong generic-prompt control on the **templates' own** rubric criteria (+0.85) and no better than it on
+  decision-usefulness criteria drawn from neither the template nor its guide (-0.03, interval spanning
+  zero). Read [`evals/results/2026-08-08_matched-rerun.md`](evals/results/2026-08-08_matched-rerun.md)
+  before repeating any number from it. **Whether a filled document performs better than one written
+  without the template remains unproven.**
 - **The quality gate proves structure, not truth.** [`tools/check-bundles.py`](tools/check-bundles.py)
   confirms every citation in a companion resolves to a real, listed source; it cannot confirm that source
   supports the claim attached to it. A manual pass in July 2026 found 28 defects across four bundles that
@@ -147,8 +153,14 @@ git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 ```
 
 Everything above, `manifest.json`, the eight files per bundle, the guidance comments, is read directly
-from the checked-out tree. There is no install step and no runtime dependency: every file is plain
-Markdown, YAML, or JSON, readable with nothing more than a file-read tool.
+from the checked-out tree. There is no runtime dependency: every file is plain Markdown, YAML, or JSON,
+readable with nothing more than a file-read tool.
+
+**There is an install step, and which one you use decides whether the bundles are present at all.** The
+Claude Code plugin route clones the whole repository, so everything above is on disk. The
+`npx skills add` route installs the **skill only**, about 12 KB, and none of the 26 bundles; the skill
+detects this and stops rather than writing a document it has no template for. The routes and how to
+verify each are in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 ## See also
 

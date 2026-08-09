@@ -195,12 +195,18 @@ returns a defect list on its own.
 Coverage is not validation, and this library's own tier rule says so about itself. These are the limits
 as they stand today, stated without softening:
 
-- **Template quality is argued, not measured.** The gate and the CI steps prove structure. The four-lens
-  review argues content, and an argument is not a measurement. There is no scoring system, benchmark, or
-  test suite that outputs a number for "is this template good."
-- **There are no efficacy evals.** Nothing in this repository measures whether a filled document produced
-  with one of these templates leads to a better outcome than one written without it. That claim has never
-  been tested here, in either direction.
+- **Template quality was measured on 2026-08-08, on three of the 26 bundles, and the result was VOID.**
+  The gate and the CI steps prove structure; the four-lens review argues content, and an argument is not a
+  measurement. An actual measurement now exists and it does not support a quality claim either. Two
+  blinded runs both failed the discrimination gate, and what they show consistently is the **circularity
+  signature**: **+0.85** on criteria drawn from the templates' own guide, beside **-0.03**, an interval
+  spanning zero, on decision-usefulness criteria drawn from neither the template nor its guide.
+  [The result](../../evals/results/2026-08-08_matched-rerun.md), and
+  [the protocol](../internal/eval-protocol.md) that was written before any number existed.
+- **No efficacy claim is available in either direction.** Nothing here shows that a document written with
+  one of these templates leads to a better outcome than one written without it, and nothing here shows the
+  reverse. Three bundles of twenty-six were tested, by an LLM rather than a human author, and scored by
+  LLM judges.
 - **No template has been filled by anyone but the author.** Every worked example in every bundle was
   written by the same person who wrote the template. Independent usage, the strongest test of whether a
   template's shape actually holds up in someone else's hands, has not happened yet.
