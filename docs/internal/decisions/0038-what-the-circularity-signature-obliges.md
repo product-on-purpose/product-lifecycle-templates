@@ -9,18 +9,19 @@ consulted: [claude]
 
 ## TL;DR
 
-- **Decision (proposed, not taken):** treat the measured circularity signature as a real finding about the
-  bundles, and resolve it by deciding, per held-out criterion, whether the property belongs in the
-  templates, in the guides and rubrics, or nowhere. **This record proposes the decision procedure and the
-  evidence needed; it does not propose an edit to any template**, and it deliberately does not assert that
-  the sources required to admit any of them exist.
-- **Why:** two independent 114-agent runs agree that documents written with these templates score **+0.85**
-  against criteria drawn from the templates' own guide and **-0.03**, an interval spanning zero, against
-  decision-usefulness criteria drawn from neither. The library's own protocol names that pattern and says
-  it gets acted on rather than buried.
-- **Status:** **proposed 2026-08-08.** Nothing is adopted. Three of the four candidate properties would be
-  cheap and uncontroversial; one is a genuine scope question that
-  [ADR 0030](0030-templating-scope-markdown-documents.md)'s admission test, as written, **does not reach**.
+- **Decision (proposed, not taken):** adopt an **element admission test** and a **three-track triage** that
+  routes any candidate property to exactly one of a guide rubric row, a house convention, or a template
+  element. **This record proposes a rule, not a template edit.** Applying that rule to the four properties
+  the eval surfaced then becomes a mechanical exercise rather than a judgment call.
+- **Why:** two independent 114-agent runs put these templates at **+0.85** against criteria drawn from
+  their own guide and **-0.03**, spanning zero, against criteria drawn from neither. Deciding what that
+  obliges turned out to be impossible, and for two structural reasons that are **missing rules rather than
+  hard trade-offs**: the library has no element-level admission test, and the protocol sets **no standard
+  at all for what a held-out gap should look like**.
+- **Status:** **proposed 2026-08-08, substantially revised 2026-08-10.** Nothing is adopted. The first
+  draft recommended adopting three of four properties; that recommendation is **withdrawn**, because it
+  rested on a number the protocol never gated and because two of the four were never scope questions at
+  all.
 
 ## Context and Problem Statement
 
@@ -43,23 +44,54 @@ mentioning rubric items rather than by being better."*
 **The templates move a document toward what they already ask for, and toward nothing else measured.** The
 question this record exists to frame is what, if anything, that obliges.
 
-## The four held-out criteria, and what each would actually cost
+## First, the number has no standard beside it
 
-The held-out criteria are consistent across the three measured bundles, and their absence from each
-template and guide was **searched for rather than assumed**, with the search recorded per criterion in
-[`evals/rubrics/`](../../../evals/rubrics/). They are not four of a kind, and treating them as "three or four
-new sections" would be wrong:
+**The protocol defines four validity gates**: hollow separation, discrimination, agreement and control
+sanity ([`eval-protocol.md`](../eval-protocol.md) section 4). **None of them is about the held-out gap.**
 
-| Criterion | What it asks | What changing it would actually be |
+So **-0.03 is neither a pass nor a fail.** It is a measurement with no threshold behind it, and any
+attempt to decide scope from it requires someone to invent the threshold at the moment of deciding. That
+is not a hard judgment call; it is an undefined one, and it is the reason the first draft of this record
+produced a recommendation nobody could calibrate.
+
+Two further properties of the number matter before anything is built on it:
+
+* **It measures spillover, and spillover was never established as a reasonable expectation.** The held-out
+  criteria are, by construction, things the template does not mention. A template can only move them
+  indirectly. A template that does exactly what it says and no more may be **working correctly**, and
+  nothing in the protocol says otherwise.
+* **The criteria were selected by searching the templates for absences**, which is the right way to prove
+  absence and biases the result toward null. [The re-run](../../../evals/results/2026-08-08_matched-rerun.md)
+  already records the related independence problem, that the authoring agents had read the templates. The
+  sharper form is that **selecting on absence and then measuring absence is close to circular in its own
+  right.**
+
+**This does not withdraw the finding.** The rubric gap is real and its interval excludes zero. It means
+the *held-out* half is currently uninterpretable as a verdict, and that is fixable: see the proposed
+protocol work at the end of this record.
+
+## The four properties are not one kind of thing
+
+Their absence from each template and guide was **searched for rather than assumed**, with the search
+recorded per criterion in [`evals/rubrics/`](../../../evals/rubrics/). But they resist a single decision
+because they belong to three different tracks, and **only one of the three is a scope question at all**:
+
+| Property | Track | What changing it would actually be |
 |---|---|---|
-| `no_internal_contradiction` | Nothing in the document contradicts anything else in it | **A rubric row and a guide anti-pattern.** Not a section. No template gains a heading. No scope question arises, because the document is not being asked to contain anything new. |
-| `scopable_without_a_meeting` | A reader could size and sequence the work from this alone | **A rubric row.** Arguably already the implicit goal of several sections; what is missing is that nothing grades the document *as a whole* against it. |
-| `decision_vs_input_traceable` | A reader can tell what the author decided from what the author was told | **A writing convention plus a rubric row.** It asks for provenance marking on load-bearing claims, not a new section. Closest to a house-style change, and it would touch every guide if adopted, not one. |
-| `explicit_stop_or_kill_condition` | The document names what would make the team stop or kill this | **A genuine new section or field**, and the only one of the four that raises a scope question. |
+| `no_internal_contradiction`, nothing here contradicts anything else here | **Quality property** | A guide rubric row and a named anti-pattern. No template gains a heading, and **no scope question arises**, because the document is not asked to contain anything new |
+| `scopable_without_a_meeting`, a reader could size and sequence the work from this alone | **Quality property** | A guide rubric row. Arguably the implicit goal of several sections already; what is missing is that nothing grades the document *as a whole* against it |
+| `decision_vs_input_traceable`, a reader can tell what the author decided from what they were told | **Convention** | A house-style change to how load-bearing claims are written, not a section. If adopted it touches **every guide in the library**, not one |
+| `explicit_stop_or_kill_condition`, the document names what would make the team stop or kill this | **Element** | A genuine new section or field. **The only one of the four that is a scope question**, and the only one that needs a source |
 
-**Three of these four are guide and rubric work.** They cost a rubric row, a named anti-pattern, and a
-regeneration of the affected self-grade arithmetic, which `check-rubric-scope.py` already enforces. Only
-the fourth proposes that a document contain something it does not currently contain.
+**A quality property makes no claim about the world.** "This document should not contradict itself" does
+not assert that practitioners write anything a particular way, so it needs no source, no admission test
+and no decision record. **An element does make such a claim**: putting a Stop Conditions heading in the
+`prd` template asserts that a PRD is the kind of document that carries one, and that assertion can be
+wrong.
+
+**That distinction is the resolution.** The first draft of this record treated all four as one scope
+decision, which is exactly why its recommendation read as taste rather than as a rule being applied. Two
+of the four were never scope decisions.
 
 ## Decision Drivers
 
@@ -124,52 +156,97 @@ criterion in practice that the written rule does not contain.
 
 ## Considered Options
 
-* **A. Adopt nothing.** Record the finding, change no bundle. The signature stands as a published,
-  unacted-on result.
-* **B. Adopt the three guide-and-rubric criteria only**, and route the fourth through whichever admission
-  rule the maintainer selects above.
-* **C. Adopt all four**, treating `explicit_stop_or_kill_condition` as a new section across the affected
-  families.
-* **D. Adopt all four across all 26 bundles**, on the reasoning that a house-style property should not vary
-  by family.
+* **A. Decide the four case by case, now.** What this record's first draft proposed. **Rejected:** two of
+  the four are not scope questions, and the one that is would be decided against a number the protocol
+  never gated.
+* **B. Adopt a rule first, then apply it.** A three-track triage plus an element admission test. The four
+  properties become the rule's first worked application rather than four separate arguments.
+* **C. Adopt nothing and close the finding.** Named rather than dismissed: a template's job may
+  legitimately be to make documents match a good shape, and the re-run takes no position on whether that
+  is valuable.
+* **D. Fix the instrument first**, and re-open the question when the held-out gap means something.
 
 ## Decision Outcome
 
 **None. This record is `proposed` and takes no decision.** The recommendation offered for the maintainer
-to accept or reject is **option B**, for three reasons:
+to accept or reject is **B, with D running alongside it**, because D is independent of any scope decision
+and would be worth doing even if C were chosen.
 
-1. It separates the cheap and uncontroversial from the genuinely contested, so the scope question is
-   argued on its own rather than carried along by three easy changes.
-2. The three it adopts require **no source at all**, because they ask the document to be internally
-   coherent and legible rather than to contain new content. A rubric row asking "does anything here
-   contradict anything else" makes no claim about the world.
-3. It leaves the fourth blocked on evidence rather than on opinion, which is the shape this library's
-   admission decisions have taken every previous time.
+### The proposed triage: which track is this candidate on?
 
-**What acceptance of option B would require**, none of which this record has done:
+Applied in order, and it terminates for most candidates at step 1:
 
-* A search, per affected bundle, for whether named sources publish that document type **containing a
-  stated stop, kill, or halt condition**, logged to the same standard as any bundle's research pass and
-  capable of returning "no", as `prototype-brief`'s did.
-* A decision on the admission-rule gap above, since the search only settles the question under reading (a).
-* A pass over every guide's self-grade rubric, because rows change the arithmetic and
-  `check-rubric-scope.py` enforces it, and because the unresolved threshold-wording question recorded in
-  `STATE.md` gets larger with every row added.
-* Fresh held-out criteria for any subsequent measurement.
+1. **Is it a claim about the world?** That is, does adopting it assert that documents of this type are
+   written a particular way? **If no**, it is a **quality property**: it becomes a guide rubric row, and
+   this record's machinery does not apply. No source, no admission test, no decision record.
+2. **If yes, is it about what the document contains, or about how its claims are written?** *How* is a
+   **convention**: it is house style, it is adopted across every guide at once or not at all, and it is
+   argued on consistency rather than on evidence.
+3. **Otherwise it is an element**, and it faces the test below.
+
+### The proposed element admission test
+
+Generalises [ADR 0030](0030-templating-scope-markdown-documents.md), which generalised
+[ADR 0028](0028-adopt-a-format-axis.md). A template may ask a document to **contain** an element when:
+
+* **E1, sourced.** A named source publishes documents of that type containing that element, in
+  circulation. **The search must be capable of returning "no"**, which is what made `prototype-brief` fail
+  ADR 0030's test rather than pass it decoratively.
+* **E2, or labelled.** Failing E1, the library argues the element in its own voice under decision
+  procedure 11, labels it as the library's own contribution rather than as received practice, **and states
+  what would falsify it**. This is the route `standing-standards` already took for its Review Trigger
+  sections.
+* **E3, homed.** Name the artifact where the element would otherwise live. If a better home exists, it
+  goes there instead. Without this clause every template becomes a junk drawer for good ideas, which is
+  the failure mode ADR 0030 was written against in a different costume.
+* **E4, sized.** It fits the lean variant, or it ships in `full` only. Lean is the default and stays the
+  default; an element that pushes lean past its weight has changed the variant model, not added to it.
+
+E1 or E2 is required. E3 and E4 are required in both cases.
+
+### What the four properties do under this rule
+
+Stated as the rule's first worked application, and **not as a decision**:
+
+| Property | Track | Where it lands |
+|---|---|---|
+| `no_internal_contradiction` | Quality property | Rubric row. Terminates at step 1, needs nothing further |
+| `scopable_without_a_meeting` | Quality property | Rubric row. Terminates at step 1 |
+| `decision_vs_input_traceable` | Convention | A family-wide guide edit, argued on consistency, competing with the twice-raised rubric-threshold question already open in [`STATE.md`](../../../STATE.md) |
+| `explicit_stop_or_kill_condition` | Element | Faces E1 through E4. **No search has been run**, and this record asserts nothing about whether one would succeed |
+
+### What acceptance would require, none of which this record has done
+
+* **Writing the test into [`decision-procedures.md`](../decision-procedures.md)** as a numbered procedure,
+  so it is citable from any future bundle rather than living inside one ADR about one eval.
+* **Adding the gap question to [`bundle-pipeline.md`](../bundle-pipeline.md)** as a standing research
+  dimension: *what does a good document of this type do that this bundle does not ask for?* That is the
+  part that makes this systematic. Today the question was asked once, as a byproduct of building an eval.
+* **A source search for the stop-or-kill element**, per affected bundle, logged to the same standard as
+  any bundle's research pass.
+* **A protocol decision on the held-out gap** (option D): either state what a passing gap looks like, or
+  declare the gap deliberately non-gated and say why. And **change how held-out criteria are selected**,
+  from searching the templates for absences to drawing them independently and measuring coverage
+  afterwards.
+* **Fresh held-out criteria** for any subsequent run, if any template changes.
 
 ### Consequences
 
-* Good: the finding is acted on through the library's own admission machinery rather than by an edit
-  justified by a number.
-* Good: the admission-rule gap is surfaced now, while it is one record's problem, rather than the next time
-  someone proposes a section.
-* Bad, and stated plainly: **option B changes what several guides grade, and this library has an open,
-  twice-raised question about how its rubric thresholds are worded.** Adding rows before settling that
-  makes the eventual family-wide edit larger.
+* Good: **the decision stops being a judgment call and becomes a rule application.** That is the only form
+  in which this library has ever settled a scope question, and the only form a future maintainer can
+  re-run.
+* Good: two of the four properties leave the scope conversation entirely, at step 1, and cost a rubric row
+  each.
+* Good: the rule outlives this eval. The next candidate element arrives with a test already written.
+* Bad, and stated plainly: **E3 will reject good ideas.** An element that genuinely improves a document
+  but belongs in an adjacent artifact gets turned away, and the library has no mechanism to remember what
+  it turned away or why. That is a real cost of the clause, not a hypothetical one.
+* Bad: a convention adopted under step 2 is argued on **consistency rather than evidence**, which is a
+  weaker footing than E1 or E2, and this record does not fix that.
 * **Open, and not closed by this record:** whether the templates *should* move a document toward anything
   beyond their own criteria at all. A +0.85 rubric gap may be exactly what a user wants, and
   [the re-run](../../../evals/results/2026-08-08_matched-rerun.md) explicitly takes no position on whether
-  scoring better against a document type's own standards is valuable.
+  scoring better against a document type's own standards is valuable. **Option C remains live.**
 
 ## More Information
 

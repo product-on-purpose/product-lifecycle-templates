@@ -24,10 +24,26 @@ people who want every change, release notes are for people who want to know what
   **CI steps: 24 to 25.**
 - **[ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md), `proposed` and not
   accepted** - the first record in this library to sit unaccepted. What the measured circularity signature
-  obliges. It proposes a decision procedure rather than a template edit, states that **"the eval said so"
-  is not an admissible reason** for changing a template, and surfaces a gap in the library's own rules:
-  ADR 0030's admission test governs document *types* and has no element-level form, so it does not reach
-  "should this template ask for X".
+  obliges. It proposes a rule rather than a template edit, and states that **"the eval said so" is not an
+  admissible reason** for changing a template.
+
+  **Substantially revised 2026-08-10, withdrawing its own first recommendation.** That draft proposed
+  adopting three of four properties; it rested on a number the protocol never gated, and treated four
+  things as one kind of thing. The revision proposes an **element admission test** (E1 sourced, E2 or
+  labelled as the library's own with a falsifier, E3 homed in the right artifact, E4 sized to lean) and a
+  **three-track triage** routing any candidate property to a rubric row, a house convention, or a template
+  element. **Two of the four leave the scope conversation at step 1**, because "this document should not
+  contradict itself" makes no claim about the world and so needs no source.
+
+### Changed
+
+- **[`eval-protocol.md`](docs/internal/eval-protocol.md) records that the held-out gap has no validity
+  gate.** The protocol defines four gates and none of them is about it, so a value like `-0.03` is
+  **neither a pass nor a fail** and no decision can be driven from it without inventing a threshold at the
+  moment of deciding. Two further properties are recorded with it: the gap measures **spillover**, which
+  was never established as a reasonable expectation, and held-out criteria are **selected by searching the
+  templates for absences**, which biases the measurement toward a null result. Two candidate fixes are
+  named and **neither is adopted**, because changing the instrument is a maintainer decision.
 
 ### Fixed
 

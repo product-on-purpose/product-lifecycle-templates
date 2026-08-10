@@ -136,6 +136,30 @@ Ported from the sibling harness, which unit-tests the ordering.
 | **Agreement** | stdev of T overall across judges at most about 0.7 | The rubric is ambiguous; tighten before trusting scores |
 | **Control sanity** | C not floored | The control drifted to a strawman; re-run |
 
+**The held-out gap is not on that list, and this is a gap in the protocol rather than an omission with a
+reason.** Recorded 2026-08-10, while trying to decide what the measured circularity signature obliges
+([ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md)):
+
+* **There is no target for the held-out gap**, so a value like `-0.03` is **neither a pass nor a fail**. It
+  can be reported and discussed, but no scope or content decision can be driven from it without someone
+  inventing a threshold at the moment of deciding, which is the opposite of a gate.
+* **The held-out gap measures spillover**, whether a template improves properties it never mentions, and
+  **nothing here establishes that spillover is a reasonable expectation**. A template that does exactly
+  what it says and no more may be working correctly.
+* **Held-out criteria are currently selected by searching the templates for absences.** That is the right
+  way to prove absence and it **biases the measurement toward a null result**, because the criteria are
+  chosen for maximal distance from what the template addresses.
+  [The re-run](../../evals/results/2026-08-08_matched-rerun.md) already records the related independence
+  problem, that the authoring agents had read the templates. **This protocol did not**, and this is the
+  sharper form of it: contamination is a risk to the criteria, whereas selection-on-absence is a bias in
+  the design.
+
+**Two candidate fixes, neither adopted, because changing the instrument is a maintainer decision:** state
+what a passing held-out gap looks like, or declare the gap deliberately non-gated and say why; and draw
+held-out criteria **independently of the templates**, from the decision-usefulness literature, then measure
+afterwards how many the templates happen to cover. The second converts coverage from an artifact of the
+selection method into a finding.
+
 **Verdict ordering is absolute-failure-first.** A bundle fails if its own score is below the bar or any
 criterion floors, *regardless of the gap*. A weak control can never launder a bad bundle into a pass. Only a
 bundle that independently clears the absolute bar is labelled void when the gap is inconclusive.
