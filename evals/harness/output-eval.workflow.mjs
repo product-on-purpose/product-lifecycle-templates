@@ -188,7 +188,30 @@ const SCORE_SCHEMA = {
   },
 }
 
-const JUDGES = [1, 2, 3]
+// SEAT 3 RUNS A DIFFERENT MODEL FROM THE GENERATOR, AND THAT IS THE ENTIRE POINT OF IT.
+//
+// Generation runs on sonnet. Until 2026-08-10 all three judge seats ran on sonnet too, so every score
+// in both completed runs came from the same model that wrote the documents being scored. The standard
+// mitigation, one seat on a different model, was deliberately skipped in the matched re-run to protect
+// comparability with the pilot. The pilot's headline was withdrawn, so that reason has expired.
+//
+// STATED HONESTLY, BECAUSE THIS IS A PARTIAL MITIGATION AND NOT A FIX. Every model reachable from this
+// harness is a Claude model, so a shared-vendor scoring idiosyncrasy is completely untouched by this
+// change and no result should be read as if it were controlled for. What the change does buy is
+// narrower and real: a quirk specific to sonnet can no longer sweep all three seats unnoticed, because
+// seat 3 will disagree with seats 1 and 2 when one exists.
+//
+// Seat 3 is opus rather than haiku because judging IS the judgment-heavy step here, and it drives the
+// verdict. Putting the cheap model in the diverse seat would trade away the thing being measured to
+// save on the thing being paid.
+//
+// The per-seat model is carried through into every emitted row as judgeModel, so a future analysis can
+// test whether the diverse seat systematically disagrees rather than assuming it does not.
+const JUDGE_SEATS = [
+  { id: 1, model: 'sonnet' },
+  { id: 2, model: 'sonnet' },
+  { id: 3, model: 'opus' },
+]
 
 // TWO judging sessions per scenario per draft, and this is not a cosmetic split.
 //
@@ -252,8 +275,8 @@ const perScenario = await pipeline(
       for (const session of SESSIONS) {
         const inSession = artifacts.filter((a) => a.gen === gen && (a.arm === session.treatment || a.arm === 'C' || a.arm === 'H'))
         if (inSession.length < 2) continue
-        for (const j of JUDGES) {
-          jobs.push({ gen, session: session.id, judge: j, inSession })
+        for (const seat of JUDGE_SEATS) {
+          jobs.push({ gen, session: session.id, judge: seat.id, model: seat.model, inSession })
         }
       }
     }
@@ -266,10 +289,10 @@ const perScenario = await pipeline(
       return agent(
         judgePrompt(scenario.type, scenario.id, shown),
         {
-          label: 'judge' + job.judge + ':' + job.session + job.gen + ':' + scenario.id,
+          label: 'judge' + job.judge + '/' + job.model + ':' + job.session + job.gen + ':' + scenario.id,
           phase: 'Judge',
           schema: SCORE_SCHEMA,
-          model: 'sonnet',
+          model: job.model,
           effort: 'high',
         }
       ).then((v) => ({
@@ -277,6 +300,7 @@ const perScenario = await pipeline(
         gen: job.gen,
         session: job.session,
         judge: job.judge,
+        judgeModel: job.model,
         key: shown.map((a) => ({ label: a.label, arm: a.arm })),
         verdict: v,
       }))
@@ -323,7 +347,7 @@ for (const scenarioResult of perScenario.filter(Boolean)) {
       const arm = map[normLabel(a.label)]
       if (!arm) { unmapped.push({ scenario: r.scenarioId, session: r.session, judge: r.judge, label: a.label }); continue }
       rows.push({
-        scenario: r.scenarioId, gen: r.gen, session: r.session, judge: r.judge, arm,
+        scenario: r.scenarioId, gen: r.gen, session: r.session, judge: r.judge, judgeModel: r.judgeModel, arm,
         rubric: a.rubricMean, heldOut: a.heldOutMean, probes: a.probesAnswered, overall: a.overall,
         notes: a.notes,
       })

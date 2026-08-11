@@ -37,8 +37,25 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **One of the eval's three judge seats now runs a different model from the generator.** Until now every
+  seat and the generator were the same model, so nothing separated the scorer from the writer in either
+  completed run; the mitigation had been skipped deliberately to protect comparability with the pilot, and
+  that reason expired when the pilot's headline was withdrawn. **Stated as a partial mitigation**: every
+  model reachable from the harness is a Claude model, so a shared-vendor idiosyncrasy is untouched. The
+  per-seat model is emitted on every row as `judgeModel`, making "does the diverse seat actually disagree"
+  a measurable question rather than an assumption.
+- **`check-workflow-prompts.py` now parses every workflow script**, not just heuristically scanning it,
+  and its docstring's claim that "no check in this repository can stand in for" proving a script loads is
+  **corrected in place** as too strong. The reason nobody had done this: `node --check` on a `.mjs`
+  workflow script reports a SyntaxError on a **completely correct file**, because the top-level `return`
+  every workflow body ends with is legal inside the runtime's async wrapper and illegal in ESM. Wrapping
+  the body first reproduces the runtime's framing. **The two checks are complementary and neither is
+  redundant**: the 2026-08-05 defect's stray backticks *rebalanced* into valid syntax, which a parser
+  cannot see by construction, while the heuristic cannot see an unbalanced brace. Both branches
+  mutation-tested.
 - **[`eval-protocol.md`](docs/internal/eval-protocol.md) records that the held-out gap has no validity
-  gate.** The protocol defines four gates and none of them is about it, so a value like `-0.03` is
+  gate**, and, separately, **who the judges are** - a validity-relevant fact the protocol had never
+  stated. The protocol defines four gates and none of them is about it, so a value like `-0.03` is
   **neither a pass nor a fail** and no decision can be driven from it without inventing a threshold at the
   moment of deciding. Two further properties are recorded with it: the gap measures **spillover**, which
   was never established as a reasonable expectation, and held-out criteria are **selected by searching the
