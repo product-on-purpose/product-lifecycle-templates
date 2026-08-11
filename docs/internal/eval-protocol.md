@@ -173,6 +173,18 @@ stripped and heading casing normalised. Both arms are truncated to the same toke
 rule, so length alone cannot separate them, and judges are instructed explicitly against form bias: a
 well-organised document that omits the success metric scores below a messy one that states it.
 
+**Who the judges are, which this protocol did not previously state.** Three seats per panel. **From
+2026-08-10, seat 3 runs a different model from the other two and from the generator**; before that date,
+including in both completed runs, every seat and the generator were the same model, so nothing separated
+the scorer from the writer. The mitigation was skipped deliberately in the matched re-run to protect
+comparability with the pilot, and that reason expired when the pilot's headline was withdrawn.
+
+**This is a partial mitigation and no result should be read as though it controlled for judge identity.**
+Every model reachable from this harness is a Claude model, so a shared-vendor scoring idiosyncrasy is
+untouched. What it buys is narrower: a quirk specific to one model can no longer sweep all three seats
+unnoticed. The per-seat model is emitted on every row as `judgeModel`, so whether the diverse seat
+actually disagrees is a measurable question rather than an assumption.
+
 **Perfect blinding is impossible and the protocol says so.** A treatment artifact carries the template's
 section names and ordering, and a judge may recognise them. The hollow arm and the probes bound how much
 that can matter, which is why they exist. This limitation ships in the validation notes rather than being
