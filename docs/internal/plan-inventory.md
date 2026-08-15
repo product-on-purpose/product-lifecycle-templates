@@ -8,7 +8,7 @@
 > It exists because that session found the answers scattered across seven documents, two of them
 > untracked, and three of them stale in ways that changed the answer.
 
-<!-- counts: bundles=26, adrs=38, cisteps=25 -->
+<!-- counts: bundles=26, adrs=40, cisteps=25 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are
@@ -102,7 +102,7 @@ Ordered by what unblocks the most other work.
 
 | # | Needs a spec | Why it matters | Current state |
 |---|---|---|---|
-| 1 | **The ADR 0038 follow-through**, if accepted | Writing the element admission test into [`decision-procedures.md`](decision-procedures.md) as a numbered procedure, and adding the gap question to [`bundle-pipeline.md`](bundle-pipeline.md) as a standing research dimension. The second half is what makes it systematic rather than a one-off | Named inside [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md). No spec |
+| ~~1~~ | ~~The ADR 0038 follow-through~~ | ~~Writing the element admission test into `decision-procedures.md`, and adding the gap question to `bundle-pipeline.md`~~ | **Done 2026-08-14.** [Procedure 12](decision-procedures.md) and [research dimension 6](bundle-pipeline.md). Never needed a spec; the ADR was the spec |
 | 2 | **The eval protocol amendments** | Three separate changes: a validity gate for the held-out gap, a redesign of held-out selection, and independence between the probe set and the held-out set | Named in `eval-protocol.md` section 4. Each stops for the maintainer. No spec |
 | 3 | **The references and selection layer** (WP-70 through WP-75) | A method-selection guide, a relationship map, a glossary, an anti-pattern catalog. The 2026-07-17 phases plan calls this the only content-shaped work permitted while the wedge is stalled, because it is selection infrastructure rather than coverage | Proposed in `_local/planning/claude_2026-07-17_next-phases-plan.md`, never ratified. Verified unbuilt: no references directory exists, and `state` and `resource_type` appear zero times in `tools/meta.schema.json`. Needs its ontology ADR first |
 | 4 | **The flagship content review findings** (CR-1 through CR-7) plus the 2026-08-05 agentic-era recommendations A1 and A2 | The only substantive critique of the library's advice quality as opposed to its governance. CR-1 (the missing AI-era debate in the PRD bundle) and A1 (a PRD AI-era section) are the same work, reached independently three weeks apart | Unapplied. Verified: `AI` appears zero times in `templates/prd/prd_companion.md`, and no `Alternatives Considered` section exists anywhere in that bundle. Both sources are untracked. Gated behind ADR 0038 |
@@ -114,18 +114,28 @@ Ordered by what unblocks the most other work.
 
 Taken from `STATE.md`, which remains authoritative for this table.
 
-| ID | Decision | Open since | Holds up |
+**Three of these five closed on 2026-08-14**, the day after this file was written, which is worth noting
+because it is what a worked decision backlog looks like rather than a failure of the inventory.
+
+| ID | Decision | Open since | State |
 |---|---|---|---|
-| ADR 0038 | What the circularity signature obliges | 2026-08-08 | Every element-level template change, which is items 1 and 4 above |
-| D1 | Build the Layer 1 generator, or not | 2026-06-29 | Nothing. Correctly gated on a usage signal |
-| D4 | Regulated-industry tier appetite | 2026-06-29 | Tier-3 regulated, permanently, until answered |
-| VL-1 | Business model | 2026-07-02 | The site track, item 7 |
-| VL-3 | Maintenance cadence | 2026-07-02 | M6. Scheduled there |
+| ADR 0038 | What the circularity signature obliges | 2026-08-08 | **Closed 2026-08-14: accepted**, with option C rejected consciously. Both follow-through items done: procedure 12, and research dimension 6 |
+| D4 | Regulated-industry tier appetite | 2026-06-29 | **Closed 2026-08-14: no, for now**, on the regulation-currency burden. Reopens on a pull from a real regulated team |
+| VL-1 | Business model | 2026-07-02 | **Closed 2026-08-14 ([ADR 0040](decisions/0040-free-and-open-source-no-paid-tier.md)): free and open source, no paid tier.** Unblocks the site track, item 7 above |
+| D1 | Build the Layer 1 generator, or not | 2026-06-29 | **Open, and correctly so.** Waiting on a usage signal. The one open decision the audit did not fault |
+| VL-3 | Maintenance cadence | 2026-07-02 | **Open.** Scheduled at M6, which is fine for the quarterly source pass. The monthly decision-triage half is arguably worth starting sooner |
+
+**A separate decision, [ADR 0039](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md), was
+taken the same day and was not on this list**, because it was not an open decision: it is an amendment the
+maintainer initiated. It removes the demand gate on Tier-2 and Tier-3 builds, which **changes item 3 in
+section 5 above**: the references layer no longer needs a pull to be legitimate, only a rationale.
 
 The **decision SLA** recorded in `STATE.md` says any open decision whose resolution cost is under two
-hours is resolved within three working days or explicitly re-dated with a reason. Three of the five above
-carry no stated cost and no re-dating, which is the same shape as the D2 and D3 breach that `STATE.md`
-records at a factor of six.
+hours is resolved within three working days or explicitly re-dated with a reason. **The three that closed
+had been open 6, 46 and 43 days.** None of them triggered the SLA, and the reason is mechanical rather than
+negligent: **the SLA keys on a stated resolution cost, and all three carried `n/a` in that column**, so no
+clock ever started. That is the same shape as the D2 and D3 breach `STATE.md` records at a factor of six,
+and it is a defect in the rule rather than in the following of it.
 
 ## 7. What this document does not do
 

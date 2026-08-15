@@ -49,9 +49,9 @@ pattern). Read one existing sibling bundle end-to-end to mirror its exact file f
 
 ## Phase 1: Research fan-out
 
-Run a Workflow of 4-6 parallel sonnet researchers, one per dimension (origins/canon, structure, methodology
-lineage, debates/status, relationships/tooling), each doing **real WebSearch/WebFetch** under strict honest
-retrieval. Template:
+Run a Workflow of 5-6 parallel sonnet researchers, one per dimension (origins/canon, structure, methodology
+lineage, debates/status, relationships/tooling, **the gap question**), each doing **real WebSearch/WebFetch**
+under strict honest retrieval. Template:
 
 ```js
 export const meta = { name: '<type>-research', description: '...', phases: [{ title: 'Research' }] }
@@ -78,6 +78,32 @@ const results = await parallel(DIMENSIONS.map(d => () =>
   agent(d.prompt, { label:`research:${d.key}`, phase:'Research', model:'sonnet', schema:SOURCE_SCHEMA })))
 return results.filter(Boolean)
 ```
+
+### Dimension 6: the gap question (standing, since 2026-08-14)
+
+**Added by [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md).** One researcher is always
+assigned this question:
+
+> **What does a good document of this type do that this bundle does not ask for?**
+
+It is a **search for absences**, run deliberately at build time rather than discovered later. The first time
+anyone asked it, it was a byproduct of building an evaluation, and it surfaced four candidate properties for
+three bundles. Asking it once, accidentally, three bundles into twenty-six, is not a method.
+
+**Three rules make the answer usable rather than a wish list:**
+
+1. **It returns candidates, never obligations.** Anything it finds is routed through
+   [decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template):
+   most terminate as a guide rubric row and never touch a template.
+2. **Sources, not intuition.** The dimension is bound by the same honest-retrieval discipline as every
+   other. "A good PRD probably should..." is not a finding; a named source publishing documents of that
+   type containing the element is.
+3. **A null result is a real result and gets recorded.** "Nothing found that this bundle omits" is worth
+   writing down, because the next author will otherwise ask again from scratch.
+
+**This dimension must not read the bundle's own rubric before searching**, for the same reason held-out
+eval criteria must not be drawn from the template: a search that starts from what the bundle already asks
+for will find that the bundle asks for it.
 
 ## Phase 2: Synthesize the research log
 

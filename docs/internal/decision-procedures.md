@@ -204,6 +204,55 @@ claim no logged source supports", and [`review-standards.md`](review-standards.m
 it. Contracts had no equivalent rule because nothing reviewed contracts against evidence until the research
 dimensions started pointing at them.
 
+## 12. A property or section is proposed for a template
+
+**Adopted 2026-08-14 by [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md).** It exists
+because a question that read as a hard judgment call turned out to be a rule nobody had written:
+[ADR 0030](decisions/0030-templating-scope-markdown-documents.md)'s admission test governs whether a
+**document type** is templatable and says nothing about whether an admitted type should **contain** a given
+element. `prd` was admitted long ago; "should the `prd` template ask for a stop-or-kill condition" is a
+different question, and it had no test.
+
+**Step 1: triage. Which of three things is this?** Applied in order, and it terminates at step 1 for most
+candidates.
+
+1. **Is it a claim about the world?** Does adopting it assert that documents of this type are written a
+   particular way? **If no, it is a quality property.** It becomes a guide rubric row and nothing else. No
+   source, no admission test, no decision record. *"This document should not contradict itself"* asserts
+   nothing about how practitioners write.
+2. **If yes: is it about what the document contains, or about how its claims are written?** *How* is a
+   **convention**. It is house style, it is adopted across every guide at once or not at all, and it is
+   argued on consistency rather than on evidence.
+3. **Otherwise it is an element**, and it faces the test below.
+
+**The distinction that does the work: a quality property makes no claim about the world; an element does.**
+Putting a Stop Conditions heading in the `prd` template asserts that a PRD is the kind of document that
+carries one, and that assertion can be wrong.
+
+**Step 2: the element admission test.** A template may ask a document to **contain** an element when:
+
+| | Clause | What it means |
+|---|---|---|
+| **E1** | **Sourced** | A named source publishes documents of that type containing that element, in circulation. **The search must be capable of returning "no"** |
+| **E2** | **Or labelled** | Failing E1, the library argues it in its own voice under [procedure 11](#11-a-family-contract-asserts-something-about-the-world), labels it as the library's own contribution rather than received practice, **and states what would falsify it** |
+| **E3** | **Homed** | Name the artifact where the element would otherwise live. If a better home exists, it goes there instead |
+| **E4** | **Sized** | It fits the lean variant, or it ships in `full` only. Lean is the default and stays the default |
+
+**E1 or E2 is required. E3 and E4 are required in both cases.**
+
+**Two things this procedure forbids.**
+
+- **"The eval said so" is not an admissible reason.** A measurement identifies candidates; it cannot justify
+  them. A record that used a score as its evidence would be committing the unsourced-confidence defect the
+  four-lens review exists to catch.
+- **Adding a held-out eval criterion to a template destroys it as an instrument.** It stops being held out,
+  and the next run's movement measures the rebuilt instrument rather than the change.
+
+**The cost of E3, stated because it is real:** it will reject good ideas that belong in an adjacent
+artifact, and this library has **no mechanism to remember what it turned away or why**. Without the clause
+every template becomes a junk drawer for good ideas, which is the failure ADR 0030 was written against in a
+different costume. The clause is kept and the cost is accepted.
+
 ## What always stops for the maintainer
 
 These are not judgment calls with a procedure. They are decisions that belong to the person who owns the
