@@ -14,6 +14,23 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`docs/internal/pull-queue-spec.md`](docs/internal/pull-queue-spec.md)**, the executable spec for
+  WP-32 (demand capture). It exists because [ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)
+  demand-gates Tier 2 and Tier 3, and the Tier-1 floor is now complete, so **the demand gate is the only
+  gate left on new content and it has no door in it**. Written after verifying that the work is **half
+  built, not unbuilt**, which both the roadmap's M3 table and a planning review had wrong: the three
+  intake templates in `.github/ISSUE_TEMPLATE/` shipped 2026-08-07. What is missing is the mechanical
+  half. **Zero issues have been filed**, the three labels those templates declare do not exist in the
+  repository, `docs/reference/pull-queue.md` does not exist, and `atlas/catalog-data.json` still carries
+  `built` with no `state`. One decision inside it stops for the maintainer: the demand rule.
+- **[`docs/internal/plan-inventory.md`](docs/internal/plan-inventory.md)**, a dated inventory of what is
+  planned, what is specified, and what is neither. It answers three questions that took a working session
+  to reassemble from seven documents, two of them untracked. Its findings: **there is no forward-looking
+  release plan** (no document names the next version or what earns it, and both patch releases so far were
+  cut as corrections rather than shipped as increments); **four of six build specs are complete, idle, and
+  untracked**, living in the gitignored audit package where no check can see them go stale; and every
+  roadmap item that would deliver value to a person who has not adopted the library is unbuilt.
+
 - **`tools/check-version-agreement.py`**, CI step 22, gating the version across `library.json` (library and
   every declared component), `.claude-plugin/plugin.json` and each declared skill's `metadata.version`.
   Listing clause **L4** requires them to agree and names its verification method as "review"; cutting
@@ -37,6 +54,31 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **[`docs/internal/roadmap.md`](docs/internal/roadmap.md) refreshed to 2026-08-14, in place rather than
+  rewritten.** Its status column dated 2026-07-28 had claimed 18 of 27 Tier-1 types were built and that
+  `v0.2.0` was the next release, **through three tagged releases**, while every counts marker in the file
+  matched the tree. That is the blind spot `check-counts.py` prints on every run, costing something for
+  the second time: **the check compares markers and cannot read the prose around them.** M2 is now
+  recorded as done with its real exit (four releases and Gold tier, not `v0.2.0`), M3 and M4 carry dated
+  per-work-package status blocks, section 4's calendar is marked overtaken with what actually consumed
+  weeks 3 through 6, and section 6 records **which of its own risks fired**. Two of them did. The
+  roadmap-goes-stale risk fired *and its tripwire missed it*, because the signal it watches is "STATE.md
+  older than the last tag", which stayed green while this file drifted; the two are different documents.
+  The historical projections are preserved rather than edited, per the correction convention this
+  repository uses on decision records.
+- **[`STATE.md`](STATE.md)'s "Next milestone" section reconciled with the tree.** It still said "M2, the
+  machine layer, is under way" and tracked WP-25 through WP-28 toward `v0.2.0`, **while its own header
+  block three screens above said the Tier-1 floor was complete**. The file contradicted itself, and the
+  half that was wrong is the half that says what to do next. M2 is now recorded as complete with its real
+  exit, the four WPs are broken out with verified status, and the direction is M3. **Auditing those four
+  rows found a deliverable that was silently dropped:** WP-25's fill tooling was never built.
+  `tools/strip-template.py` does not exist and `filled_by` appears in **zero** files under `templates/`,
+  which nothing had recorded. WP-26's `fetch_status` column was superseded by
+  [ADR 0029](docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md) rather than
+  forgotten, and two of WP-27's named files do not exist, one of them covered elsewhere under a different
+  name. **This is the same class as DF-5 (prose drifts where no marker sits)**, whose last recorded
+  instance was in this same file, and it is the first time the drift was in the section that tells a
+  reader what to work on rather than in one that describes what exists.
 - **One of the eval's three judge seats now runs a different model from the generator.** Until now every
   seat and the generator were the same model, so nothing separated the scorer from the writer in either
   completed run; the mitigation had been skipped deliberately to protect comparability with the pilot, and
