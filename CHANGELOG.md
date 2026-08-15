@@ -14,6 +14,32 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md): the maintainer
+  may build any template; grow-by-pull becomes an input, not a gate.** Amends
+  [ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md) for Tier 2 and Tier 3. With the
+  Tier-1 floor complete, zero external users, and **zero issues ever filed**, a strict pull gate was not a
+  gate but a stop: 151 Tier-2 and 27 Tier-3 candidates could never be built, because no population existed
+  from which a pull could arrive. That is the chicken-and-egg ADR 0021 named, one tier up and with no
+  scheduled escape. **The load-bearing half does not change**: coverage and real usage stay separate honest
+  numbers, "zero real fills" stays visible, and every bundle still faces the full pipeline, the four-lens
+  review, and ADR 0030's admission test. **Discretion is about which types get built, never about the
+  standard they are built to.** Records its own accepted cost plainly, that coverage-first is now guarded by
+  judgment rather than by rule, and carries a falsifier: re-open at roughly forty bundles with still-zero
+  external fills.
+- **[ADR 0040](docs/internal/decisions/0040-free-and-open-source-no-paid-tier.md): free and open source
+  under Apache-2.0, no paid tier.** Closes **VL-1**, open **43 days** against a three-day SLA, which never
+  triggered the SLA because it carried no stated resolution cost. It had blocked the site track from
+  choosing a domain or a call to action. Open core was rejected for now because it needs entitlement
+  machinery before it has content, and the tier that would most plausibly carry a price is separately closed
+  as "no". Names its own cost: the maintenance is funded by the maintainer's time indefinitely with no
+  mechanism that scales it, which is **the counterweight to ADR 0039** having just removed the rule that
+  limited how many bundles may be built.
+- **[`.claude/README.md`](.claude/README.md)**, stating that the directory is maintainer-internal, why the
+  build harness is a slash command rather than a skill, and the one rule that matters: **do not create
+  `.claude/skills/`**, because anything placed there ships to every installer. That is not hypothetical; it
+  is what [ADR 0037](docs/internal/decisions/0037-keep-the-build-harness-off-the-published-skill-surface.md)
+  was written to fix.
+
 - **[`docs/internal/pull-queue-spec.md`](docs/internal/pull-queue-spec.md)**, the executable spec for
   WP-32 (demand capture). It exists because [ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)
   demand-gates Tier 2 and Tier 3, and the Tier-1 floor is now complete, so **the demand gate is the only
@@ -54,6 +80,27 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **[ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md) accepted 2026-08-14**,
+  ending the only period in this library's history when a decision record sat unaccepted. **Option C, adopt
+  nothing, was rejected consciously rather than skipped**, which is what the record asked for. What is
+  adopted is the rule plus the instrument fix; **no template changes as a result.** Both follow-through
+  items it committed to are done in this same change: the test is written into
+  [`decision-procedures.md`](docs/internal/decision-procedures.md) as **procedure 12**, so it is citable
+  from any bundle rather than living inside one ADR about one eval, and the gap question is added to
+  [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md) as **standing research dimension 6**. That second
+  one is the part that makes it systematic: *"what does a good document of this type do that this bundle
+  does not ask for?"* had been asked exactly once, accidentally, three bundles into twenty-six, as a
+  byproduct of building an evaluation. The dimension carries the rule that a null result is a real result
+  and gets recorded, and the constraint that it must not read the bundle's own rubric before searching, for
+  the same reason held-out eval criteria must not be drawn from the template.
+- **`STATE.md`: D4 (regulated-industry appetite) and VL-1 (business model) both closed**, leaving D1 (the
+  Layer 1 generator, correctly gated on a usage signal) and VL-3 (maintenance cadence, scheduled at M6) as
+  the only open entries in that table. Three positions previously carried implicitly are now recorded under
+  "Open by choice, not by oversight": the **sidecar-asset scope** question is deliberately left open, since
+  deciding it now would be writing a rule with no subject; the **family-wide rubric-threshold rewording** is
+  **scheduled** and explicitly not to be re-argued per bundle, after three independent reviewers raised it;
+  and the **2026-08-05 agentic-era research is parked with its three false premises named**, rather than
+  promoted or deleted.
 - **[`docs/internal/roadmap.md`](docs/internal/roadmap.md) refreshed to 2026-08-14, in place rather than
   rewritten.** Its status column dated 2026-07-28 had claimed 18 of 27 Tier-1 types were built and that
   `v0.2.0` was the next release, **through three tagged releases**, while every counts marker in the file

@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-08-08
 decision-makers: [jprisant]
 consulted: [claude]
@@ -9,7 +9,7 @@ consulted: [claude]
 
 ## TL;DR
 
-- **Decision (proposed, not taken):** adopt an **element admission test** and a **three-track triage** that
+- **Decision:** adopt an **element admission test** and a **three-track triage** that
   routes any candidate property to exactly one of a guide rubric row, a house convention, or a template
   element. **This record proposes a rule, not a template edit.** Applying that rule to the four properties
   the eval surfaced then becomes a mechanical exercise rather than a judgment call.
@@ -18,10 +18,11 @@ consulted: [claude]
   obliges turned out to be impossible, and for two structural reasons that are **missing rules rather than
   hard trade-offs**: the library has no element-level admission test, and the protocol sets **no standard
   at all for what a held-out gap should look like**.
-- **Status:** **proposed 2026-08-08, substantially revised 2026-08-10.** Nothing is adopted. The first
+- **Status:** proposed 2026-08-08, substantially revised 2026-08-10, **accepted 2026-08-14**. The first
   draft recommended adopting three of four properties; that recommendation is **withdrawn**, because it
   rested on a number the protocol never gated and because two of the four were never scope questions at
-  all.
+  all. What is accepted is **option B with option D alongside it**: the rule, plus the instrument fix.
+  **No template changes as a result of this record.**
 
 ## Context and Problem Statement
 
@@ -168,9 +169,16 @@ criterion in practice that the written rule does not contain.
 
 ## Decision Outcome
 
-**None. This record is `proposed` and takes no decision.** The recommendation offered for the maintainer
-to accept or reject is **B, with D running alongside it**, because D is independent of any scope decision
-and would be worth doing even if C were chosen.
+**B, with D running alongside it. Accepted 2026-08-14.**
+
+D was accepted separately and on its own merits, because it is independent of any scope decision and would
+have been worth doing even if C had been chosen. **C was considered and rejected**, not skipped: the
+maintainer was asked to reject it consciously and did. The reason for preferring B is that the rule outlives
+this eval and is re-runnable by a future maintainer, whereas C closes one question and leaves the next
+proposed section facing the same undefined judgment call.
+
+**Nothing about the four properties is decided by this acceptance.** The rule is adopted; its first
+application is still pending the source search named below.
 
 ### The proposed triage: which track is this candidate on?
 
@@ -215,20 +223,15 @@ Stated as the rule's first worked application, and **not as a decision**:
 | `decision_vs_input_traceable` | Convention | A family-wide guide edit, argued on consistency, competing with the twice-raised rubric-threshold question already open in [`STATE.md`](../../../STATE.md) |
 | `explicit_stop_or_kill_condition` | Element | Faces E1 through E4. **No search has been run**, and this record asserts nothing about whether one would succeed |
 
-### What acceptance would require, none of which this record has done
+### What acceptance required, and where each item stands
 
-* **Writing the test into [`decision-procedures.md`](../decision-procedures.md)** as a numbered procedure,
-  so it is citable from any future bundle rather than living inside one ADR about one eval.
-* **Adding the gap question to [`bundle-pipeline.md`](../bundle-pipeline.md)** as a standing research
-  dimension: *what does a good document of this type do that this bundle does not ask for?* That is the
-  part that makes this systematic. Today the question was asked once, as a byproduct of building an eval.
-* **A source search for the stop-or-kill element**, per affected bundle, logged to the same standard as
-  any bundle's research pass.
-* **A protocol decision on the held-out gap** (option D): either state what a passing gap looks like, or
-  declare the gap deliberately non-gated and say why. And **change how held-out criteria are selected**,
-  from searching the templates for absences to drawing them independently and measuring coverage
-  afterwards.
-* **Fresh held-out criteria** for any subsequent run, if any template changes.
+| Follow-through | State |
+|---|---|
+| **Write the test into [`decision-procedures.md`](../decision-procedures.md)** as a numbered procedure, so it is citable from any future bundle rather than living inside one ADR about one eval | **Done 2026-08-14**, as procedure 12 |
+| **Add the gap question to [`bundle-pipeline.md`](../bundle-pipeline.md)** as a standing research dimension: *what does a good document of this type do that this bundle does not ask for?* This is the part that makes it systematic; the question has so far been asked once, as a byproduct of building an eval | **Done 2026-08-14**, as research dimension 6 |
+| **A protocol decision on the held-out gap** (option D): state what a passing gap looks like, or declare it deliberately non-gated and say why. And **change how held-out criteria are selected**, from searching the templates for absences to drawing them independently and measuring coverage afterwards | **Accepted, execution pending.** Both land in [`eval-protocol.md`](../eval-protocol.md) |
+| **A source search for the stop-or-kill element**, per affected bundle, logged to the same standard as any bundle's research pass | **Not started.** It is the rule's first real application, and it may return "no" |
+| **Fresh held-out criteria** for any subsequent run, if any template changes | **Not applicable yet.** No template has changed |
 
 ### Consequences
 
@@ -243,10 +246,12 @@ Stated as the rule's first worked application, and **not as a decision**:
   it turned away or why. That is a real cost of the clause, not a hypothetical one.
 * Bad: a convention adopted under step 2 is argued on **consistency rather than evidence**, which is a
   weaker footing than E1 or E2, and this record does not fix that.
-* **Open, and not closed by this record:** whether the templates *should* move a document toward anything
-  beyond their own criteria at all. A +0.85 rubric gap may be exactly what a user wants, and
+* **Open, and deliberately not closed by this record:** whether the templates *should* move a document
+  toward anything beyond their own criteria at all. A +0.85 rubric gap may be exactly what a user wants, and
   [the re-run](../../../evals/results/2026-08-08_matched-rerun.md) explicitly takes no position on whether
-  scoring better against a document type's own standards is valuable. **Option C remains live.**
+  scoring better against a document type's own standards is valuable. **Adopting the rule does not answer
+  this**; it only ensures that whoever does answer it applies a test rather than a preference. Option C was
+  rejected as a way of *closing* the question, not as a possible answer to it.
 
 ## More Information
 
