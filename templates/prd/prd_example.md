@@ -79,10 +79,16 @@ carries the why, the scope, and the success criteria.
 
 - As a Recurring Analyst, I want to save my current filters as a named view, so that I can return to
   exactly this slice tomorrow without rebuilding it.
+- As a Recurring Analyst, I want to see the views I have saved for a dashboard and switch between them
+  in one action, so that moving between two slices does not mean rebuilding either one.
 - As a Recurring Analyst, I want to set a view as my default for this dashboard, so that it opens the
   way I work.
 - As a Team Lead, I want to share a view with my team, so that we are all looking at the same numbers.
 - As a Recurring Analyst, I want to rename or delete a view I made, so that my list stays meaningful.
+
+These are representative stories, not the full decomposition; that lives in the product backlog. The
+rule this team works to: **every Must and Should requirement below maps to at least one story before
+build starts.** FR-6 is a Could and is deliberately carried without one.
 
 ## Functional requirements
 

@@ -2,6 +2,57 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.0, reviewed 2026-08-15 - flagship content review, the half that could be applied (CR-5, CR-6, CR-7)
+
+**No template change, so `template_version` stays 0.1.0.** The changes are to the example, the guide
+rubric, and one companion cross-reference. This closes the applicable part of the 2026-07-10 audit's
+flagship content review, which had sat unapplied for five weeks.
+
+- **CR-5, the traceability gap, and the trap inside its own proposed fix.** The example declared six
+  functional requirements against four stories. **FR-2 (list and switch views) is a Must and had no
+  story**; FR-6 (stale-view indication) is a Could and had none either. The review proposed adding one
+  line, *"every Must/Should FR must map to at least one story"*, which **would have shipped a document
+  stating a rule its own content broke.** Fixed in the other order: the missing FR-2 story is added
+  first, and only then the rule, which is now true of the example. FR-6 stays uncovered and is named as
+  a deliberate Could rather than left as a silent gap. The guide's full-variant rubric gains the
+  matching line.
+- **CR-7, two of its four notes.** The `user-stories` example carried **two `## Story` headings at the
+  same level as their own parents** (`## Lean card`, `## Full story`), so its outline read flat in a
+  library that teaches structure; the inner headings are demoted to `###`. And the companion's
+  upstream-artifacts line named a "solution brief" this library does not template. Half of that
+  reference has since become resolvable: **PR/FAQ now exists here**, as a `product-vision` format
+  ([ADR 0028](../../docs/internal/decisions/0028-adopt-a-format-axis.md)), which was not true when the
+  review was written. It now links there, and the solution brief is flagged as out of scope.
+
+### CR-6, recorded as the review asked: why this bundle ships two variants and the catalog signals three
+
+**Catalog entry 29 gives this type `S/M/L`. The bundle ships `lean` and `full`.** That divergence is
+legal under [ADR 0002](../../docs/internal/decisions/0002-variant-model.md), which lets the type decide
+rather than the catalog, and it was **documented nowhere** until this line.
+
+**The position:** the catalog's S signal is served by the lean variant used partially, which is exactly
+what the companion's adaptations section already tells a solo user to do. **A true four-section S
+variant is deferred until a real user asks for one.** The nesting rule makes adding it painless if they
+do, and building it now would be speculation of the kind
+[ADR 0021](../../docs/internal/decisions/0021-complete-the-tier-1-floor.md) confines to the Tier-1 floor.
+
+### What was NOT applied, and why
+
+The review's remaining findings are held deliberately, not overlooked.
+
+- **CR-1 (the missing AI-era debate) and CR-2, CR-3, and CR-7's fourth note** all add teaching claims
+  about how practitioners work. **They need sources, and the review does not supply them.** Writing
+  them from the review's own summary would be the library's dominant defect (a plausible specific claim
+  no logged source supports), committed on purpose. Each needs a research pass under
+  [`bundle-pipeline.md`](../../docs/internal/bundle-pipeline.md), and CR-1 needs a full one.
+- **CR-4 (add an "Alternatives considered" section to the full template) is now gated by a rule that
+  did not exist when it was written.** It adds an **element** to an admitted type, so it faces
+  [decision procedure 12](../../docs/internal/decision-procedures.md)'s admission test. Its E1 clause
+  requires a named source publishing PRDs that contain that element, found by a search **capable of
+  returning "no"**. The review asserts that "the strongest real PRDs" carry such a block and names no
+  source for it. **This is the first candidate to meet procedure 12 since it was adopted, and it does
+  not pass on the evidence available.** It is not rejected; it is unresearched.
+
 ## 0.1.0, reviewed 2026-07-16 - citation integrity pass (WP-10)
 
 **No template change, so `template_version` stays 0.1.0.** Corrections are to the companion and the

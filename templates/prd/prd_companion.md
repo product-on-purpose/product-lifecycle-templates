@@ -138,7 +138,7 @@ The recurring ways a PRD goes wrong.
 
 The PRD sits in a natural document lineage [[12]](#ref-12):
 
-- **Upstream (precede it):** product strategy and roadmap (set the bet), discovery research and personas (validate the problem and user), opportunity solution trees or a problem statement (frame what is worth solving), and for new products a PR/FAQ or solution brief.
+- **Upstream (precede it):** product strategy and roadmap (set the bet), discovery research and personas (validate the problem and user), opportunity solution trees or a problem statement (frame what is worth solving), and for new products a PR/FAQ (this library ships one as a [`product-vision`](../product-vision/) format) or a solution brief (**not a type this library templates**; see the [catalog](../../docs/internal/catalog.md)).
 - **Sibling / inside it:** the high-fidelity prototype (often the real experiential spec the PRD points at), and analytics or measurement plans.
 - **Downstream (follow it):** user stories and acceptance criteria (decompose it for delivery), the software design doc and ADRs (decide how to build it), the test plan (verify it), and release notes plus the launch checklist (ship it).
 
