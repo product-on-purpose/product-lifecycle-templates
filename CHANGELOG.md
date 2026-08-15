@@ -14,6 +14,26 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`.claude/agents/blind-probe-author.md`](.claude/agents/blind-probe-author.md)**, a scoped subagent that
+  satisfies the eval protocol's section 6 blinding rule **by construction rather than by instruction**. It
+  is given **no filesystem tools at all**, no `Read`, `Grep`, `Glob` or `Bash`, so it cannot open
+  `templates/`, `evals/rubrics/` or `manifest.json` because it has nothing to open them with. An agent told
+  not to look can look; an agent with no read tool cannot. Path-level restriction is not something agent
+  configuration can express, so tool removal is the enforceable form. **It exists because the rule
+  disqualified the only author available:** probe hardening was authorised on 2026-08-10 and deliberately
+  not done, since the agent holding the authorisation had spent the session reading the very material the
+  rule excludes. **Authorisation is not competence to do the task correctly.** The agent carries its own
+  limitation in its instructions and is required to restate it in every output: it is an *approximation* of
+  a blind author, sharing a model family with the agents that wrote the templates, and no report may claim
+  the stronger "written by someone who has never seen this library".
+- **Spend recording in the eval harness.** The first two runs recorded **no cost data whatsoever**, so the
+  question "what does a re-run cost?" had no answer for three sessions and the Workflow grant kept being
+  requested for an amount nobody could state. `output-eval.workflow.mjs` now emits a `spend` block into its
+  raw output, with both of its limits attached in the file: `budget.spent()` is **turn-level** output
+  tokens rather than this workflow alone, so it is an upper bound; and it counts **output only**, while for
+  this harness input is likely the larger half. An upper bound on half the cost beats the nothing that was
+  there. `judgeRows` is emitted alongside it.
+
 - **[ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md): the maintainer
   may build any template; grow-by-pull becomes an input, not a gate.** Amends
   [ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md) for Tier 2 and Tier 3. With the
@@ -80,6 +100,30 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **The eval protocol's two open instrument questions are both decided (2026-08-14), completing option D of
+  [ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md).**
+
+  **The held-out gap is deliberately NOT gated**, and the reason is recorded so that the next person must
+  beat the reason rather than simply pick a number: **a template that does exactly what it says and no more
+  may be working correctly**, so there is no defensible value at which a held-out gap becomes a failure.
+  Setting a target would assert that these templates *ought* to improve properties they never mention, and
+  nothing establishes that they ought to. The number stays reported, since a non-gated number is not a
+  suppressed one and removing it would hide the circularity signature itself. It may not be used as a pass
+  or a fail, and no scope decision may be driven from it alone.
+
+  **Held-out criteria are now drawn independently and coverage is measured afterwards.** The old method
+  (search the templates for absences, then measure those absences) biased toward null by construction and
+  was close to circular in its own right. The new order is: draw from the decision-usefulness literature
+  without reading the template, *then* measure how many the template covers, *then* score. **This converts
+  coverage from an artifact of the selection method into a finding**: "the template addresses 6 of the 20
+  things the literature says matter" is a real sentence, where the old method made coverage near zero by
+  construction. **Stated so it is not discovered later: this makes the next run incomparable with the first
+  two on the held-out axis.** The rubric axis and the gates stay comparable.
+
+  Also recorded: **the probe set and the held-out set are not independent instruments** (`prd-001` probes 2
+  and 5 measure the same properties as two held-out criteria), and this is fixed *as part of* the rewrite
+  rather than before it, because fixing overlap against criteria about to be replaced is work against a
+  moving target.
 - **[ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md) accepted 2026-08-14**,
   ending the only period in this library's history when a decision record sat unaccepted. **Option C, adopt
   nothing, was rejected consciously rather than skipped**, which is what the record asked for. What is

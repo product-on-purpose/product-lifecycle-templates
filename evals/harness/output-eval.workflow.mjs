@@ -481,6 +481,25 @@ log('gaps.pilotComparable ' + JSON.stringify(summary.gaps.pilotComparable))
 log('gates ' + JSON.stringify(summary.gates))
 log('control replication delta ' + JSON.stringify(summary.controlReplication.delta))
 
+// Spend, recorded because the first two runs recorded none and the question "what does a re-run cost?"
+// then had no answer for three sessions. A run nobody can price is a run nobody can authorise.
+//
+// Read this number with its limits attached, both of which are real:
+//   1. budget.spent() is TURN-level output tokens, across the main loop and every workflow in it, not
+//      this workflow alone. It is an UPPER BOUND on this run's cost, not the cost.
+//   2. It counts output tokens only. Input, including the bundle text every treatment agent reads, is
+//      not in it, and for this harness input is likely the larger half.
+// An upper bound on half the cost still beats the nothing that was recorded before.
+const spend = (typeof budget !== 'undefined' && budget)
+  ? {
+      outputTokensTurnUpperBound: budget.spent(),
+      turnBudgetTotal: budget.total,
+      note: 'Turn-level output tokens, upper bound, output only. See the comment in this file.',
+    }
+  : { outputTokensTurnUpperBound: null, turnBudgetTotal: null, note: 'budget global unavailable in this runtime' }
+
+log('SPEND ' + JSON.stringify(spend))
+
 return {
   summary,
   rows,
@@ -490,5 +509,7 @@ return {
     generations: GENERATIONS,
     sessions: SESSIONS,
     scenarios: SCENARIOS.map((s) => s.id),
+    judgeRows: rows.length,
+    spend,
   },
 }
