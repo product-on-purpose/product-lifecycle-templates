@@ -154,11 +154,52 @@ reason.** Recorded 2026-08-10, while trying to decide what the measured circular
   sharper form of it: contamination is a risk to the criteria, whereas selection-on-absence is a bias in
   the design.
 
-**Two candidate fixes, neither adopted, because changing the instrument is a maintainer decision:** state
-what a passing held-out gap looks like, or declare the gap deliberately non-gated and say why; and draw
-held-out criteria **independently of the templates**, from the decision-usefulness literature, then measure
-afterwards how many the templates happen to cover. The second converts coverage from an artifact of the
-selection method into a finding.
+### Both fixes adopted 2026-08-14
+
+Recorded here rather than in a decision record, because changing the instrument is a maintainer decision and
+the maintainer took it. [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md) is the context.
+
+**Fix 1. The held-out gap is deliberately NOT gated, and this is the reason.**
+
+No threshold is set, and none should be invented later without superseding this paragraph. **A template
+that does exactly what it says and no more may be working correctly**, so there is no defensible value at
+which a held-out gap becomes a failure. Setting a target would mean asserting that these templates *ought*
+to improve properties they never mention, and **nothing in this protocol, this library, or the literature
+establishes that they ought to.**
+
+What follows from the non-gate, and it is binding:
+
+- **The held-out gap may be reported and discussed. It may not be used as a pass or a fail**, and no scope
+  or content decision may be driven from it alone. That is what
+  [decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template) is
+  for: candidates it surfaces face a source search, not a score.
+- **It stays reported anyway.** A non-gated number is not a suppressed one. Removing it would hide the
+  circularity signature, which is the most interesting thing either run produced.
+- **Reopening this requires an argument that spillover is expected**, naming who expects it and why. The
+  point of writing the reason down is that the next person must beat the reason rather than just pick a
+  number.
+
+**Fix 2. Held-out criteria are drawn independently, then coverage is measured afterwards.**
+
+The old method (search the templates for absences, then measure those absences) is retired. It biases
+toward null by construction, and selecting on absence to then measure absence is close to circular in its
+own right.
+
+**The new method, in order, and the order is the whole point:**
+
+1. **Draw criteria from the decision-usefulness literature**, independently, **without reading the template
+   or its guide first**. What makes a document of this type useful to the person who must act on it?
+2. **Then measure how many of them the template happens to cover**, and report that as **coverage**.
+3. **Then score both arms against the full set.**
+
+**This converts coverage from an artifact of the selection method into a finding.** Under the old method,
+coverage was near zero by construction and meant nothing. Under the new one, "the template addresses 6 of
+the 20 things the literature says matter" is a real sentence about the template, and it is a more useful
+one than any gap number.
+
+**Consequence, stated so it is not discovered later: this makes the next run incomparable with the first
+two on the held-out axis.** The criteria change, so the number changes for reasons that have nothing to do
+with the templates. The rubric axis and the gates remain comparable. Any report covering both must say so.
 
 **Verdict ordering is absolute-failure-first.** A bundle fails if its own score is below the bar or any
 criterion floors, *regardless of the gap*. A weak control can never launder a bad bundle into a pass. Only a
@@ -202,6 +243,41 @@ managed out of sight.
   including everything.
 - **Comes in three difficulties**: standard, messy (conflicting facts), and sparse (thin facts). Domains
   vary deliberately, which doubles as a probe: a template that only lifts in one domain is a finding.
+
+### How the blinding rule is actually satisfied, added 2026-08-14
+
+**The rule above disqualified the only author available**, and that is worth recording rather than working
+around. Probe hardening was authorised on 2026-08-10 and **was not done**, because the agent holding the
+authorisation had spent the session reading these templates, rubrics and held-out criteria, and is
+therefore precisely the contaminated author this section excludes. **Authorisation is not competence to do
+the task correctly.**
+
+**The mechanism now is a scoped subagent**, [`blind-probe-author`](../../.claude/agents/blind-probe-author.md),
+which is given **no filesystem tools at all**: no `Read`, no `Grep`, no `Glob`, no `Bash`. It cannot open
+`templates/`, `evals/rubrics/` or `manifest.json` because it has nothing to open them with. Everything it
+needs, the catalog entry and the scenario brief, is passed to it in its prompt.
+
+**Blinding by construction rather than by instruction.** An agent told not to look can look. An agent with
+no read tool cannot, and this is the difference between a rule and a guarantee. Path-level restriction is
+not something agent configuration can express, so the enforceable version is tool removal.
+
+**Its honest limitation, which must travel with any result it produces:** it is an approximation of a blind
+author, not a real one. It shares a model family and a training distribution with the agents that wrote the
+templates, so it may reach for the same vocabulary without ever reading them. **That is a weaker claim than
+"written by someone who has never seen this library", and no report should make the stronger one.** The
+stronger version needs a human who has not read the bundles.
+
+### The probe set and the held-out set are not independent instruments
+
+**Found 2026-08-10 and not yet fixed.** `prd-001` probe 2 ("what would make the team stop or reconsider")
+and probe 5 ("who owns that constraint") measure **the same properties as two of the held-out criteria**.
+They do not provide independent evidence, and hardening the probes without addressing the overlap would
+deepen it.
+
+**This is fixed as part of the rewrite, not before it**, because fix 2 in section 4 redraws the held-out
+criteria from scratch. Fixing the overlap against criteria that are about to be replaced would be work
+against a moving target. **The rule for the rewrite: probes and held-out criteria are drawn separately and
+checked against each other for overlap before either is used.**
 
 ---
 
