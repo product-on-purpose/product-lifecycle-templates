@@ -1,26 +1,34 @@
 # Delivery Roadmap (Expanded): From Audited Prototype to Reference Implementation
 
-> **Currency note, added 2026-07-26. This file is a dated projection; [`STATE.md`](../../STATE.md) outranks
-> it wherever they disagree.** That is not a criticism of the roadmap, it is the rule STATE.md was created to
-> enforce. Read this banner before trusting any sequencing below.
+> **Currency note, added 2026-07-26, refreshed 2026-08-14. This file is a dated projection;
+> [`STATE.md`](../../STATE.md) outranks it wherever they disagree.** That is not a criticism of the
+> roadmap, it is the rule STATE.md was created to enforce. Read this banner before trusting any
+> sequencing below.
 >
-> **Still live:** the milestone and work-package numbering. STATE.md's "Next milestone" section still tracks
-> WP-25 through WP-28 against this file, and sections 5 (non-goals), 6 (risks) and 7 (traceability) have not
-> been overtaken.
+> **Still live:** the milestone and work-package numbering, the sequencing thesis in section 1 (floor,
+> then wedge, then proof, then reach), the M3 through M6 work packages and their acceptance criteria, and
+> sections 5 (non-goals), 6 (risks) and 7 (traceability).
 >
-> **Overtaken:** everything about bundle sequencing, family composition, and what gets built next. That is
-> now governed by [`buildout-specs.md`](buildout-specs.md) (per-type specs, the taxonomy decisions D-A
-> through D-E, and the live progress table) and executed per
-> [`bundle-pipeline.md`](bundle-pipeline.md). This file was written 2026-07-10 and last cites **ADR 0020**;
-> there are now **38** decision records, and eighteen of them (0021 through 0038) postdate it and change the
-> plan it describes. Do not read section 3's work packages as the current build order.
+> **Overtaken, and by what:**
+>
+> - **Everything about bundle sequencing, family composition, and what gets built next**, now governed by
+>   [`buildout-specs.md`](buildout-specs.md) and executed per [`bundle-pipeline.md`](bundle-pipeline.md).
+>   Do not read section 3's M0 through M2 work packages as the current build order.
+> - **Section 4's week-by-week timeline**, which is a historical calendar. It is marked as such in place.
+> - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
+>
+> This file was written 2026-07-10 and last cites **ADR 0020**; there are now **38** decision records, and
+> eighteen of them (0021 through 0038) postdate it and change the plan it describes.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
 > one of the ungated. **The banner you are reading drifted too**, which is finding **DF-5 (prose counts
 > drift)**: it was added on 2026-07-26 to manage staleness and its own decision-record count was wrong
 > within two days. Since 2026-07-28 the counts marker below is compared against the tree by
 > [`tools/check-counts.py`](../../tools/check-counts.py), so a changed number now fails CI instead of
-> ageing quietly here.
+> ageing quietly here. **The counts marker did its job and the prose around it still went stale**: between
+> 2026-07-28 and 2026-08-14 this file's status column claimed 18 of 27 types were built and that `v0.2.0`
+> was the next release, through three tagged releases, while every marker in it matched the tree. That is
+> the limitation `check-counts.py` prints on every run, costing something for the second time.
 
 <!-- counts: adrs=38, bundles=26 -->
 
@@ -62,17 +70,17 @@ This ordering was adversarially stress-tested during the audit (finding G-03, ro
 
 ## 2. Milestone overview
 
-**Status column added 2026-07-28.** The milestone names below are still the live vocabulary, but two of
-them no longer describe what actually happened, so the real state is recorded here rather than inferred.
-[`STATE.md`](../../STATE.md) remains authoritative wherever this disagrees.
+**Status column added 2026-07-28, refreshed 2026-08-14.** The milestone names below are still the live
+vocabulary, but several of them no longer describe what actually happened, so the real state is recorded
+here rather than inferred. [`STATE.md`](../../STATE.md) remains authoritative wherever this disagrees.
 
-| Milestone | Goal | Duration (est.) | Exit act | **Status (2026-07-28)** | Closes (primary) |
+| Milestone | Goal | Duration (est.) | Exit act | **Status (2026-08-14)** | Closes (primary) |
 |---|---|---|---|---|---|
 | M0 Credibility floor | A fresh clone survives the five-minute sniff test | 1 day | CI green on main | **Done** | E-01, D-03, G-01, F-03, B-04, C-05, B-08, F-07 |
 | M1 Integrity and truth | Content claims verifiable; decisions closed; first release | 1 week | Tag v0.1.0 with a dogfooded release note | **Done 2026-07-17** | A-01..A-06, D-02, E-03 (D2), D3, F-01, F-05, G-02 |
-| **M2 Machine layer, contract, and the Tier-1 floor** | The library is machine-consumable, lives at its final path, and covers the catalog's must-have set | 2 weeks as estimated; **materially longer in practice** | Tag v0.2.0 | **In progress.** The machine layer shipped (schema, manifest, atlas, freshness gates). The Tier-1 floor build-out ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md)) was adopted **after** this roadmap was written and folded into this milestone rather than given its own; 18 of 27 types are built and `strategy-docs` completed with `okrs`; the 9 that remain all sit in families whose contracts are not yet adopted. **v0.2.0 is the exit act and is the next release.** | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
-| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | **Not started.** Still **zero real fills**; this is the milestone the library has been deferring, and coverage does not substitute for it | D-05, E-04 partial, E-02 partial |
-| M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | **Not started** | D-04, EV-2, CT-1 (conditional) |
+| **M2 Machine layer, contract, and the Tier-1 floor** | The library is machine-consumable, lives at its final path, and covers the catalog's must-have set | 2 weeks as estimated; **roughly four in practice** (2026-07-12 to 2026-08-07) | Tag v0.2.0 | **Done 2026-08-07.** The machine layer shipped (schema, manifest, atlas, freshness gates). The Tier-1 floor build-out ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md)) was adopted **after** this roadmap was written and folded into this milestone rather than given its own. **26 bundles cover all 25 templatable Tier-1 types across nine complete families, every family contract is adopted, and the build backlog is empty.** The 27-to-25 reconciliation is [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) (`wireframe` and `interactive-prototype` are not documents) and [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). **The exit act was not `v0.2.0` alone**: the milestone spanned `v0.2.0`, `v0.2.1`, `v0.3.0` and `v0.3.1`, and the library reached **Gold (advanced)** on the Advanced Skill Library Standard, measured in CI rather than declared | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
+| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | **Next, and now the binding constraint.** Still **zero real fills**. Two parts moved without the milestone starting: the D2 install retest was run 2026-08-08 (recorded in full under M3 below), and **the intake half of WP-32 is built** (three issue templates shipped 2026-08-07). WP-30 (LP-2, the wedge itself) is not started. **ADR 0021's floor override has expired on its own terms**, since its stated scope was the Tier-1 floor and that floor is complete, so section 1's original ordering resumes here | D-05, E-04 partial, E-02 partial |
+| M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | **Partly started, and the first numbers came back VOID.** [`eval-protocol.md`](eval-protocol.md) is written, the harness runs, and two independent 114-agent runs completed 2026-08-08 agreeing within 0.13 on every quantity. **Both are VOID on discrimination**, and **three bundles of 26** are measured. What survives is the circularity signature: **+0.85** on criteria drawn from the templates' own guide beside **-0.03** on criteria drawn from neither. Four blockers remain, listed under WP-40 | D-04, EV-2, CT-1 (conditional) |
 | M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | MCP + fill flow live; distribution per D2/D3 outcomes | **Not started**, correctly gated on M3 | C-01, E-02 remainder, AG-1, AG-2 |
 | M6 Scale by pull | Next family by demand; sustainable cadence | ongoing | Quarterly freshness pass #1 completed | **Not started** | E-04, G-05, VL-1/VL-3 |
 
@@ -167,19 +175,52 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 - [ ] An agent given only manifest.json can answer: which bundle for each of the 3 audit test intents, which size by default, and what each fetch costs in approx tokens (re-run the Dimension C simulation; all 6 of 6 decisions should now be deterministic).
 - [ ] CI fails on a deliberately broken fixture for: schema violation, padded citation, dead link (test once, then remove fixtures).
 
+> **M2 exit, recorded 2026-08-14.** The milestone is complete, and the boxes above are deliberately left
+> unchecked because two of them were never verified as written and one has been superseded.
+>
+> **Met, and verifiable by running something:** `templates/` is the canonical path and the gate runs from
+> it; `check-bundles.py` reports checks A through **K**, one further than this list anticipated; the
+> broken-fixture requirement is met and then some, by five mutation-checked self-tests rather than by
+> throwaway fixtures.
+>
+> **Superseded:** `manifest.json` lists **26** bundles, not the 4 this criterion was written against, and
+> `gen-manifest.py --check` holds it fresh in CI.
+>
+> **Never done:** the Dimension C selection simulation was not re-run. Nobody has tested whether an agent
+> given only `manifest.json` makes the six selection decisions deterministically, so the "agent-native"
+> claim rests on the surface existing rather than on the surface working. **This is the same shape as the
+> install that sat unrun for three weeks**: a claim about what a stranger receives, checked by nobody.
+> It is cheap, and it is carried forward to WP-53.
+
 ### M3: First usage and wedge (weeks 3-4, overlapping M2 tail)
 
 | WP | Work package | Deliverables | Effort | Traces / spec |
 |---|---|---|---|---|
 | WP-30 | LP-2 grade-my-doc | `skills/grade-doc/SKILL.md` + rubric extraction per spec; report-card output format; works on all 4 bundles | L | D-05 path, E-04; `specs/spec_lp2-grade-my-doc.md` |
 | WP-31 | First real usage cycle | One real internal document filled from the lean PRD (or user-stories) template; EV-3 five-question feedback form designed and completed; outcome recorded in the bundle history | M | D-05, EV-3 |
-| WP-32 | Demand capture | GitHub issue form as the pull queue (structured fields: requested type, requester context, methodology, urgency); atlas `catalog-data.json` gains a per-type `state` field (built / queued / pull-gated / out-of-scope) with an atlas legend | M | E-04, P7, VS-3; `12_catalog-recommendations.md` section 5 |
+| WP-32 | Demand capture | GitHub issue form as the pull queue (structured fields: requested type, requester context, methodology, urgency); atlas `catalog-data.json` gains a per-type `state` field (built / queued / pull-gated / out-of-scope) with an atlas legend. **Half built as of 2026-08-14; the remainder is specified in [`pull-queue-spec.md`](pull-queue-spec.md)** | M | E-04, P7, VS-3; `12_catalog-recommendations.md` section 5 |
 | WP-33 | Wedge outreach | LP-2 run against 3 to 5 real documents from real PMs (network, community); each produces a report card and an EV-3 form | M | D-05, E-04 |
+
+> **M3 status, 2026-08-14. This is the next milestone, and two of its four work packages have moved
+> without it being started.**
+>
+> | WP | State |
+> |---|---|
+> | **WP-30 LP-2 grade-my-doc** | **Not started.** `skills/` holds only `plt-fill-template`. Its build spec is complete and has been ready since 2026-07-10. **This is the wedge**, and it is the only item in this entire roadmap that delivers something to a person who has not adopted the library |
+> | **WP-31 First real usage cycle** | **Not started. Zero fills by anyone but the author**, which is the library's binding constraint and has been since it existed |
+> | **WP-32 Demand capture** | **Half built.** `.github/ISSUE_TEMPLATE/` holds `new-type.md`, `usage-report.md` and `correction.md`, shipped 2026-08-07. **Zero issues have been filed**, the three labels those templates declare do not exist in the repository, `docs/reference/pull-queue.md` does not exist, and `catalog-data.json` still carries `built` with no `state`. The remainder is specified in [`pull-queue-spec.md`](pull-queue-spec.md) |
+> | **WP-33 Wedge outreach** | **Not started**, and it is the only work package here that creates demand rather than capturing it. Shipping WP-32 and reading an empty queue as evidence that nobody wants the library would be the wrong reading |
+>
+> **Why this milestone matters more than it did in July.** When this file was written, deferring M3 was
+> defensible: the library was too thin to pull. [ADR 0021](decisions/0021-complete-the-tier-1-floor.md)
+> made that argument explicitly and bought the time to fix it. The floor is now complete, so the argument
+> has been spent. There is no remaining Tier-1 work to prefer over the wedge, and Tier-2 and Tier-3 are
+> demand-gated by that same ADR, so **there is no template backlog at all** until WP-32 produces one.
 
 **M3 acceptance criteria**
 - [ ] At least one filled document exists whose author is not the library author, or whose content is a real work artifact (not an authored example); its provenance frontmatter is stamped and its EV-3 form is stored.
 - [ ] LP-2 grades a never-seen PRD in under 3 minutes of wall-clock agent time and its report card cites specific rubric line items.
-- [ ] The pull queue has at least one genuine external entry OR a documented outreach log showing five attempts.
+- [ ] The pull queue has at least one genuine external entry OR a documented outreach log showing five attempts. **Partly addressed 2026-08-07: the intake exists. Zero entries received, and no outreach log exists.**
 - [x] Because LP-2 ships as a SKILL.md in this repo, the D2 question is retested with the skill present: record whether `npx skills add product-on-purpose/product-lifecycle-templates` now installs (this is the distribution unlock the audit predicted). **Run 2026-08-08 against `skills@1.5.22`. It installs. It is not yet the unlock the audit predicted, and the reasons are below.**
 
 **D2 retest, 2026-08-08, recorded in full because it has been open since 2026-07-17 and because two of its three findings are unwelcome.**
@@ -256,6 +297,35 @@ input*, and all three times the second was true.
 | WP-42 | Conformance levels | Gate reports L1 (structure) / L2 (research integrity) / L3 (eval-proven) per bundle; levels shown in manifest and atlas | M | 13_excellence play 4 |
 | WP-43 | Second-domain example (conditional on usage signal) | One bundle (recommended: PRD) gains a second worked example from a different domain (regulated/health or consumer-mobile) plus a lean-variant example | L | CT-1, A dimension validity limit |
 
+> **M4 status, 2026-08-14. WP-40 ran, and the honest summary is that the instrument is not yet trusted.**
+>
+> [`eval-protocol.md`](eval-protocol.md) was written **before** the first number existed, deliberately, so
+> it could not be tuned to a result it had already seen. Two independent 114-agent runs completed
+> 2026-08-08 and agree within 0.13 on every quantity. **Both are VOID on discrimination**, and the pilot's
+> headline (a held-out gap of -0.81) was **withdrawn** once the arms were matched: the control arm had been
+> told to produce decision-usefulness and the treatment arm had not. Matched, it is **-0.03**.
+>
+> What replaced it is the **circularity signature**: **+0.85** on criteria drawn from the templates' own
+> guide, beside **-0.03** on criteria drawn from neither. [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md)
+> proposes what that obliges and is **`proposed`, the first unaccepted record in this library**.
+>
+> **Coverage is three bundles of 26. Nothing generalises.** Four blockers, each needing something
+> different, and none of them more evidence:
+>
+> | Blocker | Needs |
+> |---|---|
+> | Probe hardening | A **blind author**. Protocol section 6 excludes anyone who has just read the bundle |
+> | Probe / held-out overlap | A design decision. `prd-001` probes 2 and 5 measure the same properties as two held-out criteria, so they are not independent instruments |
+> | Held-out selection redesign | A **protocol change**, which stops for the maintainer |
+> | The re-run itself | The **Workflow tool grant**, plus a go-ahead on spend |
+>
+> **The held-out gap has no validity gate.** The protocol defines four gates and none of them is about it,
+> so **-0.03 is neither a pass nor a fail** and cannot be read as a verdict until the protocol either gates
+> it or declares it deliberately non-gated. **Standing recommendation: re-run before changing any
+> template**, so a clean baseline against the templates as they stand survives.
+>
+> WP-41, WP-42 and WP-43 are **not started**.
+
 **M4 acceptance criteria**
 - [ ] Every bundle has a published eval scorecard with a with-vs-without discrimination gap and a judge-agreement stat.
 - [ ] CI re-runs the eval subset affected by any template/companion change and fails on a gap regression beyond the set threshold.
@@ -288,6 +358,15 @@ input*, and all three times the second was true.
 ---
 
 ## 4. Timeline view (assumes ~12 h/week)
+
+> **Overtaken 2026-08-14, and kept as the record of what was projected.** The calendar below is the
+> 2026-07-10 estimate. What actually happened: weeks 1 and 2 held roughly, and then M2 absorbed the
+> Tier-1 floor build-out, which this file did not contain because [ADR 0021](decisions/0021-complete-the-tier-1-floor.md)
+> post-dates it. **The floor took from 2026-07-20 to 2026-08-07 and produced 20 bundles**, so weeks 3
+> through 6 below were spent on work that is not on this calendar at all, and M3 and M4 slid by that
+> amount. The estimate was not wrong about the work it described; it was silent about the work that was
+> inserted ahead of it. **Do not use this section for planning.** The current sequence is the milestone
+> table in section 2 plus the per-milestone status notes in section 3.
 
 ```
 Week 1   [M0 floor: 1 day][M1 integrity, gate v1, D2/D3, quickstart]  -> tag v0.1.0
@@ -323,6 +402,27 @@ Ongoing  [M6: pull-gated families, quarterly freshness, contribution]
 | Eval cost/complexity balloons | WP-40 exceeds ~2 days | Scope guard: 12 scenarios, 3 judges, one metric (discrimination gap); everything else is later |
 | Graduation breaks links | Post-WP-20 grep finds stragglers | The migration checklist IS the WP; atomic commit; CI link-check catches leftovers |
 | Roadmap goes stale like the plan did | STATE.md older than the last tag | STATE update is part of every milestone exit AC |
+
+> **Which of these fired, recorded 2026-08-14.**
+>
+> **"Roadmap goes stale like the plan did" fired, and its tripwire did not catch it.** The signal it
+> watches for is "STATE.md older than the last tag", and STATE.md was updated at every release, so the
+> tripwire stayed green while this file's status column claimed 18 of 27 types were built across three
+> tagged releases. **The signal was the wrong one**: it detects an un-updated STATE.md, not a stale
+> roadmap, and the two are different documents. A better signal is the one this refresh used: does the
+> milestone table's status column name a release older than the newest tag?
+>
+> **"Wedge outreach stalls" is firing now, unambiguously.** Its signal is "WP-33 log shows under 5
+> attempts by end of week 4". There is no WP-33 log and there have been zero attempts, well past week 4.
+> Its mitigation, treating outreach as a work package with acceptance criteria rather than a hope, has not
+> been applied. This is the risk that most deserves attention, and it is not solved by anything in the
+> repository.
+>
+> **"Eval cost/complexity balloons" partly fired.** WP-40's scope guard named 12 scenarios, 3 judges and
+> one metric. What shipped is a 114-agent workflow run twice, and the one metric came back VOID both
+> times. The cost was real; the guard held on judges and metric and not on machinery.
+>
+> **"Floor skipped again" and "Graduation breaks links" did not fire.**
 
 ---
 
