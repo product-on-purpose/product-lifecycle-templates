@@ -33,6 +33,7 @@ Fast reference for using the PRD bundle. For the full reasoning, history, and so
 - [ ] Open questions are surfaced, each with an owner and a needed-by date.
 - [ ] (Full) Error, empty, and edge states are covered, not just the happy path.
 - [ ] (Full) Functional requirements are prioritized; dependencies and risks have owners.
+- [ ] (Full) Every Must and Should functional requirement maps to at least one user story.
 - [ ] No load-bearing decision is buried in the appendix.
 - [ ] Every guidance comment has been deleted; no placeholders remain.
 

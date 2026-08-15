@@ -222,6 +222,41 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **The 2026-07-10 audit's flagship content review is applied, five weeks late, in the half that could be
+  applied without inventing sources.** It is the only substantive critique anyone has written of this
+  library's *advice quality* rather than its governance, and it had sat untouched.
+
+  **CR-5, the traceability gap, contained a trap in its own proposed fix.** The `prd` example declared
+  six functional requirements against four stories: **FR-2 (list and switch views) is a `Must` and had
+  no story at all.** The review proposed adding the line *"every Must/Should FR must map to at least one
+  story"*, which **would have shipped a document stating a rule its own content broke.** Applied in the
+  other order: the missing FR-2 story first, then the rule, which is now true. FR-6 stays uncovered and
+  is named as a deliberate `Could` rather than left a silent gap. The guide's full-variant rubric gains
+  the matching line.
+
+  **CR-7, two of four notes.** The `user-stories` example carried **two `## Story` headings at the same
+  level as their own parents**, so its outline read flat in a library that teaches structure; inner
+  headings demoted to `###`. The `prd` companion named a "solution brief" this library does not
+  template; **half that reference became resolvable since the review was written**, because PR/FAQ now
+  ships as a `product-vision` format, so it links there and the solution brief is flagged out of scope.
+
+  **CR-6 recorded as the review asked:** catalog entry 29 signals `S/M/L` and the bundle ships two
+  variants. Legal under [ADR 0002](docs/internal/decisions/0002-variant-model.md), which lets the type
+  decide, but documented nowhere until now. A true four-section `S` variant is **deferred until a real
+  user asks**.
+
+  **Held, with reasons, not overlooked.** CR-1, CR-2, CR-3 and CR-7's fourth note all add teaching
+  claims about how practitioners work, and **the review supplies no sources for them**; writing them
+  from its summary would be this library's dominant defect committed on purpose. **CR-4 is now gated by
+  a rule that post-dates it**: adding an "Alternatives considered" section is an *element* addition, so
+  it faces [decision procedure 12](docs/internal/decision-procedures.md), whose E1 clause wants a named
+  source found by a search capable of returning "no". The review asserts "the strongest real PRDs" carry
+  such a block and names none. **This is the first candidate to meet procedure 12 since it was adopted,
+  and it does not pass on the evidence available.** Not rejected; unresearched.
+
+  No `template_version` changes: the edits are to an example, a guide rubric, a companion
+  cross-reference, and a history entry.
+
 - **A claim this repository published about someone else's software was wrong.**
   [`roadmap.md`](docs/internal/roadmap.md) recorded that `skills add <repo>@<ref>` "prints the ref and
   clones the default branch anyway", concluding that nobody pinning a version through that CLI gets one.

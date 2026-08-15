@@ -27,17 +27,17 @@ Epic: Saved Views (see the PRD example). Below: one lean card, one full story, a
 
 ## Lean card
 
-## Story
+### Story
 
 As a recurring analyst, I want to save my current dashboard filters as a named view, so that I can
 return to exactly this slice tomorrow without rebuilding it.
 
-## Acceptance criteria
+### Acceptance criteria
 
 - I can name and save the current filters, date range, and visible columns as a view.
 - The saved view appears in my list of views for this dashboard.
 
-## Notes and open questions
+### Notes and open questions
 
 Parent epic: Saved Views. Prototype: figma.com/acme/saved-views (illustrative).
 
@@ -45,24 +45,24 @@ Parent epic: Saved Views. Prototype: figma.com/acme/saved-views (illustrative).
 
 ## Full story
 
-## Story
+### Story
 
 As a recurring analyst, I want to set one of my saved views as the default for a dashboard, so that the
 dashboard opens the way I work instead of in its generic default state.
 
-## Description and context
+### Description and context
 
 Follows from the Saved Views PRD. Depends on a view already existing (the save story above). The default
 is per-user, not per-dashboard, per the Q1 storage decision.
 
-## Acceptance criteria
+### Acceptance criteria
 
 - I can mark exactly one of my views as the default for a given dashboard.
 - When I open that dashboard, my default view loads instead of the generic default.
 - If my default view references a filter that no longer exists, the dashboard loads the valid parts and
   tells me which filter is missing.
 
-## INVEST check
+### INVEST check
 
 - [x] Independent: depends only on the save-view story, which is a sequenced prerequisite, not a sibling.
 - [x] Negotiable: how "default" is surfaced in the UI is open.
@@ -71,16 +71,16 @@ is per-user, not per-dashboard, per the Q1 storage decision.
 - [x] Small: fits one iteration.
 - [x] Testable: criteria above are observable.
 
-## Estimate and sizing
+### Estimate and sizing
 
 3 story points (illustrative), high confidence; the storage and load paths already exist.
 
-## Dependencies
+### Dependencies
 
 - Save-view story must ship first (provides the view to set as default).
 - Per-user preferences storage (shipped Q1).
 
-## Notes and open questions
+### Notes and open questions
 
 Open: should a Team Lead be able to set a team default, or only personal defaults? Owner: Priya, needed
 before Phase 2.
