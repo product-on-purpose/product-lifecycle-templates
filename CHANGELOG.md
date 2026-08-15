@@ -14,6 +14,31 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`docs/internal/distribution-plan.md`](docs/internal/distribution-plan.md)**, the executable plan for
+  roadmap **WP-33** (wedge outreach), built from research that fetched and read every venue rather than
+  recalling it. **Its central finding contradicts the brief it was written against.** The largest and
+  best-fitting venue, `hesreallyhim/awesome-claude-code` (52,325 stars), states in its own `CONTRIBUTING.md`
+  that the submit-then-get-users sequencing is backwards: *"If 'getting on the list' is any part of a
+  promotional strategy for your project, you should be prepared to have a backup plan."* The plan is
+  sequenced to respect that rather than ignore it.
+
+  **The two ecosystems are not alike.** Product management has almost no live surface: four
+  "awesome-product-management" lists were last pushed between 2019 and 2023, the one live general PM list
+  forbids self-promotion, no maintained `awesome-adr` exists, and no PM community or newsletter was found
+  with a public non-gated submission path. The Claude and agent-skills ecosystem is young and mostly
+  ungated, and where a maturity bar exists it is framed as *age-plus-activity or stars*, never stars alone.
+  **That distinction is what makes this library eligible today at one star**: it clears
+  `awesome-claude-code`'s written bar (14 days plus continued commits) outright.
+
+  Records what must **not** be submitted and why, including one venue whose stated criteria this library
+  fails today by its own honest caveat (`VoltAgent/awesome-agent-skills` requires "real community usage"),
+  and one that shows integrity red flags. Also records the tension the README's `real fills: 0 (honest)`
+  badge creates: it will cost acceptances, removing it would abandon the thing that makes the library worth
+  finding, and the recommendation is to keep it and lose the acceptances **on purpose**.
+
+  **Every act of submission stops for the maintainer.** Each one opens an issue or a pull request on someone
+  else's repository under this project's name, and is not cleanly reversible.
+
 - **[`.claude/agents/blind-probe-author.md`](.claude/agents/blind-probe-author.md)**, a scoped subagent that
   satisfies the eval protocol's section 6 blinding rule **by construction rather than by instruction**. It
   is given **no filesystem tools at all**, no `Read`, `Grep`, `Glob` or `Bash`, so it cannot open
