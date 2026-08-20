@@ -15,6 +15,10 @@
 > which is this document's own job; and the spec counts in section 1 and under the section 4 table both
 > read "six" and "four" against a table that has carried seven rows and five untracked entries since the
 > day it was written. **Every other fact below still dates from 2026-08-14 and has not been re-verified.**
+>
+> **Amended again 2026-08-19, when WP-30 shipped.** The `spec_lp2-grade-my-doc.md` row said the wedge was
+> not started and that `skills/` held only `plt-fill-template`. Both were true when written and are now
+> false; section 3's skill count and section 1's tally move with them.
 
 <!-- counts: bundles=26, adrs=40, cisteps=25 -->
 
@@ -32,7 +36,7 @@ the same convention [`roadmap.md`](roadmap.md) uses, for the same reason.
 
 **There is a roadmap. There is no release plan.** The roadmap is specified through M6 and the library is
 currently off it by an explicit decision that has now expired. Of the eight documents inventoried in
-section 4, one is fully executed, one is half executed, and six are complete and idle.
+section 4, two are fully executed, one is half executed, and five are complete and idle.
 
 **The pattern underneath all three answers:** everything built so far delivers value to someone who has
 already adopted the library. Every item that would deliver value to someone who has not is unbuilt.
@@ -83,16 +87,17 @@ ordering resumes at M3 on the roadmap's own terms**, not as a matter of preferen
 ### What a user can actually get today
 
 Twenty-six researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
-one installable skill, `plt-fill-template`. The Claude Code plugin channel clones the tree and works. The
-skills-CLI channel installs 12 KB of instructions and none of the 26 bundles, and fetches templates at
-fill time from the release tag matching its own declared version.
+**two installable skills**, `plt-fill-template` and, since 2026-08-19,
+`plt-grade-doc`. The Claude Code plugin channel clones the tree and works. The skills-CLI channel installs
+instructions and none of the 26 bundles, and each skill fetches what it needs at run time from the release
+tag matching its own declared version.
 
 ## 4. Spec inventory
 
 | Spec | The feature | State | What blocks it |
 |---|---|---|---|
 | `spec_machine-metadata.md` (untracked) | Metadata schema, manifest, the gate alphabet | **Executed.** ADRs 0016 through 0019 | nothing, done |
-| **`spec_lp2-grade-my-doc.md`** (untracked) | **The wedge: grade an existing document, return a report card** | **Complete, ready, not started.** `skills/` holds only `plt-fill-template` | Nothing. It is the highest-value idle asset in the repository |
+| **`spec_lp2-grade-my-doc.md`** (untracked) | **The wedge: grade an existing document, return a report card** | **Executed 2026-08-19** as [`skills/plt-grade-doc/`](../../skills/plt-grade-doc/), with two deviations stated in the skill: the `plt-` prefix, and a grader-supplied 0/1/2 scale for the twelve checklist-rubric guides | **Built, not validated.** Most of the spec's acceptance criteria need documents this repository does not have, and no external document has been graded |
 | `spec_ev1-efficacy-evals.md` (untracked) | Efficacy evaluation | **Half executed.** [`evals/`](../../evals/) holds the harness, rubrics and two completed runs | The Workflow tool grant, plus three protocol decisions in [`eval-protocol.md`](eval-protocol.md) |
 | `spec_lp1-use-template-flow.md` (untracked) | Interview-driven fill, the guidance-comment grammar, `strip-template.py` | **Complete, not started.** Partly pre-empted by `plt-fill-template` | M5, gated on M3 |
 | `spec_ag2-mcp-server.md` (untracked) | MCP server: five tools, three resources, token budgets | **Complete, not started** | M5, gated on M3 by design |

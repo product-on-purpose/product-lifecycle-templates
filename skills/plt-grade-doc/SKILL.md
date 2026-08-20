@@ -202,8 +202,9 @@ Recorded here rather than only in a commit message, because a reader of the skil
    [ADR 0036](../../docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md), which took the
    `plt-` prefix and requires a skill's `name` to match its directory.
 2. **Checklist rubrics are scored on a scale this skill supplies.** The spec assumed every guide carries a
-   0/1/2 rubric. Twelve of the twenty-six do not, and converting them is an open decision the library has
-   deliberately left open. Handled under
+   0/1/2 rubric. Twelve of the twenty-six did not as of 2026-08-19, and converting them is an open decision
+   the library has deliberately left open. **Detect the form from the guide in front of you, not from that
+   count**, which nothing gates. Handled under
    [decision procedure 5](../../docs/internal/decision-procedures.md): state the rule in the artifact that
    applies it, and route the resolution to the document that owns it.
 
