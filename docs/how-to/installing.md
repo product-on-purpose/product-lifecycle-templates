@@ -68,8 +68,8 @@ worked.
 npx skills add product-on-purpose/product-lifecycle-templates --list
 ```
 
-**It should report exactly one skill, `plt-fill-template`.** If it reports more than one, that is a
-defect in this repository, and [`tools/check-export-surface.py`](../../tools/check-export-surface.py)
+**It should report exactly two skills, `plt-fill-template` and `plt-grade-doc`.** If it reports any other
+set, that is a defect in this repository, and [`tools/check-export-surface.py`](../../tools/check-export-surface.py)
 exists to make it impossible: it fails CI whenever the set of skills the installer would export stops
 matching the set [`library.json`](../../library.json) declares. It was written the day the install
 reported two.

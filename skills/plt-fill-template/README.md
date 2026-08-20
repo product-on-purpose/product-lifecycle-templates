@@ -4,8 +4,10 @@ title: "plt-fill-template"
 
 # `plt-fill-template`
 
-The library's single skill. It teaches an agent to pick the right template bundle for a job, fill it
-against that bundle's guidance, and grade the result on the bundle's own rubric. The skill is a thin
+The library's template-filling skill, and the first of its two. It teaches an agent to pick the right
+template bundle for a job, fill it against that bundle's guidance, and grade the result on the bundle's own
+rubric. For a document that already exists and was not filled from a template, the other skill is
+[`plt-grade-doc`](../plt-grade-doc/). The skill is a thin
 wrapper: the knowledge lives in the bundles under [`templates/`](../../templates/), and this file is how an
 agent framework finds it.
 

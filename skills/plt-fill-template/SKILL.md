@@ -28,8 +28,9 @@ shape, a worked example, and a rubric for judging the result.
 
 ## When NOT to use
 
-- **The document already exists and only needs editing.** Use the bundle's guide and rubric to grade it;
-  do not restart from the template.
+- **The document already exists and only needs editing.** Use [`plt-grade-doc`](../plt-grade-doc/SKILL.md),
+  which grades an existing document against the bundle's rubric and returns a report card; do not restart
+  from the template.
 - **The type is not in the library.** The catalog holds 205 types and only the Tier-1 floor is built. If
   nothing matches, say so rather than forcing the nearest bundle. Bending an adjacent type to fit is the
   specific failure this library rejected two candidate types for.

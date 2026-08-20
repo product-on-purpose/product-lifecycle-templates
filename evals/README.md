@@ -60,6 +60,11 @@ it is the evidence that the authors attacked their own number first.
   **A superseded result is annotated, never deleted**: the [pilot](results/2026-08-08_pilot.md) carries a
   banner withdrawing its headline finding and points at the
   [matched re-run](results/2026-08-08_matched-rerun.md) that withdrew it
+- [`usage-log/`](usage-log/) - **empty, and honestly so.** EV-3 feedback records written by
+  [`plt-grade-doc`](../skills/plt-grade-doc/) after it grades a real document for a real person: type,
+  date, scores and five answers, **never the document**. Separate from `results/` on purpose, and a
+  usefulness average from it is not an efficacy number. The first file here is the roadmap's M3 exit
+  criterion
 
 ## Running it
 

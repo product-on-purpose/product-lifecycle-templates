@@ -16,6 +16,13 @@
         "version": "0.3.1",
         "tier": "advanced",
         "status": "experimental"
+      },
+      {
+        "name": "plt-grade-doc",
+        "path": "skills/plt-grade-doc/SKILL.md",
+        "version": "0.3.1",
+        "tier": "advanced",
+        "status": "experimental"
       }
     ],
     "subagents": [],
