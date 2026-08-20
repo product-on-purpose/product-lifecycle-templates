@@ -1,13 +1,27 @@
 # Spec: the pull queue, and what a pull is worth
 
-Status: **spec, ready to execute, except for one decision that stops for the maintainer** (section 4, the
-demand rule). Written 2026-08-14. Traces to roadmap WP-32 (demand capture), to [`plan.md`](plan.md) P7
+Status: **spec, ready to execute.** Written 2026-08-14; **status corrected 2026-08-19**, because the one
+decision this line said it was waiting on had already been taken when the line was written. Traces to roadmap WP-32 (demand capture), to [`plan.md`](plan.md) P7
 (stand up the demand-gated roadmap), and to the 2026-07-10 audit's catalog recommendations section 5.4.
 
 This exists because [ADR 0021 (complete the Tier-1 floor)](decisions/0021-complete-the-tier-1-floor.md)
 demand-gates Tier 2 and Tier 3, and the Tier-1 floor is now complete. **The demand gate is therefore the
 only gate left on new content, and it has no door in it.** Nothing in this repository records a request,
 so no candidate outside the floor can legitimately be built, no matter how well argued.
+
+> **Superseded the same day, marked 2026-08-19.**
+> [ADR 0039 (maintainer discretion replaces the pull gate)](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md)
+> was accepted on 2026-08-14, the day this file was written, and it removes the premise the paragraph
+> above rests on: **the maintainer may now build any Tier-2 or Tier-3 type at discretion with a recorded
+> one-line rationale**, so the demand gate is no longer the only gate and no longer a stop. The paragraph
+> is left standing rather than rewritten, because it was true when written and it is the argument ADR 0039
+> answers.
+>
+> **What this changes in the spec, and what it does not.** Sections 1, 2, 3 and 5 are unaffected: intake,
+> the field set, the queue page and the acceptance criteria all still describe work worth doing, and
+> ADR 0039 explicitly retains the queue as an intake and as a priority signal. **Section 4 is the part
+> that needs rewriting**, from a rule about what may be built into a rule about what gets built first.
+> That rewrite is WP-32 build work, not a decision, and it has not been done.
 
 ---
 
@@ -127,9 +141,12 @@ need and not an external request.
 An empty queue that has never held anything teaches a reader nothing about how the queue works. A queue
 whose only entry is labelled a self-pull teaches them exactly what counts.
 
-## 4. The demand rule, which is the part that stops for the maintainer
+## 4. The demand rule, which now sets priority rather than permission
 
-Proposed, per the audit's 5.4, with one addition:
+Proposed, per the audit's 5.4, with one addition. **Read every rule below as a priority rule**: since
+[ADR 0039](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) none of them decides whether a
+type may be built, only where it sits in the order. The rules are left in their original permission
+wording, and rewriting them is the open WP-32 task named at the top of this file.
 
 1. **One named requester moves a type from `pull-gated` to `queued`.** Named means attributable: a person
    or a team, not an anonymous vote.
@@ -138,7 +155,11 @@ Proposed, per the audit's 5.4, with one addition:
 3. **Three or more requests for a Tier-2 methodology pack** trigger the catalog's active-practice test
    before any build, using the `methodology_in_use` field as the evidence.
 4. **Tier-3 regulated stays blocked on decision D4 (regulated-industry appetite)** regardless of pull
-   count, because that tier carries a currency discipline this library has not committed to.
+   count, because that tier carries a currency discipline this library has not committed to. **D4 closed
+   2026-08-14 as a deliberate no**, on that same currency burden, and it reopens only on a pull from a
+   real regulated team, so this rule now states a settled position rather than a pending one. ADR 0039
+   does not unblock it: discretion governs which types get built, and this tier is closed on a separate
+   ground.
 5. **Added here, not in the audit: a queued type is not a commitment**, and the queue page must say so in
    the requester's own reading path. The library has one credibility asset, which is that it does not
    claim what it has not earned. A queue that reads as a promise spends that asset.

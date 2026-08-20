@@ -222,6 +222,38 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **Four internal planning documents were stale in ways that told a reader the wrong thing, and the
+  hygiene sweep that found three of them did not fix any.** All four were introduced on 2026-08-14 and
+  2026-08-15 by the work that closed the decisions they now misreport.
+
+  **[`STATE.md`](STATE.md) said "Last updated: 2026-08-08" while its milestone section, its decisions
+  table and three of its "Open by choice" entries all changed on 2026-08-14.** The field now carries the
+  correct date and describes what changed: M2 closed, M3 named as the binding constraint, and the split
+  of one status row into four, which is how **WP-25's fill tooling was found never to have been built**.
+  **No check in this repository reads that field**, which is why it went five days stale on the one file
+  that outranks every other, and the entry now says so.
+
+  **[`plan-inventory.md`](docs/internal/plan-inventory.md) called the pull queue's demand rule an open
+  decision that "stops for the maintainer".** It was taken on 2026-08-14 by
+  [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md), which made
+  the queue a priority signal rather than a precondition. The same file **omitted
+  [`distribution-plan.md`](docs/internal/distribution-plan.md) from its spec inventory**, which is the
+  one job that document has.
+
+  **A count in that file was wrong on the day it was written, and was found by sweeping rather than by
+  being told.** Section 1 said "six executable build specs" and the prose under the section 4 table said
+  "four of the six build specs are untracked". **The table has carried seven rows and five untracked
+  entries since it was created**, so both numbers were wrong before anything drifted. Nothing checks a
+  count written in prose, which is the standing limitation `check-counts.py` prints on every run.
+
+  **[`pull-queue-spec.md`](docs/internal/pull-queue-spec.md) still declared itself blocked on a decision
+  that had been taken the same day it was written**, and its section 4 rules still read as permission
+  rules. The status line is corrected, the superseded premise is **marked in place rather than
+  rewritten** because it is the argument ADR 0039 answers, and section 4 now states that its rules set
+  priority rather than permission. **Rewriting those five rules is left as open WP-32 build work and is
+  named as such**, because it is a build task rather than a decision. Its rule 4 also still described
+  **D4 (regulated-industry appetite) as pending** after D4 closed as a deliberate no on 2026-08-14.
+
 - **The 2026-07-10 audit's flagship content review is applied, five weeks late, in the half that could be
   applied without inventing sources.** It is the only substantive critique anyone has written of this
   library's *advice quality* rather than its governance, and it had sat untouched.
