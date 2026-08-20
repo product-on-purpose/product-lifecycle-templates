@@ -14,6 +14,49 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`skills/plt-grade-doc/`](skills/plt-grade-doc/), the library's second skill and roadmap WP-30.** It
+  takes a product document that already exists and grades it against that document type's own researched
+  rubric, returning an itemized report card that quotes the document's own text as evidence.
+  **[`plt-fill-template`](skills/plt-fill-template/) runs template to document; this runs document to
+  rubric.** Its build spec had been complete and idle since 2026-07-10, and it is **the only item in the
+  roadmap that delivers something to a person who has not adopted the library**.
+
+  **It is built and not validated, and the two words are doing different work.** The skill ships, the
+  gates pass, and one real document has been graded end to end. **Most of the build spec's acceptance
+  criteria have not been run**: the type-detection target across a mixed set of ten documents, the
+  wall-clock target, the Slack and GitHub rendering check, and the EV-3 write all need documents this
+  repository does not have. They are listed as not-run rather than quietly dropped.
+
+  **Two deviations from the build spec, both stated inside the skill rather than only in this file.**
+  The spec calls the skill `grade-doc`; it ships as `plt-grade-doc` because
+  [ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md) post-dates the spec
+  and takes the `plt-` prefix. More substantially, **the spec assumed every guide carries a 0/1/2 scored
+  rubric and twelve of the twenty-six do not**: they carry a checklist with no scale and no threshold,
+  and [`guide-rubric-spec.md`](docs/internal/guide-rubric-spec.md) section 4 item 2 deliberately refuses
+  to convert them mechanically. The skill supplies its own 0/1/2 scale for those bundles, **states in
+  every report card's frontmatter that the scale is the grader's and not the guide's**, and routes the
+  question back to that spec. That is [decision procedure 5](docs/internal/decision-procedures.md)
+  applied rather than an unwritten rule applied silently, and each such report card is a data point the
+  open decision needs.
+
+  **The first run found a defect nothing in CI looks for.** Grading
+  [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) against the
+  `adr` rubric scored it **C** and surfaced that
+  [ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md), the record 0039 amends, **had
+  never been updated to point at it**, so a reader landing on 0021 got the superseded rule with no
+  forward pointer. `check-adr-index.py` checks that every record has an index row; nothing checks that a
+  record links the ones that changed it. **The pointer is added here**, and the grading is kept unedited
+  in [`worked-example.md`](skills/plt-grade-doc/references/worked-example.md) so the run that found it
+  stays legible. **The document graded was deliberately not one of this library's own worked examples**,
+  which would have been circular.
+
+- **[`evals/usage-log/`](evals/usage-log/), empty and honestly so.** Where the EV-3 feedback record from
+  a real grading lands: type, date, variant, scores and five answers, **never the document**, and never
+  without recorded consent. It is separate from [`evals/results/`](evals/results/) on purpose, and a
+  usefulness average from it is not an efficacy number. **The first file in it is the roadmap's M3 exit
+  criterion**, and `STATE.md` keeps saying zero real fills until one appears.
+
+
 - **[`docs/internal/distribution-plan.md`](docs/internal/distribution-plan.md)**, the executable plan for
   roadmap **WP-33** (wedge outreach), built from research that fetched and read every venue rather than
   recalling it. **Its central finding contradicts the brief it was written against.** The largest and

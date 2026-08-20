@@ -7,6 +7,20 @@ consulted: [claude]
 
 # Complete the Tier-1 floor on a schedule; grow-by-pull governs Tier-2 and Tier-3 only
 
+> **Amended 2026-08-14 by [ADR 0039 (maintainer discretion replaces the pull gate)](0039-maintainer-discretion-replaces-the-pull-gate.md),
+> pointer added 2026-08-19.** The clause below that Tier 2 and Tier 3 "stay strictly demand-gated" **no
+> longer holds**: the maintainer may now initiate any Tier-2 or Tier-3 bundle at discretion with a
+> recorded one-line rationale, and the pull queue is a priority signal rather than a precondition. The
+> reasoning is that this record's own chicken-and-egg argument did not stop applying at the boundary of
+> the 27 must-have types. **What 0039 explicitly keeps is this record's load-bearing half**: coverage and
+> real usage stay separate honest numbers, and no bundle is called proven on the strength of a green gate.
+>
+> **This pointer was missing for five days and was found by grading this repository's own decision
+> records** with [`plt-grade-doc`](../../../skills/plt-grade-doc/), whose `adr` rubric asks whether an
+> amended record was updated to point at the record that amended it. Nothing in CI checks
+> cross-references between decision records: `check-adr-index.py` checks that every record has an index
+> row, not that a record links the ones that changed it.
+
 ## TL;DR
 
 - **Decision:** Build the 21 remaining Tier-1 bundles on a schedule set by docs/internal/buildout-plan.md, amending grow-by-pull for the Tier-1 floor only; Tier-2 and Tier-3 stay strictly demand-gated.
