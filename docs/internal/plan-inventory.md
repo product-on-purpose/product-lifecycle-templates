@@ -7,6 +7,14 @@
 >
 > It exists because that session found the answers scattered across seven documents, two of them
 > untracked, and three of them stale in ways that changed the answer.
+>
+> **Amended 2026-08-19, four corrections and no re-dating.** The `pull-queue-spec.md` row in section 4
+> still called the demand rule an open decision after
+> [ADR 0039 (maintainer discretion replaces the pull gate)](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md)
+> had settled it; [`distribution-plan.md`](distribution-plan.md) was missing from section 4 altogether,
+> which is this document's own job; and the spec counts in section 1 and under the section 4 table both
+> read "six" and "four" against a table that has carried seven rows and five untracked entries since the
+> day it was written. **Every other fact below still dates from 2026-08-14 and has not been re-verified.**
 
 <!-- counts: bundles=26, adrs=40, cisteps=25 -->
 
@@ -23,8 +31,8 @@ the same convention [`roadmap.md`](roadmap.md) uses, for the same reason.
 ## 1. The short version
 
 **There is a roadmap. There is no release plan.** The roadmap is specified through M6 and the library is
-currently off it by an explicit decision that has now expired. Of six executable build specs, one is
-fully executed, one is half executed, and four are complete and idle.
+currently off it by an explicit decision that has now expired. Of the eight documents inventoried in
+section 4, one is fully executed, one is half executed, and six are complete and idle.
 
 **The pattern underneath all three answers:** everything built so far delivers value to someone who has
 already adopted the library. Every item that would deliver value to someone who has not is unbuilt.
@@ -89,10 +97,14 @@ fill time from the release tag matching its own declared version.
 | `spec_lp1-use-template-flow.md` (untracked) | Interview-driven fill, the guidance-comment grammar, `strip-template.py` | **Complete, not started.** Partly pre-empted by `plt-fill-template` | M5, gated on M3 |
 | `spec_ag2-mcp-server.md` (untracked) | MCP server: five tools, three resources, token budgets | **Complete, not started** | M5, gated on M3 by design |
 | [`guide-rubric-spec.md`](guide-rubric-spec.md) | Guide rubric house style, and the backfill across every guide | **Says "spec, ready to execute" in its own header**, adopted 2026-07-27 | Nothing. It was scoped as an opportunistic backfill and has not been swept |
-| [`pull-queue-spec.md`](pull-queue-spec.md) | Demand capture, WP-32 | **Written 2026-08-14, one decision open** | The demand rule, which stops for the maintainer |
+| [`pull-queue-spec.md`](pull-queue-spec.md) | Demand capture, WP-32 | **Written 2026-08-14. The one decision it stopped for was taken the same day.** [ADR 0039 (maintainer discretion replaces the pull gate)](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) made the queue a priority signal rather than a precondition | **No decision.** Section 4 of the spec still frames the demand rule as a permission gate and has to be rewritten as a prioritisation rule, which is WP-32 build work |
+| [`distribution-plan.md`](distribution-plan.md) | Wedge outreach, WP-33: a venue-by-venue submission plan | **Written 2026-08-14. Complete, and nothing has been submitted.** Built from research that fetched and read every venue rather than recalling it | **No decision and no build.** Every act in it opens an issue or a pull request on a third party's repository, so its own section 8 stops all of them for the maintainer |
 
-**Four of the six build specs are untracked.** They live in the gitignored audit package, are cited by name
-in the roadmap because they cannot be linked, and are covered by no check in this repository. They cannot
+**Five of the eight documents in this table are untracked, and all five of those are build specs.** They
+live in the gitignored audit package, are cited by name in the roadmap because they cannot be linked, and
+are covered by no check in this repository. (This sentence read "four of the six" until 2026-08-19. It was
+wrong on the day it was written: the table has carried seven rows and five untracked entries from the
+start, and nothing checks a count written in prose.) They cannot
 go stale loudly, only quietly. That is ADR 0013's recorded cost appearing as an operational one, and it is
 the strongest argument for promoting the two that are closest to execution.
 
