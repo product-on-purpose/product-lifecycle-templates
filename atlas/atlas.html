@@ -247,6 +247,7 @@
     text-transform: uppercase; font-weight: 600;
   }
   .chip.built { background: var(--accent); color: #fff; }
+  .chip.oos { background: #6B7280; color: #fff; }
   .chip.reg { background: var(--t3); color: #fff; }
   .card .sub {
     font-size: 12px; color: var(--muted); line-height: 1.4;
@@ -343,6 +344,7 @@
     <span><i class="swatch sw-t3"></i> Tier 3 &middot; regulated</span>
     <span><i class="star-key">&#9733;</i> must-have</span>
     <span><i class="swatch" style="background:var(--accent)"></i> Built in this library</span>
+    <span><i class="swatch" style="background:#6B7280"></i> Out of scope, with a stated reason (hover the chip)</span>
   </div>
 </header>
 
@@ -463,7 +465,9 @@
       "relationships": [
         "Strategy",
         "Roadmap"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "product-strategy",
@@ -489,7 +493,9 @@
         "Vision",
         "Roadmap",
         "OKRs"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "business-case",
@@ -514,7 +520,9 @@
       "relationships": [
         "Vision",
         "Charter"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "business-model-canvas",
@@ -536,7 +544,9 @@
       "built": false,
       "relationships": [
         "MRD"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "lean-canvas",
@@ -558,7 +568,9 @@
       "built": false,
       "relationships": [
         "BMC"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "okrs",
@@ -583,7 +595,9 @@
       "relationships": [
         "Strategy",
         "Roadmap"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "product-operating-model-team-topology-doc",
@@ -606,7 +620,9 @@
       "built": false,
       "relationships": [
         "Team Charter"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "north-star-metric-definition",
@@ -630,7 +646,9 @@
       "relationships": [
         "Metric Tree",
         "Dashboards"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "strategic-theme-portfolio-vision",
@@ -653,7 +671,9 @@
       "built": false,
       "relationships": [
         "PI Objectives"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "market-requirements-document",
@@ -675,7 +695,9 @@
       "built": false,
       "relationships": [
         "PRD"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "competitive-analysis",
@@ -700,7 +722,9 @@
       "relationships": [
         "Positioning",
         "Battlecard"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "market-sizing-tam-sam-som-model",
@@ -722,7 +746,9 @@
       "built": false,
       "relationships": [
         "Business Case"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "positioning-statement",
@@ -746,7 +772,9 @@
       "relationships": [
         "Messaging",
         "Battlecard"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "messaging-framework",
@@ -770,7 +798,9 @@
       "built": false,
       "relationships": [
         "Positioning"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "win-loss-analysis",
@@ -793,7 +823,9 @@
       "relationships": [
         "Positioning",
         "Roadmap"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "pricing-packaging-document",
@@ -816,7 +848,9 @@
       "built": false,
       "relationships": [
         "GTM Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "voice-of-customer-report",
@@ -840,7 +874,9 @@
       "relationships": [
         "Personas",
         "Roadmap"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "user-research-report",
@@ -865,7 +901,9 @@
       "relationships": [
         "Personas",
         "PRD"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "user-persona",
@@ -890,7 +928,9 @@
       "relationships": [
         "Journey Map",
         "PRD"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "empathy-map",
@@ -912,7 +952,9 @@
       "built": false,
       "relationships": [
         "Persona"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "jobs-to-be-done-statement",
@@ -933,7 +975,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "opportunity-solution-tree",
@@ -955,7 +999,9 @@
       "built": false,
       "relationships": [
         "Experiment Design"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "customer-journey-map",
@@ -978,7 +1024,9 @@
       "built": false,
       "relationships": [
         "Service Blueprint"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "service-blueprint",
@@ -1000,7 +1048,9 @@
       "built": false,
       "relationships": [
         "Journey Map"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "interview-guide-discussion-guide",
@@ -1023,7 +1073,9 @@
       "built": false,
       "relationships": [
         "Research Report"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "survey-instrument",
@@ -1046,7 +1098,9 @@
       "built": false,
       "relationships": [
         "Research Report"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "concept-test-validation-brief",
@@ -1070,7 +1124,9 @@
       "relationships": [
         "PRD",
         "Pitch"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "diary-study-field-study-plan",
@@ -1093,7 +1149,9 @@
       "built": false,
       "relationships": [
         "Research Report"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "product-requirements-document",
@@ -1117,7 +1175,9 @@
       "tier_inferred": false,
       "must_have": true,
       "built": true,
-      "relationships": []
+      "relationships": [],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "user-story",
@@ -1142,7 +1202,9 @@
       "relationships": [
         "Epic",
         "Sprint Backlog"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "epic",
@@ -1167,7 +1229,9 @@
         "Stories",
         "Initiative",
         "Theme"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "software-requirements-specification",
@@ -1190,7 +1254,9 @@
       "relationships": [
         "SDD",
         "Test Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "functional-specification",
@@ -1215,7 +1281,9 @@
       "relationships": [
         "SRS",
         "SDD"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "non-functional-requirements-doc",
@@ -1239,7 +1307,9 @@
       "relationships": [
         "Architecture",
         "Test Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "use-case-specification",
@@ -1260,7 +1330,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "business-requirements-document",
@@ -1283,7 +1355,9 @@
       "relationships": [
         "FRS",
         "SRS"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "requirements-traceability-matrix",
@@ -1308,7 +1382,9 @@
       "relationships": [
         "SRS to Tests",
         "Risk"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "acceptance-criteria",
@@ -1332,7 +1408,9 @@
       "relationships": [
         "Story",
         "DoD"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "definition-of-done",
@@ -1354,7 +1432,9 @@
       "built": true,
       "relationships": [
         "Increment"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "definition-of-ready",
@@ -1376,7 +1456,9 @@
       "built": false,
       "relationships": [
         "Sprint Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "business-rules-catalog",
@@ -1400,7 +1482,9 @@
       "relationships": [
         "Spec",
         "Design"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "data-requirements-data-model",
@@ -1424,7 +1508,9 @@
       "built": false,
       "relationships": [
         "Database Design"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "amazon-pr-faq",
@@ -1447,7 +1533,9 @@
       "built": false,
       "relationships": [
         "PRD"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "amazon-six-pager",
@@ -1471,7 +1559,9 @@
       "relationships": [
         "PR",
         "FAQ"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "shape-up-pitch",
@@ -1492,7 +1582,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "breadboard-fat-marker-sketch",
@@ -1515,7 +1607,9 @@
       "built": false,
       "relationships": [
         "Pitch"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "software-design-document",
@@ -1542,7 +1636,9 @@
       "relationships": [
         "PRD",
         "SRS"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "request-for-comments-engineering",
@@ -1566,7 +1662,9 @@
       "built": true,
       "relationships": [
         "ADR"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "api-specification",
@@ -1588,7 +1686,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "interface-control-document",
@@ -1611,7 +1711,9 @@
       "built": false,
       "relationships": [
         "API spec"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "configuration-environment-specification",
@@ -1635,7 +1737,9 @@
       "built": false,
       "relationships": [
         "Deployment"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "wireframe",
@@ -1661,7 +1765,9 @@
         "Prototype"
       ],
       "templatable": false,
-      "templatable_note": "Artifact is visual. No named source publishes a wireframe specification as a written document. ADR 0030."
+      "templatable_note": "Artifact is visual. No named source publishes a wireframe specification as a written document. ADR 0030.",
+      "state": "out-of-scope",
+      "state_note": "Not a document. ADR 0030 declared catalog 52 out of scope: no named source publishes a 'wireframe specification' as a written document, so shipping one would invent a document type nobody writes to fill a catalog slot."
     },
     {
       "id": "high-fidelity-mockup",
@@ -1685,7 +1791,9 @@
       "relationships": [
         "Wireframe",
         "Prototype"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "interactive-prototype",
@@ -1712,7 +1820,9 @@
         "Test"
       ],
       "templatable": false,
-      "templatable_note": "Artifact is executable. A prototype-brief type was proposed to ship instead, but failed the same admission test on its own research and does not ship. ADR 0030, corrected by ADR 0035."
+      "templatable_note": "Artifact is executable. A prototype-brief type was proposed to ship instead, but failed the same admission test on its own research and does not ship. ADR 0030, corrected by ADR 0035.",
+      "state": "out-of-scope",
+      "state_note": "Not a document. ADR 0030 declared catalog 54 out of scope on the same admission test: flows, interactions, states and transitions are not a written artifact a Markdown template can produce."
     },
     {
       "id": "design-system-ui-kit",
@@ -1734,7 +1844,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "information-architecture-sitemap",
@@ -1758,7 +1870,9 @@
       "built": false,
       "relationships": [
         "Wireframes"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "user-flow-task-flow",
@@ -1782,7 +1896,9 @@
       "relationships": [
         "Wireframes",
         "Prototype"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "architecture-diagram-c4-model",
@@ -1806,7 +1922,9 @@
       "relationships": [
         "SDD",
         "ADR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "arc42-architecture-documentation",
@@ -1829,7 +1947,9 @@
       "relationships": [
         "ADRs",
         "C4 views"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "4-1-views-beyond-iso-42010-architecture-views",
@@ -1852,7 +1972,9 @@
       "built": false,
       "relationships": [
         "C4"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "data-flow-diagram",
@@ -1874,7 +1996,9 @@
       "built": false,
       "relationships": [
         "STRIDE threat model"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "database-schema-data-model-physical",
@@ -1898,7 +2022,9 @@
       "built": false,
       "relationships": [
         "Data Requirements"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "deployment-infrastructure-architecture",
@@ -1923,7 +2049,9 @@
       "relationships": [
         "Runbook",
         "Deployment"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "architecture-decision-record",
@@ -1946,7 +2074,9 @@
       "built": true,
       "relationships": [
         "RFC"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "decision-log",
@@ -1967,7 +2097,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "trade-study-options-analysis",
@@ -1992,7 +2124,9 @@
       "relationships": [
         "ADR",
         "Business Case"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "spike-research-spike-report",
@@ -2016,7 +2150,9 @@
       "relationships": [
         "Story",
         "ADR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "product-roadmap",
@@ -2041,7 +2177,9 @@
       "relationships": [
         "Strategy",
         "Backlog"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "release-plan",
@@ -2064,7 +2202,9 @@
       "built": false,
       "relationships": [
         "Deployment"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "project-charter",
@@ -2088,7 +2228,9 @@
       "built": false,
       "relationships": [
         "Project Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "project-brief",
@@ -2111,7 +2253,9 @@
       "built": false,
       "relationships": [
         "Charter"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "project-management-plan",
@@ -2132,7 +2276,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "work-breakdown-structure",
@@ -2156,7 +2302,9 @@
       "relationships": [
         "Schedule",
         "Estimate"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "project-schedule-gantt-chart",
@@ -2180,7 +2328,9 @@
       "built": false,
       "relationships": [
         "WBS"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "product-backlog",
@@ -2203,7 +2353,9 @@
       "built": true,
       "relationships": [
         "Sprint Backlog"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "sprint-backlog",
@@ -2225,7 +2377,9 @@
       "built": true,
       "relationships": [
         "Product Backlog"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "safe-pi-objectives",
@@ -2247,7 +2401,9 @@
       "built": false,
       "relationships": [
         "PI Planning"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "safe-program-board-art-planning-board",
@@ -2270,7 +2426,9 @@
       "built": false,
       "relationships": [
         "PI Objectives"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "roam-board",
@@ -2292,7 +2450,9 @@
       "built": false,
       "relationships": [
         "PI Planning"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "team-charter",
@@ -2313,7 +2473,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "capacity-resource-plan",
@@ -2336,7 +2498,9 @@
       "built": false,
       "relationships": [
         "Schedule"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "dependency-map-dependency-log",
@@ -2359,7 +2523,9 @@
       "built": false,
       "relationships": [
         "Program Board"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "communication-management-plan",
@@ -2382,7 +2548,9 @@
       "built": false,
       "relationships": [
         "Status Reports"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "estimate-story-point-estimate",
@@ -2407,7 +2575,9 @@
       "relationships": [
         "Sprint",
         "Release plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "appetite-statement",
@@ -2429,7 +2599,9 @@
       "built": false,
       "relationships": [
         "Pitch"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "cost-estimate-budget",
@@ -2452,7 +2624,9 @@
       "built": false,
       "relationships": [
         "Business Case"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "velocity-throughput-report",
@@ -2475,7 +2649,9 @@
       "built": false,
       "relationships": [
         "Estimates"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "sprint-goal",
@@ -2497,7 +2673,9 @@
       "built": false,
       "relationships": [
         "Sprint Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "product-increment",
@@ -2520,7 +2698,9 @@
       "built": false,
       "relationships": [
         "Sprint Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "standup-notes-daily-scrum-update",
@@ -2543,7 +2723,9 @@
       "built": false,
       "relationships": [
         "Impediment Log"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "impediment-log-blocker-list",
@@ -2566,7 +2748,9 @@
       "built": false,
       "relationships": [
         "Standup"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "sprint-review-notes-demo-record",
@@ -2589,7 +2773,9 @@
       "built": false,
       "relationships": [
         "Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "backlog-refinement-notes",
@@ -2611,7 +2797,9 @@
       "built": false,
       "relationships": [
         "Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "kanban-board",
@@ -2632,7 +2820,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "cumulative-flow-diagram",
@@ -2652,7 +2842,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "burndown-burnup-chart",
@@ -2675,7 +2867,9 @@
       "built": false,
       "relationships": [
         "Velocity"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "kickoff-deck-project-kickoff-doc",
@@ -2699,7 +2893,9 @@
       "relationships": [
         "Charter",
         "Pitch"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-review-record",
@@ -2720,7 +2916,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "architecture-review-record",
@@ -2743,7 +2941,9 @@
       "built": false,
       "relationships": [
         "ADR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "working-agreement-ground-rules",
@@ -2765,7 +2965,9 @@
       "built": false,
       "relationships": [
         "Team Charter"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "confidence-vote-record",
@@ -2787,7 +2989,9 @@
       "built": false,
       "relationships": [
         "PI Objectives"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "test-plan",
@@ -2810,7 +3014,9 @@
       "built": true,
       "relationships": [
         "Requirements"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "test-strategy",
@@ -2833,7 +3039,9 @@
       "built": false,
       "relationships": [
         "Test Plans"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "test-case",
@@ -2856,7 +3064,9 @@
       "built": true,
       "relationships": [
         "Requirements"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "test-suite-test-scenario",
@@ -2879,7 +3089,9 @@
       "built": false,
       "relationships": [
         "Test Cases"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "test-report-test-summary-report",
@@ -2900,7 +3112,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "bug-report-defect-report",
@@ -2925,7 +3139,9 @@
       "relationships": [
         "Backlog",
         "Triage"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "defect-triage-log-bug-bash-notes",
@@ -2948,7 +3164,9 @@
       "built": false,
       "relationships": [
         "Bug Reports"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "test-automation-plan-framework-doc",
@@ -2970,7 +3188,9 @@
       "built": false,
       "relationships": [
         "CI pipeline"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "user-acceptance-test-plan",
@@ -2991,7 +3211,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "software-verification-validation-plan",
@@ -3015,7 +3237,9 @@
       "relationships": [
         "Verification",
         "Validation reports"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "performance-load-test-plan",
@@ -3038,7 +3262,9 @@
       "built": false,
       "relationships": [
         "NFRs"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "security-test-plan-penetration-test-report",
@@ -3061,7 +3287,9 @@
       "built": false,
       "relationships": [
         "Remediation backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "test-data-management-plan",
@@ -3083,7 +3311,9 @@
       "built": false,
       "relationships": [
         "Test Cases"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "release-notes",
@@ -3107,7 +3337,9 @@
       "built": true,
       "relationships": [
         "Release Plan"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "runbook",
@@ -3129,7 +3361,9 @@
       "tier_inferred": false,
       "must_have": true,
       "built": true,
-      "relationships": []
+      "relationships": [],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "playbook",
@@ -3152,7 +3386,9 @@
       "built": false,
       "relationships": [
         "Runbook"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "deployment-plan",
@@ -3176,7 +3412,9 @@
       "built": false,
       "relationships": [
         "Release Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "rollback-back-out-plan",
@@ -3199,7 +3437,9 @@
       "built": false,
       "relationships": [
         "Deployment Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "change-request",
@@ -3223,7 +3463,9 @@
       "built": false,
       "relationships": [
         "CAB review"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "release-deployment-checklist",
@@ -3246,7 +3488,9 @@
       "built": false,
       "relationships": [
         "Deployment Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "feature-flag-rollout-configuration-record",
@@ -3267,7 +3511,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "release-calendar-release-schedule",
@@ -3290,7 +3536,9 @@
       "built": false,
       "relationships": [
         "Release Plans"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "configuration-management-plan",
@@ -3314,7 +3562,9 @@
       "built": false,
       "relationships": [
         "CMDB"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "production-readiness-review",
@@ -3335,7 +3585,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "launch-coordination-checklist",
@@ -3357,7 +3609,9 @@
       "built": false,
       "relationships": [
         "PRR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "incident-postmortem",
@@ -3382,7 +3636,9 @@
       "built": true,
       "relationships": [
         "Backlog"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "incident-report-incident-record",
@@ -3405,7 +3661,9 @@
       "built": false,
       "relationships": [
         "Postmortem"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "service-level-objective-document",
@@ -3428,7 +3686,9 @@
       "built": false,
       "relationships": [
         "Error Budget Policy"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "error-budget-policy",
@@ -3450,7 +3710,9 @@
       "built": false,
       "relationships": [
         "SLO"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "service-level-agreement",
@@ -3472,7 +3734,9 @@
       "built": false,
       "relationships": [
         "SLO underpins it"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "on-call-escalation-policy",
@@ -3495,7 +3759,9 @@
       "built": false,
       "relationships": [
         "Incident response"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "monitoring-alerting-plan",
@@ -3518,7 +3784,9 @@
       "built": false,
       "relationships": [
         "SLO"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "capacity-plan-ops",
@@ -3541,7 +3809,9 @@
       "built": false,
       "relationships": [
         "Infra Architecture"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "disaster-recovery-business-continuity-plan",
@@ -3563,7 +3833,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "production-meeting-minutes-ops-review",
@@ -3584,7 +3856,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "support-knowledge-base-article-faq",
@@ -3606,7 +3880,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "maintenance-deprecation-plan",
@@ -3628,7 +3904,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "kpi-dashboard",
@@ -3653,7 +3931,9 @@
       "relationships": [
         "NSM",
         "OKRs"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "tracking-plan",
@@ -3678,7 +3958,9 @@
       "relationships": [
         "Data Dictionary",
         "Dashboards"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "data-dictionary",
@@ -3701,7 +3983,9 @@
       "built": false,
       "relationships": [
         "Tracking Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "experiment-design-doc",
@@ -3725,7 +4009,9 @@
       "built": false,
       "relationships": [
         "Experiment Readout"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "experiment-readout-results-report",
@@ -3748,7 +4034,9 @@
       "built": false,
       "relationships": [
         "Experiment Design"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "metric-tree",
@@ -3772,7 +4060,9 @@
       "built": false,
       "relationships": [
         "NSM to team metrics"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "cohort-retention-analysis",
@@ -3795,7 +4085,9 @@
       "built": false,
       "relationships": [
         "Roadmap"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "funnel-analysis",
@@ -3817,7 +4109,9 @@
       "built": false,
       "relationships": [
         "Experiment Design"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "analytics-requirements-measurement-plan",
@@ -3840,7 +4134,9 @@
       "built": false,
       "relationships": [
         "PRD or standalone"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "ml-experiment-tracking-record",
@@ -3863,7 +4159,9 @@
       "built": false,
       "relationships": [
         "Model Card"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "model-card-datasheet-for-datasets",
@@ -3886,7 +4184,9 @@
       "built": false,
       "relationships": [
         "Compliance"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "risk-register",
@@ -3907,7 +4207,9 @@
       "tier_inferred": false,
       "must_have": true,
       "built": true,
-      "relationships": []
+      "relationships": [],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "raid-log",
@@ -3931,7 +4233,9 @@
       "relationships": [
         "Risk",
         "Issue logs"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "issue-log",
@@ -3954,7 +4258,9 @@
       "built": false,
       "relationships": [
         "RAID"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "assumption-log",
@@ -3976,7 +4282,9 @@
       "built": false,
       "relationships": [
         "RAID"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "change-log-governance",
@@ -3999,7 +4307,9 @@
       "built": false,
       "relationships": [
         "Change Requests"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "threat-model",
@@ -4023,7 +4333,9 @@
       "built": false,
       "relationships": [
         "DFD; feeds Security Backlog"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "software-bill-of-materials",
@@ -4046,7 +4358,9 @@
       "built": false,
       "relationships": [
         "Vulnerability mgmt"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "risk-management-file-iso-14971",
@@ -4067,7 +4381,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-history-file",
@@ -4087,7 +4403,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-and-development-plan-regulated",
@@ -4110,7 +4428,9 @@
       "built": false,
       "relationships": [
         "DHF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-inputs-document",
@@ -4133,7 +4453,9 @@
       "relationships": [
         "Outputs",
         "Verification"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-outputs-document",
@@ -4155,7 +4477,9 @@
       "built": false,
       "relationships": [
         "Inputs"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-review-records-regulated",
@@ -4177,7 +4501,9 @@
       "built": false,
       "relationships": [
         "DHF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-verification-protocol-report",
@@ -4199,7 +4525,9 @@
       "built": false,
       "relationships": [
         "DHF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-validation-protocol-report",
@@ -4221,7 +4549,9 @@
       "built": false,
       "relationships": [
         "DHF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-transfer-documentation",
@@ -4245,7 +4575,9 @@
         "DHF",
         "DMR",
         "MDF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "design-changes-record",
@@ -4269,7 +4601,9 @@
       "built": false,
       "relationships": [
         "DHF"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "device-master-record",
@@ -4291,7 +4625,9 @@
       "built": false,
       "relationships": [
         "Design Transfer"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "device-history-record",
@@ -4314,7 +4650,9 @@
       "built": false,
       "relationships": [
         "DMR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "installation-operational-performance-qualification-protocols",
@@ -4337,7 +4675,9 @@
       "built": false,
       "relationships": [
         "DMR"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "validation-master-plan",
@@ -4361,7 +4701,9 @@
         "IQ",
         "OQ",
         "PQ"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "21-cfr-part-11-computer-system-validation-package",
@@ -4385,7 +4727,9 @@
       "relationships": [
         "CSV",
         "IQ-OQ-PQ"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "soc-2-system-description",
@@ -4407,7 +4751,9 @@
       "built": false,
       "relationships": [
         "core SOC 2 doc"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "soc-2-management-assertion",
@@ -4427,7 +4773,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "soc-2-control-matrix",
@@ -4450,7 +4798,9 @@
       "built": false,
       "relationships": [
         "core SOC 2 doc; maps to evidence"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "information-security-policy-set",
@@ -4470,7 +4820,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "gdpr-records-of-processing-activities",
@@ -4493,7 +4845,9 @@
       "built": false,
       "relationships": [
         "DPIA"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "data-protection-impact-assessment",
@@ -4517,7 +4871,9 @@
       "built": false,
       "relationships": [
         "RoPA"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "audit-report-compliance-evidence-package",
@@ -4538,7 +4894,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "accessibility-conformance-report",
@@ -4559,7 +4917,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "status-report",
@@ -4584,7 +4944,9 @@
       "relationships": [
         "RAID",
         "Schedule"
-      ]
+      ],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "stakeholder-map-register",
@@ -4607,7 +4969,9 @@
       "built": false,
       "relationships": [
         "Comms Plan"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "raci-matrix",
@@ -4630,7 +4994,9 @@
       "built": false,
       "relationships": [
         "Team Charter"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "executive-briefing-steering-committee-deck",
@@ -4652,7 +5018,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "meeting-notes-minutes",
@@ -4677,7 +5045,9 @@
       "relationships": [
         "Decision",
         "Action logs"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "faq-document",
@@ -4701,7 +5071,9 @@
         "PR",
         "FAQ",
         "KB"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "announcement-internal-comms",
@@ -4725,7 +5097,9 @@
       "built": false,
       "relationships": [
         "Release Notes"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "sprint-retrospective-notes",
@@ -4746,7 +5120,9 @@
       "tier_inferred": false,
       "must_have": true,
       "built": true,
-      "relationships": []
+      "relationships": [],
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "project-milestone-retrospective",
@@ -4768,7 +5144,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "pi-release-retrospective",
@@ -4791,7 +5169,9 @@
       "built": false,
       "relationships": [
         "PI execution"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "premortem",
@@ -4814,7 +5194,9 @@
       "built": false,
       "relationships": [
         "Risk Register"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "postmortem-action-item-tracker",
@@ -4837,7 +5219,9 @@
       "built": false,
       "relationships": [
         "Postmortem"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "readme",
@@ -4858,7 +5242,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "technical-documentation-developer-docs",
@@ -4882,7 +5268,9 @@
       "built": false,
       "relationships": [
         "API Spec"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "user-manual-help-documentation",
@@ -4904,7 +5292,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "onboarding-training-guide",
@@ -4929,7 +5319,9 @@
       "relationships": [
         "Sales",
         "CS readiness"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "sales-battlecard",
@@ -4952,7 +5344,9 @@
       "built": false,
       "relationships": [
         "Competitive Analysis"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "sales-playbook-demo-script",
@@ -4976,7 +5370,9 @@
       "built": false,
       "relationships": [
         "GTM appendix"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "runbook-knowledge-standard-operating-procedure",
@@ -4999,7 +5395,9 @@
       "built": false,
       "relationships": [
         "ops Runbook"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "style-guide-content-guidelines",
@@ -5022,7 +5420,9 @@
       "built": false,
       "relationships": [
         "Design System"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "statement-of-work",
@@ -5045,7 +5445,9 @@
       "built": false,
       "relationships": [
         "Contract"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "contract-agreement",
@@ -5069,7 +5471,9 @@
       "built": false,
       "relationships": [
         "SOW"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "data-processing-agreement",
@@ -5091,7 +5495,9 @@
       "built": false,
       "relationships": [
         "RoPA"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "service-level-agreement-contractual",
@@ -5113,7 +5519,9 @@
       "built": false,
       "relationships": [
         "SLO"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "terms-of-service-eula-privacy-policy",
@@ -5135,7 +5543,9 @@
       "tier_inferred": true,
       "must_have": false,
       "built": false,
-      "relationships": []
+      "relationships": [],
+      "state": "candidate",
+      "state_note": ""
     },
     {
       "id": "intellectual-property-licensing-record",
@@ -5159,7 +5569,9 @@
       "built": false,
       "relationships": [
         "SBOM"
-      ]
+      ],
+      "state": "candidate",
+      "state_note": ""
     }
   ]
 }</script>
@@ -5220,10 +5632,18 @@
     var badge = '<span class="badge tier' + t.tier + '">T' + t.tier + '</span>';
     var built = t.built ? '<span class="chip built">Built</span>' : "";
     var reg = (t.tier === 3) ? '<span class="chip reg">Regulated</span>' : "";
+    // Only states that carry a decision get a chip. `candidate` is the default and means "eligible,
+    // nobody has decided", which is what an unmarked card already says; 177 of those would be noise.
+    var st = "";
+    if (t.state === "out-of-scope") {
+      st = '<span class="chip oos" title="' + esc(t.state_note || "") + '">Out of scope</span>';
+    } else if (t.state === "queued") {
+      st = '<span class="chip oos" title="' + esc(t.state_note || "") + '">Queued</span>';
+    }
     var sub = [cap(t.stage), cap(t.formality), cap(t.rarity)].filter(Boolean).map(esc);
     return '<button class="card t' + t.tier + (t.built ? ' built' : '') + '" data-id="' + esc(t.id) + '">' +
       '<span class="name">' + stars + '<span>' + esc(t.name) + '</span></span>' +
-      '<span class="markers">' + badge + built + reg + '</span>' +
+      '<span class="markers">' + badge + built + st + reg + '</span>' +
       '<span class="sub">' + sub.join('<span class="dot">&middot;</span>') + '</span>' +
     '</button>';
   }

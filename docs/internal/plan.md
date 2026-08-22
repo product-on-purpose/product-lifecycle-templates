@@ -26,7 +26,7 @@ priority: P1
 >
 > Execution diverged from this plan in three material ways, each of which is now recorded as a decision rather than left as drift: bundle IDs became bare doc-type handles instead of `<phase>-<doctype>` ([ADR 20260630, bundle IDs are the doc-type spine](decisions/0005-bundle-ids-doctype-spine.md)); the CI gate became a local Python script instead of a Node port ([ADR 20260703, Python local gate as interim](decisions/0008-gate-python-local-interim.md)); and content was built ahead of scaffold, leaving the final directory path open as decision HY-2.
 >
-> **Freshness note added 2026-07-26, itself corrected 2026-07-28 (finding DF-5, prose counts drift):** that list of three divergences is itself dated. This file last cites **ADR 0020**; there are now **40** decision records (re-corrected 2026-08-14; the 28 this sentence originally carried was stale within days, which is DF-3 recurring inside the note written to manage it), and the twenty since (0021 through 0040) have changed the taxonomy, the family model, the gate, and the variant model. For what is actually being built and in what order, read [`buildout-specs.md`](buildout-specs.md), not this file. Recorded as finding **DF-3** in STATE.md.
+> **Freshness note added 2026-07-26, itself corrected 2026-07-28 (finding DF-5, prose counts drift):** that list of three divergences is itself dated. This file last cites **ADR 0020**; there are now **41** decision records (re-corrected 2026-08-22; the 28 this sentence originally carried was stale within days, which is DF-3 recurring inside the note written to manage it), and the twenty-one since (0021 through 0041) have changed the taxonomy, the family model, the gate, and the variant model. For what is actually being built and in what order, read [`buildout-specs.md`](buildout-specs.md), not this file. Recorded as finding **DF-3** in STATE.md.
 >
 > The live roadmap superseding this plan is [`10_roadmap-expanded.md`](roadmap.md) (milestones M0 through M6).
 >
@@ -36,7 +36,7 @@ priority: P1
 > a historical record only. The reason it is kept at all is audit finding **G-01 (the plan that lied about
 > the tree)**: deleting a plan that went stale hides the fact that it went stale, and this repository would
 > rather show the scar.
-<!-- counts: adrs=40 -->
+<!-- counts: adrs=41 -->
 >
 > This banner exists because of audit finding G-01: this plan's progress table said "Not started" for every phase while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan.
 

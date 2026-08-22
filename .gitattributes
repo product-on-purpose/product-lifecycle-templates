@@ -6,6 +6,10 @@
 # dialog rejected it as containing control characters. The comment above named that exact
 # failure while its own pattern did not cover the file it was written to protect.
 *.mjs text eol=lf
+# atlas.html is written by tools/gen-atlas.py with newline="
+", so pinning it keeps a fresh
+# checkout byte-identical to what the generator produces. Added 2026-08-22 alongside *.mjs.
+*.html text eol=lf
 
 # The gate and its tools are executed by CI on Linux and locally on Windows; LF everywhere avoids
 # a class of shebang and heredoc breakage that only shows up on one of the two.

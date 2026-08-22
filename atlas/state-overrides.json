@@ -1,0 +1,13 @@
+{
+  "_what": "Per-type state decisions that cannot be derived from the tree, read by tools/gen-atlas.py.",
+  "_why": "atlas/catalog-data.json's `state` is generated, not hand-written, for the same reason `built` is: a fact kept honest only by memory drifts, and this one is public. `built` is derived from the bundles on disk. `out-of-scope` and `queued` cannot be, because they are decisions rather than facts about the tree, so they live here where each carries a reason and an ADR. Everything not named here defaults to `candidate`.",
+  "_vocabulary": "built (derived) | queued (a build the maintainer intends) | candidate (eligible, unranked, the default) | out-of-scope (refused, on a stated ground). Set by ADR 0041, which replaced `pull-gated` because that name asserted a gate ADR 0039 had already removed.",
+  "_rule": "Keep this file small. Every entry carries a reason naming an ADR or an issue. A type listed here that also has a bundle on disk is a contradiction and gen-atlas.py fails on it.",
+
+  "out-of-scope": {
+    "wireframe": "Not a document. ADR 0030 declared catalog 52 out of scope: no named source publishes a 'wireframe specification' as a written document, so shipping one would invent a document type nobody writes to fill a catalog slot.",
+    "interactive-prototype": "Not a document. ADR 0030 declared catalog 54 out of scope on the same admission test: flows, interactions, states and transitions are not a written artifact a Markdown template can produce."
+  },
+
+  "queued": {}
+}

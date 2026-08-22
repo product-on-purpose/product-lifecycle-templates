@@ -16,7 +16,16 @@ single source of truth for the type data; atlas.html's JSON island is regenerate
 catalog-data.json's content, so the two can no longer disagree. `--check` regenerates in memory and
 fails on drift, the same discipline gen-manifest, the link gate, and the dashes gate already use.
 
-Only the `built` field is derived here. Every other field in catalog-data.json (categories, stages,
+The `state` field is derived the same way and for the same reason, added 2026-08-22 under ADR 0041.
+`built` answers "is there a bundle"; `state` answers "and if not, why not", so that 179 unbuilt types stop
+reading as undifferentiated gaps. Its four values are `built` (derived from the tree), `queued` and
+`out-of-scope` (decisions, so they live in atlas/state-overrides.json with a reason each), and `candidate`
+(the default for everything else: eligible, unranked, refused by nobody).
+
+ADR 0041 named the value `candidate` rather than the spec's original `pull-gated`, because that name
+asserted a demand gate ADR 0039 had already removed.
+
+Only `built` and `state` are derived here. Every other field in catalog-data.json (categories, stages,
 the per-type catalog data) is hand-maintained and preserved untouched.
 
 Usage:
@@ -36,6 +45,7 @@ ROOT = os.path.normpath(os.path.join(SCRIPT_DIR, ".."))
 TEMPLATES_DIR = os.path.join(ROOT, "templates")
 CATALOG_JSON = os.path.join(ROOT, "atlas", "catalog-data.json")
 ATLAS_HTML = os.path.join(ROOT, "atlas", "atlas.html")
+STATE_OVERRIDES = os.path.join(ROOT, "atlas", "state-overrides.json")
 
 # The JSON island in atlas.html: a self-contained data block the offline page reads. Its content is
 # kept byte-identical to catalog-data.json so there is exactly one source of truth for the type data.
@@ -73,18 +83,71 @@ def built_catalog_refs():
     return refs, missing
 
 
-def rebuild_catalog_json_text(current_text, refs):
-    """Return catalog-data.json's text with `built` set to (type is in refs), everything else kept.
+def read_state_overrides():
+    """The decisions `state` cannot derive from the tree: what is refused, and what is queued.
+
+    Returns (out_of_scope, queued) as id -> reason dicts. Keys beginning with an underscore are
+    documentation for whoever opens the file and are ignored here.
+    """
+    if not os.path.isfile(STATE_OVERRIDES):
+        return {}, {}
+    data = json.loads(read(STATE_OVERRIDES))
+    return data.get("out-of-scope", {}) or {}, data.get("queued", {}) or {}
+
+
+def rebuild_catalog_json_text(current_text, refs, out_of_scope, queued):
+    """Return catalog-data.json's text with `built` and `state` derived, everything else kept.
 
     A type's catalog number is its 1-indexed position in the types array (the ordering the catalog's
     own numbering uses; verified: catalog_ref N maps to types[N-1]).
+
+    Precedence is deliberate: a bundle on disk wins over any override, so `state` cannot claim a type
+    is refused or queued while its bundle exists. That contradiction is reported by validate_overrides
+    rather than silently resolved.
     """
     data = json.loads(current_text)
     types = data["types"]
     for i, t in enumerate(types):
-        t["built"] = (i + 1) in refs
+        built = (i + 1) in refs
+        t["built"] = built
+        tid = t.get("id")
+        if built:
+            t["state"] = "built"
+            t["state_note"] = ""
+        elif tid in out_of_scope:
+            t["state"] = "out-of-scope"
+            t["state_note"] = out_of_scope[tid]
+        elif tid in queued:
+            t["state"] = "queued"
+            t["state_note"] = queued[tid]
+        else:
+            t["state"] = "candidate"
+            t["state_note"] = ""
     # Exactly the serialization the committed file already uses (indent 2, unicode, no trailing NL).
     return json.dumps(data, indent=2, ensure_ascii=False)
+
+
+def validate_overrides(current_text, refs, out_of_scope, queued):
+    """Fail on an override that names a type the catalog does not have, or one that is already built.
+
+    Both are the same class of defect the `built` flag had before it was generated: a hand-maintained
+    claim with nothing checking it against the tree.
+    """
+    data = json.loads(current_text)
+    ids = {t.get("id"): i + 1 for i, t in enumerate(data["types"])}
+    problems = []
+    for label, table in (("out-of-scope", out_of_scope), ("queued", queued)):
+        for tid, reason in table.items():
+            if tid not in ids:
+                problems.append("%s: '%s' is not a catalog type id" % (label, tid))
+                continue
+            if ids[tid] in refs:
+                problems.append(
+                    "%s: '%s' has a bundle on disk, so its state is 'built' and the override is a "
+                    "contradiction" % (label, tid))
+            if not str(reason).strip():
+                problems.append("%s: '%s' has no reason, and every entry must carry one" % (label, tid))
+    return problems
 
 
 def rebuild_atlas_html(current_html, catalog_json_text):
@@ -121,7 +184,15 @@ def main():
               % (total_types, out_of_range))
         return 1
 
-    want_json = rebuild_catalog_json_text(cur_json, refs)
+    out_of_scope, queued = read_state_overrides()
+    problems = validate_overrides(cur_json, refs, out_of_scope, queued)
+    if problems:
+        print(RED + "FAIL" + OFF + "  atlas/state-overrides.json disagrees with the catalog:")
+        for line in problems:
+            print("        " + line)
+        return 1
+
+    want_json = rebuild_catalog_json_text(cur_json, refs, out_of_scope, queued)
     cur_html = read(ATLAS_HTML)
     want_html = rebuild_atlas_html(cur_html, want_json)
     n = len(refs)
