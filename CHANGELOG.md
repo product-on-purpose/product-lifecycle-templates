@@ -168,6 +168,28 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **[`pull-queue-spec.md`](docs/internal/pull-queue-spec.md) section 4 rewritten from permission wording
+  into priority wording, closing the WP-32 build task that file named at its own top.**
+  [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) was accepted on
+  2026-08-14, the day the spec was written, and it made the demand rule a priority signal rather than a
+  precondition. **The rules had been left in their original permission wording** with a note asking the
+  reader to mentally reinterpret all five, which is the kind of instruction that survives exactly as long
+  as the reader who was told it.
+
+  **Only the wording moved. No rule gained, lost or altered a threshold.** Rule 4 (Tier-3 regulated) is
+  now marked in its own text as **the one rule here that is still a permission rule**, blocked on decision
+  D4's deliberate no rather than on pull count, instead of relying on a reader to carry that exception
+  down from the section header. Rule 5 gained the corollary the reframing creates: **a rank is not a
+  schedule**, and an ordered queue reads as a delivery plan to whoever filed the request at the top of it.
+
+  **What did not happen, and why it is worth naming.** The spec's deliverable **D5 would promote section 4
+  into an accepted ADR, and D5 stops for the maintainer** under
+  [`decision-procedures.md`](docs/internal/decision-procedures.md), because it amends how ADR 0021's gate
+  operates and that is a scope decision. **Rewording a spec to match a decision already taken is build
+  work; promoting it into a decision record is not**, and the two were kept apart deliberately. The spec's
+  own sequencing puts D5 first, so D1 through D4 and D6 remain sequenced behind a maintainer decision
+  rather than behind effort.
+
 - **The `npx skills add` install was rerun 2026-08-21, the first run made with two skills present, and
   [`roadmap.md`](docs/internal/roadmap.md) records it in full beside the 2026-08-08 original.** WP-30
   shipped a second skill on 2026-08-19 and [`installing.md`](docs/how-to/installing.md) then published a
