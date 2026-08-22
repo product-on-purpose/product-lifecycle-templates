@@ -308,6 +308,27 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **`.gitattributes` pinned `*.js` to LF and not `*.mjs`, and the eval harness had therefore been
+  unrunnable on a Windows checkout since it was written.** Launching it failed with "script contains
+  control characters that would be hidden in the approval dialog". Both files under
+  [`evals/harness/`](evals/harness/) were **pure CRLF in the working tree**: 515 lines in
+  `output-eval.workflow.mjs` and 158 in `analyze.mjs`.
+
+  **The rule that missed it names this exact failure in its own comment**, three lines above the pattern:
+  "Workflow scripts are read from disk and passed through a permission dialog that rejects control
+  characters, so a CRLF checkout makes them unrunnable. Keep them LF on every platform." It was written
+  for `.claude/workflows/build-bundle.js`, which `*.js` covers, and **the harness that most needed it has
+  a different extension**.
+
+  **The committed blobs were always LF.** `core.autocrlf` normalized on the way in, so nothing in the
+  repository was wrong and nothing in CI could see it: the defect existed only in what a Windows checkout
+  produced, which is the only place the Workflow tool reads from. **`git diff` was clean the entire time.**
+
+  This is the most likely mechanical reason no eval had ever run.
+  [`check-workflow-prompts.py`](tools/check-workflow-prompts.py) parses both scripts and passes, and says
+  so in its own output: "not proven here: that a script actually RUNS... the runtime contract [is] only
+  proven by invoking the Workflow tool." **The gap it names is exactly the gap this lived in.**
+
 - **`skills@1.5.23` added a thirty-third search prefix and
   [`check-export-surface.py`](tools/check-export-surface.py) did not know about it.** The check simulates
   the CLI's export surface from a verbatim copy of its hardcoded `PRIORITY_PREFIXES` list, read from
