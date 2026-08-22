@@ -1,0 +1,588 @@
+{
+  "summary": {
+    "generations": 2,
+    "byArm": {
+      "T": {
+        "n": 6,
+        "rubric": 4.366666666666667,
+        "heldOut": 4,
+        "probes": 4.5,
+        "overall": 4
+      },
+      "Tplus": {
+        "n": 6,
+        "rubric": 4.526666666666666,
+        "heldOut": 4.083333333333333,
+        "probes": 4.333333333333333,
+        "overall": 3.8333333333333335
+      },
+      "C_sessionA": {
+        "n": 6,
+        "rubric": 3.366666666666666,
+        "heldOut": 4.166666666666667,
+        "probes": 5,
+        "overall": 3.1666666666666665
+      },
+      "C_sessionB": {
+        "n": 6,
+        "rubric": 3.388333333333333,
+        "heldOut": 4.166666666666667,
+        "probes": 5,
+        "overall": 3.3333333333333335
+      },
+      "H_sessionA": {
+        "n": 6,
+        "rubric": 1.045,
+        "heldOut": 1.3,
+        "probes": 0,
+        "overall": 1
+      },
+      "H_sessionB": {
+        "n": 6,
+        "rubric": 1.0566666666666666,
+        "heldOut": 1.375,
+        "probes": 0,
+        "overall": 1
+      }
+    },
+    "gaps": {
+      "matched": {
+        "rubricGap": 1.1383333333333332,
+        "heldOutGap": -0.08333333333333393,
+        "probeGap": -0.666666666666667,
+        "overallGap": 0.5
+      },
+      "pilotComparable": {
+        "rubricGap": 1.0000000000000013,
+        "heldOutGap": -0.16666666666666696,
+        "probeGap": -0.5,
+        "overallGap": 0.8333333333333335
+      },
+      "instructionEffect_crossSession": {
+        "rubricGap": 0.15999999999999925,
+        "heldOutGap": 0.08333333333333304,
+        "overallGap": -0.16666666666666652
+      },
+      "hollowSeparation_matched": 2.8333333333333335,
+      "hollowSeparation_pilotComparable": 3
+    },
+    "gates": {
+      "hollowSeparation": "pass",
+      "discrimination": "FAIL, void rather than negative",
+      "agreement": "pass",
+      "controlSanity": "pass",
+      "agreementStdev": 0.40824829046386296,
+      "agreementStdev_pilotComparable": 0
+    },
+    "perScenario": {
+      "prd-001": {
+        "T": 4,
+        "Tplus": 3.8333333333333335,
+        "C_A": 3.1666666666666665,
+        "C_B": 3.3333333333333335,
+        "H_A": 1,
+        "H_B": 1
+      }
+    },
+    "controlReplication": {
+      "sessionA_overall": 3.1666666666666665,
+      "sessionB_overall": 3.3333333333333335,
+      "delta": -0.16666666666666696,
+      "note": "identical artifacts, independent panels; any gap smaller than this delta is not distinguishable from judging noise"
+    }
+  },
+  "rows": [
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "T",
+      "rubric": 4.7,
+      "heldOut": 4.5,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Problem section is longer and more evidenced than Solution overview (double-booking recurrence, 12% company-wide day-of reassignment rate, driver count/hub count, text-swap drift). Goals read as outcomes (build-time cut, rest-rule enforcement, sync, reassignment reduction below baseline) and non-goals each carry a stated reason. Target user is Renata Okafor/Denver, a named persona with situation. Success metrics section has primary, guardrail, and an explicit measurement window (8-week baseline vs 8-week peak-season window) -- the strongest of the three on this criterion. Open questions table has two rows, each with a named owner (team) and a milestone-tied need-by. FR table has MoSCoW priority on every row; UX section covers the error/conflict-flagging state clearly but does not describe loading or empty states, so unhappy_paths_and_prioritized_requirements is only partially met. Held-out: has an explicit bolded stop condition tied to a date (two weeks before peak season) and a measurable trigger; no internal contradiction found (non-goal on self-serve swaps is consistent with FR-5's scheduler-logged-swap scope); dependencies table separates confirmed risk items with named owners, so an engineer could largely scope from the document, though 'Unconfirmed' status on two dependencies leaves real sizing risk open (this is disclosed, not hidden, which is itself useful); some traceability of author judgment vs. stakeholder input (the off-the-shelf cancellation is used to justify the build-not-buy framing). All 5 probes answerable directly from the document. No distractor facts (budget threshold, long-haul system) included except the necessary non-goal mention of long-haul, which is a correct scoping statement, not clutter. Holistic 4: solid, shippable work with a real but narrow gap (unhappy-path coverage in UX) keeping it off a 5."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.7,
+      "heldOut": 4.5,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Problem and Why-now sections together substantially outweigh the What-we're-building section in both length and evidentiary density (Denver's 3-4 hour rebuild, repeated double-booking, 12% company-wide day-of reassignment rate framed as 1-in-8, prior failed SaaS purchase). Target user section names Renata/Denver specifically with her situation. Success criteria section has a primary metric, a stated deadline, and two leading indicators framed as guardrail-like (day-of reassignment rate, rest-day violation rate targeted at zero), but lacks an explicit measurement window comparable to A's baseline-vs-post windows -- it states a deadline, not a window. There is no dedicated Goals section (goals must be inferred from Success criteria and the capability list) and only one Non-goal (long-haul, with a stated reason), so this criterion is only partly satisfied. There is no Open questions table at all -- the closest equivalent, in Ownership and unknowns, names an owner for rest-day validation with a milestone-tied need-by, but leaves the DriverGo/HR spike ownership unassigned to a person or team. There is no FR table, no priority markers, no NFR section, and no UX/design section describing empty, loading, or error states -- this rubric criterion is essentially unmet, which matters directly against the scenario's ask that engineering be able to size the work without a follow-up conversation. Held-out: has an explicit, dated stop condition; no internal contradiction found; strong decision-vs-input traceability (explicitly reasons through why the prior SaaS cancellation implies build-not-buy, and why rest-day validation must sit with ops managers rather than engineering); scopable_without_a_meeting is weaker than A's because there is no itemized requirement or dependency table an engineer could size line by line, only prose description of three capabilities. All 5 probes answerable, and some (dependency risk, rule ownership) stated even more explicitly than in A. No distractor facts included. Holistic 3: the problem framing, stop condition, and ownership reasoning are as strong as or stronger than A's, but the near-total absence of itemized, prioritized requirements and any UX unhappy-path treatment is more than a nitpick given the scenario's explicit ask that engineering and design not have to come back and ask what was meant."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.3,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Every section is generic filler with no facts, numbers, names, or dates from the scenario -- no Denver, no Renata, no DriverGo, no rest-day rule, no 12% figure, no VP commitment, no hub or driver count. Problem section states only that 'users encounter a challenge' with no evidence of who, how often, or at what cost. Goals and non-goals are placeholder sentences ('efforts that fall outside the intended scope will be considered separately, as appropriate'). Target users section explicitly falls back to 'individuals and groups who interact with the relevant parts of the product,' the undifferentiated-user failure mode the rubric checks against. Success metrics name no primary or guardrail metric and no real measurement window ('an appropriate period following release'). Open questions row has no real owner ('Relevant stakeholders') and no real date ('As appropriate'). FR table has one vague row with a Should priority but no unhappy-path coverage anywhere, and no other information a reader could use to size effort. Held-out: no stop or kill condition anywhere; no scopable content at all (nothing in any row carries an owner, status, or measurable target); no traceable decisions since nothing concrete is asserted, let alone attributed to author judgment versus stakeholder input; technically no internal contradiction is findable, but only because there is no substantive claim anywhere to contradict, which is not meaningful decision-usefulness, so it does not earn a high score on that criterion either. None of the five retrieval probes can be answered from this document -- it never mentions the long-haul division, any stop condition, any dependency, any named metric, or any rule owner. Holistic 1: unusable as a PRD; a senior practitioner would send this back unread."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.33,
+      "heldOut": 4,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Strong, well-evidenced Problem section (Renata Okafor, 3-4 hr rebuild, 12% reassignment rate, 340 drivers/9 hubs, prior vendor failure) that clearly outweighs the short 'What we're building' section. Target users are specific and situated (named scheduler, named app). Explicit, well-formed stop condition tied to a pilot and a deadline. Success criteria names a primary metric plus two leading indicators including a de facto guardrail (zero rest-day violations), though not labeled 'guardrail' or given a precise measurement window. Weak points: no dedicated Goals section separate from Non-goals (goals are inferable from Success criteria/Why now but not organized as outcome statements paired with named exclusions); 'Ownership and unknowns' names an owner for rule validation but has no dated Open Questions table (no needed-by dates anywhere); and most importantly, no functional requirements list and no UX/unhappy-path content at all, which the scenario's ask explicitly wants ('engineering can size it, design can start sketching'). No distractor facts (finance threshold) included; long-haul trucking mentioned only briefly and appropriately as an exclusion. All 5 probes answerable directly from the text."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.25,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Entirely vacuous template-shaped filler: every section is well-headed (Summary, Goals/Non-goals, FR table with a priority column, Success metrics, Risks, Open questions) but contains no facts, numbers, names, dates, or owners anywhere -- 'the individuals and groups who interact with the relevant parts of the product,' 'relevant metrics,' 'as appropriate.' The FR table has a priority tag but the requirement text is meaningless, so it cannot actually be sized. Open questions and dependencies are explicit placeholders ('Further details will be clarified as appropriate'). This is the textbook case the anti-form instruction warns about: full document skeleton, zero content. No internal contradiction only because nothing concrete is asserted to contradict. None of the 5 retrieval probes can be answered because none of the source facts (Renata, DriverGo, HR certs, 12%, 340 drivers, peak season deadline, union rule) appear anywhere in the document."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "T",
+      "rubric": 4.67,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 4,
+      "notes": "The most complete document: evidenced Problem section comparable to A's; explicit Goals (outcome-phrased, e.g. 'reduce day-of reassignments below the 12% baseline') paired with three Non-goals each carrying a stated reason (long-haul out of scope, integrates with DriverGo rather than replacing it, self-serve swaps deferred as a fast-follow); specific primary user (named scheduler) plus secondary; full Success metrics block with primary, guardrail, and an explicit 8-week measurement window; Open Questions table with named owners and needed-by milestones; Dependencies table with owner and status, correctly flagging the DriverGo integration as 'highest risk'; an explicit, dated stop condition ('two weeks before peak season... leadership reassesses scope'). FR rows carry MoSCoW priority. Main gap: the UX section covers error/conflict states well (inline flagging of rest-day, cert, and double-booking conflicts; mid-week reassignment) but never describes empty or loading states, so the 'full variant unhappy paths' criterion is only partially met. No distractor facts included. All 5 probes answerable, several (riskiest dependency, stop condition, rule ownership) more precisely than in A."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Structurally complete and content-free. Every section heading a PRD would have is present, and not one of them carries a fact, a number, a name, or a decision. Problem section says users face 'a challenge' with no evidence of who, how often, or what it costs. One goal ('an improved experience'), one non-goal that excludes nothing ('efforts that fall outside the intended scope'). Target users are 'the individuals and groups who interact with the relevant parts of the product' - the undifferentiated fallback the rubric names as a failure. Success metrics say 'relevant metrics' with 'an appropriate period' as the window: no primary, no guardrail, no window. Open questions table is a filled placeholder ('Further details will be clarified'), owner 'Relevant stakeholders', needed-by 'As appropriate' - exactly the unfilled-to-look-finished pattern the criterion calls out. The single FR row carries a 'Should' marker, but that is a MoSCoW label on an empty requirement, not credit. UX section names no empty, loading, or error states. Held-out: nothing is scopable (no owner, status, or measurable target anywhere); no stop or kill condition; no contradiction only because no two statements are specific enough to conflict, which is not a pass; the voice is uniformly flat so nothing distinguishes author judgment from instruction received. Probes: 0 of 5 - the document does not mention long-haul, DriverGo, HR data, the rest-day rule, peak season, or any owner. Contains no distractors, but only because it contains no facts."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "T",
+      "rubric": 4,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Problem section is evidenced and outweighs the solution overview: 3 to 4 hours per Sunday rebuild, the Denver double-booking repeated twice in a month, 12 percent of shifts reassigned day-of last quarter, 340 drivers across 9 hubs, plus the mechanism (swaps living in text threads) that explains why the live schedule diverges. Goals mix outcomes (build time hours to minutes, reassignments below the 12 percent baseline) with feature-shaped entries; non-goals name three exclusions with reasons, including a deliberate v1 deferral of self-serve swaps. Target user is the named regional scheduler with the Sunday-rebuild situation, drivers secondary. Metrics carry a primary (delays halved), a real guardrail (zero rest-day violations), and a window - but the window compares a pre-launch baseline against 8 weeks into peak season, when peak volume moves the delay base rate independently of the tool, and that also sits slightly against the 'before peak season' target. That is a nitpick a senior practitioner would touch, so 4 rather than 5. Open questions carry named owners (driver mobile team, regional ops managers) and real milestones (before sizing, before Denver pilot). Weakest rubric line is unhappy paths: every FR row is MoSCoW-prioritized, but UX describes conflict flagging and a mid-week call-out only, with no empty, loading, or error states. Held-out: the stop condition is explicit, dated, and tied to two concrete triggers; dependencies name owner and status and flag the DriverGo integration as highest risk, so blockers are identifiable, though the reliability NFR ('within minutes') is soft to size against and the doc-level owner is TBD. No contradiction found across goals, non-goals, FRs, and rollout; FR-5 logging scheduler-recorded swaps is consistent with deferring self-serve. Told versus decided is traceable: the VP commitment and the cancelled vendor attempt are marked as given, 'which is why this is a build proposal, not a re-shop' is marked as the author's inference, and the appendix lists source facts. Probes: 5 of 5, each answerable from a specific line. Mentions long-haul only as a one-line non-goal, which is what the retrieval probe asks for; does not carry the finance budget-review distractor."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "C",
+      "rubric": 3.17,
+      "heldOut": 3.75,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Strongest problem writing of the three: two developed paragraphs with the same hard evidence B carries, plus the sharpest framing of why the cancelled vendor attempt argues for building rather than against trying. Target users are three named segments with their situations. Where it loses ground is on everything engineering and design were told to be able to act on without coming back. No goals section: the outcome has to be read out of Success criteria. Non-goals amount to the long-haul exclusion alone, so nothing deferred inside the effort is named. Metrics have a primary and a compliance floor at zero rest-day violations, and the two leading indicators are a genuinely good call, but there is no measurement window - only a deadline. No functional requirements list at all, therefore no MoSCoW prioritization and nothing telling engineering what gets cut first, and no UX section, so no empty, loading, or error states. Open questions live in prose: the rest-day owner is named with a real milestone, but the DriverGo and HR unknowns carry no owner. Held-out: scoping is partly served - the three core capabilities are concrete and the blockers are named honestly, including that a technical spike must precede any estimate - but with no FR rows, no NFR targets, and no dependency owners or statuses, a reader still needs a conversation to size it. The stop condition is present and tied to concrete triggers, but hangs on 'a defined pilot' that no section defines, and there is no rollout plan to define it. No internal contradiction found; the doc pre-empts the obvious one by noting the delay metric lags launch. Told versus decided is well marked throughout ('matching the VP's stated target' as given, 'that failure is relevant context, not a reason to avoid trying again' and the false-confidence argument as the author's own). Probes: 5 of 5. Gives the long-haul exclusion its own short section, marginally more than the probe needs; does not carry the finance budget-review distractor."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "Tplus",
+      "rubric": 4.67,
+      "heldOut": 4.75,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Problem section is evidenced (Renata's 3-4hr rebuild, two double-bookings, 12% reassignment rate) and clearly outweighs the short Solution overview. Three non-goals each carry a stated reason. Target user is Renata-as-example plus 'one per hub,' not an undifferentiated role. Success metrics name a primary, a guardrail (zero rest-rule violations), and an explicit 8-week baseline-vs-8-week measurement window. Both open questions carry a named owner and a milestone. FRs carry Must/Should on every row. The one real gap: UX states cover empty and several error cases but never names a loading state, so target_user... no, unhappy_paths criterion lands at 4, not 5 -- pulled down with target_user_specificity (Renata example is strong but 'one per hub' plus 340 drivers across 9 hubs is a segment description, not a fully worked persona-in-situation, so on a tie I took the lower 4 per the rubric's tie-break rule). Held-out: an explicit dated stop condition, an Appendix that sources every fact to its origin (direct report, VP statement, operational data) which is about as clean a decision-vs-input trace as this format allows, and no contradiction found across goals/non-goals/rollout. Scopable-without-a-meeting is a 4 not 5: dependency rows have owner and status but no effort/readiness detail. All 5 probes answerable from the document alone."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.5,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Problem section is the most evidence-dense of the three (same Renata facts, reframed as 'roughly 1 in 8 shifts,' plus the cancelled-SaaS history) and is longer than the 'What we're building' section, so it passes on substance despite unconventional headings -- the anti-form instruction cuts in its favor here, not against it. But it loses real ground versus A on content, not form: only one non-goal (trucking) versus A's three, no stated measurement window for its success metric (only a target date), one of two open unknowns lacks a named owner, and most importantly it has no functional-requirements table with priority markers and no UX section naming empty/loading/error states at all -- a real miss given the brief's explicit ask that 'design can start sketching' and 'engineering can size it.' Held-out is close to A: an explicit dated stop condition, the clearest single-sentence naming of the riskiest dependency of any artifact ('DriverGo and HR certification data... are the biggest risk'), and honest acknowledgment that both integrations need a technical spike before an estimate -- which is candid but also concedes the brief's 'without coming back to ask,' capping scopable_without_a_meeting at 3. All 5 probes answerable."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.25,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Fully generic placeholder prose under real section headings -- no named person, count, date, owner, metric, or fact from the brief appears anywhere. Every rubric criterion fails on its pointable-evidence test: no study/count/quote in Problem, a Goal that isn't an outcome, a Non-goal and an Open Question that are both explicit unfilled placeholders, 'monitor relevant metrics' with no primary/guardrail/window, and a single FR too vague for a priority tag to mean anything. This is exactly the trap the anti-form instruction warns about in reverse: it has all the right headings and a confident tone and states nothing. No internal contradiction was found only because there is no concrete claim anywhere to contradict, which is not a meaningful pass, so it scores low rather than high on that criterion. Zero probes answerable from the document alone."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.5,
+      "heldOut": 4,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Strong, well-evidenced Problem section (Renata Okafor's 3-4hr rebuild, twice-repeated double-booking, 12% day-of reassignment rate, 340 drivers/9 hubs) that genuinely outweighs the short 'What we're building' section. Explicit, concrete Stop condition tied to a pilot-region trigger. Names DriverGo and HR-cert integration as the biggest risk in plain language, and assigns rest-day-rule ownership to regional ops managers. Answers all 5 probes directly and cleanly. Distinguishes authorial judgment from raw input in a few places (e.g., interpreting the prior failed SaaS purchase as a lesson rather than a reason to avoid trying again). Avoids both distractors (budget board absent entirely; long-haul trucking confined to one appropriate out-of-scope sentence). Where it falls short: no Goals/Non-goals section as such (outcome goal and one reasoned exclusion exist but are folded into Success criteria/Out of scope rather than named), no Functional Requirements table, no MoSCoW prioritization, no UX/design section with empty/loading/error states, and Open questions exist only as unstructured prose without a named owner+date row. Given the scenario's ask that engineering be able to size the work and design start sketching without a follow-up meeting, these are real, not cosmetic, gaps -- a senior practitioner handed this for build-sizing would still need a requirements pass before engineering could start."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.25,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Fully-formed document skeleton (every section a full PRD template would have) with essentially no actual content -- every sentence is interchangeable corporate filler ('the system will perform in a manner that is appropriate for its intended use', 'as appropriate', 'as needed'). No named user, no number, no date, no owner, no metric, and no reference to any fact from the brief (no Denver, no Renata, no DriverGo, no union rule, no 12 percent, no VP target). This is the clearest illustration of the anti-form instruction: it has more headings and tables than Artifact A yet scores far below it, because the structure is empty. None of the 5 retrieval probes can be answered from this document; a reader learns literally nothing project-specific. The apparent 'no contradiction' finding is vacuous rather than earned, since there is no concrete claim anywhere to contradict."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "Tplus",
+      "rubric": 4.83,
+      "heldOut": 5,
+      "probes": 5,
+      "overall": 4,
+      "notes": "The most complete and decision-useful of the three. Problem section is evidenced and explicitly flags what is and isn't yet known ('we don't yet know the split between scheduling error and driver call-outs'), which is itself a mark of rigor. Goals are outcome-phrased (delay reduction, build-time reduction, rest-rule enforcement, DriverGo sync) and Non-goals each carry a stated reason, including a genuinely useful one (capturing swaps is in scope, a self-service swap marketplace is not, this release). Target user is specific with a named example and a secondary segment. Success metrics name a primary, a guardrail, and a concrete measurement window (8 weeks pre-rollout vs 8 weeks pre-peak). Open questions carry named owners and milestone dates. FR table fully prioritized with MoSCoW; UX section names empty/error states in detail (though does not separately name a 'loading' state, the one rubric nitpick). Held-out criteria are all strongly met: a genuine, dated stop condition; FR/NFR/Dependency rows specific enough to size without a meeting; an appendix that explicitly separates source facts and their reporters from the author's own synthesis, which is the clearest decision-vs-input traceability of the three documents; and no internal contradiction found on cross-check of goals/non-goals/FRs/rollout. Handled both distractors correctly (brief, appropriate exclusion of long-haul trucking in Non-goals; budget board omitted entirely). Solid, shippable work with a minor nitpick, not flawless -- a 4, not a 5."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.25,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Content-free. Every section is a placeholder sentence with the shape of an answer and none of the substance: no domain, no numbers, no names, no product. Problem section (3 sentences of 'a challenge... continues to affect their experience') carries zero evidence: no who, no frequency, no cost, and it is no longer than the equally empty Solution overview (problem_weight_and_evidence 1). One goal ('deliver an improved experience') is not an outcome and the non-goal names nothing excluded, it just says other things will be considered later (1). Target users is 'the individuals and groups who interact with the relevant parts of the product' - the exact 'everyone' fallback the criterion forbids (1). Success metrics has the headings Primary/Guardrail/Measurement window but names no metric, no guardrail quantity, and 'an appropriate period' for a window - the section is the strongest illustration that headings are not content (1). Open questions row is 'Further details will be clarified' / 'Relevant stakeholders' / 'As appropriate' - a placeholder left in to look finished, which the criterion calls out by name (1). One FR row does carry a MoSCoW 'Should', but there is exactly one requirement and UX and design covers no empty, loading, or error state (1). Held out: nothing is scopable (no owner, no status, no measurable target anywhere) (1); no stop or kill condition, only 'the team will monitor the situation' (1); no contradiction exists but only vacuously, since nothing is asserted that could conflict - scored 2, not a pass, because the held-out criteria measure decision-usefulness (2); voice is uniformly flat with no distinction between what the author decided and what they were told (1). Probes: 0 of 5 - the document does not mention long-haul, DriverGo, HR data, the VP, peak season, or the union rule. It contains no distractors only because it contains no facts; that is not discipline. Well-organised and confident-sounding, and worthless."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "Tplus",
+      "rubric": 4.33,
+      "heldOut": 4.75,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Substantive throughout and decision-ready. Problem section is evidenced (Renata's twice-monthly double-booking, 3-4h Sunday rebuild, 12 percent day-of reassignment, 340 drivers / 9 hubs, no HR or DriverGo connection) and is visibly longer and more developed than the Solution overview; it also states what is NOT known ('we don't yet know the split between scheduling error and driver call-outs'). Docked to 4 for one real overreach: the Denver-only 3-4 hour figure is restated as 'each of the 9 regional hubs' schedulers spends 3 to 4 hours', a single scheduler's report generalised to nine. Goals lead with the outcome (halve schedule-related delays) though two of four are feature-shaped; three non-goals each carry a reason (4). Target user is the regional scheduler, one per hub, with the Sunday-night situation, plus 340 drivers as secondary (4). Metrics are the strongest section: named primary tied to the VP's bar, a separate guardrail (zero rest-rule violations in published schedules) that is genuinely a different quantity, and a real window (8 weeks pre-rollout baseline vs 8 weeks into peak) written before results (5). Both open-questions rows have named owners and milestone dates (before Phase 1 pilot; before design finalizes FR-6) (5). MoSCoW on every one of six FR rows; UX names empty week, rest-rule block, certification mismatch, call-out, and post-publish swap - error and empty states covered, no loading state, so 4. Held out: dependency rows carry owner and status, NFRs are measurable (99 percent of weeks, 24-hour freshness), so an engineer could size most of it (4); an explicit dated stop condition ('if, four weeks before peak season, the system is not both enforcing the rest-day rule and syncing live with DriverGo, stop and reassess') (5); no contradiction, and the one place a conflict would be expected - FR-5 swap logging vs the 'no swap marketplace' non-goal - is explicitly reconciled in the non-goal itself (5); decided-vs-told is unusually clean: 'the VP's stated bar', 'that deadline, not general modernization, is why this is proposed now', 'we know X from direct reports; we don't yet know Y', plus an appendix attributing each source fact to who reported it (5). Probes 5/5, with one recorded gap: B never writes 'November to December', only 'before peak season', so the month anchor is not recoverable from the document alone; the metric, the deadline referent, and the VP as its source are all unambiguous, so I counted it answered. Distractors: the finance 50k budget review board is absent (correct); long-haul appears as a single scope-exclusion bullet with a reason, which probe 1 requires. Overall 4, not 5: the hub overgeneralization, the missing loading state, and the unanchored date are exactly the nitpicks a senior practitioner would fix."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 1,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "C",
+      "rubric": 3.17,
+      "heldOut": 3.75,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Best problem statement of the three and the weakest half of a PRD. The Problem section is genuinely excellent: Renata's 3-4 hours and the repeated double-booking correctly kept as Denver-specific rather than generalised, 12 percent reframed as 'roughly 1 in 8 shifts breaking after the schedule is supposedly final', the untracked text-message swaps as a divergence mechanism, and the cancelled vendor read as a constraint on the solution shape rather than a reason to stop (5). But the document stops after the framing. No Goals section: the one outcome lives inside Success criteria, and Out of scope names only the long-haul division, so nothing else is deliberately excluded - no swap marketplace, no DriverGo replacement (3). Target users names three segments with real roles and Renata as an example, though the situation is implied rather than stated (4). Metrics: primary is the halved-delay target with the peak-season deadline, and 'rest-day rule violations at build, target zero' functions as a guardrail, but there is no measurement window at all - no baseline period, no comparison frame (3). No Open questions table; 'Ownership and unknowns' does assign the union-rule validation to regional ops managers with a real milestone ('before any region relies on the tool for a real schedule'), but the two integration unknowns carry no owner and no date (3). Worst gap: no functional requirements list, no MoSCoW priorities anywhere, no NFRs, and no UX section at all - no empty, loading, or error states (1). Held out: an engineer could not size this from the document alone; there are no requirement rows, no dependency owners or statuses, and the text itself concedes a technical spike is needed before an estimate - honest, but it fails the criterion on those rows (2). Stop condition is explicitly present and tied to a pilot result, slightly softer on the date than B's (4). No internal contradiction found on a cross-check of scope, success criteria, and the integration caveats; the live-sync capability sitting beside the admitted DriverGo unknown is flagged as a risk, not asserted away (5). Decided-vs-told is good - 'matching the VP's stated target', 'that failure is relevant context, not a reason to avoid trying again', 'we should also track two leading indicators, since the delay metric will lag' - but source attribution is less systematic than B's (4). Probes 5/5, all answerable directly. Distractors: finance budget board correctly absent; long-haul gets its own short section, more real estate than B gives it, but probe 1 requires the exclusion so it is not penalised. Overall 3: the scenario asked for enough scope and success criteria that engineering can size it and design can start sketching without coming back to ask what we meant, and design has literally nothing to sketch from."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "T",
+      "rubric": 4,
+      "heldOut": 3.25,
+      "probes": 4,
+      "overall": 4,
+      "notes": "Strongest structurally: evidenced problem (Renata's specific double-booking, 12% reassignment rate), outcome-phrased goals, specific named target users, a genuinely well-built metrics section with primary/guardrail/measurement window stated before results, and real unhappy-path coverage (empty/error states) plus MoSCoW priorities on every FR row. Two real defects, not cosmetic ones: (1) it imports the Finance-budget-review-board distractor verbatim as an Open Question row, which is content that does not belong in a good document of this type per the scenario's own distractor list -- this is a discipline failure, not a completeness gain; (2) it has no explicit stop/kill condition -- Rollout names a rollback-to-spreadsheet fallback, which is a contingency mechanism, not a stated trigger ('if delays don't drop by X, stop'). Probe 2 (stop/reconsider condition) could not be answered confidently from this document alone; the other four probes were clearly answerable, including risk ranking and rest-rule ownership."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Analytically the sharpest of the three and the only one to explicitly separate what the author was told from what the author concluded (flags the 12%-breakdown gap as unknown rather than assumed, marks the shift-swap capture question as 'flagged as an open question rather than a decision', and states plainly that rule-compliance validation 'is not an engineering judgment call'). It has an explicit, checkable stop-or-reconsider condition and names DriverGo as the single highest-risk dependency outright -- both are held-out-criteria wins A and C lack, and it swept all five probes cleanly. But it has real content gaps the ask specifically required: no functional-requirements table (so nothing is prioritized MoSCoW-style), no UX section at all (no empty/loading/error states for design to start from), and no owned-and-dated open-questions table (the one open item named has neither owner nor date). The ask asked for a document engineering could size and design could sketch from without a follow-up meeting; on that specific bar B underperforms A despite being the more rigorous piece of thinking."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1.1,
+      "heldOut": 1.5,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Contains no scenario-specific facts anywhere -- no names, no numbers, no named metric, no named user segment, no real dependency, no rest-rule mention at all. Every section is templated filler ('friction in parts of their experience', 'as appropriate', 'Relevant team' as an owner, 'To be determined' as a date). This is the clearest illustration of the anti-form warning: it has every heading a PRD should have and states nothing checkable under any of them. None of the five probes are answerable from this document; it does not even surface the union rest-day rule as a constraint. The only criterion it does not flatly fail is internal non-contradiction, and only because there is no substantive content left to contradict."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.67,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Rubric: problem_weight_and_evidence=5 (Renata Okafor, 3-4hr rebuild, double-booking twice, 12% baseline, and explicitly flags the 12%-breakdown as unknown rather than assumed; Problem section clearly outweighs the prose Scope section). goals_measurable_nongoals_explicit=4 (goals are folded into 'Success criteria' rather than a labeled Goals section, but they are outcome-phrased; Non-goals names long-haul exclusion with a stated reason). target_user_specificity=5 (nine named regional schedulers, 340 drivers, ops managers, each with situation). metrics_primary_and_guardrail=5 (primary = cut delays in half; guardrail = zero rest-rule violations explicitly framed as a compliance floor; window = before peak season). open_questions_owned_and_dated=2 (shift-swap capture is flagged as an open question in prose but has no named owner or date -- no table at all). unhappy_paths_and_prioritized_requirements=1 (no FR table, no MoSCoW markers, no UX empty/loading/error states -- this section type is simply absent). Held-out: scopable_without_a_meeting=2 (no FR/NFR/dependency rows with owner+status+target, so an engineer cannot size line items even though the prose is directionally clear); explicit_stop_or_kill_condition=5 (dedicated 'Stop or reconsider condition' section with two concrete triggers tied to the peak-season deadline -- the strongest instance of this criterion across the set); no_internal_contradiction=5 (consistent throughout); decision_vs_input_traceable=5 (unusually explicit about what's a data point vs a company-wide fact, what's the VP's stated target vs the author's inference to build-not-buy, and who owns rule-validation as 'not an engineering judgment call'). All 5 probes answerable directly from the text. No distractors included (Finance $50k review board is absent; long-haul is mentioned only as the legitimate out-of-scope item the probe asks about). Overall a lean, evidence-honest, well-reasoned document let down by missing the structural scaffolding (FR/NFR tables, dated open questions, UX states) that would let engineering and design proceed without a follow-up conversation on individual line items."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1.17,
+      "heldOut": 1.75,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Every rubric criterion fails on content despite the document having all the expected headings. problem_weight_and_evidence=1 (no number, name, or source anywhere -- 'feedback gathered through various channels suggests'). goals_measurable_nongoals_explicit=1 (goal is 'noticeable and appreciated'; non-goal is a placeholder deferring scope to 'a future phase' without naming anything). target_user_specificity=1 (explicitly 'individuals and groups who regularly interact with this part of the experience' -- undifferentiated by design). metrics_primary_and_guardrail=1 (primary metric is 'relevant engagement will improve as appropriate'; window is 'an appropriate period'). open_questions_owned_and_dated=1 (single row, owner 'Relevant team', date 'To be determined' -- placeholder in substance even though the cells are non-empty). unhappy_paths_and_prioritized_requirements=2 (FR table does carry Should/Could MoSCoW tags, which is the one structurally real element in the document, but the requirements themselves are untestable prose and no empty/loading/error states appear, only a promise that edge cases 'will be considered'). Held-out: scopable_without_a_meeting=1; explicit_stop_or_kill_condition=1; no_internal_contradiction=4 (nothing concrete enough to contradict, so no conflicting sentences are found, but this is vacuous rather than earned); decision_vs_input_traceable=1 (no stakeholder fact is ever named, so the flat undifferentiated voice the rubric warns about is exactly what's here). None of the five probes are answerable -- no mention of the trucking division, no stop condition, no named dependency risk, no named metric or date, and the union rest-day rule is never mentioned at all. This is the anti-form case: fully formed headings around content that could describe any initiative."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "T",
+      "rubric": 4.83,
+      "heldOut": 4,
+      "probes": 4,
+      "overall": 4,
+      "notes": "Rubric: problem_weight_and_evidence=5 (same evidence base as A -- Okafor, 3-4hr, double-booking twice, 12% -- and the Problem section runs longer than Solution overview). goals_measurable_nongoals_explicit=5 (goals include a measurable build-time target under 1 hour in addition to the VP's headline goal; non-goal excludes automated route optimization with a stated reason). target_user_specificity=5 (same specificity as A, plus explicit situational detail -- drivers 'currently text schedulers to swap shifts informally'). metrics_primary_and_guardrail=5 (primary, guardrail, and an 8-week pre/post measurement window explicitly tied to the November peak). open_questions_owned_and_dated=5 (three rows, each with a real owner and a real milestone). unhappy_paths_and_prioritized_requirements=4 (explicit empty state and error state for missing HR records; FR table carries Must/Should/Could on every row; no explicit loading-state description, which is the one gap). Held-out: scopable_without_a_meeting=5 (FR priorities, NFR targets with numeric thresholds, and a dependency table with owner and status give an engineer enough to size and sequence); explicit_stop_or_kill_condition=2 (no dedicated stop/kill trigger -- only a rollback-to-spreadsheet fallback in the rollout plan and a zero-violations guardrail, neither framed as 'if this happens, halt the initiative'); no_internal_contradiction=5 (goals, NFRs, and non-goals check out against each other); decision_vs_input_traceable=4 (the build-not-buy reasoning and VP commitment are clearly attributed, though slightly less pointed than A about which calls are the author's own). 4 of 5 probes answerable: scope, top-risk dependency, guardrail/metric/date, and rest-rule ownership are all directly findable; the stop-or-reconsider probe is not clearly answerable since no explicit halt trigger is stated. One distractor leaks in: the Finance $50k budget-review-board fact appears as an Open Questions row, which the scenario flags as a fact that does not belong in a good document of this type -- a real discipline lapse despite the otherwise strong structure."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Contains no scenario content whatsoever: no drivers, hubs, spreadsheet, DriverGo, union rest rule, named users, or dates. Problem section is three sentences of generic friction language with zero evidence (no count, quote, or frequency) and is no more developed than the solution overview. Goals are 'improve the relevant experience'; the non-goal is a blank placeholder ('areas outside the current scope'). Target users are 'individuals and groups who regularly interact', i.e. everyone. Success metrics say 'relevant engagement will improve as appropriate' with 'an appropriate period' as the window, which is a metric-shaped sentence with no metric in it. Open questions row is 'How should remaining details be finalized? / Relevant team / To be determined', the exact unfilled placeholder the criterion names as a fail. FR rows carry Should/Could markers but the requirements themselves are unsizable ('support the intended experience in a reliable and appropriate manner'); NFR targets are 'acceptable level'. UX section names no empty, loading, or error state. No stop or kill condition. Nothing contradicts because nothing is asserted, but that is vacuous rather than consistent, so no credit. Nothing distinguishes author judgment from instruction because no judgment is visible. Section headings are complete and well ordered; that is the only thing it has, and per the anti-form instruction it earns nothing. Zero probes answerable."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "T",
+      "rubric": 4,
+      "heldOut": 3.75,
+      "probes": 4,
+      "overall": 4,
+      "notes": "Problem section carries real evidence (3-4 hour Sunday rebuild, Renata Okafor's repeated double-booking, 12 percent day-of reassignment, drift from text swaps) and runs longer than the solution overview. Goals are outcomes (halve schedule-related delays, cut build time to under 1 hour) and non-goals name three exclusions with reasons. Metrics are the strongest section: primary (delays halved vs pre-launch baseline), a separate guardrail (rest-rule violations stay at zero), and an explicit 8-weeks-post vs 8-weeks-prior window, written pre-result. Open questions rows all carry owners and milestones. FRs all carry MoSCoW; NFRs have measurable targets (sync within 5 minutes, 99 percent). Scored 3 on unhappy_paths: UX names empty and error states plus swap states but no loading state, and the criterion names all three. Held-out: scopable is good (owners, statuses, measurable NFRs, honest 'not yet confirmed' on both dependencies, which is itself sizing information). Weakest held-out is the stop condition at 3, the only probe it fails: it offers rollback to the spreadsheet and a phase gate, but never names a result that would halt or kill the work, and a fallback mechanism is not a trigger. Decision-vs-input is attributed in places ('the VP has publicly committed... which makes this the forcing deadline', 'that failure is why this is scoped as a build'), though several scope cuts are stated flat. Distractor penalty: the open questions table imports the Finance 50,000 dollar budget review board, a procurement gate that does not belong in this document; priced into the open_questions score, not double-counted. The long-haul exclusion is not treated as a distractor hit since probe 1 requires it. Probes: 1, 3, 4, 5 answerable directly; 2 not."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "A",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "C",
+      "rubric": 3.33,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Best problem section of the three: the evidence is present and its limits are stated ('that is one data point, not a company-wide measurement'; the 12 percent breakdown is explicitly flagged as unknown and named as an early build task rather than assumed). Target users are the nine regional schedulers and 340 drivers with ops managers as accountable owner. Success criteria give the primary metric and an explicit guardrail framed as a compliance floor ('zero union rest-rule violations, since that one is a compliance floor rather than a target to trend toward'), with the peak-season deadline; the window is a deadline plus 'tracked from launch' rather than a defined comparison period. Carries no distractor: Finance's budget board is absent, and the long-haul exclusion is stated with a reason. Where it fails is what the ask specifically demanded. There are no functional requirement rows and no MoSCoW priorities, no NFR targets, and no UX section, so there is no empty, loading, or error state anywhere (scored 1). Open questions exist only as prose (swap capture flagged as undesigned) with no owner and no date, and there is no table (scored 2). Scored 2 on scopable_without_a_meeting for the same reason: blockers are identified sharply (spike DriverGo first, HR data quality unknown) but there are no rows an engineer could size, so effort estimation fails outright. Against that, it takes the held-out criteria: a dedicated stop-or-reconsider section with two concrete checkable triggers tied to the reason the project exists, no internal contradiction, and unusually clean separation of what the author was told from what the author decided ('Marcus Feld's stated target', 'flagged as an open question rather than a decision', 'this is not an engineering judgment call'). It answers all five probes. The asymmetry is worth recording: it leads on held-out (4.25) and probes (5/5) while trailing badly on the rubric criteria, which is exactly the split the held-out set exists to expose. Holistic 3 reflects meaningful, substantive gaps against the ask (design cannot sketch, engineering cannot size), not a formatting shortfall."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "Tplus",
+      "rubric": 4,
+      "heldOut": 2.75,
+      "probes": 3,
+      "overall": 3,
+      "notes": "Rubric scores: problem_weight_and_evidence 4 (Renata's 3 to 4 hour rebuild, two double bookings, 12 percent last quarter, and an explicit confidence caveat; Problem section is longer and more developed than Solution overview). goals_measurable_nongoals_explicit 4 (outcome goals, three non-goals each with a stated reason, though one goal reads more like a feature than an outcome). target_user_specificity 4 (regional scheduler with a stated situation, not a named individual persona). metrics_primary_and_guardrail 5 (primary, guardrail, and measurement window all explicit and prospective). open_questions_owned_and_dated 5 (two rows, real team owners, milestone based dates). unhappy_paths_and_prioritized_requirements 2 (FR table carries Must, Should, Could priorities, but the UX section explicitly states empty and error states are still open, so the full variant's unhappy path coverage is not actually delivered). Held-out: scopable_without_a_meeting 2 (two of three dependency rows list an owner as TBD or not yet assigned, which is the criterion's own failure condition). explicit_stop_or_kill_condition 2 (the document poses 'what triggers stopping this work' as an open question for ops leadership to answer later rather than stating the trigger itself). no_internal_contradiction 4 (one nameable tension: the non-goal says shift swaps 'must land in the system of record' in absolute terms, while the corresponding requirement, FR-5, is only priority Should, not Must). decision_vs_input_traceable 3 (some differentiation via the explicit confidence caveat and the 'this is build, not buy' reasoning, but it is not sustained through the document). Probes answered from the document alone: trucking out of scope (yes), highest risk dependency (yes, DriverGo), guardrail metric and deadline (yes); stop condition (no, deferred to an open question) and rest-day rule owner (no, listed as TBD in three separate places) were not resolvable. No distractor facts present; the trucking mention is the expected non-goal, not a penalized distractor."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.33,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 3,
+      "notes": "Rubric scores: problem_weight_and_evidence 5 (same Denver evidence as A, plus explicit epistemic honesty: 'that is one data point, not a company wide measurement'). goals_measurable_nongoals_explicit 3 (no dedicated Goals list; the outcome goal lives inside Success criteria, and only one non-goal, the trucking exclusion, is clearly named with a reason). target_user_specificity 5 (nine regional schedulers, Denver pattern named explicitly, plus 340 drivers). metrics_primary_and_guardrail 5 (headline metric, guardrail framed as a compliance floor, and a dated measurement window). open_questions_owned_and_dated 1 (no Open Questions section at all; the one open item, shift swap capture, has no owner and no date). unhappy_paths_and_prioritized_requirements 1 (no FR table, no MoSCoW priorities anywhere, no UX section, no empty or error state treatment). Held-out: scopable_without_a_meeting 2 (prose only, no FR, NFR, or dependency rows an engineer could size against). explicit_stop_or_kill_condition 5 (a dedicated section states the exact trigger: delays not measurably down or the rest rule not demonstrably enforced by the peak deadline). no_internal_contradiction 5 (no contradiction found on cross check). decision_vs_input_traceable 5 (repeatedly separates author judgment from stakeholder fact, for example flagging the causal breakdown as unknown rather than assumed, and stating explicitly that rule validation is not an engineering judgment call). Probes answered from the document alone: all five, including an explicit named highest risk dependency and an explicit named metric owner, both stated as direct claims rather than deferred questions. No distractor facts present; the trucking mention is the expected non-goal, not a penalized distractor."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 1,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1,
+      "heldOut": 1.75,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Every rubric criterion scores 1: the Problem section names no evidence, count, or quote; Goals and Non-goals are placeholder language with nothing named; Target users is explicitly undifferentiated ('individuals and groups who regularly interact with this part of the experience'); Success metrics state no named metric or real window ('as appropriate'); the single Open Questions row uses 'Relevant team' and 'To be determined' in place of a real owner and date; the FR table carries priority labels but the requirements themselves are not testable. Held-out: scopable_without_a_meeting 1, explicit_stop_or_kill_condition 1, and decision_vs_input_traceable 1, all absent. no_internal_contradiction scores 4 only because the prose is too vacuous to contain a locatable contradiction, a hollow pass rather than a sign of quality. Zero of the five probes are answerable, since none of the scenario's specific facts (Denver, DriverGo, the 6 day rest rule, the 340 drivers, the VP's deadline) appear anywhere in the document. This is placeholder content carrying full PRD headings with no scenario-specific facts in any section, the clearest instance of the anti-form pattern the task warns against."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "C",
+      "rubric": 3.5,
+      "heldOut": 4.25,
+      "probes": 5,
+      "overall": 4,
+      "notes": "Narrative-style PRD with genuinely strong evidence (named scheduler, hours, error count, 12% baseline) and a Problem section that clearly outweighs the thinner Scope/solution material. Target users are specific (nine named-role schedulers, 340 drivers, ops managers with a named accountability). Success criteria cleanly separate a primary metric (cut delays in half by peak season) from a guardrail (zero rest-rule violations) with a stated window. It has an explicit, dedicated Stop-or-reconsider section with concrete triggers, and is unusually careful about marking what is the author's own judgment versus a stakeholder directive ('this is not an engineering judgment call,' 'that is one data point, not a company-wide measurement'). It does include the long-haul-trucking distractor as an out-of-scope line, which does not make it more complete. Its real weakness is structural-but-substantive: there is no Goals list separate from metrics, no FR/NFR table, no MoSCoW prioritization, and no UX section addressing empty/loading/error states, so an engineer or designer would still have real sizing questions the document doesn't answer. All five retrieval probes are answerable directly from the text."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "H",
+      "rubric": 1.17,
+      "heldOut": 1.25,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Fully generic corporate placeholder prose with no domain facts at all: no driver counts, no scheduler name, no DriverGo, no union rule, no percentages. Every section (Problem, Goals, Target users, Success metrics, Dependencies, Risks, Open questions) is filled with hedge words ('appropriate,' 'relevant,' 'as needed') rather than content, despite having a complete template shape (tables for FR priority, NFR targets, dependencies, risks, open questions). The FR table technically carries Should/Could markers and the open-questions row technically has Owner/Needed-by columns, which is why a couple of rubric items aren't a flat 1, but the values in those cells ('Relevant team,' 'To be determined') are placeholders, not real content, so they fail the rubric's explicit 'not TBD' bar. None of the five retrieval probes can be answered from this document; it contains none of the scenario's facts. This is the clearest illustration of the anti-form instruction: a fully-formed document shape carrying zero decision-usable content."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 2,
+      "judgeModel": "sonnet",
+      "arm": "Tplus",
+      "rubric": 4.83,
+      "heldOut": 3.5,
+      "probes": 4,
+      "overall": 4,
+      "notes": "Full-template PRD with strong, specific evidence (Renata Okafor, 3-4 hours, 12% baseline, explicit confidence caveats), a real Goals/Non-goals split with reasons (including two substantive non-goals beyond the distractor), specific target users, and a primary/guardrail/window metrics block. FR rows carry Must/Should/Could priorities, NFRs have concrete targets, and the UX section names specific edge cases (mid-week reassignment, late swap, lapsing certification) plus flags empty/error states, though it doesn't cover a loading state. It also includes the long-haul-trucking distractor as a non-goal. Held out from strong performance: rather than stating a stop/kill condition, it converts that exact question into an Open Questions row assigned to 'Ops leadership' to answer before Phase 1 -- so a reader cannot actually name the trigger from this document, only that one is pending. The same evasive pattern shows up on rest-rule ownership: Target users says 'ops managers and whoever owns the rest-day rule' and the Risks mitigation says 'named owner validates logic' without naming anyone, so the well-filled Open Questions table is doing work that should have been a decision. This is the anti-form trap in miniature: the table looks complete and satisfies the literal rubric wording (owner column isn't blank, isn't literally 'TBD'), but the substantive commitment a senior reader wants is deferred, not made. Four of five probes are answerable; the stop-condition probe is not, since the document only names the fact that a trigger is needed, not what it is."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "H",
+      "rubric": 1.17,
+      "heldOut": 1.5,
+      "probes": 0,
+      "overall": 1,
+      "notes": "Content-free. Every noun is a placeholder: 'the relevant experience', 'appropriate period', 'relevant team'. Nothing in it is about driver scheduling, or about anything. Rubric: problem_weight_and_evidence 1 (no evidence of any kind; Problem is three sentences of hedge); goals_measurable_nongoals_explicit 1 (goals are 'improve the relevant experience'; the single non-goal is a literal placeholder line, the exact failure the criterion names); target_user_specificity 1 ('individuals and groups who regularly interact'); metrics_primary_and_guardrail 1 (the section exists and the slots are filled with 'engagement will improve as appropriate' and 'an appropriate period' - a named slot is not a named metric); open_questions_owned_and_dated 1 ('Relevant team' / 'To be determined' is the textbook fail); unhappy_paths_and_prioritized_requirements 2 (MoSCoW markers do appear on the two FR rows, the only thing in the document that clears anything, but there are no empty/loading/error states and the requirements themselves say nothing). Held-out: scopable 1; stop condition 1 (none); no_internal_contradiction 3 (nothing contradicts because nothing is asserted - I will not award a real 5 for vacuous consistency); decision_vs_input_traceable 1 (flat undifferentiated voice throughout, which is precisely what that criterion fails). Probes 0/5: it cannot answer a single one. This is the clearest demonstration that headings are not quality - it has more section headings than either other artifact and delivers nothing."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "Tplus",
+      "rubric": 4.5,
+      "heldOut": 3.75,
+      "probes": 4,
+      "overall": 4,
+      "notes": "Substantive, sourced, and specific; the structure is carrying real content rather than standing in for it. Rubric: problem_weight_and_evidence 5 (Renata Okafor's 3-4 hours, two double-bookings in a month, 12 percent day-of reassignment, and an explicit confidence line separating the reported figure from its uncited cause breakdown; Problem clearly outweighs the three-sentence Solution overview); goals_measurable_nongoals_explicit 5 (goals are outcomes - halve delays, hours to minutes - and each of three non-goals carries a reason, e.g. 'negotiation is a later phase', 'integrates with it, not replaces it'); target_user_specificity 4 (regional scheduler named as primary with 340 drivers / 9 hubs secondary, but the Target users section itself does not carry the Sunday-night situation, which sits in Problem); metrics_primary_and_guardrail 5 (primary halved delays, separate guardrail 'zero rest-day rule violations reach a live schedule', window baseline-through-peak versus last year's peak); open_questions_owned_and_dated 5 (two rows, owners Ops leadership and Regional ops / compliance, needed-by 'Before Phase 1'); unhappy_paths_and_prioritized_requirements 3 (MoSCoW on all 7 FR rows is clean, but UX names edge cases then says empty and error states 'are open' - flagging a gap is not describing the state, and loading is absent). Held-out: scopable 3 (FRs and NFR targets are sizeable - 340+ drivers, 9 hubs, sync within minutes, audit log - but all three dependency rows carry owner 'TBD', which the criterion penalises row-specifically); stop condition 2 (this is the real hole - B poses 'What triggers stopping or reconsidering this work...' as an open question rather than answering it, so the reader still does not know when to quit); no_internal_contradiction 5 (checked Goals against Non-goals, FR-5 swap-recording against the swap-negotiation non-goal, and rollout against FR-6; consistent, and the 'sync exists' summary versus 'no existing connection' dependency is plan-versus-present, not conflict); decision_vs_input_traceable 5 (Feld's commitment marked as the externally set deadline, the build-not-buy call traced to the cancelled vendor, confidence tagged on the Denver figures, sources listed in the appendix). Probes 4/5: long-haul out of scope yes; riskiest dependency yes (DriverGo, Medium/High); metric and date yes; rest-rule owner yes via the open-questions row naming Regional ops / compliance, though 'Owner not yet assigned' in Dependencies weakens it. Fails the stop-condition probe outright. No distractor contamination: no mention of the 50000 dollar finance budget review board. The long-haul line is a single non-goal entry, which probe 1 requires, so I did not penalise it."
+    },
+    {
+      "scenario": "prd-001",
+      "gen": 2,
+      "session": "B",
+      "judge": 3,
+      "judgeModel": "opus",
+      "arm": "C",
+      "rubric": 3.33,
+      "heldOut": 4.5,
+      "probes": 5,
+      "overall": 4,
+      "notes": "The most decision-useful document and the most epistemically disciplined, but it omits whole classes of content the ask demanded. Rubric: problem_weight_and_evidence 5 (same figures as B plus the sharpest caveat in the panel - 'that is one data point, not a company-wide measurement' and 'we do not know what fraction of that 12 percent traces back to scheduling errors versus call-outs', with the breakdown assigned as an early build task rather than assumed); goals_measurable_nongoals_explicit 4 (the halved-delays outcome is present in Success criteria and long-haul is excluded with a reason, but there is no Goals/Non-goals pairing and the exclusion reason is thin); target_user_specificity 4 (nine regional schedulers one per hub, 340 drivers secondary, ops managers accountable - specific, though the situation again lives in Problem); metrics_primary_and_guardrail 4 (headline halved delays, an effective guardrail in 'zero union rest-rule violations, a compliance floor rather than a target to trend toward', window before Nov-Dec peak; the reassignment supporting metric has a baseline but no target and 'tracked from launch' is loose); open_questions_owned_and_dated 2 (no open-questions table; shift-swap capture is flagged as an open question with neither owner nor date, and the ops/HR ownership of rule ambiguity is stated but never paired with a needed-by); unhappy_paths_and_prioritized_requirements 1 (hard fail - no functional requirement list at all, therefore no MoSCoW priorities, and no empty/loading/error states; engineering cannot see what gets cut first and design has one flagged flow to sketch from). Held-out: scopable 3 (blockers are identified better than anywhere else - spike DriverGo first, HR feed quality unknown - but no NFR targets, no dependency owners or statuses, no sizeable rows); stop condition 5 (a dedicated section with two concrete checkable triggers tied to the action 'stop and reassess', the strongest instance in the panel); no_internal_contradiction 5 (cross-checked scope against success criteria and the swap flow against out-of-scope; none found, and the nine-schedulers inference from the one-per-region fact is hedged); decision_vs_input_traceable 5 ('the headline metric is Marcus Feld's stated target', 'flagged as an open question rather than a decision', 'this is not an engineering judgment call' - the told/decided line is drawn explicitly, repeatedly). Probes 5/5, all answerable directly and unambiguously. No distractor contamination: the finance budget review board is absent, and long-haul appears only as a one-paragraph out-of-scope statement that probe 1 requires."
+    }
+  ],
+  "meta": {
+    "controlPromptVersion": 1,
+    "treatmentPromptVersion": 1,
+    "generations": 2,
+    "sessions": [
+      {
+        "id": "A",
+        "treatment": "T"
+      },
+      {
+        "id": "B",
+        "treatment": "Tplus"
+      }
+    ],
+    "scenarios": [
+      "prd-001"
+    ],
+    "judgeRows": 36,
+    "spend": {
+      "outputTokensTurnUpperBound": 411179,
+      "turnBudgetTotal": null,
+      "note": "Turn-level output tokens, upper bound, output only. See the comment in this file."
+    }
+  }
+}
