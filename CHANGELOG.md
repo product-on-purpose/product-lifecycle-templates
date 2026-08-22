@@ -204,10 +204,11 @@ people who want every change, release notes are for people who want to know what
   [`check-export-surface.py`](tools/check-export-surface.py) still earns its place for the reason its own
   docstring gives: the next leak will not be `build-bundle`.
 
-  **One limitation is recorded rather than left implicit.** That check simulates the CLI from a copy of its
-  prefix list read from `skills@1.5.22`; this run used `1.5.23`. The export surface still matched, so
-  nothing has drifted, but **the pin is one version behind what `npx` now fetches** and the check goes
-  stale in the direction of continuing to pass.
+  **The limitation recorded with that run turned out to be live.** The check simulates the CLI from a copy
+  of its prefix list read from `skills@1.5.22`; this run used `1.5.23`. The export surface matched, which
+  was first recorded as "nothing has drifted". **That was the wrong inference, and re-reading the list the
+  same day proved it: `1.5.23` carries a thirty-third prefix, `.posit/assistant/skills/`.** See the Fixed
+  entry below.
 
 
 - **The eval protocol's two open instrument questions are both decided (2026-08-14), completing option D of
@@ -306,6 +307,29 @@ people who want every change, release notes are for people who want to know what
   named and **neither is adopted**, because changing the instrument is a maintainer decision.
 
 ### Fixed
+
+- **`skills@1.5.23` added a thirty-third search prefix and
+  [`check-export-surface.py`](tools/check-export-surface.py) did not know about it.** The check simulates
+  the CLI's export surface from a verbatim copy of its hardcoded `PRIORITY_PREFIXES` list, read from
+  `skills@1.5.22` on 2026-08-08. `1.5.23` carries `.posit/assistant/skills/` and the copy carried
+  thirty-two prefixes.
+
+  **This is the failure that check predicted about itself, firing.** Its docstring says: "if upstream adds
+  a directory or walks the whole tree, this check goes stale in the dangerous direction: it keeps passing."
+  **Upstream added a directory, between one patch release and the next.** The check kept passing, correctly
+  in outcome and blindly in mechanism: the surfaces matched only because this repository has no `.posit/`
+  directory, which is a fact about this tree and not about the check. Anyone adding one would have shipped
+  its contents on the next `npx skills add`, past every gate here.
+
+  **The same-day sequence is the part worth keeping.** The retest recorded the version gap as a stated
+  limitation and inferred from a matching export surface that nothing had drifted. **A matching surface is
+  not a matching list**, and only re-reading the list showed the difference. The record merged in #107 has
+  been corrected rather than left standing.
+
+  The list is re-read from `1.5.23` and **verified position by position rather than as a set**, because the
+  order is the CLI's priority order and a set comparison would have accepted the new prefix in the wrong
+  place. It was in fact inserted three positions late on the first attempt, and the ordered comparison
+  caught it. `CLI_VERSION_READ` and the docstring's counts now read `skills@1.5.23, read 2026-08-21`.
 
 - **Four documents told a reader the `npx skills add` install is about a quarter of its real size, and the
   install retest is the only thing that could have found it.** Each said "about 12 KB", true when one skill
