@@ -470,6 +470,49 @@ Full definition: [`docs/internal/roadmap.md`](docs/internal/roadmap.md).
 
 ## Open decisions, with ages
 
+### Decision triage, 2026-08-21, the first one
+
+**This is the monthly decision-triage half of VL-3 (maintenance cadence), started ahead of its M6
+schedule.** Running it does **not** resolve VL-3: the cadence ADR that would fix a schedule and create
+calendar entries is still WP-61 in M6 and still stops for the maintainer. What starts here is the practice,
+because **the SLA rule below has existed since 2026-07-17 and nothing has ever swept against it.**
+
+| Item | Open since | Age | Stated cost | Verdict |
+|---|---|---|---|---|
+| **D1**, build the Layer 1 generator | 2026-06-29 | **53 days** | n/a | **Not eligible, and correctly so.** D1's cost is not effort, it is evidence: it needs a real customization to observe, which is WP-33's output. **Deferring it is the decision**, re-affirmed here rather than left to drift |
+| **VL-3**, maintenance cadence | 2026-07-02 | **50 days** | n/a | **Not eligible on cost, and half-actioned by this table.** The quarterly source pass stays at M6. The monthly half needed no decision to start |
+| [`guide-rubric-spec.md`](docs/internal/guide-rubric-spec.md) **section 4 item 2**, whether the checklist guides convert to scored rubrics | 2026-07-27 | **25 days** | **Unstated.** In practice: convert one and read it | **Not triggered, and that is the finding.** See below |
+| [`pull-queue-spec.md`](docs/internal/pull-queue-spec.md) **section 4 open question**, does an unattributed request count as a pull | 2026-08-14 | **7 days** | **Unstated.** A recommended answer is already written | **Not triggered**, same reason |
+| **D5**, the demand-rule ADR | 2026-08-14 | **7 days** | M | Not an SLA item; it is a deliverable that stops for the maintainer. Its content is now written, since `pull-queue-spec.md` section 4 was rewritten 2026-08-21 |
+
+**What the first triage found, and it is the reason to run one.**
+
+**The SLA has a loophole, it is load-bearing, and this repository already documented it once without
+noticing it was general.** The rule binds "any open decision whose stated resolution cost is under two
+hours". VL-1 (business model) sat **43 days** against it, and the entry recording its resolution says
+plainly that this happened because it carried **no stated resolution cost, which is why it never triggered
+the SLA**. That was written as a fact about VL-1. **It is a fact about the rule**, and two more items are
+sheltering under it right now: both open questions above have no stated cost, so neither can ever breach a
+rule that only measures items that name one. **An estimate is the trigger, so omitting the estimate is the
+exemption.**
+
+Not fixed here. Amending the SLA is a change to how this library governs itself, which stops for the
+maintainer, and **naming the loophole on the day the first sweep found it is what a triage is for**. The
+minimal repair, if wanted: an open question with no stated cost is triaged as **under two hours until
+someone says otherwise**, which inverts the default so silence costs attention rather than buying time.
+
+**One scope gap, surfaced by the same sweep.** `guide-rubric-spec.md` section 4 item 2 names **four**
+checklist guides. The tree has **twelve** guides carrying a checklist with no scale and no threshold,
+counted 2026-08-19 by testing every guide for a scored-rubric table rather than from a list. The spec's
+scope was set against a **16-guide** tree on 2026-07-27 and the tree now holds **26**. The four it names
+are still in the twelve; the other eight were never in anyone's scope. **This is not drift in the spec, it
+is the population growing out from under it**, and it makes the open question larger than the spec presents
+it.
+
+**Next triage due 2026-09-21**, if the cadence holds. Nothing enforces that date, which is the honest state
+until WP-61 lands.
+
+
 | ID | Decision | Open since | Cost to resolve | Scheduled |
 |---|---|---|---|---|
 | D1 | Build the Layer 1 generator, or not | 2026-06-29 | n/a | Correctly gated on a usage signal |
