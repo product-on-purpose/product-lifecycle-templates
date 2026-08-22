@@ -20,7 +20,7 @@
 > not started and that `skills/` held only `plt-fill-template`. Both were true when written and are now
 > false; section 3's skill count and section 1's tally move with them.
 
-<!-- counts: bundles=26, adrs=40, cisteps=25 -->
+<!-- counts: bundles=26, adrs=41, cisteps=25 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are

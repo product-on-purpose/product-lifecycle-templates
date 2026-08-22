@@ -18,7 +18,7 @@
 > - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
 >
 > This file was written 2026-07-10 and last cites **ADR 0020**; there are now **40** decision records, and
-> twenty of them (0021 through 0040) postdate it and change the plan it describes.
+> twenty-one of them (0021 through 0041) postdate it and change the plan it describes.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
 > one of the ungated. **The banner you are reading drifted too**, which is finding **DF-5 (prose counts
@@ -30,7 +30,7 @@
 > was the next release, through three tagged releases, while every marker in it matched the tree. That is
 > the limitation `check-counts.py` prints on every run, costing something for the second time.
 
-<!-- counts: adrs=40, bundles=26 -->
+<!-- counts: adrs=41, bundles=26 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies

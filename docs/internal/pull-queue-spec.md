@@ -21,9 +21,15 @@ so no candidate outside the floor can legitimately be built, no matter how well 
 > the field set, the queue page and the acceptance criteria all still describe work worth doing, and
 > ADR 0039 explicitly retains the queue as an intake and as a priority signal. **Section 4 was the part
 > that needed rewriting**, from a rule about what may be built into a rule about what gets built first.
-> That rewrite is WP-32 build work rather than a decision, and it was **done 2026-08-21**. **Deliverable
-> D5, which would promote section 4 into an accepted ADR, still stops for the maintainer**, and the rest
-> of section 3 sequences behind it.
+> That rewrite was done 2026-08-21.
+>
+> **Superseded again 2026-08-22, and this time the decision changed rather than the wording.**
+> [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) closes **D5** and settles
+> section 4: **the build order is set by the maintainer's own preference and need**, and external demand
+> is an input rather than a rank. The 2026-08-21 rewrite is what exposed the reason: both ordering rules
+> metered external pull, and **the queue has received zero issues since it shipped**, so the ranking
+> input was empty and always had been. `pull-gated` becomes `candidate` throughout, and **D1 through D4
+> and D6 are no longer sequenced behind a maintainer decision.** D4 shipped the same day.
 
 ---
 
@@ -113,25 +119,48 @@ every filed issue, and no check in this repository could see it.
 Extend `atlas/catalog-data.json` from `built: true/false` to a four-state enum, per the audit's 5.1:
 
 ```json
-"state": "built | queued | pull-gated | out-of-scope",
+"state": "built | queued | candidate | out-of-scope",
 "state_note": "one line: why, or what the pull was"
 ```
 
-- `built` is **derived** by `tools/gen-atlas.py` from the bundles on disk, exactly as `built` is today.
-- `out-of-scope` is derived from a small tracked overrides file, seeded from the decisions that already
-  exist: `wireframe` and `interactive-prototype` (ADR 0030), `prototype-brief`
-  ([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)).
-- `queued` is set by the maintainer at triage, in the same overrides file, with the issue number as its
-  `state_note`.
-- `pull-gated` is the **default for everything else**, so the 179 unbuilt types stop reading as gaps.
+**BUILT 2026-08-22.** The vocabulary changed from the original `pull-gated` to **`candidate`** under
+[ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md), because that name asserted a
+demand gate ADR 0039 had already removed. What shipped:
 
-Keep `built` alongside `state` for one release, per the audit's backward-compatibility note.
-`gen-atlas.py --check` already fails CI on drift and extends to cover this. The atlas renders a legend.
+- `built` is **derived** by `tools/gen-atlas.py` from the bundles on disk, exactly as `built` is.
+- `out-of-scope` and `queued` come from [`atlas/state-overrides.json`](../../atlas/state-overrides.json),
+  a small tracked file where **every entry carries a reason**. Seeded with the two decisions that already
+  existed: `wireframe` and `interactive-prototype` (ADR 0030). **`prototype-brief` needs no entry**: ADR
+  0035 rejected it as a *proposed* type, so it was never added to the catalog and has no row to label.
+- `candidate` is the **default for everything else**, so the unbuilt types read as eligible-and-unranked
+  rather than as gaps.
+
+**Distribution at ship: 26 `built`, 177 `candidate`, 2 `out-of-scope`, across all 205 types.**
+
+`built` is kept alongside `state` per the audit's backward-compatibility note. The atlas renders a chip and
+a legend entry for the states that carry a decision; **`candidate` deliberately gets no chip**, because it
+is the default and 177 of them would be noise on a map whose job is to show what is decided.
+
+**Three guards, each mutation-tested rather than assumed:**
+
+| Mutation | Result |
+|---|---|
+| Hide a bundle directory | `gen-atlas.py --check` **exits 1**, and that type's `state` flips `built` to `candidate`. This is section 5's acceptance criterion, and it proves the value is derived rather than hand-copied |
+| Override names a type that has a bundle | **Fails**, naming the contradiction |
+| Override names an id the catalog does not have | **Fails**, naming the id |
 
 ### D5. The demand-rule ADR (effort: M)
 
-Section 4 is the content. It stops for the maintainer under
-[`decision-procedures.md`](decision-procedures.md) because it amends how ADR 0021's gate operates.
+**DONE 2026-08-22** as [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md). Section 4
+was the content, and it is now rewritten to match the record rather than proposing it. It stopped for the
+maintainer under [`decision-procedures.md`](decision-procedures.md) because it amends how ADR 0021's gate
+operates, and **the maintainer decided it: preference and need set the build order, not external demand.**
+
+**It did not land as section 4 proposed.** The version that stopped for the maintainer ranked by external
+pull. The record inverts that, on the ground that a ranking input which has never been non-zero cannot
+rank. **This is the sequencing in section 7 paying off**: D5 was put first so the fields in D2 would not be
+designed against a rule that had not been settled, and the rule that emerged is not the one D2 would have
+been built for.
 
 ### D6. The dogfood entry (effort: S)
 
@@ -143,49 +172,50 @@ need and not an external request.
 An empty queue that has never held anything teaches a reader nothing about how the queue works. A queue
 whose only entry is labelled a self-pull teaches them exactly what counts.
 
-## 4. The demand rule, which sets priority rather than permission
+## 4. The build-order rule: maintainer preference, with demand as an input
 
-Proposed, per the audit's 5.4, with one addition. **Rewritten 2026-08-21 from permission wording into
-priority wording**, which is the WP-32 build task the top of this file named. Since
-[ADR 0039 (maintainer discretion replaces the pull gate)](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md),
-**no rule below decides whether a type may be built** except rule 4, which is blocked on a separate ground
-and now says so in its own text rather than relying on a reader to carry the exception down from here.
+**Settled 2026-08-22 by [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md), which is
+deliverable D5.** This section is no longer an open question. It was proposed per the audit's 5.4, rewritten
+2026-08-21 from permission wording into priority wording, and rewritten again here because that rewrite
+exposed the real problem: **both ordering rules metered a currency the library has none of.**
 
-**What the rewrite changed, and what it did not.** Only the wording moved. **No rule gained, lost or
-altered a threshold**, and the recommended answer to the open question below is unchanged. **Section 4 is
-still the content of deliverable D5, and D5 still stops for the maintainer**, because accepting these
-rules as an ADR binds the library in a way that restating them in a spec does not. Rewording a spec to
-match a decision already taken is build work; promoting it into a decision record is not.
+**The order is set by the maintainer's own preference and need.** External requests are recorded, kept
+visible, and may be weighed. **They do not rank the queue, and their absence blocks nothing.**
 
-1. **One named requester raises a type from `pull-gated` to `queued`**, which is a move up the order and
-   not a grant of permission. Named means attributable: a person or a team, not an anonymous vote. **A
-   type with no requester is still buildable at maintainer discretion**; it simply has nothing arguing
-   for it, and it sorts below anything that does.
-2. **The maintainer's own governance need ranks as one pull**, and is recorded as a self-pull rather than
-   disguised as external demand. `adr` is the standing example. Recording it as a self-pull is what keeps
-   the ordering honest: a self-pull that reads as external demand inflates the only signal this queue
-   carries.
-3. **Three or more requests for a Tier-2 methodology pack rank that pack above single-request types, and
-   trigger the catalog's active-practice test before it is built**, using the `methodology_in_use` field
-   as the evidence. **The test is a quality bar on the build, not a gate on eligibility**: failing it
-   changes what gets built and how it is scoped, not whether the type was allowed to be considered.
+1. **A request is recorded and stays visible. It does not itself change rank.** Named means attributable:
+   a person or a team, not an anonymous vote. The maintainer may weigh a request as evidence that a type
+   is wanted, and is not obliged to.
+2. **The maintainer's own preference and need are the ranking criterion.** Not one pull among others, which
+   is what this rule said before ADR 0041 and which valued the only real input in the system at one unit of
+   a currency whose total supply is one unit. Each build still carries a recorded one-line rationale, per
+   ADR 0039. `adr` is the standing example: it was built early because this repository's governance needed
+   it, and **that is now the normal case rather than a self-pull needing a disclaimer.**
+3. **The catalog's active-practice test is a quality bar on the build, applied whenever a Tier-2
+   methodology pack is built**, using the `methodology_in_use` field as the evidence. **It is no longer
+   triggered by a request count.** Failing it changes what gets built and how it is scoped, never whether
+   the type could be considered.
 4. **Tier-3 regulated is blocked, and this is the one rule here that is still a permission rule.** It is
-   blocked regardless of pull count, because that tier carries a currency discipline this library has not
-   committed to. **Decision D4 (regulated-industry appetite) closed 2026-08-14 as a deliberate no** on
-   that same currency burden, and it reopens only on a pull from a real regulated team, so this rule
-   states a settled position rather than a pending one. **ADR 0039 does not unblock it**: discretion
-   governs which types get built, and this tier is closed on a separate ground, so the reframing above
-   does not reach it.
-5. **Added here, not in the audit: a queued type is not a commitment, and a rank is not a schedule.** The
-   queue page must say both in the requester's own reading path. The library has one credibility asset,
-   which is that it does not claim what it has not earned. A queue that reads as a promise spends that
-   asset, and **an ordered queue that reads as a delivery plan spends it faster**, because an order looks
-   like a date to the person who filed the request at the top of it.
+   blocked because that tier carries a currency discipline this library has not committed to: regulation
+   text must be re-verified at authoring time and on a cadence forever. **Decision D4 (regulated-industry
+   appetite) closed 2026-08-14 as a deliberate no** on that ground. **Neither ADR 0039 nor ADR 0041
+   unblocks it**, because both govern how build order is chosen and this tier is closed on a maintenance
+   obligation instead.
 
-**The one open question, recommended answer included.** Does an anonymous or unattributed request count as
-a pull? **Recommended: no.** The entire purpose of the gate is evidence that someone will use the thing.
-An unattributable request is evidence that someone finds the idea appealing, which is what grow-by-pull
-exists to filter out.
+   > **One tension ADR 0041 creates and does not settle.** D4 states that Tier 3 "re-opens on a pull from a
+   > real regulated team", and **a pull is exactly what ADR 0041 says does not govern the order.** The
+   > reopening condition is now written in a currency this spec no longer ranks in. Restating it in
+   > preference terms is open, and reopening Tier 3 is a scope decision of its own.
+
+5. **A queued type is not a commitment, and a rank is not a schedule.** The queue page must say both in the
+   requester's own reading path. **This rule became more load-bearing under ADR 0041, not less**, because
+   the order is now openly one person's preference: a reader who mistakes it for a delivery plan is
+   mistaking a preference for a promise. The library has one credibility asset, which is that it does not
+   claim what it has not earned.
+
+**The open question from the previous version is closed by the same record.** It asked whether an anonymous
+or unattributed request counts as a pull, and recommended no. **Under ADR 0041 the question no longer
+decides anything**, because no request, attributed or not, sets rank. Attribution still matters for a
+different reason: an attributable request is someone the maintainer can go back to.
 
 ## 5. Acceptance criteria
 

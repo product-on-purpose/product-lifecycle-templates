@@ -12,7 +12,63 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **[ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md): the
+  maintainer's own preference and need set the build order, and external demand is an input rather than a
+  rank.** Closes deliverable **D5** of [`pull-queue-spec.md`](docs/internal/pull-queue-spec.md), which had
+  been the one thing sequencing the rest of WP-32 behind a maintainer decision.
+
+  **The rewrite of section 4 on 2026-08-21 is what exposed the reason.** Turning the rules from permission
+  wording into priority wording made visible that **both ordering rules metered a currency the library has
+  none of**: rule 1 raised a type's rank on a named request, and the intake has received **zero issues**
+  since it shipped 2026-08-07. Rule 2 valued the maintainer's own need at **one pull**, which is one unit
+  of a currency whose total supply is one unit. **Ranking by an always-zero input is not ranking**; it
+  presents one person's judgment as though a queue produced it.
+
+  [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) named this shape
+  one level up: *"A gate that cannot open is not managing risk. It is preventing work."* This is the same
+  shape applied to order rather than permission.
+
+  **The record names its own cost rather than arguing it away.** It removes the last structural brake
+  against building content nobody uses, which the roadmap's risk table warns about by name: *"fix outreach,
+  do not soothe a stalled wedge by building more content."* ADR 0039's falsifier is restated and tightened
+  rather than inherited quietly: **re-open at roughly forty bundles with still-zero external fills.**
+
+  **Tier 3 is not reopened**, and the record names a tension it creates and does not settle: decision D4
+  closed Tier 3 on the currency burden and says it "re-opens on a pull from a real regulated team", which
+  is **a condition written in a currency this record no longer ranks in**.
+
+- **Every catalog type now carries a generated `state`, so 179 unbuilt types stop reading as
+  undifferentiated gaps.** This is `pull-queue-spec.md` deliverable **D4**, and
+  [`pull-queue-spec.md`](docs/internal/pull-queue-spec.md) section 2 is why it matters, in its own words:
+  *"Today the catalog's 205 types are undifferentiated to an outside reader: 26 are built and 179 look like
+  gaps. Most are decisions."*
+
+  **Distribution: 26 `built`, 177 `candidate`, 2 `out-of-scope`, across all 205 types.**
+
+  **`state` is derived, not hand-written**, for the same reason `built` is: a fact kept honest only by
+  memory drifts, and this one is public. `built` comes from the bundles on disk. `out-of-scope` and
+  `queued` are decisions, so they live in the new
+  [`atlas/state-overrides.json`](atlas/state-overrides.json) where **every entry carries a reason naming an
+  ADR**. `candidate` is the default. **`prototype-brief` needs no entry**: ADR 0035 rejected it as a
+  *proposed* type, so it was never added to the catalog and has no row to label.
+
+  **Three guards, each mutation-tested rather than assumed.** Hiding a bundle directory makes
+  `gen-atlas.py --check` **exit 1** and flips that type's `state` from `built` to `candidate`, which is
+  section 5's acceptance criterion and the proof the value is derived. An override naming a type that has a
+  bundle fails as a contradiction. An override naming an id the catalog does not have fails by name.
+
+  The atlas renders a chip and a legend entry for the states that carry a decision. **`candidate`
+  deliberately gets no chip**: it is the default, and 177 of them would be noise on a map whose job is to
+  show what has been decided.
+
 ### Changed
+
+- **`pull-gated` is now `candidate` throughout**, because the name asserted a demand gate ADR 0039 had
+  already removed and ADR 0041 finished removing. The four states are `built`, `queued`, `candidate`,
+  `out-of-scope`.
+
 
 - **[`acceptance-criteria`](templates/acceptance-criteria/)'s checklist rubric is now a scored 0/1/2 table,
   which is the experiment [`guide-rubric-spec.md`](docs/internal/guide-rubric-spec.md) section 4 item 2 asks
