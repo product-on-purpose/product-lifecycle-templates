@@ -22,16 +22,31 @@ Fast reference for the Acceptance Criteria bundle. For the full reasoning, histo
   or risky stories, and when AC will seed automated tests. Grow lean into full by adding sections; never
   reorder the shared ones.
 
-## Quality rubric (self-grade before sprint)
+## The rubric
 
-- [ ] Each criterion is an observable outcome (what the user sees), not implementation detail.
-- [ ] Each criterion is verifiable: you can mark it pass or fail.
-- [ ] The unhappy paths are covered, not just the happy one.
-- [ ] Nothing here duplicates the team's Definition of Done.
-- [ ] Story-specific non-functional bars (speed, accessibility) are stated, not assumed.
-- [ ] Each Given/When/Then scenario tests one behavior; "When" is a single action.
-- [ ] Out of scope is stated, so omissions are not mistaken for decisions.
-- [ ] All guidance comments deleted; no placeholders remain.
+Score each 0, 1 or 2. **Under 10 out of 14 and "done" will be settled in the review meeting rather than
+before the work started**, which is the one outcome this document exists to prevent.
+
+**Which rows apply to what.** This bundle ships two variants, and one row grades a section that only the
+full variant carries, so scoring lean against all seven would penalise the choice of variant rather than the
+quality of the criteria.
+
+| Variant | Rows that apply | Maximum | Score against |
+|---|---|---|---|
+| full | all 7 | 14 | **10** |
+| lean | 1-5, 7 (it carries no Scenarios section) | 12 | **9** |
+
+Both thresholds sit above two-thirds of the available points; neither is a bare pass mark.
+
+| # | Criterion | 0 | 1 | 2 |
+|---|---|---|---|---|
+| 1 | **Observable outcome, not implementation** | Criteria name components, technologies or internal mechanisms | Mostly behavioural, but at least one criterion says how rather than what | Every criterion states something a user could watch happen, and none names a technology |
+| 2 | **Verifiable pass or fail** | Criteria rest on words like "fast", "intuitive" or "robust" with no bar | Verifiable in principle, but the tester has to choose the bar themselves | A tester who has never met the author can mark every criterion pass or fail without asking anyone |
+| 3 | **Unhappy paths covered** | Happy path only | One or two error cases, chosen because they were easy to think of | The failure this story is most likely to hit in production is named, with what should happen when it does |
+| 4 | **No overlap with the Definition of Done** | Restates universal checks such as tests passing or code reviewed | Mostly story-specific, with one or two DoD items carried in | Every criterion is true of this story and would be meaningless pasted onto the next one |
+| 5 | **Story-specific non-functional bars** | A bar plausibly applies and none is stated | A bar is mentioned without a number or a named standard | A number or a named standard scoped to this story, or an explicit statement that none applies and why |
+| 6 | **One behaviour per scenario** *(full only)* | One scenario chains several behaviours through repeated "And" steps | Scenarios are separated, but at least one "When" contains more than one action | Every scenario tests one behaviour and its "When" is a single action |
+| 7 | **Out of scope is stated** | No scope statement, so a reader cannot tell an omission from a decision | Scope stated in general terms | Names something a reader would reasonably have expected here and says it is deliberately excluded |
 
 ## Named anti-patterns (the usual wrecks)
 
