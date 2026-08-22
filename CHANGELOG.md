@@ -14,6 +14,28 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The first decision triage ran, 2026-08-21, and it found that this library's decision SLA has a
+  loophole it had already documented once without noticing the documentation was general.** This is the
+  monthly half of **VL-3 (maintenance cadence)**, started ahead of its M6 schedule. Recorded in
+  [`STATE.md`](STATE.md) above the open-decisions table. **Running it does not resolve VL-3**: the cadence
+  ADR is still WP-61 and still stops for the maintainer.
+
+  **The SLA binds "any open decision whose stated resolution cost is under two hours".** VL-1 (business
+  model) sat **43 days** against it, and the entry recording its resolution already says why: it carried
+  no stated resolution cost, **so it never triggered**. That was written as a fact about VL-1. **It is a
+  fact about the rule.** Two open questions are sheltering under it now, both with no stated cost:
+  `guide-rubric-spec.md` section 4 item 2 (25 days) and `pull-queue-spec.md` section 4's anonymous-pull
+  question (7 days). **An estimate is the trigger, so omitting the estimate is the exemption.**
+
+  Not fixed, because amending the SLA is a change to how the library governs itself. The minimal repair is
+  recorded for the maintainer: **treat an unstated cost as under two hours until someone says otherwise**,
+  so silence costs attention rather than buying time.
+
+  **One scope gap found by the same sweep.** `guide-rubric-spec.md` names **four** checklist guides needing
+  a conversion decision. **The tree has twelve.** That spec's scope was set against a 16-guide tree on
+  2026-07-27 and the tree now holds 26, so eight of the twelve were never in anyone's scope. The population
+  grew out from under the spec rather than the spec drifting.
+
 - **[`skills/plt-grade-doc/`](skills/plt-grade-doc/), the library's second skill and roadmap WP-30.** It
   takes a product document that already exists and grades it against that document type's own researched
   rubric, returning an itemized report card that quotes the document's own text as evidence.
