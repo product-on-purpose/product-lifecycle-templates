@@ -19,9 +19,11 @@ so no candidate outside the floor can legitimately be built, no matter how well 
 >
 > **What this changes in the spec, and what it does not.** Sections 1, 2, 3 and 5 are unaffected: intake,
 > the field set, the queue page and the acceptance criteria all still describe work worth doing, and
-> ADR 0039 explicitly retains the queue as an intake and as a priority signal. **Section 4 is the part
-> that needs rewriting**, from a rule about what may be built into a rule about what gets built first.
-> That rewrite is WP-32 build work, not a decision, and it has not been done.
+> ADR 0039 explicitly retains the queue as an intake and as a priority signal. **Section 4 was the part
+> that needed rewriting**, from a rule about what may be built into a rule about what gets built first.
+> That rewrite is WP-32 build work rather than a decision, and it was **done 2026-08-21**. **Deliverable
+> D5, which would promote section 4 into an accepted ADR, still stops for the maintainer**, and the rest
+> of section 3 sequences behind it.
 
 ---
 
@@ -141,28 +143,44 @@ need and not an external request.
 An empty queue that has never held anything teaches a reader nothing about how the queue works. A queue
 whose only entry is labelled a self-pull teaches them exactly what counts.
 
-## 4. The demand rule, which now sets priority rather than permission
+## 4. The demand rule, which sets priority rather than permission
 
-Proposed, per the audit's 5.4, with one addition. **Read every rule below as a priority rule**: since
-[ADR 0039](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) none of them decides whether a
-type may be built, only where it sits in the order. The rules are left in their original permission
-wording, and rewriting them is the open WP-32 task named at the top of this file.
+Proposed, per the audit's 5.4, with one addition. **Rewritten 2026-08-21 from permission wording into
+priority wording**, which is the WP-32 build task the top of this file named. Since
+[ADR 0039 (maintainer discretion replaces the pull gate)](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md),
+**no rule below decides whether a type may be built** except rule 4, which is blocked on a separate ground
+and now says so in its own text rather than relying on a reader to carry the exception down from here.
 
-1. **One named requester moves a type from `pull-gated` to `queued`.** Named means attributable: a person
-   or a team, not an anonymous vote.
-2. **The maintainer's own governance need counts as one pull**, and is recorded as a self-pull rather than
-   disguised as external demand. `adr` is the standing example.
-3. **Three or more requests for a Tier-2 methodology pack** trigger the catalog's active-practice test
-   before any build, using the `methodology_in_use` field as the evidence.
-4. **Tier-3 regulated stays blocked on decision D4 (regulated-industry appetite)** regardless of pull
-   count, because that tier carries a currency discipline this library has not committed to. **D4 closed
-   2026-08-14 as a deliberate no**, on that same currency burden, and it reopens only on a pull from a
-   real regulated team, so this rule now states a settled position rather than a pending one. ADR 0039
-   does not unblock it: discretion governs which types get built, and this tier is closed on a separate
-   ground.
-5. **Added here, not in the audit: a queued type is not a commitment**, and the queue page must say so in
-   the requester's own reading path. The library has one credibility asset, which is that it does not
-   claim what it has not earned. A queue that reads as a promise spends that asset.
+**What the rewrite changed, and what it did not.** Only the wording moved. **No rule gained, lost or
+altered a threshold**, and the recommended answer to the open question below is unchanged. **Section 4 is
+still the content of deliverable D5, and D5 still stops for the maintainer**, because accepting these
+rules as an ADR binds the library in a way that restating them in a spec does not. Rewording a spec to
+match a decision already taken is build work; promoting it into a decision record is not.
+
+1. **One named requester raises a type from `pull-gated` to `queued`**, which is a move up the order and
+   not a grant of permission. Named means attributable: a person or a team, not an anonymous vote. **A
+   type with no requester is still buildable at maintainer discretion**; it simply has nothing arguing
+   for it, and it sorts below anything that does.
+2. **The maintainer's own governance need ranks as one pull**, and is recorded as a self-pull rather than
+   disguised as external demand. `adr` is the standing example. Recording it as a self-pull is what keeps
+   the ordering honest: a self-pull that reads as external demand inflates the only signal this queue
+   carries.
+3. **Three or more requests for a Tier-2 methodology pack rank that pack above single-request types, and
+   trigger the catalog's active-practice test before it is built**, using the `methodology_in_use` field
+   as the evidence. **The test is a quality bar on the build, not a gate on eligibility**: failing it
+   changes what gets built and how it is scoped, not whether the type was allowed to be considered.
+4. **Tier-3 regulated is blocked, and this is the one rule here that is still a permission rule.** It is
+   blocked regardless of pull count, because that tier carries a currency discipline this library has not
+   committed to. **Decision D4 (regulated-industry appetite) closed 2026-08-14 as a deliberate no** on
+   that same currency burden, and it reopens only on a pull from a real regulated team, so this rule
+   states a settled position rather than a pending one. **ADR 0039 does not unblock it**: discretion
+   governs which types get built, and this tier is closed on a separate ground, so the reframing above
+   does not reach it.
+5. **Added here, not in the audit: a queued type is not a commitment, and a rank is not a schedule.** The
+   queue page must say both in the requester's own reading path. The library has one credibility asset,
+   which is that it does not claim what it has not earned. A queue that reads as a promise spends that
+   asset, and **an ordered queue that reads as a delivery plan spends it faster**, because an order looks
+   like a date to the person who filed the request at the top of it.
 
 **The one open question, recommended answer included.** Does an anonymous or unattributed request count as
 a pull? **Recommended: no.** The entire purpose of the gate is evidence that someone will use the thing.
