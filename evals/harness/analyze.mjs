@@ -142,8 +142,24 @@ console.log('The interval is resampled over SCENARIOS, not over judge-artifact r
 console.log('scenario share a document and a panel, so treating them as independent would return a')
 console.log('confident interval the data does not support.')
 console.log('')
-console.log('Protocol section 7: a regression threshold reads the LOWER BOUND, never the point. With')
-console.log('' + scenarios.length + ' clusters the interval is wide, and that width is the run precision rather than a defect.')
+console.log('Protocol section 7: a regression threshold reads the LOWER BOUND, never the point.')
+
+// A cluster bootstrap over ONE cluster is degenerate: every resample draws the same scenario, so
+// lower === upper === point and the "interval" is zero-width. Said plainly because the previous
+// wording asserted the opposite ("the interval is wide") directly under a table of +1.14 to +1.14,
+// which reads as certainty rather than as the absence of an estimate. Found 2026-08-21 on the first
+// single-scenario run, which is the only shape that triggers it.
+if (scenarios.length < 2) {
+  console.log('')
+  console.log('WARNING: ' + scenarios.length + ' cluster. The bootstrap is DEGENERATE, not wide. Every')
+  console.log('resample draws the same scenario, so lower === upper === point and the interval above')
+  console.log('carries NO information about precision. Do not read it as a confidence interval, and do')
+  console.log('not publish a gap from this run: protocol section 7 forbids a bare point estimate and')
+  console.log('this run cannot produce anything else. Two or more scenarios are required.')
+} else {
+  console.log('With ' + scenarios.length + ' clusters the interval is wide, and that width is the run')
+  console.log('precision rather than a defect.')
+}
 
 // A gap whose interval spans zero has not established a direction, whatever its point estimate says.
 const spanning = Object.entries(results).filter(([, r]) => r.lower !== null && r.lower < 0 && r.upper > 0)

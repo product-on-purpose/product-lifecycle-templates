@@ -14,6 +14,44 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[The first eval that could run](evals/results/2026-08-21_first-runnable.md), and the reason it could
+  not before was one line in `.gitattributes`.** 20 agents, 0 errors, 4 arms, 36 judge rows, 11 minutes,
+  one scenario (`prd-001`). **No verdict, and that is the correct outcome**: this measured the instrument
+  and the price, not the templates.
+
+  **The first cost figure this repository has ever had.** 1,229,196 subagent tokens, and **`budget.spent()`
+  executed at runtime for the first time**, returning 411,179. That global has been recorded as "unproven
+  at runtime" for three sessions. Both numbers carry the limits the harness prints beside them: turn-level
+  and output-only, so an upper bound on roughly half the cost.
+
+  **The hollow arm worked, which is the instrument's most important property.** A document with the right
+  shape and no content scored **1.05** against the treatment's **4.53**, blind. A rubric a fluent empty
+  document could pass would be worthless.
+
+  **The circularity signature reproduced** on a harness that had never executed: **+1.14** on criteria
+  drawn from the templates' own guide, **-0.08** on criteria drawn from neither. The 2026-08-08 re-run
+  found +0.85 and -0.03. **Same shape, same sign.** The held-out gap is smaller than the -0.17 control
+  replication delta, so it is inside judging noise: **VOID rather than negative**, for the third time.
+
+  **One result points the wrong way and is recorded because it does:** the control arm answered 5.0 of 5
+  retrieval probes and the treatment answered 4.5.
+
+### Fixed
+
+- **[`analyze.mjs`](evals/harness/analyze.mjs) told the reader a zero-width interval was a wide one.** Its
+  closing line was hardcoded to "With N clusters the interval is wide, and that width is the run precision
+  rather than a defect." On a single-scenario run it printed **"With 1 clusters the interval is wide"**
+  directly beneath a table reading **`+1.14 to +1.14`**.
+
+  The sentence encodes a true intuition, that fewer clusters means a wider interval, and **it inverts at
+  n=1**: with one cluster every resample draws the same scenario, so `lower === upper === point` and the
+  bootstrap is **degenerate rather than wide**. Under two clusters the script now refuses the reading
+  explicitly and says no gap may be published from the run.
+
+  **This defect could only surface on a single-scenario run, which is exactly what a first cautious
+  execution looks like.** The six-scenario path was re-run against the 2026-08-08 raw rows to confirm the
+  normal branch and its historical numbers are unchanged.
+
 - **The first decision triage ran, 2026-08-21, and it found that this library's decision SLA has a
   loophole it had already documented once without noticing the documentation was general.** This is the
   monthly half of **VL-3 (maintenance cadence)**, started ahead of its M6 schedule. Recorded in
