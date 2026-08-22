@@ -158,8 +158,8 @@ readable with nothing more than a file-read tool.
 
 **There is an install step, and which one you use decides whether the bundles are present at all.** The
 Claude Code plugin route clones the whole repository, so everything above is on disk. The
-`npx skills add` route installs the **skill only**, about 12 KB, and none of the 26 bundles; the skill
-detects this and stops rather than writing a document it has no template for. The routes and how to
+`npx skills add` route installs the **two skills only**, about 47 KB, and none of the 26 bundles; each
+skill detects this and stops rather than writing a document it has no template for. The routes and how to
 verify each are in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 ## See also

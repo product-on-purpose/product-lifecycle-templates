@@ -79,7 +79,7 @@ here rather than inferred. [`STATE.md`](../../STATE.md) remains authoritative wh
 | M0 Credibility floor | A fresh clone survives the five-minute sniff test | 1 day | CI green on main | **Done** | E-01, D-03, G-01, F-03, B-04, C-05, B-08, F-07 |
 | M1 Integrity and truth | Content claims verifiable; decisions closed; first release | 1 week | Tag v0.1.0 with a dogfooded release note | **Done 2026-07-17** | A-01..A-06, D-02, E-03 (D2), D3, F-01, F-05, G-02 |
 | **M2 Machine layer, contract, and the Tier-1 floor** | The library is machine-consumable, lives at its final path, and covers the catalog's must-have set | 2 weeks as estimated; **roughly four in practice** (2026-07-12 to 2026-08-07) | Tag v0.2.0 | **Done 2026-08-07.** The machine layer shipped (schema, manifest, atlas, freshness gates). The Tier-1 floor build-out ([ADR 0021](decisions/0021-complete-the-tier-1-floor.md)) was adopted **after** this roadmap was written and folded into this milestone rather than given its own. **26 bundles cover all 25 templatable Tier-1 types across nine complete families, every family contract is adopted, and the build backlog is empty.** The 27-to-25 reconciliation is [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) (`wireframe` and `interactive-prototype` are not documents) and [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). **The exit act was not `v0.2.0` alone**: the milestone spanned `v0.2.0`, `v0.2.1`, `v0.3.0` and `v0.3.1`, and the library reached **Gold (advanced)** on the Advanced Skill Library Standard, measured in CI rather than declared | B-01, B-02, C-03, C-04, C-06, C-08, C-09, E-06, E-07 done at M1, F-02, F-06, G-04 |
-| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | **Next, and now the binding constraint.** Still **zero real fills**. Two parts moved without the milestone starting: the D2 install retest was run 2026-08-08 (recorded in full under M3 below), and **the intake half of WP-32 is built** (three issue templates shipped 2026-08-07). **WP-30 (LP-2, the wedge itself) was built 2026-08-19** and is **built, not validated**: no external document has been graded, so the milestone's own exit criterion (first external doc graded plus an EV-3 form banked) is untouched. **ADR 0021's floor override has expired on its own terms**, since its stated scope was the Tier-1 floor and that floor is complete, so section 1's original ordering resumes here | D-05, E-04 partial, E-02 partial |
+| M3 First usage and wedge | One real usage cycle; LP-2 shipped; demand capture live | 1-2 weeks (overlaps M2 tail) | First external doc graded + EV-3 form banked | **Under way, and the binding constraint.** Still **zero real fills**. Three parts have moved: the D2 install retest was run 2026-08-08 and rerun 2026-08-21 (both recorded in full under M3 below), **the intake half of WP-32 is built** (three issue templates shipped 2026-08-07), and **WP-30 (LP-2, the wedge itself) was built 2026-08-19**. WP-30 is **built, not validated**: no external document has been graded, so the milestone's own exit criterion (first external doc graded plus an EV-3 form banked) is untouched. **ADR 0021's floor override has expired on its own terms**, since its stated scope was the Tier-1 floor and that floor is complete, so section 1's original ordering resumes here | D-05, E-04 partial, E-02 partial |
 | M4 Proof | Quality measured, not asserted; regression-protected | 2 weeks | Per-bundle eval scorecards published | **Partly started, and the first numbers came back VOID.** [`eval-protocol.md`](eval-protocol.md) is written, the harness runs, and two independent 114-agent runs completed 2026-08-08 agreeing within 0.13 on every quantity. **Both are VOID on discrimination**, and **three bundles of 26** are measured. What survives is the circularity signature: **+0.85** on criteria drawn from the templates' own guide beside **-0.03** on criteria drawn from neither. Four blockers remain, listed under WP-40 | D-04, EV-2, CT-1 (conditional) |
 | M5 Reach | Agents can discover, select, fetch, fill, validate | 4-6 weeks, gated on M3 signal | MCP + fill flow live; distribution per D2/D3 outcomes | **Not started**, correctly gated on M3 | C-01, E-02 remainder, AG-1, AG-2 |
 | M6 Scale by pull | Next family by demand; sustainable cadence | ongoing | Quarterly freshness pass #1 completed | **Not started** | E-04, G-05, VL-1/VL-3 |
@@ -221,7 +221,7 @@ Ordering note: graduation (WP-20) runs FIRST so every machine surface (schema, m
 - [ ] At least one filled document exists whose author is not the library author, or whose content is a real work artifact (not an authored example); its provenance frontmatter is stamped and its EV-3 form is stored.
 - [ ] LP-2 grades a never-seen PRD in under 3 minutes of wall-clock agent time and its report card cites specific rubric line items.
 - [ ] The pull queue has at least one genuine external entry OR a documented outreach log showing five attempts. **Partly addressed 2026-08-07: the intake exists. Zero entries received, and no outreach log exists.**
-- [x] Because LP-2 ships as a SKILL.md in this repo, the D2 question is retested with the skill present: record whether `npx skills add product-on-purpose/product-lifecycle-templates` now installs (this is the distribution unlock the audit predicted). **Run 2026-08-08 against `skills@1.5.22`. It installs. It is not yet the unlock the audit predicted, and the reasons are below.**
+- [x] Because LP-2 ships as a SKILL.md in this repo, the D2 question is retested with the skill present: record whether `npx skills add product-on-purpose/product-lifecycle-templates` now installs (this is the distribution unlock the audit predicted). **Run 2026-08-08 against `skills@1.5.22`. It installs. It is not yet the unlock the audit predicted, and the reasons are below. Rerun 2026-08-21 against `skills@1.5.23`, the first run with both skills present: it reports exactly the two declared skills and installs them, and its payload probe falsified a size claim carried in four documents. Both records below.**
 
 **D2 retest, 2026-08-08, recorded in full because it has been open since 2026-07-17 and because two of its three findings are unwelcome.**
 
@@ -288,6 +288,50 @@ for that same reason, after the efficacy pilot's -0.81 and finding #8's "probabl
 single observation with no control cannot distinguish *the tool ignored my input* from *I used the wrong
 input*, and all three times the second was true.
 
+**D2 rerun, 2026-08-21, and it is the first run made with two skills present.**
+
+WP-30 shipped a second skill on 2026-08-19, and [`installing.md`](../how-to/installing.md) then published a
+falsifiable prediction about what an install would report. **This is that prediction being watched**, which
+had not happened for any claim on that page. Run against **`skills@1.5.23`** in an empty directory.
+
+| Probe | Command | Result |
+|---|---|---|
+| Discovery | `skills add <repo> --list` | **Found 2 skills**, `plt-fill-template` and `plt-grade-doc`, exit 0 |
+| Leak | same run | **None.** Nothing under `.claude/skills/`, because `build-bundle` is now a command and a workflow rather than a skill |
+| Install | `skills add <repo>` | **Succeeds**, exit 0, into `.agents/skills/` with a `.claude/skills/` symlink |
+| Payload | inspect the install | **8 files, 48,412 bytes.** No `manifest.json`, no `templates/` |
+
+**1. The published prediction holds.** [`installing.md`](../how-to/installing.md) tells a reader that any set
+other than those two skills is a defect in this repository. That sentence had been shipped and never
+observed.
+
+**2. The 2026-08-08 leak is closed, and not by the check written for it.** That run exported
+`.claude/skills/build-bundle/` because removing the root `SKILL.md` switched on a subdirectory search nobody
+knew was being suppressed. `build-bundle` now lives at `.claude/commands/build-bundle.md` and
+`.claude/workflows/build-bundle.js`, neither of which is on the CLI's search path.
+[`check-export-surface.py`](../../tools/check-export-surface.py) still earns its place, and its own docstring
+says why: the next leak will not be `build-bundle`, it will be the first `.codex/skills/` directory anyone
+adds.
+
+**3. The payload figure was wrong in four documents, and only this probe could have found it.** Each said
+"about 12 KB", which was true with one skill and false the moment the second shipped. **None of them named a
+skill**, so `grep plt-grade-doc` returned clean on all four: `installing.md` twice, `AGENTS.md`, `STATE.md`,
+and the route table in `plt-fill-template/SKILL.md`. Fixed in the same change as this record. This is the
+third time this defect class has recurred, and the fix applied to `plt-fill-template/SKILL.md` was to
+**delete the number** rather than update it, copying `plt-grade-doc`'s equivalent row, which carries no
+figure and therefore cannot go stale when a third skill ships.
+
+**4. The inert-install finding is unchanged, and it is still the one that matters.** About 47 KB of
+instructions land and none of the library. Both skills check for `manifest.json` and stop when it is absent.
+The Claude Code plugin route clones the repository and does not have this problem.
+
+**One limitation, stated because it is the kind that hides.**
+[`check-export-surface.py`](../../tools/check-export-surface.py) simulates the CLI from a copy of its
+`PRIORITY_PREFIXES` list read from **`skills@1.5.22`** on 2026-08-08. This run used **`1.5.23`**. The export
+surface still matched, so nothing has drifted, but **the pin is one version behind the CLI that `npx` now
+fetches**, and that check's docstring warns that upstream change makes it go stale in the direction of
+continuing to pass. Re-reading the list is the mitigation, and it is cheap.
+
 ### M4: Proof (weeks 5-6)
 
 | WP | Work package | Deliverables | Effort | Traces / spec |
@@ -307,7 +351,9 @@ input*, and all three times the second was true.
 >
 > What replaced it is the **circularity signature**: **+0.85** on criteria drawn from the templates' own
 > guide, beside **-0.03** on criteria drawn from neither. [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md)
-> proposes what that obliges and is **`proposed`, the first unaccepted record in this library**.
+> proposes what that obliges. It was the **only record in this library ever to sit `proposed`**, from
+> 2026-08-08 until it was **accepted 2026-08-14** with option C (adopt nothing) consciously rejected
+> rather than skipped. All 40 records are accepted.
 >
 > **Coverage is three bundles of 26. Nothing generalises.** Four blockers, each needing something
 > different, and none of them more evidence:
