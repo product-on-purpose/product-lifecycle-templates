@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.4.0] - 2026-08-21
+
 ### Added
 
 - **[The first eval that could run](evals/results/2026-08-21_first-runnable.md), and the reason it could
@@ -1117,7 +1121,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.2.0...v0.2.1

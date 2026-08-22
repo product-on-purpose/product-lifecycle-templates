@@ -26,6 +26,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 - [`v0.2.1.md`](v0.2.1.md) - a listing-contract patch: `v0.2.0` was tagged before its downstream contract was read, and a published tag is not moved. **Backfilled 2026-08-09**
 - [`v0.3.0.md`](v0.3.0.md) - Gold tier measured in CI, the pilot's held-out finding withdrawn, and two install defects found by running the install
 - [`v0.3.1.md`](v0.3.1.md) - a documentation patch: the `v0.3.0` tag shipped four documents denying the efficacy evaluations that shipped beside them
+- [`v0.4.0.md`](v0.4.0.md) - the first release carrying a feature rather than a correction: a second skill that grades documents you already have, the first eval run that was mechanically possible, and four claims the library made about itself that were not true
 
 **Every tagged release now has a page**, which was not true until 2026-08-09. `v0.2.1` shipped without one
 and the gap sat unnoticed because nothing checks it:
