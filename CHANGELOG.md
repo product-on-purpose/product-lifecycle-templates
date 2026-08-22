@@ -168,6 +168,26 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **The `npx skills add` install was rerun 2026-08-21, the first run made with two skills present, and
+  [`roadmap.md`](docs/internal/roadmap.md) records it in full beside the 2026-08-08 original.** WP-30
+  shipped a second skill on 2026-08-19 and [`installing.md`](docs/how-to/installing.md) then published a
+  falsifiable prediction about what an install would report. **Nobody had watched it happen.** Run against
+  `skills@1.5.23` in an empty directory: discovery returns exactly `plt-fill-template` and `plt-grade-doc`,
+  the install succeeds into `.agents/skills/` with a `.claude/skills/` symlink, and the payload is
+  **8 files, 48,412 bytes** with no `manifest.json` and no `templates/`.
+
+  **The 2026-08-08 leak is closed, and not by the check written for it.** That run exported the
+  maintainer-internal `.claude/skills/build-bundle/`; `build-bundle` is now a command and a workflow,
+  neither of which sits on the CLI's search path.
+  [`check-export-surface.py`](tools/check-export-surface.py) still earns its place for the reason its own
+  docstring gives: the next leak will not be `build-bundle`.
+
+  **One limitation is recorded rather than left implicit.** That check simulates the CLI from a copy of its
+  prefix list read from `skills@1.5.22`; this run used `1.5.23`. The export surface still matched, so
+  nothing has drifted, but **the pin is one version behind what `npx` now fetches** and the check goes
+  stale in the direction of continuing to pass.
+
+
 - **The eval protocol's two open instrument questions are both decided (2026-08-14), completing option D of
   [ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md).**
 
@@ -264,6 +284,50 @@ people who want every change, release notes are for people who want to know what
   named and **neither is adopted**, because changing the instrument is a maintainer decision.
 
 ### Fixed
+
+- **Four documents told a reader the `npx skills add` install is about a quarter of its real size, and the
+  install retest is the only thing that could have found it.** Each said "about 12 KB", true when one skill
+  shipped and false from the moment the second did on 2026-08-19. The measured payload is **8 files and
+  48,412 bytes**. Corrected in [`installing.md`](docs/how-to/installing.md), [`AGENTS.md`](AGENTS.md),
+  and [`STATE.md`](STATE.md)'s present-tense claim about what the install delivers. **Fixing the count
+  exposed the singular framing wrapped around it**, so the same page's plugin row ("the skill **and** all
+  26 bundles") and its "what the skill does about it" paragraph, which described only
+  [`plt-fill-template`](skills/plt-fill-template/)'s fetch, now cover both skills.
+  [`plt-grade-doc`](skills/plt-grade-doc/) runs the same two-request pattern against a guide rather than
+  a template. Dated records of the 2026-08-08 run keep their
+  original figures, because they are correct as history.
+
+  **The fix applied to [`plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md) was to delete the
+  number rather than update it**, copying the equivalent row in
+  [`plt-grade-doc/SKILL.md`](skills/plt-grade-doc/SKILL.md), which carries no figure and therefore cannot
+  go stale when a third skill ships. A number that no check reads is a liability wherever restating it
+  buys nothing.
+
+  **This is the third recurrence of one defect class**, and the reason it keeps recurring is exact: **not
+  one of these sentences names a skill**, so `grep plt-grade-doc` returned clean on every one of them. The
+  string that finds them is the component count, not the component name.
+
+- **One sentence in [`installing.md`](docs/how-to/installing.md) inverted its meaning when the second skill
+  shipped.** It read "It was written the day the install reported two", explaining
+  [`check-export-surface.py`](tools/check-export-surface.py). On 2026-08-08 two was the **defect**: one
+  declared skill and a maintainer-internal build harness leaking beside it. After WP-30, **two is the
+  correct answer**, so the sentence read as though the check exists to prevent the thing it now permits.
+  It is dated and says which two.
+
+- **[`roadmap.md`](docs/internal/roadmap.md) still described
+  [ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md) as "`proposed`, the
+  first unaccepted record in this library".** It was **accepted 2026-08-14**, and both
+  [`STATE.md`](STATE.md) and this file already say so. All 40 records are accepted. A status recorded in
+  three places drifted in exactly one of them.
+
+- **M3 was framed as "next" in three places that then reported three of its parts as moved.** Both
+  [`STATE.md`](STATE.md) lines (the "Direction" stamp and the milestone paragraph beneath it) and
+  [`roadmap.md`](docs/internal/roadmap.md)'s M3 status cell said the milestone had not started while
+  listing the D2 retest, the WP-32 intake half, and WP-30 itself as delivered. **M3 is under way.** The
+  previous session's hygiene sweep proposed two of these three and missed the first, which is the same
+  lesson that sweep recorded about itself: **a drift report is an ungated claim.** The "Direction" stamp
+  moved with the content it stamps, so the fix does not seed the next drift.
+
 
 - **Four internal planning documents were stale in ways that told a reader the wrong thing, and the
   hygiene sweep that found three of them did not fix any.** All four were introduced on 2026-08-14 and

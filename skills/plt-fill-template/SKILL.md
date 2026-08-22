@@ -47,7 +47,7 @@ depends entirely on how this skill was installed:
 | Install route | What you have |
 |---|---|
 | **Claude Code plugin** | the whole repository. Everything below works |
-| **`npx skills add`** | this file and its README, about 12 KB. **No bundles, no `manifest.json`** |
+| **`npx skills add`** | this file and its README. **No bundles, no `manifest.json`** |
 
 **Before doing anything else, check that `manifest.json` is readable.**
 
