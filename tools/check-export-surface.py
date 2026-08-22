@@ -14,8 +14,8 @@ Library Standard. Removing the root file removed a protection nobody knew was th
 
 MOVING ONE FILE FIXED ONE LEAK. THIS CHECK IS THE PART THAT LASTS.
 
-The CLI scans a hardcoded list of THIRTY-TWO prefixes, twenty-seven of them agent-config directories:
-.claude/skills, .codex/skills, .cursor-adjacent tools, .github/skills, and twenty-three more. It reads
+The CLI scans a hardcoded list of THIRTY-THREE prefixes, twenty-eight of them agent-config directories:
+.claude/skills, .codex/skills, .cursor-adjacent tools, .github/skills, and twenty-four more. It reads
 no ignore file; its skip list is hardcoded to node_modules, .git, dist, build and __pycache__. So the
 next leak will not be build-bundle. It will be the first time anyone adds .codex/skills/<anything> to a
 repository whose maintainer also uses Codex, and it will ship silently, past every other check here.
@@ -29,7 +29,7 @@ not ship is a broken install, which is the same defect pointed the other way.
 WHAT IT CANNOT CHECK.
 
 That the upstream CLI keeps these rules. PRIORITY_PREFIXES below is a copy of a hardcoded list in a
-package that ships often, read from skills@1.5.22 on 2026-08-08. If upstream adds a directory or walks
+package that ships often, re-read from skills@1.5.23 on 2026-08-21. If upstream adds a directory or walks
 the whole tree, this check goes stale in the dangerous direction: it keeps passing. That limitation is
 printed on every run, and the honest mitigation is to re-read the list when the CLI majors.
 """
@@ -44,7 +44,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 
-# Copied verbatim from PRIORITY_PREFIXES in skills@1.5.22 (package/dist/cli.mjs). The empty string is
+# Copied verbatim from PRIORITY_PREFIXES in skills@1.5.23 (package/dist/cli.mjs). The empty string is
 # the repository root, and it behaves differently: a root SKILL.md short-circuits the whole search.
 PRIORITY_PREFIXES = [
     "",
@@ -54,11 +54,11 @@ PRIORITY_PREFIXES = [
     ".goose/skills/", ".grok/skills/", ".iflow/skills/", ".junie/skills/",
     ".kilocode/skills/", ".kimchi/skills/", ".kiro/skills/", ".minimax/skills/",
     ".mux/skills/", ".neovate/skills/", ".opencode/skills/", ".openhands/skills/",
-    ".pi/skills/", ".qoder/skills/", ".roo/skills/", ".trae/skills/",
-    ".windsurf/skills/", ".zcode/skills/", ".zencoder/skills/",
+    ".pi/skills/", ".posit/assistant/skills/", ".qoder/skills/", ".roo/skills/",
+    ".trae/skills/", ".windsurf/skills/", ".zcode/skills/", ".zencoder/skills/",
 ]
 
-CLI_VERSION_READ = "skills@1.5.22, read 2026-08-08"
+CLI_VERSION_READ = "skills@1.5.23, read 2026-08-21"
 
 
 def tracked_skill_files():

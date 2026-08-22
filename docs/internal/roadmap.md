@@ -325,12 +325,22 @@ figure and therefore cannot go stale when a third skill ships.
 instructions land and none of the library. Both skills check for `manifest.json` and stop when it is absent.
 The Claude Code plugin route clones the repository and does not have this problem.
 
-**One limitation, stated because it is the kind that hides.**
+**The limitation this run recorded turned out to be live, and the follow-up is below.**
 [`check-export-surface.py`](../../tools/check-export-surface.py) simulates the CLI from a copy of its
 `PRIORITY_PREFIXES` list read from **`skills@1.5.22`** on 2026-08-08. This run used **`1.5.23`**. The export
-surface still matched, so nothing has drifted, but **the pin is one version behind the CLI that `npx` now
-fetches**, and that check's docstring warns that upstream change makes it go stale in the direction of
-continuing to pass. Re-reading the list is the mitigation, and it is cheap.
+surface matched, which was originally recorded as "nothing has drifted". **That was the wrong inference from
+a matching surface**, and re-reading the list the same day proved it.
+
+**The list had drifted. `skills@1.5.23` carries a thirty-third prefix, `.posit/assistant/skills/`, and the
+check's copy had thirty-two.** The surfaces matched only because this repository has no `.posit/` directory,
+which is a fact about this tree rather than about the check. **This is the exact failure the check's own
+docstring predicted**, in its own words: "if upstream adds a directory or walks the whole tree, this check
+goes stale in the dangerous direction: it keeps passing." Upstream added a directory. Between one patch
+release and the next, on a package that ships often.
+
+The list is now re-read from `1.5.23`, order included, and verified position by position rather than as a
+set, since the order is the CLI's priority order. The check reports its own provenance on every run and now
+says `skills@1.5.23, read 2026-08-21`.
 
 ### M4: Proof (weeks 5-6)
 
