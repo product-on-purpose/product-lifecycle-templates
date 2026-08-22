@@ -71,6 +71,17 @@ consequence, and the "(not lean canvas)" scope markers on rows 9 and 10 are pres
 **Item 2: the four checklist guides** (`acceptance-criteria`, `prd`, `release-notes`, `user-stories`). These
 need a decision before conversion, recorded here as an open question rather than assumed:
 
+> **`acceptance-criteria` was converted 2026-08-21**, which is the experiment the instruction below asks
+> for and **not an answer to it**. The question of whether `prd`, `release-notes` and `user-stories` follow
+> is still open and still stops for the maintainer. **Two things worth reading before deciding**: the
+> conversion produced **seven rows, one below the smallest scored sibling**, and named anti-pattern 6
+> ("criteria as afterthought") **has no rubric row and had none as a checklist item either**, so no
+> criterion in either form can detect a document written after the code.
+>
+> **The scope of this item is also wider than it says.** It names four guides against a **16-guide** tree
+> on 2026-07-27. The tree now holds **26**, and **eleven** carry a checklist, so eight were never in
+> anyone's scope. Counted 2026-08-21 by testing every guide, not from a list.
+
 > A checklist and a scored rubric do different jobs. A checklist asks "did you do the thing"; a scored rubric
 > asks "how well". For a short artifact such as a set of acceptance criteria, a checklist may genuinely be
 > the right instrument. **Do not convert these mechanically.** Convert one (`acceptance-criteria` is the

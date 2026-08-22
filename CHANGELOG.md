@@ -12,7 +12,39 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-Nothing yet.
+### Changed
+
+- **[`acceptance-criteria`](templates/acceptance-criteria/)'s checklist rubric is now a scored 0/1/2 table,
+  which is the experiment [`guide-rubric-spec.md`](docs/internal/guide-rubric-spec.md) section 4 item 2 asks
+  for and not an answer to it.** That item names this bundle as the candidate, "being the most-used", and
+  instructs that one guide is converted and read before the rest follow. **Whether `prd`, `release-notes`
+  and `user-stories` follow is still open and still stops for the maintainer.**
+
+  Eight checklist items become **seven scored rows**. The housekeeping item ("all guidance comments
+  deleted") was dropped rather than lost: **none of the fourteen already-scored guides carries such a row**,
+  and both templates already say it in their own HOW TO FILL block. Thresholds are **10 of 14** for full and
+  **9 of 12** for lean, stated in a scope table. `template_version` 0.1.0 to 0.1.1.
+
+  **Two things found by converting, both reported rather than fixed.** Named anti-pattern 6, "criteria as
+  afterthought", **has no rubric row and had none as a checklist item either**: a document written after the
+  code can satisfy all seven criteria, so neither form can detect the failure that defeats the document's
+  purpose. And **seven rows is one below the smallest scored sibling**, which run eight to twelve. Adding a
+  criterion changes what the library asks of a document, so both are raised for the maintainer.
+
+  **The scope of that spec item is wider than it states.** It names four guides against a 16-guide tree from
+  2026-07-27; the tree now holds 26 and **eleven** carry a checklist, so eight were never in anyone's scope.
+
+  **[`plt-grade-doc`](skills/plt-grade-doc/) needed no change**, which is the design working: it detects
+  rubric form from the guide at run time rather than from a list, so this bundle silently stopped needing
+  the grader-supplied scale and its report cards stopped carrying that caveat.
+
+- **The gate caught two defects in this change that a human reviewer would have passed.**
+  [`check-rubric-scope.py`](tools/check-rubric-scope.py) **failed** the first version, which scoped the
+  lean variant in a sentence: it requires a **scope table** as soon as any row carries a variant marker and
+  the bundle ships more than one variant. It also caught the first lean threshold of 8 of 12, which is 67
+  percent, against the house convention `status-report` states that **both thresholds sit above
+  two-thirds**. **The prose version read as complete.**
+
 
 ## [0.4.0] - 2026-08-21
 
