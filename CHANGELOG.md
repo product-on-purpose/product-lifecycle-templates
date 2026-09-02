@@ -14,6 +14,30 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[ADR 0042](docs/internal/decisions/0042-epic-joins-delivery-docs.md): `epic` joins the delivery-docs
+  family, and the first Tier-2 build finds a gate that two records did not remove.** The maintainer set the
+  build order under ADR 0041 and chose `epic`. The build stopped before phase 0.
+
+  **[ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) removed the
+  gate on *whether* a Tier-2 type may be built, and ADR 0041 removed the rule that ordered it. Neither
+  touched family membership**, which a family contract enumerates and which the contract says may only
+  change by decision record. The `build-bundle` precondition that actually failed was "the type is on the
+  build backlog", and no Tier-2 backlog existed:
+  [`buildout-specs.md`](docs/internal/buildout-specs.md) covers the Tier-1 floor, which is complete, and
+  nothing succeeded it.
+
+  Amends [`contracts/delivery-docs.md`](docs/internal/contracts/delivery-docs.md) to **0.1.3**, placing
+  `epic` in the section 1 chain sentence between the artifact that opens the chain and the stories that
+  decompose it. The chain claim is **tested against research already fetched and verified in this
+  repository** rather than newly asserted, per decision procedure 11, so the amendment needed no research
+  pass of its own. The build is recorded in the `queued` block of
+  [`atlas/state-overrides.json`](atlas/state-overrides.json), which shipped empty on 2026-08-22 and had
+  never been used, rather than in a second backlog document.
+
+  **The record names a cost it does not remove:** eight other families will each hit this same gate on
+  their first Tier-2 admission, and it refuses to generalise the membership rule from one instance,
+  because generalising from one instance is how the demand rule ADR 0041 replaced came to be written.
+
 - **[ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md): the
   maintainer's own preference and need set the build order, and external demand is an input rather than a
   rank.** Closes deliverable **D5** of [`pull-queue-spec.md`](docs/internal/pull-queue-spec.md), which had
