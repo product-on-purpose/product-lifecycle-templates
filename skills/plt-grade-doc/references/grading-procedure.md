@@ -42,7 +42,7 @@ The detection rule is mechanical:
   the **scored table** form. The sentence directly above it states the pass threshold.
 - `- [ ]` items under the rubric heading are the **checklist** form. There is no scale and no threshold.
 
-**As of 2026-08-21 the split is 15 scored-table and 11 checklist across the 26 guides**, after
+**As of 2026-09-02 the split is 16 scored-table and 11 checklist across the 27 guides**, after
 `acceptance-criteria` converted under `guide-rubric-spec.md` section 4 item 2. **That count is not gated by
 anything and is recorded here only as context.** The detection rule above is the authority, and it is why
 this skill needed no change when a guide converted: the form is read from the file at run time.

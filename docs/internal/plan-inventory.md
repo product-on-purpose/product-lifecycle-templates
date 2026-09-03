@@ -20,7 +20,7 @@
 > not started and that `skills/` held only `plt-fill-template`. Both were true when written and are now
 > false; section 3's skill count and section 1's tally move with them.
 
-<!-- counts: bundles=26, adrs=42, cisteps=25 -->
+<!-- counts: bundles=27, adrs=42, cisteps=25 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are
@@ -89,7 +89,7 @@ ordering resumes at M3 on the roadmap's own terms**, not as a matter of preferen
 Twenty-six researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
 **two installable skills**, `plt-fill-template` and, since 2026-08-19,
 `plt-grade-doc`. The Claude Code plugin channel clones the tree and works. The skills-CLI channel installs
-instructions and none of the 26 bundles, and each skill fetches what it needs at run time from the release
+instructions and none of the 27 bundles, and each skill fetches what it needs at run time from the release
 tag matching its own declared version.
 
 ## 4. Spec inventory
@@ -125,7 +125,7 @@ Ordered by what unblocks the most other work.
 | 4 | **The flagship content review findings** (CR-1 through CR-7) plus the 2026-08-05 agentic-era recommendations A1 and A2 | The only substantive critique of the library's advice quality as opposed to its governance. CR-1 (the missing AI-era debate in the PRD bundle) and A1 (a PRD AI-era section) are the same work, reached independently three weeks apart | Unapplied. Verified: `AI` appears zero times in `templates/prd/prd_companion.md`, and no `Alternatives Considered` section exists anywhere in that bundle. Both sources are untracked. Gated behind ADR 0038 |
 | 5 | **The family-wide rubric-threshold rewording** | Two independent reviewers flagged the guides' predictive threshold sentences as unsourced claims. `STATE.md` records that the family-wide edit "should be scheduled rather than re-litigated per bundle" | Recorded as open by choice. It has since been re-litigated per bundle twice. No spec |
 | 6 | **The sidecar-asset scope decision** | Whether a bundle may ship a non-Markdown sidecar. A prerequisite for any dataset or evaluation bundle. [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) settles what the library templates, not what a bundle may carry. Verified: `sidecar` appears zero times under `docs/` | Proposed in the 2026-08-05 research. Genuinely open |
-| 7 | **The site track** | The presentation layer for 26 bundles that no one can currently browse | Two plans in `_local/planning/`, unratified, hard-gated on decision VL-1 (business model) |
+| 7 | **The site track** | The presentation layer for 27 bundles that no one can currently browse | Two plans in `_local/planning/`, unratified, hard-gated on decision VL-1 (business model) |
 
 ## 6. Open decisions, and what they hold up
 

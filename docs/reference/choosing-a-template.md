@@ -128,8 +128,8 @@ included here for readers who want the complete picture rather than a situationa
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
-<!-- counts: bundles=26 -->
-That is 26 bundles across every family the library currently ships, and every family is
+<!-- counts: bundles=27 -->
+That is 27 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.

@@ -14,6 +14,29 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The `epic` bundle, the library's twenty-seventh and the first built under the maintainer-preference
+  build order.** Eight files in `templates/epic/`, admitted to delivery-docs by
+  [ADR 0042](docs/internal/decisions/0042-epic-joins-delivery-docs.md). Two variants: lean (Title and
+  Narrative Summary, Goal and Context, Scope, Child Stories, Acceptance Criteria) and full, which adds
+  Out of Scope, Dependencies, and Link Upward.
+
+  **The research is the part worth reading, because it argues against the easy version of this document.**
+  Thirty sources, twenty-nine fetched and verified. The 2020 Scrum Guide contains **zero occurrences of
+  "epic"**, confirmed by literal string search over the raw fetched HTML; XP substitutes a time-box
+  splitting rule, the Kanban Method has no product-sized work unit at all, and LeSS Huge partitions one
+  flat backlog into Requirement Areas. **Only SAFe formalizes the epic**, and heavily. Meanwhile the
+  founding definition is one sentence in Cohn (2004) describing a *single oversized story destined to be
+  split*, and Cohn himself names the modern container usage as a departure he did not author.
+
+  **In its native habitat an epic is a tracker record, not a document**, and the bundle says so rather
+  than pretending otherwise: every tracker surveyed ships it as typed fields on a work-item panel. The
+  two named sources that publish it as prose are ProductPlan and SAFe's Lean Business Case, and the
+  latter is where the bundle draws its sharpest boundary: **a cost estimate, a value-return figure, or a
+  go/no-go recommendation belongs to `business-case`, not here.**
+
+  The guide ships a scored 0/1/2 rubric of eight rows with a variant scope table, which takes the
+  library to **16 scored-table and 11 checklist guides across 27**.
+
 - **[ADR 0042](docs/internal/decisions/0042-epic-joins-delivery-docs.md): `epic` joins the delivery-docs
   family, and the first Tier-2 build finds a gate that two records did not remove.** The maintainer set the
   build order under ADR 0041 and chose `epic`. The build stopped before phase 0.

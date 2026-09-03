@@ -17,8 +17,8 @@ A library of **26 researched document-template bundles**, covering the complete 
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
-<!-- counts: bundles=26, tier1=25 -->
-26 bundles, spanning all 25 templatable Tier-1 document types plus one Tier-2 type built early.
+<!-- counts: bundles=27, tier1=25 -->
+27 bundles, spanning all 25 templatable Tier-1 document types plus two Tier-2 types.
 
 ## When to use
 
@@ -41,7 +41,7 @@ shape, a worked example, and a rubric for judging the result.
 
 ### 0. Confirm the library is present, and STOP if it is not
 
-**This skill is a wrapper. The 26 bundles it indexes are not inside it.** Whether they are on disk
+**This skill is a wrapper. The 27 bundles it indexes are not inside it.** Whether they are on disk
 depends entirely on how this skill was installed:
 
 | Install route | What you have |
@@ -143,13 +143,13 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=25, logsgated=20, sourcesgated=796 -->
-25 CI steps; 20 research logs gated, covering 796 sources.
+<!-- counts: cisteps=25, logsgated=21, sourcesgated=826 -->
+25 CI steps; 21 research logs gated, covering 826 sources.
 
 **Not proved by anything:**
 
 - **Template quality was measured on 2026-08-08, and the measurement was inconclusive.** Two blinded
-  runs over three of the 26 bundles both returned **VOID**: the templates score well above a strong
+  runs over three of the twenty-six bundles then in the library both returned **VOID**: the templates score well above a strong
   generic-prompt control on the bundles' *own* rubric criteria, and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide. Read the results before
   quoting anything from them, in [`evals/results/`](../../evals/results/). **No number from either run

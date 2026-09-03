@@ -1,0 +1,33 @@
+id: epic
+title: Epic
+summary: >-
+  A named body of work large enough to need splitting into stories, written to carry what a tracker's own
+  epic record cannot: why the work exists, who it serves, what is deliberately left out, and what larger
+  effort it ladders up to. Native to no Scrum, XP, or Kanban framework, formalized only by SAFe, and
+  everywhere else a vocabulary borrowed from the tools that ship it as fields on a work-item panel.
+doc_type: epic
+phase: deliver
+family: delivery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Title and Narrative Summary, Goal and Context, Scope, Child Stories, and Acceptance Criteria) for a single-team epic living inside one tool, where the tracker's own fields for dates, parent-child links, and rollups already do the record-keeping and this document only needs to carry the narrative summary and the exclusions a field cannot hold. Use full when the work crosses teams, carries real dependencies, or needs a stated (or explicitly absent) answer to what sits above it: it adds Out of Scope, Dependencies, and Link Upward on top of lean's first five sections, which keep their name and order."
+methodology: SAFe-lineage
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - safe
+  - epic
+  - backlog
+  - roadmapping
+  - planning
+related_templates: [user-stories, product-backlog, product-roadmap]
+aliases:
+  - epic
+  - feature epic
+  - portfolio epic
+catalog_ref: 31
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-02
+license: Apache-2.0

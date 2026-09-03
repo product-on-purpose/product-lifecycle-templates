@@ -8,7 +8,7 @@ maintainer.** Written 2026-08-14. Traces to roadmap WP-33 (wedge outreach), the 
 observed on 2026-08-14 and will drift; the policy quotes are verbatim from the named file. Re-check both
 before acting on any row.
 
-<!-- counts: bundles=26 -->
+<!-- counts: bundles=27 -->
 
 ---
 

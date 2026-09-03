@@ -30,6 +30,7 @@ document", not as "change this one number".
 Pure standard library. Runs in CI alongside the gate.
 Usage: python tools/check-counts.py
 """
+import json
 import os
 import re
 import subprocess
@@ -109,13 +110,33 @@ def live_facts():
 
     ci = open(os.path.join(ROOT, ".github", "workflows", "ci.yml"), encoding="utf-8").read()
 
-    # rfc is catalog Tier 2, built early; every other bundle is a Tier-1 type. See D-D in buildout-specs.
-    tier1_built = len(bundle_dirs) - (1 if "rfc" in bundle_dirs else 0)
+    # Tier comes from the catalog, never from an assumption about which bundles are Tier 1.
+    #
+    # This read `len(bundle_dirs) - (1 if "rfc" in bundle_dirs else 0)` until 2026-09-02, with a comment
+    # explaining that rfc was the one Tier-2 bundle and "every other bundle is a Tier-1 type". That was
+    # true when it was written and stopped being true the moment Tier-2 building opened: ADR 0039 removed
+    # the pull gate, ADR 0041 made the maintainer's preference set the order, and ADR 0042 admitted `epic`
+    # as the second Tier-2 bundle ever built. The old expression then counted epic into the Tier-1 floor
+    # and reported it as 26 of 27 with 1 remaining, when the floor is 25 with 2 refused under ADR 0030.
+    #
+    # A hardcoded exception list is a claim about the tree that nothing re-checks. The catalog's `built`
+    # flag is derived by gen-atlas.py from the tree itself, and CI gates its freshness, so reading tier
+    # from there cannot drift the same way. This does couple this check to a fresh catalog-data.json;
+    # that coupling is deliberate and cheaper than the assumption it replaces.
+    catalog_path = os.path.join(ROOT, "atlas", "catalog-data.json")
+    with open(catalog_path, encoding="utf-8") as fh:
+        catalog = json.load(fh)
+    catalog_types = catalog["types"] if isinstance(catalog, dict) and "types" in catalog else catalog
+    if isinstance(catalog_types, dict):
+        catalog_types = list(catalog_types.values())
+    tier1_types = [t for t in catalog_types if t.get("tier") == 1]
+    tier1_built = sum(1 for t in tier1_types if t.get("built"))
+    tier1_total = len(tier1_types)
 
     return {
         "bundles": _int_from(bundles_out, r"OK\s+(\d+) bundle"),
         "tier1": tier1_built,
-        "tier1remaining": 27 - tier1_built,
+        "tier1remaining": tier1_total - tier1_built,
         "adrs": len(adrs),
         "adrmax": max(int(f[:4]) for f in adrs) if adrs else 0,
         "cisteps": len(re.findall(r"^\s+-\s+(?:name|uses):", ci, re.M)),

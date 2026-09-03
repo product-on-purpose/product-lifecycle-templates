@@ -21,7 +21,7 @@ stories, an ADR, a risk register, a test plan, and so on. A bundle is not one fi
 that carries the blank template plus the research, guidance, and worked example that make it fast to fill
 correctly rather than merely fast to fill.
 
-<!-- counts: bundles=26, tier1=25 -->
+<!-- counts: bundles=27, tier1=25 -->
 Twenty-six bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
 library's researched 205-type catalog. That is the floor, not the ceiling: types beyond Tier-1 are built
 when a real team asks for one (grow-by-pull), not speculatively.
@@ -130,7 +130,7 @@ agent selecting a bundle should not read more confidence into it than the librar
   rule requires a type to "survive one real usage cycle" before it is considered proven; by that standard,
   nothing in this library has graduated.
 - **Efficacy was measured on 2026-08-08, and the result does not support a quality claim.** Two blinded
-  runs over three of the 26 bundles both returned **VOID** on the discrimination gate. What the runs show
+  runs over three of the twenty-six bundles then in the library both returned **VOID** on the discrimination gate. What the runs show
   consistently is the circularity signature: documents written with these templates score well above a
   strong generic-prompt control on the **templates' own** rubric criteria (+0.85) and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide (-0.03, interval spanning
@@ -158,7 +158,7 @@ readable with nothing more than a file-read tool.
 
 **There is an install step, and which one you use decides whether the bundles are present at all.** The
 Claude Code plugin route clones the whole repository, so everything above is on disk. The
-`npx skills add` route installs the **two skills only**, about 47 KB, and none of the 26 bundles; each
+`npx skills add` route installs the **two skills only**, about 47 KB, and none of the 27 bundles; each
 skill detects this and stops rather than writing a document it has no template for. The routes and how to
 verify each are in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
