@@ -17,8 +17,8 @@ metadata:
 a blank template to a document. This one goes from a document someone already wrote to a report card
 against that document type's own researched rubric.
 
-<!-- counts: bundles=26, tier1=25 -->
-The rubrics come from the same 26 bundles, covering all 25 templatable Tier-1 document types.
+<!-- counts: bundles=27, tier1=25 -->
+The rubrics come from the same 27 bundles, covering all 25 templatable Tier-1 document types plus two Tier-2 types.
 
 Nobody has to adopt anything to use this. That is the point: a critique of a document that already exists
 costs the reader nothing but the reading.
@@ -35,7 +35,7 @@ costs the reader nothing but the reading.
 - **The document does not exist yet.** Use [`plt-fill-template`](../plt-fill-template/SKILL.md).
 - **The reader wants the document rewritten.** This produces a critique and a fix list. Rewriting the
   author's content is out of scope unless they ask for it after seeing the report.
-- **The document is not one of the 26 types.** Say so and offer a structure-only review. Grading a
+- **The document is not one of the 27 types.** Say so and offer a structure-only review. Grading a
   strategy memo against the PRD rubric produces confident nonsense, and forcing the nearest bundle is the
   specific failure this library rejected two candidate types to avoid.
 - **The reader wants a verdict on whether the underlying idea is good.** The rubric grades the document,
@@ -202,7 +202,7 @@ Recorded here rather than only in a commit message, because a reader of the skil
    [ADR 0036](../../docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md), which took the
    `plt-` prefix and requires a skill's `name` to match its directory.
 2. **Checklist rubrics are scored on a scale this skill supplies.** The spec assumed every guide carries a
-   0/1/2 rubric. Eleven of the twenty-six do not as of 2026-08-21, after `acceptance-criteria` converted,
+   0/1/2 rubric. Eleven of the twenty-seven do not as of 2026-09-02, after `acceptance-criteria` converted,
    and whether the rest follow is an open decision the library has deliberately left open. **Detect the form from the guide in front of you, not from that
    count**, which nothing gates. Handled under
    [decision procedure 5](../../docs/internal/decision-procedures.md): state the rule in the artifact that

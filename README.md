@@ -56,7 +56,7 @@ Six steps, start to finished document. No install, no tooling, no account.
 **1. Get the library.** Three routes, and **they do not give you the same thing**. Full comparison, and how to check that it worked, in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 ```bash
-# Clone it. Everything: 26 bundles, the research logs, the gate. Best for reading.
+# Clone it. Everything: 27 bundles, the research logs, the gate. Best for reading.
 git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 cd product-lifecycle-templates
 ```
@@ -70,7 +70,7 @@ cd product-lifecycle-templates
 
 ```bash
 # Or install just the skills, for a non-Claude agent. NOTE: this installs the
-# two skills and NOT the 26 bundles, so a skill fetches what it needs on demand
+# two skills and NOT the 27 bundles, so a skill fetches what it needs on demand
 # and stops rather than improvising if it cannot reach them.
 npx skills add product-on-purpose/product-lifecycle-templates
 ```
@@ -148,8 +148,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 26 -->
-<!-- counts: bundles=26, tier1=25, adrs=42 -->
+<!-- bundle-count: 27 -->
+<!-- counts: bundles=27, tier1=25, adrs=42 -->
 **Twenty-six bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
@@ -159,6 +159,7 @@ Their examples chain on one fictional "Saved Views" feature, so the family reads
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`prd`](templates/prd/) | Product Requirements Document: what to build, for whom, and why | `deliver-prd` |
+| [`epic`](templates/epic/) | A container of stories, carrying the context and the exclusions a tracker's own epic record cannot | (none exists yet) |
 | [`user-stories`](templates/user-stories/) | User-centered stories that anchor work to user value | `deliver-user-stories` |
 | [`product-backlog`](templates/product-backlog/) | The ordered, goal-anchored list of work the team draws from | (none exists yet) |
 | [`sprint-backlog`](templates/sprint-backlog/) | One sprint's forecast of work, drawn from the product backlog | (none exists yet) |
@@ -247,7 +248,7 @@ The family whose defining property is that **the document owns none of its own f
 |---|---|---|
 | [`status-report`](templates/status-report/) | The periodic report that narrates what happened against metrics defined elsewhere, and invents no figure of its own | (none exists yet) |
 
-Beyond these twenty-six, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
+Beyond these twenty-seven, the library is completing its **Tier-1 "must-have" floor** (the 27 core types) from a researched catalog of 205 artifact types across 19 categories ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)). Grow-**by-pull** governs Tier-2 and Tier-3: specialized and regulated types are built when a real team asks for one, not speculatively.
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -299,8 +300,8 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-<!-- counts: bundles=26 -->
-All twenty-six bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+<!-- counts: bundles=27 -->
+All twenty-seven bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >
@@ -333,11 +334,12 @@ All twenty-six bundles currently pass. GitHub Actions runs these on every push t
 templates/
   methodology.md            The authoring process and Definition of Done
   prd/                      \
-  user-stories/              \
-  product-backlog/            \
-  sprint-backlog/              }  the delivery-docs family (8 files each)
-  acceptance-criteria/        /
-  release-notes/             /
+  epic/                      \
+  user-stories/               \
+  product-backlog/             }  the delivery-docs family (8 files each)
+  sprint-backlog/             /
+  acceptance-criteria/       /
+  release-notes/            /
   rfc/                      \
   adr/                       }  the decision-docs family (8 files each)
   sdd/                      /

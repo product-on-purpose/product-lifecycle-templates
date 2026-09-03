@@ -30,7 +30,7 @@
 > was the next release, through three tagged releases, while every marker in it matched the tree. That is
 > the limitation `check-counts.py` prints on every run, costing something for the second time.
 
-<!-- counts: adrs=42, bundles=26 -->
+<!-- counts: adrs=42, bundles=27 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
@@ -243,7 +243,7 @@ deliberately (`AGENT_PROJECT_SKILL_DIRS`), its `SKIP_DIRS` is
 supported way to exclude it**, so this is recorded as open rather than fixed.
 
 **3. The installed skill is inert, and this is the finding that matters.** What lands is `SKILL.md` and
-`README.md`. `manifest.json` is absent, all 26 bundles are absent, and every `../../` link in the skill
+`README.md`. `manifest.json` is absent, all 27 bundles are absent, and every `../../` link in the skill
 is dangling. The skill's own step 1 is "Read `manifest.json` at the repository root", and after an
 install there is no repository. **The Claude Code plugin channel clones the whole repository and does
 not have this problem**, so the library has two distribution channels and only one of them delivers a

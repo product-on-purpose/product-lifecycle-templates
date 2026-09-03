@@ -9,7 +9,7 @@
     "interactive-prototype": "Not a document. ADR 0030 declared catalog 54 out of scope on the same admission test: flows, interactions, states and transitions are not a written artifact a Markdown template can produce."
   },
 
-  "queued": {
-    "epic": "A build the maintainer set on 2026-09-01 under ADR 0041, whose rationale is recorded as: closes the requirements spine between product-roadmap and user-stories, and is the type most likely to arrive in WP-33 wedge outreach. Family membership admitted by ADR 0042, which amended contracts/delivery-docs.md to 0.1.3."
-  }
+  "_queued_lifecycle": "An entry here is removed when its bundle lands, because `built` is derived from the tree and takes over. Leaving it makes gen-atlas.py --check fail on the contradiction named in _rule above. `epic` was queued 2026-09-01 by ADR 0042 and removed 2026-09-02 when the bundle shipped; that round trip is what this note records so the next queued build does not rediscover it.",
+
+  "queued": {}
 }

@@ -836,14 +836,14 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
         "Stories",
         "Initiative",
         "Theme"
       ],
-      "state": "queued",
-      "state_note": "A build the maintainer set on 2026-09-01 under ADR 0041, whose rationale is recorded as: closes the requirements spine between product-roadmap and user-stories, and is the type most likely to arrive in WP-33 wedge outreach. Family membership admitted by ADR 0042, which amended contracts/delivery-docs.md to 0.1.3."
+      "state": "built",
+      "state_note": ""
     },
     {
       "id": "software-requirements-specification",

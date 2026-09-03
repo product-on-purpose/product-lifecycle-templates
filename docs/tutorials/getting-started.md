@@ -121,7 +121,7 @@ comment on your own blank Problem section reads as confirmation rather than inst
 
 ## What this library has not proven yet
 
-<!-- counts: bundles=26 -->
+<!-- counts: bundles=27 -->
 Twenty-six bundles exist today, and the Tier-1 "must-have" floor this library set out to build is
 complete: <!-- counts: tier1=25 -->all 25 templatable Tier-1 document types the catalog names are built.
 Every one of them is gate-green: [`tools/check-bundles.py`](../../tools/check-bundles.py) checks structure,
