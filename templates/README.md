@@ -41,6 +41,7 @@ tree without the gate noticing.
 **`delivery-docs`**
 
 - [`acceptance-criteria/`](acceptance-criteria/) - Acceptance Criteria. Axis phase deliver; ships lean/full.
+- [`epic/`](epic/) - Epic. Axis phase deliver; ships lean/full.
 - [`prd/`](prd/) - Product Requirements Document. Axis phase deliver; ships lean/full.
 - [`product-backlog/`](product-backlog/) - Product Backlog. Axis phase deliver; ships lean/full.
 - [`release-notes/`](release-notes/) - Release Notes. Axis phase deliver; ships lean/full.
