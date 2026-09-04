@@ -168,7 +168,8 @@ It is descriptive, carries no emoji, does not address the reader, and every clau
 the repository. It claims nothing about adoption, quality, or outcomes.
 
 **What must not appear in a submission**, because the library cannot support it: "best-in-class", "proven",
-"trusted by", any adoption number, and any efficacy claim. The efficacy evaluation returned **VOID** twice.
+"trusted by", any adoption number, and any efficacy claim. Three efficacy runs returned **VOID**; the
+fourth, on 2026-09-03, is valid on **two scenarios of one bundle** and is nowhere near a marketing claim.
 The README's own `real fills: 0 (honest)` badge is the standard the copy has to meet.
 
 **The tension worth deciding deliberately.** That badge is the most on-brand element in the repository and it

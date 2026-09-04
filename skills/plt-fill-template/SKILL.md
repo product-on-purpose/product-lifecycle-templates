@@ -148,8 +148,10 @@ reuses its own template's guidance text.
 
 **Not proved by anything:**
 
-- **Template quality was measured on 2026-08-08, and the measurement was inconclusive.** Two blinded
-  runs over three of the twenty-six bundles then in the library both returned **VOID**: the templates score well above a strong
+- **Template quality has been measured four times, and no measurement supports a library-wide claim.**
+  The valid run, 2026-09-03, covers **two scenarios of the `prd` bundle** and found the probe gap at
+  **exactly 0.00**. The three before it were void. Two blinded runs on 2026-08-08 over three of the
+  twenty-six bundles then in the library both returned **VOID**: the templates score well above a strong
   generic-prompt control on the bundles' *own* rubric criteria, and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide. Read the results before
   quoting anything from them, in [`evals/results/`](../../evals/results/). **No number from either run

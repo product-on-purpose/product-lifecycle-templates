@@ -213,6 +213,14 @@ as they stand today, stated without softening:
   spanning zero, on decision-usefulness criteria drawn from neither the template nor its guide.
   [The result](../../evals/results/2026-08-08_matched-rerun.md), and
   [the protocol](../internal/eval-protocol.md) that was written before any number existed.
+
+  **Updated 2026-09-03, and this is the first run that is not void.** A fourth run cleared every validity
+  gate over **two scenarios of the `prd` bundle only**. Rubric gap **+1.18** (interval +1.10 to +1.26),
+  held-out gap **+0.14** (+0.11 to +0.17), and **probe gap exactly 0.00**: a writer with no template
+  answered a reader's questions as well as one with it. Per protocol section 4 the held-out gap is **not a
+  gate** and neither passes nor fails anything, and its criteria are selected on absence, which biases them
+  toward null by design. Two scenarios of one bundle says nothing about the other twenty-six.
+  [The result](../../evals/results/2026-09-03_two-scenario.md).
 - **No efficacy claim is available in either direction.** Nothing here shows that a document written with
   one of these templates leads to a better outcome than one written without it, and nothing here shows the
   reverse. Three bundles of twenty-six were tested, by an LLM rather than a human author, and scored by
