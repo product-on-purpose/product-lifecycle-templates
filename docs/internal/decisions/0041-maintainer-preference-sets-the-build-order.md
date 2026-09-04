@@ -121,6 +121,12 @@ open rather than settled here, because reopening Tier 3 is a scope decision of i
 
 **Re-open this record when the library reaches roughly forty bundles with still-zero external fills.**
 
+> **Amended 2026-09-03 by [ADR 0043](0043-the-usage-gate-becomes-advisory.md): this falsifier is now a soft
+> reminder, not a trigger.** Reaching forty bundles with zero external fills re-opens nothing. It prompts
+> one question, and "no, keep going" is a complete answer. The original text is kept because the reasoning
+> below it is still the honest reasoning; what changed is the obligation it created, not the observation
+> it makes.
+
 This is ADR 0039's falsifier, restated because this record makes it more likely to fire. At that point the
 library will have added fourteen bundles under maintainer preference alone, with no external evidence that
 any of the twenty-six before them were worth having. **If that happens, the honest reading is not that the
