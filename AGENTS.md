@@ -9,7 +9,9 @@ reading anything else first.
 
 The one fact to hold onto while reading the rest of this file: **nothing here has been proven to work.**
 Every bundle is researched and gate-green, but zero of them have been filled in anger by anyone but the
-library's author, and the one efficacy measurement that exists returned **VOID** twice. See
+library's author. Efficacy has been measured four times: three runs returned **VOID**, and the fourth,
+on 2026-09-03, cleared every validity gate on **two scenarios of one bundle** and found no measurable
+difference in whether a reader could answer their questions. See
 [What this library has not proven](#what-this-library-has-not-proven) before you trust a claim here more
 than it has earned.
 
@@ -129,8 +131,12 @@ agent selecting a bundle should not read more confidence into it than the librar
 - **No template here has been filled by anyone but the library's author.** The catalog's own graduation
   rule requires a type to "survive one real usage cycle" before it is considered proven; by that standard,
   nothing in this library has graduated.
-- **Efficacy was measured on 2026-08-08, and the result does not support a quality claim.** Two blinded
-  runs over three of the twenty-six bundles then in the library both returned **VOID** on the discrimination gate. What the runs show
+- **Efficacy has been measured four times, and the result still does not support a library-wide quality
+  claim.** Two blinded runs on 2026-08-08 over three of the twenty-six bundles then in the library both
+  returned **VOID** on the discrimination gate, as did a single-scenario run on 2026-08-21. **The fourth,
+  on 2026-09-03, cleared every gate over two scenarios of the `prd` bundle**, and found the probe gap at
+  **exactly 0.00**: no measurable difference in whether a reader could answer their questions. See
+  [`2026-09-03_two-scenario.md`](evals/results/2026-09-03_two-scenario.md). What the runs show
   consistently is the circularity signature: documents written with these templates score well above a
   strong generic-prompt control on the **templates' own** rubric criteria (+0.85) and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide (-0.03, interval spanning

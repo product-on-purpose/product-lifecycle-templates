@@ -27,7 +27,8 @@ records the answer.
 ## Why this is not `results/`
 
 [`results/`](../results/) holds runs of the efficacy harness: blinded, four-armed, LLM-judged, with a
-protocol written before the first number existed. Both of its runs returned VOID.
+protocol written before the first number existed. Three of its four runs returned VOID; the fourth,
+2026-09-03, is valid over two scenarios of one bundle.
 
 This directory holds something weaker and, at zero external users, more useful: whether a real person found
 a real report card worth their time. **A usefulness average from this log is not an efficacy number**, the

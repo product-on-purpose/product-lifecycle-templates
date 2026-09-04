@@ -12,6 +12,38 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **The first efficacy run that is not void**
+  ([`2026-09-03_two-scenario.md`](evals/results/2026-09-03_two-scenario.md)). Two scenarios, `prd-001` and
+  `prd-002`, 38 agents, 60 judge-artifact rows, 2,364,791 subagent tokens, 11 minutes. **All four validity
+  gates pass** (hollow separation 3.00, discrimination 1.18, agreement 0.00, control sanity 3.08 and 3.00),
+  and the cluster bootstrap is non-degenerate for the first time because it finally has two clusters to
+  resample.
+
+  **Rubric gap +1.18** (95% interval +1.10 to +1.26), **held-out gap +0.14** (+0.11 to +0.17), **probe gap
+  exactly 0.00**. The probe result is the uncomfortable one and is published rather than buried: on these
+  two scenarios a competent writer with no template answered a reader's questions as well as one with it.
+
+  **What the protocol forbids, and this record obeys:** the held-out gap is **not a validity gate** and
+  neither passes nor fails anything ([ADR 0038](docs/internal/decisions/0038-what-the-circularity-signature-obliges.md)),
+  and its criteria are **selected on absence**, which biases the measurement toward null by construction. A
+  small held-out gap is what the design predicts even for a template working correctly. The movement from
+  the 2026-08-08 runs' **-0.03 spanning zero** to this run's **+0.14 excluding zero** is reported as a
+  change in sign the interval supports, not as a pass.
+
+  **Two intervals are zero-width and are labelled an artifact, not precision:** with two clusters a
+  bootstrap draws from two values, and both scenarios returned identical overall and probe scores.
+
+### Changed
+
+- **Eleven documents claimed the efficacy evidence was "VOID twice" or absent.** Each now states the fourth
+  run and its narrow scope, without swinging the library from "no evidence" to "measured": `AGENTS.md`,
+  `docs/explanation/what-the-gate-proves.md`, `docs/tutorials/getting-started.md`,
+  `docs/internal/distribution-plan.md`, `evals/usage-log/README.md`, both `SKILL.md` files, and
+  `plt-grade-doc`'s grading procedure. **Two scenarios of one bundle is still not a library-wide claim**,
+  and every updated sentence says so.
+
 ## [0.5.0] - 2026-09-03
 
 ### Added
