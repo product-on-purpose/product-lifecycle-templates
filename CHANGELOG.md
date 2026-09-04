@@ -12,6 +12,38 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **[ADR 0043](docs/internal/decisions/0043-the-usage-gate-becomes-advisory.md): the usage gate becomes
+  advisory, and the honesty gate does not move.** No usage signal gates any build. ADR 0041's forty-bundle
+  falsifier is downgraded to a **soft reminder** that re-opens nothing, the roadmap's risk-table entry is
+  reworded from an instruction into an observation, and **milestone M5 is no longer gated on an M3 usage
+  signal**.
+
+  **Building was already ungated by [0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md)
+  and [0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md), and it did not
+  feel ungated**, because each removed a gate and left a falsifier that re-imposed it at a threshold. A
+  countdown running toward forty bundles is a gate wearing a reminder's clothes.
+
+  **Half the decision is what does not move.** A bundle is still `beta` until a real usage cycle is
+  recorded, is still never called "verified", "proven" or "complete" on a green gate, and zero real fills
+  is still published as zero. **A library may grow without evidence. It may not claim without evidence.**
+
+  **The prose that was being quoted was stricter than the criterion it introduced.** M3's acceptance
+  criterion reads "whose author is not the library author, **or** whose content is a real work artifact";
+  the summary above it says "zero fills by anyone but the library's author". The stricter summary is what
+  had been quoted, including by this repository's own agent earlier the same day.
+
+  Names its own cost: this removes the last structural pressure toward outreach.
+
+### Added
+
+- **[`docs/how-to/evaluating-a-template.md`](docs/how-to/evaluating-a-template.md), the method the gate
+  never supplied.** A ten-minute checklist for turning one real use of a template into evidence: what
+  counts as a real use, what to record before the experience fades, where it goes (`_history.md` for fills,
+  the usage log for gradings), and a worked contrast between weak and strong feedback. **Optional by
+  construction**, because a reminder with no method is guilt.
+
 ### Added
 
 - **The first efficacy run that is not void**
