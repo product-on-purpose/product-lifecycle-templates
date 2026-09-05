@@ -1,5 +1,13 @@
 # Releasing
 
+> **Read [`release-process.md`](release-process.md) instead.** That is the document the rest of the tree
+> cross-references (from `decision-procedures.md`, `plan-inventory.md`, `CHANGELOG.md`,
+> `docs/releases/README.md`, `RELEASE-NOTES.md` and `docs/releases/v0.2.1.md`); nothing links here. This
+> file is kept because it was the original checklist and because it carried one step the canonical
+> document did not, the CHANGELOG compare links, which `v0.5.0` skipped as a result. That step has been
+> folded into `release-process.md` section 3. **Whether this file is retired outright is the maintainer's
+> call**, so it is marked rather than deleted.
+
 The executable checklist for cutting a tagged release of this library. Written 2026-07-28, after v0.1.0
 shipped without one and the steps lived only in a session log.
 

@@ -8,6 +8,55 @@ Newest first.
 
 ---
 
+## v0.5.0
+
+**A 27th bundle, `epic`, and it is the first one built because the maintainer wanted it rather than
+because a plan said so.**
+
+Two decision records made that possible.
+[ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md) made the
+maintainer's own preference set the build order, on the ground that a ranking input which has never been
+non-zero cannot rank. [ADR 0042](docs/internal/decisions/0042-epic-joins-delivery-docs.md) then admitted
+`epic` to the delivery-docs family, after the first attempt to build it stopped on a gate that neither of
+the two records removing the *previous* gates had touched.
+
+**The bundle's research is the part worth reading, because it argues against the easy version of the
+document it ships.** The 2020 Scrum Guide contains zero occurrences of the word "epic", confirmed by
+literal string search rather than by summary. XP substitutes a splitting rule, the Kanban Method has no
+product-sized work unit at all, and LeSS Huge partitions one flat backlog instead. Only SAFe formalizes
+the artifact. In its native habitat an epic is a tracker record, not a document, and the bundle says so on
+its own catalog card rather than overselling itself.
+
+**Nothing here changes an existing template, a meta field, or the bundle contract.** Upgrading is safe.
+
+**The caveat, unchanged since this library existed: nobody outside this repository has filled one of these
+templates.** 27 bundles is a bigger library, not a used one.
+[The full note](docs/releases/v0.5.0.md).
+
+---
+
+## v0.4.0
+
+**A second skill, for people who are not using the library, and four claims it was making about itself
+that were not true.**
+
+[`plt-grade-doc`](skills/plt-grade-doc/) takes a product document you already have and grades it against
+that document type's own researched rubric, quoting your own text back as evidence. You do not have to
+adopt a template to get something out of it. **Its first run graded this repository's own governance and
+found a defect no automated check here looks for.**
+
+The other half is less flattering and more useful. **The eval harness had never run, and not because
+nobody tried.** One line missing from `.gitattributes` made it mechanically impossible on Windows: the
+harness scripts had been pure CRLF since they were written, and the permission dialog rejected them as
+containing control characters. Once fixed it ran, and produced this project's first real cost figure.
+**Four separate claims the library published about itself turned out to be false**, each found by running
+something rather than by reading it.
+
+**The honest position is unchanged: zero fills by anyone but the author.**
+[The full note](docs/releases/v0.4.0.md).
+
+---
+
 ## v0.3.1
 
 **A documentation patch, cut because the previous tag denied the evidence it shipped with.**
@@ -105,11 +154,23 @@ checks were written before the bundles were.
 ## What this library does not claim
 
 Every release above describes coverage and governance, both of which are checkable. **None of them claims
-the templates are good.** That was measured for the first time on 2026-08-08, on three of the 26 bundles,
-and both independent runs returned **VOID**: nothing here shows a document written with one of these
-templates leads to a better outcome than one written without it, and nothing here shows the reverse. What
-the runs do show is the **circularity signature** - a clear gap on criteria drawn from the templates' own
-guide, beside nothing at all on criteria drawn from neither
-([the result](evals/results/2026-08-08_matched-rerun.md)). No template in this library has been filled in
-anger by anyone but its author, and the honest scope of the quality claim is written up in
-[what the gate proves](docs/explanation/what-the-gate-proves.md).
+the templates are good.**
+
+Quality has been measured **four times**. Two independent runs on 2026-08-08 over three of the bundles
+then in the library returned **VOID** on the discrimination gate, as did a single-scenario run on
+2026-08-21. What those runs did show is the **circularity signature**: a clear gap on criteria drawn from
+the templates' own guide, beside nothing at all on criteria drawn from neither
+([the result](evals/results/2026-08-08_matched-rerun.md)).
+
+**The fourth run, on 2026-09-03, is the first that is not void.** All four validity gates pass and the
+bootstrap is non-degenerate for the first time, so it produces a countable gap rather than a shrug
+([the result](evals/results/2026-09-03_two-scenario.md)). **What it does not produce is a verdict on this
+library.** It covers **two scenarios of one bundle**, `prd`, out of twenty-seven. It also returned a probe
+gap of exactly **0.00**, which is ambiguous between "the template does not help a reader" and "the
+scenarios were too easy", and the protocol currently specifies neither harder scenarios nor a weaker
+generation model to tell those apart.
+
+So the position is narrower than "measured" and better than "unmeasured": **the instrument now works well
+enough that a null result is informative, and it has been pointed at one bundle.** No template in this
+library has been filled in anger by anyone but its author, and the honest scope of the quality claim is
+written up in [what the gate proves](docs/explanation/what-the-gate-proves.md).
