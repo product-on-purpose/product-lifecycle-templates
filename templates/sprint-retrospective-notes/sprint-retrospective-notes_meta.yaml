@@ -21,7 +21,7 @@ tags:
   - iterate
   - action items
   - continuous improvement
-related_templates: [sprint-backlog, bug-report, definition-of-done, sdd, test-plan, future:incident-postmortem]
+related_templates: [sprint-backlog, bug-report, definition-of-done, sdd, test-plan, incident-postmortem]
 aliases:
   - sprint retro
   - retro notes

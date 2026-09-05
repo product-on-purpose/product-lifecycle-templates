@@ -21,7 +21,7 @@ tags:
   - prioritization
   - planning
   - delivery
-related_templates: [user-stories, prd, acceptance-criteria, future:sprint-backlog, future:product-roadmap]
+related_templates: [user-stories, prd, acceptance-criteria, sprint-backlog, product-roadmap]
 aliases:
   - backlog
   - master backlog

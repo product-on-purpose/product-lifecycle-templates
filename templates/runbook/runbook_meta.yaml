@@ -22,7 +22,7 @@ tags:
   - devops
   - procedure
   - standing-standards
-related_templates: [sdd, test-plan, future:definition-of-done, future:incident-postmortem]
+related_templates: [sdd, test-plan, definition-of-done, incident-postmortem]
 aliases:
   - playbook
   - operational runbook

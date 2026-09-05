@@ -23,7 +23,7 @@ tags:
   - issues
   - dependencies
   - assumptions
-related_templates: [risk-register, future:kpi-dashboard, future:status-report]
+related_templates: [risk-register, kpi-dashboard, status-report]
 aliases:
   - raid
   - raid log

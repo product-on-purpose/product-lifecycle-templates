@@ -36,7 +36,7 @@ is structural: it can be answered by parsing text, never by judging whether the 
 | F | Meta contract | The declared size vocabulary is non-empty, internally consistent, and carries no unfilled placeholder |
 | G | Frontmatter YAML | Every YAML frontmatter block in the bundle parses |
 | H | History | A history entry exists for the template version the meta claims |
-| I | Refs resolve | `pairs_with` names a skill on the pinned list, and `related_templates` names a bundle that exists or is marked `future:` |
+| I | Refs resolve | `pairs_with` names a skill on the pinned list, and `related_templates` names a bundle that exists, or is marked `future:` and is genuinely unbuilt |
 | J | Meta schema | The meta validates against [`tools/meta.schema.json`](../../tools/meta.schema.json): required fields present, enums legal, exactly one of `phase` or `classification` |
 | K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](../internal/contracts/) |
 
@@ -116,13 +116,13 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   `agent-skills-toolkit`, which also supplies the README version-badge guard `check-readme-version.mjs`
   run in the same step). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=25 -->
-Twenty-five CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Twenty** prove the tree is
+<!-- counts: cisteps=26 -->
+Twenty-six CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Twenty-one** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The twenty-fifth is the only one that can surprise anybody**, because it is the only one whose rules
+**The twenty-sixth is the only one that can surprise anybody**, because it is the only one whose rules
 this repository did not write. It runs the Advanced Skill Library Standard's conformance gate, and the
 toolkit's README version-badge guard, from a pinned checkout of a separate repository, so it can report
 that this library has stopped meeting a published external standard. Every other step can only report

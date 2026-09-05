@@ -21,7 +21,7 @@ tags:
   - verification
   - traceability
   - quality
-related_templates: [test-plan, acceptance-criteria, prd, future:bug-report]
+related_templates: [test-plan, acceptance-criteria, prd, bug-report]
 aliases:
   - test case
   - test case specification
