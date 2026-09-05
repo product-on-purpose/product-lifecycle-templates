@@ -95,6 +95,8 @@ ANCHOR_RE = re.compile(r'id="ref-(\d+)"')
 BARE_CITE_RE = re.compile(r"(?<!\[)\[(\d+)\](?!\()")
 SIZES_RE = re.compile(r"^sizes_available:\s*(.*)$", re.MULTILINE)
 DEFAULT_SIZE_RE = re.compile(r"^default_size:\s*(.+?)\s*$", re.MULTILINE)
+# The provenance value each variant stamps, which a filled document carries forward.
+SOURCE_VERSION_RE = re.compile(r"^source_template_version:\s*(\S+)", re.M)
 VERSION_RE = re.compile(r"^template_version:\s*(.+?)\s*$", re.MULTILINE)
 PAIRS_RE = re.compile(r"^pairs_with:\s*(.*)$", re.MULTILINE)
 RELATED_RE = re.compile(r"^related_templates:\s*(.*)$", re.MULTILINE)
@@ -712,7 +714,28 @@ def check_history(name, d):
             "no history entry for template_version " + version
             + "; bumping the version without a changelog entry makes the history a fiction"
         )
-    return True, "history documents " + version
+
+    # Every variant stamps source_template_version into its instance frontmatter, and a filled
+    # document carries that value forward as its provenance. If it disagrees with the meta, every
+    # document ever filled from this bundle records the wrong template version, and the disagreement
+    # is invisible: the meta is right, the history is right, and only the file a user actually copies
+    # is wrong. Found 2026-09-05 in `acceptance-criteria`, whose 0.1.1 bump updated the meta and the
+    # history and not the two variants. Checked here rather than left to review because WP-50's
+    # strip and validate tools now stamp and read provenance, so this stopped being cosmetic.
+    stale = []
+    for fn in sorted(os.listdir(d)):
+        if "_template-" not in fn or not fn.endswith(".md"):
+            continue
+        sm = SOURCE_VERSION_RE.search(read(os.path.join(d, fn)))
+        if sm and sm.group(1).strip().strip("\"'") != version:
+            stale.append(fn + " says " + sm.group(1).strip().strip("\"'"))
+    if stale:
+        return False, (
+            "source_template_version disagrees with the meta's template_version (" + version
+            + "): " + "; ".join(stale)
+            + ". A document filled from this bundle would record the wrong template version"
+        )
+    return True, "history documents " + version + ", and every variant stamps it"
 
 
 def known_skills():

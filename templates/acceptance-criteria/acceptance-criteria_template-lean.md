@@ -9,7 +9,7 @@ created: "{{date}}"
 updated: "{{date}}"
 related_links: []
 source_template: acceptance-criteria
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
