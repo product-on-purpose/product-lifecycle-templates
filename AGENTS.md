@@ -24,7 +24,7 @@ that carries the blank template plus the research, guidance, and worked example 
 correctly rather than merely fast to fill.
 
 <!-- counts: bundles=27, tier1=25 -->
-Twenty-six bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
+Twenty-seven bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
 library's researched 205-type catalog. That is the floor, not the ceiling: types beyond Tier-1 are built
 when a real team asks for one (grow-by-pull), not speculatively.
 
@@ -46,6 +46,29 @@ checked fresh in CI) and it is the whole selection surface. Each entry carries:
 | `approx_tokens` | An estimated token count **per size variant**, keyed by size (and by format, for the few bundles that ship more than one format; see below). Budget context before loading anything. |
 | `status` | Maturity. Every bundle in this library is currently `beta`: offered for use, not yet settled. |
 | `tags`, `aliases` | Match these against the job you were asked to do. `aliases` covers what practitioners actually call the type ("decision record" for `adr`, "cost-benefit analysis" for `business-case`). |
+
+### The second machine artifact: `sections.json`
+
+`manifest.json` answers **which bundle and which size**. It deliberately stops there: embedding the
+per-section detail was measured at 4.6x its size, which would have made the selection surface expensive
+to read for a question selection never asks.
+
+[`sections.json`](sections.json) answers **what is inside the one you picked**. It is generated the same
+way (from the template variants themselves, by [`tools/gen-sections.py`](tools/gen-sections.py), checked
+fresh in CI) and covers all 27 bundles: 241 sections and 181 frontmatter fill sites. Per bundle, per
+format, in document order, each section carries its `title` and heading `level`, the `in_sizes` that hold
+it, the `guidance_fields` its comment declares (WHAT, WHY, ASK, GOOD, WEAK, TRAP, and PRIORITY / ROW HINT
+on table sections), `has_table` and `has_row_hint`, and its `placeholders`.
+
+**Read it instead of re-deriving the same facts from the raw comments.** The section below tells you the
+guidance grammar so you can parse a template yourself; `sections.json` is that parse, already done and
+gate-checked. Use it to answer "what sections does this bundle have", "which are in lean", "which take a
+table", and "is this draft structurally complete".
+
+**One thing it deliberately does not give you.** Each section lists a placeholder **name** once, which is
+what a completeness check needs. It is not a substitution map: 94 names recur within a single file body,
+and `prd` reuses `{{owner}}` and `{{date}}` at unrelated sites, so a tool that asked one question per name
+would put the document owner into an open question's owner column. To fill a template, read the file.
 
 The flow: read `manifest.json`, match the job you were given against `doc_type`, `aliases`, and `tags`,
 disambiguate with `summary` if more than one entry matches, then pick a size from `approx_tokens` and

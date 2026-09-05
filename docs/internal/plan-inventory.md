@@ -86,7 +86,7 @@ ordering resumes at M3 on the roadmap's own terms**, not as a matter of preferen
 
 ### What a user can actually get today
 
-Twenty-six researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
+Twenty-seven researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
 **two installable skills**, `plt-fill-template` and, since 2026-08-19,
 `plt-grade-doc`. The Claude Code plugin channel clones the tree and works. The skills-CLI channel installs
 instructions and none of the 27 bundles, and each skill fetches what it needs at run time from the release

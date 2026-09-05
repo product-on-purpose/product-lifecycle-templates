@@ -12,6 +12,53 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Fixed
+
+- **The procedure-6 sweep the last three bundle-count changes skipped, and a counts marker so the fourth
+  one cannot.** `tools/check-counts.py` validates a marker numeral and says in its own output that it
+  cannot read the prose beside it. Three PRs bumped `bundles` 26 to 27 and left the sentences: CI stayed
+  green while nine documents said twenty-six.
+
+  **The worst instance was `README.md`'s "Project status" and "At a glance" block, frozen at `v0.1.0`,
+  23 bundles, 7 families and a Tier-1 floor of "22 of 25, 3 remain to build"** while the badge at the top
+  of the same file said `v0.5.0` and the floor had been complete since 2026-08-07. **The one row in that
+  table that was still right was the ADR count, which is the only row a marker guards** - the tooling's
+  own thesis, demonstrated against itself: a generated count stays fresh and a retyped one goes stale. A
+  `<!-- counts: -->` marker now sits above that table, so the next drift fails CI instead of an audit.
+
+  Corrected across `README.md` (status block, at-a-glance, bundle badge, gate row, three prose counts),
+  `AGENTS.md`, `STATE.md`, `docs/tutorials/getting-started.md`, `docs/internal/plan-inventory.md`, and
+  `skills/plt-fill-template/SKILL.md` (whose description propagates to the generated `INDEX.md`,
+  regenerated rather than hand-edited).
+
+  **Dated records were deliberately left alone.** "The twenty-six bundles *then* in the library" is
+  correct, and so are the counts inside ADRs, per-release notes and eval results. `check-counts.py`
+  already exempts release notes on exactly this reasoning: gating a dated record against today's tree
+  forces a correct statement to become a false one.
+
+- **`sections.json` is now documented where an agent will find it.** It was mentioned in three files, none
+  of them agent-facing, while its sibling `manifest.json` appears in twenty. `AGENTS.md` gains it as the
+  second machine artifact - the manifest answers which bundle, the section schema answers what is inside
+  it - including the caveat that it lists placeholder names, not substitution sites. `STATE.md` and
+  `docs/explanation/architecture.md` gain it too; the latter said "Both generators" where there are now
+  three. It is deliberately **not** added to `docs/tutorials/`, `how-to/` or `reference/`: those describe
+  what a user consumes, and no shipped tool reads it yet.
+
+- **The ADR index table was silently broken.** A blank line at `docs/internal/decisions/README.md:77` sat
+  between the 0038 and 0039 rows. GitHub-flavored markdown ends a table at a blank line, so records 0039
+  through 0043 were rendering outside it as plain text. `check-adr-index.py` validates that every record
+  is listed, not that the listing renders as one table, so it passed.
+
+- **`.claude-plugin/plugin.json`'s install-time description** claimed 26 bundles and 25 CI steps (27 and
+  28), promised every bundle ships a lean *and* a full template (`sprint-retrospective-notes` ships lean
+  only), and still said efficacy "was measured on 2026-08-08 and the result was VOID". The last is now the
+  framing [PR #120](https://github.com/product-on-purpose/product-lifecycle-templates/pull/120) already
+  established in eleven other documents: four runs, three VOID, the fourth clearing every validity gate
+  on two scenarios of one bundle, which is too narrow to carry a library-wide claim.
+
+- **`CHANGELOG.md`'s compare-link footer** had no `[0.5.0]` entry and pointed `[Unreleased]` at `v0.4.0`,
+  so the "unreleased" diff silently included everything in `v0.5.0`.
+
 ### Added
 
 - **WP-53, the AG-1 section schema: `sections.json`, generated from the templates themselves.** For every
@@ -1394,7 +1441,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.2.1...v0.3.0
