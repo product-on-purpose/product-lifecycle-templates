@@ -91,7 +91,7 @@ rather than rewritten.
 
 ### 3.1 `search_templates`
 - **In:** `{ query, phase?, max? = 3 }`
-- **Out, per candidate:** `{ id, title, summary, doc_type, sizes_available, default_size, sizing_guidance, approx_tokens, tags, aliases }` — the field names `manifest.json` actually uses.
+- **Out, per candidate:** `{ id, title, summary, doc_type, sizes_available, default_size, sizing_guidance, approx_tokens, tags, aliases }` - the field names `manifest.json` actually uses.
 - **Budget:** 368 tokens for 3, 1,154 for 8. Cap `max` at 8.
 - **Teachable error:** an empty result returns the **six** phase values and three example queries. Not eight.
 
@@ -105,12 +105,12 @@ rather than rewritten.
 - **In:** `{ id }`
 - **Budget: 530 to 3,264, median 1,744.** State the real range rather than a target no bundle meets. Two of 27 fall inside the sketch's 800-1,200.
 
-### 3.4 `validate_fill` — **already built**
+### 3.4 `validate_fill`, already built
 `tools/validate-fill.py` performs every check the sketch names: placeholder scan, residual-comment scan,
 frontmatter provenance, and section completeness against `sections.json`. It exits 2 on failure and has a
 `--json` mode. The server wraps it; it does not reimplement it.
 
-### 3.5 `stamp_and_strip` — **already built**
+### 3.5 `stamp_and_strip`, already built
 `tools/strip-template.py` removes guidance, stamps `filled_by` / `fill_method` / `fill_date`, and refuses
 on remaining placeholders. Same wrapping.
 
