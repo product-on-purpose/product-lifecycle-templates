@@ -1,0 +1,7257 @@
+{
+  "_generated": "by tools/gen-sections.py from templates/*/*_template-*.md; do not edit by hand",
+  "bundles": [
+    {
+      "bundle": "acceptance-criteria",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "story-reference",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "story_reference"
+              ],
+              "title": "Story reference"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "acceptance-criteria",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_1",
+                "criterion_2"
+              ],
+              "title": "Acceptance criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "out-of-scope-and-notes",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "out_of_scope_and_notes"
+              ],
+              "title": "Out of scope and notes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scenarios-given-when-then",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "action",
+                "context",
+                "expected_outcome",
+                "scenario_name"
+              ],
+              "title": "Scenarios (Given / When / Then)"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "edge-cases-and-negative-paths",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "edge_case_1"
+              ],
+              "title": "Edge cases and negative paths"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "non-functional-criteria",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "non_functional_criterion_1"
+              ],
+              "title": "Non-functional criteria"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.1"
+    },
+    {
+      "bundle": "adr",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "consulted"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "decision_makers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "informed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "title",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 1,
+              "placeholders": [],
+              "title": "{{title}}"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "context-and-problem-statement",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "context_and_problem"
+              ],
+              "title": "Context and Problem Statement"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "considered-options",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "option_1",
+                "option_2",
+                "option_3"
+              ],
+              "title": "Considered Options"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "decision-outcome",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "chosen_option",
+                "justification"
+              ],
+              "title": "Decision Outcome"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "consequences",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "negative_consequence",
+                "positive_consequence"
+              ],
+              "title": "Consequences"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "decision-drivers",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_driver_1",
+                "decision_driver_2"
+              ],
+              "title": "Decision Drivers"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "confirmation",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "confirmation"
+              ],
+              "title": "Confirmation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "pros-and-cons-of-the-options",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [],
+              "title": "Pros and Cons of the Options"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "more-information",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "more_information"
+              ],
+              "title": "More Information"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "bug-report",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "assignee"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "build_or_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "one_line_summary"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "priority"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "reporter"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "severity"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "steps-to-reproduce",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "steps_to_reproduce"
+              ],
+              "title": "Steps to Reproduce"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "expected-and-actual-behavior",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "expected_and_actual"
+              ],
+              "title": "Expected and Actual Behavior"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "environment-and-reproducibility",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "environment_and_reproducibility"
+              ],
+              "title": "Environment and Reproducibility"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "evidence",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "evidence"
+              ],
+              "title": "Evidence"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "impact-severity-and-priority",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "impact_narrative",
+                "priority_owner",
+                "priority_reason",
+                "priority_value",
+                "severity_owner",
+                "severity_reason",
+                "severity_value"
+              ],
+              "title": "Impact, Severity and Priority"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "triage-and-ownership",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "triage_and_ownership"
+              ],
+              "title": "Triage and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "resolution-and-regression-guard",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "resolution_and_regression_guard"
+              ],
+              "title": "Resolution and Regression Guard"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "business-case",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "financial_model_ref"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "investment_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "sponsor"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "stage"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "problem-and-opportunity",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "problem_and_opportunity"
+              ],
+              "title": "Problem and Opportunity"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "options-considered",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "option_description",
+                "option_id",
+                "option_name",
+                "option_rationale",
+                "option_status"
+              ],
+              "title": "Options Considered"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "recommendation",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_requested",
+                "post_go_live_check",
+                "recommendation_rationale",
+                "recommended_option"
+              ],
+              "title": "Recommendation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "costs",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "adjusted_estimate",
+                "base_estimate",
+                "cost_category",
+                "optimism_adjustment"
+              ],
+              "title": "Costs"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "benefits",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit_name",
+                "benefit_range",
+                "benefit_type",
+                "measurement_method"
+              ],
+              "title": "Benefits"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "case_risk_id",
+                "case_risk_mechanism",
+                "case_risk_owner",
+                "case_risk_statement",
+                "case_risk_trigger"
+              ],
+              "title": "Risks"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "financials",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "discount_rate_and_basis",
+                "financial_caveat",
+                "financial_metric",
+                "financial_value"
+              ],
+              "title": "Financials"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "definition-of-done",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scope-and-ownership",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scope_and_ownership"
+              ],
+              "title": "Scope and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "done-criteria",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_1",
+                "criterion_2"
+              ],
+              "title": "Done Criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_trigger_event",
+                "review_trigger_owner"
+              ],
+              "title": "Review Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "criteria-by-level",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_by_level",
+                "level"
+              ],
+              "title": "Criteria by Level"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-this-excludes",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_this_excludes"
+              ],
+              "title": "What This Excludes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "when-work-does-not-meet-it",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "when_work_does_not_meet_it"
+              ],
+              "title": "When Work Does Not Meet It"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "epic",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "epic_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "target_timeframe"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "title-and-narrative-summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goal_description",
+                "objective",
+                "persona",
+                "value"
+              ],
+              "title": "Title and Narrative Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "goal-and-context",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goal_and_context"
+              ],
+              "title": "Goal and Context"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scope"
+              ],
+              "title": "Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "child-stories",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "story_id",
+                "story_status",
+                "story_title"
+              ],
+              "title": "Child Stories"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "acceptance-criteria",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_1",
+                "criterion_2"
+              ],
+              "title": "Acceptance Criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "out-of-scope",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "out_of_scope"
+              ],
+              "title": "Out of Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "dependencies",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependency",
+                "dependency_id",
+                "dependency_status",
+                "dependency_type",
+                "owner_other_side",
+                "owner_this_side",
+                "severity"
+              ],
+              "title": "Dependencies"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "link-upward-initiative-theme-or-nothing",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "link_upward"
+              ],
+              "title": "Link Upward (Initiative, Theme, or nothing)"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "incident-postmortem",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "author"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "incident_date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "incident_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "postmortem_title"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "impact",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "impact_affected",
+                "impact_duration",
+                "impact_magnitude"
+              ],
+              "title": "Impact"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "timeline",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "timeline_event",
+                "timeline_time"
+              ],
+              "title": "Timeline"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "root-causes",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "root_cause",
+                "root_cause_evidence"
+              ],
+              "title": "Root Causes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "action-items",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "action_item",
+                "action_item_owner",
+                "action_item_status",
+                "action_item_ticket",
+                "action_item_type"
+              ],
+              "title": "Action Items"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "detection",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "detection_narrative"
+              ],
+              "title": "Detection"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "trigger",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "trigger_narrative"
+              ],
+              "title": "Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "resolution",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "resolution_narrative"
+              ],
+              "title": "Resolution"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "lessons-learned",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "lessons_learned"
+              ],
+              "title": "Lessons Learned"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "kpi-dashboard",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "audience_tier"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dashboard_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dashboard_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "objective_or_program"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-audience",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_audience"
+              ],
+              "title": "Purpose and Audience"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "kpis",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "current",
+                "definition",
+                "kpi_name",
+                "lead_lag",
+                "owner",
+                "target",
+                "trend"
+              ],
+              "title": "KPIs"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-and-ownership",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_and_ownership"
+              ],
+              "title": "Review and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "metric-definitions",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "metric_definitions"
+              ],
+              "title": "Metric Definitions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "layout-and-thresholds",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "layout_and_thresholds"
+              ],
+              "title": "Layout and Thresholds"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "data-sources-and-refresh",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "data_sources_and_refresh"
+              ],
+              "title": "Data Sources and Refresh"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "okrs",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_or_company_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "the_cycle_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "the_strategy_or_roadmap_this_serves"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_is_accountable_for_this_whole_set"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_reads_this"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-period-and-what-this-serves",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_period_and_what_this_serves"
+              ],
+              "title": "The Period and What This Serves"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "objective",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "objective"
+              ],
+              "title": "Objective"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "key-results",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "baseline_1",
+                "baseline_2",
+                "baseline_3",
+                "commitment_1",
+                "commitment_2",
+                "commitment_3",
+                "key_result_1",
+                "key_result_2",
+                "key_result_3",
+                "owner_1",
+                "owner_2",
+                "owner_3",
+                "target_1",
+                "target_2",
+                "target_3"
+              ],
+              "title": "Key Results"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-this-set-is-not-committing-to",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_this_set_is_not_committing_to"
+              ],
+              "title": "What This Set Is Not Committing To"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "initiatives",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "initiative_1",
+                "initiative_2",
+                "initiative_3",
+                "initiative_owner_1",
+                "initiative_owner_2",
+                "initiative_owner_3",
+                "initiative_status_1",
+                "initiative_status_2",
+                "initiative_status_3",
+                "serves_1",
+                "serves_2",
+                "serves_3"
+              ],
+              "title": "Initiatives"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "confidence-and-check-in",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "confidence_and_check_in"
+              ],
+              "title": "Confidence and Check-in"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scoring-and-close-out",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scoring_and_close_out"
+              ],
+              "title": "Scoring and Close-out"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "prd",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "problem",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "problem"
+              ],
+              "title": "Problem"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "goals-and-non-goals",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goal_1",
+                "non_goal_1"
+              ],
+              "title": "Goals and non-goals"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "target-users",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "target_users"
+              ],
+              "title": "Target users"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "solution-overview",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "solution_overview"
+              ],
+              "title": "Solution overview"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "success-metrics",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "guardrail_metric",
+                "measurement_window",
+                "primary_metric"
+              ],
+              "title": "Success metrics"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": true,
+              "id": "open-questions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "date",
+                "open_question_1",
+                "owner"
+              ],
+              "title": "Open questions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "context-and-background",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "context_and_background"
+              ],
+              "title": "Context and background"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "user-stories",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit",
+                "goal",
+                "user"
+              ],
+              "title": "User stories"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "functional-requirements",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "functional_requirement_1",
+                "priority"
+              ],
+              "title": "Functional requirements"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "non-functional-requirements",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "nfr_attribute",
+                "nfr_target"
+              ],
+              "title": "Non-functional requirements"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "ux-and-design",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "ux_and_design"
+              ],
+              "title": "UX and design"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "analytics-and-instrumentation",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "analytics_and_instrumentation"
+              ],
+              "title": "Analytics and instrumentation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "dependencies",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependency_1",
+                "owner",
+                "status"
+              ],
+              "title": "Dependencies"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks-and-mitigations",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "impact",
+                "likelihood",
+                "mitigation",
+                "risk_1"
+              ],
+              "title": "Risks and mitigations"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "rollout-and-release-plan",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "rollout_and_release_plan"
+              ],
+              "title": "Rollout and release plan"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "appendix",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "appendix"
+              ],
+              "title": "Appendix"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "product-backlog",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_owner"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "product-goal",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "product_goal"
+              ],
+              "title": "Product Goal"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "backlog-items",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "estimate",
+                "item_depends_on",
+                "item_id",
+                "item_priority",
+                "item_status",
+                "item_title",
+                "item_type",
+                "item_value",
+                "rank"
+              ],
+              "title": "Backlog Items"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "ordering-rationale",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "ordering_rationale"
+              ],
+              "title": "Ordering Rationale"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "refinement-and-readiness",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "refinement_and_readiness"
+              ],
+              "title": "Refinement and Readiness"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "prioritization-framework",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "prioritization_framework"
+              ],
+              "title": "Prioritization Framework"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "dependencies-and-risks",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependencies_and_risks"
+              ],
+              "title": "Dependencies and Risks"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "backlog-health-and-metrics",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "backlog_health_and_metrics"
+              ],
+              "title": "Backlog Health and Metrics"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "product-roadmap",
+      "default_format": "now-next-later",
+      "formats": {
+        "go": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-strategy-this-serves",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_strategy_this_serves"
+              ],
+              "title": "The Strategy This Serves"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "release-goals",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "date_1",
+                "date_2",
+                "date_3",
+                "features_1",
+                "features_2",
+                "features_3",
+                "goal_1",
+                "goal_2",
+                "goal_3",
+                "metrics_1",
+                "metrics_2",
+                "metrics_3",
+                "name_1",
+                "name_2",
+                "name_3"
+              ],
+              "title": "Release Goals"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-is-not-on-here",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_is_not_on_here"
+              ],
+              "title": "What Is Not On Here"
+            }
+          ],
+          "sizes": [
+            "full"
+          ]
+        },
+        "now-next-later": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-outcome-this-serves",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_outcome_this_serves"
+              ],
+              "title": "The Outcome This Serves"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "now",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "now"
+              ],
+              "title": "Now"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "next",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "next"
+              ],
+              "title": "Next"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "later",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "later"
+              ],
+              "title": "Later"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-is-not-on-here",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_is_not_on_here"
+              ],
+              "title": "What Is Not On Here"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "confidence-and-how-it-decays",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "confidence_and_how_it_decays"
+              ],
+              "title": "Confidence, and How It Decays"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "dependencies-and-what-could-move-it",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependencies_and_what_could_move_it"
+              ],
+              "title": "Dependencies and What Could Move It"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-trigger",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_trigger"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        },
+        "themes": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "product-vision",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "product_vision"
+              ],
+              "title": "Product Vision"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "business-objectives",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "business_objectives"
+              ],
+              "title": "Business Objectives"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "themes",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "themes"
+              ],
+              "title": "Themes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "timeframes",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "timeframes"
+              ],
+              "title": "Timeframes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-is-not-on-here",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_is_not_on_here"
+              ],
+              "title": "What Is Not On Here"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "disclaimer",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "disclaimer"
+              ],
+              "title": "Disclaimer"
+            }
+          ],
+          "sizes": [
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "product-strategy",
+      "default_format": "kernel",
+      "formats": {
+        "kernel": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_strategy"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "diagnosis",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_diagnosis"
+              ],
+              "title": "Diagnosis"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "guiding-policy",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_guiding_policy"
+              ],
+              "title": "Guiding Policy"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "coherent-action",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_coherent_action"
+              ],
+              "title": "Coherent Action"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-we-are-not-doing",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_we_are_not_doing"
+              ],
+              "title": "What We Are Not Doing"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "target-segments-and-non-targets",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "target_segments_and_non_targets"
+              ],
+              "title": "Target Segments, and Non-Targets"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "how-we-will-know-it-is-working",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "how_we_will_know"
+              ],
+              "title": "How We Will Know It Is Working"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "assumptions-and-risks",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "assumptions_and_risks"
+              ],
+              "title": "Assumptions and Risks"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-trigger",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_trigger"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        },
+        "one-pager": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_strategy"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "winning-aspiration",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "winning_aspiration"
+              ],
+              "title": "Winning Aspiration"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "how-we-will-know-we-have-won",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "how_we_will_know_we_have_won"
+              ],
+              "title": "How We Will Know We Have Won"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "where-we-will-play",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "where_we_will_play"
+              ],
+              "title": "Where We Will Play"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "how-we-will-win",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "how_we_will_win"
+              ],
+              "title": "How We Will Win"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "capabilities-and-systems",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "capabilities_and_systems"
+              ],
+              "title": "Capabilities and Systems"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "product-principles",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "product_principles"
+              ],
+              "title": "Product Principles"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-we-are-not-doing",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_we_are_not_doing"
+              ],
+              "title": "What We Are Not Doing"
+            }
+          ],
+          "sizes": [
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "product-vision",
+      "default_format": "canvas",
+      "formats": {
+        "canvas": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date_or_trigger"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "target_year_or_range"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-vision",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_vision"
+              ],
+              "title": "The Vision"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "who-it-is-for-and-what-they-need",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "who_it_is_for_and_what_they_need"
+              ],
+              "title": "Who It Is For, and What They Need"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "why-us",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "why_us"
+              ],
+              "title": "Why Us"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-this-rules-out",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_this_rules_out"
+              ],
+              "title": "What This Rules Out"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "market-and-competitive-context",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "market_and_competitive_context"
+              ],
+              "title": "Market and Competitive Context"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "business-goals",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "business_goals"
+              ],
+              "title": "Business Goals"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "horizon-and-review",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "horizon_and_review"
+              ],
+              "title": "Horizon and Review"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "leaps-of-faith",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "leaps_of_faith"
+              ],
+              "title": "Leaps of Faith"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        },
+        "narrative": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "target_year_or_range"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "open-in-the-future",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "open_in_the_future"
+              ],
+              "title": "Open in the Future"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-people-there",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_people_there"
+              ],
+              "title": "The People There"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "why-this-falls-to-us",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "why_this_falls_to_us"
+              ],
+              "title": "Why This Falls to Us"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-we-are-not-doing",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_we_are_not_doing"
+              ],
+              "title": "What We Are Not Doing"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-has-to-be-true",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_has_to_be_true"
+              ],
+              "title": "What Has to Be True"
+            }
+          ],
+          "sizes": [
+            "full"
+          ]
+        },
+        "prfaq": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "future_date_two_to_three_years_out"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "press-release",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "press_release"
+              ],
+              "title": "Press Release"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "customer-faq",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "customer_faq"
+              ],
+              "title": "Customer FAQ"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "internal-faq",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "internal_faq"
+              ],
+              "title": "Internal FAQ"
+            }
+          ],
+          "sizes": [
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "raid-log",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "log_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "project_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_scope"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "owner",
+                "register_ref",
+                "response",
+                "risk_id",
+                "risk_statement",
+                "severity",
+                "status"
+              ],
+              "title": "Risks"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "assumptions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "assumption",
+                "assumption_id",
+                "confidence",
+                "impact_if_false",
+                "owner",
+                "source",
+                "status",
+                "validate_by"
+              ],
+              "title": "Assumptions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "issues",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cause",
+                "issue",
+                "issue_id",
+                "owner",
+                "priority",
+                "raised_date",
+                "resolution_plan",
+                "severity",
+                "status",
+                "target_date"
+              ],
+              "title": "Issues"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "dependencies",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependency",
+                "dependency_id",
+                "direction",
+                "impact_if_missed",
+                "needed_by",
+                "party",
+                "status",
+                "type"
+              ],
+              "title": "Dependencies"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-and-ownership",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_and_ownership"
+              ],
+              "title": "Review and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "escalation-and-aging",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "escalation_and_aging"
+              ],
+              "title": "Escalation and Aging"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "cross-quadrant-summary",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cross_quadrant_summary"
+              ],
+              "title": "Cross-Quadrant Summary"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "release-notes",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "version"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "product-version",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 1,
+              "placeholders": [],
+              "title": "{{product}} {{version}}"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "new",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit_description",
+                "feature_headline"
+              ],
+              "title": "New"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "improved",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "improvement_1"
+              ],
+              "title": "Improved"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "fixed",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "fix_1"
+              ],
+              "title": "Fixed"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "highlights",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "highlight_1"
+              ],
+              "title": "Highlights"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "changed",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "change_1"
+              ],
+              "title": "Changed"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "deprecated",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "deprecation_1"
+              ],
+              "title": "Deprecated"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "removed",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "removal_1"
+              ],
+              "title": "Removed"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "security",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "security_note_1"
+              ],
+              "title": "Security"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "breaking-changes-and-upgrade-notes",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "breaking_changes_and_upgrade_notes"
+              ],
+              "title": "Breaking changes and upgrade notes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "known-issues",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "known_issue_1"
+              ],
+              "title": "Known issues"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.1"
+    },
+    {
+      "bundle": "rfc",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "authors"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "reviewers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "rfc_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "motivation",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "motivation"
+              ],
+              "title": "Motivation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "proposal",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "proposal"
+              ],
+              "title": "Proposal"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "alternatives-considered",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "alternatives_considered"
+              ],
+              "title": "Alternatives Considered"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "open-questions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "open_questions"
+              ],
+              "title": "Open Questions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "outcome",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "outcome"
+              ],
+              "title": "Outcome"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "goals-and-non-goals",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goals_and_non_goals"
+              ],
+              "title": "Goals and Non-Goals"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "detailed-design",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "detailed_design"
+              ],
+              "title": "Detailed Design"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "drawbacks-and-trade-offs",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "drawbacks_and_tradeoffs"
+              ],
+              "title": "Drawbacks and Trade-offs"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "rollout-and-adoption",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "rollout_and_adoption"
+              ],
+              "title": "Rollout and Adoption"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "risk-register",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "appetite_statement"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "approach_doc_link"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "project_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "register_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_scope"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "scoring-scale",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scoring_scale"
+              ],
+              "title": "Scoring Scale"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "category",
+                "impact",
+                "inherent_score",
+                "likelihood",
+                "owner",
+                "owner_actionee",
+                "proximity",
+                "residual_score",
+                "response",
+                "risk_id",
+                "risk_statement",
+                "risk_status",
+                "score",
+                "trigger"
+              ],
+              "title": "Risks"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-and-ownership",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_and_ownership"
+              ],
+              "title": "Review and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "escalation-and-risk-appetite",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "escalation_and_appetite"
+              ],
+              "title": "Escalation and Risk Appetite"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "closed-and-materialized-risks",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "closed_and_materialized"
+              ],
+              "title": "Closed and Materialized Risks"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "runbook",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "runbook_title"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "service_or_system"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "triggering_alert"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-trigger",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_trigger"
+              ],
+              "title": "Purpose and Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "procedure",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "procedure_approach",
+                "step_action",
+                "step_expected_result",
+                "step_number"
+              ],
+              "title": "Procedure"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "validation",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "validation_check",
+                "validation_method",
+                "validation_signal"
+              ],
+              "title": "Validation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_action",
+                "review_event",
+                "review_owner"
+              ],
+              "title": "Review Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "prerequisites-and-access",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "prereq_how_to_obtain",
+                "prereq_item",
+                "prereq_reason"
+              ],
+              "title": "Prerequisites and Access"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "remediation-and-cleanup",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cleanup_item",
+                "cleanup_owner",
+                "cleanup_reason",
+                "cleanup_trigger"
+              ],
+              "title": "Remediation and Cleanup"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "when-this-does-not-apply",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "actual_cause",
+                "lookalike_symptom",
+                "redirect_action"
+              ],
+              "title": "When This Does Not Apply"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "sdd",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "authors"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "reviewers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "context-and-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "context_and_scope"
+              ],
+              "title": "Context and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "goals-and-non-goals",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goals_and_non_goals"
+              ],
+              "title": "Goals and Non-Goals"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-design",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_design",
+                "the_design_overview"
+              ],
+              "title": "The Design"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "alternatives-considered",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "alternatives_considered"
+              ],
+              "title": "Alternatives Considered"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "cross-cutting-concerns",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cross_cutting_concerns"
+              ],
+              "title": "Cross-Cutting Concerns"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "static-structure-and-components",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "static_structure_and_components"
+              ],
+              "title": "Static Structure and Components"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "runtime-and-data-flow",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "runtime_and_data_flow"
+              ],
+              "title": "Runtime and Data Flow"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "interfaces-and-contracts",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "interfaces_and_contracts"
+              ],
+              "title": "Interfaces and Contracts"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "deployment-and-operations",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 3,
+              "placeholders": [
+                "deployment_and_operations"
+              ],
+              "title": "Deployment and Operations"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "quality-attributes",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "quality_attributes"
+              ],
+              "title": "Quality Attributes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "risks-and-open-issues",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "risks_and_open_issues"
+              ],
+              "title": "Risks and Open Issues"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "sprint-backlog",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "end_date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "sprint_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "start_date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "sprint-goal",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "sprint_goal"
+              ],
+              "title": "Sprint Goal"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "selected-items",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "estimate",
+                "item_id",
+                "item_status",
+                "item_title"
+              ],
+              "title": "Selected Items"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "delivery-plan",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "delivery_plan"
+              ],
+              "title": "Delivery Plan"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "capacity-and-forecast",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "capacity_and_forecast"
+              ],
+              "title": "Capacity and Forecast"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "progress-and-tracking",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "progress_and_tracking"
+              ],
+              "title": "Progress and Tracking"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "risks-and-carry-over",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "risks_and_carryover"
+              ],
+              "title": "Risks and Carry-over"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "sprint-retrospective-notes",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "facilitator"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "sprint_id"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "team_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "sprint-and-participants",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "facilitator",
+                "participants_present",
+                "sprint_end_date",
+                "sprint_id",
+                "sprint_start_date"
+              ],
+              "title": "Sprint and Participants"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "previous-actions",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "previous_action",
+                "previous_action_note",
+                "previous_action_owner",
+                "previous_action_status"
+              ],
+              "title": "Previous Actions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "what-went-well",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "went_well_item",
+                "went_well_reason"
+              ],
+              "title": "What Went Well"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "what-to-improve",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "improve_idea",
+                "improve_item"
+              ],
+              "title": "What To Improve"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "action-items",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "action_due",
+                "action_item",
+                "action_owner"
+              ],
+              "title": "Action Items"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "status-report",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "audience"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "program_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "reporting_period"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "status",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "status_change",
+                "status_dimension",
+                "status_rag",
+                "status_threshold"
+              ],
+              "title": "Status"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "accomplishments",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "accomplishment_1"
+              ],
+              "title": "Accomplishments"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks-and-issues",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "item_change",
+                "item_description",
+                "item_ref",
+                "item_status"
+              ],
+              "title": "Risks and Issues"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "next-steps",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "next_step_1"
+              ],
+              "title": "Next Steps"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "metrics",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "metric_current",
+                "metric_name",
+                "metric_reads_as",
+                "metric_source",
+                "metric_target_threshold"
+              ],
+              "title": "Metrics"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "milestones",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "milestone_date",
+                "milestone_name",
+                "milestone_note",
+                "milestone_status"
+              ],
+              "title": "Milestones"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "decisions-needed",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision",
+                "decision_context",
+                "decision_deadline",
+                "decision_owner"
+              ],
+              "title": "Decisions Needed"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "test-case",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_title"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "case_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "priority"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "what_this_traces_to"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "identification-and-traceability",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "identification_and_traceability"
+              ],
+              "title": "Identification and Traceability"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "preconditions-and-test-data",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "preconditions_and_test_data"
+              ],
+              "title": "Preconditions and Test Data"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "steps-and-expected-results",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "action",
+                "expected_result",
+                "step_number"
+              ],
+              "title": "Steps and Expected Results"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "postconditions-and-teardown",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "postconditions_and_teardown"
+              ],
+              "title": "Postconditions and Teardown"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "design-rationale",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_rationale"
+              ],
+              "title": "Design Rationale"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "environment-and-configuration",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "environment_and_configuration"
+              ],
+              "title": "Environment and Configuration"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "automation-status",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "automation_status"
+              ],
+              "title": "Automation Status"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "version-and-approval",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_date",
+                "review_scope",
+                "reviewer",
+                "reviewer_role",
+                "version_and_change_rule"
+              ],
+              "title": "Version and Approval"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "test-plan",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "plan_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "release_or_feature"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "test_strategy_ref"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scope-and-non-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scope_and_non_scope"
+              ],
+              "title": "Scope and Non-Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risk-ranked-approach",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "area",
+                "order",
+                "risk_and_consequence",
+                "technique_and_depth",
+                "tier_and_reason"
+              ],
+              "title": "Risk-Ranked Approach"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "entry-and-exit-criteria",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "entry_and_exit_criteria"
+              ],
+              "title": "Entry and Exit Criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "environment-data-and-ownership",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "environment_data_and_ownership"
+              ],
+              "title": "Environment, Data, and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "schedule-and-deliverables",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "schedule_and_deliverables"
+              ],
+              "title": "Schedule and Deliverables"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "test-levels-and-types",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "level_environment",
+                "level_or_type",
+                "level_owner",
+                "level_rationale"
+              ],
+              "title": "Test Levels and Types"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "suspension-and-resumption-criteria",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "suspension_and_resumption"
+              ],
+              "title": "Suspension and Resumption Criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risks-to-the-test-effort",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "effort_risk",
+                "effort_risk_contingency",
+                "effort_risk_impact",
+                "effort_risk_owner"
+              ],
+              "title": "Risks to the Test Effort"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "approvals-and-change-control",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "approval_date",
+                "approval_scope",
+                "approver",
+                "approver_role",
+                "change_control_rule"
+              ],
+              "title": "Approvals and Change Control"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "user-persona",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "evidence_tier"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "persona_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "persona_role"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_or_team"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "who-they-are",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "persona_background",
+                "persona_name",
+                "persona_quote",
+                "persona_role"
+              ],
+              "title": "Who They Are"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "goals-and-motivations",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goal_evidence",
+                "goal_rationale",
+                "goal_statement"
+              ],
+              "title": "Goals and Motivations"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "pains-and-barriers",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "pain_evidence",
+                "pain_impact",
+                "pain_statement"
+              ],
+              "title": "Pains and Barriers"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "context-of-use",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "context_detail",
+                "context_evidence",
+                "context_factor"
+              ],
+              "title": "Context of Use"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scenarios",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scenario_beginning",
+                "scenario_end",
+                "scenario_middle",
+                "scenario_name"
+              ],
+              "title": "Scenarios"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "evidence-basis",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "evidence_basis",
+                "evidence_last_updated",
+                "evidence_revisit_trigger",
+                "evidence_tier"
+              ],
+              "title": "Evidence Basis"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
+      "bundle": "user-stories",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "story",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit",
+                "goal",
+                "user"
+              ],
+              "title": "Story"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "acceptance-criteria",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "acceptance_criterion_1"
+              ],
+              "title": "Acceptance criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "notes-and-open-questions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "notes"
+              ],
+              "title": "Notes and open questions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "description-and-context",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "description_and_context"
+              ],
+              "title": "Description and context"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "invest-check",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [],
+              "title": "INVEST check"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "estimate-and-sizing",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "estimate"
+              ],
+              "title": "Estimate and sizing"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "dependencies",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dependency_1"
+              ],
+              "title": "Dependencies"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    }
+  ],
+  "count": 27,
+  "frontmatter_count": 181,
+  "section_count": 241
+}

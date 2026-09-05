@@ -116,13 +116,13 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   `agent-skills-toolkit`, which also supplies the README version-badge guard `check-readme-version.mjs`
   run in the same step). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=26 -->
-Twenty-six CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Twenty-one** prove the tree is
+<!-- counts: cisteps=28 -->
+Twenty-eight CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Twenty-three** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The twenty-sixth is the only one that can surprise anybody**, because it is the only one whose rules
+**The twenty-eighth is the only one that can surprise anybody**, because it is the only one whose rules
 this repository did not write. It runs the Advanced Skill Library Standard's conformance gate, and the
 toolkit's README version-badge guard, from a pinned checkout of a separate repository, so it can report
 that this library has stopped meeting a published external standard. Every other step can only report

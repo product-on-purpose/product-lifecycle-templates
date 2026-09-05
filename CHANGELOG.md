@@ -12,6 +12,56 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **WP-53, the AG-1 section schema: `sections.json`, generated from the templates themselves.** For every
+  bundle, every format, the ordered sections with heading level, the sizes carrying each, the guidance
+  fields its comment declares, whether the shipped body holds a table, and its placeholders, plus the
+  frontmatter fill sites that precede them. 27 bundles, **241 sections and 181 frontmatter sites**.
+  Frontmatter is included because LP-1 collects it before interviewing anything, so a completeness check
+  reading sections alone would pass a document whose `author` and `status` are still `{{placeholder}}`;
+  it is keyed per size because 13 bundles carry more frontmatter in `full` than in `lean`. Built by [`tools/gen-sections.py`](tools/gen-sections.py) with a `--check` drift mode in
+  CI, the same discipline as `gen-manifest.py`. Consumers are LP-1's completeness check, LP-2's structure
+  layer, and an AG-2 `validate_fill`.
+
+  **It is also the grammar check.** Nothing else in this repository reads the Approach A guidance comments
+  mechanically: checks A through K prove files exist, nest, cite and validate, and none of them opens a
+  comment and asks whether it parses. So a malformed comment now fails a build that would previously have
+  passed, and the generator raises rather than skipping the section, because a section missing from the
+  schema makes a downstream completeness check pass for the wrong reason.
+
+  **The grammar was measured, not taken from the methodology.** All 58 variant files carry exactly 353
+  guidance comments, and the schema accounts for every one: 4 at H1, 342 at H2, 7 at H3. Three findings
+  changed the design. A field label sits at **indent exactly 5**, not merely "a label followed by two
+  spaces": three lines in `okrs` are table rows inside a ROW HINT whose first cell is literally `WEAK` plus
+  two spaces, and the loose rule reads them as a second WEAK field, giving 356 where the tree has 353.
+  Sections are **not only H2**: `release-notes` and `adr` attach guidance to the H1, `adr` and `sdd` to H3s.
+  And the 58 preambles are excluded by structure rather than heuristic, since a guidance comment opens
+  `<!-- LABEL` and a preamble opens with a newline.
+
+  **Three departures from the 2026-07-12 AG-1 sketch, each forced by the current tree.** The sketch's
+  `in_lean`/`in_full` booleans cannot address four bundles that ship three or four variants under the
+  format axis ([ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md)) or the one that ships a
+  single variant, and two section titles appear in more than one *format* with genuinely different guidance
+  text, so keying by title alone would merge documents that share only a heading; sections are grouped per
+  format and carry `in_sizes`. The sketch's single `has_table` is split into `has_table` and
+  `has_row_hint`, because the two signals **disagree on 10 of 353 sections** and one boolean makes those
+  ten silently wrong. And the schema ships beside `manifest.json` rather than embedded in it: embedding
+  measured **4.6x**, taking the manifest from about 10,850 to about 49,750 approx-tokens, while the AG-2
+  spec beside AG-1 requires default responses under 1,200.
+
+  A six-way parallel audit of the grammar ran alongside the build and is the reason two design calls are
+  recorded rather than assumed. On table detection **three auditors reported that the ROW HINT signal and
+  a real pipe table never disagree and three found cases where they do**; they disagree on 10 of 353
+  sections, so the schema records both. On continuation indent three reported "fixed at exactly 11 spaces,
+  no exceptions" and two found 15-space cases; the parser is therefore indent-agnostic below the label
+  column. A majority of independent readers was wrong on both, which is why neither is a boolean taken on
+  faith.
+
+  `tools/test-gen-sections.py` runs in CI with 40 assertions. The load-bearing ones are adversarial and
+  drawn from measured shapes rather than imagined ones, and the test caught two real defects while being
+  written: a cross-drive `relpath` crash and a conflict between two intended behaviours.
+
 ### Changed
 
 - **Check I now fails a `future:` reference whose target the library has built, and nine stale labels

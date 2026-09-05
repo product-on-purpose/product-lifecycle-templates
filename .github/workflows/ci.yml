@@ -86,6 +86,23 @@ jobs:
       - name: Manifest freshness
         run: python tools/gen-manifest.py --check
 
+      # The AG-1 section schema (roadmap WP-53). sections.json is generated from the template
+      # variants themselves and committed; this regenerates it in memory and fails on drift, the
+      # same discipline as the manifest. It carries a second job the manifest does not: nothing
+      # else in this repository reads the Approach A guidance comments mechanically, so a comment
+      # this parser cannot read is a malformed template that no other check would report. It fails
+      # loudly rather than skipping the section, because a section missing from the schema makes a
+      # downstream completeness check pass for the wrong reason.
+      - name: Section schema freshness
+        run: python tools/gen-sections.py --check
+
+      # The parser's adversarial self-test. The dangerous failure here is silent: a real shape in
+      # the tree that yields a wrong section list rather than an error. Its load-bearing cases are
+      # drawn from measured shapes, notably okrs' ROW HINT containing a table row whose first cell
+      # is literally "WEAK" followed by two spaces, which a looser label rule reads as a field.
+      - name: Section parser self-test
+        run: python tools/test-gen-sections.py
+
       # The atlas built flags. atlas/catalog-data.json and the inline copy in atlas/atlas.html
       # both carry a per-type `built` boolean, which drifted (advertised 4 built while 12 existed).
       # This regenerates both from the bundles on disk and fails on drift (same discipline as the

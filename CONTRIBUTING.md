@@ -80,9 +80,9 @@ python tools/check-research-logs.py    # every research log meets the source-rec
 python tools/check-counts.py           # every generated-count marker in a document matches the tree
 ```
 
-<!-- counts: cisteps=26 -->
+<!-- counts: cisteps=28 -->
 The full list runs in CI on every push and every pull request
-([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 26 steps in total, of which four are checkout,
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 28 steps in total, of which four are checkout,
 runtime setup and dependency installation, and `main` is branch-protected on the result: a change that
 fails any step cannot merge. The last step is the only one whose rules live outside this repository: it
 runs the Advanced Skill Library Standard's conformance gate from a pinned checkout of
