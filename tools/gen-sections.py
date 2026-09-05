@@ -5,9 +5,24 @@ gen-sections.py - generate the AG-1 section schema: the machine shape of every t
 WHAT THIS PRODUCES.
 `sections.json` at the repository root: for every bundle, for every format, the ordered list of
 sections with their heading level, which sizes carry them, which guidance fields their comment
-declares, whether the shipped body contains a table, and which placeholders they hold. It is
-DERIVED from the variant files themselves and never hand-written, so it cannot drift from the
-templates it describes: edit a template and `--check` reports the schema stale until regenerated.
+declares, whether the shipped body contains a table, and which placeholders they hold, plus the
+frontmatter fill sites that precede them. It is DERIVED from the variant files themselves and
+never hand-written, so it cannot drift from the templates it describes: edit a template and
+`--check` reports the schema stale until regenerated.
+
+WHY FRONTMATTER IS IN HERE AND NOT ONLY SECTIONS.
+A template's shape is not only its headings. LP-1 collects the frontmatter before it interviews
+anything, so a completeness check reading `sections` alone would pass a document whose `author`
+and `status` are still `{{placeholder}}`. 181 such sites exist, and they are recorded per size
+because they genuinely differ: 13 bundles carry more frontmatter fields in `full` than in `lean`.
+
+WHAT THIS DELIBERATELY DOES NOT RECORD.
+Placeholder OCCURRENCES. A section lists each placeholder NAME once, which is what a completeness
+check wants ("is anything still unfilled"). It is not what a substituting fill tool wants: 94
+names recur within a single file body, and `prd` reuses `{{owner}}` and `{{date}}` across
+semantically unrelated sites, so a tool that asked one question per NAME would put the document
+owner's name into an open question's owner column. A fill tool must key sites by occurrence, and
+must read the file to do it. This schema describes shape, not substitution.
 
 WHY IT IS NOT A NINTH BUNDLE FILE.
 The bundle contract is eight files (methodology B1) and every gate check counts on that. This is
@@ -152,15 +167,27 @@ def slug(title):
     return t or "section"
 
 
-def strip_frontmatter(text):
-    """The body after the instance frontmatter, and the number of lines removed (for line numbers
-    in errors). A variant that opens without frontmatter is returned unchanged."""
+def split_frontmatter(text):
+    """(frontmatter_text, body, lines_consumed). A variant opening without frontmatter yields ''."""
     if not text.startswith("---"):
-        return text, 0
+        return "", text, 0
     m = re.match(r"^---\r?\n.*?\r?\n---[ \t]*\r?\n", text, re.S)
     if not m:
-        return text, 0
-    return text[m.end():], text[:m.end()].count("\n")
+        return "", text, 0
+    return m.group(0), text[m.end():], text[:m.end()].count("\n")
+
+
+def frontmatter_placeholders(path):
+    """The fill sites in a variant's instance frontmatter.
+
+    Sections are not the whole shape of a template. LP-1's flow collects the frontmatter before it
+    interviews anything, so a completeness check reading only `sections` would pass a document
+    whose `author` and `status` are still `{{placeholder}}`. These are recorded per size because
+    they genuinely differ: 13 bundles carry more frontmatter fields in `full` than in `lean`.
+    """
+    with open(path, encoding="utf-8") as f:
+        front, _, _ = split_frontmatter(f.read())
+    return sorted(set(PLACEHOLDER_RE.findall(front)))
 
 
 def parse_guidance(block, path, line_no):
@@ -207,7 +234,7 @@ def parse_variant(path):
     """
     with open(path, encoding="utf-8") as f:
         text = f.read()
-    body, skipped = strip_frontmatter(text)
+    _, body, skipped = split_frontmatter(text)
     heads = list(HEADING_RE.finditer(body))
     sections = []
     for i, h in enumerate(heads):
@@ -269,9 +296,12 @@ def build_bundle(bundle, meta, bundle_dir):
             # The meta declares the size contract (ADR 0010) and gate check A already fails a
             # declared-but-missing variant. Not this tool's job to report it twice.
             continue
-        entry = formats.setdefault(fmt, {"sizes": [], "sections": [], "_index": {}})
+        entry = formats.setdefault(
+            fmt, {"sizes": [], "frontmatter": [], "sections": [], "_index": {}, "_front": {}})
         if size not in entry["sizes"]:
             entry["sizes"].append(size)
+        for name in frontmatter_placeholders(path):
+            entry["_front"].setdefault(name, []).append(size)
         for sec in parse_variant(path):
             key = (sec["id"], sec["level"])
             known = entry["_index"].get(key)
@@ -292,7 +322,10 @@ def build_bundle(bundle, meta, bundle_dir):
                     if f not in known["guidance_fields"]:
                         known["guidance_fields"].append(f)
     for entry in formats.values():
+        entry["frontmatter"] = [{"name": n, "in_sizes": s}
+                                for n, s in sorted(entry["_front"].items())]
         del entry["_index"]
+        del entry["_front"]
     return {
         "bundle": bundle,
         "template_version": meta.get("template_version"),
@@ -309,10 +342,12 @@ def build(yaml):
             meta = yaml.safe_load(f.read())
         bundles.append(build_bundle(name, meta, d))
     total = sum(len(f["sections"]) for b in bundles for f in b["formats"].values())
+    front = sum(len(f["frontmatter"]) for b in bundles for f in b["formats"].values())
     return {
         "_generated": "by tools/gen-sections.py from templates/*/*_template-*.md; do not edit by hand",
         "count": len(bundles),
         "section_count": total,
+        "frontmatter_count": front,
         "bundles": bundles,
     }
 
@@ -340,7 +375,8 @@ def main():
         return 1
     fresh = serialize(schema)
 
-    counted = (str(schema["count"]) + " bundles, " + str(schema["section_count"]) + " sections")
+    counted = (str(schema["count"]) + " bundles, " + str(schema["section_count"])
+               + " sections, " + str(schema["frontmatter_count"]) + " frontmatter fill sites")
     if check_only:
         if not os.path.isfile(SECTIONS_PATH):
             print(RED + "DRIFT" + OFF + "  sections.json is missing; run `python tools/gen-sections.py`")

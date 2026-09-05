@@ -16,8 +16,11 @@ people who want every change, release notes are for people who want to know what
 
 - **WP-53, the AG-1 section schema: `sections.json`, generated from the templates themselves.** For every
   bundle, every format, the ordered sections with heading level, the sizes carrying each, the guidance
-  fields its comment declares, whether the shipped body holds a table, and its placeholders. 27 bundles,
-  241 sections. Built by [`tools/gen-sections.py`](tools/gen-sections.py) with a `--check` drift mode in
+  fields its comment declares, whether the shipped body holds a table, and its placeholders, plus the
+  frontmatter fill sites that precede them. 27 bundles, **241 sections and 181 frontmatter sites**.
+  Frontmatter is included because LP-1 collects it before interviewing anything, so a completeness check
+  reading sections alone would pass a document whose `author` and `status` are still `{{placeholder}}`;
+  it is keyed per size because 13 bundles carry more frontmatter in `full` than in `lean`. Built by [`tools/gen-sections.py`](tools/gen-sections.py) with a `--check` drift mode in
   CI, the same discipline as `gen-manifest.py`. Consumers are LP-1's completeness check, LP-2's structure
   layer, and an AG-2 `validate_fill`.
 
@@ -47,7 +50,15 @@ people who want every change, release notes are for people who want to know what
   measured **4.6x**, taking the manifest from about 10,850 to about 49,750 approx-tokens, while the AG-2
   spec beside AG-1 requires default responses under 1,200.
 
-  `tools/test-gen-sections.py` runs in CI with 34 assertions. The load-bearing ones are adversarial and
+  A six-way parallel audit of the grammar ran alongside the build and is the reason two design calls are
+  recorded rather than assumed. On table detection **three auditors reported that the ROW HINT signal and
+  a real pipe table never disagree and three found cases where they do**; they disagree on 10 of 353
+  sections, so the schema records both. On continuation indent three reported "fixed at exactly 11 spaces,
+  no exceptions" and two found 15-space cases; the parser is therefore indent-agnostic below the label
+  column. A majority of independent readers was wrong on both, which is why neither is a boolean taken on
+  faith.
+
+  `tools/test-gen-sections.py` runs in CI with 40 assertions. The load-bearing ones are adversarial and
   drawn from measured shapes rather than imagined ones, and the test caught two real defects while being
   written: a cross-drive `relpath` crash and a conflict between two intended behaviours.
 

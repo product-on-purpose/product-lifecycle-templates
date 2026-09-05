@@ -243,7 +243,37 @@ def main():
     check("an example table drawn inside guidance does not set has_table",
           not s["has_table"], s)
 
-    print("\n" + DIM + "8. Formats are grouped, never merged across" + OFF)
+    print("\n" + DIM + "8. Frontmatter fill sites, which sections alone would miss" + OFF)
+    d, p = variant("## Alpha\n\n" + GUIDANCE + "\n{{alpha}}\n")
+    try:
+        # The fixture's frontmatter carries no placeholder; the real ones do.
+        check("a frontmatter with no placeholder yields none",
+              gen.frontmatter_placeholders(p) == [], gen.frontmatter_placeholders(p))
+    finally:
+        shutil.rmtree(d, ignore_errors=True)
+    d = tempfile.mkdtemp()
+    fp = os.path.join(d, "fixture_template-lean.md")
+    with open(fp, "w", encoding="utf-8", newline="\n") as f:
+        f.write("---\ntitle: {{doc_title}}\nauthor: {{author}}\nstatus: draft\n---\n"
+                + PREAMBLE + "## Alpha\n\n" + GUIDANCE + "\n{{alpha}}\n")
+    try:
+        fm = gen.frontmatter_placeholders(fp)
+        check("frontmatter placeholders are found", fm == ["author", "doc_title"], fm)
+        check("  a bare literal is not a fill site", "draft" not in fm, fm)
+        check("  a body placeholder does not leak into frontmatter", "alpha" not in fm, fm)
+    finally:
+        shutil.rmtree(d, ignore_errors=True)
+    # The real tree: 13 bundles carry more frontmatter in full than in lean, so in_sizes matters.
+    sized = [(b["bundle"], e["frontmatter"]) for b in schema["bundles"]
+             for e in b["formats"].values()
+             if any(len(x["in_sizes"]) < len(e["sizes"]) for x in e["frontmatter"])]
+    check("some frontmatter sites are size-specific, so in_sizes is load-bearing",
+          len(sized) >= 13, len(sized))
+    check("every frontmatter entry names sizes that exist", all(
+        set(x["in_sizes"]) <= set(e["sizes"])
+        for b in schema["bundles"] for e in b["formats"].values() for x in e["frontmatter"]))
+
+    print("\n" + DIM + "9. Formats are grouped, never merged across" + OFF)
     b = [x for x in schema["bundles"] if x["bundle"] == "product-roadmap"][0]
     check("product-roadmap keeps three formats", len(b["formats"]) == 3, sorted(b["formats"]))
     titles = {f: [s["title"] for s in e["sections"]] for f, e in b["formats"].items()}

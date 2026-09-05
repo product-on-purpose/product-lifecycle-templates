@@ -6,6 +6,36 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -154,6 +184,41 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "consulted"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "decision_makers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "informed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -364,6 +429,68 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "assignee"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "build_or_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "one_line_summary"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "priority"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "reporter"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "severity"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -559,6 +686,49 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "financial_model_ref"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "investment_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "sponsor"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "stage"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -754,6 +924,36 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_name"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -903,6 +1103,42 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "epic_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "target_timeframe"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -1107,6 +1343,50 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "author"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "incident_date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "incident_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "postmortem_title"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -1332,6 +1612,57 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "audience_tier"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dashboard_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dashboard_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "objective_or_program"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -1489,6 +1820,64 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_or_company_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "the_cycle_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "the_strategy_or_roadmap_this_serves"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_is_accountable_for_this_whole_set"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_reads_this"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -1684,6 +2073,36 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2082,6 +2501,42 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_owner"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2258,6 +2713,44 @@
       "default_format": "now-next-later",
       "formats": {
         "go": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2344,6 +2837,50 @@
           ]
         },
         "now-next-later": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2525,6 +3062,44 @@
           ]
         },
         "themes": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "internal_or_customer_facing"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_roadmap"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2665,6 +3240,43 @@
       "default_format": "kernel",
       "formats": {
         "kernel": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_strategy"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -2845,6 +3457,38 @@
           ]
         },
         "one-pager": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "period_this_covers"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_strategy"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3006,6 +3650,49 @@
       "default_format": "canvas",
       "formats": {
         "canvas": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date_or_trigger"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "target_year_or_range"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3186,6 +3873,38 @@
           ]
         },
         "narrative": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "target_year_or_range"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3298,6 +4017,38 @@
           ]
         },
         "prfaq": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "future_date_two_to_three_years_out"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "who_owns_this_vision"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3375,6 +4126,43 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "log_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "project_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3605,6 +4393,36 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "version"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -3876,6 +4694,49 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "authors"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "reviewers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "rfc_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -4107,6 +4968,55 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "appetite_statement"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "approach_doc_link"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "project_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "register_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -4271,6 +5181,50 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "runbook_title"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "service_or_system"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "triggering_alert"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -4463,6 +5417,48 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "authors"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "reviewers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -4715,6 +5711,49 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "end_date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "related_docs"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "sprint_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "start_date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "team_name"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -4864,6 +5903,38 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "facilitator"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "sprint_id"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "team_name"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5002,6 +6073,50 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "audience"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "program_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "report_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "reporting_period"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5216,6 +6331,56 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_id"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "case_title"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "case_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "priority"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "what_this_traces_to"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5413,6 +6578,42 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "plan_owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "release_or_feature"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "test_strategy_ref"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5644,6 +6845,56 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "evidence_tier"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "persona_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "persona_role"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_or_team"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5809,6 +7060,36 @@
       "default_format": "default",
       "formats": {
         "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
           "sections": [
             {
               "guidance_fields": [
@@ -5971,5 +7252,6 @@
     }
   ],
   "count": 27,
+  "frontmatter_count": 181,
   "section_count": 241
 }
