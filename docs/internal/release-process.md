@@ -58,6 +58,19 @@ not a checklist afterwards.
 what shipped is actually recorded: `check-changelog.py` gates decision records only, so bundles and tooling
 can be missing while it passes green.
 
+**Then update the compare links at the bottom of the file**, which is the step this document was missing
+until 2026-09-05 and which `v0.5.0` consequently skipped: its section closed in the body while the footer
+still ran `[Unreleased]` from `v0.4.0` and carried no `[0.5.0]` line at all, so for two days the
+"unreleased" diff silently included everything in `v0.5.0`.
+
+```
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/vX.Y.Z...HEAD
+[X.Y.Z]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/vA.B.C...vX.Y.Z
+```
+
+Nothing gates this. `check-changelog.py` reads the body and never looks at the footer, which is why it
+went unnoticed.
+
 ### 4. Write the release note by filling the template
 
 Copy `templates/release-notes/release-notes_template-lean.md`, fill it, and grade it against

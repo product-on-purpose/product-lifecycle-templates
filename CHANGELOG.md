@@ -12,6 +12,27 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Fixed
+
+- **`RELEASE-NOTES.md` was two releases behind, and its standing claim about quality was stale.** The
+  per-version sections stopped at `v0.3.1` while `v0.4.0` and `v0.5.0` were both tagged with pages under
+  `docs/releases/`, and `INDEX.md` points readers here as the curated read. Both entries are backfilled
+  from their release pages.
+
+  **The standing "What this library does not claim" section still said quality was measured once and
+  returned VOID.** That section is not a dated record, and it is the same section whose staleness cost
+  `v0.3.1` a release. It now states the four runs accurately: three VOID, and the 2026-09-03 run clearing
+  all four validity gates over **two scenarios of one bundle out of twenty-seven**, with a probe gap of
+  exactly 0.00 that is ambiguous between "the template does not help" and "the scenarios were too easy".
+  The honest position is narrower than "measured" and better than "unmeasured".
+
+- **The release process was missing the step that broke `v0.5.0`'s changelog footer.**
+  `docs/internal/release-process.md` is what six documents cross-reference, and it never mentioned
+  updating the CHANGELOG compare links. `docs/internal/releasing.md` did carry that step, and nothing in
+  the tree links to it. The step is folded into the canonical document at section 3, with the failure it
+  caused named; the orphan is **marked as superseded rather than deleted**, because retiring it is the
+  maintainer's call, not an agent's.
+
 ### Added
 
 - **WP-50, the mechanical half of the LP-1 fill flow: `strip-template.py` and `validate-fill.py`.** The
