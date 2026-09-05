@@ -14,6 +14,24 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **`acceptance-criteria` was telling every document filled from it the wrong template version, and
+  nothing checked.** Its 0.1.1 bump on 2026-08-21 updated the meta and the history and left both variant
+  files stamping `source_template_version: 0.1.0`. The disagreement is invisible from every angle a
+  reviewer looks: the meta is right, the history is right, and only the file a user actually copies is
+  wrong. `release-notes` is also at 0.1.1 and its variants say 0.1.1, so the convention was never in
+  doubt, just unenforced.
+
+  **Gate check H now enforces it.** It already owned `template_version` (it fails a bump with no history
+  entry), so the invariant lands there rather than in a new check: every variant's stamped
+  `source_template_version` must equal the meta's `template_version`. Verified by injection, not by a
+  green run, since fixing the only failure and re-running proves nothing.
+
+  This stopped being cosmetic when WP-50 landed. `strip-template.py` stamps provenance and
+  `validate-fill.py` reads it, so a template that lies about its own version now propagates that lie into
+  every document filled from it and into the validator's own report.
+
+  Found by a five-way verification of the M5 specs against the tree, which was looking for something else.
+
 - **`RELEASE-NOTES.md` was two releases behind, and its standing claim about quality was stale.** The
   per-version sections stopped at `v0.3.1` while `v0.4.0` and `v0.5.0` were both tagged with pages under
   `docs/releases/`, and `INDEX.md` points readers here as the curated read. Both entries are backfilled
