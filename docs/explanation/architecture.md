@@ -119,7 +119,9 @@ review exists to catch.
 
 A second kind of evidence sits above the bundle layer: artifacts the tooling generates from the bundles
 themselves rather than an author retyping by hand, among them [`manifest.json`](../../manifest.json) (the
-machine catalog, from `tools/gen-manifest.py`) and the atlas dataset (from `tools/gen-atlas.py`). Both
+machine catalog, from `tools/gen-manifest.py`), [`sections.json`](../../sections.json) (the AG-1 section
+schema: every section of every template variant, its guidance fields and its fill sites, from
+`tools/gen-sections.py`), and the atlas dataset (from `tools/gen-atlas.py`). All three
 generators run in a `--check` mode in CI that regenerates the artifact in memory and fails on any drift
 from the committed copy, on the same reasoning stated throughout the tooling: a generated fact stays
 fresh, a retyped one drifts.
