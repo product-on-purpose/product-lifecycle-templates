@@ -131,6 +131,31 @@ it** - a reader cannot tell a deleted section from one nobody thought about.
 Every guide ends with a rubric: numbered rows scored 0, 1 or 2, with a stated threshold and what falls
 below it. Grade honestly; the rubric asks for evidence you can point at, not for counts you can inflate.
 
+### 6. Strip, stamp, and validate before you call it done
+
+Two tools finish the job. They live in the repository, so they are available on the plugin install and
+on a clone; the `npx skills add` route does not carry them.
+
+```
+python tools/strip-template.py DOC --filled-by "Name" --fill-method interview --out SHIPPED.md
+python tools/validate-fill.py SHIPPED.md
+```
+
+**`strip-template.py`** removes every guidance comment, collapses the gaps they leave, and stamps
+`filled_by`, `fill_method` and `fill_date` after the `source_template` pair the template already
+carries. **It exits 2 rather than writing a file if any `{{placeholder}}` is left**, because a document
+that ships with a placeholder in it looks complete and is not. Pass `--allow-placeholders` for a partial
+save; the comments are the resume state, so keep them until you ship.
+
+**`validate-fill.py`** answers four questions against
+[`sections.json`](../../sections.json): is every section the template declared still present, is
+anything unfilled, is the guidance gone, does the document record where it came from. It reads
+`source_template`, `size` and `format` from the document's own frontmatter, so it works on a document
+that has left this repository.
+
+**Neither tool grades.** They check that the shape survived the fill. A document can pass both and be
+empty prose under every heading, which is what step 5 and a reader are for.
+
 ## What this library proves, and what it does not
 
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
@@ -143,8 +168,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=28, logsgated=21, sourcesgated=826 -->
-28 CI steps; 21 research logs gated, covering 826 sources.
+<!-- counts: cisteps=30, logsgated=21, sourcesgated=826 -->
+30 CI steps; 21 research logs gated, covering 826 sources.
 
 **Not proved by anything:**
 

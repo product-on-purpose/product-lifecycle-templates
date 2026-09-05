@@ -12,6 +12,48 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **WP-50, the mechanical half of the LP-1 fill flow: `strip-template.py` and `validate-fill.py`.** The
+  interview half already shipped as guidance inside `plt-fill-template`; what never existed was anything
+  that could finish a filled document or check one. Both are standalone, both work on a document that has
+  left this repository, and both are wired into the skill as step 6.
+
+  **`tools/strip-template.py`** removes every guidance comment, collapses the gaps they leave, and stamps
+  `filled_by`, `fill_method` and `fill_date` after the `source_template` / `source_template_version` pair
+  that all 58 variants already carry. **It exits 2 without writing a file if any `{{placeholder}}`
+  remains**, because a document shipping with a placeholder looks complete and is not;
+  `--allow-placeholders` covers the partial-save case, where the comments are the resume state.
+
+  The subtle part is scan order. The guidance comments *themselves* name placeholders: every preamble says
+  "Replace each `{{placeholder}}`" and GOOD examples quote placeholder-shaped text. A tool that scans the
+  raw file refuses every document forever, correct ones included, so the scan runs on the stripped body and
+  the self-test asserts that ordering rather than leaving it as a comment.
+
+- **`tools/validate-fill.py`, which [ADR 0044](docs/internal/decisions/0044-the-section-schema-is-a-second-generated-artifact.md)
+  made possible.** It answers four questions against `sections.json`: is every declared section still
+  present, is anything unfilled, is the guidance gone, does the document record where it came from. It
+  finds the template from the document's own `source_template`, `size` and `format`. The LP-1 spec wrote
+  "section-schema completeness **when available**" because it was not available; it is now, so the check is
+  not optional here. **Neither tool grades**, and both say so: a document can pass every check and be empty
+  prose under every heading.
+
+  `tools/test-strip-template.py` (29 assertions) and `tools/test-validate-fill.py` (21 assertions) run in
+  CI. The load-bearing case in the first is the refusal; in the second it is the **slug contract**, since
+  the validator looks sections up by the id `gen-sections.py` wrote and two functions in two files must
+  agree forever. If they drift the validator reports sections missing that are present, or reports a
+  document complete because it matched nothing and found nothing missing. The test runs the real tree
+  through both, which is the only way that failure is visible. **All 58 variants resolve their schema
+  entry and find every declared section.**
+
+- **[ADR 0044](docs/internal/decisions/0044-the-section-schema-is-a-second-generated-artifact.md): the
+  section schema is a second generated artifact beside the manifest, and its parser is the guidance
+  grammar's first mechanical reader.** Records WP-53's three measured departures from the 22-line AG-1
+  sketch, and that the LP-1 spec's own "normative contract" regex extracts **zero of 353 `WHAT` fields**
+  and 357 `WEAK` where there are 353. LP-1's flow is "show WHAT plus the ASK questions verbatim", so that
+  contract implemented as written yields an interview with no questions, while six of eight field types
+  extract correctly and hide the defect from any spot check.
+
 ### Fixed
 
 - **The procedure-6 sweep the last three bundle-count changes skipped, and a counts marker so the fourth
