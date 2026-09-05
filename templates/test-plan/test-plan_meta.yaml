@@ -22,7 +22,7 @@ tags:
   - risk-based-testing
   - verification
   - quality
-related_templates: [prd, acceptance-criteria, risk-register, future:test-case, future:bug-report]
+related_templates: [prd, acceptance-criteria, risk-register, test-case, bug-report]
 aliases:
   - test plan
   - master test plan

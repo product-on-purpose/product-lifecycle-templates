@@ -741,6 +741,13 @@ def check_refs(name, d):
       on disk, or use the `future:` prefix for one that does not exist yet. The prefix is the
       whole point: it lets a bundle honestly reference a type the library has not built,
       without that reference rotting into a broken claim.
+
+      A `future:` reference whose target now exists also fails, because it says the library
+      has not built something it has. That direction went unchecked until 2026-09-04 and the
+      drift recurred three times: ADR 0022 corrected `future:rfc` and `future:design-doc`,
+      2026-07-30 corrected `future:okrs` and two more, and the check landed alongside nine
+      further stale labels. Per decision procedure 9, a convention that has been tested and
+      failed becomes a check.
     """
     p = os.path.join(d, name + "_meta.yaml")
     text = read(p)
@@ -770,10 +777,14 @@ def check_refs(name, d):
     if m:
         related = yaml_list(m.group(1), text, m.end())
         bad = []
+        stale = []
         for r in related:
             if r.startswith("future:"):
-                if not r[len("future:"):].strip():
+                target = r[len("future:"):].strip()
+                if not target:
                     bad.append(r + " (empty future: reference)")
+                elif target in local:
+                    stale.append(r)
                 continue
             if r not in local:
                 bad.append(r)
@@ -782,7 +793,12 @@ def check_refs(name, d):
                 "related_templates does not resolve: " + ", ".join(bad)
                 + " (name a bundle that exists, or prefix future: if it does not yet)"
             )
-        else:
+        if stale:
+            problems.append(
+                "related_templates marks a built bundle as future: " + ", ".join(stale)
+                + " (drop the future: prefix; the library has built these)"
+            )
+        if not bad and not stale:
             detail.append("related_templates " + str(len(related)) + " resolved")
 
     if problems:

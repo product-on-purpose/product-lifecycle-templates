@@ -21,7 +21,7 @@ tags:
   - planning
   - delivery
   - forecast
-related_templates: [product-backlog, user-stories, future:definition-of-done]
+related_templates: [product-backlog, user-stories, definition-of-done]
 aliases:
   - iteration backlog
   - sprint plan

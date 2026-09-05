@@ -54,6 +54,15 @@ jobs:
       - name: Check K self-test
         run: python tools/test-check-k.py
 
+      # Check I's `future:` branch had a live subject and still went unchecked in one
+      # direction: a `future:` reference whose target the library has since built. That drift
+      # recurred three times before this test existed (ADR 0022, 2026-07-30, and the nine
+      # labels swept alongside this file), because each fix corrected the labels and nothing
+      # re-read them. The load-bearing assertions are the adversarial ones: `future:` on a
+      # built bundle must FAIL, and the two failure kinds must not blur into one message.
+      - name: Check I self-test
+        run: python tools/test-check-i.py
+
       # The format axis (ADR 0028). Same argument as the check K self-test: most of this logic
       # has no live subject, since one bundle ships a second format and none ships two. The
       # load-bearing assertions are that two formats with unrelated outlines PASS (nesting is

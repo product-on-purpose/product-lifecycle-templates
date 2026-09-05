@@ -22,7 +22,7 @@ tags:
   - register
   - assurance
   - pmbok
-related_templates: [future:raid-log, future:kpi-dashboard, future:status-report]
+related_templates: [raid-log, kpi-dashboard, status-report]
 aliases:
   - risk register
   - risk log

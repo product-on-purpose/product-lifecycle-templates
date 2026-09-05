@@ -261,6 +261,10 @@ the maintainer read at the family boundary (batch review), then merge and pull. 
 
 1. **The link gate only scans git-tracked files.** A pre-commit run over an untracked new bundle is a
    FALSE GREEN. `git add templates/<type>` first. Cross-bundle links need `../<other-type>/`.
+1a. **Building type X breaks every `future:X` elsewhere in the library.** Since 2026-09-04 check I fails a
+   `future:` reference whose target is built, so the PR that lands a bundle must also sweep the sibling
+   metas that were waiting on it: `grep -rn "future:<type>" templates/*/*_meta.yaml` and drop the prefix.
+   The check exists because three earlier sweeps were done by hand and none of them held.
 2. **check I drops the first entry of a *block-style* `related_templates` list** (a regex `\s*` swallows
    the newline). Use an **inline** list `[a, b, c]` so every entry is validated.
 3. **Citation numbering: get it right on the first write.** No `12b`-style non-integer ids (the gate's

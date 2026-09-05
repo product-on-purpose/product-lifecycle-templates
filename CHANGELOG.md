@@ -14,6 +14,28 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Check I now fails a `future:` reference whose target the library has built, and nine stale labels
+  were swept.** `related_templates` may name a bundle that exists or prefix `future:` for one that does
+  not. Only the second half was ever checked: `future:X` passed forever, including after X shipped. Nine
+  of the thirteen `future:` labels pointed at built bundles (`sprint-backlog`, `product-roadmap`,
+  `kpi-dashboard`, `status-report`, `raid-log`, `definition-of-done`, `incident-postmortem`, `bug-report`,
+  `test-case`), and `user-persona` carried `future:prototype-brief`, a type
+  [ADR 0035](docs/internal/decisions/0035-prototype-brief-fails-the-admission-test.md) refused.
+
+  **The check is the deliverable; the sweep is what it caught.** This is the third correction of the same
+  defect. [ADR 0022](docs/internal/decisions/0022-adopt-decision-docs-family-contract.md) fixed
+  `future:rfc` and `future:design-doc` and named the mechanism in its own text ("the `future:` prefix let
+  [them] pass the gate silently"); 2026-07-30 fixed three more; neither built the check. Per
+  [decision procedure 9](docs/internal/decision-procedures.md), a convention tested and failed becomes a
+  check. `tools/test-check-i.py` runs in CI with 42 assertions, the load-bearing ones adversarial.
+
+  **What this changes for the next build:** landing bundle X now breaks every `future:X` elsewhere, so a
+  bundle PR must sweep the sibling metas that were waiting on it. Recorded as gotcha 1a in
+  [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md).
+
+  Four `future:` references survive, all genuine: `future:spike-report`, `future:solution-brief` (twice),
+  and `future:launch-checklist`.
+
 - **[ADR 0043](docs/internal/decisions/0043-the-usage-gate-becomes-advisory.md): the usage gate becomes
   advisory, and the honesty gate does not move.** No usage signal gates any build. ADR 0041's forty-bundle
   falsifier is downgraded to a **soft reminder** that re-opens nothing, the roadmap's risk-table entry is
