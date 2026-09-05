@@ -103,6 +103,26 @@ jobs:
       - name: Section parser self-test
         run: python tools/test-gen-sections.py
 
+      # The fill tools (roadmap WP-50). Neither has a live subject in this repository: no filled
+      # document is committed here, so running the gate cannot exercise either one. Both therefore
+      # carry fixture-based self-tests, on the same reasoning as the check K and check I tests.
+      #
+      # strip-template's load-bearing case is the REFUSAL. Its reason to exist is preventing a
+      # document that looks finished and is not, so a placeholder scan that silently passes makes
+      # the tool worse than nothing. The subtle case is that guidance comments themselves name
+      # placeholders ("Replace each {{placeholder}}"), so a scan of the raw file refuses every
+      # document forever; the scan runs on the stripped body and the test asserts that ordering.
+      - name: Strip-template self-test
+        run: python tools/test-strip-template.py
+
+      # validate-fill's load-bearing case is the slug contract: it looks a section up by the id
+      # gen-sections.py wrote, so two functions in two files must agree forever. If they drift, the
+      # validator reports sections missing that are present, or reports a document complete because
+      # it matched nothing. The test runs the real tree through both, which is the only way that
+      # failure is visible.
+      - name: Validate-fill self-test
+        run: python tools/test-validate-fill.py
+
       # The atlas built flags. atlas/catalog-data.json and the inline copy in atlas/atlas.html
       # both carry a per-type `built` boolean, which drifted (advertised 4 built while 12 existed).
       # This regenerates both from the bundles on disk and fails on drift (same discipline as the
