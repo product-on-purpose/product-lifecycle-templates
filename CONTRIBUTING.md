@@ -65,8 +65,26 @@ a document, not a plausible case for why one should exist.
 
 ## Running the gate locally
 
-The bundle gate is a Python script with no external dependency beyond `pyyaml` and `jsonschema`,
-both of which it skips gracefully if absent:
+**Run everything CI runs, in one command:**
+
+```bash
+python tools/run-gate.py            # every runnable step, G2 included
+python tools/run-gate.py --offline  # skip the steps needing network, and say which
+python tools/run-gate.py --list     # show the steps and their disposition, run nothing
+```
+
+It reads the step list from [`.github/workflows/ci.yml`](.github/workflows/ci.yml) rather than from a
+directory listing, so a step added to CI is a step it runs, whatever language it is written in. It
+prints every step it skips with the reason, and its summary counts ran and skipped separately: there
+is no output line saying everything passed, because the defect it exists to prevent is a confident
+summary over a partial run.
+
+**Why it exists.** Before 2026-09-05 the way to check this repository was to loop over
+`tools/check-*.py` and `tools/test-*.py`. That is 21 scripts; CI runs 30 steps. The difference was
+invisible until it cost a red build on the em-dash check, which is an inline heredoc in the workflow
+rather than a script under `tools/`, so no glob over that directory could ever have found it.
+
+The individual scripts still exist and are worth running one at a time while you iterate:
 
 ```bash
 python tools/check-bundles.py          # the structural bundle gate (files, dashes, nesting,
@@ -86,9 +104,10 @@ The full list runs in CI on every push and every pull request
 runtime setup and dependency installation, and `main` is branch-protected on the result: a change that
 fails any step cannot merge. The last step is the only one whose rules live outside this repository: it
 runs the Advanced Skill Library Standard's conformance gate from a pinned checkout of
-`agent-skills-toolkit`, so you cannot reproduce it with a command from the list above.
-Run the checks above before opening a PR; they take seconds and catch nearly everything CI would
-catch.
+`agent-skills-toolkit`. The individual commands above cannot reproduce it; `run-gate.py` can, because
+it runs the workflow's own step, and skips it only when you pass `--offline`.
+Run `python tools/run-gate.py` before opening a PR. The scripted steps take seconds; G2 clones a
+pinned repository and installs its dependencies, so budget about a minute for a full run.
 
 **What the gate proves, and what it does not.** The gate proves structure: files present, no em-dash
 or en-dash, variants nest correctly, citations resolve in both directions, metadata is well-formed.
