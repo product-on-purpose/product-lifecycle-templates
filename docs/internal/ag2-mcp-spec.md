@@ -150,7 +150,19 @@ Neither is large. Both are prerequisites, not parallel work.
 - [x] Every response naming a bundle uses the field names `manifest.json` uses. A response carrying `bundle_id` or `one_line_summary` fails.
 - [x] `get_template` addresses all **58** variants, including the 11 that exist only under a non-default format.
 - [x] `validate_fill` and `stamp_and_strip` agree exactly with the Python tools they wrap, asserted by running both over the same fixtures.
-- [x] An agent with only this server configured completes intent to selection to fetch to fill to validation, and the transcript shows it never guessed a token cost.
+- [~] Intent to selection to fetch to fill to validation completes **over stdio**, and the price quoted at
+      discovery equals the price charged at retrieval. Verified 2026-09-06 by driving the server with the
+      SDK's own `stdio_client`: five tools listed, "acceptance criteria for a story" selected
+      `acceptance-criteria`, the fetched variant's 1,000 tokens matched the figure `search_templates` had
+      already reported, a non-default format with a two-element `parts` list round-tripped, and
+      `validate_fill` passed this release's own note.
+      **Not met as originally written, and the tick is deliberately partial.** The criterion says *an
+      agent* completes the flow and *the transcript* shows it never guessed. No agent has done this. What
+      is proven is that the mechanism works and cannot make the agent guess, which is a weaker claim than
+      the one this line makes, and the line stays honest by saying so.
+      One thing observed and not fixed: responses arrive as JSON text in `content[0].text` rather than as
+      `structuredContent`, because the tool functions carry no return annotation for FastMCP to build an
+      output schema from.
 - [x] The server reports the library version it was built from, read from `library.json`.
 
 The dropped criterion is the sketch's "default payload under 2.6k for every bundle". It is not achievable
