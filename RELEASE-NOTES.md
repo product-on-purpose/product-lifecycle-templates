@@ -8,6 +8,53 @@ Newest first.
 
 ---
 
+## v0.6.0
+
+**Agents can now find a template without being told where any file lives.**
+
+This library has always been readable by an agent - `manifest.json` says which bundle, `sections.json`
+says what is inside it - but only if the agent knew to go looking. `v0.6.0` adds an MCP server with five
+tools: search the catalog in your own words, fetch any of the 58 template variants, fetch the grading
+rubric, validate a filled document, and strip and stamp it when it is done. It installs with the plugin,
+because that route already clones the repository and the templates arrive with the server.
+
+[ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md) records
+the decision it was blocked on, and the argument is worth more than the answer. The 2026-07-12 audit
+sketch specified a separate TypeScript npm package with an embed step packaging `templates/**` into the
+artifact. **That embed step is a fifth copy of the content that no `--check` can reach**, and this
+repository's entire architecture is an argument that copies go stale. So it is Python, here, and the two
+tools that already existed are **called** rather than reimplemented. The cost is stated in the record:
+`pm-skills-mcp` and this now serve MCP differently.
+
+**Building it falsified three claims, and the third one was ours.** The catalog's taxonomy axis is `phase`
+XOR `classification` - 17 bundles carry one, 10 the other - so the sketch's phase-only filter would have
+returned plausible results while a third of the library stayed unreachable. Only four of the six declared
+phase values are used by any bundle. And our own refreshed spec set a 500-token budget for search results
+without measuring the field list that same spec prescribes: it costs 1,194. Moving the sizing guidance off
+search, where you have not chosen a bundle yet, brought it to 685.
+
+**The other half of this release is about checks that returned something rather than the right thing.**
+`tools/run-gate.py` runs every step CI runs, derived from the workflow file rather than from a list anyone
+maintains, and prints each step it skipped with a reason - it has no output line saying everything passed,
+because a confident summary over a partial run is the failure it exists to prevent. Both install-time
+descriptions were false: the plugin listing claimed 28 CI checks against 30, and `library.json` claimed 26
+bundles against 27. Neither could be reached by the check that exists for exactly this, because that check
+reads markers in Markdown and JSON cannot carry an HTML comment. It reads both descriptions now, and
+caught both on its first run.
+
+**And the release note you are reading found a bug.** It is the first document ever filled using
+`strip-template.py` and `validate-fill.py` on something that was not a test fixture, and validation failed
+immediately: a template whose H1 is entirely a placeholder - `adr` and `release-notes` both - could never
+be matched, so **two of the twenty-seven bundles produced documents that structurally could not
+validate**. The fixtures had all been built from `prd`, whose headings carry no placeholders. Fixed, and
+the suite now builds and validates a document from every one of the 58 variants rather than merely
+checking that each one resolves.
+
+**Still zero.** No template in this library has been filled by anyone but the author. No agent outside this
+repository has used the server. Nothing about efficacy changed.
+
+---
+
 ## v0.5.0
 
 **A 27th bundle, `epic`, and it is the first one built because the maintainer wanted it rather than

@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [0.6.0] - 2026-09-06
+
 ### Added
 
 - **WP-51 (AG-2, the MCP server): `tools/mcp_server.py`, five tools, served to any agent that installs
@@ -69,6 +73,10 @@ people who want every change, release notes are for people who want to know what
   was verified by execution rather than by reading, and **seven of its claims are false**. Every false
   budget is too small, and each was written before the library had the bundles it now has.
 
+  **Building the server in this same release found two more, and one of this spec's own** - see the
+  WP-51 entry above. The figures in this entry are the SKETCH's payload measured against the tree; the
+  shipped server's are different, because its candidate field list is not the one the sketch prescribed.
+
   **The correction that matters is that the token budget governs discovery, not retrieval.** The sketch
   treats "under 1,200 tokens" as a property of every response. Measured, `search_templates` returns three
   candidates in **368** tokens and eight in 1,154, while a template alone is **998 to 3,348** and template
@@ -98,6 +106,20 @@ people who want every change, release notes are for people who want to know what
   landed, and WP-50 and WP-51 carried no status at all.
 
 ### Fixed
+
+- **`validate-fill.py` could never pass a document filled from `adr` or `release-notes`.** Both declare
+  an H1 that is entirely a placeholder - `{{title}}` and `{{product}} {{version}}` - and the validator
+  matched declared sections by slugging their titles. Filling the document replaces the very text the id
+  was slugged from, so it reported a section missing that was plainly there, and reported the real H1 as
+  extra. **Two of twenty-seven bundles produced documents that structurally could not validate.**
+
+  **It was found by using the tool, not by testing it.** The suite's fixtures were built from `prd`,
+  whose headings carry no placeholders, and its "regression over all 58 variants" only asserted that each
+  variant *resolves to a section list* - a different and much weaker claim than that a document filled
+  from it validates. The first real document ever put through the tool was this release's own note, and
+  it failed immediately. A declared section whose title is a placeholder is now satisfied by a heading at
+  the same level, and the suite builds and validates a document for **every one of the 58 variants**,
+  which fails if the fix is reverted.
 
 - **Both install-time descriptions were false, and neither could be reached by the check that exists for
   exactly this.** `.claude-plugin/plugin.json` claimed **28 CI steps** against 30, and `library.json`
@@ -1627,7 +1649,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.0...v0.3.1
