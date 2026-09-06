@@ -80,7 +80,7 @@ is no output line saying everything passed, because the defect it exists to prev
 summary over a partial run.
 
 **Why it exists.** Before 2026-09-05 the way to check this repository was to loop over
-`tools/check-*.py` and `tools/test-*.py`. That is 21 scripts; CI runs 30 steps. The difference was
+`tools/check-*.py` and `tools/test-*.py`. That is 21 scripts; CI runs 31 steps. The difference was
 invisible until it cost a red build on the em-dash check, which is an inline heredoc in the workflow
 rather than a script under `tools/`, so no glob over that directory could ever have found it.
 
@@ -98,9 +98,9 @@ python tools/check-research-logs.py    # every research log meets the source-rec
 python tools/check-counts.py           # every generated-count marker in a document matches the tree
 ```
 
-<!-- counts: cisteps=30 -->
+<!-- counts: cisteps=31 -->
 The full list runs in CI on every push and every pull request
-([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 30 steps in total, of which four are checkout,
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 31 steps in total, of which four are checkout,
 runtime setup and dependency installation, and `main` is branch-protected on the result: a change that
 fails any step cannot merge. The last step is the only one whose rules live outside this repository: it
 runs the Advanced Skill Library Standard's conformance gate from a pinned checkout of

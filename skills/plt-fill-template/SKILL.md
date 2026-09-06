@@ -168,8 +168,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=30, logsgated=21, sourcesgated=826 -->
-30 CI steps; 21 research logs gated, covering 826 sources.
+<!-- counts: cisteps=31, logsgated=21, sourcesgated=826 -->
+31 CI steps; 21 research logs gated, covering 826 sources.
 
 **Not proved by anything:**
 

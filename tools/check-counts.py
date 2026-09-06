@@ -148,6 +148,40 @@ def live_facts():
     }
 
 
+# The install-time descriptions. These are JSON, so they cannot carry an HTML comment, which is why they
+# sat outside this check for its whole life while being the FIRST prose most users ever read: the plugin
+# description is what Claude Code shows at install time, and `library.json`'s is what the registry reads.
+#
+# Both had gone stale, in different facts, and each had gone stale before - the changelog records
+# `plugin.json` claiming 26 bundles and 25 CI steps once already. A defect that recurs after a convention
+# gets a check rather than another fix, so these are scanned by PATTERN instead of by marker.
+JSON_SURFACES = [".claude-plugin/plugin.json", "library.json"]
+
+# Deliberately narrow. A pattern loose enough to catch every number in a sentence would fire on the
+# 205-type catalog figure, which is not a fact this check computes, and a check that cries wolf gets
+# suppressed rather than fixed.
+JSON_CLAIMS = [
+    (re.compile(r"\b(\d+) (?:researched )?(?:document-template )?bundles\b"), "bundles"),
+    (re.compile(r"\b(\d+) CI steps\b"), "cisteps"),
+]
+
+
+def json_surface_claims():
+    """(path, fact, claimed, snippet) for every number a description states that the tree also knows."""
+    out = []
+    for rel in JSON_SURFACES:
+        path = os.path.join(ROOT, rel)
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as fh:
+            desc = json.load(fh).get("description", "") or ""
+        for pattern, fact in JSON_CLAIMS:
+            for m in pattern.finditer(desc):
+                start = max(0, m.start() - 20)
+                out.append((rel, fact, int(m.group(1)), desc[start:m.end() + 20].strip()))
+    return out
+
+
 def marked_files():
     """Tracked markdown carrying counts markers, as (label, {fact: claimed}) per MARKER found.
 
@@ -227,7 +261,16 @@ def main():
             for p in problems:
                 print("        " + p)
 
-    print("\nself-reported counts: %d document(s) carry a marker" % len(files))
+    json_claims = json_surface_claims()
+    for rel, fact, claimed, snippet in json_claims:
+        if fact in facts and claimed != facts[fact]:
+            bad = True
+            print(RED + "FAIL" + OFF + "  %s (description)" % rel)
+            print("        %s says %d, the tree says %d" % (fact, claimed, facts[fact]))
+            print("        ...%s..." % snippet)
+
+    print("\nself-reported counts: %d document(s) carry a marker; %d number(s) checked across %d "
+          "install-time description(s)" % (len(files), len(json_claims), len(JSON_SURFACES)))
     if frozen:
         print(DIM + "      %d dated snapshot(s) exempt, by directory, and named here so the hole stays"
               % len(frozen) + OFF)
@@ -243,7 +286,8 @@ def main():
         print("        quotes these numbers, and the prose is what a reader believes.")
         return 1
 
-    print(GREEN + "OK" + OFF + "  every marked document agrees with the tree.")
+    print(GREEN + "OK" + OFF + "  every marked document agrees with the tree, and so does every number "
+          "the\n      install-time descriptions state.")
     print(DIM + "      not verified: the prose. This check compares markers, and cannot read the"
           "\n      sentences that quote them. A green run means no number has changed since an"
           "\n      author last confirmed the text, not that the text is correct." + OFF)
