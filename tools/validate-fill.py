@@ -131,11 +131,32 @@ def validate(path):
     # it would put a spurious "extra section" note on every document ever validated. Where a bundle
     # DOES attach guidance to its H1 (adr and release-notes do), level 1 is in the declared set and
     # an unexpected H1 is flagged normally.
+    # A declared title that IS a placeholder cannot be matched by id, because filling the document
+    # replaces the very text the id was slugged from. `adr` declares an H1 of `{{title}}` and
+    # `release-notes` one of `{{product}} {{version}}`, so EVERY document filled from either was
+    # reported as missing a section it plainly had, and its real H1 reported as extra. Found on the
+    # first run against a real document rather than a fixture: the test suite used `prd`, whose
+    # headings carry no placeholders, so the whole suite passed over a validator that could not pass
+    # two of the twenty-seven bundles. Those sections are satisfied by a heading at the same LEVEL.
     declared_levels = {s["level"] for s in declared}
     seen = [(len(m.group(1)), slug(m.group(2))) for m in HEADING_RE.finditer(COMMENT_RE.sub("", body))]
     present = {sid for level, sid in seen}
-    missing = [s for s in declared if s["id"] not in present]
-    extra = {sid for level, sid in seen if level in declared_levels} - {s["id"] for s in declared}
+
+    by_id = [s for s in declared if not PLACEHOLDER_RE.search(s["title"])]
+    by_level = [s for s in declared if PLACEHOLDER_RE.search(s["title"])]
+    claimed = {s["id"] for s in by_id}
+
+    missing = [s for s in by_id if s["id"] not in present]
+    matched_by_level = set()
+    for s in by_level:
+        free = [sid for lvl, sid in seen
+                if lvl == s["level"] and sid not in claimed and sid not in matched_by_level]
+        if free:
+            matched_by_level.add(free[0])
+        else:
+            missing.append(s)
+    extra = ({sid for level, sid in seen if level in declared_levels}
+             - claimed - matched_by_level)
     if missing:
         out.append(("fail", "missing " + str(len(missing)) + " of " + str(len(declared))
                     + " declared section(s): " + ", ".join(s["title"] for s in missing[:6])

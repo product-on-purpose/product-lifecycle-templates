@@ -136,6 +136,46 @@ def main():
     check("all 58 variants resolve to a non-empty declared section list",
           not unresolved, unresolved[:4])
 
+    # Resolving a section list is NOT the same claim as validating a document, and treating them as
+    # one is why this suite passed over a validator that could not pass two of the twenty-seven
+    # bundles. `adr` declares an H1 of `{{title}}` and `release-notes` one of `{{product}}
+    # {{version}}`; filling either replaces the text their id was slugged from, so the id could never
+    # match and every such document was reported as missing a section it had. The fixture used `prd`,
+    # whose headings carry no placeholders, so nothing here ever exercised it.
+    #
+    # So: build a filled document for EVERY variant and require it to validate. A synthetic fill is a
+    # weak document and a strong test - it is exactly the shape a real fill produces.
+    print("\n" + DIM + "2b. A document filled from EVERY variant validates" + OFF)
+    unfillable = []
+    for b in gen.find_bundles(gen.TEMPLATES_DIR):
+        d = os.path.join(gen.TEMPLATES_DIR, b)
+        meta = yaml.safe_load(open(os.path.join(d, b + "_meta.yaml"), encoding="utf-8").read())
+        version = str(meta.get("template_version", "0.1.0"))
+        for fmt, size, fname in gen.variant_files(b, meta):
+            if not os.path.isfile(os.path.join(d, fname)):
+                continue
+            fmt_field = None if fmt == "default" else fmt
+            declared, err = val.find_variant(schema, b, fmt_field, size)
+            if err or not declared:
+                continue
+            head = ['---', 'title: "A Filled Document"', "doc_type: " + b, "size: " + size]
+            if fmt_field:
+                head.append("format: " + fmt_field)
+            head += ["status: draft", "source_template: " + b,
+                     "source_template_version: " + version,
+                     'filled_by: "tester"', "fill_method: manual", "fill_date: 2026-09-06", "---", ""]
+            body = []
+            for s in declared:
+                # Render a placeholder title the way a real fill does: with a value in it.
+                title = val.PLACEHOLDER_RE.sub(lambda m: "Filled " + m.group(1).replace("_", " "),
+                                               s["title"])
+                body.append("\n" + "#" * s["level"] + " " + title + "\n\nSomething.\n")
+            ok, findings = run("\n".join(head) + "".join(body))
+            if not ok:
+                unfillable.append((fname, fails(findings)[:1]))
+    check("a document filled from each of the 58 variants validates",
+          not unfillable, unfillable[:4])
+
     print("\n" + DIM + "3. A good document passes; the tool is not vacuously green" + OFF)
     ok, f = run(GOOD)
     check("a complete document validates", ok, fails(f))
