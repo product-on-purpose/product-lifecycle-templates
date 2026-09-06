@@ -12,6 +12,41 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **[`docs/internal/ag2-mcp-spec.md`](docs/internal/ag2-mcp-spec.md): WP-51's spec, refreshed against the
+  tree, replacing a sketch whose acceptance criteria no implementation could meet.** The 2026-07-12 sketch
+  was verified by execution rather than by reading, and **seven of its claims are false**. Every false
+  budget is too small, and each was written before the library had the bundles it now has.
+
+  **The correction that matters is that the token budget governs discovery, not retrieval.** The sketch
+  treats "under 1,200 tokens" as a property of every response. Measured, `search_templates` returns three
+  candidates in **368** tokens and eight in 1,154, while a template alone is **998 to 3,348** and template
+  plus guide is 1,543 to 6,612. A template *is* the payload, so the honest design is not a smaller cap but
+  a **priced menu**: every discovery response already carries `approx_tokens`, so an agent knows the cost
+  before it pays. The default `parts` therefore becomes `["template"]`, not template plus guide, which was
+  the single largest source of the sketch's budget error.
+
+  Also corrected: the candidate field names (`id` and `summary`, not `bundle_id` and `one_line_summary`),
+  the phase count (**six** per [ADR 0003](docs/internal/decisions/0003-phase-vocabulary.md), not eight),
+  the removal of `sha256` and `conformance` and `state` (nothing in the tree computes or carries them),
+  and the addition of `format` to `get_template`, without which 11 variants are unaddressable under
+  [ADR 0028](docs/internal/decisions/0028-adopt-a-format-axis.md).
+
+  **Two of the five tools already exist**: `validate_fill` is `tools/validate-fill.py` and
+  `stamp_and_strip` is `tools/strip-template.py`, both shipped in the previous release cycle. The server
+  wraps them rather than reimplementing them. **One prerequisite does not exist**: `alias-index.json`,
+  which the sketch names as an embed input, and which should be a fifth generator.
+
+  The spec is **blocked on one maintainer decision, stated as such**: the stack. The sketch says mirror
+  `pm-skills-mcp` as a separate TypeScript npm package; this repository has no `package.json` and no JS
+  build. Nothing measurable settles it.
+
+### Changed
+
+- **The roadmap's M5 table now reflects what shipped.** WP-53 was still listed as pending work after it
+  landed, and WP-50 and WP-51 carried no status at all.
+
 ### Fixed
 
 - **`acceptance-criteria` was telling every document filled from it the wrong template version, and
