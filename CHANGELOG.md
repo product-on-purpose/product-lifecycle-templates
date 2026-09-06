@@ -14,6 +14,30 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`tools/run-gate.py`, which runs what CI runs and says plainly what it did not.** The way to check
+  this repository before pushing was to loop over `tools/check-*.py` and `tools/test-*.py`. That is 21
+  scripts. **CI runs 30 steps.** The difference was invisible, and "all gates pass" meant "the 21 things
+  I happened to iterate passed", which is a different claim.
+
+  It cost a red build on the repo-wide em-dash check, which is an **inline heredoc in the workflow**
+  rather than a script under `tools/`, so no glob over that directory could ever have found it. The
+  number was available the whole time: `check-counts.py` reads the CI step count from `ci.yml` and
+  reports 30.
+
+  **The step list is derived from `ci.yml` and never from a directory listing**, so a step added to CI
+  is a step this runs, whatever language it is written in. It runs 26 of 30 locally including the G2
+  conformance gate, whose three runner variables are supplied rather than stubbed so the step runs for
+  real instead of running a different command than CI runs.
+
+  **It refuses to claim completeness it does not have.** Every skip is printed with its reason, the
+  summary counts ran and skipped separately, and there is no output line saying everything passed. The
+  four steps it skips by default are the three GitHub actions that provision the runner and the pip
+  install; `--install` and `--offline` move the boundary and the summary follows.
+
+  Verified by injection: an em-dash added to a tracked file makes it exit 1 naming the failing step and
+  quoting its output.
+
+
 - **[`docs/internal/ag2-mcp-spec.md`](docs/internal/ag2-mcp-spec.md): WP-51's spec, refreshed against the
   tree, replacing a sketch whose acceptance criteria no implementation could meet.** The 2026-07-12 sketch
   was verified by execution rather than by reading, and **seven of its claims are false**. Every false
