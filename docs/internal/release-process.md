@@ -34,11 +34,18 @@ review, and it is the entire argument for doing this.
 ### 1. Confirm the tree is releasable
 
 ```
-python tools/check-bundles.py          # every bundle, all 11 checks
-python tools/check-links.py            # every relative link
-python tools/check-counts.py           # every marked document agrees with the tree
-python tools/check-changelog.py        # no post-0.1.0 decision record missing
+python tools/run-gate.py               # every step CI runs, and a named reason for each it skips
 ```
+
+**Run the whole gate, not a list of scripts.** This document named four of them until 2026-09-06, and CI
+runs **30 steps**. Three of those are not files under `tools/` at all - one is an inline heredoc in
+`ci.yml` - so no list anyone maintains by hand, and no glob over a directory, can be complete.
+`run-gate.py` derives its list from `.github/workflows/ci.yml` and prints every step it skipped with the
+reason, which is why it has no output line that says everything passed. Read the skip list before calling
+the tree green.
+
+`check-links.py` skips untracked files. Run the gate **after `git add`**, or a new document's broken links
+pass.
 
 `STATE.md` outranks every other document. If it disagrees with the tree, fix `STATE.md` first, and re-read
 the prose around each marker rather than only the marker.
@@ -96,6 +103,21 @@ Pin the **commit**, bump the registry's own version, add the README row and the 
 and run the registry's validator with a token (`GITHUB_TOKEN=$(gh auth token)`; without one, its sha-on-tag
 check fails on every entry with a rate-limit 403 that looks like a real failure and is not).
 
+### 7. Sweep the forward-looking prose
+
+**Releasing falsifies sentences nobody edited.** Prose written while work was pending - "in an open PR",
+"not yet built", "planned", "will ship" - becomes false the moment it lands, and nothing gates it. This
+happened on the very first merge after it was first written down.
+
+```
+git grep -n -i "open PR\|not yet built\|will be built\|in progress\|planned for"
+```
+
+Read every hit and fix what the release made untrue. This stays a discipline rather than a check, because
+a linter matching these strings would fire on template guidance text, which legitimately uses all of them.
+The nearest thing to a machine version is check I in `check-bundles.py`, which does catch one instance of
+the shape: a `related_templates` entry still labelled `future:` after the bundle was built.
+
 ---
 
 ## What went wrong, on 2026-08-08
@@ -134,6 +156,19 @@ into a governance registry rather than a template.
 
 Each bundle carries its own `template_version` in its meta, moving independently of the library version,
 with its own `_history.md`. A library release does not bump them.
+
+## What a release does not prove
+
+State this plainly at each release rather than letting a tag imply more than it means.
+
+- **Not that any template has been used.** Every filled artifact in this repository is an authored example.
+  Coverage and usage are separate numbers and both belong in `STATE.md`.
+- **Not that citations support their claims.** The gate proves a citation resolves and that a research log
+  carries its contract; whether a source supports the sentence citing it is the four-lens review's job.
+- **Not that a retrieval status is truthful.** `check-research-logs.py` says so in its own output.
+- **Not that the guidance is good.** No check scores a rubric or a guide. That is deliberate: a check that
+  counted rows would be the countable-target failure [`guide-rubric-spec.md`](guide-rubric-spec.md) warns
+  against.
 
 ## What the process does not do
 

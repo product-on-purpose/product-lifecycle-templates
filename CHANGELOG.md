@@ -103,12 +103,16 @@ people who want every change, release notes are for people who want to know what
   exactly 0.00 that is ambiguous between "the template does not help" and "the scenarios were too easy".
   The honest position is narrower than "measured" and better than "unmeasured".
 
-- **The release process was missing the step that broke `v0.5.0`'s changelog footer.**
-  `docs/internal/release-process.md` is what six documents cross-reference, and it never mentioned
-  updating the CHANGELOG compare links. `docs/internal/releasing.md` did carry that step, and nothing in
-  the tree links to it. The step is folded into the canonical document at section 3, with the failure it
-  caused named; the orphan is **marked as superseded rather than deleted**, because retiring it is the
-  maintainer's call, not an agent's.
+- **`docs/internal/releasing.md` is retired, and three things it carried alone were folded in first.**
+  Two release documents existed. `docs/internal/release-process.md` is the one six documents
+  cross-reference; nothing in the tree linked to `releasing.md`, and it held three passages the canonical
+  document did not: the CHANGELOG compare-link step, whose absence is why `v0.5.0` shipped a footer still
+  pointing at `v0.4.0`; the post-release sweep for forward-looking prose, which is the discipline behind
+  the stale `future:` labels this same release fixed; and **what a release does not prove**, four honesty
+  bullets distinct from the procedural "what the process does not do" that sat beside them. All three now
+  live in `release-process.md` (sections 3, 7, and a new section), and step 1 was corrected at the same
+  time: it named four gate scripts where CI runs thirty, and now calls `run-gate.py`. **Deleting a
+  document is only safe after reading what it alone said.**
 
 ### Added
 
