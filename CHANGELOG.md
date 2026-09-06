@@ -14,18 +14,44 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **WP-51 (AG-2, the MCP server): `tools/mcp_server.py`, five tools, served to any agent that installs
+  the plugin.** `search_templates` ranks the catalog by intent, `get_template` fetches any of the 58
+  variants, `get_grading_pack` returns the guide sections a grader needs, and `validate_fill` and
+  `stamp_and_strip` **call** the two existing Python tools rather than reimplementing them, so agreement
+  with the CLI is true by construction. Declared through a plugin-root `.mcp.json`; 44 assertions in
+  `tools/test-mcp-server.py` run as CI step 29, and all five injected defects were caught before it
+  shipped.
+
+  **The stack was the open decision and it is [ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md): Python here, not the sketched TypeScript npm package.**
+  The recommended install route already clones this repository, so there is nothing to embed - and an
+  embedded copy of `templates/**` would be a fifth artifact that can drift, which is the defect class the
+  whole gate exists to catch. The cost is named rather than minimised: two sibling repositories now serve
+  MCP differently.
+
+  **Building it falsified three more claims, and one of them was ours.** The taxonomy axis is `phase`
+  XOR `classification` - 17 bundles carry one, 10 the other, none both - so the sketch's `phase` filter
+  would have returned plausible results while **10 of 27 bundles were unreachable**. Only four of ADR
+  0003's six phase values are used by any built bundle, so a teachable error listing six sends an agent
+  hunting for bundles that do not exist. And **the 500-token discovery budget was set by our own
+  refreshed spec without measuring the field list that spec prescribes**: three candidates cost 1,194.
+  `sizing_guidance` averages 632 characters, is prose you read *after* choosing a bundle, and moved to
+  `get_template`; the measured worst case is now 685.
+
+  **Not validated:** no agent outside this repository has used it, and no assertion scores its ranking.
+  The suite says so in its own output.
+
 - **`tools/run-gate.py`, which runs what CI runs and says plainly what it did not.** The way to check
   this repository before pushing was to loop over `tools/check-*.py` and `tools/test-*.py`. That is 21
-  scripts. **CI runs 30 steps.** The difference was invisible, and "all gates pass" meant "the 21 things
+  scripts. **CI runs 31 steps** (30 when this was written). The difference was invisible, and "all gates pass" meant "the 21 things
   I happened to iterate passed", which is a different claim.
 
   It cost a red build on the repo-wide em-dash check, which is an **inline heredoc in the workflow**
   rather than a script under `tools/`, so no glob over that directory could ever have found it. The
   number was available the whole time: `check-counts.py` reads the CI step count from `ci.yml` and
-  reports 30.
+  reports it.
 
   **The step list is derived from `ci.yml` and never from a directory listing**, so a step added to CI
-  is a step this runs, whatever language it is written in. It runs 26 of 30 locally including the G2
+  is a step this runs, whatever language it is written in. It runs 26 of 31 locally including the G2
   conformance gate, whose three runner variables are supplied rather than stubbed so the step runs for
   real instead of running a different command than CI runs.
 
@@ -72,6 +98,22 @@ people who want every change, release notes are for people who want to know what
   landed, and WP-50 and WP-51 carried no status at all.
 
 ### Fixed
+
+- **Both install-time descriptions were false, and neither could be reached by the check that exists for
+  exactly this.** `.claude-plugin/plugin.json` claimed **28 CI steps** against 30, and `library.json`
+  claimed **26 bundles** against 27 and said every bundle ships a full template when 26 of 27 do. These
+  are the first prose most users ever read: one is what Claude Code shows at install, the other is what
+  the registry reads.
+
+  `check-counts.py` never saw them because it reads `<!-- counts: -->` markers in tracked **markdown**,
+  and JSON cannot carry an HTML comment. **This had happened before** - the `v0.4.0` section of this file
+  records `plugin.json` claiming 26 bundles and 25 CI steps - so under decision procedure 9 the recurrence
+  gets a check rather than a third fix. `check-counts.py` now scans both descriptions by pattern. It
+  caught both defects on its first run.
+
+- **The README's gate row said "five self-tests" when there were eight.** No marker governs that phrase,
+  so it survived three step additions. It now says nine, names the other steps it had been eliding, and
+  points at `run-gate.py`.
 
 - **`acceptance-criteria` was telling every document filled from it the wrong template version, and
   nothing checked.** Its 0.1.1 bump on 2026-08-21 updated the meta and the history and left both variant

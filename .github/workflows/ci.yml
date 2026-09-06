@@ -40,7 +40,7 @@ jobs:
       # both here is what makes G and J enforced in CI; locally each SKIPs if its dependency is
       # absent. See decisions 0014 (PyYAML) and 0017 (jsonschema).
       - name: Install gate dependencies
-        run: pip install pyyaml jsonschema
+        run: pip install pyyaml jsonschema mcp
 
       # The bundle gate: eleven structural checks across every bundle.
       - name: Bundle gate
@@ -252,6 +252,15 @@ jobs:
       # and every assertion is mutation-checked against a deliberately broken implementation.
       - name: Research-log generator self-test
         run: python tools/test-gen-research-log.py
+
+      # The MCP server (ADR 0045) wraps validate-fill.py and strip-template.py rather than
+      # reimplementing them, so agreement with the CLI is true by construction. It is asserted anyway,
+      # on the REFUSING path as well as the passing one: a wrapper that swallowed a refusal and reported
+      # success would pass any suite that only ever fed it good documents. The suite also proves every
+      # one of the 58 variants is addressable and that the taxonomy filter reaches all 27 bundles, which
+      # a phase-only filter - the one the AG-2 sketch specified - does not.
+      - name: MCP server self-test
+        run: python tools/test-mcp-server.py
 
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without

@@ -47,6 +47,18 @@ checked fresh in CI) and it is the whole selection surface. Each entry carries:
 | `status` | Maturity. Every bundle in this library is currently `beta`: offered for use, not yet settled. |
 | `tags`, `aliases` | Match these against the job you were asked to do. `aliases` covers what practitioners actually call the type ("decision record" for `adr`, "cost-benefit analysis" for `business-case`). |
 
+### If you have the MCP server, you can skip the file reads
+
+Installed via the plugin, this library also serves an MCP server with five tools: `search_templates`,
+`get_template`, `get_grading_pack`, `validate_fill` and `stamp_and_strip`. They read the same two
+artifacts described here and wrap the same two Python tools, so **the answers are identical** - the server
+is a different door to the same room, not a second source of truth. Everything below still applies if you
+are reading the files directly. See [`installing.md`](docs/how-to/installing.md).
+
+One difference worth knowing: `search_templates` takes an `axis` filter that accepts a **phase or a
+classification** value, because 17 bundles carry a `phase` and the other 10 carry a `classification`.
+Filtering on phase alone silently reaches only 17 of the 27.
+
 ### The second machine artifact: `sections.json`
 
 `manifest.json` answers **which bundle and which size**. It deliberately stops there: embedding the

@@ -149,7 +149,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 27 -->
-<!-- counts: bundles=27, tier1=25, adrs=44 -->
+<!-- counts: bundles=27, tier1=25, adrs=45 -->
 **Twenty-seven bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
@@ -317,7 +317,7 @@ All twenty-seven bundles currently pass. GitHub Actions runs these on every push
 
 ### At a glance
 
-<!-- counts: bundles=27, tier1=25, adrs=44, cisteps=30 -->
+<!-- counts: bundles=27, tier1=25, adrs=45, cisteps=31 -->
 
 |  |  |
 |---|---|
@@ -325,8 +325,9 @@ All twenty-seven bundles currently pass. GitHub Actions runs these on every push
 | **Bundles** | 27, across 9 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs) |
 | **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other two bundles are Tier-2 types built early, `rfc` and `epic` |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
-| **Gate** | 30 CI steps: 11 bundle checks, plus link, manifest / atlas / section-schema freshness, ADR-index, changelog, research-log-contract, self-reported-counts, five self-tests, and the Advanced Skill Library Standard's own conformance gate; `main` branch-protected |
-| **Decision records** | 44 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
+| **Gate** | 31 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
+| **Agent surface** | 2 skills, 2 generated artifacts (`manifest.json`, `sections.json`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 58 template variants addressable |
+| **Decision records** | 45 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
 

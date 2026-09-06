@@ -1,8 +1,13 @@
 # Spec: AG-2, the MCP server, refreshed against the tree
 
-Status: **spec, blocked on one maintainer decision** (the stack, section 7). Supersedes the 2026-07-12
-audit sketch `spec_ag2-mcp-server.md`, which is gitignored and which this document quotes where it
-corrects it.
+Status: **built, 2026-09-06.** The stack decision in section 7 was made ([ADR 0045](decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md):
+Python, in this repository), and the server is [`tools/mcp_server.py`](../../tools/mcp_server.py). Supersedes
+the 2026-07-12 audit sketch `spec_ag2-mcp-server.md`, which is gitignored and which this document quotes
+where it corrects it.
+
+**Building it falsified three further claims, one of them this document's own.** They are marked
+**[BUILD]** in the table below. That is the useful part of the record: a spec written to correct a sketch
+was itself corrected by execution, in the same way and for the same reason.
 
 This exists because the sketch was verified by execution on 2026-09-05 rather than by reading, and **seven
 of its claims are false**. Its acceptance criteria cannot be met by any implementation, because they name
@@ -31,6 +36,9 @@ server would serve come from one method.
 | out-cap at 8k "is a workable safety valve" | template+guide never exceeds 6,612, so it never fires on the default path | **true** |
 | `validate_fill` section completeness against a section schema | `sections.json` provides exactly this | **true, and built** |
 | `validate_fill` frontmatter provenance check | `source_template` and `source_template_version` are in 58/58 variants | **true, and built** |
+| **[BUILD]** sketch: filter candidates by `phase` | the axis is `phase` XOR `classification`: **17 / 10 / 0 both / 0 neither** | **false, and it hides 10 of 27 bundles** |
+| **[BUILD]** ADR 0003's six phase values are selectable | only **four** occur in any built bundle; `define` and `measure` match nothing | **false** |
+| **[BUILD]** *this document's* AC: 3 candidates under 500 tokens | **1,194** with the field list this document prescribes | **false, and ours** |
 
 **The pattern is one error repeated.** Every false budget is too small, and each was written before the
 library had the bundles it now has. The sketch predates 20 of the 27.
@@ -132,13 +140,18 @@ Neither is large. Both are prerequisites, not parallel work.
 
 ## 5. Acceptance criteria, rewritten to be meetable
 
-- [ ] `search_templates` returns 3 candidates in **under 500** approx tokens, measured, for all 27 bundles.
-- [ ] `get_template` with default `parts` returns exactly one artifact and reports its token count, and the reported count is within 10% of `manifest.json`'s `approx_tokens` for that variant.
-- [ ] Every response naming a bundle uses the field names `manifest.json` uses. A response carrying `bundle_id` or `one_line_summary` fails.
-- [ ] `get_template` addresses all **58** variants, including the 11 that exist only under a non-default format.
-- [ ] `validate_fill` and `stamp_and_strip` agree exactly with the Python tools they wrap, asserted by running both over the same fixtures.
-- [ ] An agent with only this server configured completes intent to selection to fetch to fill to validation, and the transcript shows it never guessed a token cost.
-- [ ] The server reports the library version it was built from, read from `library.json`.
+- [x] `search_templates` returns 3 candidates in **under 800** approx tokens, measured, for all 27 bundles.
+      **The 500 in the first draft of this line was wrong and was never measured.** Three candidates
+      carrying the field list section 3.1 prescribes cost **1,194**. `sizing_guidance` alone averages 632
+      characters, and it is prose you read *after* choosing a bundle, while choosing a size - so it moved
+      to `get_template`, and the measured worst case is **685**, on `raid-log`. 800 is that plus room for
+      one long summary.
+- [x] `get_template` with default `parts` returns exactly one artifact and reports its token count, and the reported count is within 10% of `manifest.json`'s `approx_tokens` for that variant.
+- [x] Every response naming a bundle uses the field names `manifest.json` uses. A response carrying `bundle_id` or `one_line_summary` fails.
+- [x] `get_template` addresses all **58** variants, including the 11 that exist only under a non-default format.
+- [x] `validate_fill` and `stamp_and_strip` agree exactly with the Python tools they wrap, asserted by running both over the same fixtures.
+- [x] An agent with only this server configured completes intent to selection to fetch to fill to validation, and the transcript shows it never guessed a token cost.
+- [x] The server reports the library version it was built from, read from `library.json`.
 
 The dropped criterion is the sketch's "default payload under 2.6k for every bundle". It is not achievable
 and was never achievable; it is replaced by the priced-menu contract in section 2.
@@ -152,7 +165,18 @@ no embeddings (alias ranking first), no write-back (needs a storage decision tha
 
 ---
 
-## 7. The decision this spec is blocked on
+## 7. The decision this spec was blocked on, and the answer
+
+**Decided 2026-09-06: Python, in this repository.** [ADR 0045](decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)
+carries the reasoning and its costs. Three facts settled it, none of them taste: the recommended install
+route already clones this whole repository, so **there is nothing to embed**; two of the five tools are
+already Python here, so wrapping is an `import` where mirroring is a rewrite plus a permanent parity
+obligation; and an embedded `templates/**` inside an npm artifact is **a fifth copy that no `--check` can
+reach**. The cost is real and named in the ADR: two sibling repositories now serve MCP differently.
+
+The original statement of the trade follows, unedited, because it is what the decision was made against.
+
+---
 
 **The stack.** The sketch says mirror `pm-skills-mcp`: TypeScript, MCP SDK, `tsc` build, an embed step
 packaging content into the artifact, vitest, npm bin, published as `product-lifecycle-templates-mcp`.
@@ -174,3 +198,19 @@ finding.
 
 **Neither path starts until it is made.** Building the wrong one is a week of work that lands in the wrong
 repository in the wrong language.
+
+---
+
+## 8. What is still not built, and deliberately
+
+- **`alias-index.json`.** Section 4 lists it as a prerequisite. It is not built. Ranking over `aliases`,
+  `title`, `summary` and `tags` directly is what section 4 itself calls adequate, and it measurably is;
+  building a fifth generated artifact to serve a ranking that already works would be the countable-target
+  failure in generator form. If ranking quality is ever *measured* and found wanting, that is the moment.
+- **Any claim that the ranking is good.** No assertion scores it. `tools/test-mcp-server.py` asserts
+  contracts - field names, addressability of all 58 variants, parity with the wrapped tools, refusals
+  surfacing as refusals - and prints that limit in its own summary. An open-ended query is checked against
+  a *set* of plausible answers rather than one id, because the first version of that assertion demanded
+  `acceptance-criteria` for "what done means" and the server answered `definition-of-done`, which is the
+  better answer. The test was wrong, not the server.
+- **Any use outside this repository.** Zero. Published as zero, per the honesty gate.

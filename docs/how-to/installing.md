@@ -38,6 +38,28 @@ refers to resolves.
 Ask your agent to list the available document types. It should read `manifest.json` and name 27 bundles.
 If it can read `manifest.json`, everything else in the library is reachable.
 
+### The MCP server comes with it
+
+This route also brings an MCP server ([`.mcp.json`](../../.mcp.json), served by
+[`tools/mcp_server.py`](../../tools/mcp_server.py)), which gives an agent five tools: search the catalog,
+fetch any of the 58 template variants, fetch a grading pack, validate a filled document, and strip and
+stamp one. Nothing is embedded or duplicated, because this route already put the templates on disk.
+
+It needs **Python 3 and the `mcp` package** in whichever interpreter `.mcp.json` names:
+
+```
+python3 -m pip install mcp
+python3 tools/mcp_server.py --selftest    # reports what it would serve, starts nothing
+```
+
+`.mcp.json` says `python3`. If your machine resolves that to an interpreter without the package - and
+`python`, `python3` and `py` are routinely three different interpreters on one machine - change the
+`command` there. The server names the interpreter it ran under when it cannot find the SDK, so the error
+tells you which one to fix.
+
+The rest of the library does not depend on the server. Skip this and every skill, template and check
+still works.
+
 ---
 
 ## Route 2: `npx skills add`
