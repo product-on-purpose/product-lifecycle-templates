@@ -16,6 +16,10 @@ reference a future session reads to continue.
 > D-C was authorized without waiting on D-A/D-B (it added a gate capability and committed to no taxonomy)
 > and landed first; D-A and D-B were then ratified the same day, which is what unblocked bundle work.
 
+> **Tier-2 specs live in [`tier2-specs.md`](tier2-specs.md), not here** (added 2026-09-11). This file
+> is the Tier-1 floor sheet, that floor is complete, and the build runbook names "the type's spec in
+> `buildout-specs.md`" as required reading - which for a Tier-2 type pointed at nothing.
+
 ## Progress
 <!-- counts: bundles=27, tier1=25, tier1remaining=2, checkformats=82 -->
 
