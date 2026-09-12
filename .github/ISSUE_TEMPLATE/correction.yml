@@ -1,0 +1,53 @@
+name: Correction to a claim, citation, or template
+description: Something in a bundle is wrong, unsupported, or misattributed
+title: "correction: <bundle> <what is wrong>"
+labels: [correction]
+body:
+  - type: input
+    id: catalog_ref
+    attributes:
+      label: Which bundle and file
+      placeholder: e.g. prd, prd_companion.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_text
+    attributes:
+      label: What it currently says
+      description: Quote it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_wrong
+    attributes:
+      label: Why it is wrong
+      description: >-
+        The strongest form is either a source that contradicts it, or the observation that the
+        bundle's own research log does not carry it. Both are valid, and the second is more common than you would
+        expect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say, if you know
+      description: Optional. A correction with no proposed wording is still useful.
+    validations:
+      required: false
+
+  - type: input
+    id: requester_context
+    attributes:
+      label: Who you are
+      description: Attribution. Optional for a correction, because the claim is checkable either way.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        **One thing worth knowing before you file:** the fix rule here is *delete the claim or label it honestly,
+        never hunt for a citation that would justify it*. If a claim is unsupported, saying so **is** the fix.

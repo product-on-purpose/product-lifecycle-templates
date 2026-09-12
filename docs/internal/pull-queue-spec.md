@@ -33,6 +33,15 @@ so no candidate outside the floor can legitimately be built, no matter how well 
 
 ---
 
+> **Amended 2026-09-11: five of the six deliverables are built, and D6 could not be.** D1 (labels), D2
+> (issue forms) and D3 (the queue page) shipped today. D4 (the `state` field) and D5 (the demand-rule ADR,
+> which is ADR 0041) were **already done when this spec was last read**, and section 1 below did not say so.
+> **D6 is refused by D4's own implementation:** it asks for `adr` to be seeded as `state: queued`, and
+> `gen-atlas.py` derives `state` from disk and hard-errors on an override contradicting a built bundle, so
+> writing `queued` on a built type would be a false value in a generated file - the exact defect the field
+> was added to remove. The self-pull example it wanted lives on the queue page instead. **Section 1's status
+> table below dates from 2026-08-14 and is superseded by this note wherever the two disagree.**
+
 ## 1. What already exists, and what does not
 
 Verified against the tree on 2026-08-14, because the roadmap's own M3 table calls this work "not started"

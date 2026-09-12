@@ -1,0 +1,104 @@
+name: Request a new document type
+description: A type the library does not cover
+title: "type: <name>"
+labels: [new-type]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Read this first, because it will probably save you time.**
+
+        A new document type has to pass ADR 0030's admission test: **a named source must publish it as a written
+        document**. Not as a practice, not as a canvas, not as a board, not as a tool. A document.
+
+        That test has rejected real candidates. `wireframe` and `interactive-prototype` were excluded because their
+        artifacts are visual and executable. `prototype-brief` was researched across six dimensions and 29 sources
+        and rejected because prototyping practice is everywhere and a commissioning *document* is nowhere.
+
+  - type: input
+    id: catalog_ref
+    attributes:
+      label: The type, and what it is for
+      description: >-
+        The catalog holds 205 types. Name the one you mean, or write "not in catalog". Free text on
+        purpose: a 205-option dropdown would be hand-maintained YAML that goes stale on every catalog
+        edit with nothing to catch it.
+      placeholder: e.g. spike report, or "not in catalog"
+    validations:
+      required: true
+
+  - type: textarea
+    id: named_source
+    attributes:
+      label: A named source that publishes it as a written document
+      description: >-
+        A standard, a methodology, a book, or a named practitioner's published template. A vendor template
+        counts but is weak evidence on its own.
+    validations:
+      required: true
+
+  - type: textarea
+    id: document_written_today
+    attributes:
+      label: What do you write instead, today?
+      description: >-
+        The document you actually produce right now in place of this one, however badly. If you write
+        nothing, say that.
+      placeholder: >-
+        e.g. "A Slack thread and a Confluence page nobody re-reads", or "nothing, we just decide in
+        standup"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_it_would_carry
+    attributes:
+      label: What it would carry that no existing bundle carries
+      description: >-
+        Overlap with an existing bundle is the usual reason a request does not proceed. See the
+        bundle list in the README for what is built.
+    validations:
+      required: false
+
+  - type: input
+    id: requester_context
+    attributes:
+      label: Who you are, and the context you work in
+      description: Attribution. A pull has to be attributable to someone.
+      placeholder: e.g. "PM at a 40-person fintech, regulated"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: methodology_in_use
+    attributes:
+      label: The methodology actually in use where you work
+      description: The Tier-2 active-practice test consumes this.
+      options:
+        - Scrum
+        - Kanban
+        - SAFe
+        - XP
+        - Shape Up
+        - No named methodology
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How soon this matters to you
+      options:
+        - This quarter
+        - Someday
+        - Just signal, I do not need it
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        How requests are weighed, and why a request is not a queue position:
+        [`docs/reference/pull-queue.md`](https://github.com/product-on-purpose/product-lifecycle-templates/blob/main/docs/reference/pull-queue.md).

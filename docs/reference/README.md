@@ -18,3 +18,4 @@ This folder is one of the four [Diataxis](https://diataxis.fr/) quadrants the
 ## Inventory
 
 - [`choosing-a-template.md`](choosing-a-template.md) - Every shipped bundle listed by the job it does
+- [`pull-queue.md`](pull-queue.md) - How a request for an unbuilt type is weighed, the four states a catalog type can be in, and the live issue views
