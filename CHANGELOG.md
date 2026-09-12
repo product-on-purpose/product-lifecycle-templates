@@ -37,6 +37,24 @@ people who want every change, release notes are for people who want to know what
   evaluations: `docs/releases/v0.6.0.md` does **not** count as the first real usage cycle, because it is
   stamped `filled_by: agent:claude-opus-5` and every participant in that loop is inside the house; and
   distribution submissions wait on judgment rather than on any gate.
+- **Three more Tier-2 specs: the retrospective pair and the test summary report.**
+  `project-milestone-retrospective` and `pi-release-retrospective` are named **by exact catalog id** in the
+  `process-docs` contract as likely future members, so there is no family question; they are specced as
+  **one build job**, because they share almost their whole research base and two fan-outs would pay for the
+  same pages twice. `test-summary-report` carries the strongest inbound demand in the catalog and it is
+  self-inflicted: **four places in the shipped `test-plan` bundle send a reader to a test report this
+  library does not have**, with no `future:` tag recording the promise, which is why no gate ever flagged
+  it. Its admission rests on ISO/IEC/IEEE 29119-3, which defines a "Test Completion Report" - one of the
+  type's catalog aliases verbatim - and **which nobody here has read, because it is paywalled**, as the
+  `test-plan` research log already established. That constraint is written into the spec rather than
+  discovered mid-build. Two things are flagged as maintainer calls rather than assumed: whether `qa-docs`
+  admits a fourth member (ADR 0026 has no fourth-member clause, unlike ADR 0022), and whether all three
+  `process-docs` retrospectives should pair with `iterate-retrospective` when the built sprint bundle
+  currently pairs with nothing.
+- **Two types recorded as un-speccable, so the gap is visible.** `launch-coordination-checklist` is promised
+  by a `future:launch-checklist` tag but straddles two families, and a family assignment is not a
+  spec-writer's call. `solution-brief` is promised **twice** and **has no catalog entry at all**, so it has
+  not passed ADR 0030's admission test and cannot be built.
 - **A Tier-2 spec sheet, and the first entry in it: `spike-report`.** `docs/internal/tier2-specs.md`
   exists because the build runbook has a hole: it names "the type's spec in `buildout-specs.md`" as
   required reading, and that file is the **Tier-1 floor** sheet by its own heading, so the first Tier-2
