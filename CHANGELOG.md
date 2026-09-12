@@ -26,6 +26,24 @@ people who want every change, release notes are for people who want to know what
   later; and the conformance checklist is **explicitly provisional**, because Section 14 has not landed in
   the Standard this repo pins (`v1.10.0` carries sections 1 through 12). The proposal's "1 to 2 days" is
   withdrawn rather than adjusted, against a measured donor of 1,496 lines.
+- **WP-32 (demand capture) is built: the pull queue has labels, issue forms, and a rules page.** Five of the
+  six deliverables in `pull-queue-spec.md`. The three labels (`new-type`, `usage`, `correction`) now exist
+  on the remote, where the repository previously carried only GitHub's nine defaults, so the labels the
+  intake templates had been declaring since 2026-08-07 could not be applied and nothing could be filtered.
+  The three `.md` templates become **issue forms** with every word of their prose preserved in `markdown`
+  blocks and the five fields the demand rule consumes as discrete inputs; `document_written_today` is
+  required, because a request from someone who writes no such document is a preference and a request from
+  someone who writes one badly is a pull. [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md)
+  states the rule and the four catalog states and links three live filtered views, reachable from
+  `README.md`, `CONTRIBUTING.md` and `choosing-a-template.md`. **All three views are empty, and the page
+  publishes that rather than omitting it.**
+  **D6 could not be built as written, which is a finding rather than a gap:** it asked for `adr` to be
+  seeded as `state: queued`, and by the time the `state` field shipped, `gen-atlas.py` derives state from
+  disk and hard-errors on an override contradicting a built bundle - so `queued` on a built type would have
+  been a false value in a generated file, the exact defect the field was added to remove. The self-pull
+  example lives on the queue page instead. Mutation-checked per the spec's own acceptance criterion: moving
+  a bundle directory aside makes `gen-atlas.py --check` exit non-zero, proving the value is derived.
+- **`README.md` said the project was at `v0.5.0`.** `v0.6.0` shipped 2026-09-06.
 - **The `interview` / `batch` / `manual` fill-method vocabulary is defined, five weeks after it started
   being enforced.** `tools/strip-template.py` has gated `--fill-method` against those three values since
   it shipped, and the only description of them anywhere in the repository was the word "how". A value a

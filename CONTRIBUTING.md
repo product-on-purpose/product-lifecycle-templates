@@ -61,6 +61,14 @@ name with no source backing the presentation). A proposal for a new type should 
 thing a bundle's own research pass would have to find: a named source that publishes this exact type as
 a document, not a plausible case for why one should exist.
 
+**Request it instead of building it**, with the **Request a new document type** issue form. Read
+[`docs/reference/pull-queue.md`](docs/reference/pull-queue.md) first, because it tells you something most
+queues hide: **the build order is the maintainer's own preference and need**
+([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)). A recorded
+request is kept visible and may be weighed as evidence that a type is wanted; it does not set position,
+and a queued type is not a commitment. That is worth knowing before you spend an hour on a request rather
+than after.
+
 ---
 
 ## Running the gate locally

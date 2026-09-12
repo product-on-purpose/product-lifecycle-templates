@@ -174,7 +174,10 @@ Two ways to check further before concluding that:
    this document, and it is regenerated and freshness-checked by the library's gate, so it
    never drifts from the tree the way hand-written prose can.
 
-If your type genuinely is not built yet, the library has no mechanism today for requesting it
-beyond opening an issue against the repository; there is no in-product request queue.
+If your type genuinely is not built yet, request it with the **Request a new document type** issue form,
+and read [`pull-queue.md`](pull-queue.md) first: it states how a request is weighed, which is honestly
+rather than decisively. **The build order is the maintainer's own preference and need**, requests are
+recorded and visible but do not set rank, and a queued type is not a commitment. Knowing that before you
+write is better than inferring it afterwards from silence.
 
 <p align="right">(<a href="#choosing-a-template">back to top</a>)</p>
