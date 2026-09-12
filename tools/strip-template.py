@@ -26,8 +26,34 @@ in its instance frontmatter (measured 2026-09-05, 58/58). What no template carri
 fill itself. This tool adds three keys, and only these three:
 
     filled_by     who filled it: a person, or an agent identity
-    fill_method   how: interview, batch, or manual
+    fill_method   how: interview, batch, or manual (defined below)
     fill_date     when: ISO 8601, stamped at strip time
+
+THE THREE FILL METHODS, WHICH WERE ENFORCED BEFORE THEY WERE DEFINED.
+`FILL_METHODS` has gated `--fill-method` since this tool shipped, and until 2026-09-11 the only
+description of the three values anywhere in the repository was the word "how" on the line above. A
+value a gate enforces and no document defines is a value every caller guesses at, so two agents
+filling the same way stamp different words and the field stops being comparable. They mean:
+
+    interview   a person answered questions section by section and the answers were written down as
+                they came. The distinguishing feature is a HUMAN IN THE LOOP PER SECTION: somebody
+                was asked, and the document records what they said. This is the path
+                `plt-fill-template` walks by default, and it is the only method whose content is
+                sourced from a person rather than from documents.
+
+    batch       an agent filled the document in one pass from material it already had (a transcript,
+                a ticket, a prior document, a repository). No per-section human input. The content is
+                derived from sources, not elicited. `docs/releases/v0.6.0.md` is the worked example
+                in this repository and carries `fill_method: batch` for exactly this reason.
+
+    manual      a person typed it themselves, without an interview structure and without an agent
+                doing the drafting. The default, because it is the honest answer when nobody can say
+                which of the other two happened.
+
+The test is WHERE THE CONTENT CAME FROM, not who ran the command. An agent that interviews a person
+section by section stamps `interview`, not `batch`; a person who pastes in a document an agent wrote
+stamps `batch`, not `manual`. When two apply, stamp the one that supplied the most content, and when
+that is genuinely unclear stamp `manual` rather than inventing precision.
 
 They are appended after the existing provenance pair rather than inserted at the top, so a diff against
 the template shows the fill as an addition in one place.
