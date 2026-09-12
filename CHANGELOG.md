@@ -26,6 +26,17 @@ people who want every change, release notes are for people who want to know what
   later; and the conformance checklist is **explicitly provisional**, because Section 14 has not landed in
   the Standard this repo pins (`v1.10.0` carries sections 1 through 12). The proposal's "1 to 2 days" is
   withdrawn rather than adjusted, against a measured donor of 1,496 lines.
+- **[ADR 0047](docs/internal/decisions/0047-the-usage-precondition-leaves-the-language-too.md): the usage
+  precondition leaves the language too, and the honesty gate stays.** ADR 0043 removed the usage permission
+  gate on 2026-09-03 and the prose never followed, so `roadmap.md` and `STATE.md` went on calling M3 "the
+  binding constraint" - and on 2026-09-11 a **new** sequencing rule gating the site on WP-31 was written
+  into `site-plan.md` by an agent that had read ADR 0043. **A rule that regrows in a new document was never
+  repealed, only moved.** That language is gone; nothing in this repository waits on a usage signal.
+  **What deliberately did not move:** the honesty gate. All 27 bundles stay `beta`, no bundle is called
+  proven on a green gate, and zero real fills is still published as zero. Also records two maintainer
+  evaluations: `docs/releases/v0.6.0.md` does **not** count as the first real usage cycle, because it is
+  stamped `filled_by: agent:claude-opus-5` and every participant in that loop is inside the house; and
+  distribution submissions wait on judgment rather than on any gate.
 - **A Tier-2 spec sheet, and the first entry in it: `spike-report`.** `docs/internal/tier2-specs.md`
   exists because the build runbook has a hole: it names "the type's spec in `buildout-specs.md`" as
   required reading, and that file is the **Tier-1 floor** sheet by its own heading, so the first Tier-2

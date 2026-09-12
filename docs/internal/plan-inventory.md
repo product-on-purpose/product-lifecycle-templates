@@ -28,7 +28,7 @@
 > both things at once. Only row 7 changed. **Every other fact below still dates from 2026-08-14 and has
 > not been re-verified.**
 
-<!-- counts: bundles=27, adrs=46, cisteps=31 -->
+<!-- counts: bundles=27, adrs=47, cisteps=31 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are

@@ -248,13 +248,15 @@ The guards are a parameterized port (roughly 450 lines, mostly adaptation and th
 
 **Deliberately not given in days.** Every effort number this repository has published in days has been wrong, and the one being replaced here is the current example. Lines of code from a measured donor is a weaker claim that happens to be true.
 
-### 10.1 Sequencing, which is a stated preference and not a gate
+### 10.1 Sequencing
 
-**S0 may run as a parallel track. Nothing in S1 or later should start before WP-31 records one real fill.**
+**S0 through S3 run whenever the maintainer wants them to. Nothing sequences them against anything else.**
 
-The binding constraint on this library is that it has **zero real usage**, and the roadmap says M3 "is the milestone this library has deferred at every opportunity". A site is the most attractive available way to defer it again: it is engaging, it is measurable, and it produces visible output without requiring anyone to talk to a user.
+An earlier version of this section, written 2026-09-11, said nothing past S0 should start before WP-31 recorded one real fill. **It was removed the same day by [ADR 0047](decisions/0047-the-usage-precondition-leaves-the-language-too.md)**, and it is worth recording why rather than quietly deleting it: [ADR 0043](decisions/0043-the-usage-gate-becomes-advisory.md) had removed the usage precondition eight days earlier, and this plan reintroduced it anyway, hedged as "a preference, not a prohibition" - which is the exact hedge ADR 0043 said had been read as a ban the first time.
 
-This is a **preference, not a prohibition**. [ADR 0043](decisions/0043-the-usage-gate-becomes-advisory.md) made the usage gate advisory precisely because an earlier version of this wording was read as a ban on building anything. Building the site violates nothing. The plan simply records that the maintainer's own roadmap names a different first thing.
+**A rule that regrows in a new document was never repealed, only moved.** So the rule is gone, and this paragraph is the scar tissue.
+
+What does not change is the honesty rule in section 13, which is a different thing: the site may be built whenever, and **no page it renders may call a bundle proven**.
 
 ---
 
