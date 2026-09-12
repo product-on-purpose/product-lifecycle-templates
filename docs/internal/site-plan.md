@@ -1,0 +1,323 @@
+# Site plan: rendering this library for the web
+
+- **Status:** plan of record. Adopted by [ADR 0046 (the site is Astro plus Starlight under Pattern S)](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md). Nothing is built.
+- **Revised:** 2026-09-11, from the untracked proposal `_local/planning/claude_2026-07-17_astro-site-plan.md` (2026-07-17, Claude Fable 5).
+- **Governing standard:** `SITE-STANDARD.md` in the `agent-plugins` repository, at `standards/domains/astro-sites/`. The 2026-07-17 proposal cites it **zero times** and contradicts it in three places, which is the reason this revision exists.
+- **Reference implementation:** `pm-skills`, named by the standard as the donor for every clause this plan adopts.
+
+> **What changed from the proposal, and why this file is tracked.** The proposal was written before anyone
+> read the family site standard, then amended the same day by a banner that reversed its own section 3
+> without editing the body, so the document argued against itself. It also lived in gitignored `_local/`,
+> where nothing can link to it and nobody but the maintainer can read it. Three sections are rewritten
+> below (3, 4, 8), three are added (12, 13, 14), and the effort estimate is rebuilt from scratch. Sections
+> 1, 2, 5, 6, 7, 10 and 11 of the proposal survive and are carried here as written.
+
+---
+
+## 1. Why a site, and why now
+
+Three existing strategy threads converge on it:
+
+- **VL-2 (authority and top-of-funnel):** the companions are best-in-class explainer content and the atlas is a shareable asset, but today both are only reachable by people who clone a repo. A site is the cheapest reach multiplier the library has.
+- **The wedge (LP-2, grade-my-doc):** report cards need somewhere to point ("here is what a strong PRD looks like and why"). A bundle page is that destination.
+- **The honesty ledger:** [`STATE.md`](../../STATE.md)'s earned-versus-on-credit framing is the most distinctive voice in the repo. Rendered publicly, it becomes positioning no competitor will copy, because no competitor is willing to say it.
+
+The site requires **no new content**. It renders what exists. That is why it can run as a parallel track without violating the roadmap's gates: it multiplies whatever is true at build time, including the honest gaps.
+
+## 2. Goals and non-goals
+
+**Goals**
+
+1. Every bundle gets a first-class page: guide, companion, both template variants, example, history, research log, navigable and beautiful.
+2. The library's machine surfaces are served, not hidden: `manifest.json` at a stable URL, per-bundle raw links, an `llms.txt`.
+3. The atlas is reachable at a URL.
+4. `STATE.md` and the methodology render as public pages.
+5. Zero content duplication: the site reads `templates/`, `manifest.json`, and `atlas/catalog-data.json` in place.
+
+**Non-goals (v1)**
+
+- No backend, no accounts, no forms that submit anywhere (the pull queue stays a GitHub issue form; link to it).
+- No in-browser template filling (that is LP-1's job, as a skill or CLI; the site links to it when it exists).
+- No CMS. Git is the CMS.
+- No analytics. VL-1 is now closed ([ADR 0040 (free and open source, no paid tier)](decisions/0040-free-and-open-source-no-paid-tier.md)) and it closed *against* a funnel, so the original "wait for VL-1" hedge resolves to "no analytics", not "decide later". If ever added, privacy-respecting (Plausible-class), never trackers.
+
+---
+
+## 3. Architecture (rewritten)
+
+**Astro plus Starlight, in a `site/` subdirectory of this repository, static output, deployed to GitHub Pages through the Pages artifact flow.**
+
+The proposal's section 3 recommended **plain Astro, explicitly not Starlight**, and argued the case at length. Its own same-day amendment banner reversed that, and the body was never updated. The reversal is correct and this section now states it as the position rather than contradicting itself.
+
+### 3.1 Why Starlight, not plain Astro
+
+The proposal's argument was that the load-bearing pages (the bundle page, the atlas embed, the STATE ledger) want custom layouts that Starlight would fight. Three things answer it:
+
+- **Clause 14.2 makes it a MUST.** A family docs site MUST be Astro plus Starlight, not plain Astro. This is not a preference the plan gets to re-litigate.
+- **The custom-layout need is real and Starlight accommodates it.** The X-ray remark plugin is stack-agnostic and runs identically under Starlight. Bundle pages that genuinely outgrow the docs layout use Starlight's custom-page escape hatch. Only if the bundle page outgrows *that* does a hybrid become worth revisiting, and nothing in this repository is near that line.
+- **One maintainer, two sites, one stack.** `pm-skills` already runs the Starlight-plus-generator pattern in production. Adopting it means the second site inherits a debugged configuration rather than paying for a second one.
+
+What Starlight supplies for free, which the proposal would have hand-built: the docs layout with an autogenerated sidebar, Pagefind search, `editLink`, `lastUpdated`, dark and light theming through `--sl-*` variables, `customCss`, component overrides, expressive-code highlighting, and automatic `@astrojs/sitemap` registration when `site` is set.
+
+### 3.2 Pattern S, and the build test that settles it
+
+**The Astro app lives in `site/`. Rendered website content lives at `site/src/content/docs/`, read by the stock Starlight `docsLoader()` called with no arguments.** Repo-root `docs/` stays governance and human documentation, and is never built by Astro.
+
+This is clause 14.1, and the standard records a build test behind it: moving the app into `site/` while leaving content at repo-root `docs/` **fails the build**, because bare Starlight component imports (`@astrojs/starlight/components`) and local `.astro` imports resolve only when the `.mdx` lives inside the app. Pattern W, the rejected alternative, is exactly what the proposal's section 4 specified.
+
+```
+product-lifecycle-templates/
+  templates/              <- unchanged, the source of truth
+  manifest.json           <- unchanged
+  sections.json           <- unchanged
+  atlas/                  <- unchanged
+  docs/                   <- unchanged, governance only, NEVER built by Astro
+  scripts/
+    gen-site.mjs          # reads the tree, writes into site/src/content/docs/
+    check-rendered-links.mjs
+    check-route-parity.mjs
+  .nvmrc                  # 24
+  package.json            # engines.node >=22.12.0
+  site/
+    astro.config.mjs      # site + base, set once
+    package.json
+    src/
+      content.config.ts   # docsSchema() extended; validates manifest.json on read
+      styles/
+      content/docs/       # GITIGNORED, rebuilt every build
+```
+
+### 3.3 Where the site lives, and the version set
+
+**In this repository**, because the site's entire value is rendering this repository's truth and a second repo reintroduces the sync drift the whole library exists to refuse. The site versions with the content it renders.
+
+**Pin the family-current resolved set**, which clause 14.8 requires to match family-wide, and which is the set `pm-skills` resolves today:
+
+| Package | Version | Source |
+|---|---|---|
+| `astro` | `^7.2.4` | `pm-skills/site/package.json` |
+| `@astrojs/starlight` | `~0.41.7` | same |
+| `astro-mermaid` | `~2.1.0` | same |
+| `sharp` | `^0.35.3` | same |
+| `engines.node` | `>=22.12.0` | same, and clause 14.8 |
+
+**The standard's own Astro-6 language is dated and the Node floor it derives is not.** `SITE-STANDARD.md` was written 2026-06-02 and says "Astro 6 requires Node `>=22.12.0`". The family has since moved to Astro 7; the `>=22.12.0` floor and the `.nvmrc` pin of `24` still stand and are what clause 14.8 actually requires. Pinning to pm-skills' resolved set is what "match family-wide" means in practice, and clause 14.8 is explicit that the set is pinned by **committed lockfile plus `npm ci`**, not by a caret range that drifts.
+
+### 3.4 The shared preset does not exist yet
+
+Decision A-2 of the standard says each site should consume `@product-on-purpose/astro-docs-preset` as a git-tag dependency rather than re-implementing the Starlight config by hand. **Verified 2026-09-11: that repository does not exist.** `gh repo view product-on-purpose/astro-docs-preset` returns "Could not resolve to a Repository".
+
+So this site hand-rolls its Starlight config now, and migrating to the preset when it ships is a swap. This is the same sanctioned-bridge reasoning clause 14.11 applies to the guards: a MUST deferred to unbuilt shared infrastructure is a MUST unmet for an unbounded time. **Vendoring the preset (copying its files once it exists) remains the rejected anti-pattern**; the migration is a dependency change, not a copy.
+
+---
+
+## 4. Content pipeline (rewritten)
+
+The proposal's section 4 mounted `../templates` from outside the app with `glob({ base: '../templates' })`. **Clause 14.1 prohibits that shape**, and 3.2 above records the build test proving it fails. The pipeline inverts.
+
+### 4.1 The generator
+
+**A dependency-free Node `.mjs` generator at `scripts/gen-site.mjs`** reads `templates/`, `manifest.json`, `sections.json` and `atlas/catalog-data.json`, and **writes** pages into `site/src/content/docs/`. Those pages are **gitignored and rebuilt on every build** (clause 14.4's preferred model: no drift surface, because there is nothing committed to drift).
+
+Clause 14.3 requires reference pages to be generated from source rather than hand-listed, and requires new site generators to be dependency-free Node `.mjs`. It states outright that **new Python site generators MUST NOT be introduced**, which matters here because every other generator in this repository is Python.
+
+Hand-author only the narrative pages: landing, start-here, family and tier introductions. Those live in the repo and inherit the default `editLink`.
+
+### 4.2 Edit links, which are a guard, not a detail
+
+A generated page must never let Starlight auto-derive its `editUrl`. Generated pages live at gitignored paths, so an auto-derived edit link points at a file that does not exist in the repository and 404s. The generator stamps each page's `editUrl` at its **true source**: a bundle role page points at `templates/<type>/<type>_<role>.md`; a page with no single source sets `editUrl: false`. Clause 14.11's `verify-edit-links` guard enforces it.
+
+### 4.3 The zod mirror survives, and its claim narrows
+
+The proposal's best idea was mirroring `tools/meta.schema.json` as a zod schema so every site build independently re-validates the machine layer, including the `phase` XOR `classification` rule from [ADR 0015](decisions/0015-second-taxonomy-axis-phase-xor-classification.md). That survives, moved into `content.config.ts`, **with its claim corrected.**
+
+- **Validating `manifest.json` where the generator READS it is an independent second gate.** The manifest is produced by `tools/gen-manifest.py`; a zod schema in a different language, written from `meta.schema.json`, can disagree with it. That disagreement is the signal, and it is worth having.
+- **Validating the frontmatter the generator WRITES is not.** The generator emits that frontmatter, so a schema checking it is checking the generator against itself. That is the circularity this repository already named in DF-6, and calling it "a free second gate" would be the same error in a new place.
+
+So the XOR rule and the field-shape assertions run on the **read** side. `docsSchema()` is extended only with the fields Starlight needs, and the plan claims nothing more for it than typo-catching.
+
+---
+
+## 5. The bundle page (where the site earns its keep)
+
+Carried from the proposal unchanged. Each bundle page presents its eight files with role tabs, raw links, and two signature features.
+
+### 5.1 The X-ray view
+
+The library's templates carry structured guidance comments that a filled document strips. The X-ray toggle renders them inline: what each section is for, what a good answer looks like, what the common failure is. Nothing else in this space shows a reader *why* a template is shaped the way it is.
+
+The remark plugin is stack-agnostic and runs identically under Starlight. It treats unrecognized comments as plain text, rendering nothing and never crashing, and the build logs unparsed guidance blocks - which doubles as a grammar-drift detector for the library itself.
+
+### 5.2 Lean and full nesting made visible
+
+Every bundle ships two sizes and `lean` is a strict subset of `full`. Render the diff so a reader sees exactly what the full variant adds, rather than reading two documents and inferring it.
+
+## 6. Other pages
+
+Start-here, a library browser driven by the manifest, the atlas at a URL, `STATE.md` as the honesty ledger, the methodology, and a reference group carrying `manifest.json`, `sections.json`, the meta schema and `llms.txt`.
+
+## 7. Search, style, and conventions
+
+Pagefind through Starlight's default (clause 14.9 MUST). Sitemap by setting `site` (14.9 MUST). `public/robots.txt` pointing at the sitemap (SHOULD). **A favicon is a MUST, not polish**: Starlight emits a `<link rel="icon">` on every page unconditionally, so a site with no favicon serves a 404 on every page. `og:image` is owned by the unbuilt shared preset and ships absent rather than hand-rolled, because unlike the favicon it emits no reference and its absence is a clean no-op.
+
+Accent `#5C7CFA` and the branded mermaid theme (lineColor `#5C7CFA`, system-ui, 14px), which the preset will own once it exists.
+
+---
+
+## 8. CI and deployment (rewritten)
+
+The proposal specified the all-in-one `withastro/action@v6`. **Clause 14.6 rejects it**, because every family site runs a Node generator before `astro build` and the all-in-one action does not accommodate that step. It becomes composable steps.
+
+### 8.1 Shape
+
+Two jobs in `.github/workflows/site.yml`, kept separate from the content gate in `ci.yml` so the gate stays the only required check until the site is stable:
+
+- **build** - checkout, `setup-node` reading **`node-version-file: .nvmrc`** (14.8 requires the mechanism, not just a pinned value), `npm ci`, run `gen-site.mjs`, run the guards, `astro build`, then `actions/upload-pages-artifact@v5`.
+- **deploy** - needs `build`, gated to `environment: github-pages`, `actions/deploy-pages@v5`.
+
+Pin one action-version set family-wide: `upload-pages-artifact@v5` and `deploy-pages@v5`, with `checkout` and `setup-node` at the same major as the rest of the family.
+
+### 8.2 The PR build is not optional
+
+Clause 14.6 requires a **PR-triggered, non-deploying build job that runs the same build recipe** as the deploy build, so a green PR predicts a green deploy. An event-gated tail, not a second recipe.
+
+### 8.3 Guards run on the deploy build too
+
+Clause 14.11 is a MUST and is explicit that the guards run on **both** the PR build and the deploy build, so the deployed artifact is what was checked. Implement locally now, as a parameterized port of the pm-skills donor, and swap to the shared reusable workflow when it exists.
+
+**Port the two load-bearing guards first**, which the clause permits for a small site: `check-rendered-links.mjs` (rendered-link check with anchor resolution) and `check-route-parity.mjs` (route-parity against a committed manifest). `verify-edit-links.mjs` follows immediately, because 4.2 makes generated `editUrl` stamping load-bearing here and the clause names exactly that failure. `remark-resolve-links.mjs` is only needed if generated pages carry relative `.md` links; decide when the generator exists.
+
+The clause makes guard robustness itself normative, and these sub-rules are where a naive port breaks:
+
+- Resolve **bare-relative** hrefs (`getting-started/`, not only `./` and `../`) through `new URL(clean, pageUrl)`.
+- Match **both attribute quote styles**.
+- **Decode percent-escaped** path segments before the filesystem lookup.
+- Null-check `process.argv[1]` in the run-as-CLI guard.
+- **Hard-fail an empty-but-existing `dist`**, and fail on the guard's own assertions rather than on a parse error of malformed input. A guard that crashes on a content typo is worse than no guard.
+
+> **This repository has an unusually specific reason to take that last rule seriously.** Its own MCP self-test degraded to a skip when its dependency could not be imported, reported OK, and hid a broken server for the whole of `v0.6.0` (DF-7 in [`STATE.md`](../../STATE.md)). A guard with no failure mode is a report. Every guard ported here must be run against a deliberately broken fixture and observed to fail before it is trusted.
+
+### 8.4 Base path
+
+`site: 'https://product-on-purpose.github.io'` and `base: '/product-lifecycle-templates'`, set **once** in `astro.config.mjs`. Clause 14.7 forbids duplicating the base as a consumed config value anywhere else: pages and components read `import.meta.env.BASE_URL`, the generator emits base-derived links, and any validator needing the base imports it from one module that reads `astro.config`. Two occurrences are sanctioned because they are not consumed config - a test that value-pins the expected base, and the `public/robots.txt` sitemap URL, which Astro copies verbatim and cannot template.
+
+---
+
+## 9. Node, which this repository does not currently have
+
+**This is the scope no version of this plan has mentioned, and it is a prerequisite for every line above.**
+
+Verified 2026-09-11: this repository has **no `package.json`, no `.nvmrc`, no `.node-version`, and no Node anywhere in CI**. Every tool in `tools/` is Python, every gate step is Python, and the one Node dependency in `ci.yml` is `actions/setup-node` provisioning a runtime for the conformance gate, which is a program in another repository. Adding a site adds an entire second toolchain to a Python-only project.
+
+What that costs, concretely:
+
+1. A root `package.json` declaring `engines.node: '>=22.12.0'` (clause 14.8 MUST).
+2. A committed `.nvmrc` pinning `24` (MUST), read in CI through `node-version-file` (MUST - the mechanism, not the value).
+3. A committed lockfile and `npm ci` in CI, because 14.8 pins the version set by lockfile and not by caret range.
+4. A local port of the link and route guards, with their own tests.
+5. `site/src/content/docs/` added to `.gitignore`.
+6. A decision about whether `npm audit` or Dependabot applies, which this repository has never needed.
+
+**One hazard is already handled.** `.gitattributes` pins `*.mjs text eol=lf` (added 2026-08-22, after the eval harness could not start because its `.mjs` files were pure CRLF). New `.mjs` files inherit that. `package.json` and the lockfile are covered by the existing `*.json text eol=lf`.
+
+---
+
+## 10. Phasing and effort
+
+**The proposal's "1 to 2 days" for its first phase is withdrawn, not adjusted.** It assumed plain Astro, no generator, no guards, and a repository that already had Node. All four assumptions are now false, so the number does not describe anything. What follows is derived from the donor rather than estimated.
+
+**Calibration, measured 2026-09-11 against `pm-skills`, the standard's named reference implementation:**
+
+| Donor file | Lines |
+|---|---|
+| `scripts/gen-site.mjs` | 868 |
+| `scripts/check-rendered-links.mjs` | 220 |
+| `scripts/check-route-parity.mjs` | 102 |
+| `scripts/verify-edit-links.mjs` | 128 |
+| `scripts/remark-resolve-links.mjs` | 178 |
+| **Total** | **1,496** |
+
+The guards are a parameterized port (roughly 450 lines, mostly adaptation and their tests). The generator is **not** a port: pm-skills generates from `skills/` and `library.json`, this library generates from an eight-file bundle structure with role tabs, an X-ray view and a lean/full diff, so its generator is at least the donor's size and probably larger. Call the Node surface **1,500 to 2,000 lines written or adapted**, plus a Starlight config, a workflow, and the six items in section 9.
+
+| Phase | Contents | Scope |
+|---|---|---|
+| **S0: it exists** | Node toolchain (section 9), `site/` scaffold, hand-rolled Starlight config, generator emitting bundle role pages and narrative pages, two load-bearing guards ported and fixture-tested, build and deploy workflow, Pages live | The bulk of the 1,500 to 2,000 lines. Multi-week at this project's observed cadence, not multi-day |
+| **S1: signature** | X-ray view, lean/full diff, library browser filters, atlas embed, `llms.txt`, `verify-edit-links` | Meaningful, and the part that differentiates |
+| **S2: reach** | Positioning pass, the wedge page pointing at LP-2, `og:image` once the preset exists | Small |
+| **S3: resource era** | New resource-type collections as the phases plan ships them | Grows with content |
+
+**Deliberately not given in days.** Every effort number this repository has published in days has been wrong, and the one being replaced here is the current example. Lines of code from a measured donor is a weaker claim that happens to be true.
+
+### 10.1 Sequencing, which is a stated preference and not a gate
+
+**S0 may run as a parallel track. Nothing in S1 or later should start before WP-31 records one real fill.**
+
+The binding constraint on this library is that it has **zero real usage**, and the roadmap says M3 "is the milestone this library has deferred at every opportunity". A site is the most attractive available way to defer it again: it is engaging, it is measurable, and it produces visible output without requiring anyone to talk to a user.
+
+This is a **preference, not a prohibition**. [ADR 0043](decisions/0043-the-usage-gate-becomes-advisory.md) made the usage gate advisory precisely because an earlier version of this wording was read as a ban on building anything. Building the site violates nothing. The plan simply records that the maintainer's own roadmap names a different first thing.
+
+---
+
+## 11. Risks
+
+| Risk | Mitigation |
+|---|---|
+| Site drifts from content claims (stale counts, tense violations) | No hand-written counts: everything derives from `manifest.json` at build time. The home page's bundle count is `manifest.bundles.length`, never a literal. This is DF-5's remedy applied to a new surface |
+| Guidance-comment grammar drifts and breaks the X-ray parser | The parser treats unrecognized comments as plain text, renders nothing, never crashes; the build logs unparsed blocks, which doubles as a grammar-drift detector |
+| Pages base-path link breakage | Base consumed from `import.meta.env.BASE_URL` only (14.7); the rendered-link guard catches the rest |
+| Atlas double-maintenance | v1 embeds the existing file unchanged; no fork of atlas logic |
+| A ported guard that cannot fail | Every guard runs against a deliberately broken fixture before it is trusted. See DF-7 |
+| Site work displaces the wedge | Section 10.1 |
+| Node toolchain rots unattended in a Python repo | The lockfile plus `npm ci` pin it; toolchain bumps land in lockstep family-wide per 14.8 |
+
+---
+
+## 12. Conformance checklist
+
+**Read this heading carefully: these clause numbers are provisional.** `SITE-STANDARD.md` section 3 says the clauses "land in `STANDARD.md` as a new Section 14" and that "numbering is provisional per GOVERNANCE.md Section 6 (real numbers are allocated at LAND time on the protected branch)".
+
+**Verified 2026-09-11: Section 14 has not landed.** The family Standard in `agent-skills-toolkit` at the tag this repository pins (`v1.10.0`, which `library.json` tracks as `standard: 0.12`) carries **sections 1 through 12 and no more**. So this site conforms to a **domain standard pending amendment**, and any claim that it conforms to "Standard Section 14" would be false today. When Section 14 lands, the numbers below may change and this table is re-checked against the landed text.
+
+| Clause | Requirement | This plan |
+|---|---|---|
+| 14.1 | Pattern S: content in `site/src/content/docs/`, app in `site/`, repo-root `docs/` never built | Section 3.2. The proposal's Pattern W pipeline is replaced |
+| 14.2 | Astro plus Starlight, `site` set, `astro-mermaid` before `starlight` | Section 3.1. The proposal's plain-Astro recommendation is reversed |
+| 14.3 | Reference pages generated from source; dependency-free Node `.mjs`; no new Python site generators | Section 4.1 |
+| 14.4 | Generated content gitignored and rebuilt, or committed and diffed in CI | Section 4.1, gitignored-and-rebuilt |
+| 14.5 | No committed build output | Section 9 item 5 |
+| 14.6 | Pages artifact flow, composable steps, PR build running the same recipe | Section 8.1, 8.2. The proposal's `withastro/action` is replaced |
+| 14.7 | Base path single source | Section 8.4 |
+| 14.8 | Pinned version set, `engines.node >=22.12.0`, committed `.nvmrc` of 24, CI reads `node-version-file`, lockfile not caret | Sections 3.3, 9 |
+| 14.9 | Pagefind, sitemap, robots.txt, **favicon MUST** | Section 7 |
+| 14.10 | No config sidecars | No `.md` sidecar beside any config or generator. Rationale goes in config comments or here |
+| 14.11 | Link and route guards on PR **and** deploy builds, robustness sub-rules normative | Section 8.3 |
+
+---
+
+## 13. The honesty rules, carried onto a public surface
+
+Everything this library refuses to claim in a README it must also refuse to claim on a rendered page, and a public page is where the temptation is strongest.
+
+1. **No eval number reaches any rendered page.** Two scenarios of one bundle were measured and both runs came back **VOID on discrimination**. Publishing a number from a void instrument is worse than publishing nothing.
+2. **No bundle is called "proven", "verified" or "validated"** on the strength of a green gate. The gate proves structure and research integrity. It does not prove the document helps anyone.
+3. **Bundles stay `beta` until a real usage cycle is recorded.** Not until they look finished.
+4. **Zero real fills is published as zero.** Not omitted, not softened, not rephrased as "early".
+
+### 13.1 One of these four has a failure mode, so build it
+
+Rules 1 to 3 are prose and rely on an author's discipline. **Rule 1 and rule 2 can be mechanical**, and this plan requires them to be: `gen-site.mjs --check` scans its own emitted output and **fails the build** on the strings `proven`, `verified`, `validated` and any percentage adjacent to a bundle id, outside an explicitly allow-listed context (the STATE ledger quotes those words to disown them, and must keep being able to).
+
+That is a fifth guard in the 14.11 style. It exists because this plan has just finished documenting what happens when a rule has no failure mode: DF-7 sat green for the life of a release. A rule that only a careful author enforces is a rule that survives exactly as long as careful authors do.
+
+Rule 3 and rule 4 stay prose, and the plan says so rather than implying all four are enforced.
+
+---
+
+## 14. What this plan asks for
+
+1. **Approve the stack and location.** Recorded as [ADR 0046](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md), which this plan adopts.
+2. **Approve the Node toolchain** (section 9). It is the real decision hiding inside "build a site": a Python-only repository takes on npm, a lockfile, and a second dependency-update surface, permanently.
+3. **Confirm the sequencing preference** in section 10.1, or overrule it. Either is legitimate under ADR 0043.
+4. **Naming and branding.** Does the site present as `product-lifecycle-templates`, or under a product-on-purpose umbrella? Affects the landing page and any future domain. Pure maintainer call, and not needed before S0.
+
+**No longer asked, because it is closed.** The proposal asked for VL-1 (business model) before its S2. VL-1 closed on 2026-08-14 by [ADR 0040](decisions/0040-free-and-open-source-no-paid-tier.md): free and open source, no paid tier. That answers the domain question by default (github.io until someone wants otherwise) and the analytics question in the negative.

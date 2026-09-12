@@ -149,7 +149,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 27 -->
-<!-- counts: bundles=27, tier1=25, adrs=45 -->
+<!-- counts: bundles=27, tier1=25, adrs=46 -->
 **Twenty-seven bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
@@ -317,7 +317,7 @@ All twenty-seven bundles currently pass. GitHub Actions runs these on every push
 
 ### At a glance
 
-<!-- counts: bundles=27, tier1=25, adrs=45, cisteps=31 -->
+<!-- counts: bundles=27, tier1=25, adrs=46, cisteps=31 -->
 
 |  |  |
 |---|---|

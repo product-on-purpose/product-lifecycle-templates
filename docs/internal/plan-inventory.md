@@ -28,7 +28,7 @@
 > both things at once. Only row 7 changed. **Every other fact below still dates from 2026-08-14 and has
 > not been re-verified.**
 
-<!-- counts: bundles=27, adrs=45, cisteps=31 -->
+<!-- counts: bundles=27, adrs=46, cisteps=31 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are
@@ -133,7 +133,7 @@ Ordered by what unblocks the most other work.
 | 4 | **The flagship content review findings** (CR-1 through CR-7) plus the 2026-08-05 agentic-era recommendations A1 and A2 | The only substantive critique of the library's advice quality as opposed to its governance. CR-1 (the missing AI-era debate in the PRD bundle) and A1 (a PRD AI-era section) are the same work, reached independently three weeks apart | Unapplied. Verified: `AI` appears zero times in `templates/prd/prd_companion.md`, and no `Alternatives Considered` section exists anywhere in that bundle. Both sources are untracked. Gated behind ADR 0038 |
 | 5 | **The family-wide rubric-threshold rewording** | Two independent reviewers flagged the guides' predictive threshold sentences as unsourced claims. `STATE.md` records that the family-wide edit "should be scheduled rather than re-litigated per bundle" | Recorded as open by choice. It has since been re-litigated per bundle twice. No spec |
 | 6 | **The sidecar-asset scope decision** | Whether a bundle may ship a non-Markdown sidecar. A prerequisite for any dataset or evaluation bundle. [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) settles what the library templates, not what a bundle may carry. Verified: `sidecar` appears zero times under `docs/` | Proposed in the 2026-08-05 research. Genuinely open |
-| 7 | **The site track** | The presentation layer for 27 bundles that no one can currently browse | Two plans in `_local/planning/`, unratified. **No longer gated:** VL-1 closed 2026-08-14 ([ADR 0040 (free and open source, no paid tier)](decisions/0040-free-and-open-source-no-paid-tier.md)), as row 141 of this same file already recorded |
+| 7 | **The site track** | The presentation layer for 27 bundles that no one can currently browse | **Planned and ratified as of 2026-09-11**, and no longer gated. [`site-plan.md`](site-plan.md) is the tracked plan of record, adopted by [ADR 0046 (Astro plus Starlight under Pattern S)](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md); the two untracked proposals in `_local/planning/` are superseded. VL-1 closed 2026-08-14 ([ADR 0040 (free and open source, no paid tier)](decisions/0040-free-and-open-source-no-paid-tier.md)), as row 141 of this same file already recorded. **Nothing is built** |
 
 ## 6. Open decisions, and what they hold up
 

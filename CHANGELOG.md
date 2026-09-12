@@ -12,6 +12,21 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **A tracked site plan and the decision that adopts it: [ADR 0046](docs/internal/decisions/0046-the-site-is-astro-starlight-under-pattern-s.md).**
+  `docs/internal/site-plan.md` replaces an untracked 2026-07-17 proposal that contradicted itself (a
+  same-day banner reversed its section 3 and the body was never updated) and that **cites the family site
+  standard zero times** while conflicting with it on the framework, the content mount and the deploy shape.
+  The site is Astro plus Starlight under Pattern S, generated into gitignored pages by a dependency-free
+  Node `.mjs` generator, deployed through the Pages artifact flow with composable steps.
+  **Nothing is built.** Three things the revision establishes that no earlier version had: this Python-only
+  repository would take on **npm, a lockfile and a permanent second dependency surface**; the shared
+  `astro-docs-preset` the standard assumes **does not exist**, so the config is hand-rolled and migrated
+  later; and the conformance checklist is **explicitly provisional**, because Section 14 has not landed in
+  the Standard this repo pins (`v1.10.0` carries sections 1 through 12). The proposal's "1 to 2 days" is
+  withdrawn rather than adjusted, against a measured donor of 1,496 lines.
+
 ### Fixed
 
 - **The MCP server's install advice installed a version the server cannot run, and the CI gate that
