@@ -143,7 +143,12 @@ python tools/validate-fill.py SHIPPED.md
 
 **`strip-template.py`** removes every guidance comment, collapses the gaps they leave, and stamps
 `filled_by`, `fill_method` and `fill_date` after the `source_template` pair the template already
-carries. **It exits 2 rather than writing a file if any `{{placeholder}}` is left**, because a document
+carries. **Pick `--fill-method` by where the content came from, not by who ran the command:**
+`interview` if a person was asked section by section and the document records what they said (the
+default path this skill walks), `batch` if an agent filled it in one pass from material it already had,
+`manual` if a person typed it themselves. When two apply, stamp the one that supplied the most content;
+when that is unclear, stamp `manual` rather than inventing precision. The full definitions are in
+`tools/strip-template.py`'s module docstring, beside the list the tool enforces. **It exits 2 rather than writing a file if any `{{placeholder}}` is left**, because a document
 that ships with a placeholder in it looks complete and is not. Pass `--allow-placeholders` for a partial
 save; the comments are the resume state, so keep them until you ship.
 

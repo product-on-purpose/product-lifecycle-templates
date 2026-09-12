@@ -161,8 +161,28 @@ Neither is large. Both are prerequisites, not parallel work.
       is proven is that the mechanism works and cannot make the agent guess, which is a weaker claim than
       the one this line makes, and the line stays honest by saying so.
       One thing observed and not fixed: responses arrive as JSON text in `content[0].text` rather than as
-      `structuredContent`, because the tool functions carry no return annotation for FastMCP to build an
-      output schema from.
+      `structuredContent`. **The cause recorded here on 2026-09-06 was wrong, and the correction is worth
+      more than the original note.** It said the tool functions "carry no return annotation for FastMCP to
+      build an output schema from", which implies that adding one would fix it. Measured against
+      `mcp 1.30.0` on 2026-09-11:
+
+      - `-> dict` produces **no** `outputSchema` and **no** `structuredContent`. The stated fix does nothing.
+      - `-> <TypedDict>`, `-> <BaseModel>` and `-> list[<BaseModel>]` all produce a full `outputSchema` and
+        a populated `structuredContent`. A `TypedDict` is the right shape here: it is stdlib `typing` and
+        adds no dependency the SDK does not already bring.
+      - **And that is exactly why this is still not fixed.** Every one of the five tools returns an error
+        shape structurally different from its success shape (`{"error": ...}` beside `{"file": ..., "ok":
+        ...}`). The SDK **validates the return against the schema**, so annotating them raises
+        `ToolError: 1 validation error ... Field required` on every refusal path. A refusal would stop being
+        a clean, readable result and start being a thrown error.
+
+      That is a regression in the one behaviour `tools/test-mcp-server.py` calls load-bearing: "a wrapper
+      that swallowed a refusal and reported success would pass a test that only ever fed it good
+      documents." So closing this gap is **not** an annotation change. It requires deciding the server's
+      error contract first - a uniform envelope such as `{ok, error?, data?}` across all five tools, which
+      is a breaking change to a shipping wire format. **That decision is the maintainer's and is not
+      made here.** The alternative, a `total=False` TypedDict where every key is optional, yields a schema
+      asserting nothing and is rejected as delivering the label without the value.
 - [x] The server reports the library version it was built from, read from `library.json`.
 
 The dropped criterion is the sketch's "default payload under 2.6k for every bundle". It is not achievable

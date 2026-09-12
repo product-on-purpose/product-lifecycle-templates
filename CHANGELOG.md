@@ -26,6 +26,12 @@ people who want every change, release notes are for people who want to know what
   later; and the conformance checklist is **explicitly provisional**, because Section 14 has not landed in
   the Standard this repo pins (`v1.10.0` carries sections 1 through 12). The proposal's "1 to 2 days" is
   withdrawn rather than adjusted, against a measured donor of 1,496 lines.
+- **The `interview` / `batch` / `manual` fill-method vocabulary is defined, five weeks after it started
+  being enforced.** `tools/strip-template.py` has gated `--fill-method` against those three values since
+  it shipped, and the only description of them anywhere in the repository was the word "how". A value a
+  gate enforces and no document defines is one every caller guesses at, and two agents filling the same
+  way stamp different words. Defined in the tool's own docstring beside the list it enforces, and
+  summarised in `plt-fill-template`. The test is **where the content came from**, not who ran the command.
 
 ### Fixed
 
@@ -49,6 +55,19 @@ people who want every change, release notes are for people who want to know what
   same file recorded as closed on 2026-08-14. `docs/internal/roadmap.md` said the MCP server was gated by
   a CI self-test, and said `catalog-data.json` carries no `state` field when all 205 types have carried
   one since 2026-08-22.
+- **The `structuredContent` diagnosis in `ag2-mcp-spec.md` section 5 was wrong, and the correction is
+  worth more than the original note.** It said the tools "carry no return annotation for FastMCP to build
+  an output schema from", implying an annotation would fix it. Measured against `mcp 1.30.0`: `-> dict`
+  produces **no** schema and **no** `structuredContent`, so the stated fix does nothing; `TypedDict` and
+  Pydantic models both work. **But every tool's error return is shaped differently from its success
+  return, and the SDK validates returns against the schema**, so annotating them raises `ToolError` on
+  every refusal path - turning a clean refusal into a thrown error, which is a regression in the one
+  behaviour the test suite calls load-bearing. Closing the gap needs a decision on the server's error
+  contract (a uniform `{ok, error?, data?}` envelope), which is a breaking change to a shipping wire
+  format and **is not made here**.
+- **`STATE.md`'s WP-25 row said `tools/strip-template.py` does not exist.** True when verified 2026-08-14,
+  false from 2026-09-05 when WP-50 shipped it in #125. The roadmap recorded that and this row did not, so
+  the two disagreed for five weeks.
 - **`user-persona` no longer points readers at a `prototype-brief`.** ADR 0035 refused that type on
   2026-08-05 - the same day this bundle shipped, which is how three references survived - and its finding
   was that *no named source publishes such a brief as a written document*, so the guide's row is deleted
