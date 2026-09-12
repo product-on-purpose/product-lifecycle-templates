@@ -47,3 +47,16 @@ deliver-edge-cases
 foundation-okr-writer
 measure-okr-grader
 foundation-lean-canvas
+
+# Added 2026-09-11 for the `spike-report` bundle specified in docs/internal/tier2-specs.md, which is not
+# built. Verified present at skills/develop-spike-summary/SKILL.md in product-on-purpose/pm-skills on
+# 2026-09-11 (tracked source, not the gitignored .claude/skills/ build copy): v2.2.0, phase develop,
+# 4,027 bytes. Its description draws the boundary this bundle needs - "for the architecture decision the
+# spike informs, use develop-adr instead" - so the pairing is the skill's own claim, not ours.
+#
+# WORTH RECORDING BECAUSE IT WAS NEARLY GOT WRONG IN BOTH DIRECTIONS. A previous session asserted this
+# skill existed without checking. Checking it the first time here used a recursive git-tree query that
+# came back EMPTY, which looked like a clean refutation and was a truncated response; the direct
+# contents call found it immediately. A negative result from one query shape is not a fact. The command
+# in this file's header is the one to trust.
+develop-spike-summary

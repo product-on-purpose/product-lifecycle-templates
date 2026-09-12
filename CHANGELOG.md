@@ -26,6 +26,17 @@ people who want every change, release notes are for people who want to know what
   later; and the conformance checklist is **explicitly provisional**, because Section 14 has not landed in
   the Standard this repo pins (`v1.10.0` carries sections 1 through 12). The proposal's "1 to 2 days" is
   withdrawn rather than adjusted, against a measured donor of 1,496 lines.
+- **A Tier-2 spec sheet, and the first entry in it: `spike-report`.** `docs/internal/tier2-specs.md`
+  exists because the build runbook has a hole: it names "the type's spec in `buildout-specs.md`" as
+  required reading, and that file is the **Tier-1 floor** sheet by its own heading, so the first Tier-2
+  build had no spec and would have been the open-ended design task a spec sheet exists to prevent. The
+  entry settles the per-type judgment (`decision-docs`, `phase: develop`, single-size `[lean]`,
+  `methodology: agile` - the family's first non-generic member, which its contract explicitly anticipated)
+  and records what is **not** settled: ADR 0030's admission test, which only the research pass can close,
+  with `prototype-brief`'s failure as the standing precedent that a catalog entry is necessary and not
+  sufficient. **A spec is not a decision to build**; build order is the maintainer's under ADR 0041.
+- **`develop-spike-summary` added to `tools/known-skills.txt`**, verified present in pm-skills on
+  2026-09-11 per that file's own update procedure.
 - **WP-32 (demand capture) is built: the pull queue has labels, issue forms, and a rules page.** Five of the
   six deliverables in `pull-queue-spec.md`. The three labels (`new-type`, `usage`, `correction`) now exist
   on the remote, where the repository previously carried only GitHub's nine defaults, so the labels the
