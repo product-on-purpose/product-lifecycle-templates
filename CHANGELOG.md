@@ -37,6 +37,24 @@ people who want every change, release notes are for people who want to know what
   evaluations: `docs/releases/v0.6.0.md` does **not** count as the first real usage cycle, because it is
   stamped `filled_by: agent:claude-opus-5` and every participant in that loop is inside the house; and
   distribution submissions wait on judgment rather than on any gate.
+- **The `spike-report` research ran, and its admission verdict is "barely, and it is the maintainer's call".**
+  [`docs/internal/spike-report-admission-evidence.md`](docs/internal/spike-report-admission-evidence.md):
+  **72 unique sources, 61 fetched-and-verified**, six dimensions. **Exactly one named source publishes a
+  spike report as a written document** - Microsoft's Code with Engineering Playbook, which says the
+  deliverable "should be a document" and ships a fill-in template, both verified against the raw markdown in
+  the GitHub repository. **The term's own inventors publish the opposite**: Ward Cunningham's c2 account,
+  crediting Kent Beck, describes the output as throwaway **code**, and Mike Cohn describes an activity.
+  SAFe's readable text never says "document" or "report", and the widely repeated "documented finding"
+  phrasing traces to training-vendor content marketing. **This is not the `prototype-brief` shape** - that
+  failed with zero qualifying sources; this has one, standing against the canon. **No bundle was drafted**,
+  because "whether a type is in scope at all" is a maintainer decision.
+  **The blinded gap dimension earned its place.** It found that an explicit, named non-scope section is the
+  single most consistent element real filled spike reports supply and a naive four-part shape omits - under
+  four different headings across four unrelated projects - while the structure dimension found that **not
+  one blank template asks for it**. Every template omits it; the good filled reports include it anyway. That
+  independently defends the one section the spec was least sure about, written before the research ran and
+  blinded from it. The same research **weakens** the spec's `Time Box` section, which belongs to pre-spike
+  planning artifacts rather than to the report of a completed spike.
 - **Three more Tier-2 specs: the retrospective pair and the test summary report.**
   `project-milestone-retrospective` and `pi-release-retrospective` are named **by exact catalog id** in the
   `process-docs` contract as likely future members, so there is no family question; they are specced as
