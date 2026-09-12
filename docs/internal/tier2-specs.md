@@ -19,7 +19,7 @@ design task" rather than "a spec-driven execution".
 
 | Type | Catalog id | Family | Spec | Built |
 |---|---|---|---|---|
-| `spike-report` | `spike-research-spike-report` | `decision-docs` | **Written 2026-09-11** | No |
+| `spike-report` | `spike-research-spike-report` | `decision-docs` | **Written 2026-09-11**; researched 2026-09-11, [admission evidence](spike-report-admission-evidence.md) | No - **admission is a maintainer decision**, see below |
 | `project-milestone-retrospective` | `project-milestone-retrospective` | `process-docs` | **Written 2026-09-11** | No |
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | No |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | No |
@@ -59,14 +59,24 @@ in tension with anything.
 > concluded a spike report might not be admissible, and overrode a correctly-ranked candidate on that
 > basis. The contract carries the rule; the ADR carries what the rule deliberately leaves open.
 
-**Open, and only research can close it: [ADR 0030](decisions/0030-templating-scope-markdown-documents.md)'s
-admission test.** A candidate type is templatable only when **a named source publishes it as a written
-document**. A catalog entry is necessary and not sufficient - `prototype-brief` had one and failed
-([ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)), closing `discovery-docs` at two
-members. **So this bundle ships only if its own research pass finds that source, and the honest outcome of
-this spec is allowed to be that it does not ship.** The candidate's favourable prior is XP's own
-literature, where a spike is a named, documented practice rather than a folk term, but a prior is not a
-retrieval.
+**The research ran on 2026-09-11 and the answer is "barely, and it is now a maintainer decision."** Full
+evidence: [`spike-report-admission-evidence.md`](spike-report-admission-evidence.md) - 72 unique sources,
+61 fetched-and-verified, six dimensions.
+
+**Exactly one named source publishes a spike report as a written document**: Microsoft's Code with
+Engineering Playbook, which states the deliverable "should be a document" and ships a fill-in template
+(*Goal / Method / Evidence / Conclusions / Next Steps*), both verified against the raw markdown in the
+GitHub repo. **The term's own inventors publish the opposite**: Ward Cunningham's c2 account, crediting
+Kent Beck, describes the output as throwaway **code**, and Mike Cohn describes an activity, not a document.
+SAFe's readable text never uses "document" or "report"; the widely repeated "documented finding" phrasing
+traces to training-vendor content marketing.
+
+**This is not the `prototype-brief` shape.** That failed with *zero* qualifying sources. This has one,
+verified and current, standing against the canon. Whether one is enough is a reading of ADR 0030 - which
+says "a named source", singular - and **a build must not start until the maintainer rules**, because
+"whether a type is in scope at all" is on the stop-for-the-maintainer list. **The prior stated in the
+paragraph this replaces was wrong**: it assumed XP's literature would supply the document, and XP's
+literature is the strongest evidence against.
 
 #### The fourth role, which is what it adds
 
@@ -100,6 +110,21 @@ findings, recommendation) and should be defended or dropped on research evidence
 for it: this library's whole credibility posture is not claiming more than was earned, and a time-boxed
 investigation is the document type where over-claiming is most natural, because the box closes whether or
 not the question was answered.
+
+> **The 2026-09-11 research defends it, and by a route worth reading.** The blinded gap dimension - which
+> never saw this table - found that an explicit, named non-scope section is **the single most consistent
+> element that real filled spike reports supply and the naive four-part shape omits**, present under four
+> different headings across four unrelated projects (`## Out of scope for this spike`, `Non-goals for now`,
+> `## Not covered here`, `Follow-ups (deferred, not in v1)`). Meanwhile the structure dimension found that
+> **not one blank template asks for it.** Every template omits it; the good filled reports include it
+> anyway. Three caveats travel with that finding (selection bias toward structured reports, a corpus
+> showing signs of agent-authored drafting, and three distinct genres that must not be pooled) and they are
+> recorded in [`spike-report-admission-evidence.md`](spike-report-admission-evidence.md).
+>
+> **The same research weakens `Time Box` as its own section.** A dedicated time-box heading appears in
+> *pre-spike planning* artifacts (a Jira ticket field, a spike plan's "Deadline") and is usually **absent**
+> from the report of a completed spike. If this bundle is built, that section must be argued from evidence
+> or folded into Scope.
 
 #### Metadata
 
