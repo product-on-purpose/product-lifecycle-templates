@@ -35,12 +35,22 @@ jobs:
         with:
           node-version: "22"
 
-      # The gate's two dependencies: PyYAML (check G, frontmatter validity) and jsonschema
-      # (check J, meta-schema validation). The other eight checks are pure stdlib. Installing
-      # both here is what makes G and J enforced in CI; locally each SKIPs if its dependency is
-      # absent. See decisions 0014 (PyYAML) and 0017 (jsonschema).
+      # The gate's dependencies: PyYAML (check G, frontmatter validity), jsonschema (check J,
+      # meta-schema validation) and the MCP SDK (the WP-51 server self-test). The remaining
+      # checks are pure stdlib. Installing them here is what makes G, J and the MCP surface
+      # assertion enforced in CI; locally each SKIPs if its dependency is absent. See decisions
+      # 0014 (PyYAML) and 0017 (jsonschema).
+      #
+      # `mcp` IS PINNED BELOW 2, AND THE PIN IS LOAD-BEARING.
+      # The SDK's v2 (2026-07-28) renamed `FastMCP` to `MCPServer`, so `from mcp.server.fastmcp
+      # import FastMCP` raises ImportError against any 2.x. An unpinned `pip install mcp` resolves
+      # to the latest, which means this step installed an SDK the server cannot import from the
+      # day WP-51 shipped. test-mcp-server.py SKIPPED its one SDK-dependent assertion and exited
+      # 0, so CI stayed green while nothing had verified the server could start. Two changes keep
+      # that from recurring: this pin, and `--require-sdk` on the self-test below, which turns
+      # that skip into a failure. Remove the pin only together with a port to v2's `MCPServer`.
       - name: Install gate dependencies
-        run: pip install pyyaml jsonschema mcp
+        run: pip install pyyaml jsonschema "mcp<2"
 
       # The bundle gate: eleven structural checks across every bundle.
       - name: Bundle gate
@@ -259,8 +269,16 @@ jobs:
       # success would pass any suite that only ever fed it good documents. The suite also proves every
       # one of the 58 variants is addressable and that the taxonomy filter reaches all 27 bundles, which
       # a phase-only filter - the one the AG-2 sketch specified - does not.
+      #
+      # `--require-sdk` IS WHY THIS STEP MEANS ANYTHING IN CI.
+      # The suite's SDK-dependent assertion - that the server registers exactly the five specced tools -
+      # skips when `mcp` cannot be imported, which is right on a contributor's machine and wrong here.
+      # Skipping it in CI is how this gate reported OK for its whole life while the pinless install above
+      # handed it an SDK the server cannot import. The flag makes that skip exit non-zero, so the gate
+      # fails rather than shrinks. This is the same defect shape the suite's own docstring names: a check
+      # that returns SOMETHING is not one that returns the RIGHT thing.
       - name: MCP server self-test
-        run: python tools/test-mcp-server.py
+        run: python tools/test-mcp-server.py --require-sdk
 
       # The gate's dash check (check B) only scans inside bundles, but the house
       # rule is repo-wide and the methodology advertises it as CI-enforced. Without

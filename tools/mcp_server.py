@@ -21,12 +21,25 @@ template IS the payload, and the largest is roughly 3,300 tokens. So every disco
 `["template"]` alone; the sketch's template+guide default roughly doubles the median payload for a part
 most callers do not want on the first fetch.
 
-THE SDK.
-`mcp` 1.27.2 exposes `FastMCP` at `mcp.server.fastmcp`. The published v2 documentation describes an
-`MCPServer` rename; importing that name against 1.27.2 raises ImportError. The name here was chosen by
-running the import, not by reading the docs, which is the discipline every other check in this repository
-applies to itself. If the SDK is absent the module still imports and every tool function still works and
-is testable; only `serve` needs it, and it says so rather than failing obscurely.
+THE SDK, AND WHY `pip install mcp` IS THE WRONG COMMAND.
+This module needs `FastMCP` at `mcp.server.fastmcp`, which exists only in the SDK's 1.x line. **The SDK
+released v2 on 2026-07-28 and renamed `FastMCP` to `MCPServer`**, so a plain `pip install mcp` resolves to
+a 2.x, succeeds, exits zero, installs twenty packages, and leaves this server unable to import. The
+install command is therefore:
+
+    python3 -m pip install "mcp<2"
+
+The pin is a deliberate hold, not permanent advice: it stands until this module is ported to v2's
+`MCPServer`, and v1 will stop receiving fixes before that becomes comfortable. Whoever does that port
+removes the pin here, in `.github/workflows/ci.yml`, and in `docs/how-to/installing.md` together.
+
+That this was wrong for the whole of `v0.6.0` is the point worth keeping. The advice was written against
+1.27.2 while 2.0.0 was already the default install, and nothing caught it, because the CI self-test
+SKIPPED its one SDK-dependent assertion and exited 0 rather than failing. `tools/test-mcp-server.py
+--require-sdk` now fails instead. A check that returns SOMETHING is not one that returns the RIGHT thing.
+
+If the SDK is absent the module still imports and every tool function still works and is testable; only
+`serve` needs it, and it says so rather than failing obscurely.
 
 Usage:
     python tools/mcp_server.py            # serve over stdio (what .mcp.json runs)
@@ -434,14 +447,21 @@ def build_server():
     try:
         from mcp.server.fastmcp import FastMCP
     except ImportError as e:      # pragma: no cover - only without the SDK installed
-        # The interpreter is NAMED, because the likeliest cause is not a missing package but the wrong
+        # The interpreter is NAMED, because one likely cause is not a missing package but the wrong
         # Python. `python`, `python3` and `py` routinely resolve to three different interpreters on one
         # machine, and "pip install mcp" is unhelpful advice to someone who already did.
+        #
+        # The VERSION is named for the other likely cause, and it is the one this message got wrong for
+        # the whole of v0.6.0: it used to say `pip install mcp`, which since 2026-07-28 installs a 2.x
+        # that renamed `FastMCP` to `MCPServer`. Following the advice landed the reader back here with
+        # the identical error and twenty packages installed. The pin is what makes the command work.
         raise ImportError(
             "the MCP Python SDK is not importable from %s.\n"
-            "Either install it there (%s -m pip install mcp), or point .mcp.json's `command` at an "
-            "interpreter that has it. `python`, `python3` and `py` are frequently three different "
+            "Either install it there (%s -m pip install \"mcp<2\"), or point .mcp.json's `command` at "
+            "an interpreter that has it. `python`, `python3` and `py` are frequently three different "
             "interpreters on the same machine.\n"
+            "The `<2` is required, not cautious: the SDK's v2 renamed `FastMCP` to `MCPServer`, so a "
+            "plain `pip install mcp` succeeds and still cannot be imported by this module.\n"
             "Every tool function in this module still works and is testable without the SDK; only "
             "serving needs it." % (sys.executable, sys.executable)
         ) from e
@@ -471,7 +491,8 @@ def selftest():
         build_server()
         print("  SDK               present; the server would start")
     except ImportError:
-        print("  SDK               ABSENT (pip install mcp). Tool functions work; serving does not.")
+        print("  SDK               ABSENT (pip install \"mcp<2\" - the pin is required; v2 renamed")
+        print("                    FastMCP to MCPServer). Tool functions work; serving does not.")
     print()
     print("  not checked: that any response is USEFUL. This counts what is addressable, which is a")
     print("  different claim from serving the right thing. tools/test-mcp-server.py checks contracts.")

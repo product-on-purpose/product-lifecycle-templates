@@ -12,7 +12,32 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-_Nothing yet._
+### Fixed
+
+- **The MCP server's install advice installed a version the server cannot run, and the CI gate that
+  should have caught it had never once checked.** The SDK released v2 on 2026-07-28, renaming `FastMCP`
+  to `MCPServer`; `pip install mcp` has resolved to that ever since. The advice in `tools/mcp_server.py`
+  (both the raised `ImportError` and the `--selftest` output) and in `docs/how-to/installing.md` is now
+  `pip install "mcp<2"`, and the pin is documented as a hold until the server is ported to `MCPServer`,
+  not as permanent advice. **Anyone who installed the MCP server during `v0.6.0` and found it would not
+  start should run `python3 -m pip install "mcp<2"`; that is the entire fix.**
+- **`.github/workflows/ci.yml` pinned to `mcp<2`, and `tools/test-mcp-server.py` gained `--require-sdk`.**
+  CI installed `mcp` unpinned, so from the day WP-51 shipped it received a 2.x the server cannot import;
+  the suite's one SDK-dependent assertion skipped, printed `OK 43 assertion(s) passed` and exited 0.
+  `--require-sdk` makes that skip a non-zero exit, so the next SDK rename fails the build instead of
+  shrinking the suite. Verified by running the suite against `mcp 2.2.0` and confirming it now fails.
+  Recorded as **DF-7** in `STATE.md`.
+- **Four documentation claims that had aged into being false.** `STATE.md`'s catalog-state counts read
+  26/177/61 against a real 27/176/58, and the 61 was never accurate at any point; all four numbers are
+  now facts `check-counts.py` recomputes from `atlas/catalog-data.json`, so the next drift fails CI.
+  `docs/internal/plan-inventory.md` row 7 called the site track hard-gated on VL-1, which row 141 of the
+  same file recorded as closed on 2026-08-14. `docs/internal/roadmap.md` said the MCP server was gated by
+  a CI self-test, and said `catalog-data.json` carries no `state` field when all 205 types have carried
+  one since 2026-08-22.
+- **`user-persona` no longer points readers at a `prototype-brief`.** ADR 0035 refused that type on
+  2026-08-05 - the same day this bundle shipped, which is how three references survived - and its finding
+  was that *no named source publishes such a brief as a written document*, so the guide's row is deleted
+  rather than redirected. Prose only; no template changed and no version bumped.
 
 ## [0.6.0] - 2026-09-06
 
