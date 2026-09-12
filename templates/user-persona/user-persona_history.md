@@ -3,6 +3,21 @@
 Change log for the `user-persona` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-09-11 - the third family member that never shipped
+
+**Template unchanged; two prose corrections in the guide and the companion.** Both still described
+`prototype-brief` as a live document this bundle hands off to, which
+[ADR 0035 (prototype-brief fails the admission test)](../../docs/internal/decisions/0035-prototype-brief-fails-the-admission-test.md)
+had already refused on 2026-08-05 - the same day this bundle shipped, which is how the two passages
+survived the release. The guide's "You actually need" table carried a row sending a reader to a
+`prototype-brief`; that row is **deleted** rather than redirected, because ADR 0035's finding is not
+"this library does not ship it" but "no named source publishes it as a written document at all", so
+there is no artifact to redirect to. The companion's Relationships section called the persona "the
+second of three documents" in `discovery-docs`; the family closed at **two**.
+
+No version bump: nothing a user copies changed. The 0.1.0 entry below stands as written, because it
+recorded what was believed on the day of release and a history that edits its own past is not one.
+
 ## 0.1.0 - 2026-08-05
 
 **Initial release.** [`user-persona_research-log.md`](user-persona_research-log.md) records **45 sources**,

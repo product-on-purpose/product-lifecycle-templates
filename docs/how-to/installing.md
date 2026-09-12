@@ -45,12 +45,20 @@ This route also brings an MCP server ([`.mcp.json`](../../.mcp.json), served by
 fetch any of the 58 template variants, fetch a grading pack, validate a filled document, and strip and
 stamp one. Nothing is embedded or duplicated, because this route already put the templates on disk.
 
-It needs **Python 3 and the `mcp` package** in whichever interpreter `.mcp.json` names:
+It needs **Python 3 and the `mcp` package, pinned below version 2**, in whichever interpreter `.mcp.json`
+names:
 
 ```
-python3 -m pip install mcp
+python3 -m pip install "mcp<2"
 python3 tools/mcp_server.py --selftest    # reports what it would serve, starts nothing
 ```
+
+**The `<2` is required, and a plain `pip install mcp` will not work.** The SDK released version 2 on
+2026-07-28 and renamed the class this server imports (`FastMCP` became `MCPServer`), so the unpinned
+command succeeds, installs cleanly, exits zero, and leaves the server unable to start. If you already ran
+it, `python3 -m pip install "mcp<2"` over the top is the whole fix. The selftest is how you confirm: it
+prints `SDK present; the server would start` when the interpreter can actually serve, and says `ABSENT`
+otherwise rather than waiting for your agent to fail.
 
 `.mcp.json` says `python3`. If your machine resolves that to an interpreter without the package - and
 `python`, `python3` and `py` are routinely three different interpreters on one machine - change the

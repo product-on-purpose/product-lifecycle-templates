@@ -20,8 +20,16 @@ ten bundles become unreachable. That is this session's recurring defect shape: a
 returns SOMETHING is not one that returns the RIGHT thing. So the axis assertions below check not that
 filtering works, but that every bundle in the tree is reachable by some filter value.
 
-Pure standard library. The SDK-dependent assertion skips loudly rather than silently if `mcp` is absent.
-Usage: python tools/test-mcp-server.py
+THE SKIP THAT MADE THIS SUITE LOOK HEALTHY FOR ITS WHOLE LIFE.
+The SDK-dependent assertion skips loudly rather than silently when `mcp` is absent, which is right for a
+contributor and was wrong for CI. The SDK's v2 renamed `FastMCP` to `MCPServer` on 2026-07-28; the
+workflow installed `mcp` unpinned, so every CI run since WP-51 shipped on 2026-09-06 got a 2.x this
+server cannot import, skipped this one assertion, printed OK, and exited 0. Nothing had ever verified
+that the server starts. `--require-sdk` makes that skip a failure, and CI passes it.
+
+Pure standard library.
+Usage: python tools/test-mcp-server.py               # skips the SDK assertion if `mcp` is absent
+       python tools/test-mcp-server.py --require-sdk # that skip becomes a failure (what CI runs)
 """
 import importlib.util
 import json
@@ -34,6 +42,18 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(SCRIPT_DIR, ".."))
 
 GREEN, RED, YELLOW, DIM, OFF = "\033[32m", "\033[31m", "\033[33m", "\033[2m", "\033[0m"
+
+# `--require-sdk` turns the one SDK-dependent skip below into a FAILURE. CI passes it; a contributor
+# without the SDK installed does not, and still gets a loud skip rather than a broken checkout.
+#
+# It exists because the skip was load-bearing in the wrong direction. The SDK's v2 (2026-07-28) renamed
+# `FastMCP` to `MCPServer`; CI installed `mcp` unpinned, so from the day WP-51 shipped it got a 2.x the
+# server cannot import, this assertion skipped, and the suite printed OK and exited 0. The gate the
+# roadmap calls a CI self-test had never once verified the server could start. Pinning `mcp<2` in the
+# workflow fixes today's break; this flag is what makes the NEXT rename fail loudly instead of shrinking
+# the suite. Deliberately narrow: it does not promote the environmental skip at the 8k-cap assertion,
+# which is a true "this tree cannot exercise it" and not a missing dependency.
+REQUIRE_SDK = "--require-sdk" in sys.argv
 
 
 def _load(filename, name):
@@ -334,8 +354,14 @@ def main():
               names == {"search_templates", "get_template", "get_grading_pack",
                         "validate_fill", "stamp_and_strip"}, sorted(names))
     except ImportError as e:
-        skip("the server registers exactly the five specced tools",
-             "the MCP SDK is not installed: " + str(e)[:60])
+        label = "the server registers exactly the five specced tools"
+        why = "the MCP SDK is not importable: " + str(e)[:120]
+        if REQUIRE_SDK:
+            check(label, False, why + "  [--require-sdk: a skip here is a failure. If this is an "
+                                      "SDK 2.x rename, either pin `mcp<2` or port build_server() "
+                                      "to `MCPServer`.]")
+        else:
+            skip(label, why)
 
     # ---------------------------------------------------------------- summary
     print()

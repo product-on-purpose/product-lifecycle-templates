@@ -294,10 +294,15 @@ is why it lives in the Evidence Basis section here rather than shipping as a sec
 **What is downstream of it.** Once a persona exists, it is the upstream research artifact a team writes
 agile user roles and user stories from: "Personas offer a great way to capture the users and the customers
 with their needs," feeding the sprint-ready requirement written from the persona's perspective
-[[31]](#ref-31). Within this library's own discovery-docs family, the persona is the second of three
-documents that answer, in order, whether an investment is worth making, who it is being built for, and what
-to build cheaply first to test that; `prototype-brief` is the member that takes over once a persona exists
-and a team is ready to test a specific hypothesis about the person this document describes.
+[[31]](#ref-31). Within this library's own discovery-docs family, the persona is the second of **two**
+documents, answering who a product is being built for after `business-case` has answered whether the
+investment is worth making at all. The family was drafted with a third member, a `prototype-brief` covering
+what to build cheaply to test the persona, and **it does not ship**:
+[ADR 0035](../../docs/internal/decisions/0035-prototype-brief-fails-the-admission-test.md) applied the
+admission test and found that no named source publishes such a brief as a written document - every
+candidate examined turned out to be a neighbouring artifact under another name - so discovery-docs closed
+at two. Nothing in this library takes over from a persona; the downstream artifacts are the agile user
+roles and user stories named above.
 
 **An open debate about whether this document is being replaced rather than merely bounded.** Klement argues
 personas should be replaced outright by a different artifact built on anxieties and purchase-progress events

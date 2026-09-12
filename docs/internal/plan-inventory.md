@@ -19,6 +19,14 @@
 > **Amended again 2026-08-19, when WP-30 shipped.** The `spec_lp2-grade-my-doc.md` row said the wedge was
 > not started and that `skills/` held only `plt-fill-template`. Both were true when written and are now
 > false; section 3's skill count and section 1's tally move with them.
+>
+> **Amended a third time 2026-09-11, one row, one contradiction with this file's own contents.** Row 7
+> called the site track "hard-gated on decision VL-1 (business model)" while **row 141 of this same
+> document recorded VL-1 as closed on 2026-08-14** by
+> [ADR 0040 (free and open source, no paid tier)](decisions/0040-free-and-open-source-no-paid-tier.md),
+> and named row 7 as the thing it unblocks. The gate had been open for four weeks and this file said
+> both things at once. Only row 7 changed. **Every other fact below still dates from 2026-08-14 and has
+> not been re-verified.**
 
 <!-- counts: bundles=27, adrs=45, cisteps=31 -->
 
@@ -125,7 +133,7 @@ Ordered by what unblocks the most other work.
 | 4 | **The flagship content review findings** (CR-1 through CR-7) plus the 2026-08-05 agentic-era recommendations A1 and A2 | The only substantive critique of the library's advice quality as opposed to its governance. CR-1 (the missing AI-era debate in the PRD bundle) and A1 (a PRD AI-era section) are the same work, reached independently three weeks apart | Unapplied. Verified: `AI` appears zero times in `templates/prd/prd_companion.md`, and no `Alternatives Considered` section exists anywhere in that bundle. Both sources are untracked. Gated behind ADR 0038 |
 | 5 | **The family-wide rubric-threshold rewording** | Two independent reviewers flagged the guides' predictive threshold sentences as unsourced claims. `STATE.md` records that the family-wide edit "should be scheduled rather than re-litigated per bundle" | Recorded as open by choice. It has since been re-litigated per bundle twice. No spec |
 | 6 | **The sidecar-asset scope decision** | Whether a bundle may ship a non-Markdown sidecar. A prerequisite for any dataset or evaluation bundle. [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) settles what the library templates, not what a bundle may carry. Verified: `sidecar` appears zero times under `docs/` | Proposed in the 2026-08-05 research. Genuinely open |
-| 7 | **The site track** | The presentation layer for 27 bundles that no one can currently browse | Two plans in `_local/planning/`, unratified, hard-gated on decision VL-1 (business model) |
+| 7 | **The site track** | The presentation layer for 27 bundles that no one can currently browse | Two plans in `_local/planning/`, unratified. **No longer gated:** VL-1 closed 2026-08-14 ([ADR 0040 (free and open source, no paid tier)](decisions/0040-free-and-open-source-no-paid-tier.md)), as row 141 of this same file already recorded |
 
 ## 6. Open decisions, and what they hold up
 

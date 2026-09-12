@@ -18,7 +18,6 @@ users, not on what a team assumes a user wants.
 | an **anti-persona** | you want to name the customer type a team deliberately does not want, built from its own data the other way around. It ships as a separate document once a positive persona exists, not a section inside this one |
 | a **market segment** | you need a strategic, faceless grouping tool for a strategy that already exists. This document is a tactical, humanized single-character tool used early, to see the product through one representative person's eyes before a strategy is set |
 | an **empathy map** | you need a single-session workshop canvas for understanding a stakeholder in one specific context. It is a structurally different artifact from this document, and choosing one does not rule out the other |
-| a **prototype-brief** | the person already exists and a team is ready to test a specific hypothesis about what to build for them. That document takes over once this one has done its job |
 
 **Write nothing at all if** no design or product decision is actually turning on knowing who this person is.
 The document exists to let a team argue from a specific person instead of a vague average; if nobody is going

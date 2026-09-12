@@ -133,10 +133,30 @@ def live_facts():
     tier1_built = sum(1 for t in tier1_types if t.get("built"))
     tier1_total = len(tier1_types)
 
+    # The catalog `state` split, added 2026-09-11 because STATE.md's copy of it had drifted in all three
+    # numbers at once (26/177/61 against a real 27/176/58) and one of them, the 61, was never true at any
+    # point - the catalog read 59 on the day that sentence was written. That is DF-5 exactly, and DF-5's
+    # own remedy is that a fact this repository states about itself should be GENERATED, not retyped.
+    #
+    # `commoncandidates` is deliberately `candidate` AND `rarity: common`, not "unbuilt and common",
+    # which is 60 and includes the two `out-of-scope` types that ADR 0030 refused. The prose says
+    # "candidate types" for the same reason: an ambiguous noun makes a gated number un-checkable, since
+    # a reader cannot tell which population the check is counting.
+    states = [t.get("state") for t in catalog_types]
+    state_built = sum(1 for s in states if s == "built")
+    state_candidate = sum(1 for s in states if s == "candidate")
+    state_oos = sum(1 for s in states if s == "out-of-scope")
+    common_candidates = sum(1 for t in catalog_types
+                            if t.get("state") == "candidate" and t.get("rarity") == "common")
+
     return {
         "bundles": _int_from(bundles_out, r"OK\s+(\d+) bundle"),
         "tier1": tier1_built,
         "tier1remaining": tier1_total - tier1_built,
+        "statebuilt": state_built,
+        "statecandidate": state_candidate,
+        "stateoutofscope": state_oos,
+        "commoncandidates": common_candidates,
         "adrs": len(adrs),
         "adrmax": max(int(f[:4]) for f in adrs) if adrs else 0,
         "cisteps": len(re.findall(r"^\s+-\s+(?:name|uses):", ci, re.M)),
