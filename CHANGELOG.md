@@ -14,6 +14,44 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The `project-milestone-retrospective` bundle: the library's 29th, and `process-docs`' third member.**
+  Sizes `[lean, full]`, because the research found two genuine genres: team-authored retrospectives (short)
+  and accountability-grade reports (long, quantified, tracking previously-identified issues). Full adds a
+  **Previously Identified Issues** section for the second. **Admitted twice over** - the strongest admission
+  any Tier-2 candidate has had - by CALL's written after-action report and PMBOK Sixth Edition's lessons
+  learned register. Note the inversion: the *foundational* Army source, TC 25-20 (1993), is the **weaker**
+  one, because it defines the AAR as a **verbal** discussion and prescribes writing only for the observer's
+  own prep notes.
+  **Two departures from the spec, both forced by research.** Scope and Period now also names **who reads
+  this and what they decide with it**: the gap dimension found that naming the audience and the document's
+  next use changed the *content* of every real filled document read, not just its cover page - the IRS
+  relabelled its findings "opportunities" rather than "lessons" because they fed a pending decision, and a
+  naive what-went-well template has no field for that. And the quantification rule is **"quantify something
+  material", not "quantify in money"**: three government sources lead with currency but the Kubernetes
+  retrospective quantifies a defect rate and a schedule slip, so demanding dollars would overfit to
+  public-money accountability documents.
+  The criticism of this document type is carried at its true width: **anti-deposit-and-forget, not
+  anti-documentation**. Every fetched-and-verified critic still recommends writing something; their fix is
+  always a different *kind* of document. Both peer-reviewed findings survive, including one that publishing
+  minutes can make participants self-censor.
+- **[ADR 0049](docs/internal/decisions/0049-pi-release-retrospective-fails-the-admission-test.md):
+  `pi-release-retrospective` fails the admission test and does not ship.** SAFe's own Inspect and Adapt
+  Facilitator's Guide, read in full and freely available, names the outputs as a predictability score, tacit
+  understanding, and improvement **backlog items** - no document anywhere. The two vendor candidates are a
+  **4-column board** (which ADR 0030 already refused for `wireframe`) and a template scoped to a single-team
+  release. **The structural finding is worth more than the refusal:** *cadence retrospectives feed a
+  backlog; terminal retrospectives produce a document* - the Scrum Guide describes the Sprint
+  Retrospective's output exactly as SAFe describes I&A's. One research pass, two opposite verdicts, and the
+  difference is principled: the discriminator is whether the work is **over**. Evidence:
+  [`pi-release-retrospective-admission-evidence.md`](docs/internal/pi-release-retrospective-admission-evidence.md).
+- **`sprint-retrospective-notes` gains the pairing it had silently declined.** It shipped with
+  `pairs_with: []` while pm-skills' `iterate-retrospective` names "the end of a sprint, project, or
+  milestone" in its own description. Pairing the new bundle while leaving the sibling bare would have made
+  the family internally inconsistent. `incident-postmortem` stays unpaired: that skill is about cadence
+  retrospectives and says nothing about event-triggered failure learning.
+
+### Added
+
 - **The `spike-report` bundle: the library's 28th, and the fourth `decision-docs` member.** Single-size
   `[lean]`, six sections, `methodology: agile` - the family's first non-generic member, which its contract
   explicitly permits. The fourth role is **investigates**: an RFC proposes a decision, an ADR records one,

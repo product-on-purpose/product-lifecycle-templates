@@ -60,3 +60,16 @@ foundation-lean-canvas
 # contents call found it immediately. A negative result from one query shape is not a fact. The command
 # in this file's header is the one to trust.
 develop-spike-summary
+
+# Added 2026-09-13 for the `project-milestone-retrospective` bundle. Verified present at
+# skills/iterate-retrospective/SKILL.md in product-on-purpose/pm-skills on 2026-09-13 (tracked source,
+# not the gitignored .claude/skills/ build copy): v2.2.0, phase iterate, 5,194 bytes. Its description
+# names the occasion this bundle serves in its own words - "use at the end of a sprint, project, or
+# milestone".
+#
+# THAT DESCRIPTION ALSO NAMES THE SPRINT, and `sprint-retrospective-notes` had shipped with
+# `pairs_with: []` since 2026-08-07. Nothing recorded whether that was deliberate; the skill plainly
+# covers it, so the sprint bundle is paired in the same change rather than leaving one family member
+# claiming a pairing its sibling silently declines. `incident-postmortem` stays unpaired: this skill is
+# about cadence retrospectives and says nothing about event-triggered failure learning.
+iterate-retrospective

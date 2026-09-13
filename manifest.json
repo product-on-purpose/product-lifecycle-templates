@@ -522,6 +522,42 @@
     },
     {
       "aliases": [
+        "lessons learned",
+        "post-project review",
+        "after-action review",
+        "project retrospective",
+        "project post-mortem",
+        "post implementation review"
+      ],
+      "approx_tokens": {
+        "full": 7200,
+        "lean": 5850
+      },
+      "default_size": "lean",
+      "doc_type": "project-milestone-retrospective",
+      "family": "process-docs",
+      "id": "project-milestone-retrospective",
+      "phase": "iterate",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean for the team-authored retrospective, the whole six sections: Scope and Period, What Happened, What Worked, What Did Not, Lessons for Others, Actions and Owners. That is the genre written by the people who did the work, read by the team, its neighbours and whoever comes next, short and narrative and in the team's own vocabulary. Use full for the accountability-grade report, read by a sponsor, a board or a named official who can stop or fund the next thing: it keeps the same six sections in the same order and adds Previously Identified Issues, which checks what an earlier review of the same work already found, plus a quantification table inside What Happened. Reach for full when money, safety or a regulator is involved, when there is a prior review whose findings need checking, or when the work is being closed formally against a baseline. The two sizes package two genres this research found in real filled documents; no single published template ships a named lean and full pair.",
+      "status": "beta",
+      "summary": "The document a team writes when a bounded piece of work has ended, for readers who may not have been there: what was in scope and who reads it, the factual record, what worked, what did not, what a stranger should take from it, and what changes with an owner and a date. It is terminal, and that is what separates it from its two siblings: a sprint retrospective looks back on a period, on a cadence, at how a team worked, and an incident postmortem looks back on one failure, triggered by it. Two independent named lineages publish it as a written document, the Army's after action report and PMBOK's lessons learned register, and the criticism aimed at it is narrower than it sounds: it attacks the unread repository, not the act of writing.",
+      "tags": [
+        "retrospective",
+        "lessons learned",
+        "after-action review",
+        "project close",
+        "iterate",
+        "action items",
+        "knowledge transfer"
+      ],
+      "title": "Project Milestone Retrospective"
+    },
+    {
+      "aliases": [
         "raid",
         "raid log",
         "raaidd log",
@@ -986,5 +1022,5 @@
       "title": "User Story"
     }
   ],
-  "count": 28
+  "count": 29
 }

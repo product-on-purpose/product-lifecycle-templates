@@ -148,8 +148,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 28 -->
-<!-- counts: bundles=28, tier1=25, adrs=48 -->
+<!-- bundle-count: 29 -->
+<!-- counts: bundles=29, tier1=25, adrs=49 -->
 **Twenty-seven bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
 
 ### `delivery-docs` (six bundles, the family complete)
@@ -300,7 +300,7 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-<!-- counts: bundles=28 -->
+<!-- counts: bundles=29 -->
 All twenty-seven bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
@@ -317,7 +317,7 @@ All twenty-seven bundles currently pass. GitHub Actions runs these on every push
 
 ### At a glance
 
-<!-- counts: bundles=28, tier1=25, adrs=48, cisteps=31 -->
+<!-- counts: bundles=29, tier1=25, adrs=49, cisteps=31 -->
 
 |  |  |
 |---|---|
