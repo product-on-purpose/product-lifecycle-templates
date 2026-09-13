@@ -725,6 +725,39 @@
     },
     {
       "aliases": [
+        "spike",
+        "research spike",
+        "technical spike",
+        "technical investigation",
+        "spike outcome",
+        "spike summary"
+      ],
+      "approx_tokens": {
+        "lean": 4550
+      },
+      "default_size": "lean",
+      "doc_type": "spike-report",
+      "family": "decision-docs",
+      "id": "spike-report",
+      "phase": "develop",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Use lean, the whole document: The Question, Scope and Time Box, What Was Tried, What Was Found, Recommendation, What This Does Not Settle. This type ships one size because the research found no second weight, not because a heavier one was left for later: no source read publishes two weights of a spike report, and the one named source that publishes the document at all ships exactly one template. The real variation in the wild is across genre, a blank template versus an AI-agent workflow template versus a filled report, rather than across size.",
+      "status": "beta",
+      "summary": "The written output of a time-boxed technical investigation: the uncertainty being reduced, what was actually tried, what was actually found, a proceed-or-not recommendation, and the edge of what that answer covers. Investigates the question that precedes a decision, as distinct from an RFC (which proposes one), an ADR (which records one), and an SDD (which describes the design that implements one). Whether a spike produces a written document at all is contested: the term's Extreme Programming inventors describe its output as throwaway code, and one named source publishes it as a document.",
+      "tags": [
+        "decision",
+        "spike",
+        "investigation",
+        "time-box",
+        "agile",
+        "engineering"
+      ],
+      "title": "Spike Report"
+    },
+    {
+      "aliases": [
         "iteration backlog",
         "sprint plan",
         "sprint commitment"
@@ -953,5 +986,5 @@
       "title": "User Story"
     }
   ],
-  "count": 27
+  "count": 28
 }

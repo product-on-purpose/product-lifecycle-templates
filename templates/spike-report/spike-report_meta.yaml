@@ -1,0 +1,38 @@
+id: spike-report
+title: Spike Report
+summary: >-
+  The written output of a time-boxed technical investigation: the uncertainty being reduced, what was
+  actually tried, what was actually found, a proceed-or-not recommendation, and the edge of what that
+  answer covers. Investigates the question that precedes a decision, as distinct from an RFC (which
+  proposes one), an ADR (which records one), and an SDD (which describes the design that implements
+  one). Whether a spike produces a written document at all is contested: the term's Extreme Programming
+  inventors describe its output as throwaway code, and one named source publishes it as a document.
+doc_type: spike-report
+phase: develop
+family: decision-docs
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the whole document: The Question, Scope and Time Box, What Was Tried, What Was Found, Recommendation, What This Does Not Settle. This type ships one size because the research found no second weight, not because a heavier one was left for later: no source read publishes two weights of a spike report, and the one named source that publishes the document at all ships exactly one template. The real variation in the wild is across genre, a blank template versus an AI-agent workflow template versus a filled report, rather than across size."
+methodology: agile
+pairs_with: [develop-spike-summary]
+status: beta
+template_version: 0.1.0
+tags:
+  - decision
+  - spike
+  - investigation
+  - time-box
+  - agile
+  - engineering
+related_templates: [adr, rfc, sdd]
+aliases:
+  - spike
+  - research spike
+  - technical spike
+  - technical investigation
+  - spike outcome
+  - spike summary
+catalog_ref: 67
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-12
+license: Apache-2.0

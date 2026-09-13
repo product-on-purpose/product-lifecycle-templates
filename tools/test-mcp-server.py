@@ -142,7 +142,7 @@ def main():
     # spec itself prescribed, which is the ninth falsified budget in this lineage and the first that
     # was ours rather than the 2026-07-12 sketch's. `sizing_guidance` moved to `get_template`, where it
     # is actually read, and 800 is the measured worst case plus room for one long summary.
-    print(DIM + "\n  AC1: 3 candidates under 800 approx tokens, for all 27 bundles" + OFF)
+    print(DIM + "\n  AC1: 3 candidates under 800 approx tokens, for all 28 bundles" + OFF)
     worst, worst_id = 0, None
     for b in bundles:
         r = srv.search_templates(b["title"], max_results=3)
@@ -184,7 +184,7 @@ def main():
                                    r["parts"]["template"]["approx_tokens"],
                                    b["approx_tokens"].get(key)))
     check("all %d variants fetch content" % total, not unreachable, unreachable)
-    check("the tree has 58 variants and all 58 are addressable", total == 58, total)
+    check("the tree has 59 variants and all 59 are addressable", total == 59, total)
     check("every reported token count EQUALS manifest.json's approx_tokens (not merely within 10%)",
           not mismatched, mismatched[:4])
 

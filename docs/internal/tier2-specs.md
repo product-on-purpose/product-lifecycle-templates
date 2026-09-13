@@ -19,7 +19,7 @@ design task" rather than "a spec-driven execution".
 
 | Type | Catalog id | Family | Spec | Built |
 |---|---|---|---|---|
-| `spike-report` | `spike-research-spike-report` | `decision-docs` | **Written 2026-09-11**; researched 2026-09-11, [admission evidence](spike-report-admission-evidence.md) | No - **admission is a maintainer decision**, see below |
+| `spike-report` | `spike-research-spike-report` | `decision-docs` | **Written 2026-09-11**; researched 2026-09-11, [admission evidence](spike-report-admission-evidence.md) | **Built 2026-09-12.** Admitted by [ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md) |
 | `project-milestone-retrospective` | `project-milestone-retrospective` | `process-docs` | **Written 2026-09-11** | No |
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | No |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | No |
@@ -60,8 +60,9 @@ in tension with anything.
 > basis. The contract carries the rule; the ADR carries what the rule deliberately leaves open.
 
 **The research ran on 2026-09-11 and the answer is "barely, and it is now a maintainer decision."** Full
-evidence: [`spike-report-admission-evidence.md`](spike-report-admission-evidence.md) - 72 unique sources,
-61 fetched-and-verified, six dimensions.
+evidence: [`spike-report-admission-evidence.md`](spike-report-admission-evidence.md) - a 72-record fan-out
+across six dimensions, merged to **68 unique sources, 57 fetched-and-verified** once four same-page pairs
+were collapsed.
 
 **Exactly one named source publishes a spike report as a written document**: Microsoft's Code with
 Engineering Playbook, which states the deliverable "should be a document" and ships a fill-in template

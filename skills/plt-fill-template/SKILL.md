@@ -13,12 +13,12 @@ metadata:
 
 # Product lifecycle templates
 
-A library of **27 researched document-template bundles**, covering the complete Tier-1 floor of a 205-type
+A library of **28 researched document-template bundles**, covering the complete Tier-1 floor of a 205-type
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
-<!-- counts: bundles=27, tier1=25 -->
-27 bundles, spanning all 25 templatable Tier-1 document types plus two Tier-2 types.
+<!-- counts: bundles=28, tier1=25 -->
+28 bundles, spanning all 25 templatable Tier-1 document types plus three Tier-2 types.
 
 ## When to use
 
@@ -173,7 +173,7 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=31, logsgated=21, sourcesgated=826 -->
+<!-- counts: cisteps=31, logsgated=22, sourcesgated=894 -->
 31 CI steps; 21 research logs gated, covering 826 sources.
 
 **Not proved by anything:**
