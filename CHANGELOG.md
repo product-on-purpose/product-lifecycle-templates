@@ -14,6 +14,21 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The `spike-report` bundle: the library's 28th, and the fourth `decision-docs` member.** Single-size
+  `[lean]`, six sections, `methodology: agile` - the family's first non-generic member, which its contract
+  explicitly permits. The fourth role is **investigates**: an RFC proposes a decision, an ADR records one,
+  an SDD describes the design, and a spike report investigates the question preceding all three.
+  **It carries an obligation no other bundle does** - teach the dispute, do not resolve it - because its
+  own canon argues against writing it at all.
+  **The four-lens review found two fabricated quotations in the first draft**, both plausible, both citing
+  a real source that does not contain them, one with an invented publication date attached. Both deleted
+  rather than re-sourced, per the fix rule. Four further claims were corrected for overstating the log,
+  including a corpus count given as "roughly fourteen" against a logged 11. Recorded in the bundle's own
+  history rather than quietly fixed.
+  Two departures from the spec, both forced by research: **Time Box is folded into Scope** (a dedicated
+  time-box heading belongs to pre-spike planning artifacts, not to the report of a completed spike), and
+  **What This Does Not Settle survives** on the blinded gap dimension's finding that an explicit non-scope
+  statement is the most consistent element real filled reports supply and no blank template asks for.
 - **[ADR 0048](docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md): one named
   source clears ADR 0030's admission test, and `spike-report` is admitted on that reading.** The first
   candidate to land between a clean pass and a clean failure. **Exactly one** qualifying source (Microsoft's
@@ -281,7 +296,7 @@ people who want every change, release notes are for people who want to know what
   are the first prose most users ever read: one is what Claude Code shows at install, the other is what
   the registry reads.
 
-  `check-counts.py` never saw them because it reads `<!-- counts: -->` markers in tracked **markdown**,
+  `check-counts.py` never saw them because it reads `<!-- counts:  -->` markers in tracked **markdown**,
   and JSON cannot carry an HTML comment. **This had happened before** - the `v0.4.0` section of this file
   records `plugin.json` claiming 26 bundles and 25 CI steps - so under decision procedure 9 the recurrence
   gets a check rather than a third fix. `check-counts.py` now scans both descriptions by pattern. It
@@ -386,7 +401,7 @@ people who want every change, release notes are for people who want to know what
   of the same file said `v0.5.0` and the floor had been complete since 2026-08-07. **The one row in that
   table that was still right was the ADR count, which is the only row a marker guards** - the tooling's
   own thesis, demonstrated against itself: a generated count stays fresh and a retyped one goes stale. A
-  `<!-- counts: -->` marker now sits above that table, so the next drift fails CI instead of an audit.
+  `<!-- counts:  -->` marker now sits above that table, so the next drift fails CI instead of an audit.
 
   Corrected across `README.md` (status block, at-a-glance, bundle badge, gate row, three prose counts),
   `AGENTS.md`, `STATE.md`, `docs/tutorials/getting-started.md`, `docs/internal/plan-inventory.md`, and

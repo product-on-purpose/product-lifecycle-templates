@@ -5707,6 +5707,208 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "spike-report",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "investigator_and_contact"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "spike_id"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "title"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "work_item_link"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "title",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 1,
+              "placeholders": [],
+              "title": "{{title}}"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-question",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "the_question"
+              ],
+              "title": "The Question"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scope-and-time-box",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "not_attempted",
+                "time_allotted",
+                "time_spent"
+              ],
+              "title": "Scope and Time Box"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-was-tried",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "what_was_tried"
+              ],
+              "title": "What Was Tried"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-was-found",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "observed_facts",
+                "what_it_implies"
+              ],
+              "title": "What Was Found"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "recommendation",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "recommendation_detail",
+                "verdict"
+              ],
+              "title": "Recommendation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-this-does-not-settle",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "open_questions",
+                "what_this_does_not_show"
+              ],
+              "title": "What This Does Not Settle"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "sprint-backlog",
       "default_format": "default",
       "formats": {
@@ -7251,7 +7453,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 27,
-  "frontmatter_count": 181,
-  "section_count": 241
+  "count": 28,
+  "frontmatter_count": 187,
+  "section_count": 248
 }

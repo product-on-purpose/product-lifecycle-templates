@@ -37,6 +37,7 @@ tree without the gate noticing.
 - [`adr/`](adr/) - Architecture Decision Record. Axis phase develop; ships lean/full.
 - [`rfc/`](rfc/) - Request for Comments. Axis phase develop; ships lean/full.
 - [`sdd/`](sdd/) - Software Design Document. Axis phase develop; ships lean/full.
+- [`spike-report/`](spike-report/) - Spike / Research Spike report. Axis phase develop; ships lean. The fourth `decision-docs` member: it INVESTIGATES the question an RFC proposes, an ADR records, and an SDD designs against.
 
 **`delivery-docs`**
 
