@@ -29,6 +29,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 - [`v0.4.0.md`](v0.4.0.md) - the first release carrying a feature rather than a correction: a second skill that grades documents you already have, the first eval run that was mechanically possible, and four claims the library made about itself that were not true
 - [`v0.5.0.md`](v0.5.0.md) - the first template built because the maintainer wanted it: the `epic` bundle, whose own research argues against the easy version of the document, and a floor counter that had assumed this release would never happen
 - [`v0.6.0.md`](v0.6.0.md) - an MCP server so an agent can find a template without being told where to look, a gate runner that refuses to say everything passed, and two install-time descriptions that had been quietly false. **The first release note filled with the library's own fill tools, which failed on it and were wrong**
+- [`v0.7.0.md`](v0.7.0.md) - the release that carries the MCP install fix to anyone who had it broken, the `--require-sdk` flag that makes a CI check able to fail, an open pull queue with a page that states the build order is one person's preference, and nine claims this repository made about itself that had aged into being false
 
 **Every tagged release now has a page**, which was not true until 2026-08-09. `v0.2.1` shipped without one
 and the gap sat unnoticed because nothing checks it:
