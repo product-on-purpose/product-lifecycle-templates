@@ -12,7 +12,22 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-_Nothing yet._
+### Added
+
+- **[ADR 0048](docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md): one named
+  source clears ADR 0030's admission test, and `spike-report` is admitted on that reading.** The first
+  candidate to land between a clean pass and a clean failure. **Exactly one** qualifying source (Microsoft's
+  Code with Engineering Playbook, which says the deliverable "should be a document" and ships a template)
+  against **the term's own inventors**, whose c2 account describes the output as throwaway **code**.
+  The real question was never about spikes: does ADR 0030 require one source or a preponderance? **The text
+  says "a named source", singular** - and answering that silently by building the bundle would have set the
+  precedent without anyone noticing it had been set. **It does not reopen `prototype-brief`**, which failed
+  with **zero**; one and zero are different numbers and that is the whole distinction. An admission argued
+  on preponderance-of-practice *would* have reopened it. Raising the bar to two sources is a legitimate
+  alternative, rejected on timing rather than merit: changing a rule inside the record that applies it makes
+  the change indistinguishable from the outcome it produces. **The obligation it creates:** the bundle must
+  **teach the dispute, not resolve it** - a bundle presenting the written artifact as settled practice would
+  be making a claim this evidence does not support.
 
 ## [0.7.0] - 2026-09-12
 
