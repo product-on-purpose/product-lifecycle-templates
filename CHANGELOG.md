@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [0.7.0] - 2026-09-12
+
 ### Added
 
 - **A tracked site plan and the decision that adopts it: [ADR 0046](docs/internal/decisions/0046-the-site-is-astro-starlight-under-pattern-s.md).**
@@ -1784,7 +1788,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.3.1...v0.4.0
