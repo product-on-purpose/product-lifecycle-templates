@@ -40,7 +40,7 @@ is structural: it can be answered by parsing text, never by judging whether the 
 | J | Meta schema | The meta validates against [`tools/meta.schema.json`](../../tools/meta.schema.json): required fields present, enums legal, exactly one of `phase` or `classification` |
 | K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](../internal/contracts/) |
 
-<!-- counts: bundles=28 -->
+<!-- counts: bundles=29 -->
 All twenty-seven bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
 pull request ([`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)), and `main` is branch-protected
 on it, so a bundle that fails a check cannot merge. That is what "enforced" means here: not a convention
@@ -55,9 +55,9 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   failure branches have no live subject once the tree is clean, so a self-test is the only way to know
   they still fail when they should. Each is mutation-checked against a deliberately broken
   implementation.
-  <!-- counts: checkk=98 -->
+  <!-- counts: checkk=100 -->
   `tools/test-check-k.py` runs 94 assertions;
-  <!-- counts: checkformats=84 -->
+  <!-- counts: checkformats=86 -->
   `tools/test-check-formats.py` runs 80.
 - **The link gate** (`tools/check-links.py`). The bundle gate only looks inside one bundle at a time, so
   a link broken by moving or renaming a file elsewhere in the tree passes it green. This step also
@@ -75,7 +75,7 @@ by itself, most of them opened by a real defect that shipped past a green gate f
 - **The research-log contract** (`tools/check-research-logs.py`, plus its own self-test). Every source in
   a bundle's research log must carry a retrieval status and, where the entry supports a claim, a
   `Supports:` clause.
-  <!-- counts: logsgated=22, sourcesgated=894 -->
+  <!-- counts: logsgated=23, sourcesgated=974 -->
   This runs across all 20 research logs the check gates, covering 796 individual sources.
 - **Self-reported counts** (`tools/check-counts.py`). The same mechanism that pins every number in this
   document. It recomputes each fact from the tree and fails when a marker disagrees. It does not, and by
@@ -89,7 +89,7 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   table when its rows are variant-specific, and that the arithmetic in that table is consistent.
 - **Workflow prompt strings** (`tools/check-workflow-prompts.py`) and the **research-log generator
   self-test** (`tools/test-gen-research-log.py`) guard the build tooling itself, not the templates.
-  <!-- counts: checklogs=90 -->
+  <!-- counts: checklogs=91 -->
   The generator's own self-test runs 88 assertions.
 - **A repo-wide dash sweep.** Check B only scans inside bundles; this step scans every tracked
   `.md`, `.yaml`, `.yml`, `.py`, and `.json` file in the repository for an em-dash or en-dash.

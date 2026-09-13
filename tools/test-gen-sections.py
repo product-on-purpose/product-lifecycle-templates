@@ -111,7 +111,7 @@ def main():
     schema = gen.build(yaml)
     instances = sum(len(s["in_sizes"]) for b in schema["bundles"]
                     for f in b["formats"].values() for s in f["sections"])
-    check("all 28 bundles parse", schema["count"] == 28, schema["count"])
+    check("all 29 bundles parse", schema["count"] == 29, schema["count"])
     # 353 guidance comments measured directly on disk 2026-09-05: 4 at H1, 342 at H2, 7 at H3.
     # If a template gains or loses a section this number moves, and it SHOULD: the assertion is
     # that the schema accounts for every block the files carry, checked below against a fresh scan.

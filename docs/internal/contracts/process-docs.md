@@ -3,7 +3,7 @@
 **Status:** **adopted 2026-08-05**, [ADR 0033](../decisions/0033-adopt-process-docs-family-contract.md).
 Registered in check K, which now gates `phase: iterate` on every member.
 **Axis:** `phase`, single value `iterate`.
-**Members:** `sprint-retrospective-notes`, `incident-postmortem`.
+**Members:** `sprint-retrospective-notes`, `incident-postmortem`, `project-milestone-retrospective`.
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -42,8 +42,18 @@ vendor, titles its material "Blameless Retrospectives" and splits *retrospective
 type and a post-project type. Naming practice in the wild is less settled than this contrast implies, and a
 member may teach the distinction only as the library's own, never as consensus.
 
-**Likely future members**, if pulled: `project-milestone-retrospective` and `pi-release-retrospective`, both
-Tier 2 and both grow-by-pull.
+**Both of the types this line used to call likely future members are now settled, in opposite directions,
+by one research pass on 2026-09-13.** `project-milestone-retrospective` is **built** and is a member (see
+section 1's Members line); it was admitted twice over, by CALL's written after-action report and PMBOK
+Sixth Edition's lessons learned register. `pi-release-retrospective` **does not ship** and is not a future
+member: [ADR 0049](../decisions/0049-pi-release-retrospective-fails-the-admission-test.md) found that
+SAFe's own Inspect and Adapt guide names the event's outputs as improvement **backlog items** and no
+document, and the only vendor candidates are a board and a differently-scoped template.
+
+**The distinction that produced two verdicts from one pass is worth keeping here, because it governs any
+future candidate for this family:** *cadence retrospectives feed a backlog; terminal retrospectives
+produce a document.* The Scrum Guide describes the Sprint Retrospective's output exactly as SAFe describes
+Inspect and Adapt's. What earns a document is that the work is **over**, not that the cadence is long.
 
 ## 2. Required catalog metadata and allowed values
 
