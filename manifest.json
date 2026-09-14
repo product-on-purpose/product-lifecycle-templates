@@ -956,6 +956,40 @@
     },
     {
       "aliases": [
+        "test summary report",
+        "test completion report",
+        "test report",
+        "test results",
+        "TSR"
+      ],
+      "approx_tokens": {
+        "full": 5950,
+        "lean": 4300
+      },
+      "default_size": "lean",
+      "doc_type": "test-summary-report",
+      "family": "qa-docs",
+      "id": "test-summary-report",
+      "phase": "develop",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Scope and What Was Tested, Execution Summary, Defects, Deviations from Planned Testing, Evaluation Against Exit Criteria, Residual Risk and What Was Not Tested) to close a release or a cycle for readers who were broadly in the room; those six are what closing a release actually takes. Use full when the reader was not there and completeness is part of the evidence rather than a style preference: a regulated submission, a certification or audit file, a customer or vendor deliverable, a multi-team or multi-vendor release, or the durable record of an engagement that is ending. Full adds Impediments and Blocked Progress, Test Deliverables and Reusable Assets, and Lessons Learned. Whichever weight you pick, Evaluation Against Exit Criteria and Residual Risk and What Was Not Tested are the two sections never to cut, because they are the two your tooling cannot produce.",
+      "status": "beta",
+      "summary": "The retrospective document that closes a testing effort: what was tested and on which build, what the testing found, what was deliberately or accidentally not tested, and whether the result clears the bar the test plan set. The closing bookend to the test plan, and the artifact a dashboard cannot produce, because the counts are computed and the judgement is not. Whether the genre should exist at all is contested: a named school of practitioners petitioned to have the international standard that defines it withdrawn, and this bundle teaches that dispute rather than settling it.",
+      "tags": [
+        "qa",
+        "testing",
+        "test-reporting",
+        "exit-criteria",
+        "residual-risk",
+        "quality"
+      ],
+      "title": "Test Summary Report"
+    },
+    {
+      "aliases": [
         "persona",
         "user profile",
         "proto-persona",
@@ -1022,5 +1056,5 @@
       "title": "User Story"
     }
   ],
-  "count": 29
+  "count": 30
 }

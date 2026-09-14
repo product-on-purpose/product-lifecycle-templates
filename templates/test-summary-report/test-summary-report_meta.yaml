@@ -1,0 +1,37 @@
+id: test-summary-report
+title: Test Summary Report
+summary: >-
+  The retrospective document that closes a testing effort: what was tested and on which build, what the
+  testing found, what was deliberately or accidentally not tested, and whether the result clears the bar the
+  test plan set. The closing bookend to the test plan, and the artifact a dashboard cannot produce, because
+  the counts are computed and the judgement is not. Whether the genre should exist at all is contested: a
+  named school of practitioners petitioned to have the international standard that defines it withdrawn, and
+  this bundle teaches that dispute rather than settling it.
+doc_type: test-summary-report
+phase: develop
+family: qa-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Scope and What Was Tested, Execution Summary, Defects, Deviations from Planned Testing, Evaluation Against Exit Criteria, Residual Risk and What Was Not Tested) to close a release or a cycle for readers who were broadly in the room; those six are what closing a release actually takes. Use full when the reader was not there and completeness is part of the evidence rather than a style preference: a regulated submission, a certification or audit file, a customer or vendor deliverable, a multi-team or multi-vendor release, or the durable record of an engagement that is ending. Full adds Impediments and Blocked Progress, Test Deliverables and Reusable Assets, and Lessons Learned. Whichever weight you pick, Evaluation Against Exit Criteria and Residual Risk and What Was Not Tested are the two sections never to cut, because they are the two your tooling cannot produce."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - qa
+  - testing
+  - test-reporting
+  - exit-criteria
+  - residual-risk
+  - quality
+related_templates: [test-plan, test-case, bug-report]
+aliases:
+  - test summary report
+  - test completion report
+  - test report
+  - test results
+  - TSR
+catalog_ref: 106                     # entry number in deep-research_master-catalog.md (test-report-test-summary-report)
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-14
+license: Apache-2.0
