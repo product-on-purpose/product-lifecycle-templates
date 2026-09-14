@@ -30,7 +30,7 @@
 > was the next release, through three tagged releases, while every marker in it matched the tree. That is
 > the limitation `check-counts.py` prints on every run, costing something for the second time.
 
-<!-- counts: adrs=49, bundles=29 -->
+<!-- counts: adrs=50, bundles=29 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies

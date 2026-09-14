@@ -14,6 +14,23 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[ADR 0050](docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md): `qa-docs` admits a fourth
+  member, and the exclusion clause is what governs a candidate.** The contract answers membership **twice,
+  differently**: its role inventory ends "or reports a verification that **failed**" - which is the bug
+  report - while its exclusion clause, the sentence written to test a candidate, reads "not to plan,
+  specify, or **report the verification of a product increment**", with no failure qualifier. A test summary
+  report matches the second exactly. ADR 0026 has **no fourth-member clause**, unlike ADR 0022, so nothing
+  had settled this and building on it silently would have set the precedent unnoticed.
+  **The generalisable rule:** where a family contract's exclusion clause and its role inventory disagree,
+  the exclusion clause governs a candidate. Amending the contract instead was rejected on ADR 0048's
+  ground: changing a rule inside the record that applies it makes the change indistinguishable from the
+  outcome it produces.
+  **It removes the family objection only.** ADR 0030's scope test is separate, answerable only by research,
+  and open when the record was written - if that fails, the type still does not ship, exactly as
+  `pi-release-retrospective` did not despite `process-docs` naming it by id.
+
+### Added
+
 - **The `project-milestone-retrospective` bundle: the library's 29th, and `process-docs`' third member.**
   Sizes `[lean, full]`, because the research found two genuine genres: team-authored retrospectives (short)
   and accountability-grade reports (long, quantified, tracking previously-identified issues). Full adds a
