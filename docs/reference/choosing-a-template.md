@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 29 governed document bundles, one per document type, organized under
+This library ships 30 governed document bundles, one per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -128,7 +128,7 @@ included here for readers who want the complete picture rather than a situationa
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
-<!-- counts: bundles=29 -->
+<!-- counts: bundles=30 -->
 That is 27 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and

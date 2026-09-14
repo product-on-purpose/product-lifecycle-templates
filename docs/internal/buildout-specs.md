@@ -21,7 +21,7 @@ reference a future session reads to continue.
 > `buildout-specs.md`" as required reading - which for a Tier-2 type pointed at nothing.
 
 ## Progress
-<!-- counts: bundles=29, tier1=25, tier1remaining=2, checkformats=86 -->
+<!-- counts: bundles=30, tier1=25, tier1remaining=2, checkformats=88 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|

@@ -70,6 +70,7 @@ tree without the gate noticing.
 
 - [`bug-report/`](bug-report/) - Bug Report. Axis phase develop; ships lean/full.
 - [`test-case/`](test-case/) - Test Case. Axis phase develop; ships lean/full.
+- [`test-summary-report/`](test-summary-report/) - Test Report / Test Summary Report. Axis phase develop; ships lean/full. The fourth `qa-docs` member ([ADR 0050](../docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md)): it reports the verification as a whole, closing the chain the plan opens and the bug report interrupts.
 - [`test-plan/`](test-plan/) - Test Plan. Axis phase develop; ships lean/full.
 
 **`standing-standards`**

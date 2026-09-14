@@ -14,6 +14,30 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The `test-summary-report` bundle: the library's 30th, and `qa-docs`' fourth member.** Sizes
+  `[lean, full]`. It closes the family's worked chain - the plan schedules the case, the case that fails
+  produces the bug report, and this reports the verification as a whole - and it keeps a promise the shipped
+  `test-plan` bundle makes in **four places** with no `future:` tag to catch it.
+  **The paywall was solved legitimately.** ISO/IEC/IEEE 29119-3 is sold, not published, and this library's
+  own earlier research recorded that nobody had read it. An official **15-page free preview** carries the
+  standard's own Clause 3 definition - "test completion report / test summary report" - and its table of
+  contents. Both were read verbatim. **The normative text of clause 7.4 and Annex G were not**, and the
+  bundle says so every time it cites the outline: those are subclause **headings from a contents page**, not
+  requirements. **The section design rests on ISTQB CTFL v4.0.1**, current and free and read, not on the
+  standard's authority.
+  **The bundle teaches a dispute rather than a settled genre.** A named school - Bach, Kaner, Bolton, and
+  James Christie as the campaign's original instigator - organised **Stop 29119**, which petitioned ISO to
+  withdraw Parts 1 to 3 of the very standard defining this document.
+  **My own spec was overturned.** It called a standalone **Release Recommendation** "the load-bearing
+  section". Neither readable structural source has one, and the real filled reports mostly do not either;
+  explicit go/no-go language appears mainly in **vendor templates**, the weakest tier. The act stays, the
+  heading goes: the ship call now sits under **Evaluation Against Exit Criteria**, beneath the graded
+  criteria that justify it.
+  **The review caught a synthesis defect no other check could have.** The research log's prose claimed the
+  design rested on CTFL v4.0.1 while its own Sources section carried only the superseded 2018 edition: the
+  de-duplication pass had **collapsed three distinct ISTQB syllabus editions**, and the standard's 2013 and
+  2021 pages, because their author and title strings agree for sixty characters. Four sources restored, 68
+  unique becomes **72**. A verification pass over source entries does not verify the prose citing them.
 - **[ADR 0050](docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md): `qa-docs` admits a fourth
   member, and the exclusion clause is what governs a candidate.** The contract answers membership **twice,
   differently**: its role inventory ends "or reports a verification that **failed**" - which is the bug
