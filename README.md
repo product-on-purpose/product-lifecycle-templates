@@ -11,7 +11,7 @@ A curated library of product-management and software-lifecycle document template
 <p>
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
-  <img src="https://img.shields.io/badge/version-0.7.0-blue?style=flat-square" alt="Version 0.7.0">
+  <img src="https://img.shields.io/badge/version-0.8.0-blue?style=flat-square" alt="Version 0.8.0">
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-27-brightgreen?style=flat-square" alt="Bundles: 27"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-9-brightgreen?style=flat-square" alt="Families: 9"></a>
@@ -313,7 +313,7 @@ All twenty-seven bundles currently pass. GitHub Actions runs these on every push
 
 ## Project status
 
-`v0.7.0` - **public, with the Tier-1 floor complete, a working MCP server for agents, and an open pull queue.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.8.0` - **public, with the Tier-1 floor complete, the first five Tier-2 types specified and three of them built, a working MCP server, and an open pull queue.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
 
 ### At a glance
 

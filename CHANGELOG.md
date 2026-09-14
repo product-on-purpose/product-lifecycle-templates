@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [0.8.0] - 2026-09-14
+
 ### Added
 
 - **The `test-summary-report` bundle: the library's 30th, and `qa-docs`' fourth member.** Sizes
@@ -1897,7 +1901,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.4.0...v0.5.0
