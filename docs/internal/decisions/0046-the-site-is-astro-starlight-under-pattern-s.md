@@ -151,8 +151,32 @@ start for the whole of `v0.6.0` - **DF-7** in [`STATE.md`](../../../STATE.md). A
 is a report. Every guard ported under clause 14.11 must be run against a deliberately broken fixture and
 observed to fail before it is trusted.
 
-**Sequencing is a preference, not a gate.** [`site-plan.md`](../site-plan.md) section 10.1 records that S0
-may run as a parallel track and that S1 and later should wait on one real fill (WP-31), because zero real
-usage is this library's binding constraint and a site is the most attractive available way to defer it
-again. [ADR 0043](0043-the-usage-gate-becomes-advisory.md) made the usage gate advisory, so this binds
-nothing; it is the roadmap's own priority, written where a future session will see it.
+**Correction, 2026-09-15.** A paragraph stood here headed "Sequencing is a preference, not a gate". It
+said `site-plan.md` section 10.1 records that S0 may run as a parallel track and that **S1 and later
+should wait on one real fill (WP-31)**, because zero real usage is this library's binding constraint.
+
+**It was wrong twice over, and it is removed rather than reworded.**
+
+It was wrong about its own subject: section 10.1 was rewritten the same day by
+[ADR 0047](0047-the-usage-precondition-leaves-the-language-too.md) and now reads "S0 through S3 run
+whenever the maintainer wants them to. Nothing sequences them against anything else." This record
+described a sentence that no longer existed by the time anyone read it.
+
+It was wrong in kind, which matters more. **"A preference, not a gate" is the hedge ADR 0047 was written
+to name.** That record's finding is that ADR 0043 removed the usage precondition on 2026-09-03 and it
+**regrew** in a new document as "a preference, not a prohibition" - the exact hedge ADR 0043 had said was
+read as a ban the first time. ADR 0047 removed the regrowth from section 10.1 and **three copies survived
+that sweep**: this paragraph, `STATE.md`'s site parenthetical, and section 14 item 3 of the plan, which
+asked the maintainer to confirm or overrule a rule that no longer existed. All three are removed on
+2026-09-15. This one was the worst placed, sitting in the decision record that adopts the plan, where it
+would have outlived the plan's own text. A rule that regrows in a new document was never repealed, only
+moved - and repealing it in one document is not repealing it.
+
+Nothing sequences the site. The honesty rules in `site-plan.md` section 13 are untouched and are a
+different thing: the site may be built whenever, and no page it renders may call a bundle proven.
+
+**Also corrected:** this record decided the Node toolchain and `site-plan.md` section 14 went on asking
+for it as an open item, which carried it as a maintainer blocker for four days. That is corrected in
+section 14 of the plan rather than here, because the error is the plan's. The one thing this record did
+**not** decide, section 9's dependency-update policy, is now
+[ADR 0051](0051-site-dependency-updates-follow-the-family-dependabot-pattern.md).

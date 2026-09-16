@@ -12,7 +12,62 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-_Nothing yet._
+### Added
+
+- **[ADR 0051](docs/internal/decisions/0051-site-dependency-updates-follow-the-family-dependabot-pattern.md):
+  site dependency updates follow the family Dependabot pattern, and no `npm audit` gate is added.** The one
+  part of taking on Node that [ADR 0046](docs/internal/decisions/0046-the-site-is-astro-starlight-under-pattern-s.md)
+  did **not** settle: `site-plan.md` section 9's sixth item, for which this repository has **no
+  `.github/dependabot.yml` at all**, not even for the GitHub Actions it already uses. Adopts `pm-skills`'
+  configuration for `npm` at `/site` - weekly, grouped, `minor` and `patch` only, majors as individual pull
+  requests. **No `npm audit` gate**, refused on actionability rather than safety: a static-site dependency
+  tree is mostly build-time, an advisory a maintainer can only wait out should not block a docs deploy, and
+  the predictable end state of such a gate is `|| true`, which is DF-7's shape from the other direction.
+  **Deliberately not claimed:** that the site has no client-side surface, because Starlight ships browser
+  JavaScript. Binds nothing until the toolchain exists.
+
+### Fixed
+
+- **Three documents said the Node toolchain was an open maintainer decision. It was decided on
+  2026-09-11.** ADR 0046 chose Astro plus Starlight from five options, **none of which supplies Astro
+  without Node**, said so in its TL;DR, fixed the version set, and listed the second toolchain in its
+  Consequences under "Bad, and stated plainly" - this repository's form for an accepted cost. Item 1 of
+  `site-plan.md` section 14 was annotated as closed by that record; item 2 was not - and **both landed in
+  the same commit**, `b534fd1`, so one change decided Node and asked for permission to decide it. Nothing
+  drifted between documents written at different times; the commit disagreed with itself, which is why no
+  later sweep caught it, and the question was carried as a maintainer blocker for four days. Corrected in
+  place per [ADR 0011](docs/internal/decisions/0011-madr-v4-at-docs-internal-decisions.md)'s rule that a
+  factual error is fixed where it sits and only a changed decision takes a new number.
+
+- **Three surviving copies of the usage gate, regrown as a sequencing preference, removed.**
+  [ADR 0047](docs/internal/decisions/0047-the-usage-precondition-leaves-the-language-too.md) recorded that
+  the precondition [ADR 0043](docs/internal/decisions/0043-the-usage-gate-becomes-advisory.md) repealed had
+  regrown in `site-plan.md` **section 10.1** as "a preference, not a prohibition". **Three copies survived
+  that sweep**, all removed here: ADR 0046's More Information carried a paragraph headed **"Sequencing is a
+  preference, not a gate"** - the same hedge, in the decision record that *adopts* the plan, where it would
+  have outlived the plan's own text; `STATE.md` went on citing a section 10.1 that ADR 0047 had already
+  rewritten; and `site-plan.md` section 14 item 3 asked the maintainer to confirm or overrule a rule that no
+  longer existed. A repo-wide sweep on 2026-09-15 found no fourth. **A rule that regrows in a new document
+  was never repealed, only moved**, and repealing it in one document is not repealing it.
+
+- **`STATE.md` said "forty-five ADRs (through 0045)" while its own gated marker said 50.** DF-5 for the
+  seventh time, and the precise shape `STATE.md` line 324 already records from the `adrs=34` to `adrs=35`
+  bump: `check-counts.py` gates the marker and cannot read the prose beside it, so the gate ran green
+  across a six-record gap.
+
+- **`README.md` told readers the library has 27 bundles, in twelve places, while its own gated marker two
+  lines away said 30.** The most-read file in the repository was a release and a half out of date. Fixed:
+  the badge, the two install snippets, the skill-without-bundles note, the "still on credit" paragraph, the
+  family listing, the gate-passing claim, and the At a glance table, which additionally said **`v0.6.0`**
+  as the current version (it is `v0.8.0`) and **45 ADRs** (51). The Tier-2 description said "the other two
+  bundles, `rfc` and `epic`"; there are **five**, and the three Tier-2 bundles shipped in `v0.7.0` and
+  `v0.8.0` appeared nowhere. **One claim was stale in kind, not just in number:** the catalog paragraph
+  still said "Grow-**by-pull** governs Tier-2 and Tier-3: built when a real team asks", which
+  [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) and
+  [ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md) replaced with
+  maintainer discretion and preference, and which had gone on inviting a request the library no longer
+  waits for. Verified against `manifest.json` and `atlas/catalog-data.json` rather than against the prose:
+  30 bundles, 9 families, 58 variants, 25 Tier-1 plus 5 Tier-2.
 
 ## [0.8.0] - 2026-09-14
 

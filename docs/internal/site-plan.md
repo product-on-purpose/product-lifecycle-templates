@@ -318,8 +318,34 @@ Rule 3 and rule 4 stay prose, and the plan says so rather than implying all four
 ## 14. What this plan asks for
 
 1. **Approve the stack and location.** Recorded as [ADR 0046](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md), which this plan adopts.
-2. **Approve the Node toolchain** (section 9). It is the real decision hiding inside "build a site": a Python-only repository takes on npm, a lockfile, and a second dependency-update surface, permanently.
-3. **Confirm the sequencing preference** in section 10.1, or overrule it. Either is legitimate under ADR 0043.
+2. **Approve the Node toolchain** (section 9). It is the real decision hiding inside "build a site": a Python-only repository takes on npm, a lockfile, and a second dependency-update surface, permanently. **[CLOSED 2026-09-15 - granted by ADR 0046 on 2026-09-11; this item was never open. See the correction below.]**
+3. **Confirm the sequencing preference** in section 10.1, or overrule it. Either is legitimate under ADR 0043. **[VOID 2026-09-15 - ADR 0047 deleted the rule this asks about. See the correction below.]**
 4. **Naming and branding.** Does the site present as `product-lifecycle-templates`, or under a product-on-purpose umbrella? Affects the landing page and any future domain. Pure maintainer call, and not needed before S0.
+
+> **Correction, 2026-09-15: items 2 and 3 were never open, and asking them here made settled decisions
+> look unsettled for four days.**
+>
+> **Item 2 was granted by [ADR 0046](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md)**,
+> accepted 2026-09-11 - **in the same commit that wrote this section**, `b534fd1`. That record chose Astro plus
+> Starlight from five options, **none of which supplies Astro without Node**; its TL;DR says "also
+> decided, and the part with teeth: this repository takes on Node"; its Version set fixes
+> `engines.node >=22.12.0`, an `.nvmrc` of 24 and lockfile-plus-`npm ci`; and it lists the second
+> toolchain in its Consequences under "Bad, and stated plainly", which is the form this repository uses
+> for an **accepted** cost rather than a deferred question. Node is entailed by the option that was
+> chosen, not a companion question to it. Item 1 was annotated as closed by that record and item 2 was
+> not, which is the whole of the error - **one commit both decided Node and asked for permission to
+> decide it.** This is not drift between documents written at different times; it is a single change that
+> disagreed with itself, which is why no later sweep caught it.
+>
+> **Item 3 asks about a rule that no longer exists.** Section 10.1's sequencing preference was removed
+> the same day by [ADR 0047](decisions/0047-the-usage-precondition-leaves-the-language-too.md); 10.1 now
+> reads "S0 through S3 run whenever the maintainer wants them to." There is nothing left to confirm or
+> overrule.
+>
+> **What ADR 0046 genuinely left open** is section 9's sixth item, the dependency-update policy, which no
+> record decided. That is now
+> [ADR 0051](decisions/0051-site-dependency-updates-follow-the-family-dependabot-pattern.md).
+>
+> Items 1 and 4 are unchanged: 1 is closed, and 4 is a live maintainer call not needed before S0.
 
 **No longer asked, because it is closed.** The proposal asked for VL-1 (business model) before its S2. VL-1 closed on 2026-08-14 by [ADR 0040](decisions/0040-free-and-open-source-no-paid-tier.md): free and open source, no paid tier. That answers the domain question by default (github.io until someone wants otherwise) and the analytics question in the negative.
