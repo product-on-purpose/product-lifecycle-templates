@@ -129,7 +129,7 @@ included here for readers who want the complete picture rather than a situationa
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
 <!-- counts: bundles=30 -->
-That is 27 bundles across every family the library currently ships, and every family is
+That is 30 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.

@@ -28,6 +28,24 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **Twelve live claims still said the library has 26 or 27 bundles, in ten documents, including both
+  shipped skills and the install guide.** The 2026-09-15 sweep corrected `README.md`; nothing else. The
+  sharpest was [`docs/how-to/installing.md`](docs/how-to/installing.md), which told a new user their
+  install had worked if the agent named 27 bundles - so a **correct** install looked broken.
+  `plt-fill-template/SKILL.md` disagreed with itself, saying 30 on one line and 27 twenty-three lines
+  later. `AGENTS.md` carried three stale numbers in one sentence (27 bundles, 241 sections, 181
+  frontmatter sites, against a tree holding 30 / 264 / 201).
+- **Five of those sat directly beneath a `<!-- counts: bundles=30 -->` marker that was correct and
+  green.** That is `check-counts.py`'s own stated blind spot - it gates markers and cannot read the
+  sentences around them - observed live rather than in the abstract. Two of the twelve evaded every
+  numeric grep by spelling the number as a word ("Twenty-seven bundles exist today"), which is why the
+  first sweep of this found seven and the second found twelve.
+- **`tools/check-counts.py` gains two facts, `sections` and `frontmatter`**, read from `sections.json`,
+  so the three-number sentence in `AGENTS.md` is gated rather than retyped and trusted. Mutation-checked
+  by restoring the old values and confirming the gate exits non-zero with `sections says 241, the tree
+  says 264`. Dated records (ADRs, release notes, eval results, and every "then in the library" clause)
+  were deliberately left alone: a release note states what was true at that release, and gating it
+  against today's tree would force a correct record to become a false one.
 - **Three documents said the Node toolchain was an open maintainer decision. It was decided on
   2026-09-11.** ADR 0046 chose Astro plus Starlight from five options, **none of which supplies Astro
   without Node**, said so in its TL;DR, fixed the version set, and listed the second toolchain in its

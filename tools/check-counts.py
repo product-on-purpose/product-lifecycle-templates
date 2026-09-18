@@ -110,6 +110,16 @@ def live_facts():
 
     ci = open(os.path.join(ROOT, ".github", "workflows", "ci.yml"), encoding="utf-8").read()
 
+    # The section-schema totals, added 2026-09-18. `sections.json` has published its own counts since
+    # WP-53 shipped it, and nothing gated the prose that quoted them: AGENTS.md said "all 27 bundles:
+    # 241 sections and 181 frontmatter fill sites" while the tree held 30 / 264 / 201 - three stale
+    # numbers in one sentence, in the agent-facing entry document, four lines below a `bundles=30`
+    # marker that was correct and green. That is this check's own stated blind spot (it gates markers
+    # and cannot read the sentences around them) caught live, so the remedy is to give the sentence
+    # markers of its own rather than to retype it and wait.
+    with open(os.path.join(ROOT, "sections.json"), encoding="utf-8") as fh:
+        sections_data = json.load(fh)
+
     # Tier comes from the catalog, never from an assumption about which bundles are Tier 1.
     #
     # This read `len(bundle_dirs) - (1 if "rfc" in bundle_dirs else 0)` until 2026-09-02, with a comment
@@ -151,6 +161,8 @@ def live_facts():
 
     return {
         "bundles": _int_from(bundles_out, r"OK\s+(\d+) bundle"),
+        "sections": sections_data["section_count"],
+        "frontmatter": sections_data["frontmatter_count"],
         "tier1": tier1_built,
         "tier1remaining": tier1_total - tier1_built,
         "statebuilt": state_built,
