@@ -31,7 +31,7 @@ jobs:
       # Node is here for one step only: the Advanced Skill Library Standard's conformance gate at
       # the bottom of this file, which is a Node program in a different repository. Every check in
       # between is Python, and none of them gained a dependency.
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
 
