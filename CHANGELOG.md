@@ -64,6 +64,16 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **Dependabot no longer proposes bumps to the pinned Astro set.** The `site-dependencies` group limits
+  itself to `minor` and `patch`, which is ADR 0051's intent - majors arrive individually and get read by
+  hand. **That is not sufficient, and PR #159 proved it within an hour of the config landing**, proposing
+  `@astrojs/starlight` `0.41.11 -> 0.42.1` while `pm-skills` sits on `~0.41.7`. **Every package in the
+  pinned set except `sharp` is `0.x`**, and semver permits breaking changes in a `0.x` minor, so the
+  version range clause 14.8 most wants held still is exactly the one the group rule waves through.
+  `astro`, `@astrojs/*`, `astro-mermaid` and `sharp` are now ignored outright; they move only in a
+  deliberate family-wide bump. **Also worth stating: the green checks on #159 were not evidence.** The
+  gate does not build the site until `site.yml` lands in S0 PR 3, so nothing in CI could have caught a
+  break.
 - **`.gitignore` ignores only the generated subpath, not the whole content tree.** The first draft
   ignored `site/src/content/docs/` wholesale, which would have made **every hand-authored narrative
   page untrackable** - and silently did: the spike branch's own landing and family pages were never

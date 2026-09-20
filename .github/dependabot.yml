@@ -54,3 +54,24 @@ updates:
         update-types:
           - "minor"
           - "patch"
+    # The pinned Astro set moves in lockstep with the family, never on its own.
+    #
+    # Clause 14.8 requires one shared resolved set across the family and names the failure
+    # mode outright: "a per-repo npm update that chases latest actively breaks convergence,
+    # so toolchain bumps land in lockstep across the family."
+    #
+    # The group rule above is not enough on its own, and PR #159 proved it within an hour of
+    # this file landing. It limits the group to minor and patch, which is ADR 0051's intent:
+    # majors arrive individually and get read by hand. But EVERY package in the pinned set
+    # except sharp is 0.x, and semver permits breaking changes in a 0.x minor - so
+    # 0.41 -> 0.42 is classified "minor" and sails straight through a rule designed to hold
+    # breaking changes back.
+    #
+    # These four are therefore ignored entirely. Bumping them is a deliberate act coordinated
+    # with pm-skills, not something Dependabot proposes on a Monday. Everything else in
+    # site/package.json still flows through the group above.
+    ignore:
+      - dependency-name: "astro"
+      - dependency-name: "@astrojs/*"
+      - dependency-name: "astro-mermaid"
+      - dependency-name: "sharp"
