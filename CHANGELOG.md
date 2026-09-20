@@ -74,6 +74,13 @@ people who want every change, release notes are for people who want to know what
   deliberate family-wide bump. **Also worth stating: the green checks on #159 were not evidence.** The
   gate does not build the site until `site.yml` lands in S0 PR 3, so nothing in CI could have caught a
   break.
+- **Two more stale counts, and the reason the marker did not help.** `docs/internal/plan-inventory.md`
+  said "Twenty-seven researched bundles" and "none of the 27 bundles" in live present tense. **Its
+  `counts:` marker was correct and sat 65 lines above them.** A marker's job is to make a changed number
+  impossible to miss so an author re-reads the document, and that signal decays with distance: one marker
+  at the top of a long file does not draw anyone to prose two thirds of the way down. The section now
+  carries its own. **This is the fourth pass over the same defect in one session** - seven found, then
+  twelve, then these two by the wrap's own hygiene sweep.
 - **`.gitignore` ignores only the generated subpath, not the whole content tree.** The first draft
   ignored `site/src/content/docs/` wholesale, which would have made **every hand-authored narrative
   page untrackable** - and silently did: the spike branch's own landing and family pages were never
