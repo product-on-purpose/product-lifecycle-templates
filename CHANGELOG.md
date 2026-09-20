@@ -41,6 +41,17 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[ADR 0052](docs/internal/decisions/0052-the-site-is-a-standalone-property-at-the-github-io-path.md):
+  the site is a standalone property at `product-on-purpose.github.io/product-lifecycle-templates`.**
+  Closes `site-plan.md` section 14 item 4, which turned out to be **one question in the plan and two in
+  practice**: branding could wait, the URL could not, because clause 14.7 requires `site` and `base` to be
+  set once before anything is built. Standalone is **decision A-4 of the family standard applied rather
+  than a new choice** - A-4 already picked per-plugin sites over a portal, and there is no
+  `product-on-purpose.github.io` umbrella repository to be a section of. **The family is genuinely split
+  on the URL half:** `pm-skills` and `agent-skills-toolkit` serve from `github.io`,
+  `thinking-framework-skills` from a `productonpurpose.com` subdomain, so this picks the less branded side
+  and says so. Acceptable because **GitHub Pages redirects the `github.io` URL once a custom domain is
+  configured**, making it one of the few reversible decisions in the site track.
 - **S0 PR 1: the site skeleton.** `site/` with a hand-rolled Starlight config (the shared preset still
   does not exist), `.nvmrc` pinning 24, a committed lockfile, two hand-authored narrative pages, and
   `.github/dependabot.yml` per ADR 0051 - which also gives **GitHub Actions** its first dependency
