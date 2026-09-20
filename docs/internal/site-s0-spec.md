@@ -13,7 +13,10 @@ Adopted decisions this spec implements rather than reopens:
 | Dependency updates follow the family Dependabot pattern; no `npm audit` gate | [ADR 0051](decisions/0051-site-dependency-updates-follow-the-family-dependabot-pattern.md) |
 | Free and open source, which settles the domain question by default | [ADR 0040](decisions/0040-free-and-open-source-no-paid-tier.md) |
 
-**Maintainer decisions taken 2026-09-17 and 2026-09-18, recorded here because no ADR carries them:**
+**Maintainer decisions taken 2026-09-17 and 2026-09-18.** The first two now live in
+[ADR 0052](decisions/0052-the-site-is-a-standalone-property-at-the-github-io-path.md), which is where
+they belong: the URL is the part other repositories copy, and it should not have lived only in a spec
+header. Summarised here so this document reads without a detour.
 
 - **The site is served at `product-on-purpose.github.io/product-lifecycle-templates`.** A custom domain
   under `productonpurpose.com` stays available later at low cost, because GitHub Pages redirects the
