@@ -27,11 +27,21 @@ design task" rather than "a spec-driven execution".
 **Not specced, deliberately.** `launch-coordination-checklist` is promised by a `future:launch-checklist` tag
 in `release-notes_meta.yaml` and has a pm-skills pairing candidate, but its catalog category straddles two
 families (`release-notes` is `delivery-docs`, `runbook` is `standing-standards`) and **a family assignment
-is not a spec-writer's call**. `solution-brief` is promised **twice** - `prd_meta.yaml` and `rfc_meta.yaml`
-both carry `future:solution-brief` - and **has no catalog entry at all**, so it has not passed
-[ADR 0030](decisions/0030-templating-scope-markdown-documents.md)'s admission test and cannot be specced
-either. Both wait on a maintainer decision, and both are recorded here so the gap is visible rather than
-forgotten.
+is not a spec-writer's call**. It still waits on a maintainer decision, and is recorded here so the gap
+stays visible rather than forgotten.
+
+> **`solution-brief` is resolved, 2026-09-20: the two tags were retired rather than the type admitted.**
+> `prd_meta.yaml` and `rfc_meta.yaml` both carried `future:solution-brief`, promising readers a type with
+> **no catalog entry at all** - so it had never faced
+> [ADR 0030](decisions/0030-templating-scope-markdown-documents.md)'s admission test and could not be
+> specced or built. Open since 2026-07-21.
+>
+> **Retiring was chosen over adding a catalog entry, and the order is the reason.** Adding an entry first
+> would admit a type on the strength of two `related_templates` tags rather than on evidence, which is the
+> expensive order and the one `prototype-brief` already proved wrong: it failed 0030's test with zero named
+> sources after a full research pass. A promise is not evidence. **If `solution-brief` is ever wanted, it
+> enters through the front door** - a research pass, a named source, a catalog entry, then a tag - and
+> pm-skills shipping `develop-solution-brief` is an argument for starting that pass, not a substitute for it.
 
 ---
 
