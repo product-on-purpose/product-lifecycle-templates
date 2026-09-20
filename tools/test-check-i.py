@@ -81,7 +81,11 @@ def main():
     check("a built bundle resolves", ok, detail)
     check("  detail reports the count", "related_templates 2 resolved" in detail, detail)
 
-    ok, detail = run(["future:solution-brief"])
+    # A deliberately synthetic name. This fixture used to say future:solution-brief, which was a
+    # real promise in two shipped metas until it was retired on 2026-09-20 for having no catalog
+    # entry. A fixture pointed at a real type rots the moment that type is built or retired, and
+    # it leaves a misleading grep hit in the meantime. Point it at a name nothing can ever build.
+    ok, detail = run(["future:no-such-type"])
     check("future: on a genuinely unbuilt type resolves", ok, detail)
 
     print("\n" + DIM + "3. Adversarial: these MUST fail, and say why" + OFF)

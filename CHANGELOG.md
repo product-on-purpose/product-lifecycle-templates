@@ -39,6 +39,20 @@ people who want every change, release notes are for people who want to know what
   **Deliberately not claimed:** that the site has no client-side surface, because Starlight ships browser
   JavaScript. Binds nothing until the toolchain exists.
 
+### Removed
+
+- **The two `future:solution-brief` tags are retired.** `templates/prd/prd_meta.yaml` and
+  `templates/rfc/rfc_meta.yaml` both promised readers a type with **no catalog entry at all**, so it had
+  never faced [ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)'s admission
+  test and could not be specced or built. Open since 2026-07-21. **Retiring was chosen over adding a
+  catalog entry** because admitting a type on the strength of two `related_templates` tags rather than on
+  evidence is the expensive order, and the one `prototype-brief` already proved wrong by failing 0030 with
+  zero named sources after a full research pass. A promise is not evidence.
+- **`tools/test-check-i.py`'s fixture no longer points at a real type.** It used `future:solution-brief`
+  to prove that `future:` on a genuinely unbuilt type resolves. A fixture aimed at a real type rots the
+  moment that type is built or retired, and leaves a misleading grep hit meanwhile. It now uses a
+  synthetic name nothing can ever build. 45 assertions still pass.
+
 ### Fixed
 
 - **Twelve live claims still said the library has 26 or 27 bundles, in ten documents, including both
