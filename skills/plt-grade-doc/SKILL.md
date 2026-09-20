@@ -18,7 +18,7 @@ a blank template to a document. This one goes from a document someone already wr
 against that document type's own researched rubric.
 
 <!-- counts: bundles=30, tier1=25 -->
-The rubrics come from the same 27 bundles, covering all 25 templatable Tier-1 document types plus two Tier-2 types.
+The rubrics come from the same 30 bundles, covering all 25 templatable Tier-1 document types plus five Tier-2 types.
 
 Nobody has to adopt anything to use this. That is the point: a critique of a document that already exists
 costs the reader nothing but the reading.

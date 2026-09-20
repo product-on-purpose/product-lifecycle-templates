@@ -41,7 +41,7 @@ shape, a worked example, and a rubric for judging the result.
 
 ### 0. Confirm the library is present, and STOP if it is not
 
-**This skill is a wrapper. The 27 bundles it indexes are not inside it.** Whether they are on disk
+**This skill is a wrapper. The 30 bundles it indexes are not inside it.** Whether they are on disk
 depends entirely on how this skill was installed:
 
 | Install route | What you have |

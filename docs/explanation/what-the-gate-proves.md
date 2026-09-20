@@ -41,7 +41,7 @@ is structural: it can be answered by parsing text, never by judging whether the 
 | K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](../internal/contracts/) |
 
 <!-- counts: bundles=30 -->
-All twenty-seven bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
+All thirty bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
 pull request ([`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)), and `main` is branch-protected
 on it, so a bundle that fails a check cannot merge. That is what "enforced" means here: not a convention
 anyone is trusted to remember, but a script with an exit code.
