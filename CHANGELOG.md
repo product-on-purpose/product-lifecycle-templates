@@ -14,6 +14,19 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`site-s0-spec.md`](docs/internal/site-s0-spec.md): S0 of the site, with twenty numbered
+  acceptance criteria.** Written **after** building a throwaway Astro scaffold rather than before, which
+  is why section 4 carries four findings the tracked plan does not: (1) `pm-skills`, the named reference
+  implementation, runs its guards in a **separate workflow from its deploy**, so the artifact that is
+  checked is not the artifact that ships and a guard failure does not stop a deploy - this spec puts the
+  guards between `astro build` and `upload-pages-artifact` instead; (2) clause 14.8's
+  `engines.node >=22.12.0` floor is **below what the dependency tree demands**, because `undici@8.10.2`
+  requires `>=22.19.0`, so the floor is misleading rather than broken; (3) Starlight emits
+  `rel="shortcut icon"`, not `rel="icon"`, so a favicon guard written the obvious way reports a false
+  failure; (4) `.gitattributes` covered **none** of the five file shapes the site introduces, and
+  `.nvmrc` is the dangerous one because CI reads it through `node-version-file`. Also records the URL
+  and branding calls, and the decision to ship **no root `package.json`** - the donor only has one to
+  hold a `js-yaml` devDependency this repository has no equivalent of.
 - **[ADR 0051](docs/internal/decisions/0051-site-dependency-updates-follow-the-family-dependabot-pattern.md):
   site dependency updates follow the family Dependabot pattern, and no `npm audit` gate is added.** The one
   part of taking on Node that [ADR 0046](docs/internal/decisions/0046-the-site-is-astro-starlight-under-pattern-s.md)

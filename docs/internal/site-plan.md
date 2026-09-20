@@ -217,6 +217,17 @@ What that costs, concretely:
 4. A local port of the link and route guards, with their own tests.
 5. `site/src/content/docs/` added to `.gitignore`.
 6. A decision about whether `npm audit` or Dependabot applies, which this repository has never needed.
+   **[CLOSED 2026-09-15 by [ADR 0051](decisions/0051-site-dependency-updates-follow-the-family-dependabot-pattern.md):
+   the family Dependabot pattern at `/site`, weekly, grouped, minor and patch only, and no `npm audit`
+   gate.** Annotated here on 2026-09-19 because only section 14's correction block recorded the closure,
+   so a reader of this section alone still saw an open question - which is the same one-sided drift
+   that correction was written about.]
+
+**One item in this list is now known to be wrong, and it is item 1.** Clause 14.8's `>=22.12.0` is
+below what the dependency tree actually requires: `npm install` of the pinned set warns
+`EBADENGINE: undici@8.10.2 requires node >=22.19.0`. Measured 2026-09-18.
+[`site-s0-spec.md`](site-s0-spec.md) section 4.2 records the departure and declares `>=22.19.0`
+instead. The `.nvmrc` pin of `24` was never affected.
 
 **One hazard is already handled.** `.gitattributes` pins `*.mjs text eol=lf` (added 2026-08-22, after the eval harness could not start because its `.mjs` files were pure CRLF). New `.mjs` files inherit that. `package.json` and the lockfile are covered by the existing `*.json text eol=lf`.
 
