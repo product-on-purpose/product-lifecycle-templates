@@ -1,0 +1,31 @@
+/* Family accent, SITE-STANDARD.md section 2 (Theme and branding). */
+:root {
+  --sl-color-accent-low: #1c2333;
+  --sl-color-accent: #5c7cfa;
+  --sl-color-accent-high: #c3cffd;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #c3cffd;
+  --sl-color-accent: #3b5bdb;
+  --sl-color-accent-high: #1c2333;
+}
+
+/* The status pill. `beta` is not decoration here - section 13 of the site plan
+   forbids any page calling a bundle proven, and every bundle is beta until a real
+   usage cycle is recorded. */
+.plt-status {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+  border: 1px solid var(--sl-color-accent);
+}
+.plt-meta {
+  font-size: 0.875rem;
+  color: var(--sl-color-gray-3);
+}

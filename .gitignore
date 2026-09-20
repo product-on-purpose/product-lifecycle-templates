@@ -35,3 +35,18 @@ __pycache__/
 
 # Cygwin crash dumps. One was committed in #53 and shipped in v0.2.0 and v0.2.1.
 *.stackdump
+
+# The Astro site (S0). Generated content is gitignored and rebuilt every build, which is
+# clause 14.4's preferred model: nothing committed means nothing that can drift.
+site/node_modules/
+site/dist/
+site/.astro/
+# ONLY the generated subpath is ignored, never the whole content tree. Hand-authored
+# narrative pages (landing, family and tier intros) live in site/src/content/docs/ too and
+# MUST stay tracked. The donor makes this explicit by ignoring five specific generated
+# paths while tracking 127 hand-authored pages in the same directory; an earlier draft of
+# this file ignored the directory wholesale, which would have made every narrative page
+# untrackable and was caught only by reading pm-skills' .gitignore rather than its prose.
+site/src/content/docs/bundles/
+.playwright-mcp/
+sample-*.png

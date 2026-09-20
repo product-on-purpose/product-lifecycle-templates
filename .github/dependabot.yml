@@ -1,0 +1,56 @@
+# Dependency updates.
+#
+# Adopted from pm-skills per ADR 0051, which chose the family pattern over inventing a local one:
+# "match family-wide" is the site plan's own conformance standard, so adopting it IS conformance.
+#
+# Two ecosystems, deliberately. This repository had NO dependabot.yml at all before the site - not
+# even for the GitHub Actions it already ran - so the Actions block below is new coverage rather
+# than a carry-over, and it is the reason the file exists at the root rather than only for /site.
+#
+# Grouped, minor and patch only. Majors arrive as individual pull requests and are read by hand,
+# which is where an Astro or Starlight major belongs.
+#
+# NO `npm audit` gate is added to CI, and no advisory blocks a build. ADR 0051 refused that on
+# actionability rather than on safety: a static-site dependency tree is mostly build-time, and an
+# advisory a maintainer can only wait out should not block a docs deploy.
+#
+# The named cost, so it is not a surprise: a recurring weekly pull-request stream in a repository
+# that has never had one, and a second dependency surface nobody is obliged to merge.
+version: 2
+updates:
+  # GitHub Actions. Already in use by ci.yml before the site existed, and never covered until now.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci(deps)"
+    groups:
+      actions-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # npm, the Astro Starlight site. The only npm project in this repository: there is deliberately
+  # no root package.json, because the donor only has one to hold a js-yaml devDependency and every
+  # validator here is Python. See docs/internal/site-s0-spec.md section 5.1.
+  - package-ecosystem: "npm"
+    directory: "/site"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      site-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

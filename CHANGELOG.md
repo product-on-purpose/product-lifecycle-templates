@@ -39,6 +39,30 @@ people who want every change, release notes are for people who want to know what
   **Deliberately not claimed:** that the site has no client-side surface, because Starlight ships browser
   JavaScript. Binds nothing until the toolchain exists.
 
+### Added
+
+- **S0 PR 1: the site skeleton.** `site/` with a hand-rolled Starlight config (the shared preset still
+  does not exist), `.nvmrc` pinning 24, a committed lockfile, two hand-authored narrative pages, and
+  `.github/dependabot.yml` per ADR 0051 - which also gives **GitHub Actions** its first dependency
+  coverage in this repository, since there was no `dependabot.yml` at all before. No generator and no
+  guards yet; those are PRs 2 and 3.
+- **`engines.node` is `>=22.19.0`, a recorded departure from clause 14.8's `>=22.12.0`**, because
+  `undici@8.10.2` in the pinned Astro set requires it. Filed upstream as
+  [agent-plugins#105](https://github.com/product-on-purpose/agent-plugins/issues/105); this value
+  re-aligns to the clause if the clause moves.
+
+### Fixed
+
+- **`.gitignore` ignores only the generated subpath, not the whole content tree.** The first draft
+  ignored `site/src/content/docs/` wholesale, which would have made **every hand-authored narrative
+  page untrackable** - and silently did: the spike branch's own landing and family pages were never
+  committed. `pm-skills` settles the question by ignoring five specific generated paths while tracking
+  **127 hand-authored pages in the same directory**. Caught by reading the donor's `.gitignore` rather
+  than any prose about it. `site-s0-spec.md` AC-3 is corrected in the same change.
+- **`.gitattributes` gains `*.mdx`**, missed on the first pass of the very block added to fix this
+  class of bug two days earlier. Twice now the list has been extended while leaving out a shape
+  sitting in the same commit.
+
 ### Removed
 
 - **The two `future:solution-brief` tags are retired.** `templates/prd/prd_meta.yaml` and
