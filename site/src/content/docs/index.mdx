@@ -1,0 +1,52 @@
+---
+title: Product Lifecycle Templates
+description: Researched, governed document templates for the product lifecycle. Every claim traced to a logged source.
+template: splash
+hero:
+  tagline: Thirty researched document templates for the product lifecycle. Every structural claim traced to a logged source, and nothing claimed that has not been earned.
+  actions:
+    - text: Start here
+      link: /product-lifecycle-templates/families/decision-docs/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/product-on-purpose/product-lifecycle-templates
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+{/* SAMPLE NOTE: every number on this page is hand-typed for the spike. In the real
+    site all of them come from manifest.json at build time - site-plan section 11
+    forbids a hand-written count on any rendered page, because that is DF-5 applied
+    to a new surface. */}
+
+<CardGrid>
+  <Card title="30 bundles" icon="open-book">
+    Across six families. Each bundle ships a template, a guide, a companion, a worked
+    example, a research log and a history - not a file.
+  </Card>
+  <Card title="264 sections" icon="list-format">
+    Every section carries machine-readable guidance: what it is for, why it exists, what
+    to ask, and the trap it is there to prevent.
+  </Card>
+  <Card title="Sourced, not asserted" icon="approve-check">
+    Every structural claim traces to an entry in that bundle's research log. Where the
+    sources disagree, the template teaches the dispute instead of resolving it.
+  </Card>
+  <Card title="Zero real fills" icon="warning">
+    No one outside this project has yet filled one of these templates for real work. All
+    30 bundles are <span class="plt-status">beta</span> until that is recorded, and this
+    number is published rather than omitted.
+  </Card>
+</CardGrid>
+
+## What this is not
+
+This library does not claim its templates help anyone. Its gate checks structure and
+research integrity - that every claim has a logged source, that no section drifts from
+its family contract, that no count in the prose disagrees with the tree. **That is not
+the same as evidence that a document produced from one of these templates is better than
+one produced without it,** and no page here will say otherwise until a real usage cycle
+is recorded.

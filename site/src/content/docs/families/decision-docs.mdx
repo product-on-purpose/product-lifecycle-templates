@@ -1,0 +1,43 @@
+---
+title: Decision docs
+description: The family for documents that investigate, propose, record, or describe a decision - and the contract that decides what belongs here.
+family: decision-docs
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Four document types that sit around a single decision, separated by **what they do to it**.
+That is the whole discriminator, and it is what keeps the family from collapsing into one
+type with four names.
+
+| Type | What it does to the decision |
+|---|---|
+| **Spike Report** | Investigates the question that *precedes* it |
+| **RFC** | *Proposes* it |
+| **ADR** | *Records* it, once taken |
+| **SDD** | *Describes the design* that implements it |
+
+<Aside type="note" title="Membership is decided by a written contract, not by resemblance">
+Each family carries a contract with an **exclusion clause** - the sentence written to test a
+candidate. When a family's role inventory and its exclusion clause disagree about whether
+something belongs, the exclusion clause governs. That is a recorded decision, not a
+convention, and it was made because a candidate type once satisfied one and failed the other.
+</Aside>
+
+## Bundles in this family
+
+{/* Bundle cards are generated from manifest.json by scripts/gen-site.mjs, which lands in
+    S0 PR 2. This page deliberately lists nothing by hand in the meantime: a hand-listed
+    family page is exactly the drift clause 14.4's coverage rule exists to prevent, and
+    seeding one here would mean deleting it again in two weeks. */}
+
+_Bundle pages are generated from the library's own manifest. They arrive with the
+generator; this page lists none by hand._
+
+## What admission costs
+
+A type does not join this family because it seems to fit. It has to clear an admission test:
+**at least one named source** that publishes the document as a document. One type was refused
+on its own evidence after a full research pass found none - and the refusal was recorded with
+the same rigor as an acceptance, because a library that only documents its inclusions is
+telling you half of what it knows.

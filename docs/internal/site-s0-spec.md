@@ -209,8 +209,19 @@ Numbered so an autonomous session can report against them, and so "done" is not 
 - [ ] **AC-2.** `scripts/gen-site.mjs` is dependency-free Node `.mjs`, reads `templates/`,
       `manifest.json`, `sections.json` and `atlas/catalog-data.json`, and writes into
       `site/src/content/docs/`. No new Python site generator exists (clause 14.3).
-- [ ] **AC-3.** `site/src/content/docs/` is gitignored and absent from a fresh clone; a clean checkout
-      plus `npm ci && npm run build` produces the site (clause 14.4, preferred model).
+- [ ] **AC-3.** **Only the generated subpath is gitignored**, currently
+      `site/src/content/docs/bundles/`, and a clean checkout plus `npm ci && npm run build` produces the
+      site (clause 14.4, preferred model). Hand-authored narrative pages live in
+      `site/src/content/docs/` too and **MUST stay tracked**.
+
+      > **Corrected 2026-09-20, and this criterion was wrong as first written.** It said
+      > "`site/src/content/docs/` is gitignored", which would make every hand-authored page
+      > untrackable. The donor settles it: `pm-skills` ignores **five specific generated paths**
+      > while **tracking 127 hand-authored pages in the same directory**. The error survived writing
+      > the spec because the site plan describes the generated-content model in prose and the prose
+      > does not distinguish the directory from the generated subtree - it was caught by reading
+      > `pm-skills/.gitignore` rather than anything written about it, and by the spike's own two
+      > narrative pages turning out never to have been committed.
 - [ ] **AC-4.** Every generated page sets `editUrl` to its true source file, or to `false` where it has
       no single source. **Mutation-checked:** removing the stamp makes `verify-edit-links.mjs` exit
       non-zero (clause 14.11, site-plan 4.2).

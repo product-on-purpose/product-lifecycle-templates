@@ -25,3 +25,21 @@
 *.yaml text eol=lf
 *.yml text eol=lf
 *.json text eol=lf
+
+# The site (S0) brings four file shapes this list never had to cover, and `git add` warned on every
+# one of them. `.nvmrc` is the dangerous member: CI reads it through `node-version-file`, so a CRLF
+# checkout hands setup-node a version string with a trailing carriage return. This is the *.mjs
+# lesson repeated - that pattern was missed until 2026-08-21, when the eval harness could not start
+# because its files had been pure CRLF since the day they were written, under a comment describing
+# the exact failure its own pattern did not cover. A new toolchain brings new extensions; pin them
+# when it lands, not after something will not start.
+*.ts text eol=lf
+*.css text eol=lf
+*.txt text eol=lf
+# *.mdx was missed on the first pass of this very block, on 2026-09-18, and caught two days later
+# when `git add` warned on the site's two narrative pages. Twice now this list has been extended
+# while leaving out a shape sitting in the same commit. If you add a type here, run `git add` over
+# the whole tree and read every warning before believing the list is complete.
+*.mdx text eol=lf
+.nvmrc text eol=lf
+.gitignore text eol=lf
