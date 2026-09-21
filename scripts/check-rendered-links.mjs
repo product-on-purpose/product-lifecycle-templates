@@ -1,0 +1,246 @@
+#!/usr/bin/env node
+// what-it-is:   the guard on every internal link in the built site
+// what-it-does: resolves each intra-site href against the page's REAL published URL and asserts
+//               the target exists in dist/; validates #fragments against the target page's ids
+// why:          a filesystem-correct relative link can still 404 in a browser, because pages
+//               build to slug/index.html and are served one level deeper than their source
+//               (site-s0-spec AC-12)
+// used-by:      .github/workflows/site.yml, between `astro build` and `upload-pages-artifact`;
+//               locally as `node scripts/check-rendered-links.mjs`
+//
+// Ported from pm-skills/scripts/check-rendered-links.mjs, essentially verbatim: it was already
+// parameterised on the base and free of repo-specific assumptions. Two notes on the differences
+// that matter here.
+//
+// THIS REPOSITORY HAS NO REMARK PLUGIN, AND THAT CHANGES WHAT A FAILURE MEANS. In the donor this
+// check is the regression gate behind remark-resolve-links.mjs, which repairs relative .md links
+// at build time. Here, scripts/gen-site.mjs emits base-absolute slug URLs directly and rewrites
+// the link forms authored inside bundle prose, so there is no repair pass. A failure here
+// therefore points at the GENERATOR's link rewriting, not at a missing plugin.
+//
+// THE BASE IS A PARAMETER, NOT A CONSTANT, and that is deliberate: it defaults to the single
+// source (scripts/site-base.mjs) so the build and this check cannot disagree, while remaining
+// injectable so a test can prove a WRONG base actually fails. A guard that silently accepts any
+// base is not checking the thing it claims to check.
+//
+// check-rendered-links.mjs - assert the built site has zero browser-broken
+// internal links.
+//
+// Why this exists: check-internal-link-validity.{sh,ps1} validates links against
+// the FILESYSTEM (it resolves `../section/x.md` relative to the source file and
+// checks the file exists). That misses a whole class of breakage, because pages
+// build to `slug/index.html` and are served one URL level deeper than their
+// source file - so a filesystem-correct relative link can still 404 in the
+// browser (the trailing-slash bug), and links to repo paths the site never
+// publishes (raw SKILL.md, _workflows/, docs/internal/) resolve on GitHub but
+// not on the site. scripts/remark-resolve-links.mjs resolves these at build time
+// (an mdast transform); this check is the regression guard that keeps them fixed.
+//
+// It resolves every intra-site href (relative or /pm-skills-absolute) against
+// the page's REAL URL and asserts the target exists in dist. External links
+// (http/https/mailto/...) are skipped. #anchors are validated against the target
+// page's element ids (advisory by default; set STRICT_ANCHORS=1 to enforce).
+// Run after `npm run build`.
+//
+// Usage:  node scripts/check-rendered-links.mjs [distDir]   (default: site/dist)
+// Exit:   0 = all internal links resolve; 1 = one or more 404 in the browser.
+//
+// The base path is NOT redeclared here (family Astro site standard 14.7): the
+// core resolver takes `base` as a parameter defaulting to the single source
+// scripts/site-base.mjs, so the build and this check can never disagree. The
+// parameter also makes the base testable: check-rendered-links.test.mjs runs the
+// core against a fixture with a deliberately wrong base and asserts it FAILS,
+// proving the check genuinely consumes the base (a wrong base must not pass).
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { BASE as DEFAULT_BASE } from './site-base.mjs';
+
+// Scheme / protocol-relative links are out of scope. Pure #anchors are NOT skipped
+// here (handled below as same-page anchor checks).
+const SKIP = /^(https?:|mailto:|tel:|ftp:|ws:|wss:|data:|javascript:|\/\/)/i;
+
+function walk(dir, acc = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) walk(full, acc);
+    else if (e.name.endsWith('.html')) acc.push(full);
+  }
+  return acc;
+}
+
+// Core check. Returns a process exit code (0 = pass, 1 = fail) and prints the
+// same human report as before. Never calls process.exit, so it is importable and
+// testable. `base` defaults to the single source (scripts/site-base.mjs) but is a
+// parameter so a test can prove a wrong base fails. `strictAnchors` defaults to
+// the STRICT_ANCHORS env var, overridable for deterministic tests.
+export function checkRenderedLinks(distArg, base = DEFAULT_BASE, opts = {}) {
+  const DIST = path.resolve(distArg || 'site/dist');
+  const BASE = base;
+  // Anchor checks are advisory by default (a broken anchor scrolls to top, it does
+  // not 404). Set STRICT_ANCHORS=1 (or opts.strictAnchors) to make them fail the build.
+  const STRICT_ANCHORS = opts.strictAnchors ?? (process.env.STRICT_ANCHORS === '1');
+
+  if (!fs.existsSync(DIST)) {
+    console.error(`check-rendered-links: dist dir not found at ${DIST}; run \`npm run build\` first`);
+    return 1;
+  }
+
+  function urlOf(file) {
+    let rel = path.relative(DIST, file).split(path.sep).join('/');
+    if (rel.endsWith('/index.html')) rel = rel.slice(0, -'index.html'.length);
+    else if (rel === 'index.html') rel = '';
+    else rel = rel.replace(/\.html$/, '/');
+    return BASE + '/' + rel;
+  }
+
+  function existsInDist(urlPath) {
+    if (!urlPath.startsWith(BASE + '/')) return false;
+    const rel = urlPath.slice((BASE + '/').length).replace(/\/$/, '');
+    if (rel === '') return fs.existsSync(path.join(DIST, 'index.html'));
+    if (fs.existsSync(path.join(DIST, rel, 'index.html'))) return true;
+    const asFile = path.join(DIST, rel);
+    if (fs.existsSync(asFile) && fs.statSync(asFile).isFile()) return true;
+    if (fs.existsSync(path.join(DIST, rel + '.html'))) return true;
+    return false;
+  }
+
+  // --- #anchor validation --------------------------------------------------
+  // Extract element ids from a built page so links with a #fragment can be checked
+  // against real heading/element ids (the retired check-internal-link-validity did
+  // this filesystem-style; here it is build-aware). Cached per file.
+  const idCache = new Map();
+  function idsOfFile(distFile) {
+    if (idCache.has(distFile)) return idCache.get(distFile);
+    const set = new Set();
+    try {
+      // Accept both quote styles. Starlight emits double-quoted ids today, but a
+      // future rehype/markdown plugin could emit single-quoted ids; matching both
+      // keeps a real (browser-honored) anchor from being flagged broken under
+      // STRICT_ANCHORS. (name="..." is deliberately NOT matched: <meta name=...>
+      // would flood the id set and mask genuinely broken anchors.)
+      for (const m of fs.readFileSync(distFile, 'utf8').matchAll(/\sid=(?:"([^"]+)"|'([^']+)')/g)) set.add(m[1] ?? m[2]);
+    } catch { /* unreadable: leave empty */ }
+    idCache.set(distFile, set);
+    return set;
+  }
+  // Reverse of urlOf: map a base-absolute URL path to its dist file.
+  function distFileFor(urlPath) {
+    if (!urlPath.startsWith(BASE + '/')) return null;
+    const rel = urlPath.slice((BASE + '/').length).replace(/\/$/, '');
+    const cands = rel === ''
+      ? [path.join(DIST, 'index.html')]
+      : [path.join(DIST, rel, 'index.html'), path.join(DIST, rel), path.join(DIST, rel + '.html')];
+    for (const c of cands) if (fs.existsSync(c) && fs.statSync(c).isFile()) return c;
+    return null;
+  }
+
+  const broken = [];
+  const brokenAnchors = [];
+  // A built site is never empty. An existing-but-empty dist is the state Astro leaves
+  // when a build crashes after emptying outDir; scanning zero pages would otherwise
+  // PASS silently and show a misleading green next to a red build. Fail loudly, the
+  // same way check-route-parity.mjs does on the identical state (keep them symmetric).
+  const pages = walk(DIST);
+  if (pages.length === 0) {
+    console.error(`check-rendered-links: ${DIST} exists but has no .html pages - the build likely failed and emptied outDir. Failing (a built site is never empty).`);
+    return 1;
+  }
+  for (const file of pages) {
+    const html = fs.readFileSync(file, 'utf8');
+    const pageUrl = urlOf(file);
+    for (const m of html.matchAll(/href="([^"]+)"/g)) {
+      const raw = m[1];
+      if (SKIP.test(raw)) continue;
+      const hashIdx = raw.indexOf('#');
+      let frag = '';
+      if (hashIdx !== -1) {
+        const rawFrag = raw.slice(hashIdx + 1).split('?')[0];
+        // A literal '%' that is not a valid percent-escape (e.g. #50%-off) makes
+        // decodeURIComponent throw URIError; fall back to the undecoded fragment so a
+        // single hand-authored anchor cannot crash the whole link check (the throw
+        // would also kill the non-anchor browser-broken-link pass in this same loop).
+        try { frag = decodeURIComponent(rawFrag); } catch { frag = rawFrag; }
+      }
+      // Same-page anchor (#frag): validate against this page's element ids.
+      if (raw.startsWith('#')) {
+        if (frag && !idsOfFile(file).has(frag)) brokenAnchors.push({ page: pageUrl, href: raw });
+        continue;
+      }
+      const isRel = raw.startsWith('./') || raw.startsWith('../');
+      const isBaseAbs = raw.startsWith(BASE + '/') || raw === BASE || raw === BASE + '/';
+      // Host-root in-site links (start with / but not the base, not protocol-relative
+      // //) are missing the base path. Flag them: they resolve outside BASE and fail
+      // existsInDist. This is the "Site not found" class the base path guards against.
+      const isHostRoot = raw.startsWith('/') && !raw.startsWith('//') && !isBaseAbs;
+      if (!isRel && !isBaseAbs && !isHostRoot) continue;
+      const clean = raw.split('#')[0].split('?')[0];
+      if (!clean) continue;
+      let resolved;
+      try { resolved = new URL(clean, 'https://x' + pageUrl).pathname; } catch { continue; }
+      if (!existsInDist(resolved)) { broken.push({ page: pageUrl, href: raw, resolved }); continue; }
+      // Page exists: if the link targets a #anchor, validate it against the target page.
+      if (frag) {
+        const tf = distFileFor(resolved);
+        if (tf && !idsOfFile(tf).has(frag)) brokenAnchors.push({ page: pageUrl, href: raw });
+      }
+    }
+  }
+
+  console.log('=== Rendered Link Resolution Check ===');
+  console.log(`Pages scanned: ${pages.length}`);
+  console.log(`Browser-broken internal links: ${broken.length}`);
+  console.log(`Broken #anchors (${STRICT_ANCHORS ? 'enforcing' : 'advisory'}): ${brokenAnchors.length}`);
+
+  if (broken.length) {
+    console.log('\nBroken internal links (resolved against the page URL):');
+    const byPage = {};
+    for (const b of broken) (byPage[b.page] ||= []).push(b);
+    for (const pg of Object.keys(byPage).sort()) {
+      console.log(`  ${pg}`);
+      for (const b of byPage[pg]) console.log(`     ${b.href}  ->  ${b.resolved}`);
+    }
+  }
+
+  if (brokenAnchors.length) {
+    console.log(`\n${STRICT_ANCHORS ? 'Broken' : 'Advisory: broken'} #anchor link(s) (target page exists, fragment id does not):`);
+    const byPage = {};
+    for (const b of brokenAnchors) (byPage[b.page] ||= []).push(b);
+    const anchorPages = Object.keys(byPage).sort();
+    for (const pg of anchorPages.slice(0, 40)) {
+      console.log(`  ${pg}`);
+      for (const b of byPage[pg]) console.log(`     ${b.href}`);
+    }
+    if (anchorPages.length > 40) console.log(`  ... and ${anchorPages.length - 40} more page(s)`);
+  }
+
+  const fail = broken.length > 0 || (STRICT_ANCHORS && brokenAnchors.length > 0);
+  if (!fail) {
+    const note = brokenAnchors.length ? ` (${brokenAnchors.length} advisory #anchor warning(s); set STRICT_ANCHORS=1 to enforce)` : '';
+    console.log(`\nPASS: all internal links resolve in the browser${note}.`);
+    return 0;
+  }
+  const parts = [];
+  if (broken.length) parts.push(`${broken.length} browser-broken link(s)`);
+  if (STRICT_ANCHORS && brokenAnchors.length) parts.push(`${brokenAnchors.length} broken #anchor(s)`);
+  console.log(`\nFAIL: ${parts.join(' + ')}.`);
+  if (broken.length) {
+    console.log('Fix broken links by routing to a published page or a GitHub source URL.');
+    console.log('For a link inside generated bundle prose, the fix belongs in rewriteLinks()');
+    console.log('in scripts/gen-site.mjs, not in the page: that prose is authored in templates/.');
+  }
+  if (STRICT_ANCHORS && brokenAnchors.length) {
+    console.log('Fix broken #anchors: a heading id was renamed/removed, or the fragment is stale.');
+  }
+  return 1;
+}
+
+// CLI entry: run only when invoked directly (not when imported by the test). The
+// process.argv[1] null-guard keeps a bare import (`node -e`, a REPL, a programmatic
+// consumer that leaves argv[1] unset) from crashing on pathToFileURL(undefined): a
+// guard module must not throw on import (family Astro site standard 14.11, guard
+// robustness - a guard that crashes is worse than no guard).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  process.exit(checkRenderedLinks(process.argv[2]));
+}

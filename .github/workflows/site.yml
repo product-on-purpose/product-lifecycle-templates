@@ -1,0 +1,125 @@
+name: site
+
+# Builds the Astro Starlight site, GUARDS THE ARTIFACT IT IS ABOUT TO UPLOAD, and deploys to
+# GitHub Pages. Separate from ci.yml on purpose (AC-18): the content gate stays the only required
+# check until the site has proven itself, so a site failure cannot block a template change.
+#
+# WHY THE GUARDS SIT WHERE THEY SIT, which is the one thing not to "tidy up" later.
+#
+# The reference implementation gets this wrong, and copying it would inherit the gap. `pm-skills`
+# runs its four guards in `validation.yml` against a SEPARATE build of the same commit, while
+# `deploy-pages.yml` builds again and uploads with no guard at all. The two workflows race, and a
+# guard failure does not stop a deploy: the artifact that is checked is not the artifact that
+# ships. Clause 14.11 requires the deploy build to be guarded, and the donor does not meet it.
+#
+# So here the guards run INSIDE the build job, between `astro build` and `upload-pages-artifact`,
+# against the very directory that is about to be uploaded. One build, guarded, then shipped. If a
+# guard fails, the upload step never runs and there is nothing to deploy.
+#
+# THE PR JOB IS THE SAME RECIPE, NOT A SECOND ONE (AC-9). `build` runs on both `push` and
+# `pull_request`; `deploy` is an event-gated tail that only runs for a push to `main`. That is why
+# there is no separate "validate" job: a second recipe is a second thing to drift.
+#
+# Rollback: disable this workflow, or flip Pages source away from "GitHub Actions" in repo
+# Settings > Pages. No deployment has ever run at time of writing, so there is no prior artifact to
+# roll back to.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # The guards need real git history: verify-edit-links.mjs asks `git ls-files` whether an
+          # edit-link target is TRACKED, not merely present on disk. A shallow or partial checkout
+          # still lists tracked paths, but fetch-depth: 0 keeps this honest if a future guard needs
+          # to look at history.
+          fetch-depth: 0
+
+      - name: Setup Node (pinned by .nvmrc, never a literal)
+        uses: actions/setup-node@v7
+        with:
+          # AC-10: the version is read from the file, so CI and a developer's shell cannot disagree.
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        # `npm ci` and the committed lockfile are what pin the version set (AC-11). Never `npm
+        # install`, which would resolve ranges afresh and silently move the Astro family.
+        run: npm ci
+
+      - name: Build site (generator, then Astro)
+        working-directory: site
+        # `prebuild` chains `npm run gen`, so this single command runs scripts/gen-site.mjs and
+        # then astro build. The all-in-one withastro/action is deliberately NOT used: it runs
+        # astro build directly with no pre-build hook and would skip the generator entirely.
+        run: npm run build
+
+      # ---------------------------------------------------------------------------------------
+      # GUARDS. Everything from here to `upload-pages-artifact` runs against ./site/dist, the
+      # exact directory the next step uploads. Each of these has been run against a deliberately
+      # broken fixture and OBSERVED to fail (AC-12); a guard that has never gone red is a report,
+      # not a gate, which is finding DF-7 and the reason this block exists at all.
+      # ---------------------------------------------------------------------------------------
+
+      - name: 'Guard: no page claims a bundle is proven'
+        working-directory: site
+        # AC-16. Fails on `proven`, `verified`, `validated` and on a percentage standing beside a
+        # claim about a bundle. Scans the generated pages, because the gate is on what ships.
+        run: npm run check:honesty
+
+      - name: 'Guard: every internal link resolves in a browser'
+        # AC-12. A filesystem-correct relative link can still 404, because pages build to
+        # slug/index.html and are served one URL level deeper than their source.
+        run: node scripts/check-rendered-links.mjs site/dist
+
+      - name: 'Guard: no published route disappeared'
+        # AC-12. Compares against the committed baseline at scripts/route-manifest.txt. A removed
+        # or renamed URL is a "Site not found" for every existing link and bookmark.
+        run: node scripts/check-route-parity.mjs site/dist
+
+      - name: 'Guard: every edit link points at a tracked file'
+        # AC-4 as amended. Asserts targets are GIT-TRACKED rather than merely present: a page that
+        # lost its editUrl stamp falls back to the generated, gitignored content path, which exists
+        # on disk in CI exactly as it does locally, so an existence check passes while the link
+        # 404s on GitHub. Also enforces a minimum occurrence count so a total emission failure
+        # fails instead of passing on 0/0.
+        run: node scripts/verify-edit-links.mjs site/dist .
+
+      - name: Upload Pages artifact
+        # Reached only if every guard above exited 0.
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./site/dist
+
+  deploy:
+    # The event-gated tail (AC-9). The build job above is shared with pull requests; only a push to
+    # main reaches here, so a PR gets the identical build and guards without deploying anything.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
