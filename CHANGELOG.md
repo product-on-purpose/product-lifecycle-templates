@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.9.0] - 2026-09-21
+
 ### Added
 
 - **[ADR 0053](docs/internal/decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md):
@@ -2079,7 +2083,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.5.0...v0.6.0
