@@ -1,8 +1,25 @@
 # Spec: S0 of the site, the slice that makes it exist
 
-Status: **spec, ready to execute.** Written 2026-09-19. Traces to [`site-plan.md`](site-plan.md)
-section 10 (phase S0) and section 9 (the Node toolchain), and to the family standard
-`SITE-STANDARD.md` in `agent-plugins` at `standards/domains/astro-sites/`.
+Status: **DONE, 2026-09-21. All 20 acceptance criteria met, and the site is live at
+<https://product-on-purpose.github.io/product-lifecycle-templates/>.** Written 2026-09-19, executed
+2026-09-20 and 2026-09-21 across four pull requests (#163 spec corrections, #165 the generator, #166
+the guards and deploy, and this one). Traces to [`site-plan.md`](site-plan.md) section 10 (phase S0)
+and section 9 (the Node toolchain), and to the family standard `SITE-STANDARD.md` in `agent-plugins`
+at `standards/domains/astro-sites/`.
+
+**What executing it corrected in it**, kept because a spec that was wrong in four places and says so
+is worth more than one that quietly agrees with the code:
+
+| The spec said | Execution found | Where |
+|---|---|---|
+| The generator would be **larger** than the donor's 868 lines | **587**, because `manifest.json` already carries every per-bundle field and no YAML parser is needed | section 7 |
+| Role tabs force `.mdx`, whose brace handling would mangle templates, so defer them to S1 | Built both ways: rendered output **byte-identical but for whitespace**, because templates are always fenced. Tabs shipped in S0 | section 7 note 4 |
+| AC-4's mutation test would go red when an `editUrl` stamp is stripped | It **could not**: the donor guard's `existsSync` passes on the generated, gitignored fallback path. Re-specified to require git-tracked | AC-4 |
+| `src/content/docs/` is gitignored | Only the `bundles/` subpath is; hand-authored pages live there and must stay tracked | AC-3, corrected before execution |
+
+**And one criterion had no implementation at all until closeout.** AC-6's favicon guard did not
+exist when #166 merged; the favicon resolved, but nothing asserted it. Writing it confirmed finding
+4.3 on a real 34-page build: Starlight emits **only** `rel="shortcut icon"`, never `rel="icon"`.
 
 Adopted decisions this spec implements rather than reopens:
 
@@ -46,8 +63,13 @@ What exists in this repository today:
 - Every generator and every gate step is Python. The one Node in `ci.yml` is `actions/setup-node`
   provisioning a runtime for the conformance gate, which is a program in another repository.
 
-What does not exist: `site/`, `scripts/`, `package.json`, `.nvmrc`, a lockfile,
-`.github/workflows/site.yml`, `.github/dependabot.yml`.
+What did not exist when this was written, and **all of which now does**: `site/`, `scripts/`,
+`package.json`, `.nvmrc`, a lockfile, `.github/workflows/site.yml`, `.github/dependabot.yml`.
+
+> **Section 1 is kept in its original tense as a record of the starting state**, not updated into a
+> description of today. The first bullet above is the one that has actually changed meaning: Pages
+> reported `status: null` because nothing had deployed, and the first deployment ran 2026-09-21,
+> with `build: success` and `deploy: success`.
 
 **The shared preset does not exist either.** `product-on-purpose/astro-docs-preset` returns "Could not
 resolve to a Repository", re-verified 2026-09-18. Its spec is written (`shared-preset-spec.md` in the
@@ -75,11 +97,13 @@ What S0 is deliberately not is in section 8.
 product-lifecycle-templates/
   .nvmrc                       NEW   "24"
   scripts/                     NEW   dependency-free Node .mjs
-    gen-site.mjs                     reads the tree, writes site/src/content/docs/
+    gen-site.mjs                     reads the tree, writes site/src/content/docs/bundles/
     check-rendered-links.mjs         guard, ported
     check-route-parity.mjs           guard, ported
-    verify-edit-links.mjs            guard, ported
-    site-base.mjs                    the one module that reads the base from astro.config
+    check-favicon.mjs                guard, written here (the donor has no equivalent)
+    verify-edit-links.mjs            guard, ported WITH a fix; see AC-4
+    route-manifest.txt               the committed route baseline check-route-parity reads
+    site-base.mjs                    the ONE place the base literal lives; astro.config imports it
   site/                        NEW   the Astro app
     astro.config.mjs                 site + base + accent + mermaid, set ONCE
     package.json                     engines.node lives HERE, not at the root
@@ -208,12 +232,12 @@ collapses to one project, in `site/`.
 
 Numbered so an autonomous session can report against them, and so "done" is not a judgment call.
 
-- [ ] **AC-1.** `site/` builds with `npx astro build` and emits `dist/` with a page for every bundle in
+- [x] **AC-1.** `site/` builds with `npx astro build` and emits `dist/` with a page for every bundle in
       `manifest.json`. No bundle is hand-listed anywhere.
-- [ ] **AC-2.** `scripts/gen-site.mjs` is dependency-free Node `.mjs`, reads `templates/`,
+- [x] **AC-2.** `scripts/gen-site.mjs` is dependency-free Node `.mjs`, reads `templates/`,
       `manifest.json`, `sections.json` and `atlas/catalog-data.json`, and writes into
       `site/src/content/docs/`. No new Python site generator exists (clause 14.3).
-- [ ] **AC-3.** **Only the generated subpath is gitignored**, currently
+- [x] **AC-3.** **Only the generated subpath is gitignored**, currently
       `site/src/content/docs/bundles/`, and a clean checkout plus `npm ci && npm run build` produces the
       site (clause 14.4, preferred model). Hand-authored narrative pages live in
       `site/src/content/docs/` too and **MUST stay tracked**.
@@ -226,7 +250,7 @@ Numbered so an autonomous session can report against them, and so "done" is not 
       > does not distinguish the directory from the generated subtree - it was caught by reading
       > `pm-skills/.gitignore` rather than anything written about it, and by the spike's own two
       > narrative pages turning out never to have been committed.
-- [ ] **AC-4.** Every generated page sets `editUrl` to its true source file, or to `false` where it has
+- [x] **AC-4.** Every generated page sets `editUrl` to its true source file, or to `false` where it has
       no single source. **Mutation-checked:** removing the stamp makes `verify-edit-links.mjs` exit
       non-zero (clause 14.11, site-plan 4.2).
 
@@ -244,43 +268,43 @@ Numbered so an autonomous session can report against them, and so "done" is not 
       > `MIN_EDIT_LINKS` occurrence floor, which exists so the guard fails on 0/0 rather than passing when
       > editUrl emission breaks entirely. Both are required before AC-12's `editUrl` fixture counts as
       > satisfied.
-- [ ] **AC-5.** `site` and `base` appear exactly once as consumed config, in `astro.config.mjs`. Any
+- [x] **AC-5.** `site` and `base` appear exactly once as consumed config, in `astro.config.mjs`. Any
       validator needing the base imports it from `scripts/site-base.mjs`. The two sanctioned exceptions
       are a test value-pin and `public/robots.txt` (clause 14.7).
-- [ ] **AC-6.** A favicon resolves **200 on every built page including `404.html`**. The guard asserting
+- [x] **AC-6.** A favicon resolves **200 on every built page including `404.html`**. The guard asserting
       this matches `rel="shortcut icon"` as well as `rel="icon"`, and **has a test proving it catches a
       removed favicon** (clause 14.9, finding 4.3).
-- [ ] **AC-7.** `.github/workflows/site.yml` has a build job and a deploy job. The deploy job `needs`
+- [x] **AC-7.** `.github/workflows/site.yml` has a build job and a deploy job. The deploy job `needs`
       build and is gated to `environment: github-pages`. Actions pinned to `upload-pages-artifact@v5`
       and `deploy-pages@v5` (clause 14.6).
-- [ ] **AC-8.** **The guards run between `astro build` and `upload-pages-artifact`, in the same job**, so
+- [x] **AC-8.** **The guards run between `astro build` and `upload-pages-artifact`, in the same job**, so
       the guarded artifact is the deployed artifact (clause 14.11, finding 4.1).
-- [ ] **AC-9.** A PR-triggered, non-deploying job runs the **same build recipe** as the deploy build, as
+- [x] **AC-9.** A PR-triggered, non-deploying job runs the **same build recipe** as the deploy build, as
       an event-gated tail rather than a second recipe (clause 14.6).
-- [ ] **AC-10.** CI reads the Node version via `node-version-file: .nvmrc`, never a hardcoded literal
+- [x] **AC-10.** CI reads the Node version via `node-version-file: .nvmrc`, never a hardcoded literal
       (clause 14.8).
-- [ ] **AC-11.** The version set is pinned by a **committed lockfile plus `npm ci`**, not by caret ranges
+- [x] **AC-11.** The version set is pinned by a **committed lockfile plus `npm ci`**, not by caret ranges
       (clause 14.8). `site/package.json` declares `engines.node: ">=22.19.0"` per finding 4.2.
-- [ ] **AC-12.** **Every ported guard has been run against a deliberately broken fixture and observed to
+- [x] **AC-12.** **Every ported guard has been run against a deliberately broken fixture and observed to
       fail** before being trusted: a broken internal link, a removed route, a stripped `editUrl`, and an
       empty-but-existing `dist`. A guard that has never gone red is a report, not a gate (DF-7).
-- [ ] **AC-13.** `.github/dependabot.yml` exists, targets `npm` at `/site`, weekly, grouped, `minor` and
+- [x] **AC-13.** `.github/dependabot.yml` exists, targets `npm` at `/site`, weekly, grouped, `minor` and
       `patch` only, with a `dependencies` label and a `chore(deps)` prefix. **No `npm audit` step is
       added to CI** (ADR 0051).
-- [ ] **AC-14.** `.gitattributes` pins `*.ts`, `*.css`, `*.txt`, `.nvmrc` and `.gitignore` to `eol=lf`,
+- [x] **AC-14.** `.gitattributes` pins `*.ts`, `*.css`, `*.txt`, `.nvmrc` and `.gitignore` to `eol=lf`,
       and **`git add` of the full site tree emits zero CRLF warnings** (finding 4.4). This change
       currently sits on `spike/site-samples` and must land with S0 rather than only on that branch.
-- [ ] **AC-15.** No rendered page states a count as a literal. Every number derives from `manifest.json`
+- [x] **AC-15.** No rendered page states a count as a literal. Every number derives from `manifest.json`
       or `sections.json` at build time (site-plan section 11; DF-5 applied to a new surface).
-- [ ] **AC-16.** `gen-site.mjs --check` **fails the build** on the strings `proven`, `verified`,
+- [x] **AC-16.** `gen-site.mjs --check` **fails the build** on the strings `proven`, `verified`,
       `validated`, and on any percentage adjacent to a bundle id, outside an allow-listed context.
       **Mutation-checked** by planting one and observing a red build (site-plan 13.1).
-- [ ] **AC-17.** No page calls any bundle proven, every bundle shows `beta`, and zero real fills is
+- [x] **AC-17.** No page calls any bundle proven, every bundle shows `beta`, and zero real fills is
       published as zero rather than omitted or softened (site-plan section 13).
-- [ ] **AC-18.** `site.yml` is a separate workflow from `ci.yml`, and the content gate remains the only
+- [x] **AC-18.** `site.yml` is a separate workflow from `ci.yml`, and the content gate remains the only
       required check until the site is stable (site-plan 8.1).
-- [ ] **AC-19.** The existing gate still passes: `python tools/run-gate.py` reports 0 failed.
-- [ ] **AC-20.** The site deploys, and `https://product-on-purpose.github.io/product-lifecycle-templates/`
+- [x] **AC-19.** The existing gate still passes: `python tools/run-gate.py` reports 0 failed.
+- [x] **AC-20.** The site deploys, and `https://product-on-purpose.github.io/product-lifecycle-templates/`
       serves the landing page over HTTPS.
 
 ---

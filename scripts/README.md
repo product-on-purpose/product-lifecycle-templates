@@ -44,17 +44,22 @@ the slice is specified in [`site-s0-spec.md`](../docs/internal/site-s0-spec.md).
 - [`route-manifest.txt`](route-manifest.txt) - the committed record of every URL this site has
   published. Snapshotted from a finished build, never generated from source: the thing it guards
   is a promise the source no longer contains once a route is removed
+- [`check-favicon.mjs`](check-favicon.mjs) - asserts every built page declares a favicon and that
+  the declared file exists in the build, `404.html` included. Matches `rel="shortcut icon"` as
+  well as `rel="icon"`, because Starlight emits only the former for a configured PNG and the
+  obvious guard reports a false failure on a healthy site
 - [`verify-edit-links.mjs`](verify-edit-links.mjs) - asserts every "Edit this page" target is
   **git-tracked**, not merely present on disk, and that the link count stays above a floor. The
   donor checks existence, which cannot fail the one mutation it exists to catch
 
-All four guards run inside [`site.yml`](../.github/workflows/site.yml) **between `astro build` and
+All five guards run inside [`site.yml`](../.github/workflows/site.yml) **between `astro build` and
 `upload-pages-artifact`**, so the artifact that is guarded is the artifact that ships. The
 reference implementation does not do this: it guards a separate build in a workflow that races the
 deploy, so a guard failure there does not stop a deploy.
 
-**Every guard has been run against a deliberately broken fixture and observed to fail** (AC-12): a
-broken link, a removed route, a stripped `editUrl`, and an empty-but-existing `dist`. A guard that
+**Every guard has been run against a deliberately broken fixture and observed to fail** (AC-12,
+AC-6): a broken link, a removed route, a stripped `editUrl`, a deleted favicon, a favicon link
+stripped from `404.html`, and an empty-but-existing `dist`. A guard that
 has never gone red is a report, not a gate.
 
 ## Conventions anything added here must follow
@@ -62,10 +67,10 @@ has never gone red is a report, not a gate.
 - **Zero dependencies.** No `package.json` in this folder and no imports outside `node:*`.
 - **A docblock header** carrying `what-it-is`, `what-it-does`, `why` and `used-by`, per the family
   standard's G9. The conformance gate fails without it.
-- **The base path is never redeclared.** `site/astro.config.mjs` owns `site` and `base` (clause
-  14.7). `gen-site.mjs` holds the one constant it needs to emit links and **asserts it against the
-  config at startup**, so the two cannot silently disagree; a wrong base passes every local check
-  and 404s on the live site.
+- **The base path is never redeclared.** [`site-base.mjs`](site-base.mjs) holds the only literal;
+  `site/astro.config.mjs`, the generator and the link checker all **import** it (clause 14.7,
+  AC-5). A wrong base passes every local check and 404s on the live site, so the arrangement that
+  removes the failure is having nothing to disagree with.
 - **Only the generated subpath is written.** `site/src/content/docs/bundles/` is the single
   gitignored generated directory. Hand-authored narrative pages live one level up in
   `site/src/content/docs/` and are **tracked**; nothing here may remove or rewrite them.

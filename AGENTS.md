@@ -187,8 +187,8 @@ agent selecting a bundle should not read more confidence into it than the librar
 
 ## Honest limits on how to get this library
 
-There is no MCP server exposing these bundles, no HTTP API, and no versioned package on any registry.
-The only acquisition path today is `git clone`:
+There is **no HTTP API and no versioned package on any registry**. The acquisition path is `git clone`,
+or the Claude Code plugin route, which clones for you:
 
 ```bash
 git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
@@ -197,6 +197,15 @@ git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 Everything above, `manifest.json`, the eight files per bundle, the guidance comments, is read directly
 from the checked-out tree. There is no runtime dependency: every file is plain Markdown, YAML, or JSON,
 readable with nothing more than a file-read tool.
+
+> **This section said "there is no MCP server exposing these bundles" until 2026-09-21, and that had
+> been false since 2026-09-06.** The server shipped in `v0.6.0` and is described two sections above, so
+> this file spent five releases contradicting itself: an agent reading top to bottom was told how to use
+> a server and then told it did not exist. Nothing gates a sentence against another sentence.
+>
+> **There is now also a website**, <https://product-on-purpose.github.io/product-lifecycle-templates/>,
+> which renders every bundle for human readers. It is a reading surface, not an acquisition path: it
+> serves no machine-readable artifact, so an agent still wants the tree or the MCP server.
 
 **There is an install step, and which one you use decides whether the bundles are present at all.** The
 Claude Code plugin route clones the whole repository, so everything above is on disk. The
