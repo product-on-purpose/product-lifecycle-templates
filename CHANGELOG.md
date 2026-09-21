@@ -14,6 +14,32 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[ADR 0053](docs/internal/decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md):
+  `launch-coordination-checklist` joins `standing-standards` as a `tool`.** Unblocks a spec stalled
+  since 2026-09-11. The catalog category `Release / Deployment / Runbooks` names both candidate
+  families' territory in one string, and the straddle was real. **What resolved it was the family's own
+  falsifier, not its membership test**: [ADR 0032](docs/internal/decisions/0032-adopt-standing-standards-family-contract.md)
+  conceded that `standing-standards` groups by rhythm rather than by job, and wrote down the condition
+  under which it would be wrong, a candidate matching the cadence but **not consulted at the moment of
+  action**. A launch checklist is consulted at the moment of action. Classified `tool` rather than
+  `foundation` on the contract's own cut, an instrument you execute rather than a standard you are
+  judged against. Not `delivery-docs`, because that contract obliges every member to state its position
+  in a chain carrying one unit of product work and this carries none. The pm-skills counter-argument,
+  which files the paired skill under `deliver`, is recorded rather than omitted. **The spec is
+  unblocked; the build is not scheduled**, since ADR 0021 leaves Tier 2 grow-by-pull.
+- **[ADR 0054](docs/internal/decisions/0054-the-mcp-server-returns-a-uniform-envelope.md): the MCP
+  server returns a uniform `{ok, data?, error?}` envelope.** Closes the open decision in
+  [`ag2-mcp-spec.md`](docs/internal/ag2-mcp-spec.md) section 5 that was blocking `structuredContent`,
+  the protocol's typed response channel. **The annotation was never the fix**: adding one was measured
+  to *cause* a regression, because the SDK validates returns against the schema while every tool's
+  error shape differs structurally from its success shape, so annotating raises `ToolError` on every
+  refusal path. **The overload this ADR found**: `ok` already means three different things in the
+  shipped server, so the obvious envelope would render an invalid document as
+  `{ok: true, data: {ok: false}}`; the inner fields are renamed `data.valid` and `data.refused`. Three
+  annotation shapes were **spiked against the installed SDK** on both the success and the refusal path
+  before the decision was written. Breaking change to a shipping wire format, taken now because nothing
+  external calls the server. **Implementation is a separate PR**; the `mcp<2` port stays out of scope.
+
 - **[`site-s0-spec.md`](docs/internal/site-s0-spec.md): S0 of the site, with twenty numbered
   acceptance criteria.** Written **after** building a throwaway Astro scaffold rather than before, which
   is why section 4 carries four findings the tracked plan does not: (1) `pm-skills`, the named reference

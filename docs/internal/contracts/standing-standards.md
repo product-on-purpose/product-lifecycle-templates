@@ -3,7 +3,9 @@
 **Status:** **adopted 2026-08-05**, [ADR 0032](../decisions/0032-adopt-standing-standards-family-contract.md).
 Registered in check K, which now gates `classification: foundation or tool` on every member.
 **Axis:** `classification`, **a set**: `foundation` or `tool`.
-**Members:** `definition-of-done`, `runbook`.
+**Members:** `definition-of-done`, `runbook`, `launch-coordination-checklist`
+([ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md),
+assigned 2026-09-20; specced and built: no).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -30,10 +32,18 @@ on a cadence and valuable only while current** is `utility` and belongs to `gove
 `strategy-docs`. A candidate that is the **output of a phase** belongs to a `phase` family. This family is
 neither periodic nor phase-bound, which is exactly why it needs the `classification` axis.
 
-**Likely future members**, if pulled: `definition-of-ready`, a coding-standards or engineering-handbook
-document, a release checklist. None is Tier 1, so none is scheduled;
+**Likely future members**, if pulled: `definition-of-ready`, and a coding-standards or
+engineering-handbook document. None is Tier 1, so none is scheduled;
 [ADR 0021 (complete the Tier-1 floor)](../decisions/0021-complete-the-tier-1-floor.md) leaves Tier 2 and Tier
 3 strictly grow-by-pull.
+
+> **"A release checklist" was the third entry on this list and has been pulled, 2026-09-20.** It is now
+> the member `launch-coordination-checklist`, `classification: tool`, assigned by
+> [ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md).
+> **The prediction is worth keeping rather than quietly deleting**: this contract named the type as a
+> likely member on 2026-08-05, before any member of the family was built, and the candidate assessed six
+> weeks later matched it. The list is a forecast the contract can be judged against, so entries are
+> moved to Members rather than removed.
 
 ## 2. Required catalog metadata and allowed values
 
@@ -151,6 +161,21 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.2.0, 2026-09-20: a third member.** `launch-coordination-checklist` joins as `classification: tool`,
+by [ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md).
+The Members line and the likely-future-members forecast above are updated accordingly.
+
+**What decided it was this family's own falsifier, not its membership test.** Section 1's "agreed once,
+applied every time" is genuinely ambiguous for a launch checklist, which is arguably written per launch.
+[ADR 0032](../decisions/0032-adopt-standing-standards-family-contract.md) conceded that this family
+groups by rhythm rather than by job and supplied the sharper test: a candidate matching the cadence but
+**not consulted at the moment of action** means the family was drawn around an axis, and should split
+rather than absorb. This candidate is consulted at the moment of action, so it is the opposite of the
+one that would force a split. **A family contract that names the condition under which it is wrong can
+answer a membership question instead of only arguing about it**, and that is the general lesson.
+
+The contract is otherwise unchanged. No structural obligation, metadata rule or axis value moved.
 
 **Research confirmation, 2026-08-07**, per
 [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). This
