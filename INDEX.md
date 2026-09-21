@@ -33,3 +33,4 @@
 - [`docs/`](docs/) - Diataxis docs (reference, how-to, explanation).
 - [`docs/internal/decisions/`](docs/internal/decisions/) - ADRs.
 - [`templates/`](templates/) - scaffolder templates.
+- [`scripts/`](scripts/) - the Node validation spine (conformance checks, generators, gate, evaluate).

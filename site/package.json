@@ -8,6 +8,9 @@
     "node": ">=22.19.0"
   },
   "scripts": {
+    "gen": "node ../scripts/gen-site.mjs",
+    "check:honesty": "node ../scripts/gen-site.mjs --check",
+    "prebuild": "npm run gen",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

@@ -315,6 +315,16 @@ Call it **1,100 to 1,500 lines written or adapted.** Multi-week at this project'
 >    force `.mdx` output, which brings JSX brace-escaping into pages that render templates full of
 >    `{{placeholders}}`. Deferred to S1; S0 emits `.md` with `<details>` disclosure, which is what the
 >    donor does for its own multi-artifact pages.
+>
+>    > **Item 4 was wrong, and it was wrong in the way this spec's own section 4 warns about: it
+>    > reasoned about a build instead of running one.** Corrected 2026-09-20 when the generator was
+>    > written. The hazard is real only for UNFENCED content, and templates are always fenced. The
+>    > same excerpt was built both ways and the rendered bodies were **byte-identical but for
+>    > whitespace**; across all 30 bundles the guides carry **zero** braces and zero tags, and the
+>    > 1,907 tag-like strings in companions are `<a id="ref-N">` citation anchors, which MDX treats
+>    > as intrinsic elements. So `.mdx` costs nothing, and S0 ships **`.mdx` with role tabs**, which
+>    > also matches `spike-report.mdx`, the hand-built reference page the 2026-09-18 spike left in
+>    > the tree. The deferral was removing a feature to avoid a cost that does not exist.
 
 **Three pull requests, not one:**
 
