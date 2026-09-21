@@ -24,11 +24,23 @@ design task" rather than "a spec-driven execution".
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | No |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | No |
 
-**Not specced, deliberately.** `launch-coordination-checklist` is promised by a `future:launch-checklist` tag
-in `release-notes_meta.yaml` and has a pm-skills pairing candidate, but its catalog category straddles two
-families (`release-notes` is `delivery-docs`, `runbook` is `standing-standards`) and **a family assignment
-is not a spec-writer's call**. It still waits on a maintainer decision, and is recorded here so the gap
-stays visible rather than forgotten.
+**`launch-coordination-checklist`: family assigned 2026-09-20, spec pending.** It joins
+`standing-standards` as `classification: tool`, by
+[ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md). The
+straddle that blocked it since 2026-09-11 was real (`release-notes` is `delivery-docs`, `runbook` is
+`standing-standards`, and the catalog category names both), and it was resolved by ADR 0032's falsifier
+rather than by the membership test: the type is **consulted at the moment of action**, which is what
+`standing-standards` is for, and it carries no unit of product work, which is what `delivery-docs`
+requires of every member.
+
+**The spec is now unblocked. The build is not scheduled**, because ADR 0021 leaves Tier 2 grow-by-pull.
+
+> **One correction landed with the assignment.** The promise tag in `release-notes_meta.yaml` read
+> `future:launch-checklist` while the catalog id is `launch-coordination-checklist`.
+> `tools/check-bundles.py` resolves `future:` targets **by bundle id** and raises its stale-reference
+> failure only when that exact id appears on disk, so building under the catalog id would have left a
+> promise pointing at an id that never arrives **with the gate still green**. The tag now reads
+> `future:launch-coordination-checklist`.
 
 > **`solution-brief` is resolved, 2026-09-20: the two tags were retired rather than the type admitted.**
 > `prd_meta.yaml` and `rfc_meta.yaml` both carried `future:solution-brief`, promising readers a type with

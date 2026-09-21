@@ -17,8 +17,8 @@
 > - **Section 4's week-by-week timeline**, which is a historical calendar. It is marked as such in place.
 > - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
 >
-> This file was written 2026-07-10 and last cites **ADR 0020**; there are now **40** decision records, and
-> twenty-one of them (0021 through 0041) postdate it and change the plan it describes.
+> This file was written 2026-07-10 and last cites **ADR 0020**; there are now **54** decision records, and
+> thirty-four of them (0021 through 0054) postdate it and change the plan it describes.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
 > one of the ungated. **The banner you are reading drifted too**, which is finding **DF-5 (prose counts
@@ -29,8 +29,15 @@
 > 2026-07-28 and 2026-08-14 this file's status column claimed 18 of 27 types were built and that `v0.2.0`
 > was the next release, through three tagged releases, while every marker in it matched the tree. That is
 > the limitation `check-counts.py` prints on every run, costing something for the second time.
+>
+> **Third time, 2026-09-20.** The marker went red on 52 versus 54 and was corrected. The sentence two
+> lines above it, inside this very banner, still said **40** decision records and named the range
+> `0021 through 0041`, both stale by fourteen records. **The paragraph documenting DF-5 had itself
+> drifted**, and the marker did not catch it because a marker gates a marker. The gate's own advice,
+> printed on every run, is the thing that found it: do not just edit the marker, re-read the prose
+> around it.
 
-<!-- counts: adrs=52, bundles=30 -->
+<!-- counts: adrs=54, bundles=30 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies

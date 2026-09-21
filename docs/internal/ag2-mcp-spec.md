@@ -37,6 +37,12 @@ server would serve come from one method.
 | `validate_fill` section completeness against a section schema | `sections.json` provides exactly this | **true, and built** |
 | `validate_fill` frontmatter provenance check | `source_template` and `source_template_version` are in 58/58 variants | **true, and built** |
 | **[BUILD]** sketch: filter candidates by `phase` | the axis is `phase` XOR `classification`: **17 / 10 / 0 both / 0 neither** | **false, and it hides 10 of 27 bundles** |
+
+> **The counts in this table are as measured when the sketch was reviewed, at 27 bundles and 58
+> variants.** They are left as they were rather than bumped, because the table records an assessment
+> made on a date and rewriting its numbers would falsify what was actually measured. The library now
+> holds **30 bundles and 63 variants** (2026-09-20). The conclusions are unaffected; the ratios are not
+> re-verified.
 | **[BUILD]** ADR 0003's six phase values are selectable | only **four** occur in any built bundle; `define` and `measure` match nothing | **false** |
 | **[BUILD]** *this document's* AC: 3 candidates under 500 tokens | **1,194** with the field list this document prescribes | **false, and ours** |
 
@@ -140,7 +146,18 @@ Neither is large. Both are prerequisites, not parallel work.
 
 ## 5. Acceptance criteria, rewritten to be meetable
 
-- [x] `search_templates` returns 3 candidates in **under 800** approx tokens, measured, for all 27 bundles.
+- [~] `search_templates` returns 3 candidates in **under 800** approx tokens, measured, for all 27 bundles.
+
+      > **Re-measured 2026-09-20 at 30 bundles, and the headroom is gone.** The library has grown from
+      > 27 bundles to 30 since this was ticked, and the worst case has **moved off `raid-log`**. It is
+      > now `project-milestone-retrospective`, one of the three bundles added after this line was
+      > written. Measured at **800 tokens** by a method that reads `raid-log` at 700 against the 685
+      > recorded below, so it runs roughly 2% high and the comparable figure is **about 785**.
+      >
+      > **That is under the ceiling, so this is not a breach, and the tick is downgraded anyway.** The
+      > 800 was chosen as "685 plus room for one long summary". There is no longer room for one long
+      > summary. The next bundle with a long `summary` breaches it, and nothing in CI would notice,
+      > because no check measures this. Either the ceiling is re-argued or discovery sheds a field.
       **The 500 in the first draft of this line was wrong and was never measured.** Three candidates
       carrying the field list section 3.1 prescribes cost **1,194**. `sizing_guidance` alone averages 632
       characters, and it is prose you read *after* choosing a bundle, while choosing a size - so it moved
@@ -148,7 +165,10 @@ Neither is large. Both are prerequisites, not parallel work.
       one long summary.
 - [x] `get_template` with default `parts` returns exactly one artifact and reports its token count, and the reported count is within 10% of `manifest.json`'s `approx_tokens` for that variant.
 - [x] Every response naming a bundle uses the field names `manifest.json` uses. A response carrying `bundle_id` or `one_line_summary` fails.
-- [x] `get_template` addresses all **58** variants, including the 11 that exist only under a non-default format.
+- [x] `get_template` addresses all **63** variants, including those that exist only under a non-default
+      format. **Re-measured 2026-09-20**; the figure was 58 when written, and grew with the library.
+      `python tools/mcp_server.py --selftest` prints the live count, which is the number to trust over
+      this line.
 - [x] `validate_fill` and `stamp_and_strip` agree exactly with the Python tools they wrap, asserted by running both over the same fixtures.
 - [~] Intent to selection to fetch to fill to validation completes **over stdio**, and the price quoted at
       discovery equals the price charged at retrieval. Verified 2026-09-06 by driving the server with the
@@ -183,6 +203,23 @@ Neither is large. Both are prerequisites, not parallel work.
       is a breaking change to a shipping wire format. **That decision is the maintainer's and is not
       made here.** The alternative, a `total=False` TypedDict where every key is optional, yields a schema
       asserting nothing and is rejected as delivering the label without the value.
+
+      > **Decided 2026-09-20 by
+      > [ADR 0054](decisions/0054-the-mcp-server-returns-a-uniform-envelope.md); implementation
+      > pending.** The envelope is `{ok, data?, error?}` with a **per-tool `TypedDict`** annotation, and
+      > `error` is an object carrying a closed `code` enum plus the existing hint fields.
+      >
+      > **The ADR adds one thing this section does not see: `ok` is already overloaded three ways** in
+      > the shipped server, meaning "the document is valid" in `validate_fill`, "the CLI exited 0" in
+      > `stamp_and_strip`, and "your request was bad" on the file-not-found path of both. The naive
+      > envelope would therefore render an invalid document as `{ok: true, data: {ok: false}}`. The
+      > inner fields are renamed `data.valid` and `data.refused` so no level reuses the word.
+      >
+      > Three annotation shapes were spiked against the installed SDK before the ADR was written, on
+      > both the success and the refusal path. All three emit a schema; the pydantic union loses because
+      > FastMCP nests it under a `result` key, and the flat `TypedDict` loses because typing `data` as
+      > `dict[str, Any]` asserts nothing, which is the same objection this paragraph raises against
+      > `total=False`.
 - [x] The server reports the library version it was built from, read from `library.json`.
 
 The dropped criterion is the sketch's "default payload under 2.6k for every bundle". It is not achievable
@@ -240,7 +277,8 @@ repository in the wrong language.
   building a fifth generated artifact to serve a ranking that already works would be the countable-target
   failure in generator form. If ranking quality is ever *measured* and found wanting, that is the moment.
 - **Any claim that the ranking is good.** No assertion scores it. `tools/test-mcp-server.py` asserts
-  contracts - field names, addressability of all 58 variants, parity with the wrapped tools, refusals
+  contracts - field names, addressability of every variant the manifest declares, parity with the
+  wrapped tools, refusals
   surfacing as refusals - and prints that limit in its own summary. An open-ended query is checked against
   a *set* of plausible answers rather than one id, because the first version of that assertion demanded
   `acceptance-criteria` for "what done means" and the server answered `definition-of-done`, which is the
