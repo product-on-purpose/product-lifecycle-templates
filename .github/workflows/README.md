@@ -14,5 +14,14 @@ form, and no step in this file can prove that a claim is true.
 
 ## Inventory
 
-- [`ci.yml`](ci.yml) - the single workflow, running the bundle gate, the tool self-tests, the link
+- [`ci.yml`](ci.yml) - the content gate, running the bundle gate, the tool self-tests, the link
   gate, freshness checks on every generated artifact, and a repo-wide dash sweep over tracked files
+- [`site.yml`](site.yml) - builds the Astro Starlight site, guards the artifact, and deploys it to
+  GitHub Pages. **Its four guards run between `astro build` and `upload-pages-artifact`**, against
+  the very directory about to be uploaded, so a guard failure means nothing is deployed. The
+  reference implementation instead guards a separate build in a workflow that races its deploy,
+  which meets the letter of nothing; clause 14.11 requires the deployed artifact to be checked
+
+**These are two workflows, deliberately, and only `ci.yml` is a required check** (AC-18). The
+content gate protects the template library; the site is downstream of it. Until the site has
+proven itself, a site failure must not be able to block a template change.

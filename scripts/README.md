@@ -31,10 +31,31 @@ the slice is specified in [`site-s0-spec.md`](../docs/internal/site-s0-spec.md).
   Python tooling has already distilled every `*_meta.yaml` into `manifest.json`. It also carries
   `--check`, the honesty gate over its own output (AC-16): the build fails if a page calls a
   bundle proven, verified or validated, or puts a percentage beside a claim about a bundle
+- [`site-base.mjs`](site-base.mjs) - the **only** place the published base path is written.
+  `site/astro.config.mjs` imports it rather than restating it, as do the generator and the link
+  checker, so there is no second copy to drift (clause 14.7, AC-5)
+- [`check-rendered-links.mjs`](check-rendered-links.mjs) - resolves every internal link against
+  the page's real published URL and asserts the target exists in `dist/`. A filesystem-correct
+  relative link can still 404, because pages build to `slug/index.html` and are served one level
+  deeper than their source
+- [`check-route-parity.mjs`](check-route-parity.mjs) - compares the built routes against the
+  committed baseline in [`route-manifest.txt`](route-manifest.txt) and fails if a published URL
+  has disappeared. New routes are allowed; `--update` rewrites the baseline
+- [`route-manifest.txt`](route-manifest.txt) - the committed record of every URL this site has
+  published. Snapshotted from a finished build, never generated from source: the thing it guards
+  is a promise the source no longer contains once a route is removed
+- [`verify-edit-links.mjs`](verify-edit-links.mjs) - asserts every "Edit this page" target is
+  **git-tracked**, not merely present on disk, and that the link count stays above a floor. The
+  donor checks existence, which cannot fail the one mutation it exists to catch
 
-Three guards (`check-rendered-links.mjs`, `check-route-parity.mjs`, `verify-edit-links.mjs`) land
-in S0 PR 3 and will run inside `site.yml` between `astro build` and `upload-pages-artifact`, so the
-artifact that is guarded is the artifact that ships.
+All four guards run inside [`site.yml`](../.github/workflows/site.yml) **between `astro build` and
+`upload-pages-artifact`**, so the artifact that is guarded is the artifact that ships. The
+reference implementation does not do this: it guards a separate build in a workflow that races the
+deploy, so a guard failure there does not stop a deploy.
+
+**Every guard has been run against a deliberately broken fixture and observed to fail** (AC-12): a
+broken link, a removed route, a stripped `editUrl`, and an empty-but-existing `dist`. A guard that
+has never gone red is a report, not a gate.
 
 ## Conventions anything added here must follow
 

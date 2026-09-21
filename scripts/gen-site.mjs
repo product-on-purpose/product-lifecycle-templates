@@ -47,14 +47,15 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 
+import { BASE } from './site-base.mjs';
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const TEMPLATES = join(ROOT, 'templates');
 const OUT = join(ROOT, 'site', 'src', 'content', 'docs', 'bundles');
 
-// The base path is NOT redeclared here (clause 14.7). astro.config.mjs owns it; this constant
-// is the one place the generator needs it to emit base-absolute links, and it is asserted
-// against the config at startup so the two can never silently disagree.
-const BASE = '/product-lifecycle-templates';
+// The base is IMPORTED, never restated (clause 14.7, AC-5). An earlier draft kept a copy here
+// and asserted it matched astro.config.mjs at startup; importing the single literal is strictly
+// better, because one literal cannot disagree with itself and there is no assertion to forget.
 const REPO = 'https://github.com/product-on-purpose/product-lifecycle-templates';
 const GH_BLOB = `${REPO}/blob/main`;
 const GH_EDIT = `${REPO}/edit/main`;
@@ -73,16 +74,6 @@ function writeOut(path, content) {
   // Explicit \n throughout; Node does not translate line endings, and this repository has been
   // bitten more than once by a whole-file CRLF rewrite that no diff-based check can see.
   writeFileSync(path, content.replace(/\r\n/g, '\n'), 'utf8');
-}
-
-/** The base must match astro.config.mjs exactly. A wrong base passes every local check and 404s live. */
-function assertBaseMatchesConfig() {
-  const cfg = readText(join(ROOT, 'site', 'astro.config.mjs'));
-  const m = cfg.match(/base:\s*['"]([^'"]+)['"]/);
-  if (!m) throw new Error('astro.config.mjs declares no `base`; cannot verify link generation.');
-  if (m[1] !== BASE) {
-    throw new Error(`base mismatch: astro.config.mjs says '${m[1]}', gen-site.mjs says '${BASE}'.`);
-  }
 }
 
 // ---------------------------------------------------------------- manifest model
@@ -543,7 +534,6 @@ function loadInputs() {
 }
 
 function generate() {
-  assertBaseMatchesConfig();
   const { manifest, sectionsById, catalogById } = loadInputs();
   const bundles = manifest.bundles || [];
   const bundleIds = new Set(bundles.map((b) => b.id));
