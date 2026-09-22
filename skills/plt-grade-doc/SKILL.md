@@ -4,7 +4,7 @@ description: Grades and reviews a product document that already exists against t
 license: Apache-2.0
 metadata:
   version: "0.11.0"
-  updated: 2026-09-03
+  updated: 2026-09-22
   category: documentation
   author: product-on-purpose
   status: experimental
@@ -35,7 +35,7 @@ costs the reader nothing but the reading.
 - **The document does not exist yet.** Use [`plt-fill-template`](../plt-fill-template/SKILL.md).
 - **The reader wants the document rewritten.** This produces a critique and a fix list. Rewriting the
   author's content is out of scope unless they ask for it after seeing the report.
-- **The document is not one of the 27 types.** Say so and offer a structure-only review. Grading a
+- **The document is not one of the 30 types.** Say so and offer a structure-only review. Grading a
   strategy memo against the PRD rubric produces confident nonsense, and forcing the nearest bundle is the
   specific failure this library rejected two candidate types to avoid.
 - **The reader wants a verdict on whether the underlying idea is good.** The rubric grades the document,

@@ -161,7 +161,7 @@ it.** This is not a marketing decision.
 
 **Proposed one-liner**, reusable across venues:
 
-> A library of 26 product-management document templates, each shipping with a researched companion that
+> A library of 30 product-management document templates, each shipping with a researched companion that
 > cites its sources, a worked example, and machine-readable metadata.
 
 It is descriptive, carries no emoji, does not address the reader, and every clause is verifiable by opening
@@ -170,7 +170,7 @@ the repository. It claims nothing about adoption, quality, or outcomes.
 **What must not appear in a submission**, because the library cannot support it: "best-in-class", "proven",
 "trusted by", any adoption number, and any efficacy claim. Three efficacy runs returned **VOID**; the
 fourth, on 2026-09-03, is valid on **two scenarios of one bundle** and is nowhere near a marketing claim.
-The README's own `real fills: 0 (honest)` badge is the standard the copy has to meet.
+The standard the copy has to meet is the README's `beta` framing and its refusal to call any bundle proven, verified or validated. *(Corrected 2026-09-22: this line named the README's `real fills: 0 (honest)` badge, which [ADR 0055](decisions/0055-retire-the-zero-fills-disclosure.md) retired on 2026-09-21. The claim ban survives and is gate-enforced on the site; the fill count does not.)*
 
 **The tension worth deciding deliberately.** That badge is the most on-brand element in the repository and it
 is a visible "nobody uses this" signal on the page a list maintainer reviews. It will cost some acceptances.

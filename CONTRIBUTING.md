@@ -88,7 +88,7 @@ is no output line saying everything passed, because the defect it exists to prev
 summary over a partial run.
 
 **Why it exists.** Before 2026-09-05 the way to check this repository was to loop over
-`tools/check-*.py` and `tools/test-*.py`. That is 21 scripts; CI runs 32 steps. The difference was
+`tools/check-*.py` and `tools/test-*.py`. That is 22 scripts; CI runs 32 steps. The difference was
 invisible until it cost a red build on the em-dash check, which is an inline heredoc in the workflow
 rather than a script under `tools/`, so no glob over that directory could ever have found it.
 
@@ -104,6 +104,8 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-changelog.py        # every decision record since the last release is in CHANGELOG.md
 python tools/check-research-logs.py    # every research log meets the source-record contract
 python tools/check-counts.py           # every generated-count marker in a document matches the tree
+python tools/gen-bundle-build-report.py --check  # bundle-builds/INDEX.md matches the committed
+                                        # build-cost reports
 ```
 
 <!-- counts: cisteps=32 -->
@@ -145,8 +147,9 @@ work. In outline:
 5. **Apply findings and re-verify.** Every review finding is itself a claim and gets checked against
    the source before it is applied; not every finding survives that check.
 6. **Gate and land.** Run the full local check list, regenerate the manifest, update
-   [`STATE.md`](STATE.md), the README, and `docs/internal/buildout-specs.md`, and open a PR against
-   `main`.
+   [`STATE.md`](STATE.md), the README, and `docs/internal/buildout-specs.md`, run
+   `python tools/gen-bundle-build-report.py --ingest` on the machine that ran the build (the harness
+   transcripts it reads are machine-local and are pruned eventually), and open a PR against `main`.
 
 ---
 

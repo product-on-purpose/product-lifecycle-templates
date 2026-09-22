@@ -16,7 +16,7 @@ tools are the implementation; these are wrappers of about ten lines each.
 
 THE BUDGET IS A DISCOVERY CONTRACT, NOT A GLOBAL ONE.
 Discovery responses stay small so an agent can choose cheaply. Retrieval costs what the artifact costs: a
-template IS the payload, and the largest is roughly 3,300 tokens. So every discovery response carries
+template IS the payload, and the largest is roughly 7,200 tokens. So every discovery response carries
 `approx_tokens` per variant and the agent knows the price before it pays. `parts` therefore defaults to
 `["template"]` alone; the sketch's template+guide default roughly doubles the median payload for a part
 most callers do not want on the first fetch.
@@ -151,9 +151,9 @@ def variants(bundle):
 def axis_values():
     """What the taxonomy axis ACTUALLY holds, generated from the tree rather than typed.
 
-    The axis is `phase` XOR `classification`: 17 bundles carry a phase, 10 a classification, none both
+    The axis is `phase` XOR `classification`: 20 bundles carry a phase, 10 a classification, none both
     and none neither. A `phase`-only filter - which is what the AG-2 sketch specified - can never reach
-    those 10, and would return a plausible non-empty result while silently hiding 37% of the library.
+    those 10, and would return a plausible non-empty result while silently hiding 33% of the library.
 
     ADR 0003 fixed the phase VOCABULARY at six values and left "does this library need a second axis?"
     open. The tree has since answered yes. Only four of the six phase values are used by any built
@@ -539,7 +539,7 @@ def _template_version(bundle_id):
 def get_grading_pack(bundle_id) -> EnvGrading:
     """Fetch the guide sections a grader needs: the quality rubric and the named anti-patterns.
 
-    Measured: all 27 guides carry a rubric heading; FOUR (`okrs`, `product-roadmap`,
+    Measured: all 30 guides carry a rubric heading; FOUR (`okrs`, `product-roadmap`,
     `product-strategy`, `product-vision`) carry no anti-patterns section. Absence is reported in
     `missing` rather than passed over, because a pack quietly short a section looks complete and is not.
     """

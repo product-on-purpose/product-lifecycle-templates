@@ -41,7 +41,16 @@ ROOT = os.path.normpath(os.path.join(SCRIPT_DIR, ".."))
 
 GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 
-MARKER = re.compile(r"<!--\s*counts:\s*(?P<body>[^>]*?)\s*-->", re.I)
+# Two comment syntaxes, because the surface that most needed gating could not carry the first one.
+# The site's landing page is `.mdx`, where `<!-- -->` is not a comment but invalid JSX, so the page a
+# reader is most likely to see sat outside this check entirely. It was found on 2026-09-22 claiming
+# the library spans "six families" against a tree of nine, with three further hand-typed counts beside
+# it and its own comment admitting they were "hand-typed for the spike".
+MARKER = re.compile(
+    r"(?:<!--\s*counts:\s*(?P<body>[^>]*?)\s*-->"
+    r"|\{/\*\s*counts:\s*(?P<body2>.*?)\s*\*/\})",
+    re.I | re.S,
+)
 
 # A fenced code block is a SPECIMEN, not a claim. The inline-code case was fixed on 2026-08-07 and the
 # fenced case was never covered, so writing docs/explanation/architecture-detailed.md hit it twice:
@@ -120,6 +129,14 @@ def live_facts():
     with open(os.path.join(ROOT, "sections.json"), encoding="utf-8") as fh:
         sections_data = json.load(fh)
 
+    # The family count, added 2026-09-22 because the live landing page claimed six against a tree of
+    # nine and nothing could have caught it: that page is .mdx and was outside this check's file glob.
+    with open(os.path.join(ROOT, "manifest.json"), encoding="utf-8") as fh:
+        manifest_data = json.load(fh)
+    manifest_bundles = manifest_data.get("bundles", manifest_data)
+    if isinstance(manifest_bundles, dict):
+        manifest_bundles = list(manifest_bundles.values())
+
     # Tier comes from the catalog, never from an assumption about which bundles are Tier 1.
     #
     # This read `len(bundle_dirs) - (1 if "rfc" in bundle_dirs else 0)` until 2026-09-02, with a comment
@@ -162,6 +179,7 @@ def live_facts():
     return {
         "bundles": _int_from(bundles_out, r"OK\s+(\d+) bundle"),
         "sections": sections_data["section_count"],
+        "families": len({b.get("family") for b in manifest_bundles}),
         "frontmatter": sections_data["frontmatter_count"],
         "tier1": tier1_built,
         "tier1remaining": tier1_total - tier1_built,
@@ -229,7 +247,7 @@ def marked_files():
     read prose, which is still impossible and still stated in its own output. It makes the blind spot
     ADDRESSABLE: an author who knows a sentence quotes a number can now pin it, one line above.
     """
-    tracked = subprocess.run(["git", "ls-files", "*.md"], cwd=ROOT,
+    tracked = subprocess.run(["git", "ls-files", "*.md", "*.mdx"], cwd=ROOT,
                              capture_output=True, text=True).stdout.split()
     out = []
     frozen = []
@@ -254,7 +272,7 @@ def marked_files():
                            and text[m.end():m.end() + 1] == "`")]
         for n, m in enumerate(markers, 1):
             claimed = {}
-            for pair in m.group("body").split(","):
+            for pair in (m.group("body") or m.group("body2") or "").split(","):
                 if "=" not in pair:
                     continue
                 k, v = pair.split("=", 1)

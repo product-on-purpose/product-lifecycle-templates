@@ -21,7 +21,9 @@ name: site
 # there is no separate "validate" job: a second recipe is a second thing to drift.
 #
 # Rollback: disable this workflow, or flip Pages source away from "GitHub Actions" in repo
-# Settings > Pages. No deployment has ever run at time of writing, so there is no prior artifact to
+# Settings > Pages, which keeps serving the last successfully deployed artifact until a new one
+# ships. (This comment said no deployment had ever run; the site has been live since v0.9.0 on
+# 2026-09-21, so there IS a prior artifact to
 # roll back to.
 
 on:

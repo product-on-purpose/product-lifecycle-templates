@@ -1,10 +1,10 @@
 ---
 name: plt-fill-template
-description: Selects and fills a researched product-document template from a 27-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
+description: Selects and fills a researched product-document template from a 30-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
 license: Apache-2.0
 metadata:
   version: "0.11.0"
-  updated: 2026-09-03
+  updated: 2026-09-22
   category: documentation
   author: product-on-purpose
   status: experimental
@@ -166,7 +166,7 @@ empty prose under every heading, which is what step 5 and a reader are for.
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
 does not.
 
-**Enforced by CI, on every push and pull request:** 25 steps, including an 11-check gate per bundle - all
+**Enforced by CI, on every push and pull request:** 32 steps, including an 11-check gate per bundle - all
 files present, no em-dash or en-dash, lean nests strictly inside full, no unfilled placeholder in any
 example, every citation anchored and none padded, metadata valid against a schema, and conformance to the
 bundle's family contract. Separately: every relative link resolves, every research log carries a
@@ -174,7 +174,7 @@ per-source retrieval status, no worked example cites a sibling dated later than 
 reuses its own template's guidance text.
 
 <!-- counts: cisteps=32, logsgated=24, sourcesgated=1046 -->
-32 CI steps; 21 research logs gated, covering 826 sources.
+32 CI steps; 24 research logs gated, covering 1,046 sources.
 
 **Not proved by anything:**
 
@@ -186,8 +186,10 @@ reuses its own template's guidance text.
   decision-usefulness criteria drawn from neither the template nor its guide. Read the results before
   quoting anything from them, in [`evals/results/`](../../evals/results/). **No number from either run
   is a quality claim, and none may be repeated without linking the protocol's stated limits.**
-- **No template here has been filled by anyone but the author.** The catalog's own rule gates Tier 2 on
-  "survives one real usage cycle", so by the library's own standard nothing has graduated.
+- **No bundle may be called proven, verified or validated, and every bundle is `beta`.** This library no
+  longer publishes a real-fill count or gates graduation on one; `beta` moves to `stable` on the
+  maintainer's judgement that a bundle has settled, not on an external usage signal. See
+  [ADR 0055](../../docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md).
 - **The gate proves structure, never that a citation supports its claim.** That is what the four-lens
   review is for, and a review is not a machine.
 

@@ -12,7 +12,25 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- **[ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md),
+  recording the decision `v0.11.0` shipped without.** Build cost is measured from harness transcripts,
+  and **ingestion is deliberately separate from verification**: the CI gate checks an index it can
+  re-derive and never the reports it cannot, because the transcripts are machine-local and absent on
+  the runner. A report is therefore trusted because it was generated once rather than because it can
+  be re-derived, which is weaker than every other generated artifact here and is now stated rather
+  than implied. Records the three rejected layouts (a ninth bundle file, a section in hand-authored
+  `_history.md`, fields on `manifest.json`) and the open question about the drafting model tier.
+  **That the release shipped before its own decision record is the gap this entry closes.**
+
+### Fixed
+
+- **`STATE.md` said the build workflow "runs its research and review fan-outs".** It runs three
+  stages, and the missing one is the drafting fan-out that writes seven of the eight bundle files.
+  This is the same two-versus-three error corrected in `bundle-pipeline.md` in `v0.11.0`; the
+  correction did not reach the cell in `STATE.md` that repeats the claim. Nothing gates a sentence
+  against the script it describes.
 
 ## [0.11.0] - 2026-09-22
 

@@ -55,7 +55,7 @@ stamp one. Nothing is embedded or duplicated, because this route already put the
 > `${CLAUDE_PLUGIN_ROOT:-.}/tools/mcp_server.py`, which resolves to the plugin directory when
 > installed and to the repository root when cloned.
 
-> **Response shape, changed by [ADR 0054](../internal/decisions/0054-the-mcp-server-returns-a-uniform-envelope.md).** Unreleased at the time of writing; it ships in the next release, and `CHANGELOG.md` records which. Every tool returns one envelope:
+> **Response shape, changed by [ADR 0054](../internal/decisions/0054-the-mcp-server-returns-a-uniform-envelope.md).** Shipped in v0.10.0 (2026-09-21). Every tool returns one envelope:
 > `{"ok": true, "data": {...}}` or `{"ok": false, "error": {"code": ..., "message": ..., <hints>}}`.
 > `ok` means **the call completed**, never a domain verdict: a document that fails validation is
 > `ok: true` with `data.valid: false`, and a strip refusal is `ok: true` with `data.refused: true`.

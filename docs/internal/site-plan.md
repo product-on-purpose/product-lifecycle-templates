@@ -1,6 +1,6 @@
 # Site plan: rendering this library for the web
 
-- **Status:** plan of record. Adopted by [ADR 0046 (the site is Astro plus Starlight under Pattern S)](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md). Nothing is built.
+- **Status:** plan of record **for S1 and beyond**. Adopted by [ADR 0046 (the site is Astro plus Starlight under Pattern S)](decisions/0046-the-site-is-astro-starlight-under-pattern-s.md). **S0 shipped 2026-09-21 in `v0.9.0` and the site is live** at <https://product-on-purpose.github.io/product-lifecycle-templates/>, serving all 30 bundles. *(Corrected 2026-09-22: this line read "Nothing is built" for a day after the site went live, which is the forward-looking-prose failure the release process names as its own step 7.)*
 - **Revised:** 2026-09-11, from the untracked proposal `_local/planning/claude_2026-07-17_astro-site-plan.md` (2026-07-17, Claude Fable 5).
 - **Governing standard:** `SITE-STANDARD.md` in the `agent-plugins` repository, at `standards/domains/astro-sites/`. The 2026-07-17 proposal cites it **zero times** and contradicts it in three places, which is the reason this revision exists.
 - **Reference implementation:** `pm-skills`, named by the standard as the donor for every clause this plan adopts.
@@ -185,7 +185,7 @@ Clause 14.6 requires a **PR-triggered, non-deploying build job that runs the sam
 
 Clause 14.11 is a MUST and is explicit that the guards run on **both** the PR build and the deploy build, so the deployed artifact is what was checked. Implement locally now, as a parameterized port of the pm-skills donor, and swap to the shared reusable workflow when it exists.
 
-**Port the two load-bearing guards first**, which the clause permits for a small site: `check-rendered-links.mjs` (rendered-link check with anchor resolution) and `check-route-parity.mjs` (route-parity against a committed manifest). `verify-edit-links.mjs` follows immediately, because 4.2 makes generated `editUrl` stamping load-bearing here and the clause names exactly that failure. `remark-resolve-links.mjs` is only needed if generated pages carry relative `.md` links; decide when the generator exists.
+**Port the two load-bearing guards first** *(superseded by what shipped: all five guards landed in S0, not two; see the phasing table)*, which the clause permits for a small site: `check-rendered-links.mjs` (rendered-link check with anchor resolution) and `check-route-parity.mjs` (route-parity against a committed manifest). `verify-edit-links.mjs` follows immediately, because 4.2 makes generated `editUrl` stamping load-bearing here and the clause names exactly that failure. `remark-resolve-links.mjs` is only needed if generated pages carry relative `.md` links; decide when the generator exists.
 
 The clause makes guard robustness itself normative, and these sub-rules are where a naive port breaks:
 
@@ -252,7 +252,7 @@ The guards are a parameterized port (roughly 450 lines, mostly adaptation and th
 
 | Phase | Contents | Scope |
 |---|---|---|
-| **S0: it exists** | Node toolchain (section 9), `site/` scaffold, hand-rolled Starlight config, generator emitting bundle role pages and narrative pages, two load-bearing guards ported and fixture-tested, build and deploy workflow, Pages live | The bulk of the 1,500 to 2,000 lines. Multi-week at this project's observed cadence, not multi-day |
+| **S0: it exists** | Node toolchain (section 9), `site/` scaffold, hand-rolled Starlight config, generator emitting bundle role pages and narrative pages, **five** guards ported and fixture-tested (honesty, rendered-links, route-parity, favicon, edit-links), not the two this plan plotted, build and deploy workflow, Pages live | The bulk of the 1,500 to 2,000 lines. Multi-week at this project's observed cadence, not multi-day |
 | **S1: signature** | X-ray view, lean/full diff, library browser filters, atlas embed, `llms.txt`, `verify-edit-links` | Meaningful, and the part that differentiates |
 | **S2: reach** | Positioning pass, the wedge page pointing at LP-2, `og:image` once the preset exists | Small |
 | **S3: resource era** | New resource-type collections as the phases plan ships them | Grows with content |
