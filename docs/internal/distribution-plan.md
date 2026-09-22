@@ -142,7 +142,7 @@ anything broader to an SRE audience reads as off-topic.
 | `VoltAgent/awesome-agent-skills` (30,301 stars) | **Stated bar this library fails today.** Verbatim: "Skill must have real community usage. We focus on community-adopted, proven skills. Brand new skills that were just created are not accepted. Give your skill time to mature and gain users before submitting." Submitting now signals not having read the guide. **Revisit after real adoption** |
 | `anthropics/claude-plugins-official` (33,534 stars) | No application process. Anthropic's discretion; the submission form does not feed it |
 | `dend/awesome-product-management` (2,309 stars) | Forbids self-promotion, has no Templates category at all, and carries a large PR backlog |
-| `punkpeye/awesome-mcp-servers` (92,336 stars) | Out of category. This library ships no MCP server |
+| `punkpeye/awesome-mcp-servers` (92,336 stars) | **Re-assess. This row's reason expired on 2026-09-06**, when the library shipped an MCP server (five tools, `tools/mcp_server.py`, [ADR 0045](decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); it is no longer out of category. Still governed by the standing no-submission grant, and the venue research is now over two months old and needs re-verifying before any approach |
 | `skillsdirectory.com` | **Integrity concern.** Claims 97,030 indexed skills with no visible ownership, "Coming Soon" placeholders in featured slots, and an inconsistent copyright year. Not a real curation surface |
 | Four dead PM lists | Last pushed 2019, 2019, 2021, 2023. Star count does not make a dead list worth a submission |
 

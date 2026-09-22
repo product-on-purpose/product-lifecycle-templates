@@ -7,7 +7,23 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=30, tier1=25, tier1remaining=2, statebuilt=30, statecandidate=173, stateoutofscope=2, commoncandidates=56, adrs=55, cisteps=31, checkk=102, checkformats=88, checklogs=92, logsgated=24, sourcesgated=1046 -->
 
-**Last updated:** 2026-09-14 (**`v0.8.0`: the library grows to 30 bundles, and for the first time it publishes the reasoning that let each one in.** Three Tier-2 types built - `spike-report`, `project-milestone-retrospective`, `test-summary-report` - and a fourth, `pi-release-retrospective`, **refused on its own evidence** ([ADR 0049](docs/internal/decisions/0049-pi-release-retrospective-fails-the-admission-test.md)): SAFe's own facilitator guide names the outputs as backlog items and no document. Two of the three that shipped **teach a dispute rather than a settled practice**, because their research said they must. [ADR 0048](docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md) settles that one named source admits a type; [ADR 0050](docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md) settles that a family contract's exclusion clause governs a candidate where its role list disagrees. **The adversarial reviews behind these three bundles found two fabricated quotations, one invented publication date and eleven overstatements, every one of them behind a green gate** - and about half originated in synthesis rather than drafting, which is the honest read on where this pipeline needs checking most. All 30 bundles remain `beta`.)
+**Last updated:** 2026-09-21 (**`v0.9.0` and `v0.10.0`, on one day.** `v0.9.0` gave the library a
+**website**: all 30 bundles readable at
+<https://product-on-purpose.github.io/product-lifecycle-templates/>, generated from the tree with
+nothing hand-listed, and five guards running **between `astro build` and the upload** so the artifact
+that is checked is the artifact that ships. `v0.10.0` fixed an MCP server that **could not start from
+a `git clone` and had not since it shipped** - `.mcp.json` used a variable Claude Code sets only for
+plugin installs - and gave all five tools a uniform `{ok, data?, error?}` envelope returned as typed
+`structuredContent` ([ADR 0054](docs/internal/decisions/0054-the-mcp-server-returns-a-uniform-envelope.md)),
+a breaking wire change taken while nothing external calls it.
+[ADR 0053](docs/internal/decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md)
+assigned `launch-coordination-checklist` to `standing-standards`, unblocking its spec.
+[ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md) **retired the zero-fills
+disclosure and kept the ban on calling a bundle proven**; no bundle was promoted and all 30 remain
+`beta`. **Both defects fixed this week were invisible to green checks for the same reason**: each was
+verified through a path no real caller uses - the server proven by a script that bypassed its config,
+the envelope designed against an in-process spike that skipped the validation a real client performs.
+The previous entry read: **`v0.8.0`: the library grows to 30 bundles, and for the first time it publishes the reasoning that let each one in.** Three Tier-2 types built - `spike-report`, `project-milestone-retrospective`, `test-summary-report` - and a fourth, `pi-release-retrospective`, **refused on its own evidence** ([ADR 0049](docs/internal/decisions/0049-pi-release-retrospective-fails-the-admission-test.md)): SAFe's own facilitator guide names the outputs as backlog items and no document. Two of the three that shipped **teach a dispute rather than a settled practice**, because their research said they must. [ADR 0048](docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md) settles that one named source admits a type; [ADR 0050](docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md) settles that a family contract's exclusion clause governs a candidate where its role list disagrees. **The adversarial reviews behind these three bundles found two fabricated quotations, one invented publication date and eleven overstatements, every one of them behind a green gate** - and about half originated in synthesis rather than drafting, which is the honest read on where this pipeline needs checking most. All 30 bundles remain `beta`.)
 
 
 ---
