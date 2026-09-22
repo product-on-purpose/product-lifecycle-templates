@@ -1,11 +1,11 @@
 # Bundle pipeline: the reusable per-bundle runbook
 
 > **This runbook is executable.** [`.claude/commands/build-bundle.md`](../../.claude/commands/build-bundle.md)
-> drives it, and [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) runs its two
-> fan-outs: `{stage:"research", type, dimensions}` and `{stage:"review", type, family}`. The script enforces
-> in a schema what this document states in prose - the retrieval enum, source ownership, grounded findings -
-> so an agent cannot return a quote without having claimed it read the body. The prose here remains the
-> authority; the script is one way of executing it.
+> drives it, and [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) runs its three
+> stages: `{stage:"research", type, dimensions}`, `{stage:"draft", type, family}`, and
+> `{stage:"review", type, family}`. The script enforces in a schema what this document states in prose - the
+> retrieval enum, source ownership, grounded findings - so an agent cannot return a quote without having
+> claimed it read the body. The prose here remains the authority; the script is one way of executing it.
 
 The executable process for building one Tier-1 bundle to the best-in-class, source-referenced standard,
 proven on `sdd` and `product-backlog` (2026-07-20/21). This operationalizes methodology section 8 and the
@@ -17,8 +17,12 @@ not in the source) was green in CI and caught only by the adversarial review. So
 negotiable is the review, not the gate. Never ship a bundle that has not passed the four-lens review with
 its findings applied and re-verified.
 
-Per-bundle cost is roughly 0.6-1M tokens (research fan-out + drafting + review). Realistic pace: 1-2
-bundles per focused run.
+Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was wrong by more
+than an order of magnitude. Measured cost, from the two builds captured end to end, is roughly 21M to 25M
+weighted token-equivalents per bundle (test-summary-report: 24,650,553; spike-report: 20,743,317; each the
+whole build, 15 agents, 3 runs). Weighted means input x1.0, cache write x1.25, cache read x0.1, output
+x5.0. See [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md) for the per-bundle reports. Realistic
+pace: 1-2 bundles per focused run.
 
 ---
 
@@ -248,12 +252,16 @@ python tools/check-bundles.py <type>              # all 11 checks
 python tools/gen-manifest.py                       # regenerate manifest.json
 python tools/gen-manifest.py --check               # freshness + README marker
 python tools/check-links.py                        # all relative links resolve
+python tools/gen-bundle-build-report.py --ingest       # measured build cost -> bundle-builds/
 ```
 
 Then: bump the README `<!-- bundle-count: N -->` marker and prose count, add the bundle to the README
 family table and the layout tree; update STATE.md (bundle count, family membership) and
 `buildout-specs.md`'s progress table. Branch off `origin/main`, PR, let CI pass (no admin merge), stop for
 the maintainer read at the family boundary (batch review), then merge and pull. Update the progress table.
+The build-report ingest must run here, on the machine that ran the build, because it reads per-agent
+transcripts under `~/.claude/projects/` that are machine-local and are pruned eventually; the resulting
+report is committed with the bundle.
 
 ---
 

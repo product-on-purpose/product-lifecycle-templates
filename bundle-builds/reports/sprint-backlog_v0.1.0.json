@@ -1,0 +1,279 @@
+{
+  "report_schema_version": "1.0.0",
+  "bundle": "sprint-backlog",
+  "template_version": "0.1.0",
+  "attribution_confidence": "medium",
+  "agents_total": 7,
+  "agents_reliably_attributed": 4,
+  "workflow_runs": 2,
+  "run_ids": [
+    "wf_2909ebc5-013",
+    "wf_8d95d811-45e"
+  ],
+  "session_ids": [
+    "e3fffc36-d57f-4b8f-bf60-098eb5d10747"
+  ],
+  "weights": {
+    "input": 1.0,
+    "cache_write": 1.25,
+    "cache_read": 0.1,
+    "output": 5.0
+  },
+  "stages_present": [
+    "other",
+    "research"
+  ],
+  "complete": false,
+  "totals": {
+    "turns": 186,
+    "input": 6662,
+    "output": 82675,
+    "cache_write": 1015381,
+    "cache_read": 6074710,
+    "web": 0
+  },
+  "weighted_total": 2296734,
+  "by_stage": {
+    "other": {
+      "agents": 5,
+      "usage": {
+        "turns": 129,
+        "input": 4403,
+        "output": 68063,
+        "cache_write": 842995,
+        "cache_read": 4598259,
+        "web": 0
+      },
+      "weighted": 1858288
+    },
+    "research": {
+      "agents": 2,
+      "usage": {
+        "turns": 57,
+        "input": 2259,
+        "output": 14612,
+        "cache_write": 172386,
+        "cache_read": 1476451,
+        "web": 0
+      },
+      "weighted": 438447
+    }
+  },
+  "by_model": {
+    "claude-sonnet-4-6": {
+      "agents": 7,
+      "usage": {
+        "turns": 186,
+        "input": 6662,
+        "output": 82675,
+        "cache_write": 1015381,
+        "cache_read": 6074710,
+        "web": 0
+      },
+      "weighted": 2296734
+    }
+  },
+  "by_requested_tier": {
+    "sonnet": {
+      "agents": 7,
+      "usage": {
+        "turns": 186,
+        "input": 6662,
+        "output": 82675,
+        "cache_write": 1015381,
+        "cache_read": 6074710,
+        "web": 0
+      },
+      "weighted": 2296734
+    }
+  },
+  "by_deliverable": {
+    "(none)": {
+      "agents": 7,
+      "usage": {
+        "turns": 186,
+        "input": 6662,
+        "output": 82675,
+        "cache_write": 1015381,
+        "cache_read": 6074710,
+        "web": 0
+      },
+      "weighted": 2296734
+    }
+  },
+  "by_attribution": {
+    "path": {
+      "agents": 4,
+      "usage": {
+        "turns": 90,
+        "input": 126,
+        "output": 57471,
+        "cache_write": 724820,
+        "cache_read": 3498698,
+        "web": 0
+      },
+      "weighted": 1543376
+    },
+    "name": {
+      "agents": 3,
+      "usage": {
+        "turns": 96,
+        "input": 6536,
+        "output": 25204,
+        "cache_write": 290561,
+        "cache_read": 2576012,
+        "web": 0
+      },
+      "weighted": 753358
+    }
+  },
+  "agents": [
+    {
+      "run": "wf_8d95d811-45e",
+      "agent_id": "a4c23bd27a4ecb8e8",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "path",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 46,
+        "input": 54,
+        "output": 23120,
+        "cache_write": 261806,
+        "cache_read": 2276865,
+        "web": 0
+      },
+      "weighted": 670598
+    },
+    {
+      "run": "wf_8d95d811-45e",
+      "agent_id": "a51eb5d8942d14139",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "path",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 18,
+        "input": 24,
+        "output": 21352,
+        "cache_write": 142513,
+        "cache_read": 679572,
+        "web": 0
+      },
+      "weighted": 352882
+    },
+    {
+      "run": "wf_2909ebc5-013",
+      "agent_id": "adefd7161de9026f6",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 39,
+        "input": 4277,
+        "output": 10592,
+        "cache_write": 118175,
+        "cache_read": 1099561,
+        "web": 0
+      },
+      "weighted": 314912
+    },
+    {
+      "run": "wf_8d95d811-45e",
+      "agent_id": "aa27645bce479eac8",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "path",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 13,
+        "input": 23,
+        "output": 10178,
+        "cache_write": 168997,
+        "cache_read": 250379,
+        "web": 0
+      },
+      "weighted": 287197
+    },
+    {
+      "run": "wf_2909ebc5-013",
+      "agent_id": "a18a1e28b283a5c0d",
+      "label": "",
+      "stage": "research",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 33,
+        "input": 2225,
+        "output": 7806,
+        "cache_write": 98444,
+        "cache_read": 876380,
+        "web": 0
+      },
+      "weighted": 251948
+    },
+    {
+      "run": "wf_8d95d811-45e",
+      "agent_id": "a913da06a4ffe2c37",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "path",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 13,
+        "input": 25,
+        "output": 2821,
+        "cache_write": 151504,
+        "cache_read": 291882,
+        "web": 0
+      },
+      "weighted": 232698
+    },
+    {
+      "run": "wf_2909ebc5-013",
+      "agent_id": "aceb851721094ddd8",
+      "label": "",
+      "stage": "research",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 24,
+        "input": 34,
+        "output": 6806,
+        "cache_write": 73942,
+        "cache_read": 600071,
+        "web": 0
+      },
+      "weighted": 186499
+    }
+  ]
+}

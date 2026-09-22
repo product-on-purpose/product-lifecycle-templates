@@ -8,6 +8,38 @@ Newest first.
 
 ---
 
+## v0.11.0
+
+**This library refuses to call a single bundle proven without evidence, and the number it used to
+decide whether a bundle was worth building had none.**
+
+Two documents stated a per-bundle build cost and they disagreed: the runbook said "roughly 0.6-1M
+tokens", the build command said "roughly 700K-1M". Neither cited a measurement. The measurement was
+always available: the harness writes a per-agent transcript with a full usage block on every turn,
+and nothing had ever read one.
+
+Read, the cost is **21M to 25M weighted token-equivalents per bundle** - between 20 and 30 times the
+estimates it replaces. The runbook also said the cost was "dominated by research fan-out and the
+four-lens review"; measured, drafting is the largest single stage and the review is under half of
+research, which points the next optimisation somewhere nobody was looking.
+
+That number now lives in [`bundle-builds/`](bundle-builds/): one report per bundle per
+`template_version`, broken down by stage, by model, by requested tier and by deliverable, generated
+rather than typed, and gated in CI like every other generated artifact here. 22 reports were
+backfilled.
+
+**Two of the twenty-two cover a whole build.** The other twenty are marked `floor`, because they
+predate a change this release also makes: every workflow agent label now carries its bundle type, so
+a subagent identifies itself in the run journal instead of being inferred from its own prompt. That
+inference worked for agents that write a file and failed for the ones that do not - one research run
+was billed to the sibling type it was comparing against.
+
+Four stale claims were corrected on the way, including `STATE.md` reporting twenty-seven bundles
+under the heading "Built and true today" when there are thirty and its own generated marker said so
+nine lines above.
+
+---
+
 ## v0.10.0
 
 **If you installed the MCP server and it never worked, this is the release that fixes it.**

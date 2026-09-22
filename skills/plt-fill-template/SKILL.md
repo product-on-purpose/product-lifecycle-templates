@@ -3,7 +3,7 @@ name: plt-fill-template
 description: Selects and fills a researched product-document template from a 27-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
 license: Apache-2.0
 metadata:
-  version: "0.10.0"
+  version: "0.11.0"
   updated: 2026-09-03
   category: documentation
   author: product-on-purpose
@@ -173,8 +173,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=31, logsgated=24, sourcesgated=1046 -->
-31 CI steps; 21 research logs gated, covering 826 sources.
+<!-- counts: cisteps=32, logsgated=24, sourcesgated=1046 -->
+32 CI steps; 21 research logs gated, covering 826 sources.
 
 **Not proved by anything:**
 

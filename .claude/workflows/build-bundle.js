@@ -15,6 +15,16 @@ export const meta = {
 // for that, so the skill calls this three times. A phases entry with no matching phase() call simply does
 // not appear in the progress tree.
 //
+// EVERY AGENT LABEL IS PREFIXED WITH THE BUNDLE TYPE, and that prefix is load-bearing rather than
+// cosmetic. The harness records each label in the run's journal.jsonl, which is the only durable
+// record of what a subagent was for. Labels used to read `draft:companion` and `research:structure`,
+// which say what job an agent did but not which bundle it did it for, so
+// tools/gen-bundle-build-report.py had to infer the bundle from each agent's own prompt. That worked
+// for drafting agents, which write a file under templates/<type>/, and failed for the research and
+// review fan-outs, which write nothing and name sibling types in the same breath as their own: one
+// research run was billed to the sibling it was comparing against. `${type}/draft:companion` makes
+// every agent self-identifying and the inference unnecessary. It costs nothing at runtime.
+//
 // args may arrive as a real object or as a JSON STRING, depending on how the caller serialised it. The
 // first run of this script died on exactly that: every field read as undefined and the script threw
 // "args.type is required" while the caller had supplied it. Parse defensively rather than making every
@@ -154,7 +164,7 @@ Return the schema. Your findings text is the raw material for one section of a r
 claim to a source in owned_sources by identity. Flag genuine disagreement in contested rather than picking
 a winner.`,
         {
-          label: `research:${typeof d === 'string' ? d.slice(0, 24) : d.key}`,
+          label: `${type}/research:${typeof d === 'string' ? d.slice(0, 24) : d.key}`,
           phase: 'Research',
           schema: RESEARCH_SCHEMA,
           model: 'sonnet',
@@ -233,7 +243,7 @@ background: explanatory, not procedural. Procedure belongs in the guide.
 
 End with a "## References" heading (that exact wording, no section number: the gate splits on it) listing
 every source you cited, anchored so [[N]](#ref-N) links resolve. Cite by the log's own numbering.`,
-        { label: 'draft:companion', phase: 'Draft', schema: {
+        { label: `${type}/draft:companion`, phase: 'Draft', schema: {
           type: 'object', required: ['sections', 'teaching_points', 'refs_cited'],
           properties: {
             sections: { type: 'array', items: { type: 'string' }, description: 'H2 headings written, in order' },
@@ -261,7 +271,7 @@ with a companion pointer, ASK, GOOD, WEAK, TRAP, plus PRIORITY and ROW HINT for 
 variant with a "How to fill this in" preamble stating the N/A rule and the self-grade step.
 
 Placeholders are {{snake_case}} and consistent across both variants.`,
-        { label: 'draft:templates', phase: 'Draft', schema: {
+        { label: `${type}/draft:templates`, phase: 'Draft', schema: {
           type: 'object', required: ['lean_sections', 'full_sections'],
           properties: {
             lean_sections: { type: 'array', items: { type: 'string' } },
@@ -289,7 +299,7 @@ The variants are: lean ${JSON.stringify(templates?.lean_sections || [])} and ful
 ${JSON.stringify(templates?.full_sections || [])}. If any rubric row grades a section a variant does not
 ship, you MUST carry a scope table naming, per variant, which rows apply, the maximum, and the threshold.
 tools/check-rubric-scope.py enforces the arithmetic and demands that table.`,
-        { label: 'draft:guide', phase: 'Draft', schema: {
+        { label: `${type}/draft:guide`, phase: 'Draft', schema: {
           type: 'object', required: ['rubric_rows', 'threshold'],
           properties: {
             rubric_rows: { type: 'integer', description: '6 to 12' },
@@ -321,7 +331,7 @@ FOUR OBLIGATIONS, each of which has been violated before:
 
 Read the family contract's shared-scenario rule before choosing your scenario. It may bind you to
 specific existing artifacts.`,
-        { label: 'draft:example', phase: 'Draft', schema: {
+        { label: `${type}/draft:example`, phase: 'Draft', schema: {
           type: 'object', required: ['scenario', 'dated'],
           properties: {
             scenario: { type: 'string' },
@@ -349,7 +359,7 @@ related_templates should point at the siblings this type genuinely relates to. T
 ${JSON.stringify(example?.cites || [])}, which is a good starting point.
 
 The history records the current template_version with a dated entry. Check H requires one.`,
-        { label: 'draft:meta', phase: 'Draft', schema: {
+        { label: `${type}/draft:meta`, phase: 'Draft', schema: {
           type: 'object', required: ['variants', 'axis_value'],
           properties: {
             variants: { type: 'array', items: { type: 'string' } },
@@ -438,7 +448,7 @@ finding the main loop cannot locate will be rejected, because it verifies every 
 before applying it.
 
 Return the schema. Set checked_nothing_else honestly.`,
-        { label: `lens:${l.key}`, phase: 'Review', schema: FINDINGS_SCHEMA, model: 'sonnet', effort: 'high' },
+        { label: `${type}/lens:${l.key}`, phase: 'Review', schema: FINDINGS_SCHEMA, model: 'sonnet', effort: 'high' },
       ),
     ),
   )

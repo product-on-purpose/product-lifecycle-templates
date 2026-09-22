@@ -113,6 +113,15 @@ jobs:
       - name: Section parser self-test
         run: python tools/test-gen-sections.py
 
+      # Build-cost reports (bundle-builds/). What a bundle actually cost to build, measured from the
+      # harness transcripts rather than estimated. This step checks ONLY that INDEX.md matches the
+      # committed reports. It deliberately cannot check the reports themselves: they are derived from
+      # per-agent transcripts under ~/.claude/projects/, which are machine-local, absent on this
+      # runner, and pruned eventually. That is why ingestion is a separate local command run at the
+      # end of a build, and why the committed JSON is the source of truth once written.
+      - name: Build-report index freshness
+        run: python tools/gen-bundle-build-report.py --check
+
       # The fill tools (roadmap WP-50). Neither has a live subject in this repository: no filled
       # document is committed here, so running the gate cannot exercise either one. Both therefore
       # carry fixture-based self-tests, on the same reasoning as the check K and check I tests.
