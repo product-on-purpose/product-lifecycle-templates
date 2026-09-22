@@ -44,8 +44,16 @@ If it can read `manifest.json`, everything else in the library is reachable.
 
 This route also brings an MCP server ([`.mcp.json`](../../.mcp.json), served by
 [`tools/mcp_server.py`](../../tools/mcp_server.py)), which gives an agent five tools: search the catalog,
-fetch any of the 58 template variants, fetch a grading pack, validate a filled document, and strip and
+fetch any of the 63 template variants, fetch a grading pack, validate a filled document, and strip and
 stamp one. Nothing is embedded or duplicated, because this route already put the templates on disk.
+
+> **It also works from a plain `git clone`, and until 2026-09-21 it did not.** `.mcp.json` located the
+> server with `${CLAUDE_PLUGIN_ROOT}`, which Claude Code sets only for a **plugin-provided** MCP
+> config. Opened as an ordinary project, the same file is read as a project-scoped config, the variable
+> is unset, and Claude Code leaves the unexpanded text in the path, so the server could not start:
+> `claude mcp list` reported `Missing environment variables: CLAUDE_PLUGIN_ROOT`. The path is now
+> `${CLAUDE_PLUGIN_ROOT:-.}/tools/mcp_server.py`, which resolves to the plugin directory when
+> installed and to the repository root when cloned.
 
 It needs **Python 3 and the `mcp` package, pinned below version 2**, in whichever interpreter `.mcp.json`
 names:

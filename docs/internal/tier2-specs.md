@@ -20,9 +20,9 @@ design task" rather than "a spec-driven execution".
 | Type | Catalog id | Family | Spec | Built |
 |---|---|---|---|---|
 | `spike-report` | `spike-research-spike-report` | `decision-docs` | **Written 2026-09-11**; researched 2026-09-11, [admission evidence](spike-report-admission-evidence.md) | **Built 2026-09-12.** Admitted by [ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md) |
-| `project-milestone-retrospective` | `project-milestone-retrospective` | `process-docs` | **Written 2026-09-11** | No |
-| `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | No |
-| `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | No |
+| `project-milestone-retrospective` | `project-milestone-retrospective` | `process-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
+| `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | **No, and it will not be.** Refused on its own evidence by [ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md): SAFe's own facilitator guide names the outputs as backlog items and no document |
+| `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, spec pending.** It joins
 `standing-standards` as `classification: tool`, by
