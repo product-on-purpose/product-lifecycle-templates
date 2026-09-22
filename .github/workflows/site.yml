@@ -71,8 +71,19 @@ jobs:
       - name: Build site (generator, then Astro)
         working-directory: site
         # `prebuild` chains `npm run gen`, so this single command runs scripts/gen-site.mjs and
-        # then astro build. The all-in-one withastro/action is deliberately NOT used: it runs
-        # astro build directly with no pre-build hook and would skip the generator entirely.
+        # then astro build.
+        #
+        # The all-in-one withastro/action is deliberately NOT used, and the reason recorded here
+        # until 2026-09-22 was WRONG. It said the action "runs astro build directly with no
+        # pre-build hook and would skip the generator entirely". It does not: its build step is
+        # `run: ${{ inputs.build-cmd || '$PACKAGE_MANAGER run build' }}`, so by default it runs
+        # `npm run build`, which fires `prebuild` and therefore the generator, exactly as this step
+        # does. Verified against the action's own action.yml on 2026-09-22.
+        #
+        # The REAL reason is structural and is the same one the guards below exist for: that action
+        # bundles `actions/upload-pages-artifact` into itself. Using it would leave no seam between
+        # `astro build` and the upload, which is precisely where every guard has to run for the
+        # artifact that is checked to be the artifact that ships.
         run: npm run build
 
       # ---------------------------------------------------------------------------------------

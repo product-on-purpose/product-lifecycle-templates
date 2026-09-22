@@ -263,6 +263,19 @@ The build-report ingest must run here, on the machine that ran the build, becaus
 transcripts under `~/.claude/projects/` that are machine-local and are pruned eventually; the resulting
 report is committed with the bundle.
 
+**Your bundle gets published, and one site guard can fail on its prose.** Landing a bundle adds a page
+to <https://product-on-purpose.github.io/product-lifecycle-templates/>, generated from the guide, the
+companion and the templates by `scripts/gen-site.mjs`. Nothing is hand-listed and there is nothing to
+add, but `site.yml` runs an honesty gate over the generated page, and **it fails the site build on a
+sentence that calls the bundle proven, verified or validated**. It is not a word filter: a hit must be
+un-negated, about the bundle rather than about the document type, and inside a fenced block only when an
+explicit meta-phrase ("this bundle", "this template") is present, so a worked example whose fictional
+tester "verified" a fix is safe. Writing that *this bundle* has been proven is not. The deliberate
+escape is an `<!-- honesty-ok: ... -->` comment, which shows up in the diff and has to be justified.
+Note this fails `site.yml`, not the content gate, so a green `run-gate.py` does not clear it. Route
+parity allows a new route, so adding a bundle cannot break the site that way. Full explanation:
+[`docs/explanation/the-site.md`](../explanation/the-site.md).
+
 ---
 
 ## Gotchas (each cost a CI round-trip or a rework pass; see the `bundle-gate-verification-gotchas` memory)

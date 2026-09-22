@@ -20,3 +20,4 @@ This folder is one of the four [Diataxis](https://diataxis.fr/) quadrants the
 - [`what-the-gate-proves.md`](what-the-gate-proves.md) - The honest scope of the library's quality claim
 - [`architecture.md`](architecture.md) - How the library is put together, in one sitting
 - [`architecture-detailed.md`](architecture-detailed.md) - The mechanics, for someone extending the library
+- [`the-site.md`](the-site.md) - How the published website is generated, guarded and deployed
