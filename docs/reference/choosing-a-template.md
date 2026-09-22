@@ -69,11 +69,17 @@ different family: see `governance-docs` in [the family map](#the-family-map) bel
   stranger gets the same answer tomorrow.
 - [`bug-report`](../../templates/bug-report/) - one anomaly, reproducible by the reader, with
   severity and priority kept apart.
+- [`test-summary-report`](../../templates/test-summary-report/) - the retrospective close-out of a
+  testing effort: what was tested, what was found, and whether the result clears the bar the test
+  plan set.
 
 ### I am recording a decision
 
-Three distinct jobs, kept deliberately separate: a proposal, a record, and a design.
+Four distinct jobs, kept deliberately separate: an investigation, a proposal, a record, and a
+design.
 
+- [`spike-report`](../../templates/spike-report/) - the time-boxed technical investigation that
+  reduces an uncertainty before a decision can be proposed.
 - [`rfc`](../../templates/rfc/) - the proposal circulated before a decision, to gather input.
 - [`adr`](../../templates/adr/) - the record of a decision after it is made, in
   [MADR v4](https://github.com/adr/madr).
@@ -118,14 +124,14 @@ included here for readers who want the complete picture rather than a situationa
 
 | Family | What it is for | Bundles |
 |---|---|---|
-| `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`release-notes`](../../templates/release-notes/) |
+| `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`release-notes`](../../templates/release-notes/) |
 | `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`product-strategy`](../../templates/product-strategy/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
-| `decision-docs` | Proposes, records, and designs against a decision, as three separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/) |
+| `decision-docs` | Investigates, proposes, records, and designs against a decision, as four separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/) |
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/) |
-| `qa-docs` | Verifies the work: what to test, one verification's specification, and one confirmed defect | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/) |
+| `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
 | `discovery-docs` | Runs before the decision to build, to test whether an investment is worth making and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/) |
 | `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/) |
-| `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/) |
+| `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
 <!-- counts: bundles=30 -->

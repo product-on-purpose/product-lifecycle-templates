@@ -149,10 +149,10 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 30 -->
-<!-- counts: bundles=30, tier1=25, adrs=55 -->
+<!-- counts: bundles=30, tier1=25, adrs=56 -->
 **Thirty bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
-### `delivery-docs` (six bundles, the family complete)
+### `delivery-docs` (seven bundles, the family complete)
 
 Their examples chain on one fictional "Saved Views" feature, so the family reads as one traceable set: a PRD leads to user stories, ordered in a product backlog and pulled into a sprint backlog, which lead to acceptance criteria, which ship in a release note.
 
@@ -166,7 +166,7 @@ Their examples chain on one fictional "Saved Views" feature, so the family reads
 | [`acceptance-criteria`](templates/acceptance-criteria/) | The conditions that confirm a story is done | `deliver-acceptance-criteria` |
 | [`release-notes`](templates/release-notes/) | The customer-facing announcement of a release | `deliver-release-notes` |
 
-### `decision-docs` (three bundles, the family complete)
+### `decision-docs` (four bundles, the family complete)
 
 Three distinct jobs, deliberately kept separate: an **RFC** proposes a decision, an **ADR** records it, and an **SDD** describes how the thing gets built.
 
@@ -175,6 +175,7 @@ Three distinct jobs, deliberately kept separate: an **RFC** proposes a decision,
 | [`rfc`](templates/rfc/) | The proposal circulated *before* a decision, to gather input | (none exists yet) |
 | [`adr`](templates/adr/) | The record of a decision *after* it is made, in [MADR v4](https://github.com/adr/madr) | `develop-adr` |
 | [`sdd`](templates/sdd/) | The software design document: how a system will be built, before the code | (none exists yet) |
+| [`spike-report`](templates/spike-report/) | The written output of a time-boxed technical investigation: what was tried, what was found, and a proceed-or-not recommendation | `develop-spike-summary` |
 
 ### `governance-docs` (three bundles, the family complete)
 
@@ -186,7 +187,7 @@ The first family gated on the `classification` axis rather than a lifecycle phas
 | [`raid-log`](templates/raid-log/) | One log for the four kinds of open item: Risks, Assumptions, Issues, Dependencies | (none exists yet) |
 | [`kpi-dashboard`](templates/kpi-dashboard/) | The definition of the KPIs that show whether objectives are being met | (none exists yet) |
 
-### `qa-docs` (three bundles, the family complete)
+### `qa-docs` (four bundles, the family complete)
 
 The verification family: one member plans the testing, one specifies a single verification, one records a verification that failed. Its examples are the library's first **cross-family** chain, continuing the delivery-docs "Saved Views" thread rather than starting a new scenario, because the sharpest thing this family has to teach (acceptance criteria are not test cases) can only be shown by putting both side by side. Read end to end, the three examples trace one program risk into a test plan row, into the case designed from it, into the defect that case found, and back into the regression test that now guards it.
 
@@ -195,6 +196,7 @@ The verification family: one member plans the testing, one specifies a single ve
 | [`test-plan`](templates/test-plan/) | What is being tested and what is not, ranked by risk, with criteria someone can check | `deliver-edge-cases` |
 | [`test-case`](templates/test-case/) | The specification of one verification, written so a stranger gets the same answer tomorrow | `deliver-edge-cases` |
 | [`bug-report`](templates/bug-report/) | One anomaly, reproducible by the reader, with severity and priority kept apart | `deliver-edge-cases` |
+| [`test-summary-report`](templates/test-summary-report/) | The retrospective document that closes a testing effort: what was tested, what was found, and whether the result clears the bar | (none exists yet) |
 
 ### `strategy-docs` (complete, four bundles)
 
@@ -229,7 +231,7 @@ It is the first family whose two members take **different values on the same axi
 | [`definition-of-done`](templates/definition-of-done/) | The one standard every increment is judged against, so "done" stops being an opinion | (none exists yet) |
 | [`runbook`](templates/runbook/) | The procedure executed when a known situation occurs, so the response does not depend on who is awake | (none exists yet) |
 
-### `process-docs` (complete, two bundles)
+### `process-docs` (complete, three bundles)
 
 The family of documents that **look back at what happened and change what happens next**. Its two members are the two occasions a team does that, and they exist to be contrasted: a retrospective looks back on a **period**, on a cadence, at how the team worked; a postmortem looks back on an **event**, triggered by it, at why a specific thing failed. The shared failure is producing a document that records feelings or a timeline and commits nobody to anything, which is why every member carries owned actions with a place they are tracked.
 
@@ -239,6 +241,7 @@ Both bundles turned on a full-text check of their own canon. The word "timeline"
 |---|---|---|
 | [`incident-postmortem`](templates/incident-postmortem/) | The learning document written after one event, whose trigger is a criterion the team published in advance | (none exists yet) |
 | [`sprint-retrospective-notes`](templates/sprint-retrospective-notes/) | The written record that turns a retrospective discussion into one owned, dated change | (none exists yet) |
+| [`project-milestone-retrospective`](templates/project-milestone-retrospective/) | The document a team writes when a bounded piece of work has ended, for readers who were not there | `iterate-retrospective` |
 
 ### `communication-docs` (complete, one bundle)
 
@@ -313,11 +316,11 @@ All thirty bundles currently pass. GitHub Actions runs these on every push to `m
 
 ## Project status
 
-`v0.8.0` - **public, with the Tier-1 floor complete, the first five Tier-2 types specified and three of them built, a working MCP server, and an open pull queue.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.11.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, all five Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
 
 ### At a glance
 
-<!-- counts: bundles=30, tier1=25, adrs=55, cisteps=32 -->
+<!-- counts: bundles=30, tier1=25, adrs=56, cisteps=32 -->
 
 |  |  |
 |---|---|
@@ -325,9 +328,9 @@ All thirty bundles currently pass. GitHub Actions runs these on every push to `m
 | **Bundles** | 30, across 9 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs) |
 | **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other five bundles are Tier-2 types: `rfc` and `epic` built early, then `spike-report`, `project-milestone-retrospective` and `test-summary-report` |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
-| **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
+| **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 63 template variants addressable |
-| **Decision records** | 51 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
+| **Decision records** | 56 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
 

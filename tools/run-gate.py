@@ -4,7 +4,7 @@ run-gate.py - run locally what CI runs, and say plainly what it did not run.
 
 WHY THIS EXISTS.
 Until 2026-09-05 the way to check this repository before pushing was to loop over `tools/check-*.py`
-and `tools/test-*.py`. That is 21 scripts. CI runs **30 steps**. The difference was invisible, and
+and `tools/test-*.py`. That is 22 scripts. CI runs **32 steps**. The difference was invisible, and
 "all gates pass" meant "the 21 things I happened to iterate passed", which is a different claim.
 
 It cost a red build on the em-dash check, which is an inline heredoc in `ci.yml` rather than a script
@@ -22,7 +22,7 @@ tool exists to prevent is a confident summary over a partial run, so it does not
 WHAT IT CANNOT RUN, AND WHY THAT IS FINE.
 Three steps are GitHub actions (`uses:`) that provision the runner: checkout, setup-python, setup-node.
 Locally their effect is the working tree and the interpreters you already have. They are reported as
-skipped rather than silently dropped, because "27 of 30, and here are the 3" is a true statement and
+skipped rather than silently dropped, because "29 of 32, and here are the 3" is a true statement and
 "all gates pass" is not.
 
 Usage:

@@ -56,8 +56,8 @@ is a different door to the same room, not a second source of truth. Everything b
 are reading the files directly. See [`installing.md`](docs/how-to/installing.md).
 
 One difference worth knowing: `search_templates` takes an `axis` filter that accepts a **phase or a
-classification** value, because 17 bundles carry a `phase` and the other 10 carry a `classification`.
-Filtering on phase alone silently reaches only 17 of the 27.
+classification** value, because 20 bundles carry a `phase` and the other 10 carry a `classification`.
+Filtering on phase alone silently reaches only 20 of the 30.
 
 ### The second machine artifact: `sections.json`
 

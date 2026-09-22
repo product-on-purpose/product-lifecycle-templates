@@ -291,8 +291,9 @@ marker wrapped in backticks is treated as an illustration rather than a live cla
 
 The runbook for building one bundle is [`docs/internal/bundle-pipeline.md`](../internal/bundle-pipeline.md),
 executable via [`.claude/commands/build-bundle.md`](../../.claude/commands/build-bundle.md), which
-drives [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) for its two parallel
-fan-out stages. The prose in the runbook remains the authority; the script is one way of executing it.
+drives [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js), which dispatches on
+`stage` into three Workflow-invoked stages: `research`, `draft`, and `review`. The prose in the runbook
+remains the authority; the script is one way of executing it.
 
 **Phase 0, spec.** Read the bundle's entry in `docs/internal/buildout-specs.md` (family, axis value, sizes,
 methodology, catalog reference, key sources) and confirm the family's contract already exists; a new family
@@ -309,9 +310,13 @@ resolve while its content has moved.
 (`tools/gen-research-log.py` does the mechanical merge; a human or agent writes the framing prose, the
 contested-claims section, and notes for the companion).
 
-**Phase 3, draft, in a fixed order.** Companion (the 11-section skeleton, citing inline as written), then
-`template-lean` and `template-full` (lean first, full as a strict superset), then guide, then example, then
-`meta.yaml`, then `history.md`. Each step draws on the research log finalized in phase 2.
+**Phase 3, draft, in a fixed order.** The script's `draft` stage, a Workflow pipeline of five sequential
+`sonnet`-model agents, each reading the last one's output from disk, writing seven of the eight bundle
+files: companion (the 11-section skeleton, citing inline as written), then `template-lean` and
+`template-full` together (lean first, full as a strict superset), then guide, then example, then
+`meta.yaml` and `history.md` together. Each step draws on the research log finalized in phase 2. This has
+been a Workflow-invoked stage rather than main-loop work since commit `8b845ad6` ("move drafting out of
+the main loop").
 
 **Phase 3.5, machine pre-read.** Two non-gating, report-only lints, `tools/lint-number-provenance.py` and
 `tools/lint-unsourced-confidence.py`, run in seconds and surface candidate defects (numbers and proper nouns
@@ -336,8 +341,12 @@ git-tracked files; then `python tools/check-bundles.py <type>`, `python tools/ge
 `STATE.md`, and `buildout-specs.md`'s progress table, open a PR against `origin/main`, let CI pass without an
 admin merge, and land.
 
-Phases 1 and 4 are Workflow fan-outs on the `sonnet` model, per the project's model-routing rule: a
-research-with-judgment or rubric-based task is sonnet's lane, and a four-to-six-way fan-out drops one tier
-from what a single adversarial-verify agent would get. Phases 0, 2, 3, 5, and 6 stay in the main loop, which
-synthesizes and re-verifies every subagent finding rather than trusting it outright, an asymmetric-verification
-pattern: frontier checks sonnet, never sonnet-checks-sonnet.
+Phases 1, 3, and 4 are Workflow-invoked, matching the script's three `stage` values. Phases 1 and 4 are
+parallel fan-outs on the `sonnet` model, per the project's model-routing rule: a research-with-judgment or
+rubric-based task is sonnet's lane, and a four-to-six-way fan-out drops one tier from what a single
+adversarial-verify agent would get. Phase 3 is not a fan-out in that same parallel sense - its five agents
+run as a dependency chain, each reading the last one's file from disk - but it is Workflow-dispatched all
+the same, not main-loop work. Phases 0, 2, 5, and 6 stay in the main loop, which synthesizes and re-verifies
+every subagent finding rather than trusting it outright (synthesizing the research log in phase 2,
+re-verifying findings against sources in phase 5), an asymmetric-verification pattern: frontier checks
+sonnet, never sonnet-checks-sonnet.

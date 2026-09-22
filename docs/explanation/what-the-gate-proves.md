@@ -135,7 +135,7 @@ that this library disagrees with itself. On 2026-08-08 it earned that descriptio
 frontmatter violation in a release note that all twelve local checks, four self-tests and both generators
 had passed.
 
-None of the twenty-six, individually or together, can tell you whether a sentence in a companion is true.
+None of the twenty-seven, individually or together, can tell you whether a sentence in a companion is true.
 
 ## What no machine checks
 
@@ -246,9 +246,6 @@ as they stand today, stated without softening:
   from sources that could not be read, and claims attributed to people who do not make them. Every one of
   those was invisible to the gate then, and the class of defect they belong to is invisible to the gate
   now, for the same structural reason: the gate checks that a citation resolves, never that it is true.
-- **The version this document describes is `v0.1.0`.** A `v0.2.0` is being prepared, but it has not
-  shipped, and this document describes the gate and review process as they run against the tree today,
-  not as they are planned to run.
 
 None of this is an argument against using the library. It is the argument for reading this page before
 you decide how much to trust a bundle: the structure is enforced and will stay enforced, the content is

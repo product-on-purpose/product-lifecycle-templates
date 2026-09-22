@@ -17,14 +17,18 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-{/* SAMPLE NOTE: every number on this page is hand-typed for the spike. In the real
-    site all of them come from manifest.json at build time - site-plan section 11
-    forbids a hand-written count on any rendered page, because that is DF-5 applied
-    to a new surface. */}
+{/* counts: bundles=30, sections=264, families=9 */}
+
+{/* The numbers below are still hand-typed, and site-plan section 11 still says a rendered page
+    should take them from manifest.json at build time. Until the generator does that, they are at
+    least GATED: tools/check-counts.py reads the marker above and fails if the tree disagrees.
+    That gate was added 2026-09-22, after this page was found claiming SIX families against a tree
+    of nine. It had been wrong on the most-read surface in the project since the page shipped,
+    because .mdx was outside the check's file glob and `<!-- -->` is not a comment in MDX. */}
 
 <CardGrid>
   <Card title="30 bundles" icon="open-book">
-    Across six families. Each bundle ships a template, a guide, a companion, a worked
+    Across nine families. Each bundle ships a template, a guide, a companion, a worked
     example, a research log and a history - not a file.
   </Card>
   <Card title="264 sections" icon="list-format">

@@ -38,7 +38,7 @@ python tools/run-gate.py               # every step CI runs, and a named reason 
 ```
 
 **Run the whole gate, not a list of scripts.** This document named four of them until 2026-09-06, and CI
-runs **30 steps**. Three of those are not files under `tools/` at all - one is an inline heredoc in
+runs **32 steps**. Three of those are not files under `tools/` at all - one is an inline heredoc in
 `ci.yml` - so no list anyone maintains by hand, and no glob over a directory, can be complete.
 `run-gate.py` derives its list from `.github/workflows/ci.yml` and prints every step it skipped with the
 reason, which is why it has no output line that says everything passed. Read the skip list before calling
