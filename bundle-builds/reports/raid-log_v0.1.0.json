@@ -1,0 +1,288 @@
+{
+  "report_schema_version": "1.0.0",
+  "bundle": "raid-log",
+  "template_version": "0.1.0",
+  "attribution_confidence": "medium",
+  "agents_total": 8,
+  "agents_reliably_attributed": 0,
+  "workflow_runs": 2,
+  "run_ids": [
+    "wf_34956e4f-7a5",
+    "wf_91bcd10d-556"
+  ],
+  "session_ids": [
+    "32db7fea-95c4-46d1-bf39-5dd63f11025f"
+  ],
+  "weights": {
+    "input": 1.0,
+    "cache_write": 1.25,
+    "cache_read": 0.1,
+    "output": 5.0
+  },
+  "stages_present": [
+    "other",
+    "research"
+  ],
+  "complete": false,
+  "totals": {
+    "turns": 377,
+    "input": 52842,
+    "output": 133625,
+    "cache_write": 1735827,
+    "cache_read": 15012028,
+    "web": 0
+  },
+  "weighted_total": 4391954,
+  "by_stage": {
+    "research": {
+      "agents": 3,
+      "usage": {
+        "turns": 268,
+        "input": 43342,
+        "output": 43578,
+        "cache_write": 671423,
+        "cache_read": 11733791,
+        "web": 0
+      },
+      "weighted": 2273890
+    },
+    "other": {
+      "agents": 5,
+      "usage": {
+        "turns": 109,
+        "input": 9500,
+        "output": 90047,
+        "cache_write": 1064404,
+        "cache_read": 3278237,
+        "web": 0
+      },
+      "weighted": 2118064
+    }
+  },
+  "by_model": {
+    "claude-sonnet-4-6": {
+      "agents": 8,
+      "usage": {
+        "turns": 377,
+        "input": 52842,
+        "output": 133625,
+        "cache_write": 1735827,
+        "cache_read": 15012028,
+        "web": 0
+      },
+      "weighted": 4391954
+    }
+  },
+  "by_requested_tier": {
+    "sonnet": {
+      "agents": 8,
+      "usage": {
+        "turns": 377,
+        "input": 52842,
+        "output": 133625,
+        "cache_write": 1735827,
+        "cache_read": 15012028,
+        "web": 0
+      },
+      "weighted": 4391954
+    }
+  },
+  "by_deliverable": {
+    "(none)": {
+      "agents": 8,
+      "usage": {
+        "turns": 377,
+        "input": 52842,
+        "output": 133625,
+        "cache_write": 1735827,
+        "cache_read": 15012028,
+        "web": 0
+      },
+      "weighted": 4391954
+    }
+  },
+  "by_attribution": {
+    "name": {
+      "agents": 8,
+      "usage": {
+        "turns": 377,
+        "input": 52842,
+        "output": 133625,
+        "cache_write": 1735827,
+        "cache_read": 15012028,
+        "web": 0
+      },
+      "weighted": 4391954
+    }
+  },
+  "agents": [
+    {
+      "run": "wf_91bcd10d-556",
+      "agent_id": "aa8e368983fd79de4",
+      "label": "",
+      "stage": "research",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 153,
+        "input": 25992,
+        "output": 20582,
+        "cache_write": 333116,
+        "cache_read": 7839855,
+        "web": 0
+      },
+      "weighted": 1329282
+    },
+    {
+      "run": "wf_34956e4f-7a5",
+      "agent_id": "af4d91ac0c3134bb6",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 23,
+        "input": 45,
+        "output": 25658,
+        "cache_write": 445119,
+        "cache_read": 706063,
+        "web": 0
+      },
+      "weighted": 755340
+    },
+    {
+      "run": "wf_91bcd10d-556",
+      "agent_id": "a4e5a55c8f166d4ef",
+      "label": "",
+      "stage": "research",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 67,
+        "input": 3794,
+        "output": 7803,
+        "cache_write": 217682,
+        "cache_read": 2472637,
+        "web": 0
+      },
+      "weighted": 562175
+    },
+    {
+      "run": "wf_91bcd10d-556",
+      "agent_id": "af96b6718ce763e26",
+      "label": "",
+      "stage": "research",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 48,
+        "input": 13556,
+        "output": 15193,
+        "cache_write": 120625,
+        "cache_read": 1421299,
+        "web": 0
+      },
+      "weighted": 382432
+    },
+    {
+      "run": "wf_34956e4f-7a5",
+      "agent_id": "ad62fcfbdc4b8cfb9",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 22,
+        "input": 28,
+        "output": 15613,
+        "cache_write": 174478,
+        "cache_read": 802624,
+        "web": 0
+      },
+      "weighted": 376453
+    },
+    {
+      "run": "wf_34956e4f-7a5",
+      "agent_id": "a56ad089229e81de9",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 18,
+        "input": 495,
+        "output": 16801,
+        "cache_write": 181768,
+        "cache_read": 534335,
+        "web": 0
+      },
+      "weighted": 365144
+    },
+    {
+      "run": "wf_34956e4f-7a5",
+      "agent_id": "affe4c792c89da626",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 8,
+        "input": 14,
+        "output": 19427,
+        "cache_write": 163520,
+        "cache_read": 153505,
+        "web": 0
+      },
+      "weighted": 316900
+    },
+    {
+      "run": "wf_91bcd10d-556",
+      "agent_id": "a12277878d0217794",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-4-6",
+      "requested_model": "sonnet",
+      "attribution": "name",
+      "confidence": "low",
+      "file_written": "",
+      "usage": {
+        "turns": 38,
+        "input": 8918,
+        "output": 12548,
+        "cache_write": 99519,
+        "cache_read": 1081710,
+        "web": 0
+      },
+      "weighted": 304228
+    }
+  ]
+}

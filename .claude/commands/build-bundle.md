@@ -75,7 +75,9 @@ table. **Every finding is a claim: verify it against the source before applying.
 finds real defects and occasionally proposes a fix that is wrong.
 
 **Phase 6, gate and land.** `git add` **before** the link gate (it skips untracked files and gives a false
-green). Then the gate, manifest, links, README and STATE updates, PR, CI, merge.
+green). Then the gate, manifest, links, README and STATE updates, PR, CI, merge, then
+`python tools/gen-bundle-build-report.py --ingest` to generate the build-cost report - this must run on
+the machine that ran the build, because the transcripts it reads are machine-local.
 
 ## Source ownership, and why it is a rule
 
@@ -117,6 +119,11 @@ Gate green, links resolve, counts agree, CI green, PR merged, `main` pulled, and
 
 ## What this costs
 
-Roughly 700K-1M tokens per bundle, dominated by research fan-out and the four-lens review. The brief and
-the lens scoping exist to hold that down; if a run is far above it, the likely cause is lenses reading the
-whole bundle instead of their own files, or research agents re-reading sources they do not own.
+Measured, not estimated: roughly 21M-25M weighted token-equivalents per bundle (test-summary-report
+24,650,553; spike-report 20,743,317; weighted means input x1.0, cache write x1.25, cache read x0.1,
+output x5.0). Source: [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for
+test-summary-report: draft 10,206,549, research 9,032,973, lens 5,411,031 - drafting is the largest
+single stage, research is close behind, and the review is under half of research, not co-dominant with
+it. The brief and the lens scoping exist to hold this down; if a run is far above it, the likely cause is
+lenses reading the whole bundle instead of their own files, or research agents re-reading sources they do
+not own.

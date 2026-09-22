@@ -14,6 +14,67 @@ people who want every change, release notes are for people who want to know what
 
 Nothing yet.
 
+## [0.11.0] - 2026-09-22
+
+### Added
+
+- **What a bundle costs to build is now measured rather than estimated, and lives in
+  [`bundle-builds/`](bundle-builds/).** One report per bundle per `template_version`, as a readable
+  `.md` and a machine-readable `.json`, plus a generated `INDEX.md` list view and a hand-authored
+  `README.md` stating what the numbers are and are not. **22 reports were backfilled**, covering
+  every bundle whose transcripts still exist on the machine that built them.
+- **[`tools/gen-bundle-build-report.py`](tools/gen-bundle-build-report.py).** It joins three things
+  the Claude Code harness already writes and nothing had ever read: the run journal mapping each
+  subagent to its label, phase and the file it wrote; the per-agent transcript carrying model and
+  usage per turn; and the per-agent sidecar carrying the requested model tier. Reports break a build
+  down by stage, by resolved model, by requested tier and by deliverable.
+  **Ingestion and verification are separate commands on purpose.** `--ingest` reads transcripts and
+  writes reports, and runs only where the transcripts are. `--check` verifies the index against the
+  committed reports and is CI-safe. Transcripts are machine-local and pruned eventually, so a
+  measurement whose source can disappear is captured at the moment it is true and the committed JSON
+  is the source of truth thereafter.
+- **A 32nd CI step, "Build-report index freshness."**
+
+### Changed
+
+- **The two per-bundle cost estimates are replaced by the measurement.**
+  [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md) said "roughly 0.6-1M tokens" and
+  [`build-bundle.md`](.claude/commands/build-bundle.md) said "roughly 700K-1M". Neither cited a
+  measurement and **both were wrong by between 20 and 30 times**: measured, a bundle costs **21M to
+  25M weighted token-equivalents** (input x1.0, cache write x1.25, cache read x0.1, output x5.0).
+  The runbook also said the cost was "dominated by research fan-out and the four-lens review";
+  measured on `test-summary-report`, drafting is the largest single stage at 10,206,549, research is
+  9,032,973, and the review is 5,411,031, which is under half of research.
+- **Every workflow agent label now carries its bundle type**
+  ([`build-bundle.js`](.claude/workflows/build-bundle.js)). A label read `draft:companion`, which
+  says what an agent did but not what it did it for, so the report tool had to infer the bundle from
+  each agent's own prompt. That worked for drafting agents, which write a file under
+  `templates/<type>/`, and failed for the research and review fan-outs, which write nothing and name
+  sibling types in the same breath as their own: one research run was billed to the sibling it was
+  comparing against. Labels now read `test-summary-report/draft:companion`. It costs nothing at
+  runtime.
+
+### Fixed
+
+- **`STATE.md` said "Twenty-seven bundles" under the heading "Built and true today".** There are
+  thirty, and its own generated marker says `bundles=30` nine lines above. The cell was stale by
+  exactly the three Tier-2 bundles that shipped in `v0.8.0`. **This is the third instance of this
+  defect in that one table**: the Decision records cell four rows down carries its own correction
+  note from 2026-09-15, and `CHANGELOG.md` already records the mechanism by name, a count that
+  defeats a numeric grep by being spelled as a word. Nothing gates prose against a marker nine lines
+  above it.
+- **`STATE.md` reported the governance gate "passing on all 27 bundles".** Thirty.
+- **`risk-register`'s companion called `raid-log` "the next governance-docs member to be built"**
+  (`risk-register_companion.md`). `raid-log` has been built and shipping for weeks, and the same
+  section links into it four lines above. Nothing checks a companion's prose against which sibling
+  bundles exist.
+- **`bundle-pipeline.md` said the build script runs "its two fan-outs".** It has three stages,
+  dispatched at `build-bundle.js` lines 135, 190 and 368, and the missing one was `draft`, the
+  five-agent fan-out that writes seven of the eight bundle files. The build command had documented
+  all three correctly for some time, so the runbook was behind its own command.
+- **`README.md` reported the current version as `v0.8.0`**, two releases behind the shields.io badge
+  in the same file.
+
 ## [0.10.0] - 2026-09-21
 
 ### Changed
@@ -2152,7 +2213,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...v0.8.0

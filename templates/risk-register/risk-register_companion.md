@@ -303,8 +303,8 @@ is by audience and cadence: *"RAID logs operate on a weekly cycle for program te
 risk registers follow quarterly reviews for steering committees as governance artifacts"* [[18]](#ref-18).
 They feed each other - *"the strategic risks that surface in the weekly RAID review get promoted up"*
 [[18]](#ref-18) - and the failure to avoid is *"one bloated artifact"* trying to be both, which *"becomes
-unwieldy and ultimately abandoned"* [[18]](#ref-18). This bundle's sibling `raid-log` (the next
-governance-docs member to be built) covers the consolidated form; use a standalone register when the R has
+unwieldy and ultimately abandoned"* [[18]](#ref-18). This bundle's sibling `raid-log` (a built
+governance-docs member) covers the consolidated form; use a standalone register when the R has
 outgrown the RAID.
 
 **Risk register vs issue log.** The distinction is temporal: *"risk registers track conditions that might

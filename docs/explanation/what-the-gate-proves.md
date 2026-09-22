@@ -66,6 +66,11 @@ by itself, most of them opened by a real defect that shipped past a green gate f
 - **Manifest and atlas freshness** (`tools/gen-manifest.py --check`, `tools/gen-atlas.py --check`).
   [`manifest.json`](../../manifest.json) and the atlas dataset are generated from the bundle metas and
   committed; these steps regenerate both in memory and fail if the committed copy has drifted.
+- **Build-report index freshness** (`tools/gen-bundle-build-report.py --check`). `bundle-builds/INDEX.md`
+  is generated from the committed per-bundle build-cost reports under `bundle-builds/reports/`; this step
+  regenerates it in memory and fails if the committed copy has drifted. It deliberately cannot check a
+  report against the harness transcript it was built from, because those per-agent transcripts live under
+  `~/.claude/projects/`, which is machine-local and absent on the CI runner.
 - **The ADR index** (`tools/check-adr-index.py`). Fails if any decision record under
   [`docs/internal/decisions/`](../internal/decisions/) is missing from its own index, or the index points
   at a file that does not exist.
@@ -116,13 +121,13 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   `agent-skills-toolkit`, which also supplies the README version-badge guard `check-readme-version.mjs`
   run in the same step). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=31 -->
-Thirty-one CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Twenty-six** prove the tree is
+<!-- counts: cisteps=32 -->
+Thirty-two CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Twenty-seven** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The thirty-first is the only one that can surprise anybody**, because it is the only one whose rules
+**The thirty-second is the only one that can surprise anybody**, because it is the only one whose rules
 this repository did not write. It runs the Advanced Skill Library Standard's conformance gate, and the
 toolkit's README version-badge guard, from a pinned checkout of a separate repository, so it can report
 that this library has stopped meeting a published external standard. Every other step can only report
@@ -130,7 +135,7 @@ that this library disagrees with itself. On 2026-08-08 it earned that descriptio
 frontmatter violation in a release note that all twelve local checks, four self-tests and both generators
 had passed.
 
-None of the twenty-five, individually or together, can tell you whether a sentence in a companion is true.
+None of the twenty-six, individually or together, can tell you whether a sentence in a companion is true.
 
 ## What no machine checks
 
