@@ -53,7 +53,7 @@ engineering-handbook document. None is Tier 1, so none is scheduled;
 | classification | **`foundation` or `tool`** - the second family contract to allow a set on the axis key. `foundation` for `definition-of-done`; `tool` for `runbook`. See the axis note below |
 | methodology | **Descriptive, not gated.** `definition-of-done` is agile-lineage; `runbook` is DevOps/SRE-lineage. Requiring one value would force one member to misdescribe itself |
 | sizes_available | `[lean, full]`, or `[lean]` where the type's own research shows it does not earn a second weight |
-| status | `beta` until one real usage cycle is recorded; then `stable` eligible |
+| status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `[]`; every value must resolve against `tools/known-skills.txt`. Verify per member; claim only what is true of that member |
 
 **The axis call, and why this family needs a set.** Both members are standing, so both are

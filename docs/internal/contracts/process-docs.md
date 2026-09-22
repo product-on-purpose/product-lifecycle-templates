@@ -63,7 +63,7 @@ Inspect and Adapt's. What earns a document is that the work is **over**, not tha
 | phase | **`iterate`**, single value |
 | methodology | **Descriptive, not gated.** The retro is Scrum/agile-lineage; the postmortem is SRE-lineage. Requiring one value would force one member to misdescribe itself, and this family is a clear case of the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson |
 | sizes_available | `[lean, full]`, or `[lean]` where the type's research shows it does not earn a second weight. **Expect pressure here**: retrospective notes are a strong candidate for single-size, and the catalog's size call is a hypothesis, not a fact |
-| status | `beta` until one real usage cycle is recorded |
+| status | `beta` until the maintainer judges the bundle settled ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | pm-skills skill ID(s) or `[]`, resolving against `tools/known-skills.txt`. Verify per member |
 
 ## 3. Structural obligations (gate-checkable)

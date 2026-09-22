@@ -8,8 +8,8 @@ below is enough to select a bundle, size it to your context budget, and fill it 
 reading anything else first.
 
 The one fact to hold onto while reading the rest of this file: **nothing here has been proven to work.**
-Every bundle is researched and gate-green, but zero of them have been filled in anger by anyone but the
-library's author. Efficacy has been measured four times: three runs returned **VOID**, and the fourth,
+Every bundle is researched and gate-green, and none of them is claimed to be more than that.
+Efficacy has been measured four times: three runs returned **VOID**, and the fourth,
 on 2026-09-03, cleared every validity gate on **two scenarios of one bundle** and found no measurable
 difference in whether a reader could answer their questions. See
 [What this library has not proven](#what-this-library-has-not-proven) before you trust a claim here more
@@ -164,9 +164,9 @@ for the bundles that do not have one.
 Stated as plainly here as it is in [`README.md`](README.md#the-claim-and-what-it-is-worth), because an
 agent selecting a bundle should not read more confidence into it than the library itself claims:
 
-- **No template here has been filled by anyone but the library's author.** The catalog's own graduation
-  rule requires a type to "survive one real usage cycle" before it is considered proven; by that standard,
-  nothing in this library has graduated.
+- **A green gate is a structural claim, not a quality one.** Every bundle is `beta`. Nothing here is
+  offered as proven, and the library does not assert that a document produced from one of these
+  templates is better than one written without it.
 - **Efficacy has been measured four times, and the result still does not support a library-wide quality
   claim.** Two blinded runs on 2026-08-08 over three of the twenty-six bundles then in the library both
   returned **VOID** on the discrimination gate, as did a single-scenario run on 2026-08-21. **The fourth,

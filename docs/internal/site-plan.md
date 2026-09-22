@@ -313,8 +313,13 @@ Everything this library refuses to claim in a README it must also refuse to clai
 
 1. **No eval number reaches any rendered page.** Two scenarios of one bundle were measured and both runs came back **VOID on discrimination**. Publishing a number from a void instrument is worse than publishing nothing.
 2. **No bundle is called "proven", "verified" or "validated"** on the strength of a green gate. The gate proves structure and research integrity. It does not prove the document helps anyone.
-3. **Bundles stay `beta` until a real usage cycle is recorded.** Not until they look finished.
-4. **Zero real fills is published as zero.** Not omitted, not softened, not rephrased as "early".
+3. **Bundles stay `beta` until the maintainer judges one settled.** Not until they look finished.
+4. ~~**Zero real fills is published as zero.** Not omitted, not softened, not rephrased as "early".~~
+   **Retired 2026-09-21 by [ADR 0055](decisions/0055-retire-the-zero-fills-disclosure.md).** The site
+   no longer publishes a fill count. Clauses 1, 2 and 3 stand: the restraint this clause protected is
+   carried by the ban on "proven", "verified" and "validated", which is still gate-enforced and still
+   mutation-tested. **Declining to volunteer a negative number is a different act from asserting a
+   positive one**, and only the second would have been a claim.
 
 ### 13.1 One of these four has a failure mode, so build it
 

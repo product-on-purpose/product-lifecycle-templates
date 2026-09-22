@@ -12,7 +12,26 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-Nothing yet.
+### Changed
+
+- **[ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md): the zero-fills
+  disclosure is retired, and the ban on calling a bundle proven is kept.** This library no longer
+  publishes a real-fill count on any public surface, and no longer requires one. Removed from the
+  site landing page, all 30 generated bundle pages, the bundle index, `README.md`, `AGENTS.md`,
+  `STATE.md`, site-plan clause 13.4, site-s0-spec AC-17, and the `status` row of all nine family
+  contracts, which had gated `stable` on "one real usage cycle is recorded".
+
+  **The load-bearing half is kept.** No page may call a bundle **proven**, **verified** or
+  **validated**; that ban is still enforced by `gen-site.mjs --check` between `astro build` and
+  `upload-pages-artifact`, still mutation-tested, and every bundle stays `beta`. The distinction the
+  decision rests on is that **declining to volunteer a negative number is a different act from
+  asserting a positive one**, and only the second would be a claim this library cannot support.
+
+  **No bundle is promoted by this change.** Graduation to `stable` becomes the maintainer's judgement
+  that a bundle has settled, replacing a rule that waited on an event outside the project's control.
+  **The cost, named:** a reader can no longer tell from the site how much real-world use these
+  templates have had. ADRs 0039, 0043 and 0047 each affirmed the disclosure and are superseded on
+  this point, not rewritten.
 
 ## [0.9.0] - 2026-09-21
 
