@@ -14,6 +14,31 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **The MCP server now returns a uniform `{ok, data?, error?}` envelope, and responses arrive as
+  typed `structuredContent`** ([ADR 0054](docs/internal/decisions/0054-the-mcp-server-returns-a-uniform-envelope.md)).
+  **A breaking change to a shipping wire format**, taken now because nothing external calls the
+  server. `ok` means the call completed and never a domain verdict: a document that fails validation
+  is `ok: true` with `data.valid: false`, and a strip refusal is `ok: true` with `data.refused: true`.
+  `error` is an object carrying a closed `code` enum plus the existing hint fields, and the nested
+  per-part `error` inside `get_template` becomes `{present: false, reason: ...}`, because a bundle
+  shipping no `example` is a fact about the bundle rather than a caller error.
+
+  **The spike that designed this was not sufficient, and that is the part worth keeping.** It drove
+  FastMCP **in process**, saw `structuredContent` populated on both branches, and concluded the shape
+  worked. A real client *also validates output against the declared `outputSchema`*, and the first
+  implementation failed **every single call** with `Output validation error: None is not of type
+  'object'`: the SDK serialises the absent branch as an explicit `null` that the schema did not admit,
+  and in-process calls skip that validation entirely. Fixed with `NotRequired[Optional[...]]`.
+  Proving the mechanism works is not proving the path works, which is DF-7's shape again.
+
+  An intermediate draft also swapped the measured `NotRequired` spelling for `total=False`
+  inheritance to keep the module importable on Python 3.10. The schemas looked identical, both
+  reporting `required: ["ok"]`, and it failed at run time for a third reason. **Substituting an
+  untested equivalent for a measured one costs**, so the measured spelling stands with a fallback.
+
+  `tools/test-mcp-server.py` grows to 48 assertions, including one that drives a **real stdio
+  session** and asserts populated `structuredContent` on both branches of every tool. It is
+  mutation-tested: reverting the nullable branch turns it red with the diagnostic above.
 - **[ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md): the zero-fills
   disclosure is retired, and the ban on calling a bundle proven is kept.** This library no longer
   publishes a real-fill count on any public surface, and no longer requires one. Removed from the

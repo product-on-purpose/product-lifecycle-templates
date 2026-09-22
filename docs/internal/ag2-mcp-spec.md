@@ -170,7 +170,7 @@ Neither is large. Both are prerequisites, not parallel work.
       `python tools/mcp_server.py --selftest` prints the live count, which is the number to trust over
       this line.
 - [x] `validate_fill` and `stamp_and_strip` agree exactly with the Python tools they wrap, asserted by running both over the same fixtures.
-- [~] Intent to selection to fetch to fill to validation completes **over stdio**, and the price quoted at
+- [x] Intent to selection to fetch to fill to validation completes **over stdio**, and the price quoted at
       discovery equals the price charged at retrieval. Verified 2026-09-06 by driving the server with the
       SDK's own `stdio_client`: five tools listed, "acceptance criteria for a story" selected
       `acceptance-criteria`, the fetched variant's 1,000 tokens matched the figure `search_templates` had
@@ -220,6 +220,24 @@ Neither is large. Both are prerequisites, not parallel work.
       > FastMCP nests it under a `result` key, and the flat `TypedDict` loses because typing `data` as
       > `dict[str, Any]` asserts nothing, which is the same objection this paragraph raises against
       > `total=False`.
+      >
+      > **IMPLEMENTED 2026-09-21, and the spike was not sufficient.** The spike drove FastMCP **in
+      > process**. A real client *also validates the tool's output against its declared
+      > `outputSchema`*, and the first implementation failed **every single call** with
+      > `Output validation error: None is not of type 'object'`: the SDK serialises the absent branch
+      > as an explicit `null`, and in-process calls skip the validation that rejects it. The fix is
+      > `NotRequired[Optional[...]]` on both branch fields, so the schema admits the null the SDK
+      > actually emits.
+      >
+      > Two lessons, both already in this repository's ledger. **Proving the mechanism works is not
+      > proving the path works** - the same shape as DF-7. And **substituting an untested equivalent
+      > for a measured one costs**: an intermediate draft expressed the optional branch by inheriting
+      > with `total=False` to keep the module importable on Python 3.10, the schemas looked identical
+      > (`required: ["ok"]` either way), and it failed at run time for a third reason.
+      >
+      > `tools/test-mcp-server.py` now asserts populated `structuredContent` on both branches of every
+      > tool **over a real stdio session**, and that assertion has been mutation-tested: reverting the
+      > nullable branch turns it red with the diagnostic above.
 - [x] The server reports the library version it was built from, read from `library.json`.
 
 The dropped criterion is the sketch's "default payload under 2.6k for every bundle". It is not achievable

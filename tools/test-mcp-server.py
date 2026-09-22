@@ -83,6 +83,26 @@ def skip(label, why):
     print("  " + YELLOW + "SKIP" + OFF + "  " + label + DIM + " - " + why + OFF)
 
 
+def D(resp):
+    """Unwrap the success branch, asserting the envelope shape on the way through (ADR 0054).
+
+    Every tool now returns {"ok": bool, "data"|"error": ...}. These two helpers keep the domain
+    assertions below readable while still failing loudly if a call lands on the wrong branch.
+    """
+    assert isinstance(resp, dict) and "ok" in resp, "response is not an envelope: %r" % (resp,)
+    assert resp["ok"] is True, "expected the success branch, got error: %r" % (resp.get("error"),)
+    assert "data" in resp, "ok: True with no data: %r" % (resp,)
+    return resp["data"]
+
+
+def E(resp):
+    """Unwrap the error branch, asserting the envelope shape."""
+    assert isinstance(resp, dict) and "ok" in resp, "response is not an envelope: %r" % (resp,)
+    assert resp["ok"] is False, "expected the error branch, got data: %r" % (resp.get("data"),)
+    assert "error" in resp, "ok: False with no error: %r" % (resp,)
+    return resp["error"]
+
+
 def approx_tokens_of(obj):
     """The size of a RESPONSE, by the same characters/4 the library uses for artifacts."""
     return len(json.dumps(obj)) / 4
@@ -131,9 +151,9 @@ def main():
           srv.library_version() == lib["version"], srv.library_version())
     check("every tool response carries library_version",
           all("library_version" in r for r in (
-              srv.search_templates("prd"),
-              srv.get_template("prd"),
-              srv.get_grading_pack("prd"))))
+              D(srv.search_templates("prd")),
+              D(srv.get_template("prd")),
+              D(srv.get_grading_pack("prd")))))
 
     # ---------------------------------------------------------------- AC 1
     # The budget is 800, not the spec's original 500, and the change is a measurement rather than a
@@ -145,22 +165,22 @@ def main():
     print(DIM + "\n  AC1: 3 candidates under 800 approx tokens, for all 30 bundles" + OFF)
     worst, worst_id = 0, None
     for b in bundles:
-        r = srv.search_templates(b["title"], max_results=3)
+        r = D(srv.search_templates(b["title"], max_results=3))
         t = approx_tokens_of(r)
         if t > worst:
             worst, worst_id = t, b["id"]
     check("worst-case 3-candidate response is under 800 approx tokens (%d, on %s)"
           % (worst, worst_id), worst < 800, worst)
     check("no candidate carries sizing_guidance, which is post-selection prose",
-          all("sizing_guidance" not in c for c in srv.search_templates("prd")["candidates"]))
+          all("sizing_guidance" not in c for c in D(srv.search_templates("prd"))["candidates"]))
     check("get_template DOES carry sizing_guidance, so it is moved rather than lost",
-          srv.get_template("prd").get("sizing_guidance"))
+          D(srv.get_template("prd")).get("sizing_guidance"))
     check("max_results is capped at 8",
-          len(srv.search_templates("", max_results=99)["candidates"]) <= srv.MAX_CANDIDATES)
+          len(D(srv.search_templates("", max_results=99))["candidates"]) <= srv.MAX_CANDIDATES)
 
     # ---------------------------------------------------------------- AC 3
     print(DIM + "\n  AC3: responses use the manifest's field names, not the sketch's" + OFF)
-    cand = srv.search_templates("prd")["candidates"][0]
+    cand = D(srv.search_templates("prd"))["candidates"][0]
     check("candidate carries `id` and `summary`", "id" in cand and "summary" in cand, sorted(cand))
     check("candidate carries NEITHER `bundle_id` NOR `one_line_summary`",
           "bundle_id" not in cand and "one_line_summary" not in cand, sorted(cand))
@@ -173,7 +193,7 @@ def main():
     for b in bundles:
         for fmt, size in srv.variants(b):
             total += 1
-            r = srv.get_template(b["id"], size=size, fmt=fmt)
+            r = D(srv.get_template(b["id"], size=size, fmt=fmt))
             if "error" in r or not r["parts"]["template"].get("content"):
                 unreachable.append((b["id"], fmt, size))
                 continue
@@ -190,7 +210,7 @@ def main():
 
     # ---------------------------------------------------------------- AC 2
     print(DIM + "\n  AC2: the default fetch returns exactly one artifact, priced" + OFF)
-    r = srv.get_template("prd")
+    r = D(srv.get_template("prd"))
     check("default `parts` returns exactly one part", list(r["parts"]) == ["template"], list(r["parts"]))
     check("default part is the template, not template+guide", "guide" not in r["parts"])
     check("the response reports approx_tokens_total", isinstance(r.get("approx_tokens_total"), int))
@@ -203,7 +223,7 @@ def main():
     ax = srv.axis_values()
     reachable = set()
     for v in ax["phase"] + ax["classification"]:
-        reachable |= {c["id"] for c in srv.search_templates("", axis=v, max_results=99)["candidates"]}
+        reachable |= {c["id"] for c in D(srv.search_templates("", axis=v, max_results=99))["candidates"]}
     check("every one of the %d bundles is reachable by some axis value" % len(bundles),
           reachable == {b["id"] for b in bundles},
           sorted({b["id"] for b in bundles} - reachable))
@@ -212,22 +232,24 @@ def main():
     check("axis_values names the phases ADR 0003 declares but no bundle uses",
           ax["phase_declared_but_unused"] == ["define", "measure"], ax["phase_declared_but_unused"])
     check("an empty result is teachable: it carries the real axis values",
-          "axis_values" in srv.search_templates("zzzz-no-such-thing").get("nothing_matched", {}))
+          "axis_values" in D(srv.search_templates("zzzz-no-such-thing")).get("nothing_matched", {}))
 
     # ---------------------------------------------------------------- refusals and errors
     print(DIM + "\n  Errors teach rather than merely fail" + OFF)
-    r = srv.get_template("no-such-bundle")
+    r = E(srv.get_template("no-such-bundle"))
     check("an unknown bundle returns did_you_mean", "did_you_mean" in r, r)
-    r = srv.get_template("product-roadmap", fmt="go", size="lean")
+    check("the refusal carries the closed error code", r["code"] == srv.ERR_NO_SUCH_BUNDLE, r["code"])
+    r = E(srv.get_template("product-roadmap", fmt="go", size="lean"))
     check("a format/size pair that ships no file is refused, not invented",
-          "error" in r and "available" in r, r)
+          r["code"] == srv.ERR_NO_SUCH_VARIANT and "available" in r, r)
     check("the refusal lists the pairs that DO exist",
           {"format": "go", "size": "full"} in r.get("available", []), r.get("available"))
-    r = srv.get_template("prd", parts=["template", "nonsense"])
-    check("an unknown part is refused with the list of real ones", "error" in r, r)
+    r = E(srv.get_template("prd", parts=["template", "nonsense"]))
+    check("an unknown part is refused with the list of real ones",
+          r["code"] == srv.ERR_UNKNOWN_PART and "available_parts" in r, r)
 
     biggest = max(bundles, key=lambda b: max(b["approx_tokens"].values()))
-    r = srv.get_template(biggest["id"], parts=["template", "guide", "companion", "example"])
+    r = D(srv.get_template(biggest["id"], parts=["template", "guide", "companion", "example"]))
     if r.get("approx_tokens_total", 0) > srv.OUT_CAP_TOKENS:
         check("the 8k out cap fires on all four parts (%s, %d tokens) and withholds content"
               % (biggest["id"], r["approx_tokens_total"]),
@@ -239,7 +261,7 @@ def main():
     print(DIM + "\n  The grading pack reports what it could not find" + OFF)
     no_rubric, no_anti = [], []
     for b in bundles:
-        g = srv.get_grading_pack(b["id"])
+        g = D(srv.get_grading_pack(b["id"]))
         if "rubric" in g.get("missing", []):
             no_rubric.append(b["id"])
         if "anti_patterns" in g.get("missing", []):
@@ -247,19 +269,20 @@ def main():
     check("all 27 guides yield a rubric section", not no_rubric, no_rubric)
     check("the 4 guides with no anti-patterns section are REPORTED, not silently short",
           sorted(no_anti) == ["okrs", "product-roadmap", "product-strategy", "product-vision"], no_anti)
-    g = srv.get_grading_pack("prd")
+    g = D(srv.get_grading_pack("prd"))
     check("the pack prices itself and the whole guide, so the caller can choose",
           g["approx_tokens_total"] > 0 and g["whole_guide_approx_tokens"] >= g["approx_tokens_total"])
-    check("an unknown bundle's grading pack is an error", "error" in srv.get_grading_pack("nope"))
+    check("an unknown bundle's grading pack is an error",
+          E(srv.get_grading_pack("nope"))["code"] == srv.ERR_NO_SUCH_BUNDLE)
 
     # ---------------------------------------------------------------- AC 5, parity
     print(DIM + "\n  AC5: the wrappers agree exactly with the tools they wrap" + OFF)
     d, p = tmpdoc(build_filled(stamped=True))
     try:
         want_ok, want_findings = val.validate(p)
-        got = srv.validate_fill(p)
+        got = D(srv.validate_fill(p))
         check("validate_fill agrees with validate-fill.py on a GOOD document",
-              got["ok"] == want_ok is True, (got["ok"], want_ok))
+              got["valid"] == want_ok is True, (got["valid"], want_ok))
         check("validate_fill returns the identical finding list",
               [(f["level"], f["message"]) for f in got["findings"]] == want_findings)
     finally:
@@ -275,19 +298,21 @@ def main():
     d, p = tmpdoc(broken)
     try:
         want_ok, want_findings = val.validate(p)
-        got = srv.validate_fill(p)
+        got = D(srv.validate_fill(p))
         check("validate_fill agrees on a BROKEN document, and both say it FAILS",
-              got["ok"] == want_ok and want_ok is False, (got["ok"], want_ok))
+              got["valid"] == want_ok and want_ok is False, (got["valid"], want_ok))
+        check("a document that FAILS validation is still a successful CALL (ADR 0054)",
+              srv.validate_fill(p)["ok"] is True)
     finally:
         shutil.rmtree(d, ignore_errors=True)
 
     d, p = tmpdoc(build_filled())
     try:
-        got = srv.stamp_and_strip(p, filled_by="agent:test", fill_method="batch")
+        got = D(srv.stamp_and_strip(p, filled_by="agent:test", fill_method="batch"))
         out = os.path.join(d, "doc.filled.md") if not os.path.isfile(p) else None
         written = [f for f in os.listdir(d) if f != "doc.md"]
         check("stamp_and_strip succeeds on a fully filled document and writes a file",
-              got["ok"] and got["exit_code"] == 0 and written, (got["exit_code"], written))
+              got["exit_code"] == 0 and written, (got["exit_code"], written))
         if written:
             text = open(os.path.join(d, written[0]), encoding="utf-8").read()
             check("the written file carries all three provenance keys",
@@ -298,24 +323,26 @@ def main():
     with_placeholder = build_filled().replace("Something.", "{{still_unfilled}}", 1)
     d, p = tmpdoc(with_placeholder)
     try:
-        got = srv.stamp_and_strip(p, filled_by="agent:test")
+        got = D(srv.stamp_and_strip(p, filled_by="agent:test"))
         cli_code = strip.main([p, "--filled-by", "agent:test"])
         check("stamp_and_strip REFUSES a document with a placeholder, exactly as the CLI does",
               got["exit_code"] == cli_code == 2, (got["exit_code"], cli_code))
         check("the refusal is surfaced as `refused`, not swallowed into a success",
-              got["refused"] is True and got["ok"] is False, got)
+              got["refused"] is True and "ok" not in got, got)
+        check("a strip REFUSAL is an outcome, not a transport error (ADR 0054)",
+              srv.stamp_and_strip(p, filled_by="agent:test")["ok"] is True)
         check("a refusal writes nothing", os.listdir(d) == ["doc.md"], os.listdir(d))
     finally:
         shutil.rmtree(d, ignore_errors=True)
 
     check("a path that does not exist is an error, not a crash",
-          srv.validate_fill(os.path.join(ROOT, "no-such.md"))["ok"] is False)
+          E(srv.validate_fill(os.path.join(ROOT, "no-such.md")))["code"] == srv.ERR_NO_SUCH_FILE)
 
     # ---------------------------------------------------------------- AC 6, end to end
     print(DIM + "\n  AC6: intent to selection to fetch to fill to validation, nothing guessed" + OFF)
     # A named document type resolves to itself. This is the FLOW assertion, so the query is one with an
     # unambiguous answer.
-    found = srv.search_templates("acceptance criteria for a user story")
+    found = D(srv.search_templates("acceptance criteria for a user story"))
     picked = found["candidates"][0]["id"]
     check("a named intent resolves to its own bundle", picked == "acceptance-criteria", picked)
 
@@ -324,23 +351,24 @@ def main():
     # version of this assertion did exactly that: it demanded `acceptance-criteria` for "what done
     # means", and the ranking answered `definition-of-done`, which is the better answer to that
     # sentence. The test was wrong, not the server.
-    loose = [c["id"] for c in srv.search_templates(
-        "I need to write down what done means for a story", max_results=3)["candidates"]]
+    loose = [c["id"] for c in D(srv.search_templates(
+        "I need to write down what done means for a story", max_results=3))["candidates"]]
     check("an open-ended sentence returns plausible candidates, ranking not asserted",
           len(loose) == 3 and set(loose) <= {"definition-of-done", "acceptance-criteria",
                                              "user-stories", "test-case", "incident-postmortem"},
           loose)
-    fetched = srv.get_template(picked)
+    fetched = D(srv.get_template(picked))
     check("the price was known BEFORE the fetch, from the search response",
           found["candidates"][0]["approx_tokens"][fetched["size"]]
           == fetched["parts"]["template"]["approx_tokens"])
     d, p = tmpdoc(build_filled("acceptance-criteria"))
     try:
-        stamped = srv.stamp_and_strip(p, filled_by="agent:test", fill_method="batch")
+        stamped = D(srv.stamp_and_strip(p, filled_by="agent:test", fill_method="batch"))
         written = [f for f in os.listdir(d) if f != "doc.md"]
-        final = srv.validate_fill(os.path.join(d, written[0])) if written else {"ok": False}
+        final = D(srv.validate_fill(os.path.join(d, written[0]))) if written else {"valid": False}
         check("the stripped, stamped document then passes validate_fill",
-              stamped["ok"] and final["ok"], (stamped["exit_code"], final.get("findings")))
+              stamped["exit_code"] == 0 and final["valid"],
+              (stamped["exit_code"], final.get("findings")))
     finally:
         shutil.rmtree(d, ignore_errors=True)
 
@@ -360,6 +388,76 @@ def main():
             check(label, False, why + "  [--require-sdk: a skip here is a failure. If this is an "
                                       "SDK 2.x rename, either pin `mcp<2` or port build_server() "
                                       "to `MCPServer`.]")
+        else:
+            skip(label, why)
+
+    # ------------------------------------------------- structuredContent, over a REAL client (ADR 0054)
+    #
+    # THIS SECTION EXISTS BECAUSE THE SPIKE THAT DESIGNED THE ENVELOPE WAS NOT ENOUGH.
+    #
+    # The 2026-09-20 spike drove FastMCP IN PROCESS, saw `structuredContent` populated on both
+    # branches, and concluded the shape worked. It did not. A real client ALSO validates the tool's
+    # output against its declared `outputSchema`, and the first implementation failed every single
+    # call with `Output validation error: None is not of type 'object'` - because the SDK serialises
+    # the absent branch as an explicit null that the schema did not admit. In-process calls skip that
+    # validation entirely, so the spike could not have seen it.
+    #
+    # So this asserts over a real stdio session, which is the only path that exercises what a caller
+    # actually gets. Proving the mechanism works is not proving the path works (DF-7, again).
+    label = "every tool returns populated structuredContent on BOTH the success and refusal path"
+    try:
+        import asyncio as _asyncio
+
+        from mcp import ClientSession, StdioServerParameters
+        from mcp.client.stdio import stdio_client
+
+        async def _probe():
+            params = StdioServerParameters(
+                command=sys.executable,
+                args=[os.path.join(SCRIPT_DIR, "mcp_server.py")],
+                cwd=ROOT,
+            )
+            cases = [
+                ("search_templates", {"query": "acceptance criteria for a story"}, True),
+                ("get_template", {"bundle_id": "prd"}, True),
+                ("get_template", {"bundle_id": "no-such-bundle"}, False),
+                ("get_template", {"bundle_id": "prd", "parts": ["nonsense"]}, False),
+                ("get_grading_pack", {"bundle_id": "prd"}, True),
+                ("get_grading_pack", {"bundle_id": "no-such-bundle"}, False),
+                ("validate_fill", {"path": "no-such.md"}, False),
+                ("stamp_and_strip", {"path": "no-such.md", "filled_by": "t"}, False),
+            ]
+            bad = []
+            async with stdio_client(params) as (r, w):
+                async with ClientSession(r, w) as sess:
+                    await sess.initialize()
+                    tools = {t.name: t for t in (await sess.list_tools()).tools}
+                    for name, t in tools.items():
+                        if not t.outputSchema:
+                            bad.append("%s declares no outputSchema" % name)
+                    for name, args, want_ok in cases:
+                        res = await sess.call_tool(name, args)
+                        sc = res.structuredContent
+                        if not sc:
+                            bad.append("%s(%s) returned no structuredContent: %s"
+                                       % (name, args, getattr(res.content[0], "text", "")[:120]))
+                        elif res.isError:
+                            bad.append("%s(%s) came back as isError" % (name, args))
+                        elif sc.get("ok") is not want_ok:
+                            bad.append("%s(%s) ok=%r, wanted %r" % (name, args, sc.get("ok"), want_ok))
+                        elif want_ok and sc.get("data") is None:
+                            bad.append("%s(%s) ok:True with no data" % (name, args))
+                        elif not want_ok and not (sc.get("error") or {}).get("code"):
+                            bad.append("%s(%s) ok:False with no error.code" % (name, args))
+            return bad, len(cases)
+
+        problems, n = _asyncio.run(_probe())
+        check("%s (%d calls)" % (label, n), not problems, problems[:4])
+    except ImportError as e:
+        why = "the MCP SDK is not importable: " + str(e)[:120]
+        if REQUIRE_SDK:
+            check(label, False, why + "  [--require-sdk: a skip here is a failure. This is the only "
+                                      "assertion that exercises what a real caller receives.]")
         else:
             skip(label, why)
 
