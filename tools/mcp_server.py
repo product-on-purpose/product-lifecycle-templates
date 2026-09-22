@@ -174,10 +174,191 @@ def _axis_of(bundle):
     return bundle.get("phase") or bundle.get("classification")
 
 
+# ---------------------------------------------------------------- the response envelope
+#
+# ADR 0054. Every tool returns ONE shape:
+#
+#     {"ok": True,  "data": {...}}          the call did what was asked
+#     {"ok": False, "error": {"code": ..., "message": ..., <hints>}}
+#
+# WHY THE ENVELOPE EXISTS AT ALL. Responses used to arrive as JSON text in `content[0].text` rather
+# than as `structuredContent`, the protocol's typed channel. Annotating the tools is what produces an
+# `outputSchema` and populates that channel - but the SDK VALIDATES returns against the schema, and
+# every tool used to return an error shape structurally different from its success shape, so
+# annotating raised `ToolError` on every refusal path. The contract had to become uniform first.
+#
+# WHY THE INNER FIELDS ARE RENAMED. `ok` used to mean three different things: "the document is valid"
+# in validate_fill, "the CLI exited 0" in stamp_and_strip, and "your request was bad" on the
+# file-not-found path of both. Wrapping that unchanged would render an invalid document as
+# `{"ok": True, "data": {"ok": False}}` - correct, and a trap for anything that checks one level and
+# stops. So validate_fill reports `data["valid"]`, and stamp_and_strip reports `data["exit_code"]`
+# and `data["refused"]` with no inner `ok` at all.
+#
+# THE ERROR-VERSUS-OUTCOME BOUNDARY. `ok: False` is for a request that named something which does not
+# exist or was malformed. `ok: True` covers everything the server actually managed to do, INCLUDING
+# answering "your document fails validation" or "strip refused this document". A refusal is an
+# answer; the module's own note has always said exit 2 "is the intended outcome".
+#
+# WHY TypedDict AND NOT pydantic. Measured 2026-09-20 against the installed SDK, on both the success
+# and the refusal path. All three candidate shapes produce an `outputSchema`; a pydantic
+# `Union[Ok, Err]` nests everything under a `result` key, and a flat TypedDict typing `data` as
+# `dict[str, Any]` produces a schema that asserts nothing about the payload. Per-tool TypedDicts are
+# the only option whose schema carries real information.
+#
+# The optional branch is expressed by inheriting with `total=False` rather than by
+# `typing.NotRequired`, which keeps the module importable on Python 3.10.
+
+from typing import Any, Dict, List, Optional, TypedDict  # noqa: E402  (grouped with its own section)
+
+# `NotRequired` is what the 2026-09-20 spike actually MEASURED, and the distinction is not cosmetic.
+# An earlier draft of this module expressed the optional branch by inheriting with `total=False`
+# instead, to keep the module importable on Python 3.10. The schemas looked identical - both report
+# required: ["ok"] - and every call then failed at run time with
+#
+#     Output validation error: None is not of type 'object'
+#
+# because the SDK serialises the absent branch as an explicit `null` and the total=False schema does
+# not admit one. Substituting an untested equivalent for a measured one is exactly the move this
+# repository keeps paying for, so the measured spelling stands and 3.10 gets a fallback instead.
+try:                                    # Python 3.11+
+    from typing import NotRequired      # noqa: E402
+except ImportError:                     # pragma: no cover - older interpreters
+    try:
+        from typing_extensions import NotRequired  # noqa: E402
+    except ImportError:                 # pragma: no cover - neither available
+        # Nullable rather than absent. A different schema, and one that also admits the `null` the
+        # SDK emits, so the envelope still validates on both branches.
+        NotRequired = Optional
+
+
+class Err(TypedDict):
+    """The error branch. `code` is a CLOSED enum; a closed enum is what lets the schema assert."""
+    code: str
+    message: str
+
+
+class ErrDetail(Err, total=False):
+    """The hint fields, which are the genuinely useful part of a refusal and are kept."""
+    did_you_mean: List[str]
+    available: List[Dict[str, Any]]
+    available_parts: List[str]
+    note: str
+
+
+# The closed set. Anything not here is a bug in this module, not a caller error.
+ERR_NO_SUCH_BUNDLE = "no_such_bundle"
+ERR_NO_SUCH_VARIANT = "no_such_variant"
+ERR_UNKNOWN_PART = "unknown_part"
+ERR_NO_SUCH_FILE = "no_such_file"
+ERR_NO_GUIDE = "no_guide"
+ERR_STRIP_FAILED = "strip_failed"
+
+
+def _err(code, message, **hints):
+    """The error branch of the envelope. Hints ride on the error, not beside it."""
+    e = {"code": code, "message": message}
+    e.update({k: v for k, v in hints.items() if v is not None})
+    return {"ok": False, "error": e}
+
+
+def _ok(data):
+    """The success branch."""
+    return {"ok": True, "data": data}
+
+
+# --- per-tool payloads. `data` is typed per tool ON PURPOSE: a shared envelope with
+# `data: dict[str, Any]` produces a schema that asserts nothing, which is the same objection the
+# spec already raised against a `total=False` TypedDict. Delivering the label without the value.
+
+class SearchData(TypedDict):
+    query: Optional[str]
+    candidates: List[Dict[str, Any]]
+    total_matched: int
+    library_version: str
+
+
+class SearchDataOpt(SearchData, total=False):
+    nothing_matched: Dict[str, Any]
+
+
+class TemplateData(TypedDict):
+    id: str
+    format: Optional[str]
+    size: Optional[str]
+    parts: Dict[str, Any]
+    sizing_guidance: Optional[str]
+    approx_tokens_total: int
+    template_version: Optional[str]
+    library_version: str
+
+
+class TemplateDataOpt(TemplateData, total=False):
+    refused: str
+
+
+class GradingData(TypedDict):
+    id: str
+    sections: Dict[str, Any]
+    missing: List[str]
+    approx_tokens_total: int
+    whole_guide_approx_tokens: int
+    template_version: Optional[str]
+    library_version: str
+    not_verified: str
+
+
+class ValidateData(TypedDict):
+    file: str
+    valid: bool
+    findings: List[Dict[str, str]]
+    not_verified: str
+
+
+class StripData(TypedDict):
+    exit_code: int
+    refused: bool
+    output: str
+    note: str
+
+
+# --- the envelopes. `ok` is required; exactly one of `data` / `error` is populated. Expressed by
+# inheriting with total=False so the schema reports required: ["ok"], which is what the spike
+# measured and what lets a refusal validate against the same schema as a success.
+
+class EnvSearch(TypedDict):
+    ok: bool
+    data: NotRequired[Optional[SearchDataOpt]]
+    error: NotRequired[Optional[ErrDetail]]
+
+
+class EnvTemplate(TypedDict):
+    ok: bool
+    data: NotRequired[Optional[TemplateDataOpt]]
+    error: NotRequired[Optional[ErrDetail]]
+
+
+class EnvGrading(TypedDict):
+    ok: bool
+    data: NotRequired[Optional[GradingData]]
+    error: NotRequired[Optional[ErrDetail]]
+
+
+class EnvValidate(TypedDict):
+    ok: bool
+    data: NotRequired[Optional[ValidateData]]
+    error: NotRequired[Optional[ErrDetail]]
+
+
+class EnvStrip(TypedDict):
+    ok: bool
+    data: NotRequired[Optional[StripData]]
+    error: NotRequired[Optional[ErrDetail]]
+
+
 # ---------------------------------------------------------------- the five tools
 
 
-def search_templates(query, axis=None, max_results=3):
+def search_templates(query, axis=None, max_results=3) -> EnvSearch:
     """Find template bundles by intent. Discovery: this response is small on purpose.
 
     Args:
@@ -214,13 +395,16 @@ def search_templates(query, axis=None, max_results=3):
     out = {"query": query, "candidates": candidates, "total_matched": len(scored),
            "library_version": library_version()}
     if not candidates:
+        # Zero matches is an ANSWER, not an error: the search ran and the library has nothing. The
+        # envelope therefore stays ok: True, and the guidance rides in the data where a caller
+        # reading the success branch will actually see it.
         out["nothing_matched"] = {
             "axis_values": axis_values(),
             "try": ["prd", "acceptance criteria for a story", "how do I write a postmortem"],
             "note": "`axis` accepts a phase OR a classification value. A phase value alone can only "
                     "reach the bundles that carry a phase, which is not all of them.",
         }
-    return out
+    return _ok(out)
 
 
 def _word(term, haystack):
@@ -272,7 +456,7 @@ def _find(bundle_id):
     return None
 
 
-def get_template(bundle_id, size=None, fmt=None, parts=None):
+def get_template(bundle_id, size=None, fmt=None, parts=None) -> EnvTemplate:
     """Fetch one template variant, and optionally its guide, companion or example.
 
     Retrieval costs what the artifact costs. Every response reports the price it charged, and
@@ -286,23 +470,24 @@ def get_template(bundle_id, size=None, fmt=None, parts=None):
     """
     b = _find(bundle_id)
     if b is None:
-        return {"error": "no such bundle: " + str(bundle_id),
-                "did_you_mean": [c["id"] for c
-                                 in search_templates(bundle_id, max_results=3)["candidates"]]}
+        return _err(ERR_NO_SUCH_BUNDLE, "no such bundle: " + str(bundle_id),
+                    did_you_mean=[c["id"] for c
+                                  in search_templates(bundle_id, max_results=3)["data"]["candidates"]])
 
     fmt = fmt or b.get("default_format")
     size = size or b.get("default_size")
     available = variants(b)
     if (fmt, size) not in available:
-        return {"error": "no such variant: %s format=%s size=%s" % (bundle_id, fmt, size),
-                "available": [{"format": f, "size": s} for f, s in available],
-                "note": "A non-default format does not necessarily ship every size."}
+        return _err(ERR_NO_SUCH_VARIANT,
+                    "no such variant: %s format=%s size=%s" % (bundle_id, fmt, size),
+                    available=[{"format": f, "size": s} for f, s in available],
+                    note="A non-default format does not necessarily ship every size.")
 
     parts = list(parts or ["template"])
     unknown = [p for p in parts if p not in PARTS]
     if unknown:
-        return {"error": "unknown part(s): " + ", ".join(unknown),
-                "available_parts": sorted(PARTS)}
+        return _err(ERR_UNKNOWN_PART, "unknown part(s): " + ", ".join(unknown),
+                    available_parts=sorted(PARTS))
 
     d = os.path.join(TEMPLATES, bundle_id)
     out_parts, total = {}, 0
@@ -310,7 +495,10 @@ def get_template(bundle_id, size=None, fmt=None, parts=None):
         path = (os.path.join(d, variant_file(bundle_id, fmt, size, b.get("default_format")))
                 if p == "template" else os.path.join(d, bundle_id + PARTS[p]))
         if not os.path.isfile(path):
-            out_parts[p] = {"error": "this bundle ships no " + p}
+            # Not an error, and deliberately not spelled like one. A bundle shipping no `example`
+            # is a fact about that bundle; a key named `error` nested inside `data` would also
+            # shadow the envelope's own error branch for anything scanning generically.
+            out_parts[p] = {"present": False, "reason": "this bundle ships no " + p}
             continue
         text = _read(path)
         tokens = estimate_tokens(text)
@@ -332,7 +520,7 @@ def get_template(bundle_id, size=None, fmt=None, parts=None):
             p.pop("content", None)
         result["refused"] = ("%d approx tokens exceeds the %d cap. Content withheld; request fewer "
                              "parts." % (total, OUT_CAP_TOKENS))
-    return result
+    return _ok(result)
 
 
 def _template_version(bundle_id):
@@ -348,7 +536,7 @@ def _template_version(bundle_id):
     return m.group(1).strip().strip("\"'") if m else None
 
 
-def get_grading_pack(bundle_id):
+def get_grading_pack(bundle_id) -> EnvGrading:
     """Fetch the guide sections a grader needs: the quality rubric and the named anti-patterns.
 
     Measured: all 27 guides carry a rubric heading; FOUR (`okrs`, `product-roadmap`,
@@ -357,10 +545,10 @@ def get_grading_pack(bundle_id):
     """
     b = _find(bundle_id)
     if b is None:
-        return {"error": "no such bundle: " + str(bundle_id)}
+        return _err(ERR_NO_SUCH_BUNDLE, "no such bundle: " + str(bundle_id))
     path = os.path.join(TEMPLATES, bundle_id, bundle_id + "_guide.md")
     if not os.path.isfile(path):
-        return {"error": "this bundle ships no guide", "id": bundle_id}
+        return _err(ERR_NO_GUIDE, "this bundle ships no guide: " + str(bundle_id))
 
     text = _read(path)
     sections = {}
@@ -369,7 +557,7 @@ def get_grading_pack(bundle_id):
         if body:
             sections[key] = {"approx_tokens": estimate_tokens(body), "content": body}
 
-    return {
+    return _ok({
         "id": bundle_id,
         "sections": sections,
         "missing": [k for k in ("rubric", "anti_patterns") if k not in sections],
@@ -378,7 +566,7 @@ def get_grading_pack(bundle_id):
         "template_version": _template_version(bundle_id),
         "library_version": library_version(),
         "not_verified": "That a rubric score is deserved. No check scores a rubric; a reader does.",
-    }
+    })
 
 
 def _section(text, header_re):
@@ -390,23 +578,26 @@ def _section(text, header_re):
     return text[m.start():nxt.start() if nxt else len(text)].rstrip() + "\n"
 
 
-def validate_fill(path):
+def validate_fill(path) -> EnvValidate:
     """Check a filled document against the template it declares it came from.
 
     Wraps `tools/validate-fill.py` by calling its `validate()`, so the server and the CLI cannot
     disagree about what passes.
     """
     if not os.path.isfile(path):
-        return {"ok": False, "error": "no such file: " + str(path)}
+        return _err(ERR_NO_SUCH_FILE, "no such file: " + str(path))
     mod = _load_module("validate-fill.py", "plt_validate_fill")
-    ok, findings = mod.validate(path)
-    return {"file": os.path.basename(path), "ok": ok,
-            "findings": [{"level": l, "message": m} for l, m in findings],
-            "not_verified": "Whether any section says anything worth reading. This checks that the "
-                            "shape survived the fill, never that the content is good."}
+    valid, findings = mod.validate(path)
+    # `valid`, not `ok`. A document that fails validation is a SUCCESSFUL call that returns bad news,
+    # so the envelope is ok: True and the verdict lives in the data. Naming both `ok` would render an
+    # invalid document as {"ok": True, "data": {"ok": False}}, which is correct and a trap.
+    return _ok({"file": os.path.basename(path), "valid": valid,
+                "findings": [{"level": l, "message": m} for l, m in findings],
+                "not_verified": "Whether any section says anything worth reading. This checks that "
+                                "the shape survived the fill, never that the content is good."})
 
 
-def stamp_and_strip(path, filled_by, fill_method="manual", out=None, allow_placeholders=False):
+def stamp_and_strip(path, filled_by, fill_method="manual", out=None, allow_placeholders=False) -> EnvStrip:
     """Remove the guidance comments from a filled template and stamp who filled it, when, and how.
 
     Wraps `tools/strip-template.py` by calling its `main()`, so its refusal rules ARE the rules here.
@@ -414,7 +605,7 @@ def stamp_and_strip(path, filled_by, fill_method="manual", out=None, allow_place
     placeholders as instruction and scanning raw text would refuse every document forever.
     """
     if not os.path.isfile(path):
-        return {"ok": False, "exit_code": 1, "error": "no such file: " + str(path)}
+        return _err(ERR_NO_SUCH_FILE, "no such file: " + str(path))
     mod = _load_module("strip-template.py", "plt_strip_template")
     argv = [path, "--fill-method", fill_method]
     if filled_by:
@@ -427,10 +618,22 @@ def stamp_and_strip(path, filled_by, fill_method="manual", out=None, allow_place
     buf = io.StringIO()
     with redirect_stdout(buf):
         code = mod.main(argv)
-    return {"ok": code == 0, "exit_code": code, "refused": code == 2,
-            "output": _strip_ansi(buf.getvalue()),
-            "note": "exit 2 means it refused and wrote nothing, which is the intended outcome for a "
-                    "document that still carries an unfilled placeholder."}
+    output = _strip_ansi(buf.getvalue())
+
+    # Exit 0 is success and exit 2 is a REFUSAL, which the module has always called "the intended
+    # outcome". Both are things the server managed to do, so both are ok: True with the verdict in
+    # the data. Any other exit code is the wrapped tool failing in a way nobody characterised, and
+    # that is the one case here that is genuinely an error.
+    if code not in (0, 2):
+        return _err(ERR_STRIP_FAILED,
+                    "strip-template.py exited %d, which is neither success nor a refusal" % code,
+                    note=output or None)
+
+    # No inner `ok`: `exit_code` and `refused` already say everything it would have said, and
+    # reusing the word at two levels is what made the old shape a trap.
+    return _ok({"exit_code": code, "refused": code == 2, "output": output,
+                "note": "exit 2 means it refused and wrote nothing, which is the intended outcome "
+                        "for a document that still carries an unfilled placeholder."})
 
 
 def _strip_ansi(s):
