@@ -138,7 +138,7 @@ The pitch above is the ambition. Here is the same thing with the credit separate
 
 - **Earned today.** Researched, dual-reader, nesting-disciplined, provenance-stamped bundles, with citations verified against raw sources and every correction recorded in the open. A gate that runs in CI and blocks merges. Decision records for every non-obvious choice.
 - **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**, though less than it was. Decisions D2/D3 (resolved 2026-07-17) established that both `npx skills add` and agentskills.io take exactly one unit, the *skill*, and that this repo shipped none. It now ships two, at [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md) and [`skills/plt-grade-doc/SKILL.md`](skills/plt-grade-doc/SKILL.md), in the location the Agent Skills specification and the Claude Code plugin loader both read ([ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)). **The install was finally run on 2026-08-08, and it works** - which closed the oldest open question here and immediately opened two smaller ones. It shipped a maintainer-internal skill alongside the real one (fixed, and now gated by [`tools/check-export-surface.py`](tools/check-export-surface.py) so it cannot recur), and **the `npx skills add` route installs the skill without the 30 bundles it indexes**, so the skill now checks for the library and stops rather than improvising. The plugin route clones the whole repository and never had that problem. Both routes, and how to verify each, are in [`docs/how-to/installing.md`](docs/how-to/installing.md); the retest is recorded in full on the [roadmap](docs/internal/roadmap.md).
-- **Still on credit: "reference implementation".** Thirty of 205 catalog types (all 25 templatable Tier-1 types, plus five Tier-2 types: `rfc`, `epic`, `spike-report`, `project-milestone-retrospective` and `test-summary-report`), and **zero fills by anyone but the author**. By the catalog's own tier rule (a type graduates when it "survives one real usage cycle"), nothing here has graduated. The floor being complete is a statement about coverage, not about use.
+- **Still on credit: "reference implementation".** Thirty of 205 catalog types (all 25 templatable Tier-1 types, plus five Tier-2 types: `rfc`, `epic`, `spike-report`, `project-milestone-retrospective` and `test-summary-report`). The floor being complete is a statement about **coverage**, not about use: every bundle is `beta`, and a green gate proves structure and research integrity rather than that a document helped anyone.
 
 If that reads harsher than a README usually does, that is the point: [`STATE.md`](STATE.md) is the source of truth, it outranks this file, and it is kept honest on purpose.
 
@@ -149,8 +149,8 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 30 -->
-<!-- counts: bundles=30, tier1=25, adrs=54 -->
-**Thirty bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none has been filled in anger by anyone but the author.
+<!-- counts: bundles=30, tier1=25, adrs=55 -->
+**Thirty bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
 ### `delivery-docs` (six bundles, the family complete)
 
@@ -317,7 +317,7 @@ All thirty bundles currently pass. GitHub Actions runs these on every push to `m
 
 ### At a glance
 
-<!-- counts: bundles=30, tier1=25, adrs=54, cisteps=31 -->
+<!-- counts: bundles=30, tier1=25, adrs=55, cisteps=31 -->
 
 |  |  |
 |---|---|

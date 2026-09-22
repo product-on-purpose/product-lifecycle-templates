@@ -222,16 +222,17 @@ function bundlePage(b, sectionsById, catalogById, bundleIds) {
   out.push(b.summary);
   out.push('');
 
-  // --- the honesty banner (AC-17). `beta` is the derived signal for zero recorded fills: the
-  // family contracts define `beta` as "until one real usage cycle is recorded". Nothing in
-  // manifest.json counts fills, so the count is derived from status rather than invented, and a
-  // bundle that ever reaches `stable` stops claiming zero instead of printing a stale number.
+  // --- the maturity banner. Retired 2026-09-21 (ADR 0055): this used to publish "Real-world fills
+  // recorded: 0" on every bundle page. The disclosure is gone; the restraint it protected is not.
+  // The page still refuses to claim the bundle helps anyone, because that claim has no evidence
+  // behind it, and gen-site --check still fails the build on "proven", "verified" and "validated".
+  // Declining to volunteer a negative number is a different act from asserting a positive one.
   if (b.status === 'beta') {
-    out.push('<Aside type="caution" title="Researched, not yet used in anger">');
+    out.push('<Aside type="caution" title="Researched, and still settling">');
     out.push(
-      `This bundle is **${b.status}**. Real-world fills recorded: **0**. Its structure and its ` +
-        'sourcing have been checked by the repository gate; whether it helps anyone has not been ' +
-        'measured, and this page will not say otherwise.'
+      `This bundle is **${b.status}**. Its structure and its sourcing have been checked by the ` +
+        'repository gate; whether it helps anyone has not been measured, and this page will not ' +
+        'say otherwise.'
     );
     out.push('</Aside>');
     out.push('');
@@ -328,8 +329,9 @@ function indexPage(manifest, byFamily) {
   );
   out.push('');
   out.push(
-    'All of them are **beta**, which in this library means researched and gate-checked but not yet ' +
-      'proven in real use. Real-world fills recorded: **0**.'
+    'All of them are **beta**, which in this library means researched and gate-checked: the ' +
+      'structure and the sourcing have been checked, and whether the document helps anyone has not ' +
+      'been measured.'
   );
   out.push('');
 

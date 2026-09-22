@@ -70,7 +70,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | phase | **`discover`**, single value. A candidate whose honest axis is `classification` belongs in another family; this family has no standing instruments |
 | methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). Members will differ: a business case is methodology-agnostic, a persona leans research-practice, a prototype brief leans dual-track or design-thinking. A single required value would force at least one to misdescribe itself |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`), and two `qa-docs` members have already departed from them on evidence |
-| status | `beta` until one real usage cycle is recorded; then `stable` eligible |
+| status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `[]`; every value must resolve against `tools/known-skills.txt`. **Verify per member at authoring time and claim only what is true of that member.** Do not assume this family has pairings; `qa-docs` found it had almost none (finding EC-4) |
 
 ## 3. Structural obligations (gate-checkable)

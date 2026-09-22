@@ -299,8 +299,14 @@ Numbered so an autonomous session can report against them, and so "done" is not 
 - [x] **AC-16.** `gen-site.mjs --check` **fails the build** on the strings `proven`, `verified`,
       `validated`, and on any percentage adjacent to a bundle id, outside an allow-listed context.
       **Mutation-checked** by planting one and observing a red build (site-plan 13.1).
-- [x] **AC-17.** No page calls any bundle proven, every bundle shows `beta`, and zero real fills is
-      published as zero rather than omitted or softened (site-plan section 13).
+- [x] **AC-17.** No page calls any bundle proven, and every bundle shows `beta` (site-plan section 13).
+
+      > **Amended 2026-09-21 by [ADR 0055](decisions/0055-retire-the-zero-fills-disclosure.md).** This
+      > criterion also required that "zero real fills is published as zero rather than omitted or
+      > softened". That clause is retired and the site no longer publishes a fill count. The two
+      > clauses that remain are the ones that prevent a **false** claim; the retired one required a
+      > **negative** one, which is a different thing. The `proven` / `verified` / `validated` ban
+      > stays gate-enforced and mutation-tested under AC-16.
 - [x] **AC-18.** `site.yml` is a separate workflow from `ci.yml`, and the content gate remains the only
       required check until the site is stable (site-plan 8.1).
 - [x] **AC-19.** The existing gate still passes: `python tools/run-gate.py` reports 0 failed.

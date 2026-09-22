@@ -44,7 +44,7 @@ family stays at one member permanently, and that is an acceptable outcome rather
 | classification | **`utility`**, single value. A status report is maintained and periodic, and is valuable only while current; last month's is history. That is `utility`'s definition, and it is the same reasoning `governance-docs` used |
 | methodology | **Descriptive, not gated** |
 | sizes_available | `[lean, full]`, or `[lean]` where the type's research shows it does not earn a second weight |
-| status | `beta` until one real usage cycle is recorded |
+| status | `beta` until the maintainer judges the bundle settled ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | pm-skills skill ID(s) or `[]`, resolving against `tools/known-skills.txt` |
 
 **Why `classification` and not `phase`.** A status report is not the output of a lifecycle stage. It is

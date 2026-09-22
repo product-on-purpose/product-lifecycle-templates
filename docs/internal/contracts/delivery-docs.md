@@ -20,7 +20,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the meta
 | phase | `deliver` (if a candidate member's phase differs, it belongs in another family) |
 | methodology | **Descriptive, not gated (amended 2026-07-20, see change note).** Each member declares the methodology it honestly leans on (`generic`, `agile-scrum-xp`, `agile-bdd`, `methodology-agnostic`, ...). Some delivery artifacts are inherently methodology-bound (a user story is an agile/XP form), so a single required value would be a fiction. Methodology-specific *collections* (a Scrum pack, an XP pack) are a future **Tier-2** concept, a separate family, not a variant of a member here. |
 | sizes_available | `[lean, full]`, or `[lean]` for types the catalog marks single-size |
-| status | `beta` until one real usage cycle is recorded; then `stable` eligible |
+| status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `null`; every non-null value must resolve against the pinned skill-ID list |
 
 ## 3. Structural obligations (gate-checkable)
