@@ -8,6 +8,63 @@ Newest first.
 
 ---
 
+## v0.10.0
+
+**If you installed the MCP server and it never worked, this is the release that fixes it.**
+
+The server could not start from a `git clone`, and had not since it shipped. `.mcp.json` located it
+with a variable Claude Code sets only for plugin installs, so opened as an ordinary project the path
+never resolved. The server itself was fine the whole time, which is exactly why nothing caught it:
+the self-test passed, and the verification that "proved" it drove the server with its own script and
+never touched the config.
+
+The same server now speaks a **typed response envelope**. Every tool returns `{ok, data?, error?}`
+and responses arrive as `structuredContent` rather than JSON text you have to re-parse. `ok` means
+the call completed, never a verdict: a document that fails validation is `ok: true` with
+`data.valid: false`. **This breaks anything written against the older shapes**, and it was taken now
+because nothing external calls the server yet.
+
+The library also stops publishing a real-fill count. Every bundle is still `beta`, and no page will
+call one proven.
+
+---
+
+## v0.9.0
+
+**The library gets a website.** All 30 bundles are readable at
+<https://product-on-purpose.github.io/product-lifecycle-templates/> by anyone with a link, instead of
+only by someone willing to clone a repository and open eight files per bundle.
+
+Every page is generated from the tree, so no bundle is named by hand anywhere in the site. Five
+guards run **between the build and the upload** - links, routes, edit links, a favicon, and the ban on
+calling a bundle proven - so the artifact that is checked is the artifact that ships. The first of
+them found a live 404 on its first run against a real build.
+
+---
+
+## v0.8.0
+
+**The library grows from 27 bundles to 30, and for the first time publishes the reasoning that let
+each one in.**
+
+Three new document types: a spike report, a project or milestone retrospective, and a test summary
+report. A fourth, a PI or release retrospective, was **refused on its own evidence** - SAFe's own
+facilitator guide names the outputs as backlog items and no document. Two of the three that shipped
+teach a dispute rather than a settled practice, because their research said they must.
+
+---
+
+## v0.7.0
+
+**If you installed the MCP server during `v0.6.0` and it would not start, this release is why**, and
+the fix is one command: `python3 -m pip install "mcp<2"`.
+
+The `v0.6.0` instructions said `pip install mcp`, which since 2026-07-28 resolves to an SDK v2 that
+renamed the class this server imports. The CI check that should have caught it skipped its only
+SDK-dependent assertion and exited 0, so nothing had ever verified the server starts.
+
+---
+
 ## v0.6.0
 
 **Agents can now find a template without being told where any file lives.**

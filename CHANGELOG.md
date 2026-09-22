@@ -12,6 +12,10 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.10.0] - 2026-09-21
+
 ### Changed
 
 - **The MCP server now returns a uniform `{ok, data?, error?}` envelope, and responses arrive as
@@ -57,6 +61,27 @@ people who want every change, release notes are for people who want to know what
   **The cost, named:** a reader can no longer tell from the site how much real-world use these
   templates have had. ADRs 0039, 0043 and 0047 each affirmed the disclosure and are superseded on
   this point, not rewritten.
+
+### Fixed
+
+- **The MCP server could never start from a `git clone`, and had not since it shipped.**
+  `.mcp.json` located the server with `${CLAUDE_PLUGIN_ROOT}`, which Claude Code sets **only for a
+  plugin-provided MCP config**. The same file is also discovered as a **project-scoped** config when
+  the repository is opened as an ordinary working directory, and in that context the variable does
+  not exist, so the path never resolved and the process could not launch. `claude mcp list` reported
+  `Missing environment variables: CLAUDE_PLUGIN_ROOT`, which is the `CONNECTION_CLOSED` seen at
+  session start.
+
+  The path is now `${CLAUDE_PLUGIN_ROOT:-.}/tools/mcp_server.py`, which resolves to the plugin
+  directory when installed and to the repository root when cloned. Backwards compatible.
+
+  **The server itself was never broken**, which is why nothing caught it: `--selftest` passed, and
+  the 2026-09-06 verification drove the server with its own script and proved the *server* works.
+  Nothing exercised the *config*. Proving the thing works is not proving the thing can be reached.
+- **`docs/internal/tier2-specs.md` listed two bundles as unbuilt that shipped in `v0.8.0`**
+  (`project-milestone-retrospective`, `test-summary-report`), and listed `pi-release-retrospective`
+  as merely unbuilt when it was **refused on its own evidence** by ADR 0049.
+- **`docs/how-to/installing.md` said the MCP server addresses 58 template variants.** It is 63.
 
 ## [0.9.0] - 2026-09-21
 
@@ -2127,7 +2152,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.6.0...v0.7.0

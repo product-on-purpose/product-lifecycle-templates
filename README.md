@@ -11,7 +11,7 @@ A curated library of product-management and software-lifecycle document template
 <p>
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
-  <img src="https://img.shields.io/badge/version-0.9.0-blue?style=flat-square" alt="Version 0.9.0">
+  <img src="https://img.shields.io/badge/version-0.10.0-blue?style=flat-square" alt="Version 0.10.0">
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-30-brightgreen?style=flat-square" alt="Bundles: 30"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-9-brightgreen?style=flat-square" alt="Families: 9"></a>
@@ -326,7 +326,7 @@ All thirty bundles currently pass. GitHub Actions runs these on every push to `m
 | **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other five bundles are Tier-2 types: `rfc` and `epic` built early, then `spike-report`, `project-milestone-retrospective` and `test-summary-report` |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 31 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
-| **Agent surface** | 2 skills, 2 generated artifacts (`manifest.json`, `sections.json`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 58 template variants addressable |
+| **Agent surface** | 2 skills, 2 generated artifacts (`manifest.json`, `sections.json`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 63 template variants addressable |
 | **Decision records** | 51 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
 | **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
 | **License** | [Apache-2.0](LICENSE) |
