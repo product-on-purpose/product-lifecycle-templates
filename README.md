@@ -17,7 +17,6 @@ A curated library of product-management and software-lifecycle document template
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-9-brightgreen?style=flat-square" alt="Families: 9"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/gate-11%20checks%20in%20CI-success?style=flat-square" alt="Gate: 11 checks in CI"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/Skill%20Library%20Standard-Gold%20(advanced)-success?style=flat-square" alt="Advanced Skill Library Standard: Gold, measured in CI"></a>
-  <a href="#the-claim-and-what-it-is-worth"><img src="https://img.shields.io/badge/real%20fills-0%20(honest)-lightgrey?style=flat-square" alt="Real fills: 0"></a>
 </p>
 
 The north star is simple and demanding: be the indisputable best-in-class reference implementation of a template library, not a folder of templates.
@@ -52,6 +51,12 @@ Six steps, start to finished document. No install, no tooling, no account.
 > fifteen minutes. [`docs/choosing-a-template.md`](docs/reference/choosing-a-template.md) gets you from a job to be
 > done to a bundle. [`docs/what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md) is the sceptic's
 > version: what is enforced, and what is only argued. Agents should start at [`AGENTS.md`](AGENTS.md).
+>
+> **Prefer to read rather than clone?** Every bundle is browsable at
+> <https://product-on-purpose.github.io/product-lifecycle-templates/>, generated from this tree with
+> nothing hand-listed. It is a reading surface, not an acquisition path: it serves no machine-readable
+> artifact, so an agent still wants the tree or the MCP server. How it is built and guarded is in
+> [`docs/explanation/the-site.md`](docs/explanation/the-site.md).
 
 **1. Get the library.** Three routes, and **they do not give you the same thing**. Full comparison, and how to check that it worked, in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
@@ -331,7 +336,7 @@ All thirty bundles currently pass. GitHub Actions runs these on every push to `m
 | **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 63 template variants addressable |
 | **Decision records** | 56 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
-| **Real usage** | 0 fills by anyone but the author (coverage is not validation) |
+| **Real usage** | Not published as a count ([ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)). Coverage is not validation, and no page calls a bundle proven |
 | **License** | [Apache-2.0](LICENSE) |
 
 ### Repository layout
