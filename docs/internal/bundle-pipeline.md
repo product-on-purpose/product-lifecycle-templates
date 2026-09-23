@@ -19,8 +19,8 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the five builds captured end to end, is roughly 6M to 12M weighted
-token-equivalents per bundle, or $12 to $41 at API list rates, and the model that drafts is most of the
+10 to 20 times. Measured cost, from the five builds captured end to end, is roughly 7M to 12M weighted
+token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
 spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
 and $14.22 with every agent on Sonnet as pinned; issue-log, the second, cost $14.29 for the same 15
 research, drafting and review agents ($16.76 with the three agents that swept the counts at landing); and

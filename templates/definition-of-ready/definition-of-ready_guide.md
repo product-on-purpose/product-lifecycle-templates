@@ -36,11 +36,11 @@ actually need before filling in this template.
 ## Pick a variant
 
 This bundle ships one size, lean, and there is no second, heavier variant to choose between. That is a
-deliberate call, not an unfinished one: the practitioners in this bundle's research who argue for keeping a
-Definition of Ready at all argue for keeping it small, one naming shrinking over time as the sign of a
-maturing team, and a `full` variant that added more sections would risk the exact failure the practice is
-criticized for. If your situation feels like it needs more than five sections, that is itself a signal worth
-taking seriously, not a reason to look for a heavier template. See
+deliberate call, not an unfinished one: no source read for this bundle argues for a bigger Definition of
+Ready, and the ones that address its size at all argue for keeping it small, one naming shrinking over
+time as the sign of a maturing team, and a `full` variant that added more sections would risk the exact
+failure the practice is criticized for. If your situation feels like it needs more than five sections, that
+is itself a signal worth taking seriously, not a reason to look for a heavier template. See
 [`definition-of-ready_companion.md` section 4](definition-of-ready_companion.md#4-variants-and-sizing) for
 the full reasoning, including the one case (readiness gated at a level above the single story, such as
 program-level planning) this bundle does not attempt to cover.
