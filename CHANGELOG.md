@@ -14,6 +14,20 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`issue-log`](templates/issue-log/), the 32nd bundle** and the fourth `governance-docs` member,
+  `classification: utility`, by
+  [ADR 0057](docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md): the owned record
+  of problems that have already happened, the deepened standalone form of the RAID log's Issues quadrant as the
+  risk register is of its Risks. **The template makes a team state its own threshold** for what counts as an
+  issue, because PMI, APM, PRINCE2 2009 and PRINCE2 7 define one four different ways. Lean carries the
+  threshold, a priority scale, the issues table (with a last-updated column the published field lists mostly
+  lack), escalation and review; full adds closed issues confirmed by someone other than the fixer, and links to
+  the risk, change and decision behind each issue. Its structure is adapted from the European Commission's PM²
+  guide, the one source read that publishes the complete artifact under a licence permitting adaptation.
+- **Its research log's 122 quotations all passed a check against the source's raw text**, and the check caught
+  a research dimension that reported PM²'s issue log had no escalation or traceability field. It has both.
+- `kpi-dashboard`'s companion states its position against the issue log, which the family contract's "other
+  members" wording now requires.
 - **The `issue-log` spec in [`tier2-specs.md`](docs/internal/tier2-specs.md), written with its admission
   sources retrieved and every quotation checked against the source's raw text.** It has the widest
   named-source base of any Tier-2 spec: PMI's Lexicon, APM's glossary, PRINCE2's glossary and the European
@@ -23,11 +37,22 @@ people who want every change, release notes are for people who want to know what
   state its own threshold.
 - **[ADR 0057](docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md): `issue-log`
   joins `governance-docs` as a fourth member**, the contract moving to `0.2.0`. An issue log stands to the
-  RAID log's I as the risk register stands to its R. Two siblings' companions, `raid-log` and
-  `kpi-dashboard`, never mention an issue log and owe a Relationships line when the bundle lands.
+  RAID log's I as the risk register stands to its R. `kpi-dashboard`'s companion owed a Relationships line
+  when the bundle landed. *(Corrected 2026-09-23: this entry said `raid-log`'s companion never mentions an issue
+  log. It does, under a heading a phrase search missed; ADR 0057 carries a dated Correction.)*
 
 ### Fixed
 
+- **The review's chaining lens works now that it reads the siblings.** Its first run after the `v0.12.0` fix
+  found six places where the new example disagreed with sibling examples, including a risk register that
+  scores compliance where the draft said quality, and an escalation "two-week line" used with a different
+  meaning from the RAID log's.
+- **Found and not fixed here: two sibling examples disagree about one figure.** The review's chaining lens
+  found that `raid-log`'s example calls ISS-12's 620ms a staging measurement while `kpi-dashboard`'s example
+  reports 620ms as a production figure and excludes staging numbers. The new `issue-log` example follows the
+  RAID log and claims neither is the other; the two older examples are left for a separate change.
+- **`STATE.md`'s per-family bundle lists named 27 of the 31 bundles**, omitting `status-report`,
+  `spike-report`, `project-milestone-retrospective` and `test-summary-report`; they now name all 32.
 - **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 57 with the rest.
 
 ## [0.12.0] - 2026-09-23

@@ -27,7 +27,7 @@ design task" rather than "a spec-driven execution".
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | **No, and it will not be.** Refused on its own evidence by [ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md): SAFe's own facilitator guide names the outputs as backlog items and no document |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
-| `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | Not yet. Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md) |
+| `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | **Built 2026-09-23.** Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md); [build report](../../bundle-builds/reports/issue-log_v0.1.0.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -734,10 +734,12 @@ The companion's Relationships section places it against all three siblings, per 
 
 1. **The `governance-docs` contract `0.2.0`**, which lands with ADR 0057 in the same change as this spec, and
    its Members line, which records whether the member is specced and built.
-2. **Two siblings owe a Relationships line, and this is not optional.** Contract `0.2.0` obliges every
-   member to state its position against the other members. `risk-register_companion.md` section 8 already
-   does; **`raid-log_companion.md` section 8 and `kpi-dashboard_companion.md` never mention an issue log**,
-   so each gains its position in the same change as the bundle. Whether the promise references in
+2. **One sibling owes a Relationships line, and this is not optional.** Contract `0.2.0` obliges every
+   member to state its position against the other members. `risk-register_companion.md` section 8 and
+   `raid-log_companion.md` section 8 ("RAID log vs a standalone issue / assumption / dependency log")
+   already do; **`kpi-dashboard_companion.md` never mentions an issue log** and calls the family "the three",
+   so it gains its position in the same change as the bundle. *(Corrected 2026-09-23: this item said
+   `raid-log`'s companion never mentions an issue log. It does, under a heading a phrase search missed.)* Whether the promise references in
    `risk-register` and `raid-log` link to the bundle, and whether `related_templates` gains it, is a build
    decision; no sibling's position changes.
 3. **This page's Progress table**, and GitHub issue #176.
@@ -764,3 +766,11 @@ at API list rates**, every agent on Sonnet
 ([report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md)). This build is the
 **second measurement, not a confirmation of a rate**. Run `python tools/gen-bundle-build-report.py --ingest`
 in Phase 6, on the machine that ran the build.
+
+**Outcome, 2026-09-23.** **8,378,876 weighted token-equivalents, $16.76 at API list rates**, 18 agents, every
+one resolved to Sonnet ([report](../../bundle-builds/reports/issue-log_v0.1.0.md)). Like for like, the 15
+research, drafting and review agents cost **$14.29 against `launch-coordination-checklist`'s $14.22**; the
+other three were this landing's count sweep ($2.47), which the previous build did in the orchestrator, where
+no report counts it. Two builds now agree within a dollar, which is two points, not a rate. Not counted in
+either figure: the admission sweep run while the spec was written (16 agents, covering this type and
+`definition-of-ready` together) and the orchestrator's own spend.
