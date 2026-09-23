@@ -5,7 +5,10 @@ Registered in check K, which now gates `classification: foundation or tool` on e
 **Axis:** `classification`, **a set**: `foundation` or `tool`.
 **Members:** `definition-of-done`, `runbook`, `launch-coordination-checklist`
 ([ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md),
-assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-22).
+assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-22),
+`definition-of-ready`
+([ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
+assigned and specced 2026-09-23; not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -32,7 +35,7 @@ on a cadence and valuable only while current** is `utility` and belongs to `gove
 `strategy-docs`. A candidate that is the **output of a phase** belongs to a `phase` family. This family is
 neither periodic nor phase-bound, which is exactly why it needs the `classification` axis.
 
-**Likely future members**, if pulled: `definition-of-ready`, and a coding-standards or
+**Likely future members**, if pulled: a coding-standards or
 engineering-handbook document. None is Tier 1, so none is scheduled;
 [ADR 0021 (complete the Tier-1 floor)](../decisions/0021-complete-the-tier-1-floor.md) leaves Tier 2 and Tier
 3 strictly grow-by-pull.
@@ -44,6 +47,11 @@ engineering-handbook document. None is Tier 1, so none is scheduled;
 > likely member on 2026-08-05, before any member of the family was built, and the candidate assessed six
 > weeks later matched it. The list is a forecast the contract can be judged against, so entries are
 > moved to Members rather than removed.
+>
+> **`definition-of-ready` was the first entry and has been pulled, 2026-09-23.** It is now a member,
+> `classification: foundation`, assigned by
+> [ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md). Two of the
+> three forecast entries have now arrived as members.
 
 ## 2. Required catalog metadata and allowed values
 
@@ -161,6 +169,17 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.3.0, 2026-09-23: a fourth member, and the first forecast entry to arrive as a `foundation`.**
+`definition-of-ready` joins as `classification: foundation`, by
+[ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md). It was the
+first entry on the likely-future-members list written on 2026-08-05, and like the release checklist it
+moves to Members rather than being deleted. **The classification was argued, not inherited**: the
+family's falsifier (consulted at the moment of action) decides membership, and section 2's cut decides the
+value, and a Definition of Ready is a standard items are judged against, the entry-side mirror of
+`definition-of-done`. **Its failure mode inverts the one section 2 names for `foundation`**: not agreed
+and never honoured, but honoured too hard, as a gate. Section 4's review trigger therefore has to fire in
+both directions for this member. No structural obligation, metadata rule or axis value moved.
 
 **0.2.0, 2026-09-20: a third member.** `launch-coordination-checklist` joins as `classification: tool`,
 by [ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md).
