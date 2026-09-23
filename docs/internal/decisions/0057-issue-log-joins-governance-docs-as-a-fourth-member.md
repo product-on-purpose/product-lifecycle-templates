@@ -94,9 +94,12 @@ Audit`, `stage: governance`, `methodology: PMBOK`, `relationships: [RAID]`).
   gains the issue log's line; "state its position against the other two" becomes "against the other
   members". No obligation changes, and check K's registry entry
   (`FAMILY_CONTRACTS["governance-docs"]`) needs no edit, because it gates values, not a member count.
-- **The relationship obligation grows by one edge per member.** The new companion states its position
-  against all three siblings; the three siblings' companions are not rewritten, because each already
-  places the issue log correctly, and the build's review checks that claim rather than assuming it.
+- **The relationship obligation grows by one edge per member, and two siblings owe it.** The new
+  companion states its position against all three siblings. Of the siblings, only `risk-register`'s
+  companion already places the issue log (its section 8). **`raid-log`'s Relationships section and
+  `kpi-dashboard`'s companion do not mention it at all**, so the day this contract says "the other
+  members", both are out of contract until each gains its position against the issue log. The build adds
+  those two lines in the same change as the bundle.
 - **The shared-scenario rule binds hard here.** The example must be the Reporting Platform Modernization
   program's issue log, and `ISS-11` and `ISS-12` already exist in four sibling examples with fixed dates,
   owners and targets. The example must carry them as they are. Because the scenario keeps them in the

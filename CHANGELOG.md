@@ -14,26 +14,21 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
-- **Specs for two Tier-2 bundles in [`tier2-specs.md`](docs/internal/tier2-specs.md), each written with its
-  admission sources retrieved and every quotation checked against the source's raw text** (55 quotations
-  and identity checks, all present; four asserted absences confirmed absent). **`issue-log`** has the widest
+- **The `issue-log` spec in [`tier2-specs.md`](docs/internal/tier2-specs.md), written with its admission
+  sources retrieved and every quotation checked against the source's raw text.** It has the widest
   named-source base of any Tier-2 spec: PMI's Lexicon, APM's glossary, PRINCE2's glossary and the European
-  Commission's PM² guide define it by name, and PM² publishes its field definitions under CC BY 4.0.
-  **`definition-of-ready`** is admitted at the practitioner and pattern tier only: neither the 2020 Scrum
-  Guide nor SAFe's glossary names it, and the spec says so.
+  Commission's PM² guide define the type by name, and PM² publishes its field definitions under CC BY 4.0.
+  The sources disagree about what an issue *is* (anything that has happened, only what breaches a
+  tolerance, or, in PRINCE2 7, anything that could affect the project), so the template will make a team
+  state its own threshold.
 - **[ADR 0057](docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md): `issue-log`
   joins `governance-docs` as a fourth member**, the contract moving to `0.2.0`. An issue log stands to the
-  RAID log's I as the risk register stands to its R.
-- **[ADR 0058](docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md):
-  `definition-of-ready` joins `standing-standards` as a `foundation`**, the contract moving to `0.3.0`. Its
-  failure mode inverts the one the contract names for `foundation`, so its review trigger fires both ways.
+  RAID log's I as the risk register stands to its R. Two siblings' companions, `raid-log` and
+  `kpi-dashboard`, never mention an issue log and owe a Relationships line when the bundle lands.
 
 ### Fixed
 
-- **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 58 with the rest.
-- **A retrieval brief credited the wrong paper with "ready-ready".** The coinage is in Jakobsen and
-  Sutherland's later paper, not the 2008 three-author one, where the string does not occur. Caught by the
-  raw-text check before anything was written from it.
+- **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 57 with the rest.
 
 ## [0.12.0] - 2026-09-23
 
