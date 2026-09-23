@@ -7,13 +7,19 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=33, tier1=25, tier1remaining=2, statebuilt=33, statecandidate=170, stateoutofscope=2, commoncandidates=55, adrs=58, cisteps=32, checkk=108, checkformats=94, checklogs=95, logsgated=27, sourcesgated=1159 -->
 
-**Last updated:** 2026-09-23 (**`definition-of-ready` becomes the 33rd bundle and the fourth
+**Last updated:** 2026-09-23 (**`v0.13.0` ships `issue-log` and `definition-of-ready`, the 32nd and 33rd
+bundles.** One minor release carrying two bundles, as the maintainer asked, rather than one release per
+bundle. Beside them: a documentation audit run after the 33rd bundle landed (seven auditors, twelve
+findings fixed, two rejected on the ADRs that settled them), a security page that had said the repository
+runs no server, and release step 7's forward-prose grep widened to catch "forthcoming". The build
+workflow gained a single-size mode, and the definition of ready was the first bundle drafted through it.
+The previous entry read: **`definition-of-ready` becomes the 33rd bundle and the fourth
 `standing-standards` member**, by [ADR 0058](docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
 held as proposed until the maintainer confirmed the type the same day. **A bundle for a type the library's
 own siblings argue about**: its sources run from "keep it small" to "do not keep one", neither the Scrum
 Guide nor SAFe's glossary names it, and the bundle treats keeping none as a legitimate outcome. Single size,
-because no source read argues for a bigger one and the ones that address its size argue for a smaller one. The first bundle drafted through the build
-workflow's new single-size mode. Not in any release yet.
+because no source read argues for a bigger one and the ones that address its size argue for a smaller
+one. The first bundle drafted through the build workflow's new single-size mode. Not in any release yet.
 The previous entry read: **`issue-log` becomes the 32nd bundle and the fourth `governance-docs`
 member**, by [ADR 0057](docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md).
 The library had routed readers to an issue log from two shipped bundles without shipping one. **Its admission
