@@ -28,7 +28,7 @@ design task" rather than "a spec-driven execution".
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
 | `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | **Built 2026-09-23.** Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md); [build report](../../bundle-builds/reports/issue-log_v0.1.0.md) |
-| `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | Not yet. Family and classification **proposed** by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md) |
+| `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | Not yet. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -800,13 +800,12 @@ boundary rather than making a promise**, and three of them argue against the doc
 - `definition-of-done_example.md`: "**Not a Definition of Ready.** The squad does not currently keep one."
 
 **So this is a bundle for a type its own siblings warn about**, which is the `spike-report` shape: that
-bundle's canon argued against writing one, and it shipped teaching the dispute. It would be built on the
-maintainer's direction under
+bundle's canon argued against writing one, and it shipped teaching the dispute. It is built on the
+maintainer's direction of 2026-09-23 under
 [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue #178,
-build-candidate 4). **The family and classification are proposed by
-[ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md)**, which stays
-`proposed` until the maintainer confirms the build: the instruction of 2026-09-23 read "delivery ready", and
-this spec reads that as `definition-of-ready`.
+build-candidate 4). **The family and classification are settled by
+[ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md).** The instruction of
+2026-09-23 read "delivery ready"; the maintainer confirmed the same day that it meant `definition-of-ready`.
 
 #### Admission: met at the practitioner and pattern tier, and declined by both standards that could have met it
 

@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-23
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,20 +27,19 @@ consulted: [claude]
   in [`tier2-specs.md`](../tier2-specs.md). **Nor does it endorse keeping a Definition of Ready.** The
   library's own `definition-of-done` and `product-backlog` bundles report the dispute over whether one should
   exist, and this bundle carries that dispute rather than settling it.
-- **Status:** **proposed** 2026-09-23, awaiting one word from the maintainer. The instruction that day was
-  "complete issue log and delivery ready"; this record reads "delivery ready" as `definition-of-ready`
-  (build-candidate 4, GitHub issue #178), and that reading is unconfirmed. The agent drafted the
-  classification argument against the contract and ADR 0032. It becomes accepted, and the bundle is built,
-  only when the reading is confirmed.
+- **Status:** accepted 2026-09-23. The maintainer's instruction that day read "delivery ready"; this record
+  was held as `proposed` until the maintainer confirmed, the same day, that it meant `definition-of-ready`
+  (build-candidate 4, GitHub issue #178). The agent drafted the classification argument against the contract
+  and ADR 0032.
 
 ## Context and Problem Statement
 
 [The `standing-standards` contract](../contracts/standing-standards.md) section 1 lists "Likely future
 members, if pulled: `definition-of-ready`, and a coding-standards or engineering-handbook document." The
 catalog entry (`id: definition-of-ready`, catalog 40, `category: Requirements`, `size_variant: S`) is a
-candidate. Under [ADR 0041](0041-maintainer-preference-sets-the-build-order.md) the maintainer's direction
-sets the build order; whether the 2026-09-23 instruction ("delivery ready") directed this type is the open
-question above (GitHub issue #178).
+candidate. The maintainer directed the build on 2026-09-23 under
+[ADR 0041](0041-maintainer-preference-sets-the-build-order.md), which makes the maintainer's preference the
+build order (GitHub issue #178).
 
 The contract's axis is a set, `foundation` or `tool`, and its section 2 states the cut: "is it a standard
 you judge against, or an instrument you execute?" Check K can verify a member picked a value from the set,

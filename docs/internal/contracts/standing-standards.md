@@ -8,7 +8,7 @@ Registered in check K, which now gates `classification: foundation or tool` on e
 assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-22),
 `definition-of-ready`
 ([ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
-**proposed** and specced 2026-09-23, pending the maintainer's confirmation; not yet built).
+assigned and specced 2026-09-23; not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -48,10 +48,10 @@ engineering-handbook document. None is Tier 1, so none is scheduled;
 > weeks later matched it. The list is a forecast the contract can be judged against, so entries are
 > moved to Members rather than removed.
 >
-> **`definition-of-ready` was the first entry and has been proposed for membership, 2026-09-23**, as
-> `classification: foundation`, by
-> [ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md), which stays
-> proposed until the maintainer confirms the build.
+> **`definition-of-ready` was the first entry and has been pulled, 2026-09-23.** It is now a member,
+> `classification: foundation`, assigned by
+> [ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md). Two of the
+> three forecast entries have now arrived as members.
 
 ## 2. Required catalog metadata and allowed values
 
@@ -170,7 +170,7 @@ obligation at authoring time; it is a section-presence rule and could later be g
 
 ## Change note
 
-**0.3.0, 2026-09-23 (proposed with ADR 0058): a fourth member, and the first forecast entry to arrive as a `foundation`.**
+**0.3.0, 2026-09-23: a fourth member, and the first forecast entry to arrive as a `foundation`.**
 `definition-of-ready` joins as `classification: foundation`, by
 [ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md). It was the
 first entry on the likely-future-members list written on 2026-08-05, and like the release checklist it

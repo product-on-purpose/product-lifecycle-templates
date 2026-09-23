@@ -29,10 +29,10 @@ people who want every change, release notes are for people who want to know what
 - `kpi-dashboard`'s companion states its position against the issue log, which the family contract's "other
   members" wording now requires.
 - **The `definition-of-ready` spec, and [ADR 0058](docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md)
-  proposing it for `standing-standards` as a `foundation`** (contract `0.3.0`, proposed). Admitted at the
+  admitting it to `standing-standards` as a `foundation`** (contract `0.3.0`). Admitted at the
   practitioner and pattern tier only: neither the 2020 Scrum Guide nor SAFe's glossary names the type, and
   the spec says so. Its failure mode inverts the one the contract names for `foundation`, so its review
-  trigger fires both ways. **Proposed, not accepted**, until the maintainer confirms the build.
+  trigger fires both ways. Held as proposed until the maintainer confirmed the type the same day.
 - **The `issue-log` spec in [`tier2-specs.md`](docs/internal/tier2-specs.md), written with its admission
   sources retrieved and every quotation checked against the source's raw text.** It has the widest
   named-source base of any Tier-2 spec: PMI's Lexicon, APM's glossary, PRINCE2's glossary and the European
