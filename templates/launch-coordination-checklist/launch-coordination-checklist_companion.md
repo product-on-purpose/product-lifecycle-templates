@@ -6,8 +6,8 @@
 > [`launch-coordination-checklist_guide.md`](launch-coordination-checklist_guide.md); a fully worked
 > instance is [`launch-coordination-checklist_example.md`](launch-coordination-checklist_example.md).
 > Inline citations like [[1]](#ref-1) resolve to the [References](#references) at the bottom, tagged by
-> source reliability. This bundle sits in the `standing-standards` family alongside `definition-of-done`
-> and `runbook`, as a **tool**: an instrument consulted at the moment of a launch decision, not a standard
+> source reliability. This bundle sits in the `standing-standards` family alongside `definition-of-done`,
+> `definition-of-ready` and `runbook`, as a **tool**: an instrument consulted at the moment of a launch decision, not a standard
 > a team is judged against on a cadence.
 
 ---

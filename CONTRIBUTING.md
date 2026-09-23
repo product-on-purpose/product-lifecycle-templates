@@ -26,11 +26,12 @@ The review standard this kind of finding is judged against lives in
 **2. A bundle for a document type.** The Tier-1 "must-have" floor (the catalog's own baseline of
 templatable types) is complete: every templatable Tier-1 type is built, and the build backlog is
 empty. New bundles beyond the floor come from the wider catalog in
-[`docs/internal/catalog.md`](docs/internal/catalog.md), and they are pulled in on demand rather than
-built speculatively: the catalog's own rule is to add a type only "based on which teams actually
-request them", and only "when a team is actively practicing it" (`catalog.md`, the Tier-2 build
-principle). If you want a type this library does not have, the strongest opening move is to say who
-needs it and why, not to open a PR with a template already attached. See "What is not wanted" below
+[`docs/internal/catalog.md`](docs/internal/catalog.md). Which of them get built, and in what order, is
+the maintainer's own choice
+([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); a request is
+recorded and may be weighed, and nothing waits for one. If you want a type this library does not have,
+the strongest opening move is to say who needs it and why, not to open a PR with a template already
+attached. See "What is not wanted" below
 before proposing a brand-new type.
 
 **3. A real usage report.** This is the most valuable contribution this library can receive, and the

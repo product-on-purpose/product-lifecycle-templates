@@ -199,7 +199,8 @@ function bundlePage(b, sectionsById, catalogById, bundleIds) {
   if (defaultTokens) out.push(`approxTokens: ${defaultTokens}`);
   // AC-4: the page's true editable source. The guide is chosen over the template because the
   // guide is this page's lead narrative and the file a reader who spots a problem would fix.
-  // It is NOT `false`: that would forfeit the affordance on 30 of the site's ~32 pages.
+  // It is NOT `false`: that would forfeit the affordance on every generated bundle page, which is nearly
+  // the whole site.
   out.push(`editUrl: ${GH_EDIT}/templates/${id}/${id}_guide.md`);
   out.push('---');
   out.push('');

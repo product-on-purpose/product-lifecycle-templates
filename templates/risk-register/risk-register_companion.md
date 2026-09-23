@@ -356,8 +356,8 @@ dashboard it threatened. See the sibling [`kpi-dashboard`](../kpi-dashboard/kpi-
 examples cover. It demonstrates cause-event-consequence statements, inherent-versus-residual scoring, named
 owners and actionees, response strategies including one opportunity and one escalation, triggers that double
 as issue-log hand-off conditions, and an escalation-and-appetite section. Its risks, owners, and residual
-scores are the ones the forthcoming sibling `raid-log` and `kpi-dashboard` examples will chain onto, so the
-three read as one program's governance surface.
+scores are the ones the sibling `raid-log`, `kpi-dashboard` and `issue-log` examples chain onto, so the four
+read as one program's governance surface.
 
 ---
 

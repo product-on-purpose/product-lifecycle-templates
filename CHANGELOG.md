@@ -87,8 +87,23 @@ people who want every change, release notes are for people who want to know what
   launched in the scenario, so the dashboard now carries the figure labelled as a pre-launch staging value that
   production data replaces at launch.
 - **`STATE.md`'s per-family bundle lists named 27 of the 31 bundles**, omitting `status-report`,
-  `spike-report`, `project-milestone-retrospective` and `test-summary-report`; they now name all 32.
+  `spike-report`, `project-milestone-retrospective` and `test-summary-report`; they now name every bundle.
 - **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 58 with the rest.
+- **Seven sentences in sibling bundles still called built bundles "forthcoming"**, the oldest from July:
+  `risk-register`'s guide named `raid-log` as "the next governance-docs bundle to be built", and the
+  `risk-register` and `raid-log` companions and examples pointed at `raid-log`, `kpi-dashboard` and
+  `status-report` as siblings still to come. `launch-coordination-checklist` named two `standing-standards`
+  siblings where there are now three. Release step 7's forward-prose grep matched none of these words; it now
+  matches "forthcoming" and "to be built".
+- **`SECURITY.md` said the repository has no server and two dependencies.** The MCP server has shipped since
+  `v0.6.0`, CI installs three Python packages, and one of the server's five tools writes a file. The page now
+  says so, and names that tool as a risk to weigh before giving the server to an agent.
+- **`CONTRIBUTING.md` still said new types are "pulled in on demand"**, grow-by-pull under different words,
+  which the earlier sweep missed because it searched for the phrase. It now points to the maintainer's
+  choice, as the chooser and the agent guide do.
+- **Smaller stale figures:** `STATE.md`'s gate row said it passes on all 31 bundles and quoted the 31-bundle
+  `sections.json` totals; the site plan said the site serves 30 bundles; and the build-out plan still said
+  grow-by-pull governs Tier-2, with no note that it was retired.
 - **A retrieval brief credited the wrong paper with "ready-ready".** The coinage is in Jakobsen and
   Sutherland's later paper, not the 2008 three-author one, where the string does not occur. Caught by the
   raw-text check before anything was written from it.

@@ -127,9 +127,10 @@ it without asking who wrote the document.
 
 ## Pairing with your process
 
-This bundle ships in the `standing-standards` family alongside `definition-of-done` and `runbook`. All three
-are agreed once and consulted repeatedly rather than authored per occasion, but they answer different
-questions: a definition of done is a standard a team is judged against, a runbook is a procedure executed
+This bundle ships in the `standing-standards` family alongside `definition-of-done`, `definition-of-ready`
+and `runbook`. All four are agreed once and consulted repeatedly rather than authored per occasion, but they
+answer different questions: a definition of done is a standard a team is judged against, a definition of
+ready is the agreement on when a backlog item can be pulled into a sprint, a runbook is a procedure executed
 once a known situation has already happened, and this checklist is consulted at the moment of a launch
 decision that has not happened yet. Keep the boundaries where they belong: this document does not certify
 that a unit of work is finished, and it does not tell a responder what to type once something has gone

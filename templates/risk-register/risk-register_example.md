@@ -37,7 +37,7 @@ which sets the categories, the 5x5 scale below, and the appetite.
 
 **Out of scope:** business-as-usual IT and security risks (tracked in the corporate enterprise register), and
 product-outcome risks such as whether the Time-to-Insight target is met (tracked as metrics on the program
-KPI dashboard, a forthcoming sibling, not as risks here). This register tracks
+KPI dashboard, a sibling document, not as risks here). This register tracks
 threats to *delivering* the program; the dashboard tracks whether the delivered program *works*.
 
 ## Scoring Scale

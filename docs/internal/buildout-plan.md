@@ -52,7 +52,7 @@ Each bundle is one run of a subagent workflow: research fan-out -> **adversarial
 
 ## The policy (decided)
 
-Building the whole floor reverses the repo's **"grow by pull, not speculation"** rule for the Tier-1 set. That call is made: [ADR 0021](decisions/0021-complete-the-tier-1-floor.md) adopts floor-completion, with grow-by-pull still governing Tier-2 and Tier-3. The one discipline kept: a bundle is never called "verified" or "complete" until a real person fills it, and STATE.md keeps coverage and real usage as separate, honest numbers.
+Building the whole floor reverses the repo's **"grow by pull, not speculation"** rule for the Tier-1 set. That call is made: [ADR 0021](decisions/0021-complete-the-tier-1-floor.md) adopts floor-completion, with grow-by-pull still governing Tier-2 and Tier-3. *(Superseded since: [ADR 0039](decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) let the maintainer build any template, [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) made that preference the build order, and the grow-by-pull wording was retired library-wide on 2026-09-23.)* The one discipline kept: a bundle is never called "verified" or "complete" until a real person fills it, and STATE.md keeps coverage and real usage as separate, honest numbers.
 
 ## Start here
 

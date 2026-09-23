@@ -268,7 +268,7 @@ unworkable, keeping *"a series of RAID logs, one for each section"* [[22]](#ref-
 
 **RAID log vs status report.** The RAID log is the **raw material** for a status report, not the report
 itself. A highlight or status report draws on the RAID to characterize the project's posture without
-transferring the whole log [[2]](#ref-2). The forthcoming `status-report` bundle is the reporting layer above
+transferring the whole log [[2]](#ref-2). The sibling `status-report` bundle is the reporting layer above
 it.
 
 **RAID log vs KPI dashboard.** Both are standing governance instruments in this family, but the RAID tracks
