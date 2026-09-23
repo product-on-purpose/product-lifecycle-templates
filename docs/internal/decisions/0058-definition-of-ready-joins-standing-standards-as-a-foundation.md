@@ -97,6 +97,11 @@ whether work is finished, and it is `foundation`. A DoR is that document's entry
   DoR let through stalls on something it should have caught and when an item it blocked turns out to have
   been ready enough. The second direction is this library's own contribution and is labelled as such in the
   bundle.
+
+  > **Corrected 2026-09-23**, per [ADR 0011](0011-madr-v4-at-docs-internal-decisions.md): the build's research
+  > found a source for the second direction too. Big Agile (2025) writes "When the DoR blocks more value than it
+  > enables, it stops being a safety rail and becomes a parking brake", so the bundle cites it rather than
+  > labelling the direction its own. The decision is unchanged.
 - **The citation hazard binds hardest here.** The contract names this family's hazard as "folklore
   presented as standard". The 2020 Scrum Guide never uses the phrase "Definition of Ready", and the Scaled
   Agile Framework's glossary has no entry for it. The bundle's admission rests on practitioner and pattern

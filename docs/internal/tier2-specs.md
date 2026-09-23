@@ -28,7 +28,7 @@ design task" rather than "a spec-driven execution".
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
 | `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | **Built 2026-09-23.** Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md); [build report](../../bundle-builds/reports/issue-log_v0.1.0.md) |
-| `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | Not yet. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md) |
+| `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23.** Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -887,7 +887,9 @@ been ready enough, and when an item it let through stalls on something it should
 playbook supplies the second direction in its own words ("Update or change the definition of ready anytime
 the scrum team observes that there are missing information in the user stories that recurrently impacts the
 planning"); **the first direction is this library's own contribution**, derived from the dispute above, and is
-labelled that way.
+labelled that way. *(Corrected 2026-09-23 by the build's research: Big Agile states the first direction too,
+"When the DoR blocks more value than it enables, it stops being a safety rail and becomes a parking brake", so
+the bundle sources it rather than labelling it its own.)*
 
 #### Sizes: single-size, because the research argues against a second weight
 
@@ -937,8 +939,10 @@ may be adapted.
 - **Not a stage gate.** Cooper's Stage-Gate model decides "Go, Kill, Hold, or Recycle"; a DoR with those
   outcomes has become one.
 - **Not ISTQB entry criteria**, which serve the same function from a testing lineage: "The set of generic and
-  specific conditions for permitting a process to go forward with a defined task". No source bridges the two
-  vocabularies, and the companion says so rather than bridging them itself.
+  specific conditions for permitting a process to go forward with a defined task". *(Corrected 2026-09-23: this
+  said no source bridges the two vocabularies. The unofficial ISTQB glossary mirror lists "definition of ready"
+  among the synonyms of entry criteria; the companion reports that, and that the mirror is not ISTQB's own
+  site.)*
 
 #### Metadata
 
@@ -978,3 +982,13 @@ The third build through the committed `build-bundle.js`, after `launch-coordinat
 drafting should be smaller; the report will say whether it was. **The committed workflow's templates stage
 writes both variants**, so a single-size build needs that stage told to write lean only, as `spike-report`'s
 per-bundle script did.
+
+**Outcome, 2026-09-23.** The workflow gained a `sizes` input before this build rather than being told per
+run, and the build ran through it. **6,947,001 weighted token-equivalents, $13.89 at API list rates**, 18
+agents, every one resolved to Sonnet ([report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md)).
+Like for like, the 15 research, drafting and review agents cost **$11.69, against $14.29 for `issue-log` and
+$14.22 for `launch-coordination-checklist`**; the other three were the landing's count sweep ($2.20). The
+prediction held, and by a margin: the drafting stage cost $4.71 against $5.63 and $7.15, and its templates
+agent $1.24 against $1.58 and $2.62, one variant instead of two. Three builds is still three points, not a
+rate. Not counted: the admission retrieval run while the spec was written, and the orchestrator's own
+spend.

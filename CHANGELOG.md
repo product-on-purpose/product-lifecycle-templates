@@ -14,6 +14,20 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`definition-of-ready`](templates/definition-of-ready/), the 33rd bundle** and the fourth
+  `standing-standards` member, `classification: foundation`, by
+  [ADR 0058](docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md): a
+  team's agreement on when a backlog item is ready to pull into a sprint, the entry-side mirror of a
+  Definition of Done. **It teaches a dispute rather than a practice**: its sources run from "keep it small" to
+  "do not keep one", neither the 2020 Scrum Guide nor SAFe's glossary names it, and the bundle treats keeping
+  none as a legitimate outcome. **Single size**, because no source read argues for a bigger one and the ones that address its size argue for a smaller one.
+  Its five sections make a team state why it keeps one and when it would stop, phrase each criterion as a
+  question, name the one kind of hard stop the sources allow (a dependency on another team or vendor), give a
+  top-priority item a way in, and review the document when it lets too much through or blocks too much.
+- Its research log's quotations were all checked against raw source text. The check corrected two claims
+  already merged: the spec said no source connects a definition of ready to testing's entry criteria (an
+  ISTQB glossary mirror lists them as synonyms), and ADR 0058 called one direction of the review trigger the
+  library's own (Big Agile states it). Both carry dated corrections.
 - **[`issue-log`](templates/issue-log/), the 32nd bundle** and the fourth `governance-docs` member,
   `classification: utility`, by
   [ADR 0057](docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md): the owned record

@@ -1,0 +1,31 @@
+id: definition-of-ready
+title: Definition of Ready
+summary: >-
+  The agreement a team makes about how complete a backlog item has to be before it can be pulled into a
+  sprint: a gate on entry, the mirror image of a Definition of Done's gate on exit. Optional in both the
+  2020 Scrum Guide and SAFe's own glossary, and kept, when a team keeps one at all, deliberately small.
+doc_type: definition-of-ready
+classification: foundation
+family: standing-standards
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "This bundle ships one size, deliberately, and the evidence runs the opposite way from a document that earns a second, heavier weight: no source read for it argues for a bigger Definition of Ready, and the ones that address its size at all argue for a smaller one. Reach for the lean template as-is; if a situation feels like it needs more than its five sections, treat that as a signal to reconsider whether a written Definition of Ready is the right tool at all, not as a reason to look for a heavier variant."
+methodology: agile-scrum
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - agile
+  - scrum
+  - standing-standards
+  - readiness
+  - backlog-refinement
+  - sprint-planning
+related_templates: [definition-of-done, sprint-backlog, product-backlog, epic]
+aliases:
+  - DoR
+  - ready-ready
+catalog_ref: 40
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-23
+license: Apache-2.0
