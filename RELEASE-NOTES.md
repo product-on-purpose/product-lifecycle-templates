@@ -8,6 +8,23 @@ Newest first.
 
 ---
 
+## v0.12.0
+
+**A 31st bundle: the launch coordination checklist**, the standing list a team consults before it ships
+an externally visible change. Grouped readiness checks with owners, a go/no-go gate decided in advance,
+and a rollout with the condition that reverses it.
+
+It was admitted on a source fetched and read while its spec was written, not on a prior: Appendix E of
+Google's *Site Reliability Engineering* book is titled "Launch Coordination Checklist". That appendix is
+licensed no-derivatives and dates from "circa 2005", so the bundle teaches the practice around the list
+and adapts none of its items.
+
+The part worth keeping is how its research was checked. Every quotation in the research log was compared
+with the source's own text rather than with the research tool's summary of it, and **19 of 193 were not
+there**. They were removed before anything was drafted from them.
+
+---
+
 ## v0.11.2
 
 **The build-cost numbers `v0.11.0` published were about twice the truth, and this release corrects

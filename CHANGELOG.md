@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-09-23
+
 ### Added
 
 - **[`launch-coordination-checklist`](templates/launch-coordination-checklist/), the 31st bundle** and the
@@ -30,6 +32,10 @@ people who want every change, release notes are for people who want to know what
   the skill does not contain.
 - **The first build-cost report at `high` confidence covering a whole build**: 7,108,920 weighted
   token-equivalents, **$14.22 at API list rates**, all 15 agents on Sonnet.
+- **The bundle's spec in [`tier2-specs.md`](docs/internal/tier2-specs.md), written with its admission source
+  retrieved rather than assumed**: Appendix E was fetched and its ten areas and 31 items counted from the
+  page's HTML, because an automated summary of the same page reported nine areas while listing ten.
+  `deliver-launch-checklist` joins [`tools/known-skills.txt`](tools/known-skills.txt) so the pairing resolves.
 
 ### Fixed
 
@@ -41,6 +47,12 @@ people who want every change, release notes are for people who want to know what
 - **The build workflow sent its templates agent to `buildout-specs.md` for every type**, which holds Tier-1
   specs only, so a Tier-2 build's section list came from nowhere. It now names `tier2-specs.md` for a Tier-2
   type, the hole that file's own preamble described.
+- **The review's chaining lens was never given the sibling examples it is meant to check against.** Its
+  file list held only the bundle's own example and full template, the lens obeyed the list, and thread
+  consistency went unreviewed while the review brief said otherwise. The lens said so in its own return
+  on this build; it now reads the sibling examples its example cites.
+- `tier2-specs.md` said a build costs "700K to 1M tokens", an estimate nobody had measured; it now cites
+  the measured figure.
 - **The four-lens review's 11 findings, all verified and applied**: a companion quotation whose words had
   been changed inside the quotation marks, an unsourced date span, rubric row titles written as sentences,
   and a worked example that reused the distinguishing details of four of its own template's GOOD
@@ -2365,7 +2377,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.2...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.2...v0.12.0
 [0.11.2]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...v0.11.0
