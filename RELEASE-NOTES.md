@@ -8,6 +8,28 @@ Newest first.
 
 ---
 
+## v0.11.1
+
+**Nothing user-facing changed shape here.** No template, no bundle, no MCP tool, no install route.
+What changed is what this repository says about itself, and in three places it was saying something
+untrue.
+
+The largest gap was an absence: **the library published a website and never told a human reader it
+exists.** The README, CONTRIBUTING and all four documentation quadrants carried zero mentions of it.
+The technical documentation was already strong and the note for agents was already correct; the human
+lens was simply missing. There is now a page explaining how the site is generated, guarded and
+deployed, and the README links the site itself.
+
+Two corrections are worth naming because they are the kind this library exists to catch. **The live
+landing page claimed the library spans six families; it has nine**, and had since the page shipped,
+because that page is `.mdx` and sat outside the prose-count gate's file glob. The gate now reaches it
+and is mutation-tested. And **this repository stated a wrong reason for a right decision**: the
+comment explaining why the all-in-one Astro action is refused was factually wrong about what that
+action does. The decision stands on a better reason, and the correction is left visible rather than
+quietly swapped.
+
+---
+
 ## v0.11.0
 
 **This library refuses to call a single bundle proven without evidence, and the number it used to

@@ -12,8 +12,23 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.11.1] - 2026-09-22
+
+A documentation and correctness patch. Nothing user-facing changed shape: no template, no bundle, no
+MCP tool and no install route is different. What changed is what this repository says about itself.
+
 ### Added
 
+- **[`docs/explanation/the-site.md`](docs/explanation/the-site.md), because the library published a
+  website and never told a human reader it exists.** `README.md`, `CONTRIBUTING.md` and all four
+  Diataxis directories carried **zero mentions** of it: no link, no explanation, no how-to. The only
+  human-readable material was internal planning. The new page covers the generate-build-guard-deploy
+  chain, what each of the five guards catches, and the honesty gate's three conditions. A README
+  callout now links the live site, and `bundle-pipeline.md` Phase 6 tells a bundle author that their
+  content gets published and that the honesty gate can fail `site.yml` even when `run-gate.py` is
+  green.
 - **[ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md),
   recording the decision `v0.11.0` shipped without.** Build cost is measured from harness transcripts,
   and **ingestion is deliberately separate from verification**: the CI gate checks an index it can
@@ -24,8 +39,31 @@ people who want every change, release notes are for people who want to know what
   `_history.md`, fields on `manifest.json`) and the open question about the drafting model tier.
   **That the release shipped before its own decision record is the gap this entry closes.**
 
+### Changed
+
+- **`site.yml` stated a wrong reason for refusing `withastro/action`, and the correction is left
+  visible.** The comment said the action "runs astro build directly with no pre-build hook and would
+  skip the generator entirely". **It does not.** Its build step is
+  `run: ${{ inputs.build-cmd || '$PACKAGE_MANAGER run build' }}`, so by default it runs
+  `npm run build`, which fires `prebuild` and therefore the generator, exactly as this workflow does.
+  Verified against the action's own `action.yml`. **The decision to refuse it was right for a better
+  reason**: the action bundles `actions/upload-pages-artifact` into itself, so it leaves no seam
+  between `astro build` and the upload, which is precisely where every guard has to run for the
+  artifact that is checked to be the artifact that ships. This was found by adversarially verifying
+  the new documentation page against source, which returned fifteen findings in total.
+
 ### Fixed
 
+- **[ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)'s sweep missed three
+  surfaces, two of them the most visible in the project.** That record stopped publishing a real-fill
+  count "on any public surface" and its own table enumerated **prose**, so `README.md`'s shields.io
+  badge reading `real fills - 0 (honest)` survived it, through the same blind spot `check-counts.py`
+  documents about badge URLs. Removed, with README's `Real usage | 0 fills` row. The **live landing
+  page** also still promised "until a real usage cycle is recorded", a graduation rule that same ADR
+  replaced with the maintainer's judgement; removed. Three further surfaces (`plugin.json`'s
+  description, `CONTRIBUTING.md`, `what-the-gate-proves.md`) are **left in place deliberately** and
+  recorded here rather than swept: the third sits in a limits section where removing it would reduce
+  honesty rather than increase it, which is a posture call for the maintainer.
 - **`STATE.md` said the build workflow "runs its research and review fan-outs".** It runs three
   stages, and the missing one is the drafting fan-out that writes seven of the eight bundle files.
   This is the same two-versus-three error corrected in `bundle-pipeline.md` in `v0.11.0`; the
@@ -2231,7 +2269,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.1...HEAD
+[0.11.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.8.0...v0.9.0
