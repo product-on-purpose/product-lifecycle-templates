@@ -12,10 +12,11 @@ design task" rather than "a spec-driven execution".
 
 > **A spec here is not a decision to build.** Build order is the maintainer's own preference and need
 > ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)), and nothing on this page
-> schedules anything. What a spec does is make the judgment reviewable *before* roughly 10M to 12M weighted
-> token-equivalents, $33 to $41 at API list rates, are spent executing it
+> schedules anything. What a spec does is make the judgment reviewable *before* roughly 7M to 12M weighted
+> token-equivalents, $14 to $41 at API list rates, are spent executing it
 > ([measured](../../bundle-builds/INDEX.md); this sentence read "700K to 1M tokens" until 2026-09-22, an
-> estimate nobody had measured).
+> estimate nobody had measured, and "$33 to $41" until 2026-09-23, before the first build through the
+> committed workflow cost $14.22).
 
 ## Progress
 
@@ -26,6 +27,7 @@ design task" rather than "a spec-driven execution".
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | **No, and it will not be.** Refused on its own evidence by [ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md): SAFe's own facilitator guide names the outputs as backlog items and no document |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
+| `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | Not yet. Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -575,3 +577,190 @@ build, the first through the committed script, cost **7,108,920 weighted token-e
 list rates** for its subagents ([report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md)),
 below the $20 to $24 projected above, because every stage was smaller than in the measured builds and not
 only drafting. The orchestrator's own spend is not in that figure.
+
+---
+
+### governance-docs (fourth member): the issue log the library already routes to
+
+**`issue-log`** - `governance-docs`, **`classification: utility`**, sizes **`[lean, full]`** (provisional),
+methodology **`generic`**, catalog id `issue-log` (catalog 152), aliases `issue register`, `issue tracker`.
+Catalog owner: PM. Purpose: "Track active issues needing resolution." Contents, per the catalog: "issue,
+owner, priority, status, resolution". `size_variant: S`, `rarity: common`, `tier_inferred: true`,
+`relationships: [RAID]`.
+
+#### Demand: promise debt in two shipped bundles, in the shape that found `test-summary-report`
+
+The library sends readers to this document from both of its sibling registers, and no `future:` tag
+records the promise, which is why no gate has flagged it:
+
+- `risk-register_guide.md` and `raid-log_guide.md` each carry a chooser table with an **Issue log**
+  column ("Register, RAID log, or issue log?" and "RAID log, risk register, or issue log?").
+- `risk-register_template-lean.md` says the register "is NOT an issue log", and both risk-register
+  templates send a materialized risk to "the issue log".
+- `risk-register_guide.md`'s rubric fails a row that "has already happened" ("that belongs in the issue
+  log"), and its anti-patterns say to "move materialized risks to the issue log".
+- `raid-log_guide.md` routes a reader with only realized problems away from RAID: "if that is all you have,
+  an issue log is enough."
+
+**The family is settled by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)**:
+`governance-docs`, `utility`, the fourth member, contract to `0.2.0`. Built on the maintainer's direction of
+2026-09-23 under [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue
+#176, build-candidate 2).
+
+#### Admission: retrieved, and the widest named-source base of any Tier-2 spec on this page
+
+Every quotation below was checked against the source's raw text on 2026-09-23, not against a retrieval
+tool's summary of it. **Four named bodies define the type by name, and one of them publishes it under an
+open licence that permits adaptation.**
+
+| Source | What it says | Licence |
+|---|---|---|
+| European Commission, *PM² Project Management Methodology Guide* v3.1 (Publications Office of the EU, 2023), Appendix B.9 | "The Issue Log is a register (log file) used to capture and maintain information on all issues that are being formally managed" | **CC BY 4.0** |
+| PMI, *Lexicon of Project Management Terms* v5.0 (January 2026) | "issue log. A project artifact where information about issues is recorded and monitored." | PMI, personal use only |
+| PMI, *PMBOK Guide* 6th edition, errata (fifth printing) | "Issue log. Described in Section 4.3.3.3." The Guide itself is sold and was not read | PMI |
+| APM, glossary (read 2026-09-23) | "A log of all issues raised during a project or programme, showing details of each issue, its evaluation, what decisions were made and its current status." | not stated |
+| PRINCE2 2009 glossary, reproduced with AXELOS's permission (stakeholdermap.com) | Issue register: "A register used to capture and maintain information on all of the issues that are being managed formally" | AXELOS, all rights reserved |
+
+Readable templates from four public bodies supply the structure the standards describe: the Northern
+Ireland Civil Service's *Issue Log* (whose own text says it is "based on the PRINCE2 recommended issue log"),
+the Tasmanian Government's *Project Management Guidelines* v7.0 (2011) "Project Issues Register", the
+Connecticut Department of Social Services' *Project Issue Log* v1.13, and Washington State OFM's issue
+tracking template. **None states a reuse licence, so they are structure evidence only, never wording.**
+
+**What was not read, and must be cited as such.** AXELOS's own manuals (PRINCE2 6th edition 2017, PRINCE2
+Agile 2016, PRINCE2 7 2023) are behind a subscription and were not retrieved. ISO 21502:2020 was read only as
+its official free preview: clause 3.11 defines an issue ("event that arises during a project ... requiring
+resolution for the project to proceed") and the contents list "7.9 Issues management", but the clause body is
+past the preview. **ISO frames a practice, not a named document, in everything readable**, and the bundle must
+not claim otherwise. The UK government's Teal Book chapter on issue management refused every raw fetch and is
+unquotable.
+
+**This is the reverse of `test-summary-report`'s position.** That bundle's governing standard was paywalled and
+its section design had to rest on a syllabus. Here the most structurally detailed source is openly licensed,
+so the bundle can adapt PM²'s field definitions with attribution, and the paywalled standards are needed only
+for existence and authority, which the Lexicon and the glossaries already supply.
+
+#### The definition is where the sources disagree, and the template must make a team choose
+
+The sources agree on the risk boundary, and on almost nothing else about what an issue *is*:
+
+- **Anything that has happened and needs someone to act.** PM²: "An issue is any unplanned event related to the
+  project that has already happened and requires the intervention of the Project Manager (PM) or higher
+  management". PMI's Lexicon is broader still: "A current condition or situation that may have an impact on one
+  or more objectives."
+- **Only what breaches a tolerance.** APM's glossary: "A problem that is now breaching, or is about to breach,
+  delegated tolerances for work on a project or programme." Anything inside tolerance is the day's work, not
+  a logged issue.
+- **Anything that could affect the project, forward-looking.** PRINCE2 7 (2023), as PeopleCert describes it:
+  "anything that could affect the project". This is a change from PRINCE2's 2009 glossary ("A relevant event
+  that has happened, was not planned, and requires management action"), and it pulls the concept toward the
+  risk register's territory.
+
+**The consequence for the design:** three incompatible definitions mean two people keeping the same log can
+disagree about whether a row belongs in it at all. So the template's first section carries the team's own
+threshold, stated, with the three positions offered as the choices they are. **That framing is this
+library's**, derived from the disagreement above; no source prescribes it.
+
+#### The change-request fork, which also bears on build-candidate 5
+
+PRINCE2 puts a **request for change inside the issue concept**. As PeopleCert puts it: "Not all issues
+result in changes" and "all changes start as issues"; the Northern Ireland template instructs that "Issues,
+including those raised as changes under the project change control mechanism, should be recorded on the issue
+log." PMI's PMBOK Guide instead **names two separate project documents**, each defined on its own ("The
+change log is used to record all submitted change requests."), and states no rule for where they overlap: it
+answers a different question from PRINCE2's rather than the opposite one. PM² keeps a separate Change Log
+linked from the issue by a Traceability field.
+
+**Proposed resolution:** the issue log records where a change request **came from** and hands it to change
+control, with a cross-reference, and the companion names PRINCE2's alternative plainly. That is compatible with
+both lineages and leaves the boundary with a future `change-request` bundle (GitHub issue #179) to that
+bundle's own research rather than deciding it here. **If the research finds the PRINCE2 lineage dominant in
+practice**, the type field carries request-for-change as a value and the companion says so.
+
+#### Section design
+
+Provisional, mirroring the `risk-register` shape its readers already know, and expected to move:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Purpose and Threshold** | yes | What counts as an issue here, stated as one of the three positions above, and what does not go in: risks (the register), defects (the bug tracker), approved changes (change control) |
+| **Priority Scale** | yes | What each priority or impact level means, in words a second person would apply the same way. PM²'s 1-to-5 urgency and impact scales and Connecticut's Material/Non-Material split are the two published shapes |
+| **Issues** | yes | **The load-bearing section.** One row per issue: ID, title and description, type, raised by and date, priority, **one named owner**, next action and target date, status. A table section, so it carries PRIORITY and ROW HINT |
+| **Escalation** | yes | Who handles which priority, and the condition that moves an issue up. **In lean, unlike the risk register**, because every readable source carries escalation and APM defines an issue by a tolerance breach. Published shapes differ (a Yes/No field in PM², a status value in Connecticut, a change of decision-maker in Washington's template, a tolerance in APM's definition), and the guidance offers them rather than picking one |
+| **Review and Ownership** | yes | Who keeps the log, how often it is reviewed, and when it is retired. Sankararajan and Shrivastava in PMI's *PM Network* (2012): "Issues recorded in the issues register should be discussed almost every day" |
+| **Closed Issues** | full only | What each issue's resolution was, **who confirmed it**, and when. PM² defines Resolved and Closed as separate states ("Closed: This status indicates that all work is completed and verified"); Connecticut's template has Resolved and a closing date but no separate Closed state. The mirror of `risk-register`'s "Closed and Materialized Risks" |
+| **Links to Other Logs** | full only | Each issue's origin and hand-offs: the risk that materialized into it, the change request it raised, the decision that closed it. PM²'s Traceability field is the published model |
+
+**Two claims the build must not source to anyone.** The boundary with a bug tracker appears in no source
+read, so it is labelled as this library's judgment. And four failure modes a brief might expect ("dumping
+ground", "duplicates the ticket tracker", "used to assign blame", "never closed") were **not found in any
+verified quotation**. The two that were found are an issue with no owner (ProjectManager.com: "If the issue
+doesn't have an owner, it's likely never to get resolved.") and a log nobody reviews (prince2.wiki: "This
+task often gets neglected when project managers get busy"). The rest are labelled or cut, never given a
+citation found afterwards to justify them.
+
+#### What makes it not a sibling
+
+The companion's Relationships section places it against all three siblings, per the contract:
+
+- **Not the risk register**, and the library has already said why: `risk-register_companion.md` section 8
+  quotes "risk registers track conditions that might happen; issue logs address conditions that have happened".
+  The new companion must agree with that section, not restate it differently. PRINCE2 7's forward-looking
+  definition is the one real challenge to it, and the companion names it.
+- **Not the RAID log.** An issue log stands to RAID's **I** as the risk register stands to its **R**: the
+  deepened, standalone form of one quadrant. `raid-log_guide.md` already draws that system. The one
+  practitioner source read on RAID (Asana) defines its issues the same way a standalone log does, so the
+  choice is organizational, not definitional, and the companion says so.
+- **Not the KPI dashboard.** The dashboard tracks performance against targets; an issue that the dashboard
+  surfaces lands here, and the two do not share rows.
+- **Not an impediment backlog.** The 2020 Scrum Guide prescribes neither: it names impediments only as
+  something removed or surfaced ("Causing the removal of impediments to the Scrum Team's progress"), never as a
+  written artifact. An agile team may need no issue log, and the guide's When NOT to use says so.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `governance-docs` | ADR 0057 |
+| `classification` | `utility` | The only value the contract allows, and correct: maintained, not executed |
+| `sizes_available` | `[lean, full]` **provisional** | The catalog says `S`, but PM² separates the rules for handling issues (its Issue Management Plan, Appendix B.4) from the log itself (B.9), and a full weight carrying closure evidence and traceability is the same split both siblings make. If the research shows the rules do not earn a second weight, `[lean]` is allowed by the contract |
+| `status` | `beta` | Every bundle |
+| `methodology` | `generic` | All three siblings declare it, and the type is defined by PMI, PRINCE2, APM and PM² alike. The catalog's `PMBOK` would misdescribe it |
+| `pairs_with` | `[]` | No pm-skills skill produces or consumes an issue log (checked against pm-skills `origin/main` on 2026-09-23); the contract says members adopt `[]` until one does |
+| `related_templates` | `[raid-log, risk-register, status-report]` **provisional** | The two instruments it deepens and completes, and the report that already cites `ISS-11` |
+| `aliases` | `issue register` kept; **`issue tracker` dropped, recommended** | "Issue tracker" is what a reader looking for Jira-style defect tooling types. Matching them to a project register is the collision the bug-tracker boundary exists to prevent. A build decision, argued in the research log |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `governance-docs` contract `0.2.0`**, which lands with ADR 0057 in the same change as this spec, and
+   its Members line, which records whether the member is specced and built.
+2. **Two siblings owe a Relationships line, and this is not optional.** Contract `0.2.0` obliges every
+   member to state its position against the other members. `risk-register_companion.md` section 8 already
+   does; **`raid-log_companion.md` section 8 and `kpi-dashboard_companion.md` never mention an issue log**,
+   so each gains its position in the same change as the bundle. Whether the promise references in
+   `risk-register` and `raid-log` link to the bundle, and whether `related_templates` gains it, is a build
+   decision; no sibling's position changes.
+3. **This page's Progress table**, and GitHub issue #176.
+
+#### The example
+
+**The Reporting Platform Modernization program's issue log**, which the family's shared-scenario rule makes a
+hard constraint rather than a preference. `ISS-11` (the query-engine lead's departure, raised 2026-06-14,
+target 2026-07-31, owner Marta Reyes, escalated to the steering group for a GBP 45,000 backfill contractor)
+and `ISS-12` (staging view-list load at 620ms against a 500ms budget, raised 2026-07-10, target 2026-07-24,
+owner Dana Osei) already appear across five sibling examples between them (`raid-log`, `risk-register`,
+`status-report`, `kpi-dashboard`, `project-milestone-retrospective`), and the example carries them **exactly
+as recorded there**. Because the scenario keeps them in the RAID log's Issues quadrant, this is the **deepened
+record behind that quadrant**, dated so it can cite the RAID log and the risk register. Any further issue it
+adds must be one the RAID log's working summary could plausibly omit, or one closed before that date.
+
+**This build exercises the chaining-lens fix** that shipped in `v0.12.0` untested: the lens now reads the
+sibling examples its example cites, and five of them carry these two issues.
+
+#### What the build costs
+
+One whole build has run through the committed `build-bundle.js`: `launch-coordination-checklist`, **$14.22
+at API list rates**, every agent on Sonnet
+([report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md)). This build is the
+**second measurement, not a confirmation of a rate**. Run `python tools/gen-bundle-build-report.py --ingest`
+in Phase 6, on the machine that ran the build.

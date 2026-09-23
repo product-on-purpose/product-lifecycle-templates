@@ -154,7 +154,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 31 -->
-<!-- counts: bundles=31, tier1=25, adrs=56 -->
+<!-- counts: bundles=31, tier1=25, adrs=57 -->
 **Thirty-one bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
 ### `delivery-docs` (seven bundles, the family complete)
@@ -326,7 +326,7 @@ All thirty-one bundles currently pass. GitHub Actions runs these on every push t
 
 ### At a glance
 
-<!-- counts: bundles=31, tier1=25, adrs=56, cisteps=32 -->
+<!-- counts: bundles=31, tier1=25, adrs=57, cisteps=32 -->
 
 |  |  |
 |---|---|
@@ -336,7 +336,7 @@ All thirty-one bundles currently pass. GitHub Actions runs these on every push t
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 65 template variants addressable |
-| **Decision records** | 56 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
+| **Decision records** | 57 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
 | **Real usage** | Not published as a count ([ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)). Coverage is not validation, and no page calls a bundle proven |
 | **License** | [Apache-2.0](LICENSE) |
 
