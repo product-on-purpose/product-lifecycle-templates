@@ -8,66 +8,69 @@ Bundle: [`templates/test-summary-report/`](../../templates/test-summary-report/)
 
 | | |
 |---|---|
-| **Weighted total** | **24,650,553** token-equivalents |
+| **Weighted total** | **12,123,040** token-equivalents |
+| **At API list rates** | **$41.22** |
 | Subagents | 15 across 3 workflow run(s) |
-| Assistant turns | 1,097 |
-| Fresh input | 2,230 |
-| Cache write | 6,538,232 |
-| Cache read | 130,834,084 |
-| Output | 678,425 |
+| API responses | 445 |
+| Fresh input | 926 |
+| Cache write | 2,312,270 |
+| Cache read | 58,538,169 |
+| Output | 675,592 |
 | Server web search / fetch | 0 |
 | Attribution confidence | **medium** (9 of 15 agents reliably attributed) |
 | Stages captured | `draft`, `lens`, `research` |
 | Covers a whole build | yes |
 
-Weighted total applies cache_read x0.1, cache_write x1.25, input x1.0, output x5.0. The weights are stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers.
+Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
+
+The list-USD figures price every API response at its own model's Anthropic API list rate as of 2026-09-22 ([source](https://platform.claude.com/docs/en/about-claude/pricing)). They are a yardstick for comparing builds, not a bill: work run under a Claude subscription is not charged per token.
 
 ### By stage
 
-| stage | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `draft` | 5 | 914 | 2,016,164 | 63,666,150 | 263,763 | **10,206,549** |
-| `research` | 6 | 994 | 2,250,125 | 50,296,279 | 237,939 | **9,032,973** |
-| `lens` | 4 | 322 | 2,271,943 | 16,871,655 | 176,723 | **5,411,031** |
+| stage | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `draft` | 5 | 454 | 841,899 | 32,890,614 | 262,935 | **5,656,564** | $28.28 |
+| `research` | 6 | 328 | 731,511 | 17,783,823 | 236,326 | **3,874,729** | $7.75 |
+| `lens` | 4 | 144 | 738,860 | 7,863,732 | 176,331 | **2,591,747** | $5.18 |
 
 ### By model
 
-| resolved model | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `claude-sonnet-5` | 10 | 1,316 | 4,522,068 | 67,167,934 | 414,662 | **14,444,004** |
-| `claude-opus-5` | 5 | 914 | 2,016,164 | 63,666,150 | 263,763 | **10,206,549** |
+| resolved model | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `claude-sonnet-5` | 10 | 472 | 1,470,371 | 25,647,555 | 412,657 | **6,466,476** | $12.93 |
+| `claude-opus-5` | 5 | 454 | 841,899 | 32,890,614 | 262,935 | **5,656,564** | $28.28 |
 
 ### By requested tier
 
-| requested | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `sonnet` | 10 | 1,316 | 4,522,068 | 67,167,934 | 414,662 | **14,444,004** |
-| `(none)` | 5 | 914 | 2,016,164 | 63,666,150 | 263,763 | **10,206,549** |
+| requested | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `sonnet` | 10 | 472 | 1,470,371 | 25,647,555 | 412,657 | **6,466,476** | $12.93 |
+| `(none)` | 5 | 454 | 841,899 | 32,890,614 | 262,935 | **5,656,564** | $28.28 |
 
 ### By deliverable
 
-| deliverable | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `structure` | 1 | 268 | 423,012 | 14,611,868 | 54,743 | **2,263,935** |
-| `relationships-and-tooling` | 1 | 226 | 483,174 | 13,561,557 | 50,523 | **2,212,964** |
-| `companion` | 1 | 154 | 502,393 | 11,726,398 | 82,201 | **2,211,790** |
-| `example` | 1 | 184 | 420,573 | 13,809,710 | 57,907 | **2,196,406** |
-| `meta+history` | 1 | 220 | 401,029 | 13,961,646 | 33,082 | **2,063,081** |
-| `templates` | 1 | 178 | 345,378 | 12,659,808 | 54,995 | **1,972,856** |
-| `citation-support` | 1 | 56 | 1,091,187 | 2,444,819 | 49,860 | **1,857,822** |
-| `guide` | 1 | 178 | 346,791 | 11,508,588 | 35,578 | **1,762,416** |
-| `dod-family-conformance` | 1 | 170 | 264,506 | 9,844,758 | 50,886 | **1,569,708** |
-| `origins-and-admission` | 1 | 156 | 361,856 | 6,833,783 | 41,578 | **1,343,744** |
-| `gap-question` | 1 | 96 | 462,941 | 5,515,201 | 35,857 | **1,309,577** |
-| `methodology-lineage` | 1 | 128 | 314,160 | 5,331,264 | 30,375 | **1,077,829** |
-| `accuracy-teaching-point` | 1 | 42 | 524,815 | 2,219,338 | 35,555 | **1,055,770** |
-| `chaining-consistency` | 1 | 54 | 391,435 | 2,362,740 | 40,422 | **927,732** |
-| `debates-and-status` | 1 | 120 | 204,982 | 4,442,606 | 24,863 | **824,923** |
+| deliverable | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `companion` | 1 | 86 | 215,560 | 6,855,502 | 82,081 | **1,365,491** | $6.83 |
+| `example` | 1 | 88 | 171,591 | 6,838,381 | 57,743 | **1,187,130** | $5.94 |
+| `templates` | 1 | 94 | 164,173 | 6,770,909 | 54,834 | **1,156,571** | $5.78 |
+| `meta+history` | 1 | 100 | 142,574 | 6,761,258 | 32,848 | **1,018,683** | $5.09 |
+| `structure` | 1 | 96 | 140,262 | 5,421,803 | 54,389 | **989,549** | $1.98 |
+| `relationships-and-tooling` | 1 | 80 | 146,619 | 5,057,452 | 50,091 | **939,554** | $1.88 |
+| `guide` | 1 | 86 | 148,001 | 5,664,564 | 35,429 | **928,689** | $4.64 |
+| `dod-family-conformance` | 1 | 86 | 133,772 | 4,899,272 | 50,709 | **910,773** | $1.82 |
+| `citation-support` | 1 | 26 | 271,159 | 1,285,884 | 49,753 | **716,328** | $1.43 |
+| `origins-and-admission` | 1 | 50 | 133,279 | 2,341,393 | 41,312 | **607,348** | $1.21 |
+| `gap-question` | 1 | 34 | 161,743 | 2,201,336 | 35,742 | **601,056** | $1.20 |
+| `chaining-consistency` | 1 | 18 | 187,827 | 796,786 | 40,359 | **516,275** | $1.03 |
+| `accuracy-teaching-point` | 1 | 14 | 146,102 | 881,790 | 35,510 | **448,370** | $0.90 |
+| `methodology-lineage` | 1 | 32 | 85,521 | 1,377,431 | 30,138 | **395,366** | $0.79 |
+| `debates-and-status` | 1 | 36 | 64,087 | 1,384,408 | 24,654 | **341,856** | $0.68 |
 
 ## What this report does not measure
 
 - **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the requested model tier is, and it is reported above.
-- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are reported per session in [`INDEX.md`](../INDEX.md), never billed to a bundle here.
+- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are not billed to a bundle here, and they are not reported anywhere else either.
 - **Exact attribution.** This build predates the labelling convention, so some agents were attributed from their own prompt rather than from a label. See the by-attribution counts in the raw JSON.
 
 Raw data: [`test-summary-report_v0.1.0.json`](test-summary-report_v0.1.0.json).

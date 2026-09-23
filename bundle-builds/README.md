@@ -12,10 +12,9 @@ hand. This file is the only hand-authored page in the directory.
 
 Two documents in this repository stated a per-bundle build cost, and they disagreed:
 `docs/internal/bundle-pipeline.md` said "roughly 0.6-1M tokens" and `.claude/commands/build-bundle.md`
-said "roughly 700K-1M". Neither cited a measurement. Both were wrong by more than an order of
-magnitude, which nobody could have known, because the number that decides whether a bundle is worth
-building was the least evidenced number in a library that refuses to call a single bundle proven
-without evidence.
+said "roughly 700K-1M". Neither cited a measurement. Both were low by roughly 10 to 20 times, which
+nobody could have known, because the number that decides whether a bundle is worth building was the
+least evidenced number in a library that refuses to call a single bundle proven without evidence.
 
 The measurement was always available. The Claude Code harness writes per-agent transcripts with a
 full `usage` block on every turn; nothing had ever read them.
@@ -23,20 +22,40 @@ full `usage` block on every turn; nothing had ever read them.
 ## What a number here means
 
 Each report gives five raw counts - fresh input, cache write, cache read, output, and server-side web
-search or fetch calls - and one **weighted total** in fresh-input-token-equivalents:
+search or fetch calls - one **weighted total** in fresh-input-token-equivalents, and one **list-USD**
+figure:
 
 | Component | Weight |
 |---|---|
 | input | x1.0 |
-| cache write | x1.25 |
+| cache write | x1.25 (x2.0 for a 1-hour write) |
 | cache read | x0.1 |
 | output | x5.0 |
 
-The weights are the published Claude ratios and are printed in every report, so that two reports
-written months apart stay comparable and a reader can re-weight with their own numbers. **Read the
-weighted total, not the raw sum**: cache reads are typically 90 percent or more of the raw token
-events and roughly a tenth of the cost, so a raw sum overstates a build by about an order of
-magnitude in the opposite direction from the old estimates.
+**The weighted total is a unit, not money.** It is the same unit for every model and every report,
+which is what keeps two reports written months apart comparable and lets a reader re-weight with their
+own numbers. It cannot tell you what a build cost, because a weighted token on Opus costs more than one
+on Sonnet, and the standard ratios above are not exact for every model: Opus 5.5 reads cache at 0.05x
+its input price and Fable 5.1 at 0.025x.
+
+**The list-USD figure is what the same work would cost at Anthropic API list rates**, pricing every
+response at its own model's rate. The price table is in the generator, dated, with its source, and is
+printed into every report's JSON. It is a yardstick for comparing builds, not a bill: work run under a
+Claude subscription is not charged per token.
+
+**Read either of those, not the raw sum**: cache reads are typically 90 percent or more of the raw
+token events and about half the weighted cost, so a raw sum overstates a build by about five times.
+
+## How a response is counted
+
+Once. The harness writes one transcript record per content block of a response - thinking, text, each
+tool call - and every one of those records repeats the response's full `usage` block. The generator
+groups records by message id and keeps each field's largest value, which is the response's final
+count. **The first version summed records**, counting each response's cache reads and writes two or
+three times, and every report it wrote overstated its build by 1.9 to 2.6 times. All 22 were
+re-ingested on 2026-09-22 from the same transcripts, with every agent's attribution unchanged; the
+report schema moved to `2.0.0` so no reader can mistake an old count for a new one. The record of that
+correction is in [ADR 0056](../docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).
 
 ## The two words in the index that carry the caveats
 
@@ -62,7 +81,10 @@ magnitude in the opposite direction from the old estimates.
 - **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the requested model
   tier is, and that is reported.
 - **The orchestrator's own spend.** One session interleaves several bundles and other work, so the
-  main loop's tokens cannot honestly be divided per bundle. They are never billed to one here.
+  main loop's tokens cannot honestly be divided per bundle. They are never billed to one here, and
+  they are not reported anywhere else either.
+- **What a build cost the person who ran it.** See the list-USD figure above: it prices the work, it
+  does not bill it.
 - **Anything about quality.** A build that cost more is not a better bundle. These numbers rank
   spend, nothing else. The library's position on what a bundle is worth is unchanged and is stated
   in [`README.md`](../README.md#the-claim-and-what-it-is-worth).
@@ -79,7 +101,11 @@ machine-local, they are not on the CI runner, and they are pruned eventually. So
   cannot re-derive these numbers and does not pretend to.
 
 This is the honest limit of the design, and it is why the report is generated at the end of a build
-rather than whenever someone remembers.
+rather than whenever someone remembers. **It is also why a wrong generator ships wrong reports with
+the gate green**, which is what happened between `v0.11.0` and `v0.11.2`. The correction was possible
+only because the transcripts still existed: re-ingesting from them is the one way to re-derive a
+report. The maintainer's machine now retains them indefinitely, which keeps that route open there; it
+does nothing for CI, which still cannot see them.
 
 ## Usage
 

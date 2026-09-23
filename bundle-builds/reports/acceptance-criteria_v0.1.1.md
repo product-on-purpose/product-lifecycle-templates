@@ -8,13 +8,14 @@ Bundle: [`templates/acceptance-criteria/`](../../templates/acceptance-criteria/)
 
 | | |
 |---|---|
-| **Weighted total** | **8,253,464** token-equivalents |
+| **Weighted total** | **4,364,309** token-equivalents |
+| **At API list rates** | **$9.53** |
 | Subagents | 10 across 2 workflow run(s) |
-| Assistant turns | 498 |
-| Fresh input | 998 |
-| Cache write | 2,112,534 |
-| Cache read | 47,942,835 |
-| Output | 163,503 |
+| API responses | 243 |
+| Fresh input | 488 |
+| Cache write | 1,000,891 |
+| Cache read | 23,031,075 |
+| Output | 161,920 |
 | Server web search / fetch | 0 |
 | Attribution confidence | **high** (3 of 10 agents reliably attributed) |
 | Stages captured | `other` |
@@ -22,37 +23,39 @@ Bundle: [`templates/acceptance-criteria/`](../../templates/acceptance-criteria/)
 
 > **This figure is a floor, not a total.** The stages captured above do not include both research and drafting, so at least one fan-out of this build is missing from the numbers below. The usual cause is a run whose agents wrote no file and whose prompts never named the bundle, which is what the labelling convention now prevents. Read this as "at least this much".
 
-Weighted total applies cache_read x0.1, cache_write x1.25, input x1.0, output x5.0. The weights are stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers.
+Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
+
+The list-USD figures price every API response at its own model's Anthropic API list rate as of 2026-09-22 ([source](https://platform.claude.com/docs/en/about-claude/pricing)). They are a yardstick for comparing builds, not a bill: work run under a Claude subscription is not charged per token.
 
 ### By stage
 
-| stage | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `other` | 10 | 998 | 2,112,534 | 47,942,835 | 163,503 | **8,253,464** |
+| stage | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `other` | 10 | 488 | 1,000,891 | 23,031,075 | 161,920 | **4,364,309** | $9.53 |
 
 ### By model
 
-| resolved model | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `claude-sonnet-5` | 9 | 932 | 1,774,001 | 44,953,183 | 157,713 | **7,502,317** |
-| `claude-opus-5` | 1 | 66 | 338,533 | 2,989,652 | 5,790 | **751,147** |
+| resolved model | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `claude-sonnet-5` | 9 | 466 | 888,538 | 22,033,925 | 156,259 | **4,095,826** | $8.19 |
+| `claude-opus-5` | 1 | 22 | 112,353 | 997,150 | 5,661 | **268,483** | $1.34 |
 
 ### By requested tier
 
-| requested | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `sonnet` | 9 | 932 | 1,774,001 | 44,953,183 | 157,713 | **7,502,317** |
-| `opus` | 1 | 66 | 338,533 | 2,989,652 | 5,790 | **751,147** |
+| requested | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `sonnet` | 9 | 466 | 888,538 | 22,033,925 | 156,259 | **4,095,826** | $8.19 |
+| `opus` | 1 | 22 | 112,353 | 997,150 | 5,661 | **268,483** | $1.34 |
 
 ### By deliverable
 
-| deliverable | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `(none)` | 10 | 998 | 2,112,534 | 47,942,835 | 163,503 | **8,253,464** |
+| deliverable | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `(none)` | 10 | 488 | 1,000,891 | 23,031,075 | 161,920 | **4,364,309** | $9.53 |
 
 ## What this report does not measure
 
 - **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the requested model tier is, and it is reported above.
-- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are reported per session in [`INDEX.md`](../INDEX.md), never billed to a bundle here.
+- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are not billed to a bundle here, and they are not reported anywhere else either.
 
 Raw data: [`acceptance-criteria_v0.1.1.json`](acceptance-criteria_v0.1.1.json).

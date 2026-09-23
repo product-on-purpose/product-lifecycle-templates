@@ -8,13 +8,14 @@ Bundle: [`templates/project-milestone-retrospective/`](../../templates/project-m
 
 | | |
 |---|---|
-| **Weighted total** | **14,066,652** token-equivalents |
+| **Weighted total** | **7,179,861** token-equivalents |
+| **At API list rates** | **$28.97** |
 | Subagents | 9 across 2 workflow run(s) |
-| Assistant turns | 589 |
-| Fresh input | 1,891 |
-| Cache write | 3,490,470 |
-| Cache read | 77,809,190 |
-| Output | 384,151 |
+| API responses | 255 |
+| Fresh input | 1,223 |
+| Cache write | 1,364,151 |
+| Cache read | 35,607,941 |
+| Output | 382,531 |
 | Server web search / fetch | 0 |
 | Attribution confidence | **high** (9 of 9 agents reliably attributed) |
 | Stages captured | `draft`, `lens` |
@@ -22,46 +23,48 @@ Bundle: [`templates/project-milestone-retrospective/`](../../templates/project-m
 
 > **This figure is a floor, not a total.** The stages captured above do not include both research and drafting, so at least one fan-out of this build is missing from the numbers below. The usual cause is a run whose agents wrote no file and whose prompts never named the bundle, which is what the labelling convention now prevents. Read this as "at least this much".
 
-Weighted total applies cache_read x0.1, cache_write x1.25, input x1.0, output x5.0. The weights are stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers.
+Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
+
+The list-USD figures price every API response at its own model's Anthropic API list rate as of 2026-09-22 ([source](https://platform.claude.com/docs/en/about-claude/pricing)). They are a yardstick for comparing builds, not a bill: work run under a Claude subscription is not charged per token.
 
 ### By stage
 
-| stage | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `draft` | 5 | 1,571 | 2,169,175 | 59,266,645 | 230,826 | **9,793,834** |
-| `lens` | 4 | 320 | 1,321,295 | 18,542,545 | 153,325 | **4,272,818** |
+| stage | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `draft` | 5 | 1,077 | 806,839 | 27,121,318 | 229,557 | **4,869,543** | $24.35 |
+| `lens` | 4 | 146 | 557,312 | 8,486,623 | 152,974 | **2,310,318** | $4.62 |
 
 ### By model
 
-| resolved model | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `claude-opus-5` | 5 | 1,571 | 2,169,175 | 59,266,645 | 230,826 | **9,793,834** |
-| `claude-sonnet-5` | 4 | 320 | 1,321,295 | 18,542,545 | 153,325 | **4,272,818** |
+| resolved model | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `claude-opus-5` | 5 | 1,077 | 806,839 | 27,121,318 | 229,557 | **4,869,543** | $24.35 |
+| `claude-sonnet-5` | 4 | 146 | 557,312 | 8,486,623 | 152,974 | **2,310,318** | $4.62 |
 
 ### By requested tier
 
-| requested | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `(none)` | 5 | 1,571 | 2,169,175 | 59,266,645 | 230,826 | **9,793,834** |
-| `sonnet` | 4 | 320 | 1,321,295 | 18,542,545 | 153,325 | **4,272,818** |
+| requested | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `(none)` | 5 | 1,077 | 806,839 | 27,121,318 | 229,557 | **4,869,543** | $24.35 |
+| `sonnet` | 4 | 146 | 557,312 | 8,486,623 | 152,974 | **2,310,318** | $4.62 |
 
 ### By deliverable
 
-| deliverable | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `templates` | 1 | 210 | 534,602 | 16,373,029 | 61,082 | **2,611,175** |
-| `companion` | 1 | 160 | 534,385 | 11,553,149 | 68,828 | **2,167,596** |
-| `example` | 1 | 784 | 474,572 | 12,977,966 | 45,347 | **2,118,531** |
-| `guide` | 1 | 229 | 338,387 | 9,137,825 | 30,183 | **1,487,910** |
-| `meta+history` | 1 | 188 | 287,229 | 9,224,676 | 25,386 | **1,408,622** |
-| `accuracy-teaching-point` | 1 | 134 | 233,581 | 8,117,832 | 30,963 | **1,258,708** |
-| `citation-support` | 1 | 72 | 357,610 | 4,420,652 | 46,554 | **1,121,920** |
-| `chaining-consistency` | 1 | 58 | 448,907 | 3,095,693 | 35,136 | **1,046,441** |
-| `dod-family-conformance` | 1 | 56 | 281,197 | 2,908,368 | 40,672 | **845,749** |
+| deliverable | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `templates` | 1 | 90 | 191,565 | 7,177,624 | 60,859 | **1,261,604** | $6.31 |
+| `companion` | 1 | 82 | 201,434 | 6,109,435 | 68,706 | **1,206,348** | $6.03 |
+| `example` | 1 | 686 | 175,172 | 6,087,716 | 44,953 | **1,053,188** | $5.27 |
+| `accuracy-teaching-point` | 1 | 72 | 128,840 | 4,312,082 | 30,822 | **746,440** | $1.49 |
+| `guide` | 1 | 141 | 131,572 | 3,759,111 | 30,048 | **690,757** | $3.45 |
+| `meta+history` | 1 | 78 | 107,096 | 3,987,432 | 24,991 | **657,646** | $3.29 |
+| `citation-support` | 1 | 34 | 175,850 | 1,992,651 | 46,486 | **651,542** | $1.30 |
+| `dod-family-conformance` | 1 | 24 | 124,613 | 1,253,947 | 40,580 | **484,085** | $0.97 |
+| `chaining-consistency` | 1 | 16 | 128,009 | 927,943 | 35,086 | **428,252** | $0.86 |
 
 ## What this report does not measure
 
 - **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the requested model tier is, and it is reported above.
-- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are reported per session in [`INDEX.md`](../INDEX.md), never billed to a bundle here.
+- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are not billed to a bundle here, and they are not reported anywhere else either.
 
 Raw data: [`project-milestone-retrospective_v0.1.0.json`](project-milestone-retrospective_v0.1.0.json).

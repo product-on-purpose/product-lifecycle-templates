@@ -120,11 +120,15 @@ that ran the build. A bundle is not done because the files exist; it is done whe
 
 ## What this costs
 
-Measured, not estimated: roughly 21M-25M weighted token-equivalents per bundle (test-summary-report
-24,650,553; spike-report 20,743,317; weighted means input x1.0, cache write x1.25, cache read x0.1,
-output x5.0). Source: [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for
-test-summary-report: draft 10,206,549, research 9,032,973, lens 5,411,031 - drafting is the largest
-single stage, research is close behind, and the review is under half of research, not co-dominant with
-it. The brief and the lens scoping exist to hold this down; if a run is far above it, the likely cause is
+Measured, not estimated: roughly 10M-12M weighted token-equivalents per bundle, or $33-$41 at API list
+rates (test-summary-report 12,123,040, $41.22; spike-report 9,881,764, $33.21; weighted means input
+x1.0, cache write x1.25, cache read x0.1, output x5.0). Source:
+[`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for test-summary-report: draft
+5,656,564 ($28.28), research 3,874,729 ($7.75), lens 2,591,747 ($5.18) - drafting is the largest stage by
+both measures, and in dollars it is over two thirds of the build, because its five agents resolved to Opus
+while the other ten resolved to Sonnet. *(Corrected 2026-09-22: this paragraph quoted figures about twice
+these, from a generator that counted each API response two to three times, and said the review was under
+half of research, which the corrected counts do not support.)* The brief and the lens scoping exist to
+hold this down; if a run is far above it, the likely cause is
 lenses reading the whole bundle instead of their own files, or research agents re-reading sources they do
 not own.

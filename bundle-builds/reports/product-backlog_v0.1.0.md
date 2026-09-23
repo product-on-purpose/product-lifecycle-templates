@@ -8,13 +8,14 @@ Bundle: [`templates/product-backlog/`](../../templates/product-backlog/) - histo
 
 | | |
 |---|---|
-| **Weighted total** | **3,246,231** token-equivalents |
+| **Weighted total** | **1,359,383** token-equivalents |
+| **At API list rates** | **$4.08** |
 | Subagents | 9 across 2 workflow run(s) |
-| Assistant turns | 255 |
-| Fresh input | 55,497 |
-| Cache write | 1,441,297 |
-| Cache read | 7,671,977 |
-| Output | 124,383 |
+| API responses | 65 |
+| Fresh input | 12,994 |
+| Cache write | 422,117 |
+| Cache read | 2,092,823 |
+| Output | 121,892 |
 | Server web search / fetch | 0 |
 | Attribution confidence | **medium** (4 of 9 agents reliably attributed) |
 | Stages captured | `other`, `research` |
@@ -22,37 +23,39 @@ Bundle: [`templates/product-backlog/`](../../templates/product-backlog/) - histo
 
 > **This figure is a floor, not a total.** The stages captured above do not include both research and drafting, so at least one fan-out of this build is missing from the numbers below. The usual cause is a run whose agents wrote no file and whose prompts never named the bundle, which is what the labelling convention now prevents. Read this as "at least this much".
 
-Weighted total applies cache_read x0.1, cache_write x1.25, input x1.0, output x5.0. The weights are stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers.
+Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
+
+The list-USD figures price every API response at its own model's Anthropic API list rate as of 2026-09-22 ([source](https://platform.claude.com/docs/en/about-claude/pricing)). They are a yardstick for comparing builds, not a bill: work run under a Claude subscription is not charged per token.
 
 ### By stage
 
-| stage | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `other` | 5 | 41,297 | 981,295 | 4,005,755 | 90,738 | **2,122,181** |
-| `research` | 4 | 14,200 | 460,002 | 3,666,222 | 33,645 | **1,124,050** |
+| stage | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `other` | 5 | 10,287 | 281,124 | 1,254,330 | 89,300 | **933,625** | $2.80 |
+| `research` | 4 | 2,707 | 140,993 | 838,493 | 32,592 | **425,758** | $1.28 |
 
 ### By model
 
-| resolved model | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `claude-sonnet-4-6` | 9 | 55,497 | 1,441,297 | 7,671,977 | 124,383 | **3,246,231** |
+| resolved model | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `claude-sonnet-4-6` | 9 | 12,994 | 422,117 | 2,092,823 | 121,892 | **1,359,383** | $4.08 |
 
 ### By requested tier
 
-| requested | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `sonnet` | 9 | 55,497 | 1,441,297 | 7,671,977 | 124,383 | **3,246,231** |
+| requested | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `sonnet` | 9 | 12,994 | 422,117 | 2,092,823 | 121,892 | **1,359,383** | $4.08 |
 
 ### By deliverable
 
-| deliverable | agents | input | cache write | cache read | output | weighted |
-|---|---:|---:|---:|---:|---:|---:|
-| `(none)` | 9 | 55,497 | 1,441,297 | 7,671,977 | 124,383 | **3,246,231** |
+| deliverable | agents | input | cache write | cache read | output | weighted | list USD |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `(none)` | 9 | 12,994 | 422,117 | 2,092,823 | 121,892 | **1,359,383** | $4.08 |
 
 ## What this report does not measure
 
 - **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the requested model tier is, and it is reported above.
-- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are reported per session in [`INDEX.md`](../INDEX.md), never billed to a bundle here.
+- **The orchestrator's own spend.** One session interleaves several bundles and other work, so the main loop's tokens cannot honestly be divided per bundle. They are not billed to a bundle here, and they are not reported anywhere else either.
 - **Exact attribution.** This build predates the labelling convention, so some agents were attributed from their own prompt rather than from a label. See the by-attribution counts in the raw JSON.
 
 Raw data: [`product-backlog_v0.1.0.json`](product-backlog_v0.1.0.json).

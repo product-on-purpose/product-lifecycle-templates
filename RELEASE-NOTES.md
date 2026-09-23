@@ -8,6 +8,28 @@ Newest first.
 
 ---
 
+## v0.11.2
+
+**The build-cost numbers `v0.11.0` published were about twice the truth, and this release corrects
+them everywhere they appeared.**
+
+The generator counted every API response two or three times: the harness writes each response into
+its transcript as several records, one per content block, and every record repeats the response's
+full usage. Recounted from the same transcripts with nothing else changed, a whole bundle build costs
+about 10M to 12M weighted token-equivalents, not 21M to 25M.
+
+Each report now also says what the work would cost at Anthropic API list rates: **$33 to $41 for a
+whole build**, over two thirds of it drafting, because the drafting agents ran on Opus. The weighted
+unit stays, since it is what keeps two reports comparable, but it was never money, and "what did this
+cost" deserved an answer in dollars.
+
+How it hid is the part worth keeping. The decision record for build cost accepted openly that CI can
+check the index but never the reports behind it. Stating that weakness did not stop it costing
+something: 22 wrong reports shipped with every check green. It was found by pricing the numbers, not
+by a gate.
+
+---
+
 ## v0.11.1
 
 **Nothing user-facing changed shape here.** No template, no bundle, no MCP tool, no install route.
@@ -31,6 +53,9 @@ quietly swapped.
 ---
 
 ## v0.11.0
+
+*Corrected in v0.11.2: the cost figures in this section are about twice the truth. Left as they
+shipped; the correction is in the v0.11.2 section above.*
 
 **This library refuses to call a single bundle proven without evidence, and the number it used to
 decide whether a bundle was worth building had none.**
