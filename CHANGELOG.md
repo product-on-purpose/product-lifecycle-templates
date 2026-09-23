@@ -14,6 +14,65 @@ people who want every change, release notes are for people who want to know what
 
 Nothing yet.
 
+## [0.11.2] - 2026-09-22
+
+A correctness patch. **The build-cost reports `v0.11.0` shipped overstated every build by about two
+times**, and every document that quoted them is corrected. No template, bundle, MCP tool or install
+route changed.
+
+### Added
+
+- **A list-price figure in every build-cost report.** Each report now prices every API response at
+  its own model's Anthropic API list rate, per stage, per model and per deliverable, beside the
+  weighted total. The price table lives in `tools/gen-bundle-build-report.py`, dated 2026-09-22 and
+  sourced to the published pricing page. **The weighted unit could never be money**: a weighted token
+  on Opus costs more than one on Sonnet, and its standard ratios are not exact for Opus 5.5 (cache
+  reads at 0.05x input) or Fable 5.1 (0.025x). A model missing from the table is reported as
+  unpriced, never as free. The figure is a yardstick for comparing builds, not a bill.
+- **One-hour cache writes are weighted and priced at 2x input**, not 1.25x. None of the 735 workflow
+  transcripts on disk contains one, so no report moves; a harness that changed its cache duration
+  would otherwise be under-counted silently.
+
+### Changed
+
+- **Build-report schema `2.0.0`.** Every usage count is per API response rather than per transcript
+  record, so `turns` now means responses. No report remains at `1.0.0`.
+
+### Fixed
+
+- **Every build-cost report counted each API response two to three times.** The harness writes one
+  transcript record per content block of a response - thinking, text, each tool call - and every
+  one of those records repeats the response's whole `usage` block. The generator summed records. In
+  the session that built `test-summary-report` and `spike-report`, 3,243 records carried usage for
+  1,262 responses. Output came out nearly right, because intermediate records carry the streaming
+  count so far; cache reads and writes were counted two or three times. The generator now counts
+  each message id once, and **all 22 reports were re-ingested from the same transcripts with every
+  agent's bundle, stage, model and attribution identical**; only the counts moved, by 1.9 to 2.6
+  times. Corrected, a whole build is **about 10M to 12M weighted token-equivalents, or $33 to $41 at
+  API list rates** (`test-summary-report` 12,123,040 and $41.22; `spike-report` 9,881,764 and
+  $33.21), not 21M to 25M.
+- **Three claims built on those numbers.** The estimates were low by roughly 10 to 20 times, not 20
+  to 30. The review is not "under half of research": corrected, it is 67 percent of research on
+  `test-summary-report` and 54 percent on `spike-report`. And cache reads are about half the weighted
+  cost, not "roughly a tenth", so a raw sum overstates a build by about five times rather than an
+  order of magnitude. **Drafting is still the largest stage**, and in dollars it is over two thirds
+  of each build, because its five agents resolved to Opus while the other ten resolved to Sonnet.
+- **Every report said the orchestrator's own spend "is reported per session in INDEX.md". Nothing
+  reported it.** The sentence, and the generator's docstring that said the same, now say it is not
+  reported.
+- **Corrected in place**: `STATE.md`, `docs/internal/bundle-pipeline.md`, the `/build-bundle`
+  command, `bundle-builds/README.md` and the WP-55 roadmap row.
+  [ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md)
+  carries a dated Correction under [ADR 0011](docs/internal/decisions/0011-madr-v4-at-docs-internal-decisions.md)'s
+  rule, since the numbers were wrong and the decision was not, and its index row says so. The `v0.11.0`
+  release note and its `RELEASE-NOTES.md` section are left as they shipped, each with a dated
+  pointer here.
+
+**Nothing gated any of it.** The CI check verifies the index against the reports and never the
+reports against their transcripts, which is the weakness ADR 0056 accepted in writing. It was found
+by pricing the numbers. The re-ingest was possible only because the transcripts still existed; the
+maintainer's machine now keeps them indefinitely.
+
 ## [0.11.1] - 2026-09-22
 
 A documentation and correctness patch. Nothing user-facing changed shape: no template, no bundle, no
@@ -2269,7 +2328,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.1...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.2...HEAD
+[0.11.2]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.9.0...v0.10.0
