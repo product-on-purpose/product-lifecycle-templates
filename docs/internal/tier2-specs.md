@@ -12,10 +12,11 @@ design task" rather than "a spec-driven execution".
 
 > **A spec here is not a decision to build.** Build order is the maintainer's own preference and need
 > ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)), and nothing on this page
-> schedules anything. What a spec does is make the judgment reviewable *before* roughly 10M to 12M weighted
-> token-equivalents, $33 to $41 at API list rates, are spent executing it
+> schedules anything. What a spec does is make the judgment reviewable *before* roughly 7M to 12M weighted
+> token-equivalents, $14 to $41 at API list rates, are spent executing it
 > ([measured](../../bundle-builds/INDEX.md); this sentence read "700K to 1M tokens" until 2026-09-22, an
-> estimate nobody had measured).
+> estimate nobody had measured, and "$33 to $41" until 2026-09-23, before the first build through the
+> committed workflow cost $14.22).
 
 ## Progress
 
@@ -26,6 +27,8 @@ design task" rather than "a spec-driven execution".
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | **No, and it will not be.** Refused on its own evidence by [ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md): SAFe's own facilitator guide names the outputs as backlog items and no document |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
+| `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | Not yet. Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md) |
+| `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | Not yet. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -575,3 +578,386 @@ build, the first through the committed script, cost **7,108,920 weighted token-e
 list rates** for its subagents ([report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md)),
 below the $20 to $24 projected above, because every stage was smaller than in the measured builds and not
 only drafting. The orchestrator's own spend is not in that figure.
+
+---
+
+### governance-docs (fourth member): the issue log the library already routes to
+
+**`issue-log`** - `governance-docs`, **`classification: utility`**, sizes **`[lean, full]`** (provisional),
+methodology **`generic`**, catalog id `issue-log` (catalog 152), aliases `issue register`, `issue tracker`.
+Catalog owner: PM. Purpose: "Track active issues needing resolution." Contents, per the catalog: "issue,
+owner, priority, status, resolution". `size_variant: S`, `rarity: common`, `tier_inferred: true`,
+`relationships: [RAID]`.
+
+#### Demand: promise debt in two shipped bundles, in the shape that found `test-summary-report`
+
+The library sends readers to this document from both of its sibling registers, and no `future:` tag
+records the promise, which is why no gate has flagged it:
+
+- `risk-register_guide.md` and `raid-log_guide.md` each carry a chooser table with an **Issue log**
+  column ("Register, RAID log, or issue log?" and "RAID log, risk register, or issue log?").
+- `risk-register_template-lean.md` says the register "is NOT an issue log", and both risk-register
+  templates send a materialized risk to "the issue log".
+- `risk-register_guide.md`'s rubric fails a row that "has already happened" ("that belongs in the issue
+  log"), and its anti-patterns say to "move materialized risks to the issue log".
+- `raid-log_guide.md` routes a reader with only realized problems away from RAID: "if that is all you have,
+  an issue log is enough."
+
+**The family is settled by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)**:
+`governance-docs`, `utility`, the fourth member, contract to `0.2.0`. Built on the maintainer's direction of
+2026-09-23 under [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue
+#176, build-candidate 2).
+
+#### Admission: retrieved, and the widest named-source base of any Tier-2 spec on this page
+
+Every quotation below was checked against the source's raw text on 2026-09-23, not against a retrieval
+tool's summary of it. **Four named bodies define the type by name, and one of them publishes it under an
+open licence that permits adaptation.**
+
+| Source | What it says | Licence |
+|---|---|---|
+| European Commission, *PM² Project Management Methodology Guide* v3.1 (Publications Office of the EU, 2023), Appendix B.9 | "The Issue Log is a register (log file) used to capture and maintain information on all issues that are being formally managed" | **CC BY 4.0** |
+| PMI, *Lexicon of Project Management Terms* v5.0 (January 2026) | "issue log. A project artifact where information about issues is recorded and monitored." | PMI, personal use only |
+| PMI, *PMBOK Guide* 6th edition, errata (fifth printing) | "Issue log. Described in Section 4.3.3.3." The Guide itself is sold and was not read | PMI |
+| APM, glossary (read 2026-09-23) | "A log of all issues raised during a project or programme, showing details of each issue, its evaluation, what decisions were made and its current status." | not stated |
+| PRINCE2 2009 glossary, reproduced with AXELOS's permission (stakeholdermap.com) | Issue register: "A register used to capture and maintain information on all of the issues that are being managed formally" | AXELOS, all rights reserved |
+
+Readable templates from four public bodies supply the structure the standards describe: the Northern
+Ireland Civil Service's *Issue Log* (whose own text says it is "based on the PRINCE2 recommended issue log"),
+the Tasmanian Government's *Project Management Guidelines* v7.0 (2011) "Project Issues Register", the
+Connecticut Department of Social Services' *Project Issue Log* v1.13, and Washington State OFM's issue
+tracking template. **None states a reuse licence, so they are structure evidence only, never wording.**
+
+**What was not read, and must be cited as such.** AXELOS's own manuals (PRINCE2 6th edition 2017, PRINCE2
+Agile 2016, PRINCE2 7 2023) are behind a subscription and were not retrieved. ISO 21502:2020 was read only as
+its official free preview: clause 3.11 defines an issue ("event that arises during a project ... requiring
+resolution for the project to proceed") and the contents list "7.9 Issues management", but the clause body is
+past the preview. **ISO frames a practice, not a named document, in everything readable**, and the bundle must
+not claim otherwise. The UK government's Teal Book chapter on issue management refused every raw fetch and is
+unquotable.
+
+**This is the reverse of `test-summary-report`'s position.** That bundle's governing standard was paywalled and
+its section design had to rest on a syllabus. Here the most structurally detailed source is openly licensed,
+so the bundle can adapt PM²'s field definitions with attribution, and the paywalled standards are needed only
+for existence and authority, which the Lexicon and the glossaries already supply.
+
+#### The definition is where the sources disagree, and the template must make a team choose
+
+The sources agree on the risk boundary, and on almost nothing else about what an issue *is*:
+
+- **Anything that has happened and needs someone to act.** PM²: "An issue is any unplanned event related to the
+  project that has already happened and requires the intervention of the Project Manager (PM) or higher
+  management". PMI's Lexicon is broader still: "A current condition or situation that may have an impact on one
+  or more objectives."
+- **Only what breaches a tolerance.** APM's glossary: "A problem that is now breaching, or is about to breach,
+  delegated tolerances for work on a project or programme." Anything inside tolerance is the day's work, not
+  a logged issue.
+- **Anything that could affect the project, forward-looking.** PRINCE2 7 (2023), as PeopleCert describes it:
+  "anything that could affect the project". This is a change from PRINCE2's 2009 glossary ("A relevant event
+  that has happened, was not planned, and requires management action"), and it pulls the concept toward the
+  risk register's territory.
+
+**The consequence for the design:** three incompatible definitions mean two people keeping the same log can
+disagree about whether a row belongs in it at all. So the template's first section carries the team's own
+threshold, stated, with the three positions offered as the choices they are. **That framing is this
+library's**, derived from the disagreement above; no source prescribes it.
+
+#### The change-request fork, which also bears on build-candidate 5
+
+PRINCE2 puts a **request for change inside the issue concept**. As PeopleCert puts it: "Not all issues
+result in changes" and "all changes start as issues"; the Northern Ireland template instructs that "Issues,
+including those raised as changes under the project change control mechanism, should be recorded on the issue
+log." PMI's PMBOK Guide instead **names two separate project documents**, each defined on its own ("The
+change log is used to record all submitted change requests."), and states no rule for where they overlap: it
+answers a different question from PRINCE2's rather than the opposite one. PM² keeps a separate Change Log
+linked from the issue by a Traceability field.
+
+**Proposed resolution:** the issue log records where a change request **came from** and hands it to change
+control, with a cross-reference, and the companion names PRINCE2's alternative plainly. That is compatible with
+both lineages and leaves the boundary with a future `change-request` bundle (GitHub issue #179) to that
+bundle's own research rather than deciding it here. **If the research finds the PRINCE2 lineage dominant in
+practice**, the type field carries request-for-change as a value and the companion says so.
+
+#### Section design
+
+Provisional, mirroring the `risk-register` shape its readers already know, and expected to move:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Purpose and Threshold** | yes | What counts as an issue here, stated as one of the three positions above, and what does not go in: risks (the register), defects (the bug tracker), approved changes (change control) |
+| **Priority Scale** | yes | What each priority or impact level means, in words a second person would apply the same way. PM²'s 1-to-5 urgency and impact scales and Connecticut's Material/Non-Material split are the two published shapes |
+| **Issues** | yes | **The load-bearing section.** One row per issue: ID, title and description, type, raised by and date, priority, **one named owner**, next action and target date, status. A table section, so it carries PRIORITY and ROW HINT |
+| **Escalation** | yes | Who handles which priority, and the condition that moves an issue up. **In lean, unlike the risk register**, because every readable source carries escalation and APM defines an issue by a tolerance breach. Published shapes differ (a Yes/No field in PM², a status value in Connecticut, a change of decision-maker in Washington's template, a tolerance in APM's definition), and the guidance offers them rather than picking one |
+| **Review and Ownership** | yes | Who keeps the log, how often it is reviewed, and when it is retired. Sankararajan and Shrivastava in PMI's *PM Network* (2012): "Issues recorded in the issues register should be discussed almost every day" |
+| **Closed Issues** | full only | What each issue's resolution was, **who confirmed it**, and when. PM² defines Resolved and Closed as separate states ("Closed: This status indicates that all work is completed and verified"); Connecticut's template has Resolved and a closing date but no separate Closed state. The mirror of `risk-register`'s "Closed and Materialized Risks" |
+| **Links to Other Logs** | full only | Each issue's origin and hand-offs: the risk that materialized into it, the change request it raised, the decision that closed it. PM²'s Traceability field is the published model |
+
+**Two claims the build must not source to anyone.** The boundary with a bug tracker appears in no source
+read, so it is labelled as this library's judgment. And four failure modes a brief might expect ("dumping
+ground", "duplicates the ticket tracker", "used to assign blame", "never closed") were **not found in any
+verified quotation**. The two that were found are an issue with no owner (ProjectManager.com: "If the issue
+doesn't have an owner, it's likely never to get resolved.") and a log nobody reviews (prince2.wiki: "This
+task often gets neglected when project managers get busy"). The rest are labelled or cut, never given a
+citation found afterwards to justify them.
+
+#### What makes it not a sibling
+
+The companion's Relationships section places it against all three siblings, per the contract:
+
+- **Not the risk register**, and the library has already said why: `risk-register_companion.md` section 8
+  quotes "risk registers track conditions that might happen; issue logs address conditions that have happened".
+  The new companion must agree with that section, not restate it differently. PRINCE2 7's forward-looking
+  definition is the one real challenge to it, and the companion names it.
+- **Not the RAID log.** An issue log stands to RAID's **I** as the risk register stands to its **R**: the
+  deepened, standalone form of one quadrant. `raid-log_guide.md` already draws that system. The one
+  practitioner source read on RAID (Asana) defines its issues the same way a standalone log does, so the
+  choice is organizational, not definitional, and the companion says so.
+- **Not the KPI dashboard.** The dashboard tracks performance against targets; an issue that the dashboard
+  surfaces lands here, and the two do not share rows.
+- **Not an impediment backlog.** The 2020 Scrum Guide prescribes neither: it names impediments only as
+  something removed or surfaced ("Causing the removal of impediments to the Scrum Team's progress"), never as a
+  written artifact. An agile team may need no issue log, and the guide's When NOT to use says so.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `governance-docs` | ADR 0057 |
+| `classification` | `utility` | The only value the contract allows, and correct: maintained, not executed |
+| `sizes_available` | `[lean, full]` **provisional** | The catalog says `S`, but PM² separates the rules for handling issues (its Issue Management Plan, Appendix B.4) from the log itself (B.9), and a full weight carrying closure evidence and traceability is the same split both siblings make. If the research shows the rules do not earn a second weight, `[lean]` is allowed by the contract |
+| `status` | `beta` | Every bundle |
+| `methodology` | `generic` | All three siblings declare it, and the type is defined by PMI, PRINCE2, APM and PM² alike. The catalog's `PMBOK` would misdescribe it |
+| `pairs_with` | `[]` | No pm-skills skill produces or consumes an issue log (checked against pm-skills `origin/main` on 2026-09-23); the contract says members adopt `[]` until one does |
+| `related_templates` | `[raid-log, risk-register, status-report]` **provisional** | The two instruments it deepens and completes, and the report that already cites `ISS-11` |
+| `aliases` | `issue register` kept; **`issue tracker` dropped, recommended** | "Issue tracker" is what a reader looking for Jira-style defect tooling types. Matching them to a project register is the collision the bug-tracker boundary exists to prevent. A build decision, argued in the research log |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `governance-docs` contract `0.2.0`**, which lands with ADR 0057 in the same change as this spec, and
+   its Members line, which records whether the member is specced and built.
+2. **The promise references in `risk-register` and `raid-log`** can link to the bundle. Whether they do, and
+   whether each sibling's `related_templates` gains it, is a build decision. Neither sibling's position changes.
+3. **This page's Progress table**, and GitHub issue #176.
+
+#### The example
+
+**The Reporting Platform Modernization program's issue log**, which the family's shared-scenario rule makes a
+hard constraint rather than a preference. `ISS-11` (the query-engine lead's departure, raised 2026-06-14,
+target 2026-07-31, owner Marta Reyes, escalated to the steering group for a GBP 45,000 backfill contractor)
+and `ISS-12` (staging view-list load at 620ms against a 500ms budget, raised 2026-07-10, target 2026-07-24,
+owner Dana Osei) already appear across five sibling examples between them (`raid-log`, `risk-register`,
+`status-report`, `kpi-dashboard`, `project-milestone-retrospective`), and the example carries them **exactly
+as recorded there**. Because the scenario keeps them in the RAID log's Issues quadrant, this is the **deepened
+record behind that quadrant**, dated so it can cite the RAID log and the risk register. Any further issue it
+adds must be one the RAID log's working summary could plausibly omit, or one closed before that date.
+
+**This build exercises the chaining-lens fix** that shipped in `v0.12.0` untested: the lens now reads the
+sibling examples its example cites, and five of them carry these two issues.
+
+#### What the build costs
+
+One whole build has run through the committed `build-bundle.js`: `launch-coordination-checklist`, **$14.22
+at API list rates**, every agent on Sonnet
+([report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md)). This build is the
+**second measurement, not a confirmation of a rate**. Run `python tools/gen-bundle-build-report.py --ingest`
+in Phase 6, on the machine that ran the build.
+
+---
+
+### standing-standards (fourth member): the definition of ready, a type this library has argued against
+
+**`definition-of-ready`** - `standing-standards`, **`classification: foundation`**, sizes **`[lean]`**
+(single-size, provisional), methodology **`agile-scrum`**, catalog id `definition-of-ready` (catalog 40),
+alias `DoR`. Catalog owner: Scrum Team. Purpose: "Criteria a backlog item must meet to enter a sprint."
+`category: Requirements`, `formality: lightweight`, `rarity: occasional`, `size_variant: S`,
+`tier_inferred: true`, `relationships: [Sprint Backlog]`.
+
+#### Demand, and the library's own position against the easy version
+
+The `standing-standards` contract names this type first among its likely future members, and twelve files
+across two bundles mention it (`definition-of-done` and `product-backlog`, counted case-insensitively on
+2026-09-23; GitHub issue #178's "8 files" counted exact-case matches). **Almost every mention draws a
+boundary rather than making a promise**, and three of them argue against the document:
+
+- `definition-of-done_guide.md`: "unlike the DoD, whether a DoR should exist at all is a real, named
+  disagreement in the field".
+- `product-backlog_guide.md` names "The rigid Definition of Ready" as an anti-pattern, and both
+  `product-backlog` templates carry the same TRAP.
+- `definition-of-done_example.md`: "**Not a Definition of Ready.** The squad does not currently keep one."
+
+**So this is a bundle for a type its own siblings warn about**, which is the `spike-report` shape: that
+bundle's canon argued against writing one, and it shipped teaching the dispute. It is built on the
+maintainer's direction of 2026-09-23 under
+[ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue #178,
+build-candidate 4). **The family and classification are settled by
+[ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md).**
+
+#### Admission: met at the practitioner and pattern tier, and declined by both standards that could have met it
+
+Every quotation below was checked against the source's raw text on 2026-09-23.
+
+| Source | What it says | Licence |
+|---|---|---|
+| Richard Kronfält, "Ready-ready: the Definition of Ready for User Stories going into sprint planning", *Scrum FTW* blog, 1 October 2008 | "So, the definition of Ready should be;" followed by a list. The earliest verified instance | none stated |
+| The Scrum Patterns Group, "Definition of Ready" pattern, scrumbook.org (also in *A Scrum Book*, Pragmatic Bookshelf, 2019) | "Richard Kronfält apparently published the first formal description of Definition of Ready in 2008" | all rights reserved |
+| Microsoft, *Code-With Engineering Playbook*, "Definition of Ready" | "Definition of Ready is the agreement made by the scrum team around how complete a user story should be in order to be selected as candidate for estimation in the sprint planning" | **CC BY 4.0** (the repository's licence file) |
+| Agile Alliance, glossary | a DoR "provides the team with an explicit agreement allowing it to "push back" on accepting ill-defined features" | all rights reserved |
+| Scrum Alliance, "Definition of Ready vs. Definition of Done" | "While the definition of done (DoD) is part of scrum, a definition of ready (DoR) is an external and optional tool" | not stated |
+
+**Two sources that could have admitted it decline to.** The 2020 Scrum Guide never uses the phrase
+"Definition of Ready"; its nearest sentence is "Product Backlog items that can be Done by the Scrum Team
+within one Sprint are deemed ready for selection in a Sprint Planning event." And the Scaled Agile Framework's
+glossary defines the Definition of Done and has no entry for a Definition of Ready. Two Professional Scrum
+Trainers writing on Scrum.org treat the silence as meaningful rather than an oversight: Barry Overeem (2016),
+"So why isn't the Definition of Ready described in the Scrum Guide? Because it is. However not as a checklist
+but as an activity: backlog refinement."; Joanna Płaskonka (2023), "Is Definition of Ready obligatory in
+Scrum?" and "The answer is short: no". Both are individually authored posts, not Scrum.org policy, and are
+cited that way. Both pages refuse plain HTTP clients and were read through a rendering browser.
+
+**ADR 0030's test is met several times over** on
+[ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)'s one-source reading. One research
+dimension returned "weak" by quietly substituting a stricter bar, a published fillable template, for the
+rule's actual wording; its completeness critic caught the substitution, and it is recorded here so the
+research log does not repeat it. **What the tier does oblige is honesty about the tier.** This family's
+named citation hazard is "folklore presented as standard", and "a Definition of Ready is part of Scrum" is
+that folklore exactly. The companion says in plain words that neither Scrum's nor SAFe's own text names it.
+
+**One correction the retrieval made, recorded because the brief was wrong.** The "ready-ready" coinage is in
+Jakobsen and Sutherland, "Scrum and CMMI - Going from Good to Great: Are you ready-ready to be done-done?":
+"Systematic introduced the term ready-ready, to express that work from the Product Backlog has been
+sufficiently elaborated to be allocated to a sprint for implementation." It is **not** in the earlier
+Sutherland, Jakobsen and Johnson paper "Scrum and CMMI Level 5: The Magic Potion for Code Warriors", where
+the string does not occur. The later paper's venue and year (Agile 2009) come from its filename and
+bibliographies, not its text, and are cited that way.
+
+#### The dispute, which the bundle carries rather than settles
+
+Three positions, each sourced from raw text:
+
+- **Against a rigid one.** Mountain Goat Software, Mike Cohn's company: "If these rules include saying that
+  something must be 100 percent finished before a story can be brought into an iteration, the definition of
+  ready becomes a huge step towards a sequential, stage-gate approach." Its remedy is not abolition: "Favor
+  guidelines rather than rules on your Definition of Ready."
+- **Against having one.** Allan Kelly (2017): a DoR "reduces agility because it breaks up process flow,
+  assumes greater role specific responsibilities, introduces more wait states (delay) and potentially
+  undermines business-value based prioritisation". His alternative for an item that is top priority and not
+  ready: "then the first task is to make it ready". Stefan Roock, quoted by InfoQ (2014): "the Definition of
+  Ready should be shrinking over time and not growing". Overeem, on Scrum.org: "Instead of using the
+  Definition of Ready as a sequential, phase-gate checklist I prefer the activity of Backlog Refinement."
+- **For one, kept small and shared.** Roman Pichler: "the definition of ready (DOR) is jointly owned by the
+  product owner and the team", and "I recommend starting with a good-enough DOR and adapting it in the sprint
+  retrospectives if and when necessary". Big Agile (2025) names the middle position outright: "a clarity
+  compass, not a compliance document".
+
+**The bundle's position is the library's usual one for a contested type: it teaches the dispute and does
+not recommend a side** (the `definition-of-done` companion's section 6.1 takes the same stance). Concretely,
+the template teaches a DoR **written as guidelines**, the stage-gate failure is the TRAP of its load-bearing
+section, and the guide's When NOT to use is unusually prominent: the `definition-of-done` example's squad
+keeps no DoR, and that is presented as a legitimate end state, not a gap.
+
+#### The design question: `foundation` or `tool`, and the twist in the failure mode
+
+The contract's cut is "a standard you judge against" (`foundation`) against "an instrument you execute,
+usually under time pressure and often by someone who did not write it" (`tool`). **A DoR is the first.** It is
+agreed by the team that applies it, consulted at refinement and sprint planning to judge whether an item is
+ready, and changed deliberately and rarely. Nobody executes it under time pressure. It is the entry-side
+mirror of `definition-of-done`, which is `foundation`. ADR 0058 records the counter-argument (it operates as a
+checklist at a moment, which sounds like a `tool`) and why it does not carry.
+
+**The twist, and the sharpest teaching point the family gains.** The contract names `foundation`'s failure
+mode: "being agreed once and never honoured". **A DoR's documented failure is the opposite: being honoured
+too hard**, enforced as a gate on items the team would rightly have taken. So the Review Trigger that section
+4 of the contract mandates must fire **in both directions**: when an item the DoR blocked turns out to have
+been ready enough, and when an item it let through stalls on something it should have caught. Microsoft's
+playbook supplies the second direction in its own words ("Update or change the definition of ready anytime
+the scrum team observes that there are missing information in the user stories that recurrently impacts the
+planning"); **the first direction is this library's own contribution**, derived from the dispute above, and is
+labelled that way.
+
+#### Sizes: single-size, because the research argues against a second weight
+
+The contract allows `[lean]` "where the type's own research shows it does not earn a second weight", and this
+is the first member where the research argues it directly. Every source that is not flatly against a DoR
+wants it shorter, not longer: Roock's "The smaller the better", Pichler's "good-enough DOR", Cohn's
+guidelines over rules. A `full` variant that added criteria would model the documented failure. The catalog
+agrees (`size_variant: S`).
+
+**The one thing a second weight could honestly carry** is readiness above the story: Applied Frameworks'
+"A Definition of Ready for PI Planning" (2022) is a published feature-level DoR, and it is a consultancy's
+extension, not a SAFe artifact. **If the build's research finds published DoRs that genuinely operate at two
+levels in one document**, a full variant carrying "Readiness by Level" is the natural shape, mirroring
+`definition-of-done`'s "Criteria by Level". Otherwise the companion describes feature-level readiness and the
+template does not carry it.
+
+#### Section design
+
+Provisional, derived from the sources' shapes and the contract, and expected to move:
+
+| Section | What it carries |
+|---|---|
+| **Why We Keep One** | The specific problem this team's DoR exists to fix, and the condition under which the team would drop it. A DoR that cannot say why it exists has no answer to Kelly. **This section is the library's own contribution**, the dispute carried into the template itself |
+| **Scope and Ownership** | Which work items it applies to, at which moment (Microsoft ties the checklist to refinement; the Scrum Guide's "ready for selection" is sprint planning), and who owns it: jointly the product owner and the team, per Pichler and Atlassian ("created for the team, by the team") |
+| **Readiness Criteria** | **The load-bearing section.** Each criterion as a guideline: the question it asks, the evidence that answers it, and whether a miss stops the item or starts a conversation. A table section, so it carries PRIORITY and ROW HINT. The TRAP is Cohn's: any criterion phrased as "100 percent" before entry |
+| **When an Item Is Not Ready** | What happens to a top-priority item that misses: Kelly's "the first task is to make it ready", or an explicit exception. The pressure valve that keeps a DoR from becoming a gate, and the mirror of `definition-of-done`'s "When Work Does Not Meet It" |
+| **Review Trigger** | **Contract-mandated** (section 4), and bidirectional, as argued above |
+
+**Two structural sources, and neither may be restyled.** INVEST (Bill Wake, 2003) is the usual content of the
+criteria, and Wake's article never uses the term "Definition of Ready", so it is cited as INVEST's origin
+only. Pichler's "clear, feasible and testable" is a competing three-criterion shape. The template offers the
+question each criterion asks, not either list; Microsoft's CC BY 4.0 playbook is the only source whose wording
+may be adapted.
+
+#### What makes it not a sibling
+
+- **Not the `definition-of-done`.** Entry against exit. Scrum Alliance: "The definition of done refers to the
+  PBI itself, while the definition of ready often refers to externalities". Kelly collapses the two in a flow
+  system ("The definition of done at the end of one activity is the definition of ready for the next"), and
+  the companion reports that as a real position.
+- **Not acceptance criteria.** Scrum Alliance: "The definition of done applies to all work in the backlog.
+  Contrast this with acceptance criteria, which are unique to each PBI". A DoR applies across items and may
+  require that acceptance criteria exist; it never states them.
+- **Not backlog refinement.** The Scrum Guide: "Product Backlog refinement is the act of breaking down and
+  further defining Product Backlog items into smaller more precise items." Refinement is the activity; the DoR
+  is what it aims at.
+- **Not a stage gate.** Cooper's Stage-Gate model decides "Go, Kill, Hold, or Recycle"; a DoR with those
+  outcomes has become one.
+- **Not ISTQB entry criteria**, which serve the same function from a testing lineage: "The set of generic and
+  specific conditions for permitting a process to go forward with a defined task". No source bridges the two
+  vocabularies, and the companion says so rather than bridging them itself.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `standing-standards` | ADR 0058; the contract's own forecast |
+| `classification` | `foundation` | ADR 0058: a standard items are judged against, the mirror of `definition-of-done` |
+| `sizes_available` | `[lean]` **provisional** | Argued above. The contract permits it on research grounds |
+| `status` | `beta` | Every bundle |
+| `methodology` | `agile-scrum` | `definition-of-done`'s value. The catalog says `Scrum/Kanban`, but the sharpest critics write from flow and Kanban practice, so claiming Kanban lineage would misdescribe the type |
+| `pairs_with` | `[]` | The only candidate is pm-skills `iterate-refinement-notes`, whose description mentions stories moving to "ready-for-sprint" but which never mentions a definition of ready (checked on pm-skills `origin/main`, 2026-09-23). Pairing would claim something the skill does not say |
+| `related_templates` | `[definition-of-done, product-backlog, acceptance-criteria, sprint-backlog]` **provisional** | The exit-side sibling, the backlog it gates, the per-item criteria it may require, and the sprint it admits items to |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `standing-standards` contract's Members line and forecast**, which move with ADR 0058 in the same
+   change as this spec. The forecast entry moves to Members rather than being deleted, as the contract's own
+   change note did for the launch checklist.
+2. **`definition-of-done` and `product-backlog` may link to the bundle**, a build decision. Neither changes its
+   position: both keep reporting the dispute, and the DoR bundle agrees with them.
+3. **This page's Progress table**, and GitHub issue #178.
+
+#### The example
+
+**The Reporting Squad's first Definition of Ready**, chained onto a sentence the family already wrote:
+`definition-of-done_example.md` says that "if the squad adopts a Definition of Ready later, it will gate entry
+into the sprint, not exit from it, and will not replace anything above." The example makes that sentence true
+rather than contradicting it, so it is dated after that example's last update (2026-07-24), and whatever
+prompted the squad to adopt one must agree with the Saved Views items' recorded states in the `product-backlog`
+and `sprint-backlog` examples. **It must be short**, because a long example would teach the anti-pattern the
+bundle warns against, and it must not reproduce Microsoft's, Atlassian's or the ScrumPLoP pattern's lists.
+
+#### What the build costs
+
+The third build through the committed `build-bundle.js`, after `launch-coordination-checklist` ($14.22)
+and `issue-log`. A single-size bundle writes one template instead of two, so drafting should be smaller; the
+report will say whether it was.

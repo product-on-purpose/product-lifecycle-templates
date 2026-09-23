@@ -3,21 +3,23 @@
 Status: adopted 2026-07-22 ([ADR 0024](../decisions/0024-adopt-governance-docs-family-contract.md))
 Applies to: every bundle declaring `family: governance-docs` in its meta
 Members at adoption: none built yet (risk-register, raid-log, kpi-dashboard are the planned members)
+Members: risk-register, raid-log, kpi-dashboard, issue-log ([ADR 0057](../decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md), assigned and specced 2026-09-23 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
 Modeled on: the delivery-docs and decision-docs family contracts, on the pm-skills family-contract pattern
 Axis: `classification` (this is the first classification-axis family; see [ADR 0015](../decisions/0015-second-taxonomy-axis-phase-xor-classification.md) and [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
+Version: 0.2.0 (changes to this contract require a decision record; see the change note at the end)
 
 ## 1. Membership
 
 A bundle belongs to this family when its document type is a **standing governance instrument**: a continuously-maintained register, log, or dashboard that a product or program manager uses to track risk, open items, or performance **across the whole lifecycle**, not as the output of one phase. This is why the family is `classification`-axis, not `phase`-axis: none of its members is produced at a single lifecycle stage and then finished. They are set up once and maintained indefinitely, which is what `classification: utility` means (a standing operational instrument, distinct from a `foundation` artifact that underpins the work and a `tool` that is executed procedurally).
 
-The three planned roles are distinct but related, and their relationship is the family's teaching value:
+The four roles are distinct but related, and their relationship is the family's teaching value:
 
 - a **risk register** tracks risks alone (likelihood, impact, owner, response, status);
 - a **RAID log** consolidates Risks, Assumptions, Issues, and Dependencies, so its Risks column is a superset-container around the risk register's whole subject;
-- a **KPI dashboard** (as a document that *defines* the dashboard, not a live one) tracks performance against targets, a different subject from risk and open items.
+- a **KPI dashboard** (as a document that *defines* the dashboard, not a live one) tracks performance against targets, a different subject from risk and open items;
+- an **issue log** tracks problems that have already happened, so it stands to the RAID log's Issues column exactly as the risk register stands to its Risks column: the deepened, standalone form of one quadrant (added in 0.2.0, [ADR 0057](../decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)).
 
-Each member must state its position against the other two in its companion's Relationships section, because this contract's position is that these instruments most often fail by collapsing into each other rather than by staying separate: one bloated document standing in for both risk register and RAID log, or a dashboard that starts carrying risk content that belongs in the register instead. A candidate type whose job is not to stand up and maintain a governance instrument across the lifecycle belongs in another family. An event-driven or phase-bound artifact (an incident postmortem, a business case) does not, however operational it feels.
+Each member must state its position against the other members in its companion's Relationships section, because this contract's position is that these instruments most often fail by collapsing into each other rather than by staying separate: one bloated document standing in for both risk register and RAID log, or a dashboard that starts carrying risk content that belongs in the register instead. A candidate type whose job is not to stand up and maintain a governance instrument across the lifecycle belongs in another family. An event-driven or phase-bound artifact (an incident postmortem, a business case) does not, however operational it feels.
 
 ## 2. Required catalog metadata and allowed values
 
@@ -57,6 +59,15 @@ Template body (headings, placeholders, tables) is the reusable shape; guidance l
 The gate enforces section 2 and the mechanical part of section 3. **Family check letter K** validates section 2's family-specific values for every declared member (`classification: utility`, a `beta`/`stable` status, and a `[lean, full]` or `[lean]` size shape) and that this contract file resolves; methodology is descriptive and is not gated (see section 2). This is the first family to be gated on the `classification` axis rather than `phase`; the check reads whichever axis the contract names ([ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md)), so a member that declares `phase: measure` instead of `classification: utility` fails check K with a message naming the axis it should have used. Of section 3's obligations, the eight files (3.1), nesting (3.2), citations (3.6), and the clean example (3.7) are enforced by checks A, C, E, and D respectively; guidance comments (3.3), the companion skeleton (3.4), and guide shape (3.5) have no mechanical check yet and are review obligations at authoring time. Sections 4 and 5 are likewise review obligations at authoring time and audit obligations thereafter. A member failing this contract is not "in the family with issues"; it is out of the family until green, and the catalog count reflects that.
 
 ## Change note
+
+**0.2.0, 2026-09-23: a fourth member.** `issue-log` joins as `classification: utility`, by
+[ADR 0057](../decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md). The membership test
+already named the type ("a continuously-maintained register, log, or dashboard ... to track risk, open
+items, or performance"); what needed a record was that [ADR 0024](../decisions/0024-adopt-governance-docs-family-contract.md)
+was written for three members and contains no fourth-member clause, the gap
+[ADR 0050](../decisions/0050-qa-docs-admits-a-fourth-member.md) settled the same way for `qa-docs`. The
+roles list gains the issue log, and "the other two" becomes "the other members". **No obligation changed**,
+and check K's registry entry needs no edit, because it gates values rather than a member count.
 
 **2026-08-07, research confirmation and correction**, per
 [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). This contract's assertions about the world were tested against the research logs of the members
