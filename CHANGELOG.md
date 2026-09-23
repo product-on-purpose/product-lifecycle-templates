@@ -47,6 +47,10 @@ people who want every change, release notes are for people who want to know what
   found six places where the new example disagreed with sibling examples, including a risk register that
   scores compliance where the draft said quality, and an escalation "two-week line" used with a different
   meaning from the RAID log's.
+- **Found and not fixed here: two sibling examples disagree about one figure.** The review's chaining lens
+  found that `raid-log`'s example calls ISS-12's 620ms a staging measurement while `kpi-dashboard`'s example
+  reports 620ms as a production figure and excludes staging numbers. The new `issue-log` example follows the
+  RAID log and claims neither is the other; the two older examples are left for a separate change.
 - **`STATE.md`'s per-family bundle lists named 27 of the 31 bundles**, omitting `status-report`,
   `spike-report`, `project-milestone-retrospective` and `test-summary-report`; they now name all 32.
 - **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 57 with the rest.

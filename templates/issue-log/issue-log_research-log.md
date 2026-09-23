@@ -193,6 +193,12 @@ closed before 2026-07-20 and must not contradict a sibling.
 
 **The pairing.** `pairs_with: []`: no pm-skills skill produces or consumes an issue log.
 
+**The aliases.** The catalog lists `issue register` and `issue tracker`. Only `issue register` is kept: [4]
+treats it as a synonym and [8] uses it as PRINCE2's name for the artifact. `issue tracker` is dropped because
+it is what a reader looking for defect-tracking software types, and [33] uses "issue tracking system" for a
+category of software tool, not this document; matching those readers to a project register is the collision the
+bug-tracker boundary above exists to prevent.
+
 ---
 
 ## Sources
