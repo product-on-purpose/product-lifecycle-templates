@@ -12,7 +12,44 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- **[`launch-coordination-checklist`](templates/launch-coordination-checklist/), the 31st bundle** and the
+  third `standing-standards` member, `classification: tool`, by
+  [ADR 0053](docs/internal/decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md).
+  **Admitted on a retrieval rather than a prior**: Appendix E of Google's *Site Reliability Engineering* is
+  titled "Launch Coordination Checklist", the catalog name verbatim. **It teaches the practice around that
+  checklist rather than the checklist itself**, because the appendix is "circa 2005" and licensed CC BY-NC-ND
+  4.0, so no template may adapt its items. The family's own membership test, which its contract called
+  ambiguous for this type, is settled by the type's origin: "In 3.5 years, one LCE ran 350 launches through
+  the LCE Checklist." Pairs with pm-skills `deliver-launch-checklist`, whose per-launch copy is what this
+  standing checklist supplies.
+- **Every quotation in the research log was checked against the source's raw text**, not against the
+  retrieval tool's summary. **19 of 193 were not in their sources and were removed**, including one that
+  invented a patient's identity inside quotation marks and one attributed to the paired pm-skills skill that
+  the skill does not contain.
+- **The first build-cost report at `high` confidence covering a whole build**: 7,108,920 weighted
+  token-equivalents, **$14.22 at API list rates**, all 15 agents on Sonnet.
+
+### Fixed
+
+- **Why the measured builds drafted on Opus is answered, by none of the three causes suspected.** Those
+  builds never ran `.claude/workflows/build-bundle.js`; the drafting scripts they did run were written per
+  bundle and pinned no model. Recorded in
+  [ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md)
+  and [`tier2-specs.md`](docs/internal/tier2-specs.md).
+- **The build workflow sent its templates agent to `buildout-specs.md` for every type**, which holds Tier-1
+  specs only, so a Tier-2 build's section list came from nowhere. It now names `tier2-specs.md` for a Tier-2
+  type, the hole that file's own preamble described.
+- **The four-lens review's 11 findings, all verified and applied**: a companion quotation whose words had
+  been changed inside the quotation marks, an unsourced date span, rubric row titles written as sentences,
+  and a worked example that reused the distinguishing details of four of its own template's GOOD
+  illustrations.
+- **Prose counts that had drifted beside correct markers**, several from builds before this one:
+  `what-the-gate-proves.md` quoted 94 assertions against a marker of 104 and 20 research logs against 25;
+  `CONTRIBUTING.md` quoted 20 logs and 796 sources; `STATE.md`'s gate row quoted four stale self-test counts;
+  and `library.json` said "26 of the 27" bundles ship a full variant, a figure from the 27-bundle library.
+- `release-notes` stops promising `future:launch-coordination-checklist`; the promise is kept.
 
 ## [0.11.2] - 2026-09-22
 

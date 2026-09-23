@@ -5,7 +5,7 @@ Registered in check K, which now gates `classification: foundation or tool` on e
 **Axis:** `classification`, **a set**: `foundation` or `tool`.
 **Members:** `definition-of-done`, `runbook`, `launch-coordination-checklist`
 ([ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md),
-assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built: no).
+assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-22).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.

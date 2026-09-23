@@ -164,6 +164,13 @@ A report that cannot say which of these it is would be worth less than no report
   agents, yet the measured 2026-09-14 build shows those agents resolving to `claude-opus-5` while
   research and lens, pinned identically, resolved to sonnet. Their sidecars carry no model key at all.
   Not established, and recorded here rather than left to be rediscovered.
+  **Resolved 2026-09-22, and by none of the three causes then suspected.** The measured builds never ran
+  `build-bundle.js`. The workflow scripts that session actually ran are saved beside its transcripts, and
+  its drafting scripts (`tsr-draft`, `spike-report-draft`, `pmr-draft`) were written per bundle inside the
+  session and pin no model on any drafting agent, while its research and review scripts do; drafting
+  inherited the session's model. The first build through the committed script,
+  `launch-coordination-checklist`, resolved every drafting agent to `claude-sonnet-5` as pinned, and its
+  report is the first at `high` confidence covering a whole build.
 
 ## More Information
 

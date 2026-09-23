@@ -77,6 +77,7 @@ tree without the gate noticing.
 
 - [`definition-of-done/`](definition-of-done/) - Definition of Done. Axis classification foundation; ships lean/full.
 - [`runbook/`](runbook/) - Runbook. Axis classification tool; ships lean/full.
+- [`launch-coordination-checklist/`](launch-coordination-checklist/) - Launch Coordination Checklist. Axis classification tool; ships lean/full.
 
 **`strategy-docs`**
 

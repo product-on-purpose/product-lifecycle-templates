@@ -39,7 +39,8 @@ You are building one bundle for `product-lifecycle-templates`: eight files, gate
 | [`docs/internal/bundle-pipeline.md`](../../docs/internal/bundle-pipeline.md) | The six-phase runbook, the gotchas, the check E snippet, model routing |
 | [`docs/internal/review-standards.md`](../../docs/internal/review-standards.md) | What CI already proves, the seven defect classes it cannot, the standards, the lens scoping |
 
-Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-specs.md) and its family contract in
+Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-specs.md) (a Tier-1 type) or
+[`tier2-specs.md`](../../docs/internal/tier2-specs.md) (a Tier-2 type) and its family contract in
 `docs/internal/contracts/<family>.md`. That is your whole reading list.
 
 ## Before you start

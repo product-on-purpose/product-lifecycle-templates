@@ -260,7 +260,9 @@ ${HOUSE}
 Read ${b}_companion.md, which you must stay consistent with. Its teaching points are:
 ${(companion?.teaching_points || []).map((t) => `  - ${t}`).join('\n')}
 
-The build spec's section list for this type is in docs/internal/buildout-specs.md. Follow it.
+The build spec's section list for this type is in docs/internal/buildout-specs.md for a Tier-1 type, or in
+docs/internal/tier2-specs.md for a Tier-2 type. Follow it, and where the companion's research has moved a
+section, follow the companion and say so in your return.
 
 ONE AGENT WRITES BOTH because of the nesting rule, which a split would break: the lean variant's H2
 sections must be a STRICT ORDERED SUBSET of the full variant's, with shared sections keeping the same

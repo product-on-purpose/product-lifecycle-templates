@@ -17,8 +17,8 @@ metadata:
 a blank template to a document. This one goes from a document someone already wrote to a report card
 against that document type's own researched rubric.
 
-<!-- counts: bundles=30, tier1=25 -->
-The rubrics come from the same 30 bundles, covering all 25 templatable Tier-1 document types plus five Tier-2 types.
+<!-- counts: bundles=31, tier1=25 -->
+The rubrics come from the same 31 bundles, covering all 25 templatable Tier-1 document types plus six Tier-2 types.
 
 Nobody has to adopt anything to use this. That is the point: a critique of a document that already exists
 costs the reader nothing but the reading.

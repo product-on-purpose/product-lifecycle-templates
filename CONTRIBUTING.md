@@ -173,11 +173,11 @@ actually read. The discipline, in full, is in
 - A source that is paywalled, blocked, or a physical book that was not retrieved says so **in the
   reference itself**, rather than being presented as if it had been read.
 
-<!-- counts: logsgated=24 -->
-<!-- counts: sourcesgated=1046 -->
+<!-- counts: logsgated=25 -->
+<!-- counts: sourcesgated=1085 -->
 `tools/check-research-logs.py` gates the structural side of this contract in CI (every source entry
-has a number, an identity, a tier, and a retrieval status token) across 20 of the library's research
-logs and 796 individual source entries; the ones it does not cover are named exceptions in the check's
+has a number, an identity, a tier, and a retrieval status token) across 25 of the library's research
+logs and 1,085 individual source entries; the ones it does not cover are named exceptions in the check's
 own output. What it cannot check, and says so on every run, is whether a `Supports:` line is actually
 true. That half is the adversarial review's job.
 
