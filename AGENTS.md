@@ -25,8 +25,10 @@ correctly rather than merely fast to fill.
 
 <!-- counts: bundles=32, tier1=25 -->
 Thirty-two bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
-library's researched 205-type catalog. That is the floor, not the ceiling: types beyond Tier-1 are built
-when a real team asks for one (grow-by-pull), not speculatively.
+library's researched 205-type catalog. That is the floor, not the ceiling: which types beyond Tier-1 get
+built, and in what order, is the maintainer's own choice
+([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)). An outside
+request is recorded and may be weighed; nothing waits for one.
 
 ## Selection flow
 

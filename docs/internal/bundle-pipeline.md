@@ -3,7 +3,8 @@
 > **This runbook is executable.** [`.claude/commands/build-bundle.md`](../../.claude/commands/build-bundle.md)
 > drives it, and [`.claude/workflows/build-bundle.js`](../../.claude/workflows/build-bundle.js) runs its three
 > stages: `{stage:"research", type, dimensions}`, `{stage:"draft", type, family}`, and
-> `{stage:"review", type, family}`. The script enforces in a schema what this document states in prose - the
+> `{stage:"review", type, family}`, with `sizes: ["lean"]` added to draft and review for a single-size
+> bundle. The script enforces in a schema what this document states in prose - the
 > retrieval enum, source ownership, grounded findings - so an agent cannot return a quote without having
 > claimed it read the body. The prose here remains the authority; the script is one way of executing it.
 
@@ -180,8 +181,11 @@ job, and the check says so in its own output on every run.
 ## Phase 3: Draft (in this order)
 
 1. **companion** (`<type>_companion.md`): 11-section skeleton (methodology section 5), dual-reader, every
-   non-obvious claim cited inline `[[n]](#ref-n)`. **Number references contiguously 1..N, one source per
-   entry.** Only quote a phrase the research log lists as a verbatim quotable for a fetched-and-verified
+   non-obvious claim cited inline `[[n]](#ref-n)`. **Number each reference with the research log's own
+   number, one source per entry**, so `[n]` means the same source in both files; a log entry the companion
+   does not cite is simply absent, which leaves a gap in the numbering and is correct. *(Corrected
+   2026-09-23: this read "contiguously 1..N", which contradicted the build workflow's instruction to cite by
+   the log's numbering; `runbook` and `issue-log` already followed the workflow.)* Only quote a phrase the research log lists as a verbatim quotable for a fetched-and-verified
    source. Reference entries: `<a id="ref-n"></a>[n] Author. "[Title](url)." ... [tier]`, with honest
    retrieval qualifiers on unread/contested sources. Verify with the check-E snippet below before moving
    on.

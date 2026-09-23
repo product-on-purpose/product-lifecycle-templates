@@ -46,16 +46,32 @@ people who want every change, release notes are for people who want to know what
   when the bundle landed. *(Corrected 2026-09-23: this entry said `raid-log`'s companion never mentions an issue
   log. It does, under a heading a phrase search missed; ADR 0057 carries a dated Correction.)*
 
+### Changed
+
+- **The build workflow drafts single-size bundles.** Pass `sizes: ["lean"]` to the draft and review stages and
+  the templates agent writes one variant with no nesting rule; until now it always wrote two, so a single-size
+  build needed a hand-written script. The example agent now also reads the research log's notes on the
+  example, which state the facts it must carry from its siblings.
+- **The research rule now says what goes in the source cache: the page's raw text, never a retrieval
+  summary.** A summary stored there would make every later quote check a check against the summary.
+
 ### Fixed
 
+- **"Grow-by-pull" was still stated as the rule** in `AGENTS.md`, the template chooser and two family
+  contracts, a month after [ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)
+  made the maintainer's own preference set the build order. Each now says so; the contracts carry dated notes.
+- **The runbook and the build workflow disagreed about reference numbering.** The runbook said number a
+  companion's references 1 to N with no gaps; the workflow told the drafting agent to reuse the research log's
+  numbers. The runbook now says reuse them, so [n] means the same source in both files.
 - **The review's chaining lens works now that it reads the siblings.** Its first run after the `v0.12.0` fix
   found six places where the new example disagreed with sibling examples, including a risk register that
   scores compliance where the draft said quality, and an escalation "two-week line" used with a different
   meaning from the RAID log's.
-- **Found and not fixed here: two sibling examples disagree about one figure.** The review's chaining lens
-  found that `raid-log`'s example calls ISS-12's 620ms a staging measurement while `kpi-dashboard`'s example
-  reports 620ms as a production figure and excludes staging numbers. The new `issue-log` example follows the
-  RAID log and claims neither is the other; the two older examples are left for a separate change.
+- **Two sibling examples disagreed about one figure, and now agree.** The review's chaining lens found that
+  `raid-log`'s example calls ISS-12's 620ms a staging measurement while `kpi-dashboard`'s example reported
+  620ms as a production figure and excluded staging numbers. Four examples say staging, and the feature has not
+  launched in the scenario, so the dashboard now carries the figure labelled as a pre-launch staging value that
+  production data replaces at launch.
 - **`STATE.md`'s per-family bundle lists named 27 of the 31 bundles**, omitting `status-report`,
   `spike-report`, `project-milestone-retrospective` and `test-summary-report`; they now name all 32.
 - **`roadmap.md` said there were 55 decision records** beside a marker of 56; it now says 58 with the rest.

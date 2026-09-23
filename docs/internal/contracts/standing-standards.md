@@ -35,10 +35,11 @@ on a cadence and valuable only while current** is `utility` and belongs to `gove
 `strategy-docs`. A candidate that is the **output of a phase** belongs to a `phase` family. This family is
 neither periodic nor phase-bound, which is exactly why it needs the `classification` axis.
 
-**Likely future members**, if pulled: a coding-standards or
-engineering-handbook document. None is Tier 1, so none is scheduled;
-[ADR 0021 (complete the Tier-1 floor)](../decisions/0021-complete-the-tier-1-floor.md) leaves Tier 2 and Tier
-3 strictly grow-by-pull.
+**Likely future members**: a coding-standards or engineering-handbook document. None is Tier 1; whether and
+when one is built is the maintainer's choice
+([ADR 0041 (maintainer preference sets the build order)](../decisions/0041-maintainer-preference-sets-the-build-order.md)).
+*(Corrected 2026-09-23: this line said ADR 0021 "leaves Tier 2 and Tier 3 strictly grow-by-pull", which
+ADR 0039 and ADR 0041 had superseded by 2026-08-22.)*
 
 > **"A release checklist" was the third entry on this list and has been pulled, 2026-09-20.** It is now
 > the member `launch-coordination-checklist`, `classification: tool`, assigned by

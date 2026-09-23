@@ -52,7 +52,7 @@ Headline first. *(Illustrative.)*
 |---|---|---|---|---|---|---|
 | Time to Insight | Median minutes from opening a report to taking a logged action | -30% vs baseline by Q3 | -18% | improving | lagging | Priya Nair |
 | Saved Views adoption | Share of Recurring Analysts using a saved view weekly | 60% by end Q3 | 41% | improving | leading | Priya Nair |
-| View-list load (p95) | 95th-percentile time to render a dashboard's saved-view list | < 500ms | 620ms | declining | leading | Dana Osei |
+| View-list load (p95) | 95th-percentile time to render a dashboard's saved-view list | < 500ms | 620ms (staging, pre-launch) | declining | leading | Dana Osei |
 | Weekly active analysts | Distinct Recurring Analysts active in the trailing 7 days | Hold >= 480 | 495 | stable | lagging | Priya Nair |
 | Migration integrity | Share of legacy saved-view configs reconciled post-cutover | 100% at cutover | n/a (pre-cutover) | n/a | leading | Lee Zhang |
 
@@ -83,7 +83,9 @@ Priya Nair. **Data steward:** Lee Zhang. *(This is the outcome the
 render, in milliseconds. **Includes:** production sessions. **Excludes:** synthetic monitoring traffic.
 **Grain:** per request, p95 over a trailing 24 hours. **Leading** (a degradation predicts the adoption and
 Time-to-Insight risk before they move). **Known limitation:** client-measured, so it includes network time
-outside Acme's control. **Owner:** Dana Osei. **Data steward:** Lee Zhang (Data Eng). *(This is the metric the
+outside Acme's control. **Owner:** Dana Osei. **Data steward:** Lee Zhang (Data Eng). **Until launch** there are
+no production sessions of the new view list to measure, so the current value is the staging load-test figure,
+labelled as such, and production RUM replaces it at launch. *(This is the metric the
 [RAID log's ISS-12](../raid-log/raid-log_example.md), which materialized from register risk R-06, moved.)*
 
 **Weekly active analysts.** Formula: count of distinct Recurring Analysts with at least one report session in
@@ -125,7 +127,7 @@ else (per-segment breakdowns) is drill-down.
 |---|---|---|---|---|
 | Time to Insight | Product analytics event stream (Amplitude) | Automated daily | ~6h | The marketing "engagement" metric (different "session" definition) |
 | Saved Views adoption | Entitlements DB + event stream | Automated nightly | ~12h | Manual pilot spreadsheet (pilot-only; not the full segment) |
-| View-list load (p95) | Front-end RUM pipeline | Automated hourly | ~1h | Staging load-test numbers (not production) |
+| View-list load (p95) | Front-end RUM pipeline from launch; the staging load test until then, labelled | Automated hourly | ~1h | Staging numbers presented as production |
 | Weekly active analysts | Entitlements DB + event stream (same pipeline as adoption) | Automated nightly | ~12h | The raw session log (double-counts multi-device) |
 | Migration integrity | Migration reconciliation script output (the R-02 dual-write reconciler) | Automated per dry-run and at cutover | minutes | Manual spot-checks (not exhaustive) |
 

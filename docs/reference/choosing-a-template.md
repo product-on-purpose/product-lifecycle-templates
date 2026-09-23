@@ -157,15 +157,18 @@ the catalog's templatable Tier-1 types are now built (two catalog Tier-1 types, 
 `interactive-prototype`, are out of scope for this library on purpose, because they are not
 Markdown documents; see
 [ADR 0021](../internal/decisions/0021-complete-the-tier-1-floor.md) and
-[ADR 0030](../internal/decisions/0030-templating-scope-markdown-documents.md)). The 26th bundle,
-`rfc`, is a Tier-2 type built early because `decision-docs` needed it to read as a complete
-family.
+[ADR 0030](../internal/decisions/0030-templating-scope-markdown-documents.md)). The rest of the
+built bundles are Tier-2 types the maintainer chose to build, such as `rfc`, which `decision-docs`
+needed to read as a complete family, and `issue-log`, which two shipped bundles already sent
+readers to.
 
-Everything past that floor, the other roughly nine in ten catalog types, is not built. That is
-not an oversight the library is embarrassed by; it is a stated growth rule. Tier-2 and Tier-3
-types are built **by pull**: when a real team asks for one, not speculatively ahead of demand.
-So if the document type you need is not in the [family map](#the-family-map) above, the honest
-answer is often **nothing here yet**, and that is expected, not a bug in this page.
+Everything past that, most of the catalog, is not built. That is not an oversight the library is
+embarrassed by. **Which Tier-2 and Tier-3 types get built, and in what order, is the maintainer's
+own choice** ([ADR 0041](../internal/decisions/0041-maintainer-preference-sets-the-build-order.md)).
+A request for a type is recorded and may be weighed, as [the pull queue](pull-queue.md) explains,
+but it does not schedule anything. So if the document type you need is not in the
+[family map](#the-family-map) above, the honest answer is often **nothing here yet**, and that is
+expected, not a bug in this page.
 
 Two ways to check further before concluding that:
 

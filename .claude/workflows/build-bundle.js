@@ -1,7 +1,7 @@
 export const meta = {
   name: 'build-bundle',
   description: 'Research, draft or review one template bundle: source ownership, files written by agents rather than returned, and scoped lens reads',
-  whenToUse: 'Invoked by the build-bundle skill. Pass {stage:"research", type, dimensions}, {stage:"draft", type, family}, or {stage:"review", type, family}.',
+  whenToUse: 'Invoked by the build-bundle skill. Pass {stage:"research", type, dimensions}, {stage:"draft", type, family}, or {stage:"review", type, family}; add sizes: ["lean"] to draft and review for a single-size bundle.',
   phases: [
     { title: 'Research', detail: 'one sonnet agent per dimension, each owning its sources' },
     { title: 'Draft', detail: 'seven files in dependency order; each agent writes its file and returns a summary' },
@@ -130,7 +130,9 @@ will converge on the same canonical sources unless you follow this.
 
   1. Before ANY fetch, run: python tools/source-cache.py get <url>
      Exit 0 = hit (body returned, no network), 1 = miss, 2 = stale (>14 days, re-fetch).
-     On a miss: fetch, then python tools/source-cache.py put <url>.
+     On a miss: fetch, then python tools/source-cache.py put <url>. Put the page's RAW text, never a
+     retrieval tool's summary of it: a summary in the cache turns every later quote check into a check
+     against the summary, which is the failure the check exists to catch.
   2. A source you read in full goes in owned_sources, with retrieval_status fetched-and-verified and any
      verbatim phrases in quotable. Set from_cache honestly.
   3. A source you need but did not read in full goes in referenced_sources: the URL and what you need from
@@ -202,6 +204,23 @@ if (stage === 'draft') {
   if (!family) throw new Error('args.family is required for stage "draft"')
   const b = `templates/${type}/${type}`
 
+  // SINGLE-SIZE BUNDLES. Every family contract allows [lean] alone where the type's own research shows it
+  // does not earn a second weight (spike-report, definition-of-ready). Pass sizes: ["lean"] and the
+  // templates stage writes one variant with no nesting rule to keep. The default is both. Until 2026-09-23
+  // this stage always wrote both, so a single-size build needed a hand-written script.
+  const sizes = Array.isArray(input.sizes) && input.sizes.length ? input.sizes : ['lean', 'full']
+  const single = sizes.length === 1
+  const TEMPLATE_HEAD = single
+    ? 'Draft the ONE TEMPLATE VARIANT for "' + type + '": ' + b + '_template-lean.md. This bundle is single-size: do NOT write a full variant.'
+    : 'Draft BOTH TEMPLATE VARIANTS for "' + type + '": ' + b + '_template-lean.md and ' + b + '_template-full.md'
+  const TEMPLATE_SHAPE = single
+    ? 'THIS BUNDLE SHIPS ONE VARIANT, lean, because its research argued against a second weight. There is no ' +
+      'nesting rule to keep. Keep it short: a long single variant models the weight the research rejected.'
+    : "ONE AGENT WRITES BOTH because of the nesting rule, which a split would break: the lean variant's H2 " +
+      "sections must be a STRICT ORDERED SUBSET of the full variant's, with shared sections keeping the same " +
+      'name and the same order. Check C enforces this and it is the easiest thing here to get wrong.'
+  const MAIN_VARIANT = single ? b + '_template-lean.md' : b + '_template-full.md'
+
   // THE RULE THAT MAKES THIS WORTH DOING: every stage WRITES ITS FILE and returns only a summary. A
   // stage that returned its 600 lines of markdown through the schema would push the whole bundle through
   // the orchestrator's context and move nothing at all. The bulk stays on disk; only the handoff crosses.
@@ -223,7 +242,7 @@ NON-NEGOTIABLE, and each has cost this library a defect:
   - Wrap prose at about 100 columns, matching the rest of the library.`
 
   phase('Draft')
-  log(`${type}: drafting 7 files in dependency order, each stage reading the last from disk`)
+  log(`${type}: drafting ${single ? 6 : 7} files in dependency order, each stage reading the last from disk`)
 
   // One item, five sequential stages. pipeline() is the honest expression of a dependency chain: the
   // companion is built from the log, the templates from the companion, the guide from both, and so on.
@@ -254,7 +273,7 @@ every source you cited, anchored so [[N]](#ref-N) links resolve. Cite by the log
       ),
     (companion) =>
       agent(
-        `Draft BOTH TEMPLATE VARIANTS for "${type}": ${b}_template-lean.md and ${b}_template-full.md
+        `${TEMPLATE_HEAD}
 ${HOUSE}
 
 Read ${b}_companion.md, which you must stay consistent with. Its teaching points are:
@@ -264,17 +283,15 @@ The build spec's section list for this type is in docs/internal/buildout-specs.m
 docs/internal/tier2-specs.md for a Tier-2 type. Follow it, and where the companion's research has moved a
 section, follow the companion and say so in your return.
 
-ONE AGENT WRITES BOTH because of the nesting rule, which a split would break: the lean variant's H2
-sections must be a STRICT ORDERED SUBSET of the full variant's, with shared sections keeping the same
-name and the same order. Check C enforces this and it is the easiest thing here to get wrong.
+${TEMPLATE_SHAPE}
 
 Every section of every variant carries the Approach A guidance comment in an HTML comment: WHAT, WHY
 with a companion pointer, ASK, GOOD, WEAK, TRAP, plus PRIORITY and ROW HINT for table sections. Open each
 variant with a "How to fill this in" preamble stating the N/A rule and the self-grade step.
 
-Placeholders are {{snake_case}} and consistent across both variants.`,
+Placeholders are {{snake_case}} and consistent across every variant.`,
         { label: `${type}/draft:templates`, phase: 'Draft', schema: {
-          type: 'object', required: ['lean_sections', 'full_sections'],
+          type: 'object', required: single ? ['lean_sections'] : ['lean_sections', 'full_sections'],
           properties: {
             lean_sections: { type: 'array', items: { type: 'string' } },
             full_sections: { type: 'array', items: { type: 'string' } },
@@ -287,7 +304,7 @@ Placeholders are {{snake_case}} and consistent across both variants.`,
         `Draft the GUIDE for "${type}": ${b}_guide.md
 ${HOUSE}
 
-Read ${b}_companion.md and ${b}_template-full.md.
+Read ${b}_companion.md and ${MAIN_VARIANT}.
 
 The guide is PROCEDURAL where the companion is explanatory. It carries: when to use; when NOT to use;
 how to pick a variant; a self-gradable rubric; and at least six named anti-patterns.
@@ -315,8 +332,10 @@ tools/check-rubric-scope.py enforces the arithmetic and demands that table.`,
         `Draft the WORKED EXAMPLE for "${type}": ${b}_example.md
 ${HOUSE}
 
-Read ${b}_template-full.md, and read at least three sibling examples in templates/*/[a-z]*_example.md to
-match the library's voice and to chain onto its shared scenario.
+Read ${MAIN_VARIANT}, and read at least three sibling examples in templates/*/[a-z]*_example.md to
+match the library's voice and to chain onto its shared scenario. Then read the paragraph headed "The
+example" in the "Notes for the companion" section of ${b}_research-log.md: it states the facts your
+example must carry from its siblings, and a build once shipped a draft that contradicted six of them.
 
 FOUR OBLIGATIONS, each of which has been violated before:
 
@@ -347,7 +366,7 @@ specific existing artifacts.`,
         `Write the META and HISTORY for "${type}": ${b}_meta.yaml and ${b}_history.md
 ${HOUSE}
 
-Read ${b}_companion.md, both templates, and tools/meta.schema.json. Copy the field set and shape from a
+Read ${b}_companion.md, every template variant on disk, and tools/meta.schema.json. Copy the field set and shape from a
 recent sibling meta such as templates/okrs/okrs_meta.yaml.
 
 The family contract's section 2 constrains the values: family "${family}", its axis value, status beta,
@@ -382,6 +401,11 @@ if (stage === 'review') {
   if (!family) throw new Error('args.family is required for stage "review"')
 
   const b = `templates/${type}/${type}`
+  // A single-size bundle has no full variant; pass sizes: ["lean"] here too, or the lenses are sent to a
+  // file that does not exist.
+  const rsizes = Array.isArray(input.sizes) && input.sizes.length ? input.sizes : ['lean', 'full']
+  const TEMPLATES = rsizes.map((s) => `${b}_template-${s}.md`)
+  const MAIN = TEMPLATES[TEMPLATES.length - 1]
   // Scoped reads. Each lens gets only the files it needs, so the bundle is not read four times over.
   const LENSES = [
     {
@@ -395,7 +419,7 @@ cited the entries rather than in the entries themselves.`,
     },
     {
       key: 'dod-family-conformance',
-      files: [`${b}_template-lean.md`, `${b}_template-full.md`, `${b}_guide.md`, `docs/internal/contracts/${family}.md`],
+      files: [...TEMPLATES, `${b}_guide.md`, `docs/internal/contracts/${family}.md`],
       owns: `The Definition of Done items CI cannot see: guidance-comment grammar, the section skeleton, the
 guide's rubric shape (brief section 3), and this family's own obligation from its contract. If rubric rows
 are variant-scoped, the scope table governs and row markers do not.`,
@@ -413,7 +437,7 @@ to hunt for a citation that would justify it.`,
       // review-standards.md section 4 gives this lens the sibling examples too. Until 2026-09-22 this list
       // omitted them, the lens obeyed the list, and thread consistency went unreviewed while the brief said
       // otherwise; the launch-coordination-checklist lens said so in its own return.
-      files: [`${b}_example.md`, `${b}_template-full.md`,
+      files: [`${b}_example.md`, MAIN,
         'the sibling examples this example cites by relative path, and no others'],
       owns: `The example internally sound, instantiating every template section, no placeholders, and
 consistent with its sibling examples in templates/*/. It must be chronologically possible: it may only cite
