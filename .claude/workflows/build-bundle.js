@@ -410,7 +410,11 @@ to hunt for a citation that would justify it.`,
     },
     {
       key: 'chaining-consistency',
-      files: [`${b}_example.md`, `${b}_template-full.md`],
+      // review-standards.md section 4 gives this lens the sibling examples too. Until 2026-09-22 this list
+      // omitted them, the lens obeyed the list, and thread consistency went unreviewed while the brief said
+      // otherwise; the launch-coordination-checklist lens said so in its own return.
+      files: [`${b}_example.md`, `${b}_template-full.md`,
+        'the sibling examples this example cites by relative path, and no others'],
       owns: `The example internally sound, instantiating every template section, no placeholders, and
 consistent with its sibling examples in templates/*/. It must be chronologically possible: it may only cite
 documents that existed when it is dated, except inside the opening "> **Worked example.**" blockquote, which

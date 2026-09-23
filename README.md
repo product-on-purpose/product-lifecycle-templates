@@ -322,7 +322,7 @@ All thirty-one bundles currently pass. GitHub Actions runs these on every push t
 
 ## Project status
 
-`v0.11.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, all five Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.11.2` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, six Tier-2 types built (the sixth, `launch-coordination-checklist`, on `main` ahead of the next release), an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
 
 ### At a glance
 
