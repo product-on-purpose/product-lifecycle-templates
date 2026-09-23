@@ -20,7 +20,8 @@ consulted: [claude]
   eventually; a measurement whose source can disappear has to be captured at the moment it is true.
   The committed JSON is the source of truth thereafter.
 - **Why now:** two documents stated a per-bundle cost, disagreed with each other, and neither cited a
-  measurement. Measured, both were wrong by 20 to 30 times. In a library that will not call a single
+  measurement. Measured, both were wrong by 20 to 30 times. *(About 10 to 20 times; see the
+  [Correction](#correction-2026-09-22).)* In a library that will not call a single
   bundle proven without evidence, the number used to decide whether a bundle was worth building was
   the least evidenced number in the repository.
 - **What it deliberately does not do:** rank quality, divide the orchestrator's own spend per bundle,

@@ -12,8 +12,10 @@ design task" rather than "a spec-driven execution".
 
 > **A spec here is not a decision to build.** Build order is the maintainer's own preference and need
 > ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)), and nothing on this page
-> schedules anything. What a spec does is make the judgment reviewable *before* 700K to 1M tokens are spent
-> executing it.
+> schedules anything. What a spec does is make the judgment reviewable *before* roughly 10M to 12M weighted
+> token-equivalents, $33 to $41 at API list rates, are spent executing it
+> ([measured](../../bundle-builds/INDEX.md); this sentence read "700K to 1M tokens" until 2026-09-22, an
+> estimate nobody had measured).
 
 ## Progress
 
@@ -23,8 +25,9 @@ design task" rather than "a spec-driven execution".
 | `project-milestone-retrospective` | `project-milestone-retrospective` | `process-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
 | `pi-release-retrospective` | `pi-release-retrospective` | `process-docs` | **Written 2026-09-11** | **No, and it will not be.** Refused on its own evidence by [ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md): SAFe's own facilitator guide names the outputs as backlog items and no document |
 | `test-summary-report` | `test-report-test-summary-report` | `qa-docs` | **Written 2026-09-11** | **Built 2026-09-14**, shipped in `v0.8.0` |
+| `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | No. Directed by the maintainer on 2026-09-22 |
 
-**`launch-coordination-checklist`: family assigned 2026-09-20, spec pending.** It joins
+**`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
 [ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md). The
 straddle that blocked it since 2026-09-11 was real (`release-notes` is `delivery-docs`, `runbook` is
@@ -33,7 +36,10 @@ rather than by the membership test: the type is **consulted at the moment of act
 `standing-standards` is for, and it carries no unit of product work, which is what `delivery-docs`
 requires of every member.
 
-**The spec is now unblocked. The build is not scheduled**, because ADR 0021 leaves Tier 2 grow-by-pull.
+**The spec is written, [below](#standing-standards-third-member-the-launch-coordination-checklist), and
+the build was directed by the maintainer on 2026-09-22**, under
+[ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)'s rule that the maintainer's
+preference sets the build order.
 
 > **One correction landed with the assignment.** The promise tag in `release-notes_meta.yaml` read
 > `future:launch-checklist` while the catalog id is `launch-coordination-checklist`.
@@ -384,3 +390,180 @@ ship.
 2. **The standards-recency trap is a citation obligation**, per the contract's section 3.6 and ADR 0026.
    Every member must get IEEE 829's status right - **superseded, not withdrawn** - verified at the IEEE SA
    page rather than inherited from this file or from the catalog.
+
+---
+
+### standing-standards (third member): the launch coordination checklist
+
+**`launch-coordination-checklist`** - `standing-standards`, **`classification: tool`**, sizes
+**`[lean, full]`** (provisional), methodology **`SRE`**, catalog id `launch-coordination-checklist`
+(catalog 126), alias: `launch checklist (SRE)`. Catalog owner: Launch Coordinator / SRE. Purpose:
+"Coordinate cross-team launch readiness." Contents, per the catalog: "dependencies, monitoring, comms,
+rollback, sign-offs". `size_variant: M`, `rarity: rare`, `tier_inferred: true`. **The catalog row's own
+source column reads "Google SRE appendix."**
+
+#### Admission: retrieved rather than assumed, which no earlier spec on this page could say
+
+**The family question is settled.**
+[ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) assigned the
+type to `standing-standards` as a `tool`, and the [contract](contracts/standing-standards.md) names it as a
+member.
+
+**The type-level test was answered by a retrieval made while writing this spec.** Every earlier spec here
+carried a prior into its research pass; this one carries a source. On 2026-09-22
+<https://sre.google/sre-book/launch-checklist/> was fetched and read in full. It is Appendix E of Google's
+*Site Reliability Engineering* (O'Reilly, 2016), titled **"Launch Coordination Checklist"**, the catalog's
+name verbatim, and it introduces itself as "Google's original Launch Coordination Checklist, circa 2005,
+slightly abridged for brevity". A named source publishing the type as a written document, under the type's
+own name, clears [ADR 0030](decisions/0030-templating-scope-markdown-documents.md)'s test on
+[ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)'s one-source reading with room to
+spare, and it is the source the catalog already credits.
+
+**What it contains, counted from the page's HTML rather than from a summary of it:** ten areas, 31 items.
+An automated summary of the same page reported nine areas while listing ten, which is why the count was
+redone by hand.
+
+| Area | Items |
+|---|---:|
+| Architecture | 2 |
+| Machines and datacenters | 2 |
+| Volume estimates, capacity, and performance | 4 |
+| System reliability and failover | 6 |
+| Monitoring and server management | 5 |
+| Security | 2 |
+| Automation and manual tasks | 2 |
+| Growth issues | 3 |
+| External dependencies | 3 |
+| Schedule and rollout planning | 2 |
+
+**Four properties of that source shape the build, and each is a trap if it is missed:**
+
+1. **It is a topic list, not a checklist in the checkable sense.** Every item is a noun phrase ("Storage
+   capacity", "Monitoring the monitoring"). None is a question with a pass condition, and none has an
+   owner. The research must establish whether the practice around it, chapter 27 ("Reliable Product
+   Launches at Scale"), supplies the questions, owners and pass conditions, or whether this bundle
+   supplies them and says so.
+2. **It omits most of what the catalog row lists.** No sign-off, no go/no-go decision, no rollback (only
+   "canaries under live traffic, staged rollouts"), and no launch communications. Of "dependencies,
+   monitoring, comms, rollback, sign-offs", only the first two appear. Any section carrying the rest must
+   be sourced elsewhere or labelled as this bundle's own contribution, the way `spike-report` labelled its
+   non-scope section.
+3. **It is twenty years old and describes one company's infrastructure**: "circa 2005", "N+2
+   redundancy", "Don't crash mail servers by sending yourself email alerts in your own server code". The
+   companion must present it as the named origin of the type, not as current practice. That is this
+   family's citation hazard (contract section 3.6, "folklore presented as standard") running in reverse: a
+   real historical artifact presented as a present-day standard.
+4. **It is licensed CC BY-NC-ND 4.0: no derivatives.** The bundle may cite it and quote it briefly. **The
+   template must not be an adaptation of its items**, and the example must not reproduce its list. This is
+   the first source in the library whose licence constrains the template rather than only the citation.
+
+**The build still records admission properly.** The research pass logs this source with a retrieval
+status like any other, and looks for a second: a production or operational readiness review published as
+a document. The catalog relates the type to PRR, and the SRE book's chapter on its engagement model is the
+first place to look. One source suffices; a second would change the teaching.
+
+#### The design question that is actually open: a standing checklist, or one filled per launch
+
+The contract's membership test is "agreed once and applied every time", and its own change note concedes
+the test "is genuinely ambiguous for a launch checklist, which is arguably written per launch". The two
+sources in hand pull opposite ways:
+
+- **Google's checklist is standing.** One list, reused across launches, and each launch answers it.
+- **pm-skills' `deliver-launch-checklist` is per launch.** It "Creates a cross-functional pre-launch
+  checklist covering engineering, design, marketing, support, legal, and operations readiness, with
+  owners, dates, and go/no-go criteria", used "1-2 weeks before any significant launch".
+
+**Proposed resolution: the template is the standing checklist, and a per-launch record is what applying
+it produces.** That is the move the contract already makes for the runbook ("a runbook written for one
+incident is an incident report"): the instrument is standing and its execution is per occasion. It keeps
+ADR 0053's assignment honest, and it turns the pairing into a question of grain rather than of kind: the
+skill produces the per-launch copy, and this template is what the copy is made from.
+
+**If the research shows practitioners do not keep a standing launch checklist at all**, so that every
+published instance is a per-launch plan, then ADR 0053's assignment is wrong on evidence and the build
+**stops for the maintainer**, because that is a change in the decision rather than in the design.
+
+**The scope question rides with it.** Google's list is engineering readiness only; the paired skill and
+the catalog row both reach into communications and sign-off. The proposal below keeps engineering
+readiness as the core and carries the cross-functional parts as full-only sections, so a lean fill stays
+an engineering instrument. The research decides whether that line is drawn in the right place.
+
+#### Section design
+
+Provisional, derived from the source's shape and the catalog row, and expected to move:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Scope and Launch Classes** | yes | What counts as a launch here, and which classes of launch get the full list. A launch checklist with no scope rule is applied to everything or to nothing |
+| **Roles and Sign-off** | full only | Who coordinates, and who can say no. The source names no roles; the catalog names sign-offs |
+| **Readiness Checks** | yes | The load-bearing section: checks grouped by area, each a question with the evidence that answers it and the role that owns it. A table section, so it carries PRIORITY and ROW HINT guidance |
+| **Launch Communications** | full only | Who must know before, at and after the launch: support, documentation, and the announcement. The edge with `release-notes` lives here |
+| **Rollout and Rollback** | full only | How the launch is staged, and the condition that reverses it, stated before the launch rather than argued during it |
+| **Go/No-Go Criteria** | yes | What blocks a launch, decided in advance. The difference between a checklist and a list |
+| **When This Does Not Apply** | full only | Launches exempt from the list, and what they get instead. Mirrors `runbook` |
+| **Review Trigger** | yes | **Contract-mandated** (section 4): a named owner and a condition, not a calendar. The obvious candidate: a launch causes an incident a check should have caught, which ties the trigger to `incident-postmortem` |
+
+**`Readiness Checks` is where the licence bites.** The ten areas above are a reasonable taxonomy, but the
+section must be built from the categories the research finds across sources, not as a restyling of one
+no-derivatives list.
+
+#### What makes it not a sibling
+
+The companion's cross-reference section has three edges to place, and each is a likely drift:
+
+- **Not a `runbook`.** A runbook responds to a situation that has occurred; a launch checklist prepares
+  for an event that has not. Both are `tool` and both are SRE-lineage, and a launch checklist whose
+  checks have turned into procedures has become a runbook.
+- **Not `release-notes`.** Readiness versus announcement, a line the paired skill draws in its own
+  description: "For the customer-facing announcement of what shipped, use deliver-release-notes instead."
+  `release-notes_guide.md` already routes "a full launch plan and comms" here.
+- **Not a production readiness review.** The catalog relates the type to PRR. Whether a PRR is a
+  different document or the same instrument at a different gate is a research question, and the answer is
+  a teaching point either way.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `standing-standards` | ADR 0053 |
+| `classification` | `tool` | ADR 0053: "an instrument you execute", sibling of `runbook` |
+| `sizes_available` | `[lean, full]` **provisional** | Catalog `size_variant: M`, and both siblings ship two weights. The contract allows `[lean]` "where the type's own research shows it does not earn a second weight" |
+| `status` | `beta` | Every bundle |
+| `methodology` | `SRE` | The catalog's value. `runbook` declares `DevOps/SRE-lineage` and the contract leaves methodology descriptive, so pick one wording deliberately at build time rather than by copying |
+| `pairs_with` | `[deliver-launch-checklist]` **provisional** | Verified present at `skills/deliver-launch-checklist/SKILL.md` on pm-skills `origin/main`, v2.2.0, `phase: deliver`, on 2026-09-22, and added to `tools/known-skills.txt` in the same change as this spec. **Honest only if the standing-versus-per-launch resolution above holds**; otherwise `[]` |
+| `related_templates` | `[release-notes, runbook, incident-postmortem]` **provisional** | The type that promised it, its sibling instrument, and the document its Review Trigger fires on |
+
+#### What landing this bundle closes elsewhere
+
+1. **`release-notes_meta.yaml` carries `future:launch-coordination-checklist`**, the only `future:` tag
+   in the tree. Check I fails a `future:` target that has been built, so the build drops the prefix in the
+   same change. The bundle directory is `launch-coordination-checklist`, the id ADR 0053 fixed the tag to.
+2. **The `standing-standards` contract's Members line**, which records whether the member is specced and
+   built.
+3. **This page's Progress table.**
+
+#### The example
+
+**A standing checklist belonging to a team, not a moment in a story**, which is the contract's own caveat
+about chaining in this family. The natural owner is Acme Analytics' platform team, and the natural
+demonstration is its checklist as it stood when the Saved Views launch consulted it, so it can chain to the
+`sdd`, `test-plan` and `release-notes` examples without pretending to be a per-launch record. Contract
+section 3.7 applies in full: no placeholders, illustrative figures labelled, and independent of the
+template's GOOD and WEAK text. **It must not reproduce Google's items**, per the licence.
+
+#### What the build costs, and what it settles at no extra cost
+
+Measured, a whole bundle build is about **10M to 12M weighted token-equivalents, or $33 to $41 at API list
+rates** ([`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md)), with drafting over two thirds of the
+dollars because its agents resolved to Opus in both measured builds. **This build is the first whose report
+can say why**, because every agent label now carries its bundle type. Projected from the two measured builds'
+token counts:
+
+- drafting resolves to **`claude-sonnet-5`**: the pin works, the measured builds ran from a drifted working
+  tree, and the build costs about **$20 to $24**;
+- **`claude-opus-5-5`**: the drafting agents inherit the session's model, so the pin is not being applied,
+  at about **$24 to $29**;
+- **`claude-opus-5`**: no longer the session model and pinned nowhere, so only a cached or resumed run could
+  produce it, at about **$33 to $41**.
+
+Run `python tools/gen-bundle-build-report.py --ingest` in Phase 6, on the machine that ran the build.

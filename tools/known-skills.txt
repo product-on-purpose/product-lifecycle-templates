@@ -73,3 +73,15 @@ develop-spike-summary
 # claiming a pairing its sibling silently declines. `incident-postmortem` stays unpaired: this skill is
 # about cadence retrospectives and says nothing about event-triggered failure learning.
 iterate-retrospective
+
+# Added 2026-09-22 with the `launch-coordination-checklist` spec (docs/internal/tier2-specs.md), before
+# the bundle is built, as the spike-report spec did. Verified present at
+# skills/deliver-launch-checklist/SKILL.md in product-on-purpose/pm-skills on 2026-09-22 with the command
+# in this file's header, at pm-skills 1cef1a9e (= origin/main), v2.2.0, `phase: deliver`, 3,877 bytes.
+#
+# LISTING IT HERE IS NOT A PAIRING. This file says the id exists; whether the bundle pairs with it is the
+# spec's open question. The skill writes a checklist PER LAUNCH ("1-2 weeks before any significant
+# launch"), while the family admits the type as a STANDING instrument, so the pairing holds only if the
+# template is what each per-launch copy is made from. If the build finds otherwise, the bundle declares
+# `pairs_with: []` and this line stays, because the skill still exists.
+deliver-launch-checklist
