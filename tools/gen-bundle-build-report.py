@@ -19,6 +19,12 @@ The Claude Code harness already writes everything needed, outside this repositor
 
 This tool joins those three and attributes each agent to a bundle, a stage and a deliverable.
 
+Usage is counted once per API RESPONSE, not once per transcript record. The harness writes one record
+per content block of a response (thinking, text, each tool call) and every one of them repeats the
+response's full usage block. Schema 1.0.0 summed records and so counted each response's cache reads
+and writes two or three times; every report it wrote overstated its build by roughly 2x. See
+agent_usage().
+
 THE TWO MODES, AND WHY THEY ARE SEPARATE.
 Transcripts are machine-local. They are not in this repository, they are not on the CI runner, and
 they are pruned eventually. So ingestion and verification cannot be the same command:
@@ -33,8 +39,10 @@ source can disappear must be captured at the moment it is true, not re-derived l
 
 WHAT IT CANNOT TELL YOU.
 - Reasoning effort is not recorded anywhere in the transcript tree. Only the requested model tier is.
-- The orchestrator's own token spend is a session total and is not divisible per bundle, because one
-  session interleaves several bundles and other work. It is reported per session, never per bundle.
+- The orchestrator's own token spend is not divisible per bundle, because one session interleaves
+  several bundles and other work. It is not reported at all, here or in INDEX.md.
+- What a build actually cost the person who ran it. The dollar figure prices each response at API list
+  rates; work run under a Claude subscription is not billed per token.
 - Runs that predate the labelling convention carry no label, so their attribution is inferred from
   the agent's own prompt and is marked with a lower confidence tier. See CONFIDENCE below.
 
@@ -62,13 +70,35 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 
 # The schema version of the emitted JSON. Bump when a field's meaning changes, never when one is
 # added, so an older report stays readable against a newer tool.
-REPORT_SCHEMA_VERSION = "1.0.0"
+#   2.0.0 (2026-09-22) every usage count is per API response rather than per transcript record, so
+#         `turns` means responses and the token totals roughly halve. All reports were re-ingested.
+REPORT_SCHEMA_VERSION = "2.0.0"
 
-# Cost weights, relative to one fresh input token. Stated in every report so two reports written
-# months apart are comparable, and so a reader can re-weight with their own numbers. These are the
-# published Claude ratios (cache write 1.25x input, cache read 0.1x input, output 5x input) and hold
-# across the Claude 5 family, which is why a single table serves every model here.
-WEIGHTS = {"input": 1.0, "cache_write": 1.25, "cache_read": 0.1, "output": 5.0}
+# Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every
+# model and every report, so that two reports written months apart stay comparable and a reader can
+# re-weight with their own numbers. It is not money. The ratios are the standard ones and are exact for
+# Sonnet 5 and Opus 5, but NOT for every Claude model: Opus 5.5 reads cache at 0.05x its input price
+# and Fable 5.1 at 0.025x. That is why cost in dollars is computed separately, from PRICES, per model.
+WEIGHTS = {"input": 1.0, "cache_write": 1.25, "cache_write_1h": 2.0, "cache_read": 0.1,
+           "output": 5.0}
+
+# USD per million tokens at Anthropic API list rates, keyed by undated model id. Checked against the
+# source on the date below; a price change needs a new date, not a silent edit. A model missing from
+# this table is reported as unpriced, never as free.
+PRICES_AS_OF = "2026-09-22"
+PRICES_SOURCE = "https://platform.claude.com/docs/en/about-claude/pricing"
+PRICES = {
+    #                    input  5m write  1h write  cache read  output
+    "claude-fable-5-1":  (10.0, 12.50,    20.0,     0.25,       50.0),
+    "claude-fable-5":    (10.0, 12.50,    20.0,     1.00,       50.0),
+    "claude-opus-5-5":   (4.0,  5.00,     8.0,      0.20,       20.0),
+    "claude-opus-5":     (5.0,  6.25,     10.0,     0.50,       25.0),
+    "claude-opus-4-8":   (5.0,  6.25,     10.0,     0.50,       25.0),
+    "claude-sonnet-5":   (2.0,  2.50,     4.0,      0.20,       10.0),
+    "claude-sonnet-4-6": (3.0,  3.75,     6.0,      0.30,       15.0),
+    "claude-haiku-4-5":  (1.0,  1.25,     2.0,      0.10,       5.0),
+}
+WEB_SEARCH_USD = 0.01  # $10 per 1,000 searches. Web fetch costs nothing beyond its tokens.
 
 # How a bundle was attributed to an agent, best first. Anything at or above "path" is treated as
 # reliable; "name" is prose matching and is recorded but never used to key a report.
@@ -235,15 +265,40 @@ def deliverable_of(label, file_written):
 
 # -------------------------------------------------------------------------------------- usage
 
+RESPONSE_FIELDS = ("input", "output", "cache_write", "cache_write_1h", "cache_read",
+                   "web_search", "web_fetch")
+
+
+def response_usd(model, row):
+    """One response's cost at API list rates, or None when its model is not in PRICES.
+
+    Transcripts carry some ids dated (claude-haiku-4-5-20251001); PRICES is keyed undated.
+    """
+    price = PRICES.get(re.sub(r"-\d{8}$", "", model or ""))
+    if price is None:
+        return None
+    p_in, p_w5, p_w1h, p_read, p_out = price
+    cw_1h = row["cache_write_1h"]
+    return ((row["input"] * p_in + (row["cache_write"] - cw_1h) * p_w5 + cw_1h * p_w1h
+             + row["cache_read"] * p_read + row["output"] * p_out) / 1e6
+            + row["web_search"] * WEB_SEARCH_USD)
+
+
 def agent_usage(path):
-    """Sum per-turn usage for one agent transcript."""
-    totals = {"turns": 0, "input": 0, "output": 0, "cache_write": 0, "cache_read": 0,
-              "web": 0}
-    models = {}
+    """Usage for one agent transcript, counted once per API response.
+
+    The harness writes one transcript record per CONTENT BLOCK of a response - thinking, text, each
+    tool call - and each of those records repeats the response's whole usage block. Summing records
+    counted every response's cache reads and writes two or three times. So records are grouped by
+    message id and each field keeps its largest value: input and cache fields are identical across
+    one response's records, and output_tokens grows as the response streams, so the largest value is
+    the final count.
+    """
+    responses = {}
     try:
         fh = open(path, encoding="utf-8")
     except OSError:
-        return totals, models
+        return blank(), {}
     with fh:
         for line in fh:
             try:
@@ -254,34 +309,78 @@ def agent_usage(path):
                 continue
             msg = rec.get("message") or {}
             use = msg.get("usage") or {}
-            if not use:
+            model = msg.get("model") or ""
+            # "<synthetic>" records are written by the harness, not returned by the API, and carry
+            # zero usage. Counting them would add responses that never happened.
+            if not use or model == "<synthetic>":
                 continue
-            totals["turns"] += 1
-            totals["input"] += use.get("input_tokens", 0)
-            totals["output"] += use.get("output_tokens", 0)
-            totals["cache_write"] += use.get("cache_creation_input_tokens", 0)
-            totals["cache_read"] += use.get("cache_read_input_tokens", 0)
             server = use.get("server_tool_use") or {}
-            totals["web"] += server.get("web_search_requests", 0)
-            totals["web"] += server.get("web_fetch_requests", 0)
-            mdl = msg.get("model")
-            if mdl:
-                models[mdl] = models.get(mdl, 0) + 1
+            row = {
+                "input": use.get("input_tokens", 0),
+                "output": use.get("output_tokens", 0),
+                "cache_write": use.get("cache_creation_input_tokens", 0),
+                "cache_write_1h": (use.get("cache_creation") or {}).get(
+                    "ephemeral_1h_input_tokens", 0),
+                "cache_read": use.get("cache_read_input_tokens", 0),
+                "web_search": server.get("web_search_requests", 0),
+                "web_fetch": server.get("web_fetch_requests", 0),
+            }
+            key = msg.get("id") or rec.get("requestId") or rec.get("uuid")
+            seen = responses.get(key)
+            if seen is None:
+                row["model"] = model
+                responses[key] = row
+            else:
+                for k in RESPONSE_FIELDS:
+                    seen[k] = max(seen[k], row[k])
+
+    totals, models = blank(), {}
+    for row in responses.values():
+        totals["turns"] += 1
+        for k in ("input", "output", "cache_write", "cache_write_1h", "cache_read", "web_search"):
+            totals[k] += row[k]
+        totals["web"] += row["web_search"] + row["web_fetch"]
+        cost = response_usd(row["model"], row)
+        if cost is None:
+            totals["unpriced_turns"] += 1
+        else:
+            totals["usd"] += cost
+        if row["model"]:
+            models[row["model"]] = models.get(row["model"], 0) + 1
     return totals, models
 
 
 def weighted(totals):
-    return int(round(sum(totals.get(k, 0) * w for k, w in WEIGHTS.items())))
+    cw_1h = totals.get("cache_write_1h", 0)
+    return int(round(totals.get("input", 0) * WEIGHTS["input"]
+                     + (totals.get("cache_write", 0) - cw_1h) * WEIGHTS["cache_write"]
+                     + cw_1h * WEIGHTS["cache_write_1h"]
+                     + totals.get("cache_read", 0) * WEIGHTS["cache_read"]
+                     + totals.get("output", 0) * WEIGHTS["output"]))
+
+
+def weights_text():
+    return ("input x%s, cache write x%s (x%s for a 1-hour write), cache read x%s, output x%s"
+            % (WEIGHTS["input"], WEIGHTS["cache_write"], WEIGHTS["cache_write_1h"],
+               WEIGHTS["cache_read"], WEIGHTS["output"]))
 
 
 def add(into, src):
-    for k in ("turns", "input", "output", "cache_write", "cache_read", "web"):
+    for k in blank():
         into[k] = into.get(k, 0) + src.get(k, 0)
     return into
 
 
+def tidy(usage):
+    """A copy with usd rounded to a hundredth of a cent, so the JSON does not carry float noise."""
+    out = dict(usage)
+    out["usd"] = round(out.get("usd", 0.0), 4)
+    return out
+
+
 def blank():
-    return {"turns": 0, "input": 0, "output": 0, "cache_write": 0, "cache_read": 0, "web": 0}
+    return {"turns": 0, "input": 0, "output": 0, "cache_write": 0, "cache_write_1h": 0,
+            "cache_read": 0, "web": 0, "web_search": 0, "usd": 0.0, "unpriced_turns": 0}
 
 
 # -------------------------------------------------------------------------------------- ingest
@@ -341,7 +440,7 @@ def collect(ids, patterns):
                     "deliverable": deliverable_of(label, files.get(aid, "")),
                     "requested_model": tier, "model": resolved,
                     "file_written": os.path.basename(files.get(aid, "")),
-                    "usage": totals, "weighted": weighted(totals),
+                    "usage": tidy(totals), "weighted": weighted(totals),
                     "mtime": os.path.getmtime(journal),
                 })
     return agents, root
@@ -405,6 +504,7 @@ def group(agents, key):
         add(row["usage"], a["usage"])
     for row in out.values():
         row["weighted"] = weighted(row["usage"])
+        row["usage"] = tidy(row["usage"])
     return dict(sorted(out.items(), key=lambda kv: -kv[1]["weighted"]))
 
 
@@ -442,10 +542,16 @@ def build_report(bundle, agents):
         "run_ids": runs,
         "session_ids": sessions,
         "weights": WEIGHTS,
+        "prices": {"as_of": PRICES_AS_OF, "source": PRICES_SOURCE,
+                   "usd_per_mtok": {m: dict(zip(("input", "cache_write_5m", "cache_write_1h",
+                                                 "cache_read", "output"), p))
+                                    for m, p in PRICES.items()},
+                   "web_search_usd": WEB_SEARCH_USD},
         "stages_present": sorted({a["stage"] for a in agents}),
         "complete": bool({a["stage"] for a in agents} >= {"research", "draft"}),
-        "totals": totals,
+        "totals": tidy(totals),
         "weighted_total": weighted(totals),
+        "cost_usd": round(totals["usd"], 2),
         "by_stage": group(agents, "stage"),
         "by_model": group(agents, "model"),
         "by_requested_tier": group(agents, "requested_model"),
@@ -464,15 +570,20 @@ def n(v):
     return "{:,}".format(v)
 
 
+def usd(v):
+    return "${:,.2f}".format(v)
+
+
 def table(title, rows, label_head):
     out = ["### By %s" % title, "",
-           "| %s | agents | input | cache write | cache read | output | weighted |" % label_head,
-           "|---|---:|---:|---:|---:|---:|---:|"]
+           "| %s | agents | input | cache write | cache read | output | weighted | list USD |"
+           % label_head,
+           "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for k, r in rows.items():
         u = r["usage"]
-        out.append("| `%s` | %d | %s | %s | %s | %s | **%s** |" % (
+        out.append("| `%s` | %d | %s | %s | %s | %s | **%s** | %s |" % (
             k, r["agents"], n(u["input"]), n(u["cache_write"]),
-            n(u["cache_read"]), n(u["output"]), n(r["weighted"])))
+            n(u["cache_read"]), n(u["output"]), n(r["weighted"]), usd(u["usd"])))
     out.append("")
     return out
 
@@ -495,9 +606,12 @@ def render(rep):
     L.append("| | |")
     L.append("|---|---|")
     L.append("| **Weighted total** | **%s** token-equivalents |" % n(rep["weighted_total"]))
+    unpriced = (" plus %s response(s) on a model with no listed price" % n(u["unpriced_turns"])
+                if u.get("unpriced_turns") else "")
+    L.append("| **At API list rates** | **%s**%s |" % (usd(rep["cost_usd"]), unpriced))
     L.append("| Subagents | %d across %d workflow run(s) |"
              % (rep["agents_total"], rep["workflow_runs"]))
-    L.append("| Assistant turns | %s |" % n(u["turns"]))
+    L.append("| API responses | %s |" % n(u["turns"]))
     L.append("| Fresh input | %s |" % n(u["input"]))
     L.append("| Cache write | %s |" % n(u["cache_write"]))
     L.append("| Cache read | %s |" % n(u["cache_read"]))
@@ -516,9 +630,15 @@ def render(rep):
                  "file and whose prompts never named the bundle, which is what the labelling "
                  "convention now prevents. Read this as \"at least this much\".")
         L.append("")
-    L.append("Weighted total applies %s. The weights are stated so that two reports "
-             "written months apart are comparable and so a reader can re-weight with their own "
-             "numbers." % ", ".join("%s x%s" % (k, v) for k, v in sorted(WEIGHTS.items())))
+    L.append("Weighted total applies %s. It is one fixed unit for every model, stated so that two "
+             "reports written months apart are comparable and so a reader can re-weight with their "
+             "own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet."
+             % weights_text())
+    L.append("")
+    L.append("The list-USD figures price every API response at its own model's Anthropic API list "
+             "rate as of %s ([source](%s)). They are a yardstick for comparing builds, not a bill: "
+             "work run under a Claude subscription is not charged per token." % (
+                 rep["prices"]["as_of"], rep["prices"]["source"]))
     L.append("")
     L += table("stage", rep["by_stage"], "stage")
     L += table("model", rep["by_model"], "resolved model")
@@ -529,8 +649,8 @@ def render(rep):
     L.append("- **Reasoning effort.** It is not recorded anywhere in the transcript tree. Only the "
              "requested model tier is, and it is reported above.")
     L.append("- **The orchestrator's own spend.** One session interleaves several bundles and other "
-             "work, so the main loop's tokens cannot honestly be divided per bundle. They are "
-             "reported per session in [`INDEX.md`](../INDEX.md), never billed to a bundle here.")
+             "work, so the main loop's tokens cannot honestly be divided per bundle. They are not "
+             "billed to a bundle here, and they are not reported anywhere else either.")
     if conf != "high":
         L.append("- **Exact attribution.** This build predates the labelling convention, so some "
                  "agents were attributed from their own prompt rather than from a label. "
@@ -584,23 +704,27 @@ def render_index(reports):
         L.append("")
         return "\n".join(L)
     tot = sum(r["weighted_total"] for r in reports)
+    tot_usd = sum(r.get("cost_usd", 0.0) for r in reports)
     hi = [r for r in reports if r["attribution_confidence"] == "high"]
-    L.append("| Bundle | Version | Weighted | Agents | Runs | Scope | Confidence | Report |")
-    L.append("|---|---|---:|---:|---:|---|---|---|")
+    L.append("| Bundle | Version | Weighted | List USD | Agents | Runs | Scope | Confidence | Report |")
+    L.append("|---|---|---:|---:|---:|---:|---|---|---|")
     for r in reports:
         b, v = r["bundle"], r["template_version"]
-        L.append("| `%s` | %s | %s | %d | %d | %s | %s | [report](reports/%s_v%s.md) |"
-                 % (b, v, n(r["weighted_total"]), r["agents_total"], r["workflow_runs"],
+        L.append("| `%s` | %s | %s | %s | %d | %d | %s | %s | [report](reports/%s_v%s.md) |"
+                 % (b, v, n(r["weighted_total"]), usd(r.get("cost_usd", 0.0)),
+                    r["agents_total"], r["workflow_runs"],
                     "whole build" if r.get("complete") else "**floor**",
                     r["attribution_confidence"], b, v))
     L.append("")
     L.append("<!-- build-reports: count=%d high=%d weighted=%d -->" % (len(reports), len(hi), tot))
     L.append("")
     L.append("**%d reports, %d of them at high attribution confidence, %s weighted "
-             "token-equivalents in total.**" % (len(reports), len(hi), n(tot)))
+             "token-equivalents and %s at API list rates in total.**"
+             % (len(reports), len(hi), n(tot), usd(tot_usd)))
     L.append("")
-    L.append("Weighted applies %s to the raw counts."
-             % ", ".join("%s x%s" % (k, v) for k, v in sorted(WEIGHTS.items())))
+    L.append("Weighted applies %s to the raw counts. List USD prices each response at its own "
+             "model's API list rate as of %s; it is a yardstick, not a bill."
+             % (weights_text(), PRICES_AS_OF))
     L.append("")
     return "\n".join(L)
 

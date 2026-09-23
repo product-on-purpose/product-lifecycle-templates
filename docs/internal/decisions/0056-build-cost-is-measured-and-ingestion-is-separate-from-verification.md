@@ -48,6 +48,9 @@ and a per-agent sidecar carrying the requested model tier. This is the same fail
 
 ### What the measurement actually said
 
+*These figures are about twice the truth. They are left as recorded; see
+[Correction (2026-09-22)](#correction-2026-09-22).*
+
 Measured across the two builds captured end to end:
 
 | | |
@@ -168,3 +171,50 @@ A report that cannot say which of these it is would be worth less than no report
 - [`docs/internal/bundle-pipeline.md`](../bundle-pipeline.md) Phase 6 runs the ingest.
 - [ADR 0041](0041-maintainer-preference-sets-the-build-order.md) is the decision this one supplies a
   price for. Nothing here supersedes it.
+
+## Correction (2026-09-22)
+
+**The numbers in this record were about twice the truth on the day it was accepted.** The error is
+named here rather than edited out, per [ADR 0011](0011-madr-v4-at-docs-internal-decisions.md): a
+factual error is corrected in place, and the decision this record makes has not changed.
+
+**What was wrong.** The generator summed `usage` across every transcript record. The harness writes
+one record per content block of an API response - thinking, text, each tool call - and every one of
+them repeats that response's full usage block. In the session that built `test-summary-report` and
+`spike-report`, 3,243 records carried usage for 1,262 responses, each group sharing one `requestId`
+and one message id. Output was nearly right, because the intermediate records carry the streaming
+count so far; cache reads and writes were counted two or three times. Fixed by counting each message
+id once (report schema `2.0.0`) and re-ingesting all 22 reports from the same transcripts. Every
+agent's bundle, stage, model and attribution came out identical; only the counts moved, by 1.9 to 2.6
+times.
+
+**What the measurement actually says:**
+
+| | Recorded above | Corrected |
+|---|---|---|
+| `test-summary-report` | 24,650,553 weighted | **12,123,040** weighted, **$41.22** at API list rates |
+| `spike-report` | 20,743,317 weighted | **9,881,764** weighted, **$33.21** |
+| By stage, `test-summary-report` | draft 10,206,549; research 9,032,973; lens 5,411,031 | draft 5,656,564 ($28.28); research 3,874,729 ($7.75); lens 2,591,747 ($5.18) |
+
+**Four claims above change with it:**
+
+- **"Low by 20 to 30 times"** is roughly 10 to 20 times against the 0.6M-1M estimates.
+- **"The four-lens review is under half of research"** was not true. Corrected, the review is 67
+  percent of research on `test-summary-report` and 54 percent on `spike-report`. **Drafting is still
+  the largest stage**, and in dollars it is over two thirds of each build, because its five agents
+  resolved to Opus while the other ten resolved to Sonnet.
+- **"Roughly a tenth of the cost ... about an order of magnitude"**: cache reads are about half the
+  weighted cost, and a raw sum overstates the weighted total by about five times.
+- **"Pruned eventually"** no longer holds on the maintainer's machine, which retains transcripts
+  indefinitely as of 2026-09-22. That is what made the re-ingest possible. The CI constraint is
+  unchanged: the runner still cannot see them.
+
+**Reports now carry a list-USD figure beside the weighted total**, because the weighted unit cannot be
+money: its ratios are exact for Sonnet 5 and Opus 5 but not for Opus 5.5, which reads cache at 0.05x
+its input price, or Fable 5.1 at 0.025x. The price table lives in the generator, dated and sourced.
+
+**The decision is right, and it is also what hid the error.** This record accepted that "a report is
+trusted because it was generated once, not because it can be re-derived", so a wrong generator
+produced 22 wrong reports with the gate green. It was found by pricing the numbers, not by any check.
+The decision stands, because the transcripts are still absent from CI, but its cost is no longer
+hypothetical.

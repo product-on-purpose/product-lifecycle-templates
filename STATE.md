@@ -7,13 +7,25 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=30, tier1=25, tier1remaining=2, statebuilt=30, statecandidate=173, stateoutofscope=2, commoncandidates=56, adrs=56, cisteps=32, checkk=102, checkformats=88, checklogs=92, logsgated=24, sourcesgated=1046 -->
 
-**Last updated:** 2026-09-22 (**`v0.11.0`: what a bundle costs to build is measured rather than
-estimated, and both estimates it replaces were wrong by 20 to 30 times.** Two documents stated a
-per-bundle cost, disagreed with each other, and neither cited a measurement; the harness had been
-writing a full `usage` block on every subagent turn since the beginning and nothing had ever read
-one. Measured, a bundle costs **21M to 25M weighted token-equivalents**, and **drafting rather than
-the research fan-out is the largest single stage**, which is the opposite of what the runbook
-asserted. 22 reports backfilled into [`bundle-builds/`](bundle-builds/), generated and gated like
+**Last updated:** 2026-09-22 (**`v0.11.2`: the build-cost reports `v0.11.0` shipped counted every
+API response two to three times, and are corrected.** The harness writes one transcript record per
+content block of a response, each repeating the response's whole `usage` block, and the generator
+summed records. Re-ingested from the same transcripts with the same attribution, a whole bundle build
+costs **about 10M to 12M weighted token-equivalents, or $33 to $41 at API list rates**, not 21M to
+25M, and every report now carries a list-price figure per model beside the weighted unit. **Drafting
+is still the largest stage**; the claim that the review costs under half of research was not true and
+is withdrawn. Nothing caught it: the gate verifies the index against the reports and never the
+reports against their transcripts, which is exactly the weakness
+[ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md)
+accepted, and which a dated Correction in that record now prices.
+The previous entry read: **`v0.11.0`: what a bundle costs to build is measured rather than
+estimated.** Two documents stated a per-bundle cost, disagreed with each other, and neither cited a
+measurement; the harness had been writing a full `usage` block on every subagent turn since the
+beginning and nothing had ever read one. *(Its figures, "21M to 25M weighted token-equivalents" and
+"wrong by 20 to 30 times", are the ones corrected above; against the old 0.6M-1M estimates the
+corrected multiple is roughly 10 to 20.)* **Drafting rather than the research fan-out is the largest
+single stage**, which is the opposite of what the runbook asserted. 22 reports backfilled into
+[`bundle-builds/`](bundle-builds/), generated and gated like
 every other artifact here, with one deliberate weakness stated rather than implied
 ([ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md)):
 **the CI gate checks an index it can re-derive and never the reports it cannot**, because the
