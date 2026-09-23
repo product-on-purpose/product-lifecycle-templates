@@ -40,7 +40,7 @@ populated by workstream leads, reviewed weekly.
 The **Risks** quadrant is a summary that points to the standalone
 [risk register](../risk-register/risk-register_example.md), which holds the authoritative inherent/residual
 scoring, triggers, and appetite; this log does not duplicate that detail. Out of scope: business-as-usual IT
-risks (corporate register) and product-outcome metrics (the program KPI dashboard, a forthcoming sibling).
+risks (corporate register) and product-outcome metrics (the program KPI dashboard, a sibling document).
 
 ## Risks
 

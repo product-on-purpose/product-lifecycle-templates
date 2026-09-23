@@ -19,7 +19,7 @@ Fast reference for using the risk-register bundle. For the full reasoning, histo
   register is for potential future events. A row describing a present problem is misfiled.
 - **You also need to track assumptions and dependencies.** Use a RAID log (Risks, Assumptions, Issues,
   Dependencies) as the one working document; the risk register is the deepened "R", worth splitting out only
-  when the R has outgrown the RAID. (`raid-log` is the next governance-docs bundle to be built.)
+  when the R has outgrown the RAID. (See the sibling [`raid-log`](../raid-log/) bundle for the consolidated form.)
 - **You are a single agile team and the overhead exceeds the value.** For small-to-medium agile work, short
   iterations retire risk continuously; a lightweight lean register refreshed each iteration may be all you
   need, or a risk-burndown chart instead. Scale and regulation are what make the full register worth it.

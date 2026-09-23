@@ -110,10 +110,13 @@ check fails on every entry with a rate-limit 403 that looks like a real failure 
 happened on the very first merge after it was first written down.
 
 ```
-git grep -n -i "open PR\|not yet built\|will be built\|in progress\|planned for"
+git grep -n -i "open PR\|not yet built\|will be built\|in progress\|planned for\|forthcoming\|to be built"
 ```
 
-Read every hit and fix what the release made untrue. This stays a discipline rather than a check, because
+Read every hit and fix what the release made untrue. *(Widened 2026-09-23: "forthcoming" and "to be built"
+were added after a documentation audit found seven sentences in sibling bundles still calling `raid-log`,
+`kpi-dashboard` and `status-report` forthcoming, the oldest from July. The earlier pattern matched none of
+them, which is how they survived every release since.)* This stays a discipline rather than a check, because
 a linter matching these strings would fire on template guidance text, which legitimately uses all of them.
 The nearest thing to a machine version is check I in `check-bundles.py`, which does catch one instance of
 the shape: a `related_templates` entry still labelled `future:` after the bundle was built.
