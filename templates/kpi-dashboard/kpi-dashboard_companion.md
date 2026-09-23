@@ -290,9 +290,16 @@ consolidates Risks, Assumptions, Issues, and Dependencies for the same program, 
 dashboard's metrics from below: an **assumption** the program rests on (analysts will adopt the feature) is
 exactly what a headline KPI later confirms or refutes (adoption rate); an **issue** that materializes (a
 performance regression) shows up as a KPI turning amber. Where the RAID log tracks the **open items** in
-flight, the dashboard tracks **whether the delivered result works**. Together the three read as one
-governance surface: the register names the threats, the RAID log tracks the open items behind them, and the
-dashboard measures the outcome. The worked examples in this family chain on one program to make that concrete.
+flight, the dashboard tracks **whether the delivered result works**. Together the family reads as one
+governance surface: the register names the threats, the RAID log tracks the open items behind them, the issue
+log carries each realized problem to a confirmed close, and the dashboard measures the outcome. The worked
+examples in this family chain on one program to make that concrete.
+
+**KPI dashboard vs issue log - the fourth governance sibling.** A realized problem can show on the
+dashboard first, as a metric turning amber; the [`issue-log`](../issue-log/issue-log_guide.md) is where that
+problem gets a named owner, a next action and a confirmed close. The dashboard shows the symptom and the issue
+log holds the problem, and neither carries the other's rows. In the worked examples, the view-list load
+metric this dashboard tracks is the one the program's issue ISS-12 must bring back under budget.
 
 **KPI dashboard vs the live BI tool.** This bundle is the **specification**; Tableau, Looker, Power BI, and
 Amplitude are the implementations. The spec is platform-agnostic and precedes the build [[21]](#ref-21);

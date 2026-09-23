@@ -59,6 +59,7 @@ tree without the gate noticing.
 - [`kpi-dashboard/`](kpi-dashboard/) - KPI Dashboard. Axis classification utility; ships lean/full.
 - [`raid-log/`](raid-log/) - RAID Log. Axis classification utility; ships lean/full.
 - [`risk-register/`](risk-register/) - Risk Register. Axis classification utility; ships lean/full.
+- [`issue-log/`](issue-log/) - Issue Log. Axis classification utility; ships lean/full. The fourth `governance-docs` member ([ADR 0057](../docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)): the deepened, standalone form of the RAID log's Issues quadrant, as the risk register is of its Risks.
 
 **`process-docs`**
 

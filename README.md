@@ -12,7 +12,7 @@ A curated library of product-management and software-lifecycle document template
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
   <img src="https://img.shields.io/badge/version-0.12.0-blue?style=flat-square" alt="Version 0.12.0">
-  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-30-brightgreen?style=flat-square" alt="Bundles: 30"></a>
+  <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-32-brightgreen?style=flat-square" alt="Bundles: 32"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-9-brightgreen?style=flat-square" alt="Families: 9"></a>
   <a href="#quality-gate"><img src="https://img.shields.io/badge/gate-11%20checks%20in%20CI-success?style=flat-square" alt="Gate: 11 checks in CI"></a>
@@ -61,7 +61,7 @@ Six steps, start to finished document. No install, no tooling, no account.
 **1. Get the library.** Three routes, and **they do not give you the same thing**. Full comparison, and how to check that it worked, in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 
 ```bash
-# Clone it. Everything: 31 bundles, the research logs, the gate. Best for reading.
+# Clone it. Everything: 32 bundles, the research logs, the gate. Best for reading.
 git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 cd product-lifecycle-templates
 ```
@@ -75,7 +75,7 @@ cd product-lifecycle-templates
 
 ```bash
 # Or install just the skills, for a non-Claude agent. NOTE: this installs the
-# two skills and NOT the 31 bundles, so a skill fetches what it needs on demand
+# two skills and NOT the 32 bundles, so a skill fetches what it needs on demand
 # and stops rather than improvising if it cannot reach them.
 npx skills add product-on-purpose/product-lifecycle-templates
 ```
@@ -142,8 +142,8 @@ The full authoring process, the citation standard, and the per-bundle Definition
 The pitch above is the ambition. Here is the same thing with the credit separated from the cash, which is the fastest way to judge whether this library is worth your time:
 
 - **Earned today.** Researched, dual-reader, nesting-disciplined, provenance-stamped bundles, with citations verified against raw sources and every correction recorded in the open. A gate that runs in CI and blocks merges. Decision records for every non-obvious choice.
-- **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**, though less than it was. Decisions D2/D3 (resolved 2026-07-17) established that both `npx skills add` and agentskills.io take exactly one unit, the *skill*, and that this repo shipped none. It now ships two, at [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md) and [`skills/plt-grade-doc/SKILL.md`](skills/plt-grade-doc/SKILL.md), in the location the Agent Skills specification and the Claude Code plugin loader both read ([ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)). **The install was finally run on 2026-08-08, and it works** - which closed the oldest open question here and immediately opened two smaller ones. It shipped a maintainer-internal skill alongside the real one (fixed, and now gated by [`tools/check-export-surface.py`](tools/check-export-surface.py) so it cannot recur), and **the `npx skills add` route installs the skill without the 31 bundles it indexes**, so the skill now checks for the library and stops rather than improvising. The plugin route clones the whole repository and never had that problem. Both routes, and how to verify each, are in [`docs/how-to/installing.md`](docs/how-to/installing.md); the retest is recorded in full on the [roadmap](docs/internal/roadmap.md).
-- **Still on credit: "reference implementation".** Thirty-one of 205 catalog types (all 25 templatable Tier-1 types, plus six Tier-2 types: `rfc`, `epic`, `spike-report`, `project-milestone-retrospective`, `test-summary-report` and `launch-coordination-checklist`). The floor being complete is a statement about **coverage**, not about use: every bundle is `beta`, and a green gate proves structure and research integrity rather than that a document helped anyone.
+- **Mostly earned now: "agent-native".** The machine layer landed 2026-07-17. Every bundle's metadata validates against a published schema in CI ([`tools/meta.schema.json`](tools/meta.schema.json), gate check J, [ADR 0016](docs/internal/decisions/0016-adopt-machine-checkable-metadata-schema.md)), and [`manifest.json`](manifest.json) exposes every bundle's selectable fields as structured data an agent reads instead of parsing prose, regenerated and freshness-checked by the gate ([ADR 0018](docs/internal/decisions/0018-machine-catalog-generated-manifest.md)). **What is still on credit is installability**, though less than it was. Decisions D2/D3 (resolved 2026-07-17) established that both `npx skills add` and agentskills.io take exactly one unit, the *skill*, and that this repo shipped none. It now ships two, at [`skills/plt-fill-template/SKILL.md`](skills/plt-fill-template/SKILL.md) and [`skills/plt-grade-doc/SKILL.md`](skills/plt-grade-doc/SKILL.md), in the location the Agent Skills specification and the Claude Code plugin loader both read ([ADR 0036](docs/internal/decisions/0036-library-prefix-and-skill-under-skills.md)). **The install was finally run on 2026-08-08, and it works** - which closed the oldest open question here and immediately opened two smaller ones. It shipped a maintainer-internal skill alongside the real one (fixed, and now gated by [`tools/check-export-surface.py`](tools/check-export-surface.py) so it cannot recur), and **the `npx skills add` route installs the skill without the 32 bundles it indexes**, so the skill now checks for the library and stops rather than improvising. The plugin route clones the whole repository and never had that problem. Both routes, and how to verify each, are in [`docs/how-to/installing.md`](docs/how-to/installing.md); the retest is recorded in full on the [roadmap](docs/internal/roadmap.md).
+- **Still on credit: "reference implementation".** Thirty-two of 205 catalog types (all 25 templatable Tier-1 types, plus seven Tier-2 types: `rfc`, `epic`, `spike-report`, `project-milestone-retrospective`, `test-summary-report`, `launch-coordination-checklist` and `issue-log`). The floor being complete is a statement about **coverage**, not about use: every bundle is `beta`, and a green gate proves structure and research integrity rather than that a document helped anyone.
 
 If that reads harsher than a README usually does, that is the point: [`STATE.md`](STATE.md) is the source of truth, it outranks this file, and it is kept honest on purpose.
 
@@ -153,9 +153,9 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 
 ## What is in the library today
 
-<!-- bundle-count: 31 -->
-<!-- counts: bundles=31, tier1=25, adrs=57 -->
-**Thirty-one bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
+<!-- bundle-count: 32 -->
+<!-- counts: bundles=32, tier1=25, adrs=57 -->
+**Thirty-two bundles, in nine complete families.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
 ### `delivery-docs` (seven bundles, the family complete)
 
@@ -182,15 +182,16 @@ Three distinct jobs, deliberately kept separate: an **RFC** proposes a decision,
 | [`sdd`](templates/sdd/) | The software design document: how a system will be built, before the code | (none exists yet) |
 | [`spike-report`](templates/spike-report/) | The written output of a time-boxed technical investigation: what was tried, what was found, and a proceed-or-not recommendation | `develop-spike-summary` |
 
-### `governance-docs` (three bundles, the family complete)
+### `governance-docs` (four bundles, the family complete)
 
-The first family gated on the `classification` axis rather than a lifecycle phase: standing governance instruments a PM maintains across the whole lifecycle. Their examples chain on one program (Reporting Platform Modernization) and interlock: the register tracks **threats**, the RAID log tracks **open items**, the dashboard tracks **whether the delivered program works**.
+The first family gated on the `classification` axis rather than a lifecycle phase: standing governance instruments a PM maintains across the whole lifecycle. Their examples chain on one program (Reporting Platform Modernization) and interlock: the register tracks **threats**, the RAID log tracks **open items**, the issue log carries each **realized problem** to a confirmed close, and the dashboard tracks **whether the delivered program works**.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
 | [`risk-register`](templates/risk-register/) | The maintained, owned record of risks to an objective, scored and reviewed | (none exists yet) |
 | [`raid-log`](templates/raid-log/) | One log for the four kinds of open item: Risks, Assumptions, Issues, Dependencies | (none exists yet) |
 | [`kpi-dashboard`](templates/kpi-dashboard/) | The definition of the KPIs that show whether objectives are being met | (none exists yet) |
+| [`issue-log`](templates/issue-log/) | The owned record of problems that have already happened and need someone above the day-to-day work to act: who owns each, whether it went up, and when it is genuinely closed | (none exists yet) |
 
 ### `qa-docs` (four bundles, the family complete)
 
@@ -257,7 +258,7 @@ The family whose defining property is that **the document owns none of its own f
 |---|---|---|
 | [`status-report`](templates/status-report/) | The periodic report that narrates what happened against metrics defined elsewhere, and invents no figure of its own | (none exists yet) |
 
-Beyond these thirty-one, the library draws on a researched catalog of **205 artifact types across 19 categories**. The **Tier-1 "must-have" floor is complete** ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)): the catalog names 27 must-have types, two are out of scope, and all 25 reachable ones are built. **Tier-2 and Tier-3 are no longer demand-gated.** Grow-by-pull governed them until [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) replaced the pull gate with maintainer discretion, and [ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md) made the maintainer's own preference and need set the build order, on the ground that a queue which has received zero requests cannot rank anything. How a request for an unbuilt type is weighed is at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md).
+Beyond these thirty-two, the library draws on a researched catalog of **205 artifact types across 19 categories**. The **Tier-1 "must-have" floor is complete** ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)): the catalog names 27 must-have types, two are out of scope, and all 25 reachable ones are built. **Tier-2 and Tier-3 are no longer demand-gated.** Grow-by-pull governed them until [ADR 0039](docs/internal/decisions/0039-maintainer-discretion-replaces-the-pull-gate.md) replaced the pull gate with maintainer discretion, and [ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md) made the maintainer's own preference and need set the build order, on the ground that a queue which has received zero requests cannot rank anything. How a request for an unbuilt type is weighed is at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md).
 
 > *A word on "complete".* A family being complete means its members are built, gate-green, and contract-validated, not that they are proven. A citation pass on 2026-07-16 found **28 defects across the original four delivery-docs bundles**, every one of which had been passing the gate green for weeks. They are verified *now*, against raw sources, with the corrections recorded in each bundle's research log. What the gate can and cannot prove is stated under [Quality gate](#quality-gate).
 
@@ -309,8 +310,8 @@ python tools/check-adr-index.py        # the decision-record index lists every A
 python tools/check-links.py       # every relative link and anchor resolves
 ```
 
-<!-- counts: bundles=31 -->
-All thirty-one bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+<!-- counts: bundles=32 -->
+All thirty-two bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >
@@ -322,20 +323,20 @@ All thirty-one bundles currently pass. GitHub Actions runs these on every push t
 
 ## Project status
 
-`v0.12.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, six Tier-2 types built (the sixth, `launch-coordination-checklist`, shipped in `v0.12.0`), an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.12.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, seven Tier-2 types built (the seventh, `issue-log`, on `main` ahead of the next release), an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
 
 ### At a glance
 
-<!-- counts: bundles=31, tier1=25, adrs=57, cisteps=32 -->
+<!-- counts: bundles=32, tier1=25, adrs=57, cisteps=32 -->
 
 |  |  |
 |---|---|
 | **Current version** | [v0.12.0](CHANGELOG.md) |
-| **Bundles** | 31, across 9 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs) |
-| **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other five bundles are Tier-2 types: `rfc` and `epic` built early, then `spike-report`, `project-milestone-retrospective` and `test-summary-report` |
+| **Bundles** | 32, across 9 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs) |
+| **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other seven bundles are Tier-2 types: `rfc` and `epic` built early, then `spike-report`, `project-milestone-retrospective`, `test-summary-report`, `launch-coordination-checklist` and `issue-log` |
 | **Catalog** | 205 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
-| **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 65 template variants addressable |
+| **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 67 template variants addressable |
 | **Decision records** | 57 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted |
 | **Real usage** | Not published as a count ([ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)). Coverage is not validation, and no page calls a bundle proven |
 | **License** | [Apache-2.0](LICENSE) |

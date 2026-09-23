@@ -236,6 +236,36 @@
     },
     {
       "aliases": [
+        "issue register"
+      ],
+      "approx_tokens": {
+        "full": 4600,
+        "lean": 3150
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "issue-log",
+      "family": "governance-docs",
+      "id": "issue-log",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (a stated threshold and what does not belong, a priority scale, the issues table with one named owner per row, the escalation rule, and review and ownership) when one team logs and resolves its own issues without a change-control hand-off or a lessons-learned record worth keeping. Use full when issues start resolving into other artifacts often enough that losing the trail matters, or when a governance board will ask, weeks later, what was actually decided and why; it adds a closed-issues audit trail (resolution, confirmer, closed date, lesson learned) and a links-to-other-logs block tracing each issue back to the risk it materialized from, the change request it raised, or the decision that closed it.",
+      "status": "beta",
+      "summary": "The living, owned record of problems that have already happened on a project or program and need someone above the day-to-day work to act on them: what the problem is, who owns getting it fixed, whether it has been escalated, and when it is genuinely closed. Distinguished from a risk register by tense, something that occurred rather than something that might, and useful only once a team states its own threshold for what counts as an issue here.",
+      "tags": [
+        "governance",
+        "issue-management",
+        "issue-tracking",
+        "register",
+        "escalation",
+        "pmbok"
+      ],
+      "title": "Issue Log"
+    },
+    {
+      "aliases": [
         "kpi dashboard",
         "metrics dashboard",
         "executive dashboard",
@@ -1092,5 +1122,5 @@
       "title": "User Story"
     }
   ],
-  "count": 31
+  "count": 32
 }
