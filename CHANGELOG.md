@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-09-23
+
 ### Added
 
 - **[`definition-of-ready`](templates/definition-of-ready/), the 33rd bundle** and the fourth
@@ -2473,7 +2475,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.2...v0.12.0
 [0.11.2]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.0...v0.11.1

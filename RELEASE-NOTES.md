@@ -8,6 +8,21 @@ Newest first.
 
 ---
 
+## v0.13.0
+
+**Two bundles in one release: an issue log and a definition of ready.** The issue log records problems
+that have already happened on a project and who is fixing each; it makes a team say what counts as an
+issue first, because the named standards define one four different ways. The definition of ready is a
+team's agreement on when a backlog item is ready to start, and it ships carrying the argument about
+itself: several of its own sources say a team may be better off without one, so keeping none is a
+legitimate outcome.
+
+Both research logs had every quotation checked against the source's raw text, and the check caught a
+research agent misreporting the European Commission's issue-log fields. A documentation audit after the
+33rd bundle also corrected the security page, which said the repository runs no server.
+
+---
+
 ## v0.12.0
 
 **A 31st bundle: the launch coordination checklist**, the standing list a team consults before it ships
