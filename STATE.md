@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=31, tier1=25, tier1remaining=2, statebuilt=31, statecandidate=172, stateoutofscope=2, commoncandidates=56, adrs=56, cisteps=32, checkk=104, checkformats=90, checklogs=93, logsgated=25, sourcesgated=1085 -->
 
-**Last updated:** 2026-09-22 (**`launch-coordination-checklist` becomes the 31st bundle, and the first
+**Last updated:** 2026-09-23 (**`v0.12.0` ships `launch-coordination-checklist`, the 31st bundle.** A
+minor release carrying the bundle merged on 2026-09-22 and nothing else of substance: version fields, the
+changelog promoted with two entries it had been missing (the bundle's spec and the chaining-lens fix), and
+the release note filled from the library's own `release-notes` template.
+The previous entry read: **`launch-coordination-checklist` becomes the 31st bundle, and the first
 build measured end to end at `high` confidence.** The third `standing-standards` member, admitted on a
 retrieval rather than a prior: Google's SRE book publishes an appendix titled "Launch Coordination
 Checklist", and its chapter on launches records one engineer running 350 launches through that one list,
