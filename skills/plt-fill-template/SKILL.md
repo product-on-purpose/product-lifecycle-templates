@@ -17,8 +17,8 @@ A library of **30 researched document-template bundles**, covering the complete 
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
-<!-- counts: bundles=30, tier1=25 -->
-30 bundles, spanning all 25 templatable Tier-1 document types plus five Tier-2 types.
+<!-- counts: bundles=31, tier1=25 -->
+31 bundles, spanning all 25 templatable Tier-1 document types plus six Tier-2 types.
 
 ## When to use
 
@@ -41,7 +41,7 @@ shape, a worked example, and a rubric for judging the result.
 
 ### 0. Confirm the library is present, and STOP if it is not
 
-**This skill is a wrapper. The 30 bundles it indexes are not inside it.** Whether they are on disk
+**This skill is a wrapper. The 31 bundles it indexes are not inside it.** Whether they are on disk
 depends entirely on how this skill was installed:
 
 | Install route | What you have |
@@ -173,8 +173,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=32, logsgated=24, sourcesgated=1046 -->
-32 CI steps; 24 research logs gated, covering 1,046 sources.
+<!-- counts: cisteps=32, logsgated=25, sourcesgated=1085 -->
+32 CI steps; 25 research logs gated, covering 1,085 sources.
 
 **Not proved by anything:**
 

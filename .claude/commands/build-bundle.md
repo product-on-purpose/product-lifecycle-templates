@@ -39,7 +39,8 @@ You are building one bundle for `product-lifecycle-templates`: eight files, gate
 | [`docs/internal/bundle-pipeline.md`](../../docs/internal/bundle-pipeline.md) | The six-phase runbook, the gotchas, the check E snippet, model routing |
 | [`docs/internal/review-standards.md`](../../docs/internal/review-standards.md) | What CI already proves, the seven defect classes it cannot, the standards, the lens scoping |
 
-Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-specs.md) and its family contract in
+Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-specs.md) (a Tier-1 type) or
+[`tier2-specs.md`](../../docs/internal/tier2-specs.md) (a Tier-2 type) and its family contract in
 `docs/internal/contracts/<family>.md`. That is your whole reading list.
 
 ## Before you start
@@ -120,9 +121,11 @@ that ran the build. A bundle is not done because the files exist; it is done whe
 
 ## What this costs
 
-Measured, not estimated: roughly 10M-12M weighted token-equivalents per bundle, or $33-$41 at API list
-rates (test-summary-report 12,123,040, $41.22; spike-report 9,881,764, $33.21; weighted means input
-x1.0, cache write x1.25, cache read x0.1, output x5.0). Source:
+Measured, not estimated: roughly 7M-12M weighted token-equivalents per bundle, or $14-$41 at API list
+rates, depending mostly on which model drafts (launch-coordination-checklist 7,108,920, $14.22, every agent
+on Sonnet as this workflow pins; test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
+both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
+x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Source:
 [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for test-summary-report: draft
 5,656,564 ($28.28), research 3,874,729 ($7.75), lens 2,591,747 ($5.18) - drafting is the largest stage by
 both measures, and in dollars it is over two thirds of the build, because its five agents resolved to Opus

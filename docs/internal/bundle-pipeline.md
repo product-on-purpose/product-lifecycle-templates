@@ -18,10 +18,13 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the two builds captured end to end, is roughly 10M to 12M weighted
-token-equivalents per bundle, or $33 to $41 at API list rates (test-summary-report: 12,123,040, $41.22;
-spike-report: 9,881,764, $33.21; each the whole build, 15 agents, 3 runs, with drafting resolving to Opus
-for reasons still open). Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.
+10 to 20 times. Measured cost, from the three builds captured end to end, is roughly 7M to 12M weighted
+token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
+spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
+and $14.22 with every agent on Sonnet as pinned, while test-summary-report (12,123,040, $41.22) and
+spike-report (9,881,764, $33.21) ran per-bundle scripts that pinned no model on drafting, which therefore
+ran on Opus. Each is the whole build, 15 agents, 3 runs; none includes the orchestrator's own spend.
+Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.
 *(Corrected 2026-09-22: this paragraph read "21M to 25M", from a generator that counted each API response
 two to three times. See the Correction in
 [ADR 0056](decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).)* See

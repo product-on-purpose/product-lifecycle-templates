@@ -269,6 +269,42 @@
     },
     {
       "aliases": [
+        "launch checklist",
+        "launch checklist (SRE)",
+        "launch readiness checklist",
+        "LCE checklist",
+        "go/no-go checklist"
+      ],
+      "approx_tokens": {
+        "full": 5800,
+        "lean": 4650
+      },
+      "classification": "tool",
+      "default_size": "lean",
+      "doc_type": "launch-coordination-checklist",
+      "family": "standing-standards",
+      "id": "launch-coordination-checklist",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Scope and Launch Classes, Readiness Checks, Rollout and Rollback, Go/No-Go Criteria, Review Trigger) for the engineering-readiness core, on the reading that the type's originating source and most of the structural precedent found for it are engineering and operations scoped; it carries the launch's decision-maker inside Go/No-Go Criteria rather than a separate roles section. Reach for full, which adds Roles and Decision Authority and Launch Communications, once a launch reaches past one team: more than one role could plausibly make the go/no-go call, or the launch reaches support, documentation, or a public announcement rather than staying inside engineering.",
+      "status": "beta",
+      "summary": "The standing list a team consults before it ships an externally visible change, so that readiness does not depend on who happens to be asking the questions. Grouped checks paired with an owner and a go/no-go gate, plus a rollout, a rollback trigger, and a review trigger decided before the launch rather than argued during it.",
+      "tags": [
+        "operations",
+        "launch",
+        "readiness",
+        "checklist",
+        "sre",
+        "go-no-go",
+        "rollback",
+        "standing-standards"
+      ],
+      "title": "Launch Coordination Checklist"
+    },
+    {
+      "aliases": [
         "objectives and key results",
         "okr",
         "okr set",
@@ -1056,5 +1092,5 @@
       "title": "User Story"
     }
   ],
-  "count": 30
+  "count": 31
 }

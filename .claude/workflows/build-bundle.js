@@ -260,7 +260,9 @@ ${HOUSE}
 Read ${b}_companion.md, which you must stay consistent with. Its teaching points are:
 ${(companion?.teaching_points || []).map((t) => `  - ${t}`).join('\n')}
 
-The build spec's section list for this type is in docs/internal/buildout-specs.md. Follow it.
+The build spec's section list for this type is in docs/internal/buildout-specs.md for a Tier-1 type, or in
+docs/internal/tier2-specs.md for a Tier-2 type. Follow it, and where the companion's research has moved a
+section, follow the companion and say so in your return.
 
 ONE AGENT WRITES BOTH because of the nesting rule, which a split would break: the lean variant's H2
 sections must be a STRICT ORDERED SUBSET of the full variant's, with shared sections keeping the same
@@ -408,7 +410,11 @@ to hunt for a citation that would justify it.`,
     },
     {
       key: 'chaining-consistency',
-      files: [`${b}_example.md`, `${b}_template-full.md`],
+      // review-standards.md section 4 gives this lens the sibling examples too. Until 2026-09-22 this list
+      // omitted them, the lens obeyed the list, and thread consistency went unreviewed while the brief said
+      // otherwise; the launch-coordination-checklist lens said so in its own return.
+      files: [`${b}_example.md`, `${b}_template-full.md`,
+        'the sibling examples this example cites by relative path, and no others'],
       owns: `The example internally sound, instantiating every template section, no placeholders, and
 consistent with its sibling examples in templates/*/. It must be chronologically possible: it may only cite
 documents that existed when it is dated, except inside the opening "> **Worked example.**" blockquote, which

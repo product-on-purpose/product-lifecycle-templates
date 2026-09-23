@@ -109,7 +109,7 @@ rather than a one-off decision, that is `standing-standards`, not this family. S
 `governance-docs` and `standing-standards` are not tied to a single moment in the list above,
 because that is what makes them different in kind. Governance documents (risk register, RAID
 log, KPI dashboard) are maintained continuously across the whole lifecycle rather than authored
-once at a stage. Standing standards (definition of done, runbook) are agreed once and then
+once at a stage. Standing standards (definition of done, runbook, launch coordination checklist) are agreed once and then
 consulted, not rewritten, every time the situation recurs. Both are real, gate-green bundles;
 they just do not fit a "right now I am doing X" frame. Find them in the family map below.
 
@@ -130,12 +130,12 @@ included here for readers who want the complete picture rather than a situationa
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
 | `discovery-docs` | Runs before the decision to build, to test whether an investment is worth making and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/) |
-| `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/) |
+| `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/) |
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
-<!-- counts: bundles=30 -->
-That is 30 bundles across every family the library currently ships, and every family is
+<!-- counts: bundles=31 -->
+That is 31 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.
