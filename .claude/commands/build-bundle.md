@@ -57,7 +57,9 @@ one research log. Honest retrieval is not negotiable: three tokens, and only `fe
 quoted. See the runbook.
 
 **Phase 3, draft.** Run `{stage:"draft", type, family}`. Seven files in dependency order: companion ->
-both templates -> guide -> example -> meta and history, because each is built from the one before.
+both templates -> guide -> example -> meta and history, because each is built from the one before. For a
+single-size bundle add `sizes: ["lean"]` here and to the review stage; the templates stage then writes one
+variant and there are six files.
 
 **Each stage writes its file and returns only a summary.** That is the point, not an implementation
 detail: a stage returning its 600 lines through the schema would push the whole bundle through your

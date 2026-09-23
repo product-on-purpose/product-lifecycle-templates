@@ -32,9 +32,12 @@ A candidate that **owns** its facts belongs elsewhere: `governance-docs` for sta
 `strategy-docs` for direction, `process-docs` for retrospective learning. A candidate written **for the team
 doing the work** rather than for an audience outside it is not a communication document, it is a working one.
 
-**Likely future members**, all Tier 2 and all grow-by-pull: `executive-briefing` / steering-committee pack,
-a release announcement distinct from `release-notes`, a stakeholder update. If none is ever pulled, this
-family stays at one member permanently, and that is an acceptable outcome rather than a defect.
+**Likely future members**, all Tier 2, built if and when the maintainer chooses
+([ADR 0041](../decisions/0041-maintainer-preference-sets-the-build-order.md)): `executive-briefing` /
+steering-committee pack, a release announcement distinct from `release-notes`, a stakeholder update. If none
+is ever built, this family stays at one member permanently, and that is an acceptable outcome rather than a
+defect. *(Corrected 2026-09-23: this line called them "all grow-by-pull", a rule ADR 0039 and ADR 0041 had
+superseded by 2026-08-22.)*
 
 ## 2. Required catalog metadata and allowed values
 
