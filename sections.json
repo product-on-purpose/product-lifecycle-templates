@@ -1099,6 +1099,159 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "definition-of-ready",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "team_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "why-we-keep-one",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "retirement_condition",
+                "why_we_keep_one"
+              ],
+              "title": "Why We Keep One"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "scope-and-ownership",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "scope_and_ownership"
+              ],
+              "title": "Scope and Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "readiness-criteria",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_consequence",
+                "criterion_evidence",
+                "criterion_question"
+              ],
+              "title": "Readiness Criteria"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "when-an-item-is-not-ready",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "not_ready_path"
+              ],
+              "title": "When an Item Is Not Ready"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "too_loose_owner",
+                "too_loose_trigger",
+                "too_tight_owner",
+                "too_tight_trigger"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "epic",
       "default_format": "default",
       "formats": {
@@ -8470,7 +8623,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 32,
-  "frontmatter_count": 212,
-  "section_count": 278
+  "count": 33,
+  "frontmatter_count": 216,
+  "section_count": 283
 }

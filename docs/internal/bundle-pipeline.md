@@ -19,11 +19,13 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the four builds captured end to end, is roughly 7M to 12M weighted
+10 to 20 times. Measured cost, from the five builds captured end to end, is roughly 7M to 12M weighted
 token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
 spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
-and $14.22 with every agent on Sonnet as pinned, and issue-log, the second, cost $14.29 for the same 15
-research, drafting and review agents ($16.76 with the three agents that swept the counts at landing), while
+and $14.22 with every agent on Sonnet as pinned; issue-log, the second, cost $14.29 for the same 15
+research, drafting and review agents ($16.76 with the three agents that swept the counts at landing); and
+definition-of-ready, the third and the first single-size build, cost $11.69 for its 15 ($13.89 with its
+sweep), its drafting stage the cheapest of the three because it writes one template, not two; while
 test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.

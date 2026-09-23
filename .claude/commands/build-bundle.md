@@ -125,7 +125,8 @@ that ran the build. A bundle is not done because the files exist; it is done whe
 
 Measured, not estimated: roughly 7M-12M weighted token-equivalents per bundle, or $14-$41 at API list
 rates, depending mostly on which model drafts (launch-coordination-checklist 7,108,920, $14.22, every agent
-on Sonnet as this workflow pins; test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
+on Sonnet as this workflow pins; issue-log $14.29 and definition-of-ready $11.69, a single-size bundle, for
+the same 15 build agents; test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Source:
 [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for test-summary-report: draft

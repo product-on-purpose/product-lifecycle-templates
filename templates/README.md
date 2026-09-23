@@ -79,6 +79,7 @@ tree without the gate noticing.
 - [`definition-of-done/`](definition-of-done/) - Definition of Done. Axis classification foundation; ships lean/full.
 - [`runbook/`](runbook/) - Runbook. Axis classification tool; ships lean/full.
 - [`launch-coordination-checklist/`](launch-coordination-checklist/) - Launch Coordination Checklist. Axis classification tool; ships lean/full.
+- [`definition-of-ready/`](definition-of-ready/) - Definition of Ready. Axis classification foundation; ships lean. The fourth `standing-standards` member ([ADR 0058](../docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md)): a team's agreement on when a backlog item is ready to pull into a sprint, the entry-side mirror of the Definition of Done.
 
 **`strategy-docs`**
 

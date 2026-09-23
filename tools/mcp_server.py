@@ -151,7 +151,7 @@ def variants(bundle):
 def axis_values():
     """What the taxonomy axis ACTUALLY holds, generated from the tree rather than typed.
 
-    The axis is `phase` XOR `classification`: 20 bundles carry a phase, 12 a classification, none both
+    The axis is `phase` XOR `classification`: 20 bundles carry a phase, 13 a classification, none both
     and none neither. A `phase`-only filter - which is what the AG-2 sketch specified - can never reach
     those 10, and would return a plausible non-empty result while silently hiding 33% of the library.
 
@@ -539,7 +539,7 @@ def _template_version(bundle_id):
 def get_grading_pack(bundle_id) -> EnvGrading:
     """Fetch the guide sections a grader needs: the quality rubric and the named anti-patterns.
 
-    Measured: all 30 guides carry a rubric heading (re-checked at 32 on 2026-09-23); FOUR (`okrs`, `product-roadmap`,
+    Measured: all 30 guides carry a rubric heading (re-checked at 33 on 2026-09-23); FOUR (`okrs`, `product-roadmap`,
     `product-strategy`, `product-vision`) carry no anti-patterns section. Absence is reported in
     `missing` rather than passed over, because a pack quietly short a section looks complete and is not.
     """
