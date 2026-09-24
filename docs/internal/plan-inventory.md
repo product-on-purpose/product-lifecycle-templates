@@ -78,7 +78,7 @@ produces a usage signal, because coverage multiplies zero.
 | M0 Credibility floor | A fresh clone survives inspection | Anyone evaluating | Done |
 | M1 Integrity | `v0.1.0`, every citation verified | Adopters | Done 2026-07-17 |
 | M2 Machine layer and Tier-1 floor | A deterministic selection surface, 26 bundles, nine family contracts | Adopters and their agents | **Done in substance.** The roadmap's own status column still reads "18 of 27 types are built" and names `v0.2.0` as the next release |
-| **M3 Wedge** | **Point a skill at a PRD you already wrote and get a report card against a researched rubric.** Plus the first real fill, the pull queue, and outreach | **Someone who has never used this library** | **Not started.** Zero fills. Three of four acceptance criteria unmet |
+| **M3 Wedge** | **Point a skill at a PRD you already wrote and get a report card against a researched rubric.** Plus the first real fill, the pull queue, and outreach | **Someone who has never used this library** | **Not started.** Three of four acceptance criteria unmet |
 | M4 Proof | Per-bundle eval scorecards; conformance levels L1, L2, L3; CI regression on the eval gap | Anyone deciding whether to trust the quality claim | **Partly started.** Protocol written, harness built, two runs completed, both **VOID** on discrimination, three bundles of 26 measured |
 | M5 Reach | Interview-driven fill flow, an MCP server, full distribution | Agents and their operators | Not started, correctly gated on M3 |
 | M6 Scale by pull | The next family on demand, quarterly freshness, a contribution pipeline | Contributors | Not started |

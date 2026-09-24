@@ -127,16 +127,13 @@ complete: <!-- counts: tier1=25 -->all 25 templatable Tier-1 document types the 
 Every one of them is gate-green: [`tools/check-bundles.py`](../../tools/check-bundles.py) checks structure,
 citation resolution, size nesting, and metadata schema conformance on every push.
 
-None of that is the same claim as "these templates work." **Zero of these bundles have been filled in
-anger by anyone but the library's author.** Efficacy was measured for the first time on 2026-08-08 and
+None of that is the same claim as "these templates work." Efficacy was measured for the first time on 2026-08-08 and
 returned **VOID** twice; a third run on 2026-08-21 was also void. The fourth, on **2026-09-03**, is the
 first that cleared every validity gate, and it covers **two scenarios of the `prd` bundle only**. On those
 two it found the template worth about a point of structural completeness against its own criteria and
 **nothing measurable** on whether a reader could answer their questions from the document. That is a
-narrow, honest result, not evidence that a lean PRD beats a blank page, and there is still no completed
-real usage cycle. The
+narrow, honest result, not evidence that a lean PRD beats a blank page. The
 gate proves a bundle's structure holds and its citations resolve; it cannot prove the guidance inside a
-bundle is right, only that nobody has changed the underlying facts without the check noticing. If you fill
-one of these templates for a real project, you will be doing something this library has not yet had done
-to it. [`STATE.md`](../../STATE.md) tracks this honestly and is worth reading before you trust any claim here
+bundle is right, only that nobody has changed the underlying facts without the check noticing.
+[`STATE.md`](../../STATE.md) tracks this honestly and is worth reading before you trust any claim here
 more than it has earned.

@@ -5,9 +5,10 @@ software lifecycle. If you have not read [`README.md`](README.md) yet, start the
 a bundle is and what "governed" means here. [`STATE.md`](STATE.md) is the single source of truth for
 what is actually built today; it outranks this file, the README, and every plan in `docs/internal/`.
 
-Status is `beta`. The gate is enforced in CI, but the library has **zero fills by anyone but the
-author** ([`STATE.md`](STATE.md)). Keep that in mind while reading the rest of this file: the thing
-this project needs most is not more prose, it is evidence that the prose is right.
+Status is `beta`. The gate is enforced in CI, and it proves structure, not that a template helps
+anyone ([`what-the-gate-proves.md`](docs/explanation/what-the-gate-proves.md)). Keep that in mind while
+reading the rest of this file: the thing this project needs most is not more prose, it is evidence that
+the prose is right.
 
 ---
 
@@ -34,12 +35,9 @@ the strongest opening move is to say who needs it and why, not to open a PR with
 attached. See "What is not wanted" below
 before proposing a brand-new type.
 
-**3. A real usage report.** This is the most valuable contribution this library can receive, and the
-rarest: nobody but the maintainer has ever filled one of these templates for real work. If you copy a
-bundle into a real project and fill it in, a report of what worked, what section fought you, and what
-you had to cut is worth more than most PRs. The catalog's own graduation rule for a Tier-1 type is that
-it "survives one real usage cycle"; by that standard, nothing here has graduated yet, and this file
-does not claim otherwise.
+**3. A real usage report.** This is the most valuable contribution this library can receive. If you
+copy a bundle into a real project and fill it in, a report of what worked, what section fought you, and
+what you had to cut is worth more than most PRs.
 
 ---
 

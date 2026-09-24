@@ -117,5 +117,5 @@ Use the [issue forms](https://github.com/product-on-purpose/product-lifecycle-te
 Three exist, and they want different things:
 
 - **Request a new document type.** It has to pass [ADR 0030](../internal/decisions/0030-templating-scope-markdown-documents.md)'s admission test: a named source must publish it as a **written document**. The form asks what you write *instead* today, and that field is required, because a request from someone who writes no such document is a preference and a request from someone who writes one badly is a pull.
-- **Usage report.** The most valuable issue anyone can open here, and the rarest. Nothing in this library has been filled by anyone but its author.
+- **Usage report.** The most valuable issue anyone can open here: what worked, which section fought you, and what you had to cut.
 - **Correction.** The fix rule is *delete the claim or label it honestly, never hunt for a citation that would justify it.* If a claim is unsupported, saying so **is** the fix.

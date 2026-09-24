@@ -6,11 +6,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        **This is the most valuable issue anyone can open here, and the rarest.**
+        **This is the most valuable issue anyone can open here.**
 
-        No template in this library has been filled by anyone but the author. The catalog's own rule gates Tier 2
-        on "survives one real usage cycle", so by the library's own standard nothing has graduated. One honest
-        usage report changes that.
+        What worked, which section fought you, and what you had to cut tells us more about a template than any
+        review of it can.
 
   - type: input
     id: catalog_ref
