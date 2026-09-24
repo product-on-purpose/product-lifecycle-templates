@@ -12,6 +12,22 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **The last "nobody but the author has filled a template" lines are gone.**
+  [ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md) stopped publishing a fill
+  count on 2026-09-21, and its sweep missed some live surfaces. Those were the plugin description, the
+  usage-report issue form, `CONTRIBUTING.md`, the explanation, how-to and tutorial pages, the pull-queue
+  reference and the usage-log README, plus internal status lines in `STATE.md`, the roadmap, the plan
+  inventory and a spec table. The wording goes too: "nothing has graduated" and "no real usage cycle"
+  restated the same count. Dated records stay as written. **No bundle is called proven**, and that ban
+  is unchanged.
+
+### Fixed
+
+- **`STATE.md`'s bundle list said `issue-log` and `definition-of-ready` were built** but not that they
+  shipped; it now says both shipped in `v0.13.0`.
+
 ## [0.13.0] - 2026-09-23
 
 ### Added

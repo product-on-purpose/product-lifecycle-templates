@@ -165,7 +165,7 @@ not the question was answered.
 | `family` | `decision-docs` | ADR 0022 |
 | `phase` | `develop` | Contract-gated; matches all three existing members |
 | `sizes_available` | `[lean]` | Catalog `size_variant: S`. The contract admits `[lean]` for a single-size type, and exempts it from nesting, not from anything else |
-| `status` | `beta` | Contract: `beta` until one real usage cycle is recorded. Nothing in this library has one |
+| `status` | `beta` | Contract: `beta` until the maintainer judges it settled ([ADR 0055](decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | `methodology` | `agile` | **The first decision-docs member to declare a non-generic methodology.** The catalog says Agile/XP, and a spike is genuinely an XP practice rather than a methodology-agnostic instrument. The contract anticipated exactly this: methodology is "descriptive, not gated ... a future member is free to declare otherwise rather than have the truth bent to a rule" |
 | `pairs_with` | `[develop-spike-summary]` | Verified present at `skills/develop-spike-summary/SKILL.md` in product-on-purpose/pm-skills on 2026-09-11, v2.2.0, `phase: develop`. Added to `tools/known-skills.txt` in the same change as this spec |
 | `related_templates` | `[adr, rfc, sdd]` | Its three siblings |

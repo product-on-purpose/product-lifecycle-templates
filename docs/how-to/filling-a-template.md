@@ -175,9 +175,8 @@ most.
 
 Everything above describes the mechanics of filling a template well: the comments, the rubric, the
 nesting rule. None of it is a claim that a well-filled document produces a good outcome for your
-product. This library has not been filled in anger by anyone but the author, so there is no track
-record yet of these bundles being used on a real team's real work, and no evaluation of whether a
-document that passes its own rubric performs any better than one that does not. The gate that runs in
+product. The library's efficacy runs have not shown that a document which passes its own rubric
+performs any better than one that does not. The gate that runs in
 this repository checks that a bundle's structure holds; it has no way to check that your filled-in
 content is right, and [`docs/what-the-gate-proves.md`](../explanation/what-the-gate-proves.md) is the full, honest
 account of that boundary. That judgment stays yours.

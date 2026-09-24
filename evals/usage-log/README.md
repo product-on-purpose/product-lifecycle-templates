@@ -30,12 +30,11 @@ records the answer.
 protocol written before the first number existed. Three of its four runs returned VOID; the fourth,
 2026-09-03, is valid over two scenarios of one bundle.
 
-This directory holds something weaker and, at zero external users, more useful: whether a real person found
+This directory holds something weaker and, for now, more useful: whether a real person found
 a real report card worth their time. **A usefulness average from this log is not an efficacy number**, the
 two must not be reported together, and the harness is the one with the protocol.
 
 ## The first entry is the milestone
 
-The roadmap's M3 exit criterion is a first external document graded with an EV-3 form banked. `STATE.md`
-records "zero fills by anyone but the author" and will keep recording it until a file appears here that
-somebody else's document produced.
+The roadmap's M3 exit criterion is a first external document graded with an EV-3 form banked: a file
+here that somebody else's document produced.

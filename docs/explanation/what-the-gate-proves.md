@@ -230,17 +230,12 @@ as they stand today, stated without softening:
   one of these templates leads to a better outcome than one written without it, and nothing here shows the
   reverse. Three bundles of twenty-six were tested, by an LLM rather than a human author, and scored by
   LLM judges.
-- **No template has been filled by anyone but the author.** Every worked example in every bundle was
-  written by the same person who wrote the template. Independent usage, the strongest test of whether a
-  template's shape actually holds up in someone else's hands, has not happened yet.
-- **By the library's own tier rule, nothing here has graduated.** [`README.md`](../../README.md#the-claim-and-what-it-is-worth)
-  states the rule directly: a document type graduates from Tier 1 to Tier 2 when it "survives one real
-  usage cycle."
+- **Every bundle is still `beta`.**
   <!-- counts: tier1=25 -->
   Twenty-five of the 25 templatable Tier-1 types are now built, which closes the library's coverage
-  floor. It does not close the graduation question. Every one of those 25 is still Tier 1, and every
-  bundle in the library carries a `status: beta` in its meta (see, for example,
-  [`templates/prd/prd_meta.yaml`](../../templates/prd/prd_meta.yaml)), because none has cleared that bar.
+  floor. It does not make any bundle settled: every bundle in the library carries `status: beta` in its
+  meta (see, for example, [`templates/prd/prd_meta.yaml`](../../templates/prd/prd_meta.yaml)), and moving
+  one to `stable` is the maintainer's judgement, never a claim that the bundle is proven.
 - **A green gate has been wrong before, at scale.** A manual citation pass in July 2026 found 28 defects
   across four bundles that had been passing the gate green for weeks, including wrong dates, quotations
   from sources that could not be read, and claims attributed to people who do not make them. Every one of

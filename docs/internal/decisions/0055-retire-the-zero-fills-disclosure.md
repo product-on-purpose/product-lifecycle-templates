@@ -112,3 +112,15 @@ ban means `stable` still cannot be presented as evidence that a bundle works.
   [`site-s0-spec.md`](../site-s0-spec.md) AC-16.
 - What the gate actually proves: [`what-the-gate-proves.md`](../../explanation/what-the-gate-proves.md).
 - The efficacy record, unchanged: [`evals/results/`](../../../evals/results/).
+- **Addendum 2026-09-24, at the maintainer's direction.** The sweep in the Removed table missed live
+  surfaces that still stated the fill count, or the old rule that a bundle graduates on a real usage
+  cycle. They are now removed:
+  - `.claude-plugin/plugin.json`'s description and the usage-report issue form;
+  - `CONTRIBUTING.md` (twice), `what-the-gate-proves.md`, `filling-a-template.md`, the getting-started
+    tutorial, the usage-log README and `pull-queue.md`;
+  - internal status lines in `STATE.md`'s claim ledger, `plan-inventory.md`, `roadmap.md` (twice) and
+    `tier2-specs.md`.
+
+  Dated records are left as written, as this record left ADRs 0039, 0043 and 0047: released changelog
+  sections, release notes, decision records, bundle history entries, eval results and dated briefs.
+  The ban on calling a bundle proven, verified or validated is untouched.
