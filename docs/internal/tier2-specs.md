@@ -29,6 +29,8 @@ design task" rather than "a spec-driven execution".
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
 | `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | **Built 2026-09-23**, shipped in `v0.13.0`. Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md); [build report](../../bundle-builds/reports/issue-log_v0.1.0.md) |
 | `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23**, shipped in `v0.13.0`. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
+| `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | No. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it |
+| `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | No. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -992,3 +994,405 @@ prediction held, and by a margin: the drafting stage cost $4.71 against $5.63 an
 agent $1.24 against $1.58 and $2.62, one variant instead of two. Three builds is still three points, not a
 rate. Not counted: the admission retrieval run while the spec was written, and the orchestrator's own
 spend.
+
+---
+
+### delivery-docs (new member): the internal announcement the release-notes guide routes to
+
+**`announcement-internal-comms`** - `delivery-docs`, **`phase: deliver`**, sizes **`[lean]`** (provisional),
+methodology **`methodology-agnostic`**, catalog id `announcement-internal-comms`, catalog name "Announcement /
+Internal Comms", aliases `internal memo`, `launch announcement`, `Slack canvas`. Catalog owner: PM / PMM.
+Purpose: "Announce changes or launches to internal/external audiences". `size_variant: S`, `rarity: common`,
+`tier_inferred: true`, `relationships: [Release Notes]`.
+
+**Scope, narrowed from the catalog's:** the **internal** announcement of a **product launch or change**,
+written for people in the organization who did not do the work (support, sales, other teams, leadership). The
+record of what changed, for customers or for anyone else, is `release-notes`' job, so the catalog's
+"internal/external" narrows to internal, and the entry is corrected when the bundle lands.
+
+#### Demand: one routing row, and a family forecast that lost to research
+
+- `release-notes_guide.md`, When NOT to use: "You need a full launch plan and comms. Use a launch checklist and
+  announcement; release notes are one input." The launch checklist shipped in `v0.12.0`; this is the other half
+  of that sentence.
+- The `communication-docs` contract named "a release announcement distinct from `release-notes`" as a likely
+  member. **It does not join that family**; see the next section and
+  [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md).
+- Built on the maintainer's direction of 2026-09-24 under
+  [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue #177,
+  build-candidate 3).
+
+#### The family: `delivery-docs`, by ADR 0059
+
+Tested on 2026-09-25 against the membership section and axis rule of all nine contracts. Two admit it:
+`communication-docs`, whose membership test fits ("exists to tell people who are not doing the work what is
+happening with it") but whose only axis value, `utility`, ADR 0034 justified as "maintained, periodic"; and
+`delivery-docs`, whose test admits it as written ("announces a unit of product work") at a phase that describes
+it honestly. **The maintainer chose `delivery-docs` on 2026-09-25.** The contract moves to `0.2.0` with the
+change-request amendment below, and the chain sentence gains the internal announcement beside the release note.
+
+#### Admission: three qualifying sources, and all of them vendor or practitioner tier
+
+Every quotation below was checked against the source's raw text on 2026-09-25, not against a retrieval
+tool's summary of it. **No standards body, government or professional institute publishes this document.**
+The UK Government Communication Service's functional standard names announcements only as an activity
+("Communication, in the context of this functional standard, includes announcements, media management,
+coordinated communication activities"); Prosci, CIPR and the Institute of Internal Communication publish
+communication *plans* and *strategies*, never the announcement itself. The `communication-docs` contract
+predicted this about the whole category ("its literature is thin and vendor-dominated"), and the bundle must
+say so rather than dress vendor content as practice.
+
+| Source | What it publishes | Licence |
+|---|---|---|
+| Staffbase, "Organizational Announcements" (Robert Grover, 2025, updated 2026) | Defines the type by name ("An organizational announcement is an internal communication that shares important updates with employees across a company") and ships seven worked templates, one a new product launch: "These templates are a starting point, not a one-size-fits-all solution" | All rights reserved |
+| GitLab Handbook, "How to make a company wide announcement" | Prescribed content, not a file: "Keep it simple, brief and summarize what is important. Cover the 5 W's", and "The majority of information should still be in the Handbook which you include links to" | All rights reserved (the handbook's own footer; GitLab's product docs are CC BY-SA, the handbook is not) |
+| Jason Fried (37signals), "Deployments: How we announce new features and updates internally at Basecamp" | A named internal format for a shipped feature: a post that "explains what's new" and "points out what could be an issue", and is "wonderful for those on the front lines too" | Not stated |
+
+**Any one of the three clears [ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)'s bar.**
+All three are all-rights-reserved or unstated, so **they are structure evidence and short quotation only; no
+wording may be adapted.** Atlassian's Team Playbook play "Change Management Communication With Video" supplies
+three content prompts ("What's changing?", "Why is this change important?", "How will this change impact
+them?") but its deliverable is a video, so it corroborates structure and is not counted.
+
+**Two things the research deliberately did not count.** US Army AR 25-50 publishes the memorandum, which the
+catalog lists as an alias ("internal memo"), but counting it would be the library certifying itself through
+its own alias. And **AR 25-50 is not a source for "bottom line up front"**: the current edition (2020, revised
+2024) contains neither the phrase nor the acronym; only the superseded 2013 edition did. The principle is
+sourced instead to Nielsen Norman Group ("Start content with the most important piece of information so
+readers can get the main point, regardless of how much they read") and the MLA, for which a writer buries
+the lede "when the newsworthy part of a story fails to appear at the beginning, where it's expected".
+
+#### Scope: after the decision, for the people who did not make it
+
+The sharpest boundary in the research is time. Amazon's PR/FAQ borrows the announcement's form for the
+opposite purpose, before anything is built: Bryar and Carr write that "Normally, writing a press release is the
+last step in launching a new product", and the PR/FAQ inverts that as a forcing function. This library ships
+that device as `product-vision`'s `prfaq` format. **The internal announcement fires after the decision and
+alongside the launch**, to people who must act on it.
+
+The internal-versus-external question has **no consensus**, and the companion reports three positions rather
+than picking one: one document with internal and external parts (the PR/FAQ's External and Internal FAQs);
+separate documents with no stated order (GitLab's handbook keeps internal and external communication in
+separate sections); and separate documents, internal first (Tomorrow People: "you should leave enough time
+between your internal and external launch so you can set realistic milestones for each department"). The last
+rests on one marketing agency's post, and the companion says so.
+
+#### Section design
+
+Provisional, one size. **The evidence argues against a second weight.** Staffbase's seven templates share one
+shape (a subject line, a salutation and three or four sentences), and its two highest-stakes examples differ
+from the rest by one sentence, not a section. Leadership quotes and FAQ links appear on that page only as
+optional best practice ("Involve leadership", "Link to FAQs or additional resources"), never inside a template.
+A full variant built from them would be the library's invention, so none is proposed.
+
+| Section | What it carries |
+|---|---|
+| **Headline** | One line a reader can act on without opening the rest. Every Staffbase template opens with a subject line; the inverted-pyramid rule is NN/g's. The TRAP is the buried lede (MLA; Tomorrow People: "avoid burying the most relevant information with the generic bits") |
+| **What Is Changing, and When** | The launch or change, who it applies to, and the date. GitLab's 5 W's; Atlassian's "What's changing?" |
+| **Why It Matters** | The reason, in the reader's terms. Atlassian's "Why is this change important?"; the TRAP is jargon (Staffbase: "Use plain language and avoid corporate jargon"; Tomorrow People: "product marketing teams use a lot of jargon") |
+| **What It Means for You** | What changes for this audience, and what, if anything, they must do and by when. Atlassian's "How will this change impact them?"; Staffbase's "what they need to do (if anything)"; Basecamp's front-line purpose |
+| **Known Issues** | What could go wrong or is not done yet, so support hears it here first. Fried: a Deployment post "points out what could be an issue". Where it overlaps `release-notes`' Known Issues, **it links there rather than restating** |
+| **Where to Learn More** | The source of truth and a named contact. GitLab: the detail belongs in the linked source, not in the announcement; Staffbase's "named contact" |
+
+**Frontmatter, not sections:** the audience, the channel and the send date. They are the author's decisions,
+not the reader's content. GitLab gates its company-wide channel by reach ("Is this relevant to all team
+members globally?") and asks for notice "ideally 72 hours (at minimum 24 hours) in advance of a due date";
+**that window is GitLab's own house rule** and the guidance labels it so rather than stating it as a norm.
+
+**The design rule this bundle owes most to its sources: link, do not restate.** GitLab's instruction to keep
+the information in the linked source is also what keeps an announcement from contradicting the release notes
+or the PRD it summarizes. Every fact in it should be traceable to an upstream artifact, and the guide's rubric
+checks for one that is not.
+
+#### Failure modes: which are sourced, and which the build must label or cut
+
+| Failure | Status |
+|---|---|
+| Burying the point | **Sourced**: NN/g, MLA, Tomorrow People |
+| Jargon | **Sourced**: Staffbase, Tomorrow People |
+| Posting it where it gets lost | **Sourced**: GitLab, "we recommend that you do not use #whats-happening-at-gitlab as a sole location for important announcements as information might get lost or muted" |
+| Broadcasting instead of starting a conversation | **Sourced**: Staffbase, "internal announcements feel more like broadcasts than conversations"; Prosci's "telling plan rather than a communications plan" |
+| Contradicting the release notes | **Not found in any verified source.** The library's own, and labelled so |
+| No call to action | **Only the fix is sourced** (Staffbase, GitLab's "call to action"); the failure's name is the library's |
+| "Announcement fatigue" | **Not found as a term.** The adjacent, sourced concept is notification fatigue (tchop: "Notification fatigue is the exhaustion and desensitisation people feel when they receive too many alerts"), and GitLab's "Be mindful of the attention economy" |
+
+#### What makes it not a sibling
+
+- **Not `release-notes`.** A release note is a constrained record of what changed; GitLab's own release-note
+  process caps an entry at "125 words or fewer, and no images or videos", and LaunchNotes calls it a "Curated
+  user-impact summary for a release, written so customers and GTM teams know what changed and why it
+  matters". The announcement tells the people who did not do the work what the change means for them and what
+  they must do, and links to the notes. **The line is purpose, not audience**, and it is this library's, drawn
+  in the contract: `release-notes_companion.md` already recommends "the full notes internally and the lean
+  notes externally", so an internal reader is not what distinguishes the two.
+- **Not `launch-coordination-checklist`.** The checklist's Launch Communications section confirms that the
+  right people have been told; the announcement is one of the things it confirms. Its example already names
+  the communications owner (Priya Nair) for the Saved Views Sharing launch.
+- **Not `status-report`.** A status report is periodic and backward-looking; the announcement is written once,
+  for one event.
+- **Not `product-vision`'s PR/FAQ.** Before the decision, not after it (above).
+- **Not a communication plan.** Prosci's deliverable is a plan for repeated, multi-sender messages; the
+  announcement is one message within such a plan, if there is one.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `delivery-docs` | ADR 0059 |
+| `phase` | `deliver` | The only value the contract allows, and honest: it announces a launch or change of a unit of product work |
+| `sizes_available` | `[lean]` **provisional** | Argued above; the catalog agrees (`size_variant: S`), and the contract permits it |
+| `status` | `beta` | Every bundle |
+| `methodology` | `methodology-agnostic` | `release-notes`' value; nothing in the sources ties the type to a method |
+| `pairs_with` | `[]` | No pm-skills skill produces an internal launch announcement. The nearest, `foundation-stakeholder-update`, translates one meeting's outcomes for people who were not there (checked on pm-skills `origin/main`, 2026-09-25, with the direct contents call) |
+| `related_templates` | `[release-notes, launch-coordination-checklist, prd]` **provisional** | The record it links to, the checklist that confirms it was sent, and the source of its facts |
+| `aliases` | `internal memo`, `launch announcement` kept; **`Slack canvas` dropped, recommended**; **never `release announcement`** | `release-notes` already carries `release announcement`. A Slack canvas is a surface, not a document type. A build decision, argued in the research log |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `delivery-docs` contract `0.2.0`** and the dated correction in `communication-docs` section 1, both of
+   which land with ADR 0059 in the same change as this spec.
+2. **`release-notes`' Relationships section owes a line.** The contract obliges every member to state its
+   position in the chain, and `release-notes_companion.md` has never had an internal announcement to place.
+   `release-notes_guide.md`'s routing row may link to the bundle, a build decision.
+3. **The catalog entry**, per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research): its
+   purpose ("internal/external audiences") narrows to internal, and the `Slack canvas` alias goes if the build
+   drops it. `docs/internal/catalog.md` and `atlas/catalog-data.json` both, then regenerate the atlas.
+4. **This page's Progress table**, and GitHub issue #177.
+
+#### The example
+
+**The internal announcement of the Saved Views Sharing launch**, sent by its communications owner, Priya Nair.
+`launch-coordination-checklist_example.md` names her in that role and says the public announcement is "Drafted
+separately as a `release-notes` entry", with Support and Documentation briefed before go-live; this example is
+the internal counterpart. **Every fact must be read from an existing example** (the checklist, the PRD, the
+release notes, the test plan), and the link-do-not-restate rule means the example should show it doing that.
+
+**A pre-existing contradiction the build must resolve first, not inherit.** `release-notes_example.md`
+(Acme Analytics 2.4.0, 2026-06-30) lists sharing under New ("share a view with your team"), while the
+launch checklist says Sharing launched later, with an exit review on 2026-07-17, "on top of the Tier 3
+private-views work that shipped ahead of it", and the PRD phases sharing after a security review. **An
+announcement that reads its facts from both would repeat the disagreement.** The build either corrects the
+release-notes example (a history entry and a version bump on that bundle) or announces a launch whose facts
+agree across every source it reads.
+
+#### What the build costs
+
+Single-size, like `definition-of-ready` ($13.89 at API list rates, $11.69 for its 15 build agents), so
+drafting should cost about the same. Build through `build-bundle.js` with `sizes: ["lean"]`, every agent on
+Sonnet.
+
+---
+
+### delivery-docs (new member, by amendment): the change request two bundles route to
+
+**`change-request`** - `delivery-docs`, **`phase: deliver`**, sizes **`[lean, full]`** (provisional),
+methodology **`generic`**, catalog id `change-request`, catalog name "Change Request", aliases `RFC (ITIL)`,
+`change record`, `change ticket`. Catalog owner: Change Manager. Purpose: "Formally request and authorize a
+production change". Category Release / Deployment / Runbooks, stage `release`, methodology ITIL, `formality:
+formal-auditable`, `size_variant: S/M`, `relationships: [CAB review]`. **Almost every one of those catalog
+calls describes the lineage this bundle does not serve**, and the entry is corrected when it lands.
+
+#### Demand: two bundles route to it
+
+- `bug-report_guide.md`: "**It is a request, not a defect.** If nothing promised the behavior you want, that is
+  a change request." Its companion covers the boundary in section 6.
+- `issue-log_template-full.md` links each issue "to a risk it materialized from, a change request it raised, or
+  a decision that closed it", and its guide names a raised request for change as a reason to use the full
+  weight.
+- Built on the maintainer's direction of 2026-09-24 under
+  [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (GitHub issue #179,
+  build-candidate 5).
+
+#### The family: `delivery-docs`, by amendment (ADR 0060)
+
+**No contract admitted this type as written, and that is the finding that shaped everything else.** Tested on
+2026-09-25 against all nine membership tests, a per-occasion change request fitted none; `governance-docs`,
+the natural-looking home, excludes "An event-driven or phase-bound artifact". The maintainer chose to widen
+`delivery-docs` with a fifth verb: the family's artifacts now define, decompose, verify, **change**, or announce
+a unit of product work. The contract's section 1 states what the verb does not admit (a change to a running
+production system; the standing change log). See
+[ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which also records the three rejected
+options.
+
+#### Which change request: the project and product baseline
+
+Two lineages share the name, and the readable sources support them about equally:
+
+| Lineage | What changes | Readable sources |
+|---|---|---|
+| **Baseline** (served) | Something agreed about a unit of work: scope, requirements, schedule, cost | PMI's Lexicon; the PMBOK Guide 6th edition errata; PRINCE2 (via prince2.wiki); APM; the European Commission's PM² guide and Change Request Form; the CDC Unified Process form; GSA's M3 Playbook form |
+| IT service (the neighbour) | A running system | NIST SP 800-128 Appendix E and SP 800-53 CM-3; the ITIL glossary; Prairie View A&M's form; IT Process Wiki's RFC checklist |
+
+**The maintainer chose the baseline lineage on 2026-09-25**, because the library's routing already used it (a
+bug-report reader asking for behavior nothing promised is asking to change what the PRD and acceptance criteria
+agreed) and because its audience is product management and software delivery, not IT operations. The IT
+service lineage stays a named neighbour: its vocabulary (standard, normal and emergency changes, a change
+authority, a back-out plan) is described in the companion and does not appear in the template.
+
+**The two lineages share a skeleton**, which is why one bundle can name both honestly: an identifier, a
+requester, a description of the change, a reason, an impact assessment, and a decision by a named authority.
+**They diverge on everything else**: the IT forms add configuration items, security impact and rollback; the
+baseline forms add scope, schedule and cost impact against an agreed plan.
+
+#### Admission: retrieved, and the widest named-source base on this page
+
+Every quotation below was checked against the source's raw text on 2026-09-25. Three sources were reached only
+through the Internet Archive, because their live pages now return 403 or 404, and **the research log must cite
+the archived copy that was actually read**, not the dead URL.
+
+| Source | What it says or publishes | Licence |
+|---|---|---|
+| PMI, *Lexicon of Project Management Terms* v5.0 (January 2026) | "A formal proposal to modify a document, deliverable, or baseline." | PMI, personal use only |
+| PMI, *PMBOK Guide* 6th edition, errata (fifth printing) | "The change log is used to record all submitted change requests." The Guide itself is sold and was not read | PMI |
+| European Commission, *PM² Project Management Methodology Guide* v3.1 (2023) | A change request asks to "amend an aspect of the agreed baseline of a project", and "can be formally submitted via a Change Request Form, or can be identified and raised during meetings as a result of decisions, issues or risks"; "There are four possible decisions: approve, reject, postpone or merge the change request" | **CC BY 4.0** |
+| PM² Change Request Form template v3.0.1 (docx) | Four narrative sections, "Current Situation", "Desired Situation", "Impact or Risks" and "Out of Scope", and "Once the change request is logged into the Change Log, then this form is updated with the assigned Change ID and the form is archived" | **Not stated in the file**; the guide's CC BY 4.0 does not automatically cover it |
+| CDC Unified Process, *Change Request Form (example)* (2009, archived copy) | Three sections by actor: "SUBMITTER - GENERAL INFORMATION", "PROJECT MANAGER - INITIAL ANALYSIS", "CHANGE CONTROL BOARD - DECISION" | Not stated; presumptively a US government work, unconfirmed |
+| US GSA, *M3 Playbook Change Request Form Template* (docx, read from its XML) | "Requirements Change Request Information" and "Change Control Board Approval Information" | Not stated |
+| APM glossary and "What is change control?" | A change request: "A request to obtain formal approval for changes to the approved baseline"; and "Change requests may arise as a result of issues" (the second is on the change-control page, not the glossary) | APM, not stated |
+| PRINCE2, via prince2.wiki | A request for change: "It is a proposal for a change to a baselined product"; the change authority is "A person or group to whom the project board may delegate responsibility for reviewing and approving change requests or off-specifications" (the second is on the change-authority page) | AXELOS, all rights reserved |
+
+**PM² is the adaptable source**, as it was for `issue-log`: its guide is CC BY 4.0, so its definitions and
+process wording may be adapted with attribution. Its form's field layout is structure evidence only until a
+licence covering the docx is found. HHS's EPLC Change Management Plan (2008, archived copy) is a useful
+outlier rather than a third form: it gives one field list for "THE PROJECT'S CHANGE REQUEST FORM AND CHANGE
+MANAGEMENT LOG" together, and the companion reports it as the case where the two are merged.
+
+**What was not read.** The PMBOK Guide body, ISO 21502:2020 beyond its catalog page, AXELOS's own PRINCE2 and
+ITIL manuals, and the ITIL 4 Change Enablement practice guide. ITIL's change types are sourced only to
+PeopleCert-copyrighted Foundation training material redistributed by a training provider, and "normal change"
+is absent from that glossary; since the template carries no ITIL vocabulary, none of this is load-bearing.
+
+**Retrieval notes for the build's research**, because several of these sources cannot be read at the address
+a search returns, and a research agent that tries the live URL will drop them:
+
+| Source | Read from | How |
+|---|---|---|
+| CDC UP Change Request Form (example) | <http://web.archive.org/web/20240601190446/https://www2a.cdc.gov/cdcup/library/templates/CDC_UP_Change_Request_Form_Example.doc> | Live site returns 404. A 1997-format `.doc`: extract with `antiword`, not a text decode |
+| HHS EPLC Change Management Plan | <http://web.archive.org/web/20260226151438/https://www.hhs.gov/sites/default/files/ocio/eplc/EPLC%20Archive%20Documents/07%20-%20Change%20Management%20Plan/eplc_change_management_plan_template.doc> | Live returns 403. `antiword` |
+| CDC UP newsletter on change management (2009) | <http://web.archive.org/web/20250418071852/https://stacks.cdc.gov/view/cdc/77284/cdc_77284_DS1.pdf> | Live returns 403. Practice narrative only; **not** the form |
+| PM² Change Request Form v3.0.1 | <https://www.pm2.center/wp-content/uploads/2022/02/21.I.PM2-Template.v3.Change_Request_Form.ProjectName.dd-mm-yyyy.vx_.x-1.docx> | The `pm2.eu` landing page carries no fields; read the docx's `word/document.xml` |
+| PM² Methodology Guide v3.1 | <https://www.pm2alliance.eu/wp-content/uploads/2024/02/pm%C2%B2-project-management-methodology-NO0523520ENN.pdf> | `pdftotext` without `-layout` |
+| GSA M3 Playbook Change Request Form | <https://ussm.gsa.gov/assets/files/M3-Playbook-Change-Request-Form-Template.docx> | Read `word/document.xml`; a text decode of the docx fails every quote |
+| PRINCE2 change authority | <https://prince2.wiki/people/change-authority/> | The definition is here, not on `/practices/issues/` |
+| APM, change requests arising from issues | <https://www.apm.org.uk/resources/what-is-project-management/what-is-change-control/> | Not on the glossary page |
+| DORA 2019 report | <https://dora.dev/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf> | The CAB finding and "there is still an important role for the CAB" |
+
+The sweep's full returns and the main loop's re-check are kept, untracked, at
+`_local/research/2026-09-25_admission-sweep-2/`.
+
+#### The change-request fork, answered
+
+`issue-log`'s spec left one question to this bundle's research: **if the PRINCE2 lineage (a request for change
+is a kind of issue) proved dominant, the type field would carry it.** It is not dominant. PRINCE2 files a
+request for change as one of "five types of issues"; PMI names a separate change log, and PM², the CDC form and
+GSA's form all treat the request as its own document. **So the request records where it came from**: PM²'s own
+list, "decisions, issues or risks", plus a meeting or a stakeholder, with a link back to the issue log entry
+when there is one. That is compatible with the issue log's existing Links to Other Logs section and needs no
+change to it.
+
+#### Defects: where the government forms and this library disagree
+
+Two of the readable forms **fold defects in**: GSA's "Type of Change" offers New Requirement, Change to Existing
+Requirement and Defect, and the CDC form's type is Enhancement or Defect. This library's `bug-report` guide draws
+the opposite line, and one named practitioner draws it too (Ian Devlin: a defect is "something is wrong with the
+delivered code", a change request covers "things that are new and additional to what was delivered"). **The
+template follows the library's line** and offers no Defect type; the companion reports that two public-sector
+forms do, so a reader from that background is not told they are wrong.
+
+#### The agile position, and who the bundle is for
+
+The 2020 Scrum Guide routes change through the backlog: "Those wanting to change the Product Backlog can do so
+by trying to convince the Product Owner." The Agile Manifesto ranks "Responding to change over following a
+plan". **A team working that way needs no change request**, and the guide's When NOT to use says so first.
+The bundle is for work where an agreed baseline carries weight outside the team: a fixed-price contract
+("fixed-price contracts usually require a detailed and exact description of the subject matter of the contract
+in advance", Wikipedia's "Agile contracts"), a regulated product (an Agile Alliance experience report maps
+design changes onto "Change control procedures" in an FDA-regulated project), or a budget and scope a steering
+group signed off. Two sharper agile claims (a Scrum.org forum thread, and a remark attributed to Mary
+Poppendieck that needing a change request is itself a warning sign) were found only as search snippets and
+**must not be quoted**.
+
+#### Section design
+
+Provisional, mirroring the CDC form's three actors and PM²'s four decisions, and expected to move:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **The Request** | yes | What should change, in one sentence, and what it changes: which agreed artifact and version (the PRD, the acceptance criteria, the plan). Requester, date, and where it came from (decision, issue, risk, meeting). PM²'s "Current Situation" and "Desired Situation" are the published shape |
+| **Why** | yes | The reason, and **what happens if it is not made**: NIST's sample asks for the expected impact of not making the change, and PM²'s process asks the assessor to "consider the impact of not implementing" it. Both lineages ask, which is why it is in lean |
+| **Impact** | yes | On scope, schedule, cost, quality and risk, each stated or marked "none". PM²'s baseline list and the CDC form's hour, duration, schedule and cost impact are the published shapes. A table section, so it carries PRIORITY and ROW HINT |
+| **Decision** | yes | Approve, reject, postpone or merge (PM²'s four), by whom, on what date, with any conditions. **One named decider**; the PMI Lexicon's change control board and PRINCE2's change authority are the two published forms of that authority |
+| **Options Considered** | full only | Alternatives to the change as requested, including a smaller version and doing nothing. The CDC form's Recommendations and the PM analysis role |
+| **Out of Scope** | full only | What this request does not change, so an approval is not read as broader than it was. PM²'s form carries it as a section of its own |
+| **Implementation and Traceability** | full only | What was updated when the change was approved (which artifact, which new version), the change log entry, and links to the issue, risk or decision it came from. PM²'s form archives itself once the change is logged |
+
+**What stays out of the template:** a back-out plan, configuration items, change types and a CAB. They belong
+to the IT service lineage, and the companion places them there.
+
+#### What makes it not a sibling
+
+- **Not a `bug-report`** (above). A defect fails an agreement; a change request alters one.
+- **Not the `rfc` bundle.** ITIL abbreviates a request for change as RFC; this library's `rfc` is a request for
+  comments, a technical design proposal, in the IETF lineage ("Request for Comments"). **The guide names the
+  collision on its first line**, and the catalog alias `RFC (ITIL)` is dropped, recommended.
+- **Not the `issue-log`.** An issue may raise a change request; the request is not an issue in this library's
+  convention (above), and it links back.
+- **Not an `adr`.** An ADR records a technical decision already made; a change request asks an authority to
+  decide on altering an agreed baseline.
+- **Not a change log.** PMI: "The change log is used to record all submitted change requests." The log is a
+  standing register, a separate catalog candidate (`change-log-governance`) that `governance-docs` admits as
+  written; this bundle is one request.
+- **Not IT change enablement.** The neighbour, above. DORA's 2019 report is the reason the companion does not
+  present a change board as an unqualified good: it found that approval by "an external body such as a change
+  advisory board (CAB) or a senior manager" had "a negative impact on software delivery performance", while
+  holding that "there is still an important role for the CAB". **That finding is about production changes**,
+  and the companion must not stretch it to a project change board.
+
+#### Failure modes: mostly unsourced, and the build must say so
+
+The research found **no verified source** for the failure modes a brief would expect: scope creep through
+informal change (PMI's article was not read), requests that never get a decision, and change boards that
+rubber-stamp project changes. Each is labelled as the library's own judgment or cut. **One tempting source
+must not be used**: Prosci's "change fatigue" describes people absorbing too much organizational change, not a
+flood of change requests.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `delivery-docs` | ADR 0060 |
+| `phase` | `deliver` | The only value the contract allows; a baseline change is raised while a unit of work is being delivered |
+| `sizes_available` | `[lean, full]` **provisional** | The catalog says `S/M`. PRINCE2's request is light (the products to change and a justification) and the CDC form carries three actors' sections, the same split the other members make |
+| `status` | `beta` | Every bundle |
+| `methodology` | `generic` | PMI, PRINCE2, APM and PM² define it alike; the catalog's `ITIL` describes the lineage not served |
+| `pairs_with` | `[]` | No pm-skills skill produces or consumes a change request (checked on pm-skills `origin/main`, 2026-09-25, with the direct contents call) |
+| `related_templates` | `[prd, acceptance-criteria, bug-report, issue-log]` **provisional** | The baseline it changes, the agreement it alters, and the two bundles that route to it |
+| `aliases` | `change record` kept; **`RFC (ITIL)` and `change ticket` dropped, recommended** | `RFC` collides with a shipped bundle; "change ticket" is service-desk vocabulary for the lineage not served. A build decision, argued in the research log |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `delivery-docs` contract `0.2.0`**, which lands with ADR 0060 in the same change as this spec.
+2. **`bug-report` and `issue-log` may link to the bundle**, a build decision; neither changes its position.
+   **`rfc`'s guide owes one line** naming the ITIL collision from its side, because a reader who searches "RFC"
+   today finds only the design proposal and nothing tells them there is another meaning.
+3. **The catalog entry**, per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research):
+   purpose, owner, category, methodology, relationships and aliases all describe the IT service lineage. Both
+   `docs/internal/catalog.md` and `atlas/catalog-data.json`, then regenerate the atlas.
+4. **This page's Progress table**, and GitHub issues #179 and #180.
+
+#### The example
+
+**A change request against the Saved Views PRD**, chained onto the delivery-docs scenario rather than the
+governance one. `prd_example.md` (doc version 0.3.0, owner Priya Nair) lists as a non-goal "Scheduled delivery
+of a view by email or Slack. Out of scope now; likely a fast follow." A request to bring it into scope, and a
+decision to postpone it to a follow-on release, is exactly the case the type exists for, and it agrees with the
+`release-notes` example, which ships no scheduled delivery. The request must be dated inside the PRD's life
+(created 2026-06-12) and must not contradict any later sibling.
+
+**One constraint from the governance side.** `issue-log_example.md` states that neither ISS-11 nor ISS-12 raised
+a change request ("No request for change; no decision"), so this example must not attach one to either.
+
+#### What the build costs
+
+Two sizes, like `issue-log` ($16.76 whole, $14.29 for its 15 build agents). Build through `build-bundle.js`
+with every agent on Sonnet.

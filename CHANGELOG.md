@@ -12,6 +12,23 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Specs for `announcement-internal-comms` and `change-request` in
+  [`tier2-specs.md`](docs/internal/tier2-specs.md)**, written with their admission sources retrieved and every
+  quotation checked against the source's raw text. The internal announcement is admitted on three vendor and
+  practitioner sources (Staffbase, GitLab's handbook, Jason Fried on Basecamp's internal posts); no standards
+  body publishes it, and the spec says so. The change request has the widest named-source base on the page
+  (PMI, PRINCE2, APM, the European Commission's PM² under CC BY 4.0, and public-sector forms from CDC and
+  GSA), and serves the project and product baseline sense, not IT service change.
+- **[ADR 0059](docs/internal/decisions/0059-announcement-internal-comms-joins-delivery-docs.md) and
+  [ADR 0060](docs/internal/decisions/0060-change-request-joins-delivery-docs.md): both join `delivery-docs`**,
+  whose contract moves to `0.2.0`. The announcement was forecast by `communication-docs`, but that family's
+  only axis value describes a standing instrument and an announcement is written once; the forecast is
+  corrected in place. The change request fitted **no** contract as written, so `delivery-docs`' membership
+  test gains the verb "changes", the first admission in this library that widens a test rather than
+  applying one.
+
 ### Changed
 
 - **The last "nobody but the author has filled a template" lines are gone.**
