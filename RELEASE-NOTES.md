@@ -8,6 +8,21 @@ Newest first.
 
 ---
 
+## v0.14.0
+
+**Two bundles in one release: an internal announcement and a change request.** The internal announcement
+tells the people who did not do the work what a launch or change means for them and what they must do; it
+is admitted on vendor and practitioner sources only, and it says so. The change request asks for something
+already agreed to change and records the decision on it; it is built on PMI, PRINCE2, APM and the European
+Commission's PM2 guide, and it says first that a team changing its own backlog through its product owner
+does not need one.
+
+Both research logs had every quotation checked against the source's raw text. This release also finishes
+retiring the "nobody but the author has filled a template" lines, and corrects a catalog entry that had
+described the change request as IT service change.
+
+---
+
 ## v0.13.0
 
 **Two bundles in one release: an issue log and a definition of ready.** The issue log records problems
