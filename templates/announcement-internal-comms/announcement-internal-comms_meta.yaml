@@ -1,0 +1,32 @@
+id: announcement-internal-comms
+title: Announcement / Internal Comms
+summary: >-
+  The message that tells the people in an organization who did not do the work that something is launching
+  or changing: what is changing, why it matters to this reader, what they must do and by when, and where the
+  underlying record of the change lives. It translates a decision already made; it does not restate the
+  decision's own supporting facts.
+doc_type: announcement-internal-comms
+family: delivery-docs
+phase: deliver
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "This bundle ships one size. The strongest source found for this type publishes seven worked templates sharing a single shape (a subject line, a salutation, three or four sentences), and even its highest-stakes examples differ from the rest by one sentence rather than an added section; building a heavier variant from that material would be inventing a shape no source documents, so none is offered."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - communication
+  - internal-comms
+  - launch
+  - change-announcement
+  - employee-communication
+related_templates: [prd, release-notes, launch-coordination-checklist, status-report, test-plan, bug-report, definition-of-done]
+aliases:
+  - internal memo
+  - launch announcement
+  - Slack canvas
+catalog_ref: 186
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-25
+license: Apache-2.0

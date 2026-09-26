@@ -19,14 +19,18 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the five builds captured end to end, is roughly 7M to 12M weighted
+10 to 20 times. Measured cost, from the seven builds captured end to end, is roughly 7M to 12M weighted
 token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
 spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
 and $14.22 with every agent on Sonnet as pinned; issue-log, the second, cost $14.29 for the same 15
 research, drafting and review agents ($16.76 with the three agents that swept the counts at landing); and
 definition-of-ready, the third and the first single-size build, cost $11.69 for its 15 ($13.89 with its
-sweep), its drafting stage the cheapest of the three because it writes one template, not two; while
-test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+sweep), its drafting stage the cheapest of the three, which was read at the time as the effect of writing
+one template, not two. announcement-internal-comms, the fourth and the second single-size build, cost 8,495,731 weighted and
+$16.99 for its 15 agents; change-request, the fifth, cost 7,203,075 weighted and $14.41 for its 15 agents.
+**This time the single-size build was the dearer one**: announcement-internal-comms' drafting stage cost
+MORE than change-request's two-template drafting, $8.58 against $5.78, mostly cache reads, so the number
+of variants is not by itself a predictor of cost. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.

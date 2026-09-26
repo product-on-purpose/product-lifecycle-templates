@@ -16,7 +16,8 @@ The short card. Why the document is shaped this way, and the argument behind eve
 
 - **You can fix it now, alone, today, and nobody outside the team saw it.** Fix it. A report you write and
   close yourself in the same hour is overhead, not process.
-- **It is a request, not a defect.** If nothing promised the behavior you want, that is a change request. The
+- **It is a request, not a defect.** If nothing promised the behavior you want, that is a
+  [change request](../change-request/change-request_guide.md). The
   working test: a defect means the software does not work the way it says it will; an enhancement means it
   does not work the way someone wants.
 - **It is a live production incident.** Get service back first. Incident response and defect management have

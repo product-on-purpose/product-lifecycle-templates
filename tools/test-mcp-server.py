@@ -162,7 +162,7 @@ def main():
     # spec itself prescribed, which is the ninth falsified budget in this lineage and the first that
     # was ours rather than the 2026-07-12 sketch's. `sizing_guidance` moved to `get_template`, where it
     # is actually read, and 800 is the measured worst case plus room for one long summary.
-    print(DIM + "\n  AC1: 3 candidates under 800 approx tokens, for all 33 bundles" + OFF)
+    print(DIM + "\n  AC1: 3 candidates under 800 approx tokens, for all 35 bundles" + OFF)
     worst, worst_id = 0, None
     for b in bundles:
         r = D(srv.search_templates(b["title"], max_results=3))
@@ -204,7 +204,7 @@ def main():
                                    r["parts"]["template"]["approx_tokens"],
                                    b["approx_tokens"].get(key)))
     check("all %d variants fetch content" % total, not unreachable, unreachable)
-    check("the tree has 68 variants and all 68 are addressable", total == 68, total)
+    check("the tree has 71 variants and all 71 are addressable", total == 71, total)
     check("every reported token count EQUALS manifest.json's approx_tokens (not merely within 10%)",
           not mismatched, mismatched[:4])
 
@@ -221,12 +221,23 @@ def main():
     # ---------------------------------------------------------------- the axis falsification
     print(DIM + "\n  The axis is phase XOR classification - every bundle must be reachable" + OFF)
     ax = srv.axis_values()
+    # Reachability is asked per bundle, by its own id inside its own axis value, not by listing each
+    # axis value with an empty query. The listing form broke on 2026-09-25 when `deliver` reached nine
+    # bundles against the 8-candidate cap: the cap is deliberate (it bounds the response), the filter was
+    # fine, and `total_matched` already tells a caller the list was cut. So the filter's coverage is
+    # checked two ways that do not depend on the cap.
     reachable = set()
-    for v in ax["phase"] + ax["classification"]:
-        reachable |= {c["id"] for c in D(srv.search_templates("", axis=v, max_results=99))["candidates"]}
-    check("every one of the %d bundles is reachable by some axis value" % len(bundles),
+    for b in bundles:
+        v = b.get("phase") or b.get("classification")
+        got = D(srv.search_templates(b["id"], axis=v))["candidates"]
+        if got and got[0]["id"] == b["id"]:
+            reachable.add(b["id"])
+    check("every one of the %d bundles is reachable through its own axis value" % len(bundles),
           reachable == {b["id"] for b in bundles},
           sorted({b["id"] for b in bundles} - reachable))
+    matched = sum(D(srv.search_templates("", axis=v))["total_matched"] for v in ax["phase"] + ax["classification"])
+    check("the axis values between them match every bundle exactly once (total_matched sums to %d)" % len(bundles),
+          matched == len(bundles), matched)
     check("a phase-only filter reaches FEWER than all bundles, which is why `axis` takes both",
           len({b["id"] for b in bundles if "phase" in b}) < len(bundles))
     check("axis_values names the phases ADR 0003 declares but no bundle uses",

@@ -17,8 +17,8 @@ metadata:
 a blank template to a document. This one goes from a document someone already wrote to a report card
 against that document type's own researched rubric.
 
-<!-- counts: bundles=33, tier1=25 -->
-The rubrics come from the same 33 bundles, covering all 25 templatable Tier-1 document types plus eight Tier-2 types.
+<!-- counts: bundles=35, tier1=25 -->
+The rubrics come from the same 35 bundles, covering all 25 templatable Tier-1 document types plus ten Tier-2 types.
 
 Nobody has to adopt anything to use this. That is the point: a critique of a document that already exists
 costs the reader nothing but the reading.
@@ -35,7 +35,7 @@ costs the reader nothing but the reading.
 - **The document does not exist yet.** Use [`plt-fill-template`](../plt-fill-template/SKILL.md).
 - **The reader wants the document rewritten.** This produces a critique and a fix list. Rewriting the
   author's content is out of scope unless they ask for it after seeing the report.
-- **The document is not one of the 33 types.** Say so and offer a structure-only review. Grading a
+- **The document is not one of the 35 types.** Say so and offer a structure-only review. Grading a
   strategy memo against the PRD rubric produces confident nonsense, and forcing the nearest bundle is the
   specific failure this library rejected two candidate types to avoid.
 - **The reader wants a verdict on whether the underlying idea is good.** The rubric grades the document,

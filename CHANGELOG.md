@@ -14,6 +14,19 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`announcement-internal-comms`](templates/announcement-internal-comms/), the 34th bundle**: the internal
+  announcement of a product launch or change, telling the people who did not do the work what it means for them
+  and what they must do. Single size. Admitted on vendor and practitioner sources only (Staffbase, GitLab's
+  handbook, Jason Fried on Basecamp's internal posts), and it says so. Its line with `release-notes` is drawn by
+  purpose rather than audience: the notes record what changed; the announcement says what it means and links to
+  them rather than restating them.
+- **[`change-request`](templates/change-request/), the 35th bundle**: a formal request to alter an agreed
+  baseline (scope, requirements, schedule, cost) and the decision on it, lean and full. Built on PMI, PRINCE2,
+  APM and the European Commission's PM² (CC BY 4.0), with CDC and GSA forms for structure; IT service change and
+  DORA's finding against external change-board approval are a named neighbour, not templated. It carries the
+  agile position as a boundary: a team changing its own backlog through its product owner does not need one.
+- **Measured build cost for both**: $16.99 and $14.41 at API list rates, every agent on Sonnet
+  ([`bundle-builds/`](bundle-builds/INDEX.md)). The single-size build was the dearer of the two.
 - **Specs for `announcement-internal-comms` and `change-request` in
   [`tier2-specs.md`](docs/internal/tier2-specs.md)**, written with their admission sources retrieved and every
   quotation checked against the source's raw text. The internal announcement is admitted on three vendor and
@@ -31,6 +44,14 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **The catalog entries for both new types are corrected in place**, per decision procedure 1. `change-request`
+  described IT service change (aliases "RFC (ITIL)" and "change ticket", owner Change Manager, feeds CAB review);
+  `announcement-internal-comms` said "internal/external audiences" and listed "Slack canvas" as an alias.
+- **`rfc`'s guide now names the ITIL collision**: in IT service management "RFC" means a request for change, and
+  the guide sends that reader to `change-request`. `bug-report`'s routing row links to the new bundle.
+- **`tools/check-example-chronology.py` reads a change request's dates** (`decision_date`, `date_submitted`); the
+  first draft of its example was skipped as undated, the silent skip that check was written to stop.
+
 - **The last "nobody but the author has filled a template" lines are gone.**
   [ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md) stopped publishing a fill
   count on 2026-09-21, and its sweep missed some live surfaces. Those were the plugin description, the
@@ -42,6 +63,8 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **`release-notes_companion.md` said the bundle "completes" `delivery-docs` alongside three others**; the family
+  has nine members. Its sibling line now links the launch checklist and the internal announcement.
 - **`STATE.md`'s bundle list said `issue-log` and `definition-of-ready` were built** but not that they
   shipped; it now says both shipped in `v0.13.0`.
 

@@ -28,7 +28,7 @@
 > both things at once. Only row 7 changed. **Every other fact below still dates from 2026-08-14 and has
 > not been re-verified.**
 
-<!-- counts: bundles=33, adrs=60, cisteps=32 -->
+<!-- counts: bundles=35, adrs=60, cisteps=32 -->
 
 **A note on the untracked references below.** Several specs and plans named here live at
 `_local/audit/2026-07-10_fable-audit/` and `_local/planning/` on the maintainer's machine, and are
@@ -94,11 +94,11 @@ ordering resumes at M3 on the roadmap's own terms**, not as a matter of preferen
 
 ### What a user can actually get today
 
-<!-- counts: bundles=33 -->
-Thirty-three researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
+<!-- counts: bundles=35 -->
+Thirty-five researched bundles, a machine-readable `manifest.json`, four user-facing how-to documents, and
 **two installable skills**, `plt-fill-template` and, since 2026-08-19,
 `plt-grade-doc`. The Claude Code plugin channel clones the tree and works. The skills-CLI channel installs
-instructions and none of the 33 bundles, and each skill fetches what it needs at run time from the release
+instructions and none of the 35 bundles, and each skill fetches what it needs at run time from the release
 tag matching its own declared version.
 
 ## 4. Spec inventory

@@ -29,8 +29,8 @@ design task" rather than "a spec-driven execution".
 | `launch-coordination-checklist` | `launch-coordination-checklist` | `standing-standards` | **Written 2026-09-22**; admission source [retrieved the same day](#standing-standards-third-member-the-launch-coordination-checklist) | **Built 2026-09-22**, shipped in `v0.12.0`. [Build report](../../bundle-builds/reports/launch-coordination-checklist_v0.1.0.md): 15 agents, all resolved to Sonnet |
 | `issue-log` | `issue-log` | `governance-docs` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#governance-docs-fourth-member-the-issue-log-the-library-already-routes-to) | **Built 2026-09-23**, shipped in `v0.13.0`. Family by [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md); [build report](../../bundle-builds/reports/issue-log_v0.1.0.md) |
 | `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23**, shipped in `v0.13.0`. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
-| `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | No. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it |
-| `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | No. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test |
+| `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | **Built 2026-09-25.** Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it; [build report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md) |
+| `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25.** Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -1181,6 +1181,15 @@ Single-size, like `definition-of-ready` ($13.89 at API list rates, $11.69 for it
 drafting should cost about the same. Build through `build-bundle.js` with `sizes: ["lean"]`, every agent on
 Sonnet.
 
+**Outcome, 2026-09-25. The prediction did not hold.** **8,495,731 weighted token-equivalents, $16.99 at API
+list rates**, 15 agents, every one resolved to Sonnet
+([report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md)). Drafting cost **$8.58**,
+against $4.71 for `definition-of-ready` and $5.78 for `change-request` built the same evening with two
+templates; almost all of the difference is cache reads (24.6M in drafting), as its example agent read widely
+across the Saved Views thread to chain one launch onto four siblings. One template instead of two did not make
+this build cheaper, so writing fewer variants is not by itself a predictor of cost. The review found the
+template's GOOD examples reused the example's own scenario; they were rewritten before landing.
+
 ---
 
 ### delivery-docs (new member, by amendment): the change request two bundles route to
@@ -1396,3 +1405,11 @@ a change request ("No request for change; no decision"), so this example must no
 
 Two sizes, like `issue-log` ($16.76 whole, $14.29 for its 15 build agents). Build through `build-bundle.js`
 with every agent on Sonnet.
+
+**Outcome, 2026-09-25.** **7,203,075 weighted token-equivalents, $14.41 at API list rates**, 15 agents, every
+one resolved to Sonnet ([report](../../bundle-builds/reports/change-request_v0.1.0.md)): research $6.01,
+drafting $5.78, review $2.62. The review found 15 findings, one blocking (a sentence that credited ITIL 4's
+glossary with a term its own log records it lacks); the main loop found two more that no lens flagged, the
+templates' GOOD examples reusing the example's scenario and the example repeating the thread's known sharing
+contradiction. Not counted: the admission sweep run while the spec was written, and the orchestrator's own
+spend.

@@ -175,12 +175,17 @@ benefit.
 - **Upstream:** the release plan and deployment plan (what ships and when), and the PRD whose feature is
   now shipping [[7]](#ref-7).
 - **Sibling:** the changelog (the structured permanent record release notes are derived from) [[1]](#ref-1), and
-  the launch checklist and announcement for a coordinated launch.
+  the [launch coordination checklist](../launch-coordination-checklist/launch-coordination-checklist_guide.md)
+  and the [internal announcement](../announcement-internal-comms/announcement-internal-comms_guide.md) for a
+  coordinated launch. The notes record what changed; the announcement tells the people who did not do the
+  work what the change means for them and what they must do. That line is drawn by purpose, not audience,
+  because the full notes may themselves go to internal readers (section 6).
 - **Downstream:** customer communications, in-app "what's new," support and knowledge-base updates, and
   the next release's "previously known issues now fixed" [[7]](#ref-7).
 
-In this library Release Notes pairs with the `deliver-release-notes` skill and completes the
-`delivery-docs` family alongside `prd`, `user-stories`, and `acceptance-criteria`.
+In this library Release Notes pairs with the `deliver-release-notes` skill and is a member of the
+`delivery-docs` family. *(Corrected 2026-09-25: this said it "completes" the family alongside three
+others; the family has grown well past four members.)*
 
 ---
 

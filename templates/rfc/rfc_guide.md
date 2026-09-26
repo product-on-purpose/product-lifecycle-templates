@@ -24,6 +24,11 @@ Fast reference for using the RFC bundle. For the full reasoning, history, and so
   prevents. Some decisions are cheaper to make and reverse than to circulate.
 - **You have no decider and no deadline.** Do not start an RFC you cannot finish; a process with no
   authority to decide produces open threads, not decisions.
+- **You mean ITIL's RFC.** In IT service management the same three letters stand for a *request for
+  change*, a different document that asks an authority to approve altering something already agreed or
+  already running. For a change to an agreed scope, requirement or plan, use a
+  [change request](../change-request/change-request_guide.md); a change to a running production system is
+  IT service change management, which this library does not template.
 
 ## RFC or ADR? (the question people actually have)
 
