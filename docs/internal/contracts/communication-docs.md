@@ -39,6 +39,15 @@ is ever built, this family stays at one member permanently, and that is an accep
 defect. *(Corrected 2026-09-23: this line called them "all grow-by-pull", a rule ADR 0039 and ADR 0041 had
 superseded by 2026-08-22.)*
 
+> **Corrected 2026-09-25: the release announcement did not join this family.** When it was researched
+> (catalog id `announcement-internal-comms`), it went to `delivery-docs` instead, by
+> [ADR 0059](../decisions/0059-announcement-internal-comms-joins-delivery-docs.md). The membership test here
+> fits it well; the axis does not. Section 2 justifies `classification: utility` as "maintained and
+> periodic", and an announcement is written once, for one launch or change, and never revised.
+> `delivery-docs` already admits a type that "announces a unit of product work" at `phase: deliver`, which
+> describes it honestly. The forecast above is left as written because it was a forecast; the other two
+> candidates it names are untouched, and this family stays at one member.
+
 ## 2. Required catalog metadata and allowed values
 
 | Field | Allowed values for this family |
