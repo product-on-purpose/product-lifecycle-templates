@@ -90,9 +90,12 @@ building is the announcement of a **launch or change to a unit of product work**
 ### Consequences
 
 - **The contract moves to `0.2.0`** (with ADR 0060). The chain sentence gains the internal announcement beside
-  the release note: the release note announces a unit of work to the people who use it, the internal
-  announcement tells the rest of the organization. **That audience split is this library's own boundary**; no
-  source read draws it in those words, and the bundle must label it so.
+  the release note: the release note records and announces what changed, and the internal announcement tells
+  the people who did not do the work what it means for them and what they must do. **The line is drawn by
+  purpose, not audience**: `release-notes_companion.md` already recommends shipping "the full notes internally
+  and the lean notes externally", so "customers versus colleagues" would contradict a shipped bundle. **That
+  split is this library's own boundary**; no source read draws it in those words, and the bundle must label it
+  so.
 - **The `communication-docs` forecast is corrected in place, with a date**, not deleted. That family stays at
   one member, which its contract calls "an acceptable outcome rather than a defect". The other two candidates
   it forecasts (an executive briefing or steering pack, a stakeholder update) are untouched.

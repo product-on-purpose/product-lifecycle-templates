@@ -1007,8 +1007,8 @@ Purpose: "Announce changes or launches to internal/external audiences". `size_va
 
 **Scope, narrowed from the catalog's:** the **internal** announcement of a **product launch or change**,
 written for people in the organization who did not do the work (support, sales, other teams, leadership). The
-external side of the catalog's "internal/external" is `release-notes`' job, and the catalog entry is corrected
-when the bundle lands.
+record of what changed, for customers or for anyone else, is `release-notes`' job, so the catalog's
+"internal/external" narrows to internal, and the entry is corrected when the bundle lands.
 
 #### Demand: one routing row, and a family forecast that lost to research
 
@@ -1118,11 +1118,13 @@ checks for one that is not.
 
 #### What makes it not a sibling
 
-- **Not `release-notes`.** A release note is a constrained record for the people who use the product; GitLab's
-  own release-note process caps an entry at "125 words or fewer, and no images or videos". LaunchNotes'
-  definition is audience-first: "Curated user-impact summary for a release, written so customers and GTM teams
-  know what changed and why it matters". The announcement tells the rest of the organization what the release
-  means for them and links to the notes. **That audience split is this library's**, drawn in the contract.
+- **Not `release-notes`.** A release note is a constrained record of what changed; GitLab's own release-note
+  process caps an entry at "125 words or fewer, and no images or videos", and LaunchNotes calls it a "Curated
+  user-impact summary for a release, written so customers and GTM teams know what changed and why it
+  matters". The announcement tells the people who did not do the work what the change means for them and what
+  they must do, and links to the notes. **The line is purpose, not audience**, and it is this library's, drawn
+  in the contract: `release-notes_companion.md` already recommends "the full notes internally and the lean
+  notes externally", so an internal reader is not what distinguishes the two.
 - **Not `launch-coordination-checklist`.** The checklist's Launch Communications section confirms that the
   right people have been told; the announcement is one of the things it confirms. Its example already names
   the communications owner (Priya Nair) for the Saved Views Sharing launch.
@@ -1259,6 +1261,24 @@ MANAGEMENT LOG" together, and the companion reports it as the case where the two
 ITIL manuals, and the ITIL 4 Change Enablement practice guide. ITIL's change types are sourced only to
 PeopleCert-copyrighted Foundation training material redistributed by a training provider, and "normal change"
 is absent from that glossary; since the template carries no ITIL vocabulary, none of this is load-bearing.
+
+**Retrieval notes for the build's research**, because several of these sources cannot be read at the address
+a search returns, and a research agent that tries the live URL will drop them:
+
+| Source | Read from | How |
+|---|---|---|
+| CDC UP Change Request Form (example) | <http://web.archive.org/web/20240601190446/https://www2a.cdc.gov/cdcup/library/templates/CDC_UP_Change_Request_Form_Example.doc> | Live site returns 404. A 1997-format `.doc`: extract with `antiword`, not a text decode |
+| HHS EPLC Change Management Plan | <http://web.archive.org/web/20260226151438/https://www.hhs.gov/sites/default/files/ocio/eplc/EPLC%20Archive%20Documents/07%20-%20Change%20Management%20Plan/eplc_change_management_plan_template.doc> | Live returns 403. `antiword` |
+| CDC UP newsletter on change management (2009) | <http://web.archive.org/web/20250418071852/https://stacks.cdc.gov/view/cdc/77284/cdc_77284_DS1.pdf> | Live returns 403. Practice narrative only; **not** the form |
+| PM² Change Request Form v3.0.1 | <https://www.pm2.center/wp-content/uploads/2022/02/21.I.PM2-Template.v3.Change_Request_Form.ProjectName.dd-mm-yyyy.vx_.x-1.docx> | The `pm2.eu` landing page carries no fields; read the docx's `word/document.xml` |
+| PM² Methodology Guide v3.1 | <https://www.pm2alliance.eu/wp-content/uploads/2024/02/pm%C2%B2-project-management-methodology-NO0523520ENN.pdf> | `pdftotext` without `-layout` |
+| GSA M3 Playbook Change Request Form | <https://ussm.gsa.gov/assets/files/M3-Playbook-Change-Request-Form-Template.docx> | Read `word/document.xml`; a text decode of the docx fails every quote |
+| PRINCE2 change authority | <https://prince2.wiki/people/change-authority/> | The definition is here, not on `/practices/issues/` |
+| APM, change requests arising from issues | <https://www.apm.org.uk/resources/what-is-project-management/what-is-change-control/> | Not on the glossary page |
+| DORA 2019 report | <https://dora.dev/research/2019/dora-report/2019-dora-accelerate-state-of-devops-report.pdf> | The CAB finding and "there is still an important role for the CAB" |
+
+The sweep's full returns and the main loop's re-check are kept, untracked, at
+`_local/research/2026-09-25_admission-sweep-2/`.
 
 #### The change-request fork, answered
 
