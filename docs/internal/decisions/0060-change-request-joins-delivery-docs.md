@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-25
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,8 +27,8 @@ consulted: [claude]
   Tier-2 candidate (see [`tier2-specs.md`](../tier2-specs.md)); and the standing **change log**, a separate
   catalog candidate (`change-log-governance`) that this record neither builds nor places, beyond noting that
   `governance-docs` admits a standing register as written.
-- **Status:** proposed 2026-09-25. The maintainer chose `delivery-docs` and the baseline lineage on
-  2026-09-25, after the research; the record is held until the maintainer has read the contract diff,
+- **Status:** accepted 2026-09-25. The maintainer chose `delivery-docs` and the baseline lineage on
+  2026-09-25, after the research, and accepted the record the same day after reading the contract diff,
   because a family contract is "adopted only after a maintainer read".
 
 ## Context and Problem Statement

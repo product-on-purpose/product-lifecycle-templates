@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-25
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,8 +27,8 @@ consulted: [claude]
   product work"), whose `phase: deliver` describes it honestly.
 - **What this does NOT decide:** admission, which retrieval settled in
   [`tier2-specs.md`](../tier2-specs.md) (three qualifying sources, all vendor or practitioner tier).
-- **Status:** proposed 2026-09-25. The maintainer chose `delivery-docs` for this type on 2026-09-25, after the
-  research; the record is held until the maintainer has read the contract diff it carries, because a family
+- **Status:** accepted 2026-09-25. The maintainer chose `delivery-docs` for this type on 2026-09-25, after the
+  research, and accepted the record the same day after reading the contract diff it carries, because a family
   contract is "adopted only after a maintainer read" ([`decision-procedures.md`](../decision-procedures.md)).
 
 ## Context and Problem Statement
