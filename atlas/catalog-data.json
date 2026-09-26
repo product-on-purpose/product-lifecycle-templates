@@ -3057,26 +3057,26 @@
       "id": "change-request",
       "name": "Change Request",
       "aliases": [
-        "RFC (ITIL)",
-        "change record",
-        "change ticket"
+        "change record"
       ],
       "category": "Release / Deployment / Runbooks",
       "stage": "release",
-      "owner": "Change Manager",
-      "purpose": "Formally request and authorize a production change",
-      "methodology": "ITIL",
+      "owner": "PM / Project Manager",
+      "purpose": "Formally request a change to an agreed baseline (scope, requirements, schedule, cost) and record the decision",
+      "methodology": "generic",
       "formality": "formal-auditable",
       "rarity": "common",
       "size_variant": "S/M",
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
-        "CAB review"
+        "PRD",
+        "Bug Report",
+        "Change Log (governance)"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {
@@ -4692,13 +4692,12 @@
       "name": "Announcement / Internal Comms",
       "aliases": [
         "internal memo",
-        "launch announcement",
-        "Slack canvas"
+        "launch announcement"
       ],
       "category": "Stakeholder / Communication",
       "stage": "communication",
       "owner": "PM / PMM",
-      "purpose": "Announce changes or launches to internal/external audiences",
+      "purpose": "Tell people inside the organization who did not do the work about a product launch or change: what changes, why, what it means for them and what to do",
       "methodology": "methodology-agnostic",
       "formality": "lightweight",
       "rarity": "common",
@@ -4706,11 +4705,12 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
-        "Release Notes"
+        "Release Notes",
+        "Launch Coordination Checklist"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {

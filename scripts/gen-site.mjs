@@ -25,7 +25,7 @@
 // fenced template survives verbatim in either. .mdx wins because it carries components, which
 // is what the role tabs need, and because every hand-authored page in this tree is already
 // .mdx. The brace hazard that argued for .md is real only for UNFENCED content: across all 30
-// bundles (re-checked at 33 on 2026-09-23) the guide files contain zero braces and zero tags, templates are always fenced, and
+// bundles (re-checked at 35 on 2026-09-25) the guide files contain zero braces and zero tags, templates are always fenced, and
 // the 1,907 tag-like strings in companions are <a id="ref-N"> citation anchors, which MDX
 // treats as intrinsic elements. Nothing inlined here can open a JSX expression.
 //
@@ -106,7 +106,7 @@ const roleFile = (id, role) => join(TEMPLATES, id, `${id}_${role}.md`);
 /**
  * Rewrite the link forms that appear in authored bundle prose so they resolve in a browser.
  *
- * Measured across all 30 guides, and re-checked at 33 on 2026-09-23, there are exactly four forms, plus the
+ * Measured across all 30 guides, and re-checked at 35 on 2026-09-25, there are exactly four forms, plus the
  * sibling-file form with a #anchor suffix (four guides use it), which the catch-all below resolves on GitHub:
  *   ../<other>/                       another bundle's directory  -> that bundle's page
  *   ../<other>/<other>_guide.md       another bundle's guide      -> that bundle's page

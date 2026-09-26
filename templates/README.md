@@ -42,6 +42,8 @@ tree without the gate noticing.
 **`delivery-docs`**
 
 - [`acceptance-criteria/`](acceptance-criteria/) - Acceptance Criteria. Axis phase deliver; ships lean/full.
+- [`announcement-internal-comms/`](announcement-internal-comms/) - Announcement / Internal Comms. Axis phase deliver; ships lean. The eighth `delivery-docs` member ([ADR 0059](../docs/internal/decisions/0059-announcement-internal-comms-joins-delivery-docs.md)): the internal announcement of a product launch or change - what it means for people who did not do the work, and what they must do.
+- [`change-request/`](change-request/) - Change Request. Axis phase deliver; ships lean/full. The ninth `delivery-docs` member ([ADR 0060](../docs/internal/decisions/0060-change-request-joins-delivery-docs.md)): a formal request to alter an agreed baseline (scope, requirements, schedule, cost), and the decision on it.
 - [`epic/`](epic/) - Epic. Axis phase deliver; ships lean/full.
 - [`prd/`](prd/) - Product Requirements Document. Axis phase deliver; ships lean/full.
 - [`product-backlog/`](product-backlog/) - Product Backlog. Axis phase deliver; ships lean/full.

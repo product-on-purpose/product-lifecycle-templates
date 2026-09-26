@@ -70,6 +70,35 @@
     },
     {
       "aliases": [
+        "internal memo",
+        "launch announcement",
+        "Slack canvas"
+      ],
+      "approx_tokens": {
+        "lean": 3350
+      },
+      "default_size": "lean",
+      "doc_type": "announcement-internal-comms",
+      "family": "delivery-docs",
+      "id": "announcement-internal-comms",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "This bundle ships one size. The strongest source found for this type publishes seven worked templates sharing a single shape (a subject line, a salutation, three or four sentences), and even its highest-stakes examples differ from the rest by one sentence rather than an added section; building a heavier variant from that material would be inventing a shape no source documents, so none is offered.",
+      "status": "beta",
+      "summary": "The message that tells the people in an organization who did not do the work that something is launching or changing: what is changing, why it matters to this reader, what they must do and by when, and where the underlying record of the change lives. It translates a decision already made; it does not restate the decision's own supporting facts.",
+      "tags": [
+        "communication",
+        "internal-comms",
+        "launch",
+        "change-announcement",
+        "employee-communication"
+      ],
+      "title": "Announcement / Internal Comms"
+    },
+    {
+      "aliases": [
         "bug report",
         "defect report",
         "anomaly report",
@@ -134,6 +163,37 @@
         "financials"
       ],
       "title": "Business Case"
+    },
+    {
+      "aliases": [
+        "change record",
+        "change ticket"
+      ],
+      "approx_tokens": {
+        "full": 4450,
+        "lean": 3150
+      },
+      "default_size": "lean",
+      "doc_type": "change-request",
+      "family": "delivery-docs",
+      "id": "change-request",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (The Request against its baseline, Why, Impact, and Decision, one named decider's choice from a closed set) when the change is small enough that one reviewer can weigh it without a documented set of alternatives. Use full when the decision needs a documented set of alternatives including doing nothing, when the boundary of what the change touches is genuinely ambiguous, or when the project keeps a change log this request must feed into cleanly; it adds Options Considered, Out of Scope, and Implementation and Traceability.",
+      "status": "beta",
+      "summary": "The record that gets a documented decision, made by one named person or body, about whether an already-agreed baseline, its scope, requirements, a deliverable, or the schedule and cost attached to it, moves. Serves the project and product baseline lineage; a change to a running production system, reviewed by a change advisory board, is a named neighbor and is not what this bundle templates.",
+      "tags": [
+        "delivery",
+        "change-management",
+        "baseline",
+        "scope",
+        "governance",
+        "decision"
+      ],
+      "title": "Change Request"
     },
     {
       "aliases": [
@@ -1151,5 +1211,5 @@
       "title": "User Story"
     }
   ],
-  "count": 33
+  "count": 35
 }

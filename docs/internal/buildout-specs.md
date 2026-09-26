@@ -21,7 +21,7 @@ reference a future session reads to continue.
 > `buildout-specs.md`" as required reading - which for a Tier-2 type pointed at nothing.
 
 ## Progress
-<!-- counts: bundles=33, tier1=25, tier1remaining=2, checkformats=94 -->
+<!-- counts: bundles=35, tier1=25, tier1remaining=2, checkformats=98 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -55,7 +55,7 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | **done** (standing-standards complete; first live use of the foundation+tool set) | #72 |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | **done** (process-docs complete; first spec in five bundles the research confirmed rather than corrected) | #75 |
 
-**Count:** 33 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
+**Count:** 35 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
 discovery-docs, standing-standards and process-docs all complete**). Those 26 sum against a 27-type floor
 oddly because
 **`rfc` is not a Tier-1 type** (catalog 48, Tier 2, `must_have: false`) while `sprint-retrospective-notes`

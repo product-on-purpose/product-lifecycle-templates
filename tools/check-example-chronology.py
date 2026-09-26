@@ -65,10 +65,13 @@ TEMPLATES = Path(__file__).resolve().parent.parent / "templates"
 # skipped as undated, and every one carried a date under a name particular to its document type. A check
 # that silently skips a third of its subjects is worse than none, because it reports a clean run over work
 # it never looked at.
+# `decision_date` and `date_submitted` are the change request's (added 2026-09-25): its first draft was
+# skipped as undated, which is the silent skip described above, one document type later.
 SPEAKS_FIELDS = (
-    "last_updated", "updated", "reported_on", "last_reviewed", "last_refined", "dates", "created", "date",
+    "last_updated", "updated", "reported_on", "last_reviewed", "last_refined", "decision_date", "dates",
+    "created", "date", "date_submitted",
 )
-EXISTS_FIELDS = ("created", "reported_on", "dates", "date")
+EXISTS_FIELDS = ("created", "reported_on", "dates", "date", "date_submitted")
 DATE_FIELDS = tuple(dict.fromkeys(SPEAKS_FIELDS + EXISTS_FIELDS))
 # Captures a range's END date where one is present. A document covering 13 to 24 July speaks until the 24th,
 # so a reference is only impossible if it points past the later bound.

@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 33 governed document bundles, one per document type, organized under
+This library ships 35 governed document bundles, one per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -124,7 +124,7 @@ included here for readers who want the complete picture rather than a situationa
 
 | Family | What it is for | Bundles |
 |---|---|---|
-| `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`release-notes`](../../templates/release-notes/) |
+| `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`change-request`](../../templates/change-request/), [`release-notes`](../../templates/release-notes/), [`announcement-internal-comms`](../../templates/announcement-internal-comms/) |
 | `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`product-strategy`](../../templates/product-strategy/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
 | `decision-docs` | Investigates, proposes, records, and designs against a decision, as four separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/) |
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/) |
@@ -134,8 +134,8 @@ included here for readers who want the complete picture rather than a situationa
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
-<!-- counts: bundles=33 -->
-That is 33 bundles across every family the library currently ships, and every family is
+<!-- counts: bundles=35 -->
+That is 35 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.

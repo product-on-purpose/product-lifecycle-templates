@@ -1,0 +1,32 @@
+id: change-request
+title: Change Request
+summary: >-
+  The record that gets a documented decision, made by one named person or body, about whether an
+  already-agreed baseline, its scope, requirements, a deliverable, or the schedule and cost attached to
+  it, moves. Serves the project and product baseline lineage; a change to a running production system,
+  reviewed by a change advisory board, is a named neighbor and is not what this bundle templates.
+doc_type: change-request
+family: delivery-docs
+phase: deliver
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (The Request against its baseline, Why, Impact, and Decision, one named decider's choice from a closed set) when the change is small enough that one reviewer can weigh it without a documented set of alternatives. Use full when the decision needs a documented set of alternatives including doing nothing, when the boundary of what the change touches is genuinely ambiguous, or when the project keeps a change log this request must feed into cleanly; it adds Options Considered, Out of Scope, and Implementation and Traceability."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - delivery
+  - change-management
+  - baseline
+  - scope
+  - governance
+  - decision
+related_templates: [prd, acceptance-criteria, bug-report, issue-log, release-notes]
+aliases:
+  - change record
+  - change ticket
+catalog_ref: 120
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-25
+license: Apache-2.0

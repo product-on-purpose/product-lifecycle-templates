@@ -1,0 +1,830 @@
+{
+  "report_schema_version": "2.0.0",
+  "bundle": "change-request",
+  "template_version": "0.1.0",
+  "attribution_confidence": "high",
+  "agents_total": 15,
+  "agents_reliably_attributed": 15,
+  "workflow_runs": 3,
+  "run_ids": [
+    "wf_2820711e-634",
+    "wf_540a6466-c1e",
+    "wf_60cbb7aa-d49"
+  ],
+  "session_ids": [
+    "b4b01d04-4f6d-4472-abc7-a782ac15f193"
+  ],
+  "weights": {
+    "input": 1.0,
+    "cache_write": 1.25,
+    "cache_write_1h": 2.0,
+    "cache_read": 0.1,
+    "output": 5.0
+  },
+  "prices": {
+    "as_of": "2026-09-22",
+    "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "usd_per_mtok": {
+      "claude-fable-5-1": {
+        "input": 10.0,
+        "cache_write_5m": 12.5,
+        "cache_write_1h": 20.0,
+        "cache_read": 0.25,
+        "output": 50.0
+      },
+      "claude-fable-5": {
+        "input": 10.0,
+        "cache_write_5m": 12.5,
+        "cache_write_1h": 20.0,
+        "cache_read": 1.0,
+        "output": 50.0
+      },
+      "claude-opus-5-5": {
+        "input": 4.0,
+        "cache_write_5m": 5.0,
+        "cache_write_1h": 8.0,
+        "cache_read": 0.2,
+        "output": 20.0
+      },
+      "claude-opus-5": {
+        "input": 5.0,
+        "cache_write_5m": 6.25,
+        "cache_write_1h": 10.0,
+        "cache_read": 0.5,
+        "output": 25.0
+      },
+      "claude-opus-4-8": {
+        "input": 5.0,
+        "cache_write_5m": 6.25,
+        "cache_write_1h": 10.0,
+        "cache_read": 0.5,
+        "output": 25.0
+      },
+      "claude-sonnet-5": {
+        "input": 2.0,
+        "cache_write_5m": 2.5,
+        "cache_write_1h": 4.0,
+        "cache_read": 0.2,
+        "output": 10.0
+      },
+      "claude-sonnet-4-6": {
+        "input": 3.0,
+        "cache_write_5m": 3.75,
+        "cache_write_1h": 6.0,
+        "cache_read": 0.3,
+        "output": 15.0
+      },
+      "claude-haiku-4-5": {
+        "input": 1.0,
+        "cache_write_5m": 1.25,
+        "cache_write_1h": 2.0,
+        "cache_read": 0.1,
+        "output": 5.0
+      }
+    },
+    "web_search_usd": 0.01
+  },
+  "stages_present": [
+    "draft",
+    "lens",
+    "research"
+  ],
+  "complete": true,
+  "totals": {
+    "turns": 292,
+    "input": 590,
+    "output": 383210,
+    "cache_write": 1841373,
+    "cache_write_1h": 0,
+    "cache_read": 29847192,
+    "web": 0,
+    "web_search": 0,
+    "usd": 14.4062,
+    "unpriced_turns": 0
+  },
+  "weighted_total": 7203075,
+  "cost_usd": 14.41,
+  "by_stage": {
+    "research": {
+      "agents": 6,
+      "usage": {
+        "turns": 179,
+        "input": 362,
+        "output": 115125,
+        "cache_write": 562492,
+        "cache_write_1h": 0,
+        "cache_read": 17250249,
+        "web": 0,
+        "web_search": 0,
+        "usd": 6.0083,
+        "unpriced_turns": 0
+      },
+      "weighted": 3004127
+    },
+    "draft": {
+      "agents": 5,
+      "usage": {
+        "turns": 85,
+        "input": 170,
+        "output": 165570,
+        "cache_write": 858257,
+        "cache_write_1h": 0,
+        "cache_read": 9879443,
+        "web": 0,
+        "web_search": 0,
+        "usd": 5.7776,
+        "unpriced_turns": 0
+      },
+      "weighted": 2888786
+    },
+    "lens": {
+      "agents": 4,
+      "usage": {
+        "turns": 28,
+        "input": 58,
+        "output": 102515,
+        "cache_write": 420624,
+        "cache_write_1h": 0,
+        "cache_read": 2717500,
+        "web": 0,
+        "web_search": 0,
+        "usd": 2.6203,
+        "unpriced_turns": 0
+      },
+      "weighted": 1310163
+    }
+  },
+  "by_model": {
+    "claude-sonnet-5": {
+      "agents": 15,
+      "usage": {
+        "turns": 292,
+        "input": 590,
+        "output": 383210,
+        "cache_write": 1841373,
+        "cache_write_1h": 0,
+        "cache_read": 29847192,
+        "web": 0,
+        "web_search": 0,
+        "usd": 14.4062,
+        "unpriced_turns": 0
+      },
+      "weighted": 7203075
+    }
+  },
+  "by_requested_tier": {
+    "sonnet": {
+      "agents": 15,
+      "usage": {
+        "turns": 292,
+        "input": 590,
+        "output": 383210,
+        "cache_write": 1841373,
+        "cache_write_1h": 0,
+        "cache_read": 29847192,
+        "web": 0,
+        "web_search": 0,
+        "usd": 14.4062,
+        "unpriced_turns": 0
+      },
+      "weighted": 7203075
+    }
+  },
+  "by_deliverable": {
+    "boundaries-failures": {
+      "agents": 1,
+      "usage": {
+        "turns": 45,
+        "input": 90,
+        "output": 29517,
+        "cache_write": 109490,
+        "cache_write_1h": 0,
+        "cache_read": 4760134,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.5211,
+        "unpriced_turns": 0
+      },
+      "weighted": 760551
+    },
+    "companion": {
+      "agents": 1,
+      "usage": {
+        "turns": 15,
+        "input": 30,
+        "output": 44428,
+        "cache_write": 242333,
+        "cache_write_1h": 0,
+        "cache_read": 1765988,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4034,
+        "unpriced_turns": 0
+      },
+      "weighted": 701685
+    },
+    "example": {
+      "agents": 1,
+      "usage": {
+        "turns": 18,
+        "input": 36,
+        "output": 47136,
+        "cache_write": 168926,
+        "cache_write_1h": 0,
+        "cache_read": 2362934,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.3663,
+        "unpriced_turns": 0
+      },
+      "weighted": 683167
+    },
+    "canon": {
+      "agents": 1,
+      "usage": {
+        "turns": 37,
+        "input": 74,
+        "output": 27626,
+        "cache_write": 90777,
+        "cache_write_1h": 0,
+        "cache_read": 3365213,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1764,
+        "unpriced_turns": 0
+      },
+      "weighted": 588197
+    },
+    "gap-question": {
+      "agents": 1,
+      "usage": {
+        "turns": 27,
+        "input": 54,
+        "output": 27722,
+        "cache_write": 131069,
+        "cache_write_1h": 0,
+        "cache_read": 2796950,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1644,
+        "unpriced_turns": 0
+      },
+      "weighted": 582195
+    },
+    "templates": {
+      "agents": 1,
+      "usage": {
+        "turns": 13,
+        "input": 26,
+        "output": 35207,
+        "cache_write": 177164,
+        "cache_write_1h": 0,
+        "cache_read": 1659256,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1269,
+        "unpriced_turns": 0
+      },
+      "weighted": 563442
+    },
+    "guide": {
+      "agents": 1,
+      "usage": {
+        "turns": 15,
+        "input": 30,
+        "output": 29218,
+        "cache_write": 166915,
+        "cache_write_1h": 0,
+        "cache_read": 1950747,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0997,
+        "unpriced_turns": 0
+      },
+      "weighted": 549838
+    },
+    "citation-support": {
+      "agents": 1,
+      "usage": {
+        "turns": 14,
+        "input": 28,
+        "output": 35816,
+        "cache_write": 152911,
+        "cache_write_1h": 0,
+        "cache_read": 1609660,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0624,
+        "unpriced_turns": 0
+      },
+      "weighted": 531213
+    },
+    "agile-and-contracts": {
+      "agents": 1,
+      "usage": {
+        "turns": 29,
+        "input": 60,
+        "output": 15589,
+        "cache_write": 104187,
+        "cache_write_1h": 0,
+        "cache_read": 3197128,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0559,
+        "unpriced_turns": 0
+      },
+      "weighted": 527952
+    },
+    "meta": {
+      "agents": 1,
+      "usage": {
+        "turns": 24,
+        "input": 48,
+        "output": 9581,
+        "cache_write": 102919,
+        "cache_write_1h": 0,
+        "cache_read": 2140518,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.7813,
+        "unpriced_turns": 0
+      },
+      "weighted": 390654
+    },
+    "accuracy-teaching-point": {
+      "agents": 1,
+      "usage": {
+        "turns": 6,
+        "input": 12,
+        "output": 22998,
+        "cache_write": 115546,
+        "cache_write_1h": 0,
+        "cache_read": 543675,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.6276,
+        "unpriced_turns": 0
+      },
+      "weighted": 313802
+    },
+    "itsm-neighbour": {
+      "agents": 1,
+      "usage": {
+        "turns": 28,
+        "input": 56,
+        "output": 4514,
+        "cache_write": 63804,
+        "cache_write_1h": 0,
+        "cache_read": 2110971,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.627,
+        "unpriced_turns": 0
+      },
+      "weighted": 313478
+    },
+    "dod-family-conformance": {
+      "agents": 1,
+      "usage": {
+        "turns": 3,
+        "input": 8,
+        "output": 24336,
+        "cache_write": 77915,
+        "cache_write_1h": 0,
+        "cache_read": 240182,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4862,
+        "unpriced_turns": 0
+      },
+      "weighted": 243100
+    },
+    "forms": {
+      "agents": 1,
+      "usage": {
+        "turns": 13,
+        "input": 28,
+        "output": 10157,
+        "cache_write": 63165,
+        "cache_write_1h": 0,
+        "cache_read": 1019853,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4635,
+        "unpriced_turns": 0
+      },
+      "weighted": 231755
+    },
+    "chaining-consistency": {
+      "agents": 1,
+      "usage": {
+        "turns": 5,
+        "input": 10,
+        "output": 19365,
+        "cache_write": 74252,
+        "cache_write_1h": 0,
+        "cache_read": 323983,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4441,
+        "unpriced_turns": 0
+      },
+      "weighted": 222048
+    }
+  },
+  "by_attribution": {
+    "label": {
+      "agents": 15,
+      "usage": {
+        "turns": 292,
+        "input": 590,
+        "output": 383210,
+        "cache_write": 1841373,
+        "cache_write_1h": 0,
+        "cache_read": 29847192,
+        "web": 0,
+        "web_search": 0,
+        "usd": 14.4062,
+        "unpriced_turns": 0
+      },
+      "weighted": 7203075
+    }
+  },
+  "agents": [
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "a1b573f732039f74d",
+      "label": "change-request/research:boundaries-failures",
+      "stage": "research",
+      "deliverable": "boundaries-failures",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 45,
+        "input": 90,
+        "output": 29517,
+        "cache_write": 109490,
+        "cache_write_1h": 0,
+        "cache_read": 4760134,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.5211,
+        "unpriced_turns": 0
+      },
+      "weighted": 760551
+    },
+    {
+      "run": "wf_540a6466-c1e",
+      "agent_id": "a7bd134a1a8c83253",
+      "label": "change-request/draft:companion",
+      "stage": "draft",
+      "deliverable": "companion",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 15,
+        "input": 30,
+        "output": 44428,
+        "cache_write": 242333,
+        "cache_write_1h": 0,
+        "cache_read": 1765988,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4034,
+        "unpriced_turns": 0
+      },
+      "weighted": 701685
+    },
+    {
+      "run": "wf_540a6466-c1e",
+      "agent_id": "a94c8f3964b1f1127",
+      "label": "change-request/draft:example",
+      "stage": "draft",
+      "deliverable": "example",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 18,
+        "input": 36,
+        "output": 47136,
+        "cache_write": 168926,
+        "cache_write_1h": 0,
+        "cache_read": 2362934,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.3663,
+        "unpriced_turns": 0
+      },
+      "weighted": 683167
+    },
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "acd90769e61bd7094",
+      "label": "change-request/research:canon",
+      "stage": "research",
+      "deliverable": "canon",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 37,
+        "input": 74,
+        "output": 27626,
+        "cache_write": 90777,
+        "cache_write_1h": 0,
+        "cache_read": 3365213,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1764,
+        "unpriced_turns": 0
+      },
+      "weighted": 588197
+    },
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "a6c00d4e64817adc5",
+      "label": "change-request/research:gap-question",
+      "stage": "research",
+      "deliverable": "gap-question",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 27,
+        "input": 54,
+        "output": 27722,
+        "cache_write": 131069,
+        "cache_write_1h": 0,
+        "cache_read": 2796950,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1644,
+        "unpriced_turns": 0
+      },
+      "weighted": 582195
+    },
+    {
+      "run": "wf_540a6466-c1e",
+      "agent_id": "afcb907cbdbf273b0",
+      "label": "change-request/draft:templates",
+      "stage": "draft",
+      "deliverable": "templates",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 13,
+        "input": 26,
+        "output": 35207,
+        "cache_write": 177164,
+        "cache_write_1h": 0,
+        "cache_read": 1659256,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.1269,
+        "unpriced_turns": 0
+      },
+      "weighted": 563442
+    },
+    {
+      "run": "wf_540a6466-c1e",
+      "agent_id": "af8c69b2f67a95a19",
+      "label": "change-request/draft:guide",
+      "stage": "draft",
+      "deliverable": "guide",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 15,
+        "input": 30,
+        "output": 29218,
+        "cache_write": 166915,
+        "cache_write_1h": 0,
+        "cache_read": 1950747,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0997,
+        "unpriced_turns": 0
+      },
+      "weighted": 549838
+    },
+    {
+      "run": "wf_60cbb7aa-d49",
+      "agent_id": "a1d539a22cb2b6771",
+      "label": "change-request/lens:citation-support",
+      "stage": "lens",
+      "deliverable": "citation-support",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 14,
+        "input": 28,
+        "output": 35816,
+        "cache_write": 152911,
+        "cache_write_1h": 0,
+        "cache_read": 1609660,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0624,
+        "unpriced_turns": 0
+      },
+      "weighted": 531213
+    },
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "a547069646ab95425",
+      "label": "change-request/research:agile-and-contracts",
+      "stage": "research",
+      "deliverable": "agile-and-contracts",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 29,
+        "input": 60,
+        "output": 15589,
+        "cache_write": 104187,
+        "cache_write_1h": 0,
+        "cache_read": 3197128,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0559,
+        "unpriced_turns": 0
+      },
+      "weighted": 527952
+    },
+    {
+      "run": "wf_540a6466-c1e",
+      "agent_id": "a1eb57cd312a683d8",
+      "label": "change-request/draft:meta",
+      "stage": "draft",
+      "deliverable": "meta",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 24,
+        "input": 48,
+        "output": 9581,
+        "cache_write": 102919,
+        "cache_write_1h": 0,
+        "cache_read": 2140518,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.7813,
+        "unpriced_turns": 0
+      },
+      "weighted": 390654
+    },
+    {
+      "run": "wf_60cbb7aa-d49",
+      "agent_id": "a4f51ba50f67fc2d0",
+      "label": "change-request/lens:accuracy-teaching-point",
+      "stage": "lens",
+      "deliverable": "accuracy-teaching-point",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 6,
+        "input": 12,
+        "output": 22998,
+        "cache_write": 115546,
+        "cache_write_1h": 0,
+        "cache_read": 543675,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.6276,
+        "unpriced_turns": 0
+      },
+      "weighted": 313802
+    },
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "a7d26041f79b7bb5f",
+      "label": "change-request/research:itsm-neighbour",
+      "stage": "research",
+      "deliverable": "itsm-neighbour",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 28,
+        "input": 56,
+        "output": 4514,
+        "cache_write": 63804,
+        "cache_write_1h": 0,
+        "cache_read": 2110971,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.627,
+        "unpriced_turns": 0
+      },
+      "weighted": 313478
+    },
+    {
+      "run": "wf_60cbb7aa-d49",
+      "agent_id": "ab033f63cf692930f",
+      "label": "change-request/lens:dod-family-conformance",
+      "stage": "lens",
+      "deliverable": "dod-family-conformance",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 3,
+        "input": 8,
+        "output": 24336,
+        "cache_write": 77915,
+        "cache_write_1h": 0,
+        "cache_read": 240182,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4862,
+        "unpriced_turns": 0
+      },
+      "weighted": 243100
+    },
+    {
+      "run": "wf_2820711e-634",
+      "agent_id": "a00bbf7c17e4dca00",
+      "label": "change-request/research:forms",
+      "stage": "research",
+      "deliverable": "forms",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 13,
+        "input": 28,
+        "output": 10157,
+        "cache_write": 63165,
+        "cache_write_1h": 0,
+        "cache_read": 1019853,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4635,
+        "unpriced_turns": 0
+      },
+      "weighted": 231755
+    },
+    {
+      "run": "wf_60cbb7aa-d49",
+      "agent_id": "a76c4ee78167a0512",
+      "label": "change-request/lens:chaining-consistency",
+      "stage": "lens",
+      "deliverable": "chaining-consistency",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 5,
+        "input": 10,
+        "output": 19365,
+        "cache_write": 74252,
+        "cache_write_1h": 0,
+        "cache_read": 323983,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.4441,
+        "unpriced_turns": 0
+      },
+      "weighted": 222048
+    }
+  ]
+}
