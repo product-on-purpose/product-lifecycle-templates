@@ -211,7 +211,8 @@ non-goal "Scheduled delivery of a view by email or Slack. Out of scope now; like
 bring it into scope, and the decision **postpones** it to a follow-on release, one of [7]'s four decisions. It must be
 dated inside the PRD's life and agree with every later sibling: `release-notes_example.md` ships no scheduled delivery,
 and nothing in the thread says one shipped. **It must not attach a request to ISS-11 or ISS-12**: `issue-log_example.md`
-states that neither raised one. **It states no release number**, because the thread's release numbering is already
+states that neither raised one. **It assigns no release to the postponed work**, and cites no release beyond the
+2.4.0 notes that shipped Saved Views, because the thread's release numbering is already
 inconsistent between `release-notes_example.md` and the runbook and postmortem examples, a contradiction recorded for
 the maintainer and not fixed here. Its requester and decider should be people the thread already names, in roles the
 thread already gives them.

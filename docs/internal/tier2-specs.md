@@ -1187,8 +1187,9 @@ list rates**, 15 agents, every one resolved to Sonnet
 against $4.71 for `definition-of-ready` and $5.78 for `change-request` built the same evening with two
 templates; almost all of the difference is cache reads (24.6M in drafting), as its example agent read widely
 across the Saved Views thread to chain one launch onto four siblings. One template instead of two did not make
-this build cheaper, so writing fewer variants is not by itself a predictor of cost. The review found the
-template's GOOD examples reused the example's own scenario; they were rewritten before landing.
+this build cheaper, so writing fewer variants is not by itself a predictor of cost. After the review, the
+main loop found the template's GOOD examples reused the example's own scenario, which no lens flagged; they
+were rewritten before landing.
 
 ---
 

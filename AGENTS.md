@@ -59,7 +59,9 @@ are reading the files directly. See [`installing.md`](docs/how-to/installing.md)
 
 One difference worth knowing: `search_templates` takes an `axis` filter that accepts a **phase or a
 classification** value, because 22 bundles carry a `phase` and the other 13 carry a `classification`.
-Filtering on phase alone silently reaches only 22 of the 35.
+Filtering on phase alone silently reaches only 22 of the 35. And one axis value can hold more bundles than a
+single response returns: `search_templates` caps a response at 8 candidates, `deliver` holds 9, and
+`total_matched` is how a caller knows the list was cut.
 
 ### The second machine artifact: `sections.json`
 

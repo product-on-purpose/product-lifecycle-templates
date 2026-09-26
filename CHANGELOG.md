@@ -49,6 +49,10 @@ people who want every change, release notes are for people who want to know what
   `announcement-internal-comms` said "internal/external audiences" and listed "Slack canvas" as an alias.
 - **`rfc`'s guide now names the ITIL collision**: in IT service management "RFC" means a request for change, and
   the guide sends that reader to `change-request`. `bug-report`'s routing row links to the new bundle.
+- **One axis value now holds more bundles than one search response returns.** `search_templates` caps a
+  response at 8 candidates and `deliver` holds 9, so an empty-query search on that phase lists 8 and reports
+  `total_matched: 9`. The cap is unchanged; `AGENTS.md` now says so, and the MCP self-test checks
+  reachability per bundle rather than by listing each axis value.
 - **`tools/check-example-chronology.py` reads a change request's dates** (`decision_date`, `date_submitted`); the
   first draft of its example was skipped as undated, the silent skip that check was written to stop.
 

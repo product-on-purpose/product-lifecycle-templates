@@ -15,8 +15,9 @@ widened `delivery-docs`' membership test with the verb "changes", the first admi
 test rather than applying one. The maintainer read the contract diff before either was built. **The
 announcement is admitted on vendor and practitioner sources only**, and says so; the change request serves
 the project and product baseline sense, with IT service change as its named neighbour. Every quotation in
-both research logs was checked against the source's raw text. Both reviews found that the templates'
-GOOD examples reused the worked example's own scenario, which no gate catches; both were rewritten. Not in
+both research logs was checked against the source's raw text. After both reviews, the main loop found that
+the templates' GOOD examples reused the worked example's own scenario, which no lens flagged and no gate
+catches; both were rewritten. Not in
 any release yet.
 The previous entry read: **`v0.13.0` ships `issue-log` and `definition-of-ready`, the 32nd and 33rd
 bundles.** One minor release carrying two bundles, as the maintainer asked, rather than one release per

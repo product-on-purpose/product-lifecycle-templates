@@ -23,7 +23,9 @@ source_template_version: 0.1.0
 > example records as a same-day snapshot. Its sender, Priya Nair, is that checklist's own named communications
 > owner for this launch. Its Known Issues section names two open items that must not be confused: the checklist's
 > accepted Yellow (no switch yet that turns sharing off everywhere at once) and R-05, the program's shared-view
-> exposure risk, escalated to the steering group on 14 July. Two later events in the same Acme Analytics thread postdate
+> exposure risk, escalated to the steering group on 14 July. It does not link the family's `release-notes`
+> example, because that document predates this launch and already lists sharing as shipped; the research log
+> records that contradiction. Two later events in the same Acme Analytics thread postdate
 > this announcement and are not cited in the body below: the Reporting Squad Definition of Done's 2026-07-24
 > amendment, and `status-report_example.md`'s account of 14 to 28 July, which still carries R-05 as escalated
 > and unresolved on the day it was written. Read this alongside
