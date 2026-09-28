@@ -24,7 +24,7 @@ Fast reference for using the status-report bundle. For the full reasoning, histo
 - **The ask outranks the update.** If the meeting exists to get an approval, open with the decision ask, not
   with "here's what happened since last time." A status report that tries to carry every metric on every
   dimension as evidence for a single recommendation produces exactly the decision paralysis a focused ask is
-  meant to avoid; that is a steering-committee or decision paper, not this document.
+  meant to avoid; that is a decision paper, not this document.
 - **The audience already walks a live board.** A team running a real information radiator has less need for
   a written report between people who see the board daily. Write this for the reader who cannot see it, not
   as a duplicate of it for people who can.

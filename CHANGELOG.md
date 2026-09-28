@@ -12,6 +12,40 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Specs for three Tier-2 types in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, from one admission
+  sweep over five candidates on 2026-09-27, with every returned quotation checked against the source's raw
+  text. The **change log** (bundle id `change-log`) is admitted on PMI's PMBOK errata, the European
+  Commission's PM² Appendix B.7 template (CC BY 4.0), the APM glossary, Connecticut DSS and HHS EPLC. The
+  **production readiness review** is admitted on Susan Fowler's *Production-Ready Microservices* Appendix A,
+  GitLab's archived template and Mercari's checklist (MIT). The **project brief** is admitted on AXELOS's own
+  PRINCE2 glossary and the UK government's *Guidelines for Managing Projects* (Open Government Licence).
+- **[ADR 0061](docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md),
+  [ADR 0062](docs/internal/decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) and
+  [ADR 0063](docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md), proposed.** The change log
+  joins `governance-docs` as a fifth member, and the contract's roles list gains a fifth role. The production
+  readiness review joins `standing-standards` as a `tool`, the family's first member that no forecast named;
+  its boundary with `launch-coordination-checklist` rests on trigger, team and timing, because Google's own
+  launch checklist is engineering-scoped too. The project brief **reopens `discovery-docs`**, which ADR 0035
+  had recorded as closed at two when `prototype-brief` failed its admission test.
+- **[ADR 0064](docs/internal/decisions/0064-deployment-plan-is-declined.md) and
+  [ADR 0065](docs/internal/decisions/0065-steering-committee-pack-is-declined.md), proposed: two declines of
+  types that cleared the admission test.** The deployment plan is published by five US public-sector sources,
+  but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and
+  admitting it would reverse `delivery-docs`' production-change exclusion. The steering committee pack's
+  periodic written form is what `status-report` already is, and its composite exists only as a slide deck.
+  Both catalog rows stay `candidate`, as ADR 0049 left its own.
+
+### Changed
+
+- **Contracts:** `governance-docs` to 0.3.0, `standing-standards` to 0.4.0 and `discovery-docs` to 0.2.0, each
+  with a dated change note; `communication-docs` carries a dated correction to its forecast. ADR 0035 carries a
+  pointer to ADR 0063. ADR count 60 -> 65 across markers and prose.
+- **`status-report` now routes a single-recommendation document to "a decision paper"**, not "a
+  steering-committee or decision paper", in its guide and the matching companion heading, because the
+  steering committee pack is declined.
+
 ## [0.14.0] - 2026-09-25
 
 ### Added

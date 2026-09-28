@@ -3,7 +3,9 @@
 **Status:** **adopted 2026-08-04**, [ADR 0031](../decisions/0031-adopt-discovery-docs-family-contract.md).
 Registered in check K, which now gates `phase: discover` on every member.
 **Axis:** `phase`, single value `discover`.
-**Members:** `business-case`, `user-persona`. **The family is closed at two.**
+**Members:** `business-case`, `user-persona`, `project-brief`
+([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), **proposed** 2026-09-27, reopening the
+family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing
@@ -14,6 +16,13 @@ Registered in check K, which now gates `phase: discover` on every member.
 > a worksheet. Section 1 below anticipated this outcome and named it legitimate; that is what happened, and
 > the contract holds. The conditions that would reopen it are listed in ADR 0035.
 
+> **Reopened 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md) (proposed).**
+> The closure above recorded `prototype-brief`'s own negative result, not a rule against testing a different
+> candidate. `project-brief` cleared [ADR 0030](../decisions/0030-templating-scope-markdown-documents.md)'s
+> admission test on its own evidence, and section 1's membership clause admitted it without amendment. The
+> family now has three members. `prototype-brief` remains not admitted, and the conditions that would
+> reopen its own finding are unchanged.
+
 This contract is written **before any member is built**, following the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern
 that `qa-docs` and `strategy-docs` both used. Writing it first is what stops the contract being
@@ -22,12 +31,18 @@ reverse-engineered to fit whatever got built.
 ## 1. Membership
 
 A bundle belongs to this family when its document type exists **to decide whether to build something, before
-anyone commits to building it.** Its members answer, in order, three questions that precede every product
-decision:
+anyone commits to building it.** Its members answer questions that precede every product decision:
 
 - a **business case** says whether the investment is worth making, and what it is being compared against;
 - a **user persona** says who we are building for, grounded in research rather than in imagination;
-- a **prototype brief** says what to build cheaply first, in order to find out whether we are right.
+- a **project brief** says why a project exists, what it must achieve, and who should be involved, before
+  anyone commits to it (added 2026-09-27,
+  [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md)).
+
+A fourth candidate, `prototype-brief`, would have said what to build cheaply first, in order to find out
+whether the team is right. It was tested and did not ship: no named source publishes it as a written document
+([ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md)). It is named here only so a reader
+of this section knows what the family considered.
 
 The thread runs *toward* commitment rather than away from it. A business case that names no alternative is a
 proposal; this library treats a persona assembled from opinion, not research, as a stereotype; a prototype
@@ -41,7 +56,8 @@ is a **standing instrument revised on a cadence** belongs to a `classification` 
 phase-bound by construction: every member is written once for a decision, and is finished when that decision
 is made.
 
-**On `prototype-brief`, and it is provisional.** It is a **new type**, added by
+**On `prototype-brief`: tested 2026-08-05 and not admitted** (kept for the reasoning it records). It was a
+**new type**, added by
 [ADR 0030 (templating scope)](../decisions/0030-templating-scope-markdown-documents.md), not a rename of
 catalog 54. **Its membership is conditional on its own research passing ADR 0030's admission test**: a named
 source must publish this as a written document. That test was applied rigorously to reject `wireframe` and
@@ -52,8 +68,9 @@ executable; the brief that **commissions** the prototype is a document, and that
 distinction matters and must be stated in the bundle: renaming an out-of-scope artifact to claim its slot is
 the defect this library rejected when it excluded V2MOM.
 
-**On membership placement.** `prototype-brief` sits here rather than in a design family because families are
-defined by what a document **does**, and this one commissions and validates. The catalog's own entry for the
+**On membership placement (historical, for a candidate not admitted).** Had it shipped, `prototype-brief`
+would have sat here rather than in a design family because families are defined by what a document **does**,
+and this one commissions and validates. The catalog's own entry for the
 prototype is categorised "design/**validation**" and staged at "validation, handoff". If the bundle's research
 shows its dominant use is handoff-to-build rather than testing an assumption, `phase: develop` becomes the
 better call and this placement should be revisited at that point, per
@@ -107,8 +124,12 @@ than inventing a new company.
 - the **business case** justifies the investment that the FY26 product strategy later spends;
 - the **user persona** is the Recurring Analyst that the vision, the strategy and every PRD already assume
   without ever having defined;
-- the **prototype brief** commissions the cheap test of the question-first entry hypothesis that the roadmap
-  carries in its Now lane and the strategy records as an unproven assumption.
+- the **project brief** asks for authorization to pursue the investment the business case then justifies in
+  full, dated before it and chained onto the same mandate (added 2026-09-27, ADR 0063; its example is set out
+  in [`tier2-specs.md`](../tier2-specs.md)).
+
+`prototype-brief`'s bullet, which would have commissioned a cheap test of an unproven assumption, is removed:
+it was tested and did not ship (ADR 0035), and it never had an example to chain.
 
 **The obligation:** each member's example is an Acme Analytics artifact, and each one must **connect to a fact
 that already exists in the library** rather than a new invention. The Recurring Analyst in particular is
@@ -163,3 +184,14 @@ proposition that opinion-built personas are stereotypes. No source in the log ca
 Relabelled as a POSITION ("this library treats ... as a stereotype") rather than deleted, because the
 distinction it draws (opinion versus research, already stated in section 1's membership question) is this
 library's own reasoning and not something that needed a citation to hold. No obligation changed.
+
+**0.2.0, proposed 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md): a third
+member, reopening a family this contract had recorded as closed.** `project-brief` joins at `phase: discover`.
+Section 1's membership test already admitted the type without amendment; what needed a record was that the
+header's "closed at two" and ADR 0035's resolution both described `prototype-brief`'s 2026-08-05 outcome,
+not a standing bar on a different candidate. `project-brief` cleared
+[ADR 0030](../decisions/0030-templating-scope-markdown-documents.md)'s admission test on four named bodies,
+among them AXELOS's own PRINCE2 glossary, and the shipped `business-case` bundle already names it as a
+boundary neighbour (`business-case_guide.md:17`). Section 1's member list and section 4's shared-scenario
+bullets change in the same edit; `prototype-brief`'s tested-and-declined status is kept, dated, rather than
+deleted. No enforcement obligation changed: check K gates values per declared member, not a member count.
