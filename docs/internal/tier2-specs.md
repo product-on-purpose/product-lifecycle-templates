@@ -31,11 +31,11 @@ design task" rather than "a spec-driven execution".
 | `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23**, shipped in `v0.13.0`. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
 | `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it; [build report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md) |
 | `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
-| `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Not yet built.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md) (proposed), which gives the contract's roles list a fifth role |
-| `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Not yet built.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) (proposed) |
-| `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) (proposed) reopens the family, which ADR 0035 had recorded as closed at two |
-| `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md) (proposed): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
-| `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md) (proposed): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
+| `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Not yet built.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
+| `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Not yet built.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) |
+| `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) reopens the family, which ADR 0035 had recorded as closed at two |
+| `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
+| `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
 
 **2026-09-27: one admission sweep, five candidates, three specs and two declines.** The maintainer queued
 five candidates on 2026-09-25 from a ranked list of the next ten. One research workflow tested all five
@@ -2087,8 +2087,8 @@ one review, not a record that only this launch could have produced.
 
 #### What landing this bundle closes elsewhere
 
-1. **The `standing-standards` contract's Members line**, from "proposed" to "built". The contract moves to
-   `0.4.0` in the spec PR, with ADR 0062.
+1. **The `standing-standards` contract's Members line**, from "not yet built" to the build date. The contract
+   moved to `0.4.0` in the spec PR, with ADR 0062.
 2. **`launch-coordination-checklist_companion.md`'s own Relationships subsection is not changed by this
    landing**; it already holds the position this bundle's companion must agree with. Whether it gains a direct
    link to the new bundle is a build decision, not a required edit.
@@ -2114,9 +2114,9 @@ methodology **`PRINCE2`**, catalog id `project-brief` (catalog 71), catalog name
 `lightweight charter`, `project one-pager`. Catalog owner: PM. Purpose, per the catalog: "Lightweight project
 definition for smaller efforts" (corrected below). Contents, per the catalog: "objectives, scope, timeline,
 budget, stakeholders". `size_variant: S`, `rarity: common`, `tier_inferred: true`, `relationships: [Charter]`.
-**The maintainer ruled 2026-09-27: build, and reopen `discovery-docs` to admit it.** This spec assumes
-[ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) (proposed) lands first; the metadata below
-is written against the contract that ADR produces, not the one on disk today.
+**The maintainer ruled 2026-09-27: build, and reopen `discovery-docs` to admit it.** The contract
+edits of [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) landed with this spec, so the
+metadata below is written against the reopened contract.
 
 #### Demand: a shipped bundle already routes a reader here, and already names a source for it
 
@@ -2323,7 +2323,7 @@ companion says so rather than leaving the omission silent.
 
 | Field | Value | Why |
 |---|---|---|
-| `family` | `discovery-docs` | ADR 0063 (proposed), reopening the family at its own membership test |
+| `family` | `discovery-docs` | ADR 0063, reopening the family at its own membership test |
 | `phase` | `discover` | The only value the contract allows; a project brief precedes commitment, like both existing members |
 | `sizes_available` | `[lean, full]` **provisional** | Reasoned above; the contract allows `[lean]` alone if the build's own research disagrees |
 | `status` | `beta` | Every bundle |
@@ -2395,7 +2395,7 @@ candidates. `pairs_with: []` is the honest declaration.
 
 1. **The `discovery-docs` contract moved to `0.2.0` in the spec PR**, with ADR 0063, and every place that said
    the family was closed or complete at two got a dated correction there. The landing PR changes the Members
-   line from "proposed" to "built".
+   line from "not yet built" to the build date.
 2. **`business-case`'s boundary text needs no edit; its worked-example callout does.**
    `business-case_guide.md:17`, `business-case_companion.md:315-317` and both templates' "NOT a project brief"
    lines already state the boundary this bundle must agree with, and the new companion agrees with them rather

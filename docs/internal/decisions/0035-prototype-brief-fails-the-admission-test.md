@@ -7,8 +7,8 @@ consulted: [claude]
 
 # `prototype-brief` fails ADR 0030's admission test and does not ship, closing `discovery-docs` at two members
 
-> **Amended 2026-09-27 by [ADR 0063 (project-brief reopens discovery-docs)](0063-project-brief-reopens-discovery-docs.md),
-> proposed.** This record's finding about `prototype-brief` stands, and so do its reopening conditions. What
+> **Amended 2026-09-27 by [ADR 0063 (project-brief reopens discovery-docs)](0063-project-brief-reopens-discovery-docs.md).**
+> This record's finding about `prototype-brief` stands, and so do its reopening conditions. What
 > no longer holds is the family's closure: "complete at two members" recorded this record's outcome for
 > `prototype-brief`, and ADR 0063 reads it that way when it admits a different candidate, `project-brief`, on
 > its own evidence.

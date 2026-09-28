@@ -4,7 +4,7 @@
 Registered in check K, which now gates `phase: discover` on every member.
 **Axis:** `phase`, single value `discover`.
 **Members:** `business-case`, `user-persona`, `project-brief`
-([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), **proposed** 2026-09-27, reopening the
+([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), assigned 2026-09-27, reopening the
 family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
@@ -16,7 +16,7 @@ family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet b
 > a worksheet. Section 1 below anticipated this outcome and named it legitimate; that is what happened, and
 > the contract holds. The conditions that would reopen it are listed in ADR 0035.
 
-> **Reopened 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md) (proposed).**
+> **Reopened 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md).**
 > The closure above recorded `prototype-brief`'s own negative result, not a rule against testing a different
 > candidate. `project-brief` cleared [ADR 0030](../decisions/0030-templating-scope-markdown-documents.md)'s
 > admission test on its own evidence, and section 1's membership clause admitted it without amendment. The
@@ -185,7 +185,7 @@ Relabelled as a POSITION ("this library treats ... as a stereotype") rather than
 distinction it draws (opinion versus research, already stated in section 1's membership question) is this
 library's own reasoning and not something that needed a citation to hold. No obligation changed.
 
-**0.2.0, proposed 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md): a third
+**0.2.0, 2026-09-27, [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md): a third
 member, reopening a family this contract had recorded as closed.** `project-brief` joins at `phase: discover`.
 Section 1's membership test already admitted the type without amendment; what needed a record was that the
 header's "closed at two" and ADR 0035's resolution both described `prototype-brief`'s 2026-08-05 outcome,

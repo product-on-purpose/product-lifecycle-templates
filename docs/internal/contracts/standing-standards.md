@@ -10,7 +10,7 @@ assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md)
 ([ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
 assigned, specced and built 2026-09-23), `production-readiness-review`
 ([ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md),
-**proposed** 2026-09-27; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -173,7 +173,7 @@ obligation at authoring time; it is a section-presence rule and could later be g
 
 ## Change note
 
-**0.4.0, proposed 2026-09-27: a fifth member, and the first that no forecast named.**
+**0.4.0, 2026-09-27: a fifth member, and the first that no forecast named.**
 `production-readiness-review` joins as `classification: tool`, by
 [ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md). Section 1's
 likely-future-members line never named it, so **the membership test and this family's falsifier admit it,

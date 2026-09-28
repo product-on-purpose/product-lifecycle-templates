@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-27
 decision-makers: [jprisant]
 consulted: [claude]
@@ -26,9 +26,9 @@ consulted: [claude]
 - **What this does NOT decide:** `project-charter` (catalog alias PID), which shares this type's catalog
   category and purpose and must pass ADR 0030's admission test on its own evidence, per the method
   [ADR 0049](0049-pi-release-retrospective-fails-the-admission-test.md) already established.
-- **Status:** proposed 2026-09-27. **Held proposed until the maintainer reads the contract diff**, the way
-  [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md) and
-  [ADR 0060](0060-change-request-joins-delivery-docs.md) were before their own acceptance.
+- **Status:** accepted 2026-09-27. The maintainer ruled on the research the same day and accepted this
+  record on reading the contract diff, as with [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md)
+  and [ADR 0060](0060-change-request-joins-delivery-docs.md).
 
 ## Context and Problem Statement
 

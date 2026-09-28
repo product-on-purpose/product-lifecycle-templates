@@ -23,14 +23,14 @@ people who want every change, release notes are for people who want to know what
   PRINCE2 glossary and the UK government's *Guidelines for Managing Projects* (Open Government Licence).
 - **[ADR 0061](docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md),
   [ADR 0062](docs/internal/decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) and
-  [ADR 0063](docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md), proposed.** The change log
+  [ADR 0063](docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md).** The change log
   joins `governance-docs` as a fifth member, and the contract's roles list gains a fifth role. The production
   readiness review joins `standing-standards` as a `tool`, the family's first member that no forecast named;
   its boundary with `launch-coordination-checklist` rests on trigger, team and timing, because Google's own
   launch checklist is engineering-scoped too. The project brief **reopens `discovery-docs`**, which ADR 0035
   had recorded as closed at two when `prototype-brief` failed its admission test.
 - **[ADR 0064](docs/internal/decisions/0064-deployment-plan-is-declined.md) and
-  [ADR 0065](docs/internal/decisions/0065-steering-committee-pack-is-declined.md), proposed: two declines of
+  [ADR 0065](docs/internal/decisions/0065-steering-committee-pack-is-declined.md): two declines of
   types that cleared the admission test.** The deployment plan is published by five US public-sector sources,
   but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and
   admitting it would reverse `delivery-docs`' production-change exclusion. The steering committee pack's

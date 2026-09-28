@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-27
 decision-makers: [jprisant]
 consulted: [claude]
@@ -23,9 +23,9 @@ consulted: [claude]
   `delivery-docs`, and it stays out.
 - **Who loses:** teams in government or other regulated delivery who must produce a standalone deployment
   plan as a gated deliverable. The record names them in its reopening conditions.
-- **Status:** proposed 2026-09-27, on the maintainer's ruling of the same day. Held proposed until the
-  maintainer reads the diff, as [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md) and
-  ADR 0060 were.
+- **Status:** accepted 2026-09-27. The maintainer ruled on the research the same day and accepted this
+  record on reading the contract diff, as with [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md)
+  and [ADR 0060](0060-change-request-joins-delivery-docs.md).
 
 ## Context and Problem Statement
 

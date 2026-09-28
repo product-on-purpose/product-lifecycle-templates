@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-09-27
 decision-makers: [jprisant]
 consulted: [claude]
@@ -22,9 +22,9 @@ consulted: [claude]
   [ADR 0030](0030-templating-scope-markdown-documents.md)'s admission test under other names. The decline
   rests on duplication and family fit, like
   [ADR 0064 (deployment-plan is declined)](0064-deployment-plan-is-declined.md), decided the same day.
-- **Status:** proposed 2026-09-27, on the maintainer's ruling of the same day. Held proposed until the
-  maintainer reads the diff, as [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md) and
-  [ADR 0060](0060-change-request-joins-delivery-docs.md) were.
+- **Status:** accepted 2026-09-27. The maintainer ruled on the research the same day and accepted this
+  record on reading the contract diff, as with [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md)
+  and [ADR 0060](0060-change-request-joins-delivery-docs.md).
 
 ## Context and Problem Statement
 

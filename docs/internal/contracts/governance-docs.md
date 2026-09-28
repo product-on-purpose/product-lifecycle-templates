@@ -3,7 +3,7 @@
 Status: adopted 2026-07-22 ([ADR 0024](../decisions/0024-adopt-governance-docs-family-contract.md))
 Applies to: every bundle declaring `family: governance-docs` in its meta
 Members at adoption: none built yet (risk-register, raid-log, kpi-dashboard are the planned members)
-Members: risk-register, raid-log, kpi-dashboard, issue-log ([ADR 0057](../decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md), assigned and specced 2026-09-23 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-23), change-log ([ADR 0061](../decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), **proposed** 2026-09-27; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built)
+Members: risk-register, raid-log, kpi-dashboard, issue-log ([ADR 0057](../decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md), assigned and specced 2026-09-23 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-23), change-log ([ADR 0061](../decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
 Modeled on: the delivery-docs and decision-docs family contracts, on the pm-skills family-contract pattern
 Axis: `classification` (this is the first classification-axis family; see [ADR 0015](../decisions/0015-second-taxonomy-axis-phase-xor-classification.md) and [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
 Version: 0.3.0 (changes to this contract require a decision record; see the change note at the end)
@@ -61,7 +61,7 @@ The gate enforces section 2 and the mechanical part of section 3. **Family check
 
 ## Change note
 
-**0.3.0, proposed 2026-09-27: a fifth member.** `change-log` (catalog id `change-log-governance`) joins as
+**0.3.0, 2026-09-27: a fifth member.** `change-log` (catalog id `change-log-governance`) joins as
 `classification: utility`, by [ADR 0061](../decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md).
 The membership test already named the type ("a continuously-maintained register, log, or dashboard"), and
 [ADR 0060 (change-request joins delivery-docs)](../decisions/0060-change-request-joins-delivery-docs.md)
