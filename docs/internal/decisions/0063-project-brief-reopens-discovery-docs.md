@@ -14,7 +14,7 @@ consulted: [claude]
   of Canada heavyweight sense named and put out of scope. The [contract](../contracts/discovery-docs.md) moves
   to `0.2.0`.
 - **Why this is a reopening, not a widening.** `discovery-docs`'s own membership test, "exists to decide
-  whether to build something, before anyone commits to building it" (`discovery-docs.md:24-26`), already
+  whether to build something, before anyone commits to building it" (`discovery-docs.md:33-34`), already
   admits a project brief without argument. What stood in the way was the contract's closure statement, "the
   family is closed at two" (`discovery-docs.md:6`), which recorded [ADR 0035](0035-prototype-brief-fails-the-admission-test.md)'s
   **outcome** for a different candidate, `prototype-brief`, whose own admission test failed. This record
@@ -48,7 +48,7 @@ Tested against every family contract's own membership language, with no family a
 the type as written, several by direct analogy to the already-shipped `business-case` bundle (`strategy-docs`
 and `governance-docs` both name `business-case` as their own worked exclusion example). Only `discovery-docs`
 admits it, and admits it on the contract's own words: "exists to decide whether to build something, before
-anyone commits to building it" (`discovery-docs.md:24-26`) describes a project brief without needing to be
+anyone commits to building it" (`discovery-docs.md:33-34`) describes a project brief without needing to be
 stretched.
 
 **The obstacle is not the membership test. It is the contract's header, "the family is closed at two"
@@ -60,16 +60,16 @@ was ever a rule against a fourth candidate, or only a record of what happened to
 [ADR 0035](0035-prototype-brief-fails-the-admission-test.md) applied ADR 0030's admission test to
 `prototype-brief`, a **different candidate type**, and found no named source publishing it as a written
 document: "every candidate examined turned out to be a neighbouring document type (a code-based prototyping
-kit, a sprint-wide brief, a hypothesis card, or vendor blog content) presented under another name" (`0035:17-19`).
+kit, a sprint-wide brief, a hypothesis card, or vendor blog content) presented under another name" (`0035:23-25`).
 Its decision outcome states: "`prototype-brief` does not ship. It is not added to
-the catalog. `discovery-docs` is complete at two members, `business-case` and `user-persona`" (`0035:123-124`).
+the catalog. `discovery-docs` is complete at two members, `business-case` and `user-persona`" (`0035:129-130`).
 
 [ADR 0031](0031-adopt-discovery-docs-family-contract.md), ratifying the contract in advance of that research,
 had already named a negative result as an acceptable outcome of testing that specific candidate: "if no named
 source is found, the type does not ship and this family has two members, which is a legitimate outcome and not
 a failure of the contract" (`0031:53-54`). **That sentence is conditional on the research finding no named
 source. It says nothing about a future candidate for which a named source is found.** ADR
-0035 itself lists four conditions that would reopen its own finding (`0035:149-160`), and every one of them is
+0035 itself lists four conditions that would reopen its own finding (`0035:155-166`), and every one of them is
 about `prototype-brief` specifically: a named source publishing a prototype-commissioning document, a
 publisher converting a canvas into a document, a different type name for the same job passing its own
 evidence, or a real team asking for one. None of the four contemplates a wholly different catalog candidate,

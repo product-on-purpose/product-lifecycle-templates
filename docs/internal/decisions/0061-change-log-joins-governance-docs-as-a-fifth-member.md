@@ -135,7 +135,7 @@ it as written; the other eight exclude it.
   change log is a build decision, not one this record settles, the same posture ADR 0057 took toward
   `kpi-dashboard`'s own gap at the time.
 - **The contract's own POSITION needs one qualification this candidate's evidence adds, that ADR 0057 did
-  not have to.** `governance-docs.md:22` states, as the library's own reasoning rather than a sourced
+  not have to.** `governance-docs.md:23` states, as the library's own reasoning rather than a sourced
   claim, that these instruments "most often fail by collapsing into each other rather than by staying
   separate." PRINCE2 (via `prince2.wiki`, raw-checked) folds change-request tracking into the Issue
   Register **by design**: "should be documented in the issue register or change log," naming a standalone

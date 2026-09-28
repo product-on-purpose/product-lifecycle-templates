@@ -1535,7 +1535,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1275-1288`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1290-1303`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1558,8 +1558,8 @@ Priority); Approval (Target Delivery Date, Escalation, Decision, Decided by, Dec
 independently re-checked against the live PDF on 2026-09-27, and "Merged," which matches PM²'s own
 four-decision vocabulary already adopted by `change-request` ("There are four possible decisions: approve,
 reject, postpone or merge"). **Connecticut DSS** ships 11 columns, a different seven-value status list, and
-states its own audience explicitly: "project team, sponsor, business owner, steering committee, and
-stakeholders." **HHS EPLC** ships a 15-column spreadsheet (`CR# | Current Status | Priority | Change
+states its own audience explicitly: "The audience for the Project Change Log includes the project team, project
+sponsor, business owner, steering committee, and may include key project stakeholders." **HHS EPLC** ships a 15-column spreadsheet (`CR# | Current Status | Priority | Change
 Request Description | Assigned To Owner | Expected Resolution Date | Escalation Required (Y/N)? | Action
 Steps | Impact Summary | Change Request Type | Date Identified | Assoc ID | Entered By | Actual Resolution
 Date | Final Resolution & Rationale`), independently parsed from its own binary spreadsheet cells rather
@@ -1642,7 +1642,7 @@ change note, not by treating the general membership sentence as sufficient on it
 governance-docs as a fifth member) makes that edit, and the contract carries it in its 0.3.0 change note.
 
 **One qualification the contract's own POSITION needs, that ADR 0057 did not have to add.**
-`governance-docs.md:22` asserts, as the family's own reasoning rather than a sourced claim, that these
+`governance-docs.md:23` asserts, as the family's own reasoning rather than a sourced claim, that these
 instruments "most often fail by collapsing into each other rather than by staying separate." PRINCE2 folds
 change tracking into the Issue Register **by design**, not by failure, which is a named methodology choice
 this contract's relationship story must accommodate rather than contradict. The change note ADR 0061 adds
@@ -1771,7 +1771,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1412-1414` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1427-1429` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1799,7 +1799,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:465-468` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:480-483` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1863,7 +1863,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:427-442` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:442-457` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -1923,10 +1923,10 @@ occasional-to-periodic rather than every increment.
 **Two readings, one membership answer.** A maintained PRR checklist (the questionnaire) passes the family's own
 falsifier the same way `launch-coordination-checklist` did: it is "consulted at the moment of action," per
 [ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md)'s test, restated
-at `docs/internal/contracts/standing-standards.md:100-102`. A per-service review record (one team's filled
+at `docs/internal/contracts/standing-standards.md:102-104`. A per-service review record (one team's filled
 answers for one service, one time) excludes from every family tested, standing-standards included, on the
 contract's own analogy: "a runbook written for one incident is an incident report"
-(`standing-standards.md:29`). **This resolves the library's stated either/or**: the bundle is the standing
+(`standing-standards.md:31`). **This resolves the library's stated either/or**: the bundle is the standing
 questionnaire, and the worked example is a filled instance of it, exactly the relationship
 `launch-coordination-checklist_example.md` already has to its own template.
 
@@ -1942,7 +1942,7 @@ into that family.
 inside the team, not outside), and `strategy-docs` (organization-wide direction, not one service).
 
 **This is the family's first unforecast member, and that is worth naming rather than hiding.**
-`standing-standards.md:38` names only "a coding-standards or engineering-handbook document" as a likely future
+`standing-standards.md:40` names only "a coding-standards or engineering-handbook document" as a likely future
 member. Unlike `launch-coordination-checklist` and `definition-of-ready`, which the contract predicted by name
 before either was built, this admission rests entirely on the membership test and the falsifier, not on a
 forecast the contract can be shown to have gotten right. Per
@@ -2147,7 +2147,7 @@ has been describing the edges of without the library building it.
 This is not the `change-request` pattern. ADR 0060 widened `delivery-docs`'s own membership test to admit a
 type no contract test passed. Here, one contract's test already admits the type: `discovery-docs`'s own
 membership clause, "exists to decide whether to build something, before anyone commits to building it"
-(`discovery-docs.md:24-26`), fits a project brief without strain on that sentence alone. **What blocks
+(`discovery-docs.md:33-34`), fits a project brief without strain on that sentence alone. **What blocks
 admission is not the test; it is the contract's own closure statement**, "`discovery-docs.md:6`: "Members:
 `business-case`, `user-persona`. The family is closed at two." That closure recorded
 [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)'s **outcome** for a different candidate,
@@ -2279,12 +2279,12 @@ direct analogy to the already-shipped `business-case`:
 | `strategy-docs` | excludes | Names `business-case` as its own worked exclusion example, "a one-time, phase-bound artifact... this is why business-case is not a member" (`strategy-docs.md:32-36`); a project brief is at least as phase-bound |
 | `delivery-docs` | excludes | Its five admitted verbs (define, decompose, verify, change, announce) describe acting on an already-agreed unit of work (`delivery-docs.md:11`); a brief precedes and scopes the project itself |
 | `decision-docs` | excludes | "a technical decision-or-design artifact of the develop phase" (`decision-docs.md:11`); a brief is not a technical design record |
-| `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:22`) |
+| `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:23`) |
 | `qa-docs` | excludes | "a verification artifact of the develop phase" (`qa-docs.md:12`); a brief plans nothing about verifying a product increment |
 | `process-docs` | excludes | Its own contract text routes a forward-looking candidate away from itself: "discovery-docs before a decision, strategy-docs for direction, delivery-docs for the work itself" (`process-docs.md:23`) |
-| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:35`); a brief is written once per project, not consulted repeatedly unchanged |
+| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:37`); a brief is written once per project, not consulted repeatedly unchanged |
 | `communication-docs` | excludes | "the document owns none of its own facts" is this family's defining property (`communication-docs.md:25`); a brief originates its own content and is not periodic |
-| `discovery-docs` | admits, with strain | Its own membership test fits: "exists to decide whether to build something, before anyone commits to building it" (`discovery-docs.md:24`). The strain is the BIS "official start of the project" line, carried into ADR 0063's body as a named POSITION rather than smoothed over |
+| `discovery-docs` | admits, with strain | Its own membership test fits: "exists to decide whether to build something, before anyone commits to building it" (`discovery-docs.md:33`). The strain is the BIS "official start of the project" line, carried into ADR 0063's body as a named POSITION rather than smoothed over |
 
 No fallback family exists on this evidence. If the maintainer's ruling to reopen were instead a ruling not to
 build, there would be no other family this research found that admits the type; the record would read like
@@ -2299,7 +2299,7 @@ at a glance." BIS, the primary source, does not state a length. The one long con
 20-plus fields across three parts, is explicitly the heavyweight sense this bundle puts out of scope. **`full`
 therefore does not mean heavier in the NSW Health/TBS Canada sense; it adds the two sections the lean variant
 omits, and nothing about options analysis, cost breakdowns or procurement.** The contract permits `[lean]`
-alone if the build's own research shows the second weight does not earn its place (`discovery-docs.md:72`);
+alone if the build's own research shows the second weight does not earn its place (`discovery-docs.md:89`);
 this spec's judgment is that it does, because `Project Approach` and `Relationship to Other Documents` are
 real, separately-named content the lean size would otherwise have to compress out entirely.
 
@@ -2310,9 +2310,9 @@ real, separately-named content the lean size would otherwise have to compress ou
 | **Scope and Exclusions** | yes | What is in, and, named as its own field, what is explicitly out: BIS's checklist item "Scope - what in and what's out", and WorksBuddy's finding that the exclusions half is "the section that most teams skip" and the one that "prevents the most expensive misunderstandings." **A named, mandatory field, not folded into a general scope paragraph** |
 | **Outline Business Justification** | yes | Why this is worth doing, in outline only, plus a statement that a fuller comparison of options (including doing nothing) will be brought to a named approval gate by a `business-case` document. Sourced to prince2.wiki's "outline business case" as one brief component; bounded by `business-case_guide.md:17`, which this section must not cross into |
 | **Constraints and Who Should Be Involved** | yes | Known constraints on the work, and the people who need to be part of it, sourced to BIS's own sentence, "the Project Brief says why the project is needed, what it must achieve and who should be involved." **Not** sourced to a "project management team structure" component: that phrase failed raw-text verification against prince2.wiki and is not confirmed as a stated part of the brief by any source read this session |
-| **Decision Requested** | yes | What approval is being asked for, from whom, and what happens to the answer: proceed to develop the business case, proceed to initiation, or stop. One named approver. **POSITION**: this section exists because the family's contract obliges each member to say which document takes over (`discovery-docs.md:34-36`), not because a named source specifies this as a brief component |
+| **Decision Requested** | yes | What approval is being asked for, from whom, and what happens to the answer: proceed to develop the business case, proceed to initiation, or stop. One named approver. **POSITION**: this section exists because the family's contract obliges each member to say which document takes over (`discovery-docs.md:49-51`), not because a named source specifies this as a brief component |
 | **Project Approach** | full only | How the work will be approached (build, buy, or a mix). Named as a brief component by prince2.wiki; not elaborated in any source read this session, so the guidance text here is labeled this library's own, not attributed to PRINCE2 |
-| **Relationship to Other Documents** | full only | Where this document sits against the mandate, the business case, and initiation documentation (a project charter or PID), naming plainly that neither `project-charter` nor a PID is built in this library. **POSITION**: this section is how the template answers the same contract obligation (`discovery-docs.md:34-36`) at the size that has room for it, not a sourced composition item |
+| **Relationship to Other Documents** | full only | Where this document sits against the mandate, the business case, and initiation documentation (a project charter or PID), naming plainly that neither `project-charter` nor a PID is built in this library. **POSITION**: this section is how the template answers the same contract obligation (`discovery-docs.md:49-51`) at the size that has room for it, not a sourced composition item |
 
 **What stays out at any size, named so a reader is not left to guess:** options analysis, capital or recurrent
 cost estimates, a formal risk-scoring table, and resubmission across the project lifecycle. Those are the
@@ -2381,7 +2381,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1413-1415`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1428-1430`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every

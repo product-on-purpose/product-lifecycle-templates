@@ -15,13 +15,13 @@ consulted: [claude]
   (`foundation`), and the [contract](../contracts/standing-standards.md) moves to `0.4.0`.
 - **Why a record is needed.** Unlike `launch-coordination-checklist` (ADR 0053) and `definition-of-ready`
   (ADR 0058), this type was never named on the contract's "likely future members" list
-  (`standing-standards.md:38`). It is the family's first member admitted purely on the membership test and
+  (`standing-standards.md:40`). It is the family's first member admitted purely on the membership test and
   falsifier, with no forecast to confirm.
 - **What settled membership:** the family's own falsifier
   ([ADR 0032](0032-adopt-standing-standards-family-contract.md)) - a maintained PRR checklist is "consulted at
   the moment of action," the same test that admitted `launch-coordination-checklist`. A per-service, one-time
   review record excludes on the contract's own analogy: "a runbook written for one incident is an incident
-  report" (`standing-standards.md:29`).
+  report" (`standing-standards.md:31`).
 - **What settled classification:** the contract's section 2 cut, "is it a standard you judge against, or an
   instrument you execute?", argued marker-by-marker below. **Recorded honestly:** the strongest single
   admission quotation reads as judged-against language, and this record explains why that does not carry the
@@ -42,7 +42,7 @@ sources publish the document as a written checklist or template: Susan Fowler's 
 Microservices* (O'Reilly), Appendix A; GitLab's production readiness review template, since archived; and
 Mercari's production readiness checklist. Google's SRE book describes the review and says its SRE team
 "establishes and maintains a PRR checklist explicitly for the Analysis phase". The `launch-coordination-checklist`
-spec had asked its own research to look for exactly such a source (`tier2-specs.md:465-468`: "One source
+spec had asked its own research to look for exactly such a source (`tier2-specs.md:480-483`: "One source
 suffices; a second would change the teaching"). The maintainer reviewed the
 sweep's verdicts on 2026-09-27 and ruled: build, joining `standing-standards` as `classification: tool`.
 
@@ -87,18 +87,18 @@ verify a member picked a value from the set `{foundation, tool}`, never that it 
 `production-readiness-review`, read as a maintained checklist, passes the same falsifier
 [ADR 0053](0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) applied: "if a candidate
 arrives that matches the cadence but is not consulted at the moment of action, this family has been drawn
-around the axis rather than around a job" (`standing-standards.md:100-102`). Google's own chapter 32, raw-checked
+around the axis rather than around a job" (`standing-standards.md:102-104`). Google's own chapter 32, raw-checked
 in this sweep, describes the checklist as something SRE "establishes and maintains ... explicitly for the
 Analysis phase" and consults during a review conducted at the moment SRE evaluates whether to take a service on,
 not authored once and shelved. Read as a one-time, per-service filled record, the type
 excludes from every family the sweep tested, `standing-standards` included, on the contract's own analogy at
-`standing-standards.md:29`: "a runbook written for one incident is an incident report." **This bundle is the
+`standing-standards.md:31`: "a runbook written for one incident is an incident report." **This bundle is the
 standing checklist**, and its worked example is a filled instance of it, the same relationship
 `launch-coordination-checklist_example.md` already has to its own template.
 
 ### Why `tool`, marker by marker, against the honest `foundation` case
 
-The contract gives each value three markers (`standing-standards.md:72-77`). A Definition of Ready matched all
+The contract gives each value three markers (`standing-standards.md:74-79`). A Definition of Ready matched all
 three of `foundation`'s and none of `tool`'s ([ADR 0058](0058-definition-of-ready-joins-standing-standards-as-a-foundation.md)).
 A PRR does not split as cleanly, and the table says so rather than picking the convenient row:
 
@@ -127,7 +127,7 @@ distinction as `admits-with-strain` against `standing-standards`' clean `admits-
 
 ### The counter-argument this record keeps rather than omits
 
-**No contract's forecast list named this type.** `standing-standards.md:38` names only "a coding-standards or
+**No contract's forecast list named this type.** `standing-standards.md:40` names only "a coding-standards or
 engineering-handbook document." A reader who expects family assignment to track a contract's own predictions
 would find nothing here to point to, unlike `launch-coordination-checklist` and `definition-of-ready`. It does
 not change the outcome, because [ADR 0057](0057-issue-log-joins-governance-docs-as-a-fourth-member.md) already
