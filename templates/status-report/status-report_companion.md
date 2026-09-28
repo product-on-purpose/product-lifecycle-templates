@@ -312,7 +312,7 @@ metrics meant for one audience in one period, and must draw its figures from the
 define new ones [[19]](#ref-19). This is the family's no-new-facts rule applied concretely, and it is why
 the worked example in section 10 reads its numbers from a sibling bundle rather than inventing them.
 
-**Status report vs steering-committee or decision paper.** A named practitioner source draws the sharpest
+**Status report vs decision paper.** A named practitioner source draws the sharpest
 line found in this research: *"In a status update, the presenter opens with a report: 'Here's what happened
 since last time.' In a decision session, the presenter opens with a decision ask: 'I need approval for X by
 this date'"* [[16]](#ref-16), and *"Status updates present every metric on every dimension - comprehensive

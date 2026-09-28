@@ -31,6 +31,21 @@ design task" rather than "a spec-driven execution".
 | `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23**, shipped in `v0.13.0`. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
 | `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it; [build report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md) |
 | `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
+| `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Not yet built.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
+| `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Not yet built.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) |
+| `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) reopens the family, which ADR 0035 had recorded as closed at two |
+| `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
+| `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
+
+**2026-09-27: one admission sweep, five candidates, three specs and two declines.** The maintainer queued
+five candidates on 2026-09-25 from a ranked list of the next ten. One research workflow tested all five
+against ADR 0030's admission test and against all nine family contracts, with no family assumed: 24 Sonnet
+agents, 356 returned quotations re-checked against raw page text in the main loop. **All five cleared
+admission.** What separated them was whether each is a distinct document and whether any family can hold it.
+The change log and the production readiness review fit existing families as written. The project brief fits
+only `discovery-docs`, which the maintainer chose to reopen. The deployment plan and the steering committee
+pack are declined on duplication and family fit, not on a missing source, so neither record takes ADR 0049's
+zero-source shape. Their catalog rows stay `candidate`, as ADR 0049 left its own.
 
 **`launch-coordination-checklist`: family assigned 2026-09-20, specced 2026-09-22.** It joins
 `standing-standards` as `classification: tool`, by
@@ -1414,3 +1429,1032 @@ glossary with a term its own log records it lacks); the main loop found two more
 templates' GOOD examples reusing the example's scenario and the example repeating the thread's known sharing
 contradiction. Not counted: the admission sweep run while the spec was written, and the orchestrator's own
 spend.
+
+---
+
+### governance-docs (fifth member): the change log
+
+**`change-log`** - `governance-docs`, **`classification: utility`**, sizes **`[lean, full]`** (provisional),
+methodology **`generic`** (provisional; corrects the catalog's `PMBOK/ITIL`), catalog id
+`change-log-governance` (catalog 154 in [`catalog.md`](catalog.md), verbatim at
+[`atlas/catalog-data.json`](../../atlas/catalog-data.json)), catalog name "Change Log
+(governance)", aliases (catalog) `change register`, `change control log`. Catalog owner: PM / Change
+Manager (open question, not source-confirmed; see Catalog corrections). Catalog purpose: "Track requested
+and approved changes to baselines." Catalog contents: "change, requestor, impact, decision, date."
+Catalog `stage`: governance. Catalog `formality`: lightweight. Catalog `rarity`: common. Catalog
+`size_variant`: S. Catalog `relationships`: `[Change Requests]`. `tier: 2`, `tier_inferred: true`,
+`must_have: false`, `built: false`, `state: candidate`.
+
+**The bundle id is `change-log`, not the catalog id verbatim, and that is a design choice this spec makes
+rather than inherits.** See "Deciding the bundle id" below.
+
+#### Demand: the sibling that names it and defers it
+
+Two shipped bundles already point at a standing change log without building one, and the deferral is
+recorded, not implied:
+
+- `change-request_companion.md:369-373` (`change-request`, the per-occasion document): "**Change request
+  vs. the change log.** The request is not the log; PM²'s form is archived once logged into one
+  [[8]](#ref-8), and the PMBOK errata describes the log as the register that collects submitted requests
+  [[2]](#ref-2). HHS's EPLC program merges the two, a documented alternative rather than an error
+  [[11]](#ref-11). A standing change log, if this library ever builds one, is a `governance-docs`
+  candidate, not a variant of this bundle."
+- `change-request_template-lean.md:45`: "This document is not the change log; it feeds one."
+- `change-request_template-full.md:23,242-254`: the full template's WHY and GOOD text both name the log as
+  the request's destination once decided.
+- `change-request_guide.md:58,76`: routes a reader to the full size "when the project keeps a change log
+  this request must feed into cleanly," and the rubric's row 8 grades whether a filled request "names the
+  change log entry (or states none is kept)."
+- `issue-log_companion.md:60,358-361` and `issue-log_template-full.md:224-226,244` and
+  `issue-log_guide.md:51-55`: `issue-log`'s own Links to Other Logs boundary names "a separate change log
+  for submitted change requests" as the PMI convention it records against, and its TRAP line warns against
+  "duplicating the risk register's or **change log's** own detail" instead of linking to it.
+- `docs/internal/contracts/delivery-docs.md:13`: "it does not admit the standing register of such requests
+  (a change log), which is a `governance-docs` instrument if it is ever built."
+- `docs/internal/decisions/0060-change-request-joins-delivery-docs.md:84-86,105-106`
+  (**ADR 0060, change-request joins delivery-docs**): considered and rejected building the log instead of
+  the request ("it builds a different document from the one three bundles route to"), and states three
+  times that `governance-docs` "admits a standing register as written" if the type is ever built.
+- `atlas/catalog-data.json:3902-3925`: the candidate has carried `state: "candidate"` in the catalog since
+  before either sibling shipped.
+
+#### Deciding the bundle id: `change-log`, keeping `change-log-governance` as the catalog id
+
+**Chosen: bundle id `change-log`.** Three reasons, weighed against the one real risk.
+
+1. **Every other `governance-docs` member's bundle id is a bare type name, with no family qualifier.**
+   `risk-register`, `raid-log`, `kpi-dashboard` and `issue-log` (**ADR 0057**, issue-log joins
+   governance-docs as a fourth member) all drop any "-governance" or "-register" suffix the catalog's own
+   compound naming might invite. Keeping `change-log-governance` as the bundle id would be the only member
+   of this family to carry a family qualifier in its own directory name, for no mechanical reason.
+2. **The library has already shortened a compound catalog id for a Tier-2 bundle twice.** `spike-report`
+   ships under `spike-research-spike-report`'s catalog entry, and `test-summary-report` ships under
+   `test-report-test-summary-report`'s. Both keep the compound string as the catalog id and ship the
+   natural, shorter descriptive phrase as the bundle id. `change-log-governance` is the same shape: a type
+   name plus a parenthetical qualifier the catalog added to disambiguate a candidate row, not a name a
+   reader would search for whole.
+3. **No mechanical collision exists either way.** `tools/mcp_server.py:371-384`'s `search_templates`
+   matches a query against `b["id"].lower()` exactly or as a substring of the bundle's own joined
+   `aliases`. A query `changelog` does not equal `change-log` (the hyphen differs) and is not a substring
+   of this candidate's catalog aliases (`change register`, `change control log`); a query `change-log`
+   does not appear inside `release-notes_meta.yaml:18`'s alias list either. `tools/check-bundles.py`
+   resolves `future:` tags and cross-references by exact bundle id, which this decision does not touch.
+   Checked directly against both files on 2026-09-27; neither normalizes hyphens.
+
+**The risk, named rather than hidden.** `release-notes` carries alias `changelog` (`release-notes_meta.yaml:18`),
+and `release-notes_companion.md:132-137` already draws the boundary from its own side: "A **changelog** is
+a portable, permanent, structured record of every notable change, maintained with the project (Keep a
+Changelog)... **Release notes** are a curated, often customer-facing summary for a specific release." A
+plain-English reader who has that sentence in mind and then meets a bundle named `change-log` is one
+short step from the wrong artifact, even though no string collides. **This is exactly the near-miss ADR
+0059 (announcement-internal-comms joins delivery-docs) found for its own alias `release announcement`
+against `release-notes`**, and that record's answer was to fix it in the build, not to avoid the name. This
+bundle's guide and companion must name the collision on their first line, the way `change-request_guide.md`'s
+first line already names the `rfc` collision, and `release-notes_guide.md` gains one routing line from its
+own side (see What landing this bundle closes elsewhere). The catalog id `change-log-governance` is
+unchanged, so any future `related_templates` or `future:` reference written against the catalog id still
+resolves once the bundle directory is checked against it.
+
+#### Admission: five independent named bodies, one already read by a sibling bundle
+
+Every quotation below was checked against the source's raw text on 2026-09-27, in the main loop's re-check of
+the admission sweep (`_local/research/2026-09-27_admission-sweep-3/`, gitignored). Three named standards
+bodies and two named government bodies each define or ship the type by name, clearing
+**ADR 0048** (one named source clears the admission test) with room to spare.
+
+| Source | What it says or ships | Licence |
+|---|---|---|
+| PMI, *PMBOK Guide* 6th edition, errata (5th printing) | "The change log is used to record all submitted change requests." | PMI, hosted openly, no login wall |
+| European Commission / PM² Alliance, *PM² Project Management Methodology Guide* v3.1, Appendix B.7 | "A Change Log is used to document, monitor and control all project changes." Ships an actual 17-field template across four groups (Identification and Description, Assessment and Action, Approval, Implementation); one of its eight Status values, in the Identification and Description group, "Waiting for approval," was independently re-checked against the live PDF on 2026-09-27 and passes | **CC BY 4.0** ("Document licensed under CC BY 4.0 license," raw-checked) |
+| PM² Alliance, pm2.eu Artefacts listing | "template for Change Log document," "Free, downloadable and easy to edit" | Not independently confirmed on this listing page; the Guide it is drawn from is CC BY 4.0 |
+| Association for Project Management (APM), UK chartered body, glossary | "A record of all proposed changes to scope" (entry name "Change log (or log)"); independently confirms the register/log naming equivalence this candidate's own alias claims | Not stated |
+| Connecticut Department of Social Services, Enterprise PMO, *Project Change Log* v1.1 | "Also known as Project Change Register." Ships a fielded, versioned, 11-column template | Not stated; presumed public-sector work product |
+| US Department of Health and Human Services, EPLC, *Change Management Practices Guide* | "All projects, regardless of type or size, should maintain a change log and regularly manage requested changes." | US federal government work, presumptively public domain |
+
+**Retrieval note for the build's research.** `hhs.gov` returns HTTP 403 to both `WebFetch` and
+`rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
+(`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
+the archived copy actually read, the same convention `change-request`'s own spec already models
+(`tier2-specs.md:1290-1303`). **One sentence in that same HHS folder is usable only as a fragment**:
+"A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
+break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
+raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
+quote below instead.
+
+**What was not read, or does not admit the type.** The PMI *Lexicon of Project Management Terms* v5.0 has
+no standalone "change log" entry; a full-text search returned zero hits, so the Guide's body defines the
+term and the Lexicon does not, a factual gap rather than a boundary claim. ISO 21502:2020 is a commercial
+standard and was not retrieved. The CDC Unified Process newsletter (`stacks.cdc.gov`) returns HTTP 403 and
+and was not recovered from an archive copy in this pass, so its sentence, word for word the same claim the
+HHS Practices Guide makes above, is not usable; cite HHS, not CDC. The ITIL glossary
+mirror (IT Process Wiki) is rawcheck-passed but does not admit "change log" itself; see Boundaries below.
+
+#### Structure: PM²'s four groups as the backbone, cross-checked by two independent government templates
+
+**PM² Appendix B.7** (17 fields, four groups): Identification and Description (ID, Category, Title,
+Description, Status, Requested by, Date Identified); Assessment and Action (Action Details, Size,
+Priority); Approval (Target Delivery Date, Escalation, Decision, Decided by, Decision Date); Implementation
+(Actual Delivery Date, Traceability and Comments). Its eight status values include "Waiting for approval,"
+independently re-checked against the live PDF on 2026-09-27, and "Merged," which matches PM²'s own
+four-decision vocabulary already adopted by `change-request` ("There are four possible decisions: approve,
+reject, postpone or merge"). **Connecticut DSS** ships 11 columns, a different seven-value status list, and
+states its own audience explicitly: "The audience for the Project Change Log includes the project team, project
+sponsor, business owner, steering committee, and may include key project stakeholders." **HHS EPLC** ships a 15-column spreadsheet (`CR# | Current Status | Priority | Change
+Request Description | Assigned To Owner | Expected Resolution Date | Escalation Required (Y/N)? | Action
+Steps | Impact Summary | Change Request Type | Date Identified | Assoc ID | Entered By | Actual Resolution
+Date | Final Resolution & Rationale`), independently parsed from its own binary spreadsheet cells rather
+than a decoded-text summary. All three converge on: an identifier, a type or category, a description, a
+requester, a date raised, a priority, a status, a named decision, a named decider, a decision date, and a
+resolution. **No single status vocabulary is presented as canonical**; the template offers a sourced
+default and states plainly that organizations customize it, the same move `issue-log`'s Priority Scale
+section already makes for its own three published shapes.
+
+#### Section design
+
+Provisional, and expected to move once a build's own research runs:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Purpose and Boundary** | yes | What baseline changes this log tracks, and what does not go in: the per-instance change request (a separate document that feeds one row here), the software CHANGELOG (a different artifact under the identical word), a decision log (see Boundaries; thinly sourced), and configuration or version history. Names PRINCE2's exception up front, the way `change-request_guide.md`'s first line already names its own `rfc` collision |
+| **Status Vocabulary** | yes | The status values this log uses, stated once so every row is comparable. Offers PM²'s eight, Connecticut DSS's seven, and HHS's set as sourced defaults, and states plainly that a team may adapt them. **POSITION**: not to present any one list as canonical, since no source claims its own list is universal |
+| **Change Log** | yes | **The load-bearing section.** One row per change request: ID, type or category, title and description, requester, date raised, priority, status, decision, decider, decision date. Every field traced to at least two of PM², Connecticut DSS, HHS. A table section, so it carries PRIORITY and ROW HINT |
+| **Escalation** | yes | Who acts, and under what condition, when a logged change needs authority above the log's normal decider. PM²'s Escalation field (Approval group) and HHS's `Escalation Required (Y/N)?` column are the two published shapes |
+| **Implementation and Traceability** | full only | What was actually done once a change was decided: the actual delivery or resolution date, the artifact and version updated, and a link back to the change-request document this row came from and to any issue or risk that raised it. PM²'s Implementation group (Actual Delivery Date, Traceability and Comments) and HHS's Actual Resolution Date and Final Resolution & Rationale are the published shapes; the language should match `change-request`'s own Implementation and Traceability section so a request's exit point and this log's entry point read as one seam, not two vocabularies |
+| **Review and Ownership** | full only | Who keeps the log and how it is reconciled to the baseline it tracks. **Thinly sourced**: the one supporting data point is HHS's own one-page checklist, whose sole ongoing activity is "Update the Change Management Log." Beyond that one line, the review cadence and reconciliation duty are this library's own judgment and must be labeled **POSITION**, not attributed |
+
+#### Boundaries with each named neighbour
+
+- **Not the change request (the per-instance document).** Three independent sources agree the log is the
+  cumulative register and the request is the document that feeds one row into it: PM² documents a change
+  "via a Change Request Form and in the Change Log" (`change-request_research-log.md:286`, already cited
+  by the sibling bundle, not re-verified fresh in this pass); the PMBOK errata lists "Change log" and
+  "Approved change requests" as two separate outputs; HHS's own Change Management Plan template defines one
+  shared list of data elements for the "Change Request Form and Change Management Log", yet keeps two
+  artifacts: its process table has a "Log CR" step ("The Change Manager enters the CR into the CR Log"), and
+  HHS ships the log as its own spreadsheet.
+- **PRINCE2 is the named exception, not an omission.** `prince2.wiki` (rawcheck-passed): "should be
+  documented in the issue register or change log," folding change-request tracking into the Issue Register
+  and naming a standalone change log only as an interchangeable alternative, not a mandatory companion
+  document. State this plainly, by name, the same way `issue-log_companion.md:358-361` already states
+  PRINCE2's parallel convention from its own side.
+- **Not the software CHANGELOG (Keep a Changelog / `release-notes`' alias).** "A changelog is a file which
+  contains a curated, chronologically ordered list of notable changes for each version of a project"
+  (Keep a Changelog, rawcheck-passed). It has no requester, approver, decision, or status field at all; the
+  identical word names a released-software artifact shipped with the codebase, categorically different
+  from a governance register of pending and decided requests. Put this on the first line of the guide,
+  since it is the single most likely mis-search, mirroring `release-notes_companion.md:132-137`'s own
+  framing of the same boundary from its side. The pm-skills skill `utility-pm-changelog-curator` (checked
+  2026-09-27 against `pm-skills` `origin/main`, 68 skills listed) targets exactly this software sense
+  ("Draft CHANGELOG entries from git log"), not this candidate's governance sense; it is not a pairable
+  skill here.
+- **Not a decision log.** No rawcheck-passing quotation, from any source read this pass, names this
+  boundary explicitly. Several vendor blogs converge informally on "a decision log records why a choice was
+  made; a change log records what changed and who approved it," but none passed the raw-text check, and one
+  attempted quote (bvop.org) failed it outright. **This boundary, if the companion states it at all, must
+  be labeled the library's own POSITION**, not sourced.
+- **Not configuration or version history.** HHS's own EPLC document archive keeps "07 - Change Management
+  Plan" and "08 - Configuration Management Plan" as two separately numbered template categories, observed
+  directly in the real archive URLs the research returned. This is a structural fact about the archive's
+  own organization, not a quotation, and should be reported as such rather than dressed up as a sourced
+  sentence.
+
+#### Family fit and the ADR
+
+**Governance-docs admits the type as written; the contract's own enumeration does not yet name it.**
+`docs/internal/contracts/governance-docs.md:13`'s membership test ("a continuously-maintained register,
+log, or dashboard ... to track risk, open items, or performance") describes a standing change log in its
+own words, and **ADR 0060** states this three times without deciding it: "A register of requests is a
+standing instrument; if it is ever built, it is a `governance-docs` candidate as written"
+(`0060:106`). Every other family contract excludes the type on the same grounds `change-request` was
+excluded from them (`delivery-docs.md:13`: an event-driven per-occasion form is not a standing register;
+`standing-standards`: continuously revised, not agreed once; `decision-docs`, `qa-docs`, `process-docs`,
+`communication-docs`, `discovery-docs`, `strategy-docs`: each excludes on the same ground ADR 0060 already
+argued for the request itself, which applies at least as clearly to its standing register).
+
+**What still needs stating, not assuming, is the same gap ADR 0057 (issue-log joins governance-docs as a
+fourth member) closed for `issue-log`.**
+`governance-docs.md:15` reads "The four roles are distinct but related," with an enumeration of exactly
+four bullets and no change-log line. Admitting a fifth member without editing that sentence would leave
+the contract's own prose out of step with its own membership, the same drift ADR 0057 and
+**ADR 0050** (qa-docs admits a fourth member) each closed by amending the roles list and adding a dated
+change note, not by treating the general membership sentence as sufficient on its own.
+[ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md) (change log joins
+governance-docs as a fifth member) makes that edit, and the contract carries it in its 0.3.0 change note.
+
+**One qualification the contract's own POSITION needs, that ADR 0057 did not have to add.**
+`governance-docs.md:23` asserts, as the family's own reasoning rather than a sourced claim, that these
+instruments "most often fail by collapsing into each other rather than by staying separate." PRINCE2 folds
+change tracking into the Issue Register **by design**, not by failure, which is a named methodology choice
+this contract's relationship story must accommodate rather than contradict. The change note ADR 0061 adds
+should record this qualification with a date, per [procedure 11](decision-procedures.md#11-a-family-contract-asserts-something-about-the-world)
+(a family contract's CLAIM sentences are tested against each new member's research log), so the sentence
+stays a POSITION the library owns rather than a CLAIM this candidate's own admission evidence contradicts.
+
+#### The worked example: the Reporting Platform Modernization program's change log
+
+**The shared-scenario rule (contract section 4) is a hard constraint, and it is unusually specific here**:
+the example must be this program's standing change-control log, and it must carry `CR-SV-01` exactly as
+`change-request_example.md` states it, because that document already treats this unbuilt log as the place
+its own decision was recorded:
+
+> "This request went through the Reporting Platform Modernization program's change-control process, the
+> one the program's issue log says every change request is handed to the day it is raised, and CR-SV-01 is
+> its identifier there; this document is the record that process decided on."
+> (`change-request_example.md:111-113`)
+
+And `issue-log_example.md:43-46` states the same routing from its own side: "this program hands every
+change request straight to its own change-control process the day it is raised, so no row below carries
+one." **This candidate's example is that change-control process's own standing register** - the document
+both siblings gesture at without instantiating.
+
+**Facts the one entry must carry exactly, with no invention:**
+
+| Field | Value | Source |
+|---|---|---|
+| Identifier | `CR-SV-01` | `change-request_example.md:3` |
+| Title | "Scheduled Email Delivery for Saved Views" | `change-request_example.md:2` |
+| Baseline artifact and version | Saved Views for Dashboards PRD, v0.3.0 | `change-request_example.md:4-5` |
+| Requester | Priya Nair (PM, Reporting), submitted 2026-07-08 | `change-request_example.md:6-7` |
+| Decider | Marta Reyes (Program Manager, Reporting Platform Modernization) | `change-request_example.md:8` |
+| Decision and date | Postponed, 2026-07-18 | `change-request_example.md:9-10` |
+| Origin | Not an issue, a risk, or a decision already on a program log; raised from account-management feedback | `change-request_example.md:50-55` |
+
+**Constraints the example must not violate**, each already established in a sibling and not this library's
+to re-decide:
+
+- No row for `ISS-11` or `ISS-12`. `issue-log_example.md:131-132,139` states plainly that neither issue
+  raised a change request ("No request for change," twice), a constraint **ADR 0060** already names for
+  the sibling bundle's own example (`0060:119-120`) and that binds this example identically.
+  `raid-log_example.md` and `risk-register_example.md` carry the same two issues under `R-03` and `R-06`
+  and must not gain a change-log row either.
+- The PRD stays at baseline v0.3.0. `change-request_example.md:114-115`: "the Saved Views PRD stays at its
+  0.3.0 baseline, and no target version or release is set, because the release that would carry the work
+  has not been scoped." A change-log row for `CR-SV-01` must show no artifact updated and no delivery date,
+  matching that outcome rather than inventing one.
+- Release 2.4.0 shipped 2026-06-30 with no scheduled delivery (`change-request_example.md:37-38`); nothing
+  in this log may contradict that.
+- If the drafting agent adds an illustrative second or historical row for realism, it must be dated inside
+  a window no sibling example pins, or closed before the earliest date any sibling states (2026-06-14, the
+  key-person risk's materialization), and it must not touch `R-03`, `R-06`, `ISS-11`, or `ISS-12`. **The
+  safer build choice is one entry, `CR-SV-01`, stated plainly as the log's first and only logged change to
+  date**, leaving a second row to a future build rather than to invention.
+- `last_reviewed` (or equivalent frontmatter) should sit at or after 2026-07-18, the decision date, so the
+  log reads as current with respect to its own one entry.
+
+**A sibling sentence the landing PR corrects.** `change-request_companion.md:371-372` says "HHS's EPLC
+program merges the two", meaning the request form and the log. Both readings of the HHS plan template are
+partly right. The template defines one shared list of data elements for the "Change Request Form and Change
+Management Log", which is what `change-request`'s research log recorded. It also keeps two artifacts: a
+"Log CR" step in which "The Change Manager enters the CR into the CR Log", and a log shipped as its own
+spreadsheet. The landing PR gives the companion's sentence a dated correction to that reading.
+
+#### Catalog corrections the landing PR must make
+
+Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3902-3925`, then regenerate the atlas:
+
+- **`methodology: "PMBOK/ITIL"` is contradicted.** No rawchecked source shows ITIL naming or shipping a
+  "change log" as such. ITIL's own two rawcheck-passed artifacts are differently-named and narrower: a
+  "Change Schedule" ("A Document that lists all approved Change Proposals and Changes and their planned
+  implementation dates") and a "Change Record" ("documenting the lifecycle of a single Change"), and
+  neither is a cumulative log of every submitted request the way PM²'s and Connecticut DSS's logs are.
+  Every source that actually admits and structures this type (PMI, PM², APM, Connecticut DSS, HHS) shares
+  the same lineage as `issue-log`'s own methodology correction. **Recommend `methodology: generic`**,
+  matching `issue-log`'s and `change-request`'s own corrected values, and cite ITIL as a named neighbour in
+  the companion instead of as a source.
+- **Aliases should gain sourced terms, not lose the sourced ones already there.** `change register` is
+  independently confirmed by APM's own glossary entry, "Change log (or log)," and should be kept.
+  `change control log` has no source in this pass; **recommend it be sourced before the build or dropped**.
+  Recommend adding `change management log` and `change request log`, both directly attested by HHS's own
+  named documents across three separate files.
+- **`owner: "PM / Change Manager"` is an open question, not a correction.** Nothing read this pass either
+  confirms or contradicts "Change Manager" as this type's owner; every source that names an audience names
+  a role (PM, sponsor, business owner, steering committee) rather than a title. Flag it for the spec
+  author or reviewer, not the build; do not invent a source for it.
+- **`size_variant: "S"` likely undercounts the shipped shape.** The same correction `issue-log`'s own
+  landing made: the catalog's single-letter size marker predates any research into the type's actual
+  published shapes, and this pass's own structure findings (PM²'s four groups, Connecticut DSS's 11
+  columns, HHS's 15 columns) support a two-weight `[lean, full]` split, not a single size.
+
+#### `pairs_with`: checked, and empty
+
+Checked 2026-09-27 against `pm-skills` `origin/main` directly (`gh api
+repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'`, 68 skills returned) and against
+`tools/known-skills.txt`. One name suggested a match and was read in full:
+`utility-pm-changelog-curator` ("Draft CHANGELOG entries from git log via the pm-changelog-curator
+sub-agent"). It targets the software CHANGELOG sense (Keep a Changelog, git-log-driven), not this
+candidate's governance sense, and never mentions a change request, a baseline, or a change-control board.
+No other skill name or description in the 68 suggests a governance change-log producer or consumer. On
+current evidence, **`pairs_with: []`** is the correct value, the same posture `issue-log` and
+`change-request` both adopt for the same reason.
+
+#### Risks for the build and review
+
+1. **The "five roles" enumeration lands with this spec, in the contract's 0.3.0 change.** A build that
+   treated `governance-docs.md:13`'s general wording as authorization enough, without that edit, would repeat
+   the gap ADR 0057 and ADR 0050 each closed rather than assumed.
+2. **PRINCE2's exception must survive drafting, not get smoothed into the PMI/PM² consensus.** Every other
+   named source agrees the log is a mandatory, separate companion document; PRINCE2 alone does not, and
+   the companion must state its position by name, the same discipline `issue-log_companion.md:358-361`
+   already keeps for its own PRINCE2 exception.
+3. **The HHS quotations carry a retrieval hazard a research agent will hit if it tries the live URL.**
+   `hhs.gov` returns 403; cite the Internet Archive `id_` copy, and do not quote "A
+   submitter completes a CR Form and sends the completed form to the Change Manager" whole. Only the
+   fragment "A submitter completes a CR Form and sends the" passed the raw-text check.
+4. **The decision-log boundary is a POSITION at best, and must not gain an invented citation.** No source
+   read this pass or the prior sweep passes the raw-text check on that specific distinction; state it as
+   the library's own judgment or cut it, never source it after the fact to make the companion read more
+   confident than the evidence.
+5. **The alias and skill near-misses need a first-line disambiguation, not a rename that hides them.**
+   `release-notes`' `changelog` alias and pm-skills' `utility-pm-changelog-curator` are both close enough,
+   in plain English, to misdirect a reader even though no string collides mechanically. State the
+   collision on the guide's and companion's first page, the way `change-request_guide.md` already states
+   its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
+6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
+   and no lens catches it reliably: `tier2-specs.md:1427-1429` records this exact failure surfacing in
+   `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
+   GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
+   Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
+   (contract section 5) and the family's own contract section 3.7.
+7. **The landing PR corrects `change-request_companion.md:371-372`'s "merges the two"**, as set out under
+   the worked example, so the two companions describe HHS the same way.
+
+---
+
+### standing-standards (fifth member): the production readiness review
+
+**`production-readiness-review`** - `standing-standards`, **`classification: tool`** (maintainer's ruling,
+2026-09-27; argued in [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md)),
+sizes **`[lean, full]`** (provisional), methodology **`SRE-lineage`**, catalog id `production-readiness-review`
+(catalog 125), aliases `PRR`. Catalog owner: SRE. Purpose: "Assess whether a service is ready for production."
+Contents, per the catalog: "reliability, monitoring, runbooks, capacity, on-call". `size_variant: M`, `rarity:
+occasional`, `tier_inferred: true`. **The catalog row's own source column reads "Google SRE practice."**
+
+#### Demand: prose routing, not a promise tag, and weaker than `issue-log`'s
+
+No `future:` tag points here. `grep -rn "future:production-readiness" templates/` returns nothing, checked
+2026-09-27. The demand is three lines of prose that already assume the type exists, plus the catalog's own
+cross-reference:
+
+- `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
+  its own subsection ("Launch coordination checklist and production readiness review") and states, without a
+  tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
+- `docs/internal/tier2-specs.md:480-483` (the launch-checklist spec) asks its own research pass to "look for a
+  second [source]: a production or operational readiness review published as a document," and says "one source
+  suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
+  document, and several more describe the review.
+- `docs/internal/decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md:41` and
+  `:105` both name the relationship in passing ("relates to `PRR`"; "a PRR relationship").
+- `atlas/catalog-data.json` already carries an asymmetric edge: `launch-coordination-checklist`'s
+  `relationships` is `["PRR"]`; `production-readiness-review`'s own `relationships` is `[]`. The catalog
+  promises the reverse link and does not pay it.
+
+This is real routing, not a gate obligation the way `issue-log`'s `future:` tags were. No check fails today for
+not building this type. It is, as the digest puts it, a maintainer scope call under
+[ADR 0041 (maintainer preference sets the build order)](decisions/0041-maintainer-preference-sets-the-build-order.md),
+made on 2026-09-27.
+
+#### Admission: three named sources publish the document, and more describe the review
+
+Every quotation below was checked against the source's raw text on 2026-09-27, either in the sweep's own
+re-check pass or by a direct `rawcheck.py` call made while writing this spec (marked below). Four quotes are
+cited to a different page than the one the sweep first filed them under, because the re-check found them
+there.
+
+| Source | What it says | Licence |
+|---|---|---|
+| Google, *Site Reliability Engineering* (O'Reilly, 2016), ch. 32, "The Evolving SRE Engagement Model" | "The SRE team establishes and maintains a PRR checklist explicitly for the Analysis phase." (re-checked in the main loop) | **CC BY-NC-ND 4.0**, confirmed by a direct `rawcheck.py` call against this page's own footer text, not carried from the launch-checklist spec's "CC BY-ND" note |
+| Susan Fowler, *Production-Ready Microservices* (O'Reilly, 2016/2017), Appendix A | "This will be a checklist to run over all microservices," under the heading "A Production-Ready Service Is Stable and Reliable" and four more, ~35 items across the five, counted directly from the pages | Cited as Fowler, *Production-Ready Microservices* (O'Reilly, 2016), Appendix A, **via the sponsored O'Reilly excerpt** ("Compliments of", chapters 1, 3, 4, 7 and Appendix A), hosted by F5 |
+| Mercari, Inc., `production-readiness-checklist` (Production Readiness Check, PRC) | "which is required for all services before receiving real production traffic"; "If a specific item is not applicable to your service check the item and explain" | **MIT** (GitHub API, 2026-09-27; not archived, last push 2021-11-22) |
+| GitLab Inc., archived `.gitlab/issue_templates/production_readiness.md` | "This issue serves as a tracking issue to guide you through the readiness review"; "It's not the production readiness document itself" | Not stated on this file |
+| GitLab Inc., the same project's `README.md` (cite here, not the issue template) | "The Production Readiness Review process has been superseded by" [PREP]. GitLab archived this project; do not cite it as a current process | Not stated |
+| AWS, Well-Architected "Operational Readiness Reviews" whitepaper | "Amazon Web Services (AWS) created the Operational Readiness Review (ORR) to distill the learnings from AWS operational incidents"; "Teams perform self-assessments on operational risks ... throughout the complete lifecycle of their service, from inception to post-release operations"; "Any high-criticality findings are escalated to leadership as input to a go or no-go launch decision" | Not stated |
+| AWS, the same whitepaper's `the-orr-tool.html` sub-page (cite here, not the landing page) | "The main tool for ORR is the checklist of questions itself"; grouped under "Release quality" and "Event management"; a third heading, "Architecture," re-checked directly with `rawcheck.py` on 2026-09-27 rather than left "not retested" | Not stated |
+| AWS, `inspect-the-process.html` | "When was your last ORR performed" | Not stated |
+| Microsoft, Azure Well-Architected `operational-excellence/maturity-model` (cite here, not `/checklist`) | "Level 3: Release readiness"; "Testing becomes a go-live requirement to ensure safe and stable deployments" | Not stated |
+| Grafana Labs, company blog | "Production readiness review (PRR) is a process that originated at Google"; "a completely separate process ... having the product in question reviewed by an experienced engineer, ideally outside of the product team"; "We're looking into a periodic and/or incremental PRR as part of our continuous product improvements" | Not stated |
+| GitLab Inc., `docs.runway.gitlab.com` platform guide | "SaaS Platforms uses production readiness review process for new services" | Not stated |
+| Google Cloud, "How SREs find the landmines in a service" (CRE Life Lessons) | "During an SRE entrance review (SER), also referred to as a Production Readiness Review (PRR), the SRE team takes the measure of a service currently running in production" | Not stated |
+| Cortex, `docs.cortex.io` Scorecard docs | "Scorecards automate the process of checking whether services meet criteria such as ownership, on-call coverage, runbooks, monitoring, and security requirements" | Not stated. **Do not** cite Cortex's specific 6-category/24-item breakdown; it failed `rawcheck` (a JS-rendered marketing page returning 245 extractable characters) |
+
+**Three sources publish the document**: Fowler's Appendix A, GitLab's template and Mercari's checklist.
+Google's chapter 32 says its SRE team maintains a PRR checklist. Grafana, GitLab's Runway guide, AWS and
+Microsoft describe the review practice without shipping the document, and Cortex describes a live scorecard
+product, which is out of scope for a Markdown template. That clears
+[ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)'s one-source floor three times.
+Confidence: high.
+
+**A name collision, confirmed and out of scope.** NASA's *Systems Engineering Handbook* Appendix B ("A review
+for projects developing or acquiring multiple or similar systems greater than three ... The PRR determines the
+readiness of the system developers to efficiently produce the required number of systems") and AcqNotes'
+DoD-acquisition glossary ("The Production Readiness Review (PRR) determines if a systems design is ready for
+production," "normally performed as a series of reviews toward the end of the Engineering [and Manufacturing
+Development phase]") both publish "Production Readiness Review" as a written document, and both quotes passed
+`rawcheck`. This is a hardware-manufacturing-readiness gate from an unrelated discipline that predates the SRE
+usage; it shares only the name and is not this bundle's subject. The companion needs one disambiguating
+sentence; the template needs none.
+
+**What must not be carried into a companion.** The claim that SRE book chapter 32 calls the Launch Coordination
+Engineering team "a lighter-weight alternative" is refuted: the phrase is not on the chapter's page, which a
+direct raw-text check confirmed. Chapter 32's only cross-reference to that team is
+that it "spends a majority of its time consulting with development teams." Say no more than that.
+
+#### The launch-checklist boundary: this is the central review risk
+
+**The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
+scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:442-457` already
+counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
+Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
+failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
+dependencies; Schedule and rollout planning. None names marketing, legal, external communications, or
+pricing/go-to-market. So the boundary cannot rest on "PRR is engineering-only, the launch checklist is
+cross-functional": both are engineering-scoped in their own founding documents. **The distinction that survives
+is trigger, team, and timing**, all three sourced to the same primary chapters:
+
+| Axis | Production Readiness Review (ch. 32) | Launch Coordination Checklist (ch. 27) |
+|---|---|---|
+| Trigger | "a development team requests that SRE take over production management" of a service already running | "Most audits are conducted before a new product or service launches" |
+| Team | "Usually one to three SREs are selected or self-nominated to conduct the PRR" | "The Launch Coordination Engineering (LCE) team," "held to the same technical requirements as any other SRE" |
+| Timing | "The Production Readiness Review can be started at any point of the service lifecycle" | Pre-launch, gatekeeping: "Acting as gatekeepers and signing off on launches determined to be" safe |
+
+A second, independent framing agrees without naming either type: Studio Red's practitioner guide draws a
+release-moment-versus-long-term-operability line, already quoted at
+`launch-coordination-checklist_companion.md:472-473` (ref 38). That source was not re-verified against its
+primary text in this sweep, so it is reported here as the sibling companion's own citation, not this sweep's,
+and is not requoted.
+
+**The new companion must agree with `launch-coordination-checklist_companion.md:464-469`, not restate it
+differently.** That section already holds the position "the two documents plausibly govern different moments
+of the same discipline" and explicitly declines to claim replacement or sequence. This bundle's own
+Relationships section states the same position from its side, adds the trigger/team/timing table above as the
+evidence for it, and **retracts the subject-matter half of the argument** rather than repeating it, because
+Appendix E now falsifies it directly. Per `decision-procedures.md` section 11, that retraction is the honest
+move: a claim a later retrieval falsifies is corrected in place, not defended.
+
+**A second neighbour, AWS's Operational Readiness Review, is the same shape at a different cadence.** ORR is
+reviewed "throughout the complete lifecycle of their service, from inception to post-release operations" and
+tracks "When was your last ORR performed" as a standing metric (cited to `inspect-the-process.html`). Google's own PRR is, on the sources read here, closer to one-time
+("Once the issues have been fixed, the product has passed the PRR," Grafana), while Grafana itself reports
+reconsidering that design ("We're looking into a periodic and/or incremental PRR"). **Cadence is contested
+across real adopters, not settled**, and the template's Review Trigger section, not a fixed assumption, is
+where that dispute belongs.
+
+**A third neighbour, the runbook, is complementary rather than competing, and the catalog under-states it.**
+Every PRR source that ships an actual checklist checks that a runbook already exists rather than producing one:
+Cortex's scorecard criteria include "runbooks" by name; GitLab's and Fowler's checklists ask for one as an
+input (per the launch-checklist bundle's own already-published research log, not re-verified here). `runbook`'s
+catalog `relationships` field is `[]` despite this; the catalog corrections below add the reverse edge.
+
+**A fourth neighbour, the Change Advisory Board, is a different unit of review, both raw-checked.** A CAB
+"delivers support to a change-management team by advising on requested changes" and "is responsible for
+oversight of all changes in the production environment" - a portfolio-wide, standing panel reviewing many
+changes across many services, not a per-service technical assessment. The two do not overlap in scope or
+grain.
+
+**A fifth neighbour, Definition of Done, differs in object and authority, both raw-checked.** The Scrum Guide's
+DoD is "a formal description of the state of the Increment," a per-work-item bar the Developers agree and judge
+themselves against every sprint. A PRR is service-level, typically reviewed by someone other than the team that
+built the service ("an experienced engineer, ideally outside of the product team," Grafana), and its cadence is
+occasional-to-periodic rather than every increment.
+
+#### Family fit: `standing-standards` admits the standing questionnaire; the per-service record does not exist as a separate type
+
+**Two readings, one membership answer.** A maintained PRR checklist (the questionnaire) passes the family's own
+falsifier the same way `launch-coordination-checklist` did: it is "consulted at the moment of action," per
+[ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md)'s test, restated
+at `docs/internal/contracts/standing-standards.md:102-104`. A per-service review record (one team's filled
+answers for one service, one time) excludes from every family tested, standing-standards included, on the
+contract's own analogy: "a runbook written for one incident is an incident report"
+(`standing-standards.md:31`). **This resolves the library's stated either/or**: the bundle is the standing
+questionnaire, and the worked example is a filled instance of it, exactly the relationship
+`launch-coordination-checklist_example.md` already has to its own template.
+
+**`governance-docs` admits with strain, not as written.** Its membership test names "a register, log, or
+dashboard" (`docs/internal/contracts/governance-docs.md:11`); a review checklist with pass/fail criteria is
+none of the three in form, even though its whole-lifecycle framing (AWS's ORR, above) matches the family's
+spirit. `standing-standards` fits the letter as well as the spirit; this spec follows the maintainer's ruling
+into that family.
+
+**Every phase-axis family excludes, on the catalog's own `stage: release` value**, which sits outside each of
+`qa-docs` (`develop`), `decision-docs` (`develop`), `delivery-docs` (`deliver`), `discovery-docs` (`discover`),
+`process-docs` (`iterate`), `communication-docs` (`utility`, audience
+inside the team, not outside), and `strategy-docs` (organization-wide direction, not one service).
+
+**This is the family's first unforecast member, and that is worth naming rather than hiding.**
+`standing-standards.md:40` names only "a coding-standards or engineering-handbook document" as a likely future
+member. Unlike `launch-coordination-checklist` and `definition-of-ready`, which the contract predicted by name
+before either was built, this admission rests entirely on the membership test and the falsifier, not on a
+forecast the contract can be shown to have gotten right. Per
+[ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)'s principle, "the membership
+test, not the list of members that happened to be planned, governs a candidate," so this does not weaken
+admission; it does mean the ADR cannot claim the forecast's confirmation the way ADR 0053 and ADR 0058 could.
+
+#### Section design
+
+Provisional, drawn from the intersection across sources rather than any one source's exact taxonomy (no two of
+Fowler, Google, GitLab and AWS agree on section count or naming), and expected to move:
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Scope and Trigger** | yes | What counts as "production" here, and what event starts a review: an SRE-ownership handoff ("a development team requests that SRE take over production management"), a maturity-gate promotion (GitLab's Experiment/Beta/GA), or a periodic re-review (AWS's ORR). A review with no stated trigger is applied to everything or nothing, the same trap `launch-coordination-checklist`'s Scope section names |
+| **Reviewer and Authority** | full only | Who conducts the review and who decides the outcome. Sourced: "Usually one to three SREs are selected or self-nominated" (Google); "an experienced engineer, ideally outside of the product team" (Grafana). Neither source ties this to a single named decision authority the way `launch-coordination-checklist`'s Roles section does; the template supplies the field and the companion says so |
+| **Readiness Criteria** | yes | **The load-bearing section.** Checks grouped by domain, each with the evidence that answers it and an owner. Domain list is the counted intersection: architecture and dependencies, capacity and scalability, monitoring and alerting, on-call and incident response, deployment and rollback, security, and data/backup/DR - drawn from the areas Google's chapter 32 names a PRR evaluates, Fowler's five headed sections, GitLab's per-gate subsections and AWS's Architecture/Release-quality/Event-management grouping, not copied from any one. A table section: carries PRIORITY and ROW HINT |
+| **Not-Applicable Rule** | yes | An item marked not-applicable must carry a written reason, not a blank check. **Sourced, for once**: Mercari's PRC states this rule directly ("If a specific item is not applicable to your service check the item and explain") |
+| **Outcome and Sign-off** | yes | What the review concluded: passed, passed-with-conditions, or not ready, and who signed. Fowler and Grafana both describe a pass/fail outcome ("the product has passed the PRR"); neither publishes a fixed vocabulary for it, so the template supplies one and the companion labels it as this library's own |
+| **Review Cadence** | full only | Whether this review is one-time, periodic, or triggered by a later event, and why. **Genuinely contested across sources, not a default**: Google/Grafana currently one-time-but-reconsidering versus AWS's ORR already periodic ("throughout the complete lifecycle"). The template asks the filler to state a position rather than assuming one |
+| **When This Does Not Apply** | full only | Services or changes exempt from a full review, and what smaller check they get instead. Mirrors `runbook` and `launch-coordination-checklist` |
+| **Review Trigger** | yes | **Contract-mandated** (section 4): a named owner and a condition, not a calendar. Candidate condition: a production incident whose contributing cause a passed criterion should have caught, tying this section to `incident-postmortem` the way `launch-coordination-checklist`'s does |
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md` and `atlas/catalog-data.json`, then regenerate the atlas:
+
+1. **Aliases: add, sourced.** "production readiness checklist" and "PRC" (Fowler's and Mercari's own names for
+   the artifact they ship); "SRE entrance review" and "SER" (the Google Cloud CRE blog's own interchangeable
+   usage inside Google: "also referred to as a Production Readiness Review (PRR)").
+2. **Aliases: drop, unsourced and collision-prone.** "launch readiness review" has no supporting quotation in
+   any source this sweep or the launch-checklist bundle's own research read, and it is the phrase most likely
+   to be typed by a reader actually looking for `launch-coordination-checklist`. Recommended, not gate-mandated.
+3. **Relationships: reverse the edge.** `production-readiness-review`'s `relationships` is `[]` while
+   `launch-coordination-checklist`'s already carries `["PRR"]`; add `["launch-coordination-checklist"]` here.
+4. **Relationships: `runbook` gains a forward edge.** Every PRR source that ships a real checklist checks for an
+   existing runbook; `runbook`'s own `relationships` is `[]`. Add `["production-readiness-review"]`.
+5. **The name collision goes in the guide and companion, not the catalog row.** `gen-atlas.py` blanks
+   `state_note` for a built type, so the one-line note that "Production Readiness Review" also names a DoD and
+   NASA hardware-manufacturing milestone belongs on the guide's first page and in the companion.
+
+#### `pairs_with`: checked, empty
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'` returned all 68 skill names on
+2026-09-27. No name contains "readiness" that targets production or
+operational readiness: the two hits, `tool-design-sprint-readiness` and `tool-foundation-sprint-readiness`, are
+design-sprint and foundation-sprint precondition checks, unrelated in subject. `deliver-launch-checklist`, the
+one plausibly adjacent skill, already pairs with `launch-coordination-checklist`
+(`launch-coordination-checklist_meta.yaml:15`), not this type. **`pairs_with: []`**, per the contract's own rule
+that a member "adopts `[]` until one does."
+
+#### Risks for the build and review
+
+1. **The launch-checklist boundary is the finding a reviewer will test hardest.** The subject-matter argument
+   is refuted by this sweep's own gap-fill retrieval; only trigger, team and timing survive. A companion that
+   reaches for the easier, refuted line ("PRR is engineering, the launch checklist is cross-functional, so
+   they're obviously different documents") will fail review on a claim this same sweep already falsified.
+2. **The "lighter-weight alternative" phrase is a live temptation** because it appears in two of this sweep's
+   own returns as if confirmed. It is refuted by a direct raw-text check; do not carry it into the companion under any
+   paraphrase that keeps its substance.
+3. **Cortex's specific category/item breakdown failed rawcheck** and must not be quoted or paraphrased as a
+   specific structure; only its general Scorecard description (docs.cortex.io, raw-checked) is usable.
+4. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into the
+   template's GOOD text**, a defect this library has already named and not yet mechanically gated. The
+   Readiness Criteria section's GOOD and WEAK illustrations must describe a service and an incident **other
+   than** the example's Acme Analytics dashboard-service PRR below; grep the drafted templates for the
+   example's proper nouns (Acme, Dana Osei, Marcus Bell, Sam Okafor, Anjali Rao, Priya Nair, DEF-2291,
+   dashboard-service) before review, the way the digest recommends for every build.
+5. **This is the family's first unforecast member and its fifth overall.** The contract's own coherence
+   caveat ("this family's coherence is thinner than `governance-docs`' or `strategy-docs`'") was written for
+   three members; a fifth, unforecast one is exactly the kind of candidate the falsifier exists to test
+   rigorously rather than wave through on precedent.
+6. **No source read supplies a fixed pass/fail vocabulary** for a review's outcome, or a full list of failure
+   modes. Only three failure modes are sourced (below); everything else must be labelled the library's own
+   judgment or cut, per `review-standards.md` section 5's dominant-defect-class rule.
+
+**Failure modes, sourced, and nothing beyond these three without a citation:**
+
+- Lack of buy-in: "Running a PRR without any specific goal means that the PRR can drop to the bottom of the
+  development team's priority list" (Alves, USENIX).
+- Defensiveness from the reviewed team: "If the development team feels threatened by the review" (Alves).
+- Engagement starting too late to change the design: "The main limitations of the PRR Model stem from the fact
+  that the service is launched and serving at scale," and "SRE engagement starts very late in the development
+  lifecycle" (Google, ch. 32). This is the sharpest of the three, since Google names it as the model's own
+  stated limitation, not an outside critique.
+
+Do not assert "checkbox exercise," "findings never followed up," or "criteria not tailored to the service" as
+sourced findings; none surfaced in a raw-checked quotation in this sweep.
+
+#### The worked example: a scenario, not a launch, chained onto facts that already exist
+
+**This must not be the Saved Views Sharing launch itself, or the example collapses into
+`launch-coordination-checklist_example.md`'s own scenario and the spec's central boundary argument (trigger:
+ownership handoff, not launch date) has nothing to demonstrate.** The proposed scenario is the SRE-lineage
+trigger directly: after the Saved Views Sharing launch stabilizes, Acme Analytics' Platform team requests that a
+newly formed Acme Analytics SRE function take over production ownership of `dashboard-service`, the same
+service the `sdd` and `test-plan` examples describe, and the review this bundle demonstrates is the one that
+decides whether SRE accepts.
+
+- **Date: 2026-08-22.** Later than every date the sibling thread already occupies (PRD created 2026-06-12;
+  DEF-2291 discovered 2026-07-13; the exit review and launch, 2026-07-17; the Reporting Squad DoD's amendment,
+  2026-07-24; the entitlement-audit runbook's first live use, 2026-07-28; the dashboard-scoped kill-switch
+  acceptance's own expiry, 2026-08-15), so the review can reference each of those events as already-settled
+  history without needing to reconcile a date against them.
+- **People: reuse the thread's named roles, in the roles the sources give them.** Dana Osei (Staff Engineer,
+  Platform; `launch-coordination-checklist_example.md:57`) is the natural reviewer per Grafana's "an
+  experienced engineer, ideally outside of the product team," because Dana holds decision authority across
+  launches rather than owning `dashboard-service`'s day-to-day code. Marcus Bell (`launch-coordination-checklist_example.md:58`;
+  `runbook_example.md:5`) is the service owner answering the review, the position Google's ch. 32 describes as
+  the requesting development team.
+- **Content it may chain onto, without repeating the launch checklist's own table rows.** The review may cite
+  that DEF-2291 occurred (2026-07-13) and that a regression guard and an entitlement-audit reconciliation job
+  exist as a result (`runbook_example.md:32-33`), as evidence its Readiness Criteria section's monitoring and
+  on-call rows can point to. **It must not restate the specific checks `launch-coordination-checklist_example.md`
+  already runs** (the permission matrix, the dashboard-scoped kill switch); a PRR reviewing whether SRE takes on
+  a service asks different questions (on-call rotation ownership, alerting coverage, capacity headroom, backup
+  and DR) than a launch checklist asks about one specific change.
+- **The build number contradiction it must simply not touch.** `release-notes_example.md` dates build/version
+  2.4.0 at 2026-06-30; `launch-coordination-checklist_example.md:109` dates build 2.3.2 at 2026-07-14;
+  `runbook_example.md:32` and `incident-postmortem_example.md:28` both describe a build numbered 2.4.0 as
+  postdating DEF-2291 (2026-07-13). No file reconciles this. **The PRR example must cite no build or release
+  number for `dashboard-service` at all**, referring only to dated events (the incident, the launch, the
+  amendment) the way this spec does above.
+
+Per the family's own shared-scenario rule (`standing-standards.md` section 4), the chaining stays loose by
+design: this is a standing instrument belonging to the Platform and the new SRE function, shown as it stood at
+one review, not a record that only this launch could have produced.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `standing-standards` | Maintainer ruling, 2026-09-27; argued in ADR 0062 |
+| `classification` | `tool` | Maintainer ruling. Argued marker-by-marker in ADR 0062 against `standing-standards.md`'s section 2 cut: executed by someone other than the service's own author ("an experienced engineer, ideally outside of the product team," Grafana; "one to three SREs ... selected or self-nominated," Google), at the moment SRE takes on a service, not a standard the service's own team is judged against on a schedule |
+| `sizes_available` | `[lean, full]` **provisional** | GitLab's three maturity gates (8, 4 and 6 subsections, counted from the raw template) show a real tiering pattern beyond Fowler's flat five-section list; lean carries the flat engineering-readiness core (Scope and Trigger, Readiness Criteria, Not-Applicable Rule, Outcome and Sign-off, Review Trigger), full adds the gating and cadence apparatus (Reviewer and Authority, Review Cadence, When This Does Not Apply). This split is this library's own judgment, not any one source's structure |
+| `status` | `beta` | Every bundle |
+| `methodology` | `SRE-lineage` | Matches its closest sibling, `launch-coordination-checklist_meta.yaml`'s own value, rather than `runbook`'s `DevOps/SRE` or the catalog's plain `SRE`; nearly every admission source in this sweep sits inside the same Google-originated lineage |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main`, 2026-09-27; no skill produces or consumes this type |
+| `related_templates` | `[launch-coordination-checklist, runbook, definition-of-done]` **provisional** | The neighbour the boundary risk names, the instrument it checks for rather than replaces, and the family sibling it is classified alongside |
+| `aliases` | `PRR` kept; **add `production readiness checklist`, `PRC`, `SRE entrance review`, `SER`**; **drop `launch readiness review`, recommended** | See catalog corrections above |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `standing-standards` contract's Members line**, from "not yet built" to the build date. The contract
+   moved to `0.4.0` in the spec PR, with ADR 0062.
+2. **`launch-coordination-checklist_companion.md`'s own Relationships subsection is not changed by this
+   landing**; it already holds the position this bundle's companion must agree with. Whether it gains a direct
+   link to the new bundle is a build decision, not a required edit.
+3. **The catalog entry**, per the corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+4. **This page's Progress table.**
+
+#### What the build would cost
+
+No build has run for this type. Projected from the two most recent Tier-2 bundles built through the committed
+`build-bundle.js`, both with every agent resolved to Sonnet: `issue-log` at $16.76 whole ($14.29 for its 15
+build agents) and `change-request` at $14.41 whole ($14.41 for its 15 build agents, research $6.01, drafting
+$5.78, review $2.62). A whole-bundle estimate of **$14 to $17 at API list rates** is reasonable on that basis;
+it is a projection, not a measurement, until `python tools/gen-bundle-build-report.py --ingest` runs against an
+actual build report.
+
+---
+
+### discovery-docs (reopened, third member): the project brief that reopens a closed family
+
+**`project-brief`** - `discovery-docs`, **`phase: discover`**, sizes **`[lean, full]`** (provisional),
+methodology **`PRINCE2`**, catalog id `project-brief` (catalog 71), catalog name "Project Brief", aliases
+`lightweight charter`, `project one-pager`. Catalog owner: PM. Purpose, per the catalog: "Lightweight project
+definition for smaller efforts" (corrected below). Contents, per the catalog: "objectives, scope, timeline,
+budget, stakeholders". `size_variant: S`, `rarity: common`, `tier_inferred: true`, `relationships: [Charter]`.
+**The maintainer ruled 2026-09-27: build, and reopen `discovery-docs` to admit it.** The contract
+edits of [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) landed with this spec, so the
+metadata below is written against the reopened contract.
+
+#### Demand: a shipped bundle already routes a reader here, and already names a source for it
+
+**`business-case`, already shipped, routes a reader to this type by name, defines the boundary against itself,
+and cites a named source for it**, the same routing shape `issue-log`'s demand section rested on:
+
+- `business-case_guide.md:17`: "a **project brief** | you need a short overview for starting up a project,
+  not an investment case. A project brief absorbs an outline business case as one component and retires once
+  initiation documentation exists; the business case itself keeps being refined, it does not retire with the
+  brief".
+- `business-case_companion.md:315-317`: "It is not a project brief: PRINCE2's project brief is 'a short,
+  high-level overview of the project, created during the starting up a project process,' and it absorbs an
+  outline business case as one component before retiring once the project initiation documentation exists;
+  the business case itself is not retired the same way, it continues to be refined [[32]]."
+- `business-case_companion.md:420`: reference 32 is "PRINCE2 Wiki. 'Project brief,' management products,
+  baselines," already logged as a citation in a shipped bundle's research trail.
+- `business-case_template-full.md:37` and `business-case_template-lean.md:32` both carry the same boundary
+  sentence in the template body itself: "It is NOT a project brief (a short overview that absorbs an outline
+  business case as one component...)".
+
+The shape is the same as `issue-log`'s: a "You actually need | Because" chooser row in a shipped guide, plus a
+companion and both templates that state the boundary in their own body text. No gate flags it, because nothing
+here is a stale `future:` reference; it is a named, cited, boundary-defining neighbour that a shipped bundle
+has been describing the edges of without the library building it.
+
+#### The family: `discovery-docs`, reopened by amendment (ADR 0063), not widened
+
+This is not the `change-request` pattern. ADR 0060 widened `delivery-docs`'s own membership test to admit a
+type no contract test passed. Here, one contract's test already admits the type: `discovery-docs`'s own
+membership clause, "exists to decide whether to build something, before anyone commits to building it"
+(`discovery-docs.md:33-34`), fits a project brief without strain on that sentence alone. **What blocks
+admission is not the test; it is the contract's own closure statement**, "`discovery-docs.md:6`: "Members:
+`business-case`, `user-persona`. The family is closed at two." That closure recorded
+[ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)'s **outcome** for a different candidate,
+`prototype-brief`, whose own admission test failed. It was never written as a rule that no fourth candidate
+could ever be tested; ADR 0031 said the opposite in advance: a two-member result was "a legitimate outcome and
+not a failure of the contract" (`0031:54`), a statement about that research's result, not a permanent ceiling.
+
+The strain the maintainer must weigh, named plainly rather than argued around: the UK Government's own primary
+guide states "Approval of the Project Brief is the official start of the project" (BIS 2010, raw-checked,
+below), which reads as the commitment trigger itself, not a document that only informs a commitment made
+afterward. [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) carries this strain in its body
+and states this library's own POSITION on it: approval of the brief commits to **initiating**, to spending
+effort finding out whether to proceed, not to **building**; the document that commits to building is a
+project charter or PID (unbuilt in this library), or a PRD once the investment is approved. That is the same
+distinction prince2.ca draws for the type against PMBOK's charter (below), read onto the family boundary.
+
+#### Admission: retrieved and raw-checked, on a wide named-source base
+
+Every quotation below passed the main loop's raw-text re-check on 2026-09-27.
+**At least four independently named bodies publish "project brief" as a written document, not merely a
+practice**, and the AXELOS glossary is the strongest of them because it is the standards body itself, not a
+practitioner's reading of it.
+
+| Source | What it says | Licence |
+|---|---|---|
+| AXELOS Limited, *PRINCE2 Glossary of Terms English* v.1.1 (2012, PRINCE2 2009 edition), read via the Internet Archive because the live host no longer serves the file | "Statement that describes the purpose, cost, time and performance requirements, and constraints for a project"; created "pre-project during the Starting up a Project process"; "superseded by the Project Initiation Documentation and not maintained" | AXELOS, all rights reserved: short quotes only, never adapted |
+| UK Government, Department for Business, Innovation and Skills, *Guidelines for Managing Projects* (November 2010) | "the Project Brief says why the project is needed, what it must achieve and who should be involved"; "Approval of the Project Brief is the official start of the project" | **Crown copyright, Open Government Licence**: adaptable with attribution |
+| prince2.wiki, "Project brief" (practitioner, edition of the underlying manual not stated on the page) | "a short, high-level overview of the project, created during the starting up a project process by the project manager"; the composition list begins "background, objectives, scope" and continues, per the page, through constraints, risks, stakeholders and "outline business case"; "the project brief is no longer used in project management activities" once the PID exists | Creative Commons Attribution (site states it; adaptable, but AXELOS marks are used under a permission of unstated scope, so this library describes structure in its own words rather than adapting the page's text directly) |
+| NSW Health, *Project Brief Template for Projects Valued at Less than $10 million* (v3.0, 2010) | "This template is mandated for the development of project briefs for projects valued at less than $10 million"; "The Project Brief is in four Parts" | Not stated; qualifies the **heavyweight** sense of the name (below), not the one this bundle builds |
+| Treasury Board of Canada Secretariat, *Guide to a Project Brief* | "a project brief must be appended to the Treasury Board submission"; "a project brief is to be supported by a business case, project charter and project management plan" | Not stated; also the heavyweight sense |
+| UK Government Functional Standard GovS 002 v2.1, read via a third-party mirror because the official host returns 403 | "project brief:" (a glossary heading in Annex B) | Confirms the term is standardised in current UK government usage; its definition text could not be recovered this session and is not attributed to this source |
+
+**Against this, PMI does not name "project brief."** The PMI *Lexicon of Project Management Terms*, version
+5.0, the exact URL this task's research specified, was fetched and raw-checked: "project brief" is absent as a
+case-insensitive substring across 80,417 extracted characters, while "Project Charter" and "Version 5.0" both
+pass. The 2017 edition (v3.2), read from a third-party mirror and therefore corroboration rather than the
+load-bearing source, lacks the term too. **The catalog's "PMBOK 7 (new)" methodology credit is unsupported by
+either document**; the PMBOK 7 Standard's own paywalled body was not read, so an isolated mention there cannot
+be ruled out, but nothing raw-checked supports the credit. PM² (v3.0 guide, 345,797 characters, raw-checked)
+does not use the term either; its Initiating phase produces a Project Initiation Request, a Business Case and
+a Project Charter as three separate named artefacts, none called a brief.
+
+**The composition question, where two AXELOS-adjacent sources disagree, and the gap-fill this task specified
+resolves in favour of caution.** The official AXELOS glossary itself names only "purpose, cost, time and
+performance requirements, and constraints" as the brief's content; it does not itemise background, objectives,
+risks or stakeholders as named sections, and its separate "start-up" entry lists "the outline Business Case,
+Project Brief and Initiation Stage Plan" as three parallel outputs rather than nesting the business case
+inside the brief. **The seven-item composition list this research otherwise leans on (background, objectives,
+scope, constraints, risks, stakeholders, outline business case) is prince2.wiki's own synthesis, of an edition
+the page does not state**, not the AXELOS glossary's wording. The build must attribute that list to prince2.wiki
+by name, not to "PRINCE2" or "AXELOS" generically, and the companion must say plainly that the one official,
+freely-readable AXELOS source is thinner than the practitioner synthesis the section design leans on. **The
+one candidate that would have settled this, AXELOS's own Appendix A.19 product description in PRINCE2 Agile
+2016, is unreachable**: its host, `publications.axelos.com`, no longer resolves at all, and no archived
+snapshot exists. Record this as a closed research gap, not a further task.
+
+**What was not read, stated as plainly as `issue-log`'s spec states it.** The PRINCE2 6th (2017) and 7th
+(2023) edition manuals are behind a subscription and were not read; the one AXELOS glossary source read is the
+2009 edition. The APM Body of Knowledge 7th edition is members-only and was read only as a boundary source (its
+one usable quote is below), not as a composition source.
+
+#### Boundaries with each named neighbour
+
+**Not `business-case` (purpose settled; timing contested).** The purpose boundary is solid and already
+adopted in this library's own text: the brief is "a short overview for starting up a project, not an
+investment case" (`business-case_guide.md:17`). The **timing** boundary is not as clean as the earlier research
+pass reported: PMStudyCircle's "the business case is created first, before the project is approved" describes
+one order, but the BIS guide's "Approval of the Project Brief is the official start of the project" makes the
+brief itself the trigger a business case might follow, not a document that only summarises a decision already
+made. The companion must report this boundary as contested on timing and settled only on purpose (justify an
+investment, versus define a project already approved to be started).
+
+**Not a `project-charter`/PID (POSITION, where sources split three ways).** prince2.ca's named comparison:
+"The main difference in purpose is that the approved Project Brief gives the project manager the authority and
+resources to complete the work necessary for the Initiation Stage" and "does not give authorization to
+complete the project activities" (sequenced, different authorization scope). Asana: "A project charter
+formally authorizes a project and grants the project manager authority to allocate resources. A project brief
+summarizes key details to align the team" (distinct, different authority, not sequenced). Smartsheet: "A
+project brief is a simplified project charter" (same document, lighter weight). The APM Body of Knowledge lists
+"problem statement", "project brief" and "project charter" as three interchangeable common-usage names for one
+undifferentiated project rationale, the strongest evidence in this set that the name can collapse rather than
+compete. **This library's own POSITION, stated because the sources do not settle it**: approval of a project
+brief authorizes initiating, spending effort to find out whether and how to proceed; a project charter or PID
+authorizes building. The companion states this as an adopted choice, not a reported fact. **`project-charter`
+(catalog alias PID) inherits nothing from this ruling** and must pass ADR 0030's admission test on its own
+evidence, per the method ADR 0049 already established for a sibling catalog category.
+
+**Not a product brief or PRD (the weakest-evidenced boundary; label it as inferred).** No source read
+contrasts "product brief" with "project brief" by name in one sentence. Productboard: a product brief "is a
+foundational document that captures the essence of a product opportunity or initiative before teams commit to
+building solutions", answering why to build a product; Storyflow frames a project brief as answering "what you
+are doing and why" at the initiative level. The distinction (product-scope versus initiative-scope) must be
+labeled inferred from triangulation, not cited as a settled contrast.
+
+**Not a creative or design brief (clean).** SHERPA Global: the project brief is "the bird's-eye view of the IT
+project"; the creative brief instead "defines how to best connect with the target audience by clarifying their
+needs and motivations". Storyflow adds a structural claim: "The project brief is the parent document" and
+"creative, design, and campaign briefs nest inside it".
+
+**Not a project proposal or one-pager pitch.** Storyflow distinguishes the brief from a scope of work, "the
+detailed, often contractual list of exactly what will be delivered", and separately states "A project brief is
+a lightweight alignment document" that "defines what you are doing and why", where a plan "defines how and
+when". A proposal or pitch document sells a decision not yet made; this bundle's brief documents one that
+enough of a mandate already exists to start exploring (the sense the BIS trigger describes). The distinction
+between a persuasive pitch and this library's brief is this library's own framing, not a single named source's
+contrast, and the guide should say so.
+
+**Not the Project Canvas (medium, not content).** Antonio Nieto-Rodriguez's named Project Canvas is "a one-page
+template" with "14 dimensions", built because "project management methods have tended to be too complex to be
+easily understood and applied by non-experts". No source treats a canvas as a synonym for a brief; they differ
+in form, a diagram meant to be read at a glance versus prose in sections, not in what they cover.
+
+**Not the NSW Health / Treasury Board of Canada heavyweight sense, named and put out of scope.** Two named
+public-sector sources publish something also called "project brief" that is large, iterative and gate-adjacent:
+options analysis, capital and recurrent cost estimates, a formal risk table, resubmission "at regular and
+meaningful intervals throughout the life-cycle of the project" (TBS Canada). **This bundle builds the
+PRINCE2/UK BIS sense: short, pre-project, superseded once initiation documentation exists.** The companion
+must name the heavyweight sense explicitly as a different document under the same name, out of scope here, so
+a reader who found this bundle searching for NSW Health's or TBS Canada's shape is told plainly they want a
+different document, not that theirs does not exist.
+
+#### Family fit: eight contracts exclude it as written; one admits it with strain
+
+Every other family contract was tested against the type's own membership language and excludes it, several by
+direct analogy to the already-shipped `business-case`:
+
+| Family | Verdict | Why |
+|---|---|---|
+| `strategy-docs` | excludes | Names `business-case` as its own worked exclusion example, "a one-time, phase-bound artifact... this is why business-case is not a member" (`strategy-docs.md:32-36`); a project brief is at least as phase-bound |
+| `delivery-docs` | excludes | Its five admitted verbs (define, decompose, verify, change, announce) describe acting on an already-agreed unit of work (`delivery-docs.md:11`); a brief precedes and scopes the project itself |
+| `decision-docs` | excludes | "a technical decision-or-design artifact of the develop phase" (`decision-docs.md:11`); a brief is not a technical design record |
+| `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:23`) |
+| `qa-docs` | excludes | "a verification artifact of the develop phase" (`qa-docs.md:12`); a brief plans nothing about verifying a product increment |
+| `process-docs` | excludes | Its own contract text routes a forward-looking candidate away from itself: "discovery-docs before a decision, strategy-docs for direction, delivery-docs for the work itself" (`process-docs.md:23`) |
+| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:37`); a brief is written once per project, not consulted repeatedly unchanged |
+| `communication-docs` | excludes | "the document owns none of its own facts" is this family's defining property (`communication-docs.md:25`); a brief originates its own content and is not periodic |
+| `discovery-docs` | admits, with strain | Its own membership test fits: "exists to decide whether to build something, before anyone commits to building it" (`discovery-docs.md:33`). The strain is the BIS "official start of the project" line, carried into ADR 0063's body as a named POSITION rather than smoothed over |
+
+No fallback family exists on this evidence. If the maintainer's ruling to reopen were instead a ruling not to
+build, there would be no other family this research found that admits the type; the record would read like
+ADR 0035's, a legitimate negative outcome, not a search failure.
+
+#### Structure and sections per size
+
+**Sizes: `[lean, full]`, provisional, and full stays short.** Two sources that speak to length agree it should
+stay brief: prince2.wiki's own quality bar is "short, focused" and "SMART"; Smartsheet, describing the
+collapsed-with-charter camp, says "It should be a single page long, and anyone should be able to understand it
+at a glance." BIS, the primary source, does not state a length. The one long confirmed example, NSW Health's
+20-plus fields across three parts, is explicitly the heavyweight sense this bundle puts out of scope. **`full`
+therefore does not mean heavier in the NSW Health/TBS Canada sense; it adds the two sections the lean variant
+omits, and nothing about options analysis, cost breakdowns or procurement.** The contract permits `[lean]`
+alone if the build's own research shows the second weight does not earn its place (`discovery-docs.md:89`);
+this spec's judgment is that it does, because `Project Approach` and `Relationship to Other Documents` are
+real, separately-named content the lean size would otherwise have to compress out entirely.
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Background and Mandate** | yes | Where this came from and who asked for it: the mandate, "often as simple as an email" from a senior manager (BIS), that triggers Starting Up a Project and is expanded into the brief (prince2.wiki: created "during the starting up a project process") |
+| **Objectives** | yes | What the project must achieve, stated so a reader can tell later whether it did. BIS's own checklist: "Objectives - achievable and measurable (SMART)"; prince2.wiki confirms SMART as the brief's own quality bar |
+| **Scope and Exclusions** | yes | What is in, and, named as its own field, what is explicitly out: BIS's checklist item "Scope - what in and what's out", and WorksBuddy's finding that the exclusions half is "the section that most teams skip" and the one that "prevents the most expensive misunderstandings." **A named, mandatory field, not folded into a general scope paragraph** |
+| **Outline Business Justification** | yes | Why this is worth doing, in outline only, plus a statement that a fuller comparison of options (including doing nothing) will be brought to a named approval gate by a `business-case` document. Sourced to prince2.wiki's "outline business case" as one brief component; bounded by `business-case_guide.md:17`, which this section must not cross into |
+| **Constraints and Who Should Be Involved** | yes | Known constraints on the work, and the people who need to be part of it, sourced to BIS's own sentence, "the Project Brief says why the project is needed, what it must achieve and who should be involved." **Not** sourced to a "project management team structure" component: that phrase failed raw-text verification against prince2.wiki and is not confirmed as a stated part of the brief by any source read this session |
+| **Decision Requested** | yes | What approval is being asked for, from whom, and what happens to the answer: proceed to develop the business case, proceed to initiation, or stop. One named approver. **POSITION**: this section exists because the family's contract obliges each member to say which document takes over (`discovery-docs.md:49-51`), not because a named source specifies this as a brief component |
+| **Project Approach** | full only | How the work will be approached (build, buy, or a mix). Named as a brief component by prince2.wiki; not elaborated in any source read this session, so the guidance text here is labeled this library's own, not attributed to PRINCE2 |
+| **Relationship to Other Documents** | full only | Where this document sits against the mandate, the business case, and initiation documentation (a project charter or PID), naming plainly that neither `project-charter` nor a PID is built in this library. **POSITION**: this section is how the template answers the same contract obligation (`discovery-docs.md:49-51`) at the size that has room for it, not a sourced composition item |
+
+**What stays out at any size, named so a reader is not left to guess:** options analysis, capital or recurrent
+cost estimates, a formal risk-scoring table, and resubmission across the project lifecycle. Those are the
+NSW Health / Treasury Board of Canada heavyweight sense, out of scope by the design choice above, and the
+companion says so rather than leaving the omission silent.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `discovery-docs` | ADR 0063, reopening the family at its own membership test |
+| `phase` | `discover` | The only value the contract allows; a project brief precedes commitment, like both existing members |
+| `sizes_available` | `[lean, full]` **provisional** | Reasoned above; the contract allows `[lean]` alone if the build's own research disagrees |
+| `status` | `beta` | Every bundle |
+| `methodology` | `PRINCE2` | The one methodology this research confirmed by an official-tier source (the archived AXELOS glossary); the catalog's `PMBOK 7 (new)` is corrected below |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main` with the direct-contents call on 2026-09-27 (68 skills returned). Two near-name matches were read and ruled out: `foundation-meeting-brief` (a private meeting-prep document, not a project-initiation document) and `develop-solution-brief` (a technical-solution pitch at `phase: develop`). No pairing exists |
+| `related_templates` | `[business-case, user-persona]` **provisional** | The sibling whose outline it absorbs and already cites by name, and the family's other member. `project-charter` is deliberately not listed: it is not built and this ruling does not admit it by inheritance |
+| `aliases` | `lightweight charter` and `project one-pager` kept, both flagged | "Lightweight charter" encodes the Smartsheet "simplified charter" camp as settled fact when the strongest sources (PRINCE2, BIS) describe a per-project pre-initiation product regardless of size, not a small-project variant; the critic named this as a maintainer-review flag, not a rewrite performed here. "Project one-pager" is what a reader wanting a persuasive pitch or proposal types, the boundary this spec draws above; a build decision, not resolved here |
+
+#### Catalog corrections the landing PR must make
+
+Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both `docs/internal/catalog.md`
+(entry 71) and `atlas/catalog-data.json` (`id: "project-brief"`), then the regenerated atlas:
+
+1. **`methodology`: "PMBOK 7 (new)" is unsupported and must be replaced or dropped.** The PMI Lexicon, versions
+   5.0 (the exact URL specified) and 3.2, were both raw-checked to lack the term entirely while both define
+   "Project Charter." PRINCE2 is the methodology this research actually confirmed; correct the field to
+   `PRINCE2`.
+2. **`purpose`/`formality` flagged, not rewritten here.** "Lightweight project definition for smaller efforts"
+   and the relationship note "S variant of Charter" encode only the Smartsheet/NSW-Tasmania reading (a brief
+   as a smaller charter scaled to project size). The strongest-evidenced sources describe a per-project,
+   pre-initiation product used regardless of size. Flag for the maintainer's read at landing; do not silently
+   rewrite a catalog row this record did not adopt a final wording for.
+3. **`relationships`** currently reads `[Charter]` alone. Add `Business Case`, since the type's own admission
+   evidence (the shipped `business-case` bundle's boundary text) is a stronger, closer relationship than the
+   unbuilt charter.
+4. **`built`, `state`, `state_note`** flip only when the bundle itself lands; this record specs and reopens the
+   family, and does not build.
+
+#### `pairs_with`: no pairing exists
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'`, run 2026-09-27, returned 68 skill
+names. None is `project-brief` or a plausible variant. Two names containing "brief" were read in full and
+ruled out: `foundation-meeting-brief` (a private, pre-meeting tactical document, never shared with attendees)
+and `develop-solution-brief` (a technical-solution pitch document at `phase: develop`, bridging problem
+understanding to detailed specification). `tool-design-sprint-brief` and `tool-foundation-sprint-brief` were
+not read in full, since their names alone place them as sprint-kickoff briefs scoped to a five-day exercise
+rather than a whole project, the same neighbouring-artifact pattern ADR 0035 found for `prototype-brief`
+candidates. `pairs_with: []` is the honest declaration.
+
+#### Risks for the build and review
+
+1. **The composition attribution is this spec's main correctness risk.** The section design above leans on
+   prince2.wiki's seven-item list, not the thinner official AXELOS wording. A build or review that quietly
+   upgrades "prince2.wiki says" into "PRINCE2 says" throughout the companion reintroduces exactly the defect
+   this section works to avoid. Every Anatomy subsection must name its actual source (prince2.wiki, BIS, or
+   POSITION), not "PRINCE2" generically.
+2. **The family-reopening question is a maintainer decision this spec presents, not one it resolves.** The
+   2026-09-27 ruling settles it for this run, but the ADR must state the strain (BIS's "official start of the
+   project") in its own body, not in a footnote, so a future reader does not find the closure re-asserted
+   without the reason it was lifted.
+3. **`project-charter` sits in the same catalog category and shares this type's purpose.** Any research run
+   for it will be tempted to inherit this ruling's family-fit reasoning wholesale. Per ADR 0049's own method,
+   it must be tested on its own admission evidence; this record settles nothing for it.
+4. **The AXELOS glossary is 2009-edition and all-rights-reserved.** The companion may quote it briefly (as
+   this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
+   Open Government Licence, is the adaptable source for anything beyond a short quote.
+5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1428-1430`
+   records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
+   examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
+   This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
+   guidance comment must use a scenario that is **not** that initiative, checked by grepping the template for
+   the example's own nouns (`Dana Okoro`, `Priya Nair`, `Question-First Entry`, `Meridian Freight`) before the
+   review closes.
+6. **No pm-skills pairing exists, and none is expected to appear.** Not a blocker, but the bundle gains no
+   cross-repository routing benefit from being built, unlike `issue-log` and `change-request`.
+
+#### What landing this bundle closes elsewhere
+
+1. **The `discovery-docs` contract moved to `0.2.0` in the spec PR**, with ADR 0063, and every place that said
+   the family was closed or complete at two got a dated correction there. The landing PR changes the Members
+   line from "not yet built" to the build date.
+2. **`business-case`'s boundary text needs no edit; its worked-example callout does.**
+   `business-case_guide.md:17`, `business-case_companion.md:315-317` and both templates' "NOT a project brief"
+   lines already state the boundary this bundle must agree with, and the new companion agrees with them rather
+   than restating the boundary differently. But `business-case_example.md:16-18`'s callout, "ahead of
+   everything except its sibling user persona and the product vision it builds on," becomes false once this
+   example exists (see the example section's contradiction 6, below), and needs a one-line dated correction in
+   the same change.
+3. **`project-charter`'s eventual research owes ADR 0049's method**, testing its own admission evidence rather
+   than inheriting this ruling by catalog-category proximity.
+4. **The catalog entry**, per procedure 1 above: both `docs/internal/catalog.md` and `atlas/catalog-data.json`,
+   then the regenerated atlas, when the bundle lands.
+5. **This page's Progress table.**
+
+#### The example
+
+**A project brief for the Question-First Entry and Modelling Defaults initiative**, dated **2026-01-16**:
+two days after the [product vision](../../templates/product-vision/product-vision_example.md) (agreed 2026-01-14) and four
+days before the [business case](../../templates/business-case/business-case_example.md) (dated 2026-01-20). This keeps the
+family's chronology obligation: the example must precede what it leads to (the business case's own funding
+decision, and any future initiation documentation) and must not cite either as existing. It sits after the
+[user persona](../../templates/user-persona/user-persona_example.md) (2026-01-05), which itself claims only to sit "ahead
+of even the product vision" (`user-persona_example.md:18`); this brief's later date does not disturb that
+claim. `README.md:222` separately calls the persona "the earliest document in the library", a stronger,
+published claim this date also respects.
+
+**Facts it reads, by file and line, and nothing it must not.** From `business-case_example.md`: the sponsor,
+Dana Okoro, VP Product (line 4); the telemetry the brief's Background section shares with the case, that "only
+31 percent build a second dashboard view within 14 days of signup" and that "revenue per new account has been
+flat for five quarters" (lines 34, 41), both Acme's own pre-existing telemetry rather than an output of the
+case itself; and the December leadership review that supplies the brief's mandate, "the flat revenue-per-account
+trend surfaced at the December leadership review and finance asked for a funding decision" (line 52-53). From
+`user-persona_example.md`: the Recurring Analyst (lines 43-47) as the segment this initiative serves, and
+Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
+
+**What it must not cite or contain, because doing so would contradict an already-shipped sibling.**
+
+1. **No staged case vocabulary.** `business-case_example.md:5` states plainly, "Acme has no staged case model
+   (no SOC/OBC/FBC)". The Outline Business Justification section must not call itself an SOC, OBC or FBC.
+2. **No Reporting Platform Modernization program, and no Marta Reyes.** That program and its program manager
+   are a mid-2026 fact of the delivery-docs and governance-docs thread (`change-request_example.md:8`,
+   `issue-log`'s ISS-11 raised 2026-06-14), five months after this brief's date. The brief uses `business-case`'s
+   own investment name, "Question-First Entry and Modelling Defaults," as its project name.
+3. **No pre-computed benefit range or financial metrics.** The 6-11 percentage point second-view lift, the
+   NPV, IRR, payback and ROI figures (`business-case_example.md:75-99`) are the business case's own later
+   analysis. The brief may cite the early prototype's 71 percent question-resolution finding as an existing
+   fact (it predates the case, per the case's own framing), but must not anticipate the case's computed
+   benefit range or financial metrics.
+4. **No options decision.** The brief defers the comparison of options, including doing nothing, to the
+   business case; it must not commit to OPT-3 or name it, since choosing between options is exactly the job
+   `business-case_guide.md:17` reserves for the other document.
+5. **No initiation documentation, project charter or PID cited as existing.** None is built in this library.
+6. **A sibling's own worked-example callout becomes false the day this bundle lands, and that is a correction
+   this landing owes, not a constraint on the new example.** `business-case_example.md:16-18` states the case
+   "sits near the start of the shared timeline, ahead of everything except its sibling user persona and the
+   product vision it builds on." A brief dated 2026-01-16 makes that sentence false the moment it ships. The
+   landing PR must add a one-line dated correction to that callout, the same pattern already used for
+   `README.md:222`'s "earliest document" claim once a still-earlier document exists.
+
+**Decision requested, closing the loop honestly.** The brief asks Dana Okoro, as executive, to authorize
+proceeding to a funding decision, to be brought to the leadership review on 2026-01-26, the same date
+`business-case_example.md:115` already names. The brief's own "what happens to the answer" is exactly that
+business case, arriving four days later: nothing here is invented for the brief to hand off to.

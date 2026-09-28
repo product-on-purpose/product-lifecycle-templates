@@ -48,6 +48,16 @@ superseded by 2026-08-22.)*
 > describes it honestly. The forecast above is left as written because it was a forecast; the other two
 > candidates it names are untouched, and this family stays at one member.
 
+> **Corrected 2026-09-27: the executive-briefing / steering-committee pack did not join this family
+> either.** When it was researched, its periodic written form turned out to be what the shipped
+> `status-report` already is: that bundle's example is a fortnightly paper to the "Program steering group"
+> with a Decisions Needed table. The catalog's composite of status, risks, decisions and asks exists only as a
+> slide deck, which [ADR 0030](../decisions/0030-templating-scope-markdown-documents.md) excludes, and the
+> event-driven decision paper falls outside every family, `decision-docs` included.
+> [ADR 0065](../decisions/0065-steering-committee-pack-is-declined.md) declines it. The forecast above is left
+> as written because it was a forecast; the one remaining candidate, a stakeholder update, is untouched, and
+> this family stays at one member.
+
 ## 2. Required catalog metadata and allowed values
 
 | Field | Allowed values for this family |

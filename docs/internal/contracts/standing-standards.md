@@ -8,7 +8,9 @@ Registered in check K, which now gates `classification: foundation or tool` on e
 assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-22),
 `definition-of-ready`
 ([ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
-assigned, specced and built 2026-09-23).
+assigned, specced and built 2026-09-23), `production-readiness-review`
+([ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md),
+assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -170,6 +172,19 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.4.0, 2026-09-27: a fifth member, and the first that no forecast named.**
+`production-readiness-review` joins as `classification: tool`, by
+[ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md). Section 1's
+likely-future-members line never named it, so **the membership test and this family's falsifier admit it,
+not a confirmed forecast.** A maintained PRR checklist is "consulted at the moment of action", the test
+[ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) applied; a
+one-time record for one service is excluded by section 1's own analogy ("a runbook written for one incident
+is an incident report"), so the bundle is the standing checklist and the per-service record is its worked
+example. **`tool` was argued against the honest `foundation` case**: the strongest admission quotation reads
+as judged-against language, but every source names a reviewer other than the service's own team ("one to
+three SREs ... selected or self-nominated", Google), which is section 2's `tool` marker. No structural
+obligation, metadata rule or axis value moved.
 
 **0.3.0, 2026-09-23: a fourth member, and the first forecast entry to arrive as a `foundation`.**
 `definition-of-ready` joins as `classification: foundation`, by
