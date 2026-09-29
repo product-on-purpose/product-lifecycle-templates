@@ -83,6 +83,7 @@ tree without the gate noticing.
 - [`runbook/`](runbook/) - Runbook. Axis classification tool; ships lean/full.
 - [`launch-coordination-checklist/`](launch-coordination-checklist/) - Launch Coordination Checklist. Axis classification tool; ships lean/full.
 - [`definition-of-ready/`](definition-of-ready/) - Definition of Ready. Axis classification foundation; ships lean. The fourth `standing-standards` member ([ADR 0058](../docs/internal/decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md)): a team's agreement on when a backlog item is ready to pull into a sprint, the entry-side mirror of the Definition of Done.
+- [`production-readiness-review/`](production-readiness-review/) - Production Readiness Review. Axis classification tool; ships lean/full. The fifth `standing-standards` member ([ADR 0062](../docs/internal/decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md)): the standing checklist a service is reviewed against before the team that will carry its pager takes it on. It checks that a runbook exists rather than producing one.
 
 **`strategy-docs`**
 

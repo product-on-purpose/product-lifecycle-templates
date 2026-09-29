@@ -1,0 +1,40 @@
+id: production-readiness-review
+title: Production Readiness Review
+summary: >-
+  The standing checklist a reviewing team consults, and a service's own team fills in, before
+  responsibility for that service's production behavior changes hands, or at a periodic re-check of a
+  service already running. Grouped by domain, each criterion carries the evidence that answers it, an
+  owner, and a status; a completed run against one service is the record of applying the questionnaire,
+  not a second kind of document.
+doc_type: production-readiness-review
+classification: tool
+family: standing-standards
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Scope and Trigger, Readiness Criteria, Not-Applicable Rule, Outcome and Sign-off, Review Trigger) for a single-service review or a small program with one obvious reviewer, which is close to the couple-hours version practitioner sources describe having actually seen run; use full when more than one plausible reviewer exists and the authority to block needs naming, when a service is expected to be reviewed more than once and the recurrence needs a stated cadence, or when the review program covers enough services that treating all of them identically would itself be a failure mode, adding Reviewer and Authority, Review Cadence, and When This Does Not Apply."
+methodology: SRE-lineage
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - sre
+  - reliability
+  - production-readiness
+  - operational-readiness
+  - standing-standards
+  - handoff
+  - checklist
+related_templates: [launch-coordination-checklist, definition-of-done, runbook]
+aliases:
+  - PRR
+  - production readiness checklist
+  - production readiness check
+  - PRC
+  - SRE entrance review
+  - SER
+  - operational readiness review
+  - ORR
+catalog_ref: 125
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-28
+license: Apache-2.0

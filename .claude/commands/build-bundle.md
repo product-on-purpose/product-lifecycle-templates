@@ -130,6 +130,7 @@ the same 15 build agents; announcement-internal-comms 8,495,731, $16.99, a secon
 change-request 7,203,075, $14.41, both for the same 15 build agents - **this time the single-size bundle
 was the dearer one**, its drafting stage costing $8.58 against change-request's two-template $5.78, mostly
 cache reads; change-log 8,472,610, $16.95, for the same 15, its two-template drafting $8.14;
+production-readiness-review 7,876,892, $15.75, for the same 15, its two-template drafting $8.35;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Source:
