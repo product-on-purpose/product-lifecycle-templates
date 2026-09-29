@@ -21,6 +21,8 @@ Bundle: [`templates/definition-of-ready/`](../../templates/definition-of-ready/)
 | Stages captured | `draft`, `lens`, `research` |
 | Covers a whole build | yes |
 
+**Not in these totals: the landing sweep.** 3 agent(s) in 1 workflow run(s) swept the repository's counts when this bundle landed, at 1,100,931 weighted and $2.20 at API list rates. A report counts only the agents that built the bundle, so this landing work is recorded here and left out of every figure above and below.
+
 Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
 
 The list-USD figures price every API response at its own model's Anthropic API list rate as of 2026-09-22 ([source](https://platform.claude.com/docs/en/about-claude/pricing)). They are a yardstick for comparing builds, not a bill: work run under a Claude subscription is not charged per token.

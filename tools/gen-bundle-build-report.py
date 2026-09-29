@@ -19,6 +19,10 @@ The Claude Code harness already writes everything needed, outside this repositor
 
 This tool joins those three and attributes each agent to a bundle, a stage and a deliverable.
 
+A report's totals count only the agents that BUILT the bundle. Agents labelled <bundle>/sweep:N, which
+sweep the repository's counts when the bundle lands, go into a separate `landing_sweep` block and never
+into the totals. That is the maintainer's rule of 2026-09-29; see LANDING_STAGES.
+
 Usage is counted once per API RESPONSE, not once per transcript record. The harness writes one record
 per content block of a response (thinking, text, each tool call) and every one of them repeats the
 response's full usage block. Schema 1.0.0 summed records and so counted each response's cache reads
@@ -72,6 +76,9 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 # added, so an older report stays readable against a newer tool.
 #   2.0.0 (2026-09-22) every usage count is per API response rather than per transcript record, so
 #         `turns` means responses and the token totals roughly halve. All reports were re-ingested.
+#   (2026-09-29, no bump) landing-sweep agents left the totals and gained the optional `landing_sweep`
+#         block. Only issue-log and definition-of-ready had folded a sweep in, and both were
+#         re-ingested. Whether that exclusion counts as a change of meaning is open for the maintainer.
 REPORT_SCHEMA_VERSION = "2.0.0"
 
 # Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every
@@ -527,7 +534,25 @@ def template_version(bundle):
     return "0.0.0"
 
 
-def build_report(bundle, agents):
+def landing_record(rows):
+    """The landing sweep, stated beside the headline and never inside it. Mirrors the headline's
+    field names so the two compare directly."""
+    totals = blank()
+    for a in rows:
+        add(totals, a["usage"])
+    runs = sorted({a["run"] for a in rows})
+    return {
+        "in_totals": False,
+        "agents": len(rows),
+        "workflow_runs": len(runs),
+        "run_ids": runs,
+        "totals": tidy(totals),
+        "weighted_total": weighted(totals),
+        "cost_usd": round(totals["usd"], 2),
+    }
+
+
+def build_report(bundle, agents, landing=()):
     reliable = [a for a in agents if a["attribution"] in RELIABLE]
     totals = blank()
     for a in agents:
@@ -537,7 +562,7 @@ def build_report(bundle, agents):
     run_confs = {a.get("run_confidence", "low") for a in agents}
     conf = "high" if run_confs == {"high"} else (
         "medium" if run_confs <= {"high", "medium"} else "mixed")
-    return {
+    rep = {
         "report_schema_version": REPORT_SCHEMA_VERSION,
         "bundle": bundle,
         "template_version": template_version(bundle),
@@ -570,6 +595,11 @@ def build_report(bundle, agents):
             key=lambda a: -a["weighted"],
         ),
     }
+    # Present only when a sweep ran, so a report without one is byte-for-byte what it was before
+    # the field existed.
+    if landing:
+        rep["landing_sweep"] = landing_record(landing)
+    return rep
 
 
 def n(v):
@@ -635,6 +665,15 @@ def render(rep):
                  "missing from the numbers below. The usual cause is a run whose agents wrote no "
                  "file and whose prompts never named the bundle, which is what the labelling "
                  "convention now prevents. Read this as \"at least this much\".")
+        L.append("")
+    sweep = rep.get("landing_sweep")
+    if sweep:
+        L.append("**Not in these totals: the landing sweep.** %d agent(s) in %d workflow run(s) swept "
+                 "the repository's counts when this bundle landed, at %s weighted and %s at API list "
+                 "rates. A report counts only the agents that built the bundle, so this landing work "
+                 "is recorded here and left out of every figure above and below."
+                 % (sweep["agents"], sweep["workflow_runs"], n(sweep["weighted_total"]),
+                    usd(sweep["cost_usd"])))
         L.append("")
     L.append("Weighted total applies %s. It is one fixed unit for every model, stated so that two "
              "reports written months apart are comparable and so a reader can re-weight with their "
@@ -760,7 +799,7 @@ def do_ingest(dry_run):
         return 1
     written = []
     for bundle, rows in sorted(by_bundle.items()):
-        rep = build_report(bundle, rows)
+        rep = build_report(bundle, rows, landing.get(bundle, ()))
         stem = os.path.join(REPORT_DIR, "%s_v%s" % (bundle, rep["template_version"]))
         if not dry_run:
             write_text(stem + ".json", json.dumps(rep, indent=2, sort_keys=False) + "\n")

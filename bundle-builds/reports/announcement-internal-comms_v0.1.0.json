@@ -826,5 +826,27 @@
       },
       "weighted": 229831
     }
-  ]
+  ],
+  "landing_sweep": {
+    "in_totals": false,
+    "agents": 3,
+    "workflow_runs": 1,
+    "run_ids": [
+      "wf_8d0753f0-f43"
+    ],
+    "totals": {
+      "turns": 92,
+      "input": 184,
+      "output": 43224,
+      "cache_write": 331940,
+      "cache_write_1h": 0,
+      "cache_read": 9802178,
+      "web": 0,
+      "web_search": 0,
+      "usd": 3.2229,
+      "unpriced_turns": 0
+    },
+    "weighted_total": 1611447,
+    "cost_usd": 3.22
+  }
 }
