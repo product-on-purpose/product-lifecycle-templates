@@ -86,6 +86,17 @@ people who want every change, release notes are for people who want to know what
   carried 2,090 garbled sequences between them were repaired in the local cache.
 - **`tier2-specs.md`'s change-log spec** misnamed APM's two glossary entries and placed PM²'s Target
   Delivery Date in the wrong field group; both carry dated corrections.
+- **Build-cost reports disagreed on whether a landing's count sweep counts.** Two reports folded their
+  three sweep agents into the totals and one did not, and every `--ingest` then raised
+  `announcement-internal-comms` from $16.99 to $20.21 until someone restored it by hand. By the maintainer's
+  rule of 2026-09-29, a report counts only the agents that built the bundle. `gen-bundle-build-report.py`
+  now keeps agents labelled `<bundle>/sweep:N` out of the totals and states them in a separate
+  `landing_sweep` line. `issue-log` moves from $16.76 to $14.29 and `definition-of-ready` from $13.89 to
+  $11.69, the like-for-like figures `bundle-pipeline.md` already quoted. No other report's figures moved:
+  `announcement-internal-comms` gains only its sweep line, and the other 26 are byte-identical. The report schema stays at 2.0.0, and whether it should move is left open.
+- **Four sentences used a gendered pronoun for a named person** whose pronouns no source states: two
+  source authors in `production-readiness-review`'s companion and research log and in `tier2-specs.md`, and
+  one fictional approver in `change-log`'s example. Each now uses the name.
 
 ## [0.14.0] - 2026-09-25
 

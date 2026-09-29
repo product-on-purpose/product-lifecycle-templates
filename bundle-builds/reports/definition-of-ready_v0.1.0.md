@@ -8,18 +8,20 @@ Bundle: [`templates/definition-of-ready/`](../../templates/definition-of-ready/)
 
 | | |
 |---|---|
-| **Weighted total** | **6,947,001** token-equivalents |
-| **At API list rates** | **$13.89** |
-| Subagents | 18 across 4 workflow run(s) |
-| API responses | 311 |
-| Fresh input | 636 |
-| Cache write | 1,843,355 |
-| Cache read | 28,659,860 |
-| Output | 355,237 |
+| **Weighted total** | **5,846,070** token-equivalents |
+| **At API list rates** | **$11.69** |
+| Subagents | 15 across 3 workflow run(s) |
+| API responses | 251 |
+| Fresh input | 516 |
+| Cache write | 1,559,542 |
+| Cache read | 23,078,713 |
+| Output | 317,651 |
 | Server web search / fetch | 0 |
-| Attribution confidence | **high** (18 of 18 agents reliably attributed) |
-| Stages captured | `draft`, `lens`, `other`, `research` |
+| Attribution confidence | **high** (15 of 15 agents reliably attributed) |
+| Stages captured | `draft`, `lens`, `research` |
 | Covers a whole build | yes |
+
+**Not in these totals: the landing sweep.** 3 agent(s) in 1 workflow run(s) swept the repository's counts when this bundle landed, at 1,100,931 weighted and $2.20 at API list rates. A report counts only the agents that built the bundle, so this landing work is recorded here and left out of every figure above and below.
 
 Weighted total applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0. It is one fixed unit for every model, stated so that two reports written months apart are comparable and so a reader can re-weight with their own numbers. It is not money: a weighted token on Opus costs more than one on Sonnet.
 
@@ -32,19 +34,18 @@ The list-USD figures price every API response at its own model's Anthropic API l
 | `draft` | 5 | 198 | 662,747 | 10,408,397 | 96,635 | **2,352,646** | $4.71 |
 | `research` | 6 | 284 | 479,902 | 11,674,485 | 95,723 | **2,246,225** | $4.49 |
 | `lens` | 4 | 34 | 416,893 | 995,831 | 125,293 | **1,247,198** | $2.49 |
-| `other` | 3 | 120 | 283,813 | 5,581,147 | 37,586 | **1,100,931** | $2.20 |
 
 ### By model
 
 | resolved model | agents | input | cache write | cache read | output | weighted | list USD |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `claude-sonnet-5` | 18 | 636 | 1,843,355 | 28,659,860 | 355,237 | **6,947,001** | $13.89 |
+| `claude-sonnet-5` | 15 | 516 | 1,559,542 | 23,078,713 | 317,651 | **5,846,070** | $11.69 |
 
 ### By requested tier
 
 | requested | agents | input | cache write | cache read | output | weighted | list USD |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| `sonnet` | 18 | 636 | 1,843,355 | 28,659,860 | 355,237 | **6,947,001** | $13.89 |
+| `sonnet` | 15 | 516 | 1,559,542 | 23,078,713 | 317,651 | **5,846,070** | $11.69 |
 
 ### By deliverable
 
@@ -56,11 +57,8 @@ The list-USD figures price every API response at its own model's Anthropic API l
 | `origins-and-admission` | 1 | 56 | 110,409 | 2,354,510 | 21,859 | **482,813** | $0.97 |
 | `guide` | 1 | 32 | 145,564 | 1,829,578 | 20,588 | **467,885** | $0.94 |
 | `example` | 1 | 34 | 128,586 | 1,719,950 | 23,854 | **452,032** | $0.90 |
-| `3` | 1 | 58 | 78,247 | 2,596,619 | 11,403 | **414,544** | $0.83 |
 | `contents-and-structure` | 1 | 58 | 75,181 | 2,383,822 | 14,811 | **406,471** | $0.81 |
 | `chaining-consistency` | 1 | 10 | 158,185 | 264,773 | 35,550 | **401,969** | $0.80 |
-| `2` | 1 | 36 | 86,588 | 1,742,269 | 12,401 | **344,503** | $0.69 |
-| `1` | 1 | 26 | 118,978 | 1,242,259 | 13,782 | **341,884** | $0.68 |
 | `the-dispute` | 1 | 44 | 77,492 | 1,706,751 | 13,781 | **336,489** | $0.67 |
 | `meta` | 1 | 42 | 91,267 | 1,629,693 | 7,556 | **314,875** | $0.63 |
 | `accuracy-teaching-point` | 1 | 10 | 88,398 | 365,604 | 32,670 | **310,418** | $0.62 |

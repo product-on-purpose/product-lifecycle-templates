@@ -80,7 +80,7 @@ escalate to when a risk or an issue outgrows the program manager's authority on 
 
 **Currently escalated:** nothing on this log. CR-SV-01's postponement sat entirely inside Marta Reyes's own
 authority: postponing a request neither commits new cost today nor moves the Q3 date, so nothing about the
-decision needed to go above her.
+decision needed to go above Marta Reyes.
 
 ## Implementation and Traceability
 

@@ -36,6 +36,12 @@ single-template $8.58, which points the same way. production-readiness-review, t
 and $15.75 for its 15 agents, its two-template drafting $8.35. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
+**A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
+labelled `<bundle>/sweep:N`, which sweep the repository's counts when a bundle lands, go in a separate
+`landing_sweep` line of that bundle's report and never into its totals. Whether a landing needs sweep agents
+depends on how its counts were swept, not on the bundle, so folding them in made builds incomparable. That is
+why issue-log's and definition-of-ready's reports read $14.29 and $11.69, and why the with-sweep figures
+above are notes rather than headlines.
 Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.
 *(Corrected 2026-09-22: this paragraph read "21M to 25M", from a generator that counted each API response
 two to three times. See the Correction in
