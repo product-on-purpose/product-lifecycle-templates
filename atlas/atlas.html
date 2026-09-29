@@ -4291,24 +4291,28 @@
       "name": "Change Log (governance)",
       "aliases": [
         "change register",
-        "change control log"
+        "change control log",
+        "change management log",
+        "change request log"
       ],
       "category": "Governance / Compliance / Audit",
       "stage": "governance",
       "owner": "PM / Change Manager",
-      "purpose": "Track requested and approved changes to baselines",
-      "methodology": "PMBOK/ITIL",
+      "purpose": "Track every requested change to an agreed baseline, with its decision, who made it and when",
+      "methodology": "generic",
       "formality": "lightweight",
       "rarity": "common",
-      "size_variant": "S",
+      "size_variant": "S/M",
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
-        "Change Requests"
+        "Change Request",
+        "Issue Log",
+        "Risk Register"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {

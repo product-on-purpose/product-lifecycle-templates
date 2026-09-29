@@ -62,6 +62,7 @@ tree without the gate noticing.
 - [`raid-log/`](raid-log/) - RAID Log. Axis classification utility; ships lean/full.
 - [`risk-register/`](risk-register/) - Risk Register. Axis classification utility; ships lean/full.
 - [`issue-log/`](issue-log/) - Issue Log. Axis classification utility; ships lean/full. The fourth `governance-docs` member ([ADR 0057](../docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)): the deepened, standalone form of the RAID log's Issues quadrant, as the risk register is of its Risks.
+- [`change-log/`](change-log/) - Change Log. Axis classification utility; ships lean/full. The fifth `governance-docs` member ([ADR 0061](../docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md)): the standing register behind the per-occasion change request, one row per request with its decision kept apart from its status.
 
 **`process-docs`**
 

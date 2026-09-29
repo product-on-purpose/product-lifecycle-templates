@@ -89,9 +89,11 @@ written.
    Information"). [12] puts per-approver checkboxes under a column headed Recommendation.
 3. **Is the request separate from the log?** [8] archives the form once it is logged ("Once the change request is
    logged into the Change Log, then this form is updated with the assigned Change ID and the form is archived");
-   [2] says "The change log is used to record all submitted change requests." [11] merges the two into one field
-   list ("AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM AND CHANGE
-   MANAGEMENT LOG").
+   [2] says "The change log is used to record all submitted change requests." [11] shares one field list
+   between the two ("AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM AND
+   CHANGE MANAGEMENT LOG") and keeps them as two artifacts ("The Change Manager enters the CR into the CR Log.").
+   *(Corrected 2026-09-28: this item said [11] merges the two. The logging step was found by the `change-log`
+   build and raw-checked against the same capture [11] cites.)*
 4. **Are defects change requests?** [10] offers Defect as a type of change and [9] offers Enhancement or Defect.
    [31] draws the opposite line: a bug is "something is wrong with the delivered code", a change request is "new
    and additional to what was delivered". This library's `bug-report` guide follows [31].
@@ -140,7 +142,8 @@ routing already used that sense; IT service change is its closest neighbour, des
   responsibility for reviewing and approving change requests or off-specifications. This authority may be given a
   change budget and can approve changes within that budget." Its worked example delegates a change under EUR 400
   to the project manager, which makes a named authority concrete.
-- **Published forms:** [8], [9], [10], [12]; [11] as the merged case; [13] as a PMO's completion guidance.
+- **Published forms:** [8], [9], [10], [12]; [11] as the shared field list (corrected 2026-09-28 from "the
+  merged case"); [13] as a PMO's completion guidance.
 - **The agile position:** [21], [22], [23], [26], [27], [25].
 - **The neighbour:** [14], [18], [48], [16], [17]; DORA [19], [20], bounded as above.
 
@@ -338,8 +341,9 @@ Quotable: "Requirements Change Request Information"
 
 **[11] HHS (U.S. Dept. of Health & Human Services) EPLC - Change Management Plan template.** primary. **fetched-and-verified.**
 `http://web.archive.org/web/20260226151438id_/https://www.hhs.gov/sites/default/files/ocio/eplc/EPLC%20Archive%20Documents/07%20-%20Change%20Management%20Plan/eplc_change_management_plan_template.doc`
-Supports: The change request form's field list is presented merged into the change log's data elements, plus separate priority, type, and status taxonomies with no Defect option. That it merges the request form and the log into one field list.
+Supports: The change request form and the change log share one list of data elements, plus separate priority, type, and status taxonomies with no Defect option; the two stay separate artifacts, with a step in which the Change Manager enters each request into the log. Corrected 2026-09-28: this clause said [11] merges the request form and the log into one field list.
 Quotable: "Change Request Form and Change Management Log"
+Quotable: "The Change Manager enters the CR into the CR Log."
 Quotable: "Priority"
 Quotable: "Type"
 Quotable: "Status"

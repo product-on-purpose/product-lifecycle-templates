@@ -212,6 +212,16 @@ def main() -> int:
     pr.add_argument("--days", type=int, default=STALE_DAYS)
     pr.set_defaults(fn=cmd_prune)
 
+    # UTF-8 ON EVERY STREAM, because Windows defaults them to cp1252. Found 2026-09-28: `get` on a cached
+    # page holding any character cp1252 lacks (an arrow, a superscript) crashed in sys.stdout.write and
+    # exited 1, which is the MISS code. An agent obeying the ownership rule then re-fetched a page it
+    # already had and could `put` a retrieval tool's summary over the raw text. `put` from stdin had the
+    # mirror fault: a UTF-8 body decoded as cp1252 is stored as mojibake, and a quote check then fails
+    # against text the source never contained.
+    for stream in (sys.stdin, sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
+
     args = ap.parse_args()
     return args.fn(args)
 
