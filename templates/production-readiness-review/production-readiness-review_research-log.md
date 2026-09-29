@@ -30,8 +30,8 @@ plainly whose they are: "These states are a recommended governance model, not a 
 behavior." [36] publishes a binary ("criteria are either passed or flagged for follow-up"). Neither is a standard, and
 the companion must say so.
 
-**The spec's three sourced failure modes are now eight.** Alves [34] adds a third to his own two, Nolan [35] names three
-antipatterns in her own headings, and [36] names drift after a one-time review. See "How it fails" below.
+**The spec's three sourced failure modes are now eight.** Alves [34] adds a third to Alves's own two, Nolan [35] names three
+antipatterns in the talk's own headings, and [36] names drift after a one-time review. See "How it fails" below.
 
 **The spec's boundary with the launch checklist rested on Google's two chapters, and adopters blur its trigger.**
 [1] and [29] separate the two by trigger, team and timing. But [9] requires its check "for all services before

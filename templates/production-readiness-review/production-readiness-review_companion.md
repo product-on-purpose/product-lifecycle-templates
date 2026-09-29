@@ -566,7 +566,7 @@ factors for the release... additional sign-off by FSA Senior Management is requi
 
 **Very small reviews** can be genuinely light without becoming absent. Laura Nolan describes having "seen
 people do PRRs that just consisted of filling in a template document over a couple of hours" [[35]](#ref-35).
-Where the service is instead critical or complex, her own recommendation runs the other way, embedding a
+Where the service is instead critical or complex, Nolan's own recommendation runs the other way, embedding a
 reviewer with the team for "a quarter or maybe two quarters, or maybe longer depending on the size and the
 complexity and the criticality of it" [[35]](#ref-35), and stating a floor even for the ordinary case: "for
 any complex or critical service, I think a PRR should take at least one person a quarter" [[35]](#ref-35).

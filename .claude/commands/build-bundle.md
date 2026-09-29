@@ -80,7 +80,9 @@ finds real defects and occasionally proposes a fix that is wrong.
 **Phase 6, gate and land.** `git add` **before** the link gate (it skips untracked files and gives a false
 green). Then the gate, manifest, links, README and STATE updates, PR, CI, merge, then
 `python tools/gen-bundle-build-report.py --ingest` to generate the build-cost report - this must run on
-the machine that ran the build, because the transcripts it reads are machine-local.
+the machine that ran the build, because the transcripts it reads are machine-local. If agents sweep the
+counts at landing, label them `<bundle>/sweep:N`: the report recognises that label alone, records the sweep
+beside the totals, and keeps it out of them.
 
 ## Source ownership, and why it is a rule
 
@@ -133,7 +135,10 @@ cache reads; change-log 8,472,610, $16.95, for the same 15, its two-template dra
 production-readiness-review 7,876,892, $15.75, for the same 15, its two-template drafting $8.35;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
-x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Source:
+x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Build
+agents only, too (the maintainer's rule, 2026-09-29): agents that sweep counts at landing are stated on their
+own line in the report and left out of every figure here, which is why issue-log and definition-of-ready read
+$14.29 and $11.69 rather than their with-sweep $16.76 and $13.89. Source:
 [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md). By stage, for test-summary-report: draft
 5,656,564 ($28.28), research 3,874,729 ($7.75), lens 2,591,747 ($5.18) - drafting is the largest stage by
 both measures, and in dollars it is over two thirds of the build, because its five agents resolved to Opus

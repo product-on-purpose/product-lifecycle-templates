@@ -83,6 +83,12 @@ correction is in [ADR 0056](../docs/internal/decisions/0056-build-cost-is-measur
 - **The orchestrator's own spend.** One session interleaves several bundles and other work, so the
   main loop's tokens cannot honestly be divided per bundle. They are never billed to one here, and
   they are not reported anywhere else either.
+- **Landing work, in the totals.** A report counts only the agents that built the bundle. Agents
+  labelled `<bundle>/sweep:N`, which sweep the repository's counts when the bundle lands, are stated
+  on their own line under the headline and in the JSON's `landing_sweep` block, and are left out of
+  every total. Whether a landing needs such agents depends on how its counts were swept, not on the
+  bundle, so counting them made two builds incomparable. This is the maintainer's rule of
+  2026-09-29; before it, the `issue-log` and `definition-of-ready` reports included their sweeps.
 - **What a build cost the person who ran it.** See the list-USD figure above: it prices the work, it
   does not bill it.
 - **Anything about quality.** A build that cost more is not a better bundle. These numbers rank

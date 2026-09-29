@@ -792,6 +792,9 @@ other three were this landing's count sweep ($2.47), which the previous build di
 no report counts it. Two builds now agree within a dollar, which is two points, not a rate. Not counted in
 either figure: the admission sweep run while the spec was written (16 agents, covering this type and
 `definition-of-ready` together) and the orchestrator's own spend.
+*(Note 2026-09-29: the linked report now reads 7,143,159 weighted, $14.29 and 15 agents. The maintainer ruled
+that a report counts only the build agents, so the $2.47 sweep moved to the report's own landing-sweep line.
+The figures above were the report's when this was written.)*
 
 ---
 
@@ -1008,7 +1011,9 @@ $14.22 for `launch-coordination-checklist`**; the other three were the landing's
 prediction held, and by a margin: the drafting stage cost $4.71 against $5.63 and $7.15, and its templates
 agent $1.24 against $1.58 and $2.62, one variant instead of two. Three builds is still three points, not a
 rate. Not counted: the admission retrieval run while the spec was written, and the orchestrator's own
-spend.
+spend. *(Note 2026-09-29: the linked report now reads 5,846,070 weighted, $11.69 and 15 agents. The maintainer
+ruled that a report counts only the build agents, so the $2.20 sweep moved to the report's own landing-sweep
+line. The figures above were the report's when this was written.)*
 
 ---
 
@@ -1537,7 +1542,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1290-1303`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1295-1308`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1776,7 +1781,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1427-1429` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1432-1434` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -2036,7 +2041,7 @@ that a member "adopts `[]` until one does."
    when the bundle was built: the bundle's research found both. OneUptime's practitioner guide publishes four
    decision states, of which the template takes "Ready", "Ready with conditions" and "Not ready", attributed to
    that guide and not presented as a standard. The sourced failure modes grow from three to eight: a third from
-   Alves, three antipatterns Nolan names in her own talk, and drift after a one-time review, which the adhorn ORR
+   Alves, three antipatterns that Nolan's talk names, and drift after a one-time review, which the adhorn ORR
    template names outright. The [research log](../../templates/production-readiness-review/production-readiness-review_research-log.md) quotes all eight.)*
 
 **Failure modes, sourced, and nothing beyond these three without a citation** *(eight since 2026-09-28; see the
@@ -2404,7 +2409,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1428-1430`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1433-1435`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
