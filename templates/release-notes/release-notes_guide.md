@@ -13,6 +13,9 @@ Fast reference for the Release Notes bundle. For the full reasoning, history, an
 
 - You need the permanent, complete, structured record of every change. Keep a changelog (Keep a
   Changelog format); derive the notes from it.
+- You need the project's register of requested changes to an agreed baseline, each with its decision
+  and who made it. That is a governance document that shares the word, not a software changelog: use
+  [`change-log`](../change-log/change-log_guide.md).
 - You need a full launch plan and comms. Use a launch checklist and announcement; release notes are one
   input.
 
