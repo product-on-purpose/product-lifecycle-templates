@@ -32,7 +32,7 @@ design task" rather than "a spec-driven execution".
 | `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it; [build report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md) |
 | `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
 | `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Built 2026-09-28.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
-| `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Not yet built.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) |
+| `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Built 2026-09-28.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md); [build report](../../bundle-builds/reports/production-readiness-review_v0.1.0.md) |
 | `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) reopens the family, which ADR 0035 had recorded as closed at two |
 | `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
 | `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
@@ -1884,6 +1884,14 @@ is trigger, team, and timing**, all three sourced to the same primary chapters:
 | Team | "Usually one to three SREs are selected or self-nominated to conduct the PRR" | "The Launch Coordination Engineering (LCE) team," "held to the same technical requirements as any other SRE" |
 | Timing | "The Production Readiness Review can be started at any point of the service lifecycle" | Pre-launch, gatekeeping: "Acting as gatekeepers and signing off on launches determined to be" safe |
 
+*(Corrected 2026-09-28, when the bundle was built: trigger and timing separate the two in Google's chapters, not in
+adopters' practice. Mercari requires its check "for all services before receiving real production traffic",
+GitLab gates each maturity level of a new service, Grafana writes of a "pre-launch PRR", and the US Federal Student
+Aid office runs a PRR on every release before implementation, so a PRR and a launch checklist can meet at the same
+launch. What differs in every source read is the object: a PRR reviews a service's standing ability to be run, and
+the launch checklist reviews one launch. That reading is this library's, and the companion labels it so. The
+quotations are in the [research log](../../templates/production-readiness-review/production-readiness-review_research-log.md), contested item 10.)*
+
 A second, independent framing agrees without naming either type: Studio Red's practitioner guide draws a
 release-moment-versus-long-term-operability line, already quoted at
 `launch-coordination-checklist_companion.md:472-473` (ref 38). That source was not re-verified against its
@@ -2024,9 +2032,15 @@ that a member "adopts `[]` until one does."
    rigorously rather than wave through on precedent.
 6. **No source read supplies a fixed pass/fail vocabulary** for a review's outcome, or a full list of failure
    modes. Only three failure modes are sourced (below); everything else must be labelled the library's own
-   judgment or cut, per `review-standards.md` section 5's dominant-defect-class rule.
+   judgment or cut, per `review-standards.md` section 5's dominant-defect-class rule. *(Corrected 2026-09-28,
+   when the bundle was built: the bundle's research found both. OneUptime's practitioner guide publishes four
+   decision states, of which the template takes "Ready", "Ready with conditions" and "Not ready", attributed to
+   that guide and not presented as a standard. The sourced failure modes grow from three to eight: a third from
+   Alves, three antipatterns Nolan names in her own talk, and drift after a one-time review, which the adhorn ORR
+   template names outright. The [research log](../../templates/production-readiness-review/production-readiness-review_research-log.md) quotes all eight.)*
 
-**Failure modes, sourced, and nothing beyond these three without a citation:**
+**Failure modes, sourced, and nothing beyond these three without a citation** *(eight since 2026-09-28; see the
+correction to item 6)*:
 
 - Lack of buy-in: "Running a PRR without any specific goal means that the PRR can drop to the bottom of the
   development team's priority list" (Alves, USENIX).
@@ -2047,7 +2061,10 @@ ownership handoff, not launch date) has nothing to demonstrate.** The proposed s
 trigger directly: after the Saved Views Sharing launch stabilizes, Acme Analytics' Platform team requests that a
 newly formed Acme Analytics SRE function take over production ownership of `dashboard-service`, the same
 service the `sdd` and `test-plan` examples describe, and the review this bundle demonstrates is the one that
-decides whether SRE accepts.
+decides whether SRE accepts. *(Corrected 2026-09-28: `dashboard-service` belongs to the Reporting team, whose
+Staff Engineer Marcus Bell `runbook_example.md:5` names as its owner, so Reporting makes the request, not Platform.
+The example also names two reviewers outside Reporting: Ines Halvorsen from the new SRE function, the team
+Google's ch. 32 says conducts the review, and Dana Osei, the outside engineer Grafana describes.)*
 
 - **Date: 2026-08-22.** Later than every date the sibling thread already occupies (PRD created 2026-06-12;
   DEF-2291 discovered 2026-07-13; the exit review and launch, 2026-07-17; the Reporting Squad DoD's amendment,

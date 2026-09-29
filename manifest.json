@@ -710,6 +710,44 @@
     },
     {
       "aliases": [
+        "PRR",
+        "production readiness checklist",
+        "production readiness check",
+        "PRC",
+        "SRE entrance review",
+        "SER",
+        "operational readiness review",
+        "ORR"
+      ],
+      "approx_tokens": {
+        "full": 7550,
+        "lean": 5000
+      },
+      "classification": "tool",
+      "default_size": "lean",
+      "doc_type": "production-readiness-review",
+      "family": "standing-standards",
+      "id": "production-readiness-review",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Scope and Trigger, Readiness Criteria, Not-Applicable Rule, Outcome and Sign-off, Review Trigger) for a single-service review or a small program with one obvious reviewer, which is close to the couple-hours version practitioner sources describe having actually seen run; use full when more than one plausible reviewer exists and the authority to block needs naming, when a service is expected to be reviewed more than once and the recurrence needs a stated cadence, or when the review program covers enough services that treating all of them identically would itself be a failure mode, adding Reviewer and Authority, Review Cadence, and When This Does Not Apply.",
+      "status": "beta",
+      "summary": "The standing checklist a reviewing team consults, and a service's own team fills in, before responsibility for that service's production behavior changes hands, or at a periodic re-check of a service already running. Grouped by domain, each criterion carries the evidence that answers it, an owner, and a status; a completed run against one service is the record of applying the questionnaire, not a second kind of document.",
+      "tags": [
+        "sre",
+        "reliability",
+        "production-readiness",
+        "operational-readiness",
+        "standing-standards",
+        "handoff",
+        "checklist"
+      ],
+      "title": "Production Readiness Review"
+    },
+    {
+      "aliases": [
         "lessons learned",
         "post-project review",
         "after-action review",
@@ -1244,5 +1282,5 @@
       "title": "User Story"
     }
   ],
-  "count": 36
+  "count": 37
 }

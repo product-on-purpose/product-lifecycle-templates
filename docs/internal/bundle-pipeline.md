@@ -19,7 +19,7 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the eight builds captured end to end, is roughly 7M to 12M weighted
+10 to 20 times. Measured cost, from the nine builds captured end to end, is roughly 7M to 12M weighted
 token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
 spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
 and $14.22 with every agent on Sonnet as pinned; issue-log, the second, cost $14.29 for the same 15
@@ -32,7 +32,8 @@ $16.99 for its 15 agents; change-request, the fifth, cost 7,203,075 weighted and
 MORE than change-request's two-template drafting, $8.58 against $5.78, mostly cache reads, so the number
 of variants is not by itself a predictor of cost. change-log, the sixth, cost 8,472,610 weighted and $16.95
 for its 15 agents, and its two-template drafting stage cost $8.14, close to announcement-internal-comms'
-single-template $8.58, which points the same way. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+single-template $8.58, which points the same way. production-readiness-review, the seventh, cost 7,876,892 weighted
+and $15.75 for its 15 agents, its two-template drafting $8.35. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.

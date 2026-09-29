@@ -30,6 +30,11 @@ consulted: [claude]
   A gap-fill retrieval in the 2026-09-27 admission sweep read Google's own Appendix E and found it
   engineering-scoped throughout, which falsifies the subject-matter half of the two bundles' distinction. Only
   trigger, team and timing survive, and the spec, not this record, carries that argument in full.
+  *(Corrected 2026-09-28, when the bundle was built: trigger and timing survive in Google's chapters, not in
+  adopters' practice, since Mercari, GitLab, Grafana and the US Federal Student Aid office all run a PRR
+  before first production traffic or before a release. What differs in every source read is the object: a
+  service's standing ability to be run, against one launch. The spec's boundary section carries the
+  correction and the bundle's research log the quotations.)*
 - **Status:** accepted 2026-09-27. The maintainer ruled on the research the same day and accepted this
   record on reading the contract diff, as with [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md)
   and [ADR 0060](0060-change-request-joins-delivery-docs.md).

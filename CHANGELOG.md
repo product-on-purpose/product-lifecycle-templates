@@ -14,6 +14,18 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`production-readiness-review`, the 37th bundle and the fifth `standing-standards` member**, by
+  [ADR 0062](docs/internal/decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md).
+  The standing checklist a service is reviewed against before the team that will carry its pager takes it
+  on, as a `tool`. Lean carries Scope and Trigger, Readiness Criteria, the Not-Applicable Rule, Outcome and
+  Sign-off, and the Review Trigger; full adds Reviewer and Authority, Review Cadence, and When This Does Not
+  Apply. The outcome vocabulary (Ready, Ready with conditions, Not ready) comes from one practitioner guide,
+  and the template attributes it rather than presenting it as a standard. The worked example is the review
+  that decides whether Acme Analytics' new SRE function takes over `dashboard-service` from the Reporting
+  team, and it ends Ready with conditions. The research corrected ADR 0062 and the spec in place: adopters
+  run the review before a service's first production traffic, so the boundary with
+  `launch-coordination-checklist` rests on the object reviewed, not on trigger and timing. Thirty-nine
+  sources, all fetched-and-verified; every quotation was checked against the source's raw text.
 - **`change-log`, the 36th bundle and the fifth `governance-docs` member**, by
   [ADR 0061](docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md). The
   standing register behind `change-request`: one row per request against a named baseline, rejected and

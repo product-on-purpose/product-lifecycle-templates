@@ -3361,7 +3361,9 @@
       "tier_inferred": false,
       "must_have": true,
       "built": true,
-      "relationships": [],
+      "relationships": [
+        "Production Readiness Review"
+      ],
       "state": "built",
       "state_note": ""
     },
@@ -3571,12 +3573,18 @@
       "name": "Production Readiness Review",
       "aliases": [
         "PRR",
-        "launch readiness review"
+        "production readiness checklist",
+        "production readiness check",
+        "PRC",
+        "SRE entrance review",
+        "SER",
+        "operational readiness review",
+        "ORR"
       ],
       "category": "Release / Deployment / Runbooks",
       "stage": "release",
       "owner": "SRE",
-      "purpose": "Assess whether a service is ready for production",
+      "purpose": "Assess, against a standing checklist, whether a service can be run in production by the team that will carry its pager",
       "methodology": "SRE",
       "formality": "standard",
       "rarity": "occasional",
@@ -3584,9 +3592,12 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
-      "relationships": [],
-      "state": "candidate",
+      "built": true,
+      "relationships": [
+        "Launch Coordination Checklist",
+        "Runbook"
+      ],
+      "state": "built",
       "state_note": ""
     },
     {
