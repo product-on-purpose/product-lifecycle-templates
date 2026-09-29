@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 35 governed document bundles, one per document type, organized under
+This library ships 36 governed document bundles, one per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -127,15 +127,15 @@ included here for readers who want the complete picture rather than a situationa
 | `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`change-request`](../../templates/change-request/), [`release-notes`](../../templates/release-notes/), [`announcement-internal-comms`](../../templates/announcement-internal-comms/) |
 | `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`product-strategy`](../../templates/product-strategy/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
 | `decision-docs` | Investigates, proposes, records, and designs against a decision, as four separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/) |
-| `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/) |
+| `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/), [`change-log`](../../templates/change-log/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
 | `discovery-docs` | Runs before the decision to build, to test whether an investment is worth making and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/) |
 | `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/), [`definition-of-ready`](../../templates/definition-of-ready/) |
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 
-<!-- counts: bundles=35 -->
-That is 35 bundles across every family the library currently ships, and every family is
+<!-- counts: bundles=36 -->
+That is 36 bundles across every family the library currently ships, and every family is
 complete: nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.

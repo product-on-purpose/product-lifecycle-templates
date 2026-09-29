@@ -14,9 +14,8 @@ returned. Of the other ten, six are verbatim on the rendered page and failed onl
 entity sits inside the sentence in the raw download; two fused a heading onto the paragraph beneath it and survive as
 the paragraph alone; one wraps a table cell and was dropped; and one is verbatim but was dropped because it is an
 author's claim about a PMBOK edition this research did not read. Five passing quotations were changed where an
-elision, a duplicate or a PDF glyph made them misleading (two cut, three trimmed or restored in full), and ten
-quotations were added from the main loop's own checks. **145
-quotations remain, and every one passes.**
+elision, a duplicate or a PDF glyph made them misleading (two cut, three trimmed or restored in full), and fourteen
+quotations were added from the main loop's own checks. **149 quotations remain, and every one passes.**
 
 ---
 
@@ -29,11 +28,18 @@ stored text garbled: [3] and [4], the two APM pages, carried 2,090 garbled seque
 before this build read them, keeping their original fetch dates. [13], the UCOP template, held the spreadsheet's raw
 bytes rather than its text; the research agent that owns it re-fetched and parsed it.
 
-**Two agents' findings, and one line of the spec, were corrected by another dimension's source.** The keeping-the-log dimension reported that no source
-names a Change Manager as the log's keeper; [12] does ("The Change Manager enters the CR into the CR Log."), and [13]
-names a Change Request Coordinator. The neighbours dimension reported that no read source states the boundary between
-a decision log and a change log; [28] does, though it is one practitioner, read from a free preview. The spec placed
-PM²'s Target Delivery Date in the Change Approval group; [7] places it in Change Assessment and Action.
+**Two agents' findings, and one line of the spec, were corrected by another dimension's source.** The
+keeping-the-log dimension reported that no source names a Change Manager as the log's keeper; [12] does ("The Change
+Manager enters the CR into the CR Log."), and [13] names a Change Request Coordinator. The neighbours dimension
+reported that no read source states the boundary between a decision log and a change log; [28] does, though it is one
+practitioner, read from a free preview. The spec placed PM²'s Target Delivery Date in the Change Approval group; [7]
+places it in Change Assessment and Action.
+
+**The dimension that owned [7] returned its appendix and not its process.** PM²'s Manage Project Change process, in
+the same guide, gives the project manager the log's upkeep and the duty to carry each approved change into the plan
+and the other logs. The keeping-the-log dimension, which did not own [7], searched for exactly that and reported it
+missing. The main loop found the sentences through `change-request`'s own log, which quotes the same guide, and added
+four of them to [7] after checking each against the raw text.
 
 **The spec misnamed APM's two glossary entries.** "A record of all proposed changes to scope." is the entry "Change
 register (or log)", and the entry "Change log" reads "A record of all project changes: proposed, authorised, rejected
@@ -127,9 +133,11 @@ documented in the issue register or change log.").
    fail rates"). **It never mentions a project baseline or a change log, and this bundle must not apply it to one.**
 7. **Who keeps the log.** [12]: the Change Manager enters requests and assigns their numbers ("Assigned by the Change
    Manager"). [13]: "The Change Request Coordinator is responsible for maintaining the Change Request Log on behalf of the
-   Change Management Lead." [29]: "The project manager is responsible to monitor the change process from the very
-   beginning to the very end." **No source separates the person who decides from the person who writes the row as a
-   rule; the template asks for a named keeper and leaves the title to the team.**
+   Change Management Lead." [7]: "The Project Manager (PM) collects information on any project changes and related
+   actions and controls the status of each change management activity." [29]: "The project manager is responsible
+   to monitor the change process from the very beginning to the very end." **No source separates the person who
+   decides from the person who writes the row as a rule; the template asks for a named keeper and leaves the title
+   to the team.**
 8. **How often it is reviewed.** One figure is sourced: [26], "at least weekly for even the simplest projects", and it
    concerns reviewing change requests, not the log as an artifact. [30] says only "Regularly review the implementation
    of approved changes". **Any other cadence is the team's choice, and the template must not suggest one as practice.**
@@ -160,11 +168,14 @@ PRINCE2 [5] keeps the whole function in its issue register, by design.
   project manager (PM) may be authorized to personally approve changes with a project impact of less than $5,000"),
   [7]'s escalation field ("Escalation to the Directing or Steering layer is needed? (Yes or No).").
 - **Keeping it:** [26] ("Unique Entries - Each change request should be recorded as a single line item. Do not combine
-  multiple requests under one change request ID."), [27] ("Update the Change Management Log."), [12], [13], [29].
+  multiple requests under one change request ID."), [27] ("Update the Change Management Log."), [7] ("The decision
+  details are documented in the Change Log and communicated to the requestor."), [12], [13], [29].
 - **Where it earns its keep:** [31], [35], [33], [34], [28].
 - **The neighbours:** [15], [16], [17], [18], [19]; [32] bounded as above.
 
-**How it fails, as sourced, and nothing more:**
+**How it fails, as sourced, and nothing more:** the research looked for a named source listing a change log's
+failure modes (entries that never receive a decision, approved changes never carried into the baseline, a log kept
+but never read, the log as bureaucracy for its own sake) and found none; the four below are everything it found.
 
 - **Decisions made and never written down.** [28]: "Changes happen. Decisions get made informally. Nobody writes it
   down. And eventually, the project is living in a reality that the plan never accounted for and nobody officially
@@ -215,8 +226,12 @@ that HHS merges the request and the log; that a Change Manager is the standard k
   baseline as first agreed ([37], [39], [40]). It passes decision procedure 12: E1 on [37], a named source describing
   the register as carrying exactly this; E3 because the total is computed from this log's own rows; E4 as full only.
 - **Review and Ownership** (full): the named keeper (contested item 7), the review cadence ([26] only), and closing
-  each approved row against its baseline. **Anything beyond [7]'s Implemented status and [29]'s integration column,
-  such as a periodic reconciliation duty, is the library's POSITION and must be labelled so.**
+  each approved row against its baseline. **This duty is sourced, not a position**: [7] says "For approved or merged
+  changes, the Project Manager (PM) should incorporate all related actions into the Project Work Plan and update the
+  related documentation and logs (i.e. Risk, Issue, Change and Decision Logs and other plans)." and "All stakeholders
+  affected by the project changes should be informed and the Change Log should be kept up-to-date."; [7]'s
+  Implemented status and [29]'s integration column are the row-level record of it. **A periodic audit of the whole
+  log against the baseline, beyond closing each row, is the library's POSITION and must be labelled so.**
 
 Candidates from the gap question that go to the guide's rubric rather than the template: a rejected row carries its
 reason; each date names the event it records ([39]); the approving authority is named, not implied ([36], [37]'s
@@ -351,6 +366,10 @@ Quotable: "Postponed: This status is set if the change is postponed indefinitely
 Quotable: "Person or committee that denied or approved the change."
 Quotable: "The target date for the change to be delivered."
 Quotable: "The date on which the change was actually delivered."
+Quotable: "The decision details are documented in the Change Log and communicated to the requestor."
+Quotable: "For approved or merged changes, the Project Manager (PM) should incorporate all related actions into the Project Work Plan and update the related documentation and logs (i.e. Risk, Issue, Change and Decision Logs and other plans)."
+Quotable: "All stakeholders affected by the project changes should be informed and the Change Log should be kept up-to-date."
+Quotable: "The Project Manager (PM) collects information on any project changes and related actions and controls the status of each change management activity."
 
 **[8] PM² Alliance, pm2.eu Artefacts listing, "Change Log" page.** vendor. **fetched-and-verified.**
 `https://www.pm2.eu/change-log/`

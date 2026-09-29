@@ -1,0 +1,830 @@
+{
+  "report_schema_version": "2.0.0",
+  "bundle": "change-log",
+  "template_version": "0.1.0",
+  "attribution_confidence": "high",
+  "agents_total": 15,
+  "agents_reliably_attributed": 15,
+  "workflow_runs": 3,
+  "run_ids": [
+    "wf_0a25f0b4-510",
+    "wf_737c427b-681",
+    "wf_fa9264de-1f3"
+  ],
+  "session_ids": [
+    "baa61537-afcf-4969-935d-32436b14549f"
+  ],
+  "weights": {
+    "input": 1.0,
+    "cache_write": 1.25,
+    "cache_write_1h": 2.0,
+    "cache_read": 0.1,
+    "output": 5.0
+  },
+  "prices": {
+    "as_of": "2026-09-22",
+    "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "usd_per_mtok": {
+      "claude-fable-5-1": {
+        "input": 10.0,
+        "cache_write_5m": 12.5,
+        "cache_write_1h": 20.0,
+        "cache_read": 0.25,
+        "output": 50.0
+      },
+      "claude-fable-5": {
+        "input": 10.0,
+        "cache_write_5m": 12.5,
+        "cache_write_1h": 20.0,
+        "cache_read": 1.0,
+        "output": 50.0
+      },
+      "claude-opus-5-5": {
+        "input": 4.0,
+        "cache_write_5m": 5.0,
+        "cache_write_1h": 8.0,
+        "cache_read": 0.2,
+        "output": 20.0
+      },
+      "claude-opus-5": {
+        "input": 5.0,
+        "cache_write_5m": 6.25,
+        "cache_write_1h": 10.0,
+        "cache_read": 0.5,
+        "output": 25.0
+      },
+      "claude-opus-4-8": {
+        "input": 5.0,
+        "cache_write_5m": 6.25,
+        "cache_write_1h": 10.0,
+        "cache_read": 0.5,
+        "output": 25.0
+      },
+      "claude-sonnet-5": {
+        "input": 2.0,
+        "cache_write_5m": 2.5,
+        "cache_write_1h": 4.0,
+        "cache_read": 0.2,
+        "output": 10.0
+      },
+      "claude-sonnet-4-6": {
+        "input": 3.0,
+        "cache_write_5m": 3.75,
+        "cache_write_1h": 6.0,
+        "cache_read": 0.3,
+        "output": 15.0
+      },
+      "claude-haiku-4-5": {
+        "input": 1.0,
+        "cache_write_5m": 1.25,
+        "cache_write_1h": 2.0,
+        "cache_read": 0.1,
+        "output": 5.0
+      }
+    },
+    "web_search_usd": 0.01
+  },
+  "stages_present": [
+    "draft",
+    "lens",
+    "research"
+  ],
+  "complete": true,
+  "totals": {
+    "turns": 316,
+    "input": 642,
+    "output": 413101,
+    "cache_write": 2247757,
+    "cache_write_1h": 0,
+    "cache_read": 35967670,
+    "web": 0,
+    "web_search": 0,
+    "usd": 16.9452,
+    "unpriced_turns": 0
+  },
+  "weighted_total": 8472610,
+  "cost_usd": 16.95,
+  "by_stage": {
+    "draft": {
+      "agents": 5,
+      "usage": {
+        "turns": 110,
+        "input": 224,
+        "output": 194196,
+        "cache_write": 1132236,
+        "cache_write_1h": 0,
+        "cache_read": 16820939,
+        "web": 0,
+        "web_search": 0,
+        "usd": 8.1372,
+        "unpriced_turns": 0
+      },
+      "weighted": 4068593
+    },
+    "research": {
+      "agents": 6,
+      "usage": {
+        "turns": 190,
+        "input": 384,
+        "output": 118335,
+        "cache_write": 615602,
+        "cache_write_1h": 0,
+        "cache_read": 18003695,
+        "web": 0,
+        "web_search": 0,
+        "usd": 6.3239,
+        "unpriced_turns": 0
+      },
+      "weighted": 3161931
+    },
+    "lens": {
+      "agents": 4,
+      "usage": {
+        "turns": 16,
+        "input": 34,
+        "output": 100570,
+        "cache_write": 499919,
+        "cache_write_1h": 0,
+        "cache_read": 1143036,
+        "web": 0,
+        "web_search": 0,
+        "usd": 2.4841,
+        "unpriced_turns": 0
+      },
+      "weighted": 1242086
+    }
+  },
+  "by_model": {
+    "claude-sonnet-5": {
+      "agents": 15,
+      "usage": {
+        "turns": 316,
+        "input": 642,
+        "output": 413101,
+        "cache_write": 2247757,
+        "cache_write_1h": 0,
+        "cache_read": 35967670,
+        "web": 0,
+        "web_search": 0,
+        "usd": 16.9452,
+        "unpriced_turns": 0
+      },
+      "weighted": 8472610
+    }
+  },
+  "by_requested_tier": {
+    "sonnet": {
+      "agents": 15,
+      "usage": {
+        "turns": 316,
+        "input": 642,
+        "output": 413101,
+        "cache_write": 2247757,
+        "cache_write_1h": 0,
+        "cache_read": 35967670,
+        "web": 0,
+        "web_search": 0,
+        "usd": 16.9452,
+        "unpriced_turns": 0
+      },
+      "weighted": 8472610
+    }
+  },
+  "by_deliverable": {
+    "templates": {
+      "agents": 1,
+      "usage": {
+        "turns": 50,
+        "input": 102,
+        "output": 76881,
+        "cache_write": 375547,
+        "cache_write_1h": 0,
+        "cache_read": 9337134,
+        "web": 0,
+        "web_search": 0,
+        "usd": 3.5753,
+        "unpriced_turns": 0
+      },
+      "weighted": 1787654
+    },
+    "gap-question": {
+      "agents": 1,
+      "usage": {
+        "turns": 52,
+        "input": 106,
+        "output": 30783,
+        "cache_write": 110298,
+        "cache_write_1h": 0,
+        "cache_read": 5403859,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.6646,
+        "unpriced_turns": 0
+      },
+      "weighted": 832279
+    },
+    "companion": {
+      "agents": 1,
+      "usage": {
+        "turns": 6,
+        "input": 12,
+        "output": 60036,
+        "cache_write": 300129,
+        "cache_write_1h": 0,
+        "cache_read": 453809,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4415,
+        "unpriced_turns": 0
+      },
+      "weighted": 720734
+    },
+    "example": {
+      "agents": 1,
+      "usage": {
+        "turns": 25,
+        "input": 52,
+        "output": 30612,
+        "cache_write": 168446,
+        "cache_write_1h": 0,
+        "cache_read": 3544933,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4363,
+        "unpriced_turns": 0
+      },
+      "weighted": 718163
+    },
+    "published-logs": {
+      "agents": 1,
+      "usage": {
+        "turns": 39,
+        "input": 78,
+        "output": 22747,
+        "cache_write": 98205,
+        "cache_write_1h": 0,
+        "cache_read": 3783482,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.2298,
+        "unpriced_turns": 0
+      },
+      "weighted": 614917
+    },
+    "guide": {
+      "agents": 1,
+      "usage": {
+        "turns": 18,
+        "input": 36,
+        "output": 19730,
+        "cache_write": 164515,
+        "cache_write_1h": 0,
+        "cache_read": 2380367,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0847,
+        "unpriced_turns": 0
+      },
+      "weighted": 542366
+    },
+    "accuracy-teaching-point": {
+      "agents": 1,
+      "usage": {
+        "turns": 5,
+        "input": 12,
+        "output": 30099,
+        "cache_write": 223118,
+        "cache_write_1h": 0,
+        "cache_read": 489125,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9566,
+        "unpriced_turns": 0
+      },
+      "weighted": 478317
+    },
+    "neighbours": {
+      "agents": 1,
+      "usage": {
+        "turns": 37,
+        "input": 74,
+        "output": 15145,
+        "cache_write": 72666,
+        "cache_write_1h": 0,
+        "cache_read": 3048139,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9429,
+        "unpriced_turns": 0
+      },
+      "weighted": 471445
+    },
+    "agile-and-when-not": {
+      "agents": 1,
+      "usage": {
+        "turns": 31,
+        "input": 64,
+        "output": 16044,
+        "cache_write": 76125,
+        "cache_write_1h": 0,
+        "cache_read": 2764627,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9038,
+        "unpriced_turns": 0
+      },
+      "weighted": 451903
+    },
+    "keeping-the-log": {
+      "agents": 1,
+      "usage": {
+        "turns": 21,
+        "input": 42,
+        "output": 21546,
+        "cache_write": 87245,
+        "cache_write_1h": 0,
+        "cache_read": 1960575,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.8258,
+        "unpriced_turns": 0
+      },
+      "weighted": 412886
+    },
+    "canon": {
+      "agents": 1,
+      "usage": {
+        "turns": 10,
+        "input": 20,
+        "output": 12070,
+        "cache_write": 171063,
+        "cache_write_1h": 0,
+        "cache_read": 1043013,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.757,
+        "unpriced_turns": 0
+      },
+      "weighted": 378500
+    },
+    "citation-support": {
+      "agents": 1,
+      "usage": {
+        "turns": 4,
+        "input": 8,
+        "output": 23854,
+        "cache_write": 137340,
+        "cache_write_1h": 0,
+        "cache_read": 249629,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.6318,
+        "unpriced_turns": 0
+      },
+      "weighted": 315916
+    },
+    "meta": {
+      "agents": 1,
+      "usage": {
+        "turns": 11,
+        "input": 22,
+        "output": 6937,
+        "cache_write": 123599,
+        "cache_write_1h": 0,
+        "cache_read": 1104696,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.5994,
+        "unpriced_turns": 0
+      },
+      "weighted": 299675
+    },
+    "chaining-consistency": {
+      "agents": 1,
+      "usage": {
+        "turns": 4,
+        "input": 8,
+        "output": 26765,
+        "cache_write": 78738,
+        "cache_write_1h": 0,
+        "cache_read": 243787,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.5133,
+        "unpriced_turns": 0
+      },
+      "weighted": 256634
+    },
+    "dod-family-conformance": {
+      "agents": 1,
+      "usage": {
+        "turns": 3,
+        "input": 6,
+        "output": 19852,
+        "cache_write": 60723,
+        "cache_write_1h": 0,
+        "cache_read": 160495,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.3824,
+        "unpriced_turns": 0
+      },
+      "weighted": 191219
+    }
+  },
+  "by_attribution": {
+    "label": {
+      "agents": 15,
+      "usage": {
+        "turns": 316,
+        "input": 642,
+        "output": 413101,
+        "cache_write": 2247757,
+        "cache_write_1h": 0,
+        "cache_read": 35967670,
+        "web": 0,
+        "web_search": 0,
+        "usd": 16.9452,
+        "unpriced_turns": 0
+      },
+      "weighted": 8472610
+    }
+  },
+  "agents": [
+    {
+      "run": "wf_737c427b-681",
+      "agent_id": "a8fdc9a25aa75b675",
+      "label": "change-log/draft:templates",
+      "stage": "draft",
+      "deliverable": "templates",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 50,
+        "input": 102,
+        "output": 76881,
+        "cache_write": 375547,
+        "cache_write_1h": 0,
+        "cache_read": 9337134,
+        "web": 0,
+        "web_search": 0,
+        "usd": 3.5753,
+        "unpriced_turns": 0
+      },
+      "weighted": 1787654
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "ac5927fa14cd2a9b5",
+      "label": "change-log/research:gap-question",
+      "stage": "research",
+      "deliverable": "gap-question",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 52,
+        "input": 106,
+        "output": 30783,
+        "cache_write": 110298,
+        "cache_write_1h": 0,
+        "cache_read": 5403859,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.6646,
+        "unpriced_turns": 0
+      },
+      "weighted": 832279
+    },
+    {
+      "run": "wf_737c427b-681",
+      "agent_id": "a9446af231c5fdc94",
+      "label": "change-log/draft:companion",
+      "stage": "draft",
+      "deliverable": "companion",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 6,
+        "input": 12,
+        "output": 60036,
+        "cache_write": 300129,
+        "cache_write_1h": 0,
+        "cache_read": 453809,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4415,
+        "unpriced_turns": 0
+      },
+      "weighted": 720734
+    },
+    {
+      "run": "wf_737c427b-681",
+      "agent_id": "a8d6893a7fd3626ef",
+      "label": "change-log/draft:example",
+      "stage": "draft",
+      "deliverable": "example",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 25,
+        "input": 52,
+        "output": 30612,
+        "cache_write": 168446,
+        "cache_write_1h": 0,
+        "cache_read": 3544933,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.4363,
+        "unpriced_turns": 0
+      },
+      "weighted": 718163
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "a1b91feba38c3ab01",
+      "label": "change-log/research:published-logs",
+      "stage": "research",
+      "deliverable": "published-logs",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 39,
+        "input": 78,
+        "output": 22747,
+        "cache_write": 98205,
+        "cache_write_1h": 0,
+        "cache_read": 3783482,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.2298,
+        "unpriced_turns": 0
+      },
+      "weighted": 614917
+    },
+    {
+      "run": "wf_737c427b-681",
+      "agent_id": "a7d32f33a136988be",
+      "label": "change-log/draft:guide",
+      "stage": "draft",
+      "deliverable": "guide",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 18,
+        "input": 36,
+        "output": 19730,
+        "cache_write": 164515,
+        "cache_write_1h": 0,
+        "cache_read": 2380367,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0847,
+        "unpriced_turns": 0
+      },
+      "weighted": 542366
+    },
+    {
+      "run": "wf_0a25f0b4-510",
+      "agent_id": "a70ad18bdb0289065",
+      "label": "change-log/lens:accuracy-teaching-point",
+      "stage": "lens",
+      "deliverable": "accuracy-teaching-point",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 5,
+        "input": 12,
+        "output": 30099,
+        "cache_write": 223118,
+        "cache_write_1h": 0,
+        "cache_read": 489125,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9566,
+        "unpriced_turns": 0
+      },
+      "weighted": 478317
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "a1e455a0b91cd24f7",
+      "label": "change-log/research:neighbours",
+      "stage": "research",
+      "deliverable": "neighbours",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 37,
+        "input": 74,
+        "output": 15145,
+        "cache_write": 72666,
+        "cache_write_1h": 0,
+        "cache_read": 3048139,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9429,
+        "unpriced_turns": 0
+      },
+      "weighted": 471445
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "a8876c6276d6a2451",
+      "label": "change-log/research:agile-and-when-not",
+      "stage": "research",
+      "deliverable": "agile-and-when-not",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 31,
+        "input": 64,
+        "output": 16044,
+        "cache_write": 76125,
+        "cache_write_1h": 0,
+        "cache_read": 2764627,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.9038,
+        "unpriced_turns": 0
+      },
+      "weighted": 451903
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "a16a33b25a1d538e5",
+      "label": "change-log/research:keeping-the-log",
+      "stage": "research",
+      "deliverable": "keeping-the-log",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 21,
+        "input": 42,
+        "output": 21546,
+        "cache_write": 87245,
+        "cache_write_1h": 0,
+        "cache_read": 1960575,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.8258,
+        "unpriced_turns": 0
+      },
+      "weighted": 412886
+    },
+    {
+      "run": "wf_fa9264de-1f3",
+      "agent_id": "a84ef7921308226c8",
+      "label": "change-log/research:canon",
+      "stage": "research",
+      "deliverable": "canon",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 10,
+        "input": 20,
+        "output": 12070,
+        "cache_write": 171063,
+        "cache_write_1h": 0,
+        "cache_read": 1043013,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.757,
+        "unpriced_turns": 0
+      },
+      "weighted": 378500
+    },
+    {
+      "run": "wf_0a25f0b4-510",
+      "agent_id": "af2586cd0b18112d4",
+      "label": "change-log/lens:citation-support",
+      "stage": "lens",
+      "deliverable": "citation-support",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 4,
+        "input": 8,
+        "output": 23854,
+        "cache_write": 137340,
+        "cache_write_1h": 0,
+        "cache_read": 249629,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.6318,
+        "unpriced_turns": 0
+      },
+      "weighted": 315916
+    },
+    {
+      "run": "wf_737c427b-681",
+      "agent_id": "a0538e6ba6de3fbf4",
+      "label": "change-log/draft:meta",
+      "stage": "draft",
+      "deliverable": "meta",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 11,
+        "input": 22,
+        "output": 6937,
+        "cache_write": 123599,
+        "cache_write_1h": 0,
+        "cache_read": 1104696,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.5994,
+        "unpriced_turns": 0
+      },
+      "weighted": 299675
+    },
+    {
+      "run": "wf_0a25f0b4-510",
+      "agent_id": "a530a9cfa70f446dd",
+      "label": "change-log/lens:chaining-consistency",
+      "stage": "lens",
+      "deliverable": "chaining-consistency",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 4,
+        "input": 8,
+        "output": 26765,
+        "cache_write": 78738,
+        "cache_write_1h": 0,
+        "cache_read": 243787,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.5133,
+        "unpriced_turns": 0
+      },
+      "weighted": 256634
+    },
+    {
+      "run": "wf_0a25f0b4-510",
+      "agent_id": "a7dba8df126eb6018",
+      "label": "change-log/lens:dod-family-conformance",
+      "stage": "lens",
+      "deliverable": "dod-family-conformance",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "label",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 3,
+        "input": 6,
+        "output": 19852,
+        "cache_write": 60723,
+        "cache_write_1h": 0,
+        "cache_read": 160495,
+        "web": 0,
+        "web_search": 0,
+        "usd": 0.3824,
+        "unpriced_turns": 0
+      },
+      "weighted": 191219
+    }
+  ]
+}

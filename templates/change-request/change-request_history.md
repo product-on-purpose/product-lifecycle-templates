@@ -3,6 +3,16 @@
 Change log for the `change-request` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-09-28 - HHS keeps the request and the log apart
+
+**A correction, not a template change**, so the version stays 0.1.0. The companion said in three places, and
+the research log in two, that HHS's EPLC program merges the change request form and the change log, and one
+passage called this "a genuine, documented split in convention". The HHS plan template defines one shared list
+of data elements for both, but it keeps them as two artifacts, with a separate step in which "The Change Manager
+enters the CR into the CR Log." The `change-log` build found that step and checked it against the same Internet
+Archive capture this bundle's source [11] cites. Each corrected passage carries a dated note. No template,
+guide or example text changed, because none of them rested on the merged reading.
+
 ## 0.1.0 - 2026-09-25
 
 **Initial release.** Specced in

@@ -166,6 +166,39 @@
     },
     {
       "aliases": [
+        "change register",
+        "change management log",
+        "change request log",
+        "change control log"
+      ],
+      "approx_tokens": {
+        "full": 5950,
+        "lean": 3800
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "change-log",
+      "family": "governance-docs",
+      "id": "change-log",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Purpose and Boundary, Status Vocabulary, the Change Log table, and Authority and Escalation) when the team decides and closes its own changes without a formal delivery hand-off, a standing cumulative figure anyone asks for, or a named owner distinct from whoever runs the project. Use full when a sponsor or governance body will ask, weeks later, how far the baseline has actually moved in total, when the decision date and the delivery date genuinely diverge often enough that conflating them would mislead a reader, or when the log needs a named owner because more than one person could plausibly be asked to keep it; it adds Implementation and Traceability, Cumulative Effect, and Review and Ownership.",
+      "status": "beta",
+      "summary": "The standing register of every change requested against an agreed baseline and what was decided about each one: one row per request, never deleted, with status kept apart from decision. Distinct from the change request it tracks (one document per occasion) and from a software changelog (a release-notes artifact with no requester, decider, or decision field at all).",
+      "tags": [
+        "governance",
+        "change-management",
+        "change-control",
+        "register",
+        "baseline",
+        "pmbok"
+      ],
+      "title": "Change Log"
+    },
+    {
+      "aliases": [
         "change record",
         "change ticket"
       ],
@@ -1211,5 +1244,5 @@
       "title": "User Story"
     }
   ],
-  "count": 35
+  "count": 36
 }

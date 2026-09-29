@@ -65,10 +65,12 @@ Process ships a three-section form, submitter, PM analysis, and board decision, 
 Requirement, Change to Existing Requirement, Defect" and a separate management-certification block that is
 not the board's decision [[10]](#ref-10). Texas DIR's Project Change Request puts the approval block above
 the definition fields and asks for Approve or Reject under a column headed "Recommendation" [[12]](#ref-12).
-One body, HHS's EPLC program, merges the request form and the change log into a single field list rather than
-keeping them apart, "AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM
-AND CHANGE MANAGEMENT LOG" [[11]](#ref-11), a genuine documented alternative to the separate-artifacts
-convention PM² and the PMBOK errata both follow. A university PMO's completion guidance describes the
+One body, HHS's EPLC program, defines a single list of data elements for the request form and the change log
+together, "AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM AND CHANGE
+MANAGEMENT LOG" [[11]](#ref-11), and still keeps them as two artifacts, with its own step in which "The Change
+Manager enters the CR into the CR Log" [[11]](#ref-11). *(Corrected 2026-09-28: this sentence said HHS merges the
+form and the log into one field list, "a genuine documented alternative to the separate-artifacts convention";
+the list is shared, and the documents stay separate.)* A university PMO's completion guidance describes the
 sections a form should carry in prose rather than a template, and states plainly that the form is "logged
 and reviewed" by a separate body once submitted [[13]](#ref-13).
 
@@ -262,9 +264,11 @@ keeps the decision inside the same document (section 3), following the majority 
 than PM²'s split.
 
 **Is the request separate from the log?** PM²'s form is archived once logged [[8]](#ref-8), and the PMBOK
-errata treats the log as the separate register [[2]](#ref-2). HHS's EPLC program merges the two into one
-field list instead [[11]](#ref-11). This is a genuine, documented split in convention, not a mistake in one
-source; this bundle follows the separate-artifacts convention and names the merged one as an alternative.
+errata treats the log as the separate register [[2]](#ref-2). HHS's EPLC program shares one field list
+between the two but keeps them apart, with its own step for entering a request into the log [[11]](#ref-11), so
+HHS follows the separate-artifacts convention too, and so does this bundle. *(Corrected 2026-09-28: this paragraph
+called HHS's shared field list "a genuine, documented split in convention" and named a merged form as an
+alternative. No source this bundle read merges the two documents.)*
 
 **Are defects change requests?** The GSA form offers Defect as a type of change [[10]](#ref-10), and the CDC
 Unified Process form offers Enhancement or Defect [[9]](#ref-9). A practitioner source draws the opposite
@@ -368,9 +372,10 @@ treating the request as a defect.
 
 **Change request vs. the change log.** The request is not the log; PM²'s form is archived once logged into
 one [[8]](#ref-8), and the PMBOK errata describes the log as the register that collects submitted requests
-[[2]](#ref-2). HHS's EPLC program merges the two, a documented alternative rather than an error
-[[11]](#ref-11). A standing change log, if this library ever builds one, is a `governance-docs` candidate,
-not a variant of this bundle.
+[[2]](#ref-2). HHS's EPLC program shares one field list between them but keeps two artifacts
+[[11]](#ref-11). *(Corrected 2026-09-28: this read "merges the two, a documented alternative rather than an
+error".)* The standing change log is its own `governance-docs` bundle,
+[`change-log`](../change-log/change-log_guide.md), not a variant of this one.
 
 **Change request vs. IT service change (the neighbor).** A change to a running production system, reviewed
 by a change advisory board under ITIL or a Configuration Control Board under NIST's SecCM guidance, is this
@@ -437,7 +442,7 @@ the release numbering across this library's other worked examples is not yet int
 
 <a id="ref-10"></a>[10] U.S. General Services Administration. "[M3 Playbook Change Request Form Template](https://ussm.gsa.gov/assets/files/M3-Playbook-Change-Request-Form-Template.docx)." (accessed 2026-09-25). Field structure offering Defect as a type of change and a board decision vocabulary distinct from a certification block ("Type of Change"; "New Requirement, Change to Existing Requirement, Defect"; "Change Control Board Approval Information"; "Board Decision"). [primary]
 
-<a id="ref-11"></a>[11] U.S. Department of Health and Human Services, EPLC. "[Change Management Plan template](http://web.archive.org/web/20260226151438id_/https://www.hhs.gov/sites/default/files/ocio/eplc/EPLC%20Archive%20Documents/07%20-%20Change%20Management%20Plan/eplc_change_management_plan_template.doc)." (accessed 2026-09-25). Merges the change request form and the change log into one field list, the documented alternative to the separate-artifacts convention ("Change Request Form and Change Management Log"; "AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM AND CHANGE MANAGEMENT LOG"). Read from the Internet Archive; the live copy 403s. [primary]
+<a id="ref-11"></a>[11] U.S. Department of Health and Human Services, EPLC. "[Change Management Plan template](http://web.archive.org/web/20260226151438id_/https://www.hhs.gov/sites/default/files/ocio/eplc/EPLC%20Archive%20Documents/07%20-%20Change%20Management%20Plan/eplc_change_management_plan_template.doc)." (accessed 2026-09-25). Defines one field list for the change request form and the change log, and keeps them as two artifacts ("Change Request Form and Change Management Log"; "AT A MINIMUM, THE FOLLOWING DATA SHOULD BE INCLUDED ON THE PROJECT'S CHANGE REQUEST FORM AND CHANGE MANAGEMENT LOG"; "The Change Manager enters the CR into the CR Log."). Corrected 2026-09-28; this entry described the shared list as a merger of the two documents. Read from the Internet Archive; the live copy 403s. [primary]
 
 <a id="ref-12"></a>[12] Texas Department of Information Resources. "[PM Essentials Project Change Request Template](https://dir.texas.gov/sites/default/files/2021-08/PM%20Essentials%20Change%20Request%20Template_ver01%20(1).docx)." (accessed 2026-09-25). Approval block placed above the definition fields, Approve or Reject under a Recommendation column, and an Alternatives field ("Project Change Request"; "Recommendation"; "Alternatives"; "retained to memorialize any changes or denial of changes"). [primary]
 

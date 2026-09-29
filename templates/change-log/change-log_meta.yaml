@@ -1,0 +1,34 @@
+id: change-log
+title: Change Log
+summary: >-
+  The standing register of every change requested against an agreed baseline and what was decided about
+  each one: one row per request, never deleted, with status kept apart from decision. Distinct from the
+  change request it tracks (one document per occasion) and from a software changelog (a release-notes
+  artifact with no requester, decider, or decision field at all).
+doc_type: change-log
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Purpose and Boundary, Status Vocabulary, the Change Log table, and Authority and Escalation) when the team decides and closes its own changes without a formal delivery hand-off, a standing cumulative figure anyone asks for, or a named owner distinct from whoever runs the project. Use full when a sponsor or governance body will ask, weeks later, how far the baseline has actually moved in total, when the decision date and the delivery date genuinely diverge often enough that conflating them would mislead a reader, or when the log needs a named owner because more than one person could plausibly be asked to keep it; it adds Implementation and Traceability, Cumulative Effect, and Review and Ownership."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - change-management
+  - change-control
+  - register
+  - baseline
+  - pmbok
+related_templates: [change-request, issue-log, risk-register, raid-log, kpi-dashboard]
+aliases:
+  - change register
+  - change management log
+  - change request log
+  - change control log
+catalog_ref: 154
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-28
+license: Apache-2.0

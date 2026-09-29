@@ -31,7 +31,7 @@ design task" rather than "a spec-driven execution".
 | `definition-of-ready` | `definition-of-ready` | `standing-standards` | **Written 2026-09-23**; admission sources [retrieved and raw-checked the same day](#standing-standards-fourth-member-the-definition-of-ready-a-type-this-library-has-argued-against) | **Built 2026-09-23**, shipped in `v0.13.0`. Family and classification by [ADR 0058](decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md); [build report](../../bundle-builds/reports/definition-of-ready_v0.1.0.md) |
 | `announcement-internal-comms` | `announcement-internal-comms` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-the-internal-announcement-the-release-notes-guide-routes-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0059](decisions/0059-announcement-internal-comms-joins-delivery-docs.md), not the `communication-docs` family that forecast it; [build report](../../bundle-builds/reports/announcement-internal-comms_v0.1.0.md) |
 | `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
-| `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Not yet built.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
+| `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Built 2026-09-28.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
 | `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Not yet built.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) |
 | `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) reopens the family, which ADR 0035 had recorded as closed at two |
 | `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
@@ -1527,7 +1527,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 | PMI, *PMBOK Guide* 6th edition, errata (5th printing) | "The change log is used to record all submitted change requests." | PMI, hosted openly, no login wall |
 | European Commission / PM² Alliance, *PM² Project Management Methodology Guide* v3.1, Appendix B.7 | "A Change Log is used to document, monitor and control all project changes." Ships an actual 17-field template across four groups (Identification and Description, Assessment and Action, Approval, Implementation); one of its eight Status values, in the Identification and Description group, "Waiting for approval," was independently re-checked against the live PDF on 2026-09-27 and passes | **CC BY 4.0** ("Document licensed under CC BY 4.0 license," raw-checked) |
 | PM² Alliance, pm2.eu Artefacts listing | "template for Change Log document," "Free, downloadable and easy to edit" | Not independently confirmed on this listing page; the Guide it is drawn from is CC BY 4.0 |
-| Association for Project Management (APM), UK chartered body, glossary | "A record of all proposed changes to scope" (entry name "Change log (or log)"); independently confirms the register/log naming equivalence this candidate's own alias claims | Not stated |
+| Association for Project Management (APM), UK chartered body, glossary | "A record of all proposed changes to scope" (entry name "Change register (or log)"; a separate entry, "Change log", reads "A record of all project changes: proposed, authorised, rejected or deferred." Entry names corrected 2026-09-28 by the build's research); independently confirms the register/log naming equivalence this candidate's own alias claims | Not stated |
 | Connecticut Department of Social Services, Enterprise PMO, *Project Change Log* v1.1 | "Also known as Project Change Register." Ships a fielded, versioned, 11-column template | Not stated; presumed public-sector work product |
 | US Department of Health and Human Services, EPLC, *Change Management Practices Guide* | "All projects, regardless of type or size, should maintain a change log and regularly manage requested changes." | US federal government work, presumptively public domain |
 
@@ -1553,8 +1553,9 @@ mirror (IT Process Wiki) is rawcheck-passed but does not admit "change log" itse
 
 **PM² Appendix B.7** (17 fields, four groups): Identification and Description (ID, Category, Title,
 Description, Status, Requested by, Date Identified); Assessment and Action (Action Details, Size,
-Priority); Approval (Target Delivery Date, Escalation, Decision, Decided by, Decision Date); Implementation
-(Actual Delivery Date, Traceability and Comments). Its eight status values include "Waiting for approval,"
+Priority, Target Delivery Date); Approval (Escalation, Decision, Decided by, Decision Date); Implementation
+(Actual Delivery Date, Traceability and Comments). *(Corrected 2026-09-28: this placed Target Delivery Date in
+the Approval group; Appendix B.7 places it in Assessment and Action.)* Its eight status values include "Waiting for approval,"
 independently re-checked against the live PDF on 2026-09-27, and "Merged," which matches PM²'s own
 four-decision vocabulary already adopted by `change-request` ("There are four possible decisions: approve,
 reject, postpone or merge"). **Connecticut DSS** ships 11 columns, a different seven-value status list, and
@@ -1723,8 +1724,10 @@ Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), bo
   matching `issue-log`'s and `change-request`'s own corrected values, and cite ITIL as a named neighbour in
   the companion instead of as a source.
 - **Aliases should gain sourced terms, not lose the sourced ones already there.** `change register` is
-  independently confirmed by APM's own glossary entry, "Change log (or log)," and should be kept.
+  independently confirmed by APM's own glossary entry, "Change register (or log)," and should be kept.
   `change control log` has no source in this pass; **recommend it be sourced before the build or dropped**.
+  *(2026-09-28: the entry name is corrected from "Change log (or log)". The build sourced `change control log`
+  to one named practitioner, and no public body; see `change-log_research-log.md`.)*
   Recommend adding `change management log` and `change request log`, both directly attested by HHS's own
   named documents across three separate files.
 - **`owner: "PM / Change Manager"` is an open question, not a correction.** Nothing read this pass either

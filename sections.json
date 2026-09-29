@@ -1111,6 +1111,231 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "change-log",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "cadence"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "full"
+              ],
+              "name": "log_keeper"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "project_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-boundary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_boundary"
+              ],
+              "title": "Purpose and Boundary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "status-vocabulary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_values",
+                "priority_scale",
+                "status_values"
+              ],
+              "title": "Status Vocabulary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "change-log",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "baseline_artifact",
+                "baseline_version",
+                "category",
+                "change_description",
+                "change_id",
+                "decided_by_date",
+                "decision_and_reason",
+                "priority",
+                "requested_by_date",
+                "status"
+              ],
+              "title": "Change Log"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": false,
+              "id": "authority-and-escalation",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "authority",
+                "escalation_record",
+                "escalation_threshold"
+              ],
+              "title": "Authority and Escalation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "implementation-and-traceability",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "actual_date",
+                "change_id",
+                "links",
+                "target_date",
+                "updated_artifact_version"
+              ],
+              "title": "Implementation and Traceability"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "cumulative-effect",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cumulative_effect"
+              ],
+              "title": "Cumulative Effect"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "review-and-ownership",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_and_ownership"
+              ],
+              "title": "Review and Ownership"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "change-request",
       "default_format": "default",
       "formats": {
@@ -9080,7 +9305,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 35,
-  "frontmatter_count": 233,
-  "section_count": 296
+  "count": 36,
+  "frontmatter_count": 238,
+  "section_count": 303
 }

@@ -14,6 +14,16 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`change-log`, the 36th bundle and the fifth `governance-docs` member**, by
+  [ADR 0061](docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md). The
+  standing register behind `change-request`: one row per request against a named baseline, rejected and
+  postponed rows kept, and the decision recorded apart from the status, following PM²'s Appendix B.7 (CC BY
+  4.0). Lean carries Purpose and Boundary, Status Vocabulary, the Change Log and Authority and Escalation;
+  full adds Implementation and Traceability, Cumulative Effect and Review and Ownership. Cumulative Effect
+  came from the build's gap question and passed decision procedure 12 on a named source. The worked
+  example is the Reporting Platform Modernization program's own log, carrying CR-SV-01 exactly as
+  `change-request_example.md` records it. Forty sources, all fetched-and-verified; every quotation was
+  checked against the source's raw text.
 - **Specs for three Tier-2 types in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, from one admission
   sweep over five candidates on 2026-09-27, with every returned quotation checked against the source's raw
   text. The **change log** (bundle id `change-log`) is admitted on PMI's PMBOK errata, the European
@@ -39,12 +49,31 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Catalog entry 154 corrected** in `catalog.md` and `atlas/catalog-data.json`: methodology `generic`, not
+  `PMBOK/ITIL`, because ITIL defines a Change Record and a Change Schedule but no change log; the
+  relationship ran backwards (the change request feeds the log, not the reverse); two aliases added from
+  HHS and UCOP.
+- **`release-notes`' guide routes a reader looking for a project's register of requested changes to
+  `change-log`**, because "changelog" is already one of its aliases.
 - **Contracts:** `governance-docs` to 0.3.0, `standing-standards` to 0.4.0 and `discovery-docs` to 0.2.0, each
   with a dated change note; `communication-docs` carries a dated correction to its forecast. ADR 0035 carries a
   pointer to ADR 0063. ADR count 60 -> 65 across markers and prose.
 - **`status-report` now routes a single-recommendation document to "a decision paper"**, not "a
   steering-committee or decision paper", in its guide and the matching companion heading, because the
   steering committee pack is declined.
+
+### Fixed
+
+- **`change-request` said in seven places that HHS merges the change request form and the change log.** The
+  HHS plan template shares one list of data elements between them and keeps two documents, with its own
+  step for entering a request into the log. Companion and research log carry dated corrections; the
+  bundle's history records it without a version bump.
+- **`tools/source-cache.py` on Windows.** `get` crashed on any cached page holding a character outside
+  cp1252 and exited 1, the code for a miss, so an agent re-fetched pages it already had; `put` from
+  standard input stored UTF-8 text garbled. Every standard stream is now UTF-8. Two cached APM pages that
+  carried 2,090 garbled sequences between them were repaired in the local cache.
+- **`tier2-specs.md`'s change-log spec** misnamed APM's two glossary entries and placed PM²'s Target
+  Delivery Date in the wrong field group; both carry dated corrections.
 
 ## [0.14.0] - 2026-09-25
 
