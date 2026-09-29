@@ -15,8 +15,7 @@ and is corrected: [38] reads "Slide 6 describes the business impact of delaying 
 the agent had written "This slide". Two "[sic]" fragments of a GitLab template were dropped as trivia, a four-row table
 in [37] that an agent flattened into prose is quoted cell by cell, and a list in [21] whose separators came from a text
 conversion is quoted as its lead sentence and items. One of the 22 was dropped although verbatim: a vendor survey
-percentage in [36] whose method nobody read. Eight quotations were added from the main loop's own checks. **270 quotations remain:
-249 pass as normalized substrings and 21 are verbatim apart from the rendering artifacts above.**
+percentage in [36] whose method nobody read. Twenty-six quotations were added from the main loop's own checks, eighteen of them section headings and outcome-state names that the companion must be able to cite by source. **288 quotations remain: 267 pass as normalized substrings and 21 are verbatim apart from the rendering artifacts above.**
 
 ---
 
@@ -75,12 +74,20 @@ template in the readiness project." This bundle follows [7] and describes [6] as
 
 ## The admission record
 
-**[ADR 0048](../../docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md)'s bar is met by four
+**[ADR 0048](../../docs/internal/decisions/0048-one-named-source-clears-the-admission-test.md)'s bar is met by three
 bodies that publish the document**: [5], Fowler's Appendix A ("This will be a checklist to run over all microservices -
-manually or in an automated way."); [6], GitLab's issue template, three maturity gates and 69 items; [9] to [12],
-Mercari's Production Readiness Check, "which is required for all services before receiving real production traffic";
-and [38], the US Federal Student Aid office's PRR Process Description, Version 26.0. [1] describes a checklist Google
-maintains without publishing it; [3], [4], [17] to [24], [25] and [27] describe the practice.
+manually or in an automated way."); [6], GitLab's issue template, three maturity gates and 69 items; and [9] to [12],
+Mercari's Production Readiness Check, "which is required for all services before receiving real production traffic".
+[1] describes a checklist Google maintains without publishing it; [3], [4], [17] to [24], [25] and [27] describe the
+practice.
+
+**[38] is not counted toward admission, and this is the rule for what the bundle takes from it.** [38] publishes a
+document named PRR, but it reviews each release before implementation, which is the launch moment. **This bundle
+takes from [38] only what any readiness review needs**: evidence for each item, a reason for every not-applicable
+answer, a sign-off that names the open issues it accepts, and a signatory that rises with risk. **It leaves [38]'s
+release-moment content** (roll-back activation criteria, the business cost of delay, the configuration check after
+implementation, the workforce-relations review) **to `launch-coordination-checklist` and `runbook`.** The companion
+must cite [38] only for the first list.
 
 **Licences decide what this bundle may adapt.** [14] is MIT ("MIT License", "Copyright (c) 2020 Mercari, Inc."), so
 Mercari's evidence rule and not-applicable rule may be adapted with attribution. [1] and [2] are CC BY-NC-ND 4.0, which
@@ -162,8 +169,8 @@ The bundle is the standing questionnaire; the worked example is one filled revie
 
 **The honest framing.** A production readiness review asks whether a service can be run, before someone who did not
 build it takes on running it. Google named it and made it the first step of SRE engagement ([1]: "A PRR is considered a
-prerequisite for an SRE team to accept responsibility for managing the production aspects of a service."). Four bodies
-publish the document ([5], [6], [9] to [12], [38]); everything past the core varies: when it runs, how often, who
+prerequisite for an SRE team to accept responsibility for managing the production aspects of a service."). Three bodies
+publish the document ([5], [6], [9] to [12]); everything past the core varies: when it runs, how often, who
 reviews, what the outcome is called, and how depth is tiered. The name collides with a hardware milestone ([32], [33])
 and, in one agency's use, with a release go-live review ([38]).
 
@@ -212,8 +219,9 @@ and, in one agency's use, with a release go-live review ([38]).
   of hoops that a team has to jump through to launch their service."
 - **Forgetting the humans.** [35]: "This is one of the biggest antipatterns: forgetting the humans." The talk's point is
   that the time the owning team spends with the system is the value, not the filled form.
-- **Drift after a one-time review.** [21]'s annual review exists to verify "that nothing has changed within their
-  systems"; [4] is reconsidering its one-time design. [36]'s survey figure is not used.
+- **Drift after a one-time review.** [39] names it outright: "**Periodically** (approximately once per year) -
+  Ensure operations haven't drifted but improved over time". [21]'s annual review exists for the same reason, and [4]
+  is reconsidering its one-time design. [36]'s survey figure is not used.
 
 **What this bundle must not say:** that the launch checklist is cross-functional and the PRR engineering-only (Appendix
 E [28] refutes it); that chapter 32 calls the launch coordination team a "lighter-weight alternative" (not on the page);
@@ -281,9 +289,14 @@ is part of an SRE-lineage PRR; any build or release number for `dashboard-servic
 - **It is not the launch checklist, a Definition of Done, a CAB, or a hardware production review** ([28], [29], [30],
   [31], [32], [33]).
 
-**The example.** Per the spec: Acme Analytics' Platform team asks a newly formed SRE function to take over production
-ownership of `dashboard-service`, and the review on **2026-08-22** decides whether SRE accepts. Dana Osei (Staff
-Engineer, Platform) reviews, from outside the service's own team; Marcus Bell answers as the service owner. It may cite
+**The example.** Acme Analytics' Reporting team, which owns `dashboard-service` (`runbook_example.md` names Marcus
+Bell, Staff Engineer, Reporting, as its owner), asks a newly formed SRE function to take over its production
+ownership, and the review on **2026-08-22** decides whether SRE accepts. *(The spec says the Platform team asks; the
+service belongs to Reporting, so Reporting asks.)* **Two reviewers, both outside Reporting**, following [34]'s "two
+reviewers tends to be the sweet spot" and satisfying both reviewer models in contested item 3: **Ines Halvorsen**, an
+engineer in the new SRE function, which is the team [1] says conducts the review, and **Dana Osei** (Staff Engineer,
+Platform), the experienced outside engineer of [4]. Marcus Bell answers as the service owner. The example states this
+choice in its Reviewer and Authority section rather than leaving it implied. It may cite
 that DEF-2291 happened on 2026-07-13 and that a regression guard and an entitlement-audit reconciliation job exist as a
 result (`runbook_example.md`), as evidence for monitoring and on-call rows. **It must not repeat the launch checklist
 example's own checks** (the permission matrix, the dashboard-scoped kill switch), **and it cites no build or release
@@ -296,7 +309,9 @@ drafted templates for Acme, Dana Osei, Marcus Bell, Sam Okafor, Anjali Rao, Priy
 
 **The aliases.** Keep `PRR`. Add `production readiness checklist` and `PRC` ([9]'s own name, "Production Readiness
 Check (PRC)"), `SRE entrance review` and `SER` ([3]), and `operational readiness review` and `ORR` ([17]), which names
-the same practice at AWS. Drop `launch readiness review`, which no source read uses.
+AWS's version of the practice. AWS never calls it a PRR, and [17] describes it as "a complementary process to
+Well-Architected", not to a PRR; the companion says so. The catalog has no separate ORR entry for the alias to collide
+with. Drop `launch readiness review`, which no source read uses.
 
 **Catalog corrections for the landing:** aliases as above; relationships gain `Launch Coordination Checklist` and
 `Runbook`, and `runbook`'s gain `PRR`; timing reads "before go-live", which [1] contradicts ("can be started at any point
@@ -399,6 +414,15 @@ Quotable: "Once the MR has been sent out for review, add a `~"Readiness::*` scop
 Quotable: "If the feature will remain at the current maturity level for an uncertain amount of time, close the issue and add a `~"workflow-infra::done"` label to the issue."
 Quotable: "Link to the troubleshooting runbooks."
 Quotable: "Link to an example of an alert and a corresponding runbook."
+Quotable: "Experiment"
+Quotable: "Beta"
+Quotable: "General Availability"
+Quotable: "Monitoring and Alerting"
+Quotable: "Deployment"
+Quotable: "Backup, Restore, DR and Retention"
+Quotable: "Performance, Scalability and Capacity Planning"
+Quotable: "Security Considerations"
+Quotable: "Operational Risk"
 
 **[7] GitLab Inc. - gl-infra/readiness project README (archived).** primary. **fetched-and-verified.**
 `https://gitlab.com/gitlab-com/gl-infra/readiness/-/raw/master/README.md`
@@ -455,6 +479,12 @@ Quotable: "Please note that all items in the design checklist that were verified
 Quotable: "Manual Scale | It can be manually scaled horizontally to handle changes in workload. | :white_check_mark: | | |"
 Quotable: "Auto Scale ... | | :white_check_mark: | :white_check_mark: |"
 Quotable: "It has OnCall playbooks."
+Quotable: "Maintainability"
+Quotable: "Observability"
+Quotable: "Reliability"
+Quotable: "Security"
+Quotable: "Accessibility"
+Quotable: "Data Storage"
 
 **[13] Mercari, Inc., `production-readiness-level.md` (production-readiness-checklist repository).** practitioner. **fetched-and-verified.**
 `https://raw.githubusercontent.com/mercari/production-readiness-checklist/master/docs/references/production-readiness-level.md`
@@ -708,6 +738,9 @@ Quotable: "The service owner owns readiness. Reviewers challenge evidence and ap
 Quotable: "A practical gate model has three levels: Blocking ... Conditional ... Advisory ..."
 Quotable: "Tailor this list to the change. ... Requiring the same evidence from a text-only user-interface change and a cross-region data migration makes teams route around the process."
 Quotable: "Do not add a question merely because something once went wrong. State the failure it prevents, the evidence that answers it, and the launch types for which it applies."
+Quotable: "Ready with conditions"
+Quotable: "Not ready"
+Quotable: "Withdrawn"
 
 ### Dimension 6: The gap question - production-readiness-review
 
