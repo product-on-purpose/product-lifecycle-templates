@@ -3,13 +3,12 @@
   "bundle": "definition-of-ready",
   "template_version": "0.1.0",
   "attribution_confidence": "high",
-  "agents_total": 18,
-  "agents_reliably_attributed": 18,
-  "workflow_runs": 4,
+  "agents_total": 15,
+  "agents_reliably_attributed": 15,
+  "workflow_runs": 3,
   "run_ids": [
     "wf_4ed80d2a-f68",
     "wf_614bfe6d-c0e",
-    "wf_84fde651-a47",
     "wf_f6fe1ff4-c9b"
   ],
   "session_ids": [
@@ -88,24 +87,23 @@
   "stages_present": [
     "draft",
     "lens",
-    "other",
     "research"
   ],
   "complete": true,
   "totals": {
-    "turns": 311,
-    "input": 636,
-    "output": 355237,
-    "cache_write": 1843355,
+    "turns": 251,
+    "input": 516,
+    "output": 317651,
+    "cache_write": 1559542,
     "cache_write_1h": 0,
-    "cache_read": 28659860,
+    "cache_read": 23078713,
     "web": 0,
     "web_search": 0,
-    "usd": 13.894,
+    "usd": 11.6921,
     "unpriced_turns": 0
   },
-  "weighted_total": 6947001,
-  "cost_usd": 13.89,
+  "weighted_total": 5846070,
+  "cost_usd": 11.69,
   "by_stage": {
     "draft": {
       "agents": 5,
@@ -154,58 +152,42 @@
         "unpriced_turns": 0
       },
       "weighted": 1247198
-    },
-    "other": {
-      "agents": 3,
-      "usage": {
-        "turns": 60,
-        "input": 120,
-        "output": 37586,
-        "cache_write": 283813,
-        "cache_write_1h": 0,
-        "cache_read": 5581147,
-        "web": 0,
-        "web_search": 0,
-        "usd": 2.2019,
-        "unpriced_turns": 0
-      },
-      "weighted": 1100931
     }
   },
   "by_model": {
     "claude-sonnet-5": {
-      "agents": 18,
+      "agents": 15,
       "usage": {
-        "turns": 311,
-        "input": 636,
-        "output": 355237,
-        "cache_write": 1843355,
+        "turns": 251,
+        "input": 516,
+        "output": 317651,
+        "cache_write": 1559542,
         "cache_write_1h": 0,
-        "cache_read": 28659860,
+        "cache_read": 23078713,
         "web": 0,
         "web_search": 0,
-        "usd": 13.894,
+        "usd": 11.6921,
         "unpriced_turns": 0
       },
-      "weighted": 6947001
+      "weighted": 5846070
     }
   },
   "by_requested_tier": {
     "sonnet": {
-      "agents": 18,
+      "agents": 15,
       "usage": {
-        "turns": 311,
-        "input": 636,
-        "output": 355237,
-        "cache_write": 1843355,
+        "turns": 251,
+        "input": 516,
+        "output": 317651,
+        "cache_write": 1559542,
         "cache_write_1h": 0,
-        "cache_read": 28659860,
+        "cache_read": 23078713,
         "web": 0,
         "web_search": 0,
-        "usd": 13.894,
+        "usd": 11.6921,
         "unpriced_turns": 0
       },
-      "weighted": 6947001
+      "weighted": 5846070
     }
   },
   "by_deliverable": {
@@ -305,22 +287,6 @@
       },
       "weighted": 452032
     },
-    "3": {
-      "agents": 1,
-      "usage": {
-        "turns": 29,
-        "input": 58,
-        "output": 11403,
-        "cache_write": 78247,
-        "cache_write_1h": 0,
-        "cache_read": 2596619,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.8291,
-        "unpriced_turns": 0
-      },
-      "weighted": 414544
-    },
     "contents-and-structure": {
       "agents": 1,
       "usage": {
@@ -352,38 +318,6 @@
         "unpriced_turns": 0
       },
       "weighted": 401969
-    },
-    "2": {
-      "agents": 1,
-      "usage": {
-        "turns": 18,
-        "input": 36,
-        "output": 12401,
-        "cache_write": 86588,
-        "cache_write_1h": 0,
-        "cache_read": 1742269,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.689,
-        "unpriced_turns": 0
-      },
-      "weighted": 344503
-    },
-    "1": {
-      "agents": 1,
-      "usage": {
-        "turns": 13,
-        "input": 26,
-        "output": 13782,
-        "cache_write": 118978,
-        "cache_write_1h": 0,
-        "cache_read": 1242259,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.6838,
-        "unpriced_turns": 0
-      },
-      "weighted": 341884
     },
     "the-dispute": {
       "agents": 1,
@@ -500,20 +434,20 @@
   },
   "by_attribution": {
     "label": {
-      "agents": 18,
+      "agents": 15,
       "usage": {
-        "turns": 311,
-        "input": 636,
-        "output": 355237,
-        "cache_write": 1843355,
+        "turns": 251,
+        "input": 516,
+        "output": 317651,
+        "cache_write": 1559542,
         "cache_write_1h": 0,
-        "cache_read": 28659860,
+        "cache_read": 23078713,
         "web": 0,
         "web_search": 0,
-        "usd": 13.894,
+        "usd": 11.6921,
         "unpriced_turns": 0
       },
-      "weighted": 6947001
+      "weighted": 5846070
     }
   },
   "agents": [
@@ -668,31 +602,6 @@
       "weighted": 452032
     },
     {
-      "run": "wf_84fde651-a47",
-      "agent_id": "ae3b08257df22718a",
-      "label": "definition-of-ready/sweep:3",
-      "stage": "other",
-      "deliverable": "3",
-      "model": "claude-sonnet-5",
-      "requested_model": "sonnet",
-      "attribution": "label",
-      "confidence": "high",
-      "file_written": "",
-      "usage": {
-        "turns": 29,
-        "input": 58,
-        "output": 11403,
-        "cache_write": 78247,
-        "cache_write_1h": 0,
-        "cache_read": 2596619,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.8291,
-        "unpriced_turns": 0
-      },
-      "weighted": 414544
-    },
-    {
       "run": "wf_4ed80d2a-f68",
       "agent_id": "ad1dedd2061908be8",
       "label": "definition-of-ready/research:contents-and-structure",
@@ -741,56 +650,6 @@
         "unpriced_turns": 0
       },
       "weighted": 401969
-    },
-    {
-      "run": "wf_84fde651-a47",
-      "agent_id": "ada2c5d76f26d6cd9",
-      "label": "definition-of-ready/sweep:2",
-      "stage": "other",
-      "deliverable": "2",
-      "model": "claude-sonnet-5",
-      "requested_model": "sonnet",
-      "attribution": "label",
-      "confidence": "high",
-      "file_written": "",
-      "usage": {
-        "turns": 18,
-        "input": 36,
-        "output": 12401,
-        "cache_write": 86588,
-        "cache_write_1h": 0,
-        "cache_read": 1742269,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.689,
-        "unpriced_turns": 0
-      },
-      "weighted": 344503
-    },
-    {
-      "run": "wf_84fde651-a47",
-      "agent_id": "ad02795c44b050fd6",
-      "label": "definition-of-ready/sweep:1",
-      "stage": "other",
-      "deliverable": "1",
-      "model": "claude-sonnet-5",
-      "requested_model": "sonnet",
-      "attribution": "label",
-      "confidence": "high",
-      "file_written": "",
-      "usage": {
-        "turns": 13,
-        "input": 26,
-        "output": 13782,
-        "cache_write": 118978,
-        "cache_write_1h": 0,
-        "cache_read": 1242259,
-        "web": 0,
-        "web_search": 0,
-        "usd": 0.6838,
-        "unpriced_turns": 0
-      },
-      "weighted": 341884
     },
     {
       "run": "wf_4ed80d2a-f68",

@@ -169,6 +169,12 @@ QUOTED_RE = re.compile(r"for\s+[`\"']([a-z0-9-]+)[`\"']")
 # A judge panel scoring finished documents is not a bundle build and must not be billed to one.
 EXCLUDE_RE = re.compile(r"blind panel|judge (?:on|scoring)|evals[\\/]rubrics", re.I)
 STAGE_RE = re.compile(r"^(research|draft|lens|review|verify)\b", re.I)
+# Work done when a bundle LANDS rather than to build it: agents that sweep the repository's counts
+# once the bundle is ready to merge. Recognised by label alone (<bundle>/sweep:N), never by prompt
+# text, which a build prompt can share. The maintainer's rule of 2026-09-29: a report's totals count
+# only the build agents. Folding a sweep in made builds incomparable, because whether a landing
+# needed agents to sweep depends on how the counts were swept, not on the bundle.
+LANDING_STAGES = ("sweep",)
 
 
 def first_prompt(path, head=600):
@@ -235,7 +241,7 @@ def attribute(label, file_written, head, ids, patterns):
 def stage_of(label, head):
     if label:
         prefix = label.split("/")[-1].split(":")[0]
-        if STAGE_RE.match(prefix):
+        if STAGE_RE.match(prefix) or prefix.lower() in LANDING_STAGES:
             return prefix.lower()
     low = head.lower()
     if low.lstrip().startswith("research the") or "research the origins" in low[:200]:
@@ -740,10 +746,15 @@ def do_ingest(dry_run):
               + OFF)
         return 1
     resolve_runs(agents)
-    by_bundle = {}
+    # Landing agents are split off here, before build_report(), and not filtered out of its totals
+    # afterwards: run_ids, workflow_runs and session_ids are derived from the same list, and a sweep
+    # left in it would still add its run to the headline's run count.
+    by_bundle, landing = {}, {}
     for a in agents:
-        if a["bundle"]:
-            by_bundle.setdefault(a["bundle"], []).append(a)
+        if not a["bundle"]:
+            continue
+        into = landing if a["stage"] in LANDING_STAGES else by_bundle
+        into.setdefault(a["bundle"], []).append(a)
     if not by_bundle:
         print(RED + "NO DATA" + OFF + "  %d agents found, none reliably attributed." % len(agents))
         return 1
@@ -763,6 +774,10 @@ def do_ingest(dry_run):
           % (verb, len(written), len(agents), root))
     for bundle, w, count in sorted(written, key=lambda t: -t[1]):
         print("      %-36s %14s weighted  (%d agents)" % (bundle, n(w), count))
+    if landing:
+        print(DIM + "      landing-sweep agents left out of the totals above: %s" % ", ".join(
+            "%s %d (%s)" % (b, len(rows), usd(sum(a["usage"]["usd"] for a in rows)))
+            for b, rows in sorted(landing.items())) + OFF)
     if unattributed:
         skipped = {}
         for a in unattributed:
