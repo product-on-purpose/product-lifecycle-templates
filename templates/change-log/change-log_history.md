@@ -49,8 +49,8 @@ Three or more of the published field lists this research read share an identifie
 raised date, and a status; a smaller, working register needs no more than that plus a decider and a threshold, which is what
 lean carries. A second weight earned its place on the same evidence the guide's Pick a variant section
 states: a sponsor or governance body eventually asking how far a baseline has moved in total, a decision
-date and a delivery date that genuinely diverge, or a log that needs a named owner distinct from whoever
-runs the project. Full adds exactly the three sections that answer those three signals, and nothing else.
+date and a delivery date that genuinely diverge, or a log that needs a named owner because more than one
+person could plausibly be asked to keep it. Full adds exactly the three sections that answer those three signals, and nothing else.
 
 ### PRINCE2, named as the family's one stated exception
 

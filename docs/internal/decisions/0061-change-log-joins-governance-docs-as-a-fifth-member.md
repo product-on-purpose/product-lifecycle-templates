@@ -45,7 +45,7 @@ consulted: [claude]
 ## Context and Problem Statement
 
 Two shipped bundles already send a reader to a standing change log the library does not ship.
-`change-request_companion.md:369-373` states plainly, from its own side: "A standing change log, if this
+`change-request_companion.md:369-373` stated plainly, from its own side: "A standing change log, if this
 library ever builds one, is a `governance-docs` candidate, not a variant of this bundle," and its lean and
 full templates both tell a filler "this document is not the change log; it feeds one"
 (`change-request_template-lean.md:45`). `issue-log_companion.md:358-361` and
@@ -54,7 +54,9 @@ the convention their own Links to Other Logs section records against. `docs/inte
 excludes the type from that family by name: "it does not admit the standing register of such requests (a
 change log), which is a `governance-docs` instrument if it is ever built." No `future:` tag records any of
 this, because none of these references is a promise tag; they are boundary statements the library has
-already shipped without a target to point at.
+already shipped without a target to point at. *(Remapped 2026-09-28: the change-log landing rewrote the
+quoted paragraph, now `change-request_companion.md:373-378`, to name the built bundle: "The standing
+change log is its own `governance-docs` bundle, `change-log`, not a variant of this one.")*
 
 A family is a contract, so the family decides the candidate's obligations and must be settled before its
 spec is finished. The type is a candidate in the catalog (`id: change-log-governance`, `category:
@@ -81,7 +83,7 @@ it as written; the other eight exclude it.
 
 1. **`governance-docs`, `classification: utility`, as a fifth member.** Chosen.
 2. **No bundle: the change request's own Implementation and Traceability section is the change log.**
-   The library's own shipped position rejects this. `change-request_companion.md:369-373` and
+   The library's own shipped position rejects this. `change-request_companion.md:373-378` and
    `change-request_template-lean.md:45` both state the request "feeds" a log rather than being one, and
    PM²'s own methodology guide documents the two as separate, paired artifacts throughout its process
    narrative.

@@ -27,7 +27,10 @@
 // .mdx. The brace hazard that argued for .md is real only for UNFENCED content: across all 30
 // bundles (re-checked at 36 on 2026-09-28) the guide files contain zero braces and zero tags, templates are always fenced, and
 // the 1,907 tag-like strings in companions are <a id="ref-N"> citation anchors, which MDX
-// treats as intrinsic elements. Nothing inlined here can open a JSX expression.
+// treats as intrinsic elements. Nothing inlined here can open a JSX expression. (At 36 the
+// companions carry 2,350 anchor tags, open and close, plus three bracketed placeholders in prose:
+// <date> in rfc and <proceed/not proceed> twice in test-summary-report. Harmless, because
+// companions are in UNPUBLISHED_ROLES and are linked, never inlined.)
 //
 // WHY NO ROUTE MANIFEST. The donor emits none. scripts/check-route-parity.mjs reads a
 // COMMITTED baseline snapshotted from a finished build, so a generator that wrote one would be

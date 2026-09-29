@@ -1458,7 +1458,9 @@ recorded, not implied:
   [[8]](#ref-8), and the PMBOK errata describes the log as the register that collects submitted requests
   [[2]](#ref-2). HHS's EPLC program merges the two, a documented alternative rather than an error
   [[11]](#ref-11). A standing change log, if this library ever builds one, is a `governance-docs`
-  candidate, not a variant of this bundle."
+  candidate, not a variant of this bundle." *(As it stood 2026-09-27. The change-log landing rewrote
+  this paragraph on 2026-09-28, now `change-request_companion.md:373-378`: HHS "shares one field list
+  between them but keeps two artifacts", and the closing sentence names the built bundle.)*
 - `change-request_template-lean.md:45`: "This document is not the change log; it feeds one."
 - `change-request_template-full.md:23,242-254`: the full template's WHY and GOOD text both name the log as
   the request's destination once decided.
@@ -1587,7 +1589,7 @@ Provisional, and expected to move once a build's own research runs:
 
 - **Not the change request (the per-instance document).** Three independent sources agree the log is the
   cumulative register and the request is the document that feeds one row into it: PM² documents a change
-  "via a Change Request Form and in the Change Log" (`change-request_research-log.md:286`, already cited
+  "via a Change Request Form and in the Change Log" (`change-request_research-log.md:289`, already cited
   by the sibling bundle, not re-verified fresh in this pass); the PMBOK errata lists "Change log" and
   "Approved change requests" as two separate outputs; HHS's own Change Management Plan template defines one
   shared list of data elements for the "Change Request Form and Change Management Log", yet keeps two
@@ -1702,8 +1704,8 @@ to re-decide:
 - `last_reviewed` (or equivalent frontmatter) should sit at or after 2026-07-18, the decision date, so the
   log reads as current with respect to its own one entry.
 
-**A sibling sentence the landing PR corrects.** `change-request_companion.md:371-372` says "HHS's EPLC
-program merges the two", meaning the request form and the log. Both readings of the HHS plan template are
+**A sibling sentence the landing PR corrects.** `change-request_companion.md:371-372` said "HHS's EPLC
+program merges the two" (corrected 2026-09-28; the sentence is now lines 375-377), meaning the request form and the log. Both readings of the HHS plan template are
 partly right. The template defines one shared list of data elements for the "Change Request Form and Change
 Management Log", which is what `change-request`'s research log recorded. It also keeps two artifacts: a
 "Log CR" step in which "The Change Manager enters the CR into the CR Log", and a log shipped as its own
@@ -1780,7 +1782,8 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
    (contract section 5) and the family's own contract section 3.7.
 7. **The landing PR corrects `change-request_companion.md:371-372`'s "merges the two"**, as set out under
-   the worked example, so the two companions describe HHS the same way.
+   the worked example, so the two companions describe HHS the same way. *(Done 2026-09-28; the corrected
+   sentence is `change-request_companion.md:375-377`.)*
 
 ---
 
@@ -2421,7 +2424,7 @@ family's chronology obligation: the example must precede what it leads to (the b
 decision, and any future initiation documentation) and must not cite either as existing. It sits after the
 [user persona](../../templates/user-persona/user-persona_example.md) (2026-01-05), which itself claims only to sit "ahead
 of even the product vision" (`user-persona_example.md:18`); this brief's later date does not disturb that
-claim. `README.md:222` separately calls the persona "the earliest document in the library", a stronger,
+claim. `README.md:223` separately calls the persona "the earliest document in the library", a stronger,
 published claim this date also respects.
 
 **Facts it reads, by file and line, and nothing it must not.** From `business-case_example.md`: the sponsor,
@@ -2455,7 +2458,7 @@ Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
    "sits near the start of the shared timeline, ahead of everything except its sibling user persona and the
    product vision it builds on." A brief dated 2026-01-16 makes that sentence false the moment it ships. The
    landing PR must add a one-line dated correction to that callout, the same pattern already used for
-   `README.md:222`'s "earliest document" claim once a still-earlier document exists.
+   `README.md:223`'s "earliest document" claim once a still-earlier document exists.
 
 **Decision requested, closing the loop honestly.** The brief asks Dana Okoro, as executive, to authorize
 proceeding to a funding decision, to be brought to the leadership review on 2026-01-26, the same date

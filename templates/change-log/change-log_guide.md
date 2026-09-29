@@ -52,8 +52,8 @@ instead, by that methodology's own design (see When NOT to use, above).
 
 - **Lean** (default): Purpose and Boundary, Status Vocabulary, Change Log, Authority and Escalation. A
   complete working register a team can populate and govern from the first submitted request, without a
-  formal delivery hand-off, a standing cumulative figure anyone asks for, or a named owner distinct from
-  whoever happens to be running the project.
+  formal delivery hand-off, a standing cumulative figure anyone asks for, or a question about who keeps
+  the log.
 - **Full**: adds **Implementation and Traceability** (the target and actual delivery dates, kept apart from
   the decision date, plus links back to the request document and to related logs), **Cumulative Effect**
   (the running total of approved change against the baseline as first agreed), and **Review and Ownership**
