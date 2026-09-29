@@ -31,7 +31,7 @@ four-file Production Readiness Check. Google's own account of the type, chapter 
 Engineering*, describes a checklist the company maintains without publishing it, and is the type's load-
 bearing source for its definition, trigger, team size, and stated limitation regardless.
 
-### One admitted source is a name collision the bundle only partly follows
+### One logged source is a name collision the bundle only partly follows
 
 Federal Student Aid's own "Production Readiness Review" reviews each release before implementation, which
 is the launch moment, not a standing handoff. It is not counted toward admission on its own. The bundle
