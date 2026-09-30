@@ -1193,7 +1193,9 @@ launch checklist says Sharing launched later, with an exit review on 2026-07-17,
 private-views work that shipped ahead of it", and the PRD phases sharing after a security review. **An
 announcement that reads its facts from both would repeat the disagreement.** The build either corrects the
 release-notes example (a history entry and a version bump on that bundle) or announces a launch whose facts
-agree across every source it reads.
+agree across every source it reads. *(Resolved 2026-09-30: the release-notes example now dates 2.4.0 to
+2026-07-21, after the launch checklist. It carries a history entry and no version bump, because only the
+example changed.)*
 
 #### What the build costs
 
@@ -1542,7 +1544,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1295-1308`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1297-1310`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1668,7 +1670,7 @@ its own decision was recorded:
 > "This request went through the Reporting Platform Modernization program's change-control process, the
 > one the program's issue log says every change request is handed to the day it is raised, and CR-SV-01 is
 > its identifier there; this document is the record that process decided on."
-> (`change-request_example.md:111-113`)
+> (`change-request_example.md:113-115`)
 
 And `issue-log_example.md:43-46` states the same routing from its own side: "this program hands every
 change request straight to its own change-control process the day it is raised, so no row below carries
@@ -1685,7 +1687,7 @@ both siblings gesture at without instantiating.
 | Requester | Priya Nair (PM, Reporting), submitted 2026-07-08 | `change-request_example.md:6-7` |
 | Decider | Marta Reyes (Program Manager, Reporting Platform Modernization) | `change-request_example.md:8` |
 | Decision and date | Postponed, 2026-07-18 | `change-request_example.md:9-10` |
-| Origin | Not an issue, a risk, or a decision already on a program log; raised from account-management feedback | `change-request_example.md:50-55` |
+| Origin | Not an issue, a risk, or a decision already on a program log; raised from account-management feedback | `change-request_example.md:52-57` |
 
 **Constraints the example must not violate**, each already established in a sibling and not this library's
 to re-decide:
@@ -1695,7 +1697,7 @@ to re-decide:
   the sibling bundle's own example (`0060:119-120`) and that binds this example identically.
   `raid-log_example.md` and `risk-register_example.md` carry the same two issues under `R-03` and `R-06`
   and must not gain a change-log row either.
-- The PRD stays at baseline v0.3.0. `change-request_example.md:114-115`: "the Saved Views PRD stays at its
+- The PRD stays at baseline v0.3.0. `change-request_example.md:116-117`: "the Saved Views PRD stays at its
   0.3.0 baseline, and no target version or release is set, because the release that would carry the work
   has not been scoped." A change-log row for `CR-SV-01` must show no artifact updated and no delivery date,
   matching that outcome rather than inventing one.
@@ -1708,6 +1710,10 @@ to re-decide:
   date**, leaving a second row to a future build rather than to invention.
 - `last_reviewed` (or equivalent frontmatter) should sit at or after 2026-07-18, the decision date, so the
   log reads as current with respect to its own one entry.
+
+*(Corrected 2026-09-30: the examples' timeline was reconciled. 2.4.0 now ships 2026-07-21, `CR-SV-01` is
+submitted 2026-08-04 and decided 2026-08-14, and the change-log example is reviewed 2026-08-17. The facts
+above keep their original dates, as the record of what this spec was built against.)*
 
 **A sibling sentence the landing PR corrects.** `change-request_companion.md:371-372` said "HHS's EPLC
 program merges the two" (corrected 2026-09-28; the sentence is now lines 375-377), meaning the request form and the log. Both readings of the HHS plan template are
@@ -1781,7 +1787,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1432-1434` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1434-1436` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -2094,7 +2100,9 @@ Google's ch. 32 says conducts the review, and Dana Osei, the outside engineer Gr
   `runbook_example.md:32` and `incident-postmortem_example.md:28` both describe a build numbered 2.4.0 as
   postdating DEF-2291 (2026-07-13). No file reconciles this. **The PRR example must cite no build or release
   number for `dashboard-service` at all**, referring only to dated events (the incident, the launch, the
-  amendment) the way this spec does above.
+  amendment) the way this spec does above. *(Reconciled 2026-09-30: 2.4.0 now ships 2026-07-21, after
+  DEF-2291, so the runbook's and the postmortem's 2.4.0 agree with the release notes. The PRR example cites
+  no build number and needed no change.)*
 
 Per the family's own shared-scenario rule (`standing-standards.md` section 4), the chaining stays loose by
 design: this is a standing instrument belonging to the Platform and the new SRE function, shown as it stood at
@@ -2437,7 +2445,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1433-1435`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1435-1437`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every

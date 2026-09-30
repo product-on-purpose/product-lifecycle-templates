@@ -150,7 +150,7 @@ it as written; the other eight exclude it.
   must be the Reporting Platform Modernization program's change log, and it must carry `CR-SV-01` exactly
   as `change-request_example.md` states it, because that sibling's own worked example already treats this
   unbuilt log as the record its decision was made against ("this document is the record that process
-  decided on," `change-request_example.md:113`). The full constraint set, including which facts the entry
+  decided on," `change-request_example.md:115`). The full constraint set, including which facts the entry
   may not contradict, is in the spec.
 - **`pairs_with: []`.** Checked 2026-09-27 against `pm-skills` `origin/main` directly; no skill produces or
   consumes this document type. One name, `utility-pm-changelog-curator`, targets the unrelated software

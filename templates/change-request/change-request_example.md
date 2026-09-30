@@ -4,10 +4,10 @@ change_id: "CR-SV-01"
 baseline_artifact: "Saved Views for Dashboards PRD"
 baseline_version: "0.3.0"
 requester: "Priya Nair (PM, Reporting)"
-date_submitted: "2026-07-08"
+date_submitted: "2026-08-04"
 decider: "Marta Reyes (Program Manager, Reporting Platform Modernization)"
 decision: "Postponed"
-decision_date: "2026-07-18"
+decision_date: "2026-08-14"
 status: "Postponed"
 doc_type: change-request
 size: full
@@ -26,7 +26,9 @@ source_template_version: 0.1.0
 > into scope after the feature it excluded had already shipped. The decision reached here is Postponed,
 > not Approved: nothing about the PRD, the 2.4.0 release, or the issue log changes because of this
 > document, which is itself part of what the decision means. All names, figures, and dates not already
-> established in the library's Acme Analytics thread are illustrative.
+> established in the library's Acme Analytics thread are illustrative. *(Corrected 2026-09-30: this request was dated
+> July, against a 2.4.0 release the shared examples had dated 2026-06-30. That release now ships 2026-07-21,
+> so the request is submitted 2026-08-04 and decided 2026-08-14.)*
 
 # Scheduled Email Delivery for Saved Views
 
@@ -35,7 +37,7 @@ source_template_version: 0.1.0
 **Baseline:** [Saved Views for Dashboards PRD](../prd/prd_example.md), version 0.3.0
 
 **Current situation:** [Saved Views](../prd/prd_example.md) shipped in
-[Acme Analytics 2.4.0](../release-notes/release-notes_example.md) on 2026-06-30. A user can capture a
+[Acme Analytics 2.4.0](../release-notes/release-notes_example.md) on 2026-07-21. A user can capture a
 dashboard's filters, date range, and columns as a named view, reopen it, and set a default - but every one
 of those views still has to be opened in the product before anyone sees it. The
 PRD lists a non-goal that covers exactly this gap: "Scheduled delivery of a view by email or Slack. Out of
@@ -45,7 +47,7 @@ scope now; likely a fast follow."
 choosing how often it goes out, with no change to how a view is captured, opened, or shared. Slack
 delivery, named in the same non-goal, is not part of this ask.
 
-**Requested by:** Priya Nair, submitted 2026-07-08
+**Requested by:** Priya Nair, submitted 2026-08-04
 
 **Where this came from:** Not from an issue, a risk, or a decision already sitting on a program log. Two
 enterprise accounts told their account manager, inside the first two weeks after the 2.4.0 launch, that
@@ -81,9 +83,9 @@ plainly that it is not coming.
 
 **Decider:** Marta Reyes (Program Manager, Reporting Platform Modernization)
 
-**Decision needed by:** 2026-07-18
+**Decision needed by:** 2026-08-14
 
-**Decision made on:** 2026-07-18
+**Decision made on:** 2026-08-14
 
 **Conditions (if approved with conditions):** N/A - the decision was to postpone, not to approve, so no
 conditions attach to it. If a later cycle approves the change, conditions would be set at that point.

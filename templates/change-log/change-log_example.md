@@ -2,7 +2,7 @@
 title: "Acme Analytics - Reporting Platform Modernization Change Log"
 project: "Reporting Platform Modernization"
 log_keeper: "Marta Reyes (Program Manager, Reporting Platform Modernization)"
-last_reviewed: "2026-07-20"
+last_reviewed: "2026-08-17"
 review_cadence: "Weekly with workstream leads, the same day as the RAID log and issue log review"
 status: active
 related: ["../change-request/change-request_example.md (CR-SV-01, the one request this log carries a row for)", "../issue-log/issue-log_example.md (the program issue log; its Purpose and Threshold section states that a change request never lands there)", "../raid-log/raid-log_example.md (the program RAID log)", "../risk-register/risk-register_example.md (the program risk register)", "../prd/prd_example.md (Saved Views for Dashboards PRD, the baseline CR-SV-01 targets)"]
@@ -19,8 +19,10 @@ source_template_version: 0.1.0
 > [`raid-log`](../raid-log/raid-log_example.md), and [`kpi-dashboard`](../kpi-dashboard/kpi-dashboard_example.md)
 > examples already cover. `change-log` joined the `governance-docs` family as its fifth member on 2026-09-27
 > under [ADR 0061](../../docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md),
-> so this log is shown as it stood at the same 2026-07-20 review the risk register, the RAID log, the issue
-> log, and the KPI dashboard were each last reviewed against. It carries one row, `CR-SV-01`, the change
+> so this log is shown as it stood at its own 2026-08-17 review, once CR-SV-01's decision had landed; the
+> risk register, the RAID log, the issue log and the KPI dashboard keep their 2026-07-20 review. *(Corrected 2026-09-30: this
+> log shared that 2026-07-20 review until the change request it carries moved to August with the corrected
+> 2.4.0 release date.)* It carries one row, `CR-SV-01`, the change
 > request [`change-request_example.md`](../change-request/change-request_example.md) already shows in full;
 > this document is the standing register that request feeds, not a second copy of it. All names, figures,
 > and dates not already established in the library's Acme Analytics thread are illustrative.
@@ -67,7 +69,7 @@ program's baseline since it was first agreed, and its disposition was not to app
 
 | ID | Category | Change | Baseline artifact | Baseline version | Requested by (date) | Priority | Status | Decision (and reason) | Decided by (date) |
 |---|---|---|---|---|---|---|---|---|---|
-| CR-SV-01 | Scope | Scheduled Email Delivery for Saved Views: a recurring scheduled-email send for a saved view a user has already captured, a piece of a non-goal the PRD named and set aside when the underlying feature shipped | Saved Views for Dashboards PRD | 0.3.0 | Priya Nair (PM, Reporting), 2026-07-08 | Not set - a real estimate, and the priority that would follow from it, was deliberately left for a cycle with room to do the work justice | Postponed | Postponed - building it this quarter would displace platform engineering work the program has already committed to; revisit once a release has room, rather than build it now or rule it out for good | Marta Reyes (Program Manager, Reporting Platform Modernization), 2026-07-18 |
+| CR-SV-01 | Scope | Scheduled Email Delivery for Saved Views: a recurring scheduled-email send for a saved view a user has already captured, a piece of a non-goal the PRD named and set aside when the underlying feature shipped | Saved Views for Dashboards PRD | 0.3.0 | Priya Nair (PM, Reporting), 2026-08-04 | Not set - a real estimate, and the priority that would follow from it, was deliberately left for a cycle with room to do the work justice | Postponed | Postponed - building it this quarter would displace platform engineering work the program has already committed to; revisit once a release has room, rather than build it now or rule it out for good | Marta Reyes (Program Manager, Reporting Platform Modernization), 2026-08-14 |
 
 ## Authority and Escalation
 
@@ -103,7 +105,6 @@ log. This log's own review has not needed a cadence of its own: it joins the wee
 RAID log and issue log already hold, on the same day, rather than pulling the workstream leads into a second
 meeting for one artifact. A row closes once its status reaches Implemented and the artifact it named is
 confirmed at the new baseline version named in the row above; CR-SV-01 has not reached that point, and is not
-expected to until a later cycle takes the work back up. Last reviewed 2026-07-20; next review 2026-07-27,
-the same date the RAID log and issue log return to.
+expected to until a later cycle takes the work back up. Last reviewed 2026-08-17; next review 2026-08-24.
 
 *(All names, figures, and dates are illustrative.)*
