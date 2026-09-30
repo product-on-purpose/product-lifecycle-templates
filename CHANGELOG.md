@@ -23,7 +23,7 @@ people who want every change, release notes are for people who want to know what
   Involved, and Decision Requested; full adds Project Approach and Relationship to Other Documents. The
   worked example is dated 2026-01-16 and extends Acme Analytics' shared timeline backward: it asks Dana
   Okoro to authorize the business case that arrives four days later, and it cites none of that case's
-  analysis. The research corrected the spec in seven places, each a dated note there, and
+  analysis. The research corrected the spec in three dated notes covering seven points, and
   `business-case_example.md` carries a dated correction because the brief now precedes it. Thirty-three
   sources, all fetched-and-verified; every quotation was checked against the source's raw text.
 - **`production-readiness-review`, the 37th bundle and the fifth `standing-standards` member**, by

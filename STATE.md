@@ -14,7 +14,7 @@ proceed, before anyone commits to building anything: the mandate, measurable obj
 exclusions, an outline justification with an illustrative estimate of time and cost, and the decision
 requested. It builds the lightweight PRINCE2 and UK government sense of the name and names the heavier NSW
 Health, Treasury Board of Canada and Irish NTA sense as out of scope. Its research corrected the spec in
-seven places, each a dated note there. GovS 002 has no glossary entry for the term. Decision Requested and
+three dated notes covering seven points. GovS 002 has no glossary entry for the term. Decision Requested and
 Project Approach are sourced rather than the library's own position. An outline estimate of time and cost
 belongs inside the justification. And the example may not cite the prototype's 71 percent result, which no
 document dates before the brief. `business-case`'s example carries a dated correction, because the brief
