@@ -73,6 +73,16 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Catalog entry 71 (Project Brief) no longer describes a small charter**, the maintainer's call on
+  2026-09-30. Its purpose now reads "Ask a named approver for authority to start initiation, before anyone
+  commits to building", its use is no longer limited to small or internal projects, and it precedes rather
+  than substitutes for a charter. The strongest sources describe the brief as written before initiation on
+  a project of any size. Both aliases stay, and the spec records why.
+- **The README's `decision-docs` section names four jobs, not three**, adding the spike report that the
+  family has held since it was built.
+- **The `discovery-docs` contract places the "How to fill this in" preamble in each variant's opening
+  comment block**, where every member already puts it. The old wording, "opens each variant", led a review
+  lens to file a finding against the family norm.
 - **Catalog entry 154 corrected** in `catalog.md` and `atlas/catalog-data.json`: methodology `generic`, not
   `PMBOK/ITIL`, because ITIL defines a Change Record and a Change Schedule but no change log; the
   relationship ran backwards (the change request feeds the log, not the reverse); two aliases added from

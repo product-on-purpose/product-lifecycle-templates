@@ -1854,7 +1854,7 @@
       "category": "Planning / Roadmapping",
       "stage": "initiation",
       "owner": "PM",
-      "purpose": "Lightweight project definition for smaller efforts",
+      "purpose": "Ask a named approver for authority to start initiation, before anyone commits to building",
       "methodology": "PRINCE2",
       "formality": "lightweight",
       "rarity": "common",

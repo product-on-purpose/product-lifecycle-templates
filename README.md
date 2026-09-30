@@ -175,7 +175,7 @@ Their examples chain on one fictional "Saved Views" feature, so the family reads
 
 ### `decision-docs` (four bundles, the family complete)
 
-Three distinct jobs, deliberately kept separate: an **RFC** proposes a decision, an **ADR** records it, and an **SDD** describes how the thing gets built.
+Four distinct jobs, deliberately kept separate: a **spike report** records what a time-boxed investigation found, an **RFC** proposes a decision, an **ADR** records it, and an **SDD** describes how the thing gets built.
 
 | Bundle | What it is | Pairs with |
 |---|---|---|
