@@ -33,7 +33,8 @@ MORE than change-request's two-template drafting, $8.58 against $5.78, mostly ca
 of variants is not by itself a predictor of cost. change-log, the sixth, cost 8,472,610 weighted and $16.95
 for its 15 agents, and its two-template drafting stage cost $8.14, close to announcement-internal-comms'
 single-template $8.58, which points the same way. production-readiness-review, the seventh, cost 7,876,892 weighted
-and $15.75 for its 15 agents, its two-template drafting $8.35. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+and $15.75 for its 15 agents, its two-template drafting $8.35. project-brief, the eighth, cost 7,120,610 weighted
+and $14.24 for its 15 agents, its two-template drafting $5.72. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
