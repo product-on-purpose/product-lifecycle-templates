@@ -98,6 +98,13 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **The shared worked examples no longer ship Saved Views before it was built**, the maintainer's call on
+  2026-09-30. The release-notes example dated Acme Analytics 2.4.0 to 2026-06-30, when the other examples
+  show its PRD still in review, no story started, no design written, and the feature tested on staging
+  builds 2.3.1 and 2.3.2 through mid-July. 2.4.0 now ships 2026-07-21, after the launch checklist and
+  before the runbook, whose 2.4.0 already follows DEF-2291. The change request follows it into August, and
+  the change log is shown at its own 2026-08-17 review. Each moved example carries a dated note and a
+  history entry; no template changed. This closes the known issue listed in `v0.14.0`.
 - **`change-request` said in seven places that HHS merges the change request form and the change log.** The
   HHS plan template shares one list of data elements between them and keeps two documents, with its own
   step for entering a request into the log. Companion and research log carry dated corrections; the

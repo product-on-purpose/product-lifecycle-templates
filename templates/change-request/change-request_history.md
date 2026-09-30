@@ -3,6 +3,13 @@
 Change log for the `change-request` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-09-30 - the example follows the corrected 2.4.0 date
+
+**A correction, not a template change**, so the version stays 0.1.0. The worked example's request was
+submitted 2026-07-08 against a 2.4.0 release the shared examples had wrongly dated 2026-06-30. With the
+release now on 2026-07-21, CR-SV-01 is submitted 2026-08-04, two weeks after launch, which fits its own
+account of when the request arose, and decided 2026-08-14, keeping the original ten-day gap. The example carries a dated note.
+
 ## 0.1.0, corrected 2026-09-28 - HHS keeps the request and the log apart
 
 **A correction, not a template change**, so the version stays 0.1.0. The companion said in three places, and

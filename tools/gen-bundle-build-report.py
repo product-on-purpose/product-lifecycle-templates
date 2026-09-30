@@ -78,7 +78,8 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 #         `turns` means responses and the token totals roughly halve. All reports were re-ingested.
 #   (2026-09-29, no bump) landing-sweep agents left the totals and gained the optional `landing_sweep`
 #         block. Only issue-log and definition-of-ready had folded a sweep in, and both were
-#         re-ingested. Whether that exclusion counts as a change of meaning is open for the maintainer.
+#         re-ingested. Resolved 2026-09-30, the maintainer's call: no bump. Every committed report was
+#         re-ingested under the rule, so none carries the old meaning, and no known program reads the version.
 REPORT_SCHEMA_VERSION = "2.0.0"
 
 # Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every

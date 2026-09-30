@@ -5,8 +5,8 @@ size: full
 owner: "Priya Nair (PM, Reporting)"
 status: approved
 doc_version: "2.4.0"
-created: "2026-06-29"
-updated: "2026-06-30"
+created: "2026-07-20"
+updated: "2026-07-21"
 related_links:
   - "PRD: Saved Views for Dashboards (prd_example.md)"
 source_template: release-notes
@@ -17,11 +17,13 @@ source_template_version: 0.1.1
 Worked example for the Release Notes bundle. Full release notes announcing the "Saved Views" feature
 (from the PRD, story, and acceptance-criteria examples) shipping in a fictional Acme Analytics 2.4.0.
 "Acme Analytics" and all figures are illustrative.
+Corrected 2026-09-30: this release was dated 2026-06-30, before the feature it ships had been designed or
+tested; it now ships 2026-07-21. See release-notes_history.md.
 -->
 
 # Acme Analytics 2.4.0
 
-Release date: 2026-06-30. Acme Analytics follows Semantic Versioning.
+Release date: 2026-07-21. Acme Analytics follows Semantic Versioning.
 
 ## Summary
 

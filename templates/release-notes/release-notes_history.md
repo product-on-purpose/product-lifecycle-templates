@@ -2,6 +2,15 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.1, corrected 2026-09-30 - the example ships after its feature is built
+
+**A correction, not a template change**, so the version stays 0.1.1. The worked example dated Acme
+Analytics 2.4.0 to 2026-06-30, when the shared examples show the Saved Views PRD still in review, no story
+started and no design written, and the feature tested on staging builds 2.3.1 and 2.3.2 through mid-July.
+The example now releases 2.4.0 on 2026-07-21, after the launch checklist and before the runbook, whose
+2.4.0 already follows DEF-2291. The change-request and change-log examples moved with it. No template,
+guide or companion text changed.
+
 ## 0.1.1 - 2026-07-17 - DF-1 fixed: a first-release mode
 
 **The dogfood loop closes.** DF-1 was found by using this template to write the library's own v0.1.0

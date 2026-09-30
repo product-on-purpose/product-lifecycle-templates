@@ -3,6 +3,13 @@
 Change log for the `change-log` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-09-30 - the example's review follows CR-SV-01 into August
+
+**A correction, not a template change**, so the version stays 0.1.0. The example showed its one row,
+CR-SV-01, at a shared 2026-07-20 review with four sibling logs. When the shared 2.4.0 release date was
+corrected to 2026-07-21, CR-SV-01 moved to August, so the log is now shown at its own 2026-08-17 review.
+The four sibling logs keep 2026-07-20. The example carries a dated note.
+
 ## 0.1.0 - 2026-09-28
 
 **Initial release.** Admitted as the fifth `governance-docs` member by
