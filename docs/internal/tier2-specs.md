@@ -33,7 +33,7 @@ design task" rather than "a spec-driven execution".
 | `change-request` | `change-request` | `delivery-docs` | **Written 2026-09-25**; admission sources [retrieved and raw-checked the same day](#delivery-docs-new-member-by-amendment-the-change-request-two-bundles-route-to) | **Built 2026-09-25**, shipped in `v0.14.0`. Family by [ADR 0060](decisions/0060-change-request-joins-delivery-docs.md), which widens the contract's membership test; [build report](../../bundle-builds/reports/change-request_v0.1.0.md) |
 | `change-log` | `change-log-governance` | `governance-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#governance-docs-fifth-member-the-change-log) | **Built 2026-09-28.** Family by [ADR 0061](decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md), which gives the contract's roles list a fifth role |
 | `production-readiness-review` | `production-readiness-review` | `standing-standards` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#standing-standards-fifth-member-the-production-readiness-review) | **Built 2026-09-28.** Family and classification (`tool`) by [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md); [build report](../../bundle-builds/reports/production-readiness-review_v0.1.0.md) |
-| `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Not yet built.** [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md) reopens the family, which ADR 0035 had recorded as closed at two |
+| `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Built 2026-09-29.** Family by [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md), which reopens it after ADR 0035 had recorded it as closed at two |
 | `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
 | `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
 
@@ -1482,7 +1482,7 @@ recorded, not implied:
   (**ADR 0060, change-request joins delivery-docs**): considered and rejected building the log instead of
   the request ("it builds a different document from the one three bundles route to"), and states three
   times that `governance-docs` "admits a standing register as written" if the type is ever built.
-- `atlas/catalog-data.json:3902-3925`: the candidate has carried `state: "candidate"` in the catalog since
+- `atlas/catalog-data.json:3903-3926`: the candidate has carried `state: "candidate"` in the catalog since
   before either sibling shipped.
 
 #### Deciding the bundle id: `change-log`, keeping `change-log-governance` as the catalog id
@@ -1719,7 +1719,7 @@ spreadsheet. The landing PR gives the companion's sentence a dated correction to
 #### Catalog corrections the landing PR must make
 
 Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3902-3925`, then regenerate the atlas:
+`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3903-3926`, then regenerate the atlas:
 
 - **`methodology: "PMBOK/ITIL"` is contradicted.** No rawchecked source shows ITIL naming or shipping a
   "change log" as such. ITIL's own two rawcheck-passed artifacts are differently-named and narrower: a
@@ -2208,6 +2208,13 @@ practitioner's reading of it.
 | Treasury Board of Canada Secretariat, *Guide to a Project Brief* | "a project brief must be appended to the Treasury Board submission"; "a project brief is to be supported by a business case, project charter and project management plan" | Not stated; also the heavyweight sense |
 | UK Government Functional Standard GovS 002 v2.1, read via a third-party mirror because the official host returns 403 | "project brief:" (a glossary heading in Annex B) | Confirms the term is standardised in current UK government usage; its definition text could not be recovered this session and is not attributed to this source |
 
+*(Corrected 2026-09-29, when the bundle was built: GovS 002 has no "project brief" entry in Annex B. The
+build read [the standard's text](../../templates/project-brief/project-brief_research-log.md#what-the-checks-caught-and-what-was-not-read) end to end, and the
+term is not among Annex B's defined terms. The one passage naming a brief is in the body, among the senior
+responsible owner's accountabilities: the vision, justification and outcomes "are documented in a programme or
+project brief". The row's conclusion stands, since the term is in current UK government use, but it is in
+the body, not the glossary.)*
+
 **Against this, PMI does not name "project brief."** The PMI *Lexicon of Project Management Terms*, version
 5.0, the exact URL this task's research specified, was fetched and raw-checked: "project brief" is absent as a
 case-insensitive substring across 80,417 extracted characters, while "Project Charter" and "Version 5.0" both
@@ -2342,6 +2349,23 @@ real, separately-named content the lean size would otherwise have to compress ou
 | **Project Approach** | full only | How the work will be approached (build, buy, or a mix). Named as a brief component by prince2.wiki; not elaborated in any source read this session, so the guidance text here is labeled this library's own, not attributed to PRINCE2 |
 | **Relationship to Other Documents** | full only | Where this document sits against the mandate, the business case, and initiation documentation (a project charter or PID), naming plainly that neither `project-charter` nor a PID is built in this library. **POSITION**: this section is how the template answers the same contract obligation (`discovery-docs.md:49-51`) at the size that has room for it, not a sourced composition item |
 
+*(Corrected 2026-09-29, when the bundle was built. Five points in this table were settled otherwise by the
+build's research, each recorded with its quotations in the
+[research log](../../templates/project-brief/project-brief_research-log.md#what-the-checks-caught-and-what-was-not-read):
+(1) "project management team structure" is verbatim on prince2.wiki's starting-up page, though absent from
+its project brief page, so Constraints and Who Should Be Involved may cite it there;
+(2) Decision Requested and Project Approach are sourced, not only the library's position, because the
+starting-up page makes the request to initiate the process's final output and names "the project approach",
+and Oxford City Council's and Bestoutcome's templates carry both an approvals block and an approach section;
+(3) the BIS items this table quotes for Objectives and Scope come from BIS's start-up checklist, not from its
+list of the brief's contents;
+(4) WorksBuddy's "the section that most teams skip" is an assertion on a vendor page, not a finding, and the
+bundle does not repeat it as fact;
+(5) an outline estimate of time and cost is adopted inside Outline Business Justification, labelled
+illustrative, because the AXELOS definition and both BIS lists name time and cost. Costed estimates stay out,
+as below. Options analysis also stays out, but as this library's position rather than a gap in the sources,
+since Oxford City Council's template has a "Project Options" section of its own.)*
+
 **What stays out at any size, named so a reader is not left to guess:** options analysis, capital or recurrent
 cost estimates, a formal risk-scoring table, and resubmission across the project lifecycle. Those are the
 NSW Health / Treasury Board of Canada heavyweight sense, out of scope by the design choice above, and the
@@ -2467,10 +2491,13 @@ Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
    `issue-log`'s ISS-11 raised 2026-06-14), five months after this brief's date. The brief uses `business-case`'s
    own investment name, "Question-First Entry and Modelling Defaults," as its project name.
 3. **No pre-computed benefit range or financial metrics.** The 6-11 percentage point second-view lift, the
-   NPV, IRR, payback and ROI figures (`business-case_example.md:75-99`) are the business case's own later
+   NPV, IRR, payback and ROI figures (`business-case_example.md:78-102`) are the business case's own later
    analysis. The brief may cite the early prototype's 71 percent question-resolution finding as an existing
    fact (it predates the case, per the case's own framing), but must not anticipate the case's computed
    benefit range or financial metrics.
+   *(Corrected 2026-09-29, when the bundle was built: the allowance for the 71 percent figure is withdrawn,
+   and the example does not cite it. No sibling dates the prototype, and every document that reports the
+   figure is dated after this brief, so it could not be shown to predate the brief.)*
 4. **No options decision.** The brief defers the comparison of options, including doing nothing, to the
    business case; it must not commit to OPT-3 or name it, since choosing between options is exactly the job
    `business-case_guide.md:17` reserves for the other document.
@@ -2480,9 +2507,10 @@ Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
    "sits near the start of the shared timeline, ahead of everything except its sibling user persona and the
    product vision it builds on." A brief dated 2026-01-16 makes that sentence false the moment it ships. The
    landing PR must add a one-line dated correction to that callout, the same pattern already used for
-   `README.md:223`'s "earliest document" claim once a still-earlier document exists.
+   `README.md:223`'s "earliest document" claim once a still-earlier document exists. *(Done 2026-09-29: the callout,
+   now `business-case_example.md:16-20`, carries that correction.)*
 
 **Decision requested, closing the loop honestly.** The brief asks Dana Okoro, as executive, to authorize
 proceeding to a funding decision, to be brought to the leadership review on 2026-01-26, the same date
-`business-case_example.md:115` already names. The brief's own "what happens to the answer" is exactly that
+`business-case_example.md:118` already names. The brief's own "what happens to the answer" is exactly that
 business case, arriving four days later: nothing here is invented for the brief to hand off to.

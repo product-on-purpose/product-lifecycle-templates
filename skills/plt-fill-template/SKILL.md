@@ -1,6 +1,6 @@
 ---
 name: plt-fill-template
-description: Selects and fills a researched product-document template from a 37-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
+description: Selects and fills a researched product-document template from a 38-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, user stories, acceptance criteria, a risk register, a RAID log, a KPI dashboard definition, a test plan, a test case, a bug report, an ADR, an RFC, a software design document, a product vision, strategy, roadmap, OKRs, a business case, a user persona, a definition of done, a runbook, an incident postmortem, sprint retrospective notes, a status report, a product or sprint backlog, or release notes. Each bundle carries a lean and a full variant, a worked example, and the research log every claim traces to.
 license: Apache-2.0
 metadata:
   version: "0.14.0"
@@ -13,12 +13,12 @@ metadata:
 
 # Product lifecycle templates
 
-A library of **37 researched document-template bundles**, covering the complete Tier-1 floor of a 205-type
+A library of **38 researched document-template bundles**, covering the complete Tier-1 floor of a 205-type
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
-<!-- counts: bundles=37, tier1=25 -->
-37 bundles, spanning all 25 templatable Tier-1 document types plus twelve Tier-2 types.
+<!-- counts: bundles=38, tier1=25 -->
+38 bundles, spanning all 25 templatable Tier-1 document types plus thirteen Tier-2 types.
 
 ## When to use
 
@@ -41,7 +41,7 @@ shape, a worked example, and a rubric for judging the result.
 
 ### 0. Confirm the library is present, and STOP if it is not
 
-**This skill is a wrapper. The 37 bundles it indexes are not inside it.** Whether they are on disk
+**This skill is a wrapper. The 38 bundles it indexes are not inside it.** Whether they are on disk
 depends entirely on how this skill was installed:
 
 | Install route | What you have |
@@ -173,8 +173,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=32, logsgated=31, sourcesgated=1326 -->
-32 CI steps; 31 research logs gated, covering 1,326 sources.
+<!-- counts: cisteps=32, logsgated=32, sourcesgated=1359 -->
+32 CI steps; 32 research logs gated, covering 1,359 sources.
 
 **Not proved by anything:**
 
