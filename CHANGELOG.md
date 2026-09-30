@@ -14,6 +14,18 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`project-brief`, the 38th bundle and the third `discovery-docs` member**, by
+  [ADR 0063](docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md). The short document that
+  asks a named approver for authority to start finding out whether and how to proceed, before anyone
+  commits to building anything, in the lightweight PRINCE2 and UK government sense; the heavier NSW Health,
+  Treasury Board of Canada and Irish NTA sense is named and put out of scope. Lean carries Background and
+  Mandate, Objectives, Scope and Exclusions, Outline Business Justification, Constraints and Who Should Be
+  Involved, and Decision Requested; full adds Project Approach and Relationship to Other Documents. The
+  worked example is dated 2026-01-16 and extends Acme Analytics' shared timeline backward: it asks Dana
+  Okoro to authorize the business case that arrives four days later, and it cites none of that case's
+  analysis. The research corrected the spec in seven places, each a dated note there, and
+  `business-case_example.md` carries a dated correction because the brief now precedes it. Thirty-three
+  sources, all fetched-and-verified; every quotation was checked against the source's raw text.
 - **`production-readiness-review`, the 37th bundle and the fifth `standing-standards` member**, by
   [ADR 0062](docs/internal/decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md).
   The standing checklist a service is reviewed against before the team that will carry its pager takes it

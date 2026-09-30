@@ -1,0 +1,32 @@
+id: project-brief
+title: Project Brief
+summary: >-
+  The document that asks a named approver for authority to start finding out whether and how to proceed,
+  before anyone commits to building anything. Lean states the mandate, objectives, exclusions, an outline
+  justification, constraints and the decision requested; full adds the proposed approach and names the
+  document that takes over once this one is approved.
+doc_type: project-brief
+phase: discover
+family: discovery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Background and Mandate, Objectives, Scope and Exclusions, Outline Business Justification, Constraints and Who Should Be Involved, Decision Requested) when the project is small or its viability is not seriously in question, and the whole job is to get a named approver to authorize starting initiation. Use full when a reader will reasonably ask how the work will be approached and what document takes over once this one is approved: it adds Project Approach (the proposed approach and the alternative that was considered) and Relationship to Other Documents (the successor document and the point after which this brief stops being consulted). Both sizes stay short by design; the primary source scales the document to the project rather than fixing a length."
+methodology: PRINCE2
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discovery
+  - project-brief
+  - initiation
+  - mandate
+  - authorization
+  - prince2
+related_templates: [business-case, user-persona]
+aliases:
+  - lightweight charter
+  - project one-pager
+license: Apache-2.0
+maintainer: "product-on-purpose"
+last_reviewed: 2026-09-29
+catalog_ref: 71

@@ -5,7 +5,7 @@ Registered in check K, which now gates `phase: discover` on every member.
 **Axis:** `phase`, single value `discover`.
 **Members:** `business-case`, `user-persona`, `project-brief`
 ([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), assigned 2026-09-27, reopening the
-family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-29).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing

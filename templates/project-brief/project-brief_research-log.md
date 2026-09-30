@@ -312,19 +312,19 @@ as existing. It reads these facts from its siblings and invents none of them:
   is Priya Nair, PM, Reporting (`user-persona_example.md:6`).
 - **Background.** Acme's own telemetry, which predates the business case: "only 31 percent build a second dashboard
   view within 14 days of signup" and "revenue per new account has been flat for five quarters"
-  (`business-case_example.md:34`, `:41`).
+  (`business-case_example.md:37`, `:44`).
 - **Mandate.** "the flat revenue-per-account trend surfaced at the December leadership review and finance asked for a
-  funding decision" (`business-case_example.md:52-53`).
+  funding decision" (`business-case_example.md:55-56`).
 - **Who it serves.** The Recurring Analyst (`user-persona_example.md:43-47`).
 - **Decision requested.** Dana Okoro authorizes proceeding to a funding decision at the leadership review on
-  2026-01-26 (`business-case_example.md:115`). The document that takes over is that business case, arriving four days
+  2026-01-26 (`business-case_example.md:118`). The document that takes over is that business case, arriving four days
   later.
 
 It must not contain:
 
 1. Any staged-case vocabulary. `business-case_example.md:5` says "Acme has no staged case model (no SOC/OBC/FBC)".
 2. The Reporting Platform Modernization program or Marta Reyes, which are mid-2026 facts of a later thread.
-3. The business case's own analysis: its benefit range, NPV, IRR, payback or ROI (`business-case_example.md:75-99`).
+3. The business case's own analysis: its benefit range, NPV, IRR, payback or ROI (`business-case_example.md:78-102`).
    **This log tightens the spec on one point: the example must not cite the prototype's 71 percent result either.** No
    sibling dates the prototype, and every document that reports the figure is dated after this brief.
 4. An options decision. It must not name or choose OPT-3; comparing options is the business case's job.

@@ -55,6 +55,7 @@ tree without the gate noticing.
 
 - [`business-case/`](business-case/) - Business Case. Axis phase discover; ships lean/full.
 - [`user-persona/`](user-persona/) - User Persona. Axis phase discover; ships lean/full.
+- [`project-brief/`](project-brief/) - Project Brief. Axis phase discover; ships lean/full. The third `discovery-docs` member ([ADR 0063](../docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md)): the request for authority to start finding out whether and how to proceed.
 
 **`governance-docs`**
 

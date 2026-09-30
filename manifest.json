@@ -748,6 +748,37 @@
     },
     {
       "aliases": [
+        "lightweight charter",
+        "project one-pager"
+      ],
+      "approx_tokens": {
+        "full": 5350,
+        "lean": 4350
+      },
+      "default_size": "lean",
+      "doc_type": "project-brief",
+      "family": "discovery-docs",
+      "id": "project-brief",
+      "phase": "discover",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Background and Mandate, Objectives, Scope and Exclusions, Outline Business Justification, Constraints and Who Should Be Involved, Decision Requested) when the project is small or its viability is not seriously in question, and the whole job is to get a named approver to authorize starting initiation. Use full when a reader will reasonably ask how the work will be approached and what document takes over once this one is approved: it adds Project Approach (the proposed approach and the alternative that was considered) and Relationship to Other Documents (the successor document and the point after which this brief stops being consulted). Both sizes stay short by design; the primary source scales the document to the project rather than fixing a length.",
+      "status": "beta",
+      "summary": "The document that asks a named approver for authority to start finding out whether and how to proceed, before anyone commits to building anything. Lean states the mandate, objectives, exclusions, an outline justification, constraints and the decision requested; full adds the proposed approach and names the document that takes over once this one is approved.",
+      "tags": [
+        "discovery",
+        "project-brief",
+        "initiation",
+        "mandate",
+        "authorization",
+        "prince2"
+      ],
+      "title": "Project Brief"
+    },
+    {
+      "aliases": [
         "lessons learned",
         "post-project review",
         "after-action review",
@@ -1282,5 +1313,5 @@
       "title": "User Story"
     }
   ],
-  "count": 37
+  "count": 38
 }
