@@ -99,7 +99,11 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
    anything else.
 3. **Guidance comments.** Every section of every variant carries the Approach A comment (WHAT, WHY with a
    companion pointer, ASK, GOOD, WEAK, TRAP; PRIORITY and ROW HINT for table sections). A "How to fill this
-   in" preamble opens each variant, and states the N/A rule and the self-grade step.
+   in" preamble appears in each variant's opening comment block, and states the N/A rule and the
+   self-grade step. *(Clarified 2026-09-30, the maintainer's call: this said the preamble "opens each
+   variant". Every member places it inside the opening comment block, after the sizing and boundary
+   notes, and a review lens building `project-brief` read the old wording literally and filed a finding
+   against the family norm.)*
 4. **Companion skeleton.** All 11 sections of methodology section 5, in order, with **one Anatomy subsection
    per template section**. An inapplicable section says so in one line rather than being dropped.
 5. **Guide shape.** When to use; when NOT to use; pick a variant; a self-gradable rubric conforming to

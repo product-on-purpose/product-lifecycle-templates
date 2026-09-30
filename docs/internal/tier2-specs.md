@@ -2382,7 +2382,7 @@ companion says so rather than leaving the omission silent.
 | `methodology` | `PRINCE2` | The one methodology this research confirmed by an official-tier source (the archived AXELOS glossary); the catalog's `PMBOK 7 (new)` is corrected below |
 | `pairs_with` | `[]` | Checked against pm-skills `origin/main` with the direct-contents call on 2026-09-27 (68 skills returned). Two near-name matches were read and ruled out: `foundation-meeting-brief` (a private meeting-prep document, not a project-initiation document) and `develop-solution-brief` (a technical-solution pitch at `phase: develop`). No pairing exists |
 | `related_templates` | `[business-case, user-persona]` **provisional** | The sibling whose outline it absorbs and already cites by name, and the family's other member. `project-charter` is deliberately not listed: it is not built and this ruling does not admit it by inheritance |
-| `aliases` | `lightweight charter` and `project one-pager` kept, both flagged | "Lightweight charter" encodes the Smartsheet "simplified charter" camp as settled fact when the strongest sources (PRINCE2, BIS) describe a per-project pre-initiation product regardless of size, not a small-project variant; the critic named this as a maintainer-review flag, not a rewrite performed here. "Project one-pager" is what a reader wanting a persuasive pitch or proposal types, the boundary this spec draws above; a build decision, not resolved here |
+| `aliases` | `lightweight charter` and `project one-pager` kept, both flagged | "Lightweight charter" encodes the Smartsheet "simplified charter" camp as settled fact when the strongest sources (PRINCE2, BIS) describe a per-project pre-initiation product regardless of size, not a small-project variant; the critic named this as a maintainer-review flag, not a rewrite performed here. "Project one-pager" is what a reader wanting a persuasive pitch or proposal types, the boundary this spec draws above; a build decision, not resolved here. *(Resolved 2026-09-30, the maintainer's call: both kept. An alias routes a searcher to the nearest bundle rather than asserting the two are one type, no charter bundle exists to route to instead, and the guide's boundary table redirects a reader who wanted a pitch.)* |
 
 #### Catalog corrections the landing PR must make
 
@@ -2398,6 +2398,10 @@ Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), bo
    as a smaller charter scaled to project size). The strongest-evidenced sources describe a per-project,
    pre-initiation product used regardless of size. Flag for the maintainer's read at landing; do not silently
    rewrite a catalog row this record did not adopt a final wording for.
+   *(Resolved 2026-09-30, the maintainer's call: `purpose` now reads "Ask a named approver for authority to
+   start initiation, before anyone commits to building", `when_used` drops "small/internal projects", the
+   relationship reads "precedes Business Case and Charter", and the note no longer calls the brief a
+   smaller charter. `formality` stays `lightweight`, because the document is short by design.)*
 3. **`relationships`** currently reads `[Charter]` alone. Add `Business Case`, since the type's own admission
    evidence (the shipped `business-case` bundle's boundary text) is a stronger, closer relationship than the
    unbuilt charter.
