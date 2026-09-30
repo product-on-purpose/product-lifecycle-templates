@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-09-30
+
 ### Added
 
 - **`project-brief`, the 38th bundle and the third `discovery-docs` member**, by
@@ -2652,7 +2654,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.15.0...HEAD
+[0.15.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.11.2...v0.12.0

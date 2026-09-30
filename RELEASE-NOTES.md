@@ -8,6 +8,20 @@ Newest first.
 
 ---
 
+## v0.15.0
+
+**Three bundles in one release: a change log, a production readiness review and a project brief.** The
+change log is the standing register of every change request a project receives, with rejected and postponed
+requests kept. The production readiness review checks a service against a standing list before the team that
+will carry its pager takes it on. The project brief asks a named approver for authority to start finding out
+whether a project is worth doing, in the lightweight PRINCE2 and UK government sense.
+
+Every quotation in the three research logs was checked against the source's raw text. This release also
+fixes the shared examples, which had shipped Saved Views before the other examples built it, and makes
+build-cost reports count only the agents that built a bundle.
+
+---
+
 ## v0.14.0
 
 **Two bundles in one release: an internal announcement and a change request.** The internal announcement
