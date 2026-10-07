@@ -2654,9 +2654,8 @@ procedures and analytical approach" before data collection begins
 which 301-redirects to the current edition; both quotes were checked against that redirect target).
 
 *Academic/industry checklist, cited for existence, not reproduced.* Fabijan, Dmitriev, Olsson, Bosch,
-Vermeer and Lewis's ICSE-SEIP 2019 paper (one author leads Booking.com's experimentation practice) names
-"Checklist 1. Experiment Design Analysis," a ten-item pre-launch checklist, and gives a hypothesis
-template attributed to an external citation, "we predict that..."
+Vermeer and Lewis's ICSE-SEIP 2019 paper names a pre-launch checklist, "Checklist 1. Experiment Design
+Analysis". It also gives a hypothesis template attributed to an external citation, "we predict that..."
 (<https://exp-platform.com/Documents/2019%20FabijanDmitrievOlssonBoschVermeerLewis_Three-Key-Checklists_ICSE_SEIP.pdf>).
 **The PDF is an authors' preprint marked "Not for redistribution"; any companion citation paraphrases, it
 does not reproduce.**
@@ -2672,15 +2671,14 @@ Metrics," "Deep-Dive," and "Implementation Details and Analysis Notes." **Cite t
 the landing page**: all five headers failed the raw-text check on
 <https://www.geteppo.com/experiment-report-landing-page>, and all five passed against
 <https://docs.google.com/document/d/1mWWzaAdTfuQWGp2tHE5NVN6pL-Tx0_JTKlDLZOcmUqw/export?format=txt>
-(`corrections.json`, reattributed). Optimizely's own documentation prescribes a five-part written results
-summary it calls "Purpose," with "Lessons Learned" and "Revenue Impact" confirmed as later sections,
-stating plainly these sections apply to losing tests too
+(`corrections.json`, reattributed). Optimizely's documentation prescribes a written results summary whose
+sections include "Purpose", "Details", "Lessons Learned" and "Revenue Impact"
 (<https://docs.optimizely.com/experimentation-strategy/docs/share-your-results-with-stakeholders>).
 
 *Academic trial reporting.* The CONSORT 2010 Statement (Schulz, Altman and Moher) is a standards-grade,
-named, CC BY-licensed checklist whose own title is "CONSORT 2010 Statement," confirming a "25 item
-checklist" organised under six named sections including "Title and abstract," "Discussion," and "Other
-information," with a required "flow diagram"
+named, CC BY-licensed checklist whose own title is "CONSORT 2010 Statement". It confirms a "25 item
+checklist", organised under named sections that include "Title and abstract", "Discussion" and "Other
+information", with a required "flow diagram"
 (<https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1000251>). **Cite this PLoS
 Medicine copy, not the EQUATOR Network PDF mirror** - the EQUATOR mirror failed five of its own tested
 quotes while this copy of the identical statement passed all of its.
@@ -2912,7 +2910,8 @@ worked example.
 #### Catalog corrections the build's landing PR should check (per decision-procedures.md section 1)
 
 The PR that adds this spec edits no catalog field. Each correction below is for the PR that lands a
-bundle, as ADR 0067 also defers the tracking plan's catalog corrections to its build.
+bundle, as [ADR 0067 (tracking-plan joins governance-docs as a sixth member)](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)
+also defers the tracking plan's catalog corrections to its build.
 
 - **`experiment-design-doc`'s guidance note, "NN/g: define metrics in advance; power analysis", is
   unverified.** The one NN/g source read in the 2026-10-05 sweep (the UX Research Methods glossary) was
@@ -2920,7 +2919,7 @@ bundle, as ADR 0067 also defers the tracking plan's catalog corrections to its b
   power-analysis guidance. Flag it as unverified pending someone reading the specific NN/g page it was
   presumably drawn from; do not delete it and do not treat it as sourced.
 - **The `experiment-readout-results-report` catalog row's guidance note, "ship/iterate/kill decision", is equally
-  unverified**, and now also inconsistent with the adopted contract's own wording. No source read in
+  unverified**, and now also inconsistent with the contract's own wording. No source read in
   either research pass uses "ship/iterate/kill" or "ship, iterate or stop" verbatim; both are this
   library's own POSITION. Because [the contract](contracts/experimentation-docs.md) section 1 already
   commits to "ship, iterate or stop", recommend the landing PR correct the catalog's guidance note to match
@@ -2931,12 +2930,11 @@ bundle, as ADR 0067 also defers the tracking plan's catalog corrections to its b
   "descriptive, not gated" for this family. The catalog's `growth/dual-track` and `growth` values may be
   carried forward as provisional, not corrected.
 - **No owner or relationship correction is needed.** Nothing read in either research pass confirms or
-  contradicts "PM / Data Scientist," "Data Scientist / PM," or the two candidates' mutual "feeds"/"follows"
-  relationship, which already matches the maintainer's two-bundle ruling.
-- **`size_variant: S/M` is not contradicted.** Confirmed section counts for both types (GrowthBook's nine
-  fields, LaunchDarkly's fourteen, Eppo's eight section blocks, CONSORT's twenty-five items) support a
-  `[lean, full]` split consistent with the catalog's own two-weight call; this is a lower-risk case than
-  `change-log`'s single-letter undercount.
+  contradicts "PM / Data Scientist", "Data Scientist / PM", or the two rows' relationships, which name each
+  other and already match the maintainer's two-bundle ruling.
+- **`size_variant: S/M` is not contradicted.** The published shapes differ widely in length, up to
+  CONSORT's "25 item checklist". That range supports a `[lean, full]` split, consistent with the catalog's
+  own two-weight call.
 
 #### Licences, as far as the evidence shows
 
@@ -3047,7 +3045,7 @@ checked directly on 2026-10-06:
   tracking plan is not in the PRD, the launch usually cannot measure its own success criteria."
 - A case-insensitive grep for "tracking plan" across `templates/` and `docs/internal/contracts/`, run
   2026-10-06, returns these three PRD lines and two contracts. The `experimentation-docs` contract's
-  boundary sentence excludes the type by name and points at ADR 0067
+  boundary sentence excludes the type by name and points at ADR 0067 (tracking-plan joins governance-docs as a sixth member)
   (`docs/internal/contracts/experimentation-docs.md:41-44`). The `governance-docs` contract names it in
   its kpi-dashboard axis note and in the text its `0.4.0` amendment adds. No other shipped bundle
   mentions the type.

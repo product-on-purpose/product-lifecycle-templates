@@ -34,7 +34,7 @@ people who want every change, release notes are for people who want to know what
   tracking plan joins `governance-docs` as a sixth member.** The contract's membership test admitted an
   instrument that tracks performance, and a tracking plan specifies what the product records so that
   performance can be tracked. The test therefore gains one clause, the second widening of a membership
-  test after ADR 0060.
+  test after [ADR 0060 (change-request joins delivery-docs)](docs/internal/decisions/0060-change-request-joins-delivery-docs.md).
 
 ### Changed
 
