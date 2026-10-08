@@ -242,6 +242,16 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    # ADR 0066. The first family on `phase: measure`, the value governance-docs refused for kpi-dashboard
+    # because a standing dashboard is not phase-bound. Both members are: a design doc is finished when its
+    # test launches and a readout when its decision is recorded. Adopted contract-first like
+    # governance-docs, so this entry is latent until the first member lands.
+    "experimentation-docs": {
+        "contract": "docs/internal/contracts/experimentation-docs.md",
+        "phase": "measure",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"

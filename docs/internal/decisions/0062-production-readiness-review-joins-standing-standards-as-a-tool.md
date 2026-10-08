@@ -47,7 +47,7 @@ sources publish the document as a written checklist or template: Susan Fowler's 
 Microservices* (O'Reilly), Appendix A; GitLab's production readiness review template, since archived; and
 Mercari's production readiness checklist. Google's SRE book describes the review and says its SRE team
 "establishes and maintains a PRR checklist explicitly for the Analysis phase". The `launch-coordination-checklist`
-spec had asked its own research to look for exactly such a source (`tier2-specs.md:480-483`: "One source
+spec had asked its own research to look for exactly such a source (`tier2-specs.md:498-501`: "One source
 suffices; a second would change the teaching"). The maintainer reviewed the
 sweep's verdicts on 2026-09-27 and ruled: build, joining `standing-standards` as `classification: tool`.
 

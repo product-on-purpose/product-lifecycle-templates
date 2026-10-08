@@ -12,6 +12,35 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Specs for three Tier-2 types in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, from one admission
+  sweep over five measurement candidates on 2026-10-05, with every returned quotation checked against the
+  source's raw text. The **experiment design doc** (bundle id `experiment-design-doc`) is admitted on
+  GrowthBook, LaunchDarkly, Optimizely, Amplitude and Adam Fishman's template. AsPredicted, the Open Science
+  Framework and HM Treasury's Magenta Book carry the same document in two further lineages. The
+  **experiment readout** (bundle id `experiment-readout`) is admitted on Eppo's report template,
+  Optimizely's results summary, the CONSORT 2010 Statement (CC BY), the Behavioural Insights Team and the
+  Magenta Book. The **tracking plan** is admitted on five analytics vendors: Avo, Twilio Segment, Amplitude,
+  Mixpanel and mParticle.
+- **The [`experimentation-docs`](docs/internal/contracts/experimentation-docs.md) family contract, adopted
+  by [ADR 0066](docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md).** It is the
+  tenth family contract and the first on `phase: measure`. Its two founding members ship as two bundles,
+  one that plans a test of a hypothesis and one that reports it, as `test-plan` and `test-summary-report`
+  do in `qa-docs`. The contract excludes standing measurement instruments, and it excludes tests run
+  before anything is built. Gate check K gains a registry entry, which stays latent until the first
+  member lands.
+- **[ADR 0067](docs/internal/decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md): the
+  tracking plan joins `governance-docs` as a sixth member.** The contract's membership test admitted an
+  instrument that tracks performance, and a tracking plan specifies what the product records so that
+  performance can be tracked. The test therefore gains one clause, the second widening of a membership
+  test after [ADR 0060 (change-request joins delivery-docs)](docs/internal/decisions/0060-change-request-joins-delivery-docs.md).
+
+### Changed
+
+- **Contracts:** `governance-docs` to 0.4.0, with a dated change note and a sixth role. ADR count 65 -> 67
+  and check K assertions 118 -> 120, across markers and prose.
+
 ## [0.15.0] - 2026-09-30
 
 ### Added

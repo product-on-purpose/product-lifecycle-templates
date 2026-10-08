@@ -55,8 +55,8 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   failure branches have no live subject once the tree is clean, so a self-test is the only way to know
   they still fail when they should. Each is mutation-checked against a deliberately broken
   implementation.
-  <!-- counts: checkk=118 -->
-  `tools/test-check-k.py` runs 118 assertions;
+  <!-- counts: checkk=120 -->
+  `tools/test-check-k.py` runs 120 assertions;
   <!-- counts: checkformats=104 -->
   `tools/test-check-formats.py` runs 104.
 - **The link gate** (`tools/check-links.py`). The bundle gate only looks inside one bundle at a time, so
