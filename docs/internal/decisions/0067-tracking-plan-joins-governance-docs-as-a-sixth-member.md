@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-06
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,8 +27,8 @@ consulted: [claude]
 - **What this does NOT decide:** admission, which retrieval settled on five named vendors (see
   [`tier2-specs.md`](../tier2-specs.md)); and two neighbours the research named but this record does not place: the
   per-feature measurement plan (catalog id `analytics-requirements-measurement-plan`) and the data dictionary.
-- **Status:** proposed 2026-10-06. It is held proposed until the maintainer reads the contract diff, as ADR 0060 was,
-  because a family contract is "adopted only after a maintainer read"
+- **Status:** accepted 2026-10-08. The record was proposed 2026-10-06 and held until the maintainer read the
+  contract diff, as ADR 0060 was, because a family contract is "adopted only after a maintainer read"
   ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
 
 ## Context and Problem Statement

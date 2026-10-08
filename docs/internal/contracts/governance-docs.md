@@ -70,8 +70,9 @@ indefinitely") fit, but a tracking plan specifies what the product records rathe
 Section 1's purpose phrase therefore gains one clause, "or to specify what the product records so that performance can
 be tracked", and no existing word changes. The roles list gains a sixth bullet and "The five roles" becomes "The six
 roles". The kpi-dashboard note in section 2 gains a dated pointer to the `experimentation-docs` family it forecast,
-adopted the same day by [ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md). **No structural
+which [ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md) proposed the same day. **No structural
 obligation changed**, and check K's registry entry needs no edit, because it gates values rather than a member count.
+This version took effect on 2026-10-08, when the maintainer read the diff and both records were accepted.
 
 **0.3.0, 2026-09-27: a fifth member.** `change-log` (catalog id `change-log-governance`) joins as
 `classification: utility`, by [ADR 0061](../decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md).

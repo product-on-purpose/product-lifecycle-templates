@@ -1,6 +1,6 @@
 # Family Contract: experimentation-docs
 
-Status: proposed 2026-10-06 ([ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)); adopted only after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
+Status: adopted 2026-10-08 ([ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)); proposed 2026-10-06 and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: experimentation-docs` in its meta
 Members at adoption: none built yet (the catalog candidates `experiment-design-doc` and `experiment-readout-results-report` are the planned members; their bundle ids are fixed in their specs in [`tier2-specs.md`](../tier2-specs.md))
 Modeled on: the qa-docs family contract, the closest existing family: a phase-bound pair that plans a test and then reports it
@@ -142,8 +142,8 @@ not "in the family with issues"; it is out of the family until green, and the ca
 
 ## Change note
 
-**0.1.0 (2026-10-06, [ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)):** proposed, to be
-enforced by gate check K, the tenth family contract and the **first on `phase: measure`**. The maintainer approved
+**0.1.0 (2026-10-06, [ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)):** adopted
+2026-10-08 after a maintainer read, to be enforced by gate check K, the tenth family contract and the **first on `phase: measure`**. The maintainer approved
 founding the family on 2026-10-04 and ruled on 2026-10-06 that its two planned members ship as two bundles, following
 the `qa-docs` pair `test-plan` and `test-summary-report`. Drafted contract-first, before any member is built, so the
 contract describes the set its two planned members must join rather than one that already exists. The membership test,

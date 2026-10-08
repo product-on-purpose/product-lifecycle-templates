@@ -18,7 +18,7 @@
 > - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
 >
 > This file was written 2026-07-10 and last cites **ADR 0020**; there are now **67** decision records, and
-> forty-five of them (0021 through 0065) postdate it and change the plan it describes.
+> forty-seven of them (0021 through 0067) postdate it and change the plan it describes.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
 > one of the ungated. **The banner you are reading drifted too**, which is finding **DF-5 (prose counts

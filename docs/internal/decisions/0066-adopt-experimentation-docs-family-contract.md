@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-06
 decision-makers: [jprisant]
 consulted: [claude]
@@ -23,8 +23,8 @@ consulted: [claude]
   specs; the bundle ids, which the specs fix; and where any standing measurement instrument lives. The tracking plan,
   which the July 2026 plan proposed as a third member, joins `governance-docs` instead, by
   [ADR 0067 (tracking-plan joins governance-docs as a sixth member)](0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md).
-- **Status:** proposed 2026-10-06. It is held proposed until the maintainer reads the contract diff, as
-  [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md) and
+- **Status:** accepted 2026-10-08. The record was proposed 2026-10-06 and held until the maintainer read the
+  contract diff, as [ADR 0059](0059-announcement-internal-comms-joins-delivery-docs.md) and
   [ADR 0060](0060-change-request-joins-delivery-docs.md) were, because a family contract is "adopted only after a
   maintainer read" ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
 
