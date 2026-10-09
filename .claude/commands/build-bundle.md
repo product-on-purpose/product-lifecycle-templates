@@ -134,6 +134,7 @@ was the dearer one**, its drafting stage costing $8.58 against change-request's 
 cache reads; change-log 8,472,610, $16.95, for the same 15, its two-template drafting $8.14;
 production-readiness-review 7,876,892, $15.75, for the same 15, its two-template drafting $8.35;
 project-brief 7,120,610, $14.24, for the same 15, its two-template drafting $5.72;
+experiment-design-doc 6,674,388, $13.35, for the same 15, its two-template drafting $5.90;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Build
