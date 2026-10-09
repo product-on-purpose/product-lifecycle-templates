@@ -69,9 +69,9 @@ that axis, an allowed publication status, and an allowed size shape. The `delive
 example, requires `phase: deliver`, a `beta` or `stable` status, and a size shape of `[lean, full]` or
 `[lean]` ([ADR 0020, adopt the delivery-docs family contract](../internal/decisions/0020-adopt-delivery-docs-family-contract.md)).
 
-Nine family contracts exist today, each its own file: `delivery-docs`, `decision-docs`, `governance-docs`,
-`qa-docs`, `strategy-docs`, `discovery-docs`, `standing-standards`, `process-docs`, and `communication-docs`
-(all in [`docs/internal/contracts/`](../internal/contracts/)). A family can be adopted before any bundle
+Ten family contracts exist today, each its own file: `delivery-docs`, `decision-docs`, `governance-docs`,
+`qa-docs`, `strategy-docs`, `discovery-docs`, `standing-standards`, `process-docs`, `communication-docs`,
+and `experimentation-docs` (all in [`docs/internal/contracts/`](../internal/contracts/)). A family can be adopted before any bundle
 of that family is built; the contract is latent until a member lands, and the gate is indifferent to how
 many members a family eventually has.
 

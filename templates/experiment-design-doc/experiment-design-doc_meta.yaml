@@ -1,0 +1,34 @@
+id: experiment-design-doc
+title: Experiment Design Doc
+summary: >-
+  The document a team writes before a product experiment launches, while nobody has seen any data, to fix
+  the hypothesis, the variants and allocation, the primary and guardrail metrics, the minimum detectable
+  effect and sample size or duration, and the decision rule for every outcome including a null one. It
+  leads with what a PRD's Success metrics section does not already carry, not a restatement of it.
+doc_type: experiment-design-doc
+phase: measure
+family: experimentation-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (the five decisions: Hypothesis, Population/Variants/Allocation, Primary and Guardrail Metrics, Minimum Detectable Effect and Sample Size or Duration, and Decision Rule) for a single test on a surface the team already understands. Use full when the experimentation program is mature enough to need a Tracking and Instrumentation Note and pre-committed Validity Pre-Commitments (sample ratio mismatch, early stop for harm, ramp-up, novelty effects, overlap handling), or when the blast radius of a mistake on this surface is large."
+methodology: growth/dual-track
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - experimentation
+  - measure
+  - a/b testing
+  - hypothesis
+  - metrics
+  - decision rule
+related_templates: [prd, spike-report, test-plan, kpi-dashboard, okrs, release-notes, "future:experiment-readout"]
+aliases:
+  - A/B test plan
+  - experiment brief
+  - test design
+  - experiment spec
+catalog_ref: 142
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-08
+license: Apache-2.0

@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 38 governed document bundles, one per document type, organized under
+This library ships 39 governed document bundles, one per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -75,6 +75,15 @@ different family: see `governance-docs` in [the family map](#the-family-map) bel
   testing effort: what was tested, what was found, and whether the result clears the bar the test
   plan set.
 
+### I am running an experiment
+
+- [`experiment-design-doc`](../../templates/experiment-design-doc/) - the plan for one experiment,
+  fixed before it runs: the hypothesis, who is in it and how they are split, what is measured, how
+  much data the test needs, and what the team will do for each outcome.
+
+If you are checking that a build meets its specification, rather than whether a change moved a
+metric, that is the quality list above, not this one.
+
 ### I am recording a decision
 
 Four distinct jobs, kept deliberately separate: an investigation, a proposal, a record, and a
@@ -135,10 +144,12 @@ included here for readers who want the complete picture rather than a situationa
 | `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/), [`definition-of-ready`](../../templates/definition-of-ready/), [`production-readiness-review`](../../templates/production-readiness-review/) |
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
+| `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/) |
 
-<!-- counts: bundles=38 -->
-That is 38 bundles across every family the library currently ships, and every family is
-complete: nothing in the list above is a partially built stub. See
+<!-- counts: bundles=39 -->
+That is 39 bundles across every family the library currently ships. Nine families are complete;
+`experimentation-docs` has the first of its two planned members, and `experiment-readout` is not
+built yet. Nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.
 

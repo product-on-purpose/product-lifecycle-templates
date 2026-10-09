@@ -14,6 +14,18 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`experiment-design-doc`, the 39th bundle and the first `experimentation-docs` member**, by
+  [ADR 0066](docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md). The plan for one
+  experiment, fixed before the test runs, drawn from three lineages: product experimentation vendors,
+  academic preregistration and UK public-sector evaluation. Lean carries Hypothesis; Population, Variants,
+  and Allocation; Primary and Guardrail Metrics; Minimum Detectable Effect and Sample Size or Duration; and
+  Decision Rule. Full adds a Tracking and Instrumentation Note and Validity Pre-Commitments. The worked
+  example is dated 2026-07-30 and plans a four-week test of an in-app prompt meant to raise Saved Views
+  adoption at Acme Analytics. It sizes the test against roughly 230 accounts (illustrative) and shows the
+  arithmetic, which puts the smallest lift the test is sized to detect at about 18 points. The research
+  corrected the spec in four dated notes covering five points, and catalog 142's NN/g guidance note is now
+  flagged as unverified. Thirty-five sources, all fetched-and-verified; every quotation was checked against
+  the source's raw text.
 - **Specs for three Tier-2 types in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, from one admission
   sweep over five measurement candidates on 2026-10-05, with every returned quotation checked against the
   source's raw text. The **experiment design doc** (bundle id `experiment-design-doc`) is admitted on
