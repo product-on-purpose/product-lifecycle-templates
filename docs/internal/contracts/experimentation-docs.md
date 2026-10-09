@@ -3,6 +3,7 @@
 Status: adopted 2026-10-08 ([ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)); proposed 2026-10-06 and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: experimentation-docs` in its meta
 Members at adoption: none built yet (the catalog candidates `experiment-design-doc` and `experiment-readout-results-report` are the planned members; their bundle ids are fixed in their specs in [`tier2-specs.md`](../tier2-specs.md))
+Members: experiment-design-doc (built 2026-10-08); experiment-readout remains to build
 Modeled on: the qa-docs family contract, the closest existing family: a phase-bound pair that plans a test and then reports it
 Axis: `phase` (`measure`); see section 2 for why this family is not on the `classification` axis
 Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)

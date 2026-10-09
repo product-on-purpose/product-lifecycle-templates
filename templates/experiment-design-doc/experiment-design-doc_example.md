@@ -129,7 +129,7 @@ the adoption panel can still attribute control accounts to the right side of the
 
 | Check | Threshold or trigger | Owner |
 |---|---|---|
-| Sample ratio mismatch | Run the platform's chi-squared sample-ratio check on assigned account counts daily; a significant gap from the configured 50/50 suspends any reading of the result until the cause is found | Lee Zhang, Data Eng |
+| Sample ratio mismatch | Run the platform's chi-squared sample-ratio check on assigned account counts every day; if it flags the split as off 50/50, nobody reads the result until the cause is found | Lee Zhang, Data Eng |
 | Weekly active analysts guardrail | Stop the test early if the count falls below 480 on any day | Priya Nair |
 | Dashboard load error rate and permission incidents | Stop the test early if the error rate rises above its pre-test level, or a single shared-view permission incident occurs on either arm | Dana Osei, Platform |
 | Ramp-up | N/A. A 50/50 split across the full eligible account population is already as large as this test gets before the next steering review; there is no larger traffic tier to ramp into first. | N/A |

@@ -139,8 +139,7 @@ directly. Deep dive: companion section 7.
 **Borrowing a frequency claim no source actually makes.** The tell: a draft states a frequency for why
 experiments fail, or calls a practice "universal," with no specific source behind the claim.
 The fix: state only the design principle actually supported, and drop the frequency claim entirely rather
-than hunting for a citation to justify a sentence already written. Deep dive: companion section 7 and
-[`docs/internal/review-standards.md`](../../docs/internal/review-standards.md) section 5.
+than hunting for a citation to justify a sentence already written. Deep dive: companion section 7.
 
 ## When it is good enough
 

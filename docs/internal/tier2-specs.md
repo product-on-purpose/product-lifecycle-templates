@@ -36,7 +36,7 @@ design task" rather than "a spec-driven execution".
 | `project-brief` | `project-brief` | `discovery-docs` | **Written 2026-09-27**; admission sources [retrieved and raw-checked the same day](#discovery-docs-reopened-third-member-the-project-brief-that-reopens-a-closed-family) | **Built 2026-09-29**, shipped in `v0.15.0`. Family by [ADR 0063](decisions/0063-project-brief-reopens-discovery-docs.md), which reopens it after ADR 0035 had recorded it as closed at two; [build report](../../bundle-builds/reports/project-brief_v0.1.0.md) |
 | `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
 | `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
-| `experiment-design-doc` | `experiment-design-doc` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Not yet.** A founding member of the family that [ADR 0066](decisions/0066-adopt-experimentation-docs-family-contract.md) (adopt the experimentation-docs family contract) adopts at `phase: measure`. It is built first, so that its example plans the test the readout reports |
+| `experiment-design-doc` | `experiment-design-doc` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Built 2026-10-08**, not yet in a release. The first member of the family that [ADR 0066](decisions/0066-adopt-experimentation-docs-family-contract.md) (adopt the experimentation-docs family contract) adopts at `phase: measure`. It is built first, so that its example plans the test the readout reports; four dated notes in its spec section record five points its research settled otherwise |
 | `experiment-readout` | `experiment-readout-results-report` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Not yet.** The family's second founding member, built after `experiment-design-doc` so that its example reports that document's plan |
 | `tracking-plan` | `tracking-plan` | `governance-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#governance-docs-sixth-member-by-amendment-the-tracking-plan) | **Not yet.** Family by [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) (tracking-plan joins governance-docs as a sixth member), which widens the contract's membership test. Built after `experiment-design-doc` and `experiment-readout`, per the maintainer's 2026-10-06 ruling |
 | `north-star-metric-definition` | `north-star-metric-definition` | none assigned | **Researched 2026-10-05**; no spec written | **Queued, after `tracking-plan`.** Deferred by the maintainer on 2026-10-06 and queued on 2026-10-08, to follow the current three builds. It needs a spec and a family before it can be built. It clears admission on one publisher (Amplitude, all rights reserved), but the definition half of its job already ships in `kpi-dashboard`'s Metric Definitions section, and no contract admits it without an amendment, which stops for the maintainer's read. Evidence held locally |
@@ -2645,6 +2645,12 @@ Wharton or the Credibility Lab as confirmed text - both failed the raw-text chec
 The Open Science Framework names "Registered Report Protocol" among its named preregistration templates,
 "Standard, comprehensive, and general purpose preregistration form" for its default, and names its
 publisher, "Center for Open Science" (<https://help.osf.io/article/330-welcome-to-registrations>).
+*(Corrected 2026-10-08, when `experiment-design-doc` was built: OSF names no default. The same article says
+"We do not recommend a specific template as we do not know the details of your study, your institution's
+policies (if any), or the standards of your community". The "Standard, comprehensive..." line describes one
+named template, "OSF Preregistration", which the article marks "Most commonly used", the nearest it comes
+to a default; see [18] in the
+bundle's [research log](../../templates/experiment-design-doc/experiment-design-doc_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
 
 *Public-sector evaluation.* HM Treasury's Magenta Book requires "evaluation plans, protocols and
 statistical analysis plans" as pre-registered written artefacts, defining pre-registration as "documenting
@@ -2714,7 +2720,11 @@ The evidence genuinely splits, and both camps are independently confirmed, not a
   "Conclusions" on the same page that opens with "Hypothesis" (the four-section ordering - Basics,
   Experimentation Planning, Results, Conclusions - is this spec's own reading of a WebFetch summary, not
   independently raw-checked section by section)
-  (<https://www.atlassian.com/software/confluence/templates/experiment-plan-and-results>). Fishman's
+  (<https://www.atlassian.com/software/confluence/templates/experiment-plan-and-results>). *(Corrected
+  2026-10-08, when `experiment-design-doc` was built: the order is now read in raw text, as "1 Cover the
+  basics", "2 Set a plan for your experiment", "3 Outline your results" and "4 Draw conclusions"; see
+  [8] in the bundle's
+  [research log](../../templates/experiment-design-doc/experiment-design-doc_research-log.md#what-the-checks-caught-and-what-was-not-read).)* Fishman's
   template puts "The Results" in Part 3 of the same document whose Parts 1-2 are "The Why" and "The Plan."
   Amplitude's "Experiment Brief" closes with a fourth phase, "Analyze and Decide," inside the same brief
   that opened with the hypothesis.
@@ -2871,6 +2881,9 @@ file:
 | Guardrail 2 | Dashboard load error rate does not increase; shared-view permission incidents stay at zero | `templates/prd/prd_example.md:128` |
 | Feature instrumented | `view_saved`, `view_switched`, `view_set_default`, `view_shared`, `view_load_error` | `templates/prd/prd_example.md:133-134` |
 
+*(Corrected 2026-10-08, when `experiment-design-doc` was built: the OKRs' `period` field is at
+`okrs_example.md:4`, not line 3. The fact it carries, "FY26 Q3 (August to October 2026)", is unchanged.)*
+
 **Dates, chosen to sit cleanly downstream of every document read above and upstream of the OKR close-out
 (first product review of November):** design doc drafted 2026-07-30; the experiment runs 2026-08-03 through
 2026-08-31 (a four-week window, matching the PRD's own "4 weeks post-rollout, compared to the 4 weeks
@@ -2955,6 +2968,13 @@ also defers the tracking plan's catalog corrections to its build.
 | Behavioural Insights Team, Pension Wise report | Not stated. |
 | Strategyzer, Learning Card / Test Card | "Copyright Strategyzer AG" only; no Creative Commons or other open grant found - all rights reserved by default. |
 | Optimizely, "Understand your Experiment Scorecard" | Not stated; cited only for the out-of-scope boundary, not adapted structurally. |
+
+*(Corrected 2026-10-08, when `experiment-design-doc` was built. Two rows above are now settled. GrowthBook's
+skills repository is MIT-licensed: its own `LICENSE` file reads "MIT License" and "Copyright (c) 2026
+GrowthBook", so risk 5 below is closed. OSF's help article is offered under CC0: the line reads "This
+Article Is Licensed Under CCO For Maximum Reuse", printed with a letter O where a zero belongs, which is
+why a search for "CC0" missed it. See [2] and [18] in the bundle's
+[research log](../../templates/experiment-design-doc/experiment-design-doc_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
 
 #### `pairs_with`: `[]` for both
 
@@ -3046,7 +3066,7 @@ checked directly on 2026-10-06:
 - A case-insensitive grep for "tracking plan" across `templates/` and `docs/internal/contracts/`, run
   2026-10-06, returns these three PRD lines and two contracts. The `experimentation-docs` contract's
   boundary sentence excludes the type by name and points at ADR 0067 (tracking-plan joins governance-docs as a sixth member)
-  (`docs/internal/contracts/experimentation-docs.md:41-44`). The `governance-docs` contract names it in
+  (`docs/internal/contracts/experimentation-docs.md:42-45`). The `governance-docs` contract names it in
   its kpi-dashboard axis note and in the text its `0.4.0` amendment adds. No other shipped bundle
   mentions the type.
 
@@ -3124,7 +3144,7 @@ and not on the `phase` axis the new `experimentation-docs` family uses. That fam
 excludes the type by name: "A standing measurement instrument is not a member, however closely it serves
 experiments. A tracking plan... is maintained across many tests and is never finished, so it belongs to a
 `classification` family. The tracking plan joins `governance-docs` by ADR 0067"
-(`docs/internal/contracts/experimentation-docs.md:41-44`).
+(`docs/internal/contracts/experimentation-docs.md:42-45`).
 
 #### Structure: one load-bearing table, converging across five vendors
 

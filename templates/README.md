@@ -57,6 +57,10 @@ tree without the gate noticing.
 - [`user-persona/`](user-persona/) - User Persona. Axis phase discover; ships lean/full.
 - [`project-brief/`](project-brief/) - Project Brief. Axis phase discover; ships lean/full. The third `discovery-docs` member ([ADR 0063](../docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md)): the request for authority to start finding out whether and how to proceed.
 
+**`experimentation-docs`**
+
+- [`experiment-design-doc/`](experiment-design-doc/) - Experiment Design Doc. Axis phase measure; ships lean/full. The first `experimentation-docs` member ([ADR 0066](../docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md)): the plan for one experiment, fixed before it runs, which the family's second member, the readout, will report against.
+
 **`governance-docs`**
 
 - [`kpi-dashboard/`](kpi-dashboard/) - KPI Dashboard. Axis classification utility; ships lean/full.
