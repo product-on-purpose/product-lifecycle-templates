@@ -31,7 +31,7 @@ source_template_version: 0.1.0
 If we show a one-time in-app prompt to a Recurring Analyst after their fifth dashboard view since the
 2.4.0 release, suggesting they save their current filter, date range, and column setup as a view, then
 weekly Saved Views adoption will rise against a no-prompt control, because analysts who have not yet
-tried the feature may simply not have noticed the Views menu that 2.4.0 added.
+tried the feature may simply not have noticed the Views menu.
 Supporting evidence: adoption sits at 41% (the KPI dashboard, last reviewed 2026-07-20), and the risk
 register already carries R-04, the risk that Recurring Analysts do not
 adopt Saved Views inside the program's 60-day launch-success window because they have deep habits in the
@@ -73,7 +73,7 @@ PRD already carry; this test adds only the adoption row's own margin, sized in t
 
 | Metric | Type (primary or guardrail) | Baseline | Target or guardrail margin |
 |---|---|---|---|
-| Saved Views adoption (share of Recurring Analysts using a saved view weekly) | primary | 41% (KPI dashboard, last reviewed 2026-07-20) | A statistically significant lift over control by 2026-08-31; the smallest lift this test can detect is about 18 points (this test's own MDE, see below; not KR2's full-quarter target of 60%) |
+| Saved Views adoption (share of Recurring Analysts using a saved view weekly) | primary | 41% (KPI dashboard, last reviewed 2026-07-20) | A statistically significant lift over control by 2026-08-31; the test is sized to detect a lift of about 18 points (this test's own MDE, see below; not KR2's full-quarter target of 60%) |
 | Weekly active analysts | guardrail | 495 (KPI dashboard, same review date) | Must not fall below 480, the dashboard's own guardrail floor, at any point during the test |
 | Dashboard load error rate | guardrail | No new baseline; the PRD's own guardrail already covers this | Must not rise above its pre-test level |
 | Shared-view permission incidents | guardrail | None recorded; the PRD's own guardrail requires zero | Must stay at zero |
@@ -106,8 +106,8 @@ same data, is what happens next.
 Win (treatment's adoption share finishes the four weeks above control by a statistically significant
 margin at the platform's standard setting, with no guardrail breach): roll the fifth-view prompt out to
 100% of Recurring Analysts' accounts and retire the control. Null (no significant difference at the end of
-the full four weeks): this rules out only a lift of about 18 points or more, and a smaller real lift may
-still exist. Shelve the fifth-view prompt rather than rerunning it unchanged, because the same population
+the full four weeks): this makes a lift of about 18 points or more unlikely, and says nothing about a
+smaller real lift, which may still exist. Shelve the fifth-view prompt rather than rerunning it unchanged, because the same population
 cannot resolve a smaller effect the second time either. Bring the null finding to the next Reporting
 Platform Modernization steering review and weigh a different mitigation for R-04 against its cost.
 Guardrail breach (weekly active analysts fall below 480, the dashboard load error rate rises above its

@@ -574,7 +574,8 @@ Three things in it are worth studying past the shape of a filled template. Its *
 small** - roughly 495 weekly active Recurring Analysts at the time the document is written - and the example
 says so plainly. It works out in the open how large an effect that population can detect, using the rule of
 thumb in section 3 [[16]](#ref-16), and labels every sample-size and duration figure illustrative rather than
-pretending to a precision the population cannot support. Its **Primary and Guardrail Metrics section states explicitly why
+pretending to a precision the population cannot support. The 80 percent power and 5 percent significance it
+names are its fictional platform's setting, labelled illustrative, not a default this bundle recommends. Its **Primary and Guardrail Metrics section states explicitly why
 it is not the PRD's metrics section again**: the nudge's own target is adoption share, not the PRD's primary
 metric of time to first meaningful interaction, and the document says so in one line. And its **Decision
 Rule names an action for the null outcome**, not only for a win, which is the exact gap section 3 argues a
