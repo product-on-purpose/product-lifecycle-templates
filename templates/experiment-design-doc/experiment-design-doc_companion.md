@@ -58,13 +58,11 @@ document template" for mature programs [[4]](#ref-4)[[5]](#ref-5); Amplitude's B
 "Experiment Brief" with a linked template [[6]](#ref-6); Adam Fishman's newsletter walks through a
 four-part experiment document from first principles [[7]](#ref-7); and Atlassian hosts a Confluence
 template, created by Optimizely, that a team can adopt directly [[8]](#ref-8). None of these sources dates
-the convention's origin; the earliest dated source in this lineage is Spotify Engineering's 2025 account of
-its own program [[22]](#ref-22), and the newest is Spotify's 2026-09-08 post on why it has not adopted a
-second statistical framework [[23]](#ref-23), which this companion treats as a current position, not a
+the convention's origin, and this companion does not guess at one. Spotify's 2026-09-08 post on why it has
+not adopted a second statistical framework [[23]](#ref-23) is treated here as a current position, not a
 settled one.
 
-**Academic preregistration**, which long predates the product convention, holds the same idea to a public
-and legally time-stamped standard: "Preregistration is the practice of posting a time-stamped, read-only
+**Academic preregistration** holds the same idea to a public, time-stamped standard: "Preregistration is the practice of posting a time-stamped, read-only
 version of your study plan to a public repository before beginning data collection or analysis. This
 establishes a transparent record of your research intentions" [[18]](#ref-18). AsPredicted's own filed form
 asks eight fixed questions, including which analyses will be run and how sample size will be determined
@@ -126,7 +124,7 @@ allowed but "cost statistical power" [[1]](#ref-1). LaunchDarkly's field list se
 [[3]](#ref-3); Amplitude asks the same two questions as "Split" and "Audience cohort" [[6]](#ref-6).
 
 **The randomization unit is named explicitly here, and it is a real design choice, not a formality.**
-Fishman lists it first among his "five critical elements of experiment design" [[7]](#ref-7). Microsoft's
+Fishman's list of "five critical elements of experiment design" names it first [[7]](#ref-7). Microsoft's
 Experimentation Platform (ExP) warns that "all identifiers have some limitations and we cannot test all
 features with a single randomization unit" [[9]](#ref-9), and names the reason: when a change affects both
 a user and the people they are connected to, "the stable unit treatment value assumption (SUTVA) ... is
@@ -154,11 +152,10 @@ as "non-inferiority" against a margin [[14]](#ref-14)[[21]](#ref-21); the ICSE-S
 expectation as a design-review item, "Metrics and their expected movement are defined" [[15]](#ref-15).
 
 **The multiple-metrics danger is worth naming in the section itself.** GrowthBook's own metrics playbook
-warns that the more metrics a test analyzes, "the greater the chance of observing a" result that is "random
-noise" rather than a real effect [[14]](#ref-14); its separate mistakes post names the mechanism outright as
-one of the two statistics errors an experimentation program most often commits: "multiple-comparison
-problems (adding so many metrics or slicing the data until it shows what you want to see)"
-[[13]](#ref-13). Capping goal metrics at one or two and guardrails at a handful, as GrowthBook's own field
+warns that every additional metric analyzed raises the chance that one of them shows an apparent effect
+that is only chance [[14]](#ref-14); its separate post on program mistakes names the mechanism among the
+statistics mistakes it lists: "multiple-comparison problems (adding so many metrics or slicing the data
+until it shows what you want to see)" [[13]](#ref-13). Capping goal metrics at one or two and guardrails at a handful, as GrowthBook's own field
 guidance does [[1]](#ref-1), is the direct answer to that danger, not a separate convention.
 
 How many primary metrics is itself contested; see section 6, item 6.
@@ -256,8 +253,8 @@ guidance rather than copying one template. Each piece is sourced on its own:
   because "SRMs typically invalidate the A/B test and make any results and metric movements untrustworthy"
   [[10]](#ref-10).
 - **Peeking.** Covered fully in the Minimum Detectable Effect section above; GrowthBook separately names
-  "peeking (deciding on an experiment before it's completed)" among the statistics mistakes a program
-  commits [[13]](#ref-13).
+  "peeking (deciding on an experiment before it's completed)" among the statistics mistakes it lists
+  [[13]](#ref-13).
 - **Shutdown for harm.** The ICSE-SEIP checklist names "criteria for alerting and shutdown are configured"
   as a design-review item [[15]](#ref-15); Microsoft ExP explains why it is pre-committed rather than
   improvised: "setting up auto-shutdown for A/B tests that significantly degrade the product or the user
@@ -295,13 +292,13 @@ start" and "how long your experiment will run" [[3]](#ref-3).
 
 **Lean (five sections)** is the default: Hypothesis, Population/Variants/Allocation, Primary and Guardrail
 Metrics, Minimum Detectable Effect and Sample Size or Duration, and Decision Rule. Optimizely's own basic
-plan is the direct precedent for a lightweight variant, built for "if your team is starting to run its first
-tests" [[4]](#ref-4).
+plan is the direct precedent for a lightweight variant: its advanced plan sends a team that is "starting to
+run its first tests" back to it [[5]](#ref-5).
 
 **Full (seven sections)** adds the Tracking and Instrumentation Note and Validity Pre-Commitments.
-Optimizely's advanced plan is the precedent again, aimed at a team whose "experimentation program is more
-mature" and layering on an "Experiment design document template" plus a separate QA checklist
-[[5]](#ref-5). The public-sector lineage states the same scaling principle independently, as proportion
+Optimizely's advanced plan is the precedent again: the basic plan sends a team whose "experimentation
+program is more mature" on to it [[4]](#ref-4), and it layers on an "Experiment design document template"
+plus a separate QA checklist [[5]](#ref-5). The public-sector lineage states the same scaling principle independently, as proportion
 rather than maturity: "for smaller or lower-risk evaluations, a short study registration may be sufficient.
 For larger, more resource-intensive or higher stakes evaluations, pre-registration should normally include a
 full evaluation protocol and a pre-registered statistical analysis plan" [[19]](#ref-19). Fishman makes the
@@ -333,8 +330,7 @@ confidence and time [[25]](#ref-25). Spotify's post is dated 2026-09-08 and expl
 company's current position - "for Spotify today, it does not" - rather than a settled industry answer
 [[23]](#ref-23), so this companion treats it as time-bound.
 
-**Academic preregistration** contributes the discipline of a public, time-stamped, legally binding
-commitment: "preregistration is the practice of posting a time-stamped, read-only version of your study
+**Academic preregistration** contributes the discipline of a public, time-stamped, read-only commitment: "preregistration is the practice of posting a time-stamped, read-only version of your study
 plan to a public repository before beginning data collection or analysis" [[18]](#ref-18), and once
 submitted, "you will not be able to edit or make changes to it or any associated files" [[18]](#ref-18).
 AsPredicted's own eight-question form is the lineage's working instrument [[17]](#ref-17).
@@ -428,7 +424,7 @@ presented as one here.
 
 **Claiming a measured frequency for why experiments fail.** One early research pass attributed to Fishman
 the claim that "most experiment failures trace back to" a specific small set of causes. That string does not
-appear on his page; what he actually writes is narrower and does not claim a frequency at all: "it IS a
+appear on Fishman's page; the page's actual claim is narrower and states no frequency at all: "it IS a
 failed experiment if you can't learn something reliable due to poor design" [[7]](#ref-7). Fix: state the
 design principle Fishman actually makes, and do not borrow a frequency claim no source makes.
 
@@ -441,7 +437,7 @@ this document exists to add.
 **Peeking, and calling it monitoring.** Deciding on an experiment before its pre-committed sample size or
 duration is reached inflates the false-positive rate in a way that makes "all the reported significance
 levels become meaningless" [[16]](#ref-16); GrowthBook separately names "peeking (deciding on an experiment
-before it's completed)" as one of two recurring statistics mistakes a program commits [[13]](#ref-13). Fix:
+before it's completed)" among the statistics mistakes it lists [[13]](#ref-13). Fix:
 fix the sample size or duration in the design document itself, before the test launches, and treat any
 early look as informational only unless a sequential design was chosen in advance.
 
@@ -571,13 +567,14 @@ briefly without adapting its structure.
 for the Saved Views adoption-nudge experiment at Acme Analytics, dated 2026-07-30: a one-time in-app prompt
 shown to a Recurring Analyst after their fifth dashboard view, suggesting they save their current filter,
 date range and column setup as a view, against a no-prompt control. It runs 2026-08-03 through 2026-08-31,
-and its primary metric, starting value and target are drawn directly from this library's own KPI dashboard
-and OKRs examples rather than invented.
+and its primary metric and starting value are drawn directly from this library's own KPI dashboard and OKRs
+examples rather than invented.
 
 Three things in it are worth studying past the shape of a filled template. Its **population is honestly
 small** - roughly 495 weekly active Recurring Analysts at the time the document is written - and the example
-says so plainly, labelling every sample-size and duration figure illustrative rather than pretending to a
-precision the population cannot support. Its **Primary and Guardrail Metrics section states explicitly why
+says so plainly. It works out in the open how large an effect that population can detect, using the rule of
+thumb in section 3 [[16]](#ref-16), and labels every sample-size and duration figure illustrative rather than
+pretending to a precision the population cannot support. Its **Primary and Guardrail Metrics section states explicitly why
 it is not the PRD's metrics section again**: the nudge's own target is adoption share, not the PRD's primary
 metric of time to first meaningful interaction, and the document says so in one line. And its **Decision
 Rule names an action for the null outcome**, not only for a win, which is the exact gap section 3 argues a

@@ -72,13 +72,13 @@ below.
 | # | Criterion | 0 | 1 | 2 |
 |---|---|---|---|---|
 | 1 | **Hypothesis is falsifiable** | States a goal ("increase open rate") with no mechanism and no way to know it failed | States a mechanism or the losing condition, but not both, or states evidence with no stated connection to the mechanism | States the mechanism, cites the evidence already pointing that way, and names the specific result that would prove it wrong |
-| 2 | **Randomization unit is justified** | No randomization unit is stated | A unit is named, with no stated reason | A unit is named, and the reason ties to who or what the change is visible to, ruling out spillover to someone outside their own assignment |
+| 2 | **Population and unit justified** | No eligibility rule or no randomization unit is stated | Eligibility, the traffic split and a unit are stated, but the unit carries no reason | Eligibility, any exclusions and the traffic split are stated, and the unit's reason ties to who or what the change is visible to, ruling out spillover to someone outside their own assignment |
 | 3 | **Metrics carry a baseline** | A metric is named with no baseline and no target or margin | A baseline or a target/margin is given, not both, or the table restates the PRD's own metrics with no statement of whether this test needs its own numbers | Every row has both a baseline and a target or margin, and the document states in one line whether any row needs nothing beyond what the PRD already carries |
 | 4 | **Sample size is derived** | A duration or sample size appears with no stated effect size and no named statistical framework | An effect size or a framework is named, not both, or a framework is named with no stated commitment against reviewing results early | The effect size, the named framework, and the resulting sample size or duration are all stated, with an explicit commitment not to review results before that point |
 | 5 | **Decision rule covers outcomes** | Only a win outcome has a named action | A win and one of (null result, guardrail breach) have named actions; the other does not | A win, a null result, and an early guardrail breach each have a named action, and the named decision-maker matches the frontmatter |
 | 6 | **Tracking note is specific** *(full)* | No events are named, or the note repeats the PRD's instrumentation section with nothing said about what differs | Events are named but the exposure event is missing, or a verification is claimed with no stated date or environment | The exposure event is named, the existing events feeding each metric are named, and a verification is stated with the environment and the date it happened |
 | 7 | **Validity checks are owned** *(full)* | A row names a worry with no threshold and no owner | Some rows carry both a threshold and a named owner; others carry one or neither | Every row that applies names a threshold or trigger and a named owner, and a check that does not apply says so in one line rather than being dropped silently |
-| 8 | **Overlap and risk are named** *(full)* | Both the overlap line and the risk line are empty, or a bare "N/A" with no stated reason | One of the two names a concrete practice; the other is generic or missing | The overlap line names a specific mechanism or states in one line why none applies, and the risk line names specific people or teams told, not a general claim that "stakeholders know" |
+| 8 | **Overlap and risk named** *(full)* | Both the overlap line and the risk line are empty, or a bare "N/A" with no stated reason | One of the two names a concrete practice; the other is generic or missing | The overlap line names a specific mechanism or states in one line why none applies, and the risk line names specific people or teams told, not a general claim that "stakeholders know" |
 
 **Which rows apply to what.**
 
@@ -91,11 +91,8 @@ below.
 Instrumentation Note and no Validity Pre-Commitments section, so grading it on those rows would penalize
 the choice of variant rather than the quality of the document.
 
-Every cell above is written to resist the gaming test: could a document satisfy it without actually getting
-better? A cell that only asks for a count, such as "names at least two checks," can be satisfied by padding
-a table with rows that name nothing concrete. Every 2-point cell above instead asks you to point at a
-specific sentence, a specific number, or a specific name, which is why it cannot be satisfied by volume
-alone.
+Score a row 2 only when you can point at the specific sentence, number or name its cell asks for; a longer
+table is not a better one.
 
 ## Named anti-patterns
 

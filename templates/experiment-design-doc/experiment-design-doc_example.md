@@ -2,7 +2,7 @@
 title: "Saved Views Adoption Nudge Experiment Design Doc"
 experiment_name: "Saved Views Adoption Nudge"
 owner: "Priya Nair (PM, Reporting)"
-reviewers: "Dana Osei (Engineering), Lee Zhang (Data Eng)"
+reviewers: "Dana Osei (Staff Engineer, Platform), Lee Zhang (Data Eng)"
 decision_maker: "Priya Nair (PM, Reporting)"
 status: "approved"
 planned_start_date: "2026-08-03"
@@ -30,8 +30,8 @@ source_template_version: 0.1.0
 
 If we show a one-time in-app prompt to a Recurring Analyst after their fifth dashboard view since the
 2.4.0 release, suggesting they save their current filter, date range, and column setup as a view, then
-weekly Saved Views adoption will rise against a no-prompt control, because most analysts who have not
-yet tried the feature have simply not noticed that the Views control already sits above the filter bar.
+weekly Saved Views adoption will rise against a no-prompt control, because analysts who have not yet
+tried the feature may simply not have noticed the Views menu that 2.4.0 added.
 Supporting evidence: adoption sits at 41% (the KPI dashboard, last reviewed 2026-07-20), and the risk
 register already carries R-04, the risk that Recurring Analysts do not
 adopt Saved Views inside the program's 60-day launch-success window because they have deep habits in the
@@ -48,12 +48,12 @@ design-partner pilot, and their accounts, so a pilot account cannot land on eith
 double up the R-04 mitigation on itself. Two variants: control (current behavior, no prompt) and
 treatment (the fifth-view prompt), 50/50 split.
 
-Randomization unit: customer account, not individual analyst. FR-4, the PRD's requirement to let an
-analyst share a view with a teammate or team, means a saved view a treatment analyst creates can become
-visible to a colleague on the same account, and the KPI dashboard's own adoption panel already counts a
-shared view for the viewer as well as its creator. Randomizing at the analyst level would let a treatment
-analyst's share leak adoption into a colleague assigned to control on the same account, which breaks the
-assumption that one account's assignment does not affect another's outcome. Keeping a whole account on
+Randomization unit: customer account, not individual analyst. FR-4, the PRD's requirement to share a
+view so that "other permitted users of that dashboard can select it", means a saved view a treatment
+analyst creates can become visible to a colleague on the same account, and the KPI dashboard's own
+adoption panel counts a shared view for the viewer, not the creator. Randomizing at the analyst level
+would let a treatment analyst's share count as adoption for a colleague assigned to control on the same
+account, which breaks the assumption that one unit's assignment does not affect another's outcome. Keeping a whole account on
 one side of the test, including everyone who shares its dashboards, avoids that spillover.
 
 **The eligible population is small, and the test is sized against that, not against a bigger number we
@@ -73,18 +73,22 @@ PRD already carry; this test adds only the adoption row's own margin, sized in t
 
 | Metric | Type (primary or guardrail) | Baseline | Target or guardrail margin |
 |---|---|---|---|
-| Saved Views adoption (share of Recurring Analysts using a saved view weekly) | primary | 41% (KPI dashboard, last reviewed 2026-07-20) | At least 10 points above control by 2026-08-31 (this test's own MDE; see below, not KR2's full-quarter target of 60%) |
+| Saved Views adoption (share of Recurring Analysts using a saved view weekly) | primary | 41% (KPI dashboard, last reviewed 2026-07-20) | A statistically significant lift over control by 2026-08-31; the smallest lift this test can detect is about 18 points (this test's own MDE, see below; not KR2's full-quarter target of 60%) |
 | Weekly active analysts | guardrail | 495 (KPI dashboard, same review date) | Must not fall below 480, the dashboard's own guardrail floor, at any point during the test |
 | Dashboard load error rate | guardrail | No new baseline; the PRD's own guardrail already covers this | Must not rise above its pre-test level |
 | Shared-view permission incidents | guardrail | None recorded; the PRD's own guardrail requires zero | Must stay at zero |
 
 ## Minimum Detectable Effect and Sample Size or Duration
 
-MDE: 10 percentage points of weekly adoption share, treatment against control (illustrative). That is a
-large ask next to KR2's own 19-point, full-quarter target (41% to 60%), and it is large on purpose: at
-roughly 230 eligible accounts split 50/50, a four-week test cannot reliably resolve a smaller swing than
-this. Statistical approach: a fixed-horizon test, at whatever power and significance the experimentation
-platform's own standard setting uses; this test does not pick its own level. Sample: every eligible
+Statistical approach: a fixed-horizon test at the experimentation platform's standard setting, 80% power
+and a 5% significance level (illustrative); this test does not pick its own level. MDE: about 18
+percentage points of weekly adoption share, treatment against control. The arithmetic uses Evan Miller's
+rule of thumb, n = 16 σ²/δ² per arm, where σ² for a proportion is p(1 - p). At the 41% baseline, σ² is
+0.41 x 0.59, about 0.24. With about 115 accounts per arm, δ is the square root of 16 x 0.24 / 115, about
+0.18. Counting analysts instead of accounts would give about 12.5 points, but that overstates what the
+test can resolve, because analysts on one account share its assignment. An 18-point MDE is a large ask
+next to KR2's own 19-point, full-quarter target (41% to 60%). It is large because the population is
+small: this test can detect a big effect and nothing subtler. Sample: every eligible
 account, roughly 230 (illustrative); there is no larger population to draw a smaller sample from, so the
 "sample size" this test commits to is the whole eligible population, not a number a calculator trims down
 to. Duration: four weeks, 2026-08-03 through 2026-08-31, chosen on its own grounds: long enough for an
@@ -93,24 +97,24 @@ not derived from the account count the way a duration would be on a higher-traff
 
 The team will not review adoption numbers before 2026-08-31 except to confirm the prompt is firing (see
 the Tracking and Instrumentation Note below); any look taken before then is informational only and
-changes no decision. If the true effect on adoption is smaller than 10 points, this test returns a null
-result rather than a confirmed loss, and the Decision Rule below, not a second look at the same data, is
-what happens next.
+changes no decision. If the true effect on adoption is well below 18 points, this test will most likely
+return a null result rather than a confirmed loss, and the Decision Rule below, not a second look at the
+same data, is what happens next.
 
 ## Decision Rule
 
-Win (treatment's adoption share finishes the four weeks at least 10 points above control, with no
-guardrail breach): roll the fifth-view prompt out to 100% of Recurring Analysts' accounts and retire the
-control. Null (no detectable difference at the end of the full four weeks, the test having run at its
-stated power): treat the fifth-view prompt as answered and shelve it rather than repeating it unchanged;
-bring the null finding to the next Reporting Platform Modernization steering review and weigh a
-different mitigation for R-04 against its cost, since a 10-point effect was already the edge of what this
-population can detect. Guardrail breach (weekly active
-analysts fall below 480, the dashboard load error rate rises above its pre-test level, or a shared-view
-permission incident occurs on either arm): stop the test for every account immediately, regardless of the
-adoption reading, and route any permission incident through the security review path the PRD already
-names for shared views. Decision-maker: Priya Nair, PM for Reporting, the same name as the frontmatter
-above.
+Win (treatment's adoption share finishes the four weeks above control by a statistically significant
+margin at the platform's standard setting, with no guardrail breach): roll the fifth-view prompt out to
+100% of Recurring Analysts' accounts and retire the control. Null (no significant difference at the end of
+the full four weeks): this rules out only a lift of about 18 points or more, and a smaller real lift may
+still exist. Shelve the fifth-view prompt rather than rerunning it unchanged, because the same population
+cannot resolve a smaller effect the second time either. Bring the null finding to the next Reporting
+Platform Modernization steering review and weigh a different mitigation for R-04 against its cost.
+Guardrail breach (weekly active analysts fall below 480, the dashboard load error rate rises above its
+pre-test level, or a shared-view permission incident occurs on either arm): stop the test for every
+account immediately, regardless of the adoption reading, and send any permission incident to Dana Osei,
+who owns the permissions service. Decision-maker: Priya Nair, PM for Reporting, the same name as the
+frontmatter above.
 
 ## Tracking and Instrumentation Note
 
@@ -125,9 +129,9 @@ the adoption panel can still attribute control accounts to the right side of the
 
 | Check | Threshold or trigger | Owner |
 |---|---|---|
-| Sample ratio mismatch | Treat the split as mismatched once the account ratio departs from 50/50 by more than 5 points across 3 straight days (a wider band than a higher-traffic test would allow, since 230 accounts moves less per day) | Lee Zhang, Data Eng |
+| Sample ratio mismatch | Run the platform's chi-squared sample-ratio check on assigned account counts daily; a significant gap from the configured 50/50 suspends any reading of the result until the cause is found | Lee Zhang, Data Eng |
 | Weekly active analysts guardrail | Stop the test early if the count falls below 480 on any day | Priya Nair |
-| Dashboard load error rate and permission incidents | Stop the test early if the error rate rises above its pre-test level, or a single shared-view permission incident occurs on either arm | Dana Osei, Engineering |
+| Dashboard load error rate and permission incidents | Stop the test early if the error rate rises above its pre-test level, or a single shared-view permission incident occurs on either arm | Dana Osei, Platform |
 | Ramp-up | N/A. A 50/50 split across the full eligible account population is already as large as this test gets before the next steering review; there is no larger traffic tier to ramp into first. | N/A |
 | Novelty effect | Compare week-1 adoption lift against weeks 2 through 4; a lift that decays toward zero by week 4 is flagged as novelty rather than counted as the finding | Priya Nair |
 | Segments fixed in advance | None beyond the account-level control and treatment split; the eligible population is too small to slice further without turning each slice into its own underpowered test | N/A |

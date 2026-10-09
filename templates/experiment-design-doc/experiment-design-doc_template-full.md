@@ -234,9 +234,8 @@ HOW TO FILL THIS IN
            not adopt either position as settled; it only asks you to state how this test handles the
            question. Deep dive: experiment-design-doc_companion.md section 3 (Anatomy > Validity
            Pre-Commitments) and section 6, item 4.
-     ASK   What sample-ratio-mismatch threshold, and against how many days, would make you distrust the
-           split itself? What guardrail breach, and detected how, stops the test early rather than waiting for
-           the scheduled end? Does this test ramp up gradually, and if so, on what schedule; if not, why not?
+     ASK   What sample-ratio check, run how often, would make you distrust the split itself? What guardrail
+           breach, and detected how, stops the test early rather than waiting for the scheduled end? Does this test ramp up gradually, and if so, on what schedule; if not, why not?
            How will a novelty effect be checked for, and were any segments fixed before launch so their own
            composition cannot shift mid-test? Does this test run alongside another experiment on the same
            surface, and if so, how is that handled? Who outside this team needs to know the test is running
@@ -246,9 +245,16 @@ HOW TO FILL THIS IN
            the result if it went unnoticed.
      ROW HINT  A good row names the check, the threshold or trigger that would act on it, and who owns
            watching for it. A weak row names a worry with no threshold and no owner.
-     GOOD  | Sample ratio mismatch | Flag if the observed split drifts more than 2 percentage points from the
-           configured 50/50 for 2 consecutive days | Data analyst on the digest team |
+     GOOD  | Sample ratio mismatch | Flag if the platform's chi-squared check on assigned subscriber counts
+           reports a significant gap from the configured 50/50 on any daily read | Data analyst on the digest
+           team |
+           Overlap line: "The subject-line test on the same weekly digest ends on 14 March and this test
+           starts on 17 March, so no subscriber receives a send from both."
+           Risks line: "A later send time can raise unsubscribes, which the guardrail row above stops on.
+           Support hears two days before launch; the lifecycle marketing lead owns that note."
      WEAK  | Watch for problems | | QA |
+           Overlap line: "Other tests should not interfere." Risks line: "Stakeholders will be informed as
+           needed." Neither names a test, a date, a person, or a consequence.
      TRAP  Listing every check from a generic list regardless of whether it applies to this test. A row with
            no threshold and no owner is not pre-committed, it is a reminder to worry; write "N/A" with one
            line of why instead. -->
