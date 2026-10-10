@@ -52,6 +52,12 @@ people who want every change, release notes are for people who want to know what
 
 - **Contracts:** `governance-docs` to 0.4.0, with a dated change note and a sixth role. ADR count 65 -> 67
   and check K assertions 118 -> 120, across markers and prose.
+- **Branch protection: the site build is a second required check on `main`** (2026-10-08, the
+  maintainer's decision), beside the content gate. Every passage that called the gate the only required
+  check now says otherwise: `site.yml`'s header, `.github/workflows/README.md` and
+  `docs/explanation/the-site.md`, with dated notes on AC-18 in `site-s0-spec.md` and on site-plan 8.1.
+  README, STATE, CONTRIBUTING and `what-the-gate-proves.md` name both checks, and note that
+  `tools/run-gate.py` runs only `ci.yml` and never builds the site.
 
 ## [0.15.0] - 2026-09-30
 

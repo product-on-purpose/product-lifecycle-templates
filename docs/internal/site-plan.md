@@ -170,7 +170,7 @@ The proposal specified the all-in-one `withastro/action@v6`. **Clause 14.6 rejec
 
 ### 8.1 Shape
 
-Two jobs in `.github/workflows/site.yml`, kept separate from the content gate in `ci.yml` so the gate stays the only required check until the site is stable:
+Two jobs in `.github/workflows/site.yml`, kept separate from the content gate in `ci.yml` so the gate stays the only required check until the site is stable *(2026-10-08: the maintainer judged it stable and made the `build` job a required check on `main` beside `gate`)*:
 
 - **build** - checkout, `setup-node` reading **`node-version-file: .nvmrc`** (14.8 requires the mechanism, not just a pinned value), `npm ci`, run `gen-site.mjs`, run the guards, `astro build`, then `actions/upload-pages-artifact@v5`.
 - **deploy** - needs `build`, gated to `environment: github-pages`, `actions/deploy-pages@v5`.

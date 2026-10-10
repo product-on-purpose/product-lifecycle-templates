@@ -46,6 +46,11 @@ pull request ([`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)), and
 on it, so a bundle that fails a check cannot merge. That is what "enforced" means here: not a convention
 anyone is trusted to remember, but a script with an exit code.
 
+The gate is one of two required checks. Since 2026-10-08 the site workflow's `build` job
+([`.github/workflows/site.yml`](../../.github/workflows/site.yml)) is required too, so a change that
+breaks the site cannot merge. That check proves the site builds and passes its own guards. It proves
+nothing about a bundle's content, and `tools/run-gate.py` never runs it.
+
 ## What the CI steps beyond the gate prove
 
 The gate is one job in a longer pipeline. The other steps each close a specific gap the gate cannot see
