@@ -325,7 +325,7 @@ python tools/check-links.py       # every relative link and anchor resolves
 ```
 
 <!-- counts: bundles=39 -->
-All thirty-nine bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge.
+All thirty-nine bundles currently pass. GitHub Actions runs these on every push to `main` and every pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), and `main` is branch-protected on the gate, so a bundle that breaks these checks cannot merge. Since 2026-10-08 the site build ([`.github/workflows/site.yml`](.github/workflows/site.yml)) is a second required check, so a change that breaks the site cannot merge either.
 
 > **Scope, stated honestly, because this is the claim most worth distrusting.** The gate automates roughly **half** the methodology's Definition of Done. The research-tracing, guidance-comment-structure, companion-skeleton, guide-structure, and history-content clauses have no automation and are human-verified.
 >

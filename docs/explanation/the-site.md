@@ -189,12 +189,15 @@ that *this bundle* has been proven is not.
 
 - **Not an acquisition path.** It serves no machine-readable artifact. An agent wants the tree or the
   MCP server; `AGENTS.md` says so directly.
-- **Not a required check, as far as this repository can tell you.** `site.yml` is separate from
-  `ci.yml` by design, so a site failure cannot block a template change - that half is structural and
-  checkable. That the content gate is the *only* required check is a **GitHub branch-protection
-  setting**, which lives in repository settings and not in the tree. `site.yml` and
-  `.github/workflows/README.md` both assert it, and `site.yml` hedges its own assertion with "until
-  the site has proven itself". Treat it as current policy, not as something this page can prove.
+- **Not exempt from blocking a merge, since 2026-10-08.** On that date the maintainer made the site
+  workflow's `build` job a required check on `main`, beside the content gate's `gate`. This bullet
+  said the site was not a required check until then. `site.yml` is still a separate file from
+  `ci.yml`, which keeps the site's build logic out of the content gate. But `site.yml` has no path
+  filter on `pull_request`, so every pull request runs `build`, and a site failure now blocks a
+  template-only change too. The setting lives in repository settings, not in the tree, so this page
+  cannot show it; the repository's branch-protection API can. `tools/run-gate.py` runs only `ci.yml`'s
+  steps, so a green local gate says nothing about the site. `npm run build` in `site/` is the local
+  equivalent of the build step.
 - **Not a place build-cost reports appear.** `bundle-builds/` is not among the generator's inputs.
   Those reports are internal provenance, not a reading surface.
 - **Not proof of anything.** The site renders what the library has; it does not make any of it more

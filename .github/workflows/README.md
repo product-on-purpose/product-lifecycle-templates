@@ -22,6 +22,12 @@ form, and no step in this file can prove that a claim is true.
   reference implementation instead guards a separate build in a workflow that races its deploy,
   which meets the letter of nothing; clause 14.11 requires the deployed artifact to be checked
 
-**These are two workflows, deliberately, and only `ci.yml` is a required check** (AC-18). The
-content gate protects the template library; the site is downstream of it. Until the site has
-proven itself, a site failure must not be able to block a template change.
+**These are two workflows, deliberately** (AC-18). The content gate protects the template library,
+and the site is downstream of it, so the site's build and deploy logic stays out of `ci.yml`.
+
+**Both are required checks on `main` since 2026-10-08:** `gate` from `ci.yml` and `build` from
+`site.yml`, by the maintainer's decision. Until then this section said only `ci.yml` was required,
+so that a site failure could not block a template change. `site.yml` has no path filter on
+`pull_request`, so every PR now runs `build`, and a site failure blocks a template-only change too.
+`tools/run-gate.py` runs only `ci.yml`'s steps, so a green local gate says nothing about the site;
+`npm run build` in `site/` is the local equivalent of the build step.

@@ -1,8 +1,14 @@
 name: site
 
 # Builds the Astro Starlight site, GUARDS THE ARTIFACT IT IS ABOUT TO UPLOAD, and deploys to
-# GitHub Pages. Separate from ci.yml on purpose (AC-18): the content gate stays the only required
-# check until the site has proven itself, so a site failure cannot block a template change.
+# GitHub Pages. Separate from ci.yml on purpose (AC-18), so the site's build and deploy logic stays
+# out of the content gate.
+#
+# THE `build` JOB IS A REQUIRED CHECK ON `main` SINCE 2026-10-08, beside ci.yml's `gate`, by the
+# maintainer's decision. This comment said "the content gate stays the only required check until the
+# site has proven itself" until then. There is no path filter on `pull_request` below, so every PR runs
+# this job, and a site failure now blocks a template-only change too. The setting lives in branch
+# protection, not in this file. tools/run-gate.py runs only ci.yml's steps and never builds the site.
 #
 # WHY THE GUARDS SIT WHERE THEY SIT, which is the one thing not to "tidy up" later.
 #

@@ -309,6 +309,8 @@ Numbered so an autonomous session can report against them, and so "done" is not 
       > stays gate-enforced and mutation-tested under AC-16.
 - [x] **AC-18.** `site.yml` is a separate workflow from `ci.yml`, and the content gate remains the only
       required check until the site is stable (site-plan 8.1).
+      > **2026-10-08:** the second half has expired by design. The maintainer made `site.yml`'s `build`
+      > job a required check on `main` beside `gate`. The two workflows remain separate files.
 - [x] **AC-19.** The existing gate still passes: `python tools/run-gate.py` reports 0 failed.
 - [x] **AC-20.** The site deploys, and `https://product-on-purpose.github.io/product-lifecycle-templates/`
       serves the landing page over HTTPS.

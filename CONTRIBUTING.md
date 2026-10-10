@@ -117,6 +117,10 @@ runs the Advanced Skill Library Standard's conformance gate from a pinned checko
 it runs the workflow's own step, and skips it only when you pass `--offline`.
 Run `python tools/run-gate.py` before opening a PR. The scripted steps take seconds; G2 clones a
 pinned repository and installs its dependencies, so budget about a minute for a full run.
+`run-gate.py` reads its steps from `ci.yml` only, so it never builds the site. Since 2026-10-08 the
+site build in [`.github/workflows/site.yml`](.github/workflows/site.yml) is also a required check. If
+your change touches `site/` or `scripts/gen-site.mjs`, or anything the site generator reads, run
+`npm run build` in `site/` as well.
 
 **What the gate proves, and what it does not.** The gate proves structure: files present, no em-dash
 or en-dash, variants nest correctly, citations resolve in both directions, metadata is well-formed.
@@ -203,7 +207,8 @@ true. That half is the adversarial review's job.
 
 ## How PRs are reviewed
 
-CI is required and `main` is branch-protected: a PR cannot merge while any gate step is red, and
+CI is required and `main` is branch-protected on two checks, `gate` from `ci.yml` and, since
+2026-10-08, the site `build` from `site.yml`: a PR cannot merge while either is red, and
 merging around a red gate with admin rights is against the project's own runbook (it has happened
 exactly once, during a genuine CI outage, and the reason is recorded in
 [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
