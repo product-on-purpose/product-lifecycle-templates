@@ -22,7 +22,7 @@ tags:
   - hypothesis
   - metrics
   - decision rule
-related_templates: [prd, spike-report, test-plan, kpi-dashboard, okrs, release-notes, "future:experiment-readout"]
+related_templates: [prd, spike-report, test-plan, kpi-dashboard, okrs, release-notes, experiment-readout]
 aliases:
   - A/B test plan
   - experiment brief

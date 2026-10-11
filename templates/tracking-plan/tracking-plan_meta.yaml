@@ -1,0 +1,32 @@
+id: tracking-plan
+title: Tracking Plan
+summary: >-
+  The standing catalog of the analytics events a product records, the properties and traits each one
+  carries, and why each is collected, where it comes from, who owns it, and whether it is still live.
+  Distinct from a single feature's own PRD instrumentation slice, the data dictionary, the broader
+  measurement plan, and the KPI dashboard it stands upstream of.
+doc_type: tracking-plan
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Purpose and Boundary, Naming Conventions, the Event and Property Catalog, User and Account Properties, and Review and Ownership) for a product starting out or a small, stable event set, following the practitioner framing that a team can start with a spreadsheet or document when the event set is small and should build tracking in phases rather than all at once. Use full when more than one team changes this plan, when it holds personal or sensitive data, or when someone will later ask what changed and who approved it; it adds Privacy, Sensitivity and Retention and Change Process and Version History."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - analytics
+  - instrumentation
+  - events
+  - tracking
+  - data-governance
+related_templates: [kpi-dashboard, prd, change-log, issue-log, risk-register, raid-log, experiment-design-doc]
+aliases:
+  - data tracking plan
+  - event tracking plan
+catalog_ref: 140
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-11
+license: Apache-2.0

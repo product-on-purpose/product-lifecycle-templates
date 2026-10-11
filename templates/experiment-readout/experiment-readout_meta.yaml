@@ -1,0 +1,32 @@
+id: experiment-readout
+title: Experiment Readout
+summary: >-
+  The document a team writes after a product experiment ends, once the result is known, to report what ran, the
+  results with their uncertainty, whether the validity checks hold, and the decision those results drove, ship,
+  iterate, or stop, against the plan and decision rule an experiment design doc fixed in advance.
+doc_type: experiment-readout
+phase: measure
+family: experimentation-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Executive Summary, Context and Setup, Key Results: Primary Metrics, Key Results: Supporting Metrics, Validity Checks, Decision: Ship, Iterate or Stop, Decision Owner, Next Steps and Owners) for a single test with one clear primary metric and no secondary analysis a later reader would need to retrace. Use full when the decision rests on more than the primary read: it adds a Deep-Dive for segment or secondary cuts, Implementation Details and Analysis Notes for how the numbers were produced, and Further Analysis for follow-on questions the readout opens rather than closes."
+methodology: growth
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - experimentation
+  - measure
+  - a/b testing
+  - results
+  - decision rule
+  - validity checks
+related_templates: [experiment-design-doc, spike-report, test-plan, test-summary-report, kpi-dashboard]
+aliases:
+  - results report
+  - A/B test results
+  - experiment analysis
+catalog_ref: 143
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-11
+license: Apache-2.0
