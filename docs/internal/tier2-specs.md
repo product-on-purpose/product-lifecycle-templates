@@ -3544,33 +3544,43 @@ inventing structure beyond what any source in this sweep actually shows".
 **The maintainer ruled on 2026-10-11 for two sizes.** This spec does not argue that ruling back. It sets the
 condition the full variant must meet: **every full-only section rests on a source the build reads, or it is
 labelled this library's POSITION in the companion's Anatomy subsection and in the guide.** The build's
-research ran a dimension aimed at longer and sectioned forms (Heap's PDF, Atlassian's template, Gothelf's
-formula, McKinsey's problem statement worksheet, and public-sector or design-lab templates), and the
-`sizing_guidance` must say when the full variant earns its extra sections.
+research ran a dimension aimed at longer and sectioned forms. It read Heap's PDF, Gothelf's formula, NHS
+Scotland's Problem Framer, NHS Wales's guide and a Rose-Hulman course template. McKinsey's worksheet and
+Atlassian's editable template could not be read. The `sizing_guidance` must say when the full variant earns its
+extra sections.
 
 The sweep already shows that the sources carry more than one paragraph's worth of named parts, even where
 their form is short: Nielsen Norman Group's three required parts and its 5 Ws, Atlassian's four quadrants,
 GOV.UK's "agreeing what is not part of the problem", Gothelf's measurable criteria, and Heap's "Hypothesis
 statement and metrics" and "Open Questions". The section design below uses those.
 
-#### Section design (provisional; the build's research settles it)
+#### Section design (settled by the build's research the same day)
+
+The build's six research dimensions ran on 2026-10-11, before this spec merged, and their verdicts are folded in
+here rather than added later as dated notes. The full variant carries **four** sections beyond lean, each of which
+recurs in independent sectioned forms. The citations are in the bundle's research log.
 
 | Section | In lean | What it carries |
 |---|---|---|
-| **Problem Statement** | yes | The statement itself: a few sentences, from the affected person's perspective, naming no solution. Nielsen Norman Group's "A concise description of the problem that needs to be solved"; Atlassian's "craft one concise problem statement". Heap's PDF uses the same section label |
-| **Background** | yes | Where the problem shows up, how it came to attention, and what is affecting the people who have it. Nielsen Norman Group's "The background of a problem"; Atlassian's what and where |
-| **Who Is Affected** | yes | The people who have the problem, specifically enough to find them, linked to a persona where one exists. Nielsen Norman Group's "The people affected by the problem"; Atlassian's who |
-| **Impact and Why Now** | yes | What the problem costs the people who have it and the organisation, and why it matters now rather than later. Nielsen Norman Group's "The impact of the problem on the organization"; Atlassian's "why it needs to be solved" |
-| **Evidence** | yes | What shows the problem is real, where each piece came from, and how strong it is. Digital NSW's "Use the evidence you gather to document your clearly defined problem"; Gothelf's "We have observed [in these ways]" |
-| **What Is Not Part of the Problem** | full only | Neighbouring problems this statement deliberately leaves out, so the boundary is agreed before anyone scopes work. GOV.UK's "agreeing what is not part of the problem". GOV.UK names no document, so this section cites a practice, and the companion says so |
-| **How We Will Know It Is Solved** | full only | Observable signals that the problem has shrunk, stated without naming a solution: the measure, its current level, and the direction. Gothelf's formula, which closes on measurable criteria (that clause was not in the sweep's raw check, so the build quotes it from the page or does not quote it); Heap's "Hypothesis statement and metrics". **Contested**: whether success measures belong in a problem statement at all is a question the debates dimension was asked to settle |
-| **Open Questions and Assumptions** | full only | What is not yet known, what is being assumed, and what would change the statement. Heap's "Open Questions"; Nielsen Norman Group's "return to your problem statement and add to it" |
-| **Decision This Informs** | yes | Who decides whether this problem is worth pursuing, by when, and which document takes over if they say yes. **POSITION**: this section answers the contract's successor obligation (`discovery-docs.md`, section 1), not a named source's component list, unless the build's research finds one |
+| **Problem Statement** | yes | The statement itself: a few sentences, from the affected person's perspective, naming no solution. Nielsen Norman Group's "A concise description of the problem that needs to be solved"; NHS Wales's "about 18 words long"; Atlassian's who, what, why and where. Heap's PDF uses the same section label |
+| **Background** | yes | Where the problem shows up, how it came to attention, and what is affecting the people who have it. Nielsen Norman Group's "The background of a problem"; Atlassian's "What is the nature of the problem?" |
+| **Who Is Affected** | yes | The people who have the problem, specifically enough to find them, linked to a persona where one exists. Nielsen Norman Group's "The people affected by the problem"; Atlassian's who; NHS Scotland's "Who The Problem Most Affects" |
+| **Impact and Why Now** | yes | What the problem costs the people who have it and the organisation, and why it matters now rather than later. Nielsen Norman Group's "The impact of the problem on the organization"; Atlassian's "What happens if we don't solve it?"; GOV.UK's "consider quantifying the value of solving the problem" |
+| **Evidence** | yes | What shows the problem is real, where each piece came from, and how strong it is. Digital NSW's "Use the evidence you gather to document your clearly defined problem"; NHS Wales's "without evidence of your problem, you are left with opinion" |
+| **How People Cope Today** | full only | How the people who have the problem work around it now, and what has already been tried and why it did not work, as evidence and never as an option. Heap's "How do people currently solve this problem?"; Heap's author on "how customers work around the problem"; the University of Waterloo's "Describe previous attempts to solve the problem and why they failed." |
+| **What Is Not Part of the Problem** | full only | Neighbouring problems this statement deliberately leaves out, so the boundary is agreed before anyone scopes work. GOV.UK's "agreeing what is not part of the problem"; Rose-Hulman's "what is to be included and, perhaps more importantly, what isn't"; Atlassian's "In what circumstances does it not occur?" |
+| **How We Will Know It Is Solved** | full only | Observable signals that the problem has shrunk, stated without naming a solution: the measure, its current level, and the direction. Gothelf's "these measurable changes in their behavior"; Heap's "Metric(s) and Baseline"; Rose-Hulman's "primary success criteria". **Contested**: Queensland's "Defining success" play treats measures as a later, separate activity, and the companion names the split |
+| **Open Questions and Assumptions** | full only | What is not yet known, what is being assumed, and a root cause the team suspects, labelled as a hypothesis. Heap's "Open Questions"; the Canada School of Public Service on statements "based on assumptions"; the University of South Carolina's A3 template, which keeps the root cause as a later step |
+| **Decision This Informs** | yes | Who decides whether this problem is worth pursuing, by when, and which document takes over if they say yes. GOV.UK's "Your discovery is finished when you've decided whether or not you want to move on to alpha"; Digital NSW's "Is the problem clear enough to investigate further?". Which document takes over is this library's POSITION, from the contract's successor obligation (`discovery-docs.md`, section 1) |
 
-The lean variant's six sections are a strict ordered subset of the full variant's nine, as contract
+The lean variant's six sections are a strict ordered subset of the full variant's ten, as contract
 section 3.2 requires. **What stays out at any size:** options, a recommended solution, a cost estimate, a
-project scope or plan, and a request for funding. Each of those is a later document's job, and naming any of
-them breaks the section 2 rule that a `define` member names no solution, option, project or investment.
+project scope or plan, a request for funding, and a constraints section. The first five are later documents'
+jobs, and naming any of them breaks the section 2 rule that a `define` member names no solution, option, project
+or investment. No source read labels a constraints section. **A root cause stays out of the statement itself**:
+NHS Wales says "problem statements do not describe the solution or root causes", while Digital NSW's checklist
+asks "Do we understand the root cause?". Keeping a suspected cause under Open Questions and Assumptions follows the
+A3 template's separation, and it is this library's POSITION.
 
 **Quality rules go to the guide, not the template**, under
 [decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template). Digital
@@ -3587,10 +3597,11 @@ library's POSITION, because no source read contrasts the two by name.
 
 **Not `project-brief`.** A project brief asks a named approver for authority to start initiation
 (`project-brief`'s spec, above). A problem statement asks for no authority and names no project. The
-project-brief research log already records that the APM Body of Knowledge lists "problem statement",
-"project brief" and "project charter" as names in common usage for one early rationale
-(`project-brief_research-log.md:156`). The companion must report that collapse as a real use of the name,
-and say which sense this bundle builds.
+project-brief research log records an APM Body of Knowledge passage that lists "problem statement", "project
+brief" and "project charter" as names in common usage for one early rationale
+(`project-brief_research-log.md:156`). The build read APM's own online glossary, which has no "problem
+statement" entry and defines "Brief" and "Charter" as two different things. The companion cites only what the
+glossary says, and notes that the collapse of the names is reported in practice.
 
 **Not the PRD.** The PRD's Problem section restates a problem that has already been agreed, inside a
 specification of what will be built. `prd_companion.md:141` already places the problem statement upstream of
@@ -3617,7 +3628,7 @@ ADR 0068 records why none is a Define candidate.
 | `methodology` | `methodology-agnostic` | The admitting sources span UX discovery (Nielsen Norman Group), public-sector service design (Digital NSW), Lean UX (Gothelf) and product management (Heap). A single methodology would misdescribe at least two of them |
 | `pairs_with` | `[define-problem-statement]` | pm-skills ships the skill at `phase: define`; its own description says it "Creates a clear problem framing document with user impact, business context, and success criteria". **The landing PR adds the ID to `tools/known-skills.txt`**, which does not list it today, after re-reading the skill at pm-skills `main` |
 | `related_templates` | `[business-case, project-brief, user-persona, prd]`, inline | The two documents that take over, the persona that names who is affected, and the PRD whose companion already points here. Inline, because check I drops the first entry of a block list |
-| `aliases` | `problem brief`, `opportunity statement` | "Problem brief" is Heap's name. "Opportunity statement" is the same artefact phrased positively, by Nielsen Norman Group's and Gothelf's accounts as the sweep reported them; no wording for that claim passed the sweep's raw check, so the build's research must quote it from a page it reads or drop the alias. Neither appears as an alias on any shipped bundle or catalog row (checked 2026-10-11 against every `_meta.yaml`, `manifest.json`, `catalog.md` and `atlas/catalog-data.json`) |
+| `aliases` | `problem brief`, `opportunity statement` | "Problem brief" is Heap's name. "Opportunity statement" is the same artefact phrased positively: Nielsen Norman Group says problem statements that capture opportunities "are sometimes referred to as opportunity statements instead of problem statements, although they are written and used in the same way" (raw-checked in the build). ModernAnalyst argues the two differ for projects, and the companion reports that dissent. Neither appears as an alias on any shipped bundle or catalog row (checked 2026-10-11 against every `_meta.yaml`, `manifest.json`, `catalog.md` and `atlas/catalog-data.json`) |
 
 #### The catalog row the build PR adds
 
@@ -3674,7 +3685,7 @@ named external source, and the sections above stand on their own citations.
 5. **The templates stage has repeatedly reused the worked example's own scenario in GOOD and WEAK text.**
    `business-case`'s own Problem and Opportunity GOOD text does it ("2026-05 friction study"). Before the
    review closes, grep both templates for the example's nouns: `Priya Nair`, `Dana Okoro`, `Elena Cho`,
-   `Meridian Freight`, `dataset picker`, `second dashboard view` and `31 percent`.
+   `Meridian Freight`, `Recurring Analyst`, `dataset picker`, `second dashboard view` and `31 percent`.
 6. **A problem statement that names a solution fails its own family rule.** The example's title and every
    section must avoid the names the later documents give the solution: "Question-First Entry", "modelling
    defaults", and the business case's option identifiers.
