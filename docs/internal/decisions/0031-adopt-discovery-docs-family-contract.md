@@ -11,7 +11,9 @@ consulted: [claude]
 
 - **Decision:** Adopt the discovery-docs family contract with `business-case`, `user-persona`, and a
   provisional third member `prototype-brief`, and register the family in check K on the `phase` axis at the
-  single value `discover`.
+  single value `discover`. *(Amended 2026-10-11 by
+  [ADR 0069](0069-problem-statement-joins-discovery-docs.md): the family now gates `discover` or `define`,
+  and `problem-statement` joins at `define`. This record is kept as it was decided.)*
 - **Why:** the persona is checkable rather than asserted (`Recurring Analyst` appears in sixteen files and no
   bundle has ever defined it), and ratifying `prototype-brief`'s membership now, with its admission-test
   outcome pre-committed, avoids deciding membership after the research runs, when a negative answer is harder

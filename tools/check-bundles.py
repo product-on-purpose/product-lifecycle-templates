@@ -200,15 +200,17 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
-    # ADR 0031. Adopted contract-first like governance-docs, so this entry is latent until business-case
-    # lands. `phase: discover` is a single value by construction: every member is written once for a
-    # decision and is finished when that decision is made, so no member can be a standing instrument.
-    # One member, `prototype-brief`, is provisional: its membership is conditional on its own research
-    # passing ADR 0030's admission test, and a two-member outcome is a legitimate result rather than a
-    # failure. This registry gates whatever ships and is indifferent to how many that turns out to be.
+    # ADR 0031. Adopted contract-first like governance-docs. Every member is written once for a decision
+    # and is finished when that decision is made, so no member can be a standing instrument; that is a
+    # cadence rule, and it never needed a single phase value. ADR 0069 (2026-10-11) makes this the FIRST
+    # phase-axis family to gate a set: `define` is reserved for a member whose whole document frames one
+    # problem and names no solution (ADR 0068), and every other member declares `discover`. As with every
+    # set, check K enforces a value FROM the set and never that a member picked the RIGHT one; that stays
+    # a review obligation against the contract's section 2. This registry gates whatever ships and is
+    # indifferent to how many members that turns out to be.
     "discovery-docs": {
         "contract": "docs/internal/contracts/discovery-docs.md",
-        "phase": "discover",
+        "phase": ["discover", "define"],
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
