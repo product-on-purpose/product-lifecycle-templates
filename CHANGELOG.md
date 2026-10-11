@@ -14,6 +14,18 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **A spec for `problem-statement` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, the library's first
+  `phase: define` type, from the Define admission sweep of 2026-10-11. It is admitted on Nielsen Norman
+  Group's "Problem Statements in UX Discovery" and Digital NSW's "Define the problem", and it ships two
+  sizes by the maintainer's ruling. The sweep tested three other candidates, the opportunity solution tree,
+  the lean canvas and the Shape Up pitch, and each carries a solution; their progress rows record why.
+- **[ADR 0068](docs/internal/decisions/0068-define-means-problem-framing.md): the `define` phase means
+  problem framing.** It records the maintainer's 2026-10-10 call, which no file had held. The PRD and the
+  rest of the delivery chain stay on `phase: deliver`.
+- **[ADR 0069](docs/internal/decisions/0069-problem-statement-joins-discovery-docs.md): `problem-statement`
+  joins `discovery-docs` at `phase: define`.** The contract moves to 0.3.0 and becomes the first
+  `phase`-axis family to carry a set of values, `discover` and `define`. Check K's registry entry gates the
+  set, and `tools/test-check-k.py` gains a phase-set fixture.
 - **`experiment-readout`, the 40th bundle, which completes `experimentation-docs`**, by
   [ADR 0066](docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md). It records what one
   experiment found and the ship, iterate or stop decision the results drove, measured against the plan the
@@ -76,6 +88,8 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **ADR count 67 -> 69 and check K assertions 126 -> 132**, across markers and prose. STATE's family-contracts
+  cell said "All nine" after ADR 0066 had adopted a tenth contract, and now names all ten with a dated note.
 - **Counts swept from 39 to 41 bundles**, with markers and the prose around them, across README, AGENTS,
   STATE, CONTRIBUTING, the how-to, reference, tutorial and explanation docs, both skills, the plugin and
   library descriptions, the site landing page and the internal plans. The phase axis now holds 25 bundles

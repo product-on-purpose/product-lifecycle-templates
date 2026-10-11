@@ -42,6 +42,12 @@ design task" rather than "a spec-driven execution".
 | `tracking-plan` | `tracking-plan` | `governance-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#governance-docs-sixth-member-by-amendment-the-tracking-plan) | **Built 2026-10-11**, not yet in a release, in the same PR as `experiment-readout`. Family by [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) (tracking-plan joins governance-docs as a sixth member), which widens the contract's membership test. Four dated notes in its spec section record what its research settled otherwise, and a fifth, in the section table, points back to one of them; [build report](../../bundle-builds/reports/tracking-plan_v0.1.0.md) |
 | `north-star-metric-definition` | `north-star-metric-definition` | none assigned | **Researched 2026-10-05**; no spec written | **Queued, after `tracking-plan`.** Deferred by the maintainer on 2026-10-06 and queued on 2026-10-08, to follow the current three builds. It needs a spec and a family before it can be built. It clears admission on one publisher (Amplitude, all rights reserved), but the definition half of its job already ships in `kpi-dashboard`'s Metric Definitions section, and no contract admits it without an amendment, which stops for the maintainer's read. Evidence held locally |
 | `concept-test-validation-brief` | `concept-test-validation-brief` | none assigned; `discovery-docs` admits it as written | **Researched 2026-10-05**; no spec written | **Not now.** Parked by the maintainer on 2026-10-06. Its admission rests on one vendor template whose body the main loop could not check against raw text, and the new `experimentation-docs` contract excludes a test run before anything is built |
+| `problem-statement` | none yet; the build PR adds it | `discovery-docs` | **Written 2026-10-11**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fourth-member-at-define-the-problem-statement-the-librarys-first-define-bundle) | **Not yet built.** The library's first `phase: define` bundle. The phase's meaning is set by [ADR 0068](decisions/0068-define-means-problem-framing.md) (the define phase means problem framing), and the family by [ADR 0069](decisions/0069-problem-statement-joins-discovery-docs.md) (problem-statement joins discovery-docs), which gives the contract a second phase value. Two sizes by the maintainer's ruling, against the sweep's lean-only finding |
+| `shape-up-pitch` | `shape-up-pitch` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** It clears admission on Basecamp's own Shape Up glossary, but it carries a chosen solution: "A problem without a solution is unshaped work" (chapter 6). Most of its content already ships in `prd`, and its one distinct element is a fixed appetite. Placing it would be its own family decision. Evidence held locally |
+| `lean-canvas` | `lean-canvas` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** Its admission rests on one vendor page, Atlassian's Confluence template. Its Solution block sits beside its Problem block from the first draft (Ash Maurya, on fill order: "There is none"), and it is revisited rather than finished, which fails `discovery-docs`' cadence clause. No contract admits it cleanly. Evidence held locally |
+| `opportunity-solution-tree` | `opportunity-solution-tree` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not admitted, and no record written.** No named source publishes it as a written document: Teresa Torres links Miro, Mural and FigJam boards, and the vendors ship boards, the shape of [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). A decline record waits until someone proposes building it. Evidence held locally |
+
+**2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`.
 
 **2026-10-06: one admission sweep, five measurement candidates, a new family and one widening.** On 2026-10-04 the
 maintainer approved an `experimentation-docs` family and queued five candidates from a ranking of the catalog's
@@ -3469,3 +3475,273 @@ researched for this candidate. **`pairs_with: []`.** No pairing is claimed.
 7. **The owner and stage catalog fields are flagged, not corrected, in this spec.** A build that quietly
    "fixes" either without a reviewer decision would be inventing a value this sweep's evidence does not
    support.
+
+---
+
+### discovery-docs (fourth member, at `define`): the problem statement, the library's first Define bundle
+
+**`problem-statement`** - `discovery-docs`, **`phase: define`**, sizes **`[lean, full]`** (the maintainer's
+ruling, against this spec's research; see below), default `lean`, methodology **`methodology-agnostic`**, a
+new catalog type with **no catalog row yet**, proposed aliases `problem brief` and `opportunity statement`.
+**The maintainer ruled on 2026-10-11: record "Define means problem framing" as
+[ADR 0068](decisions/0068-define-means-problem-framing.md), build this type with two sizes, and admit it by
+amending `discovery-docs` rather than founding a new family.** The contract edits of
+[ADR 0069](decisions/0069-problem-statement-joins-discovery-docs.md) land with this spec, so the metadata
+below is written against contract `0.3.0`.
+
+#### Demand: a shipped companion already names it as an upstream document
+
+**`prd_companion.md:141` names a problem statement as one of the documents that precede a PRD**: "Upstream
+(precede it): product strategy and roadmap (set the bet), discovery research and personas (validate the problem
+and user), opportunity solution trees or a problem statement (frame what is worth solving)". No bundle answers
+that pointer today. The nearest shipped text is `business-case`'s Problem and Opportunity section, whose WHAT
+reads "described without naming the solution you already have in mind"
+(`business-case_template-lean.md:52-53`), and whose TRAP is "Naming a solution instead of a problem"
+(`business-case_template-lean.md:64`). That section sits inside an investment case, and a reader who wants to
+agree on a problem before anyone proposes an investment has no document to write.
+
+**pm-skills ships `define-problem-statement`** (`phase: define`, version 2.1.0, read on 2026-10-11 at
+pm-skills `main` 1cef1a9e). It is a pairing, not a ranking signal: this library never assumes pm-skills is
+installed, and the pairing is no reason to build. It is recorded here because `pairs_with` must name it (see
+Metadata).
+
+#### Admission: retrieved and raw-checked on 2026-10-11
+
+The Define admission sweep of 2026-10-11 read 75 addresses across two workflow runs. The main loop checked 311
+returned quotations against raw page text, and 310 passed. Every quotation below is one of the 310.
+
+| Source | What it says | Weight |
+|---|---|---|
+| Maria Rosala, Nielsen Norman Group, "Problem Statements in UX Discovery" (2021-08-22) | "A concise description of the problem that needs to be solved"; three required parts, "The background of a problem", "The people affected by the problem" and "The impact of the problem on the organization"; a quality rule, "Not contain a solution"; and "Throughout the discovery process, you can return to your problem statement and add to it" | **Admits on its own** (ADR 0048). Practitioner tier |
+| Digital NSW, "Define the problem" (New South Wales Government digital service toolkit) | "Use the evidence you gather to document your clearly defined problem"; a review checklist that asks "Have we described a problem rather than a solution?"; a worked example that rewrites a solution-first sentence | **Admits on its own.** Public-sector guidance. Its full checklist was not quoted in the sweep, and the build must read every question verbatim |
+| Heap, "The Problem Brief" (landing page, PDF and blog) | Landing page: "A worksheet for defining product problems". PDF: headed "PROBLEM BRIEF TEMPLATE" on all four pages, with sections including "Hypothesis statement and metrics", "Problem Statement", "Launch Plan" and "Open Questions". Vijay Umapathy, Heap's Senior Director of Product Management: "a document that lays out the problem to be solved" | Settles that the worksheet label alone does not decide form. **Not a structural source**: pages 3 and 4 carry job stories and a launch plan, delivery content the library already ships |
+| Atlassian Team Playbook, "Problem Framing" | "craft one concise problem statement that sums up the issue from the customer's perspective"; "The problem statement should include who is affected, what is affecting them, why it needs to be solved, and where the problem is happening". Also, in tension: "designed to align the entire team with one solution for a project" against "the goal today is to understand and define the problem, not to solve it" | Not needed for admission. Its editable template is gated and was not read |
+| Jeff Gothelf, "Business Problem Statements vs Opportunity Statements" | "Here is the template we use as part of the Lean UX process to write business problem statements"; "We have observed [in these ways] that the product isn't meeting our expectations"; it is "Box 1 in the Lean UX Canvas" | A formula inside one canvas box, not a sectioned document. All rights reserved |
+| GOV.UK Service Manual, "How the discovery phase works" | "reframe it as a problem to be solved"; "agreeing what is not part of the problem" | **A negative finding on form**: the practice is described and no written deliverable is named. Crown copyright, Open Government Licence |
+| Design Council, "Framework for Innovation" | "The insight gathered from the discovery phase can help you to define the challenge in a different way" | **A negative finding**: the Double Diamond's own pages name no written Define deliverable (ADR 0068) |
+
+One quotation was dropped by the raw check: Atlassian's "who, what, where, when, and why of a business problem"
+does not appear on the cached play page.
+
+#### The family: `discovery-docs`, amended to carry `define` (ADR 0069)
+
+`discovery-docs` section 1 admits a type that "exists to decide whether to build something, before anyone
+commits to building it", and its cadence clause says every member "is written once for a decision, and is
+finished when that decision is made". A problem statement passes both: it settles which problem is worth
+pursuing, before any solution is named, and Digital NSW, Atlassian and Gothelf each describe it written once,
+at the start of an initiative. Nielsen Norman Group supports both readings, and its "return to your problem
+statement and add to it" is revision during the discovery that the statement opens, not a standing cadence.
+**What needed an amendment was the axis, not the membership test.** The contract pinned `discover`, and
+ADR 0068 reserves `define` for exactly this kind of document. ADR 0069 records the costs: the first
+`phase`-axis set, an inverted order inside the family, and a value check K can gate but cannot judge.
+
+#### Sizes: two, by the maintainer's ruling, and what the full variant must earn
+
+**The sweep's own finding was one lean variant, at high confidence.** Every admitting source describes a few
+sentences or a short page. The sweep's problem-statement dimension put it plainly: a full variant "would be
+inventing structure beyond what any source in this sweep actually shows".
+
+**The maintainer ruled on 2026-10-11 for two sizes.** This spec does not argue that ruling back. It sets the
+condition the full variant must meet: **every full-only section rests on a source the build reads, or it is
+labelled this library's POSITION in the companion's Anatomy subsection and in the guide.** The build's
+research ran a dimension aimed at longer and sectioned forms. It read Heap's PDF, Gothelf's formula, NHS
+Scotland's Problem Framer, NHS Wales's guide and a Rose-Hulman course template. McKinsey's worksheet and
+Atlassian's editable template could not be read. The `sizing_guidance` must say when the full variant earns its
+extra sections.
+
+The sweep already shows that the sources carry more than one paragraph's worth of named parts, even where
+their form is short: Nielsen Norman Group's three required parts and its 5 Ws, Atlassian's four quadrants,
+GOV.UK's "agreeing what is not part of the problem", Gothelf's measurable criteria, and Heap's "Hypothesis
+statement and metrics" and "Open Questions". The section design below uses those.
+
+#### Section design (settled by the build's research the same day)
+
+The build's six research dimensions ran on 2026-10-11, before this spec merged, and their verdicts are folded in
+here rather than added later as dated notes. The full variant carries **four** sections beyond lean, each of which
+recurs in independent sectioned forms. The citations are in the bundle's research log.
+
+| Section | In lean | What it carries |
+|---|---|---|
+| **Problem Statement** | yes | The statement itself: a few sentences, from the affected person's perspective, naming no solution. Nielsen Norman Group's "A concise description of the problem that needs to be solved"; NHS Wales's "about 18 words long"; Atlassian's who, what, why and where. Heap's PDF uses the same section label |
+| **Background** | yes | Where the problem shows up, how it came to attention, and what is affecting the people who have it. Nielsen Norman Group's "The background of a problem"; Atlassian's "What is the nature of the problem?" |
+| **Who Is Affected** | yes | The people who have the problem, specifically enough to find them, linked to a persona where one exists. Nielsen Norman Group's "The people affected by the problem"; Atlassian's who; NHS Scotland's "Who The Problem Most Affects" |
+| **Impact and Why Now** | yes | What the problem costs the people who have it and the organisation, and why it matters now rather than later. Nielsen Norman Group's "The impact of the problem on the organization"; Atlassian's "What happens if we don't solve it?"; GOV.UK's "consider quantifying the value of solving the problem" |
+| **Evidence** | yes | What shows the problem is real, where each piece came from, and how strong it is. Digital NSW's "Use the evidence you gather to document your clearly defined problem"; NHS Wales's "without evidence of your problem, you are left with opinion" |
+| **How People Cope Today** | full only | How the people who have the problem work around it now, and what has already been tried and why it did not work, as evidence and never as an option. Heap's "How do people currently solve this problem?"; Heap's author on "how customers work around the problem"; the University of Waterloo's "Describe previous attempts to solve the problem and why they failed." |
+| **What Is Not Part of the Problem** | full only | Neighbouring problems this statement deliberately leaves out, so the boundary is agreed before anyone scopes work. GOV.UK's "agreeing what is not part of the problem"; Rose-Hulman's "what is to be included and, perhaps more importantly, what isn't"; Atlassian's "In what circumstances does it not occur?" |
+| **How We Will Know It Is Solved** | full only | Observable signals that the problem has shrunk, stated without naming a solution: the measure, its current level, and the direction. Gothelf's "these measurable changes in their behavior"; Heap's "Metric(s) and Baseline"; Rose-Hulman's "primary success criteria". **Contested**: Queensland's "Defining success" play treats measures as a later, separate activity, and the companion names the split |
+| **Open Questions and Assumptions** | full only | What is not yet known, what is being assumed, and a root cause the team suspects, labelled as a hypothesis. Heap's "Open Questions"; the Canada School of Public Service on statements "based on assumptions"; the University of South Carolina's A3 template, which keeps the root cause as a later step |
+| **Decision This Informs** | yes | Who decides whether this problem is worth pursuing, by when, and which document takes over if they say yes. GOV.UK's "Your discovery is finished when you've decided whether or not you want to move on to alpha"; Digital NSW's "Is the problem clear enough to investigate further?". Which document takes over is this library's POSITION, from the contract's successor obligation (`discovery-docs.md`, section 1) |
+
+The lean variant's six sections are a strict ordered subset of the full variant's ten, as contract
+section 3.2 requires. **What stays out at any size:** options, a recommended solution, a cost estimate, a
+project scope or plan, a request for funding, and a constraints section. The first five are later documents'
+jobs, and naming any of them breaks the section 2 rule that a `define` member names no solution, option, project
+or investment. No source read labels a constraints section. **A root cause stays out of the statement itself**:
+NHS Wales says "problem statements do not describe the solution or root causes", while Digital NSW's checklist
+asks "Do we understand the root cause?". Keeping a suspected cause under Open Questions and Assumptions follows the
+A3 template's separation, and it is this library's POSITION.
+
+**Quality rules go to the guide, not the template**, under
+[decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template). Digital
+NSW's review checklist and Nielsen Norman Group's quality rules are rubric rows, and the TRAP lines carry the
+no-solution rule.
+
+#### Boundaries with each named neighbour
+
+**Not `business-case` (the duplication risk, named plainly).** `business-case`'s Problem and Opportunity
+section does the same job inside an investment case. The standalone statement comes earlier and decides
+something different: whether a problem is worth a project brief or a business case at all. A business case
+that follows cites the statement, and its own section can then be shorter. The companion states this as the
+library's POSITION, because no source read contrasts the two by name.
+
+**Not `project-brief`.** A project brief asks a named approver for authority to start initiation
+(`project-brief`'s spec, above). A problem statement asks for no authority and names no project. The
+project-brief research log records an APM Body of Knowledge passage that lists "problem statement", "project
+brief" and "project charter" as names in common usage for one early rationale
+(`project-brief_research-log.md:156`). The build read APM's own online glossary, which has no "problem
+statement" entry and defines "Brief" and "Charter" as two different things. The companion cites only what the
+glossary says, and notes that the collapse of the names is reported in practice.
+
+**Not the PRD.** The PRD's Problem section restates a problem that has already been agreed, inside a
+specification of what will be built. `prd_companion.md:141` already places the problem statement upstream of
+the PRD.
+
+**Not a hypothesis statement, a How Might We question or a job story.** Each points at a solution or at a
+test of one. Gothelf's Lean UX canvas carries the business problem statement in box 1 and the hypothesis in a
+later box; the SAFe epic hypothesis statement is written about an epic, which SAFe defines as "a significant
+solution development initiative". **An opportunity statement is the same artefact phrased positively**, by
+Nielsen Norman Group's and Gothelf's accounts, which is why it is an alias rather than a neighbour.
+
+**Not the opportunity solution tree, the lean canvas or the Shape Up pitch.** Each carries a solution, and
+ADR 0068 records why none is a Define candidate.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `discovery-docs` | ADR 0069 |
+| `phase` | `define` | ADR 0068 reserves it for a document that frames one problem and names no solution; contract `0.3.0` section 2 |
+| `sizes_available` | `[lean, full]` | The maintainer's ruling, 2026-10-11, against the sweep's lean-only finding. The full variant's conditions are above |
+| `default_size` | `lean` | Every admitting source describes a short artefact |
+| `status` | `beta` | Every bundle |
+| `methodology` | `methodology-agnostic` | The admitting sources span UX discovery (Nielsen Norman Group), public-sector service design (Digital NSW), Lean UX (Gothelf) and product management (Heap). A single methodology would misdescribe at least two of them |
+| `pairs_with` | `[define-problem-statement]` | pm-skills ships the skill at `phase: define`; its own description says it "Creates a clear problem framing document with user impact, business context, and success criteria". **The landing PR adds the ID to `tools/known-skills.txt`**, which does not list it today, after re-reading the skill at pm-skills `main` |
+| `related_templates` | `[business-case, project-brief, user-persona, prd]`, inline | The two documents that take over, the persona that names who is affected, and the PRD whose companion already points here. Inline, because check I drops the first entry of a block list |
+| `aliases` | `problem brief`, `opportunity statement` | "Problem brief" is Heap's name. "Opportunity statement" is the same artefact phrased positively: Nielsen Norman Group says problem statements that capture opportunities "are sometimes referred to as opportunity statements instead of problem statements, although they are written and used in the same way" (raw-checked in the build). ModernAnalyst argues the two differ for projects, and the companion reports that dissent. Neither appears as an alias on any shipped bundle or catalog row (checked 2026-10-11 against every `_meta.yaml`, `manifest.json`, `catalog.md` and `atlas/catalog-data.json`) |
+
+#### The catalog row the build PR adds
+
+Under [ADR 0030](decisions/0030-templating-scope-markdown-documents.md), a new type's catalog row waits for
+its own research to find a named source. The sweep found two. The row lands on the build branch **before the
+build runs**, because `.claude/commands/build-bundle.md` requires a catalog entry first, and it lands in the
+build PR with the count sweep from 205 catalog types to 206.
+
+```json
+{
+  "id": "problem-statement",
+  "name": "Problem Statement",
+  "aliases": ["problem brief", "opportunity statement"],
+  "category": "Research / Discovery",
+  "stage": "discovery",
+  "owner": "PM / UXR",
+  "purpose": "Frame one problem, who has it, the evidence that it is real, and why it matters, before any solution is named",
+  "methodology": "UX discovery / service design",
+  "formality": "lightweight",
+  "rarity": "common",
+  "size_variant": "S",
+  "tier": 2,
+  "tier_inferred": true,
+  "must_have": false,
+  "relationships": ["Business Case", "Project Brief", "PRD"]
+}
+```
+
+`built` and `state` are derived by `tools/gen-atlas.py`. Three fields are this spec's judgment, not sourced
+facts: `rarity`, `owner` and `methodology`. The build must match the row's field set to its neighbours in
+`atlas/catalog-data.json` and give it the next entry number in `docs/internal/catalog.md`.
+
+#### `pairs_with`: one pairing, to be pinned at landing
+
+`define-problem-statement` was read on 2026-10-11. Its "When NOT to Use" list routes a reader to `deliver-prd`
+when "The problem is already agreed and engineering needs the spec", and to `define-hypothesis` when the
+problem "is really an unvalidated assumption". Both boundaries match this spec's. Its output sections,
+Problem Summary, User Impact, Business Context, Success Criteria, Constraints & Considerations and Open
+Questions, are **not** a source for this bundle's section design: pm-skills is a sibling repository, not a
+named external source, and the sections above stand on their own citations.
+
+#### Risks for the build and the review
+
+1. **The full variant is where invented structure would enter.** The sweep found high-confidence evidence for
+   a short artefact. Any full-only section that cannot cite a source the build read must say it is the
+   library's POSITION, in the companion and in the guide's variant chooser. A review lens that finds a
+   full-only section presented as sourced, without a logged source, files it as blocking.
+2. **The duplication with `business-case` is the reason this bundle could be declined, and the companion must
+   not hide it.** Its Relationships section names the overlap and says what the standalone statement adds.
+3. **Heap is not a structural source.** Its PDF carries delivery content on pages 3 and 4, and its own
+   landing page calls the artefact a worksheet. The companion may cite Heap for the name "problem brief" and
+   for the section labels on its first two pages, and nothing more.
+4. **Atlassian's tagline and run-sheet disagree.** Report both quotations; do not resolve which governs.
+5. **The templates stage has repeatedly reused the worked example's own scenario in GOOD and WEAK text.**
+   `business-case`'s own Problem and Opportunity GOOD text does it ("2026-05 friction study"). Before the
+   review closes, grep both templates for the example's nouns: `Priya Nair`, `Dana Okoro`, `Elena Cho`,
+   `Meridian Freight`, `Recurring Analyst`, `dataset picker`, `second dashboard view` and `31 percent`.
+6. **A problem statement that names a solution fails its own family rule.** The example's title and every
+   section must avoid the names the later documents give the solution: "Question-First Entry", "modelling
+   defaults", and the business case's option identifiers.
+
+#### What landing this bundle closes elsewhere
+
+1. **The contract's Members line** changes from "not yet built" to the build date.
+2. **`business-case_example.md:15-28`'s callout becomes false** the day this example exists, because it says
+   the case is ahead of everything except the persona, the project brief and the product vision. The landing
+   PR adds a one-line dated correction, as it did for the project brief.
+3. **`business-case_guide.md`'s "Write something else if" table gains a problem-statement row**, for a reader
+   who needs to agree on a problem before any investment is proposed. `business-case`'s history records it.
+4. **`tools/known-skills.txt` gains `define-problem-statement`.**
+5. **The catalog row**, the 205-to-206 catalog count sweep, and the 41-to-42 bundle count sweep. The phase
+   axis then holds 26 bundles and the classification axis 16, and `define` holds its first.
+6. **`README.md`'s `discovery-docs` paragraph** (`README.md:224`) says the family's members "answer whether
+   the investment is worth making and who it is for". It gains which problem is worth solving.
+7. **This page's Progress table.**
+
+#### The example
+
+**A problem statement for the problem that the Question-First Entry project brief and business case later
+answer**, dated **2026-01-09** and written by Priya Nair, PM, Reporting. That is four days after the
+[user persona](../../templates/user-persona/user-persona_example.md) (2026-01-05), five days before the
+[product vision](../../templates/product-vision/product-vision_example.md) (2026-01-14), seven days before the
+[project brief](../../templates/project-brief/project-brief_example.md) (2026-01-16) and eleven days before
+the [business case](../../templates/business-case/business-case_example.md) (2026-01-20). It extends the
+family's thread backward, as contract section 4 requires. It does not disturb `README.md:224`'s claim that
+the persona is the library's earliest document.
+
+**Facts it may read, all of them Acme's own and older than the statement.** From
+`project-brief_example.md:32-47` and `business-case_example.md:37-55`: the December 2025 leadership review at
+which Dana Okoro, VP Product, raised the flat revenue-per-account trend, and finance asked for a funding
+decision; the trend held for five quarters; only 31 percent of new accounts build a second dashboard view
+within 14 days of signup; the drop concentrates at the step where a new account first has to pick which
+table, which join and which measure answers their question; two-thirds of the accounts that stall there never
+return to authoring; sign-ups grew 40 percent over the same period; the segment that stalls, an account with no
+dedicated analyst and no query background, is the fastest-growing part of the signup base; and two years of
+incremental investment in documentation, tutorials and services capacity has not moved the number. From
+`user-persona_example.md`: the Recurring Analyst and Elena Cho, from interviews across November and December
+2025 (n=12), cited the way `project-brief_example.md:40-42` cites them.
+
+**What it must not cite or contain.**
+
+1. **No solution, option or investment.** Not "Question-First Entry", not "modelling defaults", not any of the
+   business case's options, and no recommendation. This is the section 2 rule, and the example is where a
+   reader learns it.
+2. **No document dated after 2026-01-09 cited as existing**: not the product vision, the project brief, the
+   business case, the FY26 product strategy, or anything later.
+3. **No 2026-05 Reporting friction study, no Saved Views, no Reporting Platform Modernization program, and no
+   Marta Reyes.** Those are mid-2026 facts of the delivery thread.
+4. **No early-prototype figures.** The 71 percent question-resolution figure and the business case's 6-11
+   point benefit range are later analysis, as the project-brief spec already ruled.
+5. **No staged case vocabulary** (SOC, OBC, FBC), which `business-case_example.md:5` rules out.
+
+**Decision this informs, closing the loop honestly.** The statement asks Dana Okoro whether the problem
+warrants a project brief. It may say that a brief is the next step if she agrees, as an intention. It must not
+describe the brief's contents, its date or its outcome. The brief, arriving seven days later, is what took
+over, and nothing here is invented for the statement to hand off to.

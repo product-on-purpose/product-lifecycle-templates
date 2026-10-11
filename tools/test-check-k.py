@@ -180,6 +180,22 @@ def main():
     ok, detail = run("sprint-retrospective-notes", "standing-standards", "phase: iterate", standing)
     check("a phase-axis member is rejected against this set", not ok, detail)
 
+    print("\n" + DIM + "4c. A set on the PHASE axis (ADR 0069), which no family carried before" + OFF)
+    # Both earlier sets sit on `classification`. axis_values() reads a list under either axis key, but
+    # nothing exercised a list under `phase` until discovery-docs gained `define` beside `discover`. This
+    # reads the live registry entry rather than a copy, so the fixture fails if the entry ever drifts.
+    discovery = {"discovery-docs": gate.FAMILY_CONTRACTS["discovery-docs"]}
+    ok, detail = run("business-case", "discovery-docs", "phase: discover", discovery)
+    check("a discover member conforms against the set", ok, detail)
+    ok, detail = run("problem-statement", "discovery-docs", "phase: define", discovery)
+    check("a define member conforms against the set", ok, detail)
+    ok, detail = run("prd", "discovery-docs", "phase: deliver", discovery)
+    check("a phase outside the set is rejected", not ok, detail)
+    check("  message lists discover/define", "allows discover/define" in detail, detail)
+    ok, detail = run("risk-register", "discovery-docs", "classification: utility", discovery)
+    check("a classification member is rejected against a phase set", not ok, detail)
+    check("  message names the phase set", "requires phase: discover/define" in detail, detail)
+
     print("\n" + DIM + "5. Real registry: every ratified entry declares exactly one axis" + OFF)
     # Guards the live FAMILY_CONTRACTS, not a fixture: a registry typo (both axes, or neither) is a
     # configuration error that would otherwise surface only when some member happened to trip it.

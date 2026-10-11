@@ -1,11 +1,16 @@
 # Family Contract: discovery-docs
 
 **Status:** **adopted 2026-08-04**, [ADR 0031](../decisions/0031-adopt-discovery-docs-family-contract.md).
-Registered in check K, which now gates `phase: discover` on every member.
-**Axis:** `phase`, single value `discover`.
+Registered in check K, which gates `phase: discover` or `phase: define` on every member.
+**Axis:** `phase`, two values: `discover` and `define` (amended 2026-10-11,
+[ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md)). A member declares `define` when its
+whole document frames one problem and names no solution, option, project or investment; every other member
+declares `discover`.
 **Members:** `business-case`, `user-persona`, `project-brief`
 ([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), assigned 2026-09-27, reopening the
-family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-29).
+family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-29), `problem-statement`
+([ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md), assigned 2026-10-11 at
+`phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing
@@ -37,9 +42,12 @@ anyone commits to building it.** Its members answer questions that precede every
 - a **user persona** says who we are building for, grounded in research rather than in imagination;
 - a **project brief** says why a project exists, what it must achieve, and who should be involved, before
   anyone commits to it (added 2026-09-27,
-  [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md)).
+  [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md));
+- a **problem statement** says which problem is worth solving, who has it, and what evidence shows it is
+  real, before anyone names a solution (added 2026-10-11,
+  [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md)).
 
-A fourth candidate, `prototype-brief`, would have said what to build cheaply first, in order to find out
+Another candidate, `prototype-brief`, would have said what to build cheaply first, in order to find out
 whether the team is right. It was tested and did not ship: no named source publishes it as a written document
 ([ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md)). It is named here only so a reader
 of this section knows what the family considered.
@@ -84,7 +92,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `discovery-docs` |
-| phase | **`discover`**, single value. A candidate whose honest axis is `classification` belongs in another family; this family has no standing instruments |
+| phase | **`discover`** or **`define`**. `define` is reserved for a member whose whole document frames one problem and names no solution, option, project or investment ([ADR 0068](../decisions/0068-define-means-problem-framing.md)). Every other member declares `discover`. A candidate whose honest axis is `classification` belongs in another family; this family has no standing instruments. *(Amended 2026-10-11, [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md): this row read "`discover`, single value".)* |
 | methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). Members will differ: a business case is methodology-agnostic, a persona leans research-practice, a prototype brief leans dual-track or design-thinking. A single required value would force at least one to misdescribe itself |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`), and two `qa-docs` members have already departed from them on evidence |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
@@ -130,7 +138,10 @@ than inventing a new company.
   without ever having defined;
 - the **project brief** asks for authorization to pursue the investment the business case then justifies in
   full, dated before it and chained onto the same mandate (added 2026-09-27, ADR 0063; its example is set out
-  in [`tier2-specs.md`](../tier2-specs.md)).
+  in [`tier2-specs.md`](../tier2-specs.md));
+- the **problem statement** frames the problem that the project brief and the business case later answer,
+  dated before both and naming none of the solutions they go on to weigh (added 2026-10-11, ADR 0069; its
+  example is set out in [`tier2-specs.md`](../tier2-specs.md)).
 
 `prototype-brief`'s bullet, which would have commissioned a cheap test of an unproven assumption, is removed:
 it was tested and did not ship (ADR 0035), and it never had an example to chain.
@@ -155,9 +166,11 @@ contract even if every file exists.
 ## 6. Enforcement
 
 The gate enforces section 2 and the mechanical part of section 3. **Family check letter K** validates section
-2's family-specific values for every declared member (a `phase` of `discover`, a `beta`/`stable` status, and a
-`[lean, full]` or `[lean]` size shape) and that this contract file resolves; methodology is descriptive and is
-not gated. A member declaring `classification` instead of `phase` fails check K with a message naming the axis
+2's family-specific values for every declared member (a `phase` of `discover` or `define`, a `beta`/`stable`
+status, and a `[lean, full]` or `[lean]` size shape) and that this contract file resolves; methodology is
+descriptive and is not gated. Check K proves that a member declared a value from the phase set, never that it
+declared the right one: which members frame one problem and name no solution is a review obligation against
+section 2. A member declaring `classification` instead of `phase` fails check K with a message naming the axis
 it should have used.
 
 Of section 3's obligations, the eight files (3.1), nesting (3.2), citations (3.6) and the clean example (3.7)
@@ -199,3 +212,16 @@ among them AXELOS's own PRINCE2 glossary, and the shipped `business-case` bundle
 boundary neighbour (`business-case_guide.md:17`). Section 1's member list and section 4's shared-scenario
 bullets change in the same edit; `prototype-brief`'s tested-and-declined status is kept, dated, rather than
 deleted. No enforcement obligation changed: check K gates values per declared member, not a member count.
+
+**0.3.0, 2026-10-11, [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md): a fourth
+member, and a second phase value.** `problem-statement` joins at `phase: define`, the value
+[ADR 0068](../decisions/0068-define-means-problem-framing.md) reserves for a document that frames a problem
+before any solution is chosen. Section 1's membership test admitted the type without amendment, and its
+cadence clause, written once and finished when the decision is made, fits it. What changed is the axis: this
+is the first `phase`-axis family to carry a set, so the header, section 2's phase row and section 6's
+enforcement sentence each name both values, and check K's registry entry gates
+`["discover", "define"]`. Section 1's member list and section 4's shared-scenario bullets gain the new member
+in the same edit. **One enforcement obligation changed**: check K now accepts either value, and which value a
+member should declare is a review obligation it cannot check. **One order is inverted on purpose**: a problem
+statement precedes a project brief and a business case, yet it carries the later phase value. Neither of
+those two members moves; ADR 0069 records why.
