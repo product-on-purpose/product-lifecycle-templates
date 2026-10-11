@@ -15,7 +15,8 @@ source_template_version: 0.1.0
 > **Worked example.** A filled `business-case`, full variant, for Acme Analytics, the same product used
 > throughout this library's examples. Per the discovery-docs family contract, this document sits near the
 > **start** of the shared timeline, ahead of everything except its siblings, the
-> [user persona](../user-persona/user-persona_example.md) and the
+> [user persona](../user-persona/user-persona_example.md), the
+> [problem statement](../problem-statement/problem-statement_example.md) and the
 > [project brief](../project-brief/project-brief_example.md) that asked for it, and the product vision it builds
 > on: it is dated
 > 2026-01-20, six days before the leadership review it asks for and eight days before the
@@ -26,6 +27,8 @@ source_template_version: 0.1.0
 > [product vision](../product-vision/product-vision_example.md), agreed six days earlier, and Acme's own
 > telemetry. *(Corrected 2026-09-29: this said the case was ahead of everything except the user persona and
 > the product vision until the project brief was built, dated 2026-01-16, four days before this case.)*
+> *(Corrected 2026-10-11: the problem statement, dated 2026-01-09, was built after this note, and is added to
+> the siblings above.)*
 >
 > All figures are illustrative. They are internally consistent with the other examples in this library and
 > are not drawn from a real company.

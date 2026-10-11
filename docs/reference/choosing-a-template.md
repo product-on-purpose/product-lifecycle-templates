@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 41 governed document bundles, one per document type, organized under
+This library ships 42 governed document bundles, one per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -25,9 +25,11 @@ library's internal grouping. If you already know the library's family structure,
 
 ### I am deciding whether to build something
 
-Before anything is scoped or scheduled, this is where you find out whether the investment is
-worth making and who it is for.
+Before anything is scoped or scheduled, this is where you settle which problem is worth solving,
+find out whether the investment is worth making, and decide who it is for.
 
+- [`problem-statement`](../../templates/problem-statement/) - which problem is worth solving, who has
+  it, and the evidence that it is real, before anyone names a solution.
 - [`business-case`](../../templates/business-case/) - whether an investment is worth making, and
   what it is being compared against, including doing nothing.
 - [`user-persona`](../../templates/user-persona/) - who you are building for, grounded in research
@@ -143,14 +145,14 @@ included here for readers who want the complete picture rather than a situationa
 | `decision-docs` | Investigates, proposes, records, and designs against a decision, as four separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/) |
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/), [`change-log`](../../templates/change-log/), [`tracking-plan`](../../templates/tracking-plan/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
-| `discovery-docs` | Runs before the decision to build, to test whether an investment is worth making and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/), [`project-brief`](../../templates/project-brief/) |
+| `discovery-docs` | Runs before the decision to build, to settle which problem is worth solving, whether an investment is worth making, and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/), [`project-brief`](../../templates/project-brief/), [`problem-statement`](../../templates/problem-statement/) |
 | `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/), [`definition-of-ready`](../../templates/definition-of-ready/), [`production-readiness-review`](../../templates/production-readiness-review/) |
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 | `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/), [`experiment-readout`](../../templates/experiment-readout/) |
 
-<!-- counts: bundles=41 -->
-That is 41 bundles across every family the library currently ships. All ten families are complete;
+<!-- counts: bundles=42 -->
+That is 42 bundles across every family the library currently ships. All ten families are complete;
 `experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
 `experiment-readout`. Nothing in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
@@ -163,7 +165,7 @@ what it does not mean.
 ## When nothing above fits
 
 Say this plainly, because it is true and it matters more than anything else on this page: **the
-library covers a 205-type catalog of product and software-lifecycle artifacts, researched and
+library covers a 206-type catalog of product and software-lifecycle artifacts, researched and
 recorded in [`docs/internal/catalog.md`](../internal/catalog.md), and only a fraction of that
 catalog is built.**
 
@@ -189,7 +191,7 @@ expected, not a bug in this page.
 Two ways to check further before concluding that:
 
 1. **Browse the whole catalog.** [`atlas/atlas.html`](../../atlas/atlas.html) is a self-contained,
-   interactive map of all 205 catalog types, filterable by category, lifecycle phase, tier, and
+   interactive map of all 206 catalog types, filterable by category, lifecycle phase, tier, and
    whether it is built. Open it in any browser. It will tell you plainly whether your type
    exists in the research and, if so, whether it has been templated yet.
 2. **If you are an agent, not a person, read the manifest instead of this page.**

@@ -86,3 +86,12 @@ iterate-retrospective
 # template is what each per-launch copy is made from. If the build finds otherwise, the bundle declares
 # `pairs_with: []` and this line stays, because the skill still exists.
 deliver-launch-checklist
+
+# Added 2026-10-11 for the `problem-statement` bundle (discovery-docs, phase: define). Verified present
+# at skills/define-problem-statement/SKILL.md in product-on-purpose/pm-skills with the command in this
+# file's header, at pm-skills commit 152b17518 (2026-06-10), skill version 2.1.0, `phase: define`. Its
+# own description reads "Creates a clear problem framing document with user impact, business context,
+# and success criteria. Use when starting a new initiative, realigning a drifted project, or
+# communicating up to leadership," and its own "When NOT to Use" list routes to deliver-prd, develop-
+# solution-brief, define-jtbd-canvas and define-hypothesis, each a boundary the bundle also draws.
+define-problem-statement
