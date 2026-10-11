@@ -125,7 +125,7 @@ Gate green, links resolve, counts agree, CI green, PR merged with `Closes #N` fo
 
 ## What this costs
 
-Measured, not estimated: roughly 7M-12M weighted token-equivalents per bundle, or $14-$41 at API list
+Measured, not estimated: roughly 6M-12M weighted token-equivalents per bundle, or $12-$41 at API list
 rates, depending mostly on which model drafts (launch-coordination-checklist 7,108,920, $14.22, every agent
 on Sonnet as this workflow pins; issue-log $14.29 and definition-of-ready $11.69, a single-size bundle, for
 the same 15 build agents; announcement-internal-comms 8,495,731, $16.99, a second single-size bundle, and
@@ -135,6 +135,8 @@ cache reads; change-log 8,472,610, $16.95, for the same 15, its two-template dra
 production-readiness-review 7,876,892, $15.75, for the same 15, its two-template drafting $8.35;
 project-brief 7,120,610, $14.24, for the same 15, its two-template drafting $5.72;
 experiment-design-doc 6,674,388, $13.35, for the same 15, its two-template drafting $5.90;
+experiment-readout 6,480,996, $12.96, for the same 15, its two-template drafting $5.06;
+tracking-plan 7,440,790, $14.88, for the same 15, its two-template drafting $8.57;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Build
