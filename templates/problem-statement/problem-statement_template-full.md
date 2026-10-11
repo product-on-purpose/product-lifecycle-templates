@@ -28,17 +28,17 @@ problem statement down to a few sentences, others will quickly understand what y
 why, and what's out of scope," and NHS Wales puts a typical instance at "about 18 words long." The
 four added sections are named fields around the statement, each resting on a source this bundle's
 research actually read; they do not turn this into a business case. Options, a recommended
-solution, a cost estimate, a project scope, and a funding request stay out at every size, and no
-source read for this bundle labels a constraints section either. See problem-statement_companion.md
-section 4.
+solution, a cost estimate, a project scope, and a funding request stay out at every size. So do
+constraints: the sources that label them use them to bound a solution, and `project-brief` carries
+them. See problem-statement_companion.md section 4.
 
 WHAT A PROBLEM STATEMENT IS, AND IS NOT
 It names which problem is worth solving, who has it, and what evidence shows it is real, before
 anyone names a solution, an option, a project, or an investment. It is NOT a business case (this
 library's own `business-case` bundle asks the same questions inside a funded investment comparison;
 this document comes earlier, asks for no money, and decides whether a problem is worth that
-comparison at all; this boundary is this library's own POSITION, since no source read for this
-bundle contrasts the two documents by name). It is NOT a project brief (which asks a named approver
+comparison at all; one Six Sigma source draws the same line by name, and the order, statement first,
+is this library's own POSITION). It is NOT a project brief (which asks a named approver
 for authority to start initiation; this document asks for no authority and names no project; an
 Association for Project Management consultation draft read for this library's `project-brief`
 research names the three documents as interchangeable for one early rationale, but APM's own

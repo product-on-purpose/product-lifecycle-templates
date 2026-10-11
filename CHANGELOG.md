@@ -14,6 +14,17 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`problem-statement`, the 42nd bundle and the library's first `phase: define` bundle**, the fourth
+  `discovery-docs` member by
+  [ADR 0069](docs/internal/decisions/0069-problem-statement-joins-discovery-docs.md). It frames one problem,
+  who has it and the evidence that it is real, before anyone names a solution. Lean carries Problem
+  Statement; Background; Who Is Affected; Impact and Why Now; Evidence; and Decision This Informs. Full adds
+  How People Cope Today; What Is Not Part of the Problem; How We Will Know It Is Solved; and Open Questions
+  and Assumptions. The worked example is dated 2026-01-09 and frames the problem the project brief and the
+  business case later answer, naming none of their solutions. The research log records 43 sources, nine of
+  them from a gap-fill pass after drafting, and every one of its 264 quotations was checked against raw
+  text. Catalog entry 206 is new, appended so that no existing entry number changes.
+
 - **A spec for `problem-statement` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, the library's first
   `phase: define` type, from the Define admission sweep of 2026-10-11. It is admitted on Nielsen Norman
   Group's "Problem Statements in UX Discovery" and Digital NSW's "Define the problem", and it ships two
@@ -88,6 +99,14 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Counts swept from 41 to 42 bundles and from 205 to 206 catalog types**, with markers and the prose
+  around them. The phase axis now holds 26 bundles. Sections are 354, frontmatter fill sites 276, gated
+  research logs 36 and gated sources 1,501. `business-case`'s guide gains a problem-statement row, and its
+  example's callout names the new sibling with a dated note. The build workflow's research schema now offers
+  the tier word `standards`, which the research-log contract accepts, in place of `standard`, which it
+  rejects. The MCP self-test expected `define` to be the one declared phase no bundle uses; it now expects
+  none, and keeps that branch under test by hiding the one `define` bundle for a single call (50
+  assertions, from 49).
 - **ADR count 67 -> 69 and check K assertions 126 -> 132**, across markers and prose. STATE's family-contracts
   cell said "All nine" after ADR 0066 had adopted a tenth contract, and now names all ten with a dated note.
 - **Counts swept from 39 to 41 bundles**, with markers and the prose around them, across README, AGENTS,

@@ -177,10 +177,10 @@ actually read. The discipline, in full, is in
   reference itself**, rather than being presented as if it had been read.
 
 <!-- counts: logsgated=36 -->
-<!-- counts: sourcesgated=1492 -->
+<!-- counts: sourcesgated=1501 -->
 `tools/check-research-logs.py` gates the structural side of this contract in CI (every source entry
 has a number, an identity, a tier, and a retrieval status token) across 36 of the library's research
-logs and 1,492 individual source entries; the ones it does not cover are named exceptions in the check's
+logs and 1,501 individual source entries; the ones it does not cover are named exceptions in the check's
 own output. What it cannot check, and says so on every run, is whether a `Supports:` line is actually
 true. That half is the adversarial review's job.
 

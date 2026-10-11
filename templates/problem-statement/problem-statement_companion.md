@@ -23,8 +23,9 @@ At a glance:
 - **The overlap with this library's `business-case` bundle is real, and this companion says so plainly.**
   `business-case`'s Problem and Opportunity section asks the same questions inside an investment case.
   The standalone statement comes earlier, asks for no money, and decides whether a problem is worth a
-  project brief or a business case at all. That framing is this library's own POSITION; no source read
-  for this bundle contrasts the two documents by name. See section 8.
+  project brief or a business case at all. One source draws the line by name: Six Sigma DSI says the
+  problem statement "describes what, where, and how much, without the persuasive framing" [[30]](#ref-30).
+  The order, statement first, is this library's own POSITION. See section 8.
 - **A root cause stays out of the statement itself.** NHS Wales and Epec both exclude it; two other
   sources invite root-cause thinking into the surrounding exercise. This bundle keeps a suspected cause
   out of the Problem Statement section and gives it a labeled, hypothesis-only place in Open Questions
@@ -192,13 +193,27 @@ Neighbouring problems this statement deliberately leaves out, agreed before anyo
 it. GOV.UK names the move directly, "Reframing the problem also includes agreeing what is not part of
 the problem" [[3]](#ref-3), and a Rose-Hulman course template asks for "the scope of the project, what is
 to be included and, perhaps more importantly, what isn't" [[16]](#ref-16). Atlassian's own prompt asks
-the boundary from the other side, "In what circumstances does it not occur?" [[11]](#ref-11).
+the boundary from the other side, "In what circumstances does it not occur?" [[11]](#ref-11). VinUni's
+capstone template puts the same boundary directly under its problem statement, as a scope sub-field that
+asks "what aspects it encompasses and what it does not cover" [[42]](#ref-42), and Conn and McLean write
+that "the boundaries on problem definition are really important to agree on up front" [[35]](#ref-35).
 
 **Beginner note.** Name at least one neighbouring problem this statement is deliberately not about.
 
 **Expert note.** This is not a project scope section; a project's scope, options and plan stay out of
 this bundle at every size. This section draws the boundary of the problem itself, not of the work that
 might follow if the problem is pursued.
+
+**Constraints are a different thing, and they go elsewhere.** Engineering-design teaching gives
+constraints a stage of their own, and reports that "ABET requires problem statements to include"
+realistic constraints [[36]](#ref-36); a capstone proposal template labels "Constraints, Risks, and
+Resources" [[41]](#ref-41). The engineering paper defines a constraint as "a boundary beyond which the
+design should not go" [[36]](#ref-36), so a constraint bounds a solution. The same paper still puts
+constraints inside the statement, "The constraints need to be added to your problem statement"
+[[36]](#ref-36), because its problem statement opens a design. This document names no solution, so a
+limit any answer must respect, such as a budget, a deadline or a regulation, belongs in
+`project-brief`'s Constraints and Who Should Be Involved section. That routing is this library's own
+POSITION, and the engineering-design line dissents from it.
 
 ### How We Will Know It Is Solved (full only)
 
@@ -209,7 +224,9 @@ closes on exactly this question, "as determined by [these measurable changes in 
 piece, "if we solve it, how we will we know? ... what customer behavior or metric shift will we see?"
 [[13]](#ref-13). Heap's worksheet gives it a labeled field, "Metric(s) and Baseline: Define how you'll
 evaluate success" [[8]](#ref-8), and a Rose-Hulman template asks for "a summary of the primary success
-criteria" [[16]](#ref-16).
+criteria" [[16]](#ref-16). A University of Arkansas template gives success metrics a field of their own,
+"Quantitative or measurable indicators of success" [[40]](#ref-40), and a Boston University guide lists
+"Measurability" among a problem statement's elements [[43]](#ref-43).
 
 **Beginner note.** Name the measure and its current level; leave the target number for the document
 that proposes how to move it.
@@ -218,9 +235,19 @@ that proposes how to move it.
 genuinely disputed, not settled. Queensland's own "Defining success" play treats it as separate, later
 work that assumes the problem is already settled, "Make sure you have a clearly defined problem ... You
 should already have a well-defined problem" [[21]](#ref-21), and draws its own line against this
-section's content, "The outcome is not an output or a metric of your project" [[21]](#ref-21). This
+section's content, "The outcome is not an output or a metric of your project" [[21]](#ref-21). UC
+Berkeley's process office sits with Queensland: "Convert your problem statement into objectives you can
+actually measure", objectives that then "go straight into your Project Charter" [[39]](#ref-39). This
 bundle carries the section in the full variant and names the split rather than treating either camp as
-the only one. Separately, one Six Sigma source recommends going further still and folding in "a claim or
+the only one.
+
+Teresa Torres supplies a test that holds in either camp. She quotes Josh Seiden's definition, that an
+outcome is "a change in human behavior that drives business results", and adds her own test: "If you can
+achieve the metric without actually helping customers, it's probably an output in disguise"
+[[38]](#ref-38). A measure of the problem's size passes that test, and a
+feature's adoption fails it. The Arkansas template goes further than this bundle in one respect: its
+success-metric example, "50% reduction in cycle time; zero compliance findings" [[40]](#ref-40), carries a
+target. This bundle leaves the target to the document that proposes how to move the measure. Separately, one Six Sigma source recommends going further still and folding in "a claim or
 working thesis that presents a potential solution or approach" [[29]](#ref-29); this bundle's no-solution
 rule, held across every other canon source this research read, overrides that one recommendation.
 
@@ -230,7 +257,9 @@ What is not yet known, what is being assumed true until research says otherwise,
 team suspects, labeled as a hypothesis. Heap's worksheet carries a literal "Open Questions" field
 [[8]](#ref-8), and a Canada School of Public Service job aid states the underlying caution directly: a
 statement "done before doing design research and consulting stakeholders should be considered as being
-based on assumptions" [[33]](#ref-33).
+based on assumptions" [[33]](#ref-33). New Zealand's Regulatory Impact Statement template makes the
+limits of the evidence a labelled section, "Limitations and Constraints on Analysis", and asks of them,
+"can Cabinet still make an informed decision?" [[37]](#ref-37).
 
 **Beginner note.** List what the statement is assuming, not only what it asserts as fact; Nielsen Norman
 Group names refining the statement "if you've learned root causes or how much a problem costs your
@@ -258,13 +287,18 @@ whether or not you want to move on to alpha," adding that "it's not a failure to
 discovery phase" [[3]](#ref-3), and Digital NSW's own checklist ends on the same question, "Is the
 problem clear enough to investigate further?" [[2]](#ref-2). One practitioner reading of PMBOK describes
 the moment after approval in the same terms this section asks for: "After the problem statement is
-created and approved, it's time to move on to possible solutions" [[26]](#ref-26).
+created and approved, it's time to move on to possible solutions" [[26]](#ref-26). New Zealand's
+Regulatory Impact Statement template gives the decision a labelled field, "Decision sought"
+[[37]](#ref-37). The University of Arkansas's combined problem-statement and business-case template is
+written "Before governance review to support go/no-go recommendations" [[40]](#ref-40). Conn and
+McLean's own tests for a problem definition start from the same place: it is agreed by those involved in
+making the decision [[35]](#ref-35).
 
 **Beginner note.** Name the decider and the date by which they need to answer, not only the question
 itself.
 
-**Expert note, and a POSITION.** Which document takes over is this library's own call, not a rule any
-source read for this bundle states. This library's `discovery-docs` family contract frames every member
+**Expert note, and a POSITION.** One source names a successor, a project charter [[39]](#ref-39), but
+none states a rule for which document follows. Which document takes over is this library's own call. This library's `discovery-docs` family contract frames every member
 as "written once for a decision, and finished when that decision is made"
 (`docs/internal/contracts/discovery-docs.md`, section on membership), and the same contract's
 shared-scenario rule names this bundle as the one that "frames the problem that the project brief and
@@ -299,10 +333,13 @@ template, contested by Queensland's own playbook [[12]](#ref-12)[[13]](#ref-13)[
 School of Public Service job aid and the University of South Carolina's A3 template
 [[8]](#ref-8)[[33]](#ref-33)[[34]](#ref-34).
 
-**One field has no sourced place in this bundle at any size.** No source this research read for this
-bundle labels a constraints section; the nearest candidate, NHS Scotland's own "Project Barriers" field
-[[14]](#ref-14), names a barrier met along the way, not a limit accepted before the work starts, and this
-bundle does not adopt it.
+**One sourced field has no place in this bundle at any size.** The first research pass found no source
+that labels a constraints section; the nearest candidate, NHS Scotland's own "Project Barriers" field
+[[14]](#ref-14), names a barrier met along the way, not a limit accepted before the work starts. The
+gap-fill pass found constraints labelled in engineering-design teaching and in a capstone proposal
+[[36]](#ref-36)[[41]](#ref-41), and in both they bound a solution. This bundle routes them to
+`project-brief`. The engineering paper puts constraints inside its problem statement, and section 3
+records that dissent.
 
 ## 5. Methodology lineage
 
@@ -452,8 +489,10 @@ to pick one answer and move on.
 Opportunity section asks the same questions this bundle asks, inside an investment case. The standalone
 statement this bundle ships comes earlier, asks for no money, and decides whether a problem is worth a
 project brief or a business case at all; a business case written afterward can cite the statement and
-keep its own problem section shorter. That framing is this library's own POSITION: no source read for
-this bundle contrasts the two documents by name.
+keep its own problem section shorter. One source contrasts the two by name: "the business case argues why
+the problem matters financially; the problem statement describes what, where, and how much, without the
+persuasive framing" [[30]](#ref-30). The order this bundle adds, the statement first and a case only if
+the problem is worth one, is this library's own POSITION; no source read sets it.
 
 **Not `project-brief` (narrower than one source first suggested).** An Association for Project Management
 consultation draft, read for this library's `project-brief` research, names "problem statement," "project
@@ -529,9 +568,9 @@ the business case, or anything else dated after it, as already existing.
 
 <a id="ref-3"></a>[3] Government Digital Service, GOV.UK Service Manual. "[How the discovery phase works](https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works)," Agile delivery community (published 4 August 2016, last updated 21 June 2021). [primary]
 
-<a id="ref-4"></a>[4] Build for Good, Open Government Products, Government of Singapore. "[Writing a good problem statement](https://www.build.gov.sg/problem-statement-guide/)." [standard]
+<a id="ref-4"></a>[4] Build for Good, Open Government Products, Government of Singapore. "[Writing a good problem statement](https://www.build.gov.sg/problem-statement-guide/)." [primary]
 
-<a id="ref-5"></a>[5] Digital.gov, U.S. General Services Administration. "[Reframing](https://digital.gov/guides/hcd/discovery-operations/reframing)," HCD Guide Series, Discovery operations guide. [standard]
+<a id="ref-5"></a>[5] Digital.gov, U.S. General Services Administration. "[Reframing](https://digital.gov/guides/hcd/discovery-operations/reframing)," HCD Guide Series, Discovery operations guide. [primary]
 
 <a id="ref-6"></a>[6] Stanford d.school, CS377 course handout. "[Developing a Point of View](https://hci.stanford.edu/courses/cs247/2011/readings/dschool-pov.pdf)" (September 2006), Adventures in Design Thinking series. [primary]
 
@@ -553,17 +592,17 @@ the business case, or anything else dated after it, as already existing.
 
 <a id="ref-15"></a>[15] Improvement Cymru Academy, NHS Wales. "[Understanding your Problem](https://performanceandimprovement.nhs.wales/functions/quality-safety-and-improvement/improvement/improvement-cymru-academy/resource-library/academy-toolkit-guides/understanding-your-problem-toolkit-guide/)," toolkit guide. [practitioner]
 
-<a id="ref-16"></a>[16] Rose-Hulman Institute of Technology, CSSE 333 course. "[Problem Statement Guide](https://www.rose-hulman.edu/class/csse/csse333/Project/Samples/problem_statement_template.pdf)" (3 September 2003). [standard]
+<a id="ref-16"></a>[16] Rose-Hulman Institute of Technology, CSSE 333 course. "[Problem Statement Guide](https://www.rose-hulman.edu/class/csse/csse333/Project/Samples/problem_statement_template.pdf)" (3 September 2003). [practitioner]
 
 <a id="ref-17"></a>[17] Stanford d.school. "[bootcamp bootleg](https://www.cs.kent.ac.uk/people/staff/saf/patterns/gallery/BootlegBootcamp.pdf)," hosted copy. [primary]
 
-<a id="ref-18"></a>[18] Interaction Design Foundation. "[What is How Might We (HMW)?](https://ixdf.org/literature/topics/how-might-we)," literature topic page (updated 2026). [standard]
+<a id="ref-18"></a>[18] Interaction Design Foundation. "[What is How Might We (HMW)?](https://ixdf.org/literature/topics/how-might-we)," literature topic page (updated 2026). [reference]
 
-<a id="ref-19"></a>[19] IDEO.org. "[How Might We](https://www.designkit.org/methods/how-might-we.html)," Design Kit method page. [standard]
+<a id="ref-19"></a>[19] IDEO.org. "[How Might We](https://www.designkit.org/methods/how-might-we.html)," Design Kit method page. [primary]
 
 <a id="ref-20"></a>[20] Institute of Project Management. "[Problem Statement Template for Project Managers (2026)](https://instituteprojectmanagement.com/blog/problem-statement-template/)." [practitioner]
 
-<a id="ref-21"></a>[21] Queensland Government, Digital Service Design Office. "[Defining success](https://www.forgov.qld.gov.au/service-delivery-and-community-support/design-and-deliver-public-services/digital-service-design-playbook/all-plays/defining-success)" play, Digital Service Design Playbook. [standard]
+<a id="ref-21"></a>[21] Queensland Government, Digital Service Design Office. "[Defining success](https://www.forgov.qld.gov.au/service-delivery-and-community-support/design-and-deliver-public-services/digital-service-design-playbook/all-plays/defining-success)" play, Digital Service Design Playbook. [primary]
 
 <a id="ref-22"></a>[22] Cynthia Vinney, CareerFoundry. "[What Is a Problem Statement in UX? (And How To Write One)](https://careerfoundry.com/en/blog/ux-design/problem-statement-ux/)." [practitioner]
 
@@ -590,3 +629,21 @@ the business case, or anything else dated after it, as already existing.
 <a id="ref-33"></a>[33] Canada School of Public Service / École Canada. "[Point-of-View (POV) Problem Statement](https://ecolecanada.gc.ca/tools/jobaids/pdfs/pov-statement-eng.pdf)," job aid. [practitioner]
 
 <a id="ref-34"></a>[34] University of South Carolina, Organizational Excellence office. "[A3 Problem Solving](https://www.sc.edu/about/offices_and_divisions/organizational_excellence/documents/problem_solving_template_a3_landscape.pdf)," template v2.0. [practitioner]
+
+<a id="ref-35"></a>[35] Charles Conn and Robert McLean. "[Bulletproof Problem Solving, chapter 1](https://media.wiley.com/product_data/excerpt/24/11195530/1119553024-191.pdf)," publisher's excerpt, Wiley. [primary]
+
+<a id="ref-36"></a>[36] Arif Sirinterlikci, Robert Morris University. "[Developing Sound Problem Statements for Course and Capstone Projects](https://peer.asee.org/developing-sound-problem-statements-for-course-and-capstone-projects.pdf)," ASEE Annual Conference paper (2026). [academic]
+
+<a id="ref-37"></a>[37] New Zealand Ministry for Regulation. "[Regulatory Impact Statement template](https://regulation.govt.nz/assets/Uploads/regulatory-impact-statement-template.docx)." [primary]
+
+<a id="ref-38"></a>[38] Teresa Torres, Product Talk. "[Outcomes vs. Outputs: What's the Difference and Why Does It Matter?](https://www.producttalk.org/2026/03/outcomes-vs-outputs/)" (2026). [practitioner]
+
+<a id="ref-39"></a>[39] UC Berkeley, Business Process Management Office. "[Define Objectives and Success Measures](https://bpm.berkeley.edu/node/84)." [practitioner]
+
+<a id="ref-40"></a>[40] University of Arkansas IT knowledge base. "[Problem Statement & Business Case (Template + Field Definitions)](https://uark.teamdynamix.com/TDClient/33/Portal/KB/ArticleDet?ID=1545)." [practitioner]
+
+<a id="ref-41"></a>[41] University of Washington Bothell, School of STEM. "[Guidelines for CSS Capstone Proposal](https://www.uwb.edu/stem/wp-content/uploads/sites/31/2024/09/stem-ms-css-defense-proposal-guidelines-1.pdf)" (2024). [practitioner]
+
+<a id="ref-42"></a>[42] VinUni College of Engineering and Computer Science. "[Capstone Project Template](https://da.overleaf.com/latex/templates/vinuni-cecs-capstone-project-template/tyxpkxytpwpn.pdf)," Overleaf. [practitioner]
+
+<a id="ref-43"></a>[43] Boston University, CIDA. "[Crafting Effective Problem Statements](https://www.bu.edu/cida/2024/10/18/crafting-effective-problem-statements)" (2024). [practitioner]

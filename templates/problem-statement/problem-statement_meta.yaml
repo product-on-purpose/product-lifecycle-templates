@@ -1,11 +1,10 @@
 id: problem-statement
 title: Problem Statement
 summary: >-
-  The document that frames which problem is worth solving, who has it, and what evidence shows it is
-  real, before anyone names a solution, an option, a project, or an investment. Lean carries the
-  statement, the background, who is affected, the impact and why now, and the evidence; full adds how
-  people cope today, what is deliberately out of scope, how the team will know it is solved, and the
-  open questions and assumptions it still carries.
+  The document that frames which problem is worth solving, who has it, and the evidence that it is
+  real, before anyone names a solution. Lean carries the statement, background, who is affected,
+  impact, evidence and the decision it informs; full adds coping today, scope, success signals and
+  open questions.
 doc_type: problem-statement
 phase: define
 family: discovery-docs

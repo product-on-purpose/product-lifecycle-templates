@@ -85,8 +85,8 @@ by itself, most of them opened by a real defect that shipped past a green gate f
 - **The research-log contract** (`tools/check-research-logs.py`, plus its own self-test). Every source in
   a bundle's research log must carry a retrieval status and, where the entry supports a claim, a
   `Supports:` clause.
-  <!-- counts: logsgated=36, sourcesgated=1492 -->
-  This runs across all 36 research logs the check gates, covering 1,492 individual sources.
+  <!-- counts: logsgated=36, sourcesgated=1501 -->
+  This runs across all 36 research logs the check gates, covering 1,501 individual sources.
 - **Self-reported counts** (`tools/check-counts.py`). The same mechanism that pins every number in this
   document. It recomputes each fact from the tree and fails when a marker disagrees. It does not, and by
   its own header comment says it cannot, read the sentence sitting next to a marker that is technically

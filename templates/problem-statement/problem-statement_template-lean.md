@@ -31,8 +31,8 @@ It names which problem is worth solving, who has it, and what evidence shows it 
 anyone names a solution, an option, a project, or an investment. It is NOT a business case (this
 library's own `business-case` bundle asks the same questions inside a funded investment comparison;
 this document comes earlier, asks for no money, and decides whether a problem is worth that
-comparison at all; this boundary is this library's own POSITION, since no source read for this
-bundle contrasts the two documents by name). It is NOT a project brief (which asks a named approver
+comparison at all; one Six Sigma source draws the same line by name, and the order, statement first,
+is this library's own POSITION). It is NOT a project brief (which asks a named approver
 for authority to start initiation; this document asks for no authority and names no project; an
 Association for Project Management consultation draft read for this library's `project-brief`
 research names the three documents as interchangeable for one early rationale, but APM's own

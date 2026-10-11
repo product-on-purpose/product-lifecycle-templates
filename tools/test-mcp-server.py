@@ -240,8 +240,19 @@ def main():
           matched == len(bundles), matched)
     check("a phase-only filter reaches FEWER than all bundles, which is why `axis` takes both",
           len({b["id"] for b in bundles if "phase" in b}) < len(bundles))
-    check("axis_values names the phases ADR 0003 declares but no bundle uses",
-          ax["phase_declared_but_unused"] == ["define"], ax["phase_declared_but_unused"])
+    # Until 2026-10-11 no bundle used `define`, and this assertion expected ["define"]. problem-statement
+    # uses it (ADR 0069), so the live list is empty, and the branch that names an unused phase is kept
+    # under test by hiding the one define bundle from the manifest for a single call.
+    check("axis_values reports no unused phase once problem-statement uses define (ADR 0069)",
+          ax["phase_declared_but_unused"] == [], ax["phase_declared_but_unused"])
+    _real_manifest = srv.manifest
+    srv.manifest = lambda: [b for b in _real_manifest() if b.get("phase") != "define"]
+    try:
+        hidden = srv.axis_values()["phase_declared_but_unused"]
+    finally:
+        srv.manifest = _real_manifest
+    check("axis_values still names a declared phase no bundle uses (define, with problem-statement hidden)",
+          hidden == ["define"], hidden)
     check("an empty result is teachable: it carries the real axis values",
           "axis_values" in D(srv.search_templates("zzzz-no-such-thing")).get("nothing_matched", {}))
 

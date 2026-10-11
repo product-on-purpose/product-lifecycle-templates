@@ -8,7 +8,7 @@ can tell a correction from a preference.
 **Initial release.** Researched 2026-10-11 across six dimensions: UX discovery practice, government
 service design, design thinking, product-management worksheets, the family's own named neighbours,
 and the standing gap question. [`problem-statement_research-log.md`](problem-statement_research-log.md)
-records **34 sources, all fetched-and-verified**, and 226 quotations checked against raw source text
+records **43 sources, all fetched-and-verified**, and 264 quotations checked against raw source text
 rather than a retrieval summary. Only `fetched-and-verified` sources are quoted anywhere in this
 bundle. A separate group of sources was never added to the log at all, because this research could not
 retrieve them: four fetch attempts against McKinsey's own problem-statement worksheet timed out, two
@@ -53,8 +53,8 @@ strict ordered subset of the full variant's ten, unchanged in name or order, per
 
 Options, a recommended solution, a cost estimate, a project scope or plan, and a request for funding
 stay out at both sizes, because naming any of them would break the `define`-phase rule that a member
-names no solution, option, project, or investment. No source read for this bundle labels a constraints
-section either, so none is carried. A root cause stays out of the Problem Statement section itself,
+names no solution, option, project, or investment. Constraints are not carried either: the sources that
+label them use them to bound a solution, and `project-brief` carries them. A root cause stays out of the Problem Statement section itself,
 following NHS Wales's own rule that "problem statements do not describe the solution or root causes";
 a suspected cause instead gets a labeled, hypothesis-only place in Open Questions and Assumptions,
 following the University of South Carolina's A3 template's own separation of the two steps. That
@@ -66,8 +66,8 @@ placement is this library's own position, not a point every source in the log ag
 a funded investment case. This bundle's companion names the overlap in its own Relationships section
 rather than leaving a reader to find it: the standalone statement comes earlier, asks for no money, and
 decides whether a problem is worth a project brief or a business case at all. A business case written
-after this statement can cite it and shorten its own section accordingly. That framing is this
-library's own position, because no source read for this bundle contrasts the two documents by name.
+after this statement can cite it and shorten its own section accordingly. One source read for this
+bundle contrasts the two documents by name; the order, statement first, is this library's own position.
 
 ### The boundary with `project-brief`
 

@@ -3,6 +3,16 @@
 Change log for the `business-case` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-10-11 - a problem statement now comes first
+
+**A routing and chronology correction, not a template change**, so the version stays 0.1.0. The
+`problem-statement` bundle joined `discovery-docs` on 2026-10-11, by
+[ADR 0069 (problem-statement joins discovery-docs)](../../docs/internal/decisions/0069-problem-statement-joins-discovery-docs.md).
+The guide's "Write something else if" table gains a row for a reader whose problem is not yet agreed. The
+example's opening callout names the problem statement, dated 2026-01-09, among the siblings this case follows,
+with a dated note. No template text changed. This bundle's Problem and Opportunity section still does the job
+on its own when no separate statement exists.
+
 ## 0.1.0 - 2026-08-05
 
 **Initial release.** [`business-case_research-log.md`](business-case_research-log.md) records **43 sources**,

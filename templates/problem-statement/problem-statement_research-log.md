@@ -6,7 +6,8 @@ in [`tier2-specs.md`](../../docs/internal/tier2-specs.md) and recorded in
 and [ADR 0069 (problem-statement joins discovery-docs)](../../docs/internal/decisions/0069-problem-statement-joins-discovery-docs.md).
 The build's six-dimension fan-out covered the canon and definition, longer and sectioned forms, lineage and contested
 practice, boundaries with this library's neighbours, failure modes and quality bars, and the standing gap question.
-**34 sources are recorded below, all fetched-and-verified.** Only `fetched-and-verified` sources are quoted anywhere
+**43 sources are recorded below, all fetched-and-verified.** Sources [35] to [43] come from a gap-fill pass run
+the same day, after drafting, and are described in the last section of this file. Only `fetched-and-verified` sources are quoted anywhere
 in this bundle.
 
 **Every quotation in this log was checked against the source's raw text**, not against the summary a retrieval tool
@@ -46,8 +47,18 @@ elements that recur across independent sectioned forms, which the full variant u
    on assumptions". [1] adds that a team can refine the statement "if you've learned root causes or how much a
    problem costs your organization".
 
-**Constraints are not a sourced field.** No source read labels a constraints section. [14]'s "Project Barriers" is the
-nearest, and a barrier met along the way is not a limit accepted in advance. The bundle has no constraints section.
+**Constraints are a sourced field elsewhere, and this bundle routes them on.** The first pass found no source that
+labels a constraints section; [14]'s "Project Barriers" was the nearest, and a barrier met along the way is not a limit
+accepted in advance. The gap-fill pass then found the field, in engineering design and in proposals. [36] teaches a
+workflow in which need statements are "constrained by defining specifications", and reports that "ABET requires
+problem statements to include "realistic constraints"". [41], a capstone proposal, labels "Constraints, Risks, and
+Resources". In both, the constraint bounds a design, which is a solution, and this document names none. [36] still
+puts constraints inside the statement, "The constraints need to be added to your problem statement", because its
+problem statement opens a design; the engineering-design line dissents from this bundle's routing. [37]'s
+"Limitations and Constraints on Analysis" is a different thing: limits on the evidence, such as "lack of data", which
+the full variant's Open Questions and Assumptions already holds. **The bundle has no constraints section.** A limit
+any answer must respect belongs in `project-brief`'s Constraints and Who Should Be Involved section, which carries it
+at both sizes. That routing is this library's POSITION.
 
 **A root cause stays out of the statement, and a suspected one has a place.** Two sources exclude causes from the
 statement: [15] says "problem statements do not describe the solution or root causes", and [24] says a good statement
@@ -76,8 +87,10 @@ can mention a name its glossary does not define. The companion cites only what [
 edition sits under a cause-and-effect diagram, and in its sixth under data analysis for root-cause work. That is a
 practitioner's report of two pages this build did not read, and the companion attributes it to [26].
 
-**Not read.** McKinsey's problem statement worksheet: four attempts on mckinsey.com timed out, so no McKinsey field
-name appears in this bundle. Atlassian's Confluence and Trello templates behind the Problem Framing play open inside
+**Not read.** McKinsey's problem statement worksheet: four attempts on mckinsey.com timed out, and the gap-fill pass's
+four more (the article, two regional mirrors and a PDF asset) timed out too. The tool refused web.archive.org. No
+McKinsey field name appears in this bundle. The gap-fill read the publisher's excerpt of Conn and McLean's
+*Bulletproof Problem Solving* instead [35]; its appendix of blank worksheets is not in the excerpt. Atlassian's Confluence and Trello templates behind the Problem Framing play open inside
 application shells, so only the play page [11] was read. Dwayne Spradlin's 2012 and Thomas Wedell-Wedellsborg's 2017
 Harvard Business Review articles are paywalled. Alan Klement's job-story post and a Lean UX hypothesis-statement
 excerpt could not be fetched. PMI's own problem-statement page returned HTTP 403.
@@ -115,8 +128,14 @@ address?" and "Launch Plan", are delivery content.
 1. **Whether success measures belong in a problem statement.** Inside: [12], [13], [8], [16] and [20], whose template
    lists "Success Criteria: Specific, measurable indicators that will confirm the problem has been solved". Later and
    separate: [21], whose "Defining success" play assumes "You should already have a well-defined problem" and says "The
-   outcome is not an output or a metric of your project". [15]'s 18-word statement has no room for one. The bundle puts
-   success measures in the full variant only and names this split in the companion.
+   outcome is not an output or a metric of your project". [39] sits with [21]: "Convert your problem statement into
+   objectives you can actually measure", which then "go straight into your Project Charter". [15]'s 18-word statement
+   has no room for one. The gap-fill added a reconciling test rather than a vote: [38] quotes Josh Seiden's definition of an
+   outcome, "a change in human behavior that drives business results", and warns in its own words that "If you can achieve the metric without actually
+   helping customers, it's probably an output in disguise". A measure of the problem's size passes that test, and a
+   feature's adoption fails it. [40] is a dissent on targets: its success-metric example is "50% reduction in cycle
+   time; zero compliance findings", a target this bundle's guide leaves to the document that proposes a solution. The
+   bundle puts success measures in the full variant only and names this split in the companion.
 2. **Written once, or revisited.** Once: [20] places it "at the very start of the project lifecycle, during the
    initiation phase, before the project charter is drafted". Revisited: [17] says "You revisit and reformulate as you
    learn by doing", and [1] says "Throughout the discovery process, you can return to your problem statement and add
@@ -148,8 +167,11 @@ address?" and "Launch Plan", are delivery content.
   and a funding request stay out at every size, as contract section 2 requires.
 - **The duplication with `business-case` is real, and the companion says so.** `business-case`'s Problem and
   Opportunity section asks the same questions inside an investment case. The standalone statement comes earlier, asks
-  for no money, and decides whether a problem is worth a project brief or a business case at all. That framing is this
-  library's POSITION; no source read contrasts the two by name.
+  for no money, and decides whether a problem is worth a project brief or a business case at all. [30] contrasts the
+  two by name: "the business case argues why the problem matters financially; the problem statement describes what,
+  where, and how much, without the persuasive framing". The order, statement first and case only if the problem is
+  worth one, is this library's POSITION; no source read sets it. (The first draft of this note said no source
+  contrasted the two. The build caught it against [30] on 2026-10-11, before merge.)
 - **Component or precursor.** [27] embeds a problem statement inside a product brief, and `business-case`, `prd` and
   `project-brief` in this library each carry one as a section. [20] and [26] treat it as a document written first,
   which feeds the next. This bundle builds the precursor, and its companion says that the component form is common.
@@ -164,10 +186,10 @@ address?" and "Launch Plan", are delivery content.
 | Impact and Why Now | yes | [1] "The impact of the problem on the organization. If the problem is not fixed, what will be the effect on the organization?"; [11] "What happens if we don't solve it?"; [3] "You should also consider quantifying the value of solving the problem" |
 | Evidence | yes | [2] "Use the evidence you gather to document your clearly defined problem." and "Is this based on evidence rather than assumptions?"; [15] "without evidence of your problem, you are left with opinion"; [4]'s quantified example against its unquantified one |
 | How People Cope Today | full | [8] "How do people currently solve this problem?"; [10] "how customers work around the problem"; [32] "Describe previous attempts to solve the problem and why they failed." |
-| What Is Not Part of the Problem | full | [3] "agreeing what is not part of the problem"; [16] "what is to be included and, perhaps more importantly, what isn't"; [11] "In what circumstances does it not occur?" |
-| How We Will Know It Is Solved | full | [12] "as determined by [these measurable changes in their behavior]"; [13] "what customer behavior or metric shift will we see?"; [8] "Metric(s) and Baseline"; [16] "A summary of the primary success criteria."; contested by [21] |
-| Open Questions and Assumptions | full | [8] "Open Questions"; [33] a pre-research statement "should be considered as being based on assumptions"; [34] a suspected root cause kept as a separate step |
-| Decision This Informs | yes | [3] "Your discovery is finished when you've decided whether or not you want to move on to alpha." and "It's not a failure to stop at the end of the discovery phase"; [2] "Is the problem clear enough to investigate further?"; [26] reports that once approved, the next step is possible solutions. Which document takes over is this library's POSITION, from the contract's successor obligation |
+| What Is Not Part of the Problem | full | [3] "agreeing what is not part of the problem"; [16] "what is to be included and, perhaps more importantly, what isn't"; [11] "In what circumstances does it not occur?"; [42] "what aspects it encompasses and what it does not cover"; [35] "the boundaries on problem definition are really important to agree on up front". Constraints route to `project-brief` |
+| How We Will Know It Is Solved | full | [12] "as determined by [these measurable changes in their behavior]"; [13] "what customer behavior or metric shift will we see?"; [8] "Metric(s) and Baseline"; [16] "A summary of the primary success criteria."; [40] "Quantitative or measurable indicators of success."; [43] "Measurability"; [38]'s output-in-disguise test; contested by [21] and [39] |
+| Open Questions and Assumptions | full | [8] "Open Questions"; [33] a pre-research statement "should be considered as being based on assumptions"; [34] a suspected root cause kept as a separate step; [37] "Limitations and Constraints on Analysis" |
+| Decision This Informs | yes | [3] "Your discovery is finished when you've decided whether or not you want to move on to alpha." and "It's not a failure to stop at the end of the discovery phase"; [2] "Is the problem clear enough to investigate further?"; [26] reports that once approved, the next step is possible solutions; [37] labels the field "Decision sought"; [40] places its combined template "Before governance review to support go/no-go recommendations"; [39] and [28] name a project charter as a successor. Which document takes over is this library's POSITION, from the contract's successor obligation |
 
 **Quality rules go to the guide's rubric and the TRAP lines**, under decision procedure 12. [2]'s five questions, [1]'s
 three rules ("Not be a laundry list of unrelated problems", "Not contain a solution", "Be brief"), [4]'s "Do not
@@ -283,7 +305,7 @@ Quotable: "Last updated: 21 June 2021"
 Quotable: "All content is available under the Open Government Licence v3.0, except where otherwise stated"
 Quotable: "© Crown copyright"
 
-**[4] Build for Good (Open Government Products, Government of Singapore), "Writing a good problem statement".** standards. **fetched-and-verified.**
+**[4] Build for Good (Open Government Products, Government of Singapore), "Writing a good problem statement".** primary. **fetched-and-verified.**
 `https://www.build.gov.sg/problem-statement-guide/`
 Supports: Government service-design rule (outside NSW/GOV.UK): solution-in-disguise, no-evidence, named good/bad contrast pair
 Quotable: "Do not include solutions in your problem statement."
@@ -292,7 +314,7 @@ Quotable: "Singaporeans find it too troublesome to recycle. Recycling bins are a
 Quotable: "Be concrete"
 Quotable: "Be specific"
 
-**[5] Digital.gov (U.S. General Services Administration), HCD Guide Series, "Reframing" (Discovery operations guide).** standards. **fetched-and-verified.**
+**[5] Digital.gov (U.S. General Services Administration), HCD Guide Series, "Reframing" (Discovery operations guide).** primary. **fetched-and-verified.**
 `https://digital.gov/guides/hcd/discovery-operations/reframing`
 Supports: Government guidance (US, outside NSW/GOV.UK) on problem framing shaping solutions, and a definitional note on root cause
 Quotable: "Who is this project for? What are you trying to understand? Why is this a problem? What is the goal of the project?"
@@ -415,7 +437,7 @@ Quotable: "Doesn't indicate a solution or a cause."
 Quotable: "Explains impact of the problem (e.g. `patients wait too long')"
 Quotable: "Data plays a vital role in understanding your problem; without evidence of your problem, you are left with opinion."
 
-**[16] Rose-Hulman Institute of Technology, CSSE 333 course, "Problem Statement Guide" / template (PDF, dated 3 September 2003).** standards. **fetched-and-verified.**
+**[16] Rose-Hulman Institute of Technology, CSSE 333 course, "Problem Statement Guide" / template (PDF, dated 3 September 2003).** practitioner. **fetched-and-verified.**
 `https://www.rose-hulman.edu/class/csse/csse333/Project/Samples/problem_statement_template.pdf`
 Supports: A university-authored, explicitly sectioned written problem statement with numbered headings covering scope, success criteria, a four-part detailed-requirements breakdown, a stakeholders table, and a revision-history table - directly answering what a longer/sectioned form can carry
 Quotable: "1. High Level Problem Summary"
@@ -438,7 +460,7 @@ Quotable: "A point-of-view (POV) is your reframing of a design challenge into an
 Quotable: "Is it User-centered, Need-based, and Insight-driven?"
 Quotable: "Use this Checklist to ensure that your team's POV is valid, insightful, actionable, unique, narrow, meaningful, and exciting."
 
-**[18] Interaction Design Foundation, "What is How Might We (HMW)?" (literature topic page, updated 2026).** standards. **fetched-and-verified.**
+**[18] Interaction Design Foundation, "What is How Might We (HMW)?" (literature topic page, updated 2026).** reference. **fetched-and-verified.**
 `https://ixdf.org/literature/topics/how-might-we`
 Supports: The HMW/POV relationship, the HMW formula, and the two competing origin-lineage claims for the HMW phrase
 Quotable: "How Might We (HMW) is a design thinking method that allows designers to reframe and open up their problem statements for efficient, targeted and innovative ideation sessions to help solve design challenges. HMW is the bridge between the Define and Ideate stages of the design thinking process."
@@ -449,7 +471,7 @@ Quotable: "Your POV should never contain any specific solution, nor should it co
 Quotable: "You should construct a narrowly-focused problem statement or POV as this will generate a greater quantity and higher quality solutions"
 Quotable: "The Phrase is rumoured to have been popularized by Min Basadur at Proctor and Gamble, then on to IDEO, next at Google and later at Facebook in a viral breakout, that has since revolutionised how companies frame their innovation challenges. GK Van Platter of Humantific references a much earlier example in an article entitled, Origins of How Might We? (2012). The reframing technique has its roots all the way back in the mid-sixties, with a work by Sidney J. Parnes Ph.D "Creative Behavior Guidebook", which touches on the concept of "Invitation Stems" or "How Mights"."
 
-**[19] IDEO.org, Design Kit, "How Might We" method page.** standards. **fetched-and-verified.**
+**[19] IDEO.org, Design Kit, "How Might We" method page.** primary. **fetched-and-verified.**
 `https://www.designkit.org/methods/how-might-we.html`
 Supports: IDEO.org's own (shorter, non-attributing) description of HMW, confirming the problem-to-opportunity reframing logic without naming an origin
 Quotable: "By defining themes and insights, you’ve identified problem areas that pose challenges to the people you’re designing for. Now, try reframing your insight statements as How Might We questions to turn those challenges into opportunities for design."
@@ -463,7 +485,7 @@ Quotable: "Desired Outcome: A clear statement of what success looks like once th
 Quotable: "The problem statement belongs at the very start of the project lifecycle, during the initiation phase, before the project charter is drafted and before the scope is defined. This timing is deliberate."
 Quotable: "Used at the earliest stage of project initiation, a well-written problem statement ensures that everyone involved understands exactly what needs to be solved and why it matters, before a single resource is committed or a scope boundary is drawn."
 
-**[21] Queensland Government, Digital Service Design Playbook, "Defining success" play (Digital Service Design Office, Dept. of Transport and Main Roads).** standards. **fetched-and-verified.**
+**[21] Queensland Government, Digital Service Design Playbook, "Defining success" play (Digital Service Design Office, Dept. of Transport and Main Roads).** primary. **fetched-and-verified.**
 `https://www.forgov.qld.gov.au/service-delivery-and-community-support/design-and-deliver-public-services/digital-service-design-playbook/all-plays/defining-success`
 Supports: The opposing camp on (a): success criteria/metrics are deliberately a separate, later activity from writing the problem statement, and outcome is explicitly distinguished from metric
 Quotable: "Make sure you have a clearly defined problem ... You should already have a well-defined problem."
@@ -554,6 +576,7 @@ Quotable: "the problem statement describes what, where, and how much, without th
 Quotable: "A specific dollar estimate, even a rough one, gives a sponsor something concrete to weigh"
 Quotable: "Occurrence rate × cost per occurrence × annual volume = estimated annual cost"
 Quotable: "is a distinct document with its own job"
+Quotable: "the business case argues why the problem matters financially"
 
 **[31] Tom McDowall, idtips (Instructional Design Tips newsletter) - "A Practical Guide to Defining Business Problems" (2025-10-01).** practitioner. **fetched-and-verified.**
 `https://idtips.substack.com/p/a-practical-guide-to-defining-business`
@@ -587,3 +610,94 @@ Quotable: "3. Current Condition What do you see that indicates a problem?"
 Quotable: "4. Goal Statement What are you aiming for and by when? Be specific so you'll know when you're successful. Use numbers whenever possible."
 Quotable: "5. Root-Cause Analysis What is your most likely root cause?"
 Quotable: "6. Countermeasures What action(s) will you take to reduce or eliminate the root cause?"
+
+### GAP-FILL, 2026-10-11: MEASURES, THE DECISION AND CONSTRAINTS
+
+A three-dimension gap-fill pass ran after drafting, on four questions the first pass left thin: McKinsey's worksheet,
+a constraints field, a field naming the decision, and success measures that name no solution. It returned 11 owned
+sources and 65 quotations. Nine sources are recorded below. A Wiley product page carried no quotation, and a
+University of Maryland course template restates what [42] shows; both are left out. 56 quotations passed against the
+cached raw text on the first pass. Of the nine that did not, six were [35]'s, whose PDF had not been cached; [35] is
+described below. One sat in [36]'s cached copy, which turned out to be truncated, so its full text layer was
+re-extracted from the PDF, and every [36] quotation passes against it. One was [40]'s, which an agent wrote with
+single quotes where the page has "better" in double quotes; it is quoted as the page has it. The last was the
+University of Maryland source, which is left out. The pages whose fresh fetch returned a `.docx` or PDF the fetcher
+could not render ([37] and [42]) are accounted for by their first-pass match, as in the header of this file.
+
+[35] needs its own note. Its text layer was extracted from the publisher's PDF and checked like every other source.
+The tests the authors apply to a problem definition sit in an exhibit on page 5 that is rendered as an image, which
+no text check can reach. The main loop read that exhibit off the page. It is paraphrased in [35]'s Supports line and
+is never quoted anywhere in this bundle.
+
+**[35] Charles Conn and Robert McLean, *Bulletproof Problem Solving* (Wiley), chapter 1 "Learn the Bulletproof Problem Solving Approach", publisher's excerpt PDF.** primary. **fetched-and-verified.**
+`https://media.wiley.com/product_data/excerpt/24/11195530/1119553024-191.pdf`
+Supports: The first step of the authors' seven-step cycle is defining the problem, and its boundaries are agreed before analysis starts. The page-5 exhibit, read off the page image and paraphrased, not quoted: a problem definition is agreed by those involved in making the decision, and is tested for being specific, for clearly measurable success, for bounds of time frame and of the decision maker's values, and for leading to definitive action
+Quotable: "As we'll see later, the boundaries on problem definition are really important to agree on up front."
+Quotable: "Rob knows that constraining the scope of the problem with clear boundaries makes problem solving more accurate and speedy (step 1)."
+
+**[36] Arif Sirinterlikci (Robert Morris University), "Developing Sound Problem Statements for Course and Capstone Projects", ASEE Annual Conference paper (2026), Paper ID #51928.** academic. **fetched-and-verified.**
+`https://peer.asee.org/developing-sound-problem-statements-for-course-and-capstone-projects.pdf`
+Supports: In engineering capstone teaching, constraints are a stage of their own after the need statement and the goals, and ABET requires an engineering problem statement to name realistic constraints. The constraints named bound a design, that is, a solution, and the paper puts them inside the problem statement: a dissent from this bundle's routing
+Quotable: "The constraints need to be added to your problem statement"
+Quotable: "the workflow of developing need statements, addressed by responsive goals and objectives, and constrained by defining specifications"
+Quotable: "A design constraint is a limitation, a boundary beyond which the design should not go, including weight, size, cost, societal and political factors, and be realistic."
+Quotable: "Identification of Constraints: ABET requires problem statements to include "realistic constraints" such as economic, environmental, social, political, ethical, health and safety, manufacturability, and sustainability factors."
+Quotable: "present all relevant assumptions and constraints clearly before attempting a solution"
+
+**[37] New Zealand Ministry for Regulation, "Regulatory Impact Statement" template (.docx).** primary. **fetched-and-verified.**
+`https://regulation.govt.nz/assets/Uploads/regulatory-impact-statement-template.docx`
+Supports: A government template whose coversheet labels the decision the document feeds, and whose body asks for the limits of the evidence and whether the decision can still be made. Its problem definition is one section of an options analysis, so the whole document is a neighbour of `business-case`, not a problem statement
+Quotable: "Decision sought"
+Quotable: "eg, analysis produced for the purpose of informing: final/in-principle Cabinet decisions, the release of a discussion document, etc."
+Quotable: "Summary: Problem definition and options"
+Quotable: "What is the policy problem?"
+Quotable: "Limitations and Constraints on Analysis"
+Quotable: "Outline all significant limitations and constraints e.g. lack of data, other forms of evidence, constraint on the range of options considered, lack of time or freedom to consult"
+Quotable: "To what extent have any limitations or constraints impacted on the quality of the analysis and can Cabinet still make an informed decision?"
+
+**[38] Teresa Torres, "Outcomes vs. Outputs: What's the Difference and Why Does It Matter?", Product Talk (2026), drawing on Josh Seiden.** practitioner. **fetched-and-verified.**
+`https://www.producttalk.org/2026/03/outcomes-vs-outputs/`
+Supports: A success measure describes a change in people's behaviour, not a feature's adoption; a test for an output disguised as an outcome
+Quotable: "An outcome is a change in human behavior that drives business results."
+Quotable: "it's what I call a traction metric - it measures adoption of a single feature, not value to the customer."
+Quotable: "If you can achieve the metric without actually helping customers, it's probably an output in disguise."
+Quotable: "When you measure success by what you ship, you get a feature factory."
+Quotable: "Increase the number of course views that include reviews."
+
+**[39] UC Berkeley, Business Process Management Office, "Define Objectives and Success Measures".** practitioner. **fetched-and-verified.**
+`https://bpm.berkeley.edu/node/84`
+Supports: Measurable objectives are derived from the problem statement as a later step, and go into a project charter; the later-and-separate camp on success measures, and one named successor document
+Quotable: "Convert your problem statement into objectives you can actually measure."
+Quotable: "Good objectives are specific and measurable. If you can't say how you'd measure it, it isn't an objective yet, it's a hope."
+Quotable: "Your objectives and success measures go straight into your Project Charter."
+
+**[40] University of Arkansas IT knowledge base (uark TeamDynamix), "Problem Statement & Business Case (Template + Field Definitions)".** practitioner. **fetched-and-verified.**
+`https://uark.teamdynamix.com/TDClient/33/Portal/KB/ArticleDet?ID=1545`
+Supports: A combined template, the component form, with a success-metrics field separate from expected outcomes, used before a governance go/no-go review; its success-metric example carries a target
+Quotable: "Describe what is happening today and who it impacts."
+Quotable: "What "better" looks like in operational terms."
+Quotable: "Quantitative or measurable indicators of success."
+Quotable: "50% reduction in cycle time; zero compliance findings."
+Quotable: "used to support Discovery alignment, prioritization, and governance-ready decision-making"
+Quotable: "Before governance review to support go/no-go recommendations"
+
+**[41] University of Washington Bothell, School of STEM, "Guidelines for CSS Capstone Proposal" (2024).** practitioner. **fetched-and-verified.**
+`https://www.uwb.edu/stem/wp-content/uploads/sites/31/2024/09/stem-ms-css-defense-proposal-guidelines-1.pdf`
+Supports: A proposal, a project-level document written for a committee's decision, labels constraints beside risks and resources; constraints sit at the level of `project-brief`, not of a problem statement
+Quotable: "Constraints, Risks, and Resources"
+Quotable: "Key constraints"
+Quotable: "The problem or opportunity you will be working on"
+Quotable: "in order to enable your committee to evaluate, ask questions about, and guide your work over the coming weeks and months"
+
+**[42] VinUni College of Engineering and Computer Science, Capstone Project Template (Overleaf).** practitioner. **fetched-and-verified.**
+`https://da.overleaf.com/latex/templates/vinuni-cecs-capstone-project-template/tyxpkxytpwpn.pdf`
+Supports: A document template with a labelled scope sub-field directly under its problem statement, naming what the problem does not cover
+Quotable: "1.2.1 Problem Statement"
+Quotable: "State the problem in a single sentence or a brief paragraph."
+Quotable: "1.2.2 Context and Scope"
+Quotable: "what aspects it encompasses and what it does not cover"
+
+**[43] Boston University, CIDA, "Crafting Effective Problem Statements" (2024).** practitioner. **fetched-and-verified.**
+`https://www.bu.edu/cida/2024/10/18/crafting-effective-problem-statements`
+Supports: Measurability named as an element of a problem statement, independent of any solution
+Quotable: "Measurability: Include quantifiable elements where possible"

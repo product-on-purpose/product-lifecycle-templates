@@ -15,10 +15,11 @@ problem and name no solution, option, project, or investment.
 
 | You actually need | Because |
 |---|---|
-| a **business case** | `business-case`'s own Problem and Opportunity section asks the same questions inside a funded investment comparison. This document comes earlier, asks for no money, and decides whether a problem is worth that comparison at all. No source read for this bundle contrasts the two documents by name; that boundary is this library's own position |
+| a **business case** | `business-case`'s own Problem and Opportunity section asks the same questions inside a funded investment comparison. This document comes earlier, asks for no money, and decides whether a problem is worth that comparison at all. One Six Sigma source draws the same line by name: the problem statement "describes what, where, and how much, without the persuasive framing". The order, statement first, is this library's own position |
 | a **project brief** | a project brief asks a named approver for authority to start initiation. This document asks for no authority and names no project. The Association for Project Management's own published glossary has no entry under this document's name, and defines Brief and Charter as two different things |
 | a **PRD** | this library's own `prd` companion already names a problem statement as one of the things that precede a PRD |
 | a **How Might We question** | it already points toward generating solutions, where this document names none |
+| a **list of constraints** | a limit any answer must respect, such as a budget, a deadline or a regulation, bounds a solution, and this document names none. Engineering-design teaching and a capstone proposal label constraints, and one engineering paper puts them inside the problem statement, a dissent this library does not follow; `project-brief`'s Constraints and Who Should Be Involved section carries them. That routing is this library's own position |
 
 **An opportunity statement is not a different document to write.** Nielsen Norman Group names the
 two as aliases, "written and used in the same way", phrased positively instead of as a problem. One
