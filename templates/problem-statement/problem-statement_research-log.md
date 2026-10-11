@@ -283,7 +283,7 @@ Quotable: "Last updated: 21 June 2021"
 Quotable: "All content is available under the Open Government Licence v3.0, except where otherwise stated"
 Quotable: "© Crown copyright"
 
-**[4] Build for Good (Open Government Products, Government of Singapore), "Writing a good problem statement".** standard. **fetched-and-verified.**
+**[4] Build for Good (Open Government Products, Government of Singapore), "Writing a good problem statement".** standards. **fetched-and-verified.**
 `https://www.build.gov.sg/problem-statement-guide/`
 Supports: Government service-design rule (outside NSW/GOV.UK): solution-in-disguise, no-evidence, named good/bad contrast pair
 Quotable: "Do not include solutions in your problem statement."
@@ -292,7 +292,7 @@ Quotable: "Singaporeans find it too troublesome to recycle. Recycling bins are a
 Quotable: "Be concrete"
 Quotable: "Be specific"
 
-**[5] Digital.gov (U.S. General Services Administration), HCD Guide Series, "Reframing" (Discovery operations guide).** standard. **fetched-and-verified.**
+**[5] Digital.gov (U.S. General Services Administration), HCD Guide Series, "Reframing" (Discovery operations guide).** standards. **fetched-and-verified.**
 `https://digital.gov/guides/hcd/discovery-operations/reframing`
 Supports: Government guidance (US, outside NSW/GOV.UK) on problem framing shaping solutions, and a definitional note on root cause
 Quotable: "Who is this project for? What are you trying to understand? Why is this a problem? What is the goal of the project?"
@@ -415,7 +415,7 @@ Quotable: "Doesn't indicate a solution or a cause."
 Quotable: "Explains impact of the problem (e.g. `patients wait too long')"
 Quotable: "Data plays a vital role in understanding your problem; without evidence of your problem, you are left with opinion."
 
-**[16] Rose-Hulman Institute of Technology, CSSE 333 course, "Problem Statement Guide" / template (PDF, dated 3 September 2003).** standard. **fetched-and-verified.**
+**[16] Rose-Hulman Institute of Technology, CSSE 333 course, "Problem Statement Guide" / template (PDF, dated 3 September 2003).** standards. **fetched-and-verified.**
 `https://www.rose-hulman.edu/class/csse/csse333/Project/Samples/problem_statement_template.pdf`
 Supports: A university-authored, explicitly sectioned written problem statement with numbered headings covering scope, success criteria, a four-part detailed-requirements breakdown, a stakeholders table, and a revision-history table - directly answering what a longer/sectioned form can carry
 Quotable: "1. High Level Problem Summary"
@@ -438,7 +438,7 @@ Quotable: "A point-of-view (POV) is your reframing of a design challenge into an
 Quotable: "Is it User-centered, Need-based, and Insight-driven?"
 Quotable: "Use this Checklist to ensure that your team's POV is valid, insightful, actionable, unique, narrow, meaningful, and exciting."
 
-**[18] Interaction Design Foundation, "What is How Might We (HMW)?" (literature topic page, updated 2026).** standard. **fetched-and-verified.**
+**[18] Interaction Design Foundation, "What is How Might We (HMW)?" (literature topic page, updated 2026).** standards. **fetched-and-verified.**
 `https://ixdf.org/literature/topics/how-might-we`
 Supports: The HMW/POV relationship, the HMW formula, and the two competing origin-lineage claims for the HMW phrase
 Quotable: "How Might We (HMW) is a design thinking method that allows designers to reframe and open up their problem statements for efficient, targeted and innovative ideation sessions to help solve design challenges. HMW is the bridge between the Define and Ideate stages of the design thinking process."
@@ -449,7 +449,7 @@ Quotable: "Your POV should never contain any specific solution, nor should it co
 Quotable: "You should construct a narrowly-focused problem statement or POV as this will generate a greater quantity and higher quality solutions"
 Quotable: "The Phrase is rumoured to have been popularized by Min Basadur at Proctor and Gamble, then on to IDEO, next at Google and later at Facebook in a viral breakout, that has since revolutionised how companies frame their innovation challenges. GK Van Platter of Humantific references a much earlier example in an article entitled, Origins of How Might We? (2012). The reframing technique has its roots all the way back in the mid-sixties, with a work by Sidney J. Parnes Ph.D "Creative Behavior Guidebook", which touches on the concept of "Invitation Stems" or "How Mights"."
 
-**[19] IDEO.org, Design Kit, "How Might We" method page.** standard. **fetched-and-verified.**
+**[19] IDEO.org, Design Kit, "How Might We" method page.** standards. **fetched-and-verified.**
 `https://www.designkit.org/methods/how-might-we.html`
 Supports: IDEO.org's own (shorter, non-attributing) description of HMW, confirming the problem-to-opportunity reframing logic without naming an origin
 Quotable: "By defining themes and insights, you’ve identified problem areas that pose challenges to the people you’re designing for. Now, try reframing your insight statements as How Might We questions to turn those challenges into opportunities for design."
@@ -463,7 +463,7 @@ Quotable: "Desired Outcome: A clear statement of what success looks like once th
 Quotable: "The problem statement belongs at the very start of the project lifecycle, during the initiation phase, before the project charter is drafted and before the scope is defined. This timing is deliberate."
 Quotable: "Used at the earliest stage of project initiation, a well-written problem statement ensures that everyone involved understands exactly what needs to be solved and why it matters, before a single resource is committed or a scope boundary is drawn."
 
-**[21] Queensland Government, Digital Service Design Playbook, "Defining success" play (Digital Service Design Office, Dept. of Transport and Main Roads).** standard. **fetched-and-verified.**
+**[21] Queensland Government, Digital Service Design Playbook, "Defining success" play (Digital Service Design Office, Dept. of Transport and Main Roads).** standards. **fetched-and-verified.**
 `https://www.forgov.qld.gov.au/service-delivery-and-community-support/design-and-deliver-public-services/digital-service-design-playbook/all-plays/defining-success`
 Supports: The opposing camp on (a): success criteria/metrics are deliberately a separate, later activity from writing the problem statement, and outcome is explicitly distinguished from metric
 Quotable: "Make sure you have a clearly defined problem ... You should already have a well-defined problem."

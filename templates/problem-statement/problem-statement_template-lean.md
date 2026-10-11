@@ -70,7 +70,7 @@ HOW TO FILL THIS IN
            the problem is happening." Deep dive: problem-statement_companion.md section 3
            (Anatomy > Problem Statement).
      ASK   Who has this problem? What is happening to them? Why does it need to be solved? Where and
-           when does it occur? Have you described a problem rather than a solution?
+           when does it occur?
      GOOD  "Patrons who borrow ebooks through the library's mobile app cannot renew a loan from
            within the app, and must call the branch during open hours to ask staff to renew it for
            them."

@@ -63,7 +63,7 @@ const RESEARCH_SCHEMA = {
         properties: {
           identity: { type: 'string', description: 'Author and title, never one without the other' },
           url: { type: 'string' },
-          tier: { type: 'string', enum: ['primary', 'standard', 'practitioner', 'vendor'] },
+          tier: { type: 'string', enum: ['primary', 'standards', 'practitioner', 'vendor'] },
           retrieval_status: {
             type: 'string',
             enum: ['fetched-and-verified', 'url-confirmed-not-read', 'not-retrieved'],

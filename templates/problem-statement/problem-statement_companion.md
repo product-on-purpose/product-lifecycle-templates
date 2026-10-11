@@ -56,21 +56,21 @@ GOV.UK Service Manual describes the same move in its own words, reframing a hand
 problem to be solved" [[3]](#ref-3), in a page last updated "21 June 2021" [[3]](#ref-3). Singapore's
 Build for Good guide and the US General Services Administration's digital.gov both publish parallel,
 independently worded guidance in the same government tradition [[4]](#ref-4)[[5]](#ref-5). None of these
-four pages cites, or appears to know about, Nielsen Norman Group's article.
+four pages mentions Nielsen Norman Group or its article, in the text this research read.
 
 **Design thinking** supplies an adjacent but separately named construct, the Point of View, rather than
 the same term. Stanford's d.school CS377 course handout dates the construct to "September 2006"
 [[6]](#ref-6) and gives it its own formula, "User + Need = Point of View" [[6]](#ref-6). Even within
 design thinking, naming is not universal: the Design Council's own Framework for Innovation, the Double
 Diamond, names four stages, "Discover," "Define," "Develop" and "Deliver" [[7]](#ref-7), and never names
-a written Define-stage deliverable at all. That is a negative finding worth holding onto: the stage
-problem statements most often map to does not itself require a document called a problem statement, even
+a written Define-stage deliverable at all. That is a negative finding worth holding onto: the stage this
+library maps a problem statement to does not itself require a document called a problem statement, even
 in a widely cited design-thinking framework.
 
 **What this research could not read.** Four fetch attempts against McKinsey's own problem-statement
 worksheet timed out, so no McKinsey field name appears anywhere in this bundle. Atlassian's companion
 Confluence and Trello templates open inside application shells this research could not enter, so only
-the public play page is cited here. Two frequently cited 2012 and 2017 articles are paywalled, a
+the public play page is cited here. Two Harvard Business Review articles, from 2012 and 2017, are paywalled, a
 job-story post and a Lean UX hypothesis-statement excerpt could not be fetched, and PMI's own
 problem-statement page returned HTTP 403. None of those sources appears anywhere in this companion.
 
@@ -306,7 +306,8 @@ bundle does not adopt it.
 
 ## 5. Methodology lineage
 
-Three lineages this research read do not cite each other and do not share vocabulary. **UX discovery
+Three lineages this research read arrive at the artefact separately: no page read from one lineage mentions
+a source from another, and design thinking names its construct differently. **UX discovery
 practice**, through Nielsen Norman Group [[1]](#ref-1), is the fullest single source this bundle leans
 on for required parts. **Government service design**, through New South Wales, GOV.UK, Singapore's Build
 for Good and the US GSA's digital.gov, converges independently on the same solution-to-problem reframing
@@ -405,8 +406,7 @@ the component form stays inside the documents that already carry it.
 
 ## 7. Anti-patterns and failure modes
 
-**A solution in disguise.** The single most frequently repeated failure across every government and UX
-source this research read. Digital NSW and GOV.UK both publish the identical corrective move, rewriting a
+**A solution in disguise.** Named by government and UX sources alike. Digital NSW and GOV.UK both publish the identical corrective move, rewriting a
 handed-down solution as a problem [[2]](#ref-2)[[3]](#ref-3); Build for Good states the rule directly, "Do
 not include solutions in your problem statement" [[4]](#ref-4); and a UX design guide explains why it
 matters, a user "doesn't need to be able to use two-factor authentication to get into a banking app, they
@@ -488,8 +488,9 @@ that, naming no solution and no reframe.
 ## 9. Adaptations
 
 **UX discovery teams** have the fullest single template to work from, Nielsen Norman Group's own required
-parts and its 5 Ws technique for gathering them, "Who is affected by the problem? What is the problem?
-Where does this problem occur? When does the problem occur? Why does the problem occur?" [[1]](#ref-1).
+parts and its 5 Ws technique for gathering them, which asks "Who is affected by the problem?", "What is
+the problem?", "Where does this problem occur?", "When does the problem occur?" and "Why does the problem
+occur?" [[1]](#ref-1).
 
 **Government service teams** should expect the solution-to-problem rewrite move to be the central skill,
 not the section list: Digital NSW's and GOV.UK's worked examples are the clearest templates for that

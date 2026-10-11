@@ -588,6 +588,37 @@
     },
     {
       "aliases": [
+        "problem brief",
+        "opportunity statement"
+      ],
+      "approx_tokens": {
+        "full": 5400,
+        "lean": 3300
+      },
+      "default_size": "lean",
+      "doc_type": "problem-statement",
+      "family": "discovery-docs",
+      "id": "problem-statement",
+      "phase": "define",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Problem Statement, Background, Who Is Affected, Impact and Why Now, Evidence, Decision This Informs) when a short, few-sentence framing is enough to decide whether the problem is worth taking to a project brief or a business case at all; every admitting source this bundle's research read describes an artefact that short. Use full when a reader will reasonably ask how people work around the problem today, what the statement deliberately excludes, what solved would look like, or what is still unknown: it inserts How People Cope Today, What Is Not Part of the Problem, How We Will Know It Is Solved, and Open Questions and Assumptions between Evidence and Decision This Informs. Growing into full adds named fields around the statement; it does not lengthen the statement itself.",
+      "status": "beta",
+      "summary": "The document that frames which problem is worth solving, who has it, and what evidence shows it is real, before anyone names a solution, an option, a project, or an investment. Lean carries the statement, the background, who is affected, the impact and why now, and the evidence; full adds how people cope today, what is deliberately out of scope, how the team will know it is solved, and the open questions and assumptions it still carries.",
+      "tags": [
+        "discovery",
+        "define",
+        "problem-statement",
+        "problem-framing",
+        "evidence",
+        "ux-discovery"
+      ],
+      "title": "Problem Statement"
+    },
+    {
+      "aliases": [
         "backlog",
         "master backlog",
         "product backlog",
@@ -1409,5 +1440,5 @@
       "title": "User Story"
     }
   ],
-  "count": 41
+  "count": 42
 }

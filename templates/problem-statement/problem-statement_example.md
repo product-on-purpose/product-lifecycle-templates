@@ -29,9 +29,8 @@ source_template_version: 0.1.0
 ## Problem Statement
 
 New accounts to Acme Analytics' Reporting product that have no dedicated data analyst and no query
-background cannot get past the step where they must already know which table, which join, and which
-measure answers their question, and most of them never build a second dashboard view within the first two
-weeks after signup.
+background stall at the step where they first choose a table, a join, and a measure, and most of them
+never build a second dashboard view within the first two weeks after signup.
 
 ## Background
 
@@ -46,15 +45,16 @@ answer, before it has had any chance to see value from Reporting at all.
 ## Who Is Affected
 
 - Who is affected: New Acme accounts that reach that step within their first two weeks after signup and
-  have no dedicated data analyst and no query background of their own to draw on. This is the newest slice
-  of a segment Acme already has a name for, and it is also the fastest-growing part of the signup base,
+  have no dedicated data analyst and no query background of their own to draw on. Their profile matches a
+  group Acme already has a name for, and they are also the fastest-growing part of the signup base,
   which is why finance is asking about it now rather than treating it as something to monitor at leisure.
 - Existing persona, if one already describes this group: the
   [Recurring Analyst](../user-persona/user-persona_example.md#who-they-are), named in the 2026-01-05 user
   persona built from interviews with operations, fulfilment, and finance managers across 9 mid-market
   accounts (n=12): a person who looks at the same numbers on the same schedule because there is nobody
   else to do it, with no dedicated analyst and no query background. The accounts that stall at the
-  dataset-picker step are the newest members of that same segment, not a different one.
+  dataset-picker step share that profile, but they are met earlier, before the weekly cadence that defines
+  the persona has had a chance to form.
 
 ## Impact and Why Now
 
@@ -121,8 +121,8 @@ building one, which is a separate, already-tracked product area with its own sup
 ## Decision This Informs
 
 - Decider: Dana Okoro, VP Product.
-- Decide by: As soon as practical, given finance's request for a funding decision on this trend ahead of
-  the FY26 planning cycle's own schedule.
+- Decide by: 2026-01-15, a date Dana Okoro agreed to when this statement was circulated, so that the
+  answer lands before the FY26 planning cycle would reach the question on its own schedule.
 - Next document if pursued: If Dana Okoro's answer is yes, a project brief follows, requesting the
   Reporting team's authority to look into the problem further. This statement does not describe what that
   brief would contain, who would write it, or when it would arrive; that is its own job, not this one's.
