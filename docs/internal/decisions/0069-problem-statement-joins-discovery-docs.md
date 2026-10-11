@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-11
 decision-makers: [jprisant]
 consulted: [claude]
@@ -29,9 +29,12 @@ consulted: [claude]
   decides nothing for `shape-up-pitch`, `lean-canvas` or `opportunity-solution-tree` either. None of the
   three is a Define candidate under
   [ADR 0068 (the define phase means problem framing)](0068-define-means-problem-framing.md).
-- **Status:** proposed 2026-10-11. The maintainer chose this route on 2026-10-11, and the contract diff
-  waits for the maintainer's read, as [ADR 0063](0063-project-brief-reopens-discovery-docs.md) and
-  [ADR 0066](0066-adopt-experimentation-docs-family-contract.md) did.
+- **Status:** accepted 2026-10-11. The maintainer chose this route on 2026-10-11, then directed that the
+  spec and build merge on the agent's own judgment. That direction stands in for the read that
+  [ADR 0063](0063-project-brief-reopens-discovery-docs.md) and
+  [ADR 0066](0066-adopt-experimentation-docs-family-contract.md) each had. The agent checked the contract
+  diff against ADR 0068 and against the draft amendment the maintainer had chosen, and found it states
+  the decision as made.
 
 ## Context and Problem Statement
 
