@@ -23,8 +23,8 @@ stories, an ADR, a risk register, a test plan, and so on. A bundle is not one fi
 that carries the blank template plus the research, guidance, and worked example that make it fast to fill
 correctly rather than merely fast to fill.
 
-<!-- counts: bundles=39, tier1=25 -->
-Thirty-nine bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
+<!-- counts: bundles=41, tier1=25 -->
+Forty-one bundles exist today, covering all 25 templatable Tier-1 ("must-have") document types in the
 library's researched 205-type catalog. That is the floor, not the ceiling: which types beyond Tier-1 get
 built, and in what order, is the maintainer's own choice
 ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)). An outside
@@ -58,8 +58,8 @@ is a different door to the same room, not a second source of truth. Everything b
 are reading the files directly. See [`installing.md`](docs/how-to/installing.md).
 
 One difference worth knowing: `search_templates` takes an `axis` filter that accepts a **phase or a
-classification** value, because 24 bundles carry a `phase` and the other 15 carry a `classification`.
-Filtering on phase alone silently reaches only 24 of the 39. And one axis value can hold more bundles than a
+classification** value, because 25 bundles carry a `phase` and the other 16 carry a `classification`.
+Filtering on phase alone silently reaches only 25 of the 41. And one axis value can hold more bundles than a
 single response returns: `search_templates` caps a response at 8 candidates, `deliver` holds 9, and
 `total_matched` is how a caller knows the list was cut.
 
@@ -69,10 +69,10 @@ single response returns: `search_templates` caps a response at 8 candidates, `de
 per-section detail was measured at 4.6x its size, which would have made the selection surface expensive
 to read for a question selection never asks.
 
-<!-- counts: bundles=39, sections=326, frontmatter=256 -->
+<!-- counts: bundles=41, sections=344, frontmatter=271 -->
 [`sections.json`](sections.json) answers **what is inside the one you picked**. It is generated the same
 way (from the template variants themselves, by [`tools/gen-sections.py`](tools/gen-sections.py), checked
-fresh in CI) and covers all 39 bundles: 326 sections and 256 frontmatter fill sites. Per bundle, per
+fresh in CI) and covers all 41 bundles: 344 sections and 271 frontmatter fill sites. Per bundle, per
 format, in document order, each section carries its `title` and heading `level`, the `in_sizes` that hold
 it, the `guidance_fields` its comment declares (WHAT, WHY, ASK, GOOD, WEAK, TRAP, and PRIORITY / ROW HINT
 on table sections), `has_table` and `has_row_hint`, and its `placeholders`.
@@ -213,7 +213,7 @@ readable with nothing more than a file-read tool.
 
 **There is an install step, and which one you use decides whether the bundles are present at all.** The
 Claude Code plugin route clones the whole repository, so everything above is on disk. The
-`npx skills add` route installs the **two skills only**, about 47 KB, and none of the 39 bundles; each
+`npx skills add` route installs the **two skills only**, about 47 KB, and none of the 41 bundles; each
 skill detects this and stops rather than writing a document it has no template for. The routes and how to
 verify each are in [`docs/how-to/installing.md`](docs/how-to/installing.md).
 

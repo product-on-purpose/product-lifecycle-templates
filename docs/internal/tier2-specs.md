@@ -37,8 +37,8 @@ design task" rather than "a spec-driven execution".
 | `deployment-plan` | `deployment-plan` | none; all nine contracts exclude it | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0064](decisions/0064-deployment-plan-is-declined.md): five public-sector sources publish it, but its content already ships in `launch-coordination-checklist` and lives on IT service change records, and admitting it would reverse `delivery-docs`' production-change exclusion |
 | `executive-briefing-steering-committee-deck` | `executive-briefing-steering-committee-deck` | none; forecast by `communication-docs`, never admitted | **Researched 2026-09-27**; no spec written | **No, and it will not be.** Declined by [ADR 0065](decisions/0065-steering-committee-pack-is-declined.md): its periodic written form is what `status-report` already is, its composite exists only as a deck, and the event-driven decision paper has no family |
 | `experiment-design-doc` | `experiment-design-doc` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Built 2026-10-08**, not yet in a release. The first member of the family that [ADR 0066](decisions/0066-adopt-experimentation-docs-family-contract.md) (adopt the experimentation-docs family contract) adopts at `phase: measure`. It is built first, so that its example plans the test the readout reports; four dated notes in its spec section record five points its research settled otherwise; [build report](../../bundle-builds/reports/experiment-design-doc_v0.1.0.md) |
-| `experiment-readout` | `experiment-readout-results-report` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Not yet.** The family's second founding member, built after `experiment-design-doc` so that its example reports that document's plan |
-| `tracking-plan` | `tracking-plan` | `governance-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#governance-docs-sixth-member-by-amendment-the-tracking-plan) | **Not yet.** Family by [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) (tracking-plan joins governance-docs as a sixth member), which widens the contract's membership test. Built after `experiment-design-doc` and `experiment-readout`, per the maintainer's 2026-10-06 ruling |
+| `experiment-readout` | `experiment-readout-results-report` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Built 2026-10-11**, not yet in a release. The family's second founding member, which completes `experimentation-docs`; built after `experiment-design-doc` so that its example reports that document's plan. Three dated notes in its spec section record what its research settled otherwise, and a fourth records the catalog correction it asked for |
+| `tracking-plan` | `tracking-plan` | `governance-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#governance-docs-sixth-member-by-amendment-the-tracking-plan) | **Built 2026-10-11**, not yet in a release, in the same PR as `experiment-readout`. Family by [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) (tracking-plan joins governance-docs as a sixth member), which widens the contract's membership test. Four dated notes in its spec section record what its research settled otherwise, and a fifth, in the section table, points back to one of them |
 | `north-star-metric-definition` | `north-star-metric-definition` | none assigned | **Researched 2026-10-05**; no spec written | **Queued, after `tracking-plan`.** Deferred by the maintainer on 2026-10-06 and queued on 2026-10-08, to follow the current three builds. It needs a spec and a family before it can be built. It clears admission on one publisher (Amplitude, all rights reserved), but the definition half of its job already ships in `kpi-dashboard`'s Metric Definitions section, and no contract admits it without an amendment, which stops for the maintainer's read. Evidence held locally |
 | `concept-test-validation-brief` | `concept-test-validation-brief` | none assigned; `discovery-docs` admits it as written | **Researched 2026-10-05**; no spec written | **Not now.** Parked by the maintainer on 2026-10-06. Its admission rests on one vendor template whose body the main loop could not check against raw text, and the new `experimentation-docs` contract excludes a test run before anything is built |
 
@@ -2500,7 +2500,7 @@ family's chronology obligation: the example must precede what it leads to (the b
 decision, and any future initiation documentation) and must not cite either as existing. It sits after the
 [user persona](../../templates/user-persona/user-persona_example.md) (2026-01-05), which itself claims only to sit "ahead
 of even the product vision" (`user-persona_example.md:18`); this brief's later date does not disturb that
-claim. `README.md:223` separately calls the persona "the earliest document in the library", a stronger,
+claim. `README.md:224` separately calls the persona "the earliest document in the library", a stronger,
 published claim this date also respects.
 
 **Facts it reads, by file and line, and nothing it must not.** From `business-case_example.md`: the sponsor,
@@ -2537,7 +2537,7 @@ Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
    "sits near the start of the shared timeline, ahead of everything except its sibling user persona and the
    product vision it builds on." A brief dated 2026-01-16 makes that sentence false the moment it ships. The
    landing PR must add a one-line dated correction to that callout, the same pattern already used for
-   `README.md:223`'s "earliest document" claim once a still-earlier document exists. *(Done 2026-09-29: the callout,
+   `README.md:224`'s "earliest document" claim once a still-earlier document exists. *(Done 2026-09-29: the callout,
    now `business-case_example.md:16-20`, carries that correction.)*
 
 **Decision requested, closing the loop honestly.** The brief asks Dana Okoro, as executive, to authorize
@@ -2760,15 +2760,17 @@ not a claim that every team's practice should split in two."*
 |---|---|---|
 | **Executive Summary** | yes | Eppo's "Executive Summary"; Optimizely's "Purpose" |
 | **Context and Setup** | yes | Tanmayi Sai's "Experiment Setup" (self-checked against the page directly, 2026-10-06); Optimizely's "Details" |
-| **Key Results: Primary Metrics** | yes | Eppo's named section, "Key Results: Primary Metrics". The 2026-10-05 research reports a Metric / Control / Test / Change / CI / Significant column set under it; the column names themselves were not independently raw-checked. A table section; carries PRIORITY and ROW HINT |
+| **Key Results: Primary Metrics** | yes | Eppo's named section, "Key Results: Primary Metrics". The 2026-10-05 research reports a Metric / Control / Test / Change / CI / Significant column set under it; the column names themselves were not independently raw-checked. *(Corrected 2026-10-11, when `experiment-readout` was built: the columns are now read in raw text, as one header row, "Metric Control Test Change (abs) Change (rel) CI Sig?"; see [1] in the bundle's [research log](../../templates/experiment-readout/experiment-readout_research-log.md#what-the-checks-caught-and-what-was-not-read).)* A table section; carries PRIORITY and ROW HINT |
 | **Key Results: Supporting Metrics** | yes | Eppo's "Key Results: Supporting Metrics", the guardrail/secondary tier. Same table shape |
 | **Validity Checks** | yes | **POSITION, UNSOURCED as a named section.** No template read in this pass labels a validity-checks block; the content (sample ratio mismatch, guardrail breach, novelty effect) is sourced only as scattered practice description - Microsoft ExP's "SRMs typically invalidate the A/B test and make any results and metric movements untrustworthy" and "Measure aspects of the product that we don't want to degrade but won't necessarily improve" (<https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/>), and GrowthBook's "peeking (deciding on an experiment before it's completed)" and "cherry-picking data" (<https://www.growthbook.io/blog/experimentation-program-mistakes-to-avoid>) and "A sample ratio mismatch is a statistically significant gap between the traffic split you configured and the split your experiment produced" (<https://www.growthbook.io/blog/sample-ratio-mismatch>). The library labels this its own POSITION because the practice is well evidenced even though no source structures it as a section |
 | **Deep-Dive** | full only | Eppo's "Deep-Dive". Its companion post reads "Experiment reports discuss the" why, not the what (self-checked fragment, 2026-10-06, against <https://www.geteppo.com/blog/how-to-craft-compelling-impactful-experiment-reports>; the surrounding sentence is this bundle's own paraphrase) |
-| **Decision: Ship, Iterate or Stop** | yes | **The decision requirement is sourced; the exact triad is not.** Sai's template closes with "Next Steps" (self-checked, 2026-10-06). Per the 2026-10-05 research's own reading of that section, not independently re-checked word for word, its content names rollout, iteration, or discontinuation; Fishman pre-commits the same choice earlier, in The Plan. No source uses "ship, iterate or stop" verbatim - that phrasing is [the contract's](contracts/experimentation-docs.md) own section 1 wording, adopted by the maintainer, and is a **POSITION** here too. Note the catalog's own guidance-note column (`docs/internal/catalog.md:209`) independently carries "ship/iterate/kill decision" - a different third word, equally unsourced; see Catalog corrections |
+| **Decision: Ship, Iterate or Stop** | yes | **The decision requirement is sourced; the exact triad is not.** Sai's template closes with "Next Steps" (self-checked, 2026-10-06). Per the 2026-10-05 research's own reading of that section, not independently re-checked word for word, its content names rollout, iteration, or discontinuation; Fishman pre-commits the same choice earlier, in The Plan. No source uses "ship, iterate or stop" verbatim - that phrasing is [the contract's](contracts/experimentation-docs.md) own section 1 wording, adopted by the maintainer, and is a **POSITION** here too. Note the catalog's own guidance-note column (`docs/internal/catalog.md:209`) independently carries "ship/iterate/kill decision" - a different third word, equally unsourced; see Catalog corrections *(Corrected 2026-10-11, when the bundle was built: the catalog note now reads "ship, iterate or stop decision", labelled as this library's POSITION.)* |
 | **Decision Owner** | yes | **POSITION, UNSOURCED.** No source read requires naming who made the call. The spec keeps it in lean because the contract finishes a readout when its decision is recorded, and a recorded decision names who made it, as an ADR names its decision-makers |
 | **Next Steps and Owners** | yes | Eppo's "Next Steps", each action item carrying an explicit owner |
 | **Implementation Details and Analysis Notes** | full only | Eppo's own section of that name; CONSORT's formal separation of Methods from Results |
 | **Further Analysis** | full only | Sai's optional "Further Analysis" (self-checked, 2026-10-06) |
+
+*(Corrected 2026-10-11, when `experiment-readout` was built: Eppo's own template puts "Next Steps" straight after the Executive Summary, before both Key Results sections, so it leads with what happens next. This spec's order, which puts the decision and its next steps after the evidence, is therefore the library's choice rather than Eppo's, and the companion names it as one; see [1] in the bundle's [research log](../../templates/experiment-readout/experiment-readout_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
 
 #### Boundaries with each named neighbour
 
@@ -2817,6 +2819,10 @@ not a claim that every team's practice should split in two."*
   independently confirms its own "scorecard" is a machine-generated table inside the experimentation
   platform, not a narrative document
   (<https://www.microsoft.com/en-us/research/articles/treatment-effect-assessment-at-scale-accounting-for-correlated-metrics-and-metric-relevance-in-modern-experimentation/>).
+  *(Corrected 2026-10-11, when `experiment-readout` was built: "machine-generated table" is this spec's
+  own paraphrase, not Microsoft's wording. The page's own sentence is "A scorecard is a collection of
+  metrics used to evaluate the success of a product change or experiment"; see [23] in the bundle's
+  [research log](../../templates/experiment-readout/experiment-readout_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
   Statsig's own "Experiment Summary" PDF export is the same kind of snapshot
   (<https://www.statsig.com/updates/update/experiment-summary-pdf>); a similar claim about Split's
   export formats rests only on an unverified WebSearch summary in the 2026-10-05 sweep and is not restated
@@ -3152,8 +3158,13 @@ No single vendor's column list is canonical, and none should be copied whole (se
 the five independently published shapes converge on the same core fields. Avo's worksheet carries ten
 columns (KPIs, Event categories, Event names, Event description, Properties, Property description,
 Property value types, Platforms, Status, Code snippet; five individually raw-checked, see Admission).
+*(Corrected 2026-10-11, when `tracking-plan` was built: all ten are now read in raw text, as numbered
+headings from "1. KPIs" to "10. Code snippet"; see [3] in the bundle's [research log](../../templates/tracking-plan/tracking-plan_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
 Twilio Segment's worked example carries four (NAME, PROPERTIES, LOCATION, and a fourth column whose name
-did not pass the raw-text check). Amplitude's docs state the field structure in the one quote that passed:
+did not pass the raw-text check). *(Corrected 2026-10-11, when `tracking-plan` was built: the fourth
+column is WHY. The headers sit in an image, but the page's prose names it: the why "(logged under WHY)
+is a short description of the business purpose that justifies tracking the event." See [6] in the
+bundle's [research log](../../templates/tracking-plan/tracking-plan_research-log.md#what-the-checks-caught-and-what-was-not-read).)* Amplitude's docs state the field structure in the one quote that passed:
 "every event and property you collect, why you collect each one, and which source emits it" - an event
 name, a reason, and a source. Mixpanel and mParticle each describe the document as centralized and
 aligning, without naming individual columns in anything that passed the raw-text check.
@@ -3168,6 +3179,14 @@ event-taxonomy page separately describes a four-role chain, "Event requesters pr
 review," "Domain owners approve," `amplitude.com/explore/data/event-taxonomy` - a richer, differently
 shaped claim about the same subject, not a second confirmation of the same role).
 
+*(Corrected 2026-10-11, when `tracking-plan` was built: neither field is single-sourced any longer.
+Amplitude's own event-taxonomy page carries the status vocabulary, as version labels like "proposed,"
+"active," "deprecated," and "removed," and Avo's "9. Status" column and GitLab's event definitions
+carry a status too. Amplitude's tracking-plan page names an owner per event, "the person responsible for
+the implementation of that event", and two more sources list an owner among a plan's contents. The
+bundle carries both as columns without a single-source label. Who owns the plan as a whole is still
+open; see the bundle's [research log](../../templates/tracking-plan/tracking-plan_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
+
 #### Section design
 
 Provisional, and expected to move once a build's own research runs:
@@ -3175,7 +3194,7 @@ Provisional, and expected to move once a build's own research runs:
 | Section | In lean | What it carries |
 |---|---|---|
 | **Purpose and Boundary** | yes | What this document catalogs (the events, properties, and traits a product captures, across every feature) and what does not go in: a per-feature instrumentation spec (the PRD's own "Analytics and instrumentation" section, or the unbuilt `analytics-requirements-measurement-plan`), the unbuilt data dictionary, the KPI dashboard's Metric Definitions section, and the in-tool enforced schema some vendors build from this document. Sourced to Segment's glossary, Countly's glossary, Avo's Data Design docs |
-| **Event and Property Catalog** | yes | **The load-bearing section.** One row per event: name, trigger (when it fires), properties, owner, source or destination, status. Name, meaning, properties and source recur across the vendors (see Structure). Owner and status are each single-sourced, so the companion labels them as such. A table section, so it carries PRIORITY and ROW HINT |
+| **Event and Property Catalog** | yes | **The load-bearing section.** One row per event: name, trigger (when it fires), properties, owner, source or destination, status. Name, meaning, properties and source recur across the vendors (see Structure). Owner and status are each single-sourced, so the companion labels them as such. *(Corrected 2026-10-11, when the bundle was built: neither is single-sourced any longer; see the note under Structure.)* A table section, so it carries PRIORITY and ROW HINT |
 | **Review and Ownership** | yes | The cadence this document is kept on, who maintains it, and the living-document framing: Amplitude's "a living document," mParticle's "live immediately." Thinly sourced on cadence specifics beyond "continuously maintained"; any stated review interval is this library's own **POSITION** |
 | **Governance and Ownership Discipline** | full only | The PII and ownership discipline several practitioners argue for but no vendor documentation states as a required field: one named owner per event (`customerscore.io`, a single practitioner source), PII flagging and masking ("strict controls to prevent the accidental collection of Personally Identifiable Information," `trackingplan.com/blog/data-governance-for-analytics`), and Amplitude's four-role approval chain as a richer, alternative shape for the same concern. **Thinly and sometimes differently sourced**; present both shapes rather than picking one as canonical, the same move `change-log`'s Status Vocabulary section already makes for its own three published shapes |
 | **Versioning and Change History** | full only | A version or change-history field per event, and the event's lifecycle state. Snowplow's named "Change History" field, Digital Applied's "proposed / active / deprecated / removed," and RudderStack's and mParticle's versioning language are the published shapes; no single vocabulary is canonical, stated as such |
@@ -3431,7 +3450,12 @@ researched for this candidate. **`pairs_with: []`.** No pairing is claimed.
    boundary, and it must be cited as exactly that, not generalized into a claim every vendor makes.
 3. **Two template counts are summary-derived and must stay flagged medium confidence**: Amplitude's "four
    sheets plus five vertical taxonomy templates" and Mixpanel's "five Google Sheets templates." Neither
-   spreadsheet was opened; both counts come from page prose or outbound links.
+   spreadsheet was opened; both counts come from page prose or outbound links. *(Corrected 2026-10-11,
+   when `tracking-plan` was built: Amplitude's page links one Google Sheets template, not a set, and
+   names its four sheets in prose: Events and Event Properties, User Properties, Organization (Group)
+   Properties, and Discussions. No vertical taxonomy templates appear on the page read. Mixpanel's page
+   names four vertical templates and a blank one, which matches its count of five. Neither spreadsheet
+   was opened; see [9] and [11] in the bundle's [research log](../../templates/tracking-plan/tracking-plan_research-log.md#what-the-checks-caught-and-what-was-not-read).)*
 4. **No licence was found for any vendor's template.** Do not adapt column names or wording from any one
    vendor's sheet verbatim, and do not state or imply a licence for any of the five.
 5. **The shared-scenario rule binds hard here.** Every event, metric, owner, and date in the worked
