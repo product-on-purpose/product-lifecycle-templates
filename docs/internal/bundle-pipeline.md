@@ -289,6 +289,8 @@ Then: bump the README `<!-- bundle-count: N -->` marker and prose count, add the
 family table and the layout tree; update STATE.md (bundle count, family membership) and
 `buildout-specs.md`'s progress table. Branch off `origin/main`, PR, let CI pass (no admin merge), stop for
 the maintainer read at the family boundary (batch review), then merge and pull. Update the progress table.
+The PR body says `Closes #N` for the type's `build-candidate` issue: since 2026-10-10 every proposed bundle
+has one (filter on `label:build-candidate`), and the merge closes it as completed on the day it lands.
 The build-report ingest must run here, on the machine that ran the build, because it reads per-agent
 transcripts under `~/.claude/projects/` that are machine-local and are pruned eventually; the resulting
 report is committed with the bundle.

@@ -119,9 +119,9 @@ A green bundle PR merges on its own authority. Everything above waits.
 
 ## Definition of done
 
-Gate green, links resolve, counts agree, CI green, PR merged, `main` pulled, the progress table in
-`buildout-specs.md` updated, and `python tools/gen-bundle-build-report.py --ingest` run on the machine
-that ran the build. A bundle is not done because the files exist; it is done when the tree says so.
+Gate green, links resolve, counts agree, CI green, PR merged with `Closes #N` for the type's
+`build-candidate` issue, `main` pulled, the progress table in `buildout-specs.md` updated, and
+`python tools/gen-bundle-build-report.py --ingest` run on the machine that ran the build. A bundle is not done because the files exist; it is done when the tree says so.
 
 ## What this costs
 
