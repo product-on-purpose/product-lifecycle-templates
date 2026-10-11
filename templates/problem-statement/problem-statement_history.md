@@ -9,11 +9,15 @@ can tell a correction from a preference.
 service design, design thinking, product-management worksheets, the family's own named neighbours,
 and the standing gap question. [`problem-statement_research-log.md`](problem-statement_research-log.md)
 records **43 sources, all fetched-and-verified**, and 264 quotations checked against raw source text
-rather than a retrieval summary. Only `fetched-and-verified` sources are quoted anywhere in this
-bundle. A separate group of sources was never added to the log at all, because this research could not
-retrieve them: four fetch attempts against McKinsey's own problem-statement worksheet timed out, two
-of Atlassian's companion templates open only inside an application shell, two frequently cited 2012 and
-2017 articles are paywalled, and PMI's own problem-statement page returned HTTP 403. None of those
+rather than a retrieval summary. Nine of the 43 came from a gap-fill pass after drafting. That pass
+found constraints labelled in engineering-design sources, which the bundle routes to `project-brief`
+against one engineering paper's dissent, and it showed that one source does contrast a problem
+statement with a business case by name, which the first draft had denied in seven places. Only
+`fetched-and-verified` sources are quoted anywhere in this bundle. A separate group of sources was
+never added to the log at all, because this research could not retrieve them: eight fetch attempts
+across two passes against McKinsey's own problem-statement worksheet timed out, two of Atlassian's
+companion templates open only inside an application shell, two Harvard Business Review articles from
+2012 and 2017 are paywalled, and PMI's own problem-statement page returned HTTP 403. None of those
 appears anywhere in this bundle, quoted or otherwise.
 
 **Catalog entry 206, a new type with no prior row.** Under

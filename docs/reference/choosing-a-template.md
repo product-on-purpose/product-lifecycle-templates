@@ -25,9 +25,11 @@ library's internal grouping. If you already know the library's family structure,
 
 ### I am deciding whether to build something
 
-Before anything is scoped or scheduled, this is where you find out whether the investment is
-worth making and who it is for.
+Before anything is scoped or scheduled, this is where you settle which problem is worth solving,
+find out whether the investment is worth making, and decide who it is for.
 
+- [`problem-statement`](../../templates/problem-statement/) - which problem is worth solving, who has
+  it, and the evidence that it is real, before anyone names a solution.
 - [`business-case`](../../templates/business-case/) - whether an investment is worth making, and
   what it is being compared against, including doing nothing.
 - [`user-persona`](../../templates/user-persona/) - who you are building for, grounded in research
