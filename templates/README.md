@@ -59,7 +59,8 @@ tree without the gate noticing.
 
 **`experimentation-docs`**
 
-- [`experiment-design-doc/`](experiment-design-doc/) - Experiment Design Doc. Axis phase measure; ships lean/full. The first `experimentation-docs` member ([ADR 0066](../docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md)): the plan for one experiment, fixed before it runs, which the family's second member, the readout, will report against.
+- [`experiment-design-doc/`](experiment-design-doc/) - Experiment Design Doc. Axis phase measure; ships lean/full. The first `experimentation-docs` member ([ADR 0066](../docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md)): the plan for one experiment, fixed before it runs, which the family's second member, the readout, reports against.
+- [`experiment-readout/`](experiment-readout/) - Experiment Readout. Axis phase measure; ships lean/full. The second `experimentation-docs` member, which completes the family ([ADR 0066](../docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md)): what one experiment found, read against the plan and decision rule its design doc fixed in advance, and the ship, iterate or stop decision that followed.
 
 **`governance-docs`**
 
@@ -68,6 +69,7 @@ tree without the gate noticing.
 - [`risk-register/`](risk-register/) - Risk Register. Axis classification utility; ships lean/full.
 - [`issue-log/`](issue-log/) - Issue Log. Axis classification utility; ships lean/full. The fourth `governance-docs` member ([ADR 0057](../docs/internal/decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)): the deepened, standalone form of the RAID log's Issues quadrant, as the risk register is of its Risks.
 - [`change-log/`](change-log/) - Change Log. Axis classification utility; ships lean/full. The fifth `governance-docs` member ([ADR 0061](../docs/internal/decisions/0061-change-log-joins-governance-docs-as-a-fifth-member.md)): the standing register behind the per-occasion change request, one row per request with its decision kept apart from its status.
+- [`tracking-plan/`](tracking-plan/) - Tracking Plan. Axis classification utility; ships lean/full. The sixth `governance-docs` member ([ADR 0067](../docs/internal/decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)): the standing, product-wide plan of which events and properties a product records and why, upstream of the KPI dashboard's metrics.
 
 **`process-docs`**
 

@@ -3,7 +3,7 @@
 Status: adopted 2026-10-08 ([ADR 0066](../decisions/0066-adopt-experimentation-docs-family-contract.md)); proposed 2026-10-06 and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: experimentation-docs` in its meta
 Members at adoption: none built yet (the catalog candidates `experiment-design-doc` and `experiment-readout-results-report` are the planned members; their bundle ids are fixed in their specs in [`tier2-specs.md`](../tier2-specs.md))
-Members: experiment-design-doc (built 2026-10-08); experiment-readout remains to build
+Members: experiment-design-doc (built 2026-10-08); experiment-readout (built 2026-10-11)
 Modeled on: the qa-docs family contract, the closest existing family: a phase-bound pair that plans a test and then reports it
 Axis: `phase` (`measure`); see section 2 for why this family is not on the `classification` axis
 Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
@@ -150,3 +150,9 @@ the `qa-docs` pair `test-plan` and `test-summary-report`. Drafted contract-first
 contract describes the set its two planned members must join rather than one that already exists. The membership test,
 both boundary sentences and the axis call come from a research pass on 2026-10-05 that tested five measurement
 candidates against all nine existing contracts and a draft of this one.
+
+**2026-10-11, second member built.** `experiment-readout` completes the family's two founding members. Per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world), its research
+log was read against this contract's assertions about the world. Section 3 item 6's three traditions all appear in
+it: product experimentation vendors, UK public-sector evaluation, and academic trial reporting. Nothing in it
+contradicts section 1's membership test or its two boundary sentences. **No obligation changed.**

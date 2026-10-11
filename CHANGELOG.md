@@ -14,6 +14,32 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`experiment-readout`, the 40th bundle, which completes `experimentation-docs`**, by
+  [ADR 0066](docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md). It records what one
+  experiment found and the ship, iterate or stop decision the results drove, measured against the plan the
+  design doc fixed in advance. Lean carries Executive Summary; Context and Setup; Key Results: Primary
+  Metrics; Key Results: Supporting Metrics; Validity Checks; Decision: Ship, Iterate or Stop; Decision Owner;
+  and Next Steps and Owners. Full adds Deep-Dive, Implementation Details and Analysis Notes, and Further
+  Analysis. The worked example is dated 2026-09-04 and reports the Saved Views adoption-nudge test that the
+  design doc's example planned. Treatment finished two points above control, and the 95% interval runs from
+  -11 to +15 points. That is a null, so the prompt is shelved. The example says what the null rules out and
+  what it does not. Three dated notes in the spec record what the research settled otherwise: Eppo's metric
+  columns, Eppo's order (Next Steps before the results), and a phrase the spec had attributed to Microsoft
+  that was the spec's own paraphrase. Twenty-seven sources, all fetched-and-verified; every quotation was
+  checked against the source's raw text.
+- **`tracking-plan`, the 41st bundle and the sixth `governance-docs` member**, by
+  [ADR 0067](docs/internal/decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md), at
+  `classification: utility`. It is the standing, product-wide plan of which events and properties a product
+  records, and why. A single feature's slice of that plan stays in its PRD, and the enforced schema is
+  generated from the plan. Lean carries Purpose and Boundary, Naming Conventions, the Event and Property
+  Catalog, User and Account Properties, and Review and Ownership. Full adds Privacy, Sensitivity and
+  Retention, and Change Process and Version History. The worked example is the Reporting Platform
+  Modernization program's plan at v1.2, dated 2026-08-24. It sits upstream of the KPI dashboard the family
+  already built, and lists the adoption-nudge test's exposure event as active, before that test has ended.
+  Four dated notes in the spec record what the research settled otherwise: all ten of Avo's columns, Twilio
+  Segment's WHY column, a status and an owner column that are no longer single-sourced, and Amplitude
+  linking one template rather than a set. Thirty-seven sources, all fetched-and-verified; every quotation
+  was checked against the source's raw text.
 - **`experiment-design-doc`, the 39th bundle and the first `experimentation-docs` member**, by
   [ADR 0066](docs/internal/decisions/0066-adopt-experimentation-docs-family-contract.md). The plan for one
   experiment, fixed before the test runs, drawn from three lineages: product experimentation vendors,
@@ -50,6 +76,25 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Counts swept from 39 to 41 bundles**, with markers and the prose around them, across README, AGENTS,
+  STATE, CONTRIBUTING, the how-to, reference, tutorial and explanation docs, both skills, the plugin and
+  library descriptions, the site landing page and the internal plans. The phase axis now holds 25 bundles
+  and the classification axis 16. `choosing-a-template` gains an experiment-readout entry and both new
+  bundles in its family map, and says all ten families are complete. The addressable-variant count was
+  stale since the 35th bundle, which put 71 in README, STATE and the install guide while `main` already
+  served 79. The MCP server's self-test now counts 83, and all three say so.
+- **Catalog entries 140 and 143 corrected**, as the spec asked of this landing. Entry 140 (Tracking Plan)
+  gains "data tracking plan" as an alias, but not "data plan", which mParticle uses for its in-tool copy.
+  It drops "analytics spec" and "instrumentation plan", which were not found in any source read;
+  "instrumentation plan" also names the per-feature measurement plan, entry 147. Its owner stays an open
+  question. Entry 143's guidance note now reads "ship, iterate or stop
+  decision", labelled as this library's position, where it read "ship/iterate/kill". The atlas is
+  regenerated.
+- **Contracts:** `experimentation-docs` records its second member, with a dated change note that changes no
+  obligation. `governance-docs` records `tracking-plan` as built. `experiment-design-doc`'s
+  `related_templates` names `experiment-readout` directly, without the `future:` prefix it carried until the
+  readout existed.
+- **Self-tests:** `test-gen-sections` expects 41 bundles and `test-mcp-server` expects 83 variants.
 - **Contracts:** `governance-docs` to 0.4.0, with a dated change note and a sixth role. ADR count 65 -> 67
   and check K assertions 118 -> 120, across markers and prose.
 - **Branch protection: the site build is a second required check on `main`** (2026-10-08, the

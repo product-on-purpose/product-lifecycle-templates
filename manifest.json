@@ -356,6 +356,38 @@
     },
     {
       "aliases": [
+        "results report",
+        "A/B test results",
+        "experiment analysis"
+      ],
+      "approx_tokens": {
+        "full": 6600,
+        "lean": 5050
+      },
+      "default_size": "lean",
+      "doc_type": "experiment-readout",
+      "family": "experimentation-docs",
+      "id": "experiment-readout",
+      "phase": "measure",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Executive Summary, Context and Setup, Key Results: Primary Metrics, Key Results: Supporting Metrics, Validity Checks, Decision: Ship, Iterate or Stop, Decision Owner, Next Steps and Owners) for a single test with one clear primary metric and no secondary analysis a later reader would need to retrace. Use full when the decision rests on more than the primary read: it adds a Deep-Dive for segment or secondary cuts, Implementation Details and Analysis Notes for how the numbers were produced, and Further Analysis for follow-on questions the readout opens rather than closes.",
+      "status": "beta",
+      "summary": "The document a team writes after a product experiment ends, once the result is known, to report what ran, the results with their uncertainty, whether the validity checks hold, and the decision those results drove, ship, iterate, or stop, against the plan and decision rule an experiment design doc fixed in advance.",
+      "tags": [
+        "experimentation",
+        "measure",
+        "a/b testing",
+        "results",
+        "decision rule",
+        "validity checks"
+      ],
+      "title": "Experiment Readout"
+    },
+    {
+      "aliases": [
         "postmortem",
         "post-mortem",
         "RCA",
@@ -1280,6 +1312,37 @@
     },
     {
       "aliases": [
+        "data tracking plan",
+        "event tracking plan"
+      ],
+      "approx_tokens": {
+        "full": 6200,
+        "lean": 4250
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "tracking-plan",
+      "family": "governance-docs",
+      "id": "tracking-plan",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Purpose and Boundary, Naming Conventions, the Event and Property Catalog, User and Account Properties, and Review and Ownership) for a product starting out or a small, stable event set, following the practitioner framing that a team can start with a spreadsheet or document when the event set is small and should build tracking in phases rather than all at once. Use full when more than one team changes this plan, when it holds personal or sensitive data, or when someone will later ask what changed and who approved it; it adds Privacy, Sensitivity and Retention and Change Process and Version History.",
+      "status": "beta",
+      "summary": "The standing catalog of the analytics events a product records, the properties and traits each one carries, and why each is collected, where it comes from, who owns it, and whether it is still live. Distinct from a single feature's own PRD instrumentation slice, the data dictionary, the broader measurement plan, and the KPI dashboard it stands upstream of.",
+      "tags": [
+        "governance",
+        "analytics",
+        "instrumentation",
+        "events",
+        "tracking",
+        "data-governance"
+      ],
+      "title": "Tracking Plan"
+    },
+    {
+      "aliases": [
         "persona",
         "user profile",
         "proto-persona",
@@ -1346,5 +1409,5 @@
       "title": "User Story"
     }
   ],
-  "count": 39
+  "count": 41
 }
