@@ -11,12 +11,14 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `announcement-internal-comms` | 0.1.0 | 8,495,731 | $16.99 | 15 | 3 | whole build | high | [report](reports/announcement-internal-comms_v0.1.0.md) |
 | `change-log` | 0.1.0 | 8,472,610 | $16.95 | 15 | 3 | whole build | high | [report](reports/change-log_v0.1.0.md) |
 | `production-readiness-review` | 0.1.0 | 7,876,892 | $15.75 | 15 | 3 | whole build | high | [report](reports/production-readiness-review_v0.1.0.md) |
+| `tracking-plan` | 0.1.0 | 7,440,790 | $14.88 | 15 | 3 | whole build | high | [report](reports/tracking-plan_v0.1.0.md) |
 | `change-request` | 0.1.0 | 7,203,075 | $14.41 | 15 | 3 | whole build | high | [report](reports/change-request_v0.1.0.md) |
 | `project-milestone-retrospective` | 0.1.0 | 7,179,861 | $28.97 | 9 | 2 | **floor** | high | [report](reports/project-milestone-retrospective_v0.1.0.md) |
 | `issue-log` | 0.1.0 | 7,143,159 | $14.29 | 15 | 3 | whole build | high | [report](reports/issue-log_v0.1.0.md) |
 | `project-brief` | 0.1.0 | 7,120,610 | $14.24 | 15 | 3 | whole build | high | [report](reports/project-brief_v0.1.0.md) |
 | `launch-coordination-checklist` | 0.1.0 | 7,108,920 | $14.22 | 15 | 3 | whole build | high | [report](reports/launch-coordination-checklist_v0.1.0.md) |
 | `experiment-design-doc` | 0.1.0 | 6,674,388 | $13.35 | 15 | 3 | whole build | high | [report](reports/experiment-design-doc_v0.1.0.md) |
+| `experiment-readout` | 0.1.0 | 6,480,996 | $12.96 | 15 | 3 | whole build | high | [report](reports/experiment-readout_v0.1.0.md) |
 | `definition-of-ready` | 0.1.0 | 5,846,070 | $11.69 | 15 | 3 | whole build | high | [report](reports/definition-of-ready_v0.1.0.md) |
 | `business-case` | 0.1.0 | 4,885,565 | $9.77 | 15 | 3 | **floor** | medium | [report](reports/business-case_v0.1.0.md) |
 | `sprint-retrospective-notes` | 0.1.0 | 4,822,982 | $9.65 | 15 | 3 | **floor** | medium | [report](reports/sprint-retrospective-notes_v0.1.0.md) |
@@ -38,8 +40,8 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `bug-report` | 0.1.0 | 893,739 | $2.68 | 5 | 1 | **floor** | medium | [report](reports/bug-report_v0.1.0.md) |
 | `prd` | 0.1.0 | 765,636 | $1.53 | 9 | 1 | **floor** | mixed | [report](reports/prd_v0.1.0.md) |
 
-<!-- build-reports: count=31 high=12 weighted=149245149 -->
+<!-- build-reports: count=33 high=14 weighted=163166935 -->
 
-**31 reports, 12 of them at high attribution confidence, 149,245,149 weighted token-equivalents and $357.86 at API list rates in total.**
+**33 reports, 14 of them at high attribution confidence, 163,166,935 weighted token-equivalents and $385.70 at API list rates in total.**
 
 Weighted applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0 to the raw counts. List USD prices each response at its own model's API list rate as of 2026-09-22; it is a yardstick, not a bill.

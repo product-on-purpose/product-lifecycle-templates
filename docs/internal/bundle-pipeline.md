@@ -19,8 +19,8 @@ negotiable is the review, not the gate. Never ship a bundle that has not passed 
 its findings applied and re-verified.
 
 Per-bundle cost was estimated at 0.6-1M tokens; that estimate was never measured and was low by roughly
-10 to 20 times. Measured cost, from the eleven builds captured end to end, is roughly 7M to 12M weighted
-token-equivalents per bundle, or $14 to $41 at API list rates, and the model that drafts is most of the
+10 to 20 times. Measured cost, from the thirteen builds captured end to end, is roughly 6M to 12M weighted
+token-equivalents per bundle, or $12 to $41 at API list rates, and the model that drafts is most of the
 spread: launch-coordination-checklist, the first build through this runbook's own workflow, cost 7,108,920
 and $14.22 with every agent on Sonnet as pinned; issue-log, the second, cost $14.29 for the same 15
 research, drafting and review agents ($16.76 with the three agents that swept the counts at landing); and
@@ -35,7 +35,9 @@ for its 15 agents, and its two-template drafting stage cost $8.14, close to anno
 single-template $8.58, which points the same way. production-readiness-review, the seventh, cost 7,876,892 weighted
 and $15.75 for its 15 agents, its two-template drafting $8.35. project-brief, the eighth, cost 7,120,610 weighted
 and $14.24 for its 15 agents, its two-template drafting $5.72. experiment-design-doc, the ninth, cost 6,674,388
-weighted and $13.35 for its 15 agents, its two-template drafting $5.90. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+weighted and $13.35 for its 15 agents, its two-template drafting $5.90. experiment-readout, the tenth, cost
+6,480,996 weighted and $12.96 for its 15 agents, its two-template drafting $5.06; tracking-plan, the eleventh,
+cost 7,440,790 weighted and $14.88 for its 15 agents, its two-template drafting $8.57. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
