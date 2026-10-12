@@ -77,7 +77,11 @@ that capability**, and the fixture becomes a real subject when the first member 
    anything else.
 3. **Guidance comments.** Every section of every variant carries the Approach A comment (WHAT, WHY with a
    companion pointer, ASK, GOOD, WEAK, TRAP; PRIORITY and ROW HINT for table sections), parseable under the
-   comment grammar. A "How to fill this in" preamble opens each variant.
+   comment grammar. A "How to fill this in" preamble sits inside each variant's opening comment block.
+   *(Clarified 2026-10-12, the maintainer's call. This said the preamble "opens each variant", yet every
+   member's variants open with frontmatter, and each places the preamble inside its first comment block. The
+   same wording in `discovery-docs` led a review lens to file a false finding, and was clarified there on
+   2026-09-30.)*
 4. **Companion skeleton.** All 11 sections of methodology section 5, in order; an inapplicable section says
    so in one line rather than being dropped.
 5. **Guide shape.** When to use; when NOT to use; pick a variant; a self-gradable quality rubric; at least
@@ -139,6 +143,13 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**2026-10-12: a wording clarification, with no obligation changed.** Section 3 said a "How to fill this
+in" preamble "opens each variant". Every member's variants open with frontmatter and carry the preamble
+inside their first comment block. Section 3 now says so, with a dated note beside the sentence. The same
+wording in `discovery-docs` led a review lens to file a false finding, and was clarified there on
+2026-09-30. The maintainer chose this on 2026-10-12 after reading the exact text. No version moves, because
+no obligation changed.
 
 **0.1.1 (2026-08-07), per
 [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world):** section 1's

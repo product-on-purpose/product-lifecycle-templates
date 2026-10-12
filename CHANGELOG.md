@@ -12,6 +12,14 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **Five more family contracts place the "How to fill this in" preamble in each variant's opening comment
+  block**, as `discovery-docs` has since 2026-09-30: `decision-docs`, `delivery-docs`, `governance-docs`,
+  `qa-docs` and `strategy-docs`. Each said the preamble "opens each variant", yet all 57 of their template
+  variants open with frontmatter and carry the preamble inside the first comment block. The bundle pipeline's
+  drafting step carried the same wording and now matches. No obligation changed.
+
 ## [0.16.0] - 2026-10-11
 
 ### Added
