@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-10-11
+
 ### Added
 
 - **`problem-statement`, the 42nd bundle and the library's first `phase: define` bundle**, the fourth
@@ -99,6 +101,10 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **`experiment-design-doc`'s example no longer calls the readout's example unbuilt.** Its opening callout
+  said its second half "is not yet built", which `experiment-readout`'s landing made false. The callout now
+  links that example with a dated note, and the history records a 0.1.0 correction. Release step 7's sweep
+  found it while `v0.16.0` was being cut.
 - **Counts swept from 41 to 42 bundles and from 205 to 206 catalog types**, with markers and the prose
   around them. The phase axis now holds 26 bundles. Sections are 354, frontmatter fill sites 276, gated
   research logs 36 and gated sources 1,501. `business-case`'s guide gains a problem-statement row, and its
@@ -2779,7 +2785,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.15.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.16.0...HEAD
+[0.16.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.12.0...v0.13.0

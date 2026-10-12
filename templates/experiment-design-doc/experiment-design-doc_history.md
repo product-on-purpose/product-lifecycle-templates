@@ -3,6 +3,14 @@
 Change log for the `experiment-design-doc` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, corrected 2026-10-11 - the readout's example now exists
+
+**A chronology correction, not a template change**, so the version stays 0.1.0. The example's opening
+callout said its second half, the `experiment-readout` bundle's example, was not yet built. That bundle was
+built on 2026-10-11, and the callout now links its example, with a dated note. The forward-looking prose
+sweep in step 7 of `docs/internal/release-process.md` found the sentence while `v0.16.0` was being cut. No
+template text changed.
+
 ## 0.1.0 - 2026-10-08
 
 **Initial release.** Admission sweep run 2026-10-05, writing the spec in `tier2-specs.md`; built and researched

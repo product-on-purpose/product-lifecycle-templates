@@ -11,7 +11,7 @@ A curated library of product-management and software-lifecycle document template
 <p>
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
-  <img src="https://img.shields.io/badge/version-0.15.0-blue?style=flat-square" alt="Version 0.15.0">
+  <img src="https://img.shields.io/badge/version-0.16.0-blue?style=flat-square" alt="Version 0.16.0">
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-42-brightgreen?style=flat-square" alt="Bundles: 42"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-10-brightgreen?style=flat-square" alt="Families: 10"></a>
@@ -340,7 +340,7 @@ All forty-two bundles currently pass. GitHub Actions runs these on every push to
 
 ## Project status
 
-`v0.15.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, thirteen Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.16.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, seventeen Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
 
 ### At a glance
 
@@ -348,7 +348,7 @@ All forty-two bundles currently pass. GitHub Actions runs these on every push to
 
 |  |  |
 |---|---|
-| **Current version** | [v0.15.0](CHANGELOG.md) |
+| **Current version** | [v0.16.0](CHANGELOG.md) |
 | **Bundles** | 42, across 10 complete families (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs, experimentation-docs) |
 | **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other ten bundles are Tier-2 types: `rfc` and `epic` built early, then `spike-report`, `project-milestone-retrospective`, `test-summary-report`, `launch-coordination-checklist`, `issue-log`, `definition-of-ready`, `announcement-internal-comms` and `change-request` |
 | **Catalog** | 206 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
