@@ -3805,7 +3805,40 @@ questions that follows the sentence. ADR 0070 records the three other routes it 
 `governance-docs` and a decline, and why each was rejected.
 
 **Where it sits.** Second, between the product vision and the product strategy, on Herbig's ordering. The contract's
-new chain link is labelled the library's POSITION, because no source read states the failure that link names.
+new chain link is labelled the library's POSITION, because no source read states the failure that link names. The
+build's research found the order contested; see the next subsection.
+
+#### The chain position is contested
+
+The build's research found two kinds of evidence about where the North Star sits, and they do not answer the same
+question.
+
+**Sequence: which document comes first.** Two sources say, and they disagree.
+
+- **Tim Herbig puts the North Star first.** "...first defining your North Star Metric, then articulating a Strategy and
+  finally establishing OKRs ensures each gets the attention it deserves." He also writes: "Your North Star Metrics
+  shouldn’t be set backwards from a KPI dashboard but develop forwards from your Product Vision."
+- **Adam Farren puts it last.** His sequence runs "everything starts with your vision", then "Next you build product
+  and go-to-market strategy", then "Then set your goals". Only then does he ask: "So how do you bring all of that -
+  vision, strategy, tactics - into alignment? Defining a North Star metric is a great step." That account makes the
+  North Star an alignment device across the chain, not a link inside it.
+
+**Dependency: what the North Star is made of.** Four publishers describe the North Star as measuring the current
+strategy, which makes the strategy an input to it.
+
+- Amplitude: a good North Star includes "A metric that serves as a key measure of your current product strategy".
+  Its own change of North Star was justified as one that "better reflects our current product strategy".
+- Swiss Post: "It represents the core of the product strategy."
+- Spotify's Confidence glossary: "The north star should reflect the current strategic question".
+- Umbrex: "Only change the NSM when strategy or product fundamentally shifts".
+
+These are not cleanly opposed to Herbig, who also calls the North Star an input to the strategy. **No source places
+the North Star third, between the strategy and the roadmap, as a sequence.** That position would be an inference from
+the dependency evidence. Every source that relates the North Star to OKRs puts it above them.
+
+**The maintainer chose second place on 2026-10-12, before this research ran, on the premise that Herbig's was the only
+order a source supported.** That premise was wrong, and the choice is re-confirmed or changed before this spec merges.
+Whichever order stands, the companion names both camps, and the contract's chain link stays the library's POSITION.
 
 #### Sizes: two, under the `problem-statement` rule, with a stop condition
 
@@ -3815,21 +3848,50 @@ POSITION in the companion's Anatomy subsection and in the guide.** One condition
 build's research cannot support a full variant, the build stops and reports to the maintainer rather than padding
 one.** The `sizing_guidance` must say when the full variant earns its extra sections.
 
-#### Section design (a draft from the sweep, for the build's research to settle)
+#### Section design (settled by the build's research, 2026-10-12)
 
-These sections are what the sweep's evidence suggests. The build's research settles them before drafting starts, and
-a change is folded in here, dated, before the maintainer's read. **Every field name is this library's own wording.**
-Amplitude's documents are all rights reserved, so the template does not reproduce Amplitude's worksheet, its field
-labels, its sidebar heuristics or its worked examples.
+Six research dimensions ran on 2026-10-12, before this spec merged, and their verdicts are folded in here rather
+than added later as dated notes. They filed 66 sources and 347 quotations. The main loop checked every quotation
+against raw page text, and 288 passed as filed. Most failures were formatting: numbered lists joined into one
+quotation, and dashes that did not survive extraction. The Umbrex page refused a plain fetch, so it was read in a
+browser, and all ten of its quotations passed there. **Four GitHub files that package the North Star Metric as an
+agent skill are not structural sources**, because no named publisher stands behind them. The citations are in the
+bundle's research log. **Every field name is this library's own wording.** Amplitude's documents are all rights
+reserved, so the template does not reproduce Amplitude's worksheet, its field labels, its sidebar heuristics or its
+worked examples.
 
-| Section | In lean | What it carries | Evidence so far |
+**The full variant is earned.** Each of its four extra sections rests on at least two independent publishers, so the
+stop condition in Sizes does not trigger.
+
+| Section | In lean | What it carries | Evidence |
 |---|---|---|---|
-| **The North Star** | yes | One statement naming the metric and what it measures, in a single line. The operational formula is not here; the section routes it to `kpi-dashboard`'s Metric Definitions | Amplitude's "Our North Star Metric is called X, which we define as Y" |
-| **Why This Metric** | yes | The case for the choice: the customer value it expresses, why it leads rather than lags, and why it is not a vanity metric | Amplitude's workshop checklist |
-| **Input Metrics** | yes | The few measures teams can move that combine to drive the North Star, each with an owner | Amplitude: "The inputs are the actionable factors that combine to drive your North Star Metric." |
-| **What It Serves** | yes | The vision it quantifies, and the company goal it is expected to predict | Herbig's ordering; `product-vision_companion.md:271-273` |
-| **When We Revisit It** | yes | The shifts that would trigger a review, not a calendar date | Amplitude's North Star hub; Mixpanel's "reevaluate" |
-| Candidates for full-only sections | full only | Candidates considered and rejected; the risks of gaming the metric; how it applies to a company with more than one core product | Each needs a source the build reads. Mixpanel's dissent on multiple core products is one lead |
+| **The North Star** | yes | The metric's name and its definition in one statement: the behaviour it counts, who does it, and over what window. The product it covers, where a company has more than one. The operational formula is not here; the section routes it to `kpi-dashboard`'s Metric Definitions | Amplitude's "Our North Star Metric is called X, which we define as Y."; Cut the SaaS's "Pick a metric that counts that action across a sensible time window, like weekly."; Ballpark's "Prefer a definition people can explain, inspect and reproduce." |
+| **Why This Metric** | yes | The customer value it expresses, in the customer's terms; why it leads revenue rather than lagging it; why it is not a vanity metric; and what shows it predicts retention or revenue in this product's own data | Amplitude's checklist, "Does it express customer value?" and "Is it a leading indicator of success?"; Amplitude's "Validate that it predicts retention and revenue in your own data."; Koji's "You cannot write this sentence by staring at a dashboard."; Basedash's "Write down the value your product delivers in one sentence." |
+| **Input Metrics** | yes | Three to five measures that teams can move and that combine to drive the North Star, each with an owner | Amplitude: "Inputs are a set of three to five influential, complementary factors"; Basedash's "Each input is something a specific team can own and affect directly."; Umbrex, on which teams own which inputs, gives each team one to three. Amplitude's "breadth, depth, frequency, and efficiency" is one vendor's heuristic, and Mixpanel structures inputs in levels instead; the companion reports both |
+| **What It Serves** | yes | The vision it quantifies, how it relates to the product strategy, and the business outcome it is expected to predict. The order of the North Star and the strategy is contested; see [the chain position](#the-chain-position-is-contested) | Herbig; Amplitude's "A metric that serves as a key measure of your current product strategy"; the worksheet field "What will the impacts to the business be?" |
+| **When We Revisit It** | yes | The signal that would trigger a review, and what would change it, not a calendar date | Amplitude's playbook, "What will be your signal to revisit this metric?"; Umbrex, "Only change the NSM when strategy or product fundamentally shifts"; Spotify's Confidence glossary, "Changing the north star is a significant organizational decision." |
+| **Candidates Considered** | full only | The other metrics weighed, and why each was rejected | Amplitude's playbook passage on a delivery app that "had considered potential North Star Metrics"; Basedash; Cut the SaaS. Five of the gap dimension's sources carry it |
+| **Guardrails** | full only | The measures that must not get worse while the North Star rises | Cut the SaaS, "The fix is pairing your north star with guardrail metrics like retention and gross margin."; Ballpark, "Pair the shared measure with checks for harm or declining quality."; Umbrex's guardrails, "to prevent “hitting the target but missing the point.”" |
+| **What It Does Not Tell Us** | full only | The metric's blind spots, how it could be gamed, and what it is too slow to show | Amplitude's playbook, "What doesn't this metric tell you?"; Umbrex, "How do we keep the NSM from being gamed?"; Spotify's Confidence glossary, "North star metrics tend to be high-level and slow-moving." |
+| **Definition History** | full only | Each earlier definition, the date it changed, and why, so that a break in the series is explained | Ballpark, "Preserve the old definition and explain the break in the series"; Mixpanel, "Every metric should have clear documentation", including how it is defined and calculated.; Amplitude's own account of moving its North Star from one definition to another, with its reasons |
+
+The lean variant's five sections are a strict ordered subset of the full variant's nine, as contract section 3.2
+requires. **Two findings go to the guide, not the template**, under
+[decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template): the one-sentence
+test (Basedash, "Everyone from sales to engineering should be able to say what it means in one sentence.") and the
+planning filter (Cut the SaaS, "does this move the north star?"). Both are rubric rows.
+
+**Where the formula lives is the library's POSITION.** No source read addresses whether a North Star document should
+carry the metric's precise calculation or leave it to an analytics specification. The sources state a definition with
+its behaviour and window wherever they name a North Star, which this bundle keeps. The calculation, data source,
+exclusions and refresh go to `kpi-dashboard`, as the maintainer ruled on 2026-10-12.
+
+**The methodology is growth and the North Star Framework, not OKR.** Amplitude's playbook lists "A goal-setting
+framework, like objectives and key results (OKRs)" under "What the North Star is not". The growth lineage rests on
+Sean Ellis's advocacy, not on a claim that he coined the term. Intercom's interview with him calls the North Star
+Metric "Sean’s way of quantifying the point where customers experience the value of your product", and describes it
+as "a key cog in a sustainable growth strategy". Neither Amplitude document mentions Ellis. The metadata below keeps
+`growth/north-star-framework`.
 
 **What stays out at any size:** the operational formula, the data source and refresh schedule, targets and
 thresholds, and a dashboard layout. Those are `kpi-dashboard`'s job. A tree of metrics below the inputs stays out
@@ -3867,7 +3929,7 @@ search on "north star" returns both.
 | `sizes_available` | `[lean, full]` | The maintainer's ruling, 2026-10-12, with the stop condition above |
 | `default_size` | `lean` | The admitting source describes one statement and a short worksheet |
 | `status` | `beta` | Every bundle |
-| `methodology` | `growth/north-star-framework` | The sweep found no source placing the North Star metric inside the OKR method, so the catalog's "growth/OKR" is not carried over. Amplitude formalized the framework; the growth lineage rests on Sean Ellis, which the build must confirm from a source it reads, or drop `growth/` |
+| `methodology` | `growth/north-star-framework` | Amplitude's playbook lists OKRs under "What the North Star is not", so the catalog's "growth/OKR" is not carried over. Amplitude formalized the framework, and Intercom's interview ties the metric to Sean Ellis's growth practice; see Section design |
 | `pairs_with` | `[]` | `tools/known-skills.txt` lists no North Star or metric-definition skill |
 | `related_templates` | `[product-vision, product-strategy, okrs, kpi-dashboard, product-roadmap]`, inline | The four existing members, and the dashboard that carries the formula. Inline, because check I drops the first entry of a block list |
 | `aliases` | `north star metric`, `nsm`, `north star metric definition` | What practitioners call the document. Not "north star statement", which `product-vision` carries, and not "North Star framework", which names the method rather than the document |
@@ -3923,9 +3985,11 @@ dated later.
 **It cannot name "Time to Insight" as Acme's North Star.** Two shipped examples label Time to Insight a lagging
 measure: `kpi-dashboard_example.md:53` marks it "lagging", and `product-strategy_example.md:110` lists it under
 "Lagging". Amplitude's checklist asks "Is it a leading indicator of success?" An example that adopted Time to Insight
-as its North Star would contradict two siblings or fail its own checklist. **The build's research decides between two
-honest shapes:** a leading measure as the North Star, with Time to Insight as the lagging company goal it predicts; or
-Time to Insight as one of the input metrics. The choice is reported in the build PR.
+as its North Star would contradict two siblings or fail its own checklist. **The research settled the shape on
+2026-10-12: a leading measure of the value an account gets is the North Star, and Time to Insight is the lagging
+company goal it is expected to predict.** No source read proposes a time-based measure as a North Star, and the
+input-metrics dimension searched for one in analytics products specifically. Every source asks for a measure of
+value that leads revenue.
 
 **Facts it may read, all of them Acme's own and dated before the example.** From the vision: the 2029 horizon, the
 statement about answering a question "in the time it takes to ask it out loud", and the goal of removing the analytics
@@ -3942,5 +4006,8 @@ business case requires a date after theirs.
    examples' notes do.
 2. **No operational formula, data source or target.** Those are `kpi-dashboard`'s, and the example demonstrates the
    boundary.
-3. **No Amplitude example**, such as its Spotify or do-it-yourself kit cases, reworded.
+3. **No Amplitude example reworded.** That covers its Spotify and do-it-yourself kit cases, and above all Amplitude's
+   account of its own North Star, a weekly count of users who query and later of users who share what they learn. It
+   is the one analytics-product North Star in the research, it is all rights reserved, and Acme sells an analytics
+   product, so the pull to borrow it is strong. Acme's North Star is its own, drawn from Acme's vision.
 4. **No figure that contradicts a sibling.** Any number the example shares with an earlier example matches it exactly.

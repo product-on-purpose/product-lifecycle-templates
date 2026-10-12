@@ -112,13 +112,18 @@ layout, not a copy of Amplitude's worksheet, its sidebar heuristics or its worke
 
 ### Where it sits in the chain, and why
 
-**Second, between the product vision and the product strategy.** Herbig's account of the order is the only one the
-research found: "North Star Metrics are persistent goals that influence Product Strategy", whereas "OKRs are
-point-in-time goals that implement that Strategy". No source read supports placing it after OKRs. Placing it outside
-the ordered chain would end the contract's claim that the chain runs downhill.
+**Second, between the product vision and the product strategy.** Tim Herbig gives this order: "North Star Metrics
+are persistent goals that influence Product Strategy", whereas "OKRs are point-in-time goals that implement that
+Strategy".
 
-**This order rests on one practitioner, and the contract says so.** The chain sentence's new link is labelled the
-library's own POSITION, under
+**The order is contested, and the build's research found it so after the choice was made.** On sequence, Adam Farren
+describes the opposite: vision, then strategy, then goals, and only then the question "So how do you bring all of that
+- vision, strategy, tactics - into alignment?", which a North Star answers. On dependency, Amplitude, Swiss Post, Spotify's Confidence glossary and Umbrex
+each describe the North Star as measuring the current strategy, and Amplitude and Umbrex tie a change of North Star to
+a change of strategy. No source places it third, between the strategy and the roadmap, as a sequence. Every source
+that relates it to OKRs puts it above them. The spec's "The chain position is contested" subsection quotes each camp.
+
+**The chain link is the library's POSITION, whichever order stands.** It is labelled so under
 [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). No source read states
 the failure that link names as a documented real-world failure.
 

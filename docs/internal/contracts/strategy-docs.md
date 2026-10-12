@@ -28,7 +28,8 @@ drift, a roadmap that does not implement the strategy is a wishlist, and OKRs th
 against the roadmap are a reporting exercise. **This library holds that** a North Star that does not quantify
 the vision is a vanity metric, and that a strategy that cannot say which input it moves has lost its link to the
 North Star. That link is the library's POSITION: no source read states either failure as documented practice,
-and its place second in the chain rests on one practitioner, Tim Herbig (ADR 0070). Each member must state its
+and its place second in the chain rests on one practitioner, Tim Herbig, while other sources order it
+differently (ADR 0070). Each member must state its
 position against the other members in its companion's Relationships section. That requirement is this
 library's own reasoning, not received practice (corrected 2026-08-07; see the change note): no source read
 across any of the first four members' research logs documents teams producing all four and having them
