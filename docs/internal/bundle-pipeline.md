@@ -214,7 +214,8 @@ job, and the check says so in its own output on every run.
    superset (every lean H2 appears in full, same order; full only adds). Every section carries the
    Approach-A comment: WHAT, WHY (ending with a `Deep dive: <type>_companion.md section 3 (...)` pointer),
    ASK (2-4 questions), GOOD, WEAK, TRAP; tables add PRIORITY and ROW HINT with GOOD/WEAK example rows. A
-   "How to fill this in" preamble opens each. Placeholders are quoted `"{{snake_case}}"`.
+   "How to fill this in" preamble sits inside each variant's opening comment block, after the frontmatter.
+   Placeholders are quoted `"{{snake_case}}"`.
 3. **guide**: when to use / when NOT to use, pick-a-variant, a self-gradable rubric, and named anti-patterns
    (family practice is six). Derived from the companion.
 4. **example**: one fully worked instance, no placeholders, illustrative figures labeled, provenance

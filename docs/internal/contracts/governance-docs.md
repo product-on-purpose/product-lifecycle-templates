@@ -42,7 +42,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the [met
 
 1. **The eight files.** Every member ships all eight roles: template-lean, template-full (where two sizes exist), companion, guide, example, meta.yaml, history, research-log; filenames prefixed `<type>_`.
 2. **Nesting.** Where two sizes exist, the lean variant's H2 sections are a strict ordered subset of the full variant's; shared sections keep name and order. Single-size members are exempt from nesting, not from anything else.
-3. **Guidance comments.** Every section of every variant carries the Approach A comment (WHAT, WHY with a companion pointer, ASK, GOOD, WEAK, TRAP; PRIORITY and ROW HINT for table sections), parseable under the comment grammar. A "How to fill this in" preamble opens each variant. Governance members are table-heavy (risk rows, RAID quadrants, KPI rows), so ROW HINT discipline matters more here than in prose-heavy families.
+3. **Guidance comments.** Every section of every variant carries the Approach A comment (WHAT, WHY with a companion pointer, ASK, GOOD, WEAK, TRAP; PRIORITY and ROW HINT for table sections), parseable under the comment grammar. A "How to fill this in" preamble sits inside each variant's opening comment block. *(Clarified 2026-10-12, the maintainer's call. This said the preamble "opens each variant", yet every member's variants open with frontmatter, and each places the preamble inside its first comment block. The same wording in `discovery-docs` led a review lens to file a false finding, and was clarified there on 2026-09-30.)* Governance members are table-heavy (risk rows, RAID quadrants, KPI rows), so ROW HINT discipline matters more here than in prose-heavy families.
 4. **Companion skeleton.** All 11 sections of methodology section 5, in order; an inapplicable section says so in one line rather than being dropped.
 5. **Guide shape.** When to use; when NOT to use; pick a variant; a self-gradable quality rubric; at least two named anti-patterns.
 6. **Citations.** Methodology section 6 in full: numbered, reliability-tagged, anchored, hyperlinked, cited inline, no padded entries, retrieval qualifiers on any source not directly fetched.
@@ -61,6 +61,13 @@ Template body (headings, placeholders, tables) is the reusable shape; guidance l
 The gate enforces section 2 and the mechanical part of section 3. **Family check letter K** validates section 2's family-specific values for every declared member (`classification: utility`, a `beta`/`stable` status, and a `[lean, full]` or `[lean]` size shape) and that this contract file resolves; methodology is descriptive and is not gated (see section 2). This is the first family to be gated on the `classification` axis rather than `phase`; the check reads whichever axis the contract names ([ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md)), so a member that declares `phase: measure` instead of `classification: utility` fails check K with a message naming the axis it should have used. Of section 3's obligations, the eight files (3.1), nesting (3.2), citations (3.6), and the clean example (3.7) are enforced by checks A, C, E, and D respectively; guidance comments (3.3), the companion skeleton (3.4), and guide shape (3.5) have no mechanical check yet and are review obligations at authoring time. Sections 4 and 5 are likewise review obligations at authoring time and audit obligations thereafter. A member failing this contract is not "in the family with issues"; it is out of the family until green, and the catalog count reflects that.
 
 ## Change note
+
+**2026-10-12: a wording clarification, with no obligation changed.** Section 3 said a "How to fill this
+in" preamble "opens each variant". Every member's variants open with frontmatter and carry the preamble
+inside their first comment block. Section 3 now says so, with a dated note beside the sentence. The same
+wording in `discovery-docs` led a review lens to file a false finding, and was clarified there on
+2026-09-30. The maintainer chose this on 2026-10-12 after reading the exact text. No version moves, because
+no obligation changed.
 
 **0.4.0, 2026-10-06: a sixth member, and the first widening of this family's test.** `tracking-plan` joins as
 `classification: utility`, by
