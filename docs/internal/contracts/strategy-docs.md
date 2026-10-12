@@ -1,33 +1,41 @@
 # Family Contract: strategy-docs
 
-Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md))
+Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.1.1 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+Version: 0.2.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
 claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
 see the change note at the end)
 
 ## 1. Membership
 
 A bundle belongs to this family when its document type **sets or tracks product direction above the level of
-any single deliverable**. Its members answer, in order, four questions a product organization cannot avoid:
+any single deliverable**. Its members answer, in order, five questions a product organization cannot avoid:
 
 - a **product vision** says where we are trying to get to, and why it is worth getting to;
+- a **North Star metric** says which single measure of customer value shows we are moving toward the vision,
+  and which inputs drive it (added 2026-10-12,
+  [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md));
 - a **product strategy** says which problems we will solve to get there, and which we will not;
 - a **product roadmap** says in what order we intend to work on them;
 - **OKRs** say what measurable change we expect in this period, and whether we got it.
 
 The chain is the family's teaching value, and it runs downhill: a strategy that does not serve the vision is
 drift, a roadmap that does not implement the strategy is a wishlist, and OKRs that do not measure progress
-against the roadmap are a reporting exercise. Each member must state its position against the other three in
-its companion's Relationships section. That requirement is this library's own reasoning, not received
-practice (corrected 2026-08-07; see the change note): no source read across any of the four members' research
-logs documents teams producing all four and having them contradict each other as a real-world failure mode,
-only named authors and sources disagreeing with each other about how each document should be shaped. The
-library still holds that a chain asserted once, at the top, and never rechecked from each member's side is the
-most likely way for the four to drift apart, which is the reasoning behind the requirement.
+against the roadmap are a reporting exercise. **This library holds that** a North Star that does not quantify
+the vision is a vanity metric, and that a strategy that cannot say which input it moves has lost its link to the
+North Star. That link is the library's POSITION: no source read states either failure as documented practice,
+and its place second in the chain rests on one practitioner, Tim Herbig (ADR 0070). Each member must state its
+position against the other members in its companion's Relationships section. That requirement is this
+library's own reasoning, not received practice (corrected 2026-08-07; see the change note): no source read
+across any of the first four members' research logs documents teams producing all four and having them
+contradict each other as a real-world failure mode, only named authors and sources disagreeing with each other
+about how each document should be shaped. The library still holds that a chain asserted once, at the top, and
+never rechecked from each member's side is the most likely way for its members to drift apart, which is the
+reasoning behind the requirement.
 
 A candidate type whose job is to specify, decompose or verify a **unit of work** belongs to `delivery-docs`
 or `qa-docs`, not here. A candidate that is a **one-time, phase-bound** artifact belongs elsewhere too: this
@@ -43,23 +51,27 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `strategy-docs` |
-| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision` and `product-strategy`; `utility` for `product-roadmap` and `okrs`. See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
-| methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method) while the other three are methodology-agnostic. A single required value would force one of the four to lie about itself. |
+| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `north-star-metrics` and `product-strategy`; `utility` for `product-roadmap` and `okrs`. See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
+| methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method), and so is `north-star-metrics` (the artifact is the North Star Framework's own written output; added 2026-10-12), while the vision, the strategy and the roadmap are methodology-agnostic. A single required value would force at least one member to lie about itself. |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`); two qa-docs members have already departed from them on evidence. |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `[]`; every value must resolve against the pinned skill-ID list. **Unlike `qa-docs`, this family has real pairings**: `foundation-okr-writer` and `measure-okr-grader` both exist and both address `okrs` directly, and `foundation-lean-canvas` describes itself as serving strategy framing and stress-testing. Each member claims only what is true of that member. |
 
 **The axis call, and why this family needs a set.** Every previous family gated a single value on its axis.
-This one cannot, and forcing it to would misdescribe two of its four members:
+This one cannot, and forcing it to would misdescribe at least two of its members:
 
 - **`product-vision` and `product-strategy` are `foundation`.** They underpin everything else, are argued
   rather than maintained, and change on a timescale of years. A vision revised quarterly was not a vision.
+  **`north-star-metrics` is `foundation` too** (added 2026-10-12,
+  [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)). It is argued
+  rather than maintained, and Amplitude and Mixpanel both describe revisiting it when the product, the market
+  or the strategy shifts, not on a calendar.
 - **`product-roadmap` and `okrs` are `utility`.** They are standing operational instruments, revised on a
   cadence, and their value comes precisely from being kept current. A roadmap nobody has updated in six
   months is not a stale foundation, it is a broken instrument.
 
 The distinction that does the work is **argued-and-durable versus maintained-and-periodic**, and it is the
-same distinction `governance-docs` used to claim `utility` for a risk register. All four members are standing
+same distinction `governance-docs` used to claim `utility` for a risk register. All five members are standing
 artifacts with no single lifecycle phase, which is what makes the family `classification`-axis; they simply
 sit in two different classes within it.
 
@@ -97,9 +109,9 @@ that capability**, and the fixture becomes a real subject when the first member 
 ## 4. The shared-scenario rule (family-specific)
 
 Like `delivery-docs`, `governance-docs` and `qa-docs`, and unlike `decision-docs`, `strategy-docs` members
-**chain their examples on one shared scenario**, because the four artifacts only make sense as a cascade: the
+**chain their examples on one shared scenario**, because the artifacts only make sense as a cascade: the
 strategy has to be a strategy *for* that vision, and the OKRs have to measure progress against *that*
-roadmap. Four independent examples would teach four shapes and none of the relationships.
+roadmap. Independent examples would teach separate shapes and none of the relationships.
 
 **And like `qa-docs`, this family chains onto the library's existing thread rather than a new scenario** -
 but from the other end. `qa-docs` extended the Acme Analytics story **downward** into verification; this
@@ -110,7 +122,10 @@ wires its primary metric to that goal's panel. Those references were written bef
 now have something to point at.
 
 The obligation: each member's example is an Acme Analytics artifact, the OKR example makes "Time to Insight"
-its objective, and the roadmap example must contain the work the PRD describes. **When this family completes,
+its objective, and the roadmap example must contain the work the PRD describes. The North Star metric's example
+names Acme's North Star and its inputs, and states how they relate to the "Time to Insight" company goal (added
+2026-10-12, [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md); its spec
+in [`tier2-specs.md`](../tier2-specs.md) sets the constraints). **When this family completes,
 the library will hold one continuous worked thread from a product vision down to a bug report**, which is a
 demonstration no single bundle can make. A member whose example invents an unrelated company forfeits that and
 is out of contract even if every file exists.
@@ -143,6 +158,17 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**0.2.0, 2026-10-12, [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md):
+a fifth member, and the first widening of this family's list of questions.** `north-star-metrics` joins at
+`classification: foundation`, placed second in the chain, between the product vision and the product strategy.
+The membership sentence admitted the type as written. What blocked it was the closed list that follows the
+sentence, so section 1's "four questions" becomes "five questions" and gains a second bullet. The chain sentence
+gains one link, labelled the library's POSITION, and the relationship obligation reads "against the other members"
+rather than "against the other three". Section 2's classification row, methodology row and axis note name the new
+member, and section 4's obligation gains its example. **No structural obligation changed**, and check K's registry
+entry needs no edit, because `foundation` is already in the set it gates. The `product-strategy`,
+`product-roadmap` and `okrs` companions never mention a North Star and gain no line; ADR 0070 states that gap.
 
 **2026-10-12: a wording clarification, with no obligation changed.** Section 3 said a "How to fill this
 in" preamble "opens each variant". Every member's variants open with frontmatter and carry the preamble

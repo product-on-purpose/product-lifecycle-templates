@@ -40,7 +40,7 @@ design task" rather than "a spec-driven execution".
 | `experiment-design-doc` | `experiment-design-doc` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Built 2026-10-08**, shipped in `v0.16.0`. The first member of the family that [ADR 0066](decisions/0066-adopt-experimentation-docs-family-contract.md) (adopt the experimentation-docs family contract) adopts at `phase: measure`. It is built first, so that its example plans the test the readout reports; four dated notes in its spec section record five points its research settled otherwise; [build report](../../bundle-builds/reports/experiment-design-doc_v0.1.0.md) |
 | `experiment-readout` | `experiment-readout-results-report` | `experimentation-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#experimentation-docs-founding-members-the-experiment-design-doc-and-the-experiment-readout) | **Built 2026-10-11**, shipped in `v0.16.0`. The family's second founding member, which completes `experimentation-docs`; built after `experiment-design-doc` so that its example reports that document's plan. Three dated notes in its spec section record what its research settled otherwise, and a fourth records the catalog correction it asked for; [build report](../../bundle-builds/reports/experiment-readout_v0.1.0.md) |
 | `tracking-plan` | `tracking-plan` | `governance-docs` | **Written 2026-10-06**; admission sources [retrieved and raw-checked 2026-10-05](#governance-docs-sixth-member-by-amendment-the-tracking-plan) | **Built 2026-10-11**, shipped in `v0.16.0`, in the same PR as `experiment-readout`. Family by [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) (tracking-plan joins governance-docs as a sixth member), which widens the contract's membership test. Four dated notes in its spec section record what its research settled otherwise, and a fifth, in the section table, points back to one of them; [build report](../../bundle-builds/reports/tracking-plan_v0.1.0.md) |
-| `north-star-metric-definition` | `north-star-metric-definition` | none assigned | **Researched 2026-10-05**; no spec written | **Queued, after `tracking-plan`.** Deferred by the maintainer on 2026-10-06 and queued on 2026-10-08, to follow the current three builds. It needs a spec and a family before it can be built. It clears admission on one publisher (Amplitude, all rights reserved), but the definition half of its job already ships in `kpi-dashboard`'s Metric Definitions section, and no contract admits it without an amendment, which stops for the maintainer's read. Evidence held locally |
+| `north-star-metrics` | `north-star-metric-definition` | `strategy-docs` | **Written 2026-10-12**; admission sources [retrieved and raw-checked 2026-10-05](#strategy-docs-fifth-member-by-amendment-north-star-metrics), and Reforge's page read in a browser 2026-10-12 | **Not yet built.** Family by [ADR 0070](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) (north-star-metrics joins strategy-docs as a fifth member), which widens the contract's list of questions and places the type second in the chain. The bundle id is plural by the maintainer's ruling of 2026-10-11, and the catalog id is unchanged. Two sizes, with a stop condition if the research cannot support a full variant. Admitted on one publisher, Amplitude |
 | `concept-test-validation-brief` | `concept-test-validation-brief` | none assigned; `discovery-docs` admits it as written | **Researched 2026-10-05**; no spec written | **Not now.** Parked by the maintainer on 2026-10-06. Its admission rests on one vendor template whose body the main loop could not check against raw text, and the new `experimentation-docs` contract excludes a test run before anything is built |
 | `problem-statement` | `problem-statement` | `discovery-docs` | **Written 2026-10-11**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fourth-member-at-define-the-problem-statement-the-librarys-first-define-bundle) | **Built 2026-10-11**, shipped in `v0.16.0`. The library's first `phase: define` bundle. The phase's meaning is set by [ADR 0068](decisions/0068-define-means-problem-framing.md) (the define phase means problem framing), and the family by [ADR 0069](decisions/0069-problem-statement-joins-discovery-docs.md) (problem-statement joins discovery-docs), which gives the contract a second phase value. Two sizes by the maintainer's ruling, against the sweep's lean-only finding. A gap-fill pass after drafting added nine sources (43 in all) and routes constraints to `project-brief`; [build report](../../bundle-builds/reports/problem-statement_v0.1.0.md) |
 | `shape-up-pitch` | `shape-up-pitch` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** It clears admission on Basecamp's own Shape Up glossary, but it carries a chosen solution: "A problem without a solution is unshaped work" (chapter 6). Most of its content already ships in `prd`, and its one distinct element is a fixed appetite. Placing it would be its own family decision. Evidence held locally |
@@ -60,7 +60,7 @@ founds the family that holds them; the maintainer ruled that they ship as two bu
 `governance-docs` on its noun and its cadence but not on its purpose phrase, which
 [ADR 0067 (tracking-plan joins governance-docs as a sixth member)](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)
 widens. The north star metric definition was deferred and the concept test brief parked, and both catalog rows stay
-`candidate`. *(2026-10-08: the maintainer queued the north star metric definition to follow the tracking plan; its progress row says what it needs first.)*
+`candidate`. *(2026-10-08: the maintainer queued the north star metric definition to follow the tracking plan; its progress row says what it needs first.)* *(2026-10-12: it is specced as `north-star-metrics`, in `strategy-docs` by [ADR 0070](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), and the concept test brief stays parked.)*
 
 **2026-09-27: one admission sweep, five candidates, three specs and two declines.** The maintainer queued
 five candidates on 2026-09-25 from a ranked list of the next ten. One research workflow tested all five
@@ -2344,7 +2344,7 @@ direct analogy to the already-shipped `business-case`:
 
 | Family | Verdict | Why |
 |---|---|---|
-| `strategy-docs` | excludes | Names `business-case` as its own worked exclusion example, "a one-time, phase-bound artifact... this is why business-case is not a member" (`strategy-docs.md:32-36`); a project brief is at least as phase-bound |
+| `strategy-docs` | excludes | Names `business-case` as its own worked exclusion example, "a one-time, phase-bound artifact... this is why business-case is not a member" (`strategy-docs.md:40-44`); a project brief is at least as phase-bound |
 | `delivery-docs` | excludes | Its five admitted verbs (define, decompose, verify, change, announce) describe acting on an already-agreed unit of work (`delivery-docs.md:11`); a brief precedes and scopes the project itself |
 | `decision-docs` | excludes | "a technical decision-or-design artifact of the develop phase" (`decision-docs.md:11`); a brief is not a technical design record |
 | `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:24`) |
@@ -3747,3 +3747,200 @@ incremental investment in documentation, tutorials and services capacity has not
 warrants a project brief. It may say that a brief is the next step if she agrees, as an intention. It must not
 describe the brief's contents, its date or its outcome. The brief, arriving seven days later, is what took
 over, and nothing here is invented for the statement to hand off to.
+
+### strategy-docs (fifth member, by amendment): north-star-metrics
+
+**`north-star-metrics`** - `strategy-docs`, **`classification: foundation`**, sizes **`[lean, full]`** (the
+maintainer's ruling, with a stop condition; see below), default `lean`, catalog entry **8**
+(`north-star-metric-definition`), `pairs_with: []`. **The maintainer chose on 2026-10-12 to admit the type by
+amending `strategy-docs`, to place it second in the chain, to build two sizes, to route the formula to
+`kpi-dashboard`, and to leave the existing members' companions as they are.** The contract edits of
+[ADR 0070](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) land with this spec, so the
+metadata below is written against contract `0.2.0`.
+
+**The bundle id is plural by the maintainer's ruling of 2026-10-11, and the document still defines one North Star.**
+The catalog id stays `north-star-metric-definition`, in the shape `change-log` set against `change-log-governance`.
+Amplitude's playbook says: "An obvious characteristic of the North Star Framework is that there's only one North
+Star Metric." Mixpanel agrees: "Companies typically have only one North Star metric." The plural names the practice,
+as Herbig's title does ("How to connect North Star Metrics, Product Strategy, and OKRs"). One filled document defines one North Star for one
+product, with its input metrics beneath it. A review lens that reads the plural as a claim of several North Stars is
+answered here.
+
+#### Demand: two shipped companions already point at it
+
+**`product-vision_companion.md:271-273` separates the metaphor from the artifact.** It reads: "As a metaphor, "north
+star" describes what a vision does. As an artifact, a **North Star Metric** is a distinct quantitative thing", and it
+cites Herbig calling the metric "the quantified sibling of the Product Vision". **`kpi-dashboard_companion.md:185-187`**
+lists the North Star Metric as one way to frame a dashboard: "One headline value metric with a few input metrics
+beneath it". No bundle answers either pointer.
+
+**The shared scenario has the same gap.** "Time to Insight" acts as the headline metric in the `okrs`,
+`kpi-dashboard`, `product-strategy` and `product-vision` examples, and no example calls it a North Star. See
+[The example](#the-example-acmes-north-star) for why it cannot simply become one.
+
+#### Admission: retrieved and raw-checked on 2026-10-05, with one read on 2026-10-12
+
+The admission sweep of 2026-10-05 read the type's sources, and the main loop checked every returned quotation against
+raw page text. Every quotation below passed that check, except the Reforge lines, which come from a browser read on
+2026-10-12.
+
+| Source | What it says | Weight |
+|---|---|---|
+| Amplitude, "The North Star Playbook" (PDF) | "When you define the metric, you complete this template: Our North Star Metric is called X, which we define as Y."; "The worksheet on the following page helps your teams fill in the blanks to create your North Star statement." | **Admits on its own** ([ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)). Vendor tier. All rights reserved |
+| Amplitude, "How-To Guide: Running Your North Star Workshop" (2024, PDF) | Blank fields, among them "What's your product's North Star?" and rows for input metrics; a checklist that asks "Does it express customer value?", "Is it a leading indicator of success?" and "It's not a vanity metric?"; "The inputs are the actionable factors that combine to drive your North Star Metric." | The same publisher. Evidences the case for the metric and the input metrics as fields. All rights reserved |
+| Amplitude, North Star hub | "You should revisit your North Star metric periodically, whenever there's a significant shift in your product, market, or business strategy." | The cadence, which makes the type `foundation` |
+| Mixpanel, "What is a North Star metric?" (blog) | "Companies typically have only one North Star metric."; "Companies should feel equally free to reevaluate their North Star metrics to make sure they still point the right direction, and amend them when they prove flawed."; and a dissent, "However, a single north star can be limiting, especially if your company has multiple core products with separate goals" | Explains the practice; publishes no document of its own |
+| Tim Herbig, "How to connect North Star Metrics, Product Strategy, and OKRs" | "North Star Metrics are persistent goals that influence Product Strategy"; "OKRs are point-in-time goals that implement that Strategy" | The only source for the chain position. Practitioner tier |
+| Reforge, North Star Metric artifacts page (read in a browser, 2026-10-12) | "Explore 2 examples of North Star Metrics so you never have to start from scratch." The two are member-submitted: a framework for cascading goal targets through a leadership team, and a brand concept document | **A negative finding.** Neither is a North Star metric template, and the page shows no field names. Admission stays on one publisher |
+
+**Admission rests on one publisher, Amplitude, in two of its own documents.** The sweep's other sources, among them
+Mixpanel, Herbig and Sean Ellis, explain the practice without publishing a document. The single-publisher basis is
+enough under ADR 0048, and the companion must state it plainly.
+
+#### The family: `strategy-docs`, amended to a fifth question (ADR 0070)
+
+`strategy-docs` section 1 admits a type that "sets or tracks product direction above the level of any single
+deliverable". A North Star metric does that on its face. What needed an amendment was the closed list of four
+questions that follows the sentence. ADR 0070 records the three other routes it tested, `standing-standards`,
+`governance-docs` and a decline, and why each was rejected.
+
+**Where it sits.** Second, between the product vision and the product strategy, on Herbig's ordering. The contract's
+new chain link is labelled the library's POSITION, because no source read states the failure that link names.
+
+#### Sizes: two, under the `problem-statement` rule, with a stop condition
+
+The catalog calls the type "S/M". The maintainer ruled on 2026-10-12 for two sizes, under the rule set for
+`problem-statement`: **every full-only section rests on a source the build reads, or it is labelled this library's
+POSITION in the companion's Anatomy subsection and in the guide.** One condition is added for this bundle. **If the
+build's research cannot support a full variant, the build stops and reports to the maintainer rather than padding
+one.** The `sizing_guidance` must say when the full variant earns its extra sections.
+
+#### Section design (a draft from the sweep, for the build's research to settle)
+
+These sections are what the sweep's evidence suggests. The build's research settles them before drafting starts, and
+a change is folded in here, dated, before the maintainer's read. **Every field name is this library's own wording.**
+Amplitude's documents are all rights reserved, so the template does not reproduce Amplitude's worksheet, its field
+labels, its sidebar heuristics or its worked examples.
+
+| Section | In lean | What it carries | Evidence so far |
+|---|---|---|---|
+| **The North Star** | yes | One statement naming the metric and what it measures, in a single line. The operational formula is not here; the section routes it to `kpi-dashboard`'s Metric Definitions | Amplitude's "Our North Star Metric is called X, which we define as Y" |
+| **Why This Metric** | yes | The case for the choice: the customer value it expresses, why it leads rather than lags, and why it is not a vanity metric | Amplitude's workshop checklist |
+| **Input Metrics** | yes | The few measures teams can move that combine to drive the North Star, each with an owner | Amplitude: "The inputs are the actionable factors that combine to drive your North Star Metric." |
+| **What It Serves** | yes | The vision it quantifies, and the company goal it is expected to predict | Herbig's ordering; `product-vision_companion.md:271-273` |
+| **When We Revisit It** | yes | The shifts that would trigger a review, not a calendar date | Amplitude's North Star hub; Mixpanel's "reevaluate" |
+| Candidates for full-only sections | full only | Candidates considered and rejected; the risks of gaming the metric; how it applies to a company with more than one core product | Each needs a source the build reads. Mixpanel's dissent on multiple core products is one lead |
+
+**What stays out at any size:** the operational formula, the data source and refresh schedule, targets and
+thresholds, and a dashboard layout. Those are `kpi-dashboard`'s job. A tree of metrics below the inputs stays out
+too: the catalog lists a metric tree as its own type, which places the North Star at its top node.
+
+#### Boundaries with each named neighbour
+
+**Not `kpi-dashboard` (the duplication risk, named plainly).** `kpi-dashboard`'s Metric Definitions section already
+carries a headline metric's formula, scope, exclusions and known limitations. This bundle carries one statement line
+and routes the rest there. What it adds is the case for choosing the metric and the input metrics, which no bundle
+carries. The companion states this division as the library's POSITION.
+
+**Not `product-vision`.** The vision says where the product is going and why. The North Star metric says which number
+shows it is getting there. `product-vision_companion.md:271-273` already draws this line, and the new companion cites
+it rather than restating it.
+
+**Not `product-strategy`.** The strategy chooses which problems to solve. On Herbig's ordering, the North Star is a
+persistent goal that influences the strategy, and it sits above it.
+
+**Not `okrs`.** OKRs are reset each period. A North Star metric persists and is revisited when the product, market or
+strategy shifts. Herbig: "OKRs are point-in-time goals that implement that Strategy".
+
+**Not `tracking-plan`.** A tracking plan specifies the events a metric is computed from. This bundle names the metric.
+
+**Not the `product-vision` alias "north star statement".** `product-vision_meta.yaml` carries that alias, in the
+metaphor sense. This bundle's aliases must not repeat it, and its `summary` must make the difference clear, because a
+search on "north star" returns both.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `strategy-docs` | ADR 0070 |
+| `classification` | `foundation` | Argued and revisited on a trigger, not maintained on a calendar; contract `0.2.0` section 2 |
+| `sizes_available` | `[lean, full]` | The maintainer's ruling, 2026-10-12, with the stop condition above |
+| `default_size` | `lean` | The admitting source describes one statement and a short worksheet |
+| `status` | `beta` | Every bundle |
+| `methodology` | `growth/north-star-framework` | The sweep found no source placing the North Star metric inside the OKR method, so the catalog's "growth/OKR" is not carried over. Amplitude formalized the framework; the growth lineage rests on Sean Ellis, which the build must confirm from a source it reads, or drop `growth/` |
+| `pairs_with` | `[]` | `tools/known-skills.txt` lists no North Star or metric-definition skill |
+| `related_templates` | `[product-vision, product-strategy, okrs, kpi-dashboard, product-roadmap]`, inline | The four existing members, and the dashboard that carries the formula. Inline, because check I drops the first entry of a block list |
+| `aliases` | `north star metric`, `nsm`, `north star metric definition` | What practitioners call the document. Not "north star statement", which `product-vision` carries, and not "North Star framework", which names the method rather than the document |
+| `catalog_ref` | `8` | Catalog entry 8, `north-star-metric-definition` |
+
+#### The catalog row the build PR corrects
+
+Catalog entry 8 exists and stays `north-star-metric-definition`. Under
+[procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), the build PR corrects what its research
+contradicts. Two fields are already in question. Its `methodology` reads "growth/OKR", and its aliases include "North
+Star framework", which names the method rather than the document. `built` and `state` are derived by
+`tools/gen-atlas.py`.
+
+#### Risks for the build and the review
+
+1. **The plural id will draw a finding.** The answer is in this spec's second paragraph. A lens that files it anyway
+   is pointed here.
+2. **Admission rests on one publisher, and that publisher reserves all rights.** The template's field names and
+   layout must be original. A review lens that finds Amplitude's wording reproduced as a field label files it as
+   blocking.
+3. **The duplication with `kpi-dashboard` is the reason this bundle could have been declined.** A template section
+   that asks for the formula, the data source or a target duplicates `kpi-dashboard`, and the review files it.
+4. **The full variant is where invented structure would enter.** Any full-only section without a logged source must
+   say it is the library's POSITION. If none can be sourced, the build stops (see Sizes).
+5. **The metaphor and the artifact share a name.** The companion must keep "north star" as a description of a vision
+   apart from the North Star metric, as `product-vision`'s companion does.
+6. **The templates stage has repeatedly reused the worked example's own scenario in GOOD and WEAK text.** Before the
+   review closes, grep both templates for the example's nouns, which the build lists once the example exists, and for
+   `Acme`, `Time to Insight` and `Dana Okoro`.
+
+#### What landing this bundle closes elsewhere
+
+1. **The contract's Members line** changes from "not yet built" to the build date.
+2. **`README.md`'s `strategy-docs` heading** (`README.md:211`) reads "complete, four bundles". It becomes five, and the
+   family paragraph gains the North Star metric. `README.md:158`'s "ten complete families" is false from this spec's
+   merge until the build lands, as it was for `discovery-docs`.
+3. **The bundle count sweep from 42 to 43.** The classification axis then holds 17 bundles.
+4. **The catalog row's corrections**, above.
+5. **No existing member's companion changes** (the maintainer's call, 2026-10-12; ADR 0070 states the gap). Whether
+   `kpi-dashboard`'s guide gains a routing row, for a reader who needs to choose the headline metric rather than
+   define it, is a build decision.
+6. **Issue #253 (bundle: north-star-metrics)** closes with the build PR.
+7. **This page's Progress table.**
+
+#### The example: Acme's North Star
+
+**A North Star metric for Acme Analytics, dated between 2026-01-15 and 2026-01-27.** That is after the
+[product vision](../../templates/product-vision/product-vision_example.md) (2026-01-14) and before the
+[product strategy](../../templates/product-strategy/product-strategy_example.md) (2026-01-28), which is where
+ADR 0070 places the type in the chain. `tools/check-example-chronology.py` fails a body-prose link to any example
+dated later.
+
+**It cannot name "Time to Insight" as Acme's North Star.** Two shipped examples label Time to Insight a lagging
+measure: `kpi-dashboard_example.md:53` marks it "lagging", and `product-strategy_example.md:110` lists it under
+"Lagging". Amplitude's checklist asks "Is it a leading indicator of success?" An example that adopted Time to Insight
+as its North Star would contradict two siblings or fail its own checklist. **The build's research decides between two
+honest shapes:** a leading measure as the North Star, with Time to Insight as the lagging company goal it predicts; or
+Time to Insight as one of the input metrics. The choice is reported in the build PR.
+
+**Facts it may read, all of them Acme's own and dated before the example.** From the vision: the 2029 horizon, the
+statement about answering a question "in the time it takes to ask it out loud", and the goal of removing the analytics
+team as a bottleneck. From the [problem statement](../../templates/problem-statement/problem-statement_example.md)
+(2026-01-09), the [project brief](../../templates/project-brief/project-brief_example.md) (2026-01-16) and the
+[business case](../../templates/business-case/business-case_example.md) (2026-01-20): the 31 percent of new accounts
+that build a second dashboard view within 14 days, and the segment that stalls. A fact from the project brief or the
+business case requires a date after theirs.
+
+**What it must not cite or contain.**
+
+1. **No document dated after the example cited as existing**: not the product strategy, the roadmap, the OKRs, the
+   PRD, the KPI dashboard or the tracking plan. A reader's note in the opening blockquote may point forward, as other
+   examples' notes do.
+2. **No operational formula, data source or target.** Those are `kpi-dashboard`'s, and the example demonstrates the
+   boundary.
+3. **No Amplitude example**, such as its Spotify or do-it-yourself kit cases, reworded.
+4. **No figure that contradicts a sibling.** Any number the example shares with an earlier example matches it exactly.

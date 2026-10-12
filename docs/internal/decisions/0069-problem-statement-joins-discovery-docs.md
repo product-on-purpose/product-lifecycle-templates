@@ -34,7 +34,8 @@ consulted: [claude]
   [ADR 0063](0063-project-brief-reopens-discovery-docs.md) and
   [ADR 0066](0066-adopt-experimentation-docs-family-contract.md) each had. The agent checked the contract
   diff against ADR 0068 and against the draft amendment the maintainer had chosen, and found it states
-  the decision as made.
+  the decision as made. **Confirmed by the maintainer on 2026-10-12**, who reviewed the delegated acceptance
+  and chose to keep it rather than reopen the record for a read.
 
 ## Context and Problem Statement
 

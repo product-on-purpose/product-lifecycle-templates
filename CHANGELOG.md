@@ -12,6 +12,21 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **A spec for `north-star-metrics` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 8
+  (`north-star-metric-definition`). The document names one product's North Star metric, the case for choosing it,
+  and the input metrics that drive it, and it routes the metric's formula to `kpi-dashboard`. It is admitted on one
+  publisher, Amplitude, in two of its documents. A browser read of Reforge's artifact page on 2026-10-12 found no
+  second template. The bundle id is plural by the maintainer's ruling; the catalog id is unchanged.
+- **[ADR 0070](docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md):
+  `north-star-metrics` joins `strategy-docs` as a fifth member.** The contract moves to 0.2.0. Its members now answer
+  five questions, and the North Star metric sits second in the chain, between the product vision and the product
+  strategy, at `classification: foundation`. The new chain link is labelled the library's POSITION. ADR 0070 is
+  proposed, pending the maintainer's read of the contract diff.
+- **ADR count 69 -> 70**, across markers and prose. ADR 0027 carries a dated amended-by note, and ADR 0069's status
+  line records the maintainer's confirmation of its delegated acceptance.
+
 ### Changed
 
 - **Five more family contracts place the "How to fill this in" preamble in each variant's opening comment
