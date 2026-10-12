@@ -19,8 +19,9 @@ source_template_version: 0.1.0
 > [KPI dashboard](../kpi-dashboard/kpi-dashboard_example.md), [OKRs](../okrs/okrs_example.md) and
 > [risk register](../risk-register/risk-register_example.md) that the rest of this library's thread
 > already uses. Dated 2026-07-30, four days before the test itself launches on 2026-08-03. Its second
-> half, the `experiment-readout` bundle's own example, is not yet built; when it ships, it reports this
-> same test against the commitments fixed below.
+> half, [the `experiment-readout` bundle's own example](../experiment-readout/experiment-readout_example.md),
+> reports this same test against the commitments fixed below. *(Corrected 2026-10-11: this said the
+> readout's example was not yet built. It was built on 2026-10-11.)*
 >
 > All figures, account counts, and event names are illustrative.
 

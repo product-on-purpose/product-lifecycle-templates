@@ -8,6 +8,21 @@ Newest first.
 
 ---
 
+## v0.16.0
+
+**Four bundles in one release: an experiment design doc, an experiment readout, a tracking plan and a
+problem statement.** The design doc fixes the plan for one experiment before it runs, and the readout
+reports what it found and the decision the results drove. Together they form `experimentation-docs`, the
+tenth family. The tracking plan is the standing list of which events and properties a product records,
+and why. The problem statement frames one problem, who has it and the evidence that it is real, before
+anyone names a solution. It is the first bundle on the `define` phase, so every lifecycle phase now holds
+at least one bundle.
+
+Every quotation in the four research logs was checked against the source's raw text. The business case
+now names the problem statement as the document that comes before it.
+
+---
+
 ## v0.15.0
 
 **Three bundles in one release: a change log, a production readiness review and a project brief.** The
