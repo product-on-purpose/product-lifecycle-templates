@@ -4009,9 +4009,10 @@ are `kpi-dashboard`'s.
 
 **It must reconcile with the strategy's leading indicator.** The strategy example says "The moment a user builds
 their second view is our leading indicator." It adds: "Every team sees the same number, on the same dashboard,
-weekly." A North Star dated after those sentences must account for them. Either the second-view measure is the
-North Star, or it is one of the input metrics and the example says what the shared weekly number is. The build
-chooses, reports why in the build PR, and matches every figure it shares with the strategy exactly.
+weekly." That shared number is the second-view measure, and a North Star dated after those sentences must account
+for it. Either the second-view measure is the North Star, or it is one of the input metrics and the example says how
+the North Star relates to the number every team already watches weekly. The build chooses, reports why in the build
+PR, and matches every figure it shares with the strategy exactly.
 
 **What it must not cite or contain.**
 
