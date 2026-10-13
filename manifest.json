@@ -522,6 +522,38 @@
     },
     {
       "aliases": [
+        "north star metric",
+        "nsm",
+        "north star metric definition"
+      ],
+      "approx_tokens": {
+        "full": 6250,
+        "lean": 3850
+      },
+      "classification": "foundation",
+      "default_size": "lean",
+      "doc_type": "north-star-metrics",
+      "family": "strategy-docs",
+      "id": "north-star-metrics",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (the metric and its one-sentence definition, the case for it, its input metrics, what it serves, and the trigger that would bring you back to it) for a first pass or a team that shares context and reviews the metric together. Use full when the North Star has already faced, or will soon face, real scrutiny: named alternatives were seriously compared, a stakeholder will ask why not something else, or the definition has already changed once and the change needs a record; full adds Candidates Considered, Guardrails, What It Does Not Tell Us and Definition History, each resting on at least two independent publishers.",
+      "status": "beta",
+      "summary": "The document that names the one metric showing customers get the value the strategy promises, says why that metric, and names the input metrics a team can move. Not the vision's north star statement; the formula and targets belong to kpi-dashboard.",
+      "tags": [
+        "strategy",
+        "metrics",
+        "north-star",
+        "growth",
+        "customer-value",
+        "measurement"
+      ],
+      "title": "North Star Metric"
+    },
+    {
+      "aliases": [
         "objectives and key results",
         "okr",
         "okr set",
@@ -1440,5 +1472,5 @@
       "title": "User Story"
     }
   ],
-  "count": 42
+  "count": 43
 }

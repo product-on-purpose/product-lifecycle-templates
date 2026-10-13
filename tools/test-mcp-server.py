@@ -204,7 +204,7 @@ def main():
                                    r["parts"]["template"]["approx_tokens"],
                                    b["approx_tokens"].get(key)))
     check("all %d variants fetch content" % total, not unreachable, unreachable)
-    check("the tree has 85 variants and all 85 are addressable", total == 85, total)
+    check("the tree has 87 variants and all 87 are addressable", total == 87, total)
     check("every reported token count EQUALS manifest.json's approx_tokens (not merely within 10%)",
           not mismatched, mismatched[:4])
 
@@ -289,8 +289,9 @@ def main():
         if "anti_patterns" in g.get("missing", []):
             no_anti.append(b["id"])
     check("all 27 guides yield a rubric section", not no_rubric, no_rubric)
-    check("the 4 guides with no anti-patterns section are REPORTED, not silently short",
-          sorted(no_anti) == ["okrs", "product-roadmap", "product-strategy", "product-vision"], no_anti)
+    check("the 5 guides with no anti-patterns section are REPORTED, not silently short",
+          sorted(no_anti) == ["north-star-metrics", "okrs", "product-roadmap", "product-strategy",
+                              "product-vision"], no_anti)
     g = D(srv.get_grading_pack("prd"))
     check("the pack prices itself and the whole guide, so the caller can choose",
           g["approx_tokens_total"] > 0 and g["whole_guide_approx_tokens"] >= g["approx_tokens_total"])
