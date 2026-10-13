@@ -3,7 +3,7 @@
 Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
-Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
 Version: 0.2.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced

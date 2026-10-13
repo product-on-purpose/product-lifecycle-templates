@@ -14,6 +14,17 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`north-star-metrics`, the 43rd bundle**, the fifth `strategy-docs` member by
+  [ADR 0070](docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), at
+  `classification: foundation`. It names one product's North Star metric, the case for choosing it, and the input
+  metrics a team can move, and it leaves the formula, data source and targets to `kpi-dashboard`. Lean carries The
+  North Star; Why This Metric; Input Metrics; What It Serves; and When We Revisit It. Full adds Candidates
+  Considered; Guardrails; What It Does Not Tell Us; and Definition History. The worked example is dated 2026-02-04,
+  between the product strategy and the product roadmap, and keeps the strategy's second-view share as its first
+  input metric rather than its North Star. The research log records 54 sources, and every one of its 345
+  quotations was checked against raw text. Catalog entry 8 now carries the methodology `growth/north-star-framework`
+  and drops the alias "North Star framework", which names the method rather than the document.
+
 - **A spec for `north-star-metrics` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 8
   (`north-star-metric-definition`). The document names one product's North Star metric, the case for choosing it,
   and the input metrics that drive it, and it routes the metric's formula to `kpi-dashboard`. It is admitted on one

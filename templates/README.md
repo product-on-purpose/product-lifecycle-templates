@@ -99,6 +99,7 @@ tree without the gate noticing.
 - [`product-roadmap/`](product-roadmap/) - Product Roadmap. Axis classification utility; ships lean/full.
 - [`product-strategy/`](product-strategy/) - Product Strategy. Axis classification foundation; ships lean/full.
 - [`product-vision/`](product-vision/) - Product Vision. Axis classification foundation; ships lean/full.
+- [`north-star-metrics/`](north-star-metrics/) - North Star Metric. Axis classification foundation; ships lean/full. The fifth `strategy-docs` member ([ADR 0070](../docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)): the one metric that shows customers get the value the strategy promises, and the input metrics a team can move.
 
 **Not a bundle**
 
