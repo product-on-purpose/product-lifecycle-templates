@@ -22,6 +22,7 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `experiment-readout` | 0.1.0 | 6,480,996 | $12.96 | 15 | 3 | whole build | high | [report](reports/experiment-readout_v0.1.0.md) |
 | `definition-of-ready` | 0.1.0 | 5,846,070 | $11.69 | 15 | 3 | whole build | high | [report](reports/definition-of-ready_v0.1.0.md) |
 | `business-case` | 0.1.0 | 4,885,565 | $9.77 | 15 | 3 | **floor** | medium | [report](reports/business-case_v0.1.0.md) |
+| `north-star-metrics` | 0.1.0 | 4,866,116 | $9.73 | 9 | 2 | **floor** | high | [report](reports/north-star-metrics_v0.1.0.md) |
 | `sprint-retrospective-notes` | 0.1.0 | 4,822,982 | $9.65 | 15 | 3 | **floor** | medium | [report](reports/sprint-retrospective-notes_v0.1.0.md) |
 | `definition-of-done` | 0.1.0 | 4,740,584 | $9.48 | 15 | 3 | **floor** | medium | [report](reports/definition-of-done_v0.1.0.md) |
 | `incident-postmortem` | 0.1.0 | 4,593,333 | $9.19 | 15 | 3 | **floor** | medium | [report](reports/incident-postmortem_v0.1.0.md) |
@@ -41,8 +42,8 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `bug-report` | 0.1.0 | 893,739 | $2.68 | 5 | 1 | **floor** | medium | [report](reports/bug-report_v0.1.0.md) |
 | `prd` | 0.1.0 | 765,636 | $1.53 | 9 | 1 | **floor** | mixed | [report](reports/prd_v0.1.0.md) |
 
-<!-- build-reports: count=34 high=15 weighted=173154049 -->
+<!-- build-reports: count=35 high=16 weighted=178020165 -->
 
-**34 reports, 15 of them at high attribution confidence, 173,154,049 weighted token-equivalents and $405.67 at API list rates in total.**
+**35 reports, 16 of them at high attribution confidence, 178,020,165 weighted token-equivalents and $415.40 at API list rates in total.**
 
 Weighted applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0 to the raw counts. List USD prices each response at its own model's API list rate as of 2026-09-22; it is a yardstick, not a bill.
