@@ -13,7 +13,7 @@ consulted: [claude]
 - **Why:** the four members split on what they actually are, not on convenience: product-vision and product-strategy are argued-and-durable (`foundation`), while product-roadmap and okrs are maintained-and-periodic, valuable only while current (`utility`); splitting the family instead would have broken the vision-to-measurement cascade that is the family's teaching content.
 - **Status:** accepted 2026-07-25. No correction or supersession is recorded against this decision. *(Amended
   2026-10-12 by [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md): the family's
-  members now answer five questions, and `north-star-metrics` joins at `foundation`, second in the chain. This
+  members now answer five questions, and `north-star-metrics` joins at `foundation`, third in the chain. This
   record is kept as it was decided.)*
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `strategy-docs`: the

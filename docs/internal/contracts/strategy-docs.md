@@ -16,21 +16,22 @@ A bundle belongs to this family when its document type **sets or tracks product 
 any single deliverable**. Its members answer, in order, five questions a product organization cannot avoid:
 
 - a **product vision** says where we are trying to get to, and why it is worth getting to;
-- a **North Star metric** says which single measure of customer value shows we are moving toward the vision,
-  and which inputs drive it (added 2026-10-12,
-  [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md));
 - a **product strategy** says which problems we will solve to get there, and which we will not;
-- a **product roadmap** says in what order we intend to work on them;
+- a **North Star metric** says which single measure of customer value shows the strategy is moving us
+  toward the vision, and which inputs drive it (added 2026-10-12,
+  [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md));
+- a **product roadmap** says in what order we intend to work on those problems;
 - **OKRs** say what measurable change we expect in this period, and whether we got it.
 
 The chain is the family's teaching value, and it runs downhill: a strategy that does not serve the vision is
 drift, a roadmap that does not implement the strategy is a wishlist, and OKRs that do not measure progress
-against the roadmap are a reporting exercise. **This library holds that** a North Star that does not quantify
-the vision is a vanity metric, and that a strategy that cannot say which input it moves has lost its link to the
-North Star. That link is the library's POSITION: no source read states either failure as documented practice,
-and its place second in the chain rests on one practitioner, Tim Herbig, while other sources order it
-differently (ADR 0070). Each member must state its
-position against the other members in its companion's Relationships section. That requirement is this
+against the roadmap are a reporting exercise. **This library holds that** a North Star that does not measure
+the strategy is a vanity metric, and that a roadmap that cannot say which input it moves has lost its link to
+the North Star. That link is the library's POSITION: no source read states either failure as documented
+practice. Its place third in the chain is inferred from four publishers who describe the North Star as
+measuring the current strategy. No source states that sequence, and Tim Herbig orders the two the other way
+(ADR 0070). Each member must state its position against the other members in its companion's Relationships
+section. That requirement is this
 library's own reasoning, not received practice (corrected 2026-08-07; see the change note): no source read
 across any of the first four members' research logs documents teams producing all four and having them
 contradict each other as a real-world failure mode, only named authors and sources disagreeing with each other
@@ -52,7 +53,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `strategy-docs` |
-| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `north-star-metrics` and `product-strategy`; `utility` for `product-roadmap` and `okrs`. See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
+| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `product-strategy` and `north-star-metrics`; `utility` for `product-roadmap` and `okrs`. See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
 | methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method), and so is `north-star-metrics` (the artifact is the North Star Framework's own written output; added 2026-10-12), while the vision, the strategy and the roadmap are methodology-agnostic. A single required value would force at least one member to lie about itself. |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`); two qa-docs members have already departed from them on evidence. |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
@@ -162,10 +163,11 @@ reviewed against.
 
 **0.2.0, 2026-10-12, [ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md):
 a fifth member, and the first widening of this family's list of questions.** `north-star-metrics` joins at
-`classification: foundation`, placed second in the chain, between the product vision and the product strategy.
-The membership sentence admitted the type as written. What blocked it was the closed list that follows the
-sentence, so section 1's "four questions" becomes "five questions" and gains a second bullet. The chain sentence
-gains one link, labelled the library's POSITION, and the relationship obligation reads "against the other members"
+`classification: foundation`, placed third in the chain, between the product strategy and the product roadmap.
+That place is inferred rather than sourced, and ADR 0070 records why. The membership sentence admitted the type
+as written. What blocked it was the closed list that follows the sentence, so section 1's "four questions"
+becomes "five questions" and gains a third bullet. The roadmap bullet's "work on them" becomes "work on those
+problems", because the new bullet now sits between it and the strategy. The chain sentence gains one link, labelled the library's POSITION, and the relationship obligation reads "against the other members"
 rather than "against the other three". Section 2's classification row, methodology row and axis note name the new
 member, and section 4's obligation gains its example. **No structural obligation changed**, and check K's registry
 entry needs no edit, because `foundation` is already in the set it gates. The `product-strategy`,

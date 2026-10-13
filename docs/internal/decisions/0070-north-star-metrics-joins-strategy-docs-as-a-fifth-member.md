@@ -5,14 +5,15 @@ decision-makers: [jprisant]
 consulted: [claude]
 ---
 
-# `north-star-metrics` joins `strategy-docs` as a fifth member, placed second in the chain
+# `north-star-metrics` joins `strategy-docs` as a fifth member, placed third in the chain
 
 ## TL;DR
 
 - **Decision.** The catalog candidate `north-star-metric-definition` is built as the bundle **`north-star-metrics`**.
   It declares **`family: strategy-docs`** and **`classification: foundation`**, and the
   [contract](../contracts/strategy-docs.md) moves to `0.2.0`. Section 1's members now answer five questions, not
-  four. The North Star metric is the second, between the product vision and the product strategy.
+  four. The North Star metric is the third, between the product strategy and the product roadmap. That place
+  is inferred from what the metric depends on, and no source states it as a sequence.
 - **Why an amendment.** The contract's membership sentence admits the type on its face: a North Star metric "sets or
   tracks product direction above the level of any single deliverable". What blocked it was the closed list of four
   questions that follows the sentence. This is the third admission to widen a contract, after
@@ -25,8 +26,9 @@ consulted: [claude]
 - **What this does not decide.** The bundle's section design, which its spec and research settle. The example's North
   Star, which cannot be "Time to Insight" for reasons the spec gives. Whether the three existing companions that never
   mention a North Star gain a line: they do not, and this record states the gap.
-- **Status:** proposed 2026-10-12. The maintainer chose the route, the chain position, the sizes, the boundary and the
-  companion question on 2026-10-12. The record is held until the maintainer reads the contract diff, because a family
+- **Status:** proposed 2026-10-12. The maintainer chose the route, the sizes, the boundary and the companion
+  question on 2026-10-12. The chain position was chosen as second that morning and moved to third the same day,
+  when the maintainer accepted the recommendation that followed the build's research. The record is held until the maintainer reads the contract diff, because a family
   contract is "adopted only after a maintainer read"
   ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
 
@@ -94,7 +96,7 @@ layout, not a copy of Amplitude's worksheet, its sidebar heuristics or its worke
 
 ## Decision Outcome
 
-**Chosen: `strategy-docs`, `classification: foundation`, fifth member, placed second in the chain.**
+**Chosen: `strategy-docs`, `classification: foundation`, fifth member, placed third in the chain.**
 
 ### Why it fits, positively
 
@@ -112,16 +114,29 @@ layout, not a copy of Amplitude's worksheet, its sidebar heuristics or its worke
 
 ### Where it sits in the chain, and why
 
-**Second, between the product vision and the product strategy.** Tim Herbig gives this order: "North Star Metrics
-are persistent goals that influence Product Strategy", whereas "OKRs are point-in-time goals that implement that
-Strategy".
+**Third, between the product strategy and the product roadmap.** The position is inferred from what a North Star
+depends on. Four publishers describe it as measuring the current strategy:
 
-**The order is contested, and the build's research found it so after the choice was made.** On sequence, Adam Farren
-describes the opposite: vision, then strategy, then goals, and only then the question "So how do you bring all of that
-- vision, strategy, tactics - into alignment?", which a North Star answers. On dependency, Amplitude, Swiss Post, Spotify's Confidence glossary and Umbrex
-each describe the North Star as measuring the current strategy, and Amplitude and Umbrex tie a change of North Star to
-a change of strategy. No source places it third, between the strategy and the roadmap, as a sequence. Every source
-that relates it to OKRs puts it above them. The spec's "The chain position is contested" subsection quotes each camp.
+- Amplitude asks for "A metric that serves as a key measure of your current product strategy".
+- Swiss Post: "It represents the core of the product strategy."
+- Spotify's Confidence glossary: "The north star should reflect the current strategic question".
+- Umbrex: "Only change the NSM when strategy or product fundamentally shifts".
+
+This library's reasoning is that a measure of the strategy cannot come before the strategy it measures. Every
+source that relates the North Star to OKRs puts it above them, and third place keeps that.
+
+**No source states this sequence, and the two sources that state a sequence disagree with each other.** Tim Herbig
+puts the North Star first: "...first defining your North Star Metric, then articulating a Strategy and finally
+establishing OKRs ensures each gets the attention it deserves." Adam Farren puts it after the vision, the strategy
+and the goals, as the answer to "So how do you bring all of that - vision, strategy, tactics - into alignment?" The
+spec's "The chain position is contested" subsection quotes each camp, and the companion names both.
+
+**The position changed once, on the day it was decided.** The maintainer first chose second place, between the
+vision and the strategy, on Herbig's order. The recommendation behind that choice said Herbig's was the only order a
+source supported. The build's research, run the same day, showed that premise was wrong. Re-presented with the
+evidence above, the maintainer accepted the recommendation of third place, which was given at low confidence. A
+reader who holds that a North Star should outlast any one strategy has Herbig on their side. Second place remains
+the considered alternative.
 
 **The chain link is the library's POSITION, whichever order stands.** It is labelled so under
 [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world). No source read states
@@ -129,8 +144,9 @@ the failure that link names as a documented real-world failure.
 
 ### What widens, and by how much
 
-- **Section 1's list.** "four questions" becomes "five questions", and a new second bullet names the North Star
-  metric's question.
+- **Section 1's list.** "four questions" becomes "five questions", and a new third bullet names the North Star
+  metric's question. The roadmap bullet's "work on them" becomes "work on those problems", because the new bullet
+  now sits between it and the strategy.
 - **Section 1's chain sentence** gains one link, labelled POSITION.
 - **Section 1's relationship obligation.** "against the other three" becomes "against the other members".
 - **Section 2.** The classification row and the axis note name the North Star metric as `foundation`. The
@@ -153,6 +169,9 @@ The membership sentence, the axis set, the structural obligations and the enforc
   mention a North Star, and none of them gains a line. This follows the precedent of ADR 0067 and
   [ADR 0069](0069-problem-statement-joins-discovery-docs.md), whose amendments swept no existing member's companion.
   The new member states its position against all four existing members.
+- **The example sits between the strategy's example and the roadmap's.** It is dated after the product strategy
+  example (2026-01-28) and before the product roadmap example (2026-02-11). It must reconcile with the leading
+  indicator the strategy example already names.
 - **The boundary with `kpi-dashboard` is a division of content.** This bundle carries one statement line naming the
   metric and what it measures. The operational formula, scope, exclusions and known limitations stay in
   `kpi-dashboard`'s Metric Definitions section, and the templates route there.

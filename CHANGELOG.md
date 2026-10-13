@@ -21,8 +21,10 @@ people who want every change, release notes are for people who want to know what
   second template. The bundle id is plural by the maintainer's ruling; the catalog id is unchanged.
 - **[ADR 0070](docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md):
   `north-star-metrics` joins `strategy-docs` as a fifth member.** The contract moves to 0.2.0. Its members now answer
-  five questions, and the North Star metric sits second in the chain, between the product vision and the product
-  strategy, at `classification: foundation`. The new chain link is labelled the library's POSITION. ADR 0070 is
+  five questions, and the North Star metric sits third in the chain, between the product strategy and the product
+  roadmap, at `classification: foundation`. That place is inferred from four publishers who describe the North Star
+  as measuring the strategy, and Herbig orders it the other way. The new chain link is labelled the library's
+  POSITION. ADR 0070 is
   proposed, pending the maintainer's read of the contract diff.
 - **ADR count 69 -> 70**, across markers and prose. ADR 0027 carries a dated amended-by note, and ADR 0069's status
   line records the maintainer's confirmation of its delegated acceptance.
