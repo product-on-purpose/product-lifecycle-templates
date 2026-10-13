@@ -31,11 +31,10 @@ the North Star. That link is the library's POSITION: no source read states eithe
 practice. Its place third in the chain is inferred from four publishers who describe the North Star as
 measuring the current strategy. No source states that sequence, and Tim Herbig orders the two the other way
 (ADR 0070). Each member must state its position against the other members in its companion's Relationships
-section. That requirement is this
-library's own reasoning, not received practice (corrected 2026-08-07; see the change note): no source read
-across any of the first four members' research logs documents teams producing all four and having them
-contradict each other as a real-world failure mode, only named authors and sources disagreeing with each other
-about how each document should be shaped. The library still holds that a chain asserted once, at the top, and
+section. That requirement is this library's own reasoning, not received practice (corrected 2026-08-07; see the
+change note): no source read across any of the first four members' research logs documents teams producing all
+four and having them contradict each other as a real-world failure mode, only named authors and sources
+disagreeing with each other about how each document should be shaped. The library still holds that a chain asserted once, at the top, and
 never rechecked from each member's side is the most likely way for its members to drift apart, which is the
 reasoning behind the requirement.
 
@@ -167,8 +166,9 @@ a fifth member, and the first widening of this family's list of questions.** `no
 That place is inferred rather than sourced, and ADR 0070 records why. The membership sentence admitted the type
 as written. What blocked it was the closed list that follows the sentence, so section 1's "four questions"
 becomes "five questions" and gains a third bullet. The roadmap bullet's "work on them" becomes "work on those
-problems", because the new bullet now sits between it and the strategy. The chain sentence gains one link, labelled the library's POSITION, and the relationship obligation reads "against the other members"
-rather than "against the other three". Section 2's classification row, methodology row and axis note name the new
+problems", because the new bullet now sits between it and the strategy. The chain sentence gains one link,
+labelled the library's POSITION, and the relationship obligation reads "against the other members" rather than
+"against the other three". Section 2's classification row, methodology row and axis note name the new
 member, and section 4's obligation gains its example. **No structural obligation changed**, and check K's registry
 entry needs no edit, because `foundation` is already in the set it gates. The `product-strategy`,
 `product-roadmap` and `okrs` companions never mention a North Star and gain no line; ADR 0070 states that gap.

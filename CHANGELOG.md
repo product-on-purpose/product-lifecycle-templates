@@ -24,8 +24,8 @@ people who want every change, release notes are for people who want to know what
   five questions, and the North Star metric sits third in the chain, between the product strategy and the product
   roadmap, at `classification: foundation`. That place is inferred from four publishers who describe the North Star
   as measuring the strategy, and Herbig orders it the other way. The new chain link is labelled the library's
-  POSITION. ADR 0070 is
-  proposed, pending the maintainer's read of the contract diff.
+  POSITION. ADR 0070 is accepted on the maintainer's delegation, which stands in for the contract read, as it did
+  for ADR 0069. The maintainer has not yet confirmed it.
 - **ADR count 69 -> 70**, across markers and prose. ADR 0027 carries a dated amended-by note, and ADR 0069's status
   line records the maintainer's confirmation of its delegated acceptance.
 

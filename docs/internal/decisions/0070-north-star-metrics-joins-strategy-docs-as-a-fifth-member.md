@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-12
 decision-makers: [jprisant]
 consulted: [claude]
@@ -26,11 +26,15 @@ consulted: [claude]
 - **What this does not decide.** The bundle's section design, which its spec and research settle. The example's North
   Star, which cannot be "Time to Insight" for reasons the spec gives. Whether the three existing companions that never
   mention a North Star gain a line: they do not, and this record states the gap.
-- **Status:** proposed 2026-10-12. The maintainer chose the route, the sizes, the boundary and the companion
-  question on 2026-10-12. The chain position was chosen as second earlier that day and moved to third the same day,
-  when the maintainer accepted the recommendation that followed the build's research. The record is held until the maintainer reads the contract diff, because a family
-  contract is "adopted only after a maintainer read"
-  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
+- **Status:** accepted 2026-10-12, on the maintainer's delegation. The maintainer chose the route, the sizes, the
+  boundary and the companion question on 2026-10-12. The chain position was chosen as second earlier that day and
+  moved to third the same day, when the maintainer accepted the recommendation that followed the build's research.
+  A family contract is "adopted only after a maintainer read"
+  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)). Told that the read
+  was the next stop, the maintainer twice replied "Continue based on your best recommendations". That direction
+  stands in for the read, as it did for [ADR 0069](0069-problem-statement-joins-discovery-docs.md). The agent
+  checked the contract diff against each of the maintainer's decisions and found nothing they do not cover. The
+  maintainer has not yet confirmed this delegated acceptance, and may reopen the record for a read.
 
 ## Context and Problem Statement
 
