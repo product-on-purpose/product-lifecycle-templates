@@ -336,8 +336,8 @@ Recovery section below):** {{disaster_recovery_plan_pointer}}
            storage be used "with caution." Google's planning guide notes that high availability
            "doesn't entirely overlap with DR." NIST and California both ask for procedures that someone
            other than their author could follow. Recovery order matters because "After an outage, you
-           can end up with a deadlock: two systems that each can't start until the other is running."
-           Google judges a restore test on "data integrity, recovery time objective (RTO), and recovery
+           can end up with a deadlock: two systems that each can't start until the other is running and
+           providing some functionality." Google judges a restore test on "data integrity, recovery time objective (RTO), and recovery
            point objective (RPO)." Deep dive: business-continuity-plan_companion.md section 3 (Anatomy >
            Disaster Recovery).
      ASK   For each critical system: what is its recovery strategy? Where do its backups live, including at

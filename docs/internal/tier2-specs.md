@@ -1535,7 +1535,7 @@ recorded, not implied:
   (**ADR 0060, change-request joins delivery-docs**): considered and rejected building the log instead of
   the request ("it builds a different document from the one three bundles route to"), and states three
   times that `governance-docs` "admits a standing register as written" if the type is ever built.
-- `atlas/catalog-data.json:3903-3926`: the candidate has carried `state: "candidate"` in the catalog since
+- `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*: the candidate has carried `state: "candidate"` in the catalog since
   before either sibling shipped.
 
 #### Deciding the bundle id: `change-log`, keeping `change-log-governance` as the catalog id
@@ -1776,7 +1776,7 @@ spreadsheet. The landing PR gives the companion's sentence a dated correction to
 #### Catalog corrections the landing PR must make
 
 Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3903-3926`, then regenerate the atlas:
+`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*, then regenerate the atlas:
 
 - **`methodology: "PMBOK/ITIL"` is contradicted.** No rawchecked source shows ITIL naming or shipping a
   "change log" as such. ITIL's own two rawcheck-passed artifacts are differently-named and narrower: a
