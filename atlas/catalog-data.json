@@ -2975,7 +2975,8 @@
       "must_have": true,
       "built": true,
       "relationships": [
-        "Production Readiness Review"
+        "Production Readiness Review",
+        "Disaster Recovery / Business Continuity Plan"
       ],
       "state": "built",
       "state_note": ""
@@ -3208,7 +3209,8 @@
       "built": true,
       "relationships": [
         "Launch Coordination Checklist",
-        "Runbook"
+        "Runbook",
+        "Disaster Recovery / Business Continuity Plan"
       ],
       "state": "built",
       "state_note": ""
@@ -3441,24 +3443,31 @@
       "id": "disaster-recovery-business-continuity-plan",
       "name": "Disaster Recovery / Business Continuity Plan",
       "aliases": [
-        "DR plan",
         "BCP",
-        "RPO/RTO doc"
+        "disaster recovery plan",
+        "DR plan",
+        "continuity plan",
+        "technology recovery plan",
+        "business continuity and disaster recovery plan",
+        "BC/DR plan"
       ],
       "category": "Operations / Incident",
       "stage": "operations",
       "owner": "SRE / Risk",
       "purpose": "Plan recovery from major disruptions",
-      "methodology": "ITIL/SOC2",
+      "methodology": "NIST/FEMA contingency planning",
       "formality": "formal-auditable",
       "rarity": "occasional",
       "size_variant": "M/L",
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
-      "relationships": [],
-      "state": "candidate",
+      "built": true,
+      "relationships": [
+        "Runbook",
+        "Production Readiness Review"
+      ],
+      "state": "built",
       "state_note": ""
     },
     {

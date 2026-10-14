@@ -1111,6 +1111,310 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "business-continuity-plan",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "business_unit"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "plan_title"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "continuity_scope_statement",
+                "disaster_recovery_plan_pointer"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "business-continuity-team-and-roles",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "activation_authority_title_and_holder",
+                "activation_successor_title_and_holder",
+                "delegation_of_authority_statement",
+                "team_role",
+                "team_role_holder",
+                "team_role_responsibility"
+              ],
+              "title": "Business Continuity Team and Roles"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "business-impact-analysis-summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "critical_process",
+                "process_dependencies",
+                "process_rpo",
+                "process_rto"
+              ],
+              "title": "Business Impact Analysis Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "continuity-strategies-and-manual-workarounds",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "workaround_description",
+                "workaround_process",
+                "workaround_recovery_level_rationale"
+              ],
+              "title": "Continuity Strategies and Manual Workarounds"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "activation-and-incident-management",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "activation_criteria",
+                "activation_decision_maker",
+                "notification_method",
+                "notification_order",
+                "notification_recipient",
+                "stand_down_condition"
+              ],
+              "title": "Activation and Incident Management"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "training-testing-and-exercising",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "corrective_action_due_date",
+                "corrective_action_owner",
+                "exercise_date",
+                "exercise_finding",
+                "exercise_observer",
+                "exercise_type",
+                "exercise_validates"
+              ],
+              "title": "Training, Testing and Exercising"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "plan-administration",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "master_copy_holder",
+                "offline_copy_location",
+                "revision_author",
+                "revision_date",
+                "revision_summary",
+                "revision_version",
+                "vendor_contact_method",
+                "vendor_name",
+                "vendor_service"
+              ],
+              "title": "Plan Administration"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "annual_exercise_floor_note",
+                "review_trigger_action",
+                "review_trigger_condition",
+                "review_trigger_owner"
+              ],
+              "title": "Review Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "disaster-recovery",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "backup_and_offsite_storage",
+                "dr_recovery_order",
+                "dr_recovery_strategy",
+                "dr_system_name",
+                "recovery_procedures_reference",
+                "recovery_test_schedule",
+                "restore_verification_criteria"
+              ],
+              "title": "Disaster Recovery"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "change-log",
       "default_format": "default",
       "formats": {
@@ -11172,7 +11476,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 43,
-  "frontmatter_count": 280,
-  "section_count": 363
+  "count": 44,
+  "frontmatter_count": 285,
+  "section_count": 372
 }
