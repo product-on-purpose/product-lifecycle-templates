@@ -14,6 +14,19 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **A spec for `business-continuity-plan` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 135
+  (`disaster-recovery-business-continuity-plan`). It is one bundle by the maintainer's ruling of 2026-10-13: the
+  business continuity plan is the primary document, and disaster recovery is a section inside it. Lean follows the
+  scale of FEMA's four-page Ready.gov template, and full adds a Disaster Recovery section modeled on California's
+  SIMM 5325-A. A gap-fill on 2026-10-12 found no source in the sweep that ships a standalone, template-grade
+  disaster recovery plan. The bundle id is the maintainer's ruling; the catalog id is unchanged.
+- **[ADR 0071](docs/internal/decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md):
+  `business-continuity-plan` joins `standing-standards` as a `tool`, its sixth member.** It is the family's second
+  member that no forecast named. The contract moves to 0.5.0, in its Members line and change note only. The record
+  says the "someone who did not write it" half of the `tool` marker is not shown by any source. It records the
+  annual-test cadence as a consequence that the bundle's Review Trigger section handles, not as an amendment.
+- **ADR count 70 -> 71**, across markers and prose.
+
 - **`north-star-metrics`, the 43rd bundle**, the fifth `strategy-docs` member by
   [ADR 0070](docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), at
   `classification: foundation`. It names one product's North Star metric, the case for choosing it, and the input

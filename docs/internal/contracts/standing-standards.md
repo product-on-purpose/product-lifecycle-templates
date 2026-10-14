@@ -10,7 +10,10 @@ assigned 2026-09-20; specced 2026-09-22 in [`tier2-specs.md`](../tier2-specs.md)
 ([ADR 0058](../decisions/0058-definition-of-ready-joins-standing-standards-as-a-foundation.md),
 assigned, specced and built 2026-09-23), `production-readiness-review`
 ([ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md),
-assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-28).
+assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-28),
+`business-continuity-plan`
+([ADR 0071](../decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md),
+assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -172,6 +175,27 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.5.0, 2026-10-13: a sixth member, and the second that no forecast named.** `business-continuity-plan` joins as
+`classification: tool`, by
+[ADR 0071](../decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md). Section 1's
+likely-future-members line again names nothing here. So **the membership test and this family's falsifier admit it,
+not a confirmed forecast**, the same shape `production-readiness-review`'s own 0.4.0 entry records. A business
+continuity plan "tested via failover drills" (the catalog's own phrase) is consulted at the moment of action. That
+is the test [ADR 0053](../decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) and
+[ADR 0062](../decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md) both applied. A
+plan written for one disruption after the fact is excluded by section 1's own analogy. The analogy states: "a
+runbook written for one incident is an incident report." So the bundle is the standing plan, and a filled instance
+written for one real event is a different, narrower artifact. **`tool` was argued against the honest `foundation`
+case**: the plan's own criteria read as judged-against language. But the plan is executed under time pressure once
+a disruption is declared or a drill begins. That is the timing half of section 2's `tool` marker. The authorship
+half ("often by someone who did not write it") is not shown by any source, and ADR 0071 says so. **The cadence
+tension is recorded as a consequence, not resolved by amendment**. NIST and a banking regulator's superseded
+guidance both require an annual review or test. That reads as a calendar cadence against section 1's "not revised
+on a calendar." The bundle's Review Trigger section states the trigger as a condition, consistent with every other
+member. It treats the annual exercise as the plan's own named condition restated as a minimum frequency, not a
+rewrite on a calendar. ADR 0071 records the tension in full. No structural obligation, metadata rule or axis value
+moved.
 
 **0.4.0, 2026-09-27: a fifth member, and the first that no forecast named.**
 `production-readiness-review` joins as `classification: tool`, by
