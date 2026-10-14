@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-13
 decision-makers: [jprisant]
 consulted: [claude]
@@ -36,7 +36,8 @@ consulted: [claude]
   contract says members are "not revised on a calendar." NIST and a banking regulator's superseded guidance both
   state an annual review-or-test requirement. This ADR records the tension and routes it to the bundle's own Review
   Trigger section, stated as a condition, rather than widening the contract.
-- **Status:** proposed 2026-10-13, pending the maintainer's read.
+- **Status:** accepted 2026-10-13. The maintainer was asked to read the contract diff and this record's admission
+  that the authorship half of the `tool` marker is not shown, and replied "Merge then wrap" (PR #278, the spec PR).
 
 ## Context and Problem Statement
 
