@@ -46,6 +46,31 @@ design task" rather than "a spec-driven execution".
 | `shape-up-pitch` | `shape-up-pitch` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** It clears admission on Basecamp's own Shape Up glossary, but it carries a chosen solution: "A problem without a solution is unshaped work" (chapter 6). Most of its content already ships in `prd`, and its one distinct element is a fixed appetite. Placing it would be its own family decision. Evidence held locally |
 | `lean-canvas` | `lean-canvas` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** Its admission rests on one vendor page, Atlassian's Confluence template. Its Solution block sits beside its Problem block from the first draft (Ash Maurya, on fill order: "There is none"), and it is revisited rather than finished, which fails `discovery-docs`' cadence clause. No contract admits it cleanly. Evidence held locally |
 | `opportunity-solution-tree` | `opportunity-solution-tree` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not admitted, and no record written.** No named source publishes it as a written document: Teresa Torres links Miro, Mural and FigJam boards, and the vendors ship boards, the shape of [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). A decline record waits until someone proposes building it. Evidence held locally |
+| `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **No, not yet.** Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), pending the maintainer's read of the spec, the ADR and the contract diff together. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
+
+**2026-10-13: a five-candidate admission sweep, and the maintainer's answers the next day.** On 2026-10-12 one
+research workflow tested five queued candidates against ADR 0030's admission test and against all ten family
+contracts. They were `disaster-recovery-business-continuity-plan` (#263), `trade-study-options-analysis` (#259),
+`test-strategy` (#260), `use-case-specification` (#254) and `data-dictionary` (#255). The workflow returned 377
+quotations, and 367 passed a re-check against raw page text as filed. A targeted gap-fill ran the same day to settle
+whether a standalone, template-grade disaster recovery plan exists apart from a business continuity plan. It found
+none. **All five cleared admission, and the fork in every case was family placement.** Three candidates need no
+contract change: `disaster-recovery-business-continuity-plan`, `trade-study-options-analysis` and `test-strategy`.
+Two need an amendment the maintainer reads first: `use-case-specification` and `data-dictionary`.
+
+**The maintainer answered all ten resulting decisions on 2026-10-13.** The disaster recovery candidate is one
+bundle, with the business continuity plan primary and disaster recovery as a section inside it. **It is specced
+[below](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it) as
+`business-continuity-plan`, by
+[ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)
+(business-continuity-plan joins standing-standards as a tool).** `trade-study-options-analysis` goes to
+`decision-docs` with no contract change, in lean and full; it is not yet specced. `test-strategy` goes to
+`standing-standards` in its organization-wide sense, but **its lost admission dimension runs first**, and that
+result decides whether a spec is written. `use-case-specification` and `data-dictionary` each wait for an amendment
+the maintainer reads as a diff. The use case's `delivery-docs` amendment adds the verb "elaborates", with a
+paragraph that limits what it admits. The data dictionary's `governance-docs` amendment admits only the narrow
+scope, the meaning of stored fields, which reverses the maintainer's first answer. Neither is specced yet. Their
+records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted.
 
 **2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`.
 
@@ -1570,7 +1595,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1315-1328`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1348-1361`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1813,7 +1838,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1452-1454` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1485-1487` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1842,7 +1867,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:498-501` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:531-534` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1906,7 +1931,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:460-475` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:493-508` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -1974,10 +1999,10 @@ occasional-to-periodic rather than every increment.
 **Two readings, one membership answer.** A maintained PRR checklist (the questionnaire) passes the family's own
 falsifier the same way `launch-coordination-checklist` did: it is "consulted at the moment of action," per
 [ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md)'s test, restated
-at `docs/internal/contracts/standing-standards.md:102-104`. A per-service review record (one team's filled
+at `docs/internal/contracts/standing-standards.md:105-107`. A per-service review record (one team's filled
 answers for one service, one time) excludes from every family tested, standing-standards included, on the
 contract's own analogy: "a runbook written for one incident is an incident report"
-(`standing-standards.md:31`). **This resolves the library's stated either/or**: the bundle is the standing
+(`standing-standards.md:34`). **This resolves the library's stated either/or**: the bundle is the standing
 questionnaire, and the worked example is a filled instance of it, exactly the relationship
 `launch-coordination-checklist_example.md` already has to its own template.
 
@@ -1993,7 +2018,7 @@ into that family.
 inside the team, not outside), and `strategy-docs` (organization-wide direction, not one service).
 
 **This is the family's first unforecast member, and that is worth naming rather than hiding.**
-`standing-standards.md:40` names only "a coding-standards or engineering-handbook document" as a likely future
+`standing-standards.md:43` names only "a coding-standards or engineering-handbook document" as a likely future
 member. Unlike `launch-coordination-checklist` and `definition-of-ready`, which the contract predicted by name
 before either was built, this admission rests entirely on the membership test and the falsifier, not on a
 forecast the contract can be shown to have gotten right. Per
@@ -2351,7 +2376,7 @@ direct analogy to the already-shipped `business-case`:
 | `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:24`) |
 | `qa-docs` | excludes | "a verification artifact of the develop phase" (`qa-docs.md:12`); a brief plans nothing about verifying a product increment |
 | `process-docs` | excludes | Its own contract text routes a forward-looking candidate away from itself: "discovery-docs before a decision, strategy-docs for direction, delivery-docs for the work itself" (`process-docs.md:23`) |
-| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:37`); a brief is written once per project, not consulted repeatedly unchanged |
+| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:40`); a brief is written once per project, not consulted repeatedly unchanged |
 | `communication-docs` | excludes | "the document owns none of its own facts" is this family's defining property (`communication-docs.md:25`); a brief originates its own content and is not periodic |
 | `discovery-docs` | admits, with strain | Its own membership test fits: "exists to decide whether to build something, before anyone commits to building it" (`discovery-docs.md:33`). The strain is the BIS "official start of the project" line, carried into ADR 0063's body as a named POSITION rather than smoothed over |
 
@@ -2471,7 +2496,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1453-1455`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1486-1488`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -4027,3 +4052,386 @@ PR, and matches every figure it shares with the strategy exactly.
    is the one analytics-product North Star in the research, it is all rights reserved, and Acme sells an analytics
    product, so the pull to borrow it is strong. Acme's North Star is its own, drawn from Acme's vision.
 4. **No figure that contradicts a sibling.** Any number the example shares with an earlier example matches it exactly.
+
+### standing-standards (sixth member): the business continuity plan, with disaster recovery inside it
+
+**`business-continuity-plan`** (bundle id by the maintainer's ruling of 2026-10-13; the catalog id stays
+`disaster-recovery-business-continuity-plan`, in the shape `north-star-metrics` kept against its own catalog id
+`north-star-metric-definition`) - `standing-standards`, **`classification: tool`** (maintainer's ruling,
+2026-10-13; argued in
+[ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)), sizes
+**`[lean, full]`**, methodology set at build from the admitting sources' lineage (the catalog's `ITIL/SOC2` has
+no supporting source; see the catalog corrections below), catalog id `disaster-recovery-business-continuity-plan`
+(catalog 134, atlas) / catalog.md row 135. Catalog owner: SRE / Risk. Purpose: "Plan recovery from major
+disruptions". Contents, per the catalog: "RPO/RTO, scenarios, recovery steps, roles, testing". `size_variant:
+M/L`, `rarity: occasional`, `tier_inferred: true`.
+**The catalog's own category field disagrees with itself across the two machine artifacts**:
+`docs/internal/catalog.md:199` reads "operations/governance", and `atlas/catalog-data.json` index 134 reads
+"Operations / Incident". Neither this spec nor ADR 0071 adjudicates that; the catalog corrections subsection
+below flags it for the landing PR.
+
+**One bundle, not two, settled by the maintainer.** The Business Continuity Plan is the primary document;
+disaster recovery is a section inside it, not a sibling document. This spec does not reopen that call. It
+exists to write the bundle the maintainer already decided to build.
+
+#### Demand: prose routing, not a promise tag, from two already-shipped bundles
+
+No `future:` tag points here. A grep of every `_meta.yaml` for a promise tag naming disaster recovery or
+continuity returned nothing, so no tag needs correcting. That differs from the `future:launch-checklist` fix
+[ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) made. The demand
+is prose, already shipped, in two bundles that each name this type as the thing they are not:
+
+- `templates/runbook/runbook_template-lean.md:34` and `templates/runbook/runbook_template-full.md:41` both state
+  the boundary inside the template body itself, not only the guide, in slightly different words. Lean says a
+  runbook is "NOT a disaster recovery plan (that recovers one or more systems at an alternate facility after a
+  major failure, one register above this)". Full says "NOT a disaster recovery plan (NIST scopes that to
+  recovering one or more systems at an alternate facility after a major failure, one register above this)".
+  `runbook_guide.md:26` repeats the same routing in the operator card: "You need to recover a whole system at an
+  alternate facility after a major failure. That is a disaster recovery plan, one register above what this
+  template covers." The routing names a document and does not link to one, because none exists yet.
+- `templates/runbook/runbook_companion.md:303-307` and `:377-380` both carry the NIST boundary at length, citing
+  the same CSRC glossary definition this sweep independently re-verified. Both also say the vendor usage that
+  blurs runbook and DR plan together is left unresolved rather than adjudicated.
+- `templates/production-readiness-review/production-readiness-review_example.md:85` defers disaster recovery
+  outright: "Backup and disaster recovery for that database is Platform's own standing responsibility, reviewed
+  under Platform's own instrument, and is not duplicated here". Line 74's Readiness Criteria row, "Data and
+  backup, disaster recovery", is marked Not Applicable on that ground: Platform's own instrument covers it. The
+  library ships no bundle for that instrument today.
+
+This is real routing, the same shape `production-readiness-review`'s own demand section described for the
+launch-coordination-checklist relationship, not a gate obligation. No check fails today for leaving this type
+unbuilt. Building it resolves both forward-references rather than competing with either bundle's existing
+content, per [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)'s rule that the
+maintainer's preference sets the build order.
+
+#### Admission: two different strengths for the two halves of the catalog's merged name
+
+**Business Continuity Plan admits decisively, on a literal fill-in federal template.** FEMA, through its Ready
+Business program on Ready.gov, ships a four-page Business Continuity Plan PDF template with named sections and
+tables. Those tables include a team roster, a vendor and contractor list, and a revision history table. Its
+Appendix names "Information Technology Disaster Recovery Plan (if not included in the business continuity
+plan)". It also names "Schedule, triggers, and assignments for the periodic review of the business continuity
+and IT disaster recovery plan." Both spans passed the recheck against the live PDF. A separate, shorter
+Ready.gov page, `ready.gov/business-continuity-plan`, carries the sentence "Organize a business continuity team
+and compile a business continuity plan to manage a business disruption." That sentence also passed the
+recheck, on that page. The nearly identical phrase inside the PDF template itself failed the recheck, because
+the PDF's exact wording did not match. So that sentence is attributed here to the shorter page, never to the
+PDF. NIST SP 800-34 Rev. 1 independently defines a Business Continuity Plan as "The documentation of a
+predetermined set of instructions or procedures that describe how an organization's mission/business processes
+will be sustained during and after a significant disruption." That is a second, independent primary source.
+Confidence: high.
+
+**Disaster Recovery Plan's admission is weaker, and rests on a definition, not a template.** NIST SP 800-34
+defines a DRP as "A written plan for recovering one or more information systems at an alternate facility in
+response to a major hardware or software failure or destruction of facilities." That span passed the recheck.
+But NIST's own template-building effort went to a different artifact, the Information System Contingency Plan,
+in Appendix A, not to a standalone DRP. NIST's glossary page also carries a second, conflicting definition from
+CNSSI 4009-2022. That definition scopes DRP to the whole enterprise rather than to a relocated facility, inside
+the same federal page. The admission bar (one named source publishing a type as a written document) reads
+disjunctively as definitional-or-template, so a definitional reading clears it. A reader who expected a
+template-grade clearance for the DRP half specifically would not find one. Confidence: high that the bar
+clears on the definitional reading; the one-document-or-two section below carries the consequence of that
+weaker clearance.
+
+#### One document or two: the gap-fill's finding
+
+A 2026-10-12 gap-fill was run specifically to settle whether a standalone, template-grade Disaster Recovery Plan
+exists anywhere as a document. Such a document would be distinct from a Business Continuity Plan's own DR
+appendix. It returned a high-confidence negative, checked across government, standards and practitioner tiers.
+
+**No named source anywhere in this sweep ships a complete fill-in template titled and scoped as a standalone
+"Disaster Recovery Plan."** Of the sources this sweep read, SANS Institute's "Disaster Recovery Plan Policy"
+comes closest to publishing the type under that exact name. It undercuts its own standalone reading in its
+own text: "The Disaster Recovery Plan is often part of the Business Continuity Plan." That span passed the main
+recheck against the SANS-hosted PDF, and the gap-fill checked it again. The page is gone from SANS's live
+policy library, which now lists 36 current templates and no DRP-titled one. So the document survives only on a
+SANS-hosted CDN asset and third-party mirrors. California's SIMM 5325-A, "Technology
+Recovery Plan Instructions," is the one template-grade structure found in the entire sweep. It runs fourteen
+numbered sections across two parts. Those parts cover admin information, critical functions and infrastructure,
+recovery strategy, backup and offsite storage, recovery procedures, roles, contact information and testing. It
+is explicitly not named "Disaster Recovery Plan." California renamed it from "Disaster Recovery Documentation
+for Agencies Preparation Instructions" (old SIMM 65A) in September 2013. Specifically, it did so to "change
+\"disaster recovery\" to \"technology recovery,\"" a span that passed the recheck. The same document states:
+"The TRP is just one portion of contingency planning and business continuity. A complete business continuity
+plan includes emergency/disaster management, business resumption, and technology recovery plans." That span
+also passed. The governing state policy clause, SAM 5325.1, independently confirms the containment direction:
+"As a sub-set of a state agency or entity's Continuity Plan, the Technology Recovery Plan (TRP) is activated
+immediately after a significant disruption or disaster." The same clause states the TRP "must be derived from
+the state agency or entity's BIA and Continuity Plan." Both spans passed the recheck. Texas's state IT agency
+ships no DR or BC template of any kind. Texas DOT's manual is prose guidance telling districts to write their
+own plan, not a fill-in template.
+
+**One quotation this spec deliberately does not use, and why.** AWS's whitepaper is widely cited for stating
+that a disaster recovery plan should sit inside an organization's business continuity plan rather than stand
+alone. That exact sentence failed the recheck against the live AWS page. So the claim appears here only in
+paraphrase, never inside quotation marks, until it is re-verified against raw text.
+
+**What this settles for the bundle.** The gap-fill reports that every source in this sweep that takes a position on
+the DR-BCP relationship places disaster recovery inside or beneath business continuity. No source in the sweep
+ships the two as co-equal, separately structured documents. That is exactly the shape the maintainer's settled
+decision already assumes. That shape is one bundle, with the Business Continuity Plan as the primary document and a
+disaster recovery section inside it. The research confirms the shape rather than deciding it.
+
+**NIST's impact-tiered scaling and the UK's setting-specific annexes are resolved out of the size axis, at the
+research stage, not left open.** NIST's own Information System Contingency Plan templates scale by impact tier
+(low, moderate, high). At the high-impact tier, they add sections such as a Data Functionality Testing
+subsection, rather than simply expanding prose within a fixed skeleton. The UK's HMPPS framework instead varies
+by organizational setting: five distinct annexes for prisons, probation units, approved premises and others. It
+does not vary by document size at all. Both are genuine scaling logics the sources support. Both are left out
+of this bundle's lean-full size axis, per the maintainer's own resolution. Neither is mixed with the
+Ready.gov-scaled, SIMM-structured logic this bundle actually uses.
+
+#### Boundaries: four neighbours the research supports, one it does not
+
+**`runbook`: a clean, already-shipped boundary.** The runbook template states the boundary in its own body,
+not only its guide: a runbook is "NOT a disaster recovery plan". The full variant scopes that with NIST's own
+definition. A runbook is one operational procedure that this plan's own Disaster Recovery section may call out
+to. It is not a replacement for the plan, and the plan is not a bigger runbook.
+
+**`production-readiness-review`: a clean, already-shipped deferral.** The PRR's own worked example defers
+disaster recovery outright to "Platform's own standing responsibility, reviewed under Platform's own
+instrument". It also marks the Readiness Criteria row Not Applicable on that ground. Landing this bundle gives
+that instrument a template. Whether the PRR's companion or example changes to reflect that is a build decision,
+not a required edit this spec makes.
+
+**`incident-postmortem`: the temporal inverse, supported by the guide's own framing.** `incident-postmortem` is
+written "after, not during," analyzing one event that already happened and already resolved. A business
+continuity plan, with its disaster-recovery section, is written and tested before a disruption and activated
+during one. The two cannot collapse into each other: one looks backward at a crystallized event, the other
+looks forward to one that has not happened yet.
+
+**`risk-register`: future risk versus a designed response to a crystallized risk.** The risk register's own
+guide scopes it to "potential future events" and explicitly routes a problem that "has already happened" to an
+issue log instead. A business continuity plan is the designed response once a tracked risk (or an untracked
+one) actually crystallizes into a disruption. It does not duplicate the register's ongoing tracking of
+uncertain events.
+
+**`launch-coordination-checklist`: no boundary argument in the research, and none is invented here.**
+Neither the admission sweep, the gap-fill, nor the family-fit research names a collision between this type and
+the launch checklist. So this spec draws no boundary with it.
+
+#### Family fit: `standing-standards` as a `tool`, the family's second unforecast member
+
+**Membership.** A business continuity plan maintained and "tested via failover drills" (the catalog's own
+phrase) is consulted at the moment of action. That is the same falsifier
+[ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md) applied to the
+launch checklist. [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md)
+applied it to the production readiness review too: "if a candidate arrives that matches the cadence but is not
+consulted at the moment of action, this family has been drawn around the axis rather than around a job"
+(`standing-standards.md:105-107`). A plan written for one specific disruption, after the fact, would be an
+incident report, excluded on the contract's own analogy at `standing-standards.md:34`. This bundle is the
+standing plan, agreed once and consulted (and periodically rehearsed) whenever a disruption or a drill calls
+for it.
+
+**Classification: `tool`, on the same three-marker method ADR 0058 and ADR 0062 both applied.** ADR 0058
+(definition-of-ready joins standing-standards as a foundation) reached `foundation` with that method, and ADR 0062
+(production-readiness-review joins standing-standards as a tool) reached `tool`. The contract's cut is "is it a
+standard you judge against, or an instrument you execute?" A business continuity plan's criteria (which functions
+are critical, what the recovery strategy is) read as a standard a team might be judged against. That is the honest
+`foundation` case. What breaks the parallel is when the plan is used: it is executed under time pressure once a
+disruption is declared or a drill begins. That reading is this library's inference from the sources' activation,
+recovery and testing content; no single source states it as a classification. NIST's ISCP sample templates carry a
+yearly-test attestation line (a structural finding from reading the PDF, not rechecked as a quotation). The plan's
+whole Disaster Recovery section describes steps run during an event. **The marker's second half is not cleanly
+met.** The contract describes a `tool` as executed "often by someone who did not write it". No source in this sweep
+says who activates a plan relative to who wrote it. A business continuity team may both write and run its own plan.
+The `tool` call therefore rests on execution under time pressure and on the third marker, which says a tool's
+authority comes "from being correct right now". It does not rest on the authorship half.
+
+**This is the family's second member that no forecast named, after `production-readiness-review`.**
+`standing-standards.md:43` names only "a coding-standards or engineering-handbook document" as a likely future
+member, checked directly against the contract's current text. Neither a business continuity plan nor a disaster
+recovery plan appears on that list. That follows
+[ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)'s principle, already applied to
+this exact family by ADR 0062. The principle states: "The membership test, not the list of members that happened
+to be planned in 2026-07, governs a candidate." So this does not weaken admission. It does mean this ADR, like ADR 0062 before
+it, cannot claim a confirmed forecast.
+
+**The cadence tension stays out of the contract, by design, and is handled in the Review Trigger section.**
+`standing-standards.md` section 1 states members are "not revised on a calendar." NIST states the "ISCP should be
+reviewed for accuracy and completeness at least annually." NIST also states "All ISCPs should be reviewed and
+tested at the organization defined frequency (e.g. yearly)." Both passed the recheck. The FFIEC's superseded 2003
+Business Continuity Planning booklet states "Testing the BCP at least annually." It was retrieved via an FDIC
+mirror, because the current 2019 edition returned a 403 twice. That span also passed. Whether the 2019 edition
+keeps this fixed interval or moves to risk-based language, as unverified secondary summaries suggest, is not
+settled by this research. **That reads as a calendar cadence, against section 1's own phrase, and this spec does
+not propose a contract amendment to resolve it.** Instead, the bundle's Review Trigger section, required by
+contract section 4 of every member, states the trigger as a condition rather than a date. Candidate conditions
+include a failed test or drill finding, or an actual activation. A third condition is a change named in the FFIEC's
+own language: "any changes to key personnel, policies, procedures, facilities, equipment, outsourcing
+relationships, vendors, or other components that impact a critical business function." That span also passed the
+recheck. The annual exercise is this plan's own named condition restated as a minimum frequency, not a calendar
+rewrite of the document. ADR 0071 records the tension as a consequence of admitting this member, as ADR 0062
+recorded the honest `foundation` case for the production readiness review. It does not resolve the tension by
+widening the contract.
+
+#### Section design
+
+Drawn from the Ready.gov template's own scale for lean and the maintainer's settled model for full. No source
+gives one single canonical section list for a merged "DR/BC plan." So the groupings below are this library's
+own judgment, sourced per row rather than copied whole from any one document.
+
+| Section | In lean? | What it is |
+|---|---|---|
+| **Purpose and Scope** | yes | What counts as a disruption here, and what business this plan covers. Sourced to Ready.gov's Program Administration block, the opening section of its four-page template |
+| **Business Continuity Team and Roles** | yes | A named team roster and a line of succession, so the plan does not depend on who is reachable. Sourced to Ready.gov's Business Continuity Organization block, which ships a five-column team roster table |
+| **Business Impact Analysis Summary** | yes | The critical business processes this plan protects, and their Recovery Time Objectives, drawn from a Business Impact Analysis done separately rather than re-templated here. Sourced to Ready.gov's own prompt, "Identify Recovery Time Objectives for business processes and information technology" (passed the recheck). Also sourced to NIST's and FFIEC's own treatment of the BIA as the plan's upstream input, not the plan itself |
+| **Continuity Strategies and Manual Workarounds** | yes | How critical processes keep running without full systems, and what the chosen recovery strategy is at the business-process level. Sourced to Ready.gov's Manual Workarounds and Business Continuity Strategies & Requirements blocks |
+| **Activation and Incident Management** | yes | What declares a disruption, who declares it, and the first procedures that follow declaration. Sourced to Ready.gov's Incident Management block and, structurally, to NIST SP 800-34 Appendix A's own "Activation and Notification" section. That section is read directly from its table of contents, not quoted, since this is a structural finding rather than a span to recheck |
+| **Training, Testing and Exercising** | yes | The exercise schedule and what a drill actually validates. Sourced to Ready.gov's own Training, Testing & Exercising block. Also sourced to the FFIEC's "Management should ensure recovery testing is conducted at least annually," which passed the recheck. Its warning that "Unmanned recovery testing, where back-up tapes are sent to the recovery site to be run by service provider employees, is not a sufficient test," also passed |
+| **Plan Administration** | yes | Vendor and contractor contacts, a revision history, and plan distribution and access. This is a library grouping of Ready.gov's three smaller blocks: a vendor and contractor table, a revision history table, and plan distribution guidance. None of those three is large enough on its own to carry a section. This library labels them here as its own combination, rather than any one source's structure |
+| **Disaster Recovery** | **full only** | The maintainer's settled model is a disaster-recovery section inside the plan, structured on California SIMM 5325-A. It covers critical functions and infrastructure, recovery strategy, backup and offsite procedures, recovery procedures, roles, contacts, and testing. SIMM 5325-A's own structure, read directly and raw-checked, runs fourteen numbered subsections across two parts. The seven groupings above are this library's own collapsing of that structure into fewer, broader headings. They are sourced to the same document, rather than to any further source that groups them this way |
+| **Review Trigger** | yes | **Contract-mandated** (section 4): a named owner and a condition, not a calendar. Candidate conditions, sourced: a failed test or drill finding; an actual activation; or a change to "key personnel, policies, procedures, facilities, equipment, outsourcing relationships, vendors, or other components that impact a critical business function." That span is from the FFIEC, and it passed the recheck. The annual exercise cadence NIST and the FFIEC both name is this section's own stated condition, restated as a floor. That is not a calendar rewrite of the document, per the family-fit discussion above |
+
+The lean variant's eight sections, in this order, are a strict ordered subset of the full variant's nine, as
+contract section 3.2 requires. Full inserts exactly one section, Disaster Recovery, immediately before Review
+Trigger.
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md` and `atlas/catalog-data.json`, then regenerate the atlas:
+
+1. **Aliases: correct the synonym framing, sourced.** The catalog currently lists "DR plan," "BCP" and "RPO/RTO
+   doc" as if they name one interchangeable thing. The gap-fill reports that every source in the sweep that
+   takes a position treats a disaster recovery plan and a business continuity plan as related by containment,
+   not as synonyms. NIST SP 800-34's two definitions also scope a DRP more narrowly than a BCP. A DRP
+   is narrower and site-relocation-bound. A BCP is the broader mission-sustaining document the DRP (or, in
+   California's current naming, the Technology Recovery Plan) sits inside. Keep "DR plan" and "BCP" as aliases
+   a reader might actually type, since both are real search terms for this one document. But the catalog's own
+   `summary` or a state note should say plainly that the two name a containment relationship. They are not two
+   names for the same document. This spec's companion must say the same thing.
+2. **Aliases: add three, one sourced and two the library's own.** "Disaster recovery plan" is NIST's own term,
+   the fuller form that "DR plan" abbreviates. "Business continuity and disaster recovery plan" and "BC/DR plan"
+   appear in no source this sweep read. They are this library's choice, approved by the maintainer on
+   2026-10-13, so that a reader who types either phrasing still finds the bundle.
+3. **Relationships: append this type to both neighbours that already route to it.** Both fields already name
+   other neighbours: `runbook`'s reads `["Production Readiness Review"]`, and `production-readiness-review`'s
+   reads `["Launch Coordination Checklist", "Runbook"]`. Append "Disaster Recovery / Business Continuity Plan"
+   to each, in the display-name form those fields use, rather than replacing either list. This type's own
+   `relationships` field, `[]` today, gains "Runbook" and "Production Readiness Review" in return.
+4. **The category discrepancy between the two machine artifacts is flagged, not resolved here.**
+   `docs/internal/catalog.md:199` reads "operations/governance"; `atlas/catalog-data.json` index 134 reads
+   "Operations / Incident". This spec does not adjudicate which is correct. The landing PR should reconcile
+   them, or record why one wins, rather than silently picking one the way the research found it already had
+   been.
+5. **Methodology: `ITIL/SOC2` has no supporting source.** The admission sweep's critic pass for this candidate
+   reports that no research dimension found a named ITIL or SOC2 source publishing this document type. Neither
+   name appears among the qualifying or corroborating sources. The landing PR replaces the value with one the
+   admitting sources support (NIST SP 800-34 and FEMA's Ready Business program). The contract's
+   methodology row is descriptive and not gated, so the choice is the build's, recorded in the meta.
+
+#### `pairs_with`: checked, empty
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'` returned all 68 skill names on
+2026-10-13. No name contains "disaster," "continuity," "recovery," "bcp" or "dr-" against this type. The
+plausibly adjacent names, `foundation-build-risk-review` and `tool-design-sprint-readiness` /
+`tool-foundation-sprint-readiness`, are a build-stage risk review and design/foundation-sprint precondition
+checks, unrelated in subject. **`pairs_with: []`**, under the contract's rule for that field: "Verify per
+member; claim only what is true of that member" (`standing-standards.md:71`).
+
+#### Risks for the build and review
+
+1. **The one-document-or-two finding is the central risk, and the companion must not round it up.** The
+   business continuity half of this bundle admits decisively; the disaster-recovery half admits only
+   definitionally. A companion that writes as if both halves cleared admission at the same strength
+   overstates the weaker one. State it exactly as the admission section above does: definitional for DRP,
+   template-grade for BCP.
+2. **The AWS sentence about a DR plan not standing alone from the BCP is a live temptation.** It is the single
+   most quotable, most on-point sentence for this bundle's own central argument, and it failed the recheck.
+   Carrying it into the companion inside quotation marks, under any paraphrase that keeps the quotation marks,
+   fails review on a citation this sweep already flagged.
+3. **The SANS quotation needs its provenance carried through, not dropped at the companion stage.** "The
+   Disaster Recovery Plan is often part of the Business Continuity Plan" is this bundle's most load-bearing
+   single sentence for the one-document decision. It passed the recheck against a SANS-hosted CDN copy of a
+   2014 policy template, and the canonical SANS page now returns 404. A companion must cite the CDN copy and say
+   the live page is gone, rather than cite the dead URL.
+4. **ISO 22301 and ISO/IEC 27031 are not available to cite at any depth.** Both standards are paywalled and were
+   never read in either the admission sweep or the gap-fill. Any companion sentence
+   about their clause structure must either go unwritten, or be labeled secondary and unverified.
+5. **This is the family's second unforecast member, and the cadence tension is a real, recorded consequence,
+   not a footnote.** A reviewer who expects every standing-standards member to match a contract forecast, the
+   way `launch-coordination-checklist` and `definition-of-ready` did, will not find one here. ADR 0062 already
+   set the precedent that the membership test, not the forecast list, governs. The cadence tension is real,
+   and ADR 0071 records it as a consequence. That tension is NIST's and the FFIEC's "at least annually" against
+   section 1's "not revised on a calendar". A companion or guide that asserts the tension is fully resolved,
+   rather than handled by the Review Trigger section's own condition framing, overclaims.
+6. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into the
+   template's GOOD and WEAK text.** Once an example exists, grep the drafted templates for its proper nouns
+   before review. That is the same practice `production-readiness-review`'s own spec names, and the
+   north-star-metrics spec repeats it.
+7. **The Business Impact Analysis is an upstream input this bundle must not re-template.** NIST and the FFIEC
+   both treat the BIA as a separate analysis artifact that feeds a plan's priorities and RTOs. The Business
+   Impact Analysis Summary section carries the BIA's output, a few load-bearing figures, not a full BIA
+   worksheet.
+
+#### The worked example: a scenario chained onto facts that already exist
+
+**This must not be the Saved Views Sharing launch, the entitlement-audit runbook's own incident, or the SRE
+ownership handoff the production-readiness-review example already covers.** Each of those is already a
+different document's own scenario; reusing one collapses this example into a sibling's.
+
+**The proposed hook: the instrument the production-readiness-review example names but does not show.**
+`production-readiness-review_example.md:85` states that "Backup and disaster recovery for that database is
+Platform's own standing responsibility, reviewed under Platform's own instrument". It names `saved_view` and
+every other dashboard-service row as living "in the shared main Postgres database", which Platform, not
+Reporting, owns. This bundle's worked example can be that instrument: a business continuity plan owned by Acme
+Analytics' Platform team. It covers the shared Postgres database and the other infrastructure Platform's
+services depend on, and its disaster-recovery section is scoped to that database's alternate-site recovery.
+
+**Chronology: the plan already exists on 2026-08-22.** The PRR example is dated 2026-08-22 and refers to
+Platform's own instrument in the present tense, so that instrument must exist by then. The example may show a
+later revision, but its revision history must then include an entry on or before 2026-08-22. It must not say
+the PRR found no plan, because the PRR example says the opposite. The exact dates are a build decision.
+
+**People: reuse the thread's named roles, in the roles the examples already give them.** Dana Osei (Staff
+Engineer, Platform) is the natural owner of a Platform-scoped continuity plan, since Platform owns the shared
+database per the PRR example. Ines Halvorsen (Engineer, the new SRE function), the PRR's decision authority,
+is a plausible reviewer. That review asked SRE to take standing ownership of a service that depends on
+Platform's infrastructure.
+
+**Content it may cite, without restating any sibling's own table rows.** The plan may cite that
+dashboard-service and other services share Platform's Postgres database
+(`production-readiness-review_example.md:85`). It must not restate the PRR's own Readiness Criteria rows, the
+runbook's own entitlement-audit procedure, or any risk-register row. A continuity plan for the database asks a different set of questions:
+recovery strategy, offsite backup, activation criteria for the database specifically. Those are not questions
+any of those three documents already answer.
+
+**What it must not do.** It must not resolve the chain's own open build-number contradiction (see the
+production-readiness-review spec's own note on this). It should cite no build or release number at all, the
+same convention that spec settled on, referring only to dated events.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `standing-standards` | Maintainer ruling, 2026-10-13; argued in ADR 0071 |
+| `classification` | `tool` | Maintainer ruling, argued marker-by-marker in ADR 0071 against `standing-standards.md` section 2's cut, on the same reasoning ADR 0062 used for the production readiness review |
+| `bundle_id` | `business-continuity-plan` | Maintainer's ruling, 2026-10-13. The catalog id stays `disaster-recovery-business-continuity-plan`; `north-star-metrics` already kept a bundle id distinct from its catalog id (`north-star-metric-definition`), so this is not a new pattern |
+| `sizes_available` | `[lean, full]` | The maintainer's settled sizing: lean at Ready.gov's own four-page scale, full adding the SIMM-modeled Disaster Recovery section |
+| `status` | `beta` | Every bundle |
+| `methodology` | Set at build from the admitting sources' lineage | The catalog's `ITIL/SOC2` has no supporting source (catalog correction 5). The contract's methodology row is descriptive, not gated |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main`, 2026-10-13; no skill produces or consumes this type |
+| `related_templates` | `[runbook, production-readiness-review]`, inline | The two neighbours with an existing, unresolved forward-reference to this type. `incident-postmortem` and `risk-register` are named boundaries in the companion, but they carry no existing forward-reference to correct |
+| `aliases` | `disaster recovery plan`, `DR plan`, `BCP`, `business continuity and disaster recovery plan`, `BC/DR plan` | See catalog corrections 1 and 2 above. The last two are the library's own, for search, and no source uses them. The companion states the containment relationship rather than treating any pair as synonyms |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `standing-standards` contract's Members line**, from "not yet built" to the build date. The contract
+   moves to `0.5.0` in the spec PR, with ADR 0071.
+2. **`runbook`'s and `production-readiness-review`'s own forward-references become resolvable.** Neither
+   bundle's companion is required to change by this landing. Whether either gains a direct link to the new
+   bundle is a build decision. That is the same stance ADR 0062 took toward `launch-coordination-checklist`.
+3. **The catalog entry**, per the corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+4. **This page's Progress table.**
+5. **Issue #263 (bundle: disaster-recovery-business-continuity-plan)** closes with the build PR.
+
+#### What the build would cost
+
+No build has run for this type. This is projected from the family's own three most recent built members, all
+with every agent resolved to Sonnet. `production-readiness-review` cost $15.75 whole (15 build agents),
+`launch-coordination-checklist` cost $14.22 whole (15 build agents), and `definition-of-ready` cost $11.69
+whole (15 build agents). All are measured figures from `bundle-builds/INDEX.md`. A whole-bundle estimate of
+**$12 to $16 at API list rates** is reasonable on that basis. It is a projection, not a measurement, until
+`python tools/gen-bundle-build-report.py --ingest` runs against an actual build report.
