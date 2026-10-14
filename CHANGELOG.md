@@ -14,6 +14,18 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`business-continuity-plan`, the 44th bundle**, the sixth `standing-standards` member by
+  [ADR 0071](docs/internal/decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md), at `classification: tool`.
+  It is the standing plan that keeps an organization's critical business processes going through a significant
+  disruption. Lean carries Purpose and Scope; Business Continuity Team and Roles; Business Impact Analysis
+  Summary; Continuity Strategies and Manual Workarounds; Activation and Incident Management; Training, Testing
+  and Exercising; Plan Administration; and Review Trigger. Full adds Disaster Recovery before Review Trigger,
+  structured on California's SIMM 5325-A; lean points to a separate disaster recovery plan instead. The worked
+  example is the Platform team's plan for the shared database, dated 2026-09-15, which the production readiness
+  review example already names. The research log records 32 sources, and every one of its 296 quotations was
+  checked against raw text. Catalog entry 135 drops the alias "RPO/RTO doc" and the methodology "ITIL/SOC2",
+  which no source read supports, and the runbook and production readiness review entries now name it.
+
 - **A spec for `business-continuity-plan` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 135
   (`disaster-recovery-business-continuity-plan`). It is one bundle by the maintainer's ruling of 2026-10-13: the
   business continuity plan is the primary document, and disaster recovery is a section inside it. Lean follows the

@@ -166,6 +166,43 @@
     },
     {
       "aliases": [
+        "BCP",
+        "disaster recovery plan",
+        "DR plan",
+        "continuity plan",
+        "technology recovery plan",
+        "business continuity and disaster recovery plan",
+        "BC/DR plan"
+      ],
+      "approx_tokens": {
+        "full": 7800,
+        "lean": 6700
+      },
+      "classification": "tool",
+      "default_size": "lean",
+      "doc_type": "business-continuity-plan",
+      "family": "standing-standards",
+      "id": "business-continuity-plan",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (eight sections: Purpose and Scope, Business Continuity Team and Roles, Business Impact Analysis Summary, Continuity Strategies and Manual Workarounds, Activation and Incident Management, Training Testing and Exercising, Plan Administration, Review Trigger) when disaster recovery is documented in a separate plan; Purpose and Scope then carries only a pointer to it, the shape FEMA's own template allows. Use full, which inserts a Disaster Recovery section before Review Trigger, when this plan must carry disaster recovery itself: the recovery strategy for each critical system, backup and offsite storage, recovery procedures, recovery order, restore verification and the recovery test.",
+      "status": "beta",
+      "summary": "How an organization keeps its critical business processes going through a significant disruption and recovers them afterward: the team and activation authority, each critical process with its recovery objectives, the manual workaround that covers it, and how the plan itself is tested and kept current. The full variant adds a Disaster Recovery section for recovering the systems those processes depend on, built where no separate disaster recovery plan already exists.",
+      "tags": [
+        "business-continuity",
+        "disaster-recovery",
+        "continuity-planning",
+        "resilience",
+        "standing-standards",
+        "bcp",
+        "risk-management"
+      ],
+      "title": "Business Continuity Plan"
+    },
+    {
+      "aliases": [
         "change register",
         "change management log",
         "change request log",
@@ -1472,5 +1509,5 @@
       "title": "User Story"
     }
   ],
-  "count": 43
+  "count": 44
 }

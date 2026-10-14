@@ -1,0 +1,39 @@
+id: business-continuity-plan
+title: Business Continuity Plan
+summary: >-
+  How an organization keeps its critical business processes going through a significant disruption and
+  recovers them afterward: the team and activation authority, each critical process with its recovery
+  objectives, the manual workaround that covers it, and how the plan itself is tested and kept current. The
+  full variant adds a Disaster Recovery section for recovering the systems those processes depend on, built
+  where no separate disaster recovery plan already exists.
+doc_type: business-continuity-plan
+classification: tool
+family: standing-standards
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (eight sections: Purpose and Scope, Business Continuity Team and Roles, Business Impact Analysis Summary, Continuity Strategies and Manual Workarounds, Activation and Incident Management, Training Testing and Exercising, Plan Administration, Review Trigger) when disaster recovery is documented in a separate plan; Purpose and Scope then carries only a pointer to it, the shape FEMA's own template allows. Use full, which inserts a Disaster Recovery section before Review Trigger, when this plan must carry disaster recovery itself: the recovery strategy for each critical system, backup and offsite storage, recovery procedures, recovery order, restore verification and the recovery test."
+methodology: NIST/FEMA-lineage
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - business-continuity
+  - disaster-recovery
+  - continuity-planning
+  - resilience
+  - standing-standards
+  - bcp
+  - risk-management
+related_templates: [runbook, production-readiness-review]
+aliases:
+  - BCP
+  - disaster recovery plan
+  - DR plan
+  - continuity plan
+  - technology recovery plan
+  - business continuity and disaster recovery plan
+  - BC/DR plan
+catalog_ref: 135
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-14
+license: Apache-2.0

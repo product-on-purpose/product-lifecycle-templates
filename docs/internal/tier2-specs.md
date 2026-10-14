@@ -46,7 +46,7 @@ design task" rather than "a spec-driven execution".
 | `shape-up-pitch` | `shape-up-pitch` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** It clears admission on Basecamp's own Shape Up glossary, but it carries a chosen solution: "A problem without a solution is unshaped work" (chapter 6). Most of its content already ships in `prd`, and its one distinct element is a fixed appetite. Placing it would be its own family decision. Evidence held locally |
 | `lean-canvas` | `lean-canvas` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** Its admission rests on one vendor page, Atlassian's Confluence template. Its Solution block sits beside its Problem block from the first draft (Ash Maurya, on fill order: "There is none"), and it is revisited rather than finished, which fails `discovery-docs`' cadence clause. No contract admits it cleanly. Evidence held locally |
 | `opportunity-solution-tree` | `opportunity-solution-tree` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not admitted, and no record written.** No named source publishes it as a written document: Teresa Torres links Miro, Mural and FigJam boards, and the vendors ship boards, the shape of [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). A decline record waits until someone proposes building it. Evidence held locally |
-| `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **No, not yet.** Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), accepted 2026-10-13 when the maintainer approved the spec PR's merge. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
+| `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **Built 2026-10-14**, lean and full, with the catalog corrections applied to both catalog files. Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), accepted 2026-10-13 when the maintainer approved the spec PR's merge. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
 
 **2026-10-13: a five-candidate admission sweep, and the maintainer's answers the next day.** On 2026-10-12 one
 research workflow tested five queued candidates against ADR 0030's admission test and against all ten family
@@ -63,7 +63,7 @@ bundle, with the business continuity plan primary and disaster recovery as a sec
 [below](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it) as
 `business-continuity-plan`, by
 [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)
-(business-continuity-plan joins standing-standards as a tool).** `trade-study-options-analysis` goes to
+(business-continuity-plan joins standing-standards as a tool).** *(2026-10-14: built; its progress row above carries the date.)* `trade-study-options-analysis` goes to
 `decision-docs` with no contract change, in lean and full; it is not yet specced. `test-strategy` goes to
 `standing-standards` in its organization-wide sense, but **its lost admission dimension runs first**, and that
 result decides whether a spec is written. `use-case-specification` and `data-dictionary` each wait for an amendment
@@ -1535,7 +1535,7 @@ recorded, not implied:
   (**ADR 0060, change-request joins delivery-docs**): considered and rejected building the log instead of
   the request ("it builds a different document from the one three bundles route to"), and states three
   times that `governance-docs` "admits a standing register as written" if the type is ever built.
-- `atlas/catalog-data.json:3903-3926`: the candidate has carried `state: "candidate"` in the catalog since
+- `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*: the candidate has carried `state: "candidate"` in the catalog since
   before either sibling shipped.
 
 #### Deciding the bundle id: `change-log`, keeping `change-log-governance` as the catalog id
@@ -1776,7 +1776,7 @@ spreadsheet. The landing PR gives the companion's sentence a dated correction to
 #### Catalog corrections the landing PR must make
 
 Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3903-3926`, then regenerate the atlas:
+`docs/internal/catalog.md:223` and `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*, then regenerate the atlas:
 
 - **`methodology: "PMBOK/ITIL"` is contradicted.** No rawchecked source shows ITIL naming or shipping a
   "change log" as such. ITIL's own two rawcheck-passed artifacts are differently-named and narrower: a

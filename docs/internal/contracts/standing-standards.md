@@ -13,7 +13,7 @@ assigned, specced and built 2026-09-23), `production-readiness-review`
 assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-28),
 `business-continuity-plan`
 ([ADR 0071](../decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md),
-assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
