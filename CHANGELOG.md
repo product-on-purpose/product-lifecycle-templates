@@ -14,6 +14,37 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **A spec for `trade-study` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 66
+  (`trade-study-options-analysis`). It is the fifth `decision-docs` member, at `phase: develop`, in lean and full,
+  admitted under the contract's fourth-member clause with no contract change and no decision record. It is the
+  trade study that `business-case_guide.md` already names: a comparison of technical approaches against weighted
+  criteria. NASA's Systems Engineering Handbook and the Federal Highway Administration's Systems Engineering for
+  ITS each clear admission on their own. The bundle id is shortened; the catalog id is unchanged.
+- **A spec for `use-case-specification` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 35. It
+  is a `delivery-docs` member at `phase: deliver`, in lean (Cockburn's casual use case) and full (his fully
+  dressed one). `user-stories_guide.md` has routed readers who need "exhaustive actor-system flows" to this type
+  since it shipped. Four named sources clear admission: Cockburn's 1998 template and 2001 book draft, Wiegers's
+  1999 template, and the Rational Unified Process use-case specification template.
+- **[ADR 0072](docs/internal/decisions/0072-use-case-specification-joins-delivery-docs.md), proposed:
+  `use-case-specification` joins `delivery-docs`, and the membership test gains the verb "elaborates".** Nine of
+  the ten family contracts excluded the type outright. The new verb admits one actor's numbered path to one
+  goal, with its alternative and exception flows, and the contract names what it does not admit: a diagram or
+  board, a user flow, and a test case. The contract moves to 0.3.0.
+- **A spec for `data-dictionary` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 141. It is a
+  `governance-docs` member at `classification: utility`, in lean and full, scoped to what the fields of a dataset
+  or table mean. Event cataloguing stays with `tracking-plan`, and metric-formula locking stays with
+  `kpi-dashboard`'s Metric Definitions section.
+- **[ADR 0073](docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md), proposed:
+  `data-dictionary` joins `governance-docs` as a seventh member.** The narrow scope is the maintainer's ruling of
+  2026-10-13. That ruling's reasoning drew the boundary with the tracking plan on tense, and research on
+  2026-10-14 found the tense line contested, so the record redraws it on subject and says so. The contract
+  moves to 0.5.0.
+- **ADR count 71 -> 73**, across markers and prose.
+- **Two dated notes in [`tier2-specs.md`](docs/internal/tier2-specs.md).** The `test-strategy` admission dimension
+  ran on 2026-10-14 and came back undecidable, so no spec is written and its scope returns to the maintainer.
+  The `tracking-plan` spec misread Wizbrand's measurement plan as a per-feature document; the same page says
+  "Many teams review it quarterly".
+
 - **`business-continuity-plan`, the 44th bundle**, the sixth `standing-standards` member by
   [ADR 0071](docs/internal/decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md), at `classification: tool`.
   It is the standing plan that keeps an organization's critical business processes going through a significant
