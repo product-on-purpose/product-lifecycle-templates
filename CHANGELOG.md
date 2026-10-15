@@ -39,7 +39,21 @@ people who want every change, release notes are for people who want to know what
   2026-10-13. That ruling's reasoning drew the boundary with the tracking plan on tense, and research on
   2026-10-14 found the tense line contested, so the record redraws it on subject and says so. The contract
   moves to 0.5.0.
-- **ADR count 71 -> 73**, across markers and prose.
+- **[ADR 0074](docs/internal/decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md),
+  accepted: `analytics-requirements-measurement-plan` does not ship as a per-feature type.** The catalog
+  describes a per-feature document, and no named source publishes one. Google's Analytics Help Center and
+  Avinash Kaushik publish a measurement plan only at business, site or store scope. The decline rests on
+  ADR 0067's own reading that the per-feature content already ships in the PRD. The business-scope reading
+  stays unswept.
+- **Admission sweep 6 recorded in [`tier2-specs.md`](docs/internal/tier2-specs.md).** It tested four
+  candidates on 2026-10-14, and the maintainer ruled on all four on 2026-10-15. `positioning-statement` is
+  specced next, `messaging-framework` is held, `metric-tree` is parked behind one template check, and the
+  per-feature measurement plan is declined by ADR 0074.
+- **Three more rulings from the 2026-10-15 sitting, recorded in place in [`tier2-specs.md`](docs/internal/tier2-specs.md).**
+  The build order for the three new specs is data dictionary, then use case, then trade study. The test
+  strategy is scoped to an organization or program, and its example is set at Acme, dated after the shipped
+  test plan.
+- **ADR count 71 -> 74**, across markers and prose.
 - **Two dated notes in [`tier2-specs.md`](docs/internal/tier2-specs.md).** The `test-strategy` admission dimension
   ran on 2026-10-14 and came back undecidable, so no spec is written and its scope returns to the maintainer.
   The `tracking-plan` spec misread Wizbrand's measurement plan as a per-feature document; the same page says
