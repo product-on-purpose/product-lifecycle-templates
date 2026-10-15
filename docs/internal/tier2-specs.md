@@ -47,6 +47,9 @@ design task" rather than "a spec-driven execution".
 | `lean-canvas` | `lean-canvas` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** Its admission rests on one vendor page, Atlassian's Confluence template. Its Solution block sits beside its Problem block from the first draft (Ash Maurya, on fill order: "There is none"), and it is revisited rather than finished, which fails `discovery-docs`' cadence clause. No contract admits it cleanly. Evidence held locally |
 | `opportunity-solution-tree` | `opportunity-solution-tree` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not admitted, and no record written.** No named source publishes it as a written document: Teresa Torres links Miro, Mural and FigJam boards, and the vendors ship boards, the shape of [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). A decline record waits until someone proposes building it. Evidence held locally |
 | `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **Built 2026-10-14**, lean and full, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/business-continuity-plan_v0.1.0.md) covers the whole build: 10,284,679 weighted, $20.57, 15 agents. Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), accepted 2026-10-13 when the maintainer approved the spec PR's merge. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
+| `trade-study` | `trade-study-options-analysis` | `decision-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) in the five-candidate admission sweep | **Not yet.** Build order is the maintainer's own preference ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)) |
+| `use-case-specification` | `use-case-specification` | `delivery-docs` | **Written 2026-10-15**; admission sources retrieved and raw-checked 2026-10-12, in the five-candidate admission sweep [below](#delivery-docs-new-member-by-amendment-the-use-case-specification-the-user-stories-guide-routes-to), with a gap-fill the same day on the Cockburn 2001 fully-dressed field set | **Not yet.** Family by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs), accepted 2026-10-15 when the maintainer approved the spec PR's merge. Its contract diff widens the membership test with a sixth verb, "elaborates" |
+| `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Not yet.** Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
 
 **2026-10-13: a five-candidate admission sweep, and the maintainer's answers the next day.** On 2026-10-12 one
 research workflow tested five queued candidates against ADR 0030's admission test and against all ten family
@@ -64,13 +67,13 @@ bundle, with the business continuity plan primary and disaster recovery as a sec
 `business-continuity-plan`, by
 [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)
 (business-continuity-plan joins standing-standards as a tool).** *(2026-10-14: built; its progress row above carries the date.)* `trade-study-options-analysis` goes to
-`decision-docs` with no contract change, in lean and full; it is not yet specced. `test-strategy` goes to
+`decision-docs` with no contract change, in lean and full; it is not yet specced. *(2026-10-15: specced [below](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) as `trade-study`, with no record needed.)* `test-strategy` goes to
 `standing-standards` in its organization-wide sense, but **its lost admission dimension runs first**, and that
-result decides whether a spec is written. `use-case-specification` and `data-dictionary` each wait for an amendment
+result decides whether a spec is written. *(2026-10-15: the dimension ran on 2026-10-14 and came back undecidable. Evidence that a test strategy is organization-wide is real but thin, evidence of a per-programme test strategy is strong and direct, and no automated fetch reached the ISO/IEC/IEEE 29119-3 clause text. No spec is written, and the scope question returns to the maintainer.)* `use-case-specification` and `data-dictionary` each wait for an amendment
 the maintainer reads as a diff. The use case's `delivery-docs` amendment adds the verb "elaborates", with a
 paragraph that limits what it admits. The data dictionary's `governance-docs` amendment admits only the narrow
 scope, the meaning of stored fields, which reverses the maintainer's first answer. Neither is specced yet. Their
-records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted.
+records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted. *(2026-10-15: both are specced below, by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs) and [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), each accepted the same day when the maintainer approved the spec PR's merge. ADR 0073 keeps the narrow scope but draws its boundary on subject rather than tense, because research on 2026-10-14 found the tense line contested; the record states the change.)*
 
 **2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`.
 
@@ -1595,7 +1598,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1348-1361`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1351-1364`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1838,7 +1841,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1485-1487` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1488-1490` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1867,7 +1870,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:531-534` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:534-537` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1931,7 +1934,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:493-508` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:496-511` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2496,7 +2499,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1486-1488`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1489-1491`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -3260,7 +3263,7 @@ Provisional, and expected to move once a build's own research runs:
   measurement plan covering "business objectives, KPI definitions, governance, and reporting logic,"
   `wizbrand.com/tutorials/analytics-measurement-plan`) describes that per-feature measurement plan, not
   the standing, cross-feature type specced here. Content breadth and cadence are separate axes, and this
-  spec draws the line by cadence.
+  spec draws the line by cadence. *(2026-10-15: Wizbrand does not describe a per-feature plan. The same page says of its measurement plan "Many teams review it quarterly", raw-checked in a 2026-10-14 admission sweep, which describes a standing document. The sentence above misreads Wizbrand on that point; the cadence line rests on Avo's branch model and this library's own POSITION, not on Wizbrand.)*
 - **Not the data dictionary (catalog 141, unbuilt).** One source draws a clean
   forward-looking-versus-backward-looking line, single-sourced but not contradicted, in three separately
   raw-checked phrases from the same page: "A tracking plan describes what you intend to track"; "A Data
@@ -4435,3 +4438,1229 @@ with every agent resolved to Sonnet. `production-readiness-review` cost $15.75 w
 whole (15 build agents). All are measured figures from `bundle-builds/INDEX.md`. A whole-bundle estimate of
 **$12 to $16 at API list rates** is reasonable on that basis. It is a projection, not a measurement, until
 `python tools/gen-bundle-build-report.py --ingest` runs against an actual build report.
+
+### decision-docs (fifth member): the trade study, in the technical sense the business-case guide already names
+
+**trade-study** (bundle id; the catalog id stays `trade-study-options-analysis`, as `north-star-metrics` kept
+`north-star-metric-definition` and `business-continuity-plan` kept `disaster-recovery-business-continuity-plan`)
+- `decision-docs`, **phase develop**, sizes **`[lean, full]`**, methodology recommended **`generic`** (see
+Metadata below), catalog id `trade-study-options-analysis` (atlas index 65, catalog_ref 66) / `catalog.md` row
+66. Catalog owner: "Architect / BA" (flagged below as unsourced). Catalog purpose: "Evaluate options against
+weighted criteria." Issue #259 (bundle: trade-study-options-analysis) tracks this build.
+
+This spec follows the model the maintainer named: the `spike-report` spec (the `decision-docs`
+fourth-member section on this page), the family's first
+Tier-2 candidate and the only other member admitted under ADR 0022 (adopt the decision-docs family
+contract)'s fourth-member clause with no contract edit. It also carries forward the two conventions the
+`business-continuity-plan` spec added most recently: a Demand subsection built from prose routing rather than
+a `future:` tag, and a sourced Section design table.
+
+#### Demand: no promise tag, and no sibling currently points here at all
+
+A grep of every `templates/*/*_meta.yaml` for a `future:` promise tag naming a trade study or an options
+analysis returned nothing. A broader grep of the same files for any live `future:` tag also returned
+nothing: no `_meta.yaml` file currently carries one. This spec does not claim to have checked every
+tag that was ever retired. It checks only the tags this reading list and this file's own history name:
+`future:spike-report`, `future:solution-brief`, `future:design-doc`, `future:rfc`,
+`future:technical-design-doc`, and the `launch-coordination-checklist` fix. All of those are accounted for.
+ADR 0053 (launch-coordination-checklist joins standing-standards as a tool) corrected that last one to
+`future:launch-coordination-checklist` before that bundle was built. So, unlike `launch-coordination-checklist`,
+there is no stale tag to correct here, and unlike `business-continuity-plan`, there is no tag to point at in
+the first place.
+
+**Unlike `business-continuity-plan`'s demand section, no sibling bundle's `related_templates` field or
+`relationships` catalog field currently names this type either.** `adr_meta.yaml`'s `related_templates` reads
+`[rfc, sdd, spike-report]`; `rfc_meta.yaml` reads `[adr, sdd]`; `sdd_meta.yaml` reads `[rfc, adr, prd]`;
+`business-case_meta.yaml` reads `[product-vision, product-strategy, product-roadmap]`. None lists a trade
+study. The demand here is prose, not a field. `business-case_guide.md`'s own routing table sends a reader here by
+name. So does `business-case_companion.md` section 8, and both `business-case` templates' own "WHAT A
+BUSINESS CASE IS, AND IS NOT" block. `business-case_guide.md:19` reads in full: "you are comparing
+technical approaches against weighted criteria, not comparing whether to invest at all. A trade study's output
+feeds into Options Considered as one input, it does not replace the case". `business-case_template-lean.md:33-34`
+carries the same boundary inside the template body itself, not only the guide: "NOT a trade study (a bounded
+technical comparison whose output feeds Options Considered as one input)". `business-case_template-full.md:38-39`
+carries it in the full variant, with "an input" in place of "one input". This is the same shape `business-continuity-plan`'s own demand section described for `runbook` and
+`production-readiness-review`: real routing, already shipped, that no gate enforces. ADR 0041 (the
+maintainer's preference sets the build order) governs when, not whether, that routing gets a bundle.
+
+#### Admission: two independently verified sources, GAO named as a neighbour only
+
+**NASA's Systems Engineering Handbook and the Federal Highway Administration's Systems Engineering for ITS
+both independently clear ADR 0030 (templating scope: a named source must publish the type as a written
+document)'s bar**, and the bar needs only one. ADR 0048 (one named source clears the admission test) already
+settled that a single qualifying source is sufficient; this candidate clears on two.
+
+NASA's Systems Engineering Handbook (SP-2016-6105 Rev 2) states in its own Glossary: "A report written to
+document a trade study." The same source adds that "the report may be a simple white paper or a more
+formally formatted document," which is the sizing evidence used below. Its Section 6.8 names a template,
+headed "Typical Information to Capture in a Decision Report," for the document a trade study produces. All
+three spans passed the 2026-10-12 recheck against the raw NASA PDF.
+
+The Federal Highway Administration's Systems Engineering for ITS, section 3.4.5, independently states:
+"Select and document the preferred candidate, typically using a trade study matrix that lists the alternatives
+on one axis." The same section states that the alternatives are compared on the basis that the evaluator should
+"compare the relative merits of alternative approaches," and that the result is a "repository of alternatives"
+for stakeholders. It also states that "Sensitivity analysis may also be used, especially with simulation," and
+names "Do Nothing" as one of the alternatives a trade study weighs. All of these spans passed the same
+recheck.
+
+**GAO's Cost Estimating and Assessment Guide (GAO-20-195G) is a neighbour, not an admitting source, by this
+spec's own ruling.** Its quotations were checked in this recheck against the primary `gao.gov` PDF. Every
+span returned HTTP 403. No Department of Energy mirror URL survives in this sweep's recorded output for this
+spec to cite. So GAO's content appears here only in paraphrase, never inside quotation marks. GAO's guide
+describes an Analysis of Alternatives process whose output is typically a single final report. That report,
+per GAO, covers roughly ten named content elements, including a sensitivity analysis and the results of an
+independent review. Those two paraphrased elements corroborate the Full-size additions below, but do not
+themselves admit them. Admission does not depend on GAO at all; two sources already independently clear the
+bar.
+
+#### Family fit: the ADR 0022 route, and why no new record is needed
+
+**Settled by the maintainer (decision 5 of the 2026-10-13 sitting): `decision-docs`, no contract change.**
+The contract's section 1 states that the "family's three roles are distinct and complementary," which read
+alone suggests a fourth role is a problem. ADR 0022 (adopt the decision-docs family contract) answers that
+reading directly. Its Consequences state: "a
+fourth (a spike report, a solution brief) would join under the same contract with no contract change unless
+it declares a different phase or size shape." `spike-report` already joined on exactly that clause, and its
+own spec in `tier2-specs.md` carries the warning this spec repeats rather than relearns: "Read the contract
+and the ADR together or not at all."
+
+**This bundle declares neither a different phase nor a different size shape.** `phase: develop` matches
+`adr`, `rfc`, `sdd` and `spike-report`. `sizes_available: [lean, full]` matches `adr`, `rfc` and `sdd`
+exactly (`spike-report` is the family's one single-size exception, for its own sourced reason). So the
+ADR 0022 clause applies on the same terms it applied to `spike-report`. This spec recommends no ADR and no
+contract edit. The precedent already set is not a one-time exception; it is a route this contract now
+supports twice.
+
+**The precedent is verifiable in the contract file itself, not only in a secondary account of it.**
+`decision-docs.md` still reads, at the top of the file: "Members at adoption: rfc, adr, sdd". That line was
+never updated when `spike-report` joined, and this spec finds no reason it should be updated now. The
+contract's own Version line still reads 0.1.0, unchanged since the 2026-07-21 adoption.
+
+**The contract file's history agrees.** Three commits have touched `decision-docs.md`: the 2026-07-21
+adoption (`2a2a5fe2`, ADR 0022), a 2026-09-21 rewrite of its status row (`722036be`, ADR 0055, retire the
+zero-fills disclosure) that left no change-note entry, and a 2026-10-12 wording clarification (`e1c5b2a1`)
+whose entry states: "No version moves, because no obligation changed." None of the three moved the version,
+and none concerned membership.
+
+**Two kinds of record, kept apart.** `spike-report` carries ADR 0048 (one named source clears the admission
+test), but that record settled its **admission** under ADR 0030, which was genuinely contested: exactly one
+source qualified, and the term's own inventors describe a spike's output as throwaway code. It is not a
+family-placement record. No member admitted under the ADR 0022 clause carries
+a family-placement record, because the clause applies itself. This candidate needs neither kind: its
+admission rests on two read sources, so no ADR 0030 ruling is in question, and its placement uses the same
+clause `spike-report`'s did.
+
+**Open question, not resolved here.** Two members, `spike-report` and now this one if built, will have
+joined `decision-docs` through the ADR 0022 clause, with no family-placement record and no version move.
+Whether that stays legible to a future reader once a third such candidate arrives is a judgment this spec
+does not make. It is named so the maintainer can decide, rather than let the same pattern repeat by default.
+
+#### Boundaries: adr, rfc, sdd, spike-report, business-case
+
+**`adr` records a decision; this type evaluates the options a decision will be made from.** `adr_companion.md`
+describes its Considered Options section as "The alternatives, by title," a prose list with no weighting or
+score. A trade study that produces a clear winner may still need an ADR written from it. That mirrors the
+relationship the contract already draws between a spike's findings and the ADR that follows. The evaluation
+and the record of the decision are not the same document, even when one leads directly to the other.
+
+**`rfc` proposes a decision and asks for feedback; its own Alternatives Considered section is argued prose,
+not a scored comparison.** `rfc_companion.md` describes it as "The options you genuinely weighed and why you
+are not proposing them, including \"do nothing.\"" The trade study and the RFC can both carry a do-nothing
+option, but the trade study's job is the weighted-criteria mechanism itself; an RFC that wants that mechanism
+can cite a trade study's output rather than rebuild it in prose.
+
+**`sdd` describes a design; its own Alternatives Considered section is the same prose shape as the RFC's.**
+`sdd_companion.md` describes it as "The other designs you genuinely weighed and why you are not proposing
+them, including \"do nothing\" or \"the obvious approach\" where those are real options." Where a design
+decision is complex enough to need weighted criteria and a scoring matrix rather than an argued paragraph,
+the trade study is the document built for that, and the SDD can cite it the way it already cites an ADR for
+a significant decision.
+
+**`spike-report` investigates an open question; a trade study scores options that are already named.** The
+`spike-report` spec in `tier2-specs.md` describes the family's fourth role, before this one, as a type that
+"investigates the question that precedes all three, and hands over evidence plus a proceed-or-not
+recommendation." A trade study starts further along: the alternatives are already identified, and the job is
+to weigh them against criteria rather than to reduce an unknown. A spike's findings can be one input a later
+trade study's criteria or scoring draws on, the same relationship the spike's own spec already draws toward
+the ADR that follows it.
+
+**`business-case` is the type that names this one, and explicitly does not do its job.** Covered fully under
+Demand above. The boundary is drawn cleanly on both sides: `business-case_companion.md` section 8 states "It
+is not a trade study: trade studies are bounded technical comparisons," and this spec's own admission section
+above shows the trade study does not do the business case's job either, because it evaluates technical
+approaches rather than an investment decision.
+
+#### Section design
+
+Five sections if lean, nine if full, in the order below. Lean's five are a strict ordered subset of full's
+nine, as contract section 3.2 requires. Full inserts two sections, Sensitivity Analysis and Risk and
+Benefit, before Recommendation, and two more, Dissent or Independent Review and References, after it. The
+Risk-and-Benefit-before and Dissent-and-References-after placement follows NASA's own Decision Report order
+structurally: NASA's named sections run Risk/Benefits before its recommendation section, and Dissent and
+References after. NASA's own template has no sensitivity section at all; placing Sensitivity Analysis beside
+Risk and Benefit, also before Recommendation, is this library's own placement, not a structural match to any
+one source, since FHWA names the section but gives it no position relative to a recommendation. This table
+keeps NASA's relative placement for the three sections NASA does order, rather than grouping all four
+full-only sections on one side of Recommendation.
+
+**NASA's Table 6.8-1 is the nearest canonical list, and this design departs from it on purpose.** Per the
+research summary of that table (its section names were not themselves raw-checked), NASA's Decision Report
+runs: Executive Summary; Problem/Issue Description; Decision Matrix Setup Rationale; Decision Matrix Scoring
+Rationale; Final Decision Matrix; Risk/Benefits; Recommendation and/or Final Decision; Dissent; References;
+Appendices. This design drops the Executive Summary and the Appendices. It splits the matrix setup into
+Criteria and Weights and a separate Alternatives section, so that the do-nothing baseline FHWA names has its
+own place. It folds the scoring rationale and the final matrix into one Scoring Matrix section. It adds
+Sensitivity Analysis, which NASA's table does not carry and FHWA does name. Each row below gives its source,
+on the pattern `business-continuity-plan`'s own Section design table used.
+
+The catalog's own `typical_sections` field reads "options, criteria, weights, scores, recommendation." That
+corroborates this shape. It does not name Problem and Decision Framing on its own, but options maps to
+Alternatives, criteria and weights map to Criteria and Weights, scores maps to the Scoring Matrix, and
+recommendation maps to Recommendation. No catalog correction follows from this; it is a consistency check,
+not a conflict.
+
+| Section | In lean? | What it is |
+|---|---|---|
+| **Problem and Decision Framing** | yes | The decision this trade study exists to inform, and who is waiting on it. Sourced structurally to NASA's own Decision Report template, whose Problem/Issue Description follows an Executive Summary this bundle does not carry, and to FHWA's framing of a trade study as comparing approaches against a named decision |
+| **Criteria and Weights** | yes | The named criteria the options will be scored against, and the weight each one carries. Sourced to FHWA's statement that evaluations are merged using weighting factors, and structurally to NASA's own named matrix-setup section, which this library does not quote directly because the section name itself was not part of the recheck-verified spans |
+| **Alternatives, Including a Mandatory Do-Nothing Baseline** | yes | Every option genuinely considered, with a named do-nothing or do-minimum option that cannot be dropped even if it is rejected in one line. Sourced to FHWA's own named "Do Nothing" alternative and its description of the matrix as a "repository of alternatives" |
+| **Scoring Matrix** | yes | The completed weighted comparison, one row per criterion, one column per option. Sourced to FHWA's instruction to "compare the relative merits of alternative approaches," and structurally to NASA's own final decision-matrix section |
+| **Sensitivity Analysis** | **full only** | How much a criterion's weight would have to move before the recommendation changes. Sourced to FHWA's statement that "Sensitivity analysis may also be used, especially with simulation." GAO's guide independently names sensitivity analysis among its required content elements. That is named here as a corroborating neighbour, paraphrased rather than quoted, because its spans did not pass this sweep's recheck |
+| **Risk and Benefit** | **full only** | The risk and benefit profile of the recommended option, named separately from the scoring criteria that produced it. Sourced structurally to NASA's own Risk/Benefits section, which NASA places before its recommendation section. GAO's guide independently names risk drivers among its required content elements, named here as a corroborating neighbour, paraphrased rather than quoted |
+| **Recommendation** | yes | The option the matrix selects, and the reasoning that depends on specific rows above it rather than restating the whole comparison. Sourced to FHWA's instruction to "Select and document the preferred candidate, typically using a trade study matrix" |
+| **Dissent or Independent Review** | **full only** | A named place for a reviewer who disagreed with the recommendation, or for an independent check on the scoring itself. Sourced structurally to NASA's own named Dissent row, which NASA places after its recommendation section. GAO's guide independently requires documenting the results of an independent review, named here as a corroborating neighbour, paraphrased rather than quoted |
+| **References** | **full only** | The sources the criteria, weights and scores actually rest on. Sourced structurally to NASA's own References section, the template's last section |
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md` and `atlas/catalog-data.json`, then regenerate the atlas:
+
+1. **`size_variant`: "M" becomes lean and full.** The maintainer's settled sizing, drawn from NASA's own
+   statement that the report "may be a simple white paper or a more formally formatted document," and from
+   GAO's and NASA's further content (sensitivity, risk and benefit, dissent or independent review, references)
+   that supports a heavier second weight.
+2. **`relationships`: add RFC and SDD, in both files.** `atlas/catalog-data.json`'s `relationships` list
+   currently reads `["ADR", "Business Case"]`; `docs/internal/catalog.md` row 66's own relationships cell
+   reads the prose "feeds ADR/Business Case." Both RFC and SDD carry their own prose Alternatives Considered
+   section, the shape this type's scored mechanism is the sourced alternative to, so both belong on this list
+   the way ADR and Business Case already do. Corrected atlas value: `["ADR", "RFC", "SDD", "Business Case"]`.
+   Corrected catalog.md prose (this spec's own proposed wording, not a quotation): `feeds ADR/RFC/SDD/Business Case`.
+3. **`owner`: "Architect / BA" is unsourced.** No admitting source in this sweep names a role for who writes
+   or owns a trade study. This spec does not invent a replacement; it flags the field as an unverified
+   attribution for the landing build to decide, the same posture the research itself took.
+4. **The `notes` column's citation, "BABOK 10.16 decision analysis," was never fetched and should not be
+   cited as support.** No research pass in this sweep or the 2026-10-12 admission sweep read BABOK's content.
+   The landing PR should either remove that citation or replace it with the two sources this spec actually
+   verifies: NASA SP-2016-6105 Rev 2 and FHWA's Systems Engineering for ITS, section 3.4.5.
+5. **Aliases: do not add `analysis of alternatives`.** That exact phrase names the investment sense in GAO's
+   and wider US defense-acquisition usage, the sense this spec and the maintainer's own ruling both exclude
+   from this bundle on purpose. Adding it as an alias would route a reader searching for GAO's Analysis of
+   Alternatives, or HM Treasury's Green Book options appraisal, to a document that explicitly does not cover
+   that ground. The catalog's existing aliases ("trade-off analysis," "decision analysis," "weighted scoring
+   matrix") stay as they are; none of them carries the same investment-sense pull.
+6. **Aliases: a misplacement worth a maintainer check, not resolved here.** The alias "decision matrix" is
+   currently assigned to the unbuilt Decision Log candidate (`decision-log`, atlas index 64, catalog_ref 65),
+   not to this type.
+   Both sources checked here, NASA (its Final Decision Matrix) and FHWA (its trade study matrix), tie a
+   scoring matrix to a trade study, not to a decision log. This spec does not move the
+   alias; it names the discrepancy the way `business-continuity-plan`'s spec named its own catalog category
+   discrepancy, for the maintainer to adjudicate.
+7. **`stage`: checked, and this is not a discrepancy.** `catalog.md`'s row reads "decision/feasibility" in the
+   stage column; `atlas/catalog-data.json`'s entry reads `"stage": "decision"`, the first of the two slashed
+   terms. `atlas/catalog-data.json`'s own top-level `stages` list is a controlled vocabulary of single
+   values, and "decision/feasibility" is not one of them. The same pattern holds for catalog entry 54
+   (Interactive Prototype), whose `catalog.md` stage reads "design/validation" and whose atlas entry reads
+   `"stage": "design"`, the first term again. `gen-atlas.py`'s own header states that `stage` is
+   hand-maintained, not generated from `catalog.md`. So this is not a code-enforced rule. But the same
+   first-term convention appears at both rows checked, which argues for an existing convention rather than
+   drift specific to this type. No correction follows.
+8. **`when_used`, `formality`, `rarity`: checked, no evidence either way.** `when_used` ("major decisions"),
+   `formality` ("standard") and `rarity` ("occasional") are not contradicted by anything NASA, FHWA or GAO
+   state, and nothing in this sweep supports a more specific claim about any of the three. They are left
+   unchanged, as a checked field rather than an unchecked one.
+9. **`methodology`: the catalog's "methodology-agnostic" supports `generic` in the meta, not a change to the
+   catalog itself.** See Metadata below.
+
+#### `pairs_with`: checked, empty
+
+`tools/known-skills.txt`, the pinned list of pm-skills skill ids this gate checks `pairs_with` against,
+carries no entry containing "trade," "options," "analysis," or "decision" in a way that names this type.
+A grep of the full 97-line pinned list for those terms returned nothing relevant. **`pairs_with: []`**,
+under the same rule `business-continuity-plan`'s spec applied: verify per member, claim only what is true of
+that member.
+
+#### Risks for the build and review
+
+1. **GAO is the single most quotable neighbour for this bundle's own argument, and it is exactly the source
+   this spec excludes from quotation.** GAO's framing of the AoA team as the party that documents the whole
+   process in one place is the cleanest one-sentence statement of why a trade study's output is a document
+   at all, and its quotations failed this sweep's recheck against the primary `gao.gov` URL. Carrying any of
+   its sentences into the companion inside quotation marks repeats a citation defect this sweep already
+   flagged, even under a paraphrase that keeps the quotation marks. Paraphrase it.
+2. **The technical-sense boundary against `business-case` is the central argument this bundle has to teach,
+   and it must not be rounded up on either side.** This spec's own Boundaries section shows the boundary
+   drawn cleanly by sources on both documents' own existing text. A companion that treats the boundary as
+   settled by this library's own prior sentence alone, rather than by NASA's and FHWA's independent technical
+   framing, overstates how externally grounded the line is.
+3. **Four cross-references, not three.** Contract section 4 requires each member's companion to place itself
+   correctly against the other members. With a fourth member already admitted (`spike-report`) and this as
+   the fifth, this bundle's companion must place itself against `adr`, `rfc`, `sdd` and `spike-report`, not
+   only the original three. `spike-report`'s own guide and example both already place it against all three
+   original members; this spec has not read `spike-report`'s own companion file directly, so it names the
+   pattern its guide and example show, not that file, as the precedent.
+4. **The example-independence rule applies, and the scenario proposed below has not been cross-checked for
+   proper nouns.** Contract section 4, the distinct-jobs rule, requires decision-docs examples to be
+   deliberately independent, each a different real decision, and `tools/check-example-independence.py`
+   enforces it. **Correction to a number the `spike-report` spec itself carries wrong**: that spec's own
+   "Two things landing this bundle would close elsewhere" subsection cites "Contract section 5" for this same
+   rule. Section 5 is the shareable-boundary rule; the distinct-jobs rule, which is what both specs actually
+   mean, is section 4. This spec cites it correctly and flags the inbound error rather than repeating it. The
+   build workflow's
+   templates stage has repeatedly copied a worked example's own scenario into the template's GOOD and WEAK
+   text in other bundles; once an example exists for this one, grep the drafted templates for its proper nouns
+   before review, the same practice `production-readiness-review`'s and `business-continuity-plan`'s specs
+   both name.
+5. **The `size_variant` correction is uncontested here but not yet applied anywhere else the catalog repeats
+   it.** `docs/internal/buildout-specs.md` or any other spec sheet that still quotes `size_variant: M` for this
+   type should be checked and corrected in the same change, per decision-procedures.md procedure 1's own
+   instruction to correct every copy.
+
+#### The worked example: an independent scenario, not a chain onto a sibling's
+
+**Contract section 4, the distinct-jobs rule, requires decision-docs examples to be deliberately independent,
+each a different real decision, because the family's teaching value is the distinction between roles, not
+one thread.**
+`spike-report`'s own example already demonstrates this at the family level: it is set at a fictional company,
+Riverland Sensing, built specifically so it does not chain onto the Acme Analytics scenario the `adr`, `rfc`
+and `sdd` examples share. This spec follows the same rule and proposes a scenario independent of all four
+existing members, Acme Analytics and Riverland Sensing both.
+
+**Proposed scenario (this spec's own proposal, not drawn from any source): a fictional logistics company,
+working name Thornwell Freight, choosing a message-ingestion technology for GPS telemetry from its truck
+fleet.** The decision: replace or keep the current nightly batch upload of GPS pings as flat files, against
+three live alternatives (a self-managed Kafka cluster, a managed streaming service, and a third broker). The
+mandatory do-nothing baseline is keeping the current nightly batch, named and scored rather than silently
+dropped, on the same evidence FHWA names for keeping a do-nothing option in the matrix. Criteria would plausibly
+include data latency, durability under node failure, operational burden on a small team, cost at the fleet's
+projected scale, and the team's existing familiarity with each option. Full size would add three things. A
+sensitivity check on the operational-burden weight, the criterion most likely to move the result. A named
+risk and benefit for the recommended option. A one-line dissent from a reviewer who weighted cost higher.
+
+**Why this scenario and not another.** It is technical, scoring-driven, and recognizable to a reader of this
+library without requiring unfamiliar domain knowledge, matching the admitting sources' own systems-engineering
+and infrastructure register. It does not reuse any sibling's own content: it is not Acme Analytics' Saved
+Views chain and not Riverland Sensing's firmware spike. Thornwell Freight is a new, independent fictional
+company, invented for this bundle alone. The exact dates, names and figures are a build decision, the same
+stance `business-continuity-plan`'s spec took toward its own worked example.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `decision-docs` | ADR 0022 (adopt the decision-docs family contract)'s fourth-member clause, maintainer decision 5 |
+| `phase` | `develop` | Contract-gated; matches all four existing members |
+| `sizes_available` | `[lean, full]` | Maintainer's settled sizing; catalog correction 1 above |
+| `bundle_id` | `trade-study` | This spec's recommendation. The catalog id stays `trade-study-options-analysis`, the shape `north-star-metrics` and `business-continuity-plan` both already kept |
+| `status` | `beta` | Every bundle |
+| `methodology` | `generic` (recommended) | The catalog's own "methodology-agnostic" supports this value, and it matches `adr`, `rfc` and `sdd`'s declared methodology. The contract's methodology row is descriptive, not gated, so this is a recommendation, not a requirement |
+| `pairs_with` | `[]` | Checked against `tools/known-skills.txt`, 2026-10-14; no pinned skill id names this type |
+| `related_templates` | `[adr, rfc, sdd, spike-report]`, inline | Its four siblings, the same pattern `spike-report_meta.yaml` used for its own three |
+| `aliases` | keep `trade-off analysis`, `decision analysis`, `weighted scoring matrix`; do not add `analysis of alternatives` | Catalog correction 5 above |
+
+#### What landing this bundle closes elsewhere
+
+1. **The catalog entry**, per the corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+2. **This page's Progress table**: the `trade-study` row's Built column, and an inline dated note in the
+   2026-10-13 sweep paragraph.
+3. **Issue #259 (bundle: trade-study-options-analysis)** closes with the build PR.
+4. **No sibling bundle's forward reference is resolved by this landing**, unlike `business-continuity-plan`'s
+   landing against `runbook` and `production-readiness-review`. No sibling currently names this type in its
+   own `related_templates` field. Whether `adr`, `rfc`, `sdd` or `business-case` gain a direct, reciprocal
+   link to this bundle is a build decision this spec does not require.
+5. **The hand-maintained family lists, beyond the usual count sweep.** `README.md` line 176 heads the family
+   "`decision-docs` (four bundles, the family complete)", and line 178 lists four jobs; both must gain the
+   trade study. `templates/README.md` lists the family's four members, and `STATE.md` names the family
+   "**complete**" with four members. Each must name the fifth.
+
+#### What the build would cost
+
+No build has run for this type. This is projected from the family's own most recent member and the library's
+two most recent two-size builds, all measured figures from `bundle-builds/INDEX.md`. `spike-report`, the
+family's only other member admitted under the ADR 0022 (adopt the decision-docs family contract) clause,
+cost $33.21 whole (15 agents, single size). The two most recent
+two-size builds cost less: `business-continuity-plan` cost $20.57 whole (15 agents), and `problem-statement`
+cost $19.97 whole (18 agents). `north-star-metrics`, a two-size floor build, cost $9.73 (9 agents). A
+whole-bundle estimate of **$14 to $21 at API list rates** is reasonable on the two-size precedents.
+`spike-report`'s higher figure has a recorded cause: `.claude/commands/build-bundle.md` states that it and
+`test-summary-report` were "both drafted on Opus by per-bundle scripts that pinned no model", while the
+current workflow pins Sonnet. It is a projection, not a measurement, until
+`python tools/gen-bundle-build-report.py --ingest` runs against an actual build report.
+
+### delivery-docs (new member, by amendment): the use case specification the user-stories guide routes to
+
+**`use-case-specification`** - `delivery-docs`, **`phase: deliver`**, sizes **`[lean, full]`**, methodology
+**`methodology-agnostic`** (set at build from the admitting sources' lineage; see catalog correction 2
+below), catalog id `use-case-specification`, catalog name "Use Case specification", aliases `use case`,
+`use case model`. Catalog owner: BA. Purpose: "Describe actor-system interactions to achieve a goal"
+(`atlas/catalog-data.json`, id `use-case-specification`, and `docs/internal/catalog.md:72`, row 35; both verbatim). GitHub
+issue **#254 (bundle: use-case-specification)**.
+
+#### Demand: the sentence this library already ships, with nothing behind it
+
+`templates/user-stories/user-stories_guide.md:15` states, under "When NOT to use": "You need exhaustive
+actor-system flows. Use a use-case specification." That sentence is live in the shipped bundle today, and
+no bundle named "use-case specification" exists for it to point to. The companion repeats the same boundary
+from its own side: `user-stories_companion.md:151-153` states, "A use case documents an actor-system
+interaction in full (main and alternate flows); a story is a thin slice that triggers a conversation," and
+recommends, "prefer stories for iterative delivery; reserve use cases for contexts that genuinely need
+exhaustive flow documentation." The demand is routing prose, not a promise tag: no `future:` tag names
+this type (a grep of every `_meta.yaml` for a tag naming "use case" or "use-case" returns nothing), so no tag
+needs correcting. The demand is the guide's own sentence, already read by every user of a shipped bundle.
+
+#### Admission: four sources, each already fetched and raw-checked
+
+Every quotation below passed the recheck in
+`_local/research/2026-10-12_admission-sweep-5/recheck-out.json` on 2026-10-12.
+[ADR 0048 (one named source clears the admission test)](decisions/0048-one-named-source-clears-the-admission-test.md)
+requires only one; this candidate clears on four, independent of the family question.
+
+| Source | What it publishes | Quotation (passed the recheck) |
+|---|---|---|
+| Alistair Cockburn, Basic Use Case Template (HaT TR 96.03a, 1998), University of Otago mirror | A titled, numbered document template, in a plain-text and a table rendering, with a worked example | "You have permission to copy and distribute the documents as long as you reference the source of the originals" |
+| Karl E. Wiegers, Use Case Template (Process Impact, 1999, v1.0) | A standalone, field-by-field fill-in template | "Permission is granted to use, modify, and distribute this document" |
+| IBM/Rational, Use-Case Specification: \<Use-Case Name\> (Rational Unified Process template), university mirror | A sectioned specification document with named flow sections | section headings "Basic Flow", "Alternative Flows", "Extension Points" |
+| Alistair Cockburn, Writing Effective Use Cases, pre-publication draft #3 (dated 2000.02.21; published by Addison-Wesley, 2001) | States the formality scheme directly, in the author's own words | "A casual use case is one written in simple, paragraph, prose style" and "A fully dressed use case is written with one of the full templates" |
+
+**Cockburn's own 1998 field list is read in full, not reconstructed.** The Otago mirror and an independent
+second mirror (Bentley University) both confirm the same field set by direct read: a characteristic-information
+block (Goal in Context, Scope, Level, Preconditions), a Main Success Scenario, Extensions, and an optional
+closing block. The field-name spans "Goal in Context", "Success End Condition", "Failed End Condition",
+"Primary Actor", "Trigger", "Sub-Variations", "Superordinate Use Case", and "Minimal Guarantee" each passed
+the recheck against one or both mirrors. Scope, Level, Preconditions, and the closing optional block's own
+field names (priority, performance target, frequency, channel to actor) were read directly in the full
+template text but were not individually submitted to the recheck, so they are reported here without
+quotation marks.
+
+**What was never read.** "Use Case 24 Fully Dressed Use Case Template," the heading on pages 119 to 120 of Cockburn's
+*Writing Effective Use Cases* (Addison-Wesley, 2001), was never read. Every Internet Archive copy
+(`writingeffective0000cock`, `writingeffective00cock`, `writingeffective0000alis`) is a lending-restricted
+item, confirmed via `archive.org/metadata`, and no borrow credential was available in either research pass.
+A 2026-10-12 gap-fill read a free Pearson sample-pages PDF for the same ISBN instead, which carries the
+book's table of contents, index, preface, and chapter 3 body text verbatim, but not the pp.119-120 template
+box itself. That PDF confirms, by direct read: the table of contents heading reads "Use Case 24 Fully
+Dressed Use Case Template" at page 119; the preface states, in Cockburn's own words, that the 2001 book
+"led to the explanations in this book and to the Stakeholders and Interests model, which is a new idea
+presented here" (passed the recheck); and the book carries a dedicated section headed "6.2 Minimal
+Guarantees" (also passed). The same gap-fill confirmed, by a direct text search of the full 1998 template
+(not a search, a full read), that the phrase "Stakeholders and Interests" does not appear there at all,
+which corroborates the preface's own "new idea" claim rather than contradicting it. So the fully-dressed
+field set used in Section design below rests on this combination: the 1998 template (read in full), the
+2001 preface and index (read in full), and converging secondary field lists, not on the literal pp.119-120
+box, which this library has never seen. Any companion or research-log entry for this bundle must state
+that distinction exactly this way, not round it up to "read."
+
+#### Family fit: the amendment, the sixth verb, and what it admits
+
+**No contract admits this type as written.** A 2026-10-12 research pass tested it against all ten family
+contracts. Nine exclude it outright on their own membership clause: `decision-docs`, `discovery-docs`,
+`qa-docs`, `governance-docs`, `process-docs`, `standing-standards`, `strategy-docs`,
+`experimentation-docs`, and `communication-docs`. Only `delivery-docs` offers even a strained fit, and the
+research that found that strain is explicit that a maintainer could just as reasonably read it as
+excluding the type too, since none of the five verbs it carried at the time (defines, decomposes, verifies,
+changes, announces) cleanly names what the type does. **Admitting it therefore
+widens a membership test**, the same shape
+[ADR 0060 (change-request joins delivery-docs)](decisions/0060-change-request-joins-delivery-docs.md)
+recorded for the fifth verb, "changes". It is the fourth widening of a membership test in the library, after
+ADR 0060,
+[ADR 0067 (tracking-plan joins governance-docs as a sixth member)](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)
+and [ADR 0070 (north-star-metrics joins strategy-docs as a fifth member)](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md).
+
+**The maintainer chose the verb "elaborates" on 2026-10-13**, after asking whether "extends", "expands" or
+"clarifies" would serve better. The membership clause's verbs become, in this order: "defines, decomposes,
+elaborates, verifies, changes, or announces a unit of product work." The chain sentence gains one link,
+placed after the stories and before the acceptance criteria: a use case specification elaborates one
+actor's full path through the system to reach a goal, including alternative and exception flows.
+
+**What "elaborates" admits, and what it does not.** This is the question the maintainer's sitting note
+raised ("clarify more what is intended, gained, and the impact of "elaborates"?"), and ADR 0072 answers it
+in the shape of ADR 0060's own equivalent passage. Three things, stated plainly:
+
+1. **What the verb is intended to admit.** A document that walks one named actor through a complete
+   interaction with the system toward one goal: a main success scenario, stated as a numbered sequence of
+   steps, plus the alternative and exception paths that branch off it and either rejoin the main scenario
+   or end it. It does not admit a diagram, a board, or a live tool schema; the admission section above
+   confirms all four qualifying sources ship a written, sectioned document, not a picture.
+2. **What the library gains.** `templates/user-stories/user-stories_guide.md:15` already tells a reader who
+   needs "exhaustive actor-system flows" to use a use-case specification. The library gains the one thing
+   that sentence has promised and not delivered since the guide shipped: a document that actually carries a
+   main success scenario and its numbered extensions, rather than a story's single-sentence goal or a
+   checklist of pass/fail criteria.
+3. **The impact on existing members.** No existing member's placement or obligations change. The
+   membership clause gains one word and the chain sentence gains one clause, the same shape ADR 0060 used
+   for "changes"; `user-stories`, `acceptance-criteria`, `epic`, and `prd` keep their own sections,
+   obligations, and chain positions exactly as they stand today. Whether any of their companions gains a
+   line naming the new neighbour is a build decision, not one this record settles, following the precedent
+   [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md) and
+   [ADR 0070 (north-star-metrics joins strategy-docs as a fifth member)](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)
+   both set: neither amendment swept an existing member's companion.
+
+**The nearest neighbour kept out: `user-flow-task-flow`, placement deferred.** Its catalog entry
+(`docs/internal/catalog.md:100`, row 57) states its purpose as "Map the steps and decisions a user takes
+through a task", at category "Design / Architecture" and stage "design", and its aliases are "flow diagram"
+and "wireflow". A naive admission test, "one actor, one goal, step by step", would admit this type too. The
+exclusion rests on what the catalog says a user flow is, a design artifact drawn as a diagram, not on the
+actor-goal framing. A user flow written out as text is the case this boundary leaves open for that type's
+own placement. Nothing in this record places `user-flow-task-flow` anywhere; its family and axis stay open
+for a later candidate pass.
+
+**The closest shipped shape kept out: `test-case`.** The contract paragraph also excludes a document that
+checks a path rather than specifying it, which `qa-docs` carries as `test-case`. The Boundaries section
+below gives the reason.
+
+#### Boundaries: six siblings kept distinct, and one kept out
+
+- **`user-stories`.** The demand source and the closest sibling. `user-stories_companion.md:151-153`
+  already states the boundary from its own side (quoted above): a use case documents the interaction in
+  full; a story is a thin slice that starts a conversation. The two are not duplicates; a shipped bundle
+  already says so.
+- **`acceptance-criteria`.** Its full template carries a "Scenarios (Given / When / Then)" section and an
+  "Edge cases and negative paths" section (both verbatim headings, `acceptance-criteria_template-full.md`).
+  Those are discrete, markable pass/fail conditions, not a sequential actor-system flow with branching
+  extensions that rejoin or end a main scenario. A use case specification is the flow those conditions are
+  later written against; neither replaces the other, and the worked example below shows the hand-off
+  directly.
+- **`epic`.** Its full template carries a "Child Stories" table and an "Out of Scope" section (both
+  verbatim headings, `epic_template-full.md`). An epic groups a body of work large enough to need
+  decomposing; it does not walk one actor through one goal step by step.
+- **`prd`.** Its full template's "UX and design" section (verbatim heading, `prd_template-full.md:177`)
+  covers key flows and every state (empty, loading, error) for a whole feature, at the altitude of a
+  product decision. A use case specification elaborates one actor's one goal at a finer grain, after the
+  PRD has already decided what the feature is.
+- **`test-case`.** Its full template shares the closest structural shape of any shipped sibling:
+  "Preconditions and Test Data," "Steps and Expected Results," and "Postconditions and Teardown" (verbatim
+  headings, `test-case_template-full.md`). A test case checks one specific path, written from a test-design
+  standpoint; a use case specification elaborates the actor's own goal-directed interaction, and is one
+  thing a test case may later be written against. The contract's new paragraph names this exclusion.
+- **`sdd`.** Its full template's "The Design" section (verbatim heading, `sdd_template-full.md:81`) documents
+  the technical architecture that satisfies a set of requirements: components, data flow, interfaces. A use
+  case specification stays at the actor's altitude throughout; it names what the system does for the actor,
+  never how the system is built to do it. This is this library's own position, not a sourced finding; no
+  source read for this candidate addresses the use-case-versus-design-document boundary directly.
+- **`user-flow-task-flow` (kept out, placement deferred).** See Family fit above.
+
+**Distinctness holds on real flow-depth content, but it is genuinely contested, not settled.** A reader
+could reasonably argue the overlap with `acceptance-criteria`, `epic`, `prd`, and `test-case` runs deeper
+than the paragraphs above allow; none of those four shipped bundles' example content was re-read against
+the full fully-dressed field set in this pass. The boundary this spec draws rests on structural comparison
+of headings and on the library's own shipped boundary sentence (`user-stories_companion.md`), not on a
+fresh content-level audit of all four.
+
+#### Formality and sizes: casual and fully dressed, not brief and not S/M
+
+Cockburn's own sources name three formality levels, not the library's usual lean/full pair. His
+pre-publication draft defines the third, lowest one directly: "The brief of a use case is a 2-6 sentence
+description of the use case behavior" (passed the recheck). That is a paragraph, not a fillable template at
+all, and it sits below any document this library builds. The two that remain are the two the quoted
+admission section above already names: "casual" ("written in simple, paragraph, prose style") and "fully
+dressed" ("written with one of the full templates"). This bundle ships **`[lean, full]`**: `lean` carries
+Cockburn's casual form, `full` carries the fully-dressed field set reconstructed in the Admission section
+above. The guide must give Cockburn's own names beside the library's `lean`/`full` labels, the same
+accommodation [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)'s
+spec made for the library's own section groupings against SIMM 5325-A's fourteen.
+
+**A note on sourcing this naming decision.** An earlier research document in this sweep
+(`_local/research/2026-10-12_admission-sweep-5/family-question.md`) describes the catalog's current sizing
+as "brief and fully-dressed." That phrase does not appear in either machine artifact: `docs/internal/catalog.md:72`
+and `atlas/catalog-data.json` (id `use-case-specification`) both carry the field `size_variant: S/M`, not a brief/fully-dressed
+pair. The correction below is unchanged either way: name the two shipped sizes `casual` and `fully dressed`,
+sourced to Cockburn directly, not `S/M` and not any brief/fully-dressed pairing this repository's own
+catalog files do not actually carry.
+
+#### Section design
+
+| Section | In lean? | What it is, with sourcing |
+|---|---|---|
+| **Title and Actor** | yes | The use case's name and its Primary Actor, the one role whose goal the case serves. Sourced to Cockburn's 1998 numbered-use-case header and its "Primary Actor" field; the field name passed the recheck |
+| **Goal in Context** | yes | What the actor is trying to accomplish, and the circumstance that brings them to it. Sourced to Cockburn's 1998 "Goal in Context" field, read and passed |
+| **Scope and Level** | **full only** | Scope: whose system this use case is about (the system under design, or a business process around it). Level: whether this is a summary case or one step inside a larger one. Both are 2001-book-era refinements over the 1998 template's plainer "Scope" field; reconstructed per the Admission section's gap-fill, not read verbatim from pp.119-120 |
+| **Preconditions and Trigger** | yes | What must already be true before this case can start, and the event that starts it. Sourced to Cockburn's 1998 "Preconditions" and "Trigger" fields, both read and passed |
+| **Main Success Scenario** | yes | The numbered sequence of steps that reaches the goal when nothing goes wrong. Sourced to Cockburn's 1998 Main Success Scenario section and to the RUP template's "Basic Flow" heading, both read and passed |
+| **Extensions** | **full only** | Numbered branches off the main scenario: alternative paths that still reach the goal, and exception paths that end the case instead. Sourced to Cockburn's 1998 "Extensions" section and the RUP template's "Alternative Flows" and "Extension Points" headings, all read and passed. Lean folds a short prose note of the most important exception into the Main Success Scenario section rather than carrying a separate section, the same collapsing move `business-continuity-plan`'s spec made for its own lean variant |
+| **Postconditions (Success and Failed End Condition)** | yes | What is guaranteed true when the case ends, on the success path and on a failed one. Sourced to Cockburn's 1998 "Success End Condition" and "Failed End Condition" fields, both read and passed. The 2001 book renames these "Minimal Guarantee" and a success guarantee, per the book's own "6.2 Minimal Guarantees" section (read and passed), and the guide names both terms |
+| **Related Information** | **full only** | The 1998 template's optional closing block: priority, performance target, frequency, and any superordinate or subordinate use case this one relates to. Sourced to Cockburn's 1998 template's own optional block, read in full; its field names "Sub-Variations" and "Superordinate Use Case" passed the recheck, and the remaining field names in that block (priority, performance target, frequency, channel to actor) were read but not individually submitted to the recheck |
+| **Open Issues and Schedule** | **full only** | Anything still undecided about this flow, and, where it matters, a due date. Sourced to the 1998 template's own closing fields of the same name, read in full but not individually submitted to the recheck |
+
+**A related-business-rules section is recommended OMITTED, not labeled as this library's own addition.**
+This candidate's own type description, the one the admission sweep researched against, names related
+business rules as a core component, but no field by that name appears in any of the four admission
+sources, in the 1998 template's full text, or in the 2001 book's index or table of contents; the index's
+only "business rules" entry sits under the book's Extensions chapter, about brainstorming alternative
+conditions during authoring, not under a template section. The one secondary illustration that uses a
+related-business-rules heading at all is a conference slide's own worked example, not a template. Two
+options exist: omit it, or carry it labeled explicitly as
+this library's own addition. **Recommendation: omit.** Labeling it as the library's own addition would make
+this the one section in the whole bundle that rests on no source at all, inside a bundle whose entire
+admission case is built on fidelity to four named templates; a reader who needs rule-level detail already
+has `epic`'s "Out of Scope" section or `acceptance-criteria`'s "Out of scope and notes" section for it. If a
+dedicated business-rules artifact is ever wanted, the library's own precedent for `solution-brief` (the
+2026-09-20 note in this page's Progress section) is to let it enter through the front door, a research pass
+and a catalog entry, rather than ride in as an unsourced section of a different bundle.
+
+The lean variant's five sections (Title and Actor, Goal in Context, Preconditions and Trigger, Main Success
+Scenario, Postconditions) are a strict ordered subset of the full variant's nine, as contract section 3.2
+requires. Full inserts Scope and Level, Extensions, Related Information, and Open Issues and Schedule, each
+at the point in the sequence the table above places it.
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md` and `atlas/catalog-data.json`, then regenerate the atlas:
+
+1. **`methodology`: `Waterfall/UP/RUP` is incomplete.** No source read for this candidate ties the type to
+   Waterfall. Cockburn and Wiegers are both methodology-agnostic practitioner lineage, and Jacobson's
+   current edition (Use-Case 3.0, 2024) is explicitly agile. The landing PR replaces the value with one the
+   admitting sources support, descriptive rather than gated, per `delivery-docs.md` section 2.
+2. **`size_variant`: `S/M` does not name the two sizes this bundle ships.** Three formality levels exist in
+   Cockburn's own scheme (brief, casual, fully dressed), and even collapsed to two for this library's
+   convention, `S/M` does not map onto `casual` and `fully dressed` without a stated rule. The landing PR
+   corrects the field to name the two sizes this bundle actually ships.
+3. **`relationships`: empty today, and every boundary source points at one neighbour.** `use-case-specification`'s
+   `relationships` field is `[]` in both machine artifacts, while `user-story`'s own entry already carries
+   `["Epic", "Sprint Backlog"]`. Every source that discusses the boundary in this sweep contrasts the type
+   directly with the user story, including this library's own shipped `user-stories_companion.md`. The
+   landing PR adds `"User Story"` to this type's `relationships` field. It does not add a reciprocal entry
+   to `user-story`'s own field; that is a build decision, not one this spec settles.
+4. **`use case model` stays an alias, with the distinction stated in prose, not resolved by dropping it.**
+   The alias most naturally names the UML use-case diagram, which this sweep's sources treat as a separate,
+   out-of-scope artifact from the written specification this bundle templates. The same precedent
+   `business-continuity-plan`'s spec applied to "DR plan" and "BCP" applies here: keep it, because a reader
+   genuinely types it to search for this document, and state the distinction in the companion rather than
+   let the alias imply the two are the same artifact.
+
+#### `pairs_with`: checked, empty
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'` returned 68 skill names on
+2026-10-14. No name contains "use-case," "use case," "uc-," or "usecase." The closest-sounding names,
+`deliver-acceptance-criteria` and `deliver-user-stories`, produce and consume the two siblings this bundle
+is distinguished from, not this type, and `tools/known-skills.txt` lists no use-case skill.
+**`pairs_with: []`**.
+
+#### Risks for the build and review
+
+1. **The fully-dressed field set is reconstructed, not read verbatim.** The Admission section states this
+   exactly; a companion or research-log that writes as if pp.119-120 were read, rather than inferred from
+   the TOC, index, preface, and the 1998 template's own confirmed absence of the 2001-era fields, overclaims
+   the one thing this candidate's research could not settle.
+2. **A related-business-rules section must not be attributed to Cockburn.** No source supports it as a
+   named field. If a reviewer or a drafting agent adds it anyway because the type description implied it,
+   that is the unsourced-confidence defect this library already tracks, and it fails review on sight.
+3. **Family fit is strained, and the companion must say so plainly.** The research that found even a
+   strained fit is explicit that a maintainer could as reasonably read `delivery-docs` as excluding this
+   type. A companion that presents "elaborates" as an obvious reading, rather than the library's own chosen
+   widening, overstates what ADR 0072 actually decided.
+4. **Distinctness is contested, not settled, against `acceptance-criteria`, `epic`, `prd`, and `test-case`.**
+   The Boundaries section above draws each line from headings and from the library's own shipped boundary
+   sentence, not from a fresh content audit of all four siblings' example files. A companion that claims a
+   clean, fully resolved boundary with all four overclaims what this pass actually checked.
+5. **The build workflow's templates stage has repeatedly copied a worked example's own scenario into a
+   template's GOOD and WEAK text.** The same practice named in `production-readiness-review`'s and
+   `business-continuity-plan`'s own specs: grep the drafted templates for the example's proper nouns (Saved
+   Views, Recurring Analyst, Priya Nair) before review.
+6. **The BABOK contradiction from the research must not be cited either way.** One research dimension flags
+   BABOK's Use Cases and Scenarios technique `publishes_type_as_written_document: false`; the other flags
+   the same unread source `true`. Neither flag should be treated as settled, and BABOK should not appear in
+   this bundle's companion as a qualifying or a disqualifying source.
+
+#### The worked example: elaborating a story this library has already shipped twice
+
+**The scenario is the one the delivery-docs family already shares, not a new one.** The use case elaborates
+the "set a default saved view" story, the full card in `templates/user-stories/user-stories_example.md`
+("As a recurring analyst, I want to set one of my saved views as the default for a dashboard, so that the
+dashboard opens the way I work instead of in its generic default state"), which is also the story
+`templates/acceptance-criteria/acceptance-criteria_example.md` already writes Given/When/Then scenarios and
+edge cases against, and which the epic example reserves as child story `SV-4` ("Set one view as the
+dashboard's default (FR-3)").
+
+**Chronology: after the story exists, before the acceptance criteria are written.** `created: "2026-06-20"`,
+`updated: "2026-06-30"` (matching the shared `updated` date most of this family's examples carry). That
+sits after `user-stories_example.md` (created 2026-06-18, the story this case elaborates) and before
+`acceptance-criteria_example.md` (created 2026-06-22, which this case feeds). That ordering matches the
+chain position ADR 0072 gives the type: between the point the story exists and the point the acceptance
+criteria confirm it.
+
+**Primary Actor: the Recurring Analyst, the same persona `prd_example.md` already names.** Goal in Context:
+switch to a saved view and make it the one that loads automatically, so the daily re-filtering tax
+disappears. Main Success Scenario: open the Views control, select a saved view, confirm setting it as
+default, and on the next dashboard open that view loads instead of the generic default. Extensions, each
+tied to a fact a sibling document already states rather than invented fresh: a referenced filter has since
+been deleted (`acceptance-criteria_example.md`'s own edge case: "it loads the still-valid filters and shows
+a clear message naming the missing filter"); no default is currently set (the same example's second edge
+case, loading the generic default with no error).
+
+**What it must not do.** It must not invent a shared-view permission edge for this case. Both
+`acceptance-criteria_example.md` ("Does not cover sharing, which has its own story") and the epic example
+(sharing is child story `SV-5`, not `SV-4`) scope the default-setting story to the owner's own views only;
+a use case for sharing is a separate case, for a later story, not this one's extension.
+
+**Links.** Upstream: the PRD (FR-2, FR-3), the epic (child stories SV-3 and SV-4), and the user story it
+elaborates. Downstream: `acceptance-criteria_example.md`, whose Given/When/Then scenarios and edge cases
+this case's own extensions feed directly, stated as a link in both directions per contract section 4's
+shared-example rule.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `delivery-docs` | ADR 0072, amending the membership test with the verb "elaborates" |
+| `phase` | `deliver` | The only value the contract allows for this family |
+| `bundle_id` | `use-case-specification` | Same as the catalog id; no divergence is proposed, unlike `north-star-metrics` or `business-continuity-plan` |
+| `sizes_available` | `[lean, full]` | Cockburn's casual and fully dressed; see Formality and sizes above |
+| `status` | `beta` | Every bundle |
+| `methodology` | `methodology-agnostic` (set at build) | Catalog correction 1 above; no source ties the type to Waterfall |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main`, 2026-10-14; see above |
+| `related_templates` | `[user-stories, acceptance-criteria, epic, prd]`, inline | The demand source and boundary sibling, the downstream sibling the worked example feeds, and the two upstream siblings that open the chain before this case elaborates one of their stories |
+| `aliases` | `use case` kept; `use case model` kept, with the UML distinction stated in the companion | Catalog correction 4 above |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `delivery-docs` contract's membership clause**, which moves to `0.3.0` and lands with ADR 0072 in
+   the same change as this spec.
+2. **`templates/user-stories/user-stories_guide.md:15`'s routing sentence becomes resolvable.** The build PR
+   must update that line so "use a use-case specification" links to the new bundle rather than naming a
+   type the library does not ship. Whether `user-stories_companion.md:151-153` gains the same link is a
+   build decision, following the precedent that neither ADR 0067 nor ADR 0070 required an existing
+   companion to change.
+3. **The catalog entry**, per the four corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+4. **This page's Progress table**: the `use-case-specification` row's Built column, and an inline dated
+   note in the 2026-10-13 sweep paragraph.
+5. **GitHub issue #254 (bundle: use-case-specification)** closes with the build PR.
+
+#### What the build would cost
+
+No build has run for this type. This is projected from two groups of measured figures in
+`bundle-builds/INDEX.md`. Within `delivery-docs` itself: `change-request` cost $14.41 whole (15 agents,
+`[lean, full]` provisional), and `announcement-internal-comms` cost $16.99 whole (15 agents, single size).
+Among the library's most recent two-size, whole-build Tier-2 members outside this family:
+`business-continuity-plan` cost $20.57 whole (15 agents), and `problem-statement` cost $19.97 whole (18
+agents). `north-star-metrics`, at $9.73 (9 agents), is excluded from the central estimate because its
+report is explicitly a **floor**, covering drafting and review only, not the whole build. On these four
+measured, whole-build figures, a projected range of **$14 to $21 at API list rates** is reasonable. It is a
+projection, not a measurement, until `python tools/gen-bundle-build-report.py --ingest` runs against an
+actual build report.
+
+### governance-docs (seventh member, by amendment): the data dictionary, scoped to what a dataset's fields mean
+
+**`data-dictionary`** - `governance-docs`, **`classification: utility`**, sizes **`[lean, full]`**,
+methodology set at build from the admitting sources' lineage (the catalog's `methodology-agnostic` is not
+contradicted by anything retrieved; see Catalog corrections), catalog id `data-dictionary` (catalog 141 in
+[`catalog.md`](catalog.md); atlas index 140 in
+[`atlas/catalog-data.json`](../../atlas/catalog-data.json)), catalog name "Data Dictionary", aliases
+(catalog, both flagged for correction below) `metric definitions`, `data catalog entry`. Catalog owner:
+`Data / Analytics Eng`. Catalog purpose (flagged below): "Document the meaning and usage of events and
+metrics." Catalog contents (flagged below): "event name, description, properties, usage, owner." Catalog
+`stage`: measurement. Catalog `formality`: standard. Catalog `rarity`: occasional. Catalog `size_variant`:
+`S/M`. Catalog `relationships`: `[Tracking Plan]`. `tier: 2`, `tier_inferred: true`, `must_have: false`,
+`built: false`, `state: candidate`.
+
+**The bundle id is `data-dictionary`, the same as the catalog id, with no reason found to differ.** This
+follows the same bare-name convention `tracking-plan`, `risk-register`, `raid-log`, `kpi-dashboard` and
+`issue-log` already use; it is not a case needing a distinct bundle id the way `change-log`,
+`north-star-metrics` and `business-continuity-plan` each needed one.
+
+**Scope, settled by the maintainer before this spec was written, and not reopened here.** This bundle
+documents what the fields of a dataset or table mean. Its Purpose and Boundary section, in both sizes,
+excludes by name event cataloguing (the tracking plan's job, [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)
+(tracking-plan joins governance-docs as a sixth member)) and metric-formula locking (the KPI dashboard's
+own Metric Definitions section). The catalog's own wider framing, its purpose field "Document the meaning
+and usage of events and metrics", is not built. This spec does not reopen the scope; it does change, and states plainly that it
+changes, the reasoning the scope condition rests on. See the boundary subsection below.
+
+#### Demand: named as an unfilled gap, four times, by the sibling it stands next to
+
+No shipped bundle **routes to** a data dictionary as the one document something else is missing (a `future:` tag or an explicit hand-off); the pattern is
+closer to `tracking-plan`'s own demand section than to `change-log`'s, because the gap is named inline
+rather than promised by a `future:` tag. A grep across every tracked file in `templates/` and
+`docs/internal/` for "data dictionary", run 2026-10-14, returns eleven files. Checked directly:
+
+- `templates/tracking-plan/tracking-plan_template-lean.md:40-48` and the matching lines in
+  `tracking-plan_template-full.md` both state, inside the template body itself, that a tracking plan is
+  not a single feature's instrumentation slice, a data dictionary, a measurement plan, or the enforced
+  schema in a tool, and the GOOD text under Purpose and Boundary (`tracking-plan_template-lean.md:83`)
+  reads: "What the warehouse tables mean once these events reach them is the data dictionary's job."
+- `templates/tracking-plan/tracking-plan_example.md:50-51` states the same gap in the worked example's own
+  Purpose and Boundary section: "It is not the data dictionary, the document that will state what the
+  data in these events' destination tables actually means once it is implemented, which this program has
+  not yet written." **Landing this bundle makes that sentence false where it stands.** This is a required
+  landing-site edit; see What landing this bundle closes elsewhere, below.
+- `templates/tracking-plan/tracking-plan_guide.md:30` names the boundary again, in the operator card's
+  "When NOT to use" list: "The question is what the data means once it lands in the warehouse. That is the
+  data dictionary's job", and continues: "stated in the opposite tense from this plan's forward-looking". The same file's comparison table (`tracking-plan_guide.md:44-48`) gives the data
+  dictionary its own column against the tracking plan, the measurement plan, and the KPI dashboard, and its
+  quality rubric (`tracking-plan_guide.md:81`) scores a plan on whether it names the data dictionary by
+  name as a neighbour it hands content to.
+- `templates/tracking-plan/tracking-plan_companion.md:90-102` and `:394-398` carry the same boundary at
+  length, citing Wizbrand's tense-based account. **This companion text is the shipped prose the 2026-10-14
+  research (below) finds is no longer the soundest statement of the boundary it draws.** It is not wrong
+  that the two documents differ; it is the specific reason it gives (tense) that a second look does not
+  support as the general rule. This is a recommended, not required, landing-site edit; see the same
+  subsection below.
+- `templates/experiment-design-doc/experiment-design-doc_guide.md:42-44` and the matching
+  `experiment-design-doc_companion.md:504` both route a reader toward a standing instrument rather than a
+  one-time test record: "A tracking plan, a data dictionary, or an experiment log is maintained across many
+  tests and is never finished." `docs/internal/contracts/experimentation-docs.md:42-45` carries the same
+  exclusion inside the family contract that governs that bundle: "A standing measurement instrument is not
+  a member, however closely it serves experiments. A tracking plan, a set of metric definitions, a data
+  dictionary or an experiment log is maintained across many tests and is never finished, so it belongs to a
+  `classification` family."
+- `docs/internal/decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md:28-29` names the
+  data dictionary directly: "two neighbours the research named but this record does not place: the
+  per-feature measurement plan... and the data dictionary."
+
+**This is the demand-side case for building it: four shipped artifacts already point at a document this
+library has not written, and one worked example's own sentence becomes false the longer the gap stays
+open.**
+
+#### Admission: it clears on several sources, in two different senses of the term
+
+Every quotation below is checked against raw page text, either in
+`_local/research/2026-10-12_admission-sweep-5/recheck-out.json` (gitignored) or, where noted, the
+2026-10-14 raw-check file, `_local/research/2026-10-14_prep-research/recheck-out.json` (also gitignored).
+
+| Source | What it says or ships |
+|---|---|
+| Amplitude | Docs: "A data dictionary is a document that lays out the project's taxonomy." |
+| Docsie | Ships a template, "completely free to download in Word (DOCX), PDF, and Markdown formats," with a column set of "Field, Type, Required, Definition, Example, and Notes," review-cadence options "[Monthly / Quarterly / Annual / Event-based]," and a line for "data owner, steward, support channel, and review cadence." |
+| Wizbrand | "A Data Dictionary is a structured reference that documents data elements and their meaning." The same page states an ownership and cadence discipline: "Who maintains it, who approves changes, and who is notified," "Ownership should be shared but explicit," and "review it on a cadence (monthly or quarterly)." |
+| Basedash | "A data dictionary is a structured reference that defines what every field, table, and metric in your data means." The same page states per-table ownership ("Owners are usually the team that produces the data, not the team that consumes it"), a review cadence ("A short quarterly review where owners confirm or fix their definitions is usually enough"), and field-level content ("the technical facts (name, data type, nullability)" and "Enums, ranges, or units"). |
+| OSF / Center for Open Science | "A data dictionary is critical to making your research more reproducible because it allows others to understand your data," and "The purpose of a data dictionary is to explain what all the variable names and values in your spreadsheet really mean." Licensed CC0. Its own retrieval note (not itself a passed quotation) describes a seven-column template: variable name, readable variable name, measurement units, allowed values, definition, optional synonyms, optional longer description. |
+| Smithsonian Libraries and Archives | "explains the contents of the dataset," and names "allowable values in a field" as a required element. |
+| University of North Carolina (RDMC) | "A codebook is a document that describes an individual data file or a collection of data files," and states that a codebook is "sometimes referred to as a" data dictionary, while flagging "There is no single standard." |
+| GDAC (UK government) | A structured glossary entry stating "The content of a data dictionary is usually extracted from the database or modelling tool," distinct from its own separate entries for a Business Glossary ("A repository of approved, governed and maintained compendium of business term names, their definitions") and a Data Catalogue ("An inventory of available data assets supported by a collection of metadata"). |
+
+Docsie alone clears [ADR 0048 (one named source clears the admission test)](decisions/0048-one-named-source-clears-the-admission-test.md),
+because it publishes the type as a downloadable written document; the others corroborate the term, not
+all in this bundle's sense. **The qualifying sources use the name in two different senses, and the Admission and
+Boundary questions must be read together, not separately.** Amplitude's own passing quotation, "a document
+that lays out the project's taxonomy," is Amplitude's event-and-property sense, the same sense Mixpanel's
+Lexicon uses (see the Boundary subsection below); it is not the sense this bundle builds. OSF, CASRAI (see
+Boundary), Docsie, Basedash and GDAC all describe the field-meaning sense of a dataset or table, which is
+this bundle's own scope. Admission is not a close call on either sense; which sense the library builds is
+the Boundary question, and this spec answers it there.
+
+#### Family fit: `governance-docs` only by a second widening, drawn on subject
+
+**The research tested the contract as it reads today, `0.4.0` after ADR 0067, and the type fails on the
+same clause ADR 0067 last widened.** Section 1 admits "a continuously-maintained register, log, or
+dashboard that a product or program manager uses to track risk, open items, or performance, or to specify
+what the product records so that performance can be tracked." The noun fits without strain: a data
+dictionary is a structured reference document, the same shape as a register. The cadence fits too: every
+admitting source above that addresses maintenance (Wizbrand, Basedash) describes a document revised as a
+schema changes, not written once. The clause that fails is the purpose clause itself: a data dictionary
+does not track risk, open items, or performance, and it does not specify what the product records so that
+performance can be tracked, which is `tracking-plan`'s own job.
+
+**[ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary
+joins governance-docs as a seventh member) widens that phrase a second time, and the contract moves to
+`0.5.0`.** The clause gains "or to document what the fields of a dataset or table mean, so that different
+teams compute the same number from them," and no existing word changes. It is the third admission to widen
+a membership test, after [ADR 0060 (change-request joins delivery-docs)](decisions/0060-change-request-joins-delivery-docs.md)
+and ADR 0067. The roles list gains a seventh bullet and "The six roles" becomes "The seven roles." The
+bullet distinguishes the data dictionary from both of its nearest neighbours by subject: the tracking plan
+specifies the events and properties a product emits, and the KPI dashboard's own Metric Definitions section
+locks one dashboard's metric formulas, neither of which is what a data dictionary's field-meaning entry
+does. A dated `0.5.0` change note records all three changes, the pattern ADR 0057, ADR 0061 and ADR 0067
+each followed. The exact text is in the [contract](contracts/governance-docs.md) itself.
+
+#### The boundary, on subject rather than tense, and why it changed since the maintainer's sitting
+
+**What the maintainer approved on 2026-10-13.** The sitting that placed this candidate was given a
+tense-based scope condition: a tracking plan says what will be recorded, and a data dictionary says what
+recorded data means, each drawn from Wizbrand's own account, "A tracking plan describes what you intend to
+track," against "A Data Dictionary documents what the data means and how it is structured once
+implemented." The maintainer approved the amendment on that basis ("Amend with the scope condition") and,
+after a same-day chat exchange, approved the narrow-scope build ("Build, narrow scope"). The sitting's own
+follow-up logged one open item: find a second, independent source for the tense line, since Wizbrand was
+the only one.
+
+**What the 2026-10-14 research found, answering that open item.** Two independent research passes searched
+for a second source on the tense boundary, deliberately excluding Wizbrand and anything citing it. They
+found the line **contested**, not confirmed, across sources with no connection to each other. On one side,
+the US National Institute of Mental Health's own grant-management guidance names "data collection
+instruments (also known as data dictionaries)" that hold "data structures that awardees are expected to
+use for new data collection," a forward-looking use of the term from a primary federal source. Temple
+University Libraries defines a data dictionary the same way: "a record of each variable and data field
+that you are going to collect in your project." On the other side, CASRAI's research-data-management guide
+defines a data dictionary as "a structured document, table, or file that defines every variable in a
+dataset," "so that anyone other than the person who collected the data can interpret it correctly," which
+presupposes the data already exists. Buchanan et al. (2021), a peer-reviewed tutorial, frames its own
+worked process as running "from source data (e.g., survey answers on Qualtrics) to an openly shared
+dataset accompanied by a data dictionary or codebook," placing the dictionary last. Nazabal et al. (2020) and Phillips et al.
+(2024) each describe the same ordering: a data dictionary built from, or after, data a team already holds,
+with Phillips et al. placing it as the tenth and final step of a ten-step pipeline. **NIMH and Temple write
+a dictionary before collection; CASRAI and Buchanan et al. write one after; so timing is no part of this
+boundary.**
+
+**What every one of those sources agrees on, regardless of timing.** Each names the same subject: a data
+dictionary defines the variables or fields of a dataset. None of them, on either side of the timing
+question, describes a data dictionary as specifying the events and properties a product will emit. Every
+tracking-plan source this library already cites (Avo, Twilio Segment, Amplitude, Mixpanel, mParticle)
+describes the tracking plan as doing exactly that, and none of them describes it as explaining what a
+field means. **The boundary this spec draws is therefore on subject, not on tense: a
+tracking plan specifies the events and properties a product emits; a data dictionary documents what the
+fields of a dataset or table mean.** This is the same narrow scope the maintainer already approved on
+2026-10-13. Only the reason it is the correct scope has changed, and ADR 0073 records that change in full,
+under its own headed subsection, so the maintainer reads it as a change from what was approved rather than
+discovering it inside a diff that happens to agree with the prior answer.
+
+**One complication the subject-based line does not resolve, and does not need to.** Phillips, Price,
+Forbes, Boulange, Mengersen, Reeves and Glauert (2024) and Nazabal et al. (2020) both describe a data
+dictionary as filled in from data already collected, which is sequence evidence, not a tense rule stated
+as such; this spec weights it as corroboration of the subject-based reading (a dictionary describes
+the variables of a dataset), not as a second, independent tense claim. One vendor source,
+RudderStack's own whitepaper, lists "Data dictionary/solution design document for analysts or data
+consumers to understand how and why data is collected at the source" beside "Instrumentation guide that
+tells the responsible dev team how to wire up events within the source," naming both as outputs of the
+same tracking-plan process rather than as two documents separated by when each is written. This spec reads that as further support for drawing the line on subject
+(what the fields mean, regardless of which document produces that explanation) rather than as a reason to
+collapse the two documents into one.
+
+#### Boundaries with each named neighbour
+
+- **Not the tracking plan.** On subject, not tense, per the section above: a tracking plan specifies the
+  events and properties a product emits; a data dictionary documents what the fields of a dataset or table
+  mean. `tracking-plan`'s own shipped text draws this boundary on tense today
+  (`tracking-plan_companion.md:394-398`, `tracking-plan_template-lean.md:69-76`); this spec recommends,
+  without requiring, a dated note on that text rather than a rewrite, under What landing this bundle
+  closes elsewhere, below.
+- **Not the KPI dashboard's own Metric Definitions section.** A data dictionary documents what a field
+  means (its name, type, allowed values, and where it lives); the Metric Definitions section
+  (`templates/kpi-dashboard/kpi-dashboard_template-full.md:87-109`) locks a derived, computed metric's own
+  formula, inclusions, exclusions, grain, owner, and data steward. Basedash's own distinction supports the
+  same line: "A data dictionary is a structured reference that defines what every field, table, and metric
+  in your data means," naming the field and the metric together as what gets defined, while its own worked
+  content (nullability, enums, ranges, units) is entirely field-level, never formula-level. **Falsifier:**
+  a source stating that a data dictionary itself locks a metric's formula, inclusions, or exclusions would
+  contradict this layering.
+- **Not the experiment design doc.** `experiment-design-doc_guide.md`'s own "When NOT to use" list routes
+  a reader toward a standing instrument, naming the data dictionary by name: "You need a standing
+  instrument, not a one-time record. A tracking plan, a data dictionary, or an experiment log is maintained
+  across many tests and is never finished." An experiment design document is written once per test and
+  finished when that test's decision is recorded; a data dictionary is never finished in that sense.
+- **A business glossary and a data catalogue are named, related concepts this library does not build.**
+  GDAC's own glossary distinguishes all three: a Business Glossary is "A repository of approved, governed
+  and maintained compendium of business term names, their definitions," a Data Catalogue is "An inventory
+  of available data assets supported by a collection of metadata," and a Data Dictionary's content "is
+  usually extracted from the database or modelling tool." GDAC's own page lists each of the other two under
+  "Confusion over definition and with related concepts", naming the overlap directly rather than leaving it
+  implicit. Neither a business glossary nor a data catalogue is a catalog candidate in this sweep's reading
+  list, and this spec does not propose
+  building either; it names the distinction only so a reader who reaches for "glossary" or "catalog"
+  language while filling this bundle does not fold a different document's job into it.
+- **Not risk-register, raid-log, issue-log, or change-log.** Same reasoning each of those four boundaries
+  already carries in `tracking-plan`'s own companion: none of this sweep's sources connects a data
+  dictionary's field-meaning job to risk tracking, RAID quadrants, resolved issues, or baseline change
+  requests. **POSITION**, stated for completeness because contract section 1 requires every member to
+  state its position against every other member.
+
+#### Routing a product-analytics reader who means the event list, not this bundle
+
+**Mixpanel's own documentation blurs the term, and a reader coming from product analytics will too.**
+Mixpanel's Lexicon page states outright, "Lexicon is a data dictionary that stores descriptions of events
+and their properties," then describes importing content directly from other vendors' tracking-plan
+products into that same "data dictionary": "Import your Segment Plan into Lexicon," and "To import your
+data dictionary from Avo.app." Mixpanel treats the two names, "data dictionary" and "tracking plan" or
+"Plan," as labels for the same imported artifact under two different product surfaces, not as two documents
+separated by subject or by tense. Amplitude's own blog does the same blurring in one sentence: "For user
+behavior data, the Data Dictionary or Taxonomy Sheet lists the user actions and descriptions of what each
+means."
+
+**This bundle's own Purpose and Boundary section must name that usage and route the reader away from it.**
+A reader who searches this library for "data dictionary" meaning the event list that Mixpanel's Lexicon,
+Segment's Protocols, or Avo's own tracking plan each already cover should land on `tracking-plan`, not on
+this bundle. The Purpose and Boundary section's WHY comment should state this directly, the same way
+`tracking-plan`'s own Purpose and Boundary section already rules out four neighbours by name.
+
+**Recommendation for the landing PR, not settled here: give `tracking-plan` the alias "event dictionary."**
+No source in this sweep uses that exact phrase, so it would be the library's own choice, for search,
+exactly as `business-continuity-plan`'s own spec added two unsourced aliases for the same reason
+(`disaster-recovery-business-continuity-plan`'s "Business continuity and disaster recovery plan" and
+"BC/DR plan"). The library's own recommendation: add it. This library's own inference is that a reader typing "event dictionary" is most
+certainly looking for the event-and-property catalog `tracking-plan` already ships, not for this bundle's
+field-meaning document. This is a landing-site edit to a different bundle's catalog row, not an edit this
+spec's own catalog corrections make for `data-dictionary` itself; it is listed again under What landing
+this bundle closes elsewhere, below, and the maintainer can veto it on reading this spec.
+
+#### Stop rule
+
+**If the worked example's field-level dictionary reads as thin, the build stops, and the decline
+alternative (ADR 0073's Considered Option 4) returns to the maintainer.** This is a single test with two
+failure readings, both of which this sweep's own confidence work named as live risks:
+
+1. **Duplication, not thinness of prose.** Every field definition in the worked example restates a row
+   already present in the tracking-plan catalog or the KPI dashboard's Metric Definitions section, with no
+   added field-level fact (a type, a nullability rule, an allowed-value list, a relationship to another
+   table) that neither sibling already states. If every row is a restatement, the narrow core this spec
+   argues for does not actually exist as separate content, and the honest move is the decline this ADR
+   already sketches, not a thinner bundle.
+2. **Wrong audience.** The filled example reads as a document a data engineer would write for another data
+   engineer, with no field a product manager would ever need to look up (an event's business meaning, a
+   metric's input, a privacy flag), rather than a document this library's own readers would reach for.
+
+Neither failure is a row count; stating one would be an invented figure no source in this sweep supports.
+Both are a qualitative read of the filled worked example against its two named siblings, done once the
+build's own example is drafted, before the build proceeds past it.
+
+#### A deferred, low-value research task for the build's own research phase
+
+**Reading FastSlowMotion's analytics-governance page in a real browser is reserved for the build, not done
+here.** Every automated fetch path tried for that page, in this sweep and in the 2026-10-12 gap-fill
+targeting it specifically, returned HTTP 403; only a browser-rendered read (not a raw-text-checkable one)
+has ever returned its actual content. Its decision value for this bundle is **low**, stated in
+`_local/research/2026-10-12_admission-sweep-5/family-question.md` line 533: "if it confirms a split between
+a full metric entry and a dashboard snippet, `kpi-dashboard`'s Metric Definitions section already carries
+the full entry, so the narrow scope still holds." Reading it would at most corroborate a boundary this spec
+already draws on other sources; it would not change the scope decision either way. The build's own
+research phase should attempt the browser read once, log whichever of its two possible findings holds, and
+move on rather than spend further attempts against a page that has returned 403 to every non-browser path
+tried so far.
+
+#### Section design
+
+Drawn from the sources above. No single vendor's exact column list is canonical (see Licences, below), and
+the final column set is this library's own tally, converged from several sources rather than copied whole
+from any one of them, the same posture `tracking-plan`'s own Structure section took.
+
+| Section | In lean? | What it is, and its sourcing |
+|---|---|---|
+| **Purpose and Boundary** | yes | What this document covers (the fields of one or more named datasets or tables) and what it rules out by name: event cataloguing (`tracking-plan`'s job), metric-formula locking (`kpi-dashboard`'s Metric Definitions section), the experiment design doc's one-time record, and the event-list sense of "data dictionary" that product-analytics usage (Mixpanel's Lexicon) blurs into this document's own name. Sourced to GDAC's three-way glossary distinction and to the Boundaries subsection above |
+| **Field Definitions** | yes | **The load-bearing section.** One row per field: its name, type, definition, allowed values or range, nullability, and owner. Name, type, and definition recur across every admitting source (OSF, Docsie, Basedash, Wizbrand); allowed values and nullability are sourced to Basedash ("the technical facts (name, data type, nullability)" and "Enums, ranges, or units") and to OSF's own retrieval-note tally (not itself a passed quotation; stated here as the library's own convergence, per the same practice `tracking-plan`'s own Structure section used for its single-vendor-sourced columns). A table section, so it carries PRIORITY and ROW HINT |
+| **Ownership and Review** | yes | The dataset's or table's own named owner, apart from any individual field, and the review cadence. Sourced to Basedash ("Owners are usually the team that produces the data, not the team that consumes it") and to Wizbrand ("review it on a cadence (monthly or quarterly)"); Docsie's own review-cadence field, "[Monthly / Quarterly / Annual / Event-based]," states no fixed norm, so this section asks the author to name one and say whether it is borrowed or this team's own choice, the same discipline `tracking-plan`'s own Review and Ownership section already applies |
+| **Dataset Metadata** | full only | A header naming the dataset or table, its source system, its version, and its effective date, ahead of the field table. Sourced to Docsie's own shipped document skeleton, which opens with a metadata header before its field table, and to Basedash's per-table framing throughout |
+| **Relationships** | full only | How this table's fields relate to other tables or datasets: foreign keys, joins, or a field that is itself computed from another table's field. Sourced to Harvard's definition, which describes a data dictionary as outlining "the structure, content, and variable definitions for a dataset or collection of data", implying more than one table is in scope once relationships exist to describe |
+| **Validation Rules** | full only | Enum lists, numeric ranges, required-versus-optional fields, and any cross-field rule a loader or a reviewer should check. Sourced to Docsie's own "Required" column and to Basedash's "Enums, ranges, or units" |
+| **Review and Sign-off** | full only | A formal record of who reviewed and approved this version, and when, distinct from the shared Ownership and Review section's standing owner and cadence. Sourced to Docsie's own shipped document, which carries a signoff block beyond its basic owner-and-cadence fields, in the same full-only addition shape `tracking-plan`'s own Change Process and Version History section took relative to its shared Review and Ownership section |
+
+The lean variant's three sections, in this order (Purpose and Boundary, Field Definitions, Ownership and
+Review), are a strict ordered subset of the full variant's seven, as contract section 3.2 requires. Full
+inserts Dataset Metadata between Purpose and Boundary and Field Definitions; Relationships and Validation
+Rules between Field Definitions and Ownership and Review; and Review and Sign-off after Ownership and
+Review, last. This mirrors the insertion pattern `tracking-plan`'s own lean-to-full growth already uses:
+new sections are inserted around the shared ones, never renaming or reordering them.
+
+**This section design is the library's own judgment, not a single source's shipped shape, and the
+maintainer may prefer folding Dataset Metadata into frontmatter instead of a full-only section; this spec
+states a recommendation the build can still reconsider against the family's own nesting rule.**
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md:208` and `atlas/catalog-data.json` (index 140), then regenerate the atlas, for
+each correction accepted:
+
+- **Alias "metric definitions" collides exactly, case-insensitively, with `kpi-dashboard`'s own shipped
+  "## Metric Definitions" H2 heading.** A catalog search on that alias today would return the wrong
+  artifact once this bundle ships. **Recommend dropping it.**
+- **Alias "data catalog entry" names a different, related concept this sweep found independently
+  defined.** GDAC's own glossary names a Data Catalogue as "An inventory of available data assets supported
+  by a collection of metadata," distinct from a Data Dictionary, and lists each under "Confusion over
+  definition and with related concepts" on its own page. **Flag it for the spec author or reviewer; do not
+  drop or keep it without a decision**, the same posture `tracking-plan`'s own landing took for its
+  contested aliases.
+- **The purpose field, "Document the meaning and usage of events and metrics," contradicts the narrow
+  scope this sitting approved.** "Events" names `tracking-plan`'s own subject; "metrics" names
+  `kpi-dashboard`'s Metric Definitions subject. Neither belongs in this bundle's purpose statement.
+  **Recommend** a purpose statement naming what the fields of a dataset or table mean, so that different
+  teams compute the same number from them, matching the contract's own amended purpose clause.
+- **The contents field, "event name, description, properties, usage, owner," is event-shaped, not
+  field-shaped.** It describes a tracking-plan row, not a data dictionary row. **Recommend** a contents
+  field naming the field name, type, definition, allowed values, and owner, matching the admitting
+  sources' own convergent column set (see Section design, above).
+- **`owner: "Data / Analytics Eng"` is well supported and needs no change.** Basedash states the role
+  directly: "Owners are usually the team that produces the data, not the team that consumes it." **No
+  change recommended.**
+- **`stage: "measurement"` should not be corrected**, on the same reasoning `tracking-plan`'s own landing
+  gave for its identical field: the catalog's descriptive `stage` is a different question from the
+  metadata schema's `phase`/`classification` axis, which this bundle settles independently as
+  `classification: utility` in its own `meta.yaml`. **No change recommended.**
+- **`size_variant: "S/M"` matches the maintainer's own settled two-size decision and needs no correction**,
+  beyond the mechanical step every other `governance-docs` member's landing has taken: setting
+  `sizes_available: [lean, full]` in `data-dictionary_meta.yaml` directly, independent of the catalog's own
+  shorthand marker.
+- **`methodology: "methodology-agnostic"` is not contradicted and should stand.** The admitting sources
+  span research-data, enterprise-data-management and product-analytics lineages with no single
+  methodology thread running through all of them. **No change recommended.**
+- **Relationships: `[Tracking Plan]` should gain `KPI Dashboard`.** The boundary this spec draws against
+  the KPI dashboard's Metric Definitions section is as load-bearing as the one against the tracking plan,
+  and the catalog's relationships field today names only one of the two. **Recommend adding `KPI Dashboard`
+  to this bundle's own relationships field.** `tracking-plan`'s own relationships field, `[Data Dictionary,
+  Dashboards]`, already names this bundle and needs no further edit for this bundle's own sake.
+- **Formality (`standard`) and rarity (`occasional`) are not contradicted by anything retrieved and can
+  stand as-is.**
+
+#### `pairs_with`: checked, empty
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'` returned 68 skill names on
+2026-10-14, the same count `business-continuity-plan`'s own landing found on 2026-10-13. No name contains
+"dictionary," "glossary," or "catalog" against this type; the closest adjacent name,
+`measure-instrumentation-spec`, is an instrumentation plan, the per-feature neighbour this library has
+already placed outside this bundle's scope. **`pairs_with: []`**, under the contract's rule for that field:
+"Verify per member; claim only what is true of that member" (quoted from `standing-standards.md:71`, the
+same clause `business-continuity-plan`'s own spec cites for this check, since `governance-docs.md` states
+the identical obligation without repeating the sentence verbatim).
+
+#### Risks for the build and the review
+
+1. **The tense-boundary reversal is the central risk, and the companion must carry it, not smooth it
+   over.** A companion written as though the subject-based boundary were the library's first and only
+   reading overstates how settled this question is, and a companion that keeps citing only Wizbrand's tense
+   line, as `tracking-plan`'s own shipped companion still does, understates what the 2026-10-14 research
+   found. State both: the subject-based line this bundle is built on, and the tense-based line a sibling
+   bundle still carries, with a note that the two are not the same claim.
+2. **The product-analytics usage collision is a live routing risk, not a footnote.** Mixpanel's own
+   documentation uses "data dictionary" for exactly the event-list content `tracking-plan` already ships.
+   A Purpose and Boundary section that does not name this directly will field support questions from
+   readers who wanted `tracking-plan` and found this bundle instead, or the reverse.
+3. **The Field Definitions column set is this library's own convergence, not any one vendor's shipped
+   list, and must be labeled as such.** OSF's seven-column structure is a retrieval note's own tally, not a
+   passed quotation; stating it as if OSF itself published exactly those seven words invents a citation
+   this sweep does not support.
+4. **No licence was found for any of the four vendor templates read** (Amplitude, Docsie, Wizbrand,
+   Basedash). OSF's own page is CC0, and GDAC's UK government content carries no explicit licence
+   statement on the page itself. Do not adapt column names or wording from any one vendor's page verbatim,
+   and do not state or imply a licence for Amplitude, Docsie, Wizbrand or Basedash.
+5. **The shared-scenario rule binds hard here, exactly as it does for every `governance-docs` member.**
+   The worked example must chain onto facts the `tracking-plan` and `kpi-dashboard` examples already state,
+   and must not invent a parallel warehouse, a parallel event set, or a parallel owner. See The worked
+   example, below, for the facts it must agree with.
+6. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into the
+   template's GOOD and WEAK text.** Once an example exists, grep the drafted templates for its proper nouns
+   before review, the same practice `tracking-plan`'s, `business-continuity-plan`'s and
+   `north-star-metrics`'s own specs each name.
+7. **The stop rule is a qualitative read, not a number, and must stay that way through review.** A reviewer
+   who reduces the stop rule to a row count, a word count, or any other invented figure is replacing the
+   test this spec states with one no source supports.
+8. **`FastSlowMotion`'s page is reserved for one browser read during the build's own research phase, and
+   its finding must not be over-weighted.** Its decision value is low, named as such in this spec's own
+   deferred-task subsection; a build that treats a confirming read as settling the scope question, rather
+   than merely corroborating it, is giving one low-value source more weight than this spec's own reasoning
+   assigns it.
+
+#### The worked example: the warehouse tables the tracking plan and the KPI dashboard already imply
+
+**The shared-scenario rule (contract section 4) applies.** The example must carry the same Acme Analytics
+Reporting Platform Modernization program every other `governance-docs` member's example uses, and it must
+document fields the `tracking-plan` and `kpi-dashboard` examples already imply exist, rather than invent a
+parallel dataset.
+
+**`tracking-plan_example.md`'s own Purpose and Boundary section names the gap this example fills**: "It is
+not the data dictionary, the document that will state what the data in these events' destination tables
+actually means once it is implemented, which this program has not yet written." Those destination tables
+are named in the same example's frontmatter and body: events land in Amplitude, and the executive view is
+built in Looker (`tracking-plan_example.md:6`, `kpi-dashboard_example.md`'s own frontmatter note, "the live
+dashboard is implemented in the Acme BI workspace (Amplitude for product events, Looker for the executive
+view)"). Between Amplitude and Looker sits a warehouse those product events land in before Looker reads
+them; this example's natural subject is that warehouse table (a fact table of Saved Views and report
+events) and the dimension tables its foreign keys point to (an analyst dimension, an account dimension),
+not a second copy of either vendor tool.
+
+**Fields this example may document, each one already implied by a sibling fact rather than invented
+fresh:**
+
+- The nine events `tracking-plan_example.md`'s own catalog already names (`view_saved`, `view_switched`,
+  `view_set_default`, `view_shared`, `view_load_error`, `report_opened`, `report_exported`,
+  `report_shared`, `report_annotated`) land as rows in an events fact table. This bundle's own Field
+  Definitions entry for that table documents the table's columns, such as `event_name`, `occurred_at`,
+  `dashboard_id`, `report_id`, and `recipient_user_id`, not the business reason each event fires; that
+  reason stays the tracking plan's own "why" column, and this bundle must not restate it.
+- `tracking-plan_example.md`'s own Privacy, Sensitivity and Retention section already states that
+  `recipient_user_id` on `view_shared` and `report_shared` is "pii_flag: true" and "Hashed on the way into
+  the warehouse". This bundle's own Field Definitions row for that column documents it as hashed, not
+  plaintext, agreeing with that sibling fact rather than restating or contradicting it.
+- `tracking-plan_example.md`'s own User and Account Properties table already names `analyst_segment` (user)
+  and `migration_reconciled` (account) as traits "Set from the entitlements database" and "Set by the
+  migration reconciliation job at cutover." This bundle's own dimension-table entries for an analyst and an
+  account dimension document those same two fields, agreeing on their type and source rather than
+  re-deriving them.
+- `kpi-dashboard_example.md`'s own Metric Definitions section states the Time to Insight formula reads
+  "timestamp of first logged action on a report" against "timestamp the report was opened". This bundle's
+  own Field Definitions entry may name which warehouse column each of those two timestamps is (for example,
+  the fact table's own `occurred_at` column, filtered to the relevant event names), without restating the
+  formula itself; the formula stays `kpi-dashboard`'s own job.
+- The data steward named across `tracking-plan_example.md`'s Event and Property Catalog, **Lee Zhang (Data
+  Eng)**, is the natural per-table owner for this bundle's own Ownership and Review section, agreeing with
+  the sibling rather than naming a second steward for the same warehouse.
+
+**Dates.** `tracking-plan_example.md` is dated 2026-08-24 and states the program "has not yet written" the
+data dictionary. This bundle's own example must be dated after 2026-08-24, and its own version history (in
+the full variant's Review and Sign-off section) must not show an entry predating that date, so the two
+examples agree on when this document starts existing.
+
+**What the example must not do.** It must not restate the tracking plan's own "why" column for any event,
+must not restate the KPI dashboard's own metric formulas, inclusions, or exclusions, and must not invent a
+third warehouse, a third tool, or an owner not already named in a sibling example. Per the stop rule above,
+if drafting this example surfaces no field-level fact beyond what the two siblings already state, the build
+stops rather than ship a document that restates its neighbours under a new heading.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `governance-docs` | By ADR 0073, a second widening of the contract's purpose phrase |
+| `classification` | `utility` | The only value the contract's axis allows; argued in ADR 0073 from the document's maintained, revised-as-the-schema-changes cadence |
+| `bundle_id` | `data-dictionary` | Same as the catalog id; no reason found to differ |
+| `sizes_available` | `[lean, full]` | The maintainer's settled sizing: lean carries the core field table, full adds a metadata header, relationships, validation rules, and a review-and-signoff section |
+| `status` | `beta` | Every bundle |
+| `methodology` | Set at build from the admitting sources' lineage | The catalog's `methodology-agnostic` is not contradicted (catalog correction above leaves it unchanged) |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main`, 2026-10-14; no skill produces or consumes this type |
+| `related_templates` | `[tracking-plan, kpi-dashboard]`, inline | The two neighbours this spec's own Boundaries section draws against, and the two the catalog's own relationships field should name after the correction above |
+| `aliases` | Carried forward from the catalog once the corrections above are applied; "metric definitions" dropped, "data catalog entry" flagged for a reviewer decision rather than kept or dropped by this spec | See Catalog corrections, above |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `governance-docs` contract's Members line**, from not yet built to the build date. The contract
+   moves to `0.5.0` in the spec PR, with ADR 0073.
+2. **`tracking-plan_example.md:50-51`'s own sentence, "this program has not yet written" [a data
+   dictionary], becomes false the moment this bundle's worked example exists.** Whether that example's
+   sibling sentence is edited to point at the new example, or left as a dated fact about the state of the
+   program at the time it was written, is a build decision this spec does not make; either choice should
+   be stated plainly in the build's own report, not left for a reader to notice the contradiction.
+3. **`tracking-plan_companion.md:90-102` and `:394-398`, and `tracking-plan_template-lean.md:69-76` /
+   `tracking-plan_template-full.md`'s matching lines, still draw the tracking-plan/data-dictionary boundary
+   on Wizbrand's tense line alone.** This spec recommends a dated note on that text, in the shape the
+   contract's own `0.4.0` and `0.5.0` change notes use, stating that the 2026-10-14 research found a second
+   source and a subject-based reading, rather than a rewrite of text that is not itself wrong, only no
+   longer the soundest statement available. This is a recommendation, not a required edit; the maintainer
+   may veto it on reading this spec.
+4. **`experimentation-docs.md:42-45`'s own boundary sentence could gain a pointer to ADR 0073**, the same
+   way its existing sentence already points at ADR 0067 for the tracking plan. This is a small, optional
+   edit, not required for this bundle's own gate to pass.
+5. **The catalog entry**, per the corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+6. **This page's Progress table**: the `data-dictionary` row's Built column, and an inline dated note in
+   the 2026-10-13 sweep paragraph.
+7. **Recommended, not required: `tracking-plan`'s own catalog aliases gain "event dictionary."** See
+   Routing a product-analytics reader, above. This is a different bundle's catalog row, so it is listed
+   here rather than in this spec's own catalog corrections, and the maintainer can accept or veto it
+   independently of this bundle's own landing.
+8. **Issue #255 (bundle: data-dictionary) relabels to `status:built` with the build PR**, not with this
+   spec's own PR, which only proposes the amendment.
+9. **This page's own `tracking-plan` spec text.** Its Purpose and Boundary design row calls this type "the
+   unbuilt data dictionary", and its "Not the data dictionary" boundary rests on Wizbrand's tense-based
+   account. Both want a dated note at the build, pointing here.
+
+#### What the build would cost
+
+No build has run for this type. This is projected from the family's own two most recently built members,
+both single-size-equivalent two-size builds with every agent resolved to Sonnet, measured in
+[`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md): `tracking-plan` cost $14.88 whole (7,440,790
+weighted tokens, 15 agents, 3 rounds), and `change-log` cost $16.95 whole (8,472,610 weighted tokens, 15
+agents, 3 rounds). `issue-log`, the family's other single-size build, cost $14.29 whole (7,143,159
+weighted tokens). A whole-bundle estimate of **$14 to $20 at API list rates** is reasonable on that basis,
+toward the higher end if the full variant's four additional sections (Dataset Metadata, Relationships,
+Validation Rules, Review and Sign-off) need more drafting rounds than a single-size member did. It is a
+projection, not a measurement, until `python tools/gen-bundle-build-report.py --ingest` runs against an
+actual build report.
