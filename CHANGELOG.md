@@ -25,7 +25,7 @@ people who want every change, release notes are for people who want to know what
   dressed one). `user-stories_guide.md` has routed readers who need "exhaustive actor-system flows" to this type
   since it shipped. Four named sources clear admission: Cockburn's 1998 template and 2001 book draft, Wiegers's
   1999 template, and the Rational Unified Process use-case specification template.
-- **[ADR 0072](docs/internal/decisions/0072-use-case-specification-joins-delivery-docs.md), proposed:
+- **[ADR 0072](docs/internal/decisions/0072-use-case-specification-joins-delivery-docs.md), accepted:
   `use-case-specification` joins `delivery-docs`, and the membership test gains the verb "elaborates".** Nine of
   the ten family contracts excluded the type outright. The new verb admits one actor's numbered path to one
   goal, with its alternative and exception flows, and the contract names what it does not admit: a diagram or
@@ -34,7 +34,7 @@ people who want every change, release notes are for people who want to know what
   `governance-docs` member at `classification: utility`, in lean and full, scoped to what the fields of a dataset
   or table mean. Event cataloguing stays with `tracking-plan`, and metric-formula locking stays with
   `kpi-dashboard`'s Metric Definitions section.
-- **[ADR 0073](docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md), proposed:
+- **[ADR 0073](docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md), accepted:
   `data-dictionary` joins `governance-docs` as a seventh member.** The narrow scope is the maintainer's ruling of
   2026-10-13. That ruling's reasoning drew the boundary with the tracking plan on tense, and research on
   2026-10-14 found the tense line contested, so the record redraws it on subject and says so. The contract

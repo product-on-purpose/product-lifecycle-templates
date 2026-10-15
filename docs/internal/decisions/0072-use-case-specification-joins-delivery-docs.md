@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-15
 decision-makers: [jprisant]
 consulted: [claude]
@@ -29,9 +29,9 @@ consulted: [claude]
 - **What this does NOT decide:** admission, which four independently read sources settle (see
   [`tier2-specs.md`](../tier2-specs.md)); and the placement of `user-flow-task-flow`, the nearest neighbour
   this record keeps out and defers rather than places.
-- **Status:** proposed 2026-10-15. Held, like ADR 0060 and ADR 0067 before it, until the maintainer reads
-  the contract diff, because a family contract is "adopted only after a maintainer read"
-  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
+- **Status:** accepted 2026-10-15. The maintainer was asked to read the contract diff and this record, and
+  answered "Accept and merge" in that day's decision sitting (PR #281, the spec PR). A family contract is
+  "adopted only after a maintainer read" ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
 
 ## Context and Problem Statement
 
@@ -168,6 +168,6 @@ both set: neither amendment required an existing member's companion to change.
   against the type on 2026-10-12.
 - The spec and the admission evidence: [`tier2-specs.md`](../tier2-specs.md), the `delivery-docs` (new
   member, by amendment) section for the use case specification.
-- **Build order.** Not yet scheduled; this record is held for the maintainer's read of the contract diff,
-  per [ADR 0041](0041-maintainer-preference-sets-the-build-order.md)'s rule that the maintainer's preference
+- **Build order.** Not scheduled by this record. The maintainer's preference sets it, per
+  [ADR 0041](0041-maintainer-preference-sets-the-build-order.md)'s rule that the maintainer's preference
   sets the build order.

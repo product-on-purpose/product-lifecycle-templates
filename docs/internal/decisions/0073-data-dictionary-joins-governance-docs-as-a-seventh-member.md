@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-15
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,9 +27,9 @@ consulted: [claude]
   recorded data means. Research run the next day found that line contested. This record replaces it with
   a subject-based line and says so plainly, rather than let the maintainer discover the change unlabeled
   in a diff.
-- **Status:** proposed 2026-10-15. Held for the maintainer's read of the contract diff and this record,
-  as every family contract amendment stops for that read
-  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
+- **Status:** accepted 2026-10-15, with the boundary drawn on subject. The maintainer was asked to read the
+  contract diff and this record's change to the 2026-10-13 reasoning, and answered "Accept the subject boundary
+  and merge" in that day's decision sitting (PR #281, the spec PR).
 
 ## Context and Problem Statement
 
