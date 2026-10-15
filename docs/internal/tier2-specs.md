@@ -51,6 +51,8 @@ design task" rather than "a spec-driven execution".
 | `use-case-specification` | `use-case-specification` | `delivery-docs` | **Written 2026-10-15**; admission sources retrieved and raw-checked 2026-10-12, in the five-candidate admission sweep [below](#delivery-docs-new-member-by-amendment-the-use-case-specification-the-user-stories-guide-routes-to), with a gap-fill the same day on the Cockburn 2001 fully-dressed field set | **Not yet.** Family by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs), accepted 2026-10-15 when the maintainer approved the spec PR's merge. Its contract diff widens the membership test with a sixth verb, "elaborates" |
 | `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Not yet.** Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
 
+**2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against all ten family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found its product-direction placement a minority reading, which the spec must state as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), proposed and held for the maintainer's read. Its business-scope reading clears admission and stays unswept.
+
 **2026-10-13: a five-candidate admission sweep, and the maintainer's answers the next day.** On 2026-10-12 one
 research workflow tested five queued candidates against ADR 0030's admission test and against all ten family
 contracts. They were `disaster-recovery-business-continuity-plan` (#263), `trade-study-options-analysis` (#259),
@@ -1598,7 +1600,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1351-1364`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1353-1366`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1841,7 +1843,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1488-1490` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1490-1492` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1870,7 +1872,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:534-537` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:536-539` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1934,7 +1936,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:496-511` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:498-513` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2499,7 +2501,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1489-1491`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1491-1493`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -4762,7 +4764,7 @@ stance `business-continuity-plan`'s spec took toward its own worked example.
 | `family` | `decision-docs` | ADR 0022 (adopt the decision-docs family contract)'s fourth-member clause, maintainer decision 5 |
 | `phase` | `develop` | Contract-gated; matches all four existing members |
 | `sizes_available` | `[lean, full]` | Maintainer's settled sizing; catalog correction 1 above |
-| `bundle_id` | `trade-study` | This spec's recommendation. The catalog id stays `trade-study-options-analysis`, the shape `north-star-metrics` and `business-continuity-plan` both already kept |
+| `bundle_id` | `trade-study` | This spec's recommendation, ruled by the maintainer 2026-10-15. The catalog id stays `trade-study-options-analysis`, the shape `north-star-metrics` and `business-continuity-plan` both already kept |
 | `status` | `beta` | Every bundle |
 | `methodology` | `generic` (recommended) | The catalog's own "methodology-agnostic" supports this value, and it matches `adr`, `rfc` and `sdd`'s declared methodology. The contract's methodology row is descriptive, not gated, so this is a recommendation, not a requirement |
 | `pairs_with` | `[]` | Checked against `tools/known-skills.txt`, 2026-10-14; no pinned skill id names this type |
