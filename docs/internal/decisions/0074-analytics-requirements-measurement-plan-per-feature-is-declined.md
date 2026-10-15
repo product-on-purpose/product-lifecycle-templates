@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-15
 decision-makers: [jprisant]
 consulted: [claude]
@@ -25,8 +25,13 @@ consulted: [claude]
 - **The business-scope reading clears admission, and this record leaves it unswept**, uncompared with
   `north-star-metrics`, `kpi-dashboard`, or `tracking-plan`. **The decline does not rest on Wizbrand**:
   its page describes a standing, quarterly-reviewed plan, not a per-feature one.
-- **Status:** proposed 2026-10-15. It stays proposed until the maintainer reads this record's text, even
-  though the sitting answer already settled the decision itself.
+- **Status:** accepted 2026-10-15, on the maintainer's delegation. The decision itself is the maintainer's
+  own answer to decision 11 of that day's sitting. This record's text was offered for a read, and the
+  maintainer replied with a wrap instruction that delegated the remaining merges to the agent's best
+  judgment. That direction stands in for the read, as a similar one did for [ADR 0070
+  (north-star-metrics)](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md). This record
+  amends no family contract, so the standing stop for a contract read does not apply. The maintainer has
+  not yet confirmed this delegated acceptance, and may reopen the record for a read.
 
 ## Context and Problem Statement
 
