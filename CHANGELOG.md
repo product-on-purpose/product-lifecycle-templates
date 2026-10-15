@@ -49,6 +49,10 @@ people who want every change, release notes are for people who want to know what
   candidates on 2026-10-14, and the maintainer ruled on all four on 2026-10-15. `positioning-statement` is
   specced next, `messaging-framework` is held, `metric-tree` is parked behind one template check, and the
   per-feature measurement plan is declined by ADR 0074.
+- **Three more rulings from the 2026-10-15 sitting, recorded in place in [`tier2-specs.md`](docs/internal/tier2-specs.md).**
+  The build order for the three new specs is data dictionary, then use case, then trade study. The test
+  strategy is scoped to an organization or program, and its example is set at Acme, dated after the shipped
+  test plan.
 - **ADR count 71 -> 74**, across markers and prose.
 - **Two dated notes in [`tier2-specs.md`](docs/internal/tier2-specs.md).** The `test-strategy` admission dimension
   ran on 2026-10-14 and came back undecidable, so no spec is written and its scope returns to the maintainer.
