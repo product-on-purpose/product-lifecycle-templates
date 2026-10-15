@@ -100,8 +100,8 @@ and Buchanan et al. write one after; so timing is no part of this boundary.
    The 2026-10-14 research found the tense line contested by primary and peer-reviewed sources on both
    sides; a widening that rests on a line two of the six sources contradict is not the smallest honest one
    available once a sounder line exists.
-3. **No amendment: build to the catalog's own wider framing ("events, properties and metrics a team
-   uses").** Rejected on duplication. The catalog's own purpose field and two vendor sources (Wizbrand's
+3. **No amendment: build to the catalog's own wider framing (its purpose field, "Document the meaning
+   and usage of events and metrics").** Rejected on duplication. The catalog's own purpose field and two vendor sources (Wizbrand's
    calculation-logic language and Basedash's metric field) describe a metrics half that duplicates
    `kpi-dashboard`'s own shipped Metric Definitions section: formula, inclusions and exclusions, owner, and
    data steward. A bundle built to that framing would re-ship content from two families at once.

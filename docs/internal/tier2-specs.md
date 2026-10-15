@@ -5175,8 +5175,8 @@ follows the same bare-name convention `tracking-plan`, `risk-register`, `raid-lo
 documents what the fields of a dataset or table mean. Its Purpose and Boundary section, in both sizes,
 excludes by name event cataloguing (the tracking plan's job, [ADR 0067](decisions/0067-tracking-plan-joins-governance-docs-as-a-sixth-member.md)
 (tracking-plan joins governance-docs as a sixth member)) and metric-formula locking (the KPI dashboard's
-own Metric Definitions section). The catalog's own wider framing, "events, properties and metrics a team
-uses," is not built. This spec does not reopen the scope; it does change, and states plainly that it
+own Metric Definitions section). The catalog's own wider framing, its purpose field "Document the meaning
+and usage of events and metrics", is not built. This spec does not reopen the scope; it does change, and states plainly that it
 changes, the reasoning the scope condition rests on. See the boundary subsection below.
 
 #### Demand: named as an unfilled gap, four times, by the sibling it stands next to
