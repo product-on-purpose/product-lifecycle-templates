@@ -231,10 +231,10 @@ How the field was narrowed to the alternatives below (or "N/A, nothing was narro
      ASK   Which weight or score are you least confident in? How far would it have to move before a
            different alternative wins? Does the recommendation survive that move? If it does not, what
            does that imply about how confidently you can recommend anything?
-     GOOD  "Moved the queue-wait weight from 30 to 20 of the total 100 points, the number the team
-           disagreed about most. The self-hosted runner still ranks first, by under a point. Moving it to
-           15 flips the result to the hosted service. The recommendation holds for any queue-wait weight
-           at or above roughly 18."
+     GOOD  "Moved the queue-wait weight from 30 to 22 of the total 100 points, the number the team
+           disagreed about most. The self-hosted runner still ranks first, by under a point. At 20 the two
+           tie, and moving it to 15 flips the result to the hosted service. The recommendation holds for
+           any queue-wait weight above 20."
      WEAK  "We're fairly confident in our weights." (no variable named, nothing moved, nothing a reader can
            check)
      TRAP  Running this check after the recommendation is already written, to defend it rather than test
@@ -293,7 +293,7 @@ How the field was narrowed to the alternatives below (or "N/A, nothing was narro
            close, say that plainly, rather than reporting a winner the matrix cannot support. What decision
            was actually taken, and where is it recorded?
      GOOD  "Recommended: the self-hosted runner, ahead by 4 points on the current weights, conditional on
-           the queue-wait weight staying at or above 18 (see Sensitivity Analysis). Re-run this
+           the queue-wait weight staying above 20 (see Sensitivity Analysis). Re-run this
            comparison if the hosted plan raises its concurrent-job cap; queue wait was the deciding
            criterion. Decision taken: adopt the self-hosted runner, recorded in ADR 0091."
      WEAK  "We recommend the self-hosted option because it scored highest." (restates the matrix total,
@@ -319,7 +319,7 @@ How the field was narrowed to the alternatives below (or "N/A, nothing was narro
      ASK   Did anyone on the team, or reviewing it, disagree with the recommendation? How was that
            disagreement addressed, not just noted? Who checked the scoring, and what is their stake in the
            outcome?
-     GOOD  "The engineer who favored the hosted service (the do-nothing option) reviewed the final matrix
+     GOOD  "The engineer who favored the hosted service reviewed the final matrix
            and disputed its reliability score, not the weights; the team re-scored that row from the
            internal incident log, the recommendation held, and she accepted it. No
            reviewer outside the team checked the scoring independently."
