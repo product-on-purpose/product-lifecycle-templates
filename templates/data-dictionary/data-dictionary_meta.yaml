@@ -1,0 +1,32 @@
+id: data-dictionary
+title: Data Dictionary
+summary: >-
+  The standing reference that documents what the fields of a dataset or table mean - each one's name,
+  type, allowed values, and unit - so that different teams compute the same number from them. Distinct
+  from the tracking plan, which specifies the events and properties a product emits, and from the KPI
+  dashboard's own Metric Definitions section, which locks one dashboard's metric formulas rather than a
+  field's meaning.
+doc_type: data-dictionary
+classification: utility
+family: governance-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Purpose and Boundary, the Field Definitions table itself, and Ownership and Review) for a single small table or an early schema, the shape several admitting sources ship on their own with no separate metadata header, relationships section, or formal sign-off chain. Use full when more than one team changes the schema, when a field carries personal or restricted data, or when a reader needs the table's own metadata header, its relationships to other tables, a validation-rules table, and a Review and Sign-off section that lean omits entirely."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - governance
+  - data-governance
+  - analytics
+  - metadata
+  - schema
+  - data-quality
+related_templates: [tracking-plan, kpi-dashboard]
+aliases:
+  - codebook
+catalog_ref: 141
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-15
+license: Apache-2.0
