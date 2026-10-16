@@ -12,7 +12,7 @@ Fast reference for the User Story bundle. For the full reasoning, history, and s
 ## When NOT to use
 
 - You need the whole feature's scope, metrics, and non-goals. Use a PRD; stories implement it.
-- You need exhaustive actor-system flows. Use a use-case specification.
+- You need exhaustive actor-system flows. Use a [use-case specification](../use-case-specification/use-case-specification_guide.md).
 - The "done" conditions are detailed enough to deserve their own artifact. Use acceptance criteria.
 
 ## Pick a variant
