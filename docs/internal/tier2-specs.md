@@ -5208,7 +5208,7 @@ rather than promised by a `future:` tag. A grep across every tracked file in `te
   dictionary its own column against the tracking plan, the measurement plan, and the KPI dashboard, and its
   quality rubric (`tracking-plan_guide.md:81`) scores a plan on whether it names the data dictionary by
   name as a neighbour it hands content to.
-- `templates/tracking-plan/tracking-plan_companion.md:90-102` and `:394-398` carry the same boundary at
+- `templates/tracking-plan/tracking-plan_companion.md:90-104` and `:395-399` carry the same boundary at
   length, citing Wizbrand's tense-based account. **This companion text is the shipped prose the 2026-10-14
   research (below) finds is no longer the soundest statement of the boundary it draws.** It is not wrong
   that the two documents differ; it is the specific reason it gives (tense) that a second look does not
@@ -5342,7 +5342,7 @@ collapse the two documents into one.
 - **Not the tracking plan.** On subject, not tense, per the section above: a tracking plan specifies the
   events and properties a product emits; a data dictionary documents what the fields of a dataset or table
   mean. `tracking-plan`'s own shipped text draws this boundary on tense today
-  (`tracking-plan_companion.md:394-398`, `tracking-plan_template-lean.md:69-76`); this spec recommends,
+  (`tracking-plan_companion.md:395-399`, `tracking-plan_template-lean.md:69-76`); this spec recommends,
   without requiring, a dated note on that text rather than a rewrite, under What landing this bundle
   closes elsewhere, below.
 - **Not the KPI dashboard's own Metric Definitions section.** A data dictionary documents what a field
@@ -5643,7 +5643,7 @@ stops rather than ship a document that restates its neighbours under a new headi
    sibling sentence is edited to point at the new example, or left as a dated fact about the state of the
    program at the time it was written, is a build decision this spec does not make; either choice should
    be stated plainly in the build's own report, not left for a reader to notice the contradiction.
-3. **`tracking-plan_companion.md:90-102` and `:394-398`, and `tracking-plan_template-lean.md:69-76` /
+3. **`tracking-plan_companion.md:90-104` and `:395-399`, and `tracking-plan_template-lean.md:69-76` /
    `tracking-plan_template-full.md`'s matching lines, still draw the tracking-plan/data-dictionary boundary
    on Wizbrand's tense line alone.** This spec recommends a dated note on that text, in the shape the
    contract's own `0.4.0` and `0.5.0` change notes use, stating that the 2026-10-14 research found a second
@@ -5666,6 +5666,16 @@ stops rather than ship a document that restates its neighbours under a new headi
 9. **This page's own `tracking-plan` spec text.** Its Purpose and Boundary design row calls this type "the
    unbuilt data dictionary", and its "Not the data dictionary" boundary rests on Wizbrand's tense-based
    account. Both want a dated note at the build, pointing here.
+
+*(2026-10-15, at the build: items 1, 5, 6, 7 and 9 are done as written. Item 2: the sentence stays as a
+dated fact, because the tracking plan's example is dated 2026-08-24 and this bundle's example 2026-09-08,
+so it was true on the day it describes; the tracking plan's history records the choice. Item 3: the
+companion's two passages carry a dated note, and the templates' guidance comments are unchanged, so the
+tracking plan's version stays 0.1.0 with a dated correction in its history. Item 4 is not done: it would
+edit a family contract, and every contract edit stops for the maintainer's read. Item 8 follows the PR.
+The line citations to the tracking plan's companion in this subsection and the two above it were remapped
+to the passages' current lines, because the build's own dated note shifted them, and the first had already
+stopped one line short.)*
 
 #### What the build would cost
 
