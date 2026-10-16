@@ -8,6 +8,19 @@ Newest first.
 
 ---
 
+## v0.17.0
+
+**Two bundles in one release: a North Star metrics document and a business continuity plan.** The North
+Star document names the one metric that shows customers get the value a product strategy promises, and the
+input metrics a team can move. It sits between the product strategy and the roadmap. The business continuity
+plan is the standing plan that keeps an organization's critical business processes going through a
+significant disruption, with disaster recovery as a section of its full variant.
+
+Every quotation in both research logs was checked against the source's raw text. Specs for a trade study, a
+use case specification and a data dictionary are written and accepted; none of the three is built in this release.
+
+---
+
 ## v0.16.0
 
 **Four bundles in one release: an experiment design doc, an experiment readout, a tracking plan and a
