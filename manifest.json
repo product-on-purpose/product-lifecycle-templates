@@ -1474,6 +1474,36 @@
     },
     {
       "aliases": [
+        "use case",
+        "use case model"
+      ],
+      "approx_tokens": {
+        "full": 6350,
+        "lean": 3600
+      },
+      "default_size": "lean",
+      "doc_type": "use-case-specification",
+      "family": "delivery-docs",
+      "id": "use-case-specification",
+      "phase": "deliver",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (actor and goal in context, preconditions and trigger, the main success scenario, and what stays true however it ends) for a low-ceremony or early-stage use case where the main path and one line on each known deviation are enough. Use full when the use case is formal or critical enough that a reviewer needs the complete header, the stakeholder and interests list, and every extension numbered and findable on its own; it adds Scope and Level, Stakeholders and Interests, Extensions, Related Information, and Open Issues and Schedule.",
+      "status": "beta",
+      "summary": "Writes down, for one named primary actor and one goal, what the actor and the system do step by step when everything goes right, plus the alternative and exception paths that branch off at each point something can go another way. Elaborates one unit of product work a story or epic already names, between the point it is defined and the point acceptance criteria confirm it.",
+      "tags": [
+        "requirements",
+        "use-case",
+        "business-analysis",
+        "delivery",
+        "scenarios"
+      ],
+      "title": "Use Case Specification"
+    },
+    {
+      "aliases": [
         "persona",
         "user profile",
         "proto-persona",
@@ -1540,5 +1570,5 @@
       "title": "User Story"
     }
   ],
-  "count": 45
+  "count": 46
 }

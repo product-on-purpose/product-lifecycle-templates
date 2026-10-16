@@ -12,6 +12,22 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **`use-case-specification`, the 46th bundle**, the tenth `delivery-docs` member by
+  [ADR 0072](docs/internal/decisions/0072-use-case-specification-joins-delivery-docs.md), at
+  `phase: deliver`. It writes down, for one primary actor and one goal, a numbered main success scenario plus
+  the alternative and exception paths that branch off it, and it elaborates one story the delivery chain
+  already names. Lean carries Title and Actor, Goal in Context, Preconditions and Trigger, Main Success Scenario
+  with one line of prose for each known deviation, and Minimal and Success Guarantees. Full adds Scope and
+  Level, Stakeholders and Interests, Extensions, Related Information, and Open Issues and Schedule. The guide
+  gives Alistair Cockburn's own names beside the sizes: lean is his casual form in coverage, and full is his
+  fully dressed form. The worked example elaborates the Saved Views chain's "set a default saved view" story,
+  dated between the story and the acceptance criteria that confirm it. The research log records 27 sources,
+  and every one of its 238 quotations was checked against raw text. Catalog entry 35 now reads
+  methodology-agnostic rather than Waterfall/UP/RUP, ships lean and full rather than S/M, and names User Story
+  as its relationship; the user stories guide's routing sentence now links to the bundle.
+
 ## [0.18.0] - 2026-10-15
 
 ### Added

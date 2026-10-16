@@ -49,6 +49,7 @@ tree without the gate noticing.
 - [`product-backlog/`](product-backlog/) - Product Backlog. Axis phase deliver; ships lean/full.
 - [`release-notes/`](release-notes/) - Release Notes. Axis phase deliver; ships lean/full.
 - [`sprint-backlog/`](sprint-backlog/) - Sprint Backlog. Axis phase deliver; ships lean/full.
+- [`use-case-specification/`](use-case-specification/) - Use Case Specification. Axis phase deliver; ships lean/full. The tenth `delivery-docs` member ([ADR 0072](../docs/internal/decisions/0072-use-case-specification-joins-delivery-docs.md)): one primary actor's full path to one goal, a numbered main success scenario plus the alternative and exception paths that branch off it. It elaborates one story the chain already names, before acceptance criteria confirm it.
 - [`user-stories/`](user-stories/) - User Story. Axis phase deliver; ships lean/full.
 
 **`discovery-docs`**

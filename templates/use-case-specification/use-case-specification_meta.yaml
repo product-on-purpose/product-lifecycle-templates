@@ -1,0 +1,31 @@
+id: use-case-specification
+title: Use Case Specification
+summary: >-
+  Writes down, for one named primary actor and one goal, what the actor and the system do step by step
+  when everything goes right, plus the alternative and exception paths that branch off at each point
+  something can go another way. Elaborates one unit of product work a story or epic already names,
+  between the point it is defined and the point acceptance criteria confirm it.
+doc_type: use-case-specification
+family: delivery-docs
+phase: deliver
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (actor and goal in context, preconditions and trigger, the main success scenario, and what stays true however it ends) for a low-ceremony or early-stage use case where the main path and one line on each known deviation are enough. Use full when the use case is formal or critical enough that a reviewer needs the complete header, the stakeholder and interests list, and every extension numbered and findable on its own; it adds Scope and Level, Stakeholders and Interests, Extensions, Related Information, and Open Issues and Schedule."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - requirements
+  - use-case
+  - business-analysis
+  - delivery
+  - scenarios
+related_templates: [user-stories, acceptance-criteria, epic, prd, data-dictionary, sdd, test-case]
+aliases:
+  - use case
+  - use case model
+catalog_ref: 35
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-15
+license: Apache-2.0
