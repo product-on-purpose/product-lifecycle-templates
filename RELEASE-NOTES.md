@@ -8,6 +8,21 @@ Newest first.
 
 ---
 
+## v0.19.0
+
+**Two bundles in one release: a use-case specification and a trade study.** A use-case specification
+spells out, for one user and one goal, the steps that succeed and the alternative and exception paths that
+branch off them. It is the tenth `delivery-docs` member. A trade study compares named technical options
+against weighted criteria, including a do-nothing baseline, and records which one the comparison favors.
+It is the fifth `decision-docs` member. Every quotation in both research logs was checked against the
+source's raw text.
+
+The gate now checks every citation in a companion that has a subsection named References. Before this
+release it stopped reading at that subsection, and the trade study's companion is the only one that has
+one.
+
+---
+
 ## v0.18.0
 
 **A data dictionary becomes the 45th bundle.** It is the standing reference to what each field in a dataset

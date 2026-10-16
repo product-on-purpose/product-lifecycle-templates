@@ -23,6 +23,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 
 **Newest first**, matching [`RELEASE-NOTES.md`](../../RELEASE-NOTES.md). Stated because it was not: entries through `v0.7.0` were appended in ascending order and everything from `v0.8.0` was inserted at the top, so the list disagreed with itself for four releases.
 
+- [`v0.19.0.md`](v0.19.0.md) - two bundles: a use-case specification, the tenth `delivery-docs` member, and a trade study, the fifth `decision-docs` member; the gate now checks every citation in a companion with a References subsection
 - [`v0.18.0.md`](v0.18.0.md) - one bundle: a data dictionary, the seventh `governance-docs` member; both agent skills now name every built document type
 - [`v0.17.0.md`](v0.17.0.md) - two bundles: a North Star metrics document, the fifth `strategy-docs` member, and a business continuity plan with disaster recovery inside its full variant; specs for three more types
 - [`v0.16.0.md`](v0.16.0.md) - four bundles: the experiment design doc and readout that form the tenth family, a tracking plan, and a problem statement, the first `define` bundle

@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-10-16
+
 ### Added
 
 - **`use-case-specification`, the 46th bundle**, the tenth `delivery-docs` member by
@@ -2974,7 +2976,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.18.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...HEAD
+[0.19.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.16.0...v0.17.0
 [0.16.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.15.0...v0.16.0
