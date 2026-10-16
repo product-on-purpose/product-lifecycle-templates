@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-10-15
+
 ### Added
 
 - **A spec for `trade-study` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 66
@@ -112,6 +114,11 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Three count sentences that no marker gates are corrected.** The README's at-a-glance table and STATE's
+  agent surface row said the MCP server addresses 85 template variants; it addresses 89, which its self-test
+  asserts. The README's Tier-1 floor row said "the other ten bundles are Tier-2 types" and named ten; nineteen
+  are, and the row now points to STATE's Bundles row for the list. STATE's row and the README's Tier-1 row
+  carry dated notes. A count check found all three while `v0.17.0` was being cut.
 - **Five more family contracts place the "How to fill this in" preamble in each variant's opening comment
   block**, as `discovery-docs` has since 2026-09-30: `decision-docs`, `delivery-docs`, `governance-docs`,
   `qa-docs` and `strategy-docs`. Each said the preamble "opens each variant", yet all 57 of their template
@@ -2891,7 +2898,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.16.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.17.0...HEAD
+[0.17.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.16.0...v0.17.0
 [0.16.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.13.0...v0.14.0

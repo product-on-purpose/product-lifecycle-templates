@@ -23,6 +23,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 
 **Newest first**, matching [`RELEASE-NOTES.md`](../../RELEASE-NOTES.md). Stated because it was not: entries through `v0.7.0` were appended in ascending order and everything from `v0.8.0` was inserted at the top, so the list disagreed with itself for four releases.
 
+- [`v0.17.0.md`](v0.17.0.md) - two bundles: a North Star metrics document, the fifth `strategy-docs` member, and a business continuity plan with disaster recovery inside its full variant; specs for three more types
 - [`v0.16.0.md`](v0.16.0.md) - four bundles: the experiment design doc and readout that form the tenth family, a tracking plan, and a problem statement, the first `define` bundle
 - [`v0.15.0.md`](v0.15.0.md) - three bundles in one release: a change log, the standing register of every change request; a production readiness review, the checklist a service meets before a team takes it on; and a project brief, which asks for authority to start.
 - [`v0.14.0.md`](v0.14.0.md) - two bundles in one release: an internal announcement, which tells the people who did not do the work what a launch means for them, and a change request, which asks for something already agreed to change and records the decision; the last fill-count lines are retired
