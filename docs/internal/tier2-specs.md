@@ -49,7 +49,7 @@ design task" rather than "a spec-driven execution".
 | `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **Built 2026-10-14**, shipped in `v0.17.0`, lean and full, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/business-continuity-plan_v0.1.0.md) covers the whole build: 10,284,679 weighted, $20.57, 15 agents. Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), accepted 2026-10-13 when the maintainer approved the spec PR's merge. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
 | `trade-study` | `trade-study-options-analysis` | `decision-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) in the five-candidate admission sweep | **Not yet; third in the build order the maintainer set on 2026-10-15.** Build order is the maintainer's own preference ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)) |
 | `use-case-specification` | `use-case-specification` | `delivery-docs` | **Written 2026-10-15**; admission sources retrieved and raw-checked 2026-10-12, in the five-candidate admission sweep [below](#delivery-docs-new-member-by-amendment-the-use-case-specification-the-user-stories-guide-routes-to), with a gap-fill the same day on the Cockburn 2001 fully-dressed field set | **Not yet; second in the build order the maintainer set on 2026-10-15.** Family by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs), accepted 2026-10-15 when the maintainer approved the spec PR's merge. Its contract diff widens the membership test with a sixth verb, "elaborates" |
-| `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Not yet; first in the build order the maintainer set on 2026-10-15.** Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
+| `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Built 2026-10-15**, lean and full, first in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Not in any release yet. Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -75,7 +75,7 @@ result decides whether a spec is written. *(2026-10-15: the dimension ran on 202
 the maintainer reads as a diff. The use case's `delivery-docs` amendment adds the verb "elaborates", with a
 paragraph that limits what it admits. The data dictionary's `governance-docs` amendment admits only the narrow
 scope, the meaning of stored fields, which reverses the maintainer's first answer. Neither is specced yet. Their
-records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted. *(2026-10-15: both are specced below, by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs) and [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), each accepted the same day when the maintainer approved the spec PR's merge. ADR 0073 keeps the narrow scope but draws its boundary on subject rather than tense, because research on 2026-10-14 found the tense line contested; the record states the change.)*
+records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted. *(2026-10-15: both are specced below, by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs) and [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), each accepted the same day when the maintainer approved the spec PR's merge. ADR 0073 keeps the narrow scope but draws its boundary on subject rather than tense, because research on 2026-10-14 found the tense line contested; the record states the change.)* *(2026-10-15: `data-dictionary` built; its progress row above carries the date.)*
 
 **2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`.
 
@@ -3231,7 +3231,7 @@ Provisional, and expected to move once a build's own research runs:
 
 | Section | In lean | What it carries |
 |---|---|---|
-| **Purpose and Boundary** | yes | What this document catalogs (the events, properties, and traits a product captures, across every feature) and what does not go in: a per-feature instrumentation spec (the PRD's own "Analytics and instrumentation" section, or the unbuilt `analytics-requirements-measurement-plan`), the unbuilt data dictionary, the KPI dashboard's Metric Definitions section, and the in-tool enforced schema some vendors build from this document. Sourced to Segment's glossary, Countly's glossary, Avo's Data Design docs |
+| **Purpose and Boundary** | yes | What this document catalogs (the events, properties, and traits a product captures, across every feature) and what does not go in: a per-feature instrumentation spec (the PRD's own "Analytics and instrumentation" section, or the unbuilt `analytics-requirements-measurement-plan`), the unbuilt data dictionary *(2026-10-15: built as `data-dictionary`)*, the KPI dashboard's Metric Definitions section, and the in-tool enforced schema some vendors build from this document. Sourced to Segment's glossary, Countly's glossary, Avo's Data Design docs |
 | **Event and Property Catalog** | yes | **The load-bearing section.** One row per event: name, trigger (when it fires), properties, owner, source or destination, status. Name, meaning, properties and source recur across the vendors (see Structure). Owner and status are each single-sourced, so the companion labels them as such. *(Corrected 2026-10-11, when the bundle was built: neither is single-sourced any longer; see the note under Structure.)* A table section, so it carries PRIORITY and ROW HINT |
 | **Review and Ownership** | yes | The cadence this document is kept on, who maintains it, and the living-document framing: Amplitude's "a living document," mParticle's "live immediately." Thinly sourced on cadence specifics beyond "continuously maintained"; any stated review interval is this library's own **POSITION** |
 | **Governance and Ownership Discipline** | full only | The PII and ownership discipline several practitioners argue for but no vendor documentation states as a required field: one named owner per event (`customerscore.io`, a single practitioner source), PII flagging and masking ("strict controls to prevent the accidental collection of Personally Identifiable Information," `trackingplan.com/blog/data-governance-for-analytics`), and Amplitude's four-role approval chain as a richer, alternative shape for the same concern. **Thinly and sometimes differently sourced**; present both shapes rather than picking one as canonical, the same move `change-log`'s Status Vocabulary section already makes for its own three published shapes |
@@ -3266,7 +3266,11 @@ Provisional, and expected to move once a build's own research runs:
   `wizbrand.com/tutorials/analytics-measurement-plan`) describes that per-feature measurement plan, not
   the standing, cross-feature type specced here. Content breadth and cadence are separate axes, and this
   spec draws the line by cadence. *(2026-10-15: Wizbrand does not describe a per-feature plan. The same page says of its measurement plan "Many teams review it quarterly", raw-checked in a 2026-10-14 admission sweep, which describes a standing document. The sentence above misreads Wizbrand on that point; the cadence line rests on Avo's branch model and this library's own POSITION, not on Wizbrand.)*
-- **Not the data dictionary (catalog 141, unbuilt).** One source draws a clean
+- **Not the data dictionary (catalog 141, unbuilt).** *(2026-10-15: built as `data-dictionary`. Its
+  [spec](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean)
+  and ADR 0073 draw this boundary on subject rather than tense, because research on 2026-10-14 found the
+  tense line contested across primary and peer-reviewed sources. The tense reading below is kept as written.)*
+  One source draws a clean
   forward-looking-versus-backward-looking line, single-sourced but not contradicted, in three separately
   raw-checked phrases from the same page: "A tracking plan describes what you intend to track"; "A Data
   Dictionary documents what the data means and how it is structured once implemented"; and "the tracking
@@ -5204,7 +5208,7 @@ rather than promised by a `future:` tag. A grep across every tracked file in `te
   dictionary its own column against the tracking plan, the measurement plan, and the KPI dashboard, and its
   quality rubric (`tracking-plan_guide.md:81`) scores a plan on whether it names the data dictionary by
   name as a neighbour it hands content to.
-- `templates/tracking-plan/tracking-plan_companion.md:90-102` and `:394-398` carry the same boundary at
+- `templates/tracking-plan/tracking-plan_companion.md:90-104` and `:395-399` carry the same boundary at
   length, citing Wizbrand's tense-based account. **This companion text is the shipped prose the 2026-10-14
   research (below) finds is no longer the soundest statement of the boundary it draws.** It is not wrong
   that the two documents differ; it is the specific reason it gives (tense) that a second look does not
@@ -5302,7 +5306,10 @@ presupposes the data already exists. Buchanan et al. (2021), a peer-reviewed tut
 worked process as running "from source data (e.g., survey answers on Qualtrics) to an openly shared
 dataset accompanied by a data dictionary or codebook," placing the dictionary last. Nazabal et al. (2020) and Phillips et al.
 (2024) each describe the same ordering: a data dictionary built from, or after, data a team already holds,
-with Phillips et al. placing it as the tenth and final step of a ten-step pipeline. **NIMH and Temple write
+with Phillips et al. placing it as the tenth and final step of a ten-step pipeline. *(2026-10-15, at the
+build: Phillips et al. list the data dictionary tenth, and the same paper says "Generation steps often
+occur concurrently with one another", so the list position is weaker sequence evidence than "final step"
+suggests. The build's research log records the caveat.)* **NIMH and Temple write
 a dictionary before collection; CASRAI and Buchanan et al. write one after; so timing is no part of this
 boundary.**
 
@@ -5335,7 +5342,7 @@ collapse the two documents into one.
 - **Not the tracking plan.** On subject, not tense, per the section above: a tracking plan specifies the
   events and properties a product emits; a data dictionary documents what the fields of a dataset or table
   mean. `tracking-plan`'s own shipped text draws this boundary on tense today
-  (`tracking-plan_companion.md:394-398`, `tracking-plan_template-lean.md:69-76`); this spec recommends,
+  (`tracking-plan_companion.md:395-399`, `tracking-plan_template-lean.md:69-76`); this spec recommends,
   without requiring, a dated note on that text rather than a rewrite, under What landing this bundle
   closes elsewhere, below.
 - **Not the KPI dashboard's own Metric Definitions section.** A data dictionary documents what a field
@@ -5346,7 +5353,13 @@ collapse the two documents into one.
   in your data means," naming the field and the metric together as what gets defined, while its own worked
   content (nullability, enums, ranges, units) is entirely field-level, never formula-level. **Falsifier:**
   a source stating that a data dictionary itself locks a metric's formula, inclusions, or exclusions would
-  contradict this layering.
+  contradict this layering. *(2026-10-15, at the build: the falsifier is met. Wizbrand lists "Calculation
+  logic (for metrics): Formulas and inclusion/exclusion rules" among a data dictionary's key components,
+  Analytics8 puts "measure names ... their calculations" inside one, and Mixpanel's Lexicon, in the
+  event-list sense, documents saved metric formulas. ADR 0073's Considered Option 3 had already weighed
+  Wizbrand's language and rejected the wider framing on duplication with the KPI dashboard, so the scope
+  stands. The layering is the library's POSITION, not a sourced consensus, and the bundle's companion
+  labels it so.)*
 - **Not the experiment design doc.** `experiment-design-doc_guide.md`'s own "When NOT to use" list routes
   a reader toward a standing instrument, naming the data dictionary by name: "You need a standing
   instrument, not a one-time record. A tracking plan, a data dictionary, or an experiment log is maintained
@@ -5630,7 +5643,7 @@ stops rather than ship a document that restates its neighbours under a new headi
    sibling sentence is edited to point at the new example, or left as a dated fact about the state of the
    program at the time it was written, is a build decision this spec does not make; either choice should
    be stated plainly in the build's own report, not left for a reader to notice the contradiction.
-3. **`tracking-plan_companion.md:90-102` and `:394-398`, and `tracking-plan_template-lean.md:69-76` /
+3. **`tracking-plan_companion.md:90-104` and `:395-399`, and `tracking-plan_template-lean.md:69-76` /
    `tracking-plan_template-full.md`'s matching lines, still draw the tracking-plan/data-dictionary boundary
    on Wizbrand's tense line alone.** This spec recommends a dated note on that text, in the shape the
    contract's own `0.4.0` and `0.5.0` change notes use, stating that the 2026-10-14 research found a second
@@ -5653,6 +5666,16 @@ stops rather than ship a document that restates its neighbours under a new headi
 9. **This page's own `tracking-plan` spec text.** Its Purpose and Boundary design row calls this type "the
    unbuilt data dictionary", and its "Not the data dictionary" boundary rests on Wizbrand's tense-based
    account. Both want a dated note at the build, pointing here.
+
+*(2026-10-15, at the build: items 1, 5, 6, 7 and 9 are done as written. Item 2: the sentence stays as a
+dated fact, because the tracking plan's example is dated 2026-08-24 and this bundle's example 2026-09-08,
+so it was true on the day it describes; the tracking plan's history records the choice. Item 3: the
+companion's two passages carry a dated note, and the templates' guidance comments are unchanged, so the
+tracking plan's version stays 0.1.0 with a dated correction in its history. Item 4 is not done: it would
+edit a family contract, and every contract edit stops for the maintainer's read. Item 8 follows the PR.
+The line citations to the tracking plan's companion in this subsection and the two above it were remapped
+to the passages' current lines, because the build's own dated note shifted them, and the first had already
+stopped one line short.)*
 
 #### What the build would cost
 

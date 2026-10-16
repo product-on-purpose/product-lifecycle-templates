@@ -12,6 +12,22 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **`data-dictionary`, the 45th bundle**, the seventh `governance-docs` member by
+  [ADR 0073](docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md), at
+  `classification: utility`. It is the standing reference to what the fields of a dataset or table mean, so that
+  different teams compute the same number from them. Lean carries Purpose and Boundary, Field Definitions and
+  Ownership and Review; each table opens with its grain and key, and each field row carries its type and
+  nullability, definition, allowed values and missing codes, source, sensitivity and owner. Full adds Dataset
+  Metadata, Relationships, Validation Rules, and Review and Sign-off. The boundary with the tracking plan is drawn
+  on subject, not tense, and the boundary with the KPI dashboard's metric formulas is labelled the library's own
+  position, because three sources put formulas inside a data dictionary. The worked example documents the
+  warehouse tables the tracking plan's events land in, dated 2026-09-08. The research log records 46 sources, and
+  every one of its 333 quotations was checked against raw text. Catalog entry 141 drops the aliases "metric
+  definitions" and "data catalog entry", adds "codebook", and now states field meaning as its purpose; the
+  tracking plan gains the alias "event dictionary".
+
 ### Changed
 
 - **Both skill descriptions now name every built document type.** They named the 25 Tier-1 types and `rfc`,

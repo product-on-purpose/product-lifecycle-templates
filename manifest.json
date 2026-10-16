@@ -267,6 +267,36 @@
     },
     {
       "aliases": [
+        "codebook"
+      ],
+      "approx_tokens": {
+        "full": 6050,
+        "lean": 3700
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "data-dictionary",
+      "family": "governance-docs",
+      "id": "data-dictionary",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Purpose and Boundary, the Field Definitions table itself, and Ownership and Review) for a single small table or an early schema, the shape several admitting sources ship on their own with no separate metadata header, relationships section, or formal sign-off chain. Use full when more than one team changes the schema, when a field carries personal or restricted data, or when a reader needs the table's own metadata header, its relationships to other tables, a validation-rules table, and a Review and Sign-off section that lean omits entirely.",
+      "status": "beta",
+      "summary": "The standing reference that documents what the fields of a dataset or table mean - each one's name, type, allowed values, and unit - so that different teams compute the same number from them. Distinct from the tracking plan, which specifies the events and properties a product emits, and from the KPI dashboard's own Metric Definitions section, which locks one dashboard's metric formulas rather than a field's meaning.",
+      "tags": [
+        "governance",
+        "data-governance",
+        "analytics",
+        "metadata",
+        "schema",
+        "data-quality"
+      ],
+      "title": "Data Dictionary"
+    },
+    {
+      "aliases": [
         "DoD",
         "done criteria",
         "definition of done"
@@ -1413,7 +1443,8 @@
     {
       "aliases": [
         "data tracking plan",
-        "event tracking plan"
+        "event tracking plan",
+        "event dictionary"
       ],
       "approx_tokens": {
         "full": 6200,
@@ -1509,5 +1540,5 @@
       "title": "User Story"
     }
   ],
-  "count": 44
+  "count": 45
 }
