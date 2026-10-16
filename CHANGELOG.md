@@ -12,6 +12,28 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **Both skill descriptions now name every built document type.** They named the 25 Tier-1 types and `rfc`,
+  and none of the other 18 Tier-2 types, from `epic` to `business-continuity-plan`. An agent decides whether
+  to load a skill from its description, so those types may never have reached either skill. The fill skill
+  also said each bundle carries a lean and a full variant; 40 of the 44 do, and it now says "most". Both
+  descriptions stay under the 1,024-character limit, and `INDEX.md` is regenerated from the pinned toolkit.
+- **The release process checks documentation for three audiences.** Step 1 of
+  [`release-process.md`](docs/internal/release-process.md) now lists the user, technical and agent surfaces
+  a release must leave current, with the two checks that found this release's gaps. This is the
+  maintainer's standing rule of 2026-10-15. Step 5 now removes the note's frontmatter before publishing the
+  GitHub release, and says to tag the squash commit on `main`.
+- **The README no longer counts the bundles the `npx skills add` route leaves out.** It said 41, a number no
+  marker gates; it now says "the bundles it indexes".
+
+### Fixed
+
+- **GitHub release pages no longer open with raw YAML.** 19 of the 21 published releases, `v0.1.0` to
+  `v0.17.0`, carried the release note's frontmatter in the release body, and GitHub rendered every field as
+  text above the title. Each body was edited on 2026-10-15 to remove the frontmatter and nothing else. The
+  notes in [`docs/releases/`](docs/releases/) keep theirs.
+
 ## [0.17.0] - 2026-10-15
 
 ### Added

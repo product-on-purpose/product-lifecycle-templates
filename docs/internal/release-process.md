@@ -50,6 +50,31 @@ pass.
 `STATE.md` outranks every other document. If it disagrees with the tree, fix `STATE.md` first, and re-read
 the prose around each marker rather than only the marker.
 
+**Then check the documentation for all three audiences: users, technical readers and agents.** This is the
+maintainer's standing rule, set 2026-10-15: every release ships with its release note, its changelog, and
+onboarding documentation that is current for each audience. A green gate does not show this. The gate
+checks the counts in markers, and it never reads whether a page names the bundles that exist.
+
+| Audience | Surfaces to read |
+|---|---|
+| User | `README.md` (status line, at-a-glance table, library table by family), `docs/tutorials/getting-started.md`, `docs/how-to/`, `docs/reference/choosing-a-template.md`, `templates/README.md`, the site's `index.mdx` |
+| Technical | `STATE.md`, `docs/explanation/`, `CONTRIBUTING.md`, `CHANGELOG.md` |
+| Agent | `AGENTS.md`, both skills' `SKILL.md` descriptions and bodies, the `plugin.json` and `library.json` descriptions, `INDEX.md` (regenerate it, never edit it), and the registry listing in `agent-plugins` |
+
+Two checks find most gaps. First, list every one of those files that names an older bundle but not the
+newest ones, and read each hit:
+
+```
+for f in <the files above>; do grep -q "<an older bundle id>" "$f" && ! grep -q "<the newest bundle id>" "$f" && echo "$f"; done
+```
+
+Second, grep those files for counts of bundles, variants, families, ADRs and CI steps outside the markers,
+and compare each with the generated artifacts. **A skill description is a trigger list, not prose.** An
+agent decides whether to load the skill from that list, so a type missing from it may never reach the skill.
+*(Added 2026-10-15: both skill descriptions named the 25 Tier-1 types and `rfc`, and none of the 18
+other Tier-2 types. The fill skill also said every bundle has a full variant, while 40 of 44 did. The README
+and STATE said the MCP server served 85 variants when it served 89.)*
+
 ### 2. Read the downstream contract BEFORE choosing the version
 
 **This step exists because skipping it cost a release.** See "What went wrong" below.
@@ -89,10 +114,21 @@ Copy `templates/release-notes/release-notes_template-lean.md`, fill it, and grad
 The changelog and note go through a normal PR and merge. **Then** tag:
 
 ```
-git tag -a vX.Y.Z -m "..."          # annotated, always
+git tag -a vX.Y.Z -m "..."          # annotated, always, on the merge commit on main
 git push origin vX.Y.Z
-gh release create vX.Y.Z --notes-file docs/releases/vX.Y.Z.md
+gh release create vX.Y.Z --title vX.Y.Z --notes-file <the note with its frontmatter removed>
 ```
+
+**Remove the frontmatter before publishing the release body.** GitHub does not parse YAML frontmatter in a
+release body. It renders the opening `---` as a rule and every field as raw text above the title. The
+repository copy keeps its frontmatter, because `source_template` is the provenance record. *(Added
+2026-10-15: 19 of the 21 releases from `v0.1.0` to `v0.17.0` published the frontmatter this way; only
+`v0.2.1` and `v0.6.0` did not. All 19 were corrected that day by editing the release bodies, which removed
+only the frontmatter.)*
+
+**Tag the squash commit, not the branch tip.** A squash merge creates a new commit on `main`, so the PR
+branch's last commit is not in `main`'s history. Check that `git rev-parse vX.Y.Z^{commit}` equals
+`git rev-parse origin/main` before publishing.
 
 **The tag object SHA is not the commit SHA.** `git rev-parse vX.Y.Z` gives the annotated tag object;
 `git rev-parse vX.Y.Z^{commit}` gives the commit. Anything pinning a release wants the second.
