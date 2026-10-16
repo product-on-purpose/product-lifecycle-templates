@@ -8,6 +8,18 @@ Newest first.
 
 ---
 
+## v0.18.0
+
+**A data dictionary becomes the 45th bundle.** It is the standing reference to what each field in a dataset
+or table means: each table opens with its grain and key, and each field row gives the type, definition,
+allowed values, source, sensitivity and owner. It is the seventh `governance-docs` member, and every
+quotation in its research log was checked against the source's raw text.
+
+Both agent skills now name every document type the library builds. Before this release they named only the
+Tier-1 types and `rfc`, so an agent asked for one of the newer types might never have loaded either skill.
+
+---
+
 ## v0.17.0
 
 **Two bundles in one release: a North Star metrics document and a business continuity plan.** The North
