@@ -16,7 +16,7 @@ a bigger name.
 |---|---|
 | a **project brief** | you need a short overview for starting up a project, not an investment case. A project brief absorbs an outline business case as one component and retires once initiation documentation exists; the business case itself keeps being refined, it does not retire with the brief |
 | a **problem statement** | the problem itself is not yet agreed. `problem-statement` frames one problem, who has it and the evidence that it is real, and asks for no money; a case that follows can cite it and keep its own Problem and Opportunity section short |
-| a **trade study** | you are comparing technical approaches against weighted criteria, not comparing whether to invest at all. A trade study's output feeds into Options Considered as one input, it does not replace the case |
+| a **[trade study](../trade-study/trade-study_guide.md)** | you are comparing technical approaches against weighted criteria, not comparing whether to invest at all. A trade study's output feeds into Options Considered as one input, it does not replace the case |
 | a **PRD** | the investment decision is already made and you need to specify what gets built. A PRD deliberately excludes market opportunity and revenue, which is exactly the ground this document covers |
 | a **cheap way to test a hypothesis** | you would rather validate an assumption than build a funding case for a known investment. The named alternative tradition is the SAFe Lean Business Case, which substitutes a hypothesis and leading indicators for a financial model. It is a genuinely different document, not a shorter one, and it is not shipped in this library |
 

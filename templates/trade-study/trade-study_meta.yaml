@@ -1,0 +1,35 @@
+id: trade-study
+title: Trade Study
+summary: >-
+  Compares a named set of technical alternatives against weighted criteria and records the
+  recommendation that comparison supports, for a problem the organization has already decided to
+  solve. Evaluates options; it does not have to be where the resulting decision is recorded, which
+  is an ADR's job.
+doc_type: trade-study
+phase: develop
+family: decision-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (Problem and Decision Framing, Criteria and Weights, Alternatives, Scoring Matrix, and Recommendation) when the stakes are contained and the comparison is between a small set of options whose tradeoffs are already mostly understood; that is the right default. Use full when the decision is hard to reverse, the field disagrees about the criteria or their weights, or a reviewer outside the immediate team will need to check the reasoning later: it adds Sensitivity Analysis, Risk and Benefit, Dissent or Independent Review, and References. If there was never a real second option, skip this document and log the decision directly instead."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - decision
+  - trade-off
+  - options-analysis
+  - weighted-scoring
+  - evaluation
+  - engineering
+related_templates: [adr, rfc, sdd, spike-report, business-case]
+aliases:
+  - trade-off analysis
+  - decision analysis
+  - weighted scoring matrix
+  - options analysis
+  - trade study report
+catalog_ref: 66
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-15
+license: Apache-2.0

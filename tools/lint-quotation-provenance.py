@@ -101,9 +101,9 @@ def strip_regions(text, path):
 
     Each exclusion is earned, and removing one only ever adds candidates.
     """
-    # The References list: those are citations, and their titles are quoted by convention.
-    if "## References" in text:
-        text = text.split("## References", 1)[0]
+    # The References list: those are citations, and their titles are quoted by convention. Split on
+    # the heading at the start of a line, not the substring, which an H3 named "References" also holds.
+    text = re.split(r"^## References\b", text, maxsplit=1, flags=re.MULTILINE)[0]
     # Guidance comments: instructions to an author, and their GOOD/WEAK blocks quote example prose
     # deliberately. Companions have none; guides carry rubric cells that quote illustrative wording.
     text = re.sub(r"(?s)<!--.*?-->", " ", text)

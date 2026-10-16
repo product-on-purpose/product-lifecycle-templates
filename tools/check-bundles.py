@@ -92,6 +92,7 @@ HEADING_RE = re.compile(r"^(#{2,6})\s+(.*?)\s*$", re.MULTILINE)
 PLACEHOLDER_RE = re.compile(r"\{\{[a-z0-9_]+\}\}")
 INLINE_CITE_RE = re.compile(r"\(#ref-(\d+)\)")
 ANCHOR_RE = re.compile(r'id="ref-(\d+)"')
+REFERENCES_HEADING = re.compile(r"^## References\b", re.MULTILINE)
 BARE_CITE_RE = re.compile(r"(?<!\[)\[(\d+)\](?!\()")
 SIZES_RE = re.compile(r"^sizes_available:\s*(.*)$", re.MULTILINE)
 DEFAULT_SIZE_RE = re.compile(r"^default_size:\s*(.+?)\s*$", re.MULTILINE)
@@ -647,7 +648,10 @@ def check_citations(name, d):
     if not os.path.isfile(p):
         return False, "companion missing"
     text = read(p)
-    body = text.split("## References", 1)[0]
+    # The section heading only, at the start of a line. A bare substring split also matched an H3
+    # such as "### References *(full variant only)*" inside Anatomy, and on 2026-10-15 that cut the
+    # trade-study companion's body at line 289 of 617, so no inline citation after it was checked.
+    body = REFERENCES_HEADING.split(text, 1)[0]
     anchors = set(ANCHOR_RE.findall(text))
     inline = set(INLINE_CITE_RE.findall(body))
     # A reference may legitimately point at another reference; that is a use, not padding.
