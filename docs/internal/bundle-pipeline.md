@@ -43,7 +43,8 @@ pass after drafting, its two-template drafting $9.06. business-continuity-plan, 
 10,284,679 weighted and $20.57 for its 15 agents, its two-template drafting $10.10. data-dictionary, the
 fourteenth, cost 8,859,179 weighted and $17.72 for 16 agents, the usual 15 plus a seventh research dimension,
 its two-template drafting $7.71. use-case-specification, the fifteenth, cost 8,370,585 weighted and $16.74 for
-its 15 agents, its two-template drafting $7.77. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+its 15 agents, its two-template drafting $7.77. trade-study, the sixteenth, cost 10,479,257 weighted and
+$20.96 for 16 agents, the usual 15 plus a seventh research dimension, its two-template drafting $10.47. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
