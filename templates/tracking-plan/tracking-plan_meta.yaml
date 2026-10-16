@@ -26,6 +26,7 @@ related_templates: [kpi-dashboard, prd, change-log, issue-log, risk-register, ra
 aliases:
   - data tracking plan
   - event tracking plan
+  - event dictionary
 catalog_ref: 140
 maintainer: "product-on-purpose"
 last_reviewed: 2026-10-11

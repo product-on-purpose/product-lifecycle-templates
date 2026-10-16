@@ -1906,6 +1906,252 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "data-dictionary",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dataset_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "dictionary_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "steward"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-boundary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "purpose_and_boundary"
+              ],
+              "title": "Purpose and Boundary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "field-definitions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "field_allowed_values",
+                "field_definition",
+                "field_name",
+                "field_owner",
+                "field_sensitivity",
+                "field_source",
+                "field_type_nullability",
+                "grain_statement",
+                "key_columns",
+                "table_name"
+              ],
+              "title": "Field Definitions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "ownership-and-review",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "change_proposal_process",
+                "review_interval",
+                "review_triggers",
+                "table_owner",
+                "table_steward"
+              ],
+              "title": "Ownership and Review"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "dataset-metadata",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dictionary_version",
+                "effective_date",
+                "primary_consumers",
+                "refresh_cadence",
+                "source_system"
+              ],
+              "title": "Dataset Metadata"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "relationships",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "related_field",
+                "related_table_field",
+                "relationship_notes",
+                "relationship_type"
+              ],
+              "title": "Relationships"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "validation-rules",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "validation_field",
+                "validation_rule"
+              ],
+              "title": "Validation Rules"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-and-sign-off",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "approver",
+                "preparer",
+                "review_cycle",
+                "reviewer",
+                "signoff_status",
+                "version_approved_by",
+                "version_change_summary",
+                "version_date",
+                "version_number"
+              ],
+              "title": "Review and Sign-off"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "definition-of-done",
       "default_format": "default",
       "formats": {
@@ -11476,7 +11722,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 44,
-  "frontmatter_count": 285,
-  "section_count": 372
+  "count": 45,
+  "frontmatter_count": 291,
+  "section_count": 379
 }

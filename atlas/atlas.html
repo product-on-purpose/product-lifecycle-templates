@@ -3961,7 +3961,8 @@
       "name": "Tracking Plan",
       "aliases": [
         "data tracking plan",
-        "event tracking plan"
+        "event tracking plan",
+        "event dictionary"
       ],
       "category": "Analytics / Measurement",
       "stage": "measurement",
@@ -3986,13 +3987,12 @@
       "id": "data-dictionary",
       "name": "Data Dictionary",
       "aliases": [
-        "metric definitions",
-        "data catalog entry"
+        "codebook"
       ],
       "category": "Analytics / Measurement",
       "stage": "measurement",
       "owner": "Data / Analytics Eng",
-      "purpose": "Document the meaning and usage of events and metrics",
+      "purpose": "Document what the fields of a dataset or table mean, so that different teams compute the same number from them",
       "methodology": "methodology-agnostic",
       "formality": "standard",
       "rarity": "occasional",
@@ -4000,11 +4000,12 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
-        "Tracking Plan"
+        "Tracking Plan",
+        "KPI Dashboard"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {

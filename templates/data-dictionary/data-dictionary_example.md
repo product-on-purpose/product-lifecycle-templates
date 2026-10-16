@@ -98,7 +98,7 @@ events table above. **Key column(s):** `report_session_id` enforces the grain.
 | report_id | string, not null | The report this session opened; carried through from the originating report_opened event's own property | Free-form; this warehouse does not yet carry a separate reports dimension table, so this column cannot be joined further than the events table it was copied from | Copied from events.report_id at load | none | Data Eng |
 | user_id | string, not null | The analyst who opened the report; joins to users.user_id | Free-form | Copied from events.user_id at load | none | Data Eng |
 | report_opened_at | timestamp, not null | When the report was opened: the first of Time to Insight's two timestamps | UTC; copied from the originating report_opened event's occurred_at | Derived at load from events | none | Data Eng |
-| first_action_at | timestamp, nullable | The earliest occurred_at among this session's report_exported, report_shared, and report_annotated events: the second of Time to Insight's two timestamps | UTC; null until one of the three actions fires for this session | Derived at load from events | none | Data Eng |
+| first_action_at | timestamp, nullable | The earliest occurred_at among report_exported, report_shared, and report_annotated events with this session's user_id and report_id, from report_opened_at until that user's next report_opened on the same report: the second of Time to Insight's two timestamps | UTC; null until one of the three actions fires for this session | Derived at load from events | none | Data Eng |
 | first_action_type | string, nullable | Which of the three logged actions set first_action_at | Enum: report_exported, report_shared, report_annotated; null while first_action_at is null | Derived at load from events | none | Data Eng |
 
 **Table:** users
@@ -131,6 +131,7 @@ Closing that gap is a known caveat of this table, not a column a reader can look
 | events.user_id | users.user_id | Foreign key | Null on nudge_variant_assigned; populated on every other event name |
 | events.account_id | accounts.account_id | Foreign key | Direct on nudge_variant_assigned; derived by joining user_id to accounts for every other event name |
 | report_sessions.report_id | events.report_id | Derived | Copied from the originating report_opened row; not an enforced foreign key, because no reports dimension table exists yet |
+| report_sessions.first_action_at | events.occurred_at | Derived | Scoped to events with the same user_id and report_id, from report_opened_at until that user's next report_opened on the same report; no session identifier is stored on the events table, so this rule is the join |
 | report_sessions.user_id | users.user_id | Foreign key | The analyst who opened the report |
 | users.account_id | accounts.account_id | Foreign key | Every user belongs to exactly one account |
 
@@ -159,7 +160,8 @@ question raised here is already settled by the time that review reads events aga
 Data Eng's own choice, not borrowed from elsewhere.
 
 **Other review triggers:** Every schema change to the warehouse, ahead of the monthly date rather than
-waiting for it, the same trigger shape the tracking plan uses for its own event changes.
+waiting for it, the same trigger shape the tracking plan uses for its own event changes. A definition a
+reader reports as wrong or unclear is corrected when it is found, not held for the monthly date.
 
 ## Review and Sign-off
 

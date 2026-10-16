@@ -3,6 +3,23 @@
 Change log for the `tracking-plan` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-10-15 - the data dictionary boundary is drawn on subject
+
+**A correction, not a template change**, so the version stays 0.1.0. The
+[`data-dictionary`](../data-dictionary/) bundle, built 2026-10-15 by
+[ADR 0073 (data-dictionary joins governance-docs as a seventh member)](../../docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md),
+draws the boundary between the two documents on subject rather than tense, because its research found
+Wizbrand's tense line contested across primary and peer-reviewed sources. The companion's two passages
+that state the tense line now carry a dated note saying so. The text itself is unchanged, because it
+places the boundary correctly; only the reason it gives is now qualified. The templates' guidance
+comments are unchanged. The
+worked example's sentence saying the program "has not yet written" its data dictionary stays as written:
+the example is dated 2026-08-24, and the data dictionary's own example is dated 2026-09-08, so the
+sentence was true on the day it describes.
+
+The meta gains the alias "event dictionary", the library's own search term for a reader who means the
+event list that some product-analytics tools call a data dictionary. No source read uses the phrase.
+
 ## 0.1.0 - 2026-10-11
 
 **Initial release.** Admitted as the sixth `governance-docs` member by

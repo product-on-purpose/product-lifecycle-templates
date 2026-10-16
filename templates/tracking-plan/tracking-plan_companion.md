@@ -94,8 +94,9 @@ that disagreement is stated rather than smoothed into a single answer.
 section is to rule them out before the catalog starts. Wizbrand's forward-looking line draws the plan
 itself: "A tracking plan describes what you intend to track (events, triggers, parameters) and why."
 [[31]](#ref-31). Against the data dictionary, the same source gives the opposite tense: "A Data Dictionary
-documents what the data means and how it is structured once implemented." [[31]](#ref-31). Against the
-broader measurement plan, Wizbrand states the containment directly: "the measurement plan explains why
+documents what the data means and how it is structured once implemented." [[31]](#ref-31). *(2026-10-15:
+see the dated note under "Tracking plan vs the data dictionary", below, on why the boundary is now drawn
+on subject.)* Against the broader measurement plan, Wizbrand states the containment directly: "the measurement plan explains why
 you track; the tracking plan explains how." [[32]](#ref-32). Against one feature's own instrumentation
 slice, this section points to the PRD's own "Analytics and instrumentation" section, where a single
 feature's events are first proposed; this bundle reads the tracking plan as what every feature's slice
@@ -395,7 +396,14 @@ ordering in those words.
 describes what you intend to track (events, triggers, parameters) and why." against "A Data Dictionary
 documents what the data means and how it is structured once implemented." [[31]](#ref-31). The same source
 states how the two should relate in practice: "the tracking plan drives implementation; the Data
-Dictionary keeps Analytics interpretation consistent over time." [[31]](#ref-31).
+Dictionary keeps Analytics interpretation consistent over time." [[31]](#ref-31). *(2026-10-15: the
+[`data-dictionary`](../data-dictionary/data-dictionary_companion.md) bundle, built that day, draws this
+boundary on subject rather than tense: a tracking plan specifies the events and properties a product
+emits, and a data dictionary documents what the fields of a dataset or table mean. Its research found the
+tense line contested, with some research-data sources writing a dictionary before data is collected and
+others after, so the account above is one source's reading rather than a general rule. See
+[ADR 0073](../../docs/internal/decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md)
+(data-dictionary joins governance-docs as a seventh member).)*
 
 **Tracking plan vs the broader measurement plan.** Containment, not rivalry, again by Wizbrand's own
 account: "A tracking plan is usually narrower and implementation-focused: events, parameters, triggers,

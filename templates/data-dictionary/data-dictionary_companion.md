@@ -20,9 +20,10 @@ your spreadsheet really mean." [[1]](#ref-1). It is a standing reference, revise
 not a one-time record filed once and archived.
 
 - **The name covers three distinct senses, and this bundle builds one.** The field-meaning sense, a
-  document of what a dataset's or table's fields mean, is this bundle's own scope, independently defined
-  by OSF, CASRAI, GOV.UK's Data Architecture Community, Docsie and Basedash
-  [[1]](#ref-1)[[5]](#ref-5)[[9]](#ref-9)[[17]](#ref-17)[[19]](#ref-19). The event-list sense, a catalog of
+  document of what a dataset's or table's fields mean, is this bundle's own scope. OSF, CASRAI and
+  GOV.UK's Data Architecture Community define it independently [[1]](#ref-1)[[5]](#ref-5)[[9]](#ref-9),
+  and Docsie and Basedash ship a template or a build guide for the same sense
+  [[17]](#ref-17)[[19]](#ref-19). The event-list sense, a catalog of
   a product's events and their properties, is `tracking-plan`'s subject, and Mixpanel, Amplitude and
   RudderStack each use this bundle's own name for it
   [[21]](#ref-21)[[22]](#ref-22)[[24]](#ref-24)[[27]](#ref-27). The DBMS-internal sense, the read-only
@@ -74,8 +75,8 @@ universal standard as to the level of detail in such a document." [[10]](#ref-10
 
 The documentation-as-code lineage treats the data dictionary as something generated from, and kept beside,
 a data model rather than authored as a separate prose document: dbt instructs a team to "Add the
-description: key to the same YAML files where you declare data tests." [[20]](#ref-20), and a practitioner newsletter prescribes the same
-move as a fix for a stale, hand-written dictionary: "Treat Docs Like Code", "Version it. Update it when
+description: key to the same YAML files where you declare data tests." [[20]](#ref-20), and a
+practitioner newsletter prescribes the same move as a fix for a stale, hand-written dictionary: "Treat Docs Like Code", "Version it. Update it when
 data changes. Assign ownership." [[35]](#ref-35).
 
 **One standards body is named in this research, and only its description is read.** Wikipedia's own entry
@@ -155,9 +156,9 @@ own deprecation rule requires that "Validation tools must report use of deprecat
 that a deprecated field is marked "with the presence of a deprecated property and object which declares
 the version number in which the field was first deprecated" [[43]](#ref-43); the NIMH Data Archive's own
 dictionary marks an entry obsolete the same way: "Some structures are obsolete, superseded by newer
-structures, or were created to support legacy projects." [[31]](#ref-31), rather than simply deleting it. A known trap belongs in the Definition cell where a reader meets the field,
-in the shape of Basedash's own net-revenue caveat, "A good caveat ("this excludes refunds") prevents the
-right column from being used the wrong way." [[19]](#ref-19), without copying its wording.
+structures, or were created to support legacy projects." [[31]](#ref-31), rather than simply deleting
+it. A known trap belongs in the Definition cell where a reader meets the field, following Basedash's general guidance on caveats, "A good caveat ("this excludes refunds") prevents the
+right column from being used the wrong way." [[19]](#ref-19).
 
 A good definition follows OSF's own genus-differentia form, "A is a B that C" [[1]](#ref-1), illustrated by
 OSF's own worked example, "An a) attitude is a b) disposition c) to think or feel that is about something
@@ -304,8 +305,9 @@ piece of what this bundle's Field Definitions section asks an author to do by ha
    this one as the newer reasoning, not a contradiction to resolve.
 2. **Whether a data dictionary carries metric formulas.** This is a **POSITION**, not a settled reading of
    the sources. Wizbrand's own key-components list includes "Calculation logic (for metrics): Formulas and
-   inclusion/exclusion rules" [[18]](#ref-18), and Mixpanel's own Lexicon page states that it "documents
-   your saved metrics and Formulas" [[21]](#ref-21), though in the event-list sense. Against them, Basedash
+   inclusion/exclusion rules" [[18]](#ref-18). Analytics8 says a data dictionary carries "measure names
+   ... their calculations" [[16]](#ref-16). Mixpanel's own Lexicon page states that it "documents your
+   saved metrics and Formulas" [[21]](#ref-21), though in the event-list sense. Against them, Basedash
    separates the dictionary from "The metrics layer on top of tables" [[19]](#ref-19), and dbt's own
    Semantic Layer exists to "centrally define business metrics" apart from the tools that consume them
    [[28]](#ref-28). This bundle takes the second reading: a data dictionary documents what a field means,
@@ -469,8 +471,9 @@ research names no finding that would place any of that content inside a data dic
 `data-dictionary_example.md` is the worked instance for this bundle, and it chains onto the same Acme
 Analytics Reporting Platform Modernization program the library's other `governance-docs` examples share.
 It documents the warehouse tables that sit between the events `tracking-plan_example.md` already catalogs
-and the executive dashboard `kpi-dashboard_example.md` already defines: the fact table those ten events
-land in, and the dimension tables its foreign keys point to. The research log fixes the facts it must
+and the executive dashboard `kpi-dashboard_example.md` already defines. It covers four tables: the fact
+table those ten events land in, a session table derived from it that holds Time to Insight's two
+timestamps, and the user and account tables they join to. The research log fixes the facts it must
 agree with rather than invent, including the event list, the two traits `analyst_segment` and
 `migration_reconciled`, the hashed `recipient_user_id` column, and Lee Zhang as the table's own named
 steward, and it must add a field-level fact beyond what either sibling already states, such as a table's
