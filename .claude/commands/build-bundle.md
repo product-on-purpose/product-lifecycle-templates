@@ -140,6 +140,8 @@ tracking-plan 7,440,790, $14.88, for the same 15, its two-template drafting $8.5
 problem-statement 9,987,114, $19.97, for 18, the usual 15 plus a three-agent gap-fill research pass, its
 two-template drafting $9.06;
 business-continuity-plan 10,284,679, $20.57, for the same 15, its two-template drafting $10.10;
+data-dictionary 8,859,179, $17.72, for 16, the usual 15 plus a seventh research dimension, its
+two-template drafting $7.71;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Build

@@ -40,7 +40,9 @@ weighted and $13.35 for its 15 agents, its two-template drafting $5.90. experime
 cost 7,440,790 weighted and $14.88 for its 15 agents, its two-template drafting $8.57. problem-statement, the
 twelfth, cost 9,987,114 weighted and $19.97 for 18 agents, the usual 15 plus a three-agent gap-fill research
 pass after drafting, its two-template drafting $9.06. business-continuity-plan, the thirteenth, cost
-10,284,679 weighted and $20.57 for its 15 agents, its two-template drafting $10.10. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+10,284,679 weighted and $20.57 for its 15 agents, its two-template drafting $10.10. data-dictionary, the
+fourteenth, cost 8,859,179 weighted and $17.72 for 16 agents, the usual 15 plus a seventh research dimension,
+its two-template drafting $7.71. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
