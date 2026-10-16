@@ -8,7 +8,7 @@ maintainer.** Written 2026-08-14. Traces to roadmap WP-33 (wedge outreach), the 
 observed on 2026-08-14 and will drift; the policy quotes are verbatim from the named file. Re-check both
 before acting on any row.
 
-<!-- counts: bundles=46 -->
+<!-- counts: bundles=47 -->
 
 ---
 
@@ -183,7 +183,7 @@ Verified present: description, 16 topics, Apache-2.0 in a root `LICENSE`, five t
 enabled with three templates, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, and a README with a
 quick start. GitHub already serves an auto-generated Open Graph card.
 
-**The repository is submission-ready. Its weakness is one star and forty-six days of age, and no amount of
+**The repository is submission-ready. Its weakness is one star and forty-seven days of age, and no amount of
 polish fixes either.**
 
 Two cheap gaps:

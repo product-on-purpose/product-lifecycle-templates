@@ -27,6 +27,26 @@ people who want every change, release notes are for people who want to know what
   and every one of its 238 quotations was checked against raw text. Catalog entry 35 now reads
   methodology-agnostic rather than Waterfall/UP/RUP, ships lean and full rather than S/M, and names User Story
   as its relationship; the user stories guide's routing sentence now links to the bundle.
+- **`trade-study`, the 47th bundle**, the fifth `decision-docs` member, at `phase: develop`, admitted with no
+  contract change under
+  [ADR 0022](docs/internal/decisions/0022-adopt-decision-docs-family-contract.md)'s consequence for a
+  further member that keeps the family's phase and size shape. It compares a named set of technical
+  alternatives against weighted criteria and records the recommendation that comparison supports; the
+  decision itself is recorded elsewhere, normally in an ADR. Lean carries Problem and Decision Framing,
+  Criteria and Weights, Alternatives (including a do-nothing baseline), Scoring Matrix and Recommendation.
+  Full adds Sensitivity Analysis, Risk and Benefit, Dissent or Independent Review, and References. The
+  worked example is independent of its siblings: a fictional freight company choosing a message-ingestion
+  technology for truck GPS telemetry, where a four-point move in one weight erases the recommendation's
+  lead. The research log records 31 sources, and every one of its 263 quotations was checked against raw
+  text. Catalog entry 66 now ships lean and full, names RFC and SDD as relationships and an engineering
+  owner, and cites the two sources the spec verified in place of an unread BABOK section; the business
+  case guide's routing row now links to the bundle.
+
+### Fixed
+
+- **Check E and the quotation-provenance lint split a companion at its `## References` heading**, not at
+  the substring, which an H3 named References also holds. On the trade study companion the substring split
+  cut the body at line 289 of 617, so a dangling citation after line 289 would have passed the gate.
 
 ## [0.18.0] - 2026-10-15
 

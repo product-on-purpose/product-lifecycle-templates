@@ -38,6 +38,7 @@ tree without the gate noticing.
 - [`rfc/`](rfc/) - Request for Comments. Axis phase develop; ships lean/full.
 - [`sdd/`](sdd/) - Software Design Document. Axis phase develop; ships lean/full.
 - [`spike-report/`](spike-report/) - Spike / Research Spike report. Axis phase develop; ships lean. The fourth `decision-docs` member: it INVESTIGATES the question an RFC proposes, an ADR records, and an SDD designs against.
+- [`trade-study/`](trade-study/) - Trade Study / Options Analysis. Axis phase develop; ships lean/full. The fifth `decision-docs` member, admitted with no contract change under [ADR 0022](../docs/internal/decisions/0022-adopt-decision-docs-family-contract.md): it EVALUATES named technical alternatives against weighted criteria and recommends one, feeding the decision an ADR records.
 
 **`delivery-docs`**
 

@@ -11312,6 +11312,302 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "trade-study",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "decision_makers"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "title"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "title",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 1,
+              "placeholders": [],
+              "title": "{{title}}"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "problem-and-decision-framing",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "constraints_and_assumptions",
+                "decision_and_decision_makers",
+                "the_question"
+              ],
+              "title": "Problem and Decision Framing"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "criteria-and-weights",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_id",
+                "criterion_justification",
+                "criterion_name",
+                "mandatory_yes_no",
+                "scoring_method_and_scale",
+                "weight",
+                "weight_meaning"
+              ],
+              "title": "Criteria and Weights"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "alternatives-including-a-do-nothing-baseline",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "alternative_description",
+                "alternative_id",
+                "alternative_name",
+                "how_the_field_was_narrowed",
+                "is_do_nothing_baseline"
+              ],
+              "title": "Alternatives, Including a Do-Nothing Baseline"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "scoring-matrix",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "alternative_1_name",
+                "alternative_2_name",
+                "basis",
+                "criterion_name",
+                "score",
+                "weight",
+                "weighted_total_1",
+                "weighted_total_2"
+              ],
+              "title": "Scoring Matrix"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "recommendation",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "conditions",
+                "decision_and_record_pointer",
+                "dependent_rows",
+                "recommended_option"
+              ],
+              "title": "Recommendation"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "sensitivity-analysis",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "recommendation_survives",
+                "sensitivity_threshold",
+                "sensitivity_variable"
+              ],
+              "title": "Sensitivity Analysis"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risk-and-benefit",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "alternative_name",
+                "benefit",
+                "mitigation_if_recommended",
+                "risk"
+              ],
+              "title": "Risk and Benefit"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "dissent-or-independent-review",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "dissent_and_resolution",
+                "reviewer_independence"
+              ],
+              "title": "Dissent or Independent Review"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "references",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "reference_1",
+                "reference_2"
+              ],
+              "title": "References"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "use-case-specification",
       "default_format": "default",
       "formats": {
@@ -12008,7 +12304,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 46,
-  "frontmatter_count": 295,
-  "section_count": 389
+  "count": 47,
+  "frontmatter_count": 299,
+  "section_count": 399
 }
