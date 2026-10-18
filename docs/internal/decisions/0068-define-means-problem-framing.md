@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded by ADR-0077
 date: 2026-10-11
 decision-makers: [jprisant]
 consulted: [claude]
@@ -24,7 +24,10 @@ consulted: [claude]
   [ADR 0069](0069-problem-statement-joins-discovery-docs.md) answers the first question for the one
   candidate that cleared admission.
 - **Status:** accepted 2026-10-11. The maintainer confirmed that the draft in the 2026-10-11 Define
-  admission sweep states the decision as it was made.
+  admission sweep states the decision as it was made. **Superseded 2026-10-17 by
+  [ADR 0077 (the define phase ends with a chosen concept)](0077-define-ends-with-a-chosen-concept.md)**, which
+  admits a chosen concept to `define` and keeps every specification out of it. The body below is left as it
+  was decided; a dated correction of one factual error follows it.
 
 ## Context and Problem Statement
 
@@ -101,3 +104,17 @@ framework supports the position about the stage's purpose, not about any documen
   [ADR 0069](0069-problem-statement-joins-discovery-docs.md).
 - The sweep's candidates and verdicts are summarised in the [`tier2-specs.md`](../tier2-specs.md) progress
   table, in the rows dated 2026-10-11.
+
+## Correction (2026-10-17)
+
+**The Decision Outcome's "Why" paragraph says the 2026-10-11 sweep "found no named written deliverable for
+the Define stage". That was true of the pages that sweep read, and it is not true of the Design Council.** Its
+history page, read by the second Define admission sweep on 2026-10-16, says of Define: "The result is to create
+a design brief which clearly defines the challenge based on these insights." The quotation passed a raw-text
+check in that sweep and again in the third
+([source](https://www.designcouncil.org.uk/our-resources/the-double-diamond/history-of-the-double-diamond/)).
+
+The error is named here rather than edited away, as
+[ADR 0011](0011-madr-v4-at-docs-internal-decisions.md) requires for an error of fact. It did not cause the
+supersession: the decision changed because the maintainer ruled a different reading on 2026-10-17, and
+[ADR 0077](0077-define-ends-with-a-chosen-concept.md) records that ruling and carries this correction too.

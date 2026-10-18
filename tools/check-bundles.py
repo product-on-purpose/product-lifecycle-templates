@@ -204,8 +204,11 @@ FAMILY_CONTRACTS = {
     # ADR 0031. Adopted contract-first like governance-docs. Every member is written once for a decision
     # and is finished when that decision is made, so no member can be a standing instrument; that is a
     # cadence rule, and it never needed a single phase value. ADR 0069 (2026-10-11) makes this the FIRST
-    # phase-axis family to gate a set: `define` is reserved for a member whose whole document frames one
-    # problem and names no solution (ADR 0068), and every other member declares `discover`. As with every
+    # phase-axis family to gate a set: `define` is reserved for a member whose whole document converges on
+    # one chosen problem and names at most one chosen concept, never a specification (ADR 0077, which
+    # superseded ADR 0068's "names no solution" on 2026-10-17), and every other member declares `discover`.
+    # ADR 0077 also lets one kind of `define` member be revised while the design work it hands off runs;
+    # the values gated here did not change. As with every
     # set, check K enforces a value FROM the set and never that a member picked the RIGHT one; that stays
     # a review obligation against the contract's section 2. This registry gates whatever ships and is
     # indifferent to how many members that turns out to be.

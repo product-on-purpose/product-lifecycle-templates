@@ -3,9 +3,11 @@
 **Status:** **adopted 2026-08-04**, [ADR 0031](../decisions/0031-adopt-discovery-docs-family-contract.md).
 Registered in check K, which gates `phase: discover` or `phase: define` on every member.
 **Axis:** `phase`, two values: `discover` and `define` (amended 2026-10-11,
-[ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md)). A member declares `define` when its
-whole document frames one problem and names no solution, option, project or investment; every other member
-declares `discover`.
+[ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md); the `define` rule widened 2026-10-17,
+[ADR 0077](../decisions/0077-define-ends-with-a-chosen-concept.md)). A member declares `define` when its whole
+document converges on one chosen problem and, at most, on one concept chosen for design; it never specifies
+how the solution works or what it must do, it decides no investment, and it is not the record that authorizes
+a project. Every other member declares `discover`.
 **Members:** `business-case`, `user-persona`, `project-brief`
 ([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), assigned 2026-09-27, reopening the
 family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-29), `problem-statement`
@@ -64,6 +66,12 @@ is a **standing instrument revised on a cadence** belongs to a `classification` 
 phase-bound by construction: every member is written once for a decision, and is finished when that decision
 is made.
 
+**One exception, added 2026-10-17 by [ADR 0077](../decisions/0077-define-ends-with-a-chosen-concept.md).** A
+`define` member that hands a chosen concept to the people who will design it may be revised while that design
+work runs, because its sources describe it as a document consulted and updated through the project. It is
+still finished when the design work it hands off is done, and it never becomes a standing instrument revised
+on a cadence. No other member takes this exception.
+
 **On `prototype-brief`: tested 2026-08-05 and not admitted** (kept for the reasoning it records). It was a
 **new type**, added by
 [ADR 0030 (templating scope)](../decisions/0030-templating-scope-markdown-documents.md), not a rename of
@@ -92,7 +100,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `discovery-docs` |
-| phase | **`discover`** or **`define`**. `define` is reserved for a member whose whole document frames one problem and names no solution, option, project or investment ([ADR 0068](../decisions/0068-define-means-problem-framing.md)). Every other member declares `discover`. A candidate whose honest axis is `classification` belongs in another family; this family has no standing instruments. *(Amended 2026-10-11, [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md): this row read "`discover`, single value".)* |
+| phase | **`discover`** or **`define`**. `define` is reserved for a member whose whole document converges on one chosen problem. It may also name the candidate concepts the team weighed, the one concept chosen for design, and the scope, time line and budget of handing that concept to the people who will design it. It never specifies how the solution works (`develop`) or what it must do in testable detail (`deliver`), it decides no investment, and it is not the record that authorizes a project ([ADR 0077](../decisions/0077-define-ends-with-a-chosen-concept.md)). Every other member declares `discover`. A candidate whose honest axis is `classification` belongs in another family; this family has no standing instruments. *(Amended 2026-10-11, [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md): this row read "`discover`, single value". Amended 2026-10-17, [ADR 0077](../decisions/0077-define-ends-with-a-chosen-concept.md): the `define` rule read "frames one problem and names no solution, option, project or investment", from [ADR 0068](../decisions/0068-define-means-problem-framing.md), which ADR 0077 supersedes.)* |
 | methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). Members will differ: a business case is methodology-agnostic, a persona leans research-practice, a prototype brief leans dual-track or design-thinking. A single required value would force at least one to misdescribe itself |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`), and two `qa-docs` members have already departed from them on evidence |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
@@ -169,8 +177,8 @@ The gate enforces section 2 and the mechanical part of section 3. **Family check
 2's family-specific values for every declared member (a `phase` of `discover` or `define`, a `beta`/`stable`
 status, and a `[lean, full]` or `[lean]` size shape) and that this contract file resolves; methodology is
 descriptive and is not gated. Check K proves that a member declared a value from the phase set, never that it
-declared the right one: which members frame one problem and name no solution is a review obligation against
-section 2. A member declaring `classification` instead of `phase` fails check K with a message naming the axis
+declared the right one: which members converge on a chosen problem, name at most a chosen concept and specify
+nothing is a review obligation against section 2. A member declaring `classification` instead of `phase` fails check K with a message naming the axis
 it should have used.
 
 Of section 3's obligations, the eight files (3.1), nesting (3.2), citations (3.6) and the clean example (3.7)
@@ -225,3 +233,15 @@ in the same edit. **One enforcement obligation changed**: check K now accepts ei
 member should declare is a review obligation it cannot check. **One order is inverted on purpose**: a problem
 statement precedes a project brief and a business case, yet it carries the later phase value. Neither of
 those two members moves; ADR 0069 records why.
+
+**0.4.0, 2026-10-17, [ADR 0077](../decisions/0077-define-ends-with-a-chosen-concept.md): the `define` rule
+widens to admit a chosen concept, and the cadence clause takes one exception.** ADR 0077 supersedes
+[ADR 0068](../decisions/0068-define-means-problem-framing.md). A `define` member now converges on one chosen
+problem and may name the concept chosen for design, but it never specifies how the solution works or what it
+must do. The header's Axis line, section 2's phase row and section 6's enforcement sentence state the new rule
+in the same edit. "Investment" stays excluded, so `business-case` stays at `discover` until a re-score of the
+Define candidates rules on it; a move would be its own record. Section 1's cadence clause gains one bounded
+exception, for a `define` member that hands a chosen concept to designers and is revised while that work runs.
+**No enforcement obligation changed**: check K still gates `["discover", "define"]`, and no built member
+changes phase, since `problem-statement` frames a chosen problem and names no concept, which the new rule still
+admits.

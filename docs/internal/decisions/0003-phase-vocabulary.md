@@ -94,6 +94,18 @@ arithmetic was off, and by a factor that would have mattered if anyone had trust
 uses the verified 30/38 counts. Recorded here rather than edited in place, per
 [ADR 0011](0011-madr-v4-at-docs-internal-decisions.md).
 
+## Note (2026-10-17): the seam now holds for spelling, not for the width of `define`
+
+**This record's decision is unchanged: the six lowercase values still match pm-skills exactly.** What changed
+is what one of them admits here.
+[ADR 0077 (the define phase ends with a chosen concept)](0077-define-ends-with-a-chosen-concept.md) lets a
+`define` document in this library name one concept chosen for design. As pm-skills documents the Triple
+Diamond, the proposed solution approach is a Develop output. So "one vocabulary across the ecosystem", this
+record's stated consequence, now holds for the spelling of the six values and for `pairs_with`, and not for the
+width of `define`. A reader moving between the two repositories should not assume `define` admits the same
+documents in both. This is recorded as a note rather than a correction, because nothing this record stated was
+false when it was written.
+
 ## More Information
 
 Provenance: accepted (decided 2026-06-29; transcribed 2026-07-11 from strategy brief section 5; ratified 2026-07-12; **factually corrected 2026-07-12**; **counts re-corrected and TX-1 closed 2026-07-17, see the second correction above**)
