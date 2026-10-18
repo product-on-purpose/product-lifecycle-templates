@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-17
 decision-makers: [jprisant]
 consulted: [claude]
@@ -30,9 +30,9 @@ consulted: [claude]
   candidates return for admission, or whether `define` members need a family of their own. A re-score of the
   three Define sweeps' candidates answers the first two.
   [ADR 0069](0069-problem-statement-joins-discovery-docs.md) already names the trigger for the third.
-- **Status:** proposed 2026-10-17. The maintainer ruled the reading on 2026-10-17 and asked for this record and
-  the contract change. Every contract amendment stops for the maintainer's read, so this record is accepted
-  only when the pull request that carries it merges.
+- **Status:** accepted 2026-10-17. The maintainer ruled the reading on 2026-10-17 and asked for this record and
+  the contract change. Every contract amendment stops for the maintainer's read; the maintainer read the
+  pull request that carries this record and approved its merge the same day.
 
 ## Context and Problem Statement
 
