@@ -19,7 +19,7 @@ consulted: [claude]
   these kinds of artifact can be templated. It admits no type.
 - **What it retires.** Two Define admission sweeps on 2026-10-16 used a written-document test stricter than
   ADR 0030. It excluded "a board, a canvas shipped only in Miro, Mural or FigJam, a workshop exercise, a
-  diagram, or a slide". No tracked file ever stated that test, and no record adopted it.
+  diagram, or a slide". No record ever adopted that test.
 - **What stays out.** Wireframes, interactive prototypes, websites and live dashboards stay out, as ADR 0030
   already says. Rendered diagrams are not admitted either.
 - **Markdown always ships.** Self-contained HTML files, or resources that import into Miro or FigJam, may be
@@ -38,8 +38,8 @@ workshop.
 **Research briefs filled that gap with a stricter test.** The second Define admission sweep, on 2026-10-16,
 stated its written-document test as: one named source defines the artifact as a written document, "not a
 board, a canvas shipped only in Miro, Mural or FigJam, a workshop exercise, a diagram, or a slide". The third
-sweep reused that test. The briefs lived in gitignored working files, so the test was applied without ever
-being written into the repository or adopted by a record. The review that followed, on 2026-10-17, found it
+sweep reused that test. The briefs lived in gitignored working files, so the test was applied without any
+record adopting it. The review that followed, on 2026-10-17, found it
 was one of three filters behind the sweeps' single Define bundle.
 [ADR 0077](0077-define-ends-with-a-chosen-concept.md) records the other two.
 
@@ -67,7 +67,7 @@ and what this library ships for them.
   team can fill and keep.
 - **A test nobody adopted should not keep deciding admissions.** Research briefs should apply the rule the
   repository states, not a stricter one they wrote for themselves.
-- **The precedents already exist.** Four built bundles template the written form of something that is not
+- **The precedents already exist.** Five built bundles template the written form of something that is not
   prose.
 - **Admission stays per candidate.** ADR 0030 asks "not 'could someone write this', but 'does someone'", and
   this record leaves that question to each candidate's research.
@@ -122,8 +122,8 @@ never heard of an LLM, or it is a prompt and belongs in a skills library. This r
 
 ### What the decision costs, stated rather than smoothed over
 
-1. **More candidates reach admission, and each costs research.** Several catalog types that earlier sweeps
-   rejected under the unadopted test become testable again. Testable is not admitted.
+1. **More candidates reach admission, and each costs research.** More kinds of artifact become eligible for
+   an admission test. Eligible is not admitted.
 2. **Many of these artifacts exist mainly inside a tool.** A vendor's board template is not a named source
    publishing a written form. Candidates whose only sources are boards will still fail admission, and this
    record does not change that.
