@@ -12,6 +12,20 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **[ADR 0077](docs/internal/decisions/0077-define-ends-with-a-chosen-concept.md): the `define` phase ends
+  with a chosen concept, never a specification.** It supersedes
+  [ADR 0068](docs/internal/decisions/0068-define-means-problem-framing.md). A `define` document converges on
+  one chosen problem and may name the one concept chosen for design, but it never specifies how the solution
+  works or what it must do, so the PRD and the rest of the delivery chain stay on `phase: deliver`. The
+  [`discovery-docs`](docs/internal/contracts/discovery-docs.md) contract moves to 0.4.0: its `define` rule
+  widens, and its cadence clause takes one bounded exception for a document handed to designers and revised
+  while their work runs. Check K is unchanged, and no bundle changes phase. ADR 0068 carries a dated
+  correction: the Design Council's history page does name a design brief as Define's result.
+  [ADR 0003](docs/internal/decisions/0003-phase-vocabulary.md) carries a dated note that its seam with
+  pm-skills now holds for the spelling of the six phase values, not for the width of `define`.
+
 ## [0.19.0] - 2026-10-16
 
 ### Added
