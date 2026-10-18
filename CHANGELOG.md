@@ -25,6 +25,14 @@ people who want every change, release notes are for people who want to know what
   correction: the Design Council's history page does name a design brief as Define's result.
   [ADR 0003](docs/internal/decisions/0003-phase-vocabulary.md) carries a dated note that its seam with
   pm-skills now holds for the spelling of the six phase values, not for the width of `define`.
+- **[ADR 0078](docs/internal/decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md):
+  maps, canvases and session records are templatable through their written form.** It clarifies
+  [ADR 0030 (templating scope)](docs/internal/decisions/0030-templating-scope-markdown-documents.md) without
+  changing its rule. A map, model or canvas is in scope through a structured written form a named source
+  publishes, and a workshop, design sprint or whiteboard session through its written record, both shipped as
+  Markdown. The admission bar is unchanged and no type is admitted. It retires a stricter written-document
+  test that two research sweeps applied without any record adopting it. ADR 0030 carries a dated note that
+  points to it.
 
 ## [0.19.0] - 2026-10-16
 

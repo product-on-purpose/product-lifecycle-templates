@@ -152,6 +152,16 @@ record is pending:
   **This is a live risk to the plan, not a formality.** If the research finds no named source, the build
   backlog drops from 8 bundles to 7 and `discovery-docs` loses a member.
 
+## Note (2026-10-17): how the scope rule applies to maps, canvases and sessions
+
+**This record's rule is unchanged.**
+[ADR 0078 (maps, canvases and session records are templatable through their written form)](0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)
+says how it applies to kinds of artifact this record did not name. A map, a model or a canvas is in scope
+through a structured written form a named source publishes. A workshop, a design sprint or a whiteboard
+session is in scope through its written record. The admission test above still applies to every candidate.
+ADR 0078 also retires a stricter written-document test that two research sweeps had applied without any
+record adopting it. This is a note rather than a correction, because nothing this record stated was false.
+
 ## More Information
 
 Generalises the admission logic of [ADR 0028 (the format-axis rule)](0028-adopt-a-format-axis.md) from
