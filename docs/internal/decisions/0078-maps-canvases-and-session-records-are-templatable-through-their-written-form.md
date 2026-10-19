@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-17
 decision-makers: [jprisant]
 consulted: [claude]
@@ -24,7 +24,14 @@ consulted: [claude]
   already says. Rendered diagrams are not admitted either.
 - **Markdown always ships.** Self-contained HTML files, or resources that import into Miro or FigJam, may be
   considered later. They would only ever accompany the Markdown, and they need a decision of their own.
-- **Status:** proposed 2026-10-17. It stops for the maintainer's read.
+- **Status:** proposed 2026-10-17, **accepted 2026-10-19 on the maintainer's delegation**. The scope ruling
+  itself is the maintainer's own answer in the 2026-10-17 decision sitting. This record's text was offered
+  for a read, and the maintainer replied "merge based on your best judgment". That direction stands in for
+  the read, as similar ones did for [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)
+  and [ADR 0074](0074-analytics-requirements-measurement-plan-per-feature-is-declined.md). This record amends
+  no family contract, so the standing stop for a contract read does not apply. **The section on templates for
+  running an exercise was accepted without a read.** It rests on a maintainer note, not a ruling, and the
+  maintainer may strike it by a dated note. The maintainer has not yet confirmed this delegated acceptance.
 
 ## Context and Problem Statement
 

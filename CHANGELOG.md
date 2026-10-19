@@ -32,7 +32,7 @@ people who want every change, release notes are for people who want to know what
   publishes, and a workshop, design sprint or whiteboard session through its written record, both shipped as
   Markdown. The admission bar is unchanged and no type is admitted. It retires a stricter written-document
   test that two research sweeps applied without any record adopting it. ADR 0030 carries a dated note that
-  points to it.
+  points to it. ADR 0078 is accepted on the maintainer's delegation, which stands in for the read.
 
 ## [0.19.0] - 2026-10-16
 
