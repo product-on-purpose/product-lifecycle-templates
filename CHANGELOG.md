@@ -20,20 +20,23 @@ people who want every change, release notes are for people who want to know what
   Process Street's template and a secondary account of ISO/IEC/IEEE 29119-3, whose own clause text no fetch
   reached.
 - **[ADR 0075](docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md)
-  (proposed): `test-strategy` joins `standing-standards` as a `foundation`, its seventh member.** It is the
+  (accepted on the maintainer's delegation): `test-strategy` joins `standing-standards` as a `foundation`,
+  its seventh member.** It is the
   family's third member that no forecast named. The contract moves to 0.6.0, in its Members line and change note
   only. The record keeps a cadence tension as a consequence: two sources say the type evolves, and a third says
-  it will not change once approved.
+  it will not change once approved. The delegation stands in for the contract read for this PR only.
 - **A spec for `positioning-statement` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 13,
   as product direction only, by the maintainer's ruling of 2026-10-15. Single size. Admitted on five sources;
   Geoffrey Moore's authorship of the familiar template is named but not credited, because no research pass could
   verify it against his book. The sources split on ownership, so the catalog owner becomes `PMM / PM`, by the maintainer's
   ruling of 2026-10-17, and the guide shows both camps with a default labelled as the library's reasoning.
 - **[ADR 0076](docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)
-  (proposed): `positioning-statement` joins `strategy-docs` as a sixth member, third in the chain.** The
+  (accepted on the maintainer's delegation): `positioning-statement` joins `strategy-docs` as a sixth
+  member, third in the chain.** The
   contract moves to 0.3.0: its list of questions widens from five to six, and the North Star metric moves from
   third to fourth. A messaging framework, a battlecard and a positioning map stay out. ADR 0027 and ADR 0070
-  carry dated notes.
+  carry dated notes. The delegation stands in for the contract read for this PR only, and the spec's
+  suggested ownership default was accepted without a read.
 - **ADR count 76 -> 78**, across markers and prose.
 
 ### Changed

@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-19
 decision-makers: [jprisant]
 consulted: [claude]
@@ -35,10 +35,23 @@ consulted: [claude]
   drafting settles against the Admission sources' copyrighted formula text. Whether `product-vision`'s
   companion gains more than the one dated note this record requires. The build order relative to any other
   queued candidate.
-- **Status:** proposed 2026-10-19, drafted 2026-10-16. The contract read stops for the maintainer, per
+- **Status:** proposed 2026-10-19, drafted 2026-10-16, **accepted 2026-10-19 on the maintainer's
+  delegation**. The contract read stops for the maintainer, per
   [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer),
-  which states that a family contract is "adopted only after a maintainer read." This record is written
-  for that read, and nothing in it is a standing decision until the maintainer accepts or amends it.
+  which states that a family contract is "adopted only after a maintainer read." This record was written
+  for that read. Told that the PR amends two family contracts and that nothing would merge before the
+  read, the maintainer directed a merge on the agent's best judgment. That direction stands in for the
+  read for this PR only, as similar ones did for
+  [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) and
+  [ADR 0078](0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md).
+  The standing rule is not repealed. The scope and the owner are the maintainer's own rulings of
+  2026-10-15 and 2026-10-17. **Three parts were accepted without a read.** The first is the contract
+  diff, including third place in the chain, which is argued here, not ruled. The second is the spec's
+  suggested ownership default: product management owns the statement, and product marketing drafts or
+  co-writes it. That default is the agent's reasoning, and no source states it. The third is the pair of
+  contract edits added after the 2026-10-16 drafts: section 4's example obligation and the axis note's
+  count of six. The maintainer may strike or change any of them by a dated note, and has not yet
+  confirmed this delegated acceptance.
 
 ## Context and Problem Statement
 

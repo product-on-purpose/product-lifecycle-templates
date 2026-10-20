@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-19
 decision-makers: [jprisant]
 consulted: [claude]
@@ -40,9 +40,17 @@ consulted: [claude]
   periodically revised; a third says it will not change once approved. This ADR records the tension and
   routes it to the bundle's own Review Trigger section, the same move ADR 0071 made for
   `business-continuity-plan`.
-- **Status:** proposed 2026-10-19, drafted 2026-10-16. This record, the spec, and the contract diff all
-  stop for the maintainer's own read, per the standing rule that every contract edit is read before it is
-  merged.
+- **Status:** proposed 2026-10-19, drafted 2026-10-16, **accepted 2026-10-19 on the maintainer's
+  delegation**. This record, the spec, and the contract diff were offered for the maintainer's own read,
+  per the standing rule that every contract edit is read before it is merged. Told that the PR amends two
+  family contracts and that nothing would merge before the read, the maintainer directed a merge on the
+  agent's best judgment. That direction stands in for the read for this PR only, as similar ones did for
+  [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) and
+  [ADR 0078](0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md).
+  The standing rule is not repealed. **The contract diff was accepted without a read.** The family and the
+  scope are the maintainer's own rulings of 2026-10-13 and 2026-10-15; the `foundation` classification is
+  argued here, not ruled. The maintainer has not yet confirmed this delegated acceptance, and may reopen
+  the record for a read.
 
 ## Context and Problem Statement
 
