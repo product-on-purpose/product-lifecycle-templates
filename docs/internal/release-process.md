@@ -58,7 +58,7 @@ checks the counts in markers, and it never reads whether a page names the bundle
 | Audience | Surfaces to read |
 |---|---|
 | User | `README.md` (status line, at-a-glance table, library table by family), `docs/tutorials/getting-started.md`, `docs/how-to/`, `docs/reference/choosing-a-template.md`, `templates/README.md`, the site's `index.mdx` |
-| Technical | `STATE.md`, `docs/explanation/`, `CONTRIBUTING.md`, `CHANGELOG.md` |
+| Technical | `STATE.md`, `docs/explanation/`, `CONTRIBUTING.md`, `CHANGELOG.md`, and `docs/internal/backlog.md` (refresh its issue counts from GitHub) |
 | Agent | `AGENTS.md`, both skills' `SKILL.md` descriptions and bodies, the `plugin.json` and `library.json` descriptions, `INDEX.md` (regenerate it, never edit it), and the registry listing in `agent-plugins` |
 
 Two checks find most gaps. First, list every one of those files that names an older bundle but not the

@@ -14,6 +14,10 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **[`docs/internal/backlog.md`](docs/internal/backlog.md), a dated snapshot of the build backlog.** It
+  says where the backlog lives, since no single list holds it: the `build-candidate` issues, the catalog
+  and the `tier2-specs.md` Progress table. It counts 8 open candidates and 153 open catalog types, and
+  lists the Define re-score's next steps. `release-process.md` now lists it for refresh at every release.
 - **A spec for `test-strategy` in [`tier2-specs.md`](docs/internal/tier2-specs.md)**, catalog entry 103. It is
   the standing test strategy for an organization or program, by the maintainer's ruling of 2026-10-15, never a
   portfolio and never the per-project sense `test-plan` already ships. Single size. Admitted on ISTQB's glossary,
