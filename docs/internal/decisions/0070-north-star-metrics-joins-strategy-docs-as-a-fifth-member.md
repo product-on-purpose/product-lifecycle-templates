@@ -35,6 +35,10 @@ consulted: [claude]
   stands in for the read, as it did for [ADR 0069](0069-problem-statement-joins-discovery-docs.md). The agent
   checked the contract diff against each of the maintainer's decisions and found nothing they do not cover. The
   maintainer has not yet confirmed this delegated acceptance, and may reopen the record for a read.
+  *(Note added 2026-10-19: [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)
+  places `positioning-statement` between the product strategy and the North Star metric, so the North Star
+  metric is now fourth in the chain, not third. It still follows the strategy, which is the dependency this
+  record argued; only its number changed.)*
 
 ## Context and Problem Statement
 

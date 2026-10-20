@@ -13,7 +13,10 @@ assigned, specced and built 2026-09-23), `production-readiness-review`
 assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-28),
 `business-continuity-plan`
 ([ADR 0071](../decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md),
-assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14).
+assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14),
+`test-strategy`
+([ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
+assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -175,6 +178,34 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.6.0, 2026-10-19: a seventh member, and the third that no forecast named.** `test-strategy` joins as
+`classification: foundation`, by
+[ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md). Section 1's
+likely-future-members line again names nothing here. So **the membership test and this family's falsifier
+admit it, not a confirmed forecast**, the same shape `production-readiness-review`'s own `0.4.0` entry and
+`business-continuity-plan`'s own `0.5.0` entry both record. A standing test strategy that one or more
+projects inherit from, and that each project's own test plan either follows or states a reasoned deviation
+from, is consulted at the moment each of those plans is written. A strategy written for one project after
+the fact, with no further project ever consulting it, is excluded by section 1's own analogy: "a runbook
+written for one incident is an incident report." So the bundle is the standing strategy, and a filled
+instance that served only one project's own test plan is a different, narrower artifact. **`foundation` was
+argued against the honest `tool` case**: the strategy is used "within the programme by all parties," per
+one admitting source, which could read as execution by people other than its authors. But applying it is,
+on this library's own inference, writing the next project's own test plan in the ordinary course of
+planning, not under the time pressure a runbook, a launch checklist, a production readiness review or a
+business continuity plan is executed under. The `foundation` call rests on that timing marker and on the
+document's own change cadence, read closer to a standard "changed deliberately and rarely" than to an
+instrument executed under pressure. **Scope is settled as an interpretation of section 1's own silence, not
+an amendment of it.** Section 1 never states an organization-wide-only cadence; the maintainer's ruling of
+2026-10-15, "an organization or program," reads a clause that was always open to a program-scoped member,
+rather than widening a clause that had excluded one. **The cadence tension is recorded as a consequence,
+not resolved by amendment.** Two sources describe the type as itself periodically revised ("evolves with
+the organization's needs and growth"; "a living document and evolves over time"), against section 1's "not
+revised on a calendar." The bundle's Review Trigger section states the trigger as a condition, consistent
+with every other member, and treats any periodic language the admitting sources use as that condition
+restated as a floor, not a calendar rewrite of the document. ADR 0075 records the tension in full. No
+structural obligation, metadata rule or axis value moved.
 
 **0.5.0, 2026-10-13: a sixth member, and the second that no forecast named.** `business-continuity-plan` joins as
 `classification: tool`, by

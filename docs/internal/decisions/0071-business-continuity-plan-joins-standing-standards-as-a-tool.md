@@ -22,13 +22,13 @@ consulted: [claude]
   none among the government, standards and practitioner sources it read. That confirms the shape rather than
   deciding it.
 - **Why a record is needed.** Like `production-readiness-review` (ADR 0062), this type was never named on the
-  contract's "likely future members" list (`standing-standards.md:43`). It is the family's second member admitted
+  contract's "likely future members" list (`standing-standards.md:46`). It is the family's second member admitted
   purely on the membership test and falsifier, with no forecast to confirm.
 - **What settled membership:** the family's own falsifier
   ([ADR 0032](0032-adopt-standing-standards-family-contract.md)) is the same test ADR 0053 and ADR 0062 applied. A
   maintained business continuity plan, "tested via failover drills" in the catalog's own words, is consulted at the
   moment of action. A plan written for one disruption after the fact excludes on the contract's own analogy. That
-  analogy states: "a runbook written for one incident is an incident report" (`standing-standards.md:34`).
+  analogy states: "a runbook written for one incident is an incident report" (`standing-standards.md:37`).
 - **What settled classification:** the contract's section 2 cut, "is it a standard you judge against, or an
   instrument you execute?" This is argued marker-by-marker below, on the same reasoning ADR 0062 used for the
   production readiness review.
@@ -110,17 +110,17 @@ that a member picked a value from the set `{foundation, tool}`. They cannot veri
 
 Read as a maintained plan, this type passes the same falsifier ADR 0053 and ADR 0062 both applied: "if a candidate
 arrives that matches the cadence but is not consulted at the moment of action, this family has been drawn around
-the axis rather than around a job" (`standing-standards.md:105-107`). The catalog's own notes field already states
+the axis rather than around a job" (`standing-standards.md:108-110`). The catalog's own notes field already states
 the plan is "tested via failover drills." That is a cadence of consultation at the moment an exercise or a real
 disruption calls for it, not authorship once and shelving. Read as a one-time record written for one specific
 disruption after the fact, the type excludes from every family the research tested, `standing-standards` included.
-That follows the contract's own analogy at `standing-standards.md:34`: "a runbook written for one incident is an
+That follows the contract's own analogy at `standing-standards.md:37`: "a runbook written for one incident is an
 incident report." **This bundle is the standing plan**, and any filled instance written for one real event is a
 different, narrower artifact this bundle does not template.
 
 ### Why `tool`, marker by marker, against the honest `foundation` case
 
-The contract gives each value three markers (`standing-standards.md:77-82`). A production readiness review did not
+The contract gives each value three markers (`standing-standards.md:80-85`). A production readiness review did not
 split cleanly either, and ADR 0062's table is the model this ADR follows rather than picking the convenient row:
 
 | Marker | `foundation` | `tool` | A business continuity plan, with disaster recovery inside it |
@@ -171,7 +171,7 @@ dimension recorded this exclusion cleanly, with no strain, unlike the `admits-wi
 ### The counter-argument this record keeps rather than omits
 
 **No contract's forecast list named this type**, the same gap ADR 0062 recorded for the production readiness
-review. `standing-standards.md:43` names only "a coding-standards or engineering-handbook document." A reader who
+review. `standing-standards.md:46` names only "a coding-standards or engineering-handbook document." A reader who
 expects family assignment to track a contract's own predictions would find nothing here to point to, unlike
 `launch-coordination-checklist` and `definition-of-ready`. It does not change the outcome, for the same reason ADR
 0062 gave: the membership test, not the forecast list, governs a candidate. The tension is recorded so a future

@@ -50,8 +50,10 @@ design task" rather than "a spec-driven execution".
 | `trade-study` | `trade-study-options-analysis` | `decision-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) in the five-candidate admission sweep | **Built 2026-10-15**, shipped in `v0.19.0`, lean and full, third in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/trade-study_v0.1.0.md) covers the whole build: 10,479,257 weighted, $20.96, 16 agents. Admitted with no contract change, under [ADR 0022](decisions/0022-adopt-decision-docs-family-contract.md)'s consequence for a further member that keeps the family's phase and size shape. Build order is the maintainer's own preference ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)) |
 | `use-case-specification` | `use-case-specification` | `delivery-docs` | **Written 2026-10-15**; admission sources retrieved and raw-checked 2026-10-12, in the five-candidate admission sweep [below](#delivery-docs-new-member-by-amendment-the-use-case-specification-the-user-stories-guide-routes-to), with a gap-fill the same day on the Cockburn 2001 fully-dressed field set | **Built 2026-10-15**, shipped in `v0.19.0`, lean and full, second in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/use-case-specification_v0.1.0.md) covers the whole build: 8,370,585 weighted, $16.74, 15 agents. Family by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs), accepted 2026-10-15 when the maintainer approved the spec PR's merge. Its contract diff widens the membership test with a sixth verb, "elaborates" |
 | `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Built 2026-10-15**, shipped in `v0.18.0`, lean and full, first in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/data-dictionary_v0.1.0.md) covers the whole build: 8,859,179 weighted, $17.72, 16 agents. Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
+| `test-strategy` | `test-strategy` | `standing-standards` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-seventh-member-the-test-strategy-for-an-organization-or-program), with a lost admission dimension recovered 2026-10-14 and a scope follow-up 2026-10-15 | **Not yet.** Family and classification (`foundation`) by [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) (test-strategy joins standing-standards as a foundation), accepted 2026-10-19 on the maintainer's delegation, which stood in for the contract read. Scoped to an organization or program, the maintainer's ruling of 2026-10-15, never a portfolio and never the per-project sense `test-plan` already ships. The contract diff was accepted without a read, and the maintainer has not yet confirmed the delegated acceptance |
+| `positioning-statement` | `positioning-statement` | `strategy-docs` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-14](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), with a sitting-decision follow-up on 2026-10-15 | **Not yet.** Family by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted 2026-10-19 on the maintainer's delegation, without a read of the contract diff. It widens the contract's list of questions and places the type third in the chain, between the strategy and the North Star metric. The bundle id matches the catalog id, and the catalog owner becomes `PMM / PM` by the maintainer's ruling of 2026-10-17. The spec's suggested ownership default is the agent's reasoning and was accepted without a read. Admitted on five sources (MIT, HubSpot, eCornell, Yesware, Product Marketing Alliance); Geoffrey Moore is named but not credited with admission |
 
-**2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
+**2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
 **2026-10-13: a five-candidate admission sweep, and the maintainer's answers the next day.** On 2026-10-12 one
 research workflow tested five queued candidates against ADR 0030's admission test and against all ten family
@@ -71,7 +73,7 @@ bundle, with the business continuity plan primary and disaster recovery as a sec
 (business-continuity-plan joins standing-standards as a tool).** *(2026-10-14: built; its progress row above carries the date.)* `trade-study-options-analysis` goes to
 `decision-docs` with no contract change, in lean and full; it is not yet specced. *(2026-10-15: specced [below](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) as `trade-study`, with no record needed.)* *(2026-10-15: `trade-study` built; its progress row above carries the date.)* `test-strategy` goes to
 `standing-standards` in its organization-wide sense, but **its lost admission dimension runs first**, and that
-result decides whether a spec is written. *(2026-10-15: the dimension ran on 2026-10-14 and came back undecidable. Evidence that a test strategy is organization-wide is real but thin, evidence of a per-programme test strategy is strong and direct, and no automated fetch reached the ISO/IEC/IEEE 29119-3 clause text. No spec is written, and the scope question returns to the maintainer.)* *(2026-10-15, the maintainer's ruling: the test strategy is scoped to an organization or program, a standing strategy used across more than one project, after a follow-up found that no source scopes it to a portfolio. Its example is set at Acme, dated after the shipped test plan, so no shipped file changes. The spec is written next.)* `use-case-specification` and `data-dictionary` each wait for an amendment
+result decides whether a spec is written. *(2026-10-15: the dimension ran on 2026-10-14 and came back undecidable. Evidence that a test strategy is organization-wide is real but thin, evidence of a per-programme test strategy is strong and direct, and no automated fetch reached the ISO/IEC/IEEE 29119-3 clause text. No spec is written, and the scope question returns to the maintainer.)* *(2026-10-15, the maintainer's ruling: the test strategy is scoped to an organization or program, a standing strategy used across more than one project, after a follow-up found that no source scopes it to a portfolio. Its example is set at Acme, dated after the shipped test plan, so no shipped file changes. The spec is written next.)* *(2026-10-19: specced [below](#standing-standards-seventh-member-the-test-strategy-for-an-organization-or-program) as `test-strategy`, by [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) (test-strategy joins standing-standards as a foundation), accepted the same day on the maintainer's delegation, which stood in for the contract read.)* `use-case-specification` and `data-dictionary` each wait for an amendment
 the maintainer reads as a diff. The use case's `delivery-docs` amendment adds the verb "elaborates", with a
 paragraph that limits what it admits. The data dictionary's `governance-docs` amendment admits only the narrow
 scope, the meaning of stored fields, which reverses the maintainer's first answer. Neither is specced yet. Their
@@ -1602,7 +1604,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1353-1366`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1357-1370`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1845,7 +1847,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1490-1492` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1494-1496` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1874,7 +1876,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:536-539` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:540-543` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1938,7 +1940,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:498-513` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:502-517` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2006,10 +2008,10 @@ occasional-to-periodic rather than every increment.
 **Two readings, one membership answer.** A maintained PRR checklist (the questionnaire) passes the family's own
 falsifier the same way `launch-coordination-checklist` did: it is "consulted at the moment of action," per
 [ADR 0053](decisions/0053-launch-coordination-checklist-joins-standing-standards-as-a-tool.md)'s test, restated
-at `docs/internal/contracts/standing-standards.md:105-107`. A per-service review record (one team's filled
+at `docs/internal/contracts/standing-standards.md:108-110`. A per-service review record (one team's filled
 answers for one service, one time) excludes from every family tested, standing-standards included, on the
 contract's own analogy: "a runbook written for one incident is an incident report"
-(`standing-standards.md:34`). **This resolves the library's stated either/or**: the bundle is the standing
+(`standing-standards.md:37`). **This resolves the library's stated either/or**: the bundle is the standing
 questionnaire, and the worked example is a filled instance of it, exactly the relationship
 `launch-coordination-checklist_example.md` already has to its own template.
 
@@ -2025,7 +2027,7 @@ into that family.
 inside the team, not outside), and `strategy-docs` (organization-wide direction, not one service).
 
 **This is the family's first unforecast member, and that is worth naming rather than hiding.**
-`standing-standards.md:43` names only "a coding-standards or engineering-handbook document" as a likely future
+`standing-standards.md:46` names only "a coding-standards or engineering-handbook document" as a likely future
 member. Unlike `launch-coordination-checklist` and `definition-of-ready`, which the contract predicted by name
 before either was built, this admission rests entirely on the membership test and the falsifier, not on a
 forecast the contract can be shown to have gotten right. Per
@@ -2383,7 +2385,7 @@ direct analogy to the already-shipped `business-case`:
 | `governance-docs` | excludes | Names `business-case` as its own worked exclusion, "an event-driven or phase-bound artifact (an incident postmortem, a business case) does not [belong], however operational it feels" (`governance-docs.md:24`) |
 | `qa-docs` | excludes | "a verification artifact of the develop phase" (`qa-docs.md:12`); a brief plans nothing about verifying a product increment |
 | `process-docs` | excludes | Its own contract text routes a forward-looking candidate away from itself: "discovery-docs before a decision, strategy-docs for direction, delivery-docs for the work itself" (`process-docs.md:23`) |
-| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:40`); a brief is written once per project, not consulted repeatedly unchanged |
+| `standing-standards` | excludes | "the output of a phase belongs to a phase family" (`standing-standards.md:43`); a brief is written once per project, not consulted repeatedly unchanged |
 | `communication-docs` | excludes | "the document owns none of its own facts" is this family's defining property (`communication-docs.md:25`); a brief originates its own content and is not periodic |
 | `discovery-docs` | admits, with strain | Its own membership test fits: "exists to decide whether to build something, before anyone commits to building it" (`discovery-docs.md:33`). The strain is the BIS "official start of the project" line, carried into ADR 0063's body as a named POSITION rather than smoothed over |
 
@@ -2503,7 +2505,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1491-1493`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1495-1497`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -4229,8 +4231,8 @@ phrase) is consulted at the moment of action. That is the same falsifier
 launch checklist. [ADR 0062](decisions/0062-production-readiness-review-joins-standing-standards-as-a-tool.md)
 applied it to the production readiness review too: "if a candidate arrives that matches the cadence but is not
 consulted at the moment of action, this family has been drawn around the axis rather than around a job"
-(`standing-standards.md:105-107`). A plan written for one specific disruption, after the fact, would be an
-incident report, excluded on the contract's own analogy at `standing-standards.md:34`. This bundle is the
+(`standing-standards.md:108-110`). A plan written for one specific disruption, after the fact, would be an
+incident report, excluded on the contract's own analogy at `standing-standards.md:37`. This bundle is the
 standing plan, agreed once and consulted (and periodically rehearsed) whenever a disruption or a drill calls
 for it.
 
@@ -4250,7 +4252,7 @@ The `tool` call therefore rests on execution under time pressure and on the thir
 authority comes "from being correct right now". It does not rest on the authorship half.
 
 **This is the family's second member that no forecast named, after `production-readiness-review`.**
-`standing-standards.md:43` names only "a coding-standards or engineering-handbook document" as a likely future
+`standing-standards.md:46` names only "a coding-standards or engineering-handbook document" as a likely future
 member, checked directly against the contract's current text. Neither a business continuity plan nor a disaster
 recovery plan appears on that list. That follows
 [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)'s principle, already applied to
@@ -4339,7 +4341,7 @@ Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call
 plausibly adjacent names, `foundation-build-risk-review` and `tool-design-sprint-readiness` /
 `tool-foundation-sprint-readiness`, are a build-stage risk review and design/foundation-sprint precondition
 checks, unrelated in subject. **`pairs_with: []`**, under the contract's rule for that field: "Verify per
-member; claim only what is true of that member" (`standing-standards.md:71`).
+member; claim only what is true of that member" (`standing-standards.md:74`).
 
 #### Risks for the build and review
 
@@ -5525,7 +5527,7 @@ each correction accepted:
 "dictionary," "glossary," or "catalog" against this type; the closest adjacent name,
 `measure-instrumentation-spec`, is an instrumentation plan, the per-feature neighbour this library has
 already placed outside this bundle's scope. **`pairs_with: []`**, under the contract's rule for that field:
-"Verify per member; claim only what is true of that member" (quoted from `standing-standards.md:71`, the
+"Verify per member; claim only what is true of that member" (quoted from `standing-standards.md:74`, the
 same clause `business-continuity-plan`'s own spec cites for this check, since `governance-docs.md` states
 the identical obligation without repeating the sentence verbatim).
 
@@ -5691,3 +5693,835 @@ toward the higher end if the full variant's four additional sections (Dataset Me
 Validation Rules, Review and Sign-off) need more drafting rounds than a single-size member did. It is a
 projection, not a measurement, until `python tools/gen-bundle-build-report.py --ingest` runs against an
 actual build report.
+
+### standing-standards (seventh member): the test strategy, for an organization or program
+
+**`test-strategy`** (bundle id; the catalog id stays `test-strategy`, since the two already match) -
+`standing-standards` (the maintainer's ruling of 2026-10-13), **`classification: foundation`** (recommended;
+argued in [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md)), sizes **`[lean]`**
+(single size, argued below), methodology `methodology-agnostic` (catalog's own value, not contradicted by
+any admitting source), catalog id `test-strategy` (catalog 103 in [`catalog.md`](catalog.md); atlas index
+102 in [`atlas/catalog-data.json`](../../atlas/catalog-data.json)). Catalog owner: `QA Manager` (flagged,
+not corrected, below). Catalog purpose (flagged below): "Define organization-wide testing approach and
+standards." Catalog contents: "levels, types, tools, environments, governance." Catalog `category`:
+"QA / Test". Catalog `stage`: "testing". Catalog `formality`: "standard". Catalog `rarity`: "occasional"
+(flagged, not corrected, below). Catalog `size_variant`: "M" (corrected below to a single size). Catalog
+`relationships`: "parent of Test Plans". Issue #260 (bundle: test-strategy) tracks this build.
+
+This spec follows the model the maintainer named most recently in this family: the `business-continuity-plan`
+spec (standing-standards, sixth member), for structure, depth and tone, and adds the data-dictionary spec's
+newer convention of a one-size "Section design" table with sourcing in the same column as the section's job.
+
+#### Demand: a routing row and a frontmatter field, in one already-shipped sibling
+
+No `future:` tag names this type. A grep of every tracked file under `templates/` and `docs/internal/` for
+"test strategy" or "test_strategy", run 2026-10-16, returns matches only inside `templates/test-plan/`.
+The demand is prose, already shipped, inside that one sibling, not a promise tag:
+
+- `templates/test-plan/test-plan_guide.md:36` routes a reader directly here, inside its own "Plan,
+  strategy, case, or report?" table: "How this organization tests, in general, across projects" maps to "A
+  **test strategy** (standing, rarely changes)". No bundle exists yet for that routing target.
+- `templates/test-plan/test-plan_guide.md:41-43` names the scope question this spec settles: "the certification
+  bodies put strategy at the organization or programme level, plenty of teams carry it as a section inside
+  the plan, and practitioners openly disagree about which is written first."
+- `templates/test-plan/test-plan_template-full.md:7` ships a dedicated frontmatter field,
+  `test_strategy_ref`, whose only job is to let a filled test plan point at a standing strategy, or declare
+  there is none. `test-plan_example.md:7` fills it today: "None. Acme Reporting has no standing test
+  strategy document; the Risk-Ranked Approach below is the strategy for this release." That sentence stays
+  true at the test plan's own date, 2026-07-06, and this spec does not ask it to change. See the worked
+  example below for how a later-dated test strategy coexists with it.
+- `templates/test-plan/test-plan_template-full.md:99-106`'s "Test Levels and Types" section and the plan's
+  own Risk-Ranked Approach section already do this content's job at the per-project level, when no standing
+  strategy exists. This spec's own Boundaries section states exactly how this bundle differs from both.
+
+This is the same shape the `business-continuity-plan` spec found for its own demand: real routing, already
+shipped, not a gate obligation. No check fails today for leaving this type unbuilt.
+
+#### Admission: three independent sources, at a cost the research names plainly
+
+Every quotation below passed the recheck against raw source text, filed in one of three checked files:
+`_local/research/2026-10-12_admission-sweep-5/recheck-out.json`,
+`_local/research/2026-10-14_prep-research/recheck-out.json`, or
+`_local/research/2026-10-15_sitting-followup/test-strategy-recheck-out.json` (all gitignored).
+
+**ISTQB's glossary clears admission, with a caveat about where it was read.** An unofficial mirror,
+`istqb-glossary.page`, serves the identical definition text under both its "test strategy" and
+"organizational test strategy" entries: "A high-level description of the test levels to be performed and
+the testing within those levels for an organization or programme (one or more projects)." That span passed
+the recheck. The mirror is not ISTQB's own `istqb.org` or `glossary.istqb.org` domain, so a build that wants
+the official page should fetch it directly rather than carry this citation forward unchanged. The same
+mirror's worked illustration also passed: "An organization that develops and maintains an e-commerce
+platform defines a test strategy stating that all projects will perform component, integration, system, and
+acceptance testing."
+
+**Process Street publishes the type as a produced, distributed written artefact, on four passing steps.**
+All four of its steps quoted by the 2026-10-12 sweep pass the recheck: "Identify objectives of the test
+strategy document", "Distribute finalized test strategy document to relevant stakeholders", "Identify test
+entry and exit criteria" and "Develop risk mitigation strategy". The page's other steps were never
+raw-checked, so this spec paraphrases them and does not quote them. No licence is stated on the
+page, so nothing from it may be copied into a template verbatim; it may only inform section naming.
+
+**ISO/IEC/IEEE 29119's own glossary text is weaker than Wikipedia's account of it.** On the imbus mirror of
+the 2013 edition, every sentence containing the word "document" failed the recheck, including the sentence
+most often quoted for this type. What did pass: "it provides detail on how the testing is to be performed.
+It is aligned with the Organizational Test Policy," "An organisation could have more than one Organizational
+Test Strategy to cover markedly different project contexts," and "The test strategy is a distinct entity
+from the Organizational Test Strategy." Wikipedia's secondary account of the standard's Part 3 structure
+passed independently: "Organizational Test Strategy" and "Test Plan (including a Test Strategy)" are named
+as separate outputs. **The standard's own current clause text was never reached by any automated fetch in
+either research dimension** (iso.org, IEEE Xplore, an iTeh mirror and an ANSI preview page each returned a
+403, a paywall or a JS-rendered empty page), per the 2026-10-14 critic's own finding. No sentence in this
+spec or its companion may cite ISO/IEC/IEEE 29119-3's own text; every reference to it is to a secondary
+account, labelled as secondary.
+
+**One dimension of this sweep's research was lost and later recovered.** The 2026-10-12 admission sweep ran
+two research dimensions for this type instead of the usual three; the dedicated named-sources dimension
+never ran. A 2026-10-14 follow-up ran it. It found ISTQB's own current (2024) Advanced-Level syllabus,
+which passed the recheck on five spans, including "Throughout this syllabus, the organizational test
+strategy is taken as given," "A project test strategy (referred to as a "test strategy" in the
+ISO/IEC/IEEE 29119-3)," and "it focuses on test management at the project level and not test management at
+the organizational level." **That syllabus also names a renaming risk this spec does not resolve**: it
+states the organization-level artefact is now "referred to as an "organizational test practice"" in the
+standard it teaches toward, which, if true of the current standard's own text, would mean the strongest
+org-level sources in this admission case (Wikipedia's account, and an academic 2009 slide deck on a then-draft
+of the standard) describe a name the standard may have since dropped. This is recorded as an open question,
+not settled here.
+
+**Admission clears on three independent sources, at ADR 0048's one-source bar, several times over.** ISTQB's
+glossary (even read through an unofficial mirror), Process Street's own template, and Wikipedia's secondary
+account of ISO/IEC/IEEE 29119's structure each independently publish the type as a written document. No
+single one of the three needs the others to clear the bar.
+
+#### Scope: organization or program, the maintainer's ruling of 2026-10-15
+
+**The scope question was undecidable from the admission evidence alone.** A 2026-10-14 family-fit critic
+found strong, direct, mostly primary evidence that a test strategy is written at program scope (Ofgem's two
+Switching Programme documents, TfL's Schedule 4 procurement contract), against evidence for a whole-organization
+reading that is real but thinner and more secondary (Wikipedia's account, a 2009 academic slide deck
+describing a draft standard, a vendor guide, one unpublished HMRC blog claim). The critic's verdict line was
+"undecidable." It also found that `standing-standards.md` section 1's own membership clause, "agreed once
+and applied every time... consulted repeatedly without being rewritten," never says "the whole
+organization," so an org-wide-only cut is a gloss layered on top of the contract rather than something its
+text requires.
+
+**The maintainer ruled on 2026-10-15: the test strategy is scoped to an organization or program, "a
+standing strategy used across more than one project," after a follow-up found that no source scopes a test
+strategy to a portfolio.** That follow-up checked `istqb-glossary.page`'s own text (hedging "organization or
+programme"), ISO/IEC/IEEE 29119-1's own wording (naming only "organization," never "programme," on the
+passing fragments above), and government, procurement and job-posting sources for "portfolio" usage.
+**No source anywhere in the follow-up scopes a test-strategy document itself to a portfolio.** The one
+verified source that uses both words, an Australian public-service job posting (passed recheck), ties the
+Test Strategy artefact to "program" scope and reserves "portfolio" for a separate, higher departmental level:
+"Manage program testing activities that are correctly prioritised to deliver outcomes that align to the
+Departments priorities," and lists Test Strategy among that role's own artefacts, "not limited to Test
+Estimation, Test Schedule, Test Strategy, Test Plan, Test Execution Reports, Defect Modelling Reports, and
+Test Summary Reports." Per PMI and APM's own definitions, also checked and passed, a portfolio sits above a
+programme, as "a collection of projects or programs and other work that are grouped together," whose parts
+"may not necessarily be interdependent or directly related." Swapping "portfolio" in for "programme" would
+have silently widened this bundle's scope past what the maintainer asked for.
+
+**Spelling: "program" in this library's own voice, "programme" only inside a quotation.** The follow-up
+found the library's own original prose (not quoting a source) mostly spells it "program": `test-plan`'s own
+Acme example, and the shipped placeholder and guidance text in `status-report`, `raid-log`, `risk-register`
+and `kpi-dashboard`, all do. "Programme" in this library's shipped text clusters almost entirely inside
+direct quotations of British sources, chiefly ISTQB's glossary and `test-plan_guide.md:42`'s own paraphrase
+of "the certification bodies." The library's `organization`-to-`organisation` ratio, 447 to 131 across the
+tree, confirms American spelling is the house default. This spec's own prose follows that: "program," never
+"programme," outside a quotation mark.
+
+**Why not the per-project sense, again, stated plainly.** The per-project sense of a test strategy is
+already shipped, inside `test-plan`'s own Test Levels and Types section and Risk-Ranked Approach section,
+and is the sense `test-plan`'s own `test_strategy_ref` field exists to distinguish from a standing one. This
+bundle builds only the organization-or-program sense: standing, consulted by more than one project, not
+authored per release.
+
+#### Family fit: `standing-standards`, `foundation`, and the third member no forecast named
+
+**Membership is the family's own falsifier, the same one every prior member faced.** A standing test
+strategy that one or more projects inherit from, and that a project's own test plan either follows or states
+a reasoned deviation from, is consulted at the moment each of those projects' plans is written. Ofgem's own
+language, which passed the recheck, states exactly this relationship: "This testing strategy will be
+followed by a more detailed programme level Testing Management Plan," and a second Ofgem document adds "a
+detailed, programme level Testing Management Plan should be developed during DLS to define the detailed
+testing approach for each test phase." A strategy written for one project after the fact, with no further
+project ever consulting it, would be the family's own excluded case, the contract's analogy at
+`standing-standards.md:37`: "a runbook written for one incident is an incident report." This bundle is the
+standing strategy; a filled instance that only ever served one project's own test plan is a different,
+narrower artefact this bundle does not template.
+
+**Classification: `foundation`, argued marker by marker, the same method ADR 0058, ADR 0062 and ADR 0071
+each used.** The full argument, with the honest `tool` case stated and rejected, is in
+[ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md). In short: a test
+strategy's levels, types, tools and governance are a standard every project's own plan is judged against
+or states a reasoned deviation from, changed deliberately and rarely, which Software Testing Help's own
+passing quote supports directly: "Test strategy usually will not change once approved." On this library's
+own inference, since no research dimension tested it, nobody executes it under time pressure the way a
+runbook or a business continuity plan is executed once a disruption or a launch is underway. It is the organization-or-program-level mirror of `definition-of-done`, which is also
+`foundation`.
+
+**Why not `qa-docs`, in that contract's own words.** `qa-docs.md` section 1 admits a type whose job is to
+"plan, specify, or report the verification of a product increment." Section 2 states the phase case
+instrument by instrument: "A test plan is written per release and closed at its exit criteria... Each is
+produced at a stage and finished, which is the definition of a phase artifact." A standing, organization-
+or-program-level test strategy, read in that sense, is none of these: it is not written per increment, not
+closed at any one release's exit criteria, and not finished at a stage. The 2026-10-12 research scored this
+reading `excludes` against `qa-docs`, cleanly, for exactly this reason. (The per-project sense would
+admit-with-strain, per that same research; this bundle does not build that sense, so the strained reading
+never arises here.)
+
+**This is the family's third unforecast member.** `standing-standards.md:46` names only "a coding-standards
+or engineering-handbook document" as a likely future member, checked directly against the contract's
+current text. Neither a test strategy nor anything resembling one appears there. `production-readiness-
+review` (ADR 0062) was the family's first unforecast member and `business-continuity-plan` (ADR 0071) its
+second. The same principle both of those records state, from
+[ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md), governs here too: "The
+membership test, not the list of members that happened to be planned in 2026-07, governs a candidate." This
+does not weaken admission. It does mean ADR 0075, like ADR 0062 and ADR 0071 before it, cannot claim a
+confirmed forecast.
+
+**The scope ruling interprets the contract's silence; it does not amend the contract's text.** Section 1's
+membership clause never says "organization-wide," so the maintainer's organization-or-program ruling reads
+a clause that was always open to it, rather than widening a clause that excluded it. This differs from
+`business-continuity-plan`'s own admission, where no comparable scope ambiguity existed inside the
+contract's own words; ADR 0075 records this as the one respect in which this admission's reasoning differs
+from ADR 0071's, even though both conclude a record is needed for the same underlying cause, an unforecast
+member whose classification has to be argued.
+
+**The cadence tension, again, routed to Review Trigger rather than resolved by amendment.** Section 1 states
+members are "not revised on a calendar." Two sources describe a test strategy as something that is itself
+periodically revised: TestRail's "A long-term document that evolves with the organization's needs and
+growth" and ReqTest's "The test strategy is a living document and evolves over time." A third source cuts
+the other way: Software Testing Help's own "Test strategy usually will not change once approved." **This
+spec does not propose a contract amendment to resolve the tension.** Instead, the bundle's own Review
+Trigger section, mandated by contract section 4 of every member, states named conditions rather than a
+calendar, the same discipline every prior member in this family uses. ADR 0075 records the tension as a
+consequence of this admission, as ADR 0062 and ADR 0071 each did for their own members.
+
+#### Boundaries: six neighbours, each stated in that neighbour's own words
+
+- **`test-plan`: the sharpest boundary, and the one this bundle hands off to.** A test plan is scoped to one
+  release and is written per increment; a test strategy is standing and spans more than one project. The
+  seam is the shipped `test_strategy_ref` field: a plan that inherits from this strategy names it there, and
+  states any reasoned deviation from the strategy's levels, types or tooling inside its own Risk-Ranked
+  Approach section, rather than this bundle restating either section's content.
+- **`definition-of-done`: the closest sibling in form, different in subject.** Both are standing, both are
+  `foundation`, both are agreed once and consulted repeatedly. A Definition of Done is a standard every
+  increment is judged against, in any discipline; a test strategy is the standing testing-specific standard
+  every project's own verification approach either follows or states a deviation from. Neither replaces the
+  other; a team may hold both.
+- **The qa-docs family (`test-plan`, `test-case`, `test-summary-report`, `bug-report`): a phase boundary, not
+  a subject boundary.** Every member of that family plans, specifies or reports the verification of one
+  product increment, authored at a stage and finished. This bundle is none of those three things: it is not
+  authored per increment and is not finished at any one stage. `qa-docs.md` section 1's own exclusion clause
+  draws this line, quoted above.
+- **`production-readiness-review`: a different standing instrument, at a different moment.** The PRR asks
+  whether one service is ready for standing production ownership to change hands; this bundle sets the
+  testing approach every project in scope follows. The PRR's own Readiness Criteria may ask whether a
+  project's testing conformed to this strategy, where one exists, without this bundle restating any PRR
+  criterion.
+- **`definition-of-ready`: an entry-side standard, not a testing-approach standard.** A DoR governs when a
+  backlog item is ready to enter a sprint; this bundle governs how testing is approached once work is
+  underway. Neither gates the other.
+- **The `qa-docs` family contract itself: why the organization-or-program sense is not one of its members.**
+  `qa-docs.md` admits a type only if its job is to "plan, specify, or report the verification of a product
+  increment" (section 1) and only where the type is "produced at a stage and finished" (section 2). An
+  organization-or-program-level test strategy is consulted by many increments across more than one project
+  and finishes at none of them, which is the opposite of what that contract's own words require. The
+  2026-10-12 research scored this reading a clean `excludes` against `qa-docs`, with no strain needed to
+  reach that verdict, unlike the per-project sense's own `admits-with-strain` reading of the same contract.
+
+#### The staleness mechanism: a Review Trigger, the same obligation every member carries
+
+Contract section 4 requires every `standing-standards` member to ship "a review trigger with a named owner
+and a condition, not a calendar reminder." `definition-of-done`'s own Review Trigger is a two-field pair,
+Trigger and Noticed by, naming an event such as a criterion waived repeatedly. `business-continuity-plan`'s
+own Review Trigger is a three-column table, Condition, Owner, and What They Do About It, because that
+bundle's own research named several distinct named conditions rather than one. This bundle's own content
+argues for the table shape, for the same reason: more than one named condition is already evidenced, and
+none should read as the headline rule over the others.
+
+Candidate conditions, drawn from the sources above and labelled as this library's own synthesis where no
+single source names the condition outright: a project's own test plan records a deviation from this
+strategy's levels, types or tooling in its `test_strategy_ref` field or its Risk-Ranked Approach section,
+which is this strategy's own inheritance mechanism signalling a possible drift; the organizational or program
+test policy this strategy is "aligned with" (imbus's passing phrase) changes; a test summary report shows a
+strategy-mandated level or type was skipped on a real release, which is this strategy's own failure mode
+surfacing downstream rather than being noticed at the strategy itself; or a new test level, tool or
+environment is adopted across more than one project without this document being revised to say so. The
+annual or periodic review language TestRail and ReqTest both use is this document's own named cadence
+restated as a floor under the condition-based trigger, not a calendar rewrite of its content, the same
+reading `business-continuity-plan`'s own Review Trigger section gives NIST's and the FFIEC's annual-review
+language.
+
+#### Section design
+
+Single size, so there is no lean column. Drawn from Process Street's own 20-step structure (four of its
+spans passed the recheck; the rest are paraphrased), ISO/IEC/IEEE 29119-1's own content note for the
+project-level strategy (read via the imbus mirror's structural listing, not quoted, since the clause text
+itself did not pass), the catalog's own "levels, types, tools, environments, governance," and Ofgem's own
+two documents' structure. No single source gives one canonical section list for the organization-or-program
+sense, so the groupings below are this library's own judgment, sourced per row.
+
+| Section | What it is, and its sourcing |
+|---|---|
+| **Purpose and Scope** | What counts as "this organization or program" here, which projects it binds, and what it explicitly leaves to each project's own test plan. Sourced to Process Street's "Identify objectives of the test strategy document" (passed) and to the scope discussion above |
+| **Test Levels and Types** | The levels (unit, integration, system, acceptance) and types (functional, performance, security, and so on) every project in scope inherits unless its own plan states a reasoned deviation. Sourced to the catalog's own content note and to ISO/IEC/IEEE 29119-1's structural content list, read from the imbus mirror's listing rather than quoted |
+| **Standard Tooling and Environments** | The tools and environments every project is expected to use by default. Sourced to the catalog's own "tools, environments" phrase and to Process Street's own environment-and-tools step, paraphrased, not quoted, since no recheck covers that step |
+| **Governance and Policy Alignment** | How this strategy relates to any higher test policy, where one exists, and who approves a change to the strategy itself. Sourced to ISO/IEC/IEEE 29119-1's own passing fragment, "it provides detail on how the testing is to be performed. It is aligned with the Organizational Test Policy" |
+| **How Project Test Plans Inherit or Deviate** | The seam with `test-plan`'s own `test_strategy_ref` field: a project names this strategy there, inherits its levels, types and tooling as the default, and states any deviation with its reason. Sourced to Ofgem's own passing language, "This testing strategy will be followed by a more detailed programme level Testing Management Plan," and "a detailed, programme level Testing Management Plan should be developed... to define the detailed testing approach for each test phase" |
+| **Roles and Responsibilities Across Projects** | Who owns this document at the organization-or-program level, distinct from who executes testing on any one project. Sourced to Process Street's own approval and distribution steps, paraphrased except where quoted above, and to the Australian government posting's passing language tying a Test Strategy artefact to "program" testing activities |
+| **Review Trigger** | **Contract-mandated** (section 4), a table of named conditions, owners and actions, per the staleness mechanism above |
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
+`docs/internal/catalog.md:161` and `atlas/catalog-data.json` (index 102), then regenerate the atlas:
+
+1. **`size_variant: "M"` becomes a single size, `[lean]`.** Re-checked directly against this sweep's
+   research rather than carried forward unread: neither the 2026-10-12 sweep nor the 2026-10-14 follow-up
+   names a source describing a short form and a long form of a test strategy. Every structure found, Process
+   Street's 20 steps, ISO/IEC/IEEE 29119-1's own content list, Ofgem's own testing-scope structure, the
+   catalog's own content note, is one comprehensive shape. **Recommend** `sizes_available: [lean]` in the
+   build's own `test-strategy_meta.yaml`, independent of this catalog correction.
+2. **`purpose: "Define organization-wide testing approach and standards"` becomes "Define the testing
+   approach and standards an organization or program applies across its projects."** The maintainer's
+   2026-10-15 ruling is organization-or-program scope, not organization-wide-only; "program" is spelled in
+   the library's own house voice rather than "programme." **Recommend.**
+3. **Alias `"test approach"` is flagged for the landing PR to route elsewhere, not kept here.** Inside this
+   library, "approach" already names the per-project sense: `test-plan`'s own full-variant section is named
+   "Risk-Ranked Approach," and `test-plan_guide.md:44-45` states plainly, "your Risk-Ranked Approach section
+   **is** your strategy for this release." A reader typing "test approach" is, by this library's own
+   vocabulary, more likely searching for that per-project section than for this standing document.
+   **Recommend dropping the alias here and considering it for `test-plan` instead, as a separate,
+   maintainer-vetoable landing-site edit**, the same posture the `data-dictionary` spec took toward giving
+   `tracking-plan` the alias "event dictionary."
+4. **Alias `"QA strategy"` has no passing or filed quotation supporting it anywhere in this sweep's three
+   recheck files.** It is not contradicted either; no source denies the phrase is used. **Flagged for the
+   spec author or reviewer to decide**, the same posture `data-dictionary`'s own landing took for its
+   contested "data catalog entry" alias, rather than kept or dropped by this spec unilaterally.
+5. **Alias "organizational test strategy" is recommended, added, sourced.** It is ISTQB's own term for
+   exactly this bundle's own sense, on the passing quotation above, and a reader who types ISTQB's own
+   vocabulary should find this bundle.
+6. **`owner: "QA Manager"` is not contradicted and is not corrected.** The one source in this sweep that ties
+   a Test Strategy artefact to a named role, an Australian public-service job posting, is titled for a
+   program-scoped test-management role and lists the Test Strategy among that role's own artefacts, on the
+   passing quotation above ("not limited to Test Estimation, Test Schedule, Test Strategy, Test Plan, Test
+   Execution Reports, Defect Modelling Reports, and Test Summary Reports"). The posting's own job title is
+   not itself a checked quotation and is not repeated here as one; the passing span is evidence enough that
+   a program-scoped testing-management role fits at least as well as the catalog's own generic owner.
+   **No change recommended.**
+7. **`rarity: "occasional"` is flagged, at low confidence, not corrected.** The 2026-10-14 critic observed
+   that a document "agreed once" per organization or program and consulted repeatedly, per ISTQB's and this
+   family's own framing, is written far less than "occasional" suggests for a single project-facing
+   document. No source directly states a correct value. **Flagged for a reviewer's judgment, not changed by
+   this spec.**
+8. **`stage: "testing"` is not corrected.** Per the same reasoning `data-dictionary`'s own landing gave for
+   its identical field: the catalog's descriptive `stage` is a different question from the metadata schema's
+   `phase`/`classification` axis, which this bundle settles independently as `classification: foundation` in
+   its own `meta.yaml`. **No change recommended.**
+9. **`relationships: ["Test Plans"]` needs no correction.** Every admitting and boundary source treats a
+   standing strategy, where one exists, as upstream of the plan. **No change recommended.**
+
+#### Landing site: `test-plan_guide.md:36`
+
+`test-plan_guide.md:36`'s own routing row, "How this organization tests, in general, across projects" to "A
+**test strategy** (standing, rarely changes)," currently routes to a type this library does not yet ship.
+Whether that cell gains a direct link to the new bundle, once built, is a build decision, the same stance
+ADR 0062 and ADR 0071 each took toward their own sibling's forward-reference. This spec names the site; it
+does not make the edit.
+
+#### `pairs_with`: checked, empty
+
+`gh api repos/product-on-purpose/pm-skills/contents/skills --jq '.[].name'` returned all 68 skill names on
+2026-10-16. The only name containing "test," `tool-design-sprint-test-and-score`, is a design-sprint
+test-and-score skill, unrelated in subject to a software test strategy. No name contains "qa," "quality" or
+"strategy" against this type. **`pairs_with: []`**, under the contract's rule for that field: "Verify per
+member; claim only what is true of that member" (quoted from `standing-standards.md:74`, the same clause
+`business-continuity-plan`'s and `data-dictionary`'s own specs each cite for this check).
+
+#### Risks for the build and review
+
+1. **"Program," never "portfolio," and "program," not "programme," outside a quotation.** The maintainer's
+   scope ruling is specific on both axes. A companion that drifts into "portfolio" anywhere outside a
+   quotation of a British source silently widens scope past what was ruled; a companion that writes
+   "programme" in its own voice, outside a quotation, contradicts the library's own house spelling, confirmed
+   at a 447-to-131 ratio for `organization` over `organisation` across the tree.
+2. **ISO/IEC/IEEE 29119-3's own clause text must never be quoted.** No automated fetch in either research
+   dimension reached it. Every reference to the standard in this bundle's companion must be to a secondary
+   account (Wikipedia, ISTQB's own syllabus describing it), labelled as secondary, never presented as the
+   standard's own words.
+3. **The "organizational test practice" rename risk is a real, recorded open question, not a settled
+   correction.** If a later reader reaches the current ISO/IEC/IEEE 29119-3 text and finds the organization-
+   level artefact renamed away from "strategy," that is new information this spec does not have, and the
+   bundle's own admission case would need to be revisited, not quietly patched around.
+4. **Only four of Process Street's steps are raw-checked.** The four quoted above pass. A companion that
+   quotes any of the page's other steps would be citing spans no recheck file carries. Paraphrase those
+   instead, exactly as this spec does.
+5. **The istqb-glossary.page mirror is unofficial, and serves one entry under two names.** A companion citing
+   it must say both facts, the mirror's status and the shared-text finding, rather than presenting it as
+   ISTQB's own site or as two independently defined terms.
+6. **This bundle must not restate `test-plan`'s own Test Levels and Types section or its Risk-Ranked
+   Approach section.** The seam is the `test_strategy_ref` field and a stated inheritance-or-deviation
+   relationship, not a duplicate of either section's content.
+7. **The 42-percent prevalence statistic `test-plan_companion.md:568` already flagged as unsourced and
+   excluded must not recur here.** No source in this sweep or its follow-ups corroborates a prevalence figure
+   for how many teams keep a standing test strategy, and none should be invented or carried forward from
+   anywhere this library has already distrusted it.
+8. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into the
+   template's GOOD and WEAK text.** Once an example exists, grep the drafted template for its proper nouns
+   before review, the practice `business-continuity-plan`'s and `data-dictionary`'s own specs each name.
+9. **The plan/strategy boundary is genuinely unsettled in the practitioner literature, and this bundle's own
+   companion must say so rather than resolve it.** `test-plan_companion.md:379-390` already frames the line
+   as "genuinely unsettled" across six sources. A companion for this bundle that writes as though ISTQB's
+   organization-or-program framing were the single correct answer would misstate research this library has
+   already logged, in a sibling bundle's own companion.
+
+#### The worked example: the Reporting Platform Modernization program, after the test plan's own date
+
+**This must chain onto the same Acme Analytics thread `test-plan`, `test-summary-report`,
+`definition-of-done`, `kpi-dashboard`, `risk-register` and `raid-log` already use, and it must not retcon any
+of their shipped sentences.** `test-plan_example.md:7` states, as of that document's own `last_updated` date,
+2026-07-06, that "Acme Reporting has no standing test strategy document." This spec's own worked example
+does not edit that sentence and does not need to: it is dated after 2026-07-06, so the test plan's own
+sentence stays a true, dated fact about the state of the program on the day it was written, the same
+resolution `data-dictionary`'s own build chose for an analogous sentence in `tracking-plan_example.md`.
+
+**The natural subject already exists in the shared scenario: the Reporting Platform Modernization
+program.** `kpi-dashboard_example.md` and `risk-register_example.md` already name this program as the
+standing container the Saved Views feature's own test plan, test summary report and KPI dashboard all sit
+inside, with Marta Reyes named as its Program Manager. A standing test strategy for that program, covering
+every project it runs (Saved Views for Dashboards among them, and others not yet shown in any shipped
+example), is this bundle's own natural worked instance: a program-level document, not an organization-wide
+one, matching the maintainer's own ruling exactly.
+
+**Chronology and a plausible hook, both a build decision to state rather than invent silently.** The test
+plan is dated 2026-07-06; `test-summary-report_example.md` records the Saved Views release's own exit review
+on 2026-07-17; `definition-of-done_example.md` is dated 2026-07-24. A test strategy adopted after the exit
+review and on or before the Definition of Done's own date is one coherent placement, motivated by a program
+that has just run one release without a shared testing approach and chooses to write one down before the
+next, the same kind of motivating event `business-continuity-plan`'s own example used (a PRR that named an
+instrument it did not yet have). The exact date is the build's own decision; this spec states only that it
+must land after 2026-07-06 and should not be placed earlier than `test-summary-report`'s own exit review
+date without a stated reason.
+
+**People: reuse the thread's named roles.** Anjali Rao (QA Lead, Reporting), already the test plan's own
+`plan_owner`, is the natural owner of a program-level standing strategy for the same program; Marta Reyes
+(Program Manager), already the KPI dashboard's and the risk register's own program-level owner, is a
+plausible approver or reviewer, consistent with Process Street's own named approval step.
+
+**What the example may cite, without restating any sibling's own rows.** It may cite that the Saved Views
+release ran under this program (`kpi-dashboard_example.md`, `test-plan_example.md`), and it may name, by
+pointer only, that the release's own test summary report recorded defects and a deviation from plan
+(`test-summary-report_example.md`), as the kind of experience that motivated writing a standing approach
+down. It must not restate any defect row, any Risk-Ranked Approach row, or any Test Levels and Types content
+already shipped in `test-plan_example.md` or `test-plan_template-full.md`. A program-level strategy answers
+a different question: which levels, types, tools and environments every project in this program uses by
+default, and how a project's own plan states a deviation, not which specific risks one release carried.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `standing-standards` | Maintainer ruling, 2026-10-13, with the scope ruled 2026-10-15; argued in ADR 0075 |
+| `classification` | `foundation` | ADR 0075, marker by marker, against the contract's own cut |
+| `bundle_id` | `test-strategy` | Same as the catalog id; no reason found to differ |
+| `sizes_available` | `[lean]` | Argued above; no source in either research dimension describes a short form and a long form |
+| `status` | `beta` | Every bundle |
+| `methodology` | `methodology-agnostic` | The catalog's own value; the admitting sources span certification, standards and practitioner lineages with no single methodology thread running through all of them |
+| `pairs_with` | `[]` | Checked against pm-skills `origin/main`, 2026-10-16; no skill produces or consumes this type |
+| `related_templates` | `[test-plan]`, inline | The one neighbour with an existing, unresolved forward-reference to this type, both in its guide's routing row and in its own `test_strategy_ref` field |
+| `aliases` | `organizational test strategy` (added, sourced); `QA strategy` (flagged, undecided); `test approach` (recommended for removal here, considered for `test-plan` instead) | See Catalog corrections, above |
+
+#### What landing this bundle closes elsewhere
+
+1. **The `standing-standards` contract's Members line and Change note**, from "not yet built" to the build
+   date, moving the contract to `0.6.0` with [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md).
+   **This is a bookkeeping edit to the Members line and a dated change-note paragraph, not an amendment of
+   the membership clause itself, and it still stops for the maintainer's read**, per the standing rule that
+   every contract edit is read before it is merged.
+2. **`test-plan_guide.md:36`'s own routing row may gain a link to the new bundle**, a build decision, not
+   required by this spec.
+3. **The catalog entry**, per the corrections above, in both `docs/internal/catalog.md` and
+   `atlas/catalog-data.json`, then the atlas regenerated.
+4. **This page's Progress table.**
+5. **Issue #260 (bundle: test-strategy) relabels to `status:built` with the build PR**, not with this spec's
+   own PR, which only proposes the record.
+
+#### What the build would cost
+
+No build has run for this type. This is projected from the family's own single-size precedent,
+`definition-of-ready`, measured in [`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md) at 5,846,070
+weighted token-equivalents, **$11.69 at API list rates, whole build, 15 agents, high confidence**. The
+family's other single-size-equivalent build outside this family, `issue-log`, cost $14.29 whole for the same
+15 agents. The family's two-size members, by contrast, ran from $14.22 (`launch-coordination-checklist`) to
+$20.57 (`business-continuity-plan`) whole. A single-size `test-strategy` build sits closer to the first
+group than the second: a whole-bundle estimate of **$10 to $15 at API list rates** is reasonable on that
+basis. It is a projection, not a measurement, until `python tools/gen-bundle-build-report.py --ingest` runs
+against an actual build report.
+
+### strategy-docs (sixth member, by amendment): the positioning statement, as product direction
+
+**`positioning-statement`** - `strategy-docs`, **`classification: foundation`** (recommended; see Family fit
+below), sizes **`[lean]`** only, default `lean`, catalog entry **13** in `docs/internal/catalog.md`
+(atlas index 12 in `atlas/catalog-data.json`), catalog id `positioning-statement`,
+`pairs_with: []`. **Settled by the maintainer on 2026-10-15: the library takes on positioning only, as
+product direction (sitting decision 7, answer B), and this type is specced next, in `strategy-docs` by
+amendment, in a single size (sitting decision 8).** The maintainer's note on decision 8 asked for more
+research before the amendment is read; that research ran the same day
+(`_local/research/2026-10-15_sitting-followup/positioning.json`, gitignored) and is folded into this section
+rather than added later as a dated note. The contract amendment, [`strategy-docs`](contracts/strategy-docs.md)
+`0.3.0`, and
+[ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement
+joins strategy-docs as a sixth member) land with this spec, so the metadata below is written against contract
+`0.3.0`, and the amendment itself stops for the maintainer's read of the diff. *(2026-10-19: the
+maintainer delegated the merge instead, so the diff was accepted without that read; see ADR 0076's
+Status.)*
+
+**`messaging-framework` (#258) is not part of this amendment and is not admitted by it.** Sitting decision 7
+holds it, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain).
+See Scope, below, for what this amendment admits and what it deliberately does not.
+
+#### Demand: the library's own research has twice reached for this boundary without a document behind it
+
+Two earlier `product-vision` research passes already named the positioning statement as the adjacent
+artifact `product-vision` is most often confused with, and both left the boundary unsourced
+(`product-vision_companion.md:276-280`: "No product management source read draws this boundary", labelled
+the library's own first-principles reasoning). Admission sweep 6 (2026-10-14) found the same gap from the
+other side: a positioning-statement candidate clears admission on five sources, and its nearest shipped
+neighbour's own companion already concedes it cannot source the line between them. The 2026-10-15 follow-up
+closed part of that gap (see Boundaries, below) without closing all of it.
+
+#### Admission: five sources, raw-checked, plus a sixth named but not counted
+
+The 2026-10-14 sweep read six candidate sources and raw-checked every quotation against page text
+(`_local/research/2026-10-14_admission-sweep-6/recheck-out.json`, gitignored). Five clear
+[ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md)'s
+one-named-source bar by shipping the positioning statement as a standalone written document or template,
+not merely a formula embedded in a book, slide, or canvas:
+
+| Source | What it says | Weight |
+|---|---|---|
+| MIT Orbit Knowledgebase (Martin Trust Center for MIT Entrepreneurship) | "forces you to use a one page format" | Academic tier. Ships a six-field, one-page template |
+| HubSpot | "For [your target market] who [target market need], [your brand name] provides [main benefit that differentiates your offering from competitors] because [reason why target market should believe your differentiation statement.]"; "A positioning statement is a brief description of a product or service" | Vendor tier. Ships a five-field formula and 16 worked examples |
+| eCornell #IMPACT, by Doug Stayman (Cornell SC Johnson College of Business) | "Point of Differentiation"; "For [insert Target Market]" | Academic tier. A five-component formula with a worked 2001 Amazon example |
+| Yesware | "For [target market] who [target market need], [brand name] offers [market category]" | Vendor tier. Ships its own template, no Moore citation |
+| Product Marketing Alliance | "an internal resource used to influence the way a product, service, or brand is positioned" | Vendor tier. A one-page, five-row `.docx` template, gated behind a free-account signup (confirmed by a direct browser observation on 2026-10-15, correcting an earlier automated-fetch read of the same URL that reported a hard paywall) |
+
+**A sixth source is named but carries no weight toward admission.** Pragmatic Institute's workshop page
+names a sectioned "positioning document" and states that section order matters, but the specific sentence
+describing that claim failed the 2026-10-14 raw-check against the page it was attributed to
+(`pragmaticinstitute.com/workshop/product-positioning/`), and no raw-checked quotation exists for the
+companion podcast page either. It is named here as a marginal, uncounted lead, and this spec does not quote
+it.
+
+**Admission does not depend on Geoffrey Moore, and the catalog's attribution to him is not confirmed.**
+Three independent research passes, two earlier `product-vision` passes and this sweep, could not locate the
+"for/who/that" wording inside *Crossing the Chasm* itself, by edition, chapter, or page. The 2026-10-15
+follow-up (Q1) improved this somewhat without settling it: a Goodreads reader-highlight note on the book's
+own text carries a verbatim fill-in-the-blank template matching the known form, at a 59 percent
+reading-progress marker rather than a page number, and an independent blog post cites the same template to
+page 186 of the 3rd edition (Harper Business, 2014), a citation not itself verified against the book. No
+chapter title or number was found anywhere. **This spec credits admission to the five sources in the table
+above, and names Moore only as a widely repeated, still-unverified practitioner attribution** - the same
+strength, not a stronger one, than the follow-up found.
+
+#### Scope: positioning only, as product direction, and what stays out
+
+**This amendment admits one type, under one reading.** A positioning statement, as this bundle builds it,
+is the internal-facing document that states how this product stands against a named alternative, for a
+specific target customer, now. It does not admit:
+
+- **A messaging framework.** April Dunford, read and raw-checked: "Positioning is not the same thing as
+  messaging." On the same site, read and raw-checked: "I usually build a messaging document that
+  references the positioning template." Aha!, read and raw-checked: "The outcome of product positioning is
+  an internal document that informs external messaging." `messaging-framework` (#258) stays held.
+- **A battlecard.** Named in the research as a separate, sales-facing, multi-topic document that should
+  reflect positioning as an input, not restate it. Not built, and not part of this amendment.
+- **A positioning map.** A two-axis chart, out of scope under
+  [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) (templating
+  scope: Markdown documents) on form grounds, and corrected out of this type's own alias list below; see
+  Catalog corrections.
+- **Go-to-market documents generally.** Sitting decision 7 answered a narrower question than whether the
+  library takes on product marketing as a whole: it takes on this one type, as a product-direction
+  artifact, and leaves battlecard, competitive analysis and win-loss analysis unswept.
+
+#### Family fit: the membership sentence fits as written; the closed list needed widening
+
+`strategy-docs` section 1 admits a type that "sets or tracks product direction above the level of any
+single deliverable." A positioning statement does that on its face: it is argued and revisited, not
+authored per occasion, and it recurs at a repositioning event (a relaunch, a new competitor, a market
+shift) rather than being finished once, the same "not phase-bound" reading that let
+[ADR 0070](decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)
+(north-star-metrics joins strategy-docs as a fifth member) in on an argued rather than quoted exclusion.
+What blocked it, exactly as it blocked the North Star metric, is the closed list of five questions that
+follows the membership sentence: the three families the sweep actually tested against the type's own
+surface (`strategy-docs`, `discovery-docs`, `standing-standards`) all excluded it, and `strategy-docs`'
+exclusion rested on arguing that none of its questions covers positioning, not on a clause that fires on its
+face. **This is the smallest honest widening available, following the ADR 0060 and ADR 0070 pattern**: a
+sixth bullet, naming the question positioning answers.
+
+**Where it sits.** This spec places the new bullet third, between the product strategy and the North Star
+metric (which moves from third to fourth), with proposed wording naming how this product stands against a
+named alternative, for a specific customer, now; the exact text is in section 1 of
+[`strategy-docs`](contracts/strategy-docs.md). The reasoning is that positioning operationalizes
+a choice the strategy has already made (which segments, which problems) into an external-facing stance, and
+the North Star metric then measures whether that stance is working for that customer. **No source read
+states this exact sequence**, so the link is labelled the library's POSITION, the same labelling convention
+ADR 0070 used for the North Star's own chain position. **The considered alternative is second, between
+vision and strategy**: Devika Nair (Director of Product Management, Oracle), read and raw-checked in the
+2026-10-15 follow-up, frames positioning "as part of the vision" (the fetch tool truncated the sentence at
+125 characters; `positioning.json` reports the sentence continues "and decision making," not independently
+re-fetched) rather than as strategy's output, which would argue for a place closer to the vision. This spec
+recommends third place at
+low confidence, on the strategy dependency, and names second as the alternative a maintainer who weights
+Nair's framing more heavily could choose instead.
+
+**Only three of ten family contracts were tested on this exact candidate**, per the sweep's own admission
+(critics.md: "'All families exclude it' is not supportable from this material; 'the three families tested
+exclude it' is"). This spec relies on the narrower claim only.
+
+#### Classification: `foundation`, recommended, on a cadence inference the research does not state directly
+
+The contract's own test is "argued-and-durable versus maintained-and-periodic." **No source read states a
+review cadence for the positioning statement itself** - this is a gap this spec names rather than papers
+over. Two pieces of indirect evidence point the same direction. First, the sweep's own argument against a
+phase-bound exclusion rests on the claim that positioning "recurs at repositioning events" rather than on a
+calendar; no single source states this in those words, and this spec reports it as the library's own
+inference from the admission case, not a quotation. Second, the catalog's own existing `when_used` column
+already carries the free-text note "GTM, repositioning" for this type (`docs/internal/catalog.md:43`), which
+names the same trigger-based pattern independently of this sweep, though the catalog is this library's own
+prior editorial judgment, not an external source. By contrast, the research found real cadence language for
+the held `messaging-framework` candidate (The Starr Conspiracy's specific, single-agency cadence numbers,
+"two-to-three years for brand and category, quarterly for audience and product"), and found none that
+specific for positioning. **Recommendation: `foundation`, beside `product-vision`, `product-strategy` and
+`north-star-metrics`.** It is argued and revisited on a trigger, the same shape the contract already uses to
+place the North Star metric, not maintained on a fixed cadence. **The alternative is `utility`**, if a
+maintainer judges that a type revisited at every repositioning event (plausibly more often than a vision or
+strategy) behaves more like the roadmap or OKRs' standing-instrument shape; this spec does not find source
+evidence for either reading's exact frequency and names both.
+
+#### Ownership: the split is real, and this spec states the library's placement as argued, not as the majority reading
+
+**Two product-marketing sources place ownership with product marketing**, one of them by name. Blackblot,
+read and raw-checked: "Product positioning statements are created by the product marketer who belongs to
+the Product Marketing department," and, on the same page: "irrelevant to the product planner" (Blackblot's
+own name for the strategy-side role). A second, independent source, read and raw-checked: "product
+positioning is usually owned by the Product Marketing function."
+
+**Strategy-side placement is defensible on two pieces of evidence, and it is the minority reading among the
+sources this sweep and its follow-up read.** Aha!, read and raw-checked in the prior sweep, lists "Product
+positioning templates" inside its product-strategy guide's own template catalog, separately from "Marketing
+positioning templates" on the same page. Devika Nair (Director of Product Management, Oracle), read and
+raw-checked: "While product management is also responsible for the positioning, they are looking at it as
+part of the vision" (the fetch tool truncated the sentence at 125 characters; the full sentence continues
+"and decision making").
+
+**This library places `positioning-statement` in `strategy-docs`, as product direction, on Aha!'s and
+Nair's placement, not because they outnumber the product-marketing sources - they do not.** The library's
+own reasoning is that a document this library builds for a strategy-docs reader needs to answer a
+direction-setting question regardless of which department holds the pen; Aha!'s own catalog split (a
+strategy-side template distinct from a marketing-side one) and the catalog's own `stage: strategy` field
+support building this reading rather than the product-marketing one.
+
+**Who owns the statement varies by organization, and the sources split, so the catalog's owner becomes
+`PMM / PM`** (the maintainer's ruling of 2026-10-17). That is a split-owner form the catalog already uses
+for other types. The catalog's `PMM` is sourced, by the two product-marketing sources above, but it records
+one camp as though it were the whole. **The guide presents both camps with their sources, then suggests a
+default, labelled as this library's own reasoning and not as a sourced finding.** The default this spec
+suggests follows from the placement: product management owns the statement as product direction, and
+product marketing drafts or co-writes it. No source states that division of work, so it is offered for the
+maintainer's read. See Catalog corrections.
+
+#### Boundaries with each named neighbour
+
+**Versus `product-vision`: the weak point, now partly addressed.** `product-vision_companion.md:276-280`
+states, in its own voice, that the boundary (present and competitive versus future and aspirational) is "No
+product management source read draws this boundary," labelled the library's own first-principles reasoning,
+not a citation. The 2026-10-15 follow-up found one practitioner source that does draw it: Sharebird, a
+named-practitioner Q&A, read and raw-checked. Mike Flouton (Managing Partner, Boxford Capital): "Product
+vision is long-term, aspirational, inspiring, speaks to a broad audience". Poorvi Shrivastav (Senior
+Director of Product Management, Meta), on the same page: "A positioning statement, on the other hand,
+outlines how a product will be perceived in the market relative to competitors," continuing, "It is more
+focused on the present, defining the target audience." **This is not universal practice.** A Rational
+Unified Process vision-document template nests a subsection named for the product's position inside a
+single Vision document, read and raw-checked: "Provide an overall statement summarizing at the highest level,
+the unique position the product intends to fill." The RUP source is a general software-engineering
+methodology artifact, not a product-management or product-marketing one, and this spec weights it as a
+weaker, adjacent-field data point rather than a peer to Sharebird. The library's own first-principles
+boundary stands, now corroborated on time horizon and audience by one named source, and contradicted on
+whether the two ever merge into one document by a second, weaker one. `product-vision_companion.md:276-280`
+is a required landing-site edit; see What landing this bundle closes elsewhere.
+
+**Versus `product-strategy`.** The strategy chooses which problems to solve and which segments to serve
+(its own "Target Segments, and Non-Targets" section). A positioning statement takes that choice and states
+how the chosen segment should perceive this product against a named alternative. `product-strategy`'s own
+template has no section for the competitive alternative or the differentiation statement, which are
+positioning's core; the overlap is partial, on the target and the market, not a duplication.
+
+**Versus `messaging-framework` (held).** Clean and well-sourced, three ways. Dunford: "Positioning is not
+the same thing as messaging." The Starr Conspiracy (read in the prior sweep): positioning is "one input...
+Lock the positioning statement first." Product Marketing Alliance's own messaging template treats the
+positioning statement as its opening line, not a duplicate section. `messaging-framework` is not part of
+this amendment; see Scope.
+
+**Versus `north-star-metrics` and `okrs` (siblings in the chain).** No source connects a positioning
+statement's target-and-differentiation content to either a North Star metric's choice of measure or an
+OKR's period-bound target. This is this spec's own completeness statement, under contract section 1's
+requirement that every member state its position against every other member; no citation is claimed for it.
+
+#### Sizes: one, short, under the sweep's own finding, reconfirmed by the follow-up
+
+**One size, lean only.** The Starr Conspiracy, read in the prior sweep: positioning runs "1 to 3 sentences."
+MIT and Product Marketing Alliance both cap the artifact at one page. The 2026-10-15 follow-up (Q4) tested
+this specifically and did not overturn it: HubSpot's own formula recommends 3 to 5 sentences, consistent
+with the same short ceiling, and no source describes a multi-page or multi-section long-form positioning
+document as the terminal artifact. April Dunford's own material is genuinely longer (five components plus a
+bonus trends component, a 12-page workbook, read and raw-checked in the prior sweep), but the follow-up
+confirms it reads as a facilitation process for arriving at the one-page statement, not a second, longer
+version of the statement document itself. **This library's own inference, following Dunford's directly
+verified critique** - "a sort of 'Mad Libs' fill in the blanks exercise for marketing folks"; "this exercise
+is not only pointless but potentially dangerous"; "The only valuable thing we can learn from the statement
+is that there are multiple components of positioning" - **is that the lean size pairs the one-sentence
+statement with its named components (target, need, category, benefit, named alternative, differentiation)
+rather than shipping the bare sentence alone.** Checked against the admitting sources' own field sets: MIT's
+template carries six fields (target, need, category, benefit, main competitor, differentiation points).
+HubSpot's quoted formula has five bracketed slots. The sweep's research summary of eCornell's page, not a
+raw-checked quotation, describes its formula as five components that must all appear
+(`_local/research/2026-10-14_admission-sweep-6/sweep6.json`, gitignored). All three name the same shape under different
+labels. The component list above is this spec's own convergence across those three, not any one source's
+exact wording, the same posture `data-dictionary`'s own Field Definitions section took for its column set.
+Dunford's longer workbook material belongs in the guide, as facilitation content, not as a second template
+size.
+
+#### Section design
+
+| Section | What it is | Sourcing |
+|---|---|---|
+| **Purpose and Boundary** | What this document states (the present-tense competitive stance for a named target) and what it rules out by name: messaging, a battlecard, a positioning map, and `product-vision`'s own future-tense content | Sourced to the Boundaries subsection above |
+| **The Statement** | The fill-in-the-blank sentence itself: for [target], who [need], [product] is the [category] that [benefit], unlike [named alternative], because [differentiation] | MIT, HubSpot, eCornell, and Yesware all ship a version of this form; the exact field labels are this library's own wording, since HubSpot's and Yesware's own phrasing is their own copyrighted formula text |
+| **The Components** | Each named component expanded to a sentence or two: the target, the need, the category, the benefit, the named alternative, and the differentiation | Dunford's directly verified critique of the bare sentence; MIT's six-field template; PMA's five-row document |
+| **Why This Positioning** | The evidence behind the differentiation claim: what the named alternative actually does, and why this target should believe the stated benefit over it | HubSpot's "reason why target market should believe your differentiation statement" field |
+| **When We Revisit It** | The trigger that would bring the team back to this statement (a new competitor, a market shift, a relaunch), not a calendar date | This spec's own inference from the admission case; see Classification, above. No source states a cadence directly, and the section's guidance comment must say so |
+
+**One size, so there is no lean column; every section above ships.** This mirrors the single-size shape
+`definition-of-ready` and `announcement-internal-comms` already use, not the lean/full nesting the rest of
+`strategy-docs` carries.
+
+#### Catalog corrections the landing PR must make
+
+Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research)
+(a catalog call loses to research), against `docs/internal/catalog.md:43` and the matching
+`atlas/catalog-data.json` entry (`positioning-statement`):
+
+- **Drop the alias "positioning map."** It names a two-axis chart, a different, out-of-scope artifact, not
+  an alternate name for the written statement. Confirmed independently by this sweep; no source treats the
+  two as the same document.
+- **The owner "PMM" becomes "PMM / PM", by the maintainer's ruling of 2026-10-17.** `PMM` is sourced:
+  Blackblot and a second source name product marketing as the owner (see Ownership, above). It is not the
+  whole picture: Aha! files a product-positioning template in its product-strategy guide, and Devika Nair
+  describes product management as "also responsible for the positioning". Yesware, read and raw-checked: "A
+  positioning statement requires input from several different teams." Product Marketing Alliance, read and
+  raw-checked (a different page from the admitting template): "share it with stakeholders across the
+  organization." `PMM / PM` records the split in a form the catalog already uses, and the guide carries
+  both camps and a labelled default, as Ownership, above, states.
+- **The named source "Moore's 'for/who/that' template" should be corrected.** Credit the five sources in
+  the Admission table instead, and name Moore only as an unverified, widely repeated attribution. See
+  Admission, above.
+- **The alias "positioning framework (Geoffrey Moore)" carries the same unverified attribution.**
+  **Recommend** shortening it to "positioning framework", for the same reason as the named-source
+  correction above.
+- **`methodology: methodology-agnostic` is not contradicted by anything retrieved and should stand.**
+- **`size_variant: S` matches this spec's own single-size call and needs no correction**, beyond the
+  mechanical step of setting `sizes_available: [lean]` directly in `positioning-statement_meta.yaml`.
+- **`relationships: [Messaging, Battlecard]` is not contradicted**, and names exactly the two neighbours
+  this spec also holds out of scope; no change recommended.
+- **`stage: strategy` is not contradicted, and supports the family placement this spec recommends.** No
+  change recommended.
+
+#### `pairs_with`: checked, empty
+
+`tools/known-skills.txt` (the pinned list; 13 skill IDs as of 2026-10-16) contains no ID with "position" or
+"messag" in it. **`pairs_with: []`**, under the contract's rule to claim only what is true of this member.
+
+#### Risks for the build and the review
+
+1. **The chain placement is the one call a maintainer could most easily overturn.** This spec places the
+   new bullet third, between strategy and the North Star metric, on an inference no source states, and
+   names second (between vision and strategy) as the considered alternative. A reviewer who treats third
+   place as settled rather than argued is overstating this spec's own confidence.
+2. **The ownership statement must stay an argued library position, never a reported consensus.** Two
+   independent sources, one of them by name (Blackblot), place ownership with product marketing. A
+   companion or guide sentence that reads as though strategy-side ownership were the majority view
+   misstates the sweep's own finding. The guide's suggested default carries the same label: it is this
+   library's reasoning, and no source states it.
+3. **The vision boundary rests on one practitioner source, not a settled rule.** Sharebird draws the
+   present/future, narrow/broad-audience line; a RUP vision template nests positioning inside a vision
+   document instead. The companion must carry both, the same way `north-star-metrics`' own companion names
+   both camps on its chain position.
+4. **Admission must not lean on Geoffrey Moore.** The follow-up found a readable-source quote and an
+   independent page citing an edition and a page number, but neither is verified against the book itself,
+   and no chapter was found anywhere. State Moore as a named but unverified attribution, at the strength the
+   follow-up found, not stronger.
+5. **The cadence claim behind `classification: foundation` is this library's own inference.** No source
+   states how often a positioning statement is revisited. A companion sentence that cites a source for this
+   claim would be inventing one; the Classification subsection above is the full extent of what the research
+   supports.
+6. **The templates stage has repeatedly reused the worked example's own scenario in GOOD and WEAK text**,
+   named as a risk in `north-star-metrics`', `data-dictionary`'s and `business-continuity-plan`'s own specs.
+   Grep the drafted template for the example's proper nouns before review.
+
+#### The worked example
+
+**The shared-scenario rule (contract section 4) applies.** The example is an Acme Analytics artifact,
+chained onto the existing `product-vision` and `product-strategy` examples rather than inventing a parallel
+company. It states Acme's positioning against a named competitive alternative, for the target segment the
+product strategy example already chose, and it must not contradict either sibling's own stated target,
+segment, or differentiation. It must not cite or contain any document dated after it, following the same
+rule `north-star-metrics`' own example states. Its date sits after the product strategy example
+(2026-01-28) and before the North Star metric example's own window (2026-01-29 through 2026-02-10), under
+the chain placement this spec recommends (positioning third in the chain, one step ahead of the North Star
+metric's own fourth place).
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `strategy-docs` | ADR 0076 |
+| `classification` | `foundation` | Recommended; argued and revisited on a trigger, not a stated calendar; see Classification, above |
+| `sizes_available` | `[lean]` | The sweep's own finding, reconfirmed by the follow-up; see Sizes, above |
+| `default_size` | `lean` | The only size |
+| `status` | `beta` | Every bundle |
+| `methodology` | `methodology-agnostic` | Not contradicted by anything retrieved |
+| `pairs_with` | `[]` | `tools/known-skills.txt` lists no positioning or messaging skill |
+| `related_templates` | `[product-vision, product-strategy, north-star-metrics, okrs]`, inline | The family's other foundation and utility members; inline, because check I drops the first entry of a block list |
+| `aliases` | corrected per Catalog corrections, above | "positioning map" dropped |
+| `catalog_ref` | `13` | Catalog entry 13 in `docs/internal/catalog.md`, `positioning-statement` |
+
+#### What landing this bundle closes elsewhere
+
+1. **The contract's Members line** changes from "not yet built" to the build date.
+2. **`product-vision_companion.md:276-280`** becomes stale once this bundle ships, citing Sharebird on the
+   vision boundary; it needs a dated note, not a silent rewrite, following the correction-versus-supersession
+   rule in `docs/internal/decisions/README.md`. Two other `product-vision` files record the same earlier
+   finding, `product-vision_research-log.md:813` and `product-vision_history.md:23`. Both are records of what
+   a past research pass found, so they stay as they are.
+3. **Any routing row that sends a positioning reader to `product-vision`** needs a second destination once
+   this bundle exists; the build PR should grep for one.
+4. **The catalog row's corrections**, above.
+5. **No existing member's companion changes beyond the one named edit above**, following the precedent ADR
+   0070 and ADR 0067 each set.
+6. **Issue #256 (bundle: positioning-statement)** closes with the build PR.
+7. **This page's Progress table.**
+
+#### What the build would cost
+
+No measured figure exists for this exact bundle; this is a forecast from the closest comparisons, not a
+quotation. The two built `strategy-docs` siblings with a measured [build report](../../bundle-builds/INDEX.md)
+are `north-star-metrics` (lean and full, $9.73 at API list rates, 9 agents, 2 runs, "floor" scope) and
+`product-vision` (lean and full, $9.22, 10 agents, 2 runs, "floor" scope). The most recent single-size
+builds in the whole library are `definition-of-ready` ($11.69, 15 agents, 3 runs, "whole build" scope) and
+`announcement-internal-comms` ($16.99, 15 agents, 3 runs, "whole build" scope). A single-size
+`positioning-statement` build sits below both pairs on sections (five, none full-only) and above the
+two-size `strategy-docs` siblings on research depth (five admitting sources plus a follow-up, against one
+publisher for `north-star-metrics`); this spec does not forecast a dollar figure from that comparison, only
+names the four measured points a maintainer can bound it between.

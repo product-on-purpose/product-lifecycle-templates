@@ -14,7 +14,10 @@ consulted: [claude]
 - **Status:** accepted 2026-07-25. No correction or supersession is recorded against this decision. *(Amended
   2026-10-12 by [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md): the family's
   members now answer five questions, and `north-star-metrics` joins at `foundation`, third in the chain. This
-  record is kept as it was decided.)*
+  record is kept as it was decided.)* *(Amended again 2026-10-19 by
+  [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md): the members now answer six
+  questions, `positioning-statement` joins at `foundation`, third in the chain, and the North Star metric
+  moves to fourth.)*
 
 The Tier-1 floor build-out ([ADR 0021](0021-complete-the-tier-1-floor.md)) turns next to `strategy-docs`: the
 family that sets and tracks product direction above the level of any single deliverable. Every new family gets
