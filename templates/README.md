@@ -104,6 +104,7 @@ tree without the gate noticing.
 - [`product-strategy/`](product-strategy/) - Product Strategy. Axis classification foundation; ships lean/full.
 - [`product-vision/`](product-vision/) - Product Vision. Axis classification foundation; ships lean/full.
 - [`north-star-metrics/`](north-star-metrics/) - North Star Metric. Axis classification foundation; ships lean/full. The fifth `strategy-docs` member ([ADR 0070](../docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)): the one metric that shows customers get the value the strategy promises, and the input metrics a team can move.
+- [`positioning-statement/`](positioning-statement/) - Positioning Statement. Axis classification foundation; ships lean. The sixth `strategy-docs` member ([ADR 0076](../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)): the internal, present-tense record of how this product stands against a named alternative, for a specific target customer, now.
 - [`business-continuity-plan/`](business-continuity-plan/) - Business Continuity Plan. Axis classification tool; ships lean/full. The sixth `standing-standards` member ([ADR 0071](../docs/internal/decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md)): the standing plan that keeps critical business processes going through a significant disruption. Lean points to a separate disaster recovery plan; full carries Disaster Recovery as its own section.
 
 **Not a bundle**

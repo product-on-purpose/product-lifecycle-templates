@@ -3,7 +3,7 @@
 Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
-Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
 Version: 0.3.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
@@ -77,7 +77,7 @@ This one cannot, and forcing it to would misdescribe at least two of its members
   (added 2026-10-19, [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)).
   No source read states a review cadence for it directly; this library infers it is argued and revisited at
   a repositioning event, not maintained on a calendar, the same shape already applied to its three siblings
-  in this bullet.
+  in this bullet. *(2026-10-20, a dated correction of an unsourced claim under procedure 11: the build found three sources that state an interval. April Dunford describes a positioning check-in "every six months" and, elsewhere, "a couple of times a year"; Abinanti says to audit the statement "every 12 months". CLIMB says a positioning statement "isn't permanent, but it shouldn't change often". The `foundation` reading stands on that durability and on the check-in's job, which is to decide whether an adjustment is needed; the maintainer ruled out `utility` on 2026-10-20. See [`positioning-statement_research-log.md`](../../../templates/positioning-statement/positioning-statement_research-log.md).)*
 - **`product-roadmap` and `okrs` are `utility`.** They are standing operational instruments, revised on a
   cadence, and their value comes precisely from being kept current. A roadmap nobody has updated in six
   months is not a stale foundation, it is a broken instrument.

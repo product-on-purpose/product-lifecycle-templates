@@ -40,8 +40,8 @@ is structural: it can be answered by parsing text, never by judging whether the 
 | J | Meta schema | The meta validates against [`tools/meta.schema.json`](../../tools/meta.schema.json): required fields present, enums legal, exactly one of `phase` or `classification` |
 | K | Family | The bundle's phase or classification, status, and size shape conform to its family's contract in [`docs/internal/contracts/`](../internal/contracts/) |
 
-<!-- counts: bundles=48 -->
-All forty-eight bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
+<!-- counts: bundles=49 -->
+All forty-nine bundles pass all eleven checks today. GitHub Actions runs the gate on every push and every
 pull request ([`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)), and `main` is branch-protected
 on it, so a bundle that fails a check cannot merge. That is what "enforced" means here: not a convention
 anyone is trusted to remember, but a script with an exit code.
@@ -60,10 +60,10 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   failure branches have no live subject once the tree is clean, so a self-test is the only way to know
   they still fail when they should. Each is mutation-checked against a deliberately broken
   implementation.
-  <!-- counts: checkk=146 -->
-  `tools/test-check-k.py` runs 146 assertions;
-  <!-- counts: checkformats=124 -->
-  `tools/test-check-formats.py` runs 124.
+  <!-- counts: checkk=148 -->
+  `tools/test-check-k.py` runs 148 assertions;
+  <!-- counts: checkformats=126 -->
+  `tools/test-check-formats.py` runs 126.
 - **The link gate** (`tools/check-links.py`). The bundle gate only looks inside one bundle at a time, so
   a link broken by moving or renaming a file elsewhere in the tree passes it green. This step also
   enforces that no tracked file links into the untracked `_local/` directory, which would resolve for
@@ -85,8 +85,8 @@ by itself, most of them opened by a real defect that shipped past a green gate f
 - **The research-log contract** (`tools/check-research-logs.py`, plus its own self-test). Every source in
   a bundle's research log must carry a retrieval status and, where the entry supports a claim, a
   `Supports:` clause.
-  <!-- counts: logsgated=42, sourcesgated=1734 -->
-  This runs across all 42 research logs the check gates, covering 1,734 individual sources.
+  <!-- counts: logsgated=43, sourcesgated=1793 -->
+  This runs across all 43 research logs the check gates, covering 1,793 individual sources.
 - **Self-reported counts** (`tools/check-counts.py`). The same mechanism that pins every number in this
   document. It recomputes each fact from the tree and fails when a marker disagrees. It does not, and by
   its own header comment says it cannot, read the sentence sitting next to a marker that is technically
@@ -99,8 +99,8 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   table when its rows are variant-specific, and that the arithmetic in that table is consistent.
 - **Workflow prompt strings** (`tools/check-workflow-prompts.py`) and the **research-log generator
   self-test** (`tools/test-gen-research-log.py`) guard the build tooling itself, not the templates.
-  <!-- counts: checklogs=110 -->
-  The generator's own self-test runs 110 assertions.
+  <!-- counts: checklogs=111 -->
+  The generator's own self-test runs 111 assertions.
 - **A repo-wide dash sweep.** Check B only scans inside bundles; this step scans every tracked
   `.md`, `.yaml`, `.yml`, `.py`, and `.json` file in the repository for an em-dash or en-dash.
 - **Eval arm parity** (`tools/check-eval-arm-parity.py`). The efficacy eval's treatment and control arms

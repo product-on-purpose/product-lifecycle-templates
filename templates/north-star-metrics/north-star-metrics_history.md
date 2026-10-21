@@ -3,6 +3,14 @@
 Change log for the `north-star-metrics` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, corrected 2026-10-20 - the North Star now sits fourth in the chain
+
+**A chain-position correction, not a template change**, so the version stays 0.1.0. The
+`positioning-statement` bundle joined `strategy-docs` on 2026-10-20, third in the chain, by
+[ADR 0076 (positioning-statement joins strategy-docs as a sixth member)](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md),
+so the family contract already puts the North Star fourth. The example's opening note and two companion
+sentences still said "third", and each now carries a dated note saying fourth. Nothing was rewritten in place.
+
 ## 0.1.0 - 2026-10-12
 
 **Initial release.** Researched 2026-10-12, building on the admission sweep of 2026-10-05. Six dimensions

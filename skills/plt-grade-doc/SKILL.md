@@ -1,6 +1,6 @@
 ---
 name: plt-grade-doc
-description: Grades and reviews an existing product document against the researched rubric for its own document type, returning a report card that quotes the document, names the anti-patterns it hit, and lists the three fixes worth an hour. Use when someone asks for a review, critique, second opinion, or score on a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report.
+description: Grades and reviews a product document against the researched rubric for its own document type, returning a report card that quotes the document, names the anti-patterns it hit, and lists the three fixes worth an hour. Use when someone asks for a review, critique, second opinion, or score on a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, positioning statement, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report.
 license: Apache-2.0
 metadata:
   version: "0.19.0"
@@ -17,8 +17,8 @@ metadata:
 a blank template to a document. This one goes from a document someone already wrote to a report card
 against that document type's own researched rubric.
 
-<!-- counts: bundles=48, tier1=25 -->
-The rubrics come from the same 48 bundles, covering all 25 templatable Tier-1 document types plus twenty-three Tier-2 types.
+<!-- counts: bundles=49, tier1=25 -->
+The rubrics come from the same 49 bundles, covering all 25 templatable Tier-1 document types plus twenty-four Tier-2 types.
 
 Nobody has to adopt anything to use this. That is the point: a critique of a document that already exists
 costs the reader nothing but the reading.

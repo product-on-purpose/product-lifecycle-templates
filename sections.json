@@ -4758,6 +4758,175 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "positioning-statement",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "target_customer_short_name"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "who_owns_this_statement"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-boundary",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "date",
+                "named_alternative_short",
+                "product_name",
+                "target_customer_short_name"
+              ],
+              "title": "Purpose and Boundary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-statement",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit",
+                "category",
+                "customer_need",
+                "differentiation",
+                "named_alternative",
+                "product_name",
+                "target_customer"
+              ],
+              "title": "The Statement"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-components",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "benefit",
+                "category",
+                "customer_need",
+                "differentiation",
+                "named_alternative",
+                "product_name",
+                "target_customer"
+              ],
+              "title": "The Components"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "why-this-positioning",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "reason_to_believe"
+              ],
+              "title": "Why This Positioning"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "when-we-revisit-it",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "checkin_interval",
+                "last_reviewed_date",
+                "revisit_owner",
+                "revisit_triggers"
+              ],
+              "title": "When We Revisit It"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "prd",
       "default_format": "default",
       "formats": {
@@ -12507,7 +12676,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 48,
-  "frontmatter_count": 303,
-  "section_count": 406
+  "count": 49,
+  "frontmatter_count": 308,
+  "section_count": 411
 }

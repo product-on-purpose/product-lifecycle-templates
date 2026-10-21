@@ -3,6 +3,16 @@
 Every change to this bundle's templates, with the reasoning. The version here must match
 `template_version` in [`product-vision_meta.yaml`](product-vision_meta.yaml); gate check H enforces that.
 
+## 0.1.0, corrected 2026-10-20 - the positioning statement now exists
+
+**A routing and citation correction, not a template change**, so the version stays 0.1.0. The
+`positioning-statement` bundle joined `strategy-docs` on 2026-10-20, by
+[ADR 0076 (positioning-statement joins strategy-docs as a sixth member)](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md).
+The companion's "Versus positioning statement" paragraph said no product management source draws the
+boundary; its research found sources that do, and one named method that nests the two, so the paragraph
+carries a dated note. The lean template's boundary note names the new template, and the guide's rubric row 8
+links to it.
+
 ## 0.1.0 - 2026-07-26
 
 First release. Status `beta`: gate-green and cited to raw sources, with no fills by anyone but the author.
