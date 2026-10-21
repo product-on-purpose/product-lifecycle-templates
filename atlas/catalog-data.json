@@ -2639,25 +2639,24 @@
       "id": "test-strategy",
       "name": "Test Strategy",
       "aliases": [
-        "QA strategy",
-        "test approach"
+        "organizational test strategy"
       ],
       "category": "QA / Test",
       "stage": "testing",
       "owner": "QA Manager",
-      "purpose": "Define organization-wide testing approach and standards",
+      "purpose": "Define the testing approach and standards an organization or program applies across its projects.",
       "methodology": "methodology-agnostic",
       "formality": "standard",
       "rarity": "occasional",
-      "size_variant": "M",
+      "size_variant": "lean",
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
         "Test Plans"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {

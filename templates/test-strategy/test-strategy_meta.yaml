@@ -1,0 +1,31 @@
+id: test-strategy
+title: Test Strategy
+summary: >-
+  The standing document that sets the default testing approach for every project inside one organization or
+  program: which levels, types, tools and environments apply by default, and the rule by which each
+  project's own test plan either follows that default or states a reasoned deviation. It is not a test
+  plan, a master test plan, or a Definition of Done.
+doc_type: test-strategy
+classification: foundation
+family: standing-standards
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Ships in one size, lean, and deliberately has no full variant: neither this bundle's admission research nor its family-fit follow-up found a source describing a short form and a long form of a test strategy. Every structure found, Process Street's steps, Ofgem's own testing-scope structure and the catalog's own content note, is one comprehensive shape."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - testing
+  - quality-assurance
+  - test-strategy
+  - standing-standards
+  - qa
+  - test-management
+related_templates: [test-plan]
+aliases:
+  - organizational test strategy
+catalog_ref: 103
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-20
+license: Apache-2.0

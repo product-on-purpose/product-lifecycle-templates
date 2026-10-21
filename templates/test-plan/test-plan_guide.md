@@ -33,7 +33,7 @@ The short card. Why the document is shaped this way, and the argument behind eve
 
 | You want to say | Write |
 |---|---|
-| How this organization tests, in general, across projects | A **test strategy** (standing, rarely changes) |
+| How this organization tests, in general, across projects | A **[test strategy](../test-strategy/test-strategy_guide.md)** (standing, rarely changes) |
 | What we are testing this time, how deeply, and when we are done | A **test plan** (this template) |
 | The exact steps and expected result for one behavior | A **test case** |
 | What we found, and whether we are shipping | A **test report** |
@@ -42,7 +42,7 @@ Two honest notes. **The plan/strategy line is genuinely unsettled**: the certifi
 the organization or programme level, plenty of teams carry it as a section inside the plan, and practitioners
 openly disagree about which is written first. If your organization has a standing strategy, say in one line
 that this plan inherits from it. If it does not, your Risk-Ranked Approach section **is** your strategy for
-this release, and that is a legitimate answer rather than a gap.
+this release, and that is a legitimate answer rather than a gap. *(2026-10-20: ISTQB's current glossary scopes the organizational test strategy "within an organization"; the "organization or programme" wording came from an unofficial mirror's older text. The program scope rests on published program strategies instead, and the standing document is the [`test-strategy`](../test-strategy/test-strategy_guide.md) bundle.)*
 
 **And the tool trap is real.** When Azure Test Plans, TestRail, Xray, Zephyr or qTest says "test plan", it
 means a container for suites, runs and configurations. Those tools do not require an approach, a risk ranking

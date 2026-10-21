@@ -1,6 +1,6 @@
 ---
 name: plt-fill-template
-description: Selects and fills a researched product-document template from a 47-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard definition, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report. Most bundles ship a lean and a full variant, and each carries a worked example and the research log its claims trace to.
+description: Selects and fills a researched product-document template from a 48-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard definition, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report. Most bundles ship lean and full variants, each with a worked example and research log.
 license: Apache-2.0
 metadata:
   version: "0.19.0"
@@ -13,12 +13,12 @@ metadata:
 
 # Product lifecycle templates
 
-A library of **47 researched document-template bundles**, covering the complete Tier-1 floor of a 206-type
+A library of **48 researched document-template bundles**, covering the complete Tier-1 floor of a 206-type
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
-<!-- counts: bundles=47, tier1=25 -->
-47 bundles, spanning all 25 templatable Tier-1 document types plus twenty-two Tier-2 types.
+<!-- counts: bundles=48, tier1=25 -->
+48 bundles, spanning all 25 templatable Tier-1 document types plus twenty-three Tier-2 types.
 
 ## When to use
 
@@ -41,7 +41,7 @@ shape, a worked example, and a rubric for judging the result.
 
 ### 0. Confirm the library is present, and STOP if it is not
 
-**This skill is a wrapper. The 47 bundles it indexes are not inside it.** Whether they are on disk
+**This skill is a wrapper. The 48 bundles it indexes are not inside it.** Whether they are on disk
 depends entirely on how this skill was installed:
 
 | Install route | What you have |
@@ -173,8 +173,8 @@ bundle's family contract. Separately: every relative link resolves, every resear
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=32, logsgated=41, sourcesgated=1691 -->
-32 CI steps; 41 research logs gated, covering 1,691 sources.
+<!-- counts: cisteps=32, logsgated=42, sourcesgated=1734 -->
+32 CI steps; 42 research logs gated, covering 1,734 sources.
 
 **Not proved by anything:**
 

@@ -1408,6 +1408,34 @@
     },
     {
       "aliases": [
+        "organizational test strategy"
+      ],
+      "approx_tokens": {
+        "lean": 5650
+      },
+      "classification": "foundation",
+      "default_size": "lean",
+      "doc_type": "test-strategy",
+      "family": "standing-standards",
+      "id": "test-strategy",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Ships in one size, lean, and deliberately has no full variant: neither this bundle's admission research nor its family-fit follow-up found a source describing a short form and a long form of a test strategy. Every structure found, Process Street's steps, Ofgem's own testing-scope structure and the catalog's own content note, is one comprehensive shape.",
+      "status": "beta",
+      "summary": "The standing document that sets the default testing approach for every project inside one organization or program: which levels, types, tools and environments apply by default, and the rule by which each project's own test plan either follows that default or states a reasoned deviation. It is not a test plan, a master test plan, or a Definition of Done.",
+      "tags": [
+        "testing",
+        "quality-assurance",
+        "test-strategy",
+        "standing-standards",
+        "qa",
+        "test-management"
+      ],
+      "title": "Test Strategy"
+    },
+    {
+      "aliases": [
         "test summary report",
         "test completion report",
         "test report",
@@ -1604,5 +1632,5 @@
       "title": "User Story"
     }
   ],
-  "count": 47
+  "count": 48
 }
