@@ -148,7 +148,12 @@ must do. The first may appear in `define`. The second never does.
    width in both. ADR 0003 carries a dated note that says so.
 2. **The Triple Diamond's primary source has not been read.** Every claim here about the Triple Diamond rests
    on pm-skills' pages. If the Zendesk article, once read, places a chosen concept inside Define, the first
-   cost shrinks. If it does not, the first cost stands as stated.
+   cost shrinks. If it does not, the first cost stands as stated. *(2026-10-20: the maintainer supplied the
+   article and its linked milestones page as PDFs, and both were read. Zendesk names no Define phase. Its
+   Problem Definition milestone summarizes findings "in a solution-agnostic way", and the concept is chosen and
+   tested afterwards, still inside Zendesk's Discovery phase and before Development. The article does not place
+   a chosen concept inside Define, so the first cost stands as stated. The read is held locally, with the
+   other evidence for this record.)*
 3. **The contract's cadence clause takes its first exception.** `discovery-docs` section 1 said every member
    "is written once for a decision, and is finished when that decision is made". A document that hands a
    chosen concept to the people who will design it is revised while that work runs. Design Society research
@@ -194,7 +199,10 @@ must do. The first may appear in `define`. The second never does.
   scored again under this reading, from evidence already gathered. That pass decides whether `business-case`
   moves and which candidates return for admission. The design brief
   ([issue #294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294)) is the first
-  Define spec if the re-score confirms it.
+  Define spec if the re-score confirms it. *(2026-10-20: the re-score ran over 67 candidates and confirmed the
+  design brief for an admission sweep at `define`, in the Design Council's sense of a document that defines the
+  challenge. `business-case` stays at `discover`, because its job is the investment decision the rule
+  excludes. The outcomes are in [`backlog.md`](../backlog.md) section 4.)*
 - **The artifact scope the maintainer ruled the same day is a separate decision.** Whether maps, canvases and
   workshop records are templatable is a question for ADR 0030, not for the phase vocabulary, and this record
   does not answer it.

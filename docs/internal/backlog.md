@@ -5,11 +5,11 @@ day, and no gate checks them, so they go stale as issues move. The catalog count
 counts marker that [`tools/check-counts.py`](../../tools/check-counts.py) gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
 
-Section 7 says when to revisit this page. Nobody has re-scored the backlog for
-[ADR 0077](decisions/0077-define-ends-with-a-chosen-concept.md) (define ends with a chosen concept) or
+Section 7 says when to revisit this page. The Define re-score that
+[ADR 0077](decisions/0077-define-ends-with-a-chosen-concept.md) (define ends with a chosen concept) and
 [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)
-(maps, canvases and session records are templatable). Until that re-score runs, sections 2 to 4 describe the
-backlog under the rules that came before those two records.
+(maps, canvases and session records are templatable) called for ran on 2026-10-20. Sections 2, 4, 5 and 6
+reflect it. Its digest is held locally, at `_local/research/2026-10-20_define-rescore/digest.md`.
 
 ## 1. Where the backlog lives
 
@@ -32,18 +32,18 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#260](https://github.com/product-on-purpose/product-lifecycle-templates/issues/260) | `test-strategy` | Specced; [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) accepted 2026-10-19 | P3 | 2 | `standing-standards`, `foundation` | Build |
-| [#256](https://github.com/product-on-purpose/product-lifecycle-templates/issues/256) | `positioning-statement` | Specced; [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) accepted 2026-10-19 | P3 | 2 | `strategy-docs`, `foundation` | Build |
-| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate | P3 | 2 | Unassigned; labelled `phase:define` | A spec, once the Define re-score confirms it |
-| [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19 | P3 | 2 | Unassigned; no axis yet | A catalog row, then admission research |
+| [#260](https://github.com/product-on-purpose/product-lifecycle-templates/issues/260) | `test-strategy` | Queued 2026-10-20; [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) accepted 2026-10-19 | P3 | 2 | `standing-standards`, `foundation` | Build, under way |
+| [#256](https://github.com/product-on-purpose/product-lifecycle-templates/issues/256) | `positioning-statement` | Queued 2026-10-20; [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) accepted 2026-10-19 | P3 | 2 | `strategy-docs`, `foundation` | Build, under way |
+| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep and a spec, in the Design Council's sense (section 4) |
+| [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | A catalog row, then an admission sweep that settles whether it is distinct from `problem-statement` |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
-| [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned | An admission re-test under ADR 0078 (see section 5) |
+| [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
 | [#264](https://github.com/product-on-purpose/product-lifecycle-templates/issues/264) | `concept-test-validation-brief` | Parked by the maintainer 2026-10-06 | P4 | 2 | Unassigned; `discovery-docs` admits it as written | None while parked |
 
 | Count by | Result |
 |---|---|
-| Status | 2 specced and ready to build, 3 candidates, 3 parked |
+| Status | 2 queued and being built, 3 candidates, 3 parked |
 | Priority | P3: 7, P4: 1 |
 | Tier | Tier 2: 7, Tier 3: 1 |
 
@@ -78,12 +78,54 @@ The last was declined in its per-feature reading only, and its business-scope re
 | Layer | Count | Which |
 |---|---|---|
 | Built bundles with `phase: define` | 1 | `problem-statement` |
-| Open candidates labelled `phase:define` | 1 | `design-brief` (#294) |
-| Candidates awaiting the Define re-score | Roughly 60 | Drawn from three Define research sweeps (2026-10-11 and 2026-10-16). The figure is the planning estimate, not a count |
+| Open candidates labelled `phase:define` | 2 | `design-brief` (#294) and `opportunity-statement` (#298) |
+| Candidates one read could still move | 7 | Listed in the re-score table below |
 
-**Most of the roughly 60 are likely to stay out.** The third sweep alone tested 29 research and constraint
-artifacts, and 26 failed on the evidence it read. The other three were untested, because their only sources
-were dropped or unreachable.
+**The re-score replaced the planning estimate with a count.** This page previously said "roughly 60"
+candidates awaited the re-score. The re-score enumerated 62 from the three Define research sweeps' files by
+script, and added five types by name: `business-case`, `trade-study`, `metric-tree` (#257),
+`concept-test-validation-brief` (#264) and `opportunity-statement` (#298). Two of the 67 rows are one type
+scored under two names (the research synthesis and the diary or field-study synthesis), so 66 distinct types
+were tested. Three Sonnet scorers tested one sweep each, against the
+[`discovery-docs` 0.4.0](contracts/discovery-docs.md) section 2 define rule. A Sonnet critic reviewed all
+three, and the main loop checked the critic's blocking findings against the sources.
+
+| Re-score outcome, 2026-10-20 | Count | Candidates |
+|---|---|---|
+| Returns for an admission sweep at `define` | 2 | `design-brief` (#294), in the Design Council's sense; `opportunity-statement` (#298) |
+| Returns for an admission sweep elsewhere | 4 | `metric-tree` (as a classification, never a phase); design principles (`foundation`); the DMAIC project charter (which points at the unbuilt `project-charter`); GDPR records of processing activities (a standing instrument) |
+| Evidence insufficient: one read would settle it | 7 | NASA's needs, goals and objectives statement with its concept of operations; a platform and device support matrix; the DoD Initial Capabilities Document; the proto-persona; an accessibility conformance target; a regulatory requirements register; the "Target" phase of the Behavioural Insights Team's TEST method |
+| Already decided | 6 | `problem-statement` (built, `define`); `business-case` (stays `discover`); `trade-study` (stays `develop`); the point of view statement (an alias of `problem-statement`, sitting item D6); `user-persona` (stays `discover`); `concept-test-validation-brief` (parked by the maintainer) |
+| Stays out | 48 | Every other candidate, among them `lean-canvas`, `opportunity-solution-tree`, the Shape Up pitch and LEGO's Foundation Document |
+
+**The design brief returns in the Design Council's sense only, with medium confidence.** The Design Council
+names a design brief as Define's result, one "which clearly defines the challenge", and that document clears
+the rule. Peter Phillips's wider commissioning brief does not fit as cleanly. He calls it "a written
+agreement, or contract, between the parties", which reads as the project authorization the rule excludes. He
+also counts a design strategy among its most critical sections. That can read as `develop`, though the reading
+is contested, because design-management usage can mean how design serves business objectives. The admission
+sweep must draw that line, possibly as a lean concept-handoff variant beside a full commissioning variant.
+
+**The opportunity statement returns with one open question, at medium confidence.** It passes the rule on the
+sources `problem-statement` already logs. One of those sources says the two are "written and used in the same
+way", so its admission sweep must show that the types are distinct, or decline it as a duplicate.
+
+**`business-case` stays at `discover`, with high confidence.** Its defining job is deciding whether an
+investment is worth making, and the define rule says in so many words that a define document "decides no
+investment". Moving it would need a record that amends `discovery-docs` section 2, which comes close to the
+option ADR 0077 did not choose.
+
+**The Shape Up pitch stays out, but the call is contested, at medium-low confidence.** One scorer moved it to
+admission, because its old failure rested on the retired "names no solution" test. The critic reversed that.
+Shaped work arrives solved at the level of how it works, which leans `develop`. The pitch also exists to be bet
+on, and the bet commits a team's cycle, which comes close to the investment decision the rule excludes. The
+opposing reading, that the pitch's appetite is the budget for handing the concept on that the rule permits, is
+a fair one.
+
+**`lean-canvas` and `opportunity-solution-tree` stay out on grounds ADR 0078 did not retire.** The lean
+canvas's admission rests on one vendor page, it carries its Solution block beside its Problem block from the
+first draft, and it is revisited rather than finished. The opportunity solution tree's sources are boards, and
+ADR 0078 keeps the rule that a vendor's board template is not a named source publishing a written form.
 
 **The catalog's `definition` stage is not a define count.** The catalog files every type under one of 30 older
 stages, which predate the library's six phases. That stage holds three types, among them the PRD, which
@@ -99,7 +141,7 @@ ADR 0077 keeps in `deliver`.
   output, and `design-brief` became candidate #294.
 - **2026-10-17.** A decision sitting ruled that `define` ends with a chosen concept, never a specification.
   ADR 0077 supersedes ADR 0068 and moved `discovery-docs` to `0.4.0`. ADR 0078 widened what counts as
-  templatable: a map, a canvas or a workshop record, through its written form.
+  templatable: a map, a canvas or a session record, through its written form.
 - **2026-10-19.** `test-strategy` and `positioning-statement` were specced and accepted. #298 opened for the
   opportunity statement, which the sitting ruled a type of its own rather than an alias of
   `problem-statement`.
@@ -107,6 +149,13 @@ ADR 0077 keeps in `deliver`.
   page of fill-in boxes in four labelled columns, not text fields or tables. Before ADR 0078, that meant a
   refusal. Under ADR 0078, a labelled fill-in form can be templatable through its written form, as
   `product-vision`'s canvas format already is. So the type needs an admission re-test, not a refusal record.
+- **2026-10-20.** The maintainer supplied the Zendesk Triple Diamond post and its linked milestones page as
+  PDFs, after the raw fetch had returned HTTP 403. Zendesk names no Define phase, and its concept is chosen and
+  tested after its Problem Definition milestone, still inside its Discovery phase. ADR 0077's first cost stands
+  as stated, and a dated note on ADR 0077 records the read.
+- **2026-10-20.** The Define re-score ran over 67 candidates (section 4). The design brief and the opportunity
+  statement return for an admission sweep at `define`, and seven candidates wait on one read each. The
+  maintainer queued `test-strategy` and `positioning-statement` the same day, and both builds began.
 
 ## 6. What comes next, in order
 
@@ -114,29 +163,28 @@ ADR 0077 keeps in `deliver`.
    alias, removes "opportunity statement" as one, and appends the opportunity statement's catalog row. That row
    moves the catalog's candidate count to 158, so section 3's marker and table move in the same PR.
 2. **A small README change for sitting item D8** (the "four literatures" passage).
-3. **The Define re-score.** Re-score the roughly 60 candidates under ADR 0077 and ADR 0078, using the evidence
-   already on disk. Include the map and canvas candidates outside Define that ADR 0078 may reopen: `metric-tree`
-   (#257) for certain, and `lean-canvas` and `opportunity-solution-tree` once someone checks whether the reasons
-   recorded in their [Progress rows](tier2-specs.md#progress) rest on the test ADR 0078 retired. A source check
-   on the Zendesk Triple Diamond post comes first; its raw fetch returned HTTP 403 on 2026-10-17.
-4. **Rewrite sections 2 to 4 of this page from the re-score's output.** That rewrite produces the first real
-   define count.
-5. **Spec the first new Define bundle**: the design brief (#294), or the strongest candidate the re-score
-   finds. Relabel #294 to match.
-6. **Build `test-strategy` and `positioning-statement` when the maintainer chooses.** Both are ready now, and
-   neither waits on the re-score.
-7. **One batch confirmation from the maintainer.** Five records were accepted on the maintainer's delegation
+3. **Land `test-strategy` and then `positioning-statement`.** Both builds are under way. Each landing PR edits
+   its family contract's Members line, so each stops for the maintainer's read.
+4. **An admission sweep and a spec for the design brief (#294).** The sweep must settle the line between
+   Define's concept handoff and Phillips's commissioning brief (section 4).
+5. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
+   from `problem-statement`. Its catalog row comes first, in step 1.
+6. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
+   settle it.
+7. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+8. **One batch confirmation from the maintainer.** Five records were accepted on the maintainer's delegation
    rather than a read: ADRs 0070, 0074, 0075, 0076 and 0078. Nothing waits on the confirmation.
 
 ## 7. When to revisit this page
 
-- **When the Define re-score lands** (step 3 above). Rewrite sections 2 to 6 from its output.
+- **When an admission sweep for the design brief or the opportunity statement lands** (steps 4 and 5 above).
+  Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
-- **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the re-score is still
-  the next piece of work.
+- **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the design brief's
+  admission sweep is still the next piece of Define work.
 
 ## 8. How to refresh the numbers
 
