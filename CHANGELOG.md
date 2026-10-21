@@ -64,6 +64,14 @@ people who want every change, release notes are for people who want to know what
   Markdown. The admission bar is unchanged and no type is admitted. It retires a stricter written-document
   test that two research sweeps applied without any record adopting it. ADR 0030 carries a dated note that
   points to it. ADR 0078 is accepted on the maintainer's delegation, which stands in for the read.
+- **The Define re-score ran, and [`backlog.md`](docs/internal/backlog.md) carries its first real define
+  count.** It re-tested 67 candidates from the three Define research sweeps under ADRs 0077 and 0078. The design
+  brief (#294, in the Design Council's sense) and the opportunity statement (#298) return for an admission
+  sweep at `define`. Seven candidates wait on one read each, four return for an admission sweep in another
+  family or axis, and 48 stay out, among them `lean-canvas`, `opportunity-solution-tree` and the Shape Up pitch.
+  `business-case` stays at `discover`. ADR 0077 carries two dated notes: the Zendesk Triple Diamond post, read
+  from PDFs the maintainer supplied, leaves its first cost standing, and the re-score confirmed the design brief.
+  No contract, catalog row or built bundle changes.
 
 ## [0.19.0] - 2026-10-16
 
