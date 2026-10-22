@@ -12,6 +12,12 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.20.1] - 2026-10-22
+
+A documentation and governance patch. No bundle was added, and no MCP tool or install route changed. One
+bundle changed: `problem-statement`'s template moves to 0.1.1, because its aliases changed. The rest records
+what the library builds next: a spec for the design brief, and a fifth admission check.
+
 ### Added
 
 - **A spec for `design-brief`, and ADR 0079 (design-brief joins discovery-docs at define), accepted on the
@@ -3143,7 +3149,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...HEAD
+[0.20.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...v0.20.1
 [0.20.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...v0.20.0
 [0.19.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.17.0...v0.18.0

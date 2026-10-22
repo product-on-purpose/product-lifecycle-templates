@@ -8,6 +8,18 @@ Newest first.
 
 ---
 
+## v0.20.1
+
+**A patch with no new bundle: the problem statement answers to the right names.** `problem-statement` gains
+the alias "point of view statement". It drops "opportunity statement", because the maintainer ruled that a
+different document, and the opportunity statement becomes catalog entry 207.
+
+The release also records what comes next. The design brief is specced as the fifth `discovery-docs` member,
+at `define`, by ADR 0079. ADR 0080 adds a fifth admission check, which asks whether a software product, UX
+or technology team writes or uses a candidate document.
+
+---
+
 ## v0.20.0
 
 **Two bundles in one release: a test strategy and a positioning statement.** A test strategy sets the
