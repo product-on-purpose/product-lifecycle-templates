@@ -57,6 +57,26 @@ re-ingested on 2026-09-22 from the same transcripts, with every agent's attribut
 report schema moved to `2.0.0` so no reader can mistake an old count for a new one. The record of that
 correction is in [ADR 0056](../docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).
 
+## Agents a build runs outside a workflow
+
+Most of a build runs in workflows, whose journals label every agent. Some of it can run through the
+Agent tool instead: a research log's head writer, an agent applying review findings, a fact check, a
+landing sweep. Those agents leave `<session>/subagents/agent-<id>.jsonl` with no journal and no label.
+Until 2026-10-21 the generator never read them, and the `test-strategy` and `positioning-statement`
+reports missed about 40 percent of each build.
+
+The generator now reads them, under one boundary: **an Agent-tool subagent counts toward a bundle only
+when the same session also built that bundle in a workflow.** A re-score scorer or a fact-checker that
+names a bundle in passing is therefore never billed to it. Inside the boundary, the agent is attributed
+from its own prompt, and the report drops to `medium` confidence. A landing sweep run this way has no
+label to carry `sweep:N`, so it is recognised by "landing sweep" in its prompt's subject line and kept
+out of the totals like a labelled one.
+
+The change moved one older report. `problem-statement`'s build ran a fact check of its gap-fill
+research through the Agent tool on 2026-10-11, before the bundle landed, and its report rose from
+9,987,114 to 10,533,753 weighted. Every other report re-derived byte-identical. The record is the
+2026-10-21 correction in ADR 0056.
+
 ## The two words in the index that carry the caveats
 
 **Scope** answers "is this a whole build?"
@@ -74,6 +94,8 @@ correction is in [ADR 0056](../docs/internal/decisions/0056-build-cost-is-measur
 - `medium` - at least one run was attributed by run-level consensus: every agent in the run named the
   same bundle in its prompt's subject line. Strong, but not exact. **A research run compares its
   subject against a sibling type, so a consensus attribution can in principle land on the sibling.**
+  A report is also `medium` when it counts an agent run through the Agent tool, which is attributed
+  from its own prompt (see above).
 - `mixed` - reliable signals disagreed within a run.
 
 ## What these reports deliberately do not measure
@@ -84,7 +106,8 @@ correction is in [ADR 0056](../docs/internal/decisions/0056-build-cost-is-measur
   main loop's tokens cannot honestly be divided per bundle. They are never billed to one here, and
   they are not reported anywhere else either.
 - **Landing work, in the totals.** A report counts only the agents that built the bundle. Agents
-  labelled `<bundle>/sweep:N`, which sweep the repository's counts when the bundle lands, are stated
+  labelled `<bundle>/sweep:N`, or run through the Agent tool with "landing sweep" in their prompt's
+  subject line, which sweep the repository's counts when the bundle lands, are stated
   on their own line under the headline and in the JSON's `landing_sweep` block, and are left out of
   every total. Whether a landing needs such agents depends on how its counts were swept, not on the
   bundle, so counting them made two builds incomparable. This is the maintainer's rule of

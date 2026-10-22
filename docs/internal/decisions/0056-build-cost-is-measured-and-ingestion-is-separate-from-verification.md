@@ -226,3 +226,25 @@ trusted because it was generated once, not because it can be re-derived", so a w
 produced 22 wrong reports with the gate green. It was found by pricing the numbers, not by any check.
 The decision stands, because the transcripts are still absent from CI, but its cost is no longer
 hypothetical.
+
+## Correction (2026-10-21)
+
+**The generator read only the agents that ran inside a workflow, so builds that ran agents outside one
+were undercounted.** The layout above lists `<session>/subagents/workflows/<run>/` as the source. A build
+can also launch agents through the Agent tool, which writes `<session>/subagents/agent-<id>.jsonl`
+with no journal and no label. The `test-strategy` and `positioning-statement` builds of 2026-10-20 ran
+their research log's head writer on Opus, their review-fix agent and their landing sweep that way, and
+their first reports missed about 40 percent of each build.
+
+**The fix keeps the decision and widens the source under one boundary.** An Agent-tool subagent counts
+toward a bundle only when the same session also built that bundle in a workflow, so a re-score scorer
+or a fact-checker that names a bundle in passing is never billed to it. Inside that boundary the agent
+is attributed from its own prompt, and the report's confidence drops to `medium`, the tier this record
+already defines for prompt-based attribution. A landing sweep run that way has no `sweep:N` label, so it
+is recognised by its prompt's subject line and kept out of the totals, per the 2026-09-29 rule.
+
+**What moved.** `test-strategy` reads 16,344,533 weighted ($35.11) and `positioning-statement`
+13,476,852 ($30.25), against 10,100,486 and 8,123,566 from the workflow agents alone. One older report
+moved: `problem-statement`'s build ran a fact check of its gap-fill research through the Agent tool on
+2026-10-11, before the bundle landed, so its report rose from 9,987,114 weighted ($19.97) to 10,533,753
+($21.07). Every other report re-derived byte-identical.

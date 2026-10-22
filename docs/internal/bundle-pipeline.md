@@ -38,13 +38,22 @@ and $14.24 for its 15 agents, its two-template drafting $5.72. experiment-design
 weighted and $13.35 for its 15 agents, its two-template drafting $5.90. experiment-readout, the tenth, cost
 6,480,996 weighted and $12.96 for its 15 agents, its two-template drafting $5.06; tracking-plan, the eleventh,
 cost 7,440,790 weighted and $14.88 for its 15 agents, its two-template drafting $8.57. problem-statement, the
-twelfth, cost 9,987,114 weighted and $19.97 for 18 agents, the usual 15 plus a three-agent gap-fill research
-pass after drafting, its two-template drafting $9.06. business-continuity-plan, the thirteenth, cost
+twelfth, cost 10,533,753 weighted and $21.07 for 19 agents, the usual 15 plus a three-agent gap-fill research
+pass after drafting and one fact check of that gap-fill, its two-template drafting $9.06 *(corrected
+2026-10-21: this read 9,987,114 and $19.97 for 18, before the generator counted agents run through the Agent
+tool)*. business-continuity-plan, the thirteenth, cost
 10,284,679 weighted and $20.57 for its 15 agents, its two-template drafting $10.10. data-dictionary, the
 fourteenth, cost 8,859,179 weighted and $17.72 for 16 agents, the usual 15 plus a seventh research dimension,
 its two-template drafting $7.71. use-case-specification, the fifteenth, cost 8,370,585 weighted and $16.74 for
 its 15 agents, its two-template drafting $7.77. trade-study, the sixteenth, cost 10,479,257 weighted and
-$20.96 for 16 agents, the usual 15 plus a seventh research dimension, its two-template drafting $10.47. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+$20.96 for 16 agents, the usual 15 plus a seventh research dimension, its two-template drafting $10.47.
+test-strategy, the seventeenth, cost 16,344,533 weighted and $35.11 for 18 agents: the usual 15 plus a seventh
+research dimension in workflows, then an Opus head writer ($10.20) and a Sonnet fix agent ($4.71) through the
+Agent tool. Its single-template drafting cost $9.17. positioning-statement, the eighteenth, cost 13,476,852
+weighted and $30.25 for 18 agents: the usual 15 in workflows, then an Opus research retry ($3.49), an Opus head
+writer ($7.67) and a Sonnet fix agent ($2.84) through the Agent tool. Its single-template drafting cost $6.86.
+**The step up is the work run outside the workflows**: from their workflow agents alone, the two would read
+$20.20 and $16.25, inside the usual range. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents
@@ -52,7 +61,10 @@ labelled `<bundle>/sweep:N`, which sweep the repository's counts when a bundle l
 `landing_sweep` line of that bundle's report and never into its totals. Whether a landing needs sweep agents
 depends on how its counts were swept, not on the bundle, so folding them in made builds incomparable. That is
 why issue-log's and definition-of-ready's reports read $14.29 and $11.69, and why the with-sweep figures
-above are notes rather than headlines.
+above are notes rather than headlines. **Agents a build runs through the Agent tool count too** (since
+2026-10-21), but only when the same session also built that bundle in a workflow; a landing sweep run that way
+is recognised by its prompt's subject line and kept out of the totals like a labelled one. See the 2026-10-21
+correction in [ADR 0056](decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).
 Weighted means input x1.0, cache write x1.25, cache read x0.1, output x5.0.
 *(Corrected 2026-09-22: this paragraph read "21M to 25M", from a generator that counted each API response
 two to three times. See the Correction in

@@ -2,9 +2,9 @@
   "report_schema_version": "2.0.0",
   "bundle": "problem-statement",
   "template_version": "0.1.0",
-  "attribution_confidence": "high",
-  "agents_total": 18,
-  "agents_reliably_attributed": 18,
+  "attribution_confidence": "medium",
+  "agents_total": 19,
+  "agents_reliably_attributed": 19,
   "workflow_runs": 4,
   "run_ids": [
     "wf_2d140210-411",
@@ -88,23 +88,24 @@
   "stages_present": [
     "draft",
     "lens",
+    "other",
     "research"
   ],
   "complete": true,
   "totals": {
-    "turns": 435,
-    "input": 882,
-    "output": 452276,
-    "cache_write": 2096860,
+    "turns": 460,
+    "input": 932,
+    "output": 478271,
+    "cache_write": 2228441,
     "cache_write_1h": 0,
-    "cache_read": 51037768,
+    "cache_read": 53559151,
     "web": 0,
     "web_search": 0,
-    "usd": 19.9742,
+    "usd": 21.0675,
     "unpriced_turns": 0
   },
-  "weighted_total": 9987114,
-  "cost_usd": 19.97,
+  "weighted_total": 10533753,
+  "cost_usd": 21.07,
   "by_stage": {
     "draft": {
       "agents": 5,
@@ -153,42 +154,58 @@
         "unpriced_turns": 0
       },
       "weighted": 1253552
+    },
+    "other": {
+      "agents": 1,
+      "usage": {
+        "turns": 25,
+        "input": 50,
+        "output": 25995,
+        "cache_write": 131581,
+        "cache_write_1h": 0,
+        "cache_read": 2521383,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0933,
+        "unpriced_turns": 0
+      },
+      "weighted": 546640
     }
   },
   "by_model": {
     "claude-sonnet-5": {
-      "agents": 18,
+      "agents": 19,
       "usage": {
-        "turns": 435,
-        "input": 882,
-        "output": 452276,
-        "cache_write": 2096860,
+        "turns": 460,
+        "input": 932,
+        "output": 478271,
+        "cache_write": 2228441,
         "cache_write_1h": 0,
-        "cache_read": 51037768,
+        "cache_read": 53559151,
         "web": 0,
         "web_search": 0,
-        "usd": 19.9742,
+        "usd": 21.0675,
         "unpriced_turns": 0
       },
-      "weighted": 9987114
+      "weighted": 10533753
     }
   },
   "by_requested_tier": {
     "sonnet": {
-      "agents": 18,
+      "agents": 19,
       "usage": {
-        "turns": 435,
-        "input": 882,
-        "output": 452276,
-        "cache_write": 2096860,
+        "turns": 460,
+        "input": 932,
+        "output": 478271,
+        "cache_write": 2228441,
         "cache_write_1h": 0,
-        "cache_read": 51037768,
+        "cache_read": 53559151,
         "web": 0,
         "web_search": 0,
-        "usd": 19.9742,
+        "usd": 21.0675,
         "unpriced_turns": 0
       },
-      "weighted": 9987114
+      "weighted": 10533753
     }
   },
   "by_deliverable": {
@@ -287,6 +304,22 @@
         "unpriced_turns": 0
       },
       "weighted": 709837
+    },
+    "(none)": {
+      "agents": 1,
+      "usage": {
+        "turns": 25,
+        "input": 50,
+        "output": 25995,
+        "cache_write": 131581,
+        "cache_write_1h": 0,
+        "cache_read": 2521383,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0933,
+        "unpriced_turns": 0
+      },
+      "weighted": 546640
     },
     "example": {
       "agents": 1,
@@ -497,6 +530,22 @@
         "unpriced_turns": 0
       },
       "weighted": 9987114
+    },
+    "path": {
+      "agents": 1,
+      "usage": {
+        "turns": 25,
+        "input": 50,
+        "output": 25995,
+        "cache_write": 131581,
+        "cache_write_1h": 0,
+        "cache_read": 2521383,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0933,
+        "unpriced_turns": 0
+      },
+      "weighted": 546640
     }
   },
   "agents": [
@@ -649,6 +698,31 @@
         "unpriced_turns": 0
       },
       "weighted": 709837
+    },
+    {
+      "run": "agent-tool",
+      "agent_id": "a82d621ffee767adc",
+      "label": "",
+      "stage": "other",
+      "deliverable": "",
+      "model": "claude-sonnet-5",
+      "requested_model": "sonnet",
+      "attribution": "path",
+      "confidence": "high",
+      "file_written": "",
+      "usage": {
+        "turns": 25,
+        "input": 50,
+        "output": 25995,
+        "cache_write": 131581,
+        "cache_write_1h": 0,
+        "cache_read": 2521383,
+        "web": 0,
+        "web_search": 0,
+        "usd": 1.0933,
+        "unpriced_turns": 0
+      },
+      "weighted": 546640
     },
     {
       "run": "wf_96e8ab68-b0f",
@@ -950,5 +1024,6 @@
       },
       "weighted": 193497
     }
-  ]
+  ],
+  "agent_tool_agents": 1
 }

@@ -125,7 +125,7 @@ Gate green, links resolve, counts agree, CI green, PR merged with `Closes #N` fo
 
 ## What this costs
 
-Measured, not estimated: roughly 6M-12M weighted token-equivalents per bundle, or $12-$41 at API list
+Measured, not estimated: roughly 6M-16M weighted token-equivalents per bundle, or $12-$41 at API list
 rates, depending mostly on which model drafts (launch-coordination-checklist 7,108,920, $14.22, every agent
 on Sonnet as this workflow pins; issue-log $14.29 and definition-of-ready $11.69, a single-size bundle, for
 the same 15 build agents; announcement-internal-comms 8,495,731, $16.99, a second single-size bundle, and
@@ -137,17 +137,20 @@ project-brief 7,120,610, $14.24, for the same 15, its two-template drafting $5.7
 experiment-design-doc 6,674,388, $13.35, for the same 15, its two-template drafting $5.90;
 experiment-readout 6,480,996, $12.96, for the same 15, its two-template drafting $5.06;
 tracking-plan 7,440,790, $14.88, for the same 15, its two-template drafting $8.57;
-problem-statement 9,987,114, $19.97, for 18, the usual 15 plus a three-agent gap-fill research pass, its
-two-template drafting $9.06;
+problem-statement 10,533,753, $21.07, for 19, the usual 15 plus a three-agent gap-fill research pass and
+one fact check of it, its two-template drafting $9.06;
 business-continuity-plan 10,284,679, $20.57, for the same 15, its two-template drafting $10.10;
 data-dictionary 8,859,179, $17.72, for 16, the usual 15 plus a seventh research dimension, its
 two-template drafting $7.71;
 use-case-specification 8,370,585, $16.74, for the same 15, its two-template drafting $7.77;
 trade-study 10,479,257, $20.96, for 16, the usual 15 plus a seventh research dimension, its
 two-template drafting $10.47;
+test-strategy 16,344,533, $35.11, and positioning-statement 13,476,852, $30.25, for 18 each, each with
+an Opus head writer and a fix agent run through the Agent tool, without which they read $20.20 and $16.25;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
-x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured. Build
+x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.
+Agent-tool subagents count only when their session also built the bundle in a workflow. Build
 agents only, too (the maintainer's rule, 2026-09-29): agents that sweep counts at landing are stated on their
 own line in the report and left out of every figure here, which is why issue-log and definition-of-ready read
 $14.29 and $11.69 rather than their with-sweep $16.76 and $13.89. Source:

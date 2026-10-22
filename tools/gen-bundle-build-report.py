@@ -16,8 +16,14 @@ The Claude Code harness already writes everything needed, outside this repositor
     <session>/subagents/workflows/<run>/journal.jsonl   agentId -> label, phase, file_written
     <session>/subagents/workflows/<run>/agent-<id>.jsonl  per-turn model and usage
     <session>/subagents/workflows/<run>/agent-<id>.meta.json  the requested model tier
+    <session>/subagents/agent-<id>.jsonl               an Agent-tool subagent: no journal, no label
 
-This tool joins those three and attributes each agent to a bundle, a stage and a deliverable.
+This tool joins those and attributes each agent to a bundle, a stage and a deliverable.
+
+An Agent-tool subagent is one a build launches outside a workflow: a head writer, a fix agent, a landing
+sweep. It counts toward a bundle only when the same session also ran a workflow attributed to that
+bundle, so a re-score or a fact-check that merely names a bundle is never billed to it. See
+AGENT_TOOL_RUN.
 
 A report's totals count only the agents that BUILT the bundle. Agents labelled <bundle>/sweep:N, which
 sweep the repository's counts when the bundle lands, go into a separate `landing_sweep` block and never
@@ -183,6 +189,16 @@ STAGE_RE = re.compile(r"^(research|draft|lens|review|verify)\b", re.I)
 # only the build agents. Folding a sweep in made builds incomparable, because whether a landing
 # needed agents to sweep depends on how the counts were swept, not on the bundle.
 LANDING_STAGES = ("sweep",)
+# Agent-tool subagents (2026-10-21). A build that runs its head writer, its fix agent or its landing
+# sweep through the Agent tool rather than inside a workflow leaves those agents in
+# <session>/subagents/agent-<id>.jsonl, with no journal and no label. Until this date collect() never
+# read them, and the test-strategy and positioning-statement builds were undercounted by about 40
+# percent. Two rules keep the extension away from work that is not a build:
+#   - an Agent-tool subagent counts only toward a bundle the SAME session also built in a workflow,
+#     at the "medium" tier, so a re-score scorer or a fact-checker that names a bundle stays out;
+#   - having no label, a landing sweep is recognised by its subject line instead, and only there.
+AGENT_TOOL_RUN = "agent-tool"
+LANDING_PROMPT_RE = re.compile(r"\blanding sweep\b", re.I)
 
 
 def first_prompt(path, head=600):
@@ -399,8 +415,19 @@ def blank():
 
 # -------------------------------------------------------------------------------------- ingest
 
+def requested_tier(mpath):
+    if not os.path.isfile(mpath):
+        return None
+    try:
+        with open(mpath, encoding="utf-8") as f:
+            return json.load(f).get("model")
+    except (OSError, ValueError):
+        return None
+
+
 def collect(ids, patterns):
-    """Walk every workflow run on this machine and return one record per agent."""
+    """Walk every workflow run on this machine, and every Agent-tool subagent of a session that ran
+    one, and return one record per agent."""
     root = transcript_root()
     if not os.path.isdir(root):
         return [], root
@@ -437,14 +464,7 @@ def collect(ids, patterns):
                 totals, models = agent_usage(apath)
                 if not totals["turns"]:
                     continue
-                tier = None
-                mpath = os.path.join(run_dir, "agent-%s.meta.json" % aid)
-                if os.path.isfile(mpath):
-                    try:
-                        with open(mpath, encoding="utf-8") as f:
-                            tier = json.load(f).get("model")
-                    except (OSError, ValueError):
-                        tier = None
+                tier = requested_tier(os.path.join(run_dir, "agent-%s.meta.json" % aid))
                 resolved = max(models, key=models.get) if models else "unknown"
                 agents.append({
                     "session": session, "run": run, "agent_id": aid,
@@ -457,6 +477,31 @@ def collect(ids, patterns):
                     "usage": tidy(totals), "weighted": weighted(totals),
                     "mtime": os.path.getmtime(journal),
                 })
+        # The same session's Agent-tool subagents. resolve_runs() decides whether each one counts.
+        sub_root = os.path.join(root, session, "subagents")
+        for name in sorted(os.listdir(sub_root)):
+            if not (name.startswith("agent-") and name.endswith(".jsonl")):
+                continue
+            apath = os.path.join(sub_root, name)
+            head = first_prompt(apath)
+            bundle, method = attribute("", "", head, ids, patterns)
+            totals, models = agent_usage(apath)
+            if not totals["turns"]:
+                continue
+            sweep = LANDING_PROMPT_RE.search(head.lstrip()[:200])
+            agents.append({
+                "session": session, "run": AGENT_TOOL_RUN,
+                "agent_id": name[len("agent-"):-len(".jsonl")],
+                "label": "", "bundle": bundle, "attribution": method,
+                "confidence": CONFIDENCE.get(method, "n/a"),
+                "stage": "sweep" if sweep else stage_of("", head),
+                "deliverable": "",
+                "requested_model": requested_tier(apath[:-len(".jsonl")] + ".meta.json"),
+                "model": max(models, key=models.get) if models else "unknown",
+                "file_written": "",
+                "usage": tidy(totals), "weighted": weighted(totals),
+                "mtime": os.path.getmtime(apath),
+            })
     return agents, root
 
 
@@ -469,10 +514,14 @@ def resolve_runs(agents):
     research agents whose prompts all name the same bundle is strong evidence even though any one
     of them alone is weak, which is why run consensus is promoted to "medium" and a lone prose
     match is not.
+
+    Agent-tool subagents are not a run, so they are resolved last, one by one: each keeps its own
+    attribution only if its session built that same bundle in a workflow, at the "medium" tier.
     """
     runs = {}
     for a in agents:
-        runs.setdefault((a["session"], a["run"]), []).append(a)
+        if a["run"] != AGENT_TOOL_RUN:
+            runs.setdefault((a["session"], a["run"]), []).append(a)
 
     for rows in runs.values():
         excluded = sum(1 for a in rows if a["attribution"] == "excluded")
@@ -506,6 +555,18 @@ def resolve_runs(agents):
 
         for a in rows:
             a["bundle"], a["run_confidence"] = "", "low"
+
+    built = {(a["session"], a["bundle"]) for a in agents
+             if a["run"] != AGENT_TOOL_RUN and a["bundle"]}
+    for a in agents:
+        if a["run"] != AGENT_TOOL_RUN:
+            continue
+        if a["attribution"] == "excluded":
+            a["bundle"], a["run_confidence"] = "", "excluded"
+        elif a["bundle"] and (a["session"], a["bundle"]) in built:
+            a["run_confidence"] = "medium"
+        else:
+            a["bundle"], a["run_confidence"] = "", "outside-build"
     return agents
 
 
@@ -541,8 +602,8 @@ def landing_record(rows):
     totals = blank()
     for a in rows:
         add(totals, a["usage"])
-    runs = sorted({a["run"] for a in rows})
-    return {
+    runs = sorted({a["run"] for a in rows if a["run"] != AGENT_TOOL_RUN})
+    rec = {
         "in_totals": False,
         "agents": len(rows),
         "workflow_runs": len(runs),
@@ -551,6 +612,10 @@ def landing_record(rows):
         "weighted_total": weighted(totals),
         "cost_usd": round(totals["usd"], 2),
     }
+    tool = sum(1 for a in rows if a["run"] == AGENT_TOOL_RUN)
+    if tool:
+        rec["agent_tool_agents"] = tool
+    return rec
 
 
 def build_report(bundle, agents, landing=()):
@@ -558,7 +623,7 @@ def build_report(bundle, agents, landing=()):
     totals = blank()
     for a in agents:
         add(totals, a["usage"])
-    runs = sorted({a["run"] for a in agents})
+    runs = sorted({a["run"] for a in agents if a["run"] != AGENT_TOOL_RUN})
     sessions = sorted({a["session"] for a in agents})
     run_confs = {a.get("run_confidence", "low") for a in agents}
     conf = "high" if run_confs == {"high"} else (
@@ -597,7 +662,10 @@ def build_report(bundle, agents, landing=()):
         ),
     }
     # Present only when a sweep ran, so a report without one is byte-for-byte what it was before
-    # the field existed.
+    # the field existed. The same holds for agent_tool_agents.
+    tool = sum(1 for a in agents if a["run"] == AGENT_TOOL_RUN)
+    if tool:
+        rep["agent_tool_agents"] = tool
     if landing:
         rep["landing_sweep"] = landing_record(landing)
     return rep
@@ -646,8 +714,13 @@ def render(rep):
     unpriced = (" plus %s response(s) on a model with no listed price" % n(u["unpriced_turns"])
                 if u.get("unpriced_turns") else "")
     L.append("| **At API list rates** | **%s**%s |" % (usd(rep["cost_usd"]), unpriced))
-    L.append("| Subagents | %d across %d workflow run(s) |"
-             % (rep["agents_total"], rep["workflow_runs"]))
+    tool = rep.get("agent_tool_agents", 0)
+    if tool:
+        L.append("| Subagents | %d: %d across %d workflow run(s), and %d through the Agent tool |"
+                 % (rep["agents_total"], rep["agents_total"] - tool, rep["workflow_runs"], tool))
+    else:
+        L.append("| Subagents | %d across %d workflow run(s) |"
+                 % (rep["agents_total"], rep["workflow_runs"]))
     L.append("| API responses | %s |" % n(u["turns"]))
     L.append("| Fresh input | %s |" % n(u["input"]))
     L.append("| Cache write | %s |" % n(u["cache_write"]))
@@ -669,12 +742,17 @@ def render(rep):
         L.append("")
     sweep = rep.get("landing_sweep")
     if sweep:
-        L.append("**Not in these totals: the landing sweep.** %d agent(s) in %d workflow run(s) swept "
+        if not sweep.get("agent_tool_agents"):
+            where = "in %d workflow run(s)" % sweep["workflow_runs"]
+        elif sweep["workflow_runs"]:
+            where = "in %d workflow run(s) and through the Agent tool" % sweep["workflow_runs"]
+        else:
+            where = "through the Agent tool"
+        L.append("**Not in these totals: the landing sweep.** %d agent(s) %s swept "
                  "the repository's counts when this bundle landed, at %s weighted and %s at API list "
                  "rates. A report counts only the agents that built the bundle, so this landing work "
                  "is recorded here and left out of every figure above and below."
-                 % (sweep["agents"], sweep["workflow_runs"], n(sweep["weighted_total"]),
-                    usd(sweep["cost_usd"])))
+                 % (sweep["agents"], where, n(sweep["weighted_total"]), usd(sweep["cost_usd"])))
         L.append("")
     L.append("Weighted total applies %s. It is one fixed unit for every model, stated so that two "
              "reports written months apart are comparable and so a reader can re-weight with their "
@@ -697,7 +775,12 @@ def render(rep):
     L.append("- **The orchestrator's own spend.** One session interleaves several bundles and other "
              "work, so the main loop's tokens cannot honestly be divided per bundle. They are not "
              "billed to a bundle here, and they are not reported anywhere else either.")
-    if conf != "high":
+    if tool:
+        L.append("- **Exact attribution.** %d agent(s) ran through the Agent tool rather than in a "
+                 "workflow, so they carry no label. Each was attributed from its own prompt, and "
+                 "counted only because the same session also built this bundle in a workflow. That "
+                 "is why this report sits below high confidence." % tool)
+    elif conf != "high":
         L.append("- **Exact attribution.** This build predates the labelling convention, so some "
                  "agents were attributed from their own prompt rather than from a label. "
                  "See the by-attribution counts in the raw JSON.")
