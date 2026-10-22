@@ -3,7 +3,7 @@ name: plt-fill-template
 description: Selects and fills a researched product-document template from a 49-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard definition, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, positioning statement, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report. Most bundles ship lean and full variants with a worked example and research log.
 license: Apache-2.0
 metadata:
-  version: "0.20.0"
+  version: "0.20.1"
   updated: 2026-10-15
   category: documentation
   author: product-on-purpose

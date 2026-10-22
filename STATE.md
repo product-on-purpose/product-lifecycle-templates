@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=49, tier1=25, tier1remaining=2, statebuilt=49, statecandidate=156, stateoutofscope=2, commoncandidates=50, adrs=80, cisteps=32, checkk=148, checkformats=126, checklogs=111, logsgated=43, sourcesgated=1793 -->
 
-**Last updated:** 2026-10-22 (**ADR 0080 adds a fifth admission check: does a software, UX or technology
+**Last updated:** 2026-10-22 (**`v0.20.1` ships as a patch with no new bundle**, as the maintainer directed on
+2026-10-22. It carries the `problem-statement` alias change, catalog entry 207, the design brief's spec with
+ADR 0079, and ADR 0080. Both records were accepted on the maintainer's delegation. Issue #294 (bundle:
+design-brief) is relabelled `status:queued` and `family:discovery-docs`, and its build needs its own go.)
+The previous entry read: **ADR 0080 adds a fifth admission check: does a software, UX or technology
 team write or use the document.** It is recorded as a dated note on ADR 0030, and the maintainer accepted it
 the same day on delegation. No bundle, catalog row or contract changed, and the ADR count moves to 80. Not in
 any release yet.)

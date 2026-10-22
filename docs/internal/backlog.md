@@ -33,7 +33,7 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | Specced 2026-10-22 in two sizes, with ADR 0079 (design-brief joins discovery-docs at define) accepted the same day on the maintainer's delegation. It waits for the build |
+| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Queued 2026-10-22, once ADR 0079 admitted it; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | `discovery-docs`, `phase: define`, by ADR 0079 | Specced 2026-10-22 in two sizes, with ADR 0079 (design-brief joins discovery-docs at define) accepted the same day on the maintainer's delegation. It waits for the build, which needs its own go |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep that settles whether it is distinct from `problem-statement`, under way since 2026-10-22. Its catalog row, entry 207, landed 2026-10-22 |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
@@ -42,7 +42,7 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 3 candidates, 3 parked |
+| Status | 2 candidates, 1 queued, 3 parked |
 | Priority | P3: 5, P4: 1 |
 | Tier | Tier 2: 5, Tier 3: 1 |
 
@@ -188,14 +188,14 @@ Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positio
 
 ## 7. When to revisit this page
 
-- **When an admission sweep for the design brief or the opportunity statement lands** (steps 2 and 3 above).
+- **When the design brief's build or the opportunity statement's decision lands** (steps 2 and 3 above).
   Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
 - **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the design brief's
-  admission sweep is still the next piece of Define work.
+  build is still the next piece of Define work.
 
 ## 8. How to refresh the numbers
 
