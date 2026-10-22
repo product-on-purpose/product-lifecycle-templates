@@ -31,9 +31,10 @@ At a glance:
   out of the Problem Statement section and gives it a labeled, hypothesis-only place in Open Questions
   and Assumptions, following the A3 template's own separation. That placement is a POSITION, not a
   point every source agrees on. See sections 3 and 6.
-- **The opportunity statement is the same artefact, phrased positively, with one dissent on record.**
+- **The opportunity statement is a separate type in this library, and the sources split on it.**
   Nielsen Norman Group names it an alias used "in the same way" [[1]](#ref-1); one business-analysis
-  source argues the two are not interchangeable for projects [[28]](#ref-28). See section 6.
+  source argues the two are not interchangeable for projects [[28]](#ref-28). On 2026-10-17 the
+  maintainer ruled them different documents, and it became catalog entry 207. See section 6.
 - **No two sources this research read share a section order or a section count.** This companion names
   whose list is whose throughout, rather than attributing any one composition generically to "the"
   canon.
@@ -61,7 +62,12 @@ four pages mentions Nielsen Norman Group or its article, in the text this resear
 
 **Design thinking** supplies an adjacent but separately named construct, the Point of View, rather than
 the same term. Stanford's d.school CS377 course handout dates the construct to "September 2006"
-[[6]](#ref-6) and gives it its own formula, "User + Need = Point of View" [[6]](#ref-6). Even within
+[[6]](#ref-6) and gives it its own formula, "User + Need = Point of View" [[6]](#ref-6). Other
+design-thinking sources treat the two names as one document: the Interaction Design Foundation calls
+the Define mode's problem statement one "commonly known as the Point of View (POV) in Design
+Thinking" [[18]](#ref-18), and the Canada School of Public Service titles its job aid "Point-of-View
+(POV) Problem Statement" [[33]](#ref-33). So since template version 0.1.1 (2026-10-22), this bundle
+lists "point of view statement" as an alias. Even within
 design thinking, naming is not universal: the Design Council's own Framework for Innovation, the Double
 Diamond, names four stages, "Discover," "Define," "Develop" and "Deliver" [[7]](#ref-7), and never names
 a written Define-stage deliverable at all. That is a negative finding worth holding onto: the stage this
@@ -421,8 +427,11 @@ the problem-statement form first, "My advice is to try the Business Problem Stat
 doesn't make sense after you've given it a shot, go for the Opportunity Statement" [[12]](#ref-12). One
 business-analysis source dissents outright for projects specifically: "many practitioners treat problems
 and opportunities interchangeably when developing Business Cases and Project Charters" [[28]](#ref-28),
-treating the conflation as a named error rather than a harmless alias. This bundle follows Nielsen Norman
-Group's reading as the alias and reports the dissent here rather than silently picking a side.
+treating the conflation as a named error rather than a harmless alias. Until 2026-10-17 this bundle
+followed Nielsen Norman Group's reading and listed the opportunity statement as an alias. That day the
+maintainer ruled the two different documents, so the alias was removed in template version 0.1.1 and the
+opportunity statement became catalog entry 207, a candidate type not yet researched on its own. The
+evidence above is unchanged; only the library's reading of it moved.
 
 **Is Atlassian's Problem Framing play a document or a workshop?** Its own tagline frames the activity, not
 a deliverable: "the goal today is to understand and define the problem, not to solve it"
@@ -513,8 +522,9 @@ product brief, Productboard's own first numbered section [[27]](#ref-27). This b
 precursor; where a document already carries the content as a section of itself, that component form is
 not displaced by this bundle existing alongside it.
 
-**An alias, not a neighbour: the opportunity statement.** See section 6's full treatment of the alias and
-its one dissent [[1]](#ref-1)[[12]](#ref-12)[[28]](#ref-28).
+**A separate candidate type, no longer an alias: the opportunity statement.** Until 2026-10-17 this
+bundle listed it as an alias. It is now catalog entry 207, not yet built. See section 6 for the sources on
+both sides [[1]](#ref-1)[[12]](#ref-12)[[28]](#ref-28).
 
 **Precedes How Might We, a job aid never shared with it.** The Interaction Design Foundation's own
 sequencing places a problem statement before any How Might We question is written, "Step 1: Clearly define

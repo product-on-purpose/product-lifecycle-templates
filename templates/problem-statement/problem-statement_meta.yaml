@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (Problem Statement, Background, Who Is Affected, Impa
 methodology: methodology-agnostic
 pairs_with: [define-problem-statement]
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - discovery
   - define
@@ -29,8 +29,8 @@ related_templates:
   - prd
 aliases:
   - problem brief
-  - opportunity statement
+  - point of view statement
 catalog_ref: 206
 maintainer: "product-on-purpose"
-last_reviewed: 2026-10-11
+last_reviewed: 2026-10-22
 license: Apache-2.0

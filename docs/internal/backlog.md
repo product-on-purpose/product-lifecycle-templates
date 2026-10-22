@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-21.** The issue counts in section 2
-were read from GitHub on 2026-10-21, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-22.** The issue counts in section 2
+were read from GitHub on 2026-10-22, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -19,7 +19,7 @@ No single list holds the backlog. Three places hold parts of it, and each one la
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 206 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 207 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
@@ -34,7 +34,7 @@ run and its label now reads `status:parked`.
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
 | [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep and a spec, in the Design Council's sense (section 4) |
-| [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | A catalog row, then an admission sweep that settles whether it is distinct from `problem-statement` |
+| [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep that settles whether it is distinct from `problem-statement`. Its catalog row, entry 207, landed 2026-10-22 |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -51,17 +51,17 @@ Fifty-seven candidate issues are closed: 49 built and 8 declined. Two of the dec
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=49, statecandidate=155, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=49, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 206 types. Its `state` field reads 49 built, 155 candidate and 2 out of scope. Four of the
-155 were declined by record, so 151 types are still open.
+The catalog holds 207 types. Its `state` field reads 49 built, 156 candidate and 2 out of scope. Four of the
+156 were declined by record, so 152 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 152 | 24 | 4, declined by record (below) | **124** |
+| 2 | 153 | 24 | 4, declined by record (below) | **125** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **206** | **49** | **6** | **151** |
+| **All** | **207** | **49** | **6** | **152** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -70,7 +70,7 @@ The four Tier 2 types declined by record are `pi-release-retrospective`
 measurement plan ([ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md)).
 The last was declined in its per-feature reading only, and its business-scope reading has not been swept.
 
-**Most of the 151 open types have never been proposed.** They have no issue, so they have no priority either.
+**Most of the open types have never been proposed.** They have no issue, so they have no priority either.
 
 ## 4. The define phase
 
@@ -159,28 +159,29 @@ ADR 0077 keeps in `deliver`.
   bundles. Both sit at `classification: foundation`, so the define count stays at one. The maintainer confirmed
   `foundation` over `define` for `positioning-statement`, and confirmed ADRs 0070, 0074, 0075, 0076 and 0078 in
   one batch.
+- **2026-10-22.** The maintainer named the design brief and the opportunity statement as the next Define work.
+  The `problem-statement` change for sitting items D6 and D9 landed: "point of view statement" became an alias,
+  and the opportunity statement left the alias list to become catalog entry 207. The design brief's admission
+  sweep began the same day.
 
 ## 6. What comes next, in order
 
-1. **The `problem-statement` change for sitting items D6 and D9.** It adds "point of view statement" as an
-   alias, removes "opportunity statement" as one, and appends the opportunity statement's catalog row. That row
-   moves the catalog's candidate count from 155 to 156, so section 3's marker and table move in the same PR.
-   *(Corrected 2026-10-21: this read "to 158", a figure from before two candidates were built.)*
-2. **A small README change for sitting item D8** (the "four literatures" passage).
-3. **An admission sweep and a spec for the design brief (#294).** The sweep must settle the line between
+1. **A small README change for sitting item D8** (the "four literatures" passage).
+2. **An admission sweep and a spec for the design brief (#294).** The sweep must settle the line between
    Define's concept handoff and Phillips's commissioning brief (section 4).
-4. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
-   from `problem-statement`. Its catalog row comes first, in step 1.
-5. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
+3. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
+   from `problem-statement`. Its catalog row, entry 207, is already in place.
+4. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
    settle it.
-6. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+5. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
-2026-10-21, and the maintainer confirmed the five delegated acceptances the same day.
+2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
+`problem-statement` change for sitting items D6 and D9, landed on 2026-10-22.
 
 ## 7. When to revisit this page
 
-- **When an admission sweep for the design brief or the opportunity statement lands** (steps 3 and 4 above).
+- **When an admission sweep for the design brief or the opportunity statement lands** (steps 2 and 3 above).
   Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.

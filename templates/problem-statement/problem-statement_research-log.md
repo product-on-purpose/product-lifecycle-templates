@@ -75,6 +75,12 @@ formula for a new initiative, and advises "try the Business Problem Statement fi
 same for projects: "many practitioners treat problems and opportunities interchangeably when developing Business
 Cases and Project Charters". The alias stands on [1], and the companion reports [28]'s dissent.
 
+> **Note added 2026-10-22.** The maintainer ruled on 2026-10-17, in decision sitting item D9, that the
+> problem statement and the opportunity statement are different documents. The alias was removed in
+> template version 0.1.1, and the opportunity statement became catalog entry 207, a candidate type. The
+> evidence recorded above is unchanged. The same change added "point of view statement" as an alias, on
+> [17], [18] and [33] (sitting item D6).
+
 **The APM claim the spec repeated is narrower than it read.** The spec cited `project-brief`'s research log for an APM
 Body of Knowledge passage that names "problem statement", "project brief" and "project charter" as names in common use
 for one rationale. This build read APM's own online glossary [25], which draws on the fifth to eighth editions: it has

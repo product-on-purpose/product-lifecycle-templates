@@ -3,6 +3,23 @@
 Change log for the `problem-statement` bundle. Each entry records what changed and why, so a reader
 can tell a correction from a preference.
 
+## 0.1.1 - 2026-10-22 - the opportunity statement becomes its own type
+
+**An alias change from the maintainer's 2026-10-17 decision sitting, items D6 and D9.** No section,
+placeholder or rubric row changed.
+
+- **"Opportunity statement" is no longer an alias (D9).** The maintainer ruled the problem statement and
+  the opportunity statement different documents. The opportunity statement became catalog entry 207, a
+  candidate type tracked as issue #298, not yet researched on its own. The guide, both templates' opening
+  comment and three companion passages now say so, each with its date. The evidence is unchanged: Nielsen
+  Norman Group still treats the two as one document, and the companion still reports it.
+- **"Point of view statement" is a new alias (D6).** The Interaction Design Foundation calls the Define
+  mode's problem statement one "commonly known as the Point of View (POV) in Design Thinking", and the
+  Canada School of Public Service titles its job aid "Point-of-View (POV) Problem Statement". Both were
+  already in the research log. The sitting declined two other proposed aliases, "market problem
+  statement" and "target behaviour definition".
+- **The research log carries a dated note**, not a rewrite, because it records what the research found.
+
 ## 0.1.0 - 2026-10-11
 
 **Initial release.** Researched 2026-10-11 across six dimensions: UX discovery practice, government
