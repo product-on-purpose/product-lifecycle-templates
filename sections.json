@@ -10766,6 +10766,209 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "test-strategy",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "organization_or_program_name"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "owner"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "explicit_exclusions",
+                "purpose_and_scope_statement"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "test-levels-and-types",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "level_or_type",
+                "level_or_type_reason",
+                "level_or_type_status"
+              ],
+              "title": "Test Levels and Types"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "standard-tooling-and-environments",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "production_data_rule",
+                "standard_tooling_and_environments"
+              ],
+              "title": "Standard Tooling and Environments"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "governance-and-policy-alignment",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "strategy_approver",
+                "test_policy_alignment_statement"
+              ],
+              "title": "Governance and Policy Alignment"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "how-project-test-plans-inherit-or-deviate",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "inherit_or_deviate_statement",
+                "who_may_accept_a_deviation"
+              ],
+              "title": "How Project Test Plans Inherit or Deviate"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "roles-and-responsibilities-across-projects",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "role_holder",
+                "role_name",
+                "role_responsibility"
+              ],
+              "title": "Roles and Responsibilities Across Projects"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "review_trigger_action",
+                "review_trigger_condition",
+                "review_trigger_owner"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "test-summary-report",
       "default_format": "default",
       "formats": {
@@ -12304,7 +12507,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 47,
-  "frontmatter_count": 299,
-  "section_count": 399
+  "count": 48,
+  "frontmatter_count": 303,
+  "section_count": 406
 }

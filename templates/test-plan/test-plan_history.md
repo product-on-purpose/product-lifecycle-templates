@@ -2,6 +2,16 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.0, corrected 2026-10-20 - the test strategy now exists, and the ISTQB citation is a mirror
+
+**A routing and citation correction, not a template change**, so the version stays 0.1.0. The
+`test-strategy` bundle joined `standing-standards` on 2026-10-20, by
+[ADR 0075 (test-strategy joins standing-standards as a foundation)](../../docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md).
+The guide's routing row now links to it. Its research found that this companion's reference [6] is an
+unofficial mirror of ISTQB's glossary, `istqb-glossary.page`, whose text is not ISTQB's current wording. The
+companion's reference entry, its plan-versus-strategy paragraph and the guide's "Two honest notes" each carry a
+dated note saying so, with the official definition quoted. Nothing was rewritten in place.
+
 ## 0.1.0 - 2026-07-25
 
 - Initial Test Plan bundle. **First member of the `qa-docs` family.** Catalog entry 102. Conforms to the

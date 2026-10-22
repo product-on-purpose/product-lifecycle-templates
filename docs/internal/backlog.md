@@ -28,11 +28,10 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 8 open candidates
+## 2. The working backlog: 7 open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#260](https://github.com/product-on-purpose/product-lifecycle-templates/issues/260) | `test-strategy` | Queued 2026-10-20; [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) accepted 2026-10-19 | P3 | 2 | `standing-standards`, `foundation` | Build, under way |
 | [#256](https://github.com/product-on-purpose/product-lifecycle-templates/issues/256) | `positioning-statement` | Queued 2026-10-20; [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) accepted 2026-10-19 | P3 | 2 | `strategy-docs`, `foundation` | Build, under way |
 | [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep and a spec, in the Design Council's sense (section 4) |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | A catalog row, then an admission sweep that settles whether it is distinct from `problem-statement` |
@@ -43,26 +42,26 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 2 queued and being built, 3 candidates, 3 parked |
-| Priority | P3: 7, P4: 1 |
-| Tier | Tier 2: 7, Tier 3: 1 |
+| Status | 1 queued and being built, 3 candidates, 3 parked |
+| Priority | P3: 6, P4: 1 |
+| Tier | Tier 2: 6, Tier 3: 1 |
 
-Fifty-five candidate issues are closed: 47 built and 8 declined. Two of the declined types,
+Fifty-six candidate issues are closed: 48 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=47, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=48, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 206 types. Its `state` field reads 47 built, 157 candidate and 2 out of scope. Four of the
-157 were declined by record, so 153 types are still open.
+The catalog holds 206 types. Its `state` field reads 48 built, 156 candidate and 2 out of scope. Four of the
+156 were declined by record, so 152 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 152 | 22 | 4, declined by record (below) | **126** |
+| 2 | 152 | 23 | 4, declined by record (below) | **125** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **206** | **47** | **6** | **153** |
+| **All** | **206** | **48** | **6** | **152** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`

@@ -42,6 +42,17 @@ people who want every change, release notes are for people who want to know what
   carry dated notes. The delegation stands in for the contract read for this PR only, and the spec's
   suggested ownership default was accepted without a read.
 - **ADR count 76 -> 78**, across markers and prose.
+- **`test-strategy`, the 48th bundle**, the seventh `standing-standards` member, at `classification:
+  foundation`, by [ADR 0075](docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md).
+  It is the standing document that sets the default testing approach for every project inside one
+  organization or program: which levels, types, tools and environments apply by default, and the rule by
+  which each project's own test plan either follows that default or states a reasoned deviation. It ships
+  in one size, lean, carrying Purpose and Scope, Test Levels and Types, Standard Tooling and Environments,
+  Governance and Policy Alignment, How Project Test Plans Inherit or Deviate, Roles and Responsibilities
+  Across Projects, and Review Trigger. The research log records 43 sources, and every one of its 291
+  quotations was checked against raw text. Catalog entry 103 now ships lean only, reads its purpose as
+  organization-or-program scope rather than organization-wide-only, and carries the alias "organizational
+  test strategy" in place of "QA strategy" and "test approach".
 
 ### Changed
 
@@ -72,6 +83,11 @@ people who want every change, release notes are for people who want to know what
   `business-case` stays at `discover`. ADR 0077 carries two dated notes: the Zendesk Triple Diamond post, read
   from PDFs the maintainer supplied, leaves its first cost standing, and the re-score confirmed the design brief.
   No contract, catalog row or built bundle changes.
+- **`test-plan` now carries a routing link to `test-strategy`**, and three dated notes that its ISTQB
+  reference [6] is an unofficial mirror whose text is not ISTQB's current definition: one in
+  `test-plan_companion.md`'s plan-versus-strategy discussion, one on the reference entry itself, and one in
+  `test-plan_guide.md`'s note on where the plan ends and the strategy begins. [ADR 0075](docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md)
+  and the `test-strategy` spec carry dated notes saying the same.
 
 ## [0.19.0] - 2026-10-16
 

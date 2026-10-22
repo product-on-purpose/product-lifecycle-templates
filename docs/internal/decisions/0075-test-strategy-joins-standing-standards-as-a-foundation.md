@@ -65,7 +65,7 @@ ISO/IEC/IEEE 29119's Part 3 structure, which names "Organizational Test Strategy
 a Test Strategy)" as separate outputs. The standard's own current clause text was never reached by any
 automated fetch in either research dimension, a finding the 2026-10-14 critic states directly, so this
 record and the spec it accompanies never cite ISO/IEC/IEEE 29119-3's own words, only secondary accounts of
-it, labelled as such.
+it, labelled as such. *(2026-10-20: the build read ISTQB's official glossary through the API behind its page. Its definition is "A strategy that describes the generic requirements for testing and how to perform testing within an organization.", with no program wording, so the text this record reads via the mirror is the mirror's older wording, not ISTQB's current one. Admission still stands, now on the official definition and on the published strategies the build read in raw text. The research log is [`test-strategy_research-log.md`](../../../templates/test-strategy/test-strategy_research-log.md).)*
 
 A second, harder question followed admission: at what scope is this type standing? The 2026-10-12 sweep's
 own family-fit critic found the question undecidable from the evidence gathered to that point. Strong,
@@ -238,7 +238,7 @@ standard) describe a name the current standard may have dropped. This record doe
 question: no automated fetch in either research dimension reached the current standard's own clause text.
 If a later reader does reach it and finds the rename confirmed, the admission case for the organization-wide
 half of ISTQB's own hedge would need revisiting, though the program-scope evidence (Ofgem, TfL), which
-carries none of this risk, would be untouched.
+carries none of this risk, would be untouched. *(2026-10-20: the "hedge" this paragraph calls ISTQB's own is the unofficial mirror's older text; ISTQB's current glossary says "within an organization" and nothing about a program. The program-scope evidence is now wider than Ofgem and TfL: the build also read DCC's joint test strategy and the Fujitsu and Post Office HNG-X testing strategy in raw text. The rename question stays open: one syllabus sentence says 29119-3 calls the artefact an "organizational test practice", and the standard was not retrieved.)*
 
 ### Consequences
 

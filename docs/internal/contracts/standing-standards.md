@@ -16,7 +16,7 @@ assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 
 assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14),
 `test-strategy`
 ([ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
-assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
