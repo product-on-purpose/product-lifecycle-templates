@@ -489,7 +489,7 @@ and durable. One repository fact cuts across both: the `foundation`-class vision
 date with a trigger, `next_review: "October 2026, or immediately if either leap of faith below is disproven"`
 (`templates/product-vision/product-vision_example.md:8`). ADR 0076 recommends `foundation` and names `utility` as
 the considered alternative:
-`docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:137-142`.
+`docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:139-144`.
 **The choice is the maintainer's.** What changes now is the premise: the bundle's "When We Revisit It" section can
 cite sources for both a check-in interval and named triggers.
 
@@ -600,13 +600,13 @@ these are dated factual corrections, outside that rule, is a maintainer call.**
 
 **The no-cadence sentence lives in five places.** The spec at `docs/internal/tier2-specs.md:6285-6286`, its
 section-design row at `:6404`, and its risk 5 at `:6465-6468`; the contract at `strategy-docs.md:78`; and ADR 0076
-at `0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:140`. Each is contradicted by [26], [30],
+at `0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:142`. Each is contradicted by [26], [30],
 [52] and [8]. The contract allows a dated in-place correction of an unsourced claim under procedure 11
 (`strategy-docs.md:9-11`).
 
 **The vision companion note.** `templates/product-vision/product-vision_companion.md:276-280` says "No product
 management source read draws this boundary". The landing PR adds a dated note, not a rewrite
-(`0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:189-194`). The note can now cite Sharebird
+(`0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:191-196`). The note can now cite Sharebird
 [43] and Dunford [11], [26], and should name the RUP counter-example [44]. The research log and history entries
 recording the old finding stay (`docs/internal/tier2-specs.md:6505-6507`). The same companion's Moore paragraph
 (`product-vision_companion.md:72-77`) agrees with this research and needs no change.
@@ -617,7 +617,7 @@ companion note above. `README.md`, `AGENTS.md` and `skills/` carry no mention of
 "position").
 
 **Count and family sentences stale on landing.** `README.md:214` reads "complete, five bundles" and its table lacks
-a row. `templates/README.md:100-106` lists the family without this bundle. `STATE.md:273` says the family is
+a row. `templates/README.md:100-106` lists the family without this bundle. `STATE.md:278` says the family is
 "complete at five members". The contract's Members line says "not yet built" (`strategy-docs.md:6`).
 
 **The catalog row still carries the uncorrected values** (`docs/internal/catalog.md:43`): the alias "positioning

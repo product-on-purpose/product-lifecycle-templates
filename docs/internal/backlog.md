@@ -1,8 +1,9 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20.** The issue counts in section 2 were read from GitHub that
-day, and no gate checks them, so they go stale as issues move. The catalog counts in section 3 sit under a
-counts marker that [`tools/check-counts.py`](../../tools/check-counts.py) gates, so CI fails when they drift.
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-21.** The issue counts in section 2
+were read from GitHub on 2026-10-21, and no gate checks them, so they go stale as issues move. The catalog
+counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
+gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
 
 Section 7 says when to revisit this page. The Define re-score that
@@ -69,7 +70,7 @@ The four Tier 2 types declined by record are `pi-release-retrospective`
 measurement plan ([ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md)).
 The last was declined in its per-feature reading only, and its business-scope reading has not been swept.
 
-**Most of the 152 open types have never been proposed.** They have no issue, so they have no priority either.
+**Most of the 151 open types have never been proposed.** They have no issue, so they have no priority either.
 
 ## 4. The define phase
 
@@ -154,28 +155,32 @@ ADR 0077 keeps in `deliver`.
 - **2026-10-20.** The Define re-score ran over 67 candidates (section 4). The design brief and the opportunity
   statement return for an admission sweep at `define`, and seven candidates wait on one read each. The
   maintainer queued `test-strategy` and `positioning-statement` the same day, and both builds began.
+- **2026-10-21.** `test-strategy` (#301) and `positioning-statement` (#302) landed as the 48th and 49th
+  bundles. Both sit at `classification: foundation`, so the define count stays at one. The maintainer confirmed
+  `foundation` over `define` for `positioning-statement`, and confirmed ADRs 0070, 0074, 0075, 0076 and 0078 in
+  one batch.
 
 ## 6. What comes next, in order
 
 1. **The `problem-statement` change for sitting items D6 and D9.** It adds "point of view statement" as an
    alias, removes "opportunity statement" as one, and appends the opportunity statement's catalog row. That row
-   moves the catalog's candidate count to 158, so section 3's marker and table move in the same PR.
+   moves the catalog's candidate count from 155 to 156, so section 3's marker and table move in the same PR.
+   *(Corrected 2026-10-21: this read "to 158", a figure from before two candidates were built.)*
 2. **A small README change for sitting item D8** (the "four literatures" passage).
-3. **Land `test-strategy` and then `positioning-statement`.** Both builds are under way. Each landing PR edits
-   its family contract's Members line, so each stops for the maintainer's read.
-4. **An admission sweep and a spec for the design brief (#294).** The sweep must settle the line between
+3. **An admission sweep and a spec for the design brief (#294).** The sweep must settle the line between
    Define's concept handoff and Phillips's commissioning brief (section 4).
-5. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
+4. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
    from `problem-statement`. Its catalog row comes first, in step 1.
-6. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
+5. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
    settle it.
-7. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
-8. **One batch confirmation from the maintainer.** Five records were accepted on the maintainer's delegation
-   rather than a read: ADRs 0070, 0074, 0075, 0076 and 0078. Nothing waits on the confirmation.
+6. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+
+Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
+2026-10-21, and the maintainer confirmed the five delegated acceptances the same day.
 
 ## 7. When to revisit this page
 
-- **When an admission sweep for the design brief or the opportunity statement lands** (steps 4 and 5 above).
+- **When an admission sweep for the design brief or the opportunity statement lands** (steps 3 and 4 above).
   Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.

@@ -50,8 +50,10 @@ consulted: [claude]
   suggested ownership default: product management owns the statement, and product marketing drafts or
   co-writes it. That default is the agent's reasoning, and no source states it. The third is the pair of
   contract edits added after the 2026-10-16 drafts: section 4's example obligation and the axis note's
-  count of six. The maintainer may strike or change any of them by a dated note, and has not yet
-  confirmed this delegated acceptance.
+  count of six. The maintainer may strike or change any of them by a dated note.
+  **Confirmed by the maintainer on 2026-10-21**, in one batch covering ADRs 0070, 0074,
+  0075, 0076 and 0078. Offered the choice to confirm all five, to reopen any of them for a read, or
+  to leave the question parked, the maintainer confirmed all five.
 
 ## Context and Problem Statement
 

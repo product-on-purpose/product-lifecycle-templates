@@ -3,7 +3,7 @@ name: plt-fill-template
 description: Selects and fills a researched product-document template from a 49-bundle library covering the full product lifecycle, then grades the result against that document type's own rubric. Use when writing a PRD, epic, user stories, use case specification, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard definition, tracking plan, data dictionary, test plan, test case, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, positioning statement, OKRs, North Star metric, problem statement, project brief, business case, user persona, experiment design or readout, definition of done or ready, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective notes, or status report. Most bundles ship lean and full variants with a worked example and research log.
 license: Apache-2.0
 metadata:
-  version: "0.19.0"
+  version: "0.20.0"
   updated: 2026-10-15
   category: documentation
   author: product-on-purpose
@@ -13,7 +13,7 @@ metadata:
 
 # Product lifecycle templates
 
-A library of **48 researched document-template bundles**, covering the complete Tier-1 floor of a 206-type
+A library of **49 researched document-template bundles**, covering the complete Tier-1 floor of a 206-type
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
@@ -31,7 +31,7 @@ shape, a worked example, and a rubric for judging the result.
 - **The document already exists and only needs editing.** Use [`plt-grade-doc`](../plt-grade-doc/SKILL.md),
   which grades an existing document against the bundle's rubric and returns a report card; do not restart
   from the template.
-- **The type is not in the library.** The catalog holds 206 types and only the Tier-1 floor is built. If
+- **The type is not in the library.** The catalog holds 206 types, and most of them are not built. If
   nothing matches, say so rather than forcing the nearest bundle. Bending an adjacent type to fit is the
   specific failure this library rejected two candidate types for.
 - **You need the document filled with facts you do not have.** These templates prompt for evidence. They

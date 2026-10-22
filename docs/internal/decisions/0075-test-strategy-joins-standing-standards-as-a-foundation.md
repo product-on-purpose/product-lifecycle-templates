@@ -49,8 +49,10 @@ consulted: [claude]
   [ADR 0078](0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md).
   The standing rule is not repealed. **The contract diff was accepted without a read.** The family and the
   scope are the maintainer's own rulings of 2026-10-13 and 2026-10-15; the `foundation` classification is
-  argued here, not ruled. The maintainer has not yet confirmed this delegated acceptance, and may reopen
-  the record for a read.
+  argued here, not ruled.
+  **Confirmed by the maintainer on 2026-10-21**, in one batch covering ADRs 0070, 0074,
+  0075, 0076 and 0078. Offered the choice to confirm all five, to reopen any of them for a read, or
+  to leave the question parked, the maintainer confirmed all five.
 
 ## Context and Problem Statement
 

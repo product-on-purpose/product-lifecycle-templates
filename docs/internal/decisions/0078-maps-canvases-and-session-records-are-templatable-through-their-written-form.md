@@ -31,7 +31,9 @@ consulted: [claude]
   and [ADR 0074](0074-analytics-requirements-measurement-plan-per-feature-is-declined.md). This record amends
   no family contract, so the standing stop for a contract read does not apply. **The section on templates for
   running an exercise was accepted without a read.** It rests on a maintainer note, not a ruling, and the
-  maintainer may strike it by a dated note. The maintainer has not yet confirmed this delegated acceptance.
+  maintainer may strike it by a dated note. **Confirmed by the maintainer on 2026-10-21**, in one batch
+  covering ADRs 0070, 0074, 0075, 0076 and 0078. Offered the choice to confirm all five, to reopen any of
+  them for a read, or to leave the question parked, the maintainer confirmed all five.
 
 ## Context and Problem Statement
 
