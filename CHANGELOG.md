@@ -12,6 +12,8 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-10-21
+
 ### Added
 
 - **[`docs/internal/backlog.md`](docs/internal/backlog.md), a dated snapshot of the build backlog.** It
@@ -108,6 +110,18 @@ people who want every change, release notes are for people who want to know what
   `positioning-statement`, between the strategy and the roadmap. `product-vision` carries a dated note on
   its positioning boundary, plus a link to the new bundle.
 
+- **Five decision records accepted on the maintainer's delegation are now confirmed by the maintainer.**
+  [ADR 0070](docs/internal/decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md),
+  [ADR 0074](docs/internal/decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md),
+  [ADR 0075](docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
+  [ADR 0076](docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) and
+  [ADR 0078](docs/internal/decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)
+  each said the maintainer had not yet confirmed the delegated acceptance. Offered the choice to confirm all
+  five, to reopen any for a read, or to leave the question parked, the maintainer confirmed all five on
+  2026-10-21. Each record's Status line now says so. No decision changes.
+- **[`backlog.md`](docs/internal/backlog.md) is refreshed for the release.** Its issue counts were re-read from
+  GitHub, two finished steps left its next-steps list, and its timeline gains the two landings.
+
 ### Fixed
 
 - **Build reports now count the agents a build runs outside a workflow.**
@@ -120,6 +134,20 @@ people who want every change, release notes are for people who want to know what
   `problem-statement` rose from 9,987,114 to 10,533,753 weighted, for a fact check its build ran that way.
   The record is a dated correction in
   [ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).
+
+- **Four onboarding surfaces had not caught up with the library.** The fill skill's opening still said
+  "48 researched document-template bundles", and the grading skill "one of the 48 types", beside counts
+  markers reading 49. The fill skill also said "only the Tier-1 floor is built", a sentence from before any
+  Tier-2 bundle existed; it now says most catalog types are not built. [`AGENTS.md`](AGENTS.md) said a
+  phase-only search "reaches only 28 of the 48", now 49, and named `deliver` and `develop` as the axis values
+  a capped search cannot list in full without naming `utility`, which also holds 10. The
+  [choosing-a-template guide](docs/reference/choosing-a-template.md) named neither new bundle:
+  `positioning-statement` now appears under defining what to build and in the `strategy-docs` row of its
+  family map, and the quality section points to `test-strategy`. No gate reads any of these sentences; the
+  release process's three-audience check found them.
+- **The backlog page's open-type count lagged one landing behind.** It said "Most of the 152 open types"
+  beside a table counting 151, and its first next step still put the catalog's candidate count "to 158".
+  Both now match the gated marker.
 
 ## [0.19.0] - 2026-10-16
 
@@ -3085,7 +3113,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...HEAD
+[0.20.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...v0.20.0
 [0.19.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.16.0...v0.17.0

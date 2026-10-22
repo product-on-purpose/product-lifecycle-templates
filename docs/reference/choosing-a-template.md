@@ -45,6 +45,8 @@ Two different altitudes live here. Direction comes first, then the specific thin
   create, and what that rules out.
 - [`product-strategy`](../../templates/product-strategy/) - which problems this product will solve
   to get there, and which it will not.
+- [`positioning-statement`](../../templates/positioning-statement/) - how this product stands
+  against a named alternative, for a specific target customer, now.
 - [`prd`](../../templates/prd/) - what to build, for whom, and why, for one initiative.
 - [`user-stories`](../../templates/user-stories/) - user-centered stories that anchor work to user
   value.
@@ -76,6 +78,10 @@ different family: see `governance-docs` in [the family map](#the-family-map) bel
 - [`test-summary-report`](../../templates/test-summary-report/) - the retrospective close-out of a
   testing effort: what was tested, what was found, and whether the result clears the bar the test
   plan set.
+
+If what you need is the default testing approach that every project's test plan inherits, agreed
+once for an organization or program, that is [`test-strategy`](../../templates/test-strategy/), in
+`standing-standards`. See [the family map](#the-family-map).
 
 ### I am running an experiment
 
@@ -141,7 +147,7 @@ included here for readers who want the complete picture rather than a situationa
 | Family | What it is for | Bundles |
 |---|---|---|
 | `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`use-case-specification`](../../templates/use-case-specification/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`change-request`](../../templates/change-request/), [`release-notes`](../../templates/release-notes/), [`announcement-internal-comms`](../../templates/announcement-internal-comms/) |
-| `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`product-strategy`](../../templates/product-strategy/), [`north-star-metrics`](../../templates/north-star-metrics/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
+| `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`product-strategy`](../../templates/product-strategy/), [`positioning-statement`](../../templates/positioning-statement/), [`north-star-metrics`](../../templates/north-star-metrics/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
 | `decision-docs` | Investigates, evaluates, proposes, records, and designs against a decision, as five separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/), [`trade-study`](../../templates/trade-study/) |
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/), [`change-log`](../../templates/change-log/), [`tracking-plan`](../../templates/tracking-plan/), [`data-dictionary`](../../templates/data-dictionary/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |

@@ -30,8 +30,10 @@ consulted: [claude]
   maintainer replied with a wrap instruction that delegated the remaining merges to the agent's best
   judgment. That direction stands in for the read, as a similar one did for [ADR 0070
   (north-star-metrics)](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md). This record
-  amends no family contract, so the standing stop for a contract read does not apply. The maintainer has
-  not yet confirmed this delegated acceptance, and may reopen the record for a read.
+  amends no family contract, so the standing stop for a contract read does not apply.
+  **Confirmed by the maintainer on 2026-10-21**, in one batch covering ADRs 0070, 0074,
+  0075, 0076 and 0078. Offered the choice to confirm all five, to reopen any of them for a read, or
+  to leave the question parked, the maintainer confirmed all five.
 
 ## Context and Problem Statement
 

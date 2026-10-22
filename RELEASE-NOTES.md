@@ -8,6 +8,21 @@ Newest first.
 
 ---
 
+## v0.20.0
+
+**Two bundles in one release: a test strategy and a positioning statement.** A test strategy sets the
+testing approach every project inside one organization or program starts from, so each project's test plan
+only states where it differs. It is the seventh `standing-standards` member. A positioning statement records
+how a product stands against a named alternative, for a specific target customer, now. It is the sixth
+`strategy-docs` member, third in that family's chain. Every quotation in both research logs was checked
+against the source's raw text.
+
+Build-cost reports now count the agents a build runs outside its workflows, which this release's two
+builds had left out of about 40 percent of their cost. Five decision records accepted on the maintainer's
+delegation are now confirmed by the maintainer.
+
+---
+
 ## v0.19.0
 
 **Two bundles in one release: a use-case specification and a trade study.** A use-case specification

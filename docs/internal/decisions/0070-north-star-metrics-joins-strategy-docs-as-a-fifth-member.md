@@ -33,8 +33,10 @@ consulted: [claude]
   ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)). Told that the read
   was the next stop, the maintainer twice replied "Continue based on your best recommendations". That direction
   stands in for the read, as it did for [ADR 0069](0069-problem-statement-joins-discovery-docs.md). The agent
-  checked the contract diff against each of the maintainer's decisions and found nothing they do not cover. The
-  maintainer has not yet confirmed this delegated acceptance, and may reopen the record for a read.
+  checked the contract diff against each of the maintainer's decisions and found nothing they do not cover.
+  **Confirmed by the maintainer on 2026-10-21**, in one batch covering ADRs 0070, 0074,
+  0075, 0076 and 0078. Offered the choice to confirm all five, to reopen any of them for a read, or
+  to leave the question parked, the maintainer confirmed all five.
   *(Note added 2026-10-19: [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)
   places `positioning-statement` between the product strategy and the North Star metric, so the North Star
   metric is now fourth in the chain, not third. It still follows the strategy, which is the dependency this

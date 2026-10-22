@@ -166,7 +166,7 @@ reached ISTQB's glossary. Confidence: high that the question is open; low on whi
 **The program half of the 2026-10-15 ruling no longer rests on ISTQB's current glossary text.** The spec read
 ISTQB's text as hedging between organization and program (`docs/internal/tier2-specs.md:5807-5810`). ADR 0075
 calls it `ISTQB's own hedge`
-(`docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md:239-241`). That hedge is
+(`docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md:241-243`). That hedge is
 the mirror's older text [3]. The current official definition says "within an organization" and nothing more [1].
 Three repository records rest on the mirror for the program wording: the spec's admission section
 (`docs/internal/tier2-specs.md:5747-5755`), ADR 0075's admission paragraph (`0075-...:60-62`), and the `test-plan`
@@ -653,7 +653,7 @@ From `dim1.md`, with lines re-checked:
   which names two bundles; and `:245-252`, the six-row table.
 - `templates/README.md:91-97`, the standing-standards list. It also lacks `business-continuity-plan`, which is filed
   at `:106` under strategy-docs, a defect that predates this bundle.
-- `STATE.md:273`, the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
+- `STATE.md:278`, the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
 - `docs/internal/contracts/standing-standards.md:17-19`, the Members line's `not yet built`. This bookkeeping edit
   stops for the maintainer's read (`docs/internal/tier2-specs.md:6137-6141`).
 - `templates/test-plan/test-plan_guide.md:36`, the routing row, which may gain a link as a build decision
@@ -661,7 +661,7 @@ From `dim1.md`, with lines re-checked:
 
 **Added for this log; `dim1.md` missed them:**
 
-- `docs/reference/choosing-a-template.md:149`, the standing-standards row of its family table.
+- `docs/reference/choosing-a-template.md:155`, the standing-standards row of its family table.
 - `AGENTS.md:61-62`: 28 bundles carry a `phase` and the other 19 a `classification`. A `foundation` member makes
   the second number 20.
 - `library.json:4`: `for 43 of the 47, a full one`. A single-size bundle changes the total, not the 43.
