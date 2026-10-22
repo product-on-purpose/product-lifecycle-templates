@@ -139,7 +139,7 @@ chain.**
    the `foundation` reading already applied to `product-vision`, `product-strategy` and
    `north-star-metrics`. **No source read states a review cadence for this type directly**; this record
    names that gap rather than papering over it, and names `classification: utility` as the considered
-   alternative. See the spec's own Classification subsection for the full argument.
+   alternative. See the spec's own Classification subsection for the full argument. *(2026-10-20: the gap this item names is closed, the other way. Three sources state an interval: April Dunford's six-month check-in, her "a couple of times a year", and Abinanti's "every 12 months". CLIMB says a positioning statement "shouldn't change often". The `foundation` reading stands on that durability, not on the absence of a cadence, and the maintainer ruled out `utility` on 2026-10-20. The contract's matching sentence carries a dated correction. The research log is [`positioning-statement_research-log.md`](../../../templates/positioning-statement/positioning-statement_research-log.md).)*
 3. **The chain has a slot this type can fill.** The strategy chooses which segments and problems to pursue;
    positioning takes that choice and states the external-facing stance it implies, before the North Star
    metric asks whether that stance is working.

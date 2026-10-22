@@ -17,7 +17,7 @@ source_template_version: 0.1.0
 > will sit just ahead of the product roadmap still to come. Dana Okoro, VP Product, owns the vision, the
 > strategy, this document, and the roadmap that follows it, which is why the four speak in one voice. Nothing
 > below carries a formula, a data source, a refresh schedule, a target, or a threshold; those belong to a KPI
-> dashboard, not to this document.
+> dashboard, not to this document. *(2026-10-20: since [ADR 0076](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) placed the positioning statement third, this type sits fourth in the chain. Nothing else here changes.)*
 >
 > All figures are illustrative. They are internally consistent with the other examples in this library and
 > are not drawn from a real company. Any figure this document shares with an earlier example, the 31 percent

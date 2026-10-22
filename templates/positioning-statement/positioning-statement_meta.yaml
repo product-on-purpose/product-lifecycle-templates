@@ -1,0 +1,32 @@
+id: positioning-statement
+title: Positioning Statement
+summary: >-
+  The internal, present-tense record of how this product stands against a named alternative, for a specific
+  target customer, now. Not the vision (future-facing), not messaging (built on top of this once it is
+  settled), and not a battlecard or a positioning map.
+doc_type: positioning-statement
+classification: foundation
+family: strategy-docs
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "This bundle ships one size. Every admitting source caps the artifact short: MIT states it 'forces you to use a one page format,' HubSpot and Yesware both give a three to five sentence ceiling, and Product Marketing Alliance's own template is a one page, five row document. The lean variant pairs the one-sentence statement with its named components (target, need, category, benefit, named alternative, differentiation) rather than shipping the bare sentence alone; there is no second, heavier size to choose instead."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - strategy
+  - positioning
+  - gtm
+  - competitive
+  - differentiation
+  - product-marketing
+related_templates: [product-vision, product-strategy, north-star-metrics, okrs]
+aliases:
+  - positioning framework
+  - product positioning statement
+  - competitive positioning statement
+catalog_ref: 13
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-20
+license: Apache-2.0

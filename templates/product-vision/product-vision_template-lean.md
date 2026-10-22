@@ -42,7 +42,8 @@ WHAT A PRODUCT VISION IS, AND IS NOT
 It describes a future state. It is NOT a mission (that describes present purpose), NOT a strategy (that is
 the set of choices for getting there), NOT a roadmap (that is sequence and timing), and NOT a positioning
 statement (that is how you stand against alternatives for a customer today). The vision/mission boundary is
-the one practitioners get wrong most often. See product-vision_companion.md section 8.
+the one practitioners get wrong most often. See product-vision_companion.md section 8. A positioning
+statement has its own template: positioning-statement.
 
 HOW TO FILL THIS IN
 1. Read the comment under each heading: WHAT it wants, WHY it matters (with a pointer into

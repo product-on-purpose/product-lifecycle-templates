@@ -653,7 +653,7 @@ From `dim1.md`, with lines re-checked:
   which names two bundles; and `:245-252`, the six-row table.
 - `templates/README.md:91-97`, the standing-standards list. It also lacks `business-continuity-plan`, which is filed
   at `:106` under strategy-docs, a defect that predates this bundle.
-- `STATE.md:265`, the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
+- `STATE.md:273`, the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
 - `docs/internal/contracts/standing-standards.md:17-19`, the Members line's `not yet built`. This bookkeeping edit
   stops for the maintainer's read (`docs/internal/tier2-specs.md:6137-6141`).
 - `templates/test-plan/test-plan_guide.md:36`, the routing row, which may gain a link as a build decision

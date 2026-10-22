@@ -53,6 +53,17 @@ people who want every change, release notes are for people who want to know what
   quotations was checked against raw text. Catalog entry 103 now ships lean only, reads its purpose as
   organization-or-program scope rather than organization-wide-only, and carries the alias "organizational
   test strategy" in place of "QA strategy" and "test approach".
+- **`positioning-statement`, the 49th bundle**, the sixth `strategy-docs` member, placed third in the
+  chain, at `classification: foundation`, by [ADR 0076](docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md).
+  It is the internal, present-tense record of how this product stands against a named competitive
+  alternative, for a specific target customer, now: not the vision (future-facing), not messaging built on
+  top of it once it is settled, and not a battlecard or a positioning map. It ships in one size, lean,
+  carrying Purpose and Boundary, The Statement, The Components, Why This Positioning, and When We Revisit
+  It. The research log records 59 sources, and every one of its 297 quotations was checked against raw
+  text. Catalog entry 13 drops the alias "positioning map", shortens "positioning framework (Geoffrey
+  Moore)" to "positioning framework", corrects the named source so it no longer credits Geoffrey Moore
+  (whose "for/who/that" wording no research pass could locate inside *Crossing the Chasm* itself), and
+  sets the owner to "PMM / PM".
 
 ### Changed
 
@@ -88,6 +99,14 @@ people who want every change, release notes are for people who want to know what
   `test-plan_companion.md`'s plan-versus-strategy discussion, one on the reference entry itself, and one in
   `test-plan_guide.md`'s note on where the plan ends and the strategy begins. [ADR 0075](docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md)
   and the `test-strategy` spec carry dated notes saying the same.
+- **The [`strategy-docs`](docs/internal/contracts/strategy-docs.md) contract, [ADR 0076](docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)
+  and the `positioning-statement` spec carry dated corrections.** Three sources do state a review interval
+  after all: April Dunford describes a positioning check-in every six months, Abinanti says to audit the
+  statement every twelve months, and CLIMB says a positioning statement "isn't permanent, but it shouldn't
+  change often." The classification stays `foundation`; the maintainer ruled out `utility` on 2026-10-20.
+  `north-star-metrics` carries dated notes that it now sits fourth in the chain, one step behind
+  `positioning-statement`, between the strategy and the roadmap. `product-vision` carries a dated note on
+  its positioning boundary, plus a link to the new bundle.
 
 ## [0.19.0] - 2026-10-16
 

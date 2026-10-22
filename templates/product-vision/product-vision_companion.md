@@ -277,7 +277,7 @@ Vision"* [[13]](#ref-13).
 notable given that the positioning template is simultaneously the most circulated "vision template"
 (section 2). Drawn from first principles, and labelled as this bundle's own reasoning: a positioning
 statement says how this product stands against alternatives for a specific customer **now**; a vision says
-what future is being created. One is competitive and present-tense, the other aspirational and future-tense.
+what future is being created. One is competitive and present-tense, the other aspirational and future-tense. *(2026-10-20: the positioning-statement build's research found sources that draw this boundary. A Sharebird answer and April Dunford's posts treat the vision and the positioning as two documents, with positioning about the present. One named method nests them instead: the Rational Unified Process puts a "Product Position Statement" subsection inside its Vision document. A positioning statement now has its own bundle, [`positioning-statement`](../positioning-statement/positioning-statement_guide.md), whose research log carries the sources.)*
 
 **Versus company vision.** A matter of scope rather than kind. Product School notes that large multi-product
 companies give different products distinct visions [[20]](#ref-20); in a single-product company the two may

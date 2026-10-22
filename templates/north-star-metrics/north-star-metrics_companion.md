@@ -24,7 +24,7 @@ At a glance:
   Amplitude's two framework documents mentions him. Whether Amplitude invented the practice is not settled by
   anything this research read firsthand. See Origins, below.
 - Where it sits relative to the product strategy and OKRs is contested. This library places it third,
-  between the strategy and the roadmap, and names that placement a POSITION rather than a finding.
+  between the strategy and the roadmap, and names that placement a POSITION rather than a finding. *(2026-10-20: fourth since [ADR 0076](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) placed the positioning statement third; it still sits between the strategy and the roadmap.)*
 
 ## 2. Origins and evolution
 
@@ -249,7 +249,7 @@ north star should reflect the current strategic question" [[11]](#ref-11); "Only
 or product fundamentally shifts" [[10]](#ref-10). This library places the North Star third, between the
 strategy and the roadmap. That placement is inferred from the measures-the-current-strategy camp, not stated
 by any one source as a sequence, and the family contract names it a POSITION rather than a finding
-([`strategy-docs.md`](../../docs/internal/contracts/strategy-docs.md)).
+([`strategy-docs.md`](../../docs/internal/contracts/strategy-docs.md)). *(2026-10-20: fourth since ADR 0076 placed the positioning statement third, between the strategy and the North Star; the reasoning above is unchanged.)*
 
 **One North Star or several.** Amplitude's own rule is one per product leader [[1]](#ref-1)[[21]](#ref-21).
 A reference article and a vendor both carry a single, named exception: "Each product line or distinct
