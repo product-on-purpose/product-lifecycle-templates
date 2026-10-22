@@ -162,6 +162,16 @@ session is in scope through its written record. The admission test above still a
 ADR 0078 also retires a stricter written-document test that two research sweeps had applied without any
 record adopting it. This is a note rather than a correction, because nothing this record stated was false.
 
+## Note (2026-10-22): a fifth question, who writes the document
+
+**This record's rule is unchanged.** [ADR 0080 (a software audience joins the admission
+test)](0080-admission-gains-a-software-audience-check.md) adds one more question. It applies to a
+candidate that already clears the test above: does a named source show a software product, UX or
+technology team writing or using the document. The written-form rule in this record asks whether a
+document exists. So does the one-source rule in
+[ADR 0048 (one named source clears the admission test)](0048-one-named-source-clears-the-admission-test.md).
+ADR 0080 asks who writes the document instead. Neither existing rule changes.
+
 ## More Information
 
 Generalises the admission logic of [ADR 0028 (the format-axis rule)](0028-adopt-a-format-axis.md) from
