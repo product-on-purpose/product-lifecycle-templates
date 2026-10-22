@@ -11,7 +11,7 @@ Newest first.
 ## v0.20.1
 
 **A patch with no new bundle: the problem statement answers to the right names.** `problem-statement` gains
-the alias "point of view statement". It drops "opportunity statement", because the maintainer ruled that a
+the alias "point of view statement". It drops "opportunity statement", because the maintainer ruled that it is a
 different document, and the opportunity statement becomes catalog entry 207.
 
 The release also records what comes next. The design brief is specced as the fifth `discovery-docs` member,
