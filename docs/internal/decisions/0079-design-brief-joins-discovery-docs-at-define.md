@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-22
 decision-makers: [jprisant]
 consulted: [claude]
@@ -29,11 +29,16 @@ consulted: [claude]
   does not decide whether the opportunity statement joins the family.
   [ADR 0069](0069-problem-statement-joins-discovery-docs.md) (problem-statement joins discovery-docs) set a
   two-part condition for a define-pinned family. This record meets the first part and declines the route for now.
-- **Status: proposed 2026-10-22.** This record amends a family contract, so it stops for the maintainer's read
-  before any merge, under
-  [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer). The maintainer ruled on
-  the spec's ten choices on 2026-10-22, taking nine recommendations and choosing two sizes over one. The rulings
-  close the spec section in [`tier2-specs.md`](../tier2-specs.md). They set the spec, and they are not the read.
+- **Status:** proposed 2026-10-22, **accepted 2026-10-22 on the maintainer's delegation**. This record amends a
+  family contract, so it was offered for the maintainer's own read, under
+  [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer). Told that the PR
+  stopped for that read, the maintainer directed a merge on the agent's best judgment. That direction stands in
+  for the read for this PR only, as similar ones did for
+  [ADR 0075](0075-test-strategy-joins-standing-standards-as-a-foundation.md) and
+  [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md). The standing rule is not
+  repealed. **The contract diff was accepted without a read.** The maintainer ruled on the spec's ten choices on
+  2026-10-22, taking nine recommendations and choosing two sizes over one. The rulings close the spec section in
+  [`tier2-specs.md`](../tier2-specs.md).
 
 ## Context and Problem Statement
 
@@ -118,7 +123,8 @@ So the question this record answers is whether the Design Council's concept hand
 
 **Chosen: option 2, by the maintainer's ruling of 2026-10-22.** The spec recommended option 1. The maintainer
 chose two sizes on the ground ADR 0069 recorded for `problem-statement`, which also ships two sizes against its
-sweep's lean-only finding. The contract amendment still stops for the maintainer's read.
+sweep's lean-only finding. The contract amendment was accepted the same day on the maintainer's delegation,
+without a read.
 
 ### Why it fits
 
@@ -238,8 +244,8 @@ contract diff that accompanies this record.
 - **`pairs_with: []`.** No pm-skills skill addresses a design brief, checked against the local pm-skills checkout
   on 2026-10-22.
 - **The bundle stays subject to ADR 0030.** This record removes the family objection only.
-- **The amendment stops for the maintainer's read.** Nothing in this record or its contract diff merges before that
-  read.
+- **The amendment was accepted without the maintainer's read.** A merge on the agent's best judgment stood in for
+  it, for this PR only. A later read that disagrees amends the contract by its own record.
 
 ## More Information
 

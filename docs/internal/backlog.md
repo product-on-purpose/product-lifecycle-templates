@@ -33,7 +33,7 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | Specced 2026-10-22 in two sizes, with ADR 0079 (design-brief joins discovery-docs at define) proposed. It waits for the maintainer's read, then the build |
+| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Candidate; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | Unassigned; labelled `phase:define` | Specced 2026-10-22 in two sizes, with ADR 0079 (design-brief joins discovery-docs at define) accepted the same day on the maintainer's delegation. It waits for the build |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Candidate, opened 2026-10-19; confirmed for `define` by the re-score | P3 | 2 | Unassigned; labelled `phase:define` | An admission sweep that settles whether it is distinct from `problem-statement`, under way since 2026-10-22. Its catalog row, entry 207, landed 2026-10-22 |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
@@ -163,15 +163,16 @@ ADR 0077 keeps in `deliver`.
   The `problem-statement` change for sitting items D6 and D9 landed: "point of view statement" became an alias,
   and the opportunity statement left the alias list to become catalog entry 207. The design brief's admission
   sweep and spec ran the same day. The maintainer answered the spec's ten choices in one sitting, taking nine
-  recommendations and choosing two sizes over one, and ADR 0079 was proposed for the maintainer's read. The
+  recommendations and choosing two sizes over one. ADR 0079 was accepted the same day on the maintainer's
+  delegation. The
   opportunity statement's admission sweep began the same day.
 
 ## 6. What comes next, in order
 
 1. **A small README change for sitting item D8** (the "four literatures" passage).
-2. **The maintainer's read of the design brief's spec (#294), then its build.** The spec and ADR 0079
-   (design-brief joins discovery-docs at define) were written on 2026-10-22, and they amend `discovery-docs`
-   to 0.5.0. The build is a separate run that needs its own go.
+2. **The design brief's build (#294).** The spec and ADR 0079 (design-brief joins discovery-docs at define)
+   were written and accepted on 2026-10-22, and they amend `discovery-docs` to 0.5.0. The build is a separate
+   run that needs its own go.
 3. **An admission sweep for the opportunity statement (#298).** It must settle whether the type is distinct
    from `problem-statement`. Its catalog row, entry 207, is already in place, and its research began on
    2026-10-22.
