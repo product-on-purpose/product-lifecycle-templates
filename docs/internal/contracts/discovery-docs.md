@@ -12,7 +12,9 @@ a project. Every other member declares `discover`.
 ([ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md), assigned 2026-09-27, reopening the
 family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 2026-09-29), `problem-statement`
 ([ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md), assigned 2026-10-11 at
-`phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day).
+`phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day),
+`design-brief` ([ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md), assigned
+2026-10-22 at `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing
@@ -37,8 +39,11 @@ reverse-engineered to fit whatever got built.
 
 ## 1. Membership
 
-A bundle belongs to this family when its document type exists **to decide whether to build something, before
-anyone commits to building it.** Its members answer questions that precede every product decision:
+A bundle belongs to this family when its document type exists **to decide whether to build something, or which
+concept to design, before anyone commits to building it.** *(Widened 2026-10-22 by
+[ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md), which added the clause on which
+concept to design, for a `define` member that hands a chosen concept to designers.)* Its members answer questions
+that precede every product decision:
 
 - a **business case** says whether the investment is worth making, and what it is being compared against;
 - a **user persona** says who we are building for, grounded in research rather than in imagination;
@@ -47,7 +52,10 @@ anyone commits to building it.** Its members answer questions that precede every
   [ADR 0063](../decisions/0063-project-brief-reopens-discovery-docs.md));
 - a **problem statement** says which problem is worth solving, who has it, and what evidence shows it is
   real, before anyone names a solution (added 2026-10-11,
-  [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md)).
+  [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md));
+- a **design brief** hands the chosen problem, and the one concept chosen for design, to the people who will
+  design it, before anyone specifies how it works (added 2026-10-22,
+  [ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md)).
 
 Another candidate, `prototype-brief`, would have said what to build cheaply first, in order to find out
 whether the team is right. It was tested and did not ship: no named source publishes it as a written document
@@ -70,7 +78,9 @@ is made.
 `define` member that hands a chosen concept to the people who will design it may be revised while that design
 work runs, because its sources describe it as a document consulted and updated through the project. It is
 still finished when the design work it hands off is done, and it never becomes a standing instrument revised
-on a cadence. No other member takes this exception.
+on a cadence. `design-brief` is that member (added 2026-10-22,
+[ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md)), and no other member takes this
+exception.
 
 **On `prototype-brief`: tested 2026-08-05 and not admitted** (kept for the reasoning it records). It was a
 **new type**, added by
@@ -149,7 +159,11 @@ than inventing a new company.
   in [`tier2-specs.md`](../tier2-specs.md));
 - the **problem statement** frames the problem that the project brief and the business case later answer,
   dated before both and naming none of the solutions they go on to weigh (added 2026-10-11, ADR 0069; its
-  example is set out in [`tier2-specs.md`](../tier2-specs.md)).
+  example is set out in [`tier2-specs.md`](../tier2-specs.md));
+- the **design brief** hands the Saved Views concept to the people who will design it, dated after the
+  2026-05 Reporting friction study and before the Saved Views PRD that specifies it, and describing nothing
+  the PRD later decides (added 2026-10-22, ADR 0079; its example is set out in
+  [`tier2-specs.md`](../tier2-specs.md)).
 
 `prototype-brief`'s bullet, which would have commissioned a cheap test of an unproven assumption, is removed:
 it was tested and did not ship (ADR 0035), and it never had an example to chain.
@@ -245,3 +259,14 @@ exception, for a `define` member that hands a chosen concept to designers and is
 **No enforcement obligation changed**: check K still gates `["discover", "define"]`, and no built member
 changes phase, since `problem-statement` frames a chosen problem and names no concept, which the new rule still
 admits.
+
+**0.5.0, 2026-10-22, [ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md): a fifth
+member, and the second at `define`.** `design-brief` joins at `phase: define`, in the Design Council's
+concept-handoff sense. Section 2 needed no change, because its phase row already permits the chosen concept and
+the scope, time line and budget of handing it to designers. Section 1's membership sentence gains one clause, for
+a type that decides which concept to design, still before anyone commits to building it. Section 1's member list
+gains a bullet, and its cadence exception names the one member that takes it. Section 4 gains the member's
+shared-scenario bullet, which extends the delivery thread backward from the Saved Views PRD. **No enforcement
+obligation changed**: check K still gates `["discover", "define"]`, and `[lean, full]` is already the default size
+shape. No built member changes phase or family. ADR 0079 records the costs, among them a second phase inversion
+inside the family, since a `define` member may follow the `discover`-phase project brief.

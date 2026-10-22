@@ -12,6 +12,15 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **A spec for `design-brief`, and ADR 0079 (design-brief joins discovery-docs at define), proposed.** The
+  spec admits the Design Council's concept-handoff sense of the design brief at `phase: define`: the chosen
+  problem and one concept chosen for design, handed to the people who will design it, never a
+  specification. It ships in two sizes, by the maintainer's ruling. The `discovery-docs` contract moves to
+  0.5.0, and its membership sentence gains one clause. The amendment waits for the maintainer's read, and
+  no bundle is built yet.
+
 ### Changed
 
 - **The opportunity statement is its own catalog type, entry 207, and the catalog now counts 207 types.**

@@ -52,6 +52,7 @@ design task" rather than "a spec-driven execution".
 | `data-dictionary` | `data-dictionary` | `governance-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#governance-docs-seventh-member-by-amendment-the-data-dictionary-scoped-to-what-a-datasets-fields-mean), with a tense-boundary gap-fill two days later (2026-10-14) reversing part of the maintainer's 2026-10-13 scope reasoning | **Built 2026-10-15**, shipped in `v0.18.0`, lean and full, first in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/data-dictionary_v0.1.0.md) covers the whole build: 8,859,179 weighted, $17.72, 16 agents. Family by [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), accepted 2026-10-15 when the maintainer approved the spec PR's merge and the boundary drawn on subject |
 | `test-strategy` | `test-strategy` | `standing-standards` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-seventh-member-the-test-strategy-for-an-organization-or-program), with a lost admission dimension recovered 2026-10-14 and a scope follow-up 2026-10-15 | **Built 2026-10-20**, shipped in `v0.20.0`. Family and classification (`foundation`) by [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) (test-strategy joins standing-standards as a foundation), accepted 2026-10-19 on the maintainer's delegation, which stood in for the contract read. Scoped to an organization or program, the maintainer's ruling of 2026-10-15, never a portfolio and never the per-project sense `test-plan` already ships. The contract diff was accepted without a read, and the maintainer has not yet confirmed the delegated acceptance |
 | `positioning-statement` | `positioning-statement` | `strategy-docs` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-14](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), with a sitting-decision follow-up on 2026-10-15 | **Built 2026-10-20**, shipped in `v0.20.0`. Family by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted 2026-10-19 on the maintainer's delegation, without a read of the contract diff. It widens the contract's list of questions and places the type third in the chain, between the strategy and the North Star metric. The bundle id matches the catalog id, and the catalog owner becomes `PMM / PM` by the maintainer's ruling of 2026-10-17. The spec's suggested ownership default is the agent's reasoning and was accepted without a read. Admitted on five sources (MIT, HubSpot, eCornell, Yesware, Product Marketing Alliance); Geoffrey Moore is named but not credited with admission |
+| `design-brief` | `design-brief` (entry 208, added at landing) | `discovery-docs` | **Written 2026-10-22**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fifth-member-at-define-the-design-brief-in-the-design-councils-sense), after the 2026-10-16 Define sweeps and the 2026-10-20 re-score | **Not yet.** Family by [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md) (design-brief joins discovery-docs at define), proposed, which stops for the maintainer's read. It builds the Design Council's concept-handoff sense: the chosen problem and one concept chosen for design, handed to the people who will design it, never a specification. It ships in two sizes, lean and full, by the maintainer's ruling of 2026-10-22. The Shape Up pitch stays out at medium-low confidence, on a line the spec states. The catalog row is entry 208, not the 207 that issue #294 (bundle: design-brief) still names, because PR #305 (the opportunity statement becomes catalog entry 207) took 207 |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -79,7 +80,7 @@ paragraph that limits what it admits. The data dictionary's `governance-docs` am
 scope, the meaning of stored fields, which reverses the maintainer's first answer. Neither is specced yet. Their
 records are numbered provisionally as ADR 0072 and ADR 0073, in the order they are drafted. *(2026-10-15: both are specced below, by [ADR 0072](decisions/0072-use-case-specification-joins-delivery-docs.md) (use-case-specification joins delivery-docs) and [ADR 0073](decisions/0073-data-dictionary-joins-governance-docs-as-a-seventh-member.md) (data-dictionary joins governance-docs as a seventh member), each accepted the same day when the maintainer approved the spec PR's merge. ADR 0073 keeps the narrow scope but draws its boundary on subject rather than tense, because research on 2026-10-14 found the tense line contested; the record states the change.)* *(2026-10-15: `data-dictionary` built; its progress row above carries the date.)* *(2026-10-15: `use-case-specification` built; its progress row above carries the date.)*
 
-**2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`. *(2026-10-20: the Define re-score that [ADR 0077](decisions/0077-define-ends-with-a-chosen-concept.md) (define ends with a chosen concept) and [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md) (maps, canvases and session records are templatable through their written form) called for re-tested these four and every candidate of the two 2026-10-16 sweeps, 67 in all. The lean canvas, the opportunity solution tree and the Shape Up pitch still stay out, on grounds those two records did not retire. Two candidates return for an admission sweep at `define`: the design brief and the opportunity statement. See [`backlog.md`](backlog.md) section 4.)*
+**2026-10-11: the Define admission sweep, four candidates, one spec.** On 2026-10-10 the maintainer chose the problem-framing reading of the `define` phase, now recorded as [ADR 0068 (the define phase means problem framing)](decisions/0068-define-means-problem-framing.md). Two research workflows on 2026-10-11 tested the opportunity solution tree, the lean canvas, the Shape Up pitch and a problem statement against ADR 0030's admission test and against that reading, with an open search for other problem-framing documents. They read 75 addresses, and the main loop checked 311 returned quotations against raw page text, of which 310 passed. **Only the problem statement is a problem-framing document that clears admission.** The other three each carry a solution, and the opportunity solution tree also has no source that publishes it as a written document. The open search found no further type. The maintainer ruled the same day to build the problem statement with two sizes and to admit it by amending `discovery-docs`, by [ADR 0069 (problem-statement joins discovery-docs)](decisions/0069-problem-statement-joins-discovery-docs.md). The three other catalog rows stay `candidate`. *(2026-10-20: the Define re-score that [ADR 0077](decisions/0077-define-ends-with-a-chosen-concept.md) (define ends with a chosen concept) and [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md) (maps, canvases and session records are templatable through their written form) called for re-tested these four and every candidate of the two 2026-10-16 sweeps, 67 in all. The lean canvas, the opportunity solution tree and the Shape Up pitch still stay out, on grounds those two records did not retire. Two candidates return for an admission sweep at `define`: the design brief and the opportunity statement. See [`backlog.md`](backlog.md) section 4.)* *(2026-10-22: the design brief is specced [below](#discovery-docs-fifth-member-at-define-the-design-brief-in-the-design-councils-sense), by [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md) (design-brief joins discovery-docs at define), proposed, in the Design Council's concept-handoff sense.)*
 
 > **Note added 2026-10-17: the reading this sweep tested against is superseded.** Two further Define sweeps on 2026-10-16 (gitignored working files) also found no second bundle, and the maintainer then ruled a wider reading: [ADR 0077 (the define phase ends with a chosen concept)](decisions/0077-define-ends-with-a-chosen-concept.md) supersedes ADR 0068, so a `define` document may name one concept chosen for design but never a specification. The verdicts above that rest on "carries a solution" (the lean canvas, the opportunity solution tree and the Shape Up pitch) are therefore open again, not reversed. A re-score of the three sweeps' candidates under ADR 0077 decides which return for admission; each must still clear ADR 0030's admission test, and the opportunity solution tree's separate failure, no source publishing it as a written document, is untouched by the new reading.
 
@@ -1604,7 +1605,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1357-1370`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1358-1371`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1847,7 +1848,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1494-1496` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1495-1497` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1876,7 +1877,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:540-543` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:541-544` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1940,7 +1941,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:502-517` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:503-518` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2505,7 +2506,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1495-1497`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1496-1498`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -6525,3 +6526,434 @@ builds in the whole library are `definition-of-ready` ($11.69, 15 agents, 3 runs
 two-size `strategy-docs` siblings on research depth (five admitting sources plus a follow-up, against one
 publisher for `north-star-metrics`); this spec does not forecast a dollar figure from that comparison, only
 names the four measured points a maintainer can bound it between.
+
+### discovery-docs (fifth member, at `define`): the design brief, in the Design Council's sense
+
+**`design-brief`** - `discovery-docs`, **`phase: define`**, sizes **`[lean, full]`**, default `lean`, methodology
+**`methodology-agnostic`**, catalog **entry 208**, no aliases. The maintainer ruled on the spec's ten choices on
+2026-10-22, and the rulings close this section. The family decision is [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md)
+(design-brief joins discovery-docs at define), and its status is **proposed**. Its contract edits stop for the
+maintainer's read before any merge.
+
+#### The recommendation, and how sure it is
+
+**Build the design brief as the fifth `discovery-docs` member, at `phase: define`, in the Design Council's
+concept-handoff sense.** Confidence: medium.
+
+The document converges on one chosen problem and names the one concept chosen for design. It hands both to the
+people who will design it. It never says how that concept works, it decides no investment, and it authorizes no
+project. The `discovery-docs` 0.4.0 contract already permits that content, in its section 2 phase row and its
+section 1 cadence exception. [ADR 0077](decisions/0077-define-ends-with-a-chosen-concept.md) (define ends with a
+chosen concept) wrote both clauses on 2026-10-17.
+
+**Sweep 3's verdict no longer governs.** The third Define sweep's digest is dated 2026-10-16. It found a narrow
+design brief too thin to build beside `problem-statement`. It tested against ADR 0068 (the define phase means
+problem framing), whose rule was that a `define` document names no solution. ADR 0077 superseded that rule the next day, so a chosen concept became legitimate
+`define` content. The 2026-10-20 Define re-score then returned the type for this sweep, in the Design Council's
+sense, at medium confidence.
+
+**What holds the confidence at medium.** The type clears admission easily. No single source, however, models the
+narrow shape this library would build, and D2 (this sweep's second research file) found that at high confidence.
+The bundle's section set is therefore the library's own composition from several sources, labelled a POSITION.
+The maintainer took nine of the ten recommendations on 2026-10-22. On sizes, the maintainer chose two over one.
+
+#### Demand: an issue, a re-score, and a sibling that routes the type away
+
+- Issue #294 (bundle: design-brief) has carried the candidate since 2026-10-16. It is labelled `phase:define`.
+- ADR 0077 named the design brief the first Define spec if the re-score confirmed it. The re-score did.
+- `project-brief`'s guide (row 21) routes a reader who is briefing a designer to a creative or design brief.
+  Its templates (lean line 39, full line 43) and its companion's section 8 also say a project brief is not a
+  design brief. No bundle answers that routing today.
+- pm-skills ships no design-brief skill. That is no reason either way, because this library never assumes
+  pm-skills is installed.
+
+#### Admission: the type clears on several named sources, and the sense is the library's composition
+
+The main loop checked 53 returned web quotations against raw page text on 2026-10-22. Fifty-one passed, directly
+or by a tokenization, Wayback or carried check. Two stayed unverified and are not used. Five more quotations are
+this repository's own text, read directly. Every quotation below is one of the 51 or one of the five.
+
+| Source | What it says | Sense | Weight |
+|---|---|---|---|
+| Design Council, *History of the Double Diamond* | "The result is to create a design brief which clearly defines the challenge based on these insights." | Concept handoff; contents unstated | **Placement only.** It is the one primary source that puts the brief at Define. It was raw-checked in sweeps 2 and 3, and again here |
+| Wyn M Jones and Hedda Haugen Askland, *Design Briefs: Is There a Standard?* (Design Society, 2012) | A brief exists "to help the designer to understand the problem by defining the objectives and parameters of the project". The paper also finds "there is no single or correct format for a design brief" | Both | It **admits on its own** under ADR 0048 (one named source clears the admission test). It also says, "A written design brief will clearly articulate the product requirements to all parties involved in a project." That sentence leans toward a specification |
+| Peter L. Phillips, *Creating the Perfect Design Brief* (Allworth Press with the Design Management Institute, 2004), checked through Open Library | "A well-written design brief is a written agreement, or contract, between the parties"; "The design brief is also a project-tracking tool." | Commissioning | It **admits on its own**, and it is the genre's main book. Its contract sense is the record the `define` rule bars |
+| Wikipedia, *Design brief* | "A design brief is a document for a design project developed by a designer in consultation with a client."; "They usually change over time and are adjusted as the project scope evolves." | Commissioning | It is a reference source, and it supports the cadence exception |
+| Kuse, *How to Write a Solid Design Brief: Workflows & Real Examples* | A brief "defines the problem a design needs to solve, the context in which it exists, and the constraints that shape the solution". It lists contents "including problem statement, goals, target users, constraints, and deliverables" | Concept handoff, with deliverables | It is a vendor source, and the closest single description of the narrow sense |
+| Heap, *Save Time and Get Aligned With a Design Brief* | "The goal of a Design Brief is to describe, holistically and at a high level, your proposed design solution(s)". Heap separates it from its Problem Brief: "The Problem Brief describes the problem to be solved and the reasons to prioritize it" | Solution | It is a practitioner source with a downloadable written template. Its goal sentence fits a concept. D1 reads its sections as reaching into how the solution works |
+| Y Combinator, *Practical Design: Design Brief* | "Good design briefs provide a clear context for a product."; "Have you done any user observations? If yes, will you be able to share the process and the findings?" | Both | It is a practitioner source. D1 reads it as a four-section question tool that ends with how to engage a designer |
+| Matej Kaninsky, *The power of a UX project brief (template included)* (UX Collective) | It puts "your initial assumptions, hard facts, goals, and other relevant information into a written form". It is written "before any research and design activities even start" | Both | It is a written template under another name. It is a kickoff brief written before research, so it is a neighbour, not this document |
+| Noric Dilanchian, *Use design briefs to shape your projects* (Dilanchian Lawyers & Consultants, 2007) | "A design brief comes early in a process which may lead to deal making, and then onwards towards contracting" | Both | It is a practitioner source. It places the brief before the deal and the contract that commission design work |
+| Figma, *How to write a creative brief: five steps for designers* | "A design brief, on the other hand, builds on this foundation with specific technical and visual requirements." | Specification | It is a vendor source. It treats the brief as a visual and technical specification |
+| Design Commission for Wales, *Introduction to Brief Writing* (2025) | "The project brief should be the central reference document used in the appointment of a consultant team." | Commissioning | It is built-environment corroboration only. Its running text calls the document a project brief |
+
+**Admission under [ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md) (one named source clears
+the admission test): it passes, with high confidence.** Jones and Askland, Phillips and Wikipedia each define the
+design brief as a written document. Heap and Y Combinator each publish a written template under that name.
+Kaninsky publishes one under another name. ADR 0078 (written forms of maps, canvases and session records) is not
+needed, because no source here is a board.
+
+**The narrow sense is assembled, not found: high confidence.** D2 found no source that confines a brief to a
+challenge, a chosen concept and a handoff. Every source that frames the brief as a Define output adds content
+beyond problem framing. Every source that names a budget, a time line or deliverables scopes them to the whole
+project or design engagement. So the bundle composes its sections from several sources and labels the composition
+the library's POSITION. ADR 0048 asked `spike-report` to teach its dispute rather than resolve it. This bundle
+carries the same duty for its term's senses.
+
+**Two sources may not be used.** Dani Nordin's article on UX Collective returned HTTP 403, and the Wayback Machine
+returned HTTP 429 on three retries. Neither of its two quotations may be cited, and experience brief may not
+become an alias. nibusinessinfo.co.uk returned HTTP 403 to sweep 3 and was not read again in this sweep.
+
+**One attributed phrase has no source.** The re-score's first scorer attributes to ADR 0063 (project-brief reopens
+discovery-docs) a phrase saying the project brief carries no shaped solution. That phrase appears nowhere in the
+repository. This spec does not repeat it, and it states the project-brief boundary from `project-brief`'s own
+template instead.
+
+#### Which sense this bundle builds, and what it tells a reader who wanted another
+
+The sources read use the term in four different senses. The count is this spec's own assembly: D1 found three
+senses among technology sources at high confidence, and the design world's concept handoff is the fourth.
+
+| Sense | Who uses it | Where it lives in this library |
+|---|---|---|
+| **Concept handoff.** The chosen challenge and one chosen concept, handed to the people who will design | The Design Council, for placement; Kuse and Jones and Askland, in part | **This bundle** |
+| **Commissioning agreement.** Scope, time line, budget and deliverables, agreed between a client and a designer | Phillips, Wikipedia and the Design Commission for Wales; Dilanchian, in part | It is not built. The `define` rule bars the record that authorizes a project, and this sweep tested no other family for it |
+| **Solution brief.** A proposed solution's journeys, surfaces and edge cases | Heap, in D1's reading of its sections | It is not built. `solution-brief` was retired on 2026-09-20 with no catalog entry, and it re-enters only through a research pass. It would sit at `develop` |
+| **Specification.** Technical and visual requirements | Figma | It is not built as a brief. Its content would sit at `develop` or `deliver`, never at `define` |
+
+**Phillips is bounded, not imported.** His three carried quotations are real. The re-score digest traced an
+apparent failure to Open Library's highlight markup. His "written agreement, or contract, between the parties" is
+the commissioning record the rule bars. He also names, among the brief's most critical elements, "the sections
+dealing with the initial design". Sweep 3's notes complete that phrase as the initial design strategy. A design
+strategy that says how the concept works belongs to `develop`, under ADR 0077's table. `backlog.md` records that
+this reading is contested, because design-management usage can mean how design serves business objectives. The
+bundle keeps only the concept, at the level of the kind of answer.
+
+**The guide routes a reader who wanted another sense.** A team commissioning an outside designer or agency needs
+Phillips's agreement, which this library does not build. A team describing a chosen solution's journeys and edge
+cases has moved past `define`, and this library builds no solution brief. A team writing visual requirements is
+specifying. Each case is a row in the guide's
+when-not-to-use table.
+
+#### Phase: `define`, under the 0.4.0 rule as written
+
+The contract's section 2 phase row lets a `define` member name the candidate concepts weighed and "the one concept
+chosen for design". It also permits "the scope, time line and budget of handing that concept to the people who will
+design it". It holds every `define` member to one bar: "it decides no investment, and it is not the record that
+authorizes a project". A design brief meets each clause.
+
+ADR 0077 draws the working line: "A concept names the kind of answer the team will pursue. A specification says how
+that answer works or what it must do." The brief carries the first and never the second.
+
+The cadence exception covers the brief's revision while design runs. Phillips writes that "The design brief is also
+a project-tracking tool." Wikipedia says briefs "usually change over time and are adjusted as the project scope
+evolves". The exception bounds that revision: the brief is finished when the design work it hands off is done.
+
+Check K gates the value and cannot judge it. Whether a filled brief stays at concept level is a review obligation
+against section 2. Confidence: high that the rule admits the document as specced. Confidence is medium that filled
+briefs will stay at concept level, which the guide's TRAP lines must carry.
+
+#### The family: `discovery-docs`, by a small amendment (ADR 0079)
+
+- **Section 2 needs no change.** The phase row already permits the content, and `[lean, full]` is the sizes
+  row's default shape.
+- **Section 1's membership sentence does not describe the job cleanly.** It admits a type that exists to decide
+  whether to build something, before anyone commits to building it. A design brief carries a concept already
+  chosen and hands it on. ADR 0077 added a cadence exception for this document and left that sentence alone.
+- **Recommended: widen the sentence by one clause.** Confidence: medium. The new words admit a type that decides
+  which concept to design, still before anyone commits to building it. This follows the smallest-honest-widening
+  standard that [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)
+  (positioning-statement joins strategy-docs) applied. The alternative argues that the sentence already fits,
+  because design is not building. Confidence in that reading: medium-low.
+- **Section 1 also gains a member bullet**, and its cadence exception names `design-brief` as the one member that
+  takes it. Section 4 gains a shared-scenario bullet. The change note records version 0.5.0.
+- **Why not a define-pinned family.** [ADR 0069](decisions/0069-problem-statement-joins-discovery-docs.md)
+  (problem-statement joins discovery-docs) named the condition for one. A second problem-framing candidate must
+  clear admission, and the maintainer must want Define bundles on a shelf of their own. This candidate meets the
+  first half, and the second half is the maintainer's call. A new family would hold one built member and one spec. Moving
+  `problem-statement` would also reopen a built bundle. ADR 0070 (north-star-metrics joins strategy-docs) and
+  ADR 0076 each declined a family that no second built member tests. This spec declines the route for now, at
+  medium confidence.
+
+#### Where it sits in the chain (POSITION)
+
+**A design brief follows the problem statement and precedes any document that specifies how the solution works or
+what it must do.** That order is the library's POSITION, the label ADR 0070 and ADR 0076 gave their own chain
+placements. Two sources support part of it.
+
+- Heap pairs the two documents: "the team goes over both Problem and Design Brief with leadership to get input."
+  Heap calls the first a Problem Brief, and problem brief is already an alias of `problem-statement`.
+- The Eleven Lessons report, quoted in ADR 0077, says "the Define stage would end with final sign-off of the
+  concept".
+
+**Dilanchian's early placement, reconciled.** Dilanchian says a design brief "comes early in a process which may
+lead to deal making, and then onwards towards contracting". Dilanchian measures early against commissioning deals
+and contracts, so a brief may follow a problem statement and a `discover`-phase project brief yet come early. A
+`define` member that follows a `discover` member repeats the inversion ADR 0069 already accepted.
+
+**The business case is left unordered.** None of this sweep's or sweep 3's research files orders a design brief
+against a business case. The bundle therefore fixes no order between them, at medium-low confidence. A brief
+written before a case hands on a concept the case may weigh as one option. A brief written after a funded case
+strains the membership sentence, and the guide says so.
+
+#### The line against the Shape Up pitch
+
+The re-score kept Basecamp's pitch out at medium-low confidence. Its score row asked this sweep to resolve the
+pitch's collision with the design brief. Catalog entry 45 (Shape Up Pitch) stays a separate, unbuilt candidate. The
+line has two parts, and both are the library's POSITION. Confidence that the line can be applied in review: medium.
+
+1. **Altitude.** A design brief names its concept at the level of the kind of answer, as ADR 0077 puts it. A pitch
+   arrives shaped. Basecamp writes, "A problem without a solution is unshaped work." Its rabbit holes are "Details
+   about the solution worth calling out to avoid problems". Detail about how the solution works belongs to
+   `develop`.
+2. **The act.** A design brief hands a concept to the people who will design it, and it does not itself commit the
+   bet. A pitch exists for the bet: "The purpose of the pitch is to present a good potential bet." The re-score
+   digest notes that the betting table's decision commits a team's cycle. That sits close to the investment
+   decision the rule excludes.
+
+**Why the exclusion stays at medium-low.** Basecamp's no-gos are "Anything specifically excluded from the concept",
+so Basecamp calls shaped work a concept too. The pitch's appetite also reads fairly as the handoff budget the
+contract permits. The maintainer may reopen the pitch as its own `define` candidate. If the maintainer does, the
+pitch's spec must state this boundary from its own side.
+
+**The guide's message to a Shape Up team.** A document that resolves rabbit holes and goes to a betting table is a
+pitch, and this library does not build one.
+
+#### Distinctness from `problem-statement`
+
+**What is distinct: the chosen concept, with the candidates weighed, and the handoff to designers.** Confidence:
+medium.
+
+- **The chosen concept is new territory.** `problem-statement`'s companion says plainly, "This document names no
+  solution". No built `discovery-docs` member names a concept chosen for design.
+- **The handoff is new territory.** `problem-statement`'s Decision This Informs names a decider and a next document.
+  It names no reader who will design from it.
+- **Design constraints may be distinct, at low confidence.** `problem-statement` routes limits that bound a
+  solution, such as a budget, a deadline or a regulation, to `project-brief`. A section on limits to the design work
+  itself would duplicate neither bundle. The kinds of limit, though, come from nibusinessinfo.co.uk, which sweep 3
+  could not read. Kuse mentions "the constraints that shape the solution", and Heap mentions "the constraints within
+  which it exists". The maintainer kept this section on 2026-10-22, in the full size, at low confidence.
+- **Success criteria are not distinct.** `problem-statement`'s full size already carries How We Will Know It Is
+  Solved. The brief's Challenge section points to those measures rather than restating them.
+- **Users and evidence overlap.** `problem-statement` carries Who Is Affected and Evidence. The brief carries a
+  short summary for a different reader, the designers, with a pointer back. That choice is the library's POSITION.
+
+#### Boundaries with each named neighbour
+
+- **Not `problem-statement`.** The statement chooses the problem. The brief carries that choice to design, with a
+  concept. A team may write a brief with no statement, and its Challenge section then frames the problem in brief.
+- **Not `project-brief`.** A project brief asks for authority to start finding out whether and how to proceed,
+  before anyone commits to building anything (`project-brief_template-lean.md:32-33`). The spec for its example
+  forbids naming the option the business case later chose. A design brief names the chosen concept and asks for no authority.
+- **Not `business-case`.** A business case decides whether an investment is worth making, against alternatives
+  that include doing nothing. A design brief decides no investment. Its candidates are concepts weighed for design,
+  with no costs and no benefits. Where both exist, the concept may enter the case as one option (POSITION).
+- **Not `product-vision`.** No source read contrasts the two directly, so D2 rates this boundary low. It is
+  inferred: a vision is a standing, whole-product document. A brief is finished when the design work it hands off
+  is done.
+- **Not the `prd`.** A PRD states what the solution must do in testable detail, which ADR 0077 places in
+  `deliver`. uxmagic.ai scopes a design brief to a "Screen or flow" and "One design task", against a PRD's wider
+  scope. That source uses the solution sense, so it supports only the order. The brief precedes the PRD and
+  carries no requirements.
+- **Not `trade-study` or another `develop` bundle.** ADR 0077's table puts comparisons between designed
+  alternatives in `develop`. A brief weighs candidate concepts at concept level only.
+- **Not the Shape Up pitch (catalog entry 45).** See the section above.
+- **Not a creative brief.** Figma separates the two: "In many design workflows, the creative brief informs the
+  design brief, ensuring visual decisions support broader project goals." No bundle or catalog row exists for a
+  creative brief.
+- **Not a Design Sprint brief.** [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md)
+  (prototype-brief fails the admission test) found that Google Ventures' Sprint Brief scopes a whole five-day
+  sprint. pm-skills' `tool-design-sprint-brief` is a pre-sprint document of that kind.
+
+#### Sizes: two, by the maintainer's ruling
+
+**Ruled 2026-10-22: two sizes, `[lean, full]`, with `lean` the default.** The maintainer chose this over the
+spec's recommendation of one size, which is kept below as the record of what was argued. The ground matches
+ADR 0069's: the maintainer ruled two sizes for `problem-statement` against that sweep's lean-only finding.
+
+- **Lean** carries four sections: The Challenge, Who It Is For and What We Learned, The Chosen Concept, and The
+  Handoff.
+- **Full** adds three: Constraints on the Design, Open Questions for Design, and The Handoff's Scope, Time Line
+  and Budget. The lean sections keep their names and order inside the full variant, as the contract's nesting
+  rule in section 3 requires.
+- **The full-only sections rest on the library's construction more than the lean ones do.** Each carries its
+  source or the POSITION label in the section table below, and the companion must say so.
+- **`default_size: lean`**, as in `problem-statement` and `project-brief`. The lean variant fits a concept handed
+  to a team's own designers. The full variant fits a handoff to a separate design team, or one that must set
+  limits, open questions, or a time and budget for the design work. That guidance is the library's judgment.
+
+**The recommendation the maintainer overruled, as the spec argued it: a single size, `[lean]`.** Confidence:
+medium.
+
+- No source splits a short brief from a long one (D2, medium confidence). Sources scale one brief by the size of
+  the organization or the project.
+- Dilanchian contrasts Phillips's corporate briefs with small-business templates that are "generally much shorter,
+  simpler and focused on specific needs". That is scaling, not two sizes of one template.
+- The long form the sources describe is the commissioning agreement, which the `define` rule bars.
+- The slice the contract does permit, the handoff's own scope, time line and budget, appears in no source at that
+  scope (D2, high confidence). A full size built on it would rest on the library's construction.
+- `positioning-statement` shipped in a single size on similar evidence, by the maintainer's ruling of 2026-10-15.
+
+**The alternative is lean plus full.** The full variant would add Constraints on the Design, Open Questions for
+Design, and a section on the handoff's scope, time line and budget. The contract permits all three. The precedent
+cuts both ways: the maintainer ruled two sizes for `problem-statement` against that sweep's lean-only finding
+(ADR 0069). Under two sizes, every full-only section must cite a source or carry the POSITION label.
+
+**What would change the recommendation.** A source that publishes a short and a long concept-handoff brief as one
+type would. So would the maintainer's preference for two sizes.
+
+#### Section design (proposed, for the build's research to test)
+
+| Section | What it carries | Sources | Confidence |
+|---|---|---|---|
+| **The Challenge** | It restates the chosen problem for the people who will design. It says what a good outcome would change, and it points to a problem statement where one exists | The Design Council's brief "clearly defines the challenge"; Kuse's brief "defines the problem a design needs to solve, the context in which it exists"; Jones and Askland's brief exists "to help the designer to understand the problem" | High |
+| **Who It Is For and What We Learned** | It summarizes the users the design serves and the research insights the challenge rests on | Kuse lists "target users"; the Design Council's brief is "based on these insights"; Y Combinator asks "Have you done any user observations?" | Medium-high |
+| **The Chosen Concept** | It lists the candidate concepts weighed, at concept level. It names the one chosen and why, and what that concept deliberately leaves out | The contract permits it. Heap describes a solution "holistically and at a high level". The Eleven Lessons report ends Define with "final sign-off of the concept". No source publishes a candidates list as a brief section, so that part is POSITION | Medium on the concept; low on the candidates list |
+| **Constraints on the Design** *(full only)* | It names limits the design work must respect that a project brief would not carry | Kuse's "the constraints that shape the solution"; Heap's "the constraints within which it exists". The kinds of limit rest on an unread source | Low |
+| **Open Questions for Design** *(full only)* | It says what the designers must find out, and what is assumed until they do | Heap's design-brief template lists Open Questions in D1's reading, which was not raw-checked | Medium-low |
+| **The Handoff** | It names who will design from the brief and what they receive. It records who approved design to begin, and when. It says how the brief stays current while design runs, and which document takes over. The PRD takes over once the designed concept is specified, and that is the library's POSITION. No `develop` bundle is named, because the designers' own output, such as wireframes and prototypes, is not templated here | Kaninsky's brief aims "to get designers, product managers and software engineers on the same page". Phillips calls the brief "a project-tracking tool" | Medium |
+| **The Handoff's Scope, Time Line and Budget** *(full only)* | It states the scope of the design work handed off, when that work should finish, and any budget already set for it. It holds no project budget, no funding request and no commissioning terms | The contract permits "the scope, time line and budget of handing that concept to the people who will design it". No source scopes a time line or a budget to the handoff alone, so the section is the library's POSITION | Low |
+
+**Lean holds the four rows with no size label. Full holds all seven, in the table's order.**
+
+**What stays out at any size.** How the concept works stays out, including a design strategy in that sense. So do
+screens, flows and requirements. A commissioning agreement, a whole-project budget and an agency selection stay out. An investment
+decision, a funding request and the record that authorizes a project stay out. Figma's visual and technical
+requirements stay out too.
+
+**Quality rules go to the guide**, under
+[decision procedure 12](decision-procedures.md#12-a-property-or-section-is-proposed-for-a-template). The
+concept-versus-specification line and the pitch line become TRAP lines and rubric rows.
+
+#### Metadata
+
+| Field | Value | Why |
+|---|---|---|
+| `family` | `discovery-docs` | ADR 0079 |
+| `phase` | `define` | Contract 0.4.0 section 2 permits it, as ADR 0077 wrote it |
+| `sizes_available` | `[lean, full]` | The maintainer's ruling of 2026-10-22. It is the contract's default size shape |
+| `default_size` | `lean` | As in `problem-statement` and `project-brief`, the family's other define-adjacent members with two sizes. This is judgment |
+| `status` | `beta` | Every bundle starts at `beta` |
+| `methodology` | `methodology-agnostic` | The sources span design management, design-council practice, product practice and UX practice. One value would misdescribe at least two. This is judgment |
+| `pairs_with` | `[]` | The check is below |
+| `related_templates` | `[problem-statement, project-brief, business-case, prd]`, inline | The document before it, two neighbours it must be told apart from, and the specification after it. Inline, because check I drops the first entry of a block list. This is judgment |
+| `aliases` | none | The aliases are argued below |
+
+#### Aliases
+
+**Recommended: none.** Confidence: medium. No raw-checked source names the end-of-Define concept handoff under
+another name.
+
+- **UX project brief**, Kaninsky's name, is the nearest sourced name. Its own text places the brief "before any
+  research and design activities even start", so it names a kickoff brief. The maintainer chose not to add it
+  on 2026-10-22.
+- **Experience brief**, Nordin's name, is unverified and may not become an alias.
+- **Problem brief** is already `problem-statement`'s alias, from Heap. **Pitch** is already an alias of catalog
+  entry 45.
+
+The companion carries the four senses, so a reader who searched for another sense learns where it lives.
+
+#### The catalog row the build PR adds
+
+The row is **entry 208**. It goes at the end of `atlas/catalog-data.json`, after entry 207, the opportunity
+statement. PR #305 (the opportunity statement becomes catalog entry 207) added entry 207 on 2026-10-22. The row
+lands with the build PR, as entry 206 landed with `problem-statement`'s build in PR #271. In
+`docs/internal/catalog.md`, entry 208 follows entry 207 at the end of Group 3, where entries 206 and 207 already
+sit. The catalog count moves from 207 to 208. The JSON, the pipe row and a field-by-field note on which values are
+sourced are in the gitignored working file `_local/research/2026-10-22_design-brief-spec/catalog-row.md`.
+
+#### `pairs_with`: checked, empty
+
+The local pm-skills checkout's skills folder was read on 2026-10-22. No skill addresses a design brief.
+`develop-solution-brief` sits at `develop` and describes a proposed solution approach, its key decisions and its
+trade-offs, so it is a boundary. `tool-design-sprint-brief` is a pre-sprint brief. `tools/known-skills.txt` needs no
+change.
+
+#### Risks for the build and the review
+
+1. **Invented structure is the main risk.** The narrow shape is the library's composition. Every section must cite
+   a source the build reads, or carry the POSITION label in the companion and the guide. A lens that finds a
+   section presented as sourced without a logged source files it as blocking.
+2. **The concept line will be crossed in GOOD text and in the example.** A sentence about what the system proposes
+   or what the user clicks is how the concept works. The review must read every GOOD line against ADR 0077's table.
+3. **Heap is a collision, not a structural source.** Cite its goal sentence and its Problem Brief pairing only. D1's
+   list of its section names is the research agent's reading, not a quotation.
+4. **Phillips must be quoted only through the three carried sentences.** The completion of his initial-design
+   phrase exists only in sweep 3's notes, and the companion may paraphrase it, labelled as such.
+5. **Nordin's article is unverified.** Nothing from it may be quoted, and experience brief is not an alias.
+6. **The re-score's unsourced ADR 0063 phrase must not travel.** State the project-brief boundary from that bundle's
+   own template.
+7. **The templates stage has reused the example's scenario in GOOD and WEAK text before.** Before the review
+   closes, grep both template and guide for the example's nouns: Saved Views, Recurring Analyst, Priya Nair,
+   friction study and Team Lead.
+8. **The pitch line must appear in the guide**, as a when-not-to-use row and a TRAP, not only in the companion.
+
+#### What landing this bundle closes elsewhere
+
+1. **The contract's Members line** changes from not yet built to the build date.
+2. **`project-brief` gains a dated note, not a rewrite.** Its guide's row 21 and its two templates, at lean line 39 and full
+   line 43, route a design brief away. So do its companion's section 8 and its history's line 32. The companion defines the design brief in Wikipedia's commissioning sense. The note says that
+   the library now builds the concept-handoff sense as `design-brief`, and that the commissioning brief remains
+   unbuilt.
+3. **`README.md`'s `discovery-docs` section** (heading at line 227) says four bundles. It becomes five, and the
+   members sentence gains which concept goes to design.
+4. **The catalog row**, and the catalog count from 207 to 208 in `catalog.md`'s TL;DR.
+5. **Every bundle count moves from 49 to 50, and the phase axis from 28 to 29.** `define` then holds two bundles.
+   `tools/check-counts.py` gates the markers. The hard-coded counts in the section and MCP-server tests, and the
+   prose counts in `AGENTS.md` and `README.md`, need a sweep by hand.
+6. **Issue #294.** Its body names entry 207 and describes a brief written before any solution is chosen. Both
+   predate PR #305 and ADR 0077. Its family label moves from unassigned to `discovery-docs`.
+7. **`docs/internal/backlog.md`**, sections 2, 4 and 6, and **this page's Progress table**.
+8. **The first empty alias list in the catalog.** `tools/meta.schema.json` permits empty aliases. The build must
+   still check that the atlas and every catalog reader accept `[]` and the (none) cell.
+9. **No change** to `problem-statement`, `business-case`, `tools/known-skills.txt`, `atlas/state-overrides.json` or
+   check K. ADR 0076 set the precedent that existing members are not swept for a reciprocal mention.
+
+#### The example: Saved Views, by the maintainer's ruling
+
+**Recommended: a design brief for Saved Views, the Acme feature the delivery thread already specifies.**
+Confidence: medium. Priya Nair, PM, Reporting, would write it. It would be dated after the 2026-05 Reporting
+friction study and before the Saved Views PRD of 2026-06-12. A date of 2026-06-01 fits. It hands the Saved Views
+concept to the people who will design it, and the PRD later specifies that concept.
+
+**Facts it may read, all of them Acme's own and older than the brief.** They come from `prd_example.md`, lines
+34-48, 57-61 and 65-68. They include the FY26 Time to Insight goal and the friction study's finding about
+re-filtering. They include the study's illustrative interview counts and the two earlier deferrals. They include
+per-user preferences storage shipping in Q1. They name the Recurring Analyst as the primary user and the Team Lead
+as the secondary user. The PRD's three non-goals become what the concept leaves out. The persona comes from
+`user-persona_example.md`.
+
+**What it must not cite or contain.**
+
+1. **No document of the Saved Views delivery thread cited as existing.** The PRD, epic, user stories, acceptance
+   criteria, design document and test plan are each dated 2026-06-12 or later.
+2. **No description of how the concept works.** The PRD's Views control and its menu are the design's output, not
+   the brief's input.
+3. **No prototype cited as existing.** The PRD cites one on 2026-06-12, and no sibling dates its creation.
+4. **No requirement IDs and no performance targets.** Those are `deliver` content.
+5. **No Reporting Platform Modernization program**, unless the build finds a sibling that dates it before the brief.
+
+**The alternative, which the maintainer did not choose, was a Question-First Entry brief.** It would hand that concept to designers after the business
+case recommended it on 2026-01-20. The product strategy of 2026-01-28 already names the design capacity question-first
+entry needs. But that brief would postdate a funding request, which strains the membership sentence. It would also
+be the family's first example dated after the decision it relates to.
+
+#### The maintainer's rulings, 2026-10-22
+
+The maintainer answered all ten choices in one sitting on 2026-10-22. Each choice's options, recommendation and
+confidence are in the gitignored working file `_local/research/2026-10-22_design-brief-spec/maintainer-options.md`.
+
+1. **The name:** keep `design-brief`, as recommended.
+2. **The aliases:** none, as recommended.
+3. **The sizes:** lean and full. This overruled the recommendation of one size.
+4. **The membership sentence:** widen it by one clause, as recommended.
+5. **The chain position:** after the problem statement and before any specification, with no fixed order against
+   a business case, as recommended.
+6. **The Shape Up pitch:** keep it out, on the stated line, as recommended. The maintainer may still reopen it.
+7. **The design-constraints section:** include it, labelled low confidence, as recommended. Under ruling 3 it sits
+   in the full size.
+8. **The family:** amend `discovery-docs` to `0.5.0`, as recommended.
+9. **The example:** Saved Views, as recommended.
+10. **The catalog category and stage:** Research / Discovery, at the `definition` stage, as recommended.
+
+These rulings set the spec. They are not the read the contract amendment needs, which happens on the pull request.
