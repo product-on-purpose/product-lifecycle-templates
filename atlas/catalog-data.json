@@ -5219,7 +5219,7 @@
       "name": "Problem Statement",
       "aliases": [
         "problem brief",
-        "opportunity statement"
+        "point of view statement"
       ],
       "category": "Research / Discovery",
       "stage": "discovery",
@@ -5239,6 +5239,32 @@
         "PRD"
       ],
       "state": "built",
+      "state_note": ""
+    },
+    {
+      "id": "opportunity-statement",
+      "name": "Opportunity Statement",
+      "aliases": [
+        "business opportunity statement"
+      ],
+      "category": "Research / Discovery",
+      "stage": "discovery",
+      "owner": "PM",
+      "purpose": "State the opportunity a new initiative would pursue: the gap between where things are now and where they should be, in place of a problem statement",
+      "methodology": "Lean UX / UX discovery",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Problem Statement",
+        "Project Brief",
+        "Business Case"
+      ],
+      "state": "candidate",
       "state_note": ""
     }
   ]

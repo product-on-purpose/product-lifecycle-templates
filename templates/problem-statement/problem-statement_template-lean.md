@@ -8,7 +8,7 @@ last_updated: "{{date}}"
 doc_type: problem-statement
 size: lean
 source_template: problem-statement
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -39,10 +39,10 @@ research names the three documents as interchangeable for one early rationale, b
 published glossary carries no "problem statement" entry and defines "Brief" and "Charter" as two
 different things). It is NOT a PRD (this library's own `prd` companion already names a problem
 statement as one of the things that precede a PRD). It is NOT a hypothesis statement, a How Might We
-question, or a job story (each of those already points at a solution or tests one). It IS the same
-artefact as an opportunity statement, phrased positively: Nielsen Norman Group names the two
-"written and used in the same way," though one business-analysis source dissents for projects
-specifically.
+question, or a job story (each of those already points at a solution or tests one). It is NOT, in
+this library, an opportunity statement: that is a separate catalog type, not yet built, though
+Nielsen Norman Group names the two "written and used in the same way." A design-thinking Point of
+View statement is listed as an alias of this document.
 See problem-statement_companion.md section 6 and section 8.
 
 HOW TO FILL THIS IN

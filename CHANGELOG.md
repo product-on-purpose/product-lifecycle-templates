@@ -12,6 +12,21 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **The opportunity statement is its own catalog type, entry 207, and the catalog now counts 207 types.**
+  The maintainer ruled on 2026-10-17, in decision sitting item D9, that a problem statement and an
+  opportunity statement are different documents. `problem-statement` drops "opportunity statement" from
+  its aliases, and its guide, both templates and three companion passages now say so with the date. The
+  research log keeps its evidence and gains a dated note. The type is a candidate, tracked as issue #298
+  (bundle: opportunity-statement), and is not yet researched on its own.
+- **`problem-statement` gains the alias "point of view statement"** (sitting item D6), on the Interaction
+  Design Foundation's and the Canada School of Public Service's own names for the document. The template
+  moves to 0.1.1.
+- **The count of catalog types moves from 206 to 207** in `AGENTS.md`, `README.md`, `STATE.md`, both
+  skills, the plugin and library descriptions, two reference pages and the backlog page. The backlog page's
+  next steps drop the finished D6 and D9 change.
+
 ## [0.20.0] - 2026-10-21
 
 ### Added

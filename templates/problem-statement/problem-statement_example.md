@@ -8,7 +8,7 @@ last_updated: "2026-01-09"
 doc_type: problem-statement
 size: full
 source_template: problem-statement
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 > **Worked example.** A filled `problem-statement`, full variant, for the same Acme Analytics product used

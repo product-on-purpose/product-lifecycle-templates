@@ -21,12 +21,14 @@ problem and name no solution, option, project, or investment.
 | a **How Might We question** | it already points toward generating solutions, where this document names none |
 | a **list of constraints** | a limit any answer must respect, such as a budget, a deadline or a regulation, bounds a solution, and this document names none. Engineering-design teaching and a capstone proposal label constraints, and one engineering paper puts them inside the problem statement, a dissent this library does not follow; `project-brief`'s Constraints and Who Should Be Involved section carries them. That routing is this library's own position |
 
-**An opportunity statement is not a different document to write.** Nielsen Norman Group names the
-two as aliases, "written and used in the same way", phrased positively instead of as a problem. One
-business-analysis source dissents for projects specifically, naming the move where "practitioners
-treat problems and opportunities interchangeably when developing Business Cases and Project
-Charters" as an error, not a harmless alias. If your organization treats the two as distinct, follow
-that dissent instead of the alias.
+**An opportunity statement is a separate type in this library, and it is not built yet.** Nielsen
+Norman Group names the two as aliases, "written and used in the same way", phrased positively instead
+of as a problem. One business-analysis source dissents for projects specifically, naming the move where
+"practitioners treat problems and opportunities interchangeably when developing Business Cases and
+Project Charters" as an error, not a harmless alias. On 2026-10-17 the maintainer ruled the two
+different documents, and the opportunity statement became catalog entry 207, a candidate type of its
+own. Until it is built, frame an opportunity here only if Nielsen Norman Group's reading fits your case.
+A design-thinking Point of View statement, by contrast, is listed as an alias of this document.
 
 **Write nothing at all if** no one is positioned to decide, once this document exists, whether the
 problem is worth pursuing further. GOV.UK frames exactly this decision: "Your discovery is finished

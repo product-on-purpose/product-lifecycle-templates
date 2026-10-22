@@ -13,7 +13,7 @@ metadata:
 
 # Product lifecycle templates
 
-A library of **49 researched document-template bundles**, covering the complete Tier-1 floor of a 206-type
+A library of **49 researched document-template bundles**, covering the complete Tier-1 floor of a 207-type
 product-artifact catalog. It is not a folder of blank forms. Each bundle carries the research behind its
 shape, a worked example, and a rubric for judging the result.
 
@@ -31,7 +31,7 @@ shape, a worked example, and a rubric for judging the result.
 - **The document already exists and only needs editing.** Use [`plt-grade-doc`](../plt-grade-doc/SKILL.md),
   which grades an existing document against the bundle's rubric and returns a report card; do not restart
   from the template.
-- **The type is not in the library.** The catalog holds 206 types, and most of them are not built. If
+- **The type is not in the library.** The catalog holds 207 types, and most of them are not built. If
   nothing matches, say so rather than forcing the nearest bundle. Bending an adjacent type to fit is the
   specific failure this library rejected two candidate types for.
 - **You need the document filled with facts you do not have.** These templates prompt for evidence. They
