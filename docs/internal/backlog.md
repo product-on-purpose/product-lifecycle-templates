@@ -165,7 +165,8 @@ ADR 0077 keeps in `deliver`.
   sweep and spec ran the same day. The maintainer answered the spec's ten choices in one sitting, taking nine
   recommendations and choosing two sizes over one. ADR 0079 was accepted the same day on the maintainer's
   delegation. The
-  opportunity statement's admission sweep began the same day.
+  opportunity statement's admission sweep began the same day. ADR 0080 (a fifth admission check, for a
+  software audience) was drafted and accepted the same day on the maintainer's delegation.
 
 ## 6. What comes next, in order
 
@@ -177,7 +178,8 @@ ADR 0077 keeps in `deliver`.
    from `problem-statement`. Its catalog row, entry 207, is already in place, and its research began on
    2026-10-22.
 4. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
-   settle it.
+   settle it. ADR 0080 (a fifth admission check, for a software audience), accepted on 2026-10-22, applies to
+   them first.
 5. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on

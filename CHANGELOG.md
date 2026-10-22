@@ -21,6 +21,11 @@ people who want every change, release notes are for people who want to know what
   specification. It ships in two sizes, by the maintainer's ruling. The `discovery-docs` contract moves to
   0.5.0, and its membership sentence gains one clause. The delegation stands in for the contract read for
   this PR only, and no bundle is built yet.
+- **ADR 0080 adds a fifth admission check: does a software, UX or technology team write or use the
+  document.** It adopts a qualified gate. A candidate that fails on this check alone is parked as
+  evidence-insufficient, not declined. It applies to admission sweeps and re-scores from now on, never to a
+  built bundle, and ADR 0030 gains a dated note pointing to it. It was accepted on the maintainer's
+  delegation, which stands in for the read.
 
 ### Changed
 
