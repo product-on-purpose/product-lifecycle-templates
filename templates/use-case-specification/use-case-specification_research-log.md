@@ -286,10 +286,10 @@ template [9] shares the name and not the type (see contested item 9).
 11. **Distinctness from four siblings stays contested.** The spec draws the boundaries with `acceptance-criteria`,
     `epic`, `prd` and `test-case` from their headings and from the shipped boundary sentence in
     `user-stories_companion.md:151-153`, not from an audit of their content
-    (`docs/internal/tier2-specs.md:4964-4969`). This build's check of the four examples found their shared facts
+    (`docs/internal/tier2-specs.md:4965-4970`). This build's check of the four examples found their shared facts
     consistent, which is narrower than a flow-by-flow audit. The companion must not claim a clean, settled
     boundary (the spec's risk 4, distinctness is contested). **One boundary the spec labelled as the library's own
-    unsourced position, against `sdd` (`docs/internal/tier2-specs.md:4957-4961`), now has sources on both sides.**
+    unsourced position, against `sdd` (`docs/internal/tier2-specs.md:4958-4962`), now has sources on both sides.**
     For keeping design out: Brandenburg says of technical detail, "These details are best saved for a technical
     design document." [20]; Cockburn's draft separates the two kinds, "a black-box use case does not discuss the
     internal structure of the system under discussion, while a white-box use case does." [3]; and both of his
@@ -318,7 +318,7 @@ not design ([3], [24]), and it is not a test: "Use cases are not test plans or t
 data values needed for test cases." [6]. **Its family fit is the library's own chosen widening, not a reading of
 the contract.** No family contract admitted the type as written. ADR 0072 widened `delivery-docs` with the verb
 "elaborates", and the research that found even that fit said a maintainer could as reasonably have read the
-contract as excluding the type (`docs/internal/tier2-specs.md:4877-4883`). The companion presents "elaborates" as
+contract as excluding the type (`docs/internal/tier2-specs.md:4878-4884`). The companion presents "elaborates" as
 that choice (the spec's risk 3, family fit is strained), and states the chain position the contract gives it: after
 the stories and before the acceptance criteria (`docs/internal/contracts/delivery-docs.md:11`).
 
@@ -422,7 +422,7 @@ proposed for a template).
   and system, "like watching a tennis match" [19], since "just about every user step should have a corresponding
   user response or action" [20]. Cockburn prefers one column of numbered steps with no if statements [3].
   **Candidate for the lean variant (a guide rubric row, not a section):** the spec has lean fold "a short prose
-  note of the most important exception" into this section (`docs/internal/tier2-specs.md:5001`). The research
+  note of the most important exception" into this section (`docs/internal/tier2-specs.md:5002`). The research
   supports asking for each known deviation in a line of prose instead: the casual form covers "the items mentioned
   above" [6], the value lies in the alternatives ([6], [18]), and the contract admits a scenario "with the
   alternative and exception paths that branch off it" (`docs/internal/contracts/delivery-docs.md:15`).
@@ -466,7 +466,7 @@ proposed for a template).
 
 **Business rules: the omission stands, and the spec's stated reason needs a dated note.** The spec's risk 2 (a
 business-rules section must not be attributed to Cockburn) says "No source supports it as a named field"
-(`docs/internal/tier2-specs.md:5067-5068`). That is now too strong: Cockburn's 2002 article lists business rules
+(`docs/internal/tier2-specs.md:5068-5069`). That is now too strong: Cockburn's 2002 article lists business rules
 among the fully dressed template's fields [6]. The omission still holds, for three reasons this research supports.
 No template read prints a business-rules section: not the 1998 template [1], [2], not the draft's Use Case 7 [3],
 and not Wiegers [7], RUP [8] or NYU [10]. Cockburn's own draft places business rules outside the use case, in their
