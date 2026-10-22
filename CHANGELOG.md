@@ -108,6 +108,19 @@ people who want every change, release notes are for people who want to know what
   `positioning-statement`, between the strategy and the roadmap. `product-vision` carries a dated note on
   its positioning boundary, plus a link to the new bundle.
 
+### Fixed
+
+- **Build reports now count the agents a build runs outside a workflow.**
+  [`tools/gen-bundle-build-report.py`](tools/gen-bundle-build-report.py) read only
+  `subagents/workflows/`, so the Opus head writers, fix agents and landing sweeps that the `test-strategy`
+  and `positioning-statement` builds ran through the Agent tool were missed, about 40 percent of each
+  build. An Agent-tool subagent now counts toward a bundle only when the same session also built that
+  bundle in a workflow, at `medium` confidence; a landing sweep run that way stays out of the totals. The
+  two new reports read 16,344,533 and 13,476,852 weighted ($35.11 and $30.25). One older report moved:
+  `problem-statement` rose from 9,987,114 to 10,533,753 weighted, for a fact check its build ran that way.
+  The record is a dated correction in
+  [ADR 0056](docs/internal/decisions/0056-build-cost-is-measured-and-ingestion-is-separate-from-verification.md).
+
 ## [0.19.0] - 2026-10-16
 
 ### Added
