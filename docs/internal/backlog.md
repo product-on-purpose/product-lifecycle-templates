@@ -29,11 +29,12 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 5 open candidates
+## 2. The working backlog: 6 open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
+| [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -41,12 +42,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 1 candidate, 4 parked |
-| Priority | P3: 4, P4: 1 |
-| Tier | Tier 2: 4, Tier 3: 1 |
+| Status | 2 candidates, 4 parked |
+| Priority | P3: 5, P4: 1 |
+| Tier | Tier 2: 5, Tier 3: 1 |
 
-One more candidate waits for the maintainer to open its issue: `product-opportunity-assessment`, catalog entry
-208, recorded 2026-10-22. Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the declined types,
+Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 ## 3. The catalog by tier
