@@ -44,7 +44,7 @@ If it can read `manifest.json`, everything else in the library is reachable.
 
 This route also brings an MCP server ([`.mcp.json`](../../.mcp.json), served by
 [`tools/mcp_server.py`](../../tools/mcp_server.py)), which gives an agent five tools: search the catalog,
-fetch any of the 97 template variants, fetch a grading pack, validate a filled document, and strip and
+fetch any of the 99 template variants, fetch a grading pack, validate a filled document, and strip and
 stamp one. Nothing is embedded or duplicated, because this route already put the templates on disk.
 
 > **It also works from a plain `git clone`, and until 2026-09-21 it did not.** `.mcp.json` located the

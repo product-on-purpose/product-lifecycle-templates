@@ -8,6 +8,18 @@ Newest first.
 
 ---
 
+## v0.21.0
+
+**One new bundle: a design brief, the library's 50th.** It hands the chosen problem, and the one concept chosen
+for design, to the people who will design it, before anyone specifies how that concept works. It ships lean and
+full, and it is the second bundle at `define`, after the problem statement.
+
+The catalog counts 209 types, with Cagan's Product Opportunity Assessment recorded as candidate 208. The
+maintainer confirmed ADRs 0079 and 0080, and the build-cost reports no longer bill a bundle's planning to its
+build.
+
+---
+
 ## v0.20.1
 
 **A patch with no new bundle: the problem statement answers to the right names.** `problem-statement` gains
