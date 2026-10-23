@@ -147,6 +147,8 @@ trade-study 10,479,257, $20.96, for 16, the usual 15 plus a seventh research dim
 two-template drafting $10.47;
 test-strategy 16,344,533, $35.11, and positioning-statement 13,476,852, $30.25, for 18 each, each with
 an Opus head writer and a fix agent run through the Agent tool, without which they read $20.20 and $16.25;
+design-brief 11,563,997, $25.38, for 16, the usual 15 plus an Opus head writer ($8.89) run through the
+Agent tool, without which it reads $16.49, its two-template drafting $6.66;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.

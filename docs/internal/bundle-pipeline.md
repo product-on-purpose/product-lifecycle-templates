@@ -53,7 +53,9 @@ Agent tool. Its single-template drafting cost $9.17. positioning-statement, the 
 weighted and $30.25 for 18 agents: the usual 15 in workflows, then an Opus research retry ($3.49), an Opus head
 writer ($7.67) and a Sonnet fix agent ($2.84) through the Agent tool. Its single-template drafting cost $6.86.
 **The step up is the work run outside the workflows**: from their workflow agents alone, the two would read
-$20.20 and $16.25, inside the usual range. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
+$20.20 and $16.25, inside the usual range. design-brief, the nineteenth, cost 11,563,997 weighted and $25.38
+for 16 agents: the usual 15 in workflows, then an Opus head writer ($8.89) through the Agent tool, so its
+workflow agents alone read $16.49. Its two-template drafting cost $6.66. Meanwhile test-summary-report (12,123,040, $41.22) and spike-report (9,881,764, $33.21) ran per-bundle scripts that
 pinned no model on drafting, which therefore ran on Opus. Each is the whole build, 3 runs; none includes the
 orchestrator's own spend.
 **A report counts only the agents that built the bundle** (the maintainer's rule, 2026-09-29). Agents

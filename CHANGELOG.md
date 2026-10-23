@@ -46,6 +46,15 @@ people who want every change, release notes are for people who want to know what
   commissioning sense of the name stays unbuilt. The version stays 0.1.0. The `discovery-docs` contract's
   Members line records `design-brief` as built.
 
+### Fixed
+
+- **Build reports no longer bill a bundle's spec work to its build.** `tools/gen-bundle-build-report.py`
+  counted every Agent-tool subagent in a session that also built the bundle in a workflow. The design brief's
+  admission sweep and spec ran in its build session, so three of their agents nearly doubled the build's
+  reported cost. An Agent-tool subagent now counts only if it started after the build's first workflow agent.
+  No committed report changed; `design-brief`'s report, added here, reads 11,563,997 weighted and $25.38 for 16
+  agents.
+
 ## [0.20.1] - 2026-10-22
 
 A documentation and governance patch. No bundle was added, and no MCP tool or install route changed. One

@@ -22,8 +22,9 @@ This tool joins those and attributes each agent to a bundle, a stage and a deliv
 
 An Agent-tool subagent is one a build launches outside a workflow: a head writer, a fix agent, a landing
 sweep. It counts toward a bundle only when the same session also ran a workflow attributed to that
-bundle, so a re-score or a fact-check that merely names a bundle is never billed to it. See
-AGENT_TOOL_RUN.
+bundle, so a re-score or a fact-check that merely names a bundle is never billed to it. Since
+2026-10-22 it must also have started after that build's first workflow agent did, so an admission sweep
+or spec drafted earlier in the same session is not billed to the build either. See AGENT_TOOL_RUN.
 
 A report's totals count only the agents that BUILT the bundle. Agents labelled <bundle>/sweep:N, which
 sweep the repository's counts when the bundle lands, go into a separate `landing_sweep` block and never
@@ -86,6 +87,9 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 #         block. Only issue-log and definition-of-ready had folded a sweep in, and both were
 #         re-ingested. Resolved 2026-09-30, the maintainer's call: no bump. Every committed report was
 #         re-ingested under the rule, so none carries the old meaning, and no known program reads the version.
+#   (2026-10-22, no bump) an Agent-tool subagent that started before its session's first workflow agent
+#         for the same bundle is outside the build. No field changes meaning; it narrows which agents
+#         count. Only design-brief, whose spec and admission sweep ran in its build session, moved.
 REPORT_SCHEMA_VERSION = "2.0.0"
 
 # Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every
@@ -476,6 +480,7 @@ def collect(ids, patterns):
                     "file_written": os.path.basename(files.get(aid, "")),
                     "usage": tidy(totals), "weighted": weighted(totals),
                     "mtime": os.path.getmtime(journal),
+                    "start": first_timestamp(apath),
                 })
         # The same session's Agent-tool subagents. resolve_runs() decides whether each one counts.
         sub_root = os.path.join(root, session, "subagents")
@@ -501,8 +506,28 @@ def collect(ids, patterns):
                 "file_written": "",
                 "usage": tidy(totals), "weighted": weighted(totals),
                 "mtime": os.path.getmtime(apath),
+                "start": first_timestamp(apath),
             })
     return agents, root
+
+
+def first_timestamp(path):
+    """The ISO timestamp of a transcript's first record that carries one, or "" if none does.
+
+    ISO-8601 UTC strings in one format compare correctly as strings, so no parsing is needed.
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                except ValueError:
+                    continue
+                if isinstance(rec, dict) and rec.get("timestamp"):
+                    return rec["timestamp"]
+    except OSError:
+        pass
+    return ""
 
 
 def resolve_runs(agents):
@@ -516,7 +541,8 @@ def resolve_runs(agents):
     match is not.
 
     Agent-tool subagents are not a run, so they are resolved last, one by one: each keeps its own
-    attribution only if its session built that same bundle in a workflow, at the "medium" tier.
+    attribution only if its session built that same bundle in a workflow, and it started no earlier than
+    that build's first workflow agent, at the "medium" tier.
     """
     runs = {}
     for a in agents:
@@ -556,14 +582,25 @@ def resolve_runs(agents):
         for a in rows:
             a["bundle"], a["run_confidence"] = "", "low"
 
-    built = {(a["session"], a["bundle"]) for a in agents
-             if a["run"] != AGENT_TOOL_RUN and a["bundle"]}
+    # When the session's build of that bundle began: its earliest workflow agent's first record.
+    # An Agent-tool subagent that started before it did work the build never asked for, most often the
+    # admission sweep and spec that came first in the same session (design-brief, 2026-10-22: three
+    # such agents nearly doubled the build's cost). Agents with no timestamp keep the old behaviour.
+    built = {}
+    for a in agents:
+        if a["run"] != AGENT_TOOL_RUN and a["bundle"]:
+            key = (a["session"], a["bundle"])
+            if a.get("start") and (key not in built or not built[key] or a["start"] < built[key]):
+                built[key] = a["start"]
+            else:
+                built.setdefault(key, "")
     for a in agents:
         if a["run"] != AGENT_TOOL_RUN:
             continue
+        key = (a["session"], a["bundle"])
         if a["attribution"] == "excluded":
             a["bundle"], a["run_confidence"] = "", "excluded"
-        elif a["bundle"] and (a["session"], a["bundle"]) in built:
+        elif a["bundle"] and key in built and not (built[key] and a.get("start") and a["start"] < built[key]):
             a["run_confidence"] = "medium"
         else:
             a["bundle"], a["run_confidence"] = "", "outside-build"
