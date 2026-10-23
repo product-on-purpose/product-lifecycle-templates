@@ -8,7 +8,7 @@ last_updated: "{{date}}"
 doc_type: problem-statement
 size: lean
 source_template: problem-statement
-source_template_version: 0.1.1
+source_template_version: 0.1.2
 ---
 
 <!--

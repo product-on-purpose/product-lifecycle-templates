@@ -25,6 +25,9 @@ consulted: [claude]
   [ADR 0078](0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md). This
   record amends no family contract, so the standing stop for a contract read does not apply. **Its
   recommendations were accepted without a read**, and the maintainer may change any of them by a dated note.
+  **Confirmed by the maintainer on 2026-10-22**, in one batch with
+  [ADR 0079](0079-design-brief-joins-discovery-docs-at-define.md). Offered the choice to confirm both, to
+  reopen either for a read, or to leave the question parked, the maintainer confirmed both.
 
 ## Context and Problem Statement
 

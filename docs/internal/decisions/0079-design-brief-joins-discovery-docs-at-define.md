@@ -38,7 +38,9 @@ consulted: [claude]
   [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md). The standing rule is not
   repealed. **The contract diff was accepted without a read.** The maintainer ruled on the spec's ten choices on
   2026-10-22, taking nine recommendations and choosing two sizes over one. The rulings close the spec section in
-  [`tier2-specs.md`](../tier2-specs.md).
+  [`tier2-specs.md`](../tier2-specs.md). **Confirmed by the maintainer on 2026-10-22**, in one batch with
+  [ADR 0080](0080-admission-gains-a-software-audience-check.md). Offered the choice to confirm both, to reopen
+  either for a read, or to leave the question parked, the maintainer confirmed both.
 
 ## Context and Problem Statement
 
@@ -234,6 +236,8 @@ contract diff that accompanies this record.
   takes over. That document is the PRD, once the designed concept is specified, and the choice is the library's
   POSITION.
 - **The catalog gains entry 208 when the bundle lands**, as entry 206 arrived with `problem-statement`'s build.
+  *(Changed 2026-10-22: the row is entry 209. The maintainer recorded Cagan's Product Opportunity Assessment
+  the same day, and it took entry 208 first.)*
   PR #305 (the opportunity statement becomes catalog entry 207) added entry 207 on 2026-10-22. Issue #294's body
   still names entry 207 and predates ADR 0077, and it is corrected on landing.
 - **`project-brief` carries a dated note, not a rewrite.** Its guide, templates and companion route a design brief

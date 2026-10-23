@@ -12,6 +12,25 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Catalog entry 208, Cagan's Product Opportunity Assessment, and the catalog now counts 208 types.** The
+  opportunity statement's admission sweep found Marty Cagan's ten-question assessment, which ends in a go or
+  no-go recommendation, as a separate document. The maintainer recorded it as a candidate on 2026-10-22. It is
+  not researched on its own, and its boundary with `business-case` is untested. The design brief's planned
+  row moves to entry 209.
+
+### Changed
+
+- **The opportunity statement is parked, and `problem-statement`'s guide covers a net-new initiative.** The
+  admission sweep found one reading that is distinct from a problem statement and allowed at `define`: Jeff
+  Gothelf's Business Opportunity Statement. It rests on one formula, and Gothelf advises trying the problem
+  statement first. The maintainer parked the type on 2026-10-22 rather than build it. The guide now shows
+  where the formula's blanks go, and that its solution line stays out. The template moves to 0.1.2.
+- **ADRs 0079 and 0080 are confirmed by the maintainer.** Both were accepted on the maintainer's delegation
+  on 2026-10-22, without a read. Offered the choice to confirm both, to reopen either for a read, or to leave
+  the question parked, the maintainer confirmed both the same day.
+
 ## [0.20.1] - 2026-10-22
 
 A documentation and governance patch. No bundle was added, and no MCP tool or install route changed. One
