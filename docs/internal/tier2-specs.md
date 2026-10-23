@@ -6533,7 +6533,7 @@ names the four measured points a maintainer can bound it between.
 **`methodology-agnostic`**, catalog **entry 209**, no aliases. The maintainer ruled on the spec's ten choices on
 2026-10-22, and the rulings close this section. The family decision is [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md)
 (design-brief joins discovery-docs at define), **accepted 2026-10-22 on the maintainer's delegation**, without
-a read of its contract edits.
+a read of its contract edits. The maintainer confirmed it the same day.
 
 #### The recommendation, and how sure it is
 
