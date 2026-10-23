@@ -440,7 +440,12 @@ entries corroborate from the creative and design side: a creative brief is "used
 and agencies to develop creative deliverables, such as visual design, copy, advertising, and websites"
 [[26]](#ref-26), and a design brief "outlines the deliverables and scope of the project" for a designer
 working with a client, and is "adjusted as the project scope evolves" over the life of the design work
-[[27]](#ref-27), unlike the project brief's own one-time, pre-commitment role.
+[[27]](#ref-27), unlike the project brief's own one-time, pre-commitment role. *(2026-10-22: this library now
+builds a design brief in a different sense, the Design Council's concept handoff, as
+[`design-brief`](../design-brief/design-brief_guide.md): the chosen problem and one concept chosen for design,
+handed to the people who will design it. The commissioning brief this paragraph describes, written for a
+designer working with a client, remains unbuilt. Neither sense asks for authority to start a project, so the
+boundary stands.)*
 
 **Not the Project Canvas (a difference of medium, not content).** Antonio Nieto-Rodriguez's Project Canvas is
 "a one-page template" modeled explicitly on the Business Model Canvas, "composed of 14 dimensions" grouped

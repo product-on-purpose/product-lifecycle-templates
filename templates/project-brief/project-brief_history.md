@@ -3,6 +3,18 @@
 Change log for the `project-brief` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-10-22 - the design brief now exists
+
+**A routing note, not a template change**, so the version stays 0.1.0. The `design-brief` bundle joined
+`discovery-docs` on 2026-10-22, by
+[ADR 0079 (design-brief joins discovery-docs at define)](../../docs/internal/decisions/0079-design-brief-joins-discovery-docs-at-define.md).
+It builds the Design Council's sense of the name: the chosen problem and one concept chosen for design,
+handed to the people who will design it. This bundle's companion defines a design brief in the
+commissioning sense, written for a designer working with a client, and that sense remains unbuilt. The
+boundary stands in both senses, because neither asks for authority to start a project. The companion's
+paragraph carries a dated note, both templates' boundary notes name the new template, and the guide's
+row links to it.
+
 ## 0.1.0 - 2026-09-29
 
 **Initial release.** Researched 2026-09-29, building on an admission sweep run on 2026-09-27 while

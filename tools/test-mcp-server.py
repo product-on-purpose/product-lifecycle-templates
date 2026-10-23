@@ -204,7 +204,7 @@ def main():
                                    r["parts"]["template"]["approx_tokens"],
                                    b["approx_tokens"].get(key)))
     check("all %d variants fetch content" % total, not unreachable, unreachable)
-    check("the tree has 97 variants and all 97 are addressable", total == 97, total)
+    check("the tree has 99 variants and all 99 are addressable", total == 99, total)
     check("every reported token count EQUALS manifest.json's approx_tokens (not merely within 10%)",
           not mismatched, mismatched[:4])
 
@@ -242,7 +242,8 @@ def main():
           len({b["id"] for b in bundles if "phase" in b}) < len(bundles))
     # Until 2026-10-11 no bundle used `define`, and this assertion expected ["define"]. problem-statement
     # uses it (ADR 0069), so the live list is empty, and the branch that names an unused phase is kept
-    # under test by hiding the one define bundle from the manifest for a single call.
+    # under test by hiding every define bundle from the manifest for a single call. (Since 2026-10-22 there
+    # are two, problem-statement and design-brief; the filter below hides both.)
     check("axis_values reports no unused phase once problem-statement uses define (ADR 0069)",
           ax["phase_declared_but_unused"] == [], ax["phase_declared_but_unused"])
     _real_manifest = srv.manifest
@@ -251,7 +252,7 @@ def main():
         hidden = srv.axis_values()["phase_declared_but_unused"]
     finally:
         srv.manifest = _real_manifest
-    check("axis_values still names a declared phase no bundle uses (define, with problem-statement hidden)",
+    check("axis_values still names a declared phase no bundle uses (define, with every define bundle hidden)",
           hidden == ["define"], hidden)
     check("an empty result is teachable: it carries the real axis values",
           "axis_values" in D(srv.search_templates("zzzz-no-such-thing")).get("nothing_matched", {}))

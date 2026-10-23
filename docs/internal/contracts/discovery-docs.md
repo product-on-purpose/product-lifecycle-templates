@@ -14,7 +14,7 @@ family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 202
 ([ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md), assigned 2026-10-11 at
 `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day),
 `design-brief` ([ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md), assigned
-2026-10-22 at `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+2026-10-22 at `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing

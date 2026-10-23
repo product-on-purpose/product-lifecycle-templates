@@ -19,6 +19,17 @@ people who want every change, release notes are for people who want to know what
   no-go recommendation, as a separate document. The maintainer recorded it as a candidate on 2026-10-22. It is
   not researched on its own, and its boundary with `business-case` is untested. The design brief's planned
   row moves to entry 209.
+- **`design-brief`, the 50th bundle**, the fifth `discovery-docs` member and the library's second at
+  `phase: define`, by [ADR 0079](docs/internal/decisions/0079-design-brief-joins-discovery-docs-at-define.md).
+  It hands the chosen problem and the one concept chosen for design to the people who will design it,
+  before anyone specifies how that concept works. It builds the Design Council's sense of the name, not a
+  commissioning agreement between a client and a designer, a creative brief, a specification or the Shape
+  Up pitch. It ships in two sizes. Lean carries The Challenge, Who It Is For and What We Learned, The Chosen
+  Concept, and The Handoff. Full adds Constraints on the Design, Open Questions for Design, and The
+  Handoff's Scope, Time Line and Budget, each with its confidence stated. The worked example is the Saved
+  Views brief of 2026-06-01, written before the Saved Views PRD. The research log records 32 sources, and
+  every one of its 228 quotations was checked against raw text; two sources could not be read and carry no
+  quotation. Catalog entry 209 lands with it, and the catalog now counts 209 types.
 
 ### Changed
 
@@ -30,6 +41,10 @@ people who want every change, release notes are for people who want to know what
 - **ADRs 0079 and 0080 are confirmed by the maintainer.** Both were accepted on the maintainer's delegation
   on 2026-10-22, without a read. Offered the choice to confirm both, to reopen either for a read, or to leave
   the question parked, the maintainer confirmed both the same day.
+- **`project-brief` carries a dated note that a design brief now exists.** Its companion, both templates and
+  its guide routed a reader who is briefing a designer away; they now name the new bundle, and say that the
+  commissioning sense of the name stays unbuilt. The version stays 0.1.0. The `discovery-docs` contract's
+  Members line records `design-brief` as built.
 
 ## [0.20.1] - 2026-10-22
 

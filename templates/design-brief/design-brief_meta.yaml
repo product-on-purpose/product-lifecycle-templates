@@ -1,0 +1,30 @@
+id: design-brief
+title: Design Brief
+summary: >-
+  The document that hands the chosen problem and the one concept chosen for design to the people who
+  will design it, before anyone specifies how that concept works. Lean carries the challenge, who it
+  is for and what was learned, the chosen concept and the handoff; full adds constraints on the
+  design, open questions for design, and the handoff's scope, time line and budget.
+doc_type: design-brief
+phase: define
+family: discovery-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (The Challenge, Who It Is For and What We Learned, The Chosen Concept, The Handoff) when the chosen concept is handed to a team's own designers and no separate time line, budget or open-questions record is needed; every full-only section rests more on this library's own construction than the lean sections do, so lean is the safer default. Use full when the handoff crosses to a separate design team, or must state limits the design work has to respect, open questions the designers must resolve, or a scope, time line and budget for the handoff itself: it adds Constraints on the Design and Open Questions for Design before The Handoff, and The Handoff's Scope, Time Line and Budget after it."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discovery
+  - define
+  - design-brief
+  - design
+  - concept-handoff
+  - ux-discovery
+related_templates: [problem-statement, user-persona, project-brief, business-case, prd]
+aliases: []
+catalog_ref: 209
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-22
+license: Apache-2.0

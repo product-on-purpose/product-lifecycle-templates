@@ -41,7 +41,8 @@ PID (this library's POSITION: those authorize delivery once initiation is approv
 built in this library). It is NOT a product brief (which scopes a single product opportunity, where
 this document scopes a whole initiative or project; this boundary is labeled inferred, since no
 source read for this bundle draws it explicitly). It is NOT a creative or design brief (a different
-discipline entirely). It is NOT a Project Canvas (the
+discipline entirely; a design brief that hands one chosen concept to its designers has its own
+template, design-brief). It is NOT a Project Canvas (the
 same kind of content in a one-page diagram, a difference of medium, not of content). It is NOT a
 project proposal or a one-page pitch (this library's POSITION: a pitch sells a decision not yet
 made, while this document records a mandate that already exists and asks for authority to explore
