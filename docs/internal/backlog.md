@@ -19,7 +19,7 @@ No single list holds the backlog. Three places hold parts of it, and each one la
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 208 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 209 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
@@ -29,11 +29,10 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 6 open candidates
+## 2. The working backlog: 5 open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#294](https://github.com/product-on-purpose/product-lifecycle-templates/issues/294) | `design-brief` | Queued 2026-10-22, once ADR 0079 admitted it; confirmed for `define` by the 2026-10-20 re-score | P3 | 2 | `discovery-docs`, `phase: define`, by ADR 0079 | Specced 2026-10-22 in two sizes, with ADR 0079 (design-brief joins discovery-docs at define) accepted the same day on the maintainer's delegation. The maintainer gave the build its go on 2026-10-22 |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
@@ -42,27 +41,27 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 1 candidate, 1 queued, 4 parked |
-| Priority | P3: 5, P4: 1 |
-| Tier | Tier 2: 5, Tier 3: 1 |
+| Status | 1 candidate, 4 parked |
+| Priority | P3: 4, P4: 1 |
+| Tier | Tier 2: 4, Tier 3: 1 |
 
 One more candidate waits for the maintainer to open its issue: `product-opportunity-assessment`, catalog entry
-208, recorded 2026-10-22. Fifty-seven candidate issues are closed: 49 built and 8 declined. Two of the declined types,
+208, recorded 2026-10-22. Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=49, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=50, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 208 types. Its `state` field reads 49 built, 157 candidate and 2 out of scope. Four of the
+The catalog holds 209 types. Its `state` field reads 50 built, 157 candidate and 2 out of scope. Four of the
 157 were declined by record, so 153 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 154 | 24 | 4, declined by record (below) | **126** |
+| 2 | 155 | 25 | 4, declined by record (below) | **126** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **208** | **49** | **6** | **153** |
+| **All** | **209** | **50** | **6** | **153** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -77,8 +76,8 @@ The last was declined in its per-feature reading only, and its business-scope re
 
 | Layer | Count | Which |
 |---|---|---|
-| Built bundles with `phase: define` | 1 | `problem-statement` |
-| Open issues labelled `phase:define` | 2 | `design-brief` (#294), queued; `opportunity-statement` (#298), parked |
+| Built bundles with `phase: define` | 2 | `problem-statement`; `design-brief`, built 2026-10-22 (#294) |
+| Open issues labelled `phase:define` | 1 | `opportunity-statement` (#298), parked |
 | Candidates one read could still move | 7 | Listed in the re-score table below |
 
 **The re-score replaced the planning estimate with a count.** This page previously said "roughly 60"
@@ -105,6 +104,8 @@ agreement, or contract, between the parties", which reads as the project authori
 also counts a design strategy among its most critical sections. That can read as `develop`, though the reading
 is contested, because design-management usage can mean how design serves business objectives. The admission
 sweep must draw that line, possibly as a lean concept-handoff variant beside a full commissioning variant.
+*(Settled 2026-10-22: the sweep drew the line at the concept handoff, ADR 0079 admitted that sense alone, in a
+lean and a full size, and the bundle was built the same day. Phillips's commissioning brief stays unbuilt.)*
 
 **The opportunity statement returns with one open question, at medium confidence.** It passes the rule on the
 sources `problem-statement` already logs. One of those sources says the two are "written and used in the same
@@ -175,33 +176,33 @@ ADR 0077 keeps in `deliver`.
   The maintainer parked the type, and `problem-statement`'s guide gained a paragraph for that case. The same
   walk confirmed ADRs 0079 and 0080, recorded Cagan's Product Opportunity Assessment as catalog entry 208,
   and gave the design brief's build its go.
+- **2026-10-22, at landing.** `design-brief` was built through the `build-bundle` workflow as the 50th bundle
+  and the second at `define`, with catalog entry 209. Its landing closes #294, so the define count is two.
 
 ## 6. What comes next, in order
 
 1. **A small README change for sitting item D8** (the "four literatures" passage).
-2. **The design brief's build (#294).** The spec and ADR 0079 (design-brief joins discovery-docs at define)
-   were written and accepted on 2026-10-22, and they amend `discovery-docs` to 0.5.0. The maintainer gave the
-   build its go the same day.
-3. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
+2. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
    settle it. ADR 0080 (a fifth admission check, for a software audience), accepted on 2026-10-22, applies to
    them first.
-4. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+3. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
 `problem-statement` change for sitting items D6 and D9, landed on 2026-10-22. A fourth, the opportunity
-statement's admission sweep, ended on 2026-10-22 with the type parked.
+statement's admission sweep, ended on 2026-10-22 with the type parked. A fifth, the design brief's build,
+landed the same day.
 
 ## 7. When to revisit this page
 
-- **When the design brief's build lands** (step 2 above).
-  Update sections 2, 4 and 6 from its outcome.
+- **When the next Define candidate moves**: one of the seven evidence-insufficient reads (step 2 above), or
+  the parked opportunity statement. Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
-- **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the design brief's
-  build is still the next piece of Define work.
+- **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the seven
+  evidence-insufficient reads are still the next piece of Define work.
 
 ## 8. How to refresh the numbers
 

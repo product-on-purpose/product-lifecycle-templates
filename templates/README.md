@@ -59,6 +59,7 @@ tree without the gate noticing.
 - [`user-persona/`](user-persona/) - User Persona. Axis phase discover; ships lean/full.
 - [`project-brief/`](project-brief/) - Project Brief. Axis phase discover; ships lean/full. The third `discovery-docs` member ([ADR 0063](../docs/internal/decisions/0063-project-brief-reopens-discovery-docs.md)): the request for authority to start finding out whether and how to proceed.
 - [`problem-statement/`](problem-statement/) - Problem Statement. Axis phase define; ships lean/full. The fourth `discovery-docs` member and the library's first `phase: define` bundle ([ADR 0069](../docs/internal/decisions/0069-problem-statement-joins-discovery-docs.md)): which problem is worth solving, who has it, and the evidence that it is real, before anyone names a solution.
+- [`design-brief/`](design-brief/) - Design Brief. Axis phase define; ships lean/full. The fifth `discovery-docs` member and the library's second `phase: define` bundle ([ADR 0079](../docs/internal/decisions/0079-design-brief-joins-discovery-docs-at-define.md)): the chosen problem and the one concept chosen for design, handed to the people who will design it, before anyone specifies how that concept works.
 
 **`experimentation-docs`**
 

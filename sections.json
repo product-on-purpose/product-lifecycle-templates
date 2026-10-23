@@ -2484,6 +2484,229 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "design-brief",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "approver"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "author"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "concept_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-challenge",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "challenge",
+                "good_outcome",
+                "problem_statement_reference",
+                "success_measures_reference"
+              ],
+              "title": "The Challenge"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "who-it-is-for-and-what-we-learned",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "persona_reference",
+                "research_insight",
+                "who_it_serves"
+              ],
+              "title": "Who It Is For and What We Learned"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-chosen-concept",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "chosen_concept",
+                "concept_candidates",
+                "concept_excludes",
+                "why_chosen"
+              ],
+              "title": "The Chosen Concept"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-handoff",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "approval_date",
+                "approver",
+                "design_team",
+                "feedback_decision_owner",
+                "next_document",
+                "revision_process"
+              ],
+              "title": "The Handoff"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "constraints-on-the-design",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_constraint",
+                "why_it_limits_design"
+              ],
+              "title": "Constraints on the Design"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "open-questions-for-design",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_assumptions",
+                "design_blockers",
+                "open_questions_design"
+              ],
+              "title": "Open Questions for Design"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-handoff-s-scope-time-line-and-budget",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_budget",
+                "design_deadline",
+                "design_scope"
+              ],
+              "title": "The Handoff's Scope, Time Line and Budget"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "epic",
       "default_format": "default",
       "formats": {
@@ -12676,7 +12899,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 49,
-  "frontmatter_count": 308,
-  "section_count": 411
+  "count": 50,
+  "frontmatter_count": 313,
+  "section_count": 418
 }
