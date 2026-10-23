@@ -3,6 +3,20 @@
 Change log for the `problem-statement` bundle. Each entry records what changed and why, so a reader
 can tell a correction from a preference.
 
+## 0.1.2 - 2026-10-22 - the opportunity statement is parked, and the guide covers a net-new initiative
+
+**A guide change from the maintainer's ruling of 2026-10-22, which parked the opportunity statement
+(#298) rather than build it.** No section, placeholder or rubric row changed.
+
+- **The guide now covers a net-new initiative.** The opportunity statement's admission sweep found one
+  reading that is distinct from this document and allowed at `define`: Jeff Gothelf's Business
+  Opportunity Statement, for an initiative where no product exists yet. It rests on one formula, and
+  Gothelf advises trying the problem statement first. The guide shows where the formula's blanks go in
+  this document, and which line stays out: the one that names a direction for a solution.
+- **The guide's opportunity-statement paragraph says the type is parked**, with the date and issue
+  #298, instead of "until it is built".
+- **No new source.** Every quotation the new paragraph uses was already in the research log, as [12].
+
 ## 0.1.1 - 2026-10-22 - the opportunity statement becomes its own type
 
 **An alias change from the maintainer's 2026-10-17 decision sitting, items D6 and D9.** No section,

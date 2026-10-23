@@ -5266,6 +5266,32 @@
       ],
       "state": "candidate",
       "state_note": ""
+    },
+    {
+      "id": "product-opportunity-assessment",
+      "name": "Product Opportunity Assessment",
+      "aliases": [
+        "opportunity assessment"
+      ],
+      "category": "Research / Discovery",
+      "stage": "discovery",
+      "owner": "PM",
+      "purpose": "Decide whether a product opportunity is worth pursuing, by answering a fixed set of questions that ends in a go or no-go recommendation",
+      "methodology": "SVPG / product discovery",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Business Case",
+        "Opportunity Statement",
+        "Problem Statement"
+      ],
+      "state": "candidate",
+      "state_note": ""
     }
   ]
 }

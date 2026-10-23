@@ -21,14 +21,24 @@ problem and name no solution, option, project, or investment.
 | a **How Might We question** | it already points toward generating solutions, where this document names none |
 | a **list of constraints** | a limit any answer must respect, such as a budget, a deadline or a regulation, bounds a solution, and this document names none. Engineering-design teaching and a capstone proposal label constraints, and one engineering paper puts them inside the problem statement, a dissent this library does not follow; `project-brief`'s Constraints and Who Should Be Involved section carries them. That routing is this library's own position |
 
-**An opportunity statement is a separate type in this library, and it is not built yet.** Nielsen
+**An opportunity statement is a separate type in this library, and it is not built.** Nielsen
 Norman Group names the two as aliases, "written and used in the same way", phrased positively instead
 of as a problem. One business-analysis source dissents for projects specifically, naming the move where
 "practitioners treat problems and opportunities interchangeably when developing Business Cases and
 Project Charters" as an error, not a harmless alias. On 2026-10-17 the maintainer ruled the two
 different documents, and the opportunity statement became catalog entry 207, a candidate type of its
-own. Until it is built, frame an opportunity here only if Nielsen Norman Group's reading fits your case.
+own. On 2026-10-22 the maintainer parked it rather than build it (#298), because no template with
+sections for it was found. Frame an opportunity here when Nielsen Norman Group's reading fits your case.
 A design-thinking Point of View statement, by contrast, is listed as an alias of this document.
+
+**A net-new initiative, where no product exists yet, can use this document too.** Jeff Gothelf
+publishes a Business Opportunity Statement for that case, and still says: "My advice is to try the
+Business Problem Statement first." To fill this document from his formula, put the people the gap
+leaves unserved in Who Is Affected, named closely enough that someone could go and find one. Put the
+gap itself in Evidence, with where you saw it. His formula's line for it reads "What existing products /
+services fail to address is [this gap]." Leave out his next line, "Our product / service will address
+this gap by [vision / strategy]." That line names a direction for a solution, which this document never
+names. Carry it to the document you name in Decision This Informs.
 
 **Write nothing at all if** no one is positioned to decide, once this document exists, whether the
 problem is worth pursuing further. GOV.UK frames exactly this decision: "Your discovery is finished

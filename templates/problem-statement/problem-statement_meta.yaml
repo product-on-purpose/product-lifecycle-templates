@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (Problem Statement, Background, Who Is Affected, Impa
 methodology: methodology-agnostic
 pairs_with: [define-problem-statement]
 status: beta
-template_version: 0.1.1
+template_version: 0.1.2
 tags:
   - discovery
   - define
