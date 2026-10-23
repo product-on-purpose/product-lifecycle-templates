@@ -12,6 +12,12 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.21.0] - 2026-10-22
+
+A minor release with one new bundle: `design-brief`, the 50th, and the second at `phase: define`. It also
+carries two new catalog entries, the maintainer's confirmation of ADRs 0079 and 0080, and a fix to the
+build-cost reports. No MCP tool or install route changed.
+
 ### Added
 
 - **Catalog entry 208, Cagan's Product Opportunity Assessment, and the catalog now counts 208 types.** The
@@ -54,6 +60,10 @@ people who want every change, release notes are for people who want to know what
   reported cost. An Agent-tool subagent now counts only if it started after the build's first workflow agent.
   No committed report changed; `design-brief`'s report, added here, reads 11,563,997 weighted and $25.38 for 16
   agents.
+- **Two counts the design brief's landing left stale.** `docs/how-to/installing.md` and the agent-surface row
+  of `STATE.md` said the MCP server addresses 97 template variants; it addresses 99, as `test-mcp-server.py`
+  asserts. The README's status line said twenty-four Tier-2 types were built; there are twenty-five. Both were
+  found by the release's three-audience check, which reads prose that no gate reads.
 
 ## [0.20.1] - 2026-10-22
 
@@ -3192,7 +3202,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...HEAD
+[0.21.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...v0.20.1
 [0.20.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...v0.20.0
 [0.19.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.18.0...v0.19.0
