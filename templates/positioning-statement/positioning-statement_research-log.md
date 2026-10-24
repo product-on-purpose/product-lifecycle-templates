@@ -2,7 +2,7 @@
 
 Research conducted 2026-10-20, building on admission sweep 6 (2026-10-14), the sitting follow-up of 2026-10-15
 (`_local/research/2026-10-15_sitting-followup/positioning.json`, gitignored), and the approved spec
-(`docs/internal/tier2-specs.md:6163-6529`). The build's six-dimension fan-out covered the canon, meaning the
+(`docs/internal/tier2-specs.md:6165-6531`). The build's six-dimension fan-out covered the canon, meaning the
 formula, its published field sets and its disputed origin; April Dunford's components, process and critique; who
 owns the statement; its boundaries with vision, strategy, messaging and the battlecard, and when it is revisited;
 the library's own neighbours and the Acme Analytics chain; and the standing gap question. **59 sources are
@@ -35,13 +35,13 @@ render the sources' long dashes as hyphens; copy them as they stand.
 **This log does not carry every span the spec quotes, unlike the `trade-study` log.** Five quotations in the spec
 are not Quotable lines here, so no drafting stage may quote them from this log:
 
-- The Starr Conspiracy's "1 to 3 sentences" (`docs/internal/tier2-specs.md:6375`).
+- The Starr Conspiracy's "1 to 3 sentences" (`docs/internal/tier2-specs.md:6377`).
 - The Starr Conspiracy's messaging-framework cadence, "two-to-three years for brand and category, quarterly for
-  audience and product" (`:6296`).
-- Yesware's "A positioning statement requires input from several different teams" (`:6423-6424`).
-- Product Marketing Alliance's "share it with stakeholders across the organization" (`:6425-6426`).
+  audience and product" (`:6298`).
+- Yesware's "A positioning statement requires input from several different teams" (`:6425-6426`).
+- Product Marketing Alliance's "share it with stakeholders across the organization" (`:6427-6428`).
 - Poorvi Shrivastav's continuation, "It is more focused on the present, defining the target audience"
-  (`:6344-6345`). It sat inside a longer quotation that failed and was split, and the clause did not survive.
+  (`:6346-6347`). It sat inside a longer quotation that failed and was split, and the clause did not survive.
 
 The RUP template's slot-by-slot formula [44] was also dropped. RUP can be cited for its section names and its
 bracketed instruction, not for its slots. Every other external span the spec quotes is a Quotable line here,
@@ -50,7 +50,7 @@ including Devika Nair's full, untruncated sentence [39].
 **The Sharebird attribution is sound.** The ownership dimension reported that Mike Flouton and Poorvi Shrivastav
 do not appear on the Sharebird page it read. That page is a different question, [39], which carries Nair's
 answer. Both practitioners are on [43], read in its raw cache body for this log: Flouton under Boxford Capital,
-Shrivastav under Meta. The spec's attribution stands (`docs/internal/tier2-specs.md:6340-6345`). Both answers are
+Shrivastav under Meta. The spec's attribution stands (`docs/internal/tier2-specs.md:6342-6347`). Both answers are
 truncated on the page behind a read-more control, so only their opening sentences were read.
 
 **The gap-question dimension rested partly on [54], which now supports nothing.** Its write-up drew per-claim
@@ -63,11 +63,11 @@ is used.
 **The Goodreads source is not about Moore.** [6] is one reader's highlights of Al Ries and Jack Trout's
 Positioning: The Battle for Your Mind, and it carries no slot-based template [6]. The canon dimension reports that
 the fetched highlights run only to a 34 percent reading-progress marker. That conflicts with the spec's account of
-a Goodreads note carrying a matching template at a 59 percent marker (`docs/internal/tier2-specs.md:6222-6224`).
+a Goodreads note carrying a matching template at a 59 percent marker (`docs/internal/tier2-specs.md:6224-6226`).
 Whether a second Goodreads note exists, for Crossing the Chasm, is not settled by this pass.
 
 **Product Marketing Alliance's field set was not re-confirmed.** The spec describes a one-page, five-row `.docx`
-behind a free-account signup, from a browser observation on 2026-10-15 (`docs/internal/tier2-specs.md:6209`).
+behind a free-account signup, from a browser observation on 2026-10-15 (`docs/internal/tier2-specs.md:6211`).
 This pass's raw text shows only the gate: "Become a member to see the rest." [5]. No PMA slot may be quoted.
 
 **What was assigned and not read, or read only in part:**
@@ -134,14 +134,14 @@ allows the wording to vary but not the content: "it must contain the five main c
 
 **The spec's six components are the union of these sets, not their intersection.** Target, need, category,
 benefit, named alternative and differentiation match MIT's six slots [1], as the spec records
-(`docs/internal/tier2-specs.md:6386-6393`). The named alternative, which the spec treats as positioning's core, is a
+(`docs/internal/tier2-specs.md:6388-6395`). The named alternative, which the spec treats as positioning's core, is a
 formula slot in only two of the five. Its stronger support is Dunford's first component, competitive alternatives
 [7], [10], and her account of what positioning describes: "It describes why a specific type of customer should
 choose your product over any other alternative way of solving the problem" [11].
 
 **The spec's because-clause departs from every published one.** The spec says its labels are the library's own
-wording (`docs/internal/tier2-specs.md:6402`), and that stands; the clause's content is the issue. The Statement
-row reads "unlike [named alternative], because [differentiation]" (`:6402`). In the three forms with a
+wording (`docs/internal/tier2-specs.md:6404`), and that stands; the clause's content is the issue. The Statement
+row reads "unlike [named alternative], because [differentiation]" (`:6404`). In the three forms with a
 because-clause, the clause carries the reason to believe, not the differentiation [2], [3], [4]. MIT gives the
 differentiation its own closing slot, "The [product name] [provides these key differentiation points]." [1]. See
 the companion notes.
@@ -167,7 +167,7 @@ to the mind of the prospect." [6]. Dunford dates the practice loosely and names 
 been taught that "Positioning" is critical to our businesses" [13]. **No source in this log attributes the
 formula to Moore.** The attribution's only footholds are the catalog row (`docs/internal/catalog.md:43`) and the
 follow-up's blog citation to page 186 of the 3rd edition, which was never verified against the book
-(`docs/internal/tier2-specs.md:6224-6225`). Admission does not lean on him (`:6226-6227`), and this research gives
+(`docs/internal/tier2-specs.md:6226-6227`). Admission does not lean on him (`:6228-6229`), and this research gives
 no reason to strengthen the attribution.
 
 ### Dunford's components, process and critique
@@ -294,10 +294,10 @@ the default's split. **Where the sources lean, they lean toward product marketin
 line states that ownership varies by organization. Blackblot's "It all depends on the given situation." is about
 how many statements are needed, not who owns them [34]. The closest is Dunford's: who drives the work depends on
 company size [30]. The default therefore stays labelled as this library's reasoning, as the spec already labels it
-(`docs/internal/tier2-specs.md:6331-6334`). ADR 0076 records that the default was accepted without the
+(`docs/internal/tier2-specs.md:6333-6336`). ADR 0076 records that the default was accepted without the
 maintainer's read
 (`docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:48-51`). The spec
-counted two product-marketing sources (`docs/internal/tier2-specs.md:6306`); with Karr there are three.
+counted two product-marketing sources (`docs/internal/tier2-specs.md:6308`); with Karr there are three.
 
 ### Boundaries with vision, strategy, messaging and the battlecard
 
@@ -327,7 +327,7 @@ present.
 inside the Vision document [44]: "[Provide an overall statement summarizing at the highest level, the unique
 position the product intends to fill in the marketplace. The following format may be used:]" [44]. It is a
 software-engineering methodology artifact, which the spec weights below Sharebird
-(`docs/internal/tier2-specs.md:6349-6352`). Dunford, in 2020, lists the vision among things downstream of
+(`docs/internal/tier2-specs.md:6351-6354`). Dunford, in 2020, lists the vision among things downstream of
 positioning: "messaging, a tag line, your vision, branding - these are all examples of things that happen after
 positioning. Each of these things requires positioning as an input or the starting point." [7]. In the raw text the
 list opens with storytelling. On this log's reading, the vision there sits among communications rather than as a
@@ -343,7 +343,7 @@ strategy, so it follows the strategy. **It also undercuts a static reading of th
 several positionings in sequence, and she rejects the idea that the strategy simply dictates one. Also on this
 log's reading, Nair's "as part of the vision" [39] speaks to who holds the responsibility, not to document order,
 so it is weaker evidence for second place than the spec's wording suggests
-(`docs/internal/tier2-specs.md:6271-6278`). Dunford's 2020 list [7] cuts against any fixed order with the vision
+(`docs/internal/tier2-specs.md:6273-6280`). Dunford's 2020 list [7] cuts against any fixed order with the vision
 first. No Quotable line places positioning relative to the North Star metric or OKRs.
 
 **Versus strategy.** Dunford treats the choice of market frame as strategy: "It's not merely a marketing decision or
@@ -382,7 +382,7 @@ your positioning statement isn't public-facing." [2].
 
 **The spec's premise is contradicted.** The spec says "No source read states a review cadence for the positioning
 statement itself" and rests the `foundation` classification partly on that gap
-(`docs/internal/tier2-specs.md:6286-6302`). Three sources in this log state a cadence for positioning, one of them
+(`docs/internal/tier2-specs.md:6288-6304`). Three sources in this log state a cadence for positioning, one of them
 for the positioning statement by name, and a fourth asks for a dated record so reviews can be tracked.
 
 **Cadences, verbatim:**
@@ -581,7 +581,7 @@ named alternative, for the segment the product strategy example already chose, a
 
 **The date window has no whole day in it.** The spec places the example after the product strategy (2026-01-28)
 and before "the North Star metric example's own window (2026-01-29 through 2026-02-10)"
-(`docs/internal/tier2-specs.md:6480-6481`). No date falls strictly between 2026-01-28 and 2026-01-29. The North
+(`docs/internal/tier2-specs.md:6482-6483`). No date falls strictly between 2026-01-28 and 2026-01-29. The North
 Star example is actually dated 2026-02-04 (`templates/north-star-metrics/north-star-metrics_example.md:6`), one week
 after the strategy (`:15-16`); the roadmap example is dated 2026-02-11
 (`templates/product-roadmap/product-roadmap_example.md:8`). Dates from 2026-01-29 to 2026-02-03 fall between the
@@ -594,12 +594,12 @@ Star fourth (`strategy-docs.md:180-182`). Its example says "this type sits third
 `strategy-docs` chain" (`templates/north-star-metrics/north-star-metrics_example.md:15`). Its companion says
 "This library places it third, between the strategy and the roadmap" (`north-star-metrics_companion.md:26-27`),
 and again at `:249-250`. The history line at `north-star-metrics_history.md:26` is a record and stays. The spec
-says no existing member's companion changes beyond the vision note (`docs/internal/tier2-specs.md:6512-6513`), and
+says no existing member's companion changes beyond the vision note (`docs/internal/tier2-specs.md:6514-6515`), and
 the contract's change note says the North Star companion gains no line (`strategy-docs.md:189-190`). **Whether
 these are dated factual corrections, outside that rule, is a maintainer call.**
 
-**The no-cadence sentence lives in five places.** The spec at `docs/internal/tier2-specs.md:6286-6287`, its
-section-design row at `:6405`, and its risk 5 at `:6466-6469`; the contract at `strategy-docs.md:78`; and ADR 0076
+**The no-cadence sentence lives in five places.** The spec at `docs/internal/tier2-specs.md:6288-6289`, its
+section-design row at `:6407`, and its risk 5 at `:6468-6471`; the contract at `strategy-docs.md:78`; and ADR 0076
 at `0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:142`. Each is contradicted by [26], [30],
 [52] and [8]. The contract allows a dated in-place correction of an unsourced claim under procedure 11
 (`strategy-docs.md:9-11`).
@@ -608,7 +608,7 @@ at `0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:142`. Ea
 management source read draws this boundary". The landing PR adds a dated note, not a rewrite
 (`0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:191-196`). The note can now cite Sharebird
 [43] and Dunford [11], [26], and should name the RUP counter-example [44]. The research log and history entries
-recording the old finding stay (`docs/internal/tier2-specs.md:6506-6508`). The same companion's Moore paragraph
+recording the old finding stay (`docs/internal/tier2-specs.md:6508-6510`). The same companion's Moore paragraph
 (`product-vision_companion.md:72-77`) agrees with this research and needs no change.
 
 **Routing rows.** Three `product-vision` files route a positioning reader away without naming a destination: the
@@ -622,7 +622,7 @@ a row. `templates/README.md:100-106` lists the family without this bundle. `STAT
 
 **The catalog row still carries the uncorrected values** (`docs/internal/catalog.md:43`): the alias "positioning
 map", the owner "PMM", and "Moore's "for/who/that" template" as the named source. The spec's corrections stand
-(`docs/internal/tier2-specs.md:6411-6440`), and this research adds nothing against them.
+(`docs/internal/tier2-specs.md:6413-6442`), and this research adds nothing against them.
 
 ---
 
@@ -728,7 +728,7 @@ stages follow this list.
    default: Dana Okoro, VP Product, owns the statement. If the example names a product marketer who drafts or
    co-writes it, that name is new to this example and appears in no sibling.
 4. **The example is dated 2026-01-30.** That falls after the product strategy example (2026-01-28) and before the
-   North Star example (2026-02-04). The spec's window (`docs/internal/tier2-specs.md:6480-6481`) holds no whole day,
+   North Star example (2026-02-04). The spec's window (`docs/internal/tier2-specs.md:6482-6483`) holds no whole day,
    so the landing PR corrects it with a dated note. The example cites neither the North Star example nor the
    roadmap example, which both postdate it.
 5. **The example's named alternative is the status quo, the spreadsheet and the favour.** The vision example
@@ -784,7 +784,7 @@ bundle is single-size, so every candidate must fit lean (E4).
   falsifier: readers make the same calls whether or not the rejected framing is recorded. E3 for both: this
   section, since the battlecard and messaging are downstream and would not carry the team's reasoning [8], [48].
 - **When We Revisit It: change the guidance, which the research overturns.** The spec's row says "not a calendar
-  date" and that no source states a cadence (`docs/internal/tier2-specs.md:6405`). Both are now wrong as stated.
+  date" and that no source states a cadence (`docs/internal/tier2-specs.md:6407`). Both are now wrong as stated.
   Candidates: the date of the last review, which is E1, since Dunford's record is "dated so you can track when the
   positioning was last reviewed" [8]; a check-in interval and named triggers, which are sourced as practice [22],
   [26], [28], [30], [51], [52] but not shown inside a document, so they are E2, with the falsifier that a team
@@ -808,7 +808,7 @@ bundle is single-size, so every candidate must fit lean (E4).
 7. **Repeating bare figures as facts**: 40 percent [53], 56 percent [56], 76 percent [58], and any Dunford
    no-decision figure.
 8. **Reusing the worked example's scenario in GOOD and WEAK text**, the risk the spec names
-   (`docs/internal/tier2-specs.md:6470-6472`). Grep the drafted template for Acme, Dana Okoro, the unaccompanied
+   (`docs/internal/tier2-specs.md:6472-6474`). Grep the drafted template for Acme, Dana Okoro, the unaccompanied
    analyst and the spreadsheet before review.
 9. **Dating the example outside the gap between its siblings**, or citing the North Star example from it.
 10. **Writing that no source states a revisit cadence**, in any file this bundle touches.

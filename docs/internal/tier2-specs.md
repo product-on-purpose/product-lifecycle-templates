@@ -53,6 +53,8 @@ design task" rather than "a spec-driven execution".
 | `test-strategy` | `test-strategy` | `standing-standards` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-seventh-member-the-test-strategy-for-an-organization-or-program), with a lost admission dimension recovered 2026-10-14 and a scope follow-up 2026-10-15 | **Built 2026-10-20**, shipped in `v0.20.0`. Family and classification (`foundation`) by [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) (test-strategy joins standing-standards as a foundation), accepted 2026-10-19 on the maintainer's delegation, which stood in for the contract read. Scoped to an organization or program, the maintainer's ruling of 2026-10-15, never a portfolio and never the per-project sense `test-plan` already ships. The contract diff was accepted without a read, and the maintainer has not yet confirmed the delegated acceptance |
 | `positioning-statement` | `positioning-statement` | `strategy-docs` | **Written 2026-10-16**; admission sources [retrieved and raw-checked 2026-10-14](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), with a sitting-decision follow-up on 2026-10-15 | **Built 2026-10-20**, shipped in `v0.20.0`. Family by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted 2026-10-19 on the maintainer's delegation, without a read of the contract diff. It widens the contract's list of questions and places the type third in the chain, between the strategy and the North Star metric. The bundle id matches the catalog id, and the catalog owner becomes `PMM / PM` by the maintainer's ruling of 2026-10-17. The spec's suggested ownership default is the agent's reasoning and was accepted without a read. Admitted on five sources (MIT, HubSpot, eCornell, Yesware, Product Marketing Alliance); Geoffrey Moore is named but not credited with admission |
 | `design-brief` | `design-brief` (entry 209, added at landing on 2026-10-22) | `discovery-docs` | **Written 2026-10-22**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fifth-member-at-define-the-design-brief-in-the-design-councils-sense), after the 2026-10-16 Define sweeps and the 2026-10-20 re-score | **Built 2026-10-22**, lean and full. Its [build report](../../bundle-builds/reports/design-brief_v0.1.0.md) covers the whole build: 11,563,997 weighted, $25.38, 16 agents. Family by [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md) (design-brief joins discovery-docs at define), accepted 2026-10-22 on the maintainer's delegation and confirmed by the maintainer the same day. It builds the Design Council's concept-handoff sense: the chosen problem and one concept chosen for design, handed to the people who will design it, never a specification. It ships in two sizes, lean and full, by the maintainer's ruling of 2026-10-22. The Shape Up pitch stays out at medium-low confidence, on a line the spec states. The catalog row is entry 209, not the 207 that issue #294 (bundle: design-brief) still names, because PR #305 (the opportunity statement becomes catalog entry 207) took 207 and Cagan's Product Opportunity Assessment took 208 on 2026-10-22 |
+| `user-research-plan` | `user-research-plan` (entry 210, added 2026-10-23 by PR #315) | `research-docs` | **Written 2026-10-23**, and the maintainer took all ten of its recommendations on 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | Not yet. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) (adopt the research-docs family contract), accepted 2026-10-23 with no member built. It is built first, by the maintainer's ruling, so that the report's example reports against its plan. Its example would plan the 2026-05 Reporting friction study that four shipped examples cite |
+| `user-research-report` | `user-research-report` (entry 18) | `research-docs` | **Written 2026-10-23**, in the same section, with the same rulings of 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | Not yet. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md). It is built second, by the maintainer's ruling. Its example would be the friction study's readout, which the PRD example cites as "Discovery readout: Reporting friction study, 2026-05" |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -1605,7 +1607,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1358-1371`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1360-1373`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1848,7 +1850,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1495-1497` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1497-1499` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1877,7 +1879,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:541-544` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:543-546` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1941,7 +1943,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:503-518` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:505-520` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2506,7 +2508,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1496-1498`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1498-1500`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -6957,3 +6959,438 @@ confidence are in the gitignored working file `_local/research/2026-10-22_design
 10. **The catalog category and stage:** Research / Discovery, at the `definition` stage, as recommended.
 
 These rulings set the spec. They are not the read the contract amendment needs, which happens on the pull request.
+
+### research-docs (founding members): the user research plan and the user research report
+
+**`user-research-plan`** - `research-docs`, **`phase: discover`**, sizes **`[lean, full]`**, default `lean`,
+methodology **`methodology-agnostic`**. Catalog **entry 210**, id `user-research-plan`, name
+"User Research Plan", added on 2026-10-23 by PR #315 (the user research plan becomes catalog entry 210). Catalog
+aliases: `UX research plan`, `research plan`, `usability test plan`, `research protocol`. Catalog
+`size_variant`: S. Tracked as issue #316 (bundle: user-research-plan), at `priority:P2`.
+
+**`user-research-report`** - `research-docs`, **`phase: discover`**, sizes **`[lean, full]`**, default `lean`,
+methodology **`methodology-agnostic`**. Catalog **entry 18**, id `user-research-report`, name
+"User Research Report". Catalog aliases: `UX research report`, `research readout`, `usability study report`,
+`usability test report`. Catalog `size_variant`: S/M/L. Tracked as issue #317 (bundle: user-research-report), at
+`priority:P2`.
+
+Both are founding members of `research-docs`, the family that
+[ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) (adopt the research-docs family contract)
+adopted on 2026-10-23 with no member built. **The maintainer ruled on the spec's ten choices on 2026-10-24,
+taking every recommendation.** The rulings close this section. Each choice's options and confidence are in the
+gitignored working file `_local/research/2026-10-23_research-docs-spec/maintainer-options.md`. No ADR is needed,
+because ADR 0081 left exactly these choices to the specs.
+
+#### The recommendation, and how sure it is
+
+**Build both bundles, the plan first, each in two sizes, and chain both examples onto the 2026-05 Reporting
+friction study.** Confidence: medium-high for the report, medium for the plan.
+
+- **The report's shape is the better evidenced of the two.** Dovetail, User Interviews, Maze, UserTesting and NIST
+  each give a report a named section list. Dovetail and UserTesting describe one study's findings issued at two
+  depths, and DHS scales the write-up to the kind of test.
+- **The plan's sections are well evidenced, and its sizes less so.** User Interviews names a minimum plan, and
+  digital.gov and 18F publish long ones. No source names a short and a long form of one plan.
+- **What holds the plan at medium is the usability block.** The alias "usability test plan" promises a reader that
+  the plan covers a usability test. The worked example cannot show that, because the friction study was an
+  interview study, so the promise rests on the template and the guide.
+
+#### Demand: four shipped examples cite a study nobody has shown
+
+- **Issues #316 and #317** carry the two types at `priority:P2`. The label's own definition is "Queued, but blocked
+  on a spec or a maintainer decision", and this spec is the unblocking step.
+- **Four shipped examples cite the 2026-05 Reporting friction study as a document that exists.** The PRD example
+  lists "Discovery readout: Reporting friction study, 2026-05 (n=12 analysts, illustrative)." in its appendix. The
+  design brief, epic and internal announcement examples cite the same study. No bundle can show that readout today.
+- **The spike report's guide routes user research away from itself.** `spike-report_guide.md` line 112 names
+  `discover-interview-synthesis`, a pm-skills skill, for exploration that "was user research rather than technical
+  feasibility". No bundle in this library takes that reader today.
+- **Demand does not schedule anything.** Build order is the maintainer's own preference
+  ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)).
+
+#### Admission: settled by two sweeps on 2026-10-23
+
+Both types cleared [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) (templating scope: Markdown
+documents) and [ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md) (one named source clears the
+admission test) on 2026-10-23. The evidence sits in two gitignored digests:
+`_local/research/2026-10-23_research-plan-and-usability-test-plan-sweep/digest.md` and
+`_local/research/2026-10-23_user-research-report-sweep/digest.md`. In the plan's sweep, 359 of 372 returned
+quotations and headings passed a raw-text check, and so did all 25 quotations the main loop added. In the
+report's sweep, 273 of 277 passed. Every quotation in this section was checked against the cached raw page or the
+repository file.
+
+| Member | Strongest written-form sources | Weight |
+|---|---|---|
+| Plan | 18F's `research-plan-template.md` on GitHub, an ungated fill-in template with eleven headings; digital.gov's "How to write a research plan", twelve sections in the document's own order; Nielsen Norman Group's research-plan article | Each **admits on its own**. Dovetail, User Interviews, Maze and dscout corroborate with section lists. NSW Digital Service links a Word template, which was not opened, so it corroborates only |
+| Plan, usability case | NN/g's "Checklist for Planning Usability Studies", whose step 8 is "Write a Test Plan"; MeasuringU's "What Goes into a Usability Test Plan?" | NN/g states the identity the catalog row rests on: "When planning a usability test, the research plan is often referred to as a test plan" |
+| Report | NIST's NISTIR 7742, an ungated fill-in template built on ISO/IEC 25062; UserTesting's three report structures; Dovetail's six sections; User Interviews' six headings; Maze's five | Each **admits on its own**. DHS's usability kit ships a report template whose file was not opened |
+
+**One lineage trap applies to the report.** NISTIR 7742 customizes the ISO/IEC 25062 Common Industry Format for
+testing electronic health records. The contract's section 3.6 forbids presenting that regulatory format as general
+product practice. The report may cite NIST for its headings and for the summative case, and must name the lineage
+in the same sentence.
+
+#### Family fit: settled by ADR 0081, not re-litigated here
+
+[The contract](contracts/research-docs.md)'s section 1 states the membership test both members must meet: each
+"plans or reports on one study of the people a product serves". Section 1 also states the boundary sentences
+against the experiment pair, the QA pair and the documents that use the findings. Section 2 fixes the axis at
+`phase: discover`, labelled the library's POSITION, with its cost stated: both documents serve studies of shipped
+products too. Section 4 fixes the shared scenario. ADR 0081 records why the types are two bundles and why no
+existing family admits either one. Nothing in this spec's research contradicts any of it. **This spec's job is
+what ADR 0081 left open:** the bundle ids and sizes, the sections, the usability block, the examples, the
+`pairs_with` claims and the catalog corrections.
+
+#### Bundle ids: the catalog ids
+
+**Keep `user-research-plan` and `user-research-report`.** Confidence: high. Neither id carries a category
+prefix to trim, the way `change-log-governance` became `change-log`. The maintainer approved entry 210's id on
+2026-10-23. Its qualifier "user" mirrors entry 18's id and keeps the plan from reading as a market research plan.
+
+#### Build order: the plan first, then the report
+
+**Recommended: two builds, the plan first.** Confidence: medium-high. The report's example reports against the
+plan's example, so the plan has to exist first, as `experiment-design-doc` preceded `experiment-readout`. The
+plan's `related_templates` names the report as `future:user-research-report`, the exact bundle id, because
+`tools/check-bundles.py` resolves a `future:` target by bundle id.
+
+**The alternative is one PR that builds both.** `tracking-plan` and `experiment-readout` landed in one PR. The
+cost is a review twice the size, and a defect in the plan's example then reaches the report's example before
+anyone reads either.
+
+#### Sizes
+
+**The plan: `[lean, full]`, default `lean`.** Confidence: medium.
+
+- **For two sizes.** User Interviews names a minimum: "At a minimum, your research plan should include:". Its six
+  items run from "What: Your research question(s) and goals" to "Next steps". digital.gov and 18F publish long
+  forms with sections the minimum lacks, such as "Past research", "Roles and responsibilities" and "Ethical
+  considerations".
+- **For one size.** Dovetail answers its own question, "How long should a research plan be?", with "One to two
+  pages." NN/g says the usability test plan "doesn't need to be lengthy". MeasuringU warns that "Test plans, like
+  many documents, can take on a life of their own and become bloated and unnecessarily complex." The plan sweep
+  found no source that names a short and a long form of one plan, at medium-high confidence.
+- **Why the balance tips to two.** In the design brief's spec, the full-only sections rested on the library's own
+  construction. Here every full-only section has a named source, so the full variant is sourced, not invented.
+- **What would change it.** A ruling for one size would drop the four full-only sections. The guide would then
+  route consent and observers into Participants and Logistics.
+
+**The report: `[lean, full]`, default `lean`.** Confidence: high.
+
+- Dovetail: "Executives want one page with the decision; your product team wants the detail behind it."
+- UserTesting gives an "Executive summary report (For Stakeholders and Leadership)" and a "Detailed research report
+  (For UX and Product teams)".
+- DHS scales the write-up by approach. One approach "may or may not result in a formal report", and another lets a
+  team "compile a short report".
+- **Not three sizes, at medium confidence.** UserTesting's third form, a "Quick feedback snapshot (For Agile
+  teams)", lists four items, and each of them maps to a lean section. The catalog's S/M/L is a hypothesis (finding EC-2
+  in `STATE.md`), and this evidence supports two sizes.
+
+**Both defaults are `lean`,** as in every two-size member of `qa-docs` and `experimentation-docs`. The worked
+examples use the full variant, as most of this library's examples do.
+
+#### Section design: `user-research-plan` (proposed, for the build's research to test)
+
+| Section | Size | What it carries | Sources | Confidence |
+|---|---|---|---|---|
+| **Why This Study, and the Decision It Informs** | both | Why the study runs now, and which decision its findings will inform | User Interviews' "Why: Business goals"; Dovetail's "Background explains why the study exists and what decision it informs."; dscout's "Part 1: Background"; digital.gov's "Context" | High |
+| **Goals and Research Questions** | both | One or two goals, and the questions the study must answer, stated as what the team needs to learn | User Interviews' "What: Your research question(s) and goals"; NN/g's "Purpose and goals of the research study"; digital.gov's "Research goals and questions"; Dovetail's "Research questions describe what you need to learn, not what you'll ask participants." | High |
+| **What We Already Know** *(full only)* | full | Earlier research, existing data, and the assumptions this study tests | digital.gov's "Past research"; User Interviews' "3. Gather available data and existing insights"; 18F's template heading "Assumptions" | Medium-high |
+| **Method** | both | The method or methods, why they fit the questions, the session format and length, and what participants will see | User Interviews' "How: Methodology"; NN/g's "Method and procedure"; digital.gov's "Research methods"; Maze's "4. Choose the right research method" | High |
+| **Participants and Recruiting** | both | Who qualifies and who does not, how many, how they are recruited, and how they are thanked or paid | User Interviews' "Who: Participants"; NN/g's "Participants"; Dovetail's "participants and recruitment criteria"; digital.gov's "Participants and recruiting" | High |
+| **Tasks and Measures** *(usability tests only)* | both | The tasks as scenarios, a success criterion for each task, the task and session measures, and the questions before and after the test. Any other method writes one line saying the study is not a usability test | NN/g's "Tasks" and "Metrics, questionnaires"; MeasuringU's "Task Metrics", "Test Metrics", "Pre-Test Questions" and "Post-Test Questions", and "Task Completion: Determine an objective success criteria for each task."; Maze's "6. Write tasks that match your goals" | High on the content; medium on the conditional placement |
+| **Schedule and Logistics** | both | The dates, the session times, the place or tool, and how sessions are recorded and noted | User Interviews' "When and where: Research schedule and logistics"; NN/g's "Logistics: time, dates, location, and format of study"; digital.gov's "Timeline"; GOV.UK's "Plan the session times" and "Arrange recording and note-taking" | High |
+| **Roles and Observers** *(full only)* | full | Who moderates, who takes notes, and how the wider team watches sessions | digital.gov's "Roles and responsibilities"; 18F's "Team participation"; GOV.UK's "Invite people to watch the sessions"; NN/g's "9. Motivate Team Members to Observe Sessions" | Medium-high |
+| **Consent, Privacy and Ethics** *(full only)* | full | How consent is taken, what personal data is captured and how it is kept, and any legal, accessibility or power concerns | 18F's "Ethical considerations"; 18F's template lines "Participants will need to sign a consent form (see attached)." and "Research team should ensure that no PII data is captured."; digital.gov's "Issues for awareness", which asks for "any legal, ethical, accessibility, bias, or power concerns" | Medium-high |
+| **What Happens to the Findings** | both | Which report the study produces, for whom and by when, how the report will be structured, and which decisions the findings feed | User Interviews' "Next steps"; Dovetail's "share-out plan"; Maze's "8. Decide how you'll present your findings"; 18F's "Outputs and outcomes"; MeasuringU's "If possible, try to outline how the report will be structured in the test plan." | High |
+| **Related Documents** *(full only)* | full | Links to the session guide, the screener, the consent form, the prototype and earlier reports | NN/g's "Relevant documents", which names "consent forms, recruitment documentation, and facilitator guides"; digital.gov's "Important links"; dscout's "Part 7: Resources/Links to Documentation" | Medium-high |
+
+**Lean holds the seven rows marked both. Full holds all eleven, in the table's order.** The lean set is User
+Interviews' six-item minimum plus the usability block. The full set matches the length of digital.gov's twelve
+sections and 18F's eleven headings without copying either.
+
+**What stays out of the plan at any size.**
+
+- **The session script.** dscout embeds one ("Part 5: Interview Guide"), and 18F's template carries an "Opening
+  script". This library treats the interview guide as catalog entry 25, a separate candidate the contract names
+  and does not admit. So the plan links the guide in Related Documents and does not hold it. Dovetail draws the
+  same line from the other side, separating a research question from "an interview question that helps answer
+  it". Confidence: medium.
+- **A standing research plan or a research strategy.** Maze: "While your UX research plan should be based on
+  strategy, it's not the same thing." GOV.UK's service-wide research plan is the standing document the contract's
+  section 1 excludes.
+- **The request for the study.** Dovetail separates the two: "A brief is the request", and "A plan is the
+  response". The plan restates the request as goals and does not stand in for it.
+
+#### The usability block: where the alias's promise is kept
+
+ADR 0081 calls the accepted alias a scope promise: "usability test plan" names a document that often runs on a
+shipped product. This spec keeps the promise in four places.
+
+1. **The block sits in both sizes,** so a reader who picks the lean plan for a small usability test finds it.
+2. **It is one conditional section, not a format.** NN/g's usability content list is its research-plan list with
+   the method fixed, plus "Tasks" and "Metrics, questionnaires". That block nests inside the general shape, so
+   [ADR 0028](decisions/0028-adopt-a-format-axis.md)'s format axis is not needed. A method that is not a usability test
+   writes one line, by the library's convention against deleting sections.
+3. **The report mirrors it** with a Task Results section in both sizes, under the same condition.
+4. **The guide's first line separates the alias from two near-misses** in `manifest.json`: `test-plan`'s alias
+   "test plan" and `experiment-design-doc`'s alias "A/B test plan". The report's guide does the same for
+   `test-summary-report`'s aliases "test report" and "test results".
+
+**The worked example cannot exercise the block.** Four sibling examples describe the friction study as interviews,
+and the design brief's handoff passes on "the full interview notes". So the plan's example marks Tasks and Measures
+not applicable in one line, and the report's example does the same for Task Results. The templates' GOOD text for
+both blocks uses a usability test unrelated to the example, which the shareable-boundary rule requires anyway.
+Confidence that this demonstrates the alias well enough: medium.
+
+#### Section design: `user-research-report` (proposed, for the build's research to test)
+
+| Section | Size | What it carries | Sources | Confidence |
+|---|---|---|---|---|
+| **Summary** | both | The answer up front: what the study found and what it recommends, in a few lines | Dovetail's "a summary that states the answer up front"; NIST's "EXECUTIVE SUMMARY"; UserTesting's "Key Takeaways (3-5 bullet points)" | High |
+| **Background and Objectives** *(full only)* | full | Why the study ran, the decision it informs, and a link to the plan | Dovetail's "background and objectives (two or three sentences on why the study ran)"; UserTesting's "Background & Objectives"; Maze's "Your introduction should lay out your research goals, plan, and scope." | High |
+| **Research Questions and Answers** | both | Each question the plan set, with a short answer and the findings behind it. A question the study could not answer says so | Maze's "Research questions the report is hoping to answer"; UserTesting's "Research Questions"; User Interviews' "Actionable reports should relate back to the initial research question". One answer per question is the library's POSITION, from the contract's "It answers the questions the plan set out." | Medium-high |
+| **What We Did** | both | The method, the participants and the dates, the limits of the sample, and one line on anything that ran differently from the plan | Dovetail's "method and participants"; NIST's "METHOD" and "PARTICIPANTS"; UserTesting's "Methodology". The deviation line is the library's POSITION, as in `experiment-readout`'s Context and Setup | High; medium on the deviation line |
+| **Key Findings** | both | Each finding, how many participants showed it, and the evidence a reader can follow | Dovetail's "key findings" and "A one-page summary with linked evidence beats a forty-slide deck nobody opens."; Maze's "Key findings"; User Interviews' "Key learnings"; UserTesting's "Use direct quotes or clips to support findings" | High |
+| **Task Results** *(usability tests only)* | both | Each task's completion, errors and time, and the questionnaire scores the plan named. Any other method writes one line | NIST's "USABILITY METRICS" and "RESULTS"; UserTesting's "Include quantitative data where applicable (e.g., success rates, charts, QX Score visualizations)"; the plan-side measures this section reports, such as Maze's "Successful task completion" in its usability plan guide | Medium |
+| **Recommendations** | both | What the team should do next and why, each recommendation tied to findings. It records no decision | Dovetail's "recommendations"; User Interviews' "Recommendations"; UserTesting's "Prioritized based on impact"; Maze's "Next steps" | High |
+| **Open Questions** *(full only)* | full | What the study raised and did not answer, and what research would answer it | Dovetail's "open questions" | Medium |
+| **Appendix** *(full only)* | full | The session list, the materials used, and where the raw notes live | Maze's "Appendix"; NIST's "APPENDICES"; UserTesting's "Full responses, session details, additional data" | High |
+
+**Lean holds the six rows marked both. Full holds all nine, in the table's order.** The order follows
+UserTesting's detailed report, which puts "Research Questions" before "Methodology". The answers point down to the
+findings that support them.
+
+**What stays out of the report at any size.**
+
+- **A decision.** The contract's section 1: "A member here may recommend, but it records no decision."
+- **A framed problem or a chosen concept.** Those are `problem-statement` and `design-brief`. A finding may say
+  what costs people time. It does not frame that as the problem to solve, or name the concept to design.
+- **An aggregate across studies.** Catalog entry 17, the Voice of Customer report, aggregates "ongoing,
+  quarterly", and the contract excludes it.
+- **A deck format.** NN/g: "Whether the report is a lengthy Word document or a presentation deck, it's meant to be
+  consumed asynchronously". No source shows a deck structurally distinct from the written sections, so this spec
+  recommends no format under ADR 0028, at medium confidence. The guide may say a deck can carry the same sections.
+
+**A report with no written plan behind it** fills Research Questions and Answers from what the study set out to
+learn. The sources tie a report to its plan where both exist. GOV.UK says agile teams often skip a formal report,
+and no source was asked how often a report runs without a plan. The guide states that case in one line.
+
+#### Boundaries with each named neighbour
+
+- **The other member.** The plan states the questions before the study runs. The report answers the same
+  questions after the study ends, and links back to the plan.
+- **The experiment pair (`experimentation-docs`).** Itamar Gilad: "Per this definition an A/B test is an
+  experiment, but a usability test is not." Gilad is already logged in `experiment-readout`'s research log. The
+  contract holds, as its POSITION, that a study which allocates participants between variants and applies a
+  decision rule is an experiment, whatever it is called.
+- **The QA pair, `test-plan` and `test-summary-report` (`qa-docs`).** They verify a product increment against a
+  specification and grade it. A usability study records how people use a product, and its report holds
+  observations, not a verdict. NIST's summative report on a "final product" is the nearest edge, and the report's
+  companion must name it.
+- **The documents that use the findings (`discovery-docs`).** `user-persona` records an evidence basis,
+  `problem-statement` an evidence table, and `design-brief` a short summary for designers. Each takes findings
+  and frames or decides. None reports a study.
+- **`project-brief`.** NSW Digital Service places the research plan "After you have been given an initial project
+  brief, but before you commence any official research activities." The project brief asks for authority to start.
+  The plan sets out one study inside that authority.
+- **`spike-report` (`decision-docs`).** A spike tests technical feasibility. Its guide sends user research
+  elsewhere, at line 112.
+- **Catalog entries 25, 26 and 28.** The interview guide (25) and the survey instrument (26) are used during a
+  study. The diary study plan (28) is a method-specific sibling of the plan: the 2026-10-23 placement pass read
+  NN/g's and User Interviews' diary-study pages, which give it its own structure. The plan's guide names all
+  three as unbuilt candidates.
+- **Catalog entry 17 and standing research documents.** A Voice of Customer report, a research repository and a
+  service-wide research plan are maintained over time. The contract excludes all of them.
+- **A retrospective on how the study ran** belongs to `process-docs`.
+
+#### The worked examples: the 2026-05 Reporting friction study
+
+**The plan's example plans the friction study, and the report's example is its readout.** Contract section 4 fixes
+the study. Both examples are dated before the design brief of 2026-06-01, which cites the study.
+
+**Facts the two examples must carry, with no contradiction.** Each comes from a shipped sibling example. The report
+must be findable by the PRD's own citation, "Discovery readout: Reporting friction study, 2026-05".
+
+| Fact | Value | Where it is stated |
+|---|---|---|
+| Name and date | "Reporting friction study", 2026-05 | `prd_example.md:12`, `:173`; `design-brief_example.md:16-17` |
+| Sample and method | 12 analysts, interviewed | `prd_example.md:44`, `:173`; `design-brief_example.md:62`; `epic_example.md:45` |
+| The top finding | Re-filtering was "the single most frequent repeated action in the dashboard, ahead of export and share" | `prd_example.md:35-36`; `design-brief_example.md:33-35`; `epic_example.md:45-46` |
+| First count | 9 of 12 described rebuilding filters by hand several times a day | `prd_example.md:44`; `design-brief_example.md:62-63` |
+| Second count | 3 kept a personal text file of "the filters I always use" | `prd_example.md:45`; `design-brief_example.md:63-64`; `epic_example.md:47` |
+| The cost | Broken flow, and the risk of analysing the wrong slice from a filter set rebuilt from memory | `prd_example.md:46-47`; `design-brief_example.md:64-66` |
+| The reframing | The study turned re-filtering from a feature gap into a recurring time tax, after two deferrals because filtering "worked" | `prd_example.md:36-37`; `design-brief_example.md:35-36`; `epic_example.md:44-49` |
+| The sharing clause | The pattern found "more often than any other" included rebuilding a setup "because nobody else could reach their saved setup" | `announcement-internal-comms_example.md:66-68` |
+| The Team Lead | A second audience Priya Nair named from the study, described only as far as the study went | `design-brief_example.md:53-55`, `:60-61` |
+| Questions not asked | Who owns a shared lens, and what a saved lens does when its dashboard changes: "The friction study asked neither question." | `design-brief_example.md:103-106` |
+| Coverage | Only the small set of report types the study happened to cover | `design-brief_example.md:110-112` |
+| The notes | The full interview notes exist, and the design team receives them on 2026-06-01 | `design-brief_example.md:116-118` |
+| Illustrative | The counts are "illustrative counts from a 12-person study" | `prd_example.md:45-46` |
+
+**Facts older than the plan, which the examples may read.** The 2026-01-05 user persona defines the Recurring
+Analyst. The FY26 product strategy (2026-01-28) carries the "Time to Insight" goal. The FY26 roadmap
+(2026-02-11) has Saved Views in its Now lane, "Being specified now", and shared views across a team in its Next
+lane (`product-roadmap_example.md:50-52`, `:63-65`).
+
+**Two traps the examples must route around.**
+
+1. **Two different 12-person studies exist.** The persona rests on interviews held in November and December 2025,
+   n=12 (`user-persona_example.md:42`), across nine mid-market customer accounts
+   (`problem-statement_example.md:53-54`). In that study 9 of 12 raised re-filtering and 6 of 12 kept a
+   spreadsheet (`user-persona_example.md:54`, `:71`). The friction study is a second study, in May 2026, where 3 of 12
+   kept a text file. The plan's What We Already Know may cite the persona's study with its own figures. Nothing
+   may merge the two sets of figures.
+2. **The plan must not presuppose its own finding.** Re-filtering is already known in April 2026: the persona
+   lists it, and the roadmap is specifying Saved Views. What the study adds is measurement, and the reframing is a
+   finding. So the plan's questions ask where analysts lose time between opening a report and acting on it. They
+   may name the deferred request as one thing to probe, and they may not assume the answer.
+
+**The sharing clause is the hardest fact to honour.** The report's top finding has to hold the PRD's "ahead of
+export and share" and the announcement's "because nobody else could reach their saved setup" together. One honest
+reading is that the only saved setups were personal notes no teammate could see. The build chooses the wording,
+and the review checks it against both sentences.
+
+**Recommended dates, chosen rather than read from a sibling.** The plan is dated 2026-04-20. Sessions run from
+2026-05-04 to 2026-05-15. The report is dated 2026-05-27, before the design brief of 2026-06-01. Confidence:
+medium.
+
+**Recommended author.** Priya Nair, PM, Reporting, writes both, with sessions run by Acme's UX Research function,
+which the risk register names as co-owner of risk R-04 (`risk-register_example.md:69`). No new named person is
+needed. A build that adds one greps every example for the name first.
+
+**Recommended method.** One-to-one interviews of about an hour, each with a walkthrough of the analyst's own
+dashboard. That fits "interviewed" in every sibling, and it lets the report count the repeated action it reports.
+A walkthrough of a participant's own work is not a usability test, so the Tasks and Measures block stays not
+applicable. Confidence: medium.
+
+**The shipped-product clause applies.** The friction study studies a dashboard customers already use. The
+contract's section 2 says a member that serves such a study still declares `discover`, "and its companion must
+say why". Both companions explain that clause with this example.
+
+**What the examples must not cite or contain.**
+
+1. **No document dated after the report**, as existing: the design brief, PRD, epic, user stories, test plan,
+   announcement and later Saved Views documents.
+2. **No concept and no decision.** The design brief of 2026-06-01 weighs candidate concepts and names Saved Views
+   as the chosen one. The report recommends a next step, and names no concept as chosen.
+3. **No answer to the two questions the study did not ask**, and no claim about report types beyond the small set
+   it covered.
+4. **No minutes-per-day figure.** The business case templates' GOOD text carries one, which is illustration and
+   binds nothing. A report that states its own figure invites a reader to reconcile two numbers that were never
+   meant to meet.
+5. **No figure from the persona's study presented as the friction study's.**
+
+#### Metadata
+
+| Field | `user-research-plan` | `user-research-report` | Why |
+|---|---|---|---|
+| `family` | `research-docs` | `research-docs` | ADR 0081 |
+| `phase` | `discover` | `discover` | Contract section 2; check K gates it |
+| `sizes_available` | `[lean, full]` | `[lean, full]` | See Sizes |
+| `default_size` | `lean` | `lean` | As in every two-size member of `qa-docs` and `experimentation-docs`. This is judgment |
+| `status` | `beta` | `beta` | Every bundle starts at `beta` |
+| `methodology` | `methodology-agnostic` | `methodology-agnostic` | The sources span UX research vendors, government digital services and an ISO reporting format. One lineage would misdescribe the others. The catalog's two values differ from each other and are not carried. This is judgment |
+| `pairs_with` | `[]` | `[discover-interview-synthesis]` | See below |
+| `related_templates` | `[future:user-research-report, user-persona, problem-statement, design-brief, test-plan, experiment-design-doc]`, inline | `[user-research-plan, user-persona, problem-statement, design-brief, test-summary-report, experiment-readout]`, inline | The other member, the three documents that use the findings, and the two near-miss neighbours. Inline, because check I drops the first entry of a block list. This is judgment |
+| `aliases` | the catalog's four | the catalog's four | Both sets were recorded on 2026-10-23 with their sources |
+
+#### `pairs_with`: one honest pairing, for the report
+
+**Recommended: the report pairs with `discover-interview-synthesis`, and the plan pairs with nothing.**
+Confidence: medium-high.
+
+- The skill is present in the local pm-skills checkout, as tracked source at
+  `skills/discover-interview-synthesis/SKILL.md`, checked on 2026-10-23.
+- Its own "When to Use" list names "After usability testing sessions to consolidate observations" and "When
+  stakeholders need a summary of research findings". That is the report's job.
+- `spike-report_guide.md` line 112 already routes user research to the same skill.
+- No pm-skills skill plans a study, so the plan's `[]` is honest, not a gap.
+- The ID is not yet in `tools/known-skills.txt`. The report's build adds it, with a verification line in the
+  file's own format.
+
+The contract's section 2 allows a pairing "only where that claim is true of that member". This pairing is a claim
+about the skill's job, and not a reason to build or rank either bundle.
+
+#### Catalog corrections the landing PRs should check (per decision-procedures.md section 1)
+
+The PR that adds this spec edits no catalog field.
+
+- **Entry 18's `size_variant: S/M/L`.** The evidence supports two sizes, so the report's landing PR corrects it to
+  match the shipped `[lean, full]`.
+- **Entry 18's relationships, "Personas" and "PRD".** The report's landing PR adds "User Research Plan", which
+  entry 210 already names in the other direction.
+- **Entry 210's `size_variant: S`.** If the maintainer rules two sizes, the plan's landing PR corrects it.
+- **The two owners differ:** "UX Researcher" on entry 18, "UXR / PM" on entry 210. Nothing read settles either.
+  This spec recommends no change, and the companions say that either role writes either document.
+- **The two methodology values differ**, and the contract makes methodology descriptive. The metadata above
+  carries neither, and the catalog rows stay as recorded.
+
+#### Risks for the build and the review
+
+1. **The binding facts are spread across five examples.** A lens that reads only the PRD will miss the
+   announcement's sharing clause and the design brief's two unasked questions. The review brief lists the table
+   above.
+2. **The two 12-person studies invite a merge.** The review greps both examples for "6 of 12" and "spreadsheet".
+3. **The plan's example must not know its own answer.** A plan whose questions already name re-filtering as the
+   finding reads as written after the study.
+4. **The templates stage has reused the example's scenario in GOOD and WEAK text before.** Before the review
+   closes, grep both bundles' templates and guides for Saved Views, Recurring Analyst, Priya Nair, friction study,
+   Team Lead and re-filter.
+5. **The NIST lineage trap.** The report may cite NISTIR 7742's headings, and must say in the same sentence that
+   it customizes ISO/IEC 25062 for electronic health records.
+6. **The report must recommend without deciding.** "We recommend" is in contract. "The team will build" is not.
+7. **No GOOD line may present the usability block as optional detail.** For a usability test it is the core of the
+   plan, and NN/g's and MeasuringU's lists put it there.
+8. **The two alias near-misses need first lines in each guide**, as `change-request_guide.md` keeps for its own
+   `rfc` collision.
+9. **The full plan holds eleven sections and may run long.** The MCP server's output cap fails a variant above
+   roughly 8,000 approx tokens, and `experiment-readout`'s full variant sits at 6,600. The build checks
+   `approx_tokens` for the full plan before landing. If it runs long, trim guidance comments before dropping a
+   sourced section.
+
+#### What landing these bundles closes elsewhere
+
+At the first landing:
+
+1. **The contract's "Members at adoption" line** changes to name the built member and its date.
+2. **Check K's `research-docs` entry stops being latent.** The gate then checks a real member.
+3. **The family count moves from 10 to 11** in `AGENTS.md` (lines 44 and 152), the README badge and its two
+   prose counts (lines 158 and 360), and wherever else `tools/check-counts.py` gates a family marker. The README's
+   "ten complete families" needs care: a family with one of two members built is not complete.
+4. **The README gains a `research-docs` family section,** not just a count change.
+5. **Issue #316 or #317** is closed by its landing PR and relabelled to `status:built`. A landing PR closes its
+   issue but changes no label, so the relabel is a separate step.
+
+At the report's landing:
+
+6. **`spike-report_guide.md` line 112** gains a dated note routing user research to `user-research-report`, beside
+   the pm-skills skill it already names.
+7. **`tools/known-skills.txt`** gains `discover-interview-synthesis`, if the maintainer accepts the pairing.
+8. **The four examples that cite the friction study** gain no edit. Contract section 4 binds the new examples to
+   them, not the reverse, as ADR 0076 set for reciprocal mentions.
+9. **The plan's `related_templates` drops the `future:` prefix** from `future:user-research-report`, with a
+   history line, in the report's landing PR. `tools/check-bundles.py` raises its stale-reference failure as soon as
+   that exact id exists on disk.
+
+#### The maintainer's rulings, 2026-10-24
+
+The maintainer answered all ten choices in one line on 2026-10-24: "I approve your ten choices". Each choice's
+options, recommendation and confidence are in the gitignored working file
+`_local/research/2026-10-23_research-docs-spec/maintainer-options.md`.
+
+1. **The bundle ids:** keep the catalog ids, `user-research-plan` and `user-research-report`, as recommended.
+2. **The plan's sizes:** lean and full, as recommended, over lean only.
+3. **The report's sizes:** lean and full, as recommended.
+4. **The usability block:** one conditional section in both sizes of each member, as recommended.
+5. **The session guide:** the plan links it and does not hold it, as recommended.
+6. **`pairs_with`:** the report pairs with `discover-interview-synthesis`, and the plan with nothing, as
+   recommended. The ID enters `tools/known-skills.txt` at the report's landing.
+7. **The examples:** Priya Nair as author, UX Research running sessions, interviews with a dashboard walkthrough,
+   with the plan dated 2026-04-20 and the report 2026-05-27, as recommended.
+8. **The build order:** two builds, the plan first, as recommended.
+9. **Defaults and methodology:** `lean` for both, and `methodology-agnostic` for both, as recommended.
+10. **The catalog corrections:** made at each landing, as listed above, as recommended.
+
+These rulings set the spec. A build is a separate run, and it needs its own go
+([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)).

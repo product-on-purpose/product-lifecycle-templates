@@ -1,7 +1,7 @@
 # trade-study: research log
 
 Research conducted 2026-10-15, building on admission sweep 5 (2026-10-12), the spec research of 2026-10-14, and the
-spec that merged on 2026-10-15 (`docs/internal/tier2-specs.md:4453-4812`). The build's seven-dimension fan-out
+spec that merged on 2026-10-15 (`docs/internal/tier2-specs.md:4455-4814`). The build's seven-dimension fan-out
 covered the NASA, SEBoK and ECSS canon; the FHWA's trade study step and other published outlines; how criteria are
 weighted and options scored; the debates and failure modes; the library's own neighbours and the worked example's
 independence; true technical facts about streaming-ingestion options for the worked example; and the standing gap
@@ -83,7 +83,7 @@ they support the existence of separate effectiveness and cost tasks and nothing 
   It supports nothing in this bundle.
 - **GAO's Cost Estimating and Assessment Guide.** Not fetched by this build, on instruction. The spec's recheck of
   its spans against the primary `gao.gov` PDF returned HTTP 403 on every span
-  (`docs/internal/tier2-specs.md:4518-4526`). It has no entry here, stays a neighbour named in paraphrase, and is
+  (`docs/internal/tier2-specs.md:4520-4528`). It has no entry here, stays a neighbour named in paraphrase, and is
   never quoted.
 - **The INCOSE Systems Engineering Handbook.** Not retrieved; treated as paywalled. Two INCOSE conference papers
   that looked likely to bear on the gap question returned a bot-check page instead of their PDFs. INCOSE's
@@ -115,7 +115,7 @@ they support the existence of separate effectiveness and cost tasks and nothing 
   absent.
 - **BABOK is not cited in either direction.** No pass of this build, of the spec research or of admission sweep 5
   read it. The catalog's notes column cites a BABOK section that was never fetched, which is catalog correction 4's
-  subject (`docs/internal/tier2-specs.md:4664-4667`).
+  subject (`docs/internal/tier2-specs.md:4666-4669`).
 
 ---
 
@@ -212,7 +212,7 @@ sections now rests on sources in this log (see the section design below).
    to acquire: RAND's presentation [25], given at an acquisition research symposium, frames its analysis of
    alternatives around "Measuring the cost and benefits of each alternative", with "Task 4: Perform effectiveness
    analysis" and "Task 5: Estimate life cycle costs" ahead of a combined cost-effectiveness task [25]. GAO's guide
-   and HM Treasury's Green Book, named by the spec (`docs/internal/tier2-specs.md:4668-4673`) and not read in this
+   and HM Treasury's Green Book, named by the spec (`docs/internal/tier2-specs.md:4670-4675`) and not read in this
    build, are in the same sense. Yet the SMC primer's own trade study outline lists performing an analysis of
    alternatives, glossed as comparative analysis, as one purpose a trade study can serve [7] (read in raw text; the
    outline line is not a Quotable line). And Wikipedia notes that the decision matrix, "frequently used in
@@ -290,7 +290,7 @@ verbs, so section 1 read alone would exclude this type. It joins on ADR 0022's c
 with no contract change unless it declares a different phase or size shape
 (`docs/internal/decisions/0022-adopt-decision-docs-family-contract.md:84-85`), as `spike-report` did, and it
 declares neither. The Relationships section must place it against `adr`, `rfc`, `sdd` and `spike-report`
-(`docs/internal/tier2-specs.md:4718-4723`): an ADR records the decision a trade study's options feed; an RFC or SDD
+(`docs/internal/tier2-specs.md:4720-4725`): an ADR records the decision a trade study's options feed; an RFC or SDD
 whose Alternatives Considered prose needs weights can cite a trade study; a spike reduces an unknown before the
 options exist. One boundary needs a caveat. NASA's decision report also records the outcome, since it includes the
 "recommendation, and final decision" [1]. Separating the evaluation from the record of the decision is this
@@ -332,7 +332,7 @@ there is a clear solution choice." [8].
 Summary, 2 Problem/Issue Description, 3 Decision Matrix Setup Rationale, 4 Decision Matrix Scoring Rationale, 5
 Final Decision Matrix, 6 Risk/Benefits, 7 Recommendation and/or Final Decision, 8 Dissent, 9 References, and A
 Appendices. That is exactly the order the spec reconstructed from a research summary
-(`docs/internal/tier2-specs.md:4618-4625`). The row descriptions add content the spec did not have. Row 3 asks for
+(`docs/internal/tier2-specs.md:4620-4627`). The row descriptions add content the spec did not have. Row 3 asks for
 the evaluation methods selected, as well as the criteria, options and weights. Row 4 asks for the rationale behind
 the scores. Row 6 covers the risks and benefits of each final option, not only the chosen one. Row 7 allows the
 final decision to be recorded in the same section. Row 8 asks how dissent was addressed. These rows and
@@ -345,7 +345,7 @@ classification; analysis of the robustness of the classification; and conclusion
 alternatives, as in the spec and as the FHWA advises, since "Ideally, the criteria are developed early in the trade
 study process, before the alternatives are selected" [4]. Robustness analysis follows the classification and
 precedes the conclusion. That is where the spec puts Sensitivity Analysis, a placement the spec had called the
-library's own (`docs/internal/tier2-specs.md:4612-4616`). The SMC outline orders it the same way, with "Sensitivity
+library's own (`docs/internal/tier2-specs.md:4614-4618`). The SMC outline orders it the same way, with "Sensitivity
 Analysis" in its analytical approach ahead of its trade results [7]. ECSS also asks for four things the spec did
 not, each a Quotable line: each weight justified, "provide the weighting of criteria and their justifications" [3];
 "the entity responsible for the evaluation of the design solutions for any criteria, as well as the source and
@@ -398,7 +398,7 @@ Section by section:
   to Wikipedia's test "to see how much your opinion would have to change in order for a lower ranked alternative to
   outrank a competing alternative" [12]; and to the FHWA [4]. NASA's section 6.8.1.3.1 also lists assumptions,
   uncertainties and sensitivities among a decision report's contents (raw text). The spec's statement that NASA's
-  template has no sensitivity section (`docs/internal/tier2-specs.md:4612-4613`) is true of Table 6.8-1 alone.
+  template has no sensitivity section (`docs/internal/tier2-specs.md:4614-4615`) is true of Table 6.8-1 alone.
 - **Risk and Benefit** (full): **position stands; content should widen.** The spec defines the section as the
   recommended option's risk and benefit profile and places it before Recommendation, as NASA orders its rows. But
   NASA's row 6 covers each option still under consideration (raw text), and ECSS puts the recommended option's
@@ -465,7 +465,7 @@ decline; this log admits none of them.
   drops, since Recommendation already states the answer.
 
 **Who writes it.** The catalog's owner value, Architect / BA, is unsourced (catalog correction 3,
-`docs/internal/tier2-specs.md:4661-4663`), and no source in this research names either role. These are the roles
+`docs/internal/tier2-specs.md:4663-4665`), and no source in this research names either role. These are the roles
 the sources do name. ECSS assigns trade-off analyses to "The system engineering function" and requires the report
 to name the entity responsible for evaluating each criterion and who agreed the weights [3]. SEBoK names an
 analyst, a "decision analysis team", "subject matter experts (SMEs) and stakeholders", and decision makers [2], and
@@ -488,7 +488,7 @@ Bromage's anecdote. Short attributed quotations in the companion are the only re
 
 **The example.** The worked example is set at a new fictional logistics company, working name Thornwell Freight,
 choosing a message-ingestion technology for GPS telemetry from its truck fleet, against a do-nothing baseline of
-the current nightly batch upload (`docs/internal/tier2-specs.md:4751-4767`).
+the current nightly batch upload (`docs/internal/tier2-specs.md:4753-4769`).
 
 **What independence requires, and what the checker actually tests.** Contract section 4 requires decision-docs
 examples to be deliberately independent, each a different decision or design, and places a cross-reference rule on
@@ -498,7 +498,7 @@ example reuses its own template's GOOD and WEAK text (line 2). It compares a bun
 (`guidance_snippets`, line 56) with that bundle's own example prose (`example_prose`, line 69), reports a shared
 run of 6 words and fails one of 8 (lines 45-46), and has no mechanism that compares one bundle's example with a
 sibling's. `trade-study` is not in its `GRANDFATHERED` map (line 174), so any run of 8 shared words fails outright.
-**The spec's sentence that the script enforces the distinct-jobs rule (`docs/internal/tier2-specs.md:4724-4727`)
+**The spec's sentence that the script enforces the distinct-jobs rule (`docs/internal/tier2-specs.md:4726-4729`)
 overstates it**; the cross-sibling check is the manual grep the spec's risk 4 names (lines 4726-4730).
 
 **Proper nouns the four siblings use, which the example must not reuse.** `adr_example.md` is a real decision about
@@ -511,12 +511,12 @@ Okafor, SPK-2026-014, OPS-1187, and nodes RS4-0031, RS4-0033 and RS4-0035, dated
 `templates/*/*_example.md`, rerun for this log, finds no use of Thornwell, Kafka, GPS, truck, MSK, Kinesis,
 Pub/Sub, RabbitMQ or JetStream. The word fleet appears in the spike report, for its monitoring nodes, and telemetry
 appears in several Acme examples; both are generic words, not collisions. The spec's statement that the `adr`,
-`rfc` and `sdd` examples share the Acme Analytics scenario (`docs/internal/tier2-specs.md:4747-4748`) is true of
+`rfc` and `sdd` examples share the Acme Analytics scenario (`docs/internal/tier2-specs.md:4749-4750`) is true of
 the `sdd` example only; contract section 4 itself says the RFC and ADR examples are real repository decisions
 (`docs/internal/contracts/decision-docs.md:44`).
 
 **The family's example dates run from 2026-07-02 to 2026-09-04.** No file mandates a date for this example; the
-spec leaves dates, names and figures to the build (`docs/internal/tier2-specs.md:4766-4767`). A date after
+spec leaves dates, names and figures to the build (`docs/internal/tier2-specs.md:4768-4769`). A date after
 2026-09-04 and no later than the landing date fits both the family's range and the library's most recent builds.
 
 **The true technical facts the criteria rows may use**, each from a Quotable line that survived the re-test:
@@ -581,7 +581,7 @@ neighbour, because it has no entry here to cite. It must not frame a trade study
 Acme Analytics, Riverland Sensing or any proper noun listed above, and it must not state a technical claim beyond
 the sourced facts above. **The example's own proper nouns must not appear in template guidance text**: before
 review, grep the drafted templates for Thornwell, Kafka, MSK, Kinesis, RabbitMQ, NATS, Pub/Sub, GPS, telemetry,
-truck and the example's people (`docs/internal/tier2-specs.md:4731-4735`). The companion must not present the
+truck and the example's people (`docs/internal/tier2-specs.md:4733-4737`). The companion must not present the
 must-and-want split as Kepner-Tregoe's own words ([11], [15]); must not attribute anything to Hazelrigg, MITRE or
 BABOK, or to INCOSE's handbook beyond what the SMC primer quotes [7]; must not present the Barnet critique as an
 audit finding [21]; must not treat the Pugh datum and the do-nothing alternative as the same thing (contested item
