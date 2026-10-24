@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-22.** The issue counts in section 2
-were read from GitHub on 2026-10-22, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-22.** Sections 3 and 5 moved again on
+2026-10-23, when catalog entry 210 was added. The issue counts in section 2 were read from GitHub on 2026-10-22, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -19,7 +19,7 @@ No single list holds the backlog. Three places hold parts of it, and each one la
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 209 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 210 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
@@ -51,17 +51,17 @@ Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the dec
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=50, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=50, statecandidate=158, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 209 types. Its `state` field reads 50 built, 157 candidate and 2 out of scope. Four of the
-157 were declined by record, so 153 types are still open.
+The catalog holds 210 types. Its `state` field reads 50 built, 158 candidate and 2 out of scope. Four of the
+158 were declined by record, so 154 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 155 | 25 | 4, declined by record (below) | **126** |
+| 2 | 156 | 25 | 4, declined by record (below) | **127** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **209** | **50** | **6** | **153** |
+| **All** | **210** | **50** | **6** | **154** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -178,6 +178,10 @@ ADR 0077 keeps in `deliver`.
   and gave the design brief's build its go.
 - **2026-10-22, at landing.** `design-brief` was built through the `build-bundle` workflow as the 50th bundle
   and the second at `define`, with catalog entry 209. Its landing closes #294, so the define count is two.
+- **2026-10-23.** An admission sweep found the user research plan and the usability test plan to be one
+  type, and the maintainer agreed. It became catalog entry 210, the user research plan, a Tier 2 candidate
+  with no family and no issue yet. The maintainer ruled that entry 18 (user research report) gets its own
+  admission sweep first, because that result decides whether the plan founds a new family.
 
 ## 6. What comes next, in order
 

@@ -12,6 +12,15 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Catalog entry 210, the user research plan, and the catalog now counts 210 types.** An admission sweep
+  tested the user research plan and the usability test plan as two candidate types. Nielsen Norman Group says
+  "When planning a usability test, the research plan is often referred to as a test plan", so the maintainer
+  recorded them as one type on 2026-10-23, with "usability test plan" as an alias. "Test plan" alone is not an
+  alias, because entry 102 is `test-plan`. The row is a Tier 2 candidate. Its family waits on an admission
+  sweep for entry 18, the user research report, and no build-candidate issue is open yet.
+
 ## [0.21.0] - 2026-10-22
 
 A minor release with one new bundle: `design-brief`, the 50th, and the second at `phase: define`. It also

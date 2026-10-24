@@ -40,7 +40,7 @@ has not earned.
 
 ## The four states
 
-Every one of the 209 catalog types carries a generated `state` in
+Every one of the 210 catalog types carries a generated `state` in
 [`atlas/catalog-data.json`](../../atlas/catalog-data.json). It is **derived from the tree** by
 `tools/gen-atlas.py`, not hand-maintained, and CI fails on drift.
 

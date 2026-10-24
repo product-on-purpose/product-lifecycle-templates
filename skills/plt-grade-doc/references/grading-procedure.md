@@ -26,7 +26,7 @@ work back.
 | `risk-register` and `raid-log` | Does it track risks only, or also assumptions, issues and dependencies? |
 | `user-stories` and `acceptance-criteria` | Is the unit a story with a value clause, or a testable condition? |
 
-**No match at all is a result, not a failure.** The catalog holds 209 types, and most of them
+**No match at all is a result, not a failure.** The catalog holds 210 types, and most of them
 are not built. Record the miss: what the document appeared to be, and what the reader called it. That is demand
 evidence for a type nobody has asked for yet in any other way.
 
