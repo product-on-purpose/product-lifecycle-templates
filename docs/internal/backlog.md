@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-23.** The issue counts in section 2 were
-read from GitHub on 2026-10-23, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-24.** The issue counts in section 2 were
+read from GitHub on 2026-10-24, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -33,8 +33,8 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). It waits for the build, which comes first of the pair |
-| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | Specced in the same section. Its build follows the plan's, so that its example reports against the plan's example |
+| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Queued 2026-10-24, once its spec was ruled; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). It waits for the build, which comes first of the pair |
+| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Queued 2026-10-24, with the plan; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | Specced in the same section. Its build follows the plan's, so that its example reports against the plan's example |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
@@ -44,7 +44,7 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 4 candidates, 4 parked |
+| Status | 2 candidates, 2 queued, 4 parked |
 | Priority | P2: 2, P3: 5, P4: 1 |
 | Tier | Tier 2: 7, Tier 3: 1 |
 
@@ -189,7 +189,8 @@ ADR 0077 keeps in `deliver`.
   adopts a `research-docs` contract at `discover` for the pair, after the maintainer's read the same day.
 - **2026-10-24.** Both types were specced in one section of `tier2-specs.md`, each in two sizes, with examples
   that plan and report the 2026-05 Reporting friction study. The maintainer took all ten of the spec's
-  recommendations in one line.
+  recommendations in one line. Once the spec merged (#319), the maintainer queued both types, so #316 and #317
+  now carry `status:queued`.
 
 ## 6. What comes next, in order
 
@@ -201,7 +202,7 @@ ADR 0077 keeps in `deliver`.
 
 Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
-ruled on 2026-10-24. The plan's build comes first, and each build needs its own go.
+ruled on 2026-10-24. Both issues are queued. The plan's build comes first, and each build needs its own go.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
