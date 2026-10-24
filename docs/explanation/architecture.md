@@ -71,7 +71,7 @@ example, requires `phase: deliver`, a `beta` or `stable` status, and a size shap
 
 Eleven family contracts exist today, each its own file: `delivery-docs`, `decision-docs`, `governance-docs`,
 `qa-docs`, `strategy-docs`, `discovery-docs`, `standing-standards`, `process-docs`, `communication-docs`,
-`experimentation-docs`, and `research-docs`, proposed 2026-10-23 (all in [`docs/internal/contracts/`](../internal/contracts/)). A family can be adopted before any bundle
+`experimentation-docs`, and `research-docs` (all in [`docs/internal/contracts/`](../internal/contracts/)). A family can be adopted before any bundle
 of that family is built; the contract is latent until a member lands, and the gate is indifferent to how
 many members a family eventually has.
 

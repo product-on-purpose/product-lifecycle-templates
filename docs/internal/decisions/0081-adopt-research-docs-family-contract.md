@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-23
 decision-makers: [jprisant]
 consulted: [claude]
@@ -21,9 +21,11 @@ consulted: [claude]
 - **What this does NOT decide:** the bundle ids and sizes, which the specs fix; whether the interview guide, the
   survey instrument or the diary study plan join; and the priority of issues #316 and #317, which the maintainer
   sets.
-- **Status:** proposed 2026-10-23, and held until the maintainer reads the contract diff, because a family contract
-  is "adopted only after a maintainer read"
-  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
+- **Status:** accepted 2026-10-23. The record was proposed the same day and held until the maintainer read the
+  contract diff, because a family contract is "adopted only after a maintainer read"
+  ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)). The maintainer
+  accepted it and asked for one sentence in the contract's section 1: finished means the document stops changing,
+  not that it stops being read.
 
 ## Context and Problem Statement
 
@@ -46,7 +48,7 @@ failures is load-bearing. The sweep's evidence is held locally, at
 `_local/research/2026-10-23_user-research-report-sweep/digest.md`.
 
 Every new family gets a contract before its members are built, following the
-[ADR 0020](0020-adopt-delivery-docs-family-contract.md) pattern. This record proposes that contract.
+[ADR 0020](0020-adopt-delivery-docs-family-contract.md) pattern. This record adopts that contract.
 
 ## Decision Drivers
 

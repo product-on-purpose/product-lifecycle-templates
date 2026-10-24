@@ -20,13 +20,13 @@ people who want every change, release notes are for people who want to know what
   recorded them as one type on 2026-10-23, with "usability test plan" as an alias. "Test plan" alone is not an
   alias, because entry 102 is `test-plan`. The row is a Tier 2 candidate, tracked as issue #316 (bundle:
   user-research-plan).
-- **A proposed eleventh family contract, `research-docs`, with
+- **The eleventh family contract, `research-docs`, adopted by
   [ADR 0081](docs/internal/decisions/0081-adopt-research-docs-family-contract.md).** It would hold documents that
   plan or report on one study of the people a product serves, at `phase: discover`. Its two planned members are
   the user research plan (entry 210) and the user research report (entry 18), which an admission sweep admitted
   on 2026-10-23 and which is tracked as issue #317. No existing contract admitted either type as written. The
-  contract is registered in check K, latent until a member lands, and it waits for the maintainer's read before
-  it is adopted.
+  maintainer adopted it on 2026-10-23 after reading the contract diff. It is registered in check K, latent until
+  a member lands.
 
 ### Changed
 

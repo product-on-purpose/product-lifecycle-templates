@@ -1,8 +1,8 @@
 # Family Contract: research-docs
 
-Status: **proposed 2026-10-23** ([ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)); adopted only after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
+Status: adopted 2026-10-23 ([ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)); proposed the same day and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: research-docs` in its meta
-Members at proposal: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317)
+Members at adoption: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317)
 Modeled on: the experimentation-docs and qa-docs family contracts, the two existing families that pair a plan with a report
 Axis: `phase` (`discover`); see section 2 for the axis call and its stated cost
 Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
@@ -13,7 +13,8 @@ A bundle belongs to this family when its document type **plans or reports on one
 serves**. A study here means research with participants: interviews, usability tests, diary studies, surveys and
 field visits. This library holds, as its own POSITION, that analysing product telemetry alone is not a study in
 this sense. Each member is written for one study, and it is finished when that study's findings are reported. That
-finish line is also the library's POSITION, because no source read argues for one.
+finish line is also the library's POSITION, because no source read argues for one. Finished means the document
+stops changing, not that it stops being read: Maze calls the report "an ongoing reference point".
 
 The family's two roles are sequential rather than alternative, and that sequence is its teaching value:
 
@@ -171,9 +172,11 @@ is not "in the family with issues"; it is out of the family until green, and the
 
 ## Change note
 
-**0.1.0 (2026-10-23, [ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)):** proposed 2026-10-23,
-to be enforced by gate check K, the eleventh family contract. Drafted contract-first, before any member is built, so
+**0.1.0 (2026-10-23, [ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)):** proposed and adopted
+2026-10-23 after a maintainer read, enforced by gate check K, the eleventh family contract. Drafted contract-first, before any member is built, so
 the contract describes the set its two planned members must join rather than one that already exists. Two admission
 sweeps on 2026-10-23 admitted the user research plan (entry 210) and the user research report (entry 18), and a
 placement pass between them tested the plan against all ten existing contracts and a draft of this one. The
-maintainer ruled the same day that entry 18 is swept first, and authorized this proposal once it cleared.
+maintainer ruled the same day that entry 18 is swept first, and authorized this proposal once it cleared. The
+maintainer then read the contract diff and accepted it, asking for one sentence in section 1 that separates a
+finished document from one no longer read.
