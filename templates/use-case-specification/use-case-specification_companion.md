@@ -31,7 +31,7 @@ contract.** No family contract admitted this type as written; the `delivery-docs
 gained a sixth membership verb, "elaborates," specifically to hold it
 (`docs/internal/contracts/delivery-docs.md`, ADR 0072, the amendment that adopted this type into the
 family). The research behind that amendment found that a maintainer could as reasonably have read the
-contract as excluding the type (`docs/internal/tier2-specs.md:4878-4884`). This companion presents
+contract as excluding the type (`docs/internal/tier2-specs.md:4880-4886`). This companion presents
 "elaborates" as that choice, not as a fact about the world, and states the chain position the contract
 gives it in section 8: after the stories a backlog decomposes, and before the acceptance criteria that
 confirm them (`docs/internal/contracts/delivery-docs.md:11`).

@@ -2,7 +2,7 @@
 
 Research conducted 2026-10-22; the stored copies written during the run carry fetch stamps of 2026-10-23 UTC. It
 builds on the third Define sweep, whose digest is dated 2026-10-16, and on the Define re-score of 2026-10-20 (PR
-#300). It also builds on the approved spec (`docs/internal/tier2-specs.md:6530-6959`), specced the same day with
+#300). It also builds on the approved spec (`docs/internal/tier2-specs.md:6532-6961`), specced the same day with
 ADR 0079. ADR 0077's line between a concept and a specification, and ADR 0080's software-audience check, bound the
 questions asked. The build's six dimensions covered the canon, section structure, altitude, practice by software
 teams, boundaries, and the gap question. The canon asked what a brief is for, who writes it and when. Altitude
@@ -42,8 +42,8 @@ whole span, so it includes the four drops; only one of the five survived as part
 **This log now carries every external span the spec quotes, except Phillips's and Dilanchian's.** The spec's
 admission and section tables quote Kuse, Heap, Jones and Askland, Kaninsky, Wikipedia, Figma, uxmagic.ai, Y
 Combinator, the Design Council and Basecamp. Each of those spans is a Quotable line here, or a part of one. The
-exceptions are **all three Phillips sentences** (`docs/internal/tier2-specs.md:6580`, `:6625-6627`, `:6648-6649`,
-`:6814`) and **both Dilanchian spans** (`:6586`, `:6689-6690`, `:6790-6791`). No drafting stage may quote those.
+exceptions are **all three Phillips sentences** (`docs/internal/tier2-specs.md:6582`, `:6627-6629`, `:6650-6651`,
+`:6816`) and **both Dilanchian spans** (`:6588`, `:6691-6692`, `:6792-6793`). No drafting stage may quote those.
 This log checked that by matching every quoted span in the spec's section against the Quotable lines.
 
 **Two newly carried spans carry less than the spec reads into them.** Both readings were made in the stored raw
@@ -407,7 +407,7 @@ property stops at step 1 and becomes a guide rubric row. **This log admits no el
 1. **Success criteria. Supported, and already homed.** E1: Kaninsky's "Key results & Success criteria" [9],
    Kuse's "3. Clarify Goals and Success Metrics" [6], Canny's "success factors" [30]. The gap dimension's Asana,
    Figr and UXPin lines are not Quotable, so that leg is unsupported. E3: `problem-statement`'s full size carries
-   the measures (`tier2-specs.md:6736-6737`), and ADR 0077 lets a define document say `how success will be judged`.
+   the measures (`tier2-specs.md:6738-6739`), and ADR 0077 lets a define document say `how success will be judged`.
    **Route:** an ASK in The Challenge that points to those measures, or states them in one line where no statement
    exists, plus a rubric row. No new section.
 2. **Decision rights and the approval path. Supported; homed in The Handoff.** E1: Kaninsky's sign-off question [9];
@@ -436,7 +436,7 @@ property stops at step 1 and becomes a guide rubric row. **This log admits no el
    `project-brief` and `risk-register`; unknowns that block design belong to Open Questions for Design. **Route:** an
    ASK in Open Questions for Design (full) on what could block the design work. No section.
 8. **Assumptions. The gap dimension's null result is wrong.** E1: Heap's "Assumptions:" [7]. It supports the
-   spec's existing clause, `what is assumed until they do`, in Open Questions for Design (`:6813`). No new element.
+   spec's existing clause, `what is assumed until they do`, in Open Questions for Design (`:6815`). No new element.
 
 Candidates the structure and boundaries dimensions surfaced, routed the same way:
 
@@ -469,7 +469,7 @@ Candidates the structure and boundaries dimensions surfaced, routed the same way
 
 ### 7. The seven proposed sections, against this research
 
-The spec's section table (`docs/internal/tier2-specs.md:6807-6815`) binds; the maintainer ruled the sections and
+The spec's section table (`docs/internal/tier2-specs.md:6809-6817`) binds; the maintainer ruled the sections and
 sizes. The table records which sources now support each section and whether confidence moves. **Every movement is a
 candidate for the maintainer; none is applied here.**
 

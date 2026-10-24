@@ -33,8 +33,8 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | A spec |
-| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | A spec |
+| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). It waits for the build, which comes first of the pair |
+| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | Specced in the same section. Its build follows the plan's, so that its example reports against the plan's example |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
@@ -187,6 +187,9 @@ ADR 0077 keeps in `deliver`.
 - **2026-10-23, later.** Entry 18's sweep cleared, and the maintainer recorded it as admitted. Both types gained
   build-candidate issues, #316 and #317, at P2. [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)
   adopts a `research-docs` contract at `discover` for the pair, after the maintainer's read the same day.
+- **2026-10-24.** Both types were specced in one section of `tier2-specs.md`, each in two sizes, with examples
+  that plan and report the 2026-05 Reporting friction study. The maintainer took all ten of the spec's
+  recommendations in one line.
 
 ## 6. What comes next, in order
 
@@ -197,7 +200,8 @@ ADR 0077 keeps in `deliver`.
 3. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
 
 Outside this Define list, the `research-docs` contract
-([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, so the specs for #316 and #317 are next.
+([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
+ruled on 2026-10-24. The plan's build comes first, and each build needs its own go.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the

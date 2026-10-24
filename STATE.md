@@ -7,7 +7,12 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=50, tier1=25, tier1remaining=2, statebuilt=50, statecandidate=158, stateoutofscope=2, commoncandidates=51, adrs=81, cisteps=32, checkk=152, checkformats=128, checklogs=112, logsgated=44, sourcesgated=1825 -->
 
-**Last updated:** 2026-10-23 (**ADR 0081 adopts `research-docs`, an eleventh family contract, for the user
+**Last updated:** 2026-10-24 (**The user research plan and the user research report are specced.** One section
+of the internal spec page sets both `research-docs` members, each in two sizes, with examples that plan and
+report the 2026-05 Reporting friction study. The maintainer took all ten of the spec's recommendations, and the
+plan is built first. No bundle, catalog row or ADR was added, so every count stays as it was. Not in any release
+yet.)
+The previous entry read: **ADR 0081 adopts `research-docs`, an eleventh family contract, for the user
 research plan and the user research report.** An admission sweep admitted entry 18, the user research report, and
 both types gained build-candidate issues, #316 and #317. No existing contract admitted
 either type. The maintainer read the contract diff and accepted it the same day. Its check K entry is latent until a member

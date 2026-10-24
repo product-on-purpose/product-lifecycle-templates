@@ -27,6 +27,12 @@ people who want every change, release notes are for people who want to know what
   on 2026-10-23 and which is tracked as issue #317. No existing contract admitted either type as written. The
   maintainer adopted it on 2026-10-23 after reading the contract diff. It is registered in check K, latent until
   a member lands.
+- **Specs for `user-research-plan` and `user-research-report`, the two `research-docs` members.** One section of
+  the internal spec page sets both bundles' sections, sizes and examples. Both ship in two sizes. A conditional
+  usability block in both sizes keeps the "usability test plan" alias's promise. The plan's example plans the
+  2026-05 Reporting friction study that four shipped examples cite, and the report's example is its readout. The
+  maintainer took all ten of the spec's recommendations on 2026-10-24. No bundle is built yet, and the plan is
+  built first.
 
 ### Changed
 
