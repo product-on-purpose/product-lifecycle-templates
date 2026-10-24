@@ -258,6 +258,12 @@ FAMILY_CONTRACTS = {
         "status": ["beta", "stable"],
         "size_shapes": [["lean", "full"], ["lean"]],
     },
+    "research-docs": {
+        "contract": "docs/internal/contracts/research-docs.md",
+        "phase": "discover",
+        "status": ["beta", "stable"],
+        "size_shapes": [["lean", "full"], ["lean"]],
+    },
 }
 
 GREEN = "\033[32m"
