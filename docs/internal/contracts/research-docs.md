@@ -143,9 +143,10 @@ cites that study and has never shown it. The PRD example cites "Discovery readou
 study and is dated before it runs. The report's example is its readout. Both precede the design brief of 2026-06-01
 that cites the study.
 
-**The obligation:** every fact the library already states about the study holds in both examples. The design
-brief's example says the study "interviewed 12 analysts; 9 of them described" the re-filtering pattern, and the PRD
-example gives n=12. A member whose example contradicts a sibling example, or invents a different study, is out of
+**The obligation:** every fact the library's other worked examples state about the study holds in both examples.
+The design brief's example says the study "interviewed 12 analysts; 9 of them described" the re-filtering pattern,
+and the PRD example gives n=12. Figures that appear only in another bundle's template GOOD or WEAK text are
+illustrations, not facts of the scenario, and they do not bind these examples. A member whose example contradicts a sibling example, or invents a different study, is out of
 contract even if every file exists.
 
 ## 5. Shareable-boundary rule
