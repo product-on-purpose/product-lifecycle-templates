@@ -5317,6 +5317,34 @@
       ],
       "state": "built",
       "state_note": ""
+    },
+    {
+      "id": "user-research-plan",
+      "name": "User Research Plan",
+      "aliases": [
+        "UX research plan",
+        "research plan",
+        "usability test plan",
+        "research protocol"
+      ],
+      "category": "Research / Discovery",
+      "stage": "discovery",
+      "owner": "UXR / PM",
+      "purpose": "Set out one study's goals, research questions, method, participants and logistics before it runs, so the team and its stakeholders agree on what the study will learn",
+      "methodology": "UX research / user-centered design",
+      "formality": "lightweight",
+      "rarity": "common",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": false,
+      "relationships": [
+        "Interview Guide",
+        "User Research Report"
+      ],
+      "state": "candidate",
+      "state_note": ""
     }
   ]
 }

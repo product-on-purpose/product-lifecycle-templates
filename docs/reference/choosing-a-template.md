@@ -174,7 +174,7 @@ what it does not mean.
 ## When nothing above fits
 
 Say this plainly, because it is true and it matters more than anything else on this page: **the
-library covers a 209-type catalog of product and software-lifecycle artifacts, researched and
+library covers a 210-type catalog of product and software-lifecycle artifacts, researched and
 recorded in [`docs/internal/catalog.md`](../internal/catalog.md), and only a fraction of that
 catalog is built.**
 
@@ -200,7 +200,7 @@ expected, not a bug in this page.
 Two ways to check further before concluding that:
 
 1. **Browse the whole catalog.** [`atlas/atlas.html`](../../atlas/atlas.html) is a self-contained,
-   interactive map of all 209 catalog types, filterable by category, lifecycle phase, tier, and
+   interactive map of all 210 catalog types, filterable by category, lifecycle phase, tier, and
    whether it is built. Open it in any browser. It will tell you plainly whether your type
    exists in the research and, if so, whether it has been templated yet.
 2. **If you are an agent, not a person, read the manifest instead of this page.**
