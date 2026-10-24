@@ -18,8 +18,9 @@ people who want every change, release notes are for people who want to know what
   tested the user research plan and the usability test plan as two candidate types. Nielsen Norman Group says
   "When planning a usability test, the research plan is often referred to as a test plan", so the maintainer
   recorded them as one type on 2026-10-23, with "usability test plan" as an alias. "Test plan" alone is not an
-  alias, because entry 102 is `test-plan`. The row is a Tier 2 candidate. Its family waits on an admission
-  sweep for entry 18, the user research report, and no build-candidate issue is open yet.
+  alias, because entry 102 is `test-plan`. The row is a Tier 2 candidate. Its family waits on the
+  maintainer's placement ruling, which follows an admission sweep for entry 18, the user research report. No
+  build-candidate issue is open yet.
 
 ## [0.21.0] - 2026-10-22
 
