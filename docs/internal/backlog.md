@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-22.** Sections 3 and 5 moved again on
-2026-10-23, when catalog entry 210 was added. The issue counts in section 2 were read from GitHub on 2026-10-22, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-23.** The issue counts in section 2 were
+read from GitHub on 2026-10-23, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -29,10 +29,12 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 6 open candidates
+## 2. The working backlog: 8 open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
+| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | A spec |
+| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Candidate, admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | A spec |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
@@ -42,9 +44,9 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 2 candidates, 4 parked |
-| Priority | P3: 5, P4: 1 |
-| Tier | Tier 2: 5, Tier 3: 1 |
+| Status | 4 candidates, 4 parked |
+| Priority | P2: 2, P3: 5, P4: 1 |
+| Tier | Tier 2: 7, Tier 3: 1 |
 
 Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
@@ -182,6 +184,9 @@ ADR 0077 keeps in `deliver`.
   type, and the maintainer agreed. It became catalog entry 210, the user research plan, a Tier 2 candidate
   with no family and no issue yet. The maintainer ruled that entry 18 (user research report) gets its own
   admission sweep first, because that result decides whether the plan founds a new family.
+- **2026-10-23, later.** Entry 18's sweep cleared, and the maintainer recorded it as admitted. Both types gained
+  build-candidate issues, #316 and #317, at P2. [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)
+  adopts a `research-docs` contract at `discover` for the pair, after the maintainer's read the same day.
 
 ## 6. What comes next, in order
 
@@ -190,6 +195,9 @@ ADR 0077 keeps in `deliver`.
    settle it. ADR 0080 (a fifth admission check, for a software audience), accepted on 2026-10-22, applies to
    them first.
 3. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+
+Outside this Define list, the `research-docs` contract
+([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, so the specs for #316 and #317 are next.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
