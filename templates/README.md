@@ -89,6 +89,10 @@ tree without the gate noticing.
 - [`test-summary-report/`](test-summary-report/) - Test Report / Test Summary Report. Axis phase develop; ships lean/full. The fourth `qa-docs` member ([ADR 0050](../docs/internal/decisions/0050-qa-docs-admits-a-fourth-member.md)): it reports the verification as a whole, closing the chain the plan opens and the bug report interrupts.
 - [`test-plan/`](test-plan/) - Test Plan. Axis phase develop; ships lean/full.
 
+**`research-docs`**
+
+- [`user-research-plan/`](user-research-plan/) - User Research Plan. Axis phase discover; ships lean/full. The first `research-docs` member ([ADR 0081](../docs/internal/decisions/0081-adopt-research-docs-family-contract.md)): the plan for one study of the people a product serves, written before it runs, with the tasks and the measures when the study is a usability test.
+
 **`standing-standards`**
 
 - [`definition-of-done/`](definition-of-done/) - Definition of Done. Axis classification foundation; ships lean/full.

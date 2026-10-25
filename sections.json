@@ -12704,6 +12704,334 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "user-research-plan",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "approver"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "author"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "study_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "why-this-study-and-the-decision-it-informs",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_informed",
+                "shipped_product_note",
+                "why_now"
+              ],
+              "title": "Why This Study, and the Decision It Informs"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "goals-and-research-questions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "goals",
+                "hypothesis",
+                "research_questions"
+              ],
+              "title": "Goals and Research Questions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "method",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "method_and_fit",
+                "session_format",
+                "session_guide_link",
+                "study_kind",
+                "what_participants_see"
+              ],
+              "title": "Method"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "participants-and-recruiting",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "access_needs",
+                "consent_summary",
+                "incentive",
+                "participant_count",
+                "recruiting_channel",
+                "who_does_not_qualify",
+                "who_qualifies"
+              ],
+              "title": "Participants and Recruiting"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "tasks-and-measures",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "measures",
+                "not_usability_test_note",
+                "questionnaire_timing",
+                "success_criterion",
+                "task_number",
+                "task_scenario"
+              ],
+              "title": "Tasks and Measures"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "schedule-and-logistics",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "analysis_time",
+                "location_or_tool",
+                "pilot_plan",
+                "recording_plan",
+                "schedule"
+              ],
+              "title": "Schedule and Logistics"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-happens-to-the-findings",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decisions_fed",
+                "findings_output",
+                "findings_structure"
+              ],
+              "title": "What Happens to the Findings"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-we-already-know",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "assumption_tested",
+                "earlier_materials_link",
+                "existing_knowledge"
+              ],
+              "title": "What We Already Know"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "roles-and-observers",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "moderator",
+                "note_taker",
+                "observers"
+              ],
+              "title": "Roles and Observers"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "consent-privacy-and-ethics",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "consent_process",
+                "data_handling",
+                "ethics_concerns",
+                "retention_policy_link"
+              ],
+              "title": "Consent, Privacy and Ethics"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "related-documents",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "consent_form_doc",
+                "earlier_report_doc",
+                "prototype_doc",
+                "screener_doc",
+                "session_guide_doc"
+              ],
+              "title": "Related Documents"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "user-stories",
       "default_format": "default",
       "formats": {
@@ -12899,7 +13227,7 @@
       "template_version": "0.1.0"
     }
   ],
-  "count": 50,
-  "frontmatter_count": 313,
-  "section_count": 418
+  "count": 51,
+  "frontmatter_count": 318,
+  "section_count": 429
 }

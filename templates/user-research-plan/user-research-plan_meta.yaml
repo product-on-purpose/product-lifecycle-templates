@@ -1,0 +1,33 @@
+id: user-research-plan
+title: User Research Plan
+summary: >-
+  The document written before one study of the people a product serves: why the study runs, which
+  decision its findings will inform, what the team must learn, from whom, how, and when. For a
+  usability test it also carries the tasks and the measures, which is why one source calls it a
+  "usability test plan".
+doc_type: user-research-plan
+phase: discover
+family: research-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (the seven sections every size ships: Why This Study and the Decision It Informs, Goals and Research Questions, Method, Participants and Recruiting, Tasks and Measures, Schedule and Logistics, and What Happens to the Findings) when one person moderates, consent follows the team's usual practice, and nothing needs linking beyond the session guide itself. Use full when earlier research or assumptions are worth summarizing before the sessions run, more than one person moderates, takes notes, or observes, consent or data handling needs its own section, or related materials are worth linking in their own place: it inserts What We Already Know, Roles and Observers, Consent, Privacy and Ethics, and Related Documents among the lean seven, each in the same place in both sizes."
+methodology: methodology-agnostic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discover
+  - research-docs
+  - user-research
+  - research-plan
+  - usability-testing
+related_templates: [future:user-research-report, user-persona, problem-statement, design-brief, test-plan, experiment-design-doc]
+aliases:
+  - UX research plan
+  - research plan
+  - usability test plan
+  - research protocol
+catalog_ref: 210
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-24
+license: Apache-2.0

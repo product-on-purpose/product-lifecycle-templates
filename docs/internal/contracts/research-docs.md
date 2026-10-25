@@ -2,7 +2,7 @@
 
 Status: adopted 2026-10-23 ([ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)); proposed the same day and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: research-docs` in its meta
-Members at adoption: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317)
+Members at adoption: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317). `user-research-plan` was built on 2026-10-24; `user-research-report` is not yet built
 Modeled on: the experimentation-docs and qa-docs family contracts, the two existing families that pair a plan with a report
 Axis: `phase` (`discover`); see section 2 for the axis call and its stated cost
 Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
