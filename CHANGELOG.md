@@ -31,13 +31,29 @@ people who want every change, release notes are for people who want to know what
   the internal spec page sets both bundles' sections, sizes and examples. Both ship in two sizes. A conditional
   usability block in both sizes keeps the "usability test plan" alias's promise. The plan's example plans the
   2026-05 Reporting friction study that four shipped examples cite, and the report's example is its readout. The
-  maintainer took all ten of the spec's recommendations on 2026-10-24. No bundle is built yet, and the plan is
-  built first.
+  maintainer took all ten of the spec's recommendations on 2026-10-24. No bundle was built when the specs
+  merged; the plan was built first, below.
+- **`user-research-plan`, the 51st bundle**, and the first `research-docs` member, at `phase: discover`, by
+  [ADR 0081](docs/internal/decisions/0081-adopt-research-docs-family-contract.md). It is the plan for one study of
+  the people a product serves: why the study runs, which decision its findings will inform, what the team must
+  learn, from whom, how, and when. For a usability test it also carries the tasks and the measures, and Nielsen
+  Norman Group notes that such a plan "is often referred to as a test plan". It ships in two sizes. Lean carries seven sections, Tasks and
+  Measures among them, filled only for a usability test. Full adds What We Already Know, Roles and Observers,
+  Consent, Privacy and Ethics, and Related Documents. The session script stays out at every size, which is this
+  library's position, not the sources' practice. The worked example is the plan of 2026-04-20 for the 2026-05
+  Reporting friction study, a set of interviews, so it marks Tasks and Measures not applicable. The research log
+  records 37 sources, all read, and every one of its 473 quotations was checked against raw text. The
+  `research-docs` family now has one member built of two.
 
 ### Changed
 
 - **Catalog entry 18 gains the alias "usability test report"**, the name the ISO/IEC 25062 Common Industry Format
   uses for the same document.
+- **Catalog entry 210's size moves from S to S/M**, because the maintainer ruled two sizes for the plan on
+  2026-10-24. The `research-docs` contract's Members line records `user-research-plan` as built.
+- **The research-docs spec gains dated notes from the plan's build.** Six sentences are weaker than the spec
+  states them, among them digital.gov's section count and two quotations that drop their source's own
+  qualifier. Each is corrected in a note at the end of the section, and the sentences stay as written.
 
 ## [0.21.0] - 2026-10-22
 

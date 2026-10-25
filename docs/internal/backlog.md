@@ -29,12 +29,11 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 8 open candidates
+## 2. The working backlog: 7 open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#316](https://github.com/product-on-purpose/product-lifecycle-templates/issues/316) | `user-research-plan` | Queued 2026-10-24, once its spec was ruled; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). It waits for the build, which comes first of the pair |
-| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Queued 2026-10-24, with the plan; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by the same record | Specced in the same section. Its build follows the plan's, so that its example reports against the plan's example |
+| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Queued 2026-10-24, with the plan; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). The plan it reports against was built on 2026-10-24, so its build is next of the pair, and it needs its own go |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
@@ -44,26 +43,26 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 2 candidates, 2 queued, 4 parked |
-| Priority | P2: 2, P3: 5, P4: 1 |
-| Tier | Tier 2: 7, Tier 3: 1 |
+| Status | 2 candidates, 1 queued, 4 parked |
+| Priority | P2: 1, P3: 5, P4: 1 |
+| Tier | Tier 2: 6, Tier 3: 1 |
 
-Fifty-eight candidate issues are closed: 50 built and 8 declined. Two of the declined types,
+Fifty-nine candidate issues are closed: 51 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=50, statecandidate=158, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=51, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 210 types. Its `state` field reads 50 built, 158 candidate and 2 out of scope. Four of the
-158 were declined by record, so 154 types are still open.
+The catalog holds 210 types. Its `state` field reads 51 built, 157 candidate and 2 out of scope. Four of the
+157 were declined by record, so 153 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 156 | 25 | 4, declined by record (below) | **127** |
+| 2 | 156 | 26 | 4, declined by record (below) | **126** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **210** | **50** | **6** | **154** |
+| **All** | **210** | **51** | **6** | **153** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -191,6 +190,9 @@ ADR 0077 keeps in `deliver`.
   that plan and report the 2026-05 Reporting friction study. The maintainer took all ten of the spec's
   recommendations in one line. Once the spec merged (#319), the maintainer queued both types, so #316 and #317
   now carry `status:queued`.
+- **2026-10-24, at landing.** `user-research-plan` was built through the `build-bundle` workflow as the 51st
+  bundle and the first `research-docs` member, at `discover`. Its landing closes #316, and the define count
+  stays at two.
 
 ## 6. What comes next, in order
 
@@ -202,7 +204,8 @@ ADR 0077 keeps in `deliver`.
 
 Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
-ruled on 2026-10-24. Both issues are queued. The plan's build comes first, and each build needs its own go.
+ruled on 2026-10-24. The plan was built the same day, so the report (#317) is the one still queued, and its
+build needs its own go.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the

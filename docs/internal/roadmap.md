@@ -38,7 +38,7 @@
 > printed on every run, is the thing that found it: do not just edit the marker, re-read the prose
 > around it.
 
-<!-- counts: adrs=81, bundles=50 -->
+<!-- counts: adrs=81, bundles=51 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies

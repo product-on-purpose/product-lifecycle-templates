@@ -86,6 +86,17 @@ If what you need is the default testing approach that every project's test plan 
 once for an organization or program, that is [`test-strategy`](../../templates/test-strategy/), in
 `standing-standards`. See [the family map](#the-family-map).
 
+### I am planning a study of the people a product serves
+
+- [`user-research-plan`](../../templates/user-research-plan/) - the plan for one study, written
+  before it runs: why it runs, which decision its findings will inform, what the team must learn,
+  from whom, how, and when. For a usability test it also carries the tasks and the measures.
+
+A usability test's plan is this document, not [`test-plan`](../../templates/test-plan/), which
+verifies a build against its specification. A study that splits participants between variants and
+applies a decision rule is an experiment, in the list below. The report that reads a study out is
+not built yet.
+
 ### I am running an experiment
 
 - [`experiment-design-doc`](../../templates/experiment-design-doc/) - the plan for one experiment,
@@ -159,11 +170,13 @@ included here for readers who want the complete picture rather than a situationa
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 | `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/), [`experiment-readout`](../../templates/experiment-readout/) |
+| `research-docs` | Plans one study of the people a product serves, and later reports it | [`user-research-plan`](../../templates/user-research-plan/) |
 
-<!-- counts: bundles=50 -->
-That is 50 bundles across every family the library currently ships. All ten families are complete;
-`experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
-`experiment-readout`. Nothing in the list above is a partially built stub. See
+<!-- counts: bundles=51 -->
+That is 51 bundles across every family the library currently ships. Ten of the eleven families are
+complete. `experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
+`experiment-readout`, and `research-docs` has one of its two, `user-research-plan`, with
+`user-research-report` still to build. No bundle in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.
 
