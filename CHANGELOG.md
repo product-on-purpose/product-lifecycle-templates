@@ -54,6 +54,10 @@ people who want every change, release notes are for people who want to know what
 - **The research-docs spec gains dated notes from the plan's build.** Six sentences are weaker than the spec
   states them, among them digital.gov's section count and two quotations that drop their source's own
   qualifier. Each is corrected in a note at the end of the section, and the sentences stay as written.
+- **Both skills now trigger on a design brief and a user research plan.** An agent decides whether to load a
+  skill from its description, and both descriptions sat at 1,021 of the 1,024 characters the Agent Skills format
+  allows, so neither named the two types built since 2026-10-22. Wording that described each skill's output was
+  cut to make room, and no document type was dropped. The descriptions now measure 1,008 and 1,006 characters.
 
 ## [0.21.0] - 2026-10-22
 
