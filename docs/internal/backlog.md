@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-24.** The issue counts in section 2 were
-read from GitHub on 2026-10-24, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-26.** The issue counts in section 2 were
+read from GitHub on 2026-10-26, at the v0.22.0 release, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.

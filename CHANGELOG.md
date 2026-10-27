@@ -12,6 +12,13 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-10-26
+
+A minor release with one new bundle, `user-research-plan`, the 51st, and one new family, `research-docs`. It
+also publishes the fifth efficacy run, applies seven sourced proposals to eight bundles, and adds a terms-of-use
+rule to the build pipeline. No MCP tool or install route changed. Release note:
+[`docs/releases/v0.22.0.md`](docs/releases/v0.22.0.md).
+
 ### Added
 
 - **Catalog entry 210, the user research plan, and the catalog now counts 210 types.** An admission sweep
@@ -3288,7 +3295,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...HEAD
+[0.22.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...v0.22.0
 [0.21.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...v0.20.1
 [0.20.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.19.0...v0.20.0
