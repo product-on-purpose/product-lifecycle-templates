@@ -486,7 +486,7 @@ best, people skim" [35]. User Interviews: "However, many researchers complain th
 are overwhelmed by the sheer volume of information." [14]. O'Neill: "If you write a report that people don't want
 to read and don't read, it doesn't have any impact, even if it had the best possible insights in it." [46].
 Usercall puts the cause in timing: "It still got shelved because it landed two weeks after the pricing decision
-was finalized. The insight wasn't wrong, it was just late." [30]. Mozilla's VP of Product puts the risk on the
+was finalized. The insight wasn't wrong, it was just late." [30]. Firefox's VP of Product puts the risk on the
 summary: "In short, without a good executive summary, the document will likely not get the attention it
 deserves." [51]. This is practitioner testimony. Confidence:
 medium that it describes practice widely.
@@ -722,7 +722,8 @@ carries it.
     [44].
 17. **A date after which the findings should be checked again. Out; the product version tested is thin.**
     Dovetail's deprecation policy [42] governs a repository, and fails the one-study test. Koji's page [52], read
-    by hand, is written for a repository too, and its review intervals are its own, citing no study. Two of its
+    by hand, is written for a repository too. Its half-life table cites no study, and it credits its one-year and
+    five-year review points to an unnamed practitioner heuristic. Two of its
     tags belong to each insight at publication. E1: "Collected on: the fieldwork date, not the publication date"
     and "Product version / state: what the participants were actually reacting to" [52]. Of usability findings,
     it says "a redesign invalidates them instantly" [52]. **Route:** a review-by date stays out. The fieldwork
@@ -1754,7 +1755,7 @@ Quotable: "All the process was handled for me so I was able to focus on my most 
 
 **[52] Koji (docs) - "How Long Is User Research Valid? Insight Decay and When to Re-Run a Study".** vendor. **fetched-and-verified, read by hand by the maintainer on 2026-10-27.**
 `https://www.koji.so/docs/research-refresh-cadence`
-Supports: A vendor's guidance on how long findings stay valid, written for a research repository and ending in a pitch for the vendor's own platform. Findings decay at the speed of what they describe. Every insight is tagged at publication with its fieldwork date, population, product version and a decay class, and carries a confidence label with a review-by date. Every cited insight needs a date. A usability finding on one interface lasts until that interface changes, and a material product change invalidates evaluative findings. The half-life table and the one-year and five-year review points are the vendor's own and cite no study. It partly fails the one-study test: the four tags and the label belong to each insight, which one report can carry, while the quarterly sweep belongs to the repository
+Supports: A vendor's guidance on how long findings stay valid, written for a research repository and ending in a pitch for the vendor's own platform. Findings decay at the speed of what they describe. Every insight is tagged at publication with its fieldwork date, population, product version and a decay class, and carries a confidence label with a review-by date. Every cited insight needs a date. A usability finding on one interface lasts until that interface changes, and a material product change invalidates evaluative findings. The half-life table cites no study, and the one-year and five-year review points are credited to an unnamed practitioner heuristic. It partly fails the one-study test: the four tags and the label belong to each insight, which one report can carry, while the quarterly sweep belongs to the repository
 Quotable: "Research does not expire on a fixed schedule"
 Quotable: "research decays at the speed of the thing it describes."
 Quotable: "Research repositories are built to accumulate and preserve; almost none are built to mark things stale."
