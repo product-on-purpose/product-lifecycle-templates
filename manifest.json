@@ -424,8 +424,8 @@
         "experiment spec"
       ],
       "approx_tokens": {
-        "full": 5050,
-        "lean": 3450
+        "full": 5100,
+        "lean": 3500
       },
       "default_size": "lean",
       "doc_type": "experiment-design-doc",
@@ -456,8 +456,8 @@
         "experiment analysis"
       ],
       "approx_tokens": {
-        "full": 6600,
-        "lean": 5050
+        "full": 6650,
+        "lean": 5100
       },
       "default_size": "lean",
       "doc_type": "experiment-readout",

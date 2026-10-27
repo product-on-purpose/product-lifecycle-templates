@@ -3,6 +3,23 @@
 Change log for the `status-report` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.1 - 2026-10-26 - an eighth anti-pattern, the last-minute compile
+
+**This applies one proposal from the library's 2026-10-23 resource crawl, approved by the maintainer on
+2026-10-25.** The crawl re-read Atlassian's `agile/project-management/status-report` page against this
+bundle's catalog tag and found a failure mode the guide's seven named anti-patterns did not cover.
+
+- **`status-report_guide.md` gains an eighth named anti-pattern, "the last-minute compile"**: a report
+  assembled from scratch right before it is due, instead of being kept current as the period unfolds. The
+  fix follows the source directly: keep an ongoing draft and update it as events happen.
+- **Sourced to Atlassian's own line**, "Keep an ongoing draft: Avoid last-minute rushes by maintaining a
+  draft of your status report," now source [31] in
+  [`status-report_research-log.md`](status-report_research-log.md), fetched and verified against the raw
+  page, not a summary.
+- **No template change.** This is advice about authoring cadence, not a new section, so neither
+  `status-report_template-lean.md` nor `-full.md` gained a section; only their `source_template_version`
+  stamp moved with this release.
+
 ## 0.1.0 - 2026-08-07
 
 **Initial release.** Researched 2026-08-07 across six parallel dimensions: whether a standard specifies this

@@ -10,7 +10,7 @@ doc_type: product-vision
 size: full
 format: canvas
 source_template: product-vision
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--

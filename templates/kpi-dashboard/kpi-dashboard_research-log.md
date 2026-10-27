@@ -314,6 +314,17 @@ Supports: the audience-typed dashboard design and the data-literacy caveat for a
 Quotable: "Should only serve users that are data literate to avoid overwhelming non-experts".
 Contested/time-bound: combines "strategic/executive" into one category where [18] splits them.
 
+**[36] Dan Schmidt (DoubleLoop) - North Star framework Dashboard for SaaS companies, in Amplitude's template gallery.** vendor. **fetched-and-verified.**
+`https://amplitude.com/templates/north-star-framework-dashboard-for-saas-companies`
+Supports: the north-star-metrics neighbor-column addition to the guide's comparison table. This dashboard
+template visualizes a North Star metric together with its input metrics, showing real content overlap
+between a KPI dashboard and a North Star Metric definition.
+Quotable: "Map the inputs and outputs of your North Star metric to translate short-term action into
+long-term success."; "It guides you to identify a North Star metric that impacts retention and the
+corresponding input metrics".
+Contested/time-bound: the page credits Dan Schmidt, a co-founder of DoubleLoop, not Amplitude staff. Both
+DoubleLoop and Amplitude sell analytics tooling.
+
 ---
 
 ## Claims flagged contested or time-bound

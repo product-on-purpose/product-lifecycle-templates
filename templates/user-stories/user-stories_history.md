@@ -2,6 +2,22 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.1 - 2026-10-26 - citation upgrade for reference [12] (Patton)
+
+**Reference [12], Jeff Patton's unretrieved print book, now has a live and verified web source beside
+it.** This applies a proposal from the library's 2026-10-23 resource crawl, approved by the maintainer
+on 2026-10-25.
+
+- Added two new entries to `user-stories_research-log.md`: [13] Patton's "Story Mapping" hub page and
+  [14] his "User Story Mapping Example" page, both on jpattonassociates.com and both fetched and
+  verified 2026-10-26.
+- Cited [13] beside [12] in the companion's Origins and evolution section, where Patton's own site now
+  corroborates the claim about story mapping with two verbatim quotes.
+- Logged [14] as a verified corroboration of the guide's "card is the spec" anti-pattern. It is not
+  cited inline in the companion, because no sentence that cites [12] rests on that specific claim.
+- [12] itself is unchanged. The print book stays the canonical source and is still not retrieved
+  online.
+
 ## 0.1.0, reviewed 2026-07-16 - citation integrity pass (WP-10)
 
 **No template change, so `template_version` stays 0.1.0.** Corrections are to the companion and the

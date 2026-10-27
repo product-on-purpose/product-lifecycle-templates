@@ -15,7 +15,7 @@ sizing_guidance: "Use lean (purpose and audience, the KPI table, review and owne
 methodology: generic
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - governance
   - metrics

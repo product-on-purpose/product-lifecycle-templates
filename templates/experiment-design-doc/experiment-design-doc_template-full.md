@@ -11,7 +11,7 @@ last_updated: "{{date}}"
 doc_type: experiment-design-doc
 size: full
 source_template: experiment-design-doc
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -130,7 +130,8 @@ HOW TO FILL THIS IN
      WEAK  | Engagement | primary | | Higher is better |
      TRAP  Copying the PRD's metrics section verbatim into this table. If this test needs its own baseline or
            margin, state it; if it needs nothing beyond what the PRD already carries, say that in one line
-           instead of restating the PRD's own numbers. -->
+           instead of restating the PRD's own numbers. A ratio metric's overall value can move opposite to
+           its own numerator and denominator. Check both separately here, not only the ratio. -->
 
 | Metric | Type (primary or guardrail) | Baseline | Target or guardrail margin |
 |---|---|---|---|

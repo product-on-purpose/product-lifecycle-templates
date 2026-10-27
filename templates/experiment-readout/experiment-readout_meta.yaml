@@ -13,7 +13,7 @@ sizing_guidance: "Use lean (Executive Summary, Context and Setup, Key Results: P
 methodology: growth
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - experimentation
   - measure

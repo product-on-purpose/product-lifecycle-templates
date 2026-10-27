@@ -5,7 +5,7 @@ that the [experiment-design-doc research log](../experiment-design-doc/experimen
 draws on. The build's six-dimension fan-out covered the product-experimentation canon, contested practice (learning,
 archives and who decides), the boundaries with this library's neighbours and the worked example's commitments,
 reporting honestly (validity checks, uncertainty and the named traps), the two non-product lineages, and the standing
-gap question. **27 sources are recorded below, all fetched-and-verified.** Only `fetched-and-verified` sources are
+gap question. **28 sources are recorded below, all fetched-and-verified.** Only `fetched-and-verified` sources are
 quoted anywhere in this bundle.
 
 **Every quotation in this log was checked against the source's raw text**, not against the summary a retrieval tool
@@ -665,3 +665,8 @@ Supports: naming a launch decision's reversibility explicitly ties back to exper
 Quotable: "Some decisions are consequential and irreversible or nearly irreversible - one-way doors - and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation."
 Quotable: "most decisions aren't like that - they are changeable, reversible - they're two-way doors. If you've made a suboptimal Type 2 decision, you don't have to live with the consequences for that long."
 Quotable: "The end result of this is slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention."
+
+**[28] Maggie Stewart (Statsig) - "Product experimentation best practices" (Statsig blog, 2024-07-10).** vendor. **fetched-and-verified.**
+`https://www.statsig.com/blog/product-experimentation-best-practices`
+Supports: A ratio metric's overall value can move in a direction opposite to the change in its own numerator and denominator, a hazard in reading a readout's reported ratio rather than a question of the comparison's validity
+Quotable: "Ratio metrics require extra attention. It's possible for the overall value of the ratio to move in a direction that is opposite to the change in the absolute numerator and denominator values. It's always good practice to check the numerator and denominator separately to understand the true effect."

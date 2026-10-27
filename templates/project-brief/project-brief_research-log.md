@@ -753,3 +753,19 @@ Quotable: "PROJECT BRIEF DOCUMENT APPROVAL"
 Quotable: "Project Requester"
 Quotable: "Bestoutcome Limited 2012"
 Quotable: "Package/Custom/Enhancement/Outsourced"
+
+### A LATER DISAGREEMENT, ADDED 2026-10-26
+
+**[34] Atlassian - "Project Poster".** vendor. **fetched-and-verified.**
+`https://www.atlassian.com/team-playbook/plays/project-poster`
+Supports: The guide's new sentence naming Atlassian's Project Poster as a counter-convention to the
+"living document" anti-pattern.
+Quotable: "Unlike project charters, project posters are living documents that your team fills out over
+the course of several conversations."
+Contested/time-bound: Contests the guide's "Treating the brief as a living document" anti-pattern
+(`project-brief_guide.md`). Atlassian makes staying a living document, updated across several
+conversations as the project proceeds, the Project Poster's whole point rather than a failure mode.
+The Project Poster's three parts (problem space, validation, ready to make it) read broader and more
+exploratory than a project brief's own scope, so the two documents may describe different ground even
+on this one point. The guide's anti-pattern paragraph now names this disagreement and keeps its own
+position.

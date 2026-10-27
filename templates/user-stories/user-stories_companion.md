@@ -49,7 +49,9 @@ Three contributions turned the practice into the form used today:
 
 A quality heuristic followed in 2003: Bill Wake's **INVEST** (Independent, Negotiable, Valuable,
 Estimable, Small, Testable), a checklist for a good story or backlog item [[4]](#ref-4). Later, Jeff Patton's
-2014 *User Story Mapping* added a way to arrange stories into a narrative of the whole product [[12]](#ref-12)[[7]](#ref-7).
+2014 *User Story Mapping* added a way to arrange stories into a narrative of the whole product
+[[12]](#ref-12)[[13]](#ref-13)[[7]](#ref-7). His own site calls story mapping "a dead simple idea" and "a
+better way to work with Agile user stories" [[13]](#ref-13).
 
 Scrum did not invent the user story but adopted it widely: stories are the most common form of Product
 Backlog item, though the Scrum Guide itself does not mandate the format [[8]](#ref-8).
@@ -225,6 +227,8 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 <a id="ref-7"></a>[7] Wikipedia. "[User story](https://en.wikipedia.org/wiki/User_story)." en.wikipedia.org (**fetched and verified 2026-07-16**). Verbatim: "1997: Kent Beck introduces user stories at the Chrysler C3 project in Detroit."; "1999: Kent Beck published the first edition of the book Extreme Programming Explained"; "2001: The XP team at Connextra in London devised the user story format". [reference]
 
 <a id="ref-12"></a>[12] Jeff Patton. *User Story Mapping: Discover the Whole Story, Build the Right Product.* O'Reilly, 2014. Print book; no URL. Cited from the book. ([[7]](#ref-7) records the 2014 publication of the technique.) [practitioner]
+
+<a id="ref-13"></a>[13] Jeff Patton. "[Story Mapping](https://www.jpattonassociates.com/story-mapping/)." jpattonassociates.com (**fetched and verified 2026-10-26**). Verbatim: "User Story Mapping is a dead simple idea."; "Story mapping is a better way to work with Agile user stories". The page itself points to [[12]](#ref-12) as the fuller treatment: "In it, you'll learn about the practice of story mapping and how user stories are really supposed to work in Agile Development." [practitioner]
 
 <a id="ref-8"></a>[8] Ken Schwaber and Jeff Sutherland. "[The 2020 Scrum Guide](https://scrumguides.org/scrum-guide.html)." scrumguides.org, 2020 (accessed 2026-06-30). [primary]
 

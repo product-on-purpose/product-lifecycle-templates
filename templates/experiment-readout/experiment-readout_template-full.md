@@ -11,7 +11,7 @@ readout_date: "{{readout_date}}"
 doc_type: experiment-readout
 size: full
 source_template: experiment-readout
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -134,7 +134,9 @@ HOW TO FILL THIS IN
      GOOD  | 7-day reorder rate | 11.0% | 11.3% | +0.3 pts | +2.7% | -0.6 to +1.2 pts (95% CI) | No |
      WEAK  | Reorder rate | up slightly | | | | | |
      TRAP  Reporting the relative change alone. A small relative lift on a tiny base can read as dramatic;
-           report both, per the clinical-lineage recommendation this bundle borrows for binary outcomes. -->
+           report both, per the clinical-lineage recommendation this bundle borrows for binary outcomes. A
+           ratio metric's overall value can move opposite to its own numerator and denominator. Check both
+           separately before trusting the ratio's own direction. -->
 
 | Metric | Control | Test | Change (abs) | Change (rel) | CI | Sig? |
 |---|---|---|---|---|---|---|

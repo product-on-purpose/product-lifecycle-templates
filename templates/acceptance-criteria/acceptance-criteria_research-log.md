@@ -18,6 +18,7 @@ claims that cite it.** Corrections below, including one factual error.
 | 8 | Master catalog entry 38 (Acceptance Criteria) | internal | On disk | Canonical form, aliases, Gherkin/BDD note, relationships |
 | 9 | Aslak Hellesoy / Ben Linders, "Cucumber is 10 Years Old" (InfoQ, 2018) | primary | **Fetched and verified 2026-07-16** | Gherkin's real origin, in the creator's words: "I created Cucumber in 2008"; "I also decided to give the Given-When-Then syntax a name, to separate it from the tool. That's why it's called Gherkin"; "I extracted the Given-When-Then parser from RSpec" |
 | 10 | Mike Cohn, *User Stories Applied*, 2004 | practitioner | **Print book, no URL. Not retrieved online**; cited from the book | "Conditions of satisfaction" as the story's AC |
+| 11 | Atlassian, "What is the Definition of Done (DoD) in Agile?" https://www.atlassian.com/agile/project-management/definition-of-done | vendor | **fetched-and-verified** 2026-10-26 (cache hit, originally fetched 2026-10-24) | AC-vs-DoD boundary, corroborating [6]: DoD "applies to all product increments," AC "apply only to specific user stories or features"; quotes Atlassian's Mark Cruth, "Remember that the definition of done is not the same thing as acceptance criteria." **Does NOT address who writes AC or when**, and its own DoD-ownership answer names "the development team," a retired Scrum role this bundle does not rely on. Cruth's quote continues that the DoD "might include acceptance criteria," so the page does not draw a fully clean separation |
 
 ## Corrections applied 2026-07-16 (WP-10 citation integrity pass)
 
@@ -172,6 +173,9 @@ in either pass, and that remains open.
   Scrum Guide [6], which was verified, but this is the weakest evidence in the bundle and is now
   labeled as such in the reference itself. A human should read the page and confirm, or the claims
   should be re-sourced to the Scrum Guide where it covers them.
+- **2026-10-26.** Atlassian's Definition of Done page [11] is now fetched-and-verified. It independently
+  states the per-story contrast that §1 of the companion previously drew only from the unread [2]. [2]
+  remains unread and still carries one live claim, in §6 on who writes acceptance criteria.
 - **[4] Thoughtworks** was confirmed live but not re-verified claim by claim in this pass. Its claims
   are uncontested and corroborated by [5] and [7].
 - **[10] Cohn is a print book with no URL**, cited from the book rather than retrieved. This is the

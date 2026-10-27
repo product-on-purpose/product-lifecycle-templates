@@ -2,6 +2,20 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.1 - 2026-10-26 - North Star Metric added to the neighbor-comparison table
+
+- **The guide's comparison table now names a fifth neighbor: North Star Metric.** This applies a proposal
+  from the library's 2026-10-23 resource crawl, approved by the maintainer on 2026-10-25. The table in
+  `kpi-dashboard_guide.md` gains a `North Star Metric` column (Answers, Direction, Cadence, and In this
+  family rows), placed beside the existing OKRs column, and the section heading now lists all five
+  neighbors.
+- **Sourced to Dan Schmidt's North Star framework Dashboard template, in Amplitude's template gallery**
+  (`https://amplitude.com/templates/north-star-framework-dashboard-for-saas-companies`, research log entry
+  [36]). The template builds a KPI dashboard that visualizes a North Star metric alongside its input
+  metrics, showing the real content overlap between this bundle and `north-star-metrics` that the new
+  table column names.
+- No section content changed; the fix is confined to the guide's comparison table and its heading.
+
 ## 0.1.0 - 2026-07-22
 
 - Initial KPI Dashboard bundle. **Third member of the `governance-docs` family** (classification: utility),

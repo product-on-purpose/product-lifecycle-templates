@@ -4,7 +4,7 @@ Research conducted 2026-10-08, building on an admission sweep run on 2026-10-05 
 build's six-dimension fan-out covered the product-experimentation canon, the statistical core (minimum detectable
 effect, sample size, duration and the decision rule), the academic preregistration and public-sector evaluation
 lineages, contested practice, the boundaries with this library's neighbours and with in-tool experiment surfaces, and
-the standing gap question. **35 sources are recorded below, all fetched-and-verified.** Only `fetched-and-verified`
+the standing gap question. **36 sources are recorded below, all fetched-and-verified.** Only `fetched-and-verified`
 sources are quoted anywhere in this bundle.
 
 **Every quotation in this log was checked against the source's raw text**, not against the summary a retrieval tool
@@ -17,10 +17,10 @@ such as a space before punctuation where a link closed. Of the other 9, two are 
 agent had added commas. Each of those is quoted below in its verbatim parts. The last was a sentence from this library's
 own spec, filed by an agent as a quotation from Fishman, and it was dropped. Claims the agents made in their findings
 prose rather than their quotable fields were checked the same way where this log relies on them; see the next
-section. Dashes inside quotations are written as hyphens, as the house rule requires. **237 quotations remain in the
-source entries below: 218 pass as normalized substrings, and 19 pass only with whitespace ignored**, because a PDF's
+section. Dashes inside quotations are written as hyphens, as the house rule requires. **238 quotations remain in the
+source entries below: 219 pass as normalized substrings, and 19 pass only with whitespace ignored**, because a PDF's
 text layer drops its spaces ([20]) or a page splits a sentence across markup ([4], [9], [21], [22], [29], [32], [33]).
-Two of the 237, GrowthBook's "MDE" and "Estimated sample size" field labels in [1], were added after review, when the
+Two of the 238, GrowthBook's "MDE" and "Estimated sample size" field labels in [1], were added after review, when the
 companion was found quoting them without a logged quotable; both were checked against the same cached raw text.
 
 ---
@@ -811,3 +811,8 @@ Quotable: "If you need to run mutually exclusive tests, you can use GrowthBook's
 Supports: A graded scale for the evidence behind an idea, from opinion to observed customer behaviour, assessed before committing resources; the full cost of acting on a wrong idea
 Quotable: "There is only one way to calculate confidence - looking for supporting evidence."
 Quotable: "The penalty for choosing the wrong product idea can be quite high - cost of development + cost of deployment + cost of maintenance + opportunity cost + other residual costs."
+
+**[36] Maggie Stewart (Statsig) - "Product experimentation best practices" (Statsig blog, 2024-07-10).** vendor. **fetched-and-verified.**
+`https://www.statsig.com/blog/product-experimentation-best-practices`
+Supports: A ratio metric's overall value can move in a direction opposite to the change in its own numerator and denominator, and the fix of checking both separately
+Quotable: "Ratio metrics require extra attention. It's possible for the overall value of the ratio to move in a direction that is opposite to the change in the absolute numerator and denominator values. It's always good practice to check the numerator and denominator separately to understand the true effect."

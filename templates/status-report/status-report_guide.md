@@ -120,6 +120,9 @@ Both thresholds sit above two-thirds of the available points; neither is a bare 
 7. **Duplicating the register.** The same underlying fact reported twice, once in Risks and Issues and again
    somewhere else in the document, under two different names. Fix: read the item and its status from the
    authoritative register by ID; do not re-describe it from scratch in a second place.
+8. **The last-minute compile.** The report is assembled from scratch right before it is due, instead of
+   being kept current as the period unfolds. Fix: keep an ongoing draft and update it as events happen,
+   rather than compiling the report from scratch at the deadline.
 
 ## When it is good enough
 

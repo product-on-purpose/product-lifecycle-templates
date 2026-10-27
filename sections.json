@@ -177,7 +177,7 @@
           ]
         }
       },
-      "template_version": "0.1.1"
+      "template_version": "0.1.2"
     },
     {
       "bundle": "adr",
@@ -3180,7 +3180,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "experiment-readout",
@@ -3518,7 +3518,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "incident-postmortem",
@@ -4223,7 +4223,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "launch-coordination-checklist",
@@ -7483,7 +7483,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "production-readiness-review",
@@ -7985,7 +7985,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "project-milestone-retrospective",
@@ -10641,7 +10641,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "test-case",
@@ -13224,7 +13224,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     }
   ],
   "count": 51,

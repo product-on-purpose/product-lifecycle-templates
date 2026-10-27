@@ -347,7 +347,10 @@ and not maintained" [[1]](#ref-1); prince2.wiki, "no longer used in project mana
 [[2]](#ref-2); Litten, "not used after the Initiation stage" [[31]](#ref-31). Against that, the Treasury
 Board of Canada's document is resubmitted "at regular and meaningful intervals throughout the life-cycle of
 the project" [[9]](#ref-9), and Ireland's NTA keeps its own under change control the whole way through
-[[32]](#ref-32). The lightweight sense retires; the heavyweight sense lives on. This bundle builds the first.
+[[32]](#ref-32). The lightweight sense retires; the heavyweight sense lives on. This bundle builds the
+first. Atlassian's Project Poster takes the other side: it calls itself a living document that a team
+fills out over several conversations [[34]](#ref-34). The guide's living-document anti-pattern names this
+disagreement.
 
 **How long should it run?** See section 4; no source measured length against outcome, and the figures given
 range from a paragraph to three pages.
@@ -563,3 +566,5 @@ final, consistent with this section's own boundary against the fuller comparison
 <a id="ref-32"></a>[32] National Transport Authority (Ireland). "[Project Approval Guidelines](https://www.nationaltransport.ie/wp-content/uploads/2020/12/NTA-Project-Approval-Guidelines-Document.pdf)" (December 2020). [primary] Describes the heavyweight, iterative sense this bundle does not build.
 
 <a id="ref-33"></a>[33] Bestoutcome Limited. "[Project Brief Document Template](https://eleco.com/pm3/wp-content/uploads/2015/01/ODPM_Framework_-_Project_Brief_Template_v2.01.pdf)," Lean Project Management Framework v2.0. [vendor]
+
+<a id="ref-34"></a>[34] Atlassian. "[Project Poster](https://www.atlassian.com/team-playbook/plays/project-poster)." [vendor]

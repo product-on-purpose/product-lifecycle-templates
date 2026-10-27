@@ -26,14 +26,14 @@ Looker, Power BI, or Amplitude. It is not the live tool.
 - **You have no objective to measure against.** A dashboard with no objective above it is a pile of numbers.
   Name the objective first, or you are collecting vanity metrics.
 
-## Dashboard, OKRs, scorecard, or risk register? (the question people actually have)
+## Dashboard, OKRs, North Star Metric, scorecard, or risk register? (the question people actually have)
 
-| | **KPI dashboard** | **OKRs** | **Scorecard** | **Risk register** |
-|---|---|---|---|---|
-| Answers | "How are we doing, live?" | "Where are we going, by when?" | "Above or below target, this period?" | "What could stop us?" |
-| Direction | Monitors progress | Sets direction | Compares to target | Tracks threats |
-| Cadence | Continuous | Quarterly | Periodic snapshot | Weekly-to-quarterly |
-| In this family | this bundle | (strategy-docs) | (a dashboard variant) | [`risk-register`](../risk-register/risk-register_guide.md) |
+| | **KPI dashboard** | **OKRs** | **North Star Metric** | **Scorecard** | **Risk register** |
+|---|---|---|---|---|---|
+| Answers | "How are we doing, live?" | "Where are we going, by when?" | "Is the strategy working, in one number?" | "Above or below target, this period?" | "What could stop us?" |
+| Direction | Monitors progress | Sets direction | Names the number | Compares to target | Tracks threats |
+| Cadence | Continuous | Quarterly | Trigger, not a date | Periodic snapshot | Weekly-to-quarterly |
+| In this family | this bundle | (strategy-docs) | (strategy-docs) | (a dashboard variant) | [`risk-register`](../risk-register/risk-register_guide.md) |
 
 The dashboard and the **risk register** are governance siblings: the dashboard tracks **progress toward**
 objectives, the register tracks **threats to** them. Read them together - a green dashboard beside an
