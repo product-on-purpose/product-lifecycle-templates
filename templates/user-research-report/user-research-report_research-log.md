@@ -74,7 +74,7 @@ stage. Two carry 2026-10-27 stamps from the recheck's hour: Employee Express [7]
 
 **The recheck counted 39 cache entries stored since 2026-10-26** (`new-cache.json`). 34 are this log's sources
 with 2026-10-26 stamps. Three more are pages this build read and does not cite: two terms pages, Askable's
-participant-facing one and GOV.UK's, and the Askable glossary page withdrawn below. The last two are pages from
+participant-facing one and GOV.UK's, and the Askable glossary page withdrawn below. The remaining two are pages from
 jpattonassociates.com, stored at 01:14 UTC on 2026-10-27 by other work that shares the cache. No dimension cites
 them. So 37 of the 39 carry 2026-10-26 stamps and 2 carry 2026-10-27 stamps.
 
@@ -1714,8 +1714,8 @@ excluded sites and their clauses are listed in `docs/internal/bundle-pipeline.md
   without permission. The page would have supported a second worked report template, with a cover page and a
   version field.
 - `https://www.koji.so/docs/research-refresh-cadence`. Koji, the same clause. The page would have supported a
-  date after which a report's findings should be checked again. Two dimensions wanted it, and neither found an
-  allowed source that treats the question.
+  date after which one study's findings should be checked again. Two dimensions wanted it. The allowed sources
+  this build read treat refreshing findings only for a research repository or a standing report.
 - `https://www.koji.so/docs/atomic-research-nuggets-guide`. Koji, the same clause. The page would have
   supported the difference in size between a research nugget and a report.
 - `https://www.koji.so/docs/research-debrief-guide`. Koji, the same clause. The page would have supported the
