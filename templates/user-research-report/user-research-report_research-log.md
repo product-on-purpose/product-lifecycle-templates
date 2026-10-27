@@ -21,7 +21,8 @@ standards, `dim2.md` vendors and `dim3.md` evidence, counts and severity. `dim4.
 the gap question. `dim5.md` and `dim7.md` hold the library chain's second and first passes, and `dim8.md` the
 gap-fill pass. The headers inside the files carry other numbers (`dim7.md`'s says dimension 5), so go by file name.
 
-**50 sources are recorded below, and all 50 are fetched-and-verified.** By tier they are 21 vendor, 19
+**52 sources are recorded below, and all 52 are fetched-and-verified.** The maintainer read two of them by hand:
+Mozilla's post [51] and Koji's page on how long findings stay valid [52]. By tier they are 22 vendor, 20
 practitioner, 6 primary and 4 standards. The six primary sources are US government documents: NIST's NISTIR 7742
 template [1], DHS's usability testing kit [3], digital.gov's starter kit [6], the Employee Express summary [7], and
 usability.gov's template page [8] and template file [9]. The four standards sources are NIST's page on the Common
@@ -30,7 +31,7 @@ Nielsen Norman Group's six pages [16] to [21] are tiered practitioner, as `order
 them primary. Five entries carry little. Moran's study guide [18] is a reading list and supports one line. Paul's
 video page [21] supports its summary line only. The Design System page [5] is not a report template. Condens [15]
 gives no section list. Dovetail's deprecation article [42] governs a repository and fails the one-study test.
-**490 Quotable lines remain.** Quotable lines render the sources' long dashes as hyphens and keep their curly
+**522 Quotable lines remain: 490 from the automated research and 32 from the two hand reads.** Quotable lines render the sources' long dashes as hyphens and keep their curly
 apostrophes; copy them as they stand.
 
 **Every quotation was checked against the source's raw text**, not against a retrieval tool's summary. Six
@@ -44,7 +45,8 @@ gap-fill pass. Go by `research.json`.
 **The 52 entries are 51 distinct URLs and one duplicate.** Condens [15] is listed twice, once per owner. One of
 the 51 is GOV.UK's terms page, which the gap-fill pass read to check the site's terms and quoted twice. The main
 loop dropped it from the log, since it supports no claim about reports. `order.before-drop51.json` holds 51 URLs
-and `order.json` holds 50. So 52, less the duplicate and the terms page, makes 50.
+and `order.json` holds 50. So 52, less the duplicate and the terms page, makes 50. Those 50 are entries [1] to
+[50]. The recheck never saw the two hand-read entries, [51] and [52].
 
 **The recheck recorded 312 strict passes, 10 passes as extraction artifacts and 59 failures.** By entry, the
 failures are 10 from [1], 2 from [4], 1 from [5], 9 from [7], 13 from [9], 3 from [11], 1 from [12], 5 from [13],
@@ -98,6 +100,13 @@ every quotation that failed as a whole span, so it includes the 13 drops. The re
 the 9 Employee Express lines and the 2 relaxed passes. Every line in sources.md passed a check against the stored
 raw body.
 
+**The two hand reads add 32 Quotable lines, for 522.** The maintainer pasted each page's text into a gitignored
+folder, as the terms rule's hand-read steps describe (`docs/internal/bundle-pipeline.md:179-191`). The copies
+were saved on 2026-10-27, and that is the date the two entries carry. The main loop chose the quotations from
+those copies and tested each one with the generator's own string test, against the copy alone. All 15 from
+Mozilla [51] and all 17 from Koji [52] passed. Neither copy went into the source cache, so neither entry carries a
+fetch stamp.
+
 ---
 
 ## What the checks caught, and what was not read
@@ -114,14 +123,18 @@ second. These pages and slips need a word here:
   had first found a participant-facing terms page with no automated-access clause. The general terms forbid
   automated access, and Askable is now on the excluded list (`docs/internal/bundle-pipeline.md:173`). The page is
   no numbered source here, and no quotation or claim in this log rests on it (`withdrawn.json`).
-- **Mozilla's post was not retrieved.** The practice dimension wanted Mozilla's *Reflecting on 'It's Our Research'
+- **Mozilla's post was read by hand.** The practice dimension wanted Mozilla's *Reflecting on 'It's Our Research'
   at Mozilla* (`https://blog.mozilla.org/ux/2019/12/reflecting-on-its-our-research-at-mozilla/`). The fetch
   returned a Cloudflare challenge page. That is a block, not a terms bar, and the rule allows no proxy past a
-  block (`docs/internal/bundle-pipeline.md:155-157`). Nothing in this log rests on it.
+  block (`docs/internal/bundle-pipeline.md:155-157`). The maintainer read the post by hand, and it is [51]. The
+  dimension wanted a practitioner's account of product managers and designers running their own research. The
+  post does not give one. A product manager and two designers take part in field research and analysis that the
+  team's user researcher led. The post gives the executive summary and the debrief instead (Findings 5, 6 and 12).
 - **GitLab's handbook stays readable.** The build at first counted handbook.gitlab.com as excluded. A correction of
   2026-10-26 found a Creative Commons BY-SA 4.0 badge on every handbook and docs page. GitLab's website terms
   of use except content `permitted under applicable content licensing permissions` from their retrieval clause
-  (`docs/internal/bundle-pipeline.md:150-152`), so the DRI page [28] stands as read from the cache.
+  (`docs/internal/bundle-pipeline.md:150-152`), so the DRI page [28] stands as read from the cache. The maintainer
+  also read it by hand on 2026-10-27, and that copy passes all seven of the entry's Quotable lines.
 - **Mind the Product stays readable.** Pendo, which is on the excluded list, owns it. Its own terms carry no
   automated-access clause, and a site's own terms govern (`docs/internal/bundle-pipeline.md:152-153`). It is [34].
 - **Sequencing slips.** The evidence dimension read cached pages from nngroup.com and measuringu.com before it
@@ -132,9 +145,10 @@ second. These pages and slips need a word here:
 - **One host has no recorded check.** No terms check is recorded for s3.amazonaws.com, which serves digital.gov's
   legacy Employee Express file [7]. The file is digital.gov's, and the terms scout found no clause on digital.gov.
   Confidence: medium.
-- **Thirteen pages on excluded sites were wanted and not read:** eight on koji.so, one each on entropik.io,
+- **Twelve pages on excluded sites were wanted and not read:** seven on koji.so, one each on entropik.io,
   getwhy.io and productplan.com, and two on Substack. The closing section, Pages not read under the terms rule,
-  lists each one with what it would have supported. No claim in this log rests on them.
+  lists each one with what it would have supported. No claim in this log rests on them. The maintainer read a
+  thirteenth by hand, Koji's page on how long findings stay valid, and it is [52].
 
 **Four spans and two headings that the spec, the contract and ADR 0081 quote for the report are not Quotable
 lines here.** This log matched every quoted span in the report's spec section, the contract and ADR 0081 against
@@ -455,7 +469,9 @@ recommendations for how it should be used." [14]. Humble wrote his own as a desi
 designer doing research, and my research report was completely undesigned." [35]. Mind the Product writes for
 product managers who "want to do user research themselves" [34], and does not discuss the report. Usercall
 describes product managers running interviews with "No shared repository, no consistent screener, no synthesis
-process." [31]. Confidence: high that either a researcher or a product person writes it. The catalog's two
+process." [31]. Mozilla's post shows a product manager and two designers taking part in field research and
+analysis that the team's user researcher led [51]. It does not say who wrote the report. Confidence: high that
+either a researcher or a product person writes it. The catalog's two
 owner values (`tier2-specs.md:7324-7325`) gain a source: GitLab lets a product manager author the report [28].
 
 **Who reads it: two audiences at least.** NIST: "The CIF targets two audiences: usability professionals and
@@ -470,7 +486,9 @@ best, people skim" [35]. User Interviews: "However, many researchers complain th
 are overwhelmed by the sheer volume of information." [14]. O'Neill: "If you write a report that people don't want
 to read and don't read, it doesn't have any impact, even if it had the best possible insights in it." [46].
 Usercall puts the cause in timing: "It still got shelved because it landed two weeks after the pricing decision
-was finalized. The insight wasn't wrong, it was just late." [30]. This is practitioner testimony. Confidence:
+was finalized. The insight wasn't wrong, it was just late." [30]. Mozilla's VP of Product puts the risk on the
+summary: "In short, without a good executive summary, the document will likely not get the attention it
+deserves." [51]. This is practitioner testimony. Confidence:
 medium that it describes practice widely.
 
 **Whether to write one at all.** GOV.UK: "researchers on an agile team won't have time to write research reports
@@ -505,7 +523,9 @@ sections, and should name PAS as a presenting frame the library does not adopt. 
 
 **Debriefs and repositories sit beside the report.** Dovetail: "A debrief is not a research report for peer
 review." [44]. It also says "In these cases, the async debrief still serves as the foundation." [44]. Its trios
-article prefers a regular session to "a quarterly research readout" [43]. Atomic research breaks findings into
+article prefers a regular session to "a quarterly research readout" [43]. Mozilla separates a debrief from
+analysis: "Notably, debriefs are not analysis. They may start the analysis juices going, but analysis is much more
+in-depth and complex." [51]. Atomic research breaks findings into
 nuggets: "A nugget is a labelled observation supported by evidence." [33]. UserTesting [11] and Maze [13] describe
 the same unit differently. Usercall's operations article warns that "Insights get reported once in a deck and then
 never referenced again" [31]. User Intuition wants each report to "reference prior findings - confirming,
@@ -700,9 +720,15 @@ carries it.
     put through a peer review process in the ux_research_team_lounge channel." [28]. **Route:** out of the
     template; a guide line at most. Dovetail's debrief contrasts itself with "a research report for peer review"
     [44].
-17. **A date after which the findings should be checked again. Out.** Dovetail's deprecation policy [42] governs a
-    repository, and fails the one-study test. The two pages that treat the question are on excluded sites, listed
-    in the closing section. **Route:** out.
+17. **A date after which the findings should be checked again. Out; the product version tested is thin.**
+    Dovetail's deprecation policy [42] governs a repository, and fails the one-study test. Koji's page [52], read
+    by hand, is written for a repository too, and its review intervals are its own, citing no study. Two of its
+    tags belong to each insight at publication. E1: "Collected on: the fieldwork date, not the publication date"
+    and "Product version / state: what the participants were actually reacting to" [52]. Of usability findings,
+    it says "a redesign invalidates them instantly" [52]. **Route:** a review-by date stays out. The fieldwork
+    dates already sit in What We Did (`tier2-specs.md:7153`). The product version tested could enter there as an
+    ASK, on one vendor source. GetWhy's pages on the question were not read, and are listed in the closing
+    section.
 18. **The coding or analysis method. Unsupported.** No Quotable line asks a report to name one. **Route:** out.
 
 ### 12. The nine proposed sections, against this research
@@ -714,7 +740,7 @@ sections and sizes bind. The table records which sources now support each sectio
 
 | Section | Size | Spec | Support in this log | Movement |
 |---|---|---|---|---|
-| **Summary** | both | High | [10] "a summary that states the answer up front"; [1] "1 EXECUTIVE SUMMARY"; [11] "Key Takeaways (3-5 bullet points)"; [44] "Executive summary"; [22] "Findings Summary"; [46] "The other is a TLDR." | **Holds at high.** All three of the spec's spans are Quotable lines. Gap candidate 1 enters as an ASK |
+| **Summary** | both | High | [10] "a summary that states the answer up front"; [1] "1 EXECUTIVE SUMMARY"; [11] "Key Takeaways (3-5 bullet points)"; [44] "Executive summary"; [22] "Findings Summary"; [46] "The other is a TLDR."; [51] "An executive summary is a few sentences, maybe one slide" and "clear takeaways and calls to action for each report" | **Holds at high.** All three of the spec's spans are Quotable lines. Gap candidate 1 enters as an ASK |
 | **Background and Objectives** | full | High | [10] "background and objectives (two or three sentences on why the study ran)"; [11] "Background & Objectives"; [13] "Your introduction should lay out your research goals, plan, and scope."; short forms: [11] "Objective of the Study" and "Study Goal"; [44] "Research objective" | **Holds at high on the element; full-only placement weakens.** Every short form with an objective line puts it near the top. That argues for a lean ASK in Summary naming the objective. Gap candidate 12 enters as an ASK |
 | **Research Questions and Answers** | both | Medium-high | [11] "Research Questions"; [14] "Actionable reports should relate back to the initial research question" and "The research questions you'd asked as the catalyst for your study."; [43] "The research questions the study aimed to answer"; [22] "If possible, try to outline how the report will be structured in the test plan." | **Holds at medium-high, with lean placement a POSITION.** Maze's span is not a Quotable line here. No short report form carries research questions. Gap candidates 2 and 3 enter as ASKs |
 | **What We Did** | both | High; medium on the deviation line | [10] "method and participants"; [1] "3 METHOD" and "3.1 PARTICIPANTS"; [11] "Methodology (e.g., unmoderated usability tests, surveys, etc.)"; [44] "Method and participants"; limits: [43] "The method used and any important limitations", [38] "Discuss any concerns you have about your methods", [24] | **Holds at high.** The limits clause gains three sources. The deviation line stays a POSITION: NIST's instruction on irregularities sits in its stored copy and is not a Quotable line. Gap candidates 9 and 10 enter as ASKs |
@@ -757,7 +783,7 @@ These are candidates for a dated note in the spec, not a silent rewrite. Each is
 - `:7189-7190`, `research-docs.md:98-99` and ADR 0081 `:72`, NIST's final-product span, which is not a Quotable
   line. The QA edge holds on NIST's summative lines [1], [2].
 - `:7179-7206`, the boundary list, which names no debrief. Two Dovetail articles distinguish one from a report
-  [43], [44].
+  [43], [44]. Mozilla separates a debrief from analysis [51].
 - `:7219` and `:7221`, the binding facts' wording against the epic. See the example note.
 - `:7089-7090` beside the plan's own promise. The plan promises a short written readout
   (`user-research-plan_example.md:175-176`), and the example uses the full variant. A full variant can still read
@@ -814,7 +840,8 @@ These are candidates for a dated note in the spec, not a silent rewrite. Each is
 12. **Time-bound facts.** NISTIR 7742 is version 0.2 of November 2010 [1]. NIST's CIF page is no longer updated
     [2]. DHS's kit was updated in February 2025 [3]. GOV.UK's sharing page dates from 2016 [4]. usability.gov is
     archived [8], and digital.gov's templates date from 2014 [6]. Employee Express reports a 2013 test [7]. User
-    Interviews' chapter says it is 2019 content [14]. Every vendor page is a living page.
+    Interviews' chapter says it is 2019 content [14]. Mozilla's post dates from December 2019 [51]. Every vendor
+    page is a living page, and the maintainer's copy of Koji's shows no date [52].
 
 ---
 
@@ -1704,6 +1731,48 @@ Quotable: "A 95% credible interval runs from roughly 72% to 96%"
 Quotable: "There's about an 89% probability that the true completion rate exceeds 78%."
 Quotable: "The prior kept us from overreacting to just twenty observations."
 
+### Pages the maintainer read by hand
+
+**[51] Mozilla UX blog (Jennifer Davidson, with Julia Starkov, Jim Thomas, Marissa (Reese) Wood and Michael Verdi) - "Reflecting on 'It's Our Research' at Mozilla" (December 18, 2019).** practitioner. **fetched-and-verified, read by hand by the maintainer on 2026-10-27.**
+`https://blog.mozilla.org/ux/2019/12/reflecting-on-its-our-research-at-mozilla/`
+Supports: An in-house research team's account, from Firefox user research, of how its reports reach stakeholders. The executive summary: what it is (a few sentences, or one slide in a deck), that it is the hardest part of a study, a VP of Product on why a document without a good one goes unread, and the team's move to shorter summaries with clear takeaways and calls to action for each report. That debriefs are not analysis. Stakeholders, a product manager and two designers among them, taking part in field research and analysis that a user researcher led, with Tomer Sharon's advice quoted second-hand. It does not show product managers writing their own reports
+Quotable: "Stakeholders come to research studies, listen attentively to research report-outs, and generally value the work our team does."
+Quotable: "An executive summary is a few sentences, maybe one slide (if it’s in slide format) that summarizes a research study."
+Quotable: "I’ll tell you - it is the hardest part of a research study."
+Quotable: "The purpose of an executive summary is to describe the main and important points of your document in such a way that it will engage the readers."
+Quotable: "In short, without a good executive summary, the document will likely not get the attention it deserves."
+Quotable: "without an executive summary, people may not pay any attention to the study results (a researcher’s worst nightmare!)."
+Quotable: "So over the past year, the Firefox UR team has been iterating on our executive summary style, to better fit the needs of our current executives."
+Quotable: "We try to be more succinct with our executive summaries than before, with clear takeaways and calls to action for each report."
+Quotable: "A debrief includes those precious moments immediately after interviewing a participant or visiting a participants’ home. They capture your first reactions after the experience."
+Quotable: "Notably, debriefs are not analysis. They may start the analysis juices going, but analysis is much more in-depth and complex."
+Quotable: "Sharon recommends analyzing results together with stakeholders."
+Quotable: "Stakeholders are more likely to act upon study results because they participated in the study’s development"
+Quotable: "We don’t always involve stakeholders in analysis, particularly if the timing is tight."
+Quotable: "As a Product Manager, I know how important it is to spend time connecting with your users, learning how they think about your product, observing what they do and how they react."
+Quotable: "All the process was handled for me so I was able to focus on my most important goal: learning about our users and their perspectives."
+
+**[52] Koji (docs) - "How Long Is User Research Valid? Insight Decay and When to Re-Run a Study".** vendor. **fetched-and-verified, read by hand by the maintainer on 2026-10-27.**
+`https://www.koji.so/docs/research-refresh-cadence`
+Supports: A vendor's guidance on how long findings stay valid, written for a research repository and ending in a pitch for the vendor's own platform. Findings decay at the speed of what they describe. Every insight is tagged at publication with its fieldwork date, population, product version and a decay class, and carries a confidence label with a review-by date. Every cited insight needs a date. A usability finding on one interface lasts until that interface changes, and a material product change invalidates evaluative findings. The half-life table and the one-year and five-year review points are the vendor's own and cite no study. It partly fails the one-study test: the four tags and the label belong to each insight, which one report can carry, while the quarterly sweep belongs to the repository
+Quotable: "Research does not expire on a fixed schedule"
+Quotable: "research decays at the speed of the thing it describes."
+Quotable: "Research repositories are built to accumulate and preserve; almost none are built to mark things stale."
+Quotable: "A widely used practitioner heuristic is to check for existing research before commissioning new work, treating roughly one year as the review point for evaluative research and about five years for generative research."
+Quotable: "Usability findings on a specific interface"
+Quotable: "Until the next material change to that interface"
+Quotable: "Often under 12 months; a redesign invalidates them instantly"
+Quotable: "Your product changed materially. Any change to the flow the research described. This invalidates evaluative findings immediately and completely."
+Quotable: "Tag every insight with four fields at the time of publication."
+Quotable: "Collected on: the fieldwork date, not the publication date"
+Quotable: "Population: the exact cohort, including how they were recruited"
+Quotable: "Product version / state: what the participants were actually reacting to"
+Quotable: "Decay class: from the table above"
+Quotable: "Run a quarterly staleness sweep."
+Quotable: "Publish an explicit confidence label."
+Quotable: "Validated Q1 2026, population: SMB admins, decay class: competitive expectations, review by Q3"
+Quotable: "The most damaging pattern: a slide with a compelling quote and no fieldwork date. Require dates on every cited insight."
+
 ## Pages not read under the terms rule
 
 The research agents found each page below and did not read it, because the site's own terms of use forbid
@@ -1713,9 +1782,6 @@ excluded sites and their clauses are listed in `docs/internal/bundle-pipeline.md
 - `https://www.koji.so/docs/ux-research-report-template`. Koji's terms bar automated access to its services
   without permission. The page would have supported a second worked report template, with a cover page and a
   version field.
-- `https://www.koji.so/docs/research-refresh-cadence`. Koji, the same clause. The page would have supported a
-  date after which one study's findings should be checked again. Two dimensions wanted it. The allowed sources
-  this build read treat refreshing findings only for a research repository or a standing report.
 - `https://www.koji.so/docs/atomic-research-nuggets-guide`. Koji, the same clause. The page would have
   supported the difference in size between a research nugget and a report.
 - `https://www.koji.so/docs/research-debrief-guide`. Koji, the same clause. The page would have supported the
