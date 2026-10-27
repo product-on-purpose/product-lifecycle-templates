@@ -9,9 +9,11 @@ reading anything else first.
 
 The one fact to hold onto while reading the rest of this file: **nothing here has been proven to work.**
 Every bundle is researched and gate-green, and none of them is claimed to be more than that.
-Efficacy has been measured four times: three runs returned **VOID**, and the fourth,
-on 2026-09-03, cleared every validity gate on **two scenarios of one bundle** and found no measurable
-difference in whether a reader could answer their questions. See
+Efficacy has been measured five times: four runs returned **VOID**, and one, on
+2026-09-03, cleared every validity gate on **two scenarios of one bundle** and found no measurable
+difference in whether a reader could answer their questions. The latest, on 2026-10-23, found documents
+written with the template scoring below the control on criteria drawn from neither the template nor its
+guide. See
 [What this library has not proven](#what-this-library-has-not-proven) before you trust a claim here more
 than it has earned.
 
@@ -171,12 +173,17 @@ agent selecting a bundle should not read more confidence into it than the librar
 - **A green gate is a structural claim, not a quality one.** Every bundle is `beta`. Nothing here is
   offered as proven, and the library does not assert that a document produced from one of these
   templates is better than one written without it.
-- **Efficacy has been measured four times, and the result still does not support a library-wide quality
+- **Efficacy has been measured five times, and the result still does not support a library-wide quality
   claim.** Two blinded runs on 2026-08-08 over three of the twenty-six bundles then in the library both
   returned **VOID** on the discrimination gate, as did a single-scenario run on 2026-08-21. **The fourth,
   on 2026-09-03, cleared every gate over two scenarios of the `prd` bundle**, and found the probe gap at
   **exactly 0.00**: no measurable difference in whether a reader could answer their questions. See
-  [`2026-09-03_two-scenario.md`](evals/results/2026-09-03_two-scenario.md). What the runs show
+  [`2026-09-03_two-scenario.md`](evals/results/2026-09-03_two-scenario.md). **The fifth, on 2026-10-23,
+  over four scenarios of `acceptance-criteria` and `incident-postmortem`, was VOID on discrimination.** On
+  criteria drawn from neither the template nor its guide, the template arm scored below the control:
+  -0.30, with an interval of -0.61 to -0.04. Those criteria were chosen because the templates lack them,
+  which biases them against the template, and the protocol does not gate on them. See
+  [`2026-10-23_four-scenario.md`](evals/results/2026-10-23_four-scenario.md). What the runs show
   consistently is the circularity signature: documents written with these templates score well above a
   strong generic-prompt control on the **templates' own** rubric criteria (+0.85) and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide (-0.03, interval spanning

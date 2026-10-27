@@ -494,7 +494,7 @@ checks were written before the bundles were.
 Every release above describes coverage and governance, both of which are checkable. **None of them claims
 the templates are good.**
 
-Quality has been measured **four times**. Two independent runs on 2026-08-08 over three of the bundles
+Quality has been measured **five times**. Two independent runs on 2026-08-08 over three of the bundles
 then in the library returned **VOID** on the discrimination gate, as did a single-scenario run on
 2026-08-21. What those runs did show is the **circularity signature**: a clear gap on criteria drawn from
 the templates' own guide, beside nothing at all on criteria drawn from neither
@@ -508,7 +508,12 @@ gap of exactly **0.00**, which is ambiguous between "the template does not help 
 scenarios were too easy", and the protocol currently specifies neither harder scenarios nor a weaker
 generation model to tell those apart.
 
-So the position is narrower than "measured" and better than "unmeasured": **the instrument now works well
-enough that a null result is informative, and it has been pointed at one bundle.** No template in this
-library has been filled in anger by anyone but its author, and the honest scope of the quality claim is
-written up in [what the gate proves](docs/explanation/what-the-gate-proves.md).
+**The fifth run, on 2026-10-23, was void again**, over four scenarios of `acceptance-criteria` and
+`incident-postmortem`. On criteria drawn from neither the template nor its guide, the template arm scored
+below the control: -0.30, with an interval of -0.61 to -0.04. Those criteria were chosen because the
+templates lack them, which biases them against the template, and the protocol does not gate on them
+([the result](evals/results/2026-10-23_four-scenario.md)).
+
+So the position is narrower than "measured" and better than "unmeasured": **the instrument can produce an
+informative result, and it has produced one valid run, on one bundle.** The honest scope of the quality
+claim is written up in [what the gate proves](docs/explanation/what-the-gate-proves.md).
