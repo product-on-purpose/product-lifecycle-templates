@@ -54,7 +54,8 @@ Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-
 
 **Phase 0-2, research.** Fan out parallel sonnet agents over the type's research dimensions, synthesize
 one research log. Honest retrieval is not negotiable: three tokens, and only `fetched-and-verified` may be
-quoted. See the runbook.
+quoted. A site whose terms bar automated reading is not read at all, not even from the cache; the
+maintainer reads any page the build needs from it by hand (the runbook's "The terms rule"). See the runbook.
 
 **Phase 3, draft.** Run `{stage:"draft", type, family}`. Seven files in dependency order: companion ->
 both templates -> guide -> example -> meta and history, because each is built from the one before. For a
