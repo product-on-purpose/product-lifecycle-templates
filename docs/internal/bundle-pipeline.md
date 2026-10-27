@@ -133,6 +133,69 @@ const results = await parallel(DIMENSIONS.map(d => () =>
 return results.filter(Boolean)
 ```
 
+### The terms rule (since 2026-10-25)
+
+**No agent reads a page on a site whose terms of use forbid automated reading.** The ban covers a fetch and
+a read from the source cache alike. The maintainer set this rule on 2026-10-25. The sites stay citable:
+the maintainer reads a needed page by hand, and the build checks every quote against that copy.
+
+**Check a site's terms before the first read of any page on it, including a read from the cache.** A
+site's own terms page, and any licence statement it links to, is the one automated read the rule allows.
+Reading it is how a site's status is learned, so the rule cannot forbid it. Two slips on 2026-10-25 read
+cached pages from nngroup.com and measuringu.com before their terms were checked. Neither site turned out
+to bar reading, but the order was wrong.
+
+**What counts as a bar.** A clause that forbids automated access, crawling, scraping or retrieval is a bar.
+A clause that forbids only copying, reproducing or mirroring content is not a bar on reading. An exception
+written into the clause itself counts. GitLab's Website Terms of Use bar retrieval "unless otherwise
+permitted under applicable content licensing permissions", and the GitLab handbook and docs carry a
+Creative Commons BY-SA 4.0 licence on every page, so both stay readable. A site owned by another company is
+governed by its own terms: Mind the Product belongs to Pendo, but its own terms carry no such clause.
+
+**No workaround.** No proxy, alternate client or second model is used to get past a block, a challenge or a
+terms bar. A second model fetching the page is the same automated read with one more step. A retired
+government page may be read through the Internet Archive's Wayback Machine.
+
+**The excluded sites, as of 2026-10-26.** Each clause below was checked against the raw text of the site's
+own terms page. A site not on this list is not cleared by its absence; check it before its first read.
+
+| Site | The clause, verbatim | Terms page |
+|---|---|---|
+| Substack and every newsletter it hosts, including `lennysnewsletter.com`, `productcompass.pm`, `elenaverna.com`, `news.aakashg.com` and `leahtharin.com` | "“Crawls,” “scrapes,” or “spiders” any page, data, or portion of Substack (through use of manual or automated means);" | `<newsletter>/tos` |
+| `baymard.com` | "It is explicitly prohibited to use any automated extracting, processing, scraping, or reverse-engineering methods in connection with the Services and on our website." | `https://baymard.com/terms-and-conditions` |
+| `anthropic.com` | "To crawl, scrape, or otherwise harvest data or information from our Services other than as permitted under these Terms." | `https://www.anthropic.com/terms` |
+| `winningbydesign.com` | "Develop, support, or use software, devices, scripts, robots or another means to scrape the Service;" | `https://winningbydesign.com/terms-and-conditions/` |
+| `pendo.io` | "Systematic retrieval of data or other Content to create or compile, directly or indirectly, a collection, database or directory without written permission from Pendo is prohibited." | `https://www.pendo.io/legal/terms-of-use/` |
+| `miro.com` | "scrape, data mine, reverse engineer, decompile, disassemble or seek to access the source code or non-public APIs to or unauthorized data from the Service" | `https://miro.com/legal/terms-of-service/` |
+| `evidentlyai.com` | "Use any robot, spider, or other automatic device, process, or means to access Service for any purpose, including monitoring or copying any of the material on Service." | `https://www.evidentlyai.com/terms` |
+| `productplan.com` | "Use automated tools to scrape, crawl, or extract content without permission" | `https://www.productplan.com/terms` |
+| `forgetthefunnel.com` | "You are not permitted to use, or cause others to use, any automated system or software to extract content or data from our Website for commercial purposes." | `https://forgetthefunnel.com/terms-of-use-license` |
+| `askable.com` | "Use any automated tool, bot, scraper, crawler, spider, or similar technology to access, extract, or index any content from the Website;" | `https://www.askable.com/legal/terms-of-use` |
+| `koji.so` | "Use automated means to access our Services without our permission" | `https://www.koji.so/terms` |
+| `entropik.io` | "You agree not to access or attempt to access any content available on the Website by any means other than through the interface that is provided by us." | `https://www.entropik.io/terms-of-use` |
+| `getwhy.io` | "...download Insights or other content from the Services through the use of any engine, software, tool, agent, device or mechanism (including spiders, robots, crawlers, data mining tools or the like)..." | `https://www.getwhy.io/terms-of-service` |
+| `about.gitlab.com` | "Using any process or device (automated or otherwise) to retrieve, index, “data mine”, “scrape”, or in any way reproduce the presentation of this website or its Content, unless otherwise permitted under applicable content licensing permissions." No content licence was found on this site, unlike the handbook and docs. | `https://handbook.gitlab.com/handbook/legal/policies/website-terms-of-use/` |
+
+**Reading an excluded page by hand.**
+
+1. A research agent that wants a page on an excluded site does not open it. It lists the page under
+   `not_read_under_terms`, with what the build needs from it.
+2. The orchestrator gives the maintainer one short list: each page's URL and what the build needs from it.
+3. The maintainer opens each page in a browser and pastes its text into a gitignored working folder. The
+   copy is never committed, and never put in the source cache.
+4. The orchestrator checks every quote against that copy before the quote enters the research log.
+5. The log entry keeps the `fetched-and-verified` token and says how the page was read, for example
+   `**fetched-and-verified, read by hand by the maintainer on 2026-10-26.**` The research-log check
+   accepts a qualifier around the token.
+6. A page the maintainer does not read goes in the log's `## Pages not read under the terms rule` section,
+   described in phase 2. No claim rests on it.
+
+**Earlier builds.** *(Recorded 2026-10-26.)* No build before 2026-10-25 checked terms. The committed
+research logs hold 57 `fetched-and-verified` entries on the sites above, across 15 bundles: 34 on
+Substack-hosted newsletters, 15 on ProductPlan, 3 on Koji, 2 on Pendo, 2 on about.gitlab.com and 1 on
+Miro. The maintainer chose to leave them as recorded. A later revision that needs one of those pages again
+reads it by hand.
+
 ### Dimension 6: the gap question (standing, since 2026-08-14)
 
 **Added by [ADR 0038](decisions/0038-what-the-circularity-signature-obliges.md).** One researcher is always
@@ -213,6 +276,13 @@ in [`STATE.md`](../../STATE.md)). Do not copy those six as a model.
 link would manufacture the appearance of retrieval. Such an entry states the absence and why, instead of a
 URL. See `risk-register` [33] (Hubbard) for the worked form. `No URL.` on its own does not buy the
 exemption; the check requires a stated reason.
+
+**Pages not read under the terms rule.** A page the build wanted on an excluded site, and that the
+maintainer did not read by hand, goes in a `## Pages not read under the terms rule` section after the
+sources. Write one bullet per page: its URL, the site's clause in a few words, and what the page would have
+supported. No claim rests on it, and it carries no number and no retrieval token. The check parses only
+sections whose heading contains the word "source", so this heading must not contain it. The section exists
+so a reader can see what the bundle did not read, and why.
 
 **What the check does not do:** it proves the fields are present, never that a retrieval status is truthful,
 that a `Supports:` clause is accurate, or that a quoted phrase appears in the source. Those are phase 4's

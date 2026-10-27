@@ -58,6 +58,13 @@ people who want every change, release notes are for people who want to know what
   skill from its description, and both descriptions sat at 1,021 of the 1,024 characters the Agent Skills format
   allows, so neither named the two types built since 2026-10-22. Wording that described each skill's output was
   cut to make room, and no document type was dropped. The descriptions now measure 1,008 and 1,006 characters.
+- **Builds no longer read sites whose terms of use forbid automated reading.** The maintainer set the rule on
+  2026-10-25. The build runbook now lists 14 excluded sites, each with its clause checked against the site's own
+  terms page, and every research agent checks a site's terms before its first read, including a read from the
+  source cache. The sites stay citable: the maintainer reads a needed page by hand, the log entry says so, and a
+  page nobody read is listed in a new `## Pages not read under the terms rule` section. A dated note records that
+  57 entries in committed research logs, across 15 bundles, came from these sites before the rule; they stay as
+  recorded.
 
 ## [0.21.0] - 2026-10-22
 

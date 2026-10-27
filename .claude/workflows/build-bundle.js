@@ -94,6 +94,15 @@ const RESEARCH_SCHEMA = {
       items: { type: 'string' },
     },
     not_found: { type: 'string', description: 'What was searched for and not found. State it; do not fill the gap.' },
+    not_read_under_terms: {
+      type: 'array',
+      description: 'Pages wanted on a site whose terms bar automated reading. Not opened, not read from the cache.',
+      items: {
+        type: 'object',
+        required: ['url', 'what_is_needed'],
+        properties: { url: { type: 'string' }, what_is_needed: { type: 'string' } },
+      },
+    },
   },
 }
 
@@ -144,6 +153,17 @@ will converge on the same canonical sources unless you follow this.
   5. State what you could not find. An honest gap is a finding; a plausible filler is a defect.
 `
 
+// The terms rule, set by the maintainer on 2026-10-25. The runbook section holds the list of excluded
+// sites and their clauses; this text only makes sure every research agent reads it before reading anything.
+const TERMS_RULE = `
+THE TERMS RULE. Some sites' terms of use forbid automated reading. Before the first read of any page on a
+site, including a read from the source cache, check that site against "The terms rule" in ${RUNBOOK}. If
+the site is listed there, or its own terms page forbids automated access, crawling, scraping or retrieval,
+do not open the page and do not read it from the cache. List it in not_read_under_terms with what you
+need from it; the maintainer may read it by hand. Reading a site's own terms page is allowed, because that
+is how its status is learned. Never use a proxy, another client or another model to get past a bar.
+`
+
 if (stage === 'research') {
   const dimensions = input.dimensions
   if (!Array.isArray(dimensions) || !dimensions.length) {
@@ -161,6 +181,7 @@ if (stage === 'research') {
 DIMENSION ${i + 1}: ${typeof d === 'string' ? d : d.prompt}
 
 Read ${RUNBOOK} phases 1-2 for the research standard. Use real web retrieval.
+${TERMS_RULE}
 ${OWNERSHIP_RULE}
 Return the schema. Your findings text is the raw material for one section of a research log, so tie every
 claim to a source in owned_sources by identity. Flag genuine disagreement in contested rather than picking
