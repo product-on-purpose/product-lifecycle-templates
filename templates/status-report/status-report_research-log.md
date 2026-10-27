@@ -377,6 +377,12 @@ Quotable: "The report has the progress information of the project."
 Quotable: "It can be mailed directly to them."
 Quotable: "a clear understanding of what you are doing. There should be no surprises for them"
 
+**[31] Atlassian - "Project Status Report: Tips and Templates for Success".** vendor. **fetched-and-verified.**
+`https://www.atlassian.com/agile/project-management/status-report`
+Supports: Names a failure mode the guide's seven existing named anti-patterns did not yet cover: compiling
+the report from scratch right before it is due, rather than keeping one current as the period unfolds.
+Quotable: "Keep an ongoing draft: Avoid last-minute rushes by maintaining a draft of your status report."
+
 ## Contested register
 
 1. **Whether RAG has a definable threshold at all.** The IPA defines Red, Amber and Green in prose and

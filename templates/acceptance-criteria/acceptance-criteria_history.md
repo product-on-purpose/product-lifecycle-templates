@@ -2,6 +2,23 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.2 - 2026-10-26 - the AC-vs-DoD boundary gains a read source
+
+**This applies a proposal from the library's 2026-10-23 resource crawl, approved by the maintainer on
+2026-10-25.**
+
+- **Atlassian's "What is the Definition of Done (DoD) in Agile?" page is now reference [11] in
+  `acceptance-criteria_research-log.md` and in the companion.** It is fetched-and-verified, unlike the
+  Scrum.org page [2] that this bundle has never been able to read at source.
+- **The companion's §1 "per-story" claim now cites [11] instead of the unread [2].** The Atlassian page
+  states the same contrast directly: acceptance criteria "apply only to specific user stories or
+  features," while the Definition of Done "applies to all product increments."
+- **The companion's §6 boundary paragraph gains [11] as corroboration**, alongside the existing citation
+  to the Scrum Guide [6], quoting Atlassian coach Mark Cruth: "Remember that the definition of done is
+  not the same thing as acceptance criteria."
+- **One claim still rests on the unread [2]**: §6's note on who conventionally drafts acceptance
+  criteria. The Atlassian page says nothing about authorship, so that claim is unchanged.
+
 ## 0.1.1 - 2026-08-21 - the checklist rubric becomes a scored rubric
 
 **This is the experiment [`guide-rubric-spec.md`](../../docs/internal/guide-rubric-spec.md) section 4 item

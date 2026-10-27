@@ -269,8 +269,9 @@ Contested/time-bound: ...           <- optional
 
 Any shape that carries no per-source record is **not** legal, and a log the check cannot parse **fails**
 rather than passing quietly. The table form is legal only if it carries a URL and an enum token in the row;
-the six logs that use it today carry neither, and are exempt by name (see the check's `EXEMPT` map and DF-4
-in [`STATE.md`](../../STATE.md)). Do not copy those six as a model.
+the six logs that use it today were written without either, and are exempt by name (see the check's `EXEMPT`
+map and DF-4 in [`STATE.md`](../../STATE.md)). Rows added to two of them on 2026-10-26 carry both. Do not copy
+those six as a model.
 
 **Print-source exemption.** A physical book that was not retrieved has no URL, and inventing a bookseller
 link would manufacture the appearance of retrieval. Such an entry states the absence and why, instead of a

@@ -22,9 +22,8 @@ before work starts. *That last point is this bundle's reading rather than a sour
 for this bundle states it, though [[4]](#ref-4) records that scenarios convert into automated tests.*
 
 **At a glance**
-- They are **per-story** [[2]](#ref-2) *(never read at source; see the reference note)*. That they are
-  also **functional**, stating what this story must do for its user, is this bundle's framing rather than
-  a sourced claim.
+- They are **per-story** [[11]](#ref-11). That they are also **functional**, stating what this story must
+  do for its user, is this bundle's framing rather than a sourced claim.
 - They come in two dominant forms: **rule-oriented** (a checklist of conditions) and **scenario-oriented**
   (Given/When/Then) [[4]](#ref-4)[[5]](#ref-5). *That the two mix freely, and should, is this bundle's
   position rather than a sourced claim; see [section 6](#6-debates-and-contested-boundaries).*
@@ -130,7 +129,10 @@ default, and that such a flow reads more easily as scenarios than as rules, are 
 **Acceptance criteria vs Definition of Done.** The most important distinction to get right. AC are
 **story-specific and functional** (what this story must do); the **Definition of Done is universal and
 applies to every increment** [[6]](#ref-6) (illustrative examples: coded, reviewed, tested, documented,
-accessible). The Product Owner
+accessible). Atlassian's Definition of Done page makes the same claim independently. Its coach Mark Cruth
+puts it directly: "Remember that the definition of done is not the same thing as acceptance criteria"
+[[11]](#ref-11). The page's FAQ adds the per-story half: the DoD "applies to all product increments," while
+AC "apply only to specific user stories or features." The Product Owner
 typically owns AC. **Corrected 2026-08-06:** this line previously said the development team owns the DoD with the Product Owner having final say, citing [[2]](#ref-2), a page this bundle's own reference entry records as never read. The 2020 Scrum Guide does not support it and retired "development team" as a role; the sourced treatment now lives in the [`definition-of-done` companion](../definition-of-done/definition-of-done_companion.md). AC are
 written per story during refinement *(this bundle's framing; the Guide names no acceptance-criteria
 concept at all, see [§5](#5-methodology-lineage))*, while the Definition of Done is defined for the
@@ -222,7 +224,7 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 
 <a id="ref-1"></a>[1] Dan North. "[Introducing BDD](https://dannorth.net/blog/introducing-bdd/)." First published in *Better Software* magazine, March 2006. dannorth.net (accessed 2026-07-16). [primary]
 
-<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org. **NEVER READ AT SOURCE, across three attempts in three sessions: HTTP 403 on 2026-06-30 and 2026-07-16, and HTTP 202 with an empty body behind a bot challenge on 2026-08-08.** A 2026-08-08 re-read of the 2020 Scrum Guide against these claims established something this reference cannot be used to bridge: the Guide contains **zero occurrences of "acceptance criteria"**, and zero of "acceptance" in any form, so it draws no boundary between the Definition of Done and acceptance criteria at all. Where this bundle states such a boundary, the boundary is this library's own and is labelled as such. **Resolved 2026-08-08.** This reference carried sixteen citations and was the most-cited source in the bundle. Each was classified in duplicate, then adjudicated, then adversarially re-checked; the verdicts and the adjudication are recorded in [the research log](acceptance-criteria_research-log.md). Six moved to the Guide [[6]](#ref-6), which supports them directly; seven were cut, either because nothing read carries the claim or because the sentence is this bundle's own reasoning; one is the §6 correction note of 2026-08-06, which already disclosed the problem and is unchanged; and **two remain as live claims, each narrowed to the clause this reference is recorded as supporting and marked unverified at the point it is made** (§1 once, §6 once). No claim in this bundle rests silently on an unread page. [primary, unread]
+<a id="ref-2"></a>[2] Scrum.org. "[What Is the Difference Between the Definition of Done and Acceptance Criteria?](https://www.scrum.org/resources/blog/what-difference-between-definition-done-and-acceptance-criteria)" scrum.org. **NEVER READ AT SOURCE, across three attempts in three sessions: HTTP 403 on 2026-06-30 and 2026-07-16, and HTTP 202 with an empty body behind a bot challenge on 2026-08-08.** A 2026-08-08 re-read of the 2020 Scrum Guide against these claims established something this reference cannot be used to bridge: the Guide contains **zero occurrences of "acceptance criteria"**, and zero of "acceptance" in any form, so it draws no boundary between the Definition of Done and acceptance criteria at all. Where this bundle states such a boundary, the boundary is this library's own and is labelled as such. **Resolved 2026-08-08.** This reference carried sixteen citations and was the most-cited source in the bundle. Each was classified in duplicate, then adjudicated, then adversarially re-checked; the verdicts and the adjudication are recorded in [the research log](acceptance-criteria_research-log.md). Six moved to the Guide [[6]](#ref-6), which supports them directly; seven were cut, either because nothing read carries the claim or because the sentence is this bundle's own reasoning; one is the §6 correction note of 2026-08-06, which already disclosed the problem and is unchanged; and **two remain as live claims, each narrowed to the clause this reference is recorded as supporting and marked unverified at the point it is made** (§1 once, §6 once). No claim in this bundle rests silently on an unread page. **Updated 2026-10-26:** the §1 per-story claim now cites Atlassian's Definition of Done page [[11]](#ref-11) instead, a source that has been read and verified. One live claim resting on this unread page remains, in §6 on who writes acceptance criteria. [primary, unread]
 
 <a id="ref-3"></a>[3] Ron Jeffries. "[Essential XP: Card, Conversation, Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/)." ronjeffries.com, 2001 (accessed 2026-07-16). [practitioner]
 
@@ -239,3 +241,5 @@ authority; `[vendor]` commercially motivated; `[reference]` consolidated seconda
 <a id="ref-8"></a>[8] "[Master Catalog of Product Management and SDLC Document and Artifact Types](../../docs/internal/catalog.md)," entry 38 (Acceptance Criteria). Internal deep-research catalog, 2026. [internal]
 
 <a id="ref-9"></a>[9] Aslak Hellesoy, interviewed by Ben Linders. "[BDD Tool Cucumber is 10 Years Old: Q&A with its Founder Aslak Hellesoy](https://www.infoq.com/news/2018/04/cucumber-bdd-ten-years/)." InfoQ, 2018-04 (accessed 2026-07-16). Hellesoy: "I created Cucumber in 2008"; "I also decided to give the Given-When-Then syntax a name, to separate it from the tool. That's why it's called Gherkin (a small, pickled Cucumber)." [primary]
+
+<a id="ref-11"></a>[11] Atlassian. "[What is the Definition of Done (DoD) in Agile?](https://www.atlassian.com/agile/project-management/definition-of-done)" atlassian.com (accessed 2026-10-26). Quotes Atlassian's Modern Work Coach Mark Cruth: "Remember that the definition of done is not the same thing as acceptance criteria." The same page's FAQ states the DoD "applies to all product increments," while AC "apply only to specific user stories or features." [vendor]

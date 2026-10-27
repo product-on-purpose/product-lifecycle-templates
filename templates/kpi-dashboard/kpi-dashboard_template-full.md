@@ -9,7 +9,7 @@ status: "{{status}}"
 doc_type: kpi-dashboard
 size: full
 source_template: kpi-dashboard
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--

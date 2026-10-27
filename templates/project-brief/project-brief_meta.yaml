@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (Background and Mandate, Objectives, Scope and Exclus
 methodology: PRINCE2
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - discovery
   - project-brief

@@ -9,7 +9,7 @@ status: "{{status}}"
 doc_type: status-report
 size: full
 source_template: status-report
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--

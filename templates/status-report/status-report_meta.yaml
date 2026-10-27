@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (Summary and Status, Accomplishments, Risks and Issue
 methodology: methodology-agnostic
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - communication
   - status-report

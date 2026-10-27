@@ -139,6 +139,13 @@ relative and absolute effect sizes is recommended" [[17]](#ref-17). **The interv
 stated in the row, never assumed as a field default**; no source read states one level as a convention, and
 section 6, item 8 covers why.
 
+**A ratio metric carries its own hazard at readout time.** Statsig's own best-practices guide warns that
+"it's possible for the overall value of the ratio to move in a direction that is opposite to the change in
+the absolute numerator and denominator values," and recommends checking "the numerator and denominator
+separately to understand the true effect" [[28]](#ref-28). This is a hazard in reading the reported change,
+not a question of whether the comparison itself can be trusted, so it sits in this table rather than in
+Validity Checks below.
+
 ### Key Results: Supporting Metrics (lean, table)
 
 Every guardrail's movement, reported against the threshold the design doc fixed.
@@ -572,3 +579,5 @@ mismatch as a lesson for the next design doc rather than quietly resolving it in
 <a id="ref-26"></a>[26] Google Research Blog. "[Overlapping Experiment Infrastructure: More, Better, Faster Experimentation](https://research.google/blog/overlapping-experiment-infrastructure-more-better-faster-experimentation/)." Google Research (summarizing Tang, Agarwal, O'Brien and Meyer, KDD 2010; accessed 2026-10-11). Supports the mechanism by which concurrently running experiments are kept statistically independent ("Google's infrastructure supports this vast experimentation by using orthogonal diversion criteria for experiments in different 'layers' so that each event ... can be assigned to multiple experiments."). [primary]
 
 <a id="ref-27"></a>[27] Farnam Street. "[Reversible and Irreversible Decisions](https://fs.blog/reversible-irreversible-decisions/)." fs.blog, quoting Jeff Bezos's Amazon shareholder letter (accessed 2026-10-11). Supports naming a launch decision's reversibility explicitly, and the link between over-applying irreversible-decision rigor and under-experimenting ("most decisions aren't like that - they are changeable, reversible - they're two-way doors."; "The end result of this is slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention."). [practitioner]
+
+<a id="ref-28"></a>[28] Maggie Stewart (Statsig). "[Product experimentation best practices](https://www.statsig.com/blog/product-experimentation-best-practices)." Statsig blog (2024-07-10; accessed 2026-10-26). Supports a ratio metric's overall value moving in a direction opposite to the change in its own numerator and denominator, and the fix of checking both separately ("It's possible for the overall value of the ratio to move in a direction that is opposite to the change in the absolute numerator and denominator values. It's always good practice to check the numerator and denominator separately to understand the true effect."). [vendor]

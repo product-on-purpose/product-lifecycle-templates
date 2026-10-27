@@ -2,7 +2,8 @@
 
 Evidence trail for the companion, per the methodology's research protocol (§A6). Researched 2026-06-30.
 **Citation integrity pass 2026-07-16 (WP-10): every reachable source fetched and verified against the
-claims that cite it.** Corrections below.
+claims that cite it.** Corrections below. **Citation upgrade 2026-10-26: reference [12] gained two
+live, fetched, and verified web sources (entries 13 and 14).** Details in its own section below.
 
 ## Sources consulted
 
@@ -20,6 +21,8 @@ claims that cite it.** Corrections below.
 | 10 | Mike Cohn, *User Stories Applied*, 2004 | practitioner | **Print book, no URL. Not retrieved**; cited from the book | The book's role as standard reference; Cohn naming Rachel Davies (as recorded by [7]) |
 | 11 | Intercom, "How we accidentally invented Job Stories" | practitioner | **Fetched, URL live 2026-07-16** | Job stories originating at Intercom |
 | 12 | Jeff Patton, *User Story Mapping*, O'Reilly, 2014 | practitioner | **Print book, no URL. Not retrieved**; cited from the book | Story mapping as a narrative arrangement of stories |
+| 13 | Jeff Patton, "Story Mapping," jpattonassociates.com, <https://www.jpattonassociates.com/story-mapping/> | practitioner | **fetched-and-verified** 2026-10-26 | Verbatim: "User Story Mapping is a dead simple idea."; "Story mapping is a better way to work with Agile user stories". Cited beside [12] in the companion's Origins and evolution section |
+| 14 | Jeff Patton, "How to Do User Story Mapping: An Example with MadMimi," jpattonassociates.com, <https://www.jpattonassociates.com/user-story-mapping-example-madmimi/> | practitioner | **fetched-and-verified** 2026-10-26 | Verbatim: "People have gotten fixated on the story template. But that's not the important part." Corroborates `user-stories_guide.md`'s anti-pattern 1 (the card is the spec); not cited inline in the companion, since no sentence that currently cites [12] rests on this claim |
 
 ## Corrections applied 2026-07-16 (WP-10 citation integrity pass)
 
@@ -63,6 +66,23 @@ single number, which is how the misattributions below survived:
 that "primary URLs are cited but were not individually fetched." Both have now been fetched and
 verified, and Wake's contradicted two claims made in his name.
 
+## Citation upgrade applied 2026-10-26
+
+Reference [12], Jeff Patton's *User Story Mapping* (2014), stayed a print book with no URL, so none
+of its claims could be checked against source text. The library's 2026-10-23 resource crawl found two
+pages on jpattonassociates.com that are both fetchable and quotable for the same author's claims. The
+maintainer approved adding them on 2026-10-25.
+
+- **[13] "Story Mapping"**, the hub page, now sits beside [12] in the companion's Origins and
+  evolution section. It supports the sentence that Patton's technique arranges stories into a
+  narrative, and it names [12]'s book as its own fuller treatment.
+- **[14] "How to Do User Story Mapping: An Example with MadMimi"** corroborates the anti-pattern
+  `user-stories_guide.md` already names, that the card is not the spec. No sentence in the companion
+  that currently cites [12] rests on that specific claim, so [14] stays logged here as a verified
+  source rather than forced into text it does not actually support.
+- [12] itself is unchanged by this pass. The print book stays the canonical source and is still not
+  retrieved online.
+
 ## Notes and limitations
 
 - **[6] Klement is the load-bearing source for the job-story debate and has never been read at
@@ -72,6 +92,7 @@ verified, and Wake's contradicted two claims made in his name.
   claims should lean on [11].
 - **Three print books ([1] Beck, [10] Cohn, [12] Patton) have no URL** and are cited from the books
   rather than retrieved. This is the book/pre-web format case WP-10e will codify in the methodology.
+  [12] now has two live web sources beside it ([13], [14]); see the citation upgrade section above.
 - **[5] Connextra has no primary source online at all**; its origin and attribution are cited from
   [7], which records both explicitly.
 - One nuance not acted on: [7] records the original Connextra wording as "As a &lt;role&gt; I **can**

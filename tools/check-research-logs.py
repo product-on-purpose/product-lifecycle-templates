@@ -97,12 +97,12 @@ COLUMNS = {
 }
 
 EXEMPT = {
-    "acceptance-criteria": "table layout, 9 of 10 sources carry no URL and none carries an enum token",
+    "acceptance-criteria": "table layout, 9 of 11 sources carry no URL and only the one added 2026-10-26 carries an enum token",
     "adr": "table layout, 0 of 22 sources carry a URL and none carries an enum token",
     "prd": "table layout, 0 of 12 sources carry a URL and none carries an enum token",
     "release-notes": "table layout, 0 of 10 sources carry a URL and none carries an enum token",
     "rfc": "table layout, 0 of 20 sources carry a URL and none carries an enum token",
-    "user-stories": "table layout, 0 of 12 sources carry a URL and none carries an enum token",
+    "user-stories": "table layout, 2 of 14 sources carry a URL and only those two, added 2026-10-26, carry an enum token",
 }
 
 

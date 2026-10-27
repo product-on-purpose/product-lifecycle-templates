@@ -8,7 +8,7 @@ last_updated: "{{date}}"
 doc_type: project-brief
 size: lean
 source_template: project-brief
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--

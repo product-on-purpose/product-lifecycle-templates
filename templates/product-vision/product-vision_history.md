@@ -3,6 +3,23 @@
 Every change to this bundle's templates, with the reasoning. The version here must match
 `template_version` in [`product-vision_meta.yaml`](product-vision_meta.yaml); gate check H enforces that.
 
+## 0.1.1 - 2026-10-26 - two SVPG citations for the prfaq and narrative formats
+
+**A citation addition, not a template change.** This applies a proposal from the library's 2026-10-23
+resource crawl, approved by the maintainer on 2026-10-25.
+
+- The companion's "Variants and sizing" section (section 4) cited SVPG's product-vision pages for the
+  canvas and the visiontype, but neither the `prfaq` nor the `narrative` format had a page of its own,
+  even though SVPG publishes one for each.
+- Added a sentence for the `prfaq` format, citing Marty Cagan's worked PRFAQ example
+  (`https://www.svpg.com/example-prfaq/`), which calls the PRFAQ "one type of '6-page written
+  narrative'" in the source's own words, tying the two formats together.
+- Added a sentence for the `narrative` format, citing Marty Cagan's coaching page
+  (`https://www.svpg.com/coaching-tools-the-narrative/`), which advises drafting the written narrative
+  before any slide deck.
+- Both pages are logged as sources [53] and [54] in `product-vision_research-log.md` and cited as
+  references [35] and [36] in the companion.
+
 ## 0.1.0, corrected 2026-10-20 - the positioning statement now exists
 
 **A routing and citation correction, not a template change**, so the version stays 0.1.0. The

@@ -774,6 +774,27 @@ rather teach them to long for the endless immensity of the sea."
 Contested/time-bound: page last updated 2025-01-16. The finding is that the modern phrasing is a paraphrase of
 unknown authorship, not that Saint-Exupery wrote nothing on the theme.
 
+### Companion citation addition, 2026-10-26
+
+**[53] Marty Cagan - Example PRFAQ.** practitioner. **fetched-and-verified.**
+`https://www.svpg.com/example-prfaq/`
+Supports: the direct link between the bundle's `prfaq` format and the `narrative` format it ships alongside
+it. The worked example is built from a Press Release, an "About" section and an Internal FAQ, the same shape
+the bundle's own `prfaq` template follows.
+Quotable: "This is an example of a PRFAQ (which is one type of '6-page written narrative')."
+Contested/time-bound: the company and people named ("Jobs Inc.") are fictionalised; the page states the
+document "has been tightened up and edited for clarity, and also to remove identifying information."
+
+**[54] Marty Cagan - Coaching Tools: The Narrative.** practitioner. **fetched-and-verified.**
+`https://www.svpg.com/coaching-tools-the-narrative/`
+Supports: the bundle's `narrative` format. Cagan coaches product managers to draft the persuasive written
+narrative before building any slide deck, so the deck can flow from it rather than the other way round.
+Quotable: "I promise you that if you first do a good job on the written narrative, then your presentation
+will be very easy to create and will flow directly from narrative; the presentation will be much better for
+it; and your visible preparation on the material will leave your audience justifiably impressed."
+Contested/time-bound: published 2019-03-11. Cagan's claim that Amazon's innovation record stems from this
+practice is his own attribution, not an independently measured finding.
+
 ---
 
 ## Claims flagged contested or time-bound

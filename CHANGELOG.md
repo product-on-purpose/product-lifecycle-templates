@@ -56,6 +56,24 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Eight bundles take seven proposals from the library's 2026-10-23 resource crawl**, each approved by the
+  maintainer on 2026-10-25 and each quote checked against the raw source page:
+  - `status-report` 0.1.1: an eighth named anti-pattern, "the last-minute compile", from Atlassian's advice to
+    keep an ongoing draft.
+  - `experiment-design-doc` 0.1.1 and `experiment-readout` 0.1.1: a TRAP line warning that a ratio metric can move
+    opposite to its own numerator and denominator, so check both (Statsig).
+  - `kpi-dashboard` 0.1.1: the guide's comparison table gains a North Star Metric column, from a North Star
+    dashboard template in Amplitude's template gallery.
+  - `project-brief` 0.1.1: the living-document anti-pattern names Atlassian's Project Poster as the convention
+    this bundle declines.
+  - `acceptance-criteria` 0.1.2: the boundary between acceptance criteria and a Definition of Done now rests on
+    Atlassian's Definition of Done page, which was read, instead of a Scrum.org page that never was.
+  - `user-stories` 0.1.1: Jeff Patton's story-mapping pages stand beside his print book, which was never
+    retrieved.
+  - `product-vision` 0.1.1: the `prfaq` and `narrative` formats cite SVPG's worked PRFAQ and its narrative
+    coaching page.
+- **Three format candidates are noted for their bundles' next revision**: Test Card and Learning Card
+  (Strategyzer), and Problem Roadmap (Melissa Perri). They are listed in the internal backlog page, not built.
 - **The efficacy wording now counts five runs, not four.** `AGENTS.md`, `STATE.md`, `RELEASE-NOTES.md`, both
   skills, the grading procedure, the getting-started tutorial and the explanation of what the gate proves each
   name the 2026-10-23 run and its held-out result, with its bias stated. The release notes' standing "does not

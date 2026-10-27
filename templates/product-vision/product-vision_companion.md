@@ -165,6 +165,14 @@ asserts no nesting relationship between them. Cagan's own alternative to a writt
 that it helps you to imagine a future that could be."* [[4]](#ref-4) The narrative format is the closest
 written analogue this bundle can teach.
 
+**The `prfaq` format has a worked example on the same site.** Cagan's own PRFAQ walkthrough names the
+relationship between the two prose formats directly: *"This is an example of a PRFAQ (which is one type of
+'6-page written narrative')."* [[35]](#ref-35)
+
+**The `narrative` format has its own coaching page, and the advice is sequencing.** Cagan tells product
+managers to draft the written narrative before building any slide deck, because the deck should then
+*"flow directly from narrative."* [[36]](#ref-36)
+
 **The fourth circulating shape, the positioning sentence, is deliberately not shipped.** See section 2.
 
 ## 5. Methodology lineage
@@ -374,3 +382,7 @@ continuous worked chain from a product vision down to a defect report.
 <a id="ref-33"></a>[33] Quote Investigator. "[Teach Them to Yearn for the Vast and Endless Sea](https://quoteinvestigator.com/2015/08/25/sea/)." Updated 2025-01-16. Fetched and verified. [reference]
 
 <a id="ref-34"></a>[34] ProdPad. "[The Only Product Vision Template You'll Ever Need](https://www.prodpad.com/blog/product-vision-template/)." Fetched and verified. A different ProdPad article from [14]; the brevity test is quotable from this one and not from that one. This source applies Moore's positioning format as a vision template, which is the reframe described in section 2 rather than Moore's own prescription. [vendor]
+
+<a id="ref-35"></a>[35] Marty Cagan. "[Example PRFAQ](https://www.svpg.com/example-prfaq/)." Silicon Valley Product Group. Fetched and verified. No publish date is shown on the page. [practitioner]
+
+<a id="ref-36"></a>[36] Marty Cagan. "[Coaching Tools - The Narrative](https://www.svpg.com/coaching-tools-the-narrative/)." Silicon Valley Product Group, 2019-03-11. Fetched and verified. [practitioner]

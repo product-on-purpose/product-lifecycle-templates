@@ -116,7 +116,8 @@ nothing to show whether an alternative was ever considered.
 written once and retired once initiation documentation exists. It is not revised in place across the
 project's life the way a business case or an initiation document would be; a brief still being updated
 after the decision it asked for has already been made is the heavyweight sense of the name, not this
-one.
+one. Atlassian names its Project Poster a living document, filled out across several conversations as
+the project proceeds, and this bundle does not build that version.
 
 ## When it is good enough
 

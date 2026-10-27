@@ -50,6 +50,20 @@ run and its label now reads `status:parked`.
 Fifty-nine candidate issues are closed: 51 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
+**Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
+resource crawl found three documents that fail the distinctness test as new types and would ship instead as
+formats of built bundles, under [ADR 0028](decisions/0028-adopt-a-format-axis.md). The maintainer chose on
+2026-10-25 to note them here rather than sweep them now, because no revision of those bundles is open.
+
+| Format candidate | Named source | Would become a format of |
+|---|---|---|
+| Test Card | Strategyzer | `experiment-design-doc` |
+| Learning Card | Strategyzer | `experiment-readout` |
+| Problem Roadmap | Melissa Perri | `product-roadmap` |
+
+Each still needs its own check, when its bundle is next revised, that a structurally distinct form of it
+is in circulation.
+
 ## 3. The catalog by tier
 
 <!-- counts: statebuilt=51, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->

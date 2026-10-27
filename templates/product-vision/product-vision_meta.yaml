@@ -22,7 +22,7 @@ additional_formats:
 methodology: methodology-agnostic
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - strategy
   - vision

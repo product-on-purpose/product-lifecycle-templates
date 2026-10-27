@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (the five decisions: Hypothesis, Population/Variants/
 methodology: growth/dual-track
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - experimentation
   - measure

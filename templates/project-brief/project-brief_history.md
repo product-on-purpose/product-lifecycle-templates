@@ -3,6 +3,24 @@
 Change log for the `project-brief` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.1 - 2026-10-26 - the guide names Atlassian's counter-convention
+
+**One sentence, naming a named disagreement rather than changing this bundle's position.** This
+applies a proposal from the library's 2026-10-23 resource crawl, approved by the maintainer on
+2026-10-25.
+
+- The crawl found Atlassian's Project Poster, which names itself a living document for the opposite
+  reason this guide's "Treating the brief as a living document" anti-pattern warns against.
+- [`project-brief_guide.md`](project-brief_guide.md)'s anti-pattern paragraph now names the Project
+  Poster by name as the counter-convention this bundle does not follow.
+- [`project-brief_companion.md`](project-brief_companion.md) section 6's "Does the brief retire, or
+  does it live on?" paragraph adds the same disagreement, citing the new source.
+- [`project-brief_research-log.md`](project-brief_research-log.md) records Atlassian's Project Poster
+  page (`https://www.atlassian.com/team-playbook/plays/project-poster`) as source 34,
+  fetched-and-verified.
+- This bundle's own position is unchanged: a project brief is still written once and retired once
+  initiation documentation exists.
+
 ## 0.1.0, corrected 2026-10-22 - the design brief now exists
 
 **A routing note, not a template change**, so the version stays 0.1.0. The `design-brief` bundle joined

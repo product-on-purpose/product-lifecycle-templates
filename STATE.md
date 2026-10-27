@@ -5,7 +5,7 @@
 > Plans and briefs are dated projections. Where they disagree with this file, **this file wins**.
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
-<!-- counts: bundles=51, tier1=25, tier1remaining=2, statebuilt=51, statecandidate=157, stateoutofscope=2, commoncandidates=50, adrs=81, cisteps=32, checkk=154, checkformats=130, checklogs=113, logsgated=45, sourcesgated=1862 -->
+<!-- counts: bundles=51, tier1=25, tier1remaining=2, statebuilt=51, statecandidate=157, stateoutofscope=2, commoncandidates=50, adrs=81, cisteps=32, checkk=154, checkformats=130, checklogs=113, logsgated=45, sourcesgated=1869 -->
 
 **Last updated:** 2026-10-24 (**`user-research-plan` lands as the 51st bundle and the first `research-docs`
 member**, at `phase: discover`, built through the `build-bundle` workflow on the maintainer's go of 2026-10-24. It

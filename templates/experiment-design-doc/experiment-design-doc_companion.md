@@ -158,6 +158,12 @@ statistics mistakes it lists: "multiple-comparison problems (adding so many metr
 until it shows what you want to see)" [[13]](#ref-13). Capping goal metrics at one or two and guardrails at a handful, as GrowthBook's own field
 guidance does [[1]](#ref-1), is the direct answer to that danger, not a separate convention.
 
+**A ratio metric needs a second check beyond the ratio itself.** Statsig's own best-practices guide warns
+that "it's possible for the overall value of the ratio to move in a direction that is opposite to the
+change in the absolute numerator and denominator values," and recommends checking "the numerator and
+denominator separately to understand the true effect" [[36]](#ref-36). This section's table carries that
+check at the point the metric is defined, not only the ratio.
+
 How many primary metrics is itself contested; see section 6, item 6.
 
 ### Minimum Detectable Effect and Sample Size or Duration
@@ -654,3 +660,5 @@ design document must not leave open.
 <a id="ref-34"></a>[34] GrowthBook. "[Experimentation Best Practices](https://docs.growthbook.io/using/experimentation-best-practices)." GrowthBook documentation (accessed 2026-10-08). Supports the vendor's own position that meaningful interactions between parallel tests are rare, with mutually exclusive tests available when needed ("meaningful interactions are actually quite rare, and keeping a higher rate of experimentation is usually more beneficial"). [vendor]
 
 <a id="ref-35"></a>[35] Itamar Gilad. "[Product Discovery With ICE and The Confidence Meter](https://itamargilad.com/the-tool-that-will-help-you-choose-better-product-ideas/)." itamargilad.com (accessed 2026-10-08). Supports a graded scale for the evidence behind an idea, assessed before committing resources ("There is only one way to calculate confidence - looking for supporting evidence."). [practitioner]
+
+<a id="ref-36"></a>[36] Maggie Stewart (Statsig). "[Product experimentation best practices](https://www.statsig.com/blog/product-experimentation-best-practices)." Statsig blog (2024-07-10; accessed 2026-10-26). Supports a ratio metric's overall value moving in a direction opposite to the change in its own numerator and denominator, and the fix of checking both separately ("It's possible for the overall value of the ratio to move in a direction that is opposite to the change in the absolute numerator and denominator values. It's always good practice to check the numerator and denominator separately to understand the true effect."). [vendor]

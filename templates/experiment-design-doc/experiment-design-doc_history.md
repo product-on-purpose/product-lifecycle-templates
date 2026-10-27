@@ -3,6 +3,21 @@
 Change log for the `experiment-design-doc` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.1 - 2026-10-26 - a ratio metric gets its own numerator and denominator check
+
+**Applies a proposal from the library's 2026-10-23 resource crawl, approved by the maintainer on
+2026-10-25.** Statsig's product-experimentation best-practices post states that a ratio metric's overall
+value can move opposite to the change in its own numerator and denominator, and recommends checking both
+separately.
+
+- The Primary and Guardrail Metrics section's TRAP line, in both the lean and the full variant, now names
+  this hazard at the point the metric is defined, not only the ratio.
+- The companion's Primary and Guardrail Metrics section gains one sourced sentence citing the new entry,
+  [`experiment-design-doc_research-log.md`](experiment-design-doc_research-log.md) entry 36, Statsig's
+  "Product experimentation best practices."
+- `template_version` moves to 0.1.1. The worked example's own `source_template_version` stamp is left at
+  0.1.0.
+
 ## 0.1.0, corrected 2026-10-11 - the readout's example now exists
 
 **A chronology correction, not a template change**, so the version stays 0.1.0. The example's opening
