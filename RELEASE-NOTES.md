@@ -8,6 +8,20 @@ Newest first.
 
 ---
 
+## v0.22.0
+
+**One new bundle: a user research plan, the library's 51st.** It plans one study of the people a product
+serves: why the study runs, which decision it informs, what the team must learn, from whom, how, and when. It
+ships lean and full, and it is the first member of a new family, `research-docs`, whose second member, the user
+research report, is not built yet.
+
+Eight bundles take sourced improvements from the library's 2026-10-23 resource crawl, and two of them now rest on
+pages that were read rather than on sources nobody retrieved. The fifth efficacy run is published: it was void,
+and on criteria drawn from outside the templates it scored them below the control, on a measure biased against
+them. Builds now follow each site's terms of use.
+
+---
+
 ## v0.21.0
 
 **One new bundle: a design brief, the library's 50th.** It hands the chosen problem, and the one concept chosen
