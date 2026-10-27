@@ -111,10 +111,12 @@ The band is arithmetic. It is produced by weights this skill chose so that a rep
 research supports the weights or the cut lines.
 
 **Say the grade. Do not defend it as a measurement of quality.** The library has measured whether its templates
-produce better documents four times. The one valid run, 2026-09-03, covers two scenarios of a single
+produce better documents five times. The one valid run, 2026-09-03, covers two scenarios of a single
 bundle and found **no measurable difference** in whether a reader could answer their questions. The two
 2026-08-08 runs were VOID: the templates beat a strong control on
 the bundles' own criteria and did not beat it on criteria drawn from outside the template and the guide.
+The 2026-10-23 run was VOID too, and on those outside criteria it scored the template arm below the
+control.
 That is the honest state of the evidence and it is published in
 [`evals/results/`](../../../evals/results/).
 

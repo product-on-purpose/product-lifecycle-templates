@@ -231,9 +231,18 @@ as they stand today, stated without softening:
   gate** and neither passes nor fails anything, and its criteria are selected on absence, which biases them
   toward null by design. Two scenarios of one bundle says nothing about the other twenty-six.
   [The result](../../evals/results/2026-09-03_two-scenario.md).
+
+  **Updated 2026-10-23: a fifth run, and the first matched held-out interval below zero.** Four scenarios of
+  `acceptance-criteria` and `incident-postmortem` returned **VOID** on discrimination: the overall gap was
+  **+0.23**, against a bar of 1.0. The rubric gap was **+0.64** (+0.45 to +0.83), and the probe gap was
+  again **exactly 0.00**. The held-out gap was **-0.30** (-0.61 to -0.04): on criteria drawn from neither
+  the template nor its guide, the template arm scored below the control. Those criteria were selected on
+  absence, which biases them against the template, and the held-out gap is not a gate.
+  [The result](../../evals/results/2026-10-23_four-scenario.md).
 - **No efficacy claim is available in either direction.** Nothing here shows that a document written with
   one of these templates leads to a better outcome than one written without it, and nothing here shows the
-  reverse. Three bundles of twenty-six were tested, by an LLM rather than a human author, and scored by
+  reverse. The one interval below zero sits on the ungated held-out axis, whose criteria are biased against
+  the template. Three bundles have been tested in all, by an LLM rather than a human author, and scored by
   LLM judges.
 - **Every bundle is still `beta`.**
   <!-- counts: tier1=25 -->

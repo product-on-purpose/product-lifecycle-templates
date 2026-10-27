@@ -132,7 +132,9 @@ returned **VOID** twice; a third run on 2026-08-21 was also void. The fourth, on
 first that cleared every validity gate, and it covers **two scenarios of the `prd` bundle only**. On those
 two it found the template worth about a point of structural completeness against its own criteria and
 **nothing measurable** on whether a reader could answer their questions from the document. That is a
-narrow, honest result, not evidence that a lean PRD beats a blank page. The
+narrow, honest result, not evidence that a lean PRD beats a blank page. A fifth run, on 2026-10-23, over
+two other bundles, was void as well. On criteria drawn from outside the template, it scored documents
+written with the template below the control. The
 gate proves a bundle's structure holds and its citations resolve; it cannot prove the guidance inside a
 bundle is right, only that nobody has changed the underlying facts without the check noticing.
 [`STATE.md`](../../STATE.md) tracks this honestly and is worth reading before you trust any claim here

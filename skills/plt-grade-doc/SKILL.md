@@ -212,8 +212,8 @@ Recorded here rather than only in a commit message, because a reader of the skil
 
 **Not proved by anything, and stated because a grader that overclaims is worse than no grader:**
 
-- **No rubric in this library has been shown to predict document quality.** Of four efficacy runs, three
-  returned **VOID**; the valid fourth, on 2026-09-03, covers two scenarios of one bundle and found **no
+- **No rubric in this library has been shown to predict document quality.** Of five efficacy runs, four
+  returned **VOID**; the valid one, on 2026-09-03, covers two scenarios of one bundle and found **no
   measurable difference** in whether a reader could answer their questions from the document. The
   2026-08-08 runs returned **VOID** twice: templates scored well above a strong control on the
   bundles' *own* rubric criteria and no better than it on criteria drawn from neither the template nor the

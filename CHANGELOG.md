@@ -45,8 +45,22 @@ people who want every change, release notes are for people who want to know what
   records 37 sources, all read, and every one of its 473 quotations was checked against raw text. The
   `research-docs` family now has one member built of two.
 
+- **The fifth efficacy run is published**, at
+  [`evals/results/2026-10-23_four-scenario.md`](evals/results/2026-10-23_four-scenario.md), with its 120 raw judge
+  rows. It ran four scenarios of `acceptance-criteria` and `incident-postmortem` on 2026-10-23 and was **VOID** on
+  discrimination. On criteria drawn from neither the template nor its guide, the template arm scored below the
+  control (-0.30, interval -0.61 to -0.04), the first matched held-out interval in this library's runs to lie entirely
+  below zero. Those criteria were selected for being absent from the templates, which biases them against the templates, and
+  the protocol does not gate on them. Twelve em-dashes in the judge notes were replaced with spaced hyphens; no score
+  changed. The maintainer decided on 2026-10-25 to publish it.
+
 ### Changed
 
+- **The efficacy wording now counts five runs, not four.** `AGENTS.md`, `STATE.md`, `RELEASE-NOTES.md`, both
+  skills, the grading procedure, the getting-started tutorial and the explanation of what the gate proves each
+  name the 2026-10-23 run and its held-out result, with its bias stated. The release notes' standing "does not
+  claim" section also loses a sentence about who has filled a template, which
+  [ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md) retired.
 - **Catalog entry 18 gains the alias "usability test report"**, the name the ISO/IEC 25062 Common Industry Format
   uses for the same document.
 - **Catalog entry 210's size moves from S to S/M**, because the maintainer ruled two sizes for the plan on

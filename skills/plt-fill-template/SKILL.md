@@ -178,9 +178,11 @@ reuses its own template's guidance text.
 
 **Not proved by anything:**
 
-- **Template quality has been measured four times, and no measurement supports a library-wide claim.**
+- **Template quality has been measured five times, and no measurement supports a library-wide claim.**
   The valid run, 2026-09-03, covers **two scenarios of the `prd` bundle** and found the probe gap at
-  **exactly 0.00**. The three before it were void. Two blinded runs on 2026-08-08 over three of the
+  **exactly 0.00**. The three before it were void, and so was the fifth, on 2026-10-23. That run covered
+  `acceptance-criteria` and `incident-postmortem`, and on criteria drawn from outside the template and its
+  guide it scored the template arm below the control. Two blinded runs on 2026-08-08 over three of the
   twenty-six bundles then in the library both returned **VOID**: the templates score well above a strong
   generic-prompt control on the bundles' *own* rubric criteria, and no better than it on
   decision-usefulness criteria drawn from neither the template nor its guide. Read the results before
