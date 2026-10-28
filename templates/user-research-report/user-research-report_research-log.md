@@ -261,6 +261,11 @@ meet these and must not quote them:
 - **Government terms.** `dim1.md` says no terms check was needed for government sites. The build's terms scout
   checked nist.gov, dhs.gov, gov.uk, design-system.service.gov.uk, digital.gov and usability.gov, and found no
   clause (`2026-10-25_urr-build-notes.md`). The gap-fill pass read GOV.UK's terms page itself.
+- **A count check of the Findings, 2026-10-27.** One sonnet agent read Findings 1 to 13 for unsourced counts,
+  quantifiers, negative claims and attributions. It checked 29 claims and found two of Finding 2's tallies
+  wrong or thin. Research questions as their own item fell from 3 to 2 of 14, because [43] is the fifteenth
+  list. The method tally now names the reading it rests on. A recount in the main loop added the grounds for the
+  recommendations tally. Finding 5's Mozilla attributions match the maintainer's hand copy [51].
 
 **What was assigned and not read, or not usable:**
 
@@ -350,12 +355,16 @@ Fourteen lists give a report's sections. Dovetail's debrief pre-read [43] gives 
   introduction before its summary [9].
 - **An introduction, objective or study overview: 11 of 14.** All three UserTesting forms carry one [11]. Only
   DHS [3], GOV.UK's deck [4] and Employee Express [7] lack one.
-- **Research questions as their own item: 3.** They are UserTesting's detailed form [11], User Interviews'
-  research-goals section [14] and Dovetail's debrief pre-read [43]. No short report form carries them.
+- **Research questions as their own item: 2 of 14.** They are UserTesting's detailed form [11] and User
+  Interviews' research-goals section [14]. Dovetail's debrief pre-read [43], the fifteenth list, names them too.
+  No short report form carries them.
 - **Method and participants: 12 of 14.** Only UserTesting's executive form and snapshot leave them out [11].
+  Maze puts the method in a step after its introduction [13]. GOV.UK's "1 or 2 slides that outline the research
+  you did" [4] counts as method on this log's reading.
 - **Findings: all 14.**
 - **Recommendations or next steps: 13 of 14.** Only NIST's CIF outline lists none [2]. NIST's template ends its
-  discussion with "AREAS FOR IMPROVEMENT" [1].
+  discussion with "AREAS FOR IMPROVEMENT" [1]. UserTesting's detailed form counts through its "Potential
+  solutions or design changes" [11].
 - **Open questions: 2 lists**, Dovetail's two [10], [44], and guidance in three more [14], [38], [46].
 - **An appendix or attachments: 6 lists** [1], [9], [10], [11], [13], [22]. None is a short form.
 - **Task metrics: 3 lists**, all usability formats [1], [9], [22].
@@ -904,7 +913,9 @@ phase, it carries the shipped-product paragraph (Finding 10).
 candidate under decision procedure 12. Every proposed change there is a candidate, and this log admits none. The
 strongest are lean ASKs. Summary asks for the objective, the decision and who makes it. Research Questions and
 Answers asks whether each answer confirms the plan's hypothesis, and which questions stayed open. Key Findings
-asks for fractions, positive findings, and anonymised quotations within consent.
+asks for fractions, positive findings, and anonymised quotations within consent. What We Did may ask which
+product version the participants reacted to (gap candidate 17, on one vendor source [52]). A review-by date
+stays out.
 
 **The traps:**
 
