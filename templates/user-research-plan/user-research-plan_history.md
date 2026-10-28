@@ -16,6 +16,10 @@ stale-`future:` failure, since the prefix fails once its target is built.
 **The example's opening note gains a dated correction.** It called the report "not yet built in this
 library", which this landing makes false. The body is unchanged.
 
+**The research log's eight line citations into the family contract move.** The same pull request adds two dated
+notes to `docs/internal/contracts/research-docs.md`, which shifts every later line, so each citation now points at
+the line it named before.
+
 ## 0.1.0 - 2026-10-24
 
 **Initial release, the first founding member of `research-docs` to land.** Researched 2026-10-24 across

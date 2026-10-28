@@ -157,7 +157,7 @@ This build ran no carrying step, unlike the plan's, so spans the admission sweep
 spans below sit in this log's stored copies and survived as no Quotable line. A drafter may paraphrase each one
 with the source number, and may not quote it from this log.
 
-- NIST's `vendors demonstrate evidence of usability in their final product`, quoted at `research-docs.md:98-99`,
+- NIST's `vendors demonstrate evidence of usability in their final product`, quoted at `research-docs.md:104-105`,
   at ADR 0081 `:72` and, as `final product`, at `tier2-specs.md:7189`. The stored copy of NISTIR 7742 holds it.
   NIST's Quotable sentence on summative studies carries the same point.
 - Maze's `Research questions the report is hoping to answer`, quoted at `tier2-specs.md:7152` and
@@ -169,7 +169,7 @@ with the source number, and may not quote it from this log.
 
 Three further spans belong to the plan's log, not this one: Maze's `Successful task completion` (`:7155`), from
 Maze's usability-plan guide; Dovetail's `Findings stay traceable` line (`research-docs.md:27`), from Dovetail's
-plan template; and the Design System's `going live` sentence (`research-docs.md:100-101`). The NSW span at `:7194`
+plan template; and the Design System's `going live` sentence (`research-docs.md:106-107`). The NSW span at `:7194`
 is the plan's too. Every other external span the report's section quotes is a Quotable line, or part of one; the
 rest are repository or catalog text.
 
@@ -447,7 +447,7 @@ UserTesting's executive form ends in "Next Steps & Action Items" [11]. Dovetail 
 takeaways and decisions from every debrief" [43], though that is the debrief's record, not the report's.
 
 **The contract's line holds as the library's boundary.** The contract says a member may recommend and records no
-decision (`research-docs.md:44-45`). A report can name the decision its findings inform, and who makes it,
+decision (`research-docs.md:47-48`). A report can name the decision its findings inform, and who makes it,
 without recording the outcome. Usercall's debate about a decision [30] fits that reading. On this log's reading,
 the template meets Dovetail [10] and Usercall [30] inside the contract this way. An ASK names the decision and
 its owner, and a TRAP rules out the outcome. Confidence: medium. No source argues for keeping the decision out;
@@ -597,7 +597,7 @@ The name-versus-job question in ADR 0080 (`0080-...:134-145`) does not arise, be
 ### 9. Lineage: what the report borrows from government and from the CIF
 
 Contract section 3.6 (citations, with the family's lineage trap) requires a member that borrows a structure from a
-government form or from ISO/IEC 25062 to say so (`research-docs.md:125-130`). **This report borrows section
+government form or from ISO/IEC 25062 to say so (`research-docs.md:131-136`). **This report borrows section
 structure from US government templates and from the Common Industry Format.**
 
 - **NIST's NISTIR 7742** (US) customizes the CIF for health records: "This version of the CIF has been customized
@@ -617,7 +617,7 @@ structure from US government templates and from the Common Industry Format.**
   community template [5].
 
 **Is NISTIR 7742 a regulatory format?** The spec calls it `that regulatory format` (`:7029`), and the contract
-speaks of a regulatory reporting format (`research-docs.md:129-130`). No Quotable line in this log says a
+speaks of a regulatory reporting format (`research-docs.md:135-136`). No Quotable line in this log says a
 regulator requires it. NIST describes an ANSI standard for software procurement [2] and a template "customized
 for use in usability testing of Electronic Health Records" [1]. The lineage trap still holds: a reader should not
 take a health-records template for general product practice. But the word regulatory has no support in this log.
@@ -631,7 +631,7 @@ to the CIF. This log did not trace whether usability.gov's template derives from
 
 The friction study studies a dashboard customers already use (`tier2-specs.md:7267-7269`). Contract section 2
 requires a member that serves such a study to declare `discover` anyway, with its companion saying why
-(`research-docs.md:101-103`). The plan's example gives its reason in its first section
+(`research-docs.md:107-109`). The plan's example gives its reason in its first section
 (`templates/user-research-plan/user-research-plan_example.md:44-47`). What this research gives the report's
 companion:
 
@@ -645,7 +645,7 @@ companion:
   motivations to inspire design and product development innovation." [48].
 - **The companion's reason.** The report finds an opportunity in a shipped product and grades no design against a
   target. On this log's reading, that is the companion's best reason, and it matches the plan's. Confidence:
-  medium, because the clause remains the library's POSITION (`research-docs.md:101-103`).
+  medium, because the clause remains the library's POSITION (`research-docs.md:107-109`).
 - **What the companion must not say:** that any source calls a study of a shipped product discovery work. None
   does. Nor may it quote NIST's final-product phrase from this log (the checks above).
 
@@ -665,7 +665,7 @@ carries it.
    should do about it, and who decides" [10]; "which decisions they own" [37]; "Would this report change a
    decision?" [32]; "How do your findings influence the decisions you mapped out in your research plan?" [14];
    and Usercall [30]. **Route:** an ASK in Summary that names the decision the plan named and who makes it. A
-   TRAP rules out recording the outcome (`research-docs.md:44-45`). Plus a rubric row. In full, Background and
+   TRAP rules out recording the outcome (`research-docs.md:47-48`). Plus a rubric row. In full, Background and
    Objectives restates the decision.
 2. **What the team believed before, against what it found. Supported.** E1: "Remind your audience of 'what we
    thought' vs. what you actually learned." [13]; "Your hypotheses and expectations prior to conducting the
@@ -778,7 +778,7 @@ These are candidates for a dated note in the spec, not a silent rewrite. Each is
 
 **Weakened:**
 
-- `:7029` and `research-docs.md:129-130`, the word regulatory for NIST's format. No Quotable line supports it
+- `:7029` and `research-docs.md:135-136`, the word regulatory for NIST's format. No Quotable line supports it
   (Finding 9).
 - `:7151`, Background and Objectives as full only. Every short form with an objective line puts it near the top
   (Finding 12).
@@ -790,7 +790,7 @@ These are candidates for a dated note in the spec, not a silent rewrite. Each is
 - `:7175-7177`, which paraphrases GOV.UK as saying agile teams `often skip a formal report`. GOV.UK says that
   agile researchers "won't have time to write research reports" [4], and allows brief summaries. The spec's word
   often is softer than the source, and it drops the qualifier.
-- `:7189-7190`, `research-docs.md:98-99` and ADR 0081 `:72`, NIST's final-product span, which is not a Quotable
+- `:7189-7190`, `research-docs.md:104-105` and ADR 0081 `:72`, NIST's final-product span, which is not a Quotable
   line. The QA edge holds on NIST's summative lines [1], [2].
 - `:7179-7206`, the boundary list, which names no debrief. Two Dovetail articles distinguish one from a report
   [43], [44]. Mozilla separates a debrief from analysis [51].
