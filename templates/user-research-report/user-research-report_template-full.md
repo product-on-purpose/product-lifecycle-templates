@@ -172,7 +172,8 @@ HOW TO FILL THIS IN
            report to note a deviation from its own plan. Deep dive: user-research-report_companion.md
            section 3 (Anatomy > What We Did).
      ASK   What method did the study use, and does it match the plan? Who took part, stated as a
-           fraction of those recruited? When did sessions run? What does a sample this size let you
+           fraction of those recruited? When did sessions run, and which version or state of the product
+           were participants reacting to? What does a sample this size let you
            claim, and what does it not let you claim? Did anything run differently from the plan, and if
            so, what and why, in one line?
      GOOD  "One-to-one moderated interviews with a walkthrough of each participant's own camera roll,
@@ -256,8 +257,8 @@ HOW TO FILL THIS IN
      TRAP  Reporting a completion rate with no criterion stated, so a reader cannot tell what counted as
            success. -->
 
-If this study is not a usability test, say so, name the method, and mark the table and the
-questionnaire line below N/A: {{not_usability_test_note}}
+- Method, if this study is not a usability test (the table and the questionnaire line are then
+  N/A): {{not_usability_test_note}}
 
 | Task | Completion (fraction, against the plan's criterion) | Errors | Time on task | Notes |
 |---|---|---|---|---|

@@ -68,8 +68,8 @@ returns HTTP 404. Usability.gov's template page states its own status: "Usabilit
 and no longer updated." [[8]](#ref-8), and "External links may not function and information on the
 site may be out of date. Visit Digital.gov for current information." [[8]](#ref-8); it was read
 through a Wayback Machine snapshot of 2024-02-21, since its live page now redirects to digital.gov.
-A filled instance of the digital.gov/usability.gov kit survives from a 2013 test at Employee Express,
-a US federal benefits site: "Test date: July 22, 2013 Users tested: 3 Method: Formal Usability Test"
+A filled instance of the digital.gov/usability.gov kit survives from a 2013 test at Employee Express:
+"Test date: July 22, 2013 Users tested: 3 Method: Formal Usability Test"
 [[7]](#ref-7), read from its stored copy as extracted paragraph text after a network fetch of the
 `.docx` corrupted the stored bytes.
 
@@ -113,8 +113,8 @@ customization its own first line states [[1]](#ref-1), opens the same way: "1 EX
 [[11]](#ref-11), and MeasuringU's usability form opens with "Study Overview" then "Findings Summary"
 [[22]](#ref-22). O'Neill names the device directly: "The other is a TLDR." [[46]](#ref-46).
 
-**The executive summary is widely named as the hardest part of the document to write well, and the
-part that decides whether the rest gets read.** Mozilla's own account of its Firefox user research
+**One team's account names the executive summary as the hardest part to write, and the part that
+decides whether the rest gets attention.** Mozilla's own account of its Firefox user research
 team: "An executive summary is a few sentences, maybe one slide (if it’s in slide format) that
 summarizes a research study." [[51]](#ref-51), and "I’ll tell you - it is the hardest part of a
 research study." [[51]](#ref-51). A Firefox VP of Product is quoted on the stakes: "In short, without
@@ -216,6 +216,12 @@ it might influence their conclusions" [[25]](#ref-25) as one way to disclose res
 own practice names a role rather than a disclosure: "The Research DRI, and their UX Researcher
 partner if applicable, synthesise findings, validate key takeaways, and create the report."
 [[28]](#ref-28).
+
+**Which version of the product the participants saw is an ASK here, on one vendor's word.** Koji tags
+each insight at publication with "Product version / state: what the participants were actually
+reacting to" [[52]](#ref-52), and says of usability findings that "a redesign invalidates them
+instantly" [[52]](#ref-52). Koji writes for a research repository rather than one report, so this
+bundle asks the question in What We Did and adds no field for it. A review-by date stays out.
 
 ### Key Findings (lean)
 
@@ -677,8 +683,8 @@ Research function ran the sessions: one-to-one interviews of about an hour, each
 the analyst's own dashboard, running from 2026-05-04 to 2026-05-15 with twelve analysts. Because a
 walkthrough of a participant's own work is not a usability test, the example marks Task Results not
 applicable in one line, the same arrangement section 3 describes for any study that is not a usability
-test. The report must be findable by the citation four other shipped examples in this library already
-use for it: "Discovery readout: Reporting friction study, 2026-05."
+test. The report must be findable by the citation the PRD example already uses for it, "Discovery
+readout: Reporting friction study, 2026-05", so the example carries that citation as its title.
 
 ---
 

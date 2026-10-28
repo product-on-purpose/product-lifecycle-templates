@@ -6,12 +6,15 @@ tell a correction from a preference.
 ## 0.1.0, reviewed 2026-10-27 - drop the `future:` prefix now that the report is built
 
 **No template change, so `template_version` stays 0.1.0.** `related_templates` named
-`future:user-research-report` because the sibling report had not landed. The report (catalog entry 18,
-tracked as issue #317) landed 2026-10-27, so the id now exists on disk and the prefix is dropped per
-the spec's own closing note (`docs/internal/tier2-specs.md:7372`) and the maintainer's ruling 10 of
-2026-10-24. `related_templates` now reads `[user-research-report, user-persona, problem-statement,
-design-brief, test-plan, experiment-design-doc]`. `tools/check-bundles.py` check I would otherwise raise
-its stale-`future:` failure, since the prefix fails once its target is built.
+`future:user-research-report` because the sibling report had not been built. The report (catalog entry
+18, issue #317) lands in the same pull request as this entry, so the id exists on disk and the prefix is
+dropped, as the spec's list for the report's landing says (`docs/internal/tier2-specs.md:7372-7374`).
+`related_templates` now reads `[user-research-report, user-persona, problem-statement, design-brief,
+test-plan, experiment-design-doc]`. `tools/check-bundles.py` check I would otherwise raise its
+stale-`future:` failure, since the prefix fails once its target is built.
+
+**The example's opening note gains a dated correction.** It called the report "not yet built in this
+library", which this landing makes false. The body is unchanged.
 
 ## 0.1.0 - 2026-10-24
 

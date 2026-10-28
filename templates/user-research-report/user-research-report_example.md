@@ -1,5 +1,5 @@
 ---
-title: "2026-05 Reporting Friction Study Research Report"
+title: "Discovery readout: Reporting friction study, 2026-05"
 study_name: "2026-05 Reporting Friction Study"
 author: "Priya Nair, PM, Reporting"
 plan_link: "../user-research-plan/user-research-plan_example.md"
@@ -28,15 +28,15 @@ source_template_version: 0.1.0
 > All figures are illustrative. They are internally consistent with the other examples in this library and
 > are not drawn from a real company.
 
-# 2026-05 Reporting Friction Study Research Report
+# Discovery readout: Reporting friction study, 2026-05
 
 ## Summary
 
 - What the study found, and what it recommends: Re-filtering, not exporting or sharing, is what analysts
-  repeat most on every visit to their dashboard. 9 of 12 described rebuilding it by hand several times a
-  day, and 3 already keep a personal file of "the filters I always use" to avoid relying on memory. We
-  recommend funding work that lets an analyst save a named filter setup and reopen it later, and that lets
-  a saved setup be handed to a teammate.
+  repeat most on every visit to their dashboard. 9 of 12 described rebuilding filters by hand several times
+  a day, and 3 already keep a personal text file of "the filters I always use" to avoid relying on memory.
+  We recommend funding work so that an analyst no longer rebuilds the same filters on every visit, and
+  weighing whether that work should reach a teammate too.
 - Decision these findings inform, and who makes it: Whether the Reporting team funds work next quarter on
   letting analysts avoid rebuilding their filters from scratch, a decision the Reporting team's own
   leadership makes.
@@ -62,7 +62,7 @@ source_template_version: 0.1.0
 | Research question (as the plan wrote it) | Answer | Confirms the plan's hypothesis? | Status |
 |---|---|---|---|
 | Where in a session does an analyst's time go to rebuilding something rather than reading what the dashboard already shows? | To rebuilding filters. Re-filtering was the single most frequent repeated action in the dashboard, ahead of export and share. | Confirmed | Answered |
-| When an analyst rebuilds filters after the dashboard resets to its default, how often does what they rebuild actually match what they meant to be looking at? | Not always. A filter set rebuilt from memory sometimes left out a field, so the dashboard showed the wrong slice of data for part of the session before the analyst noticed. | N/A | Answered |
+| When an analyst rebuilds filters after the dashboard resets to its default, how often does what they rebuild actually match what they meant to be looking at? | Not always. Analysts described filters set incorrectly from memory, which risks an analysis of the wrong slice (Key Findings, row 2). The sessions did not count how often it happened. | N/A | Answered |
 | What do analysts already do, inside the product or outside it, to avoid rebuilding filters from memory? | 3 of 12 already kept a personal text file listing "the filters I always use"; the rest rebuilt from memory each time. | N/A | Answered |
 | Does this differ between an analyst who opens the dashboard several times a week and one who opens it about once a week? | Could not be answered from this study. See Open Questions, below. | N/A | Open |
 | How often does rebuilding filters come up in a session compared with other repeated actions, like exporting a view or sharing one with a teammate? | More often than either. Re-filtering outranked both exporting and sharing as the most frequently repeated action logged across the sessions. | N/A | Answered |
@@ -70,14 +70,16 @@ source_template_version: 0.1.0
 ## What We Did
 
 - Method, and whether it matches the plan: One-to-one moderated interviews built around a walkthrough of
-  the analyst's own live dashboard, matching the plan. No prototype or mockup was shown, since nothing had
-  been designed yet.
+  the analyst's own live dashboard, about an hour each, matching the plan. Participants reacted to the
+  dashboard as it shipped at the time. No prototype or mockup was shown, since nothing had been designed
+  yet.
 - Participants, as a fraction of those recruited: 12 of 15 recruited completed a session; the other three,
   held in reserve, were not needed.
 - Dates sessions ran: 2026-05-04 to 2026-05-15, with a pilot session on 2026-05-01.
 - What this sample size lets you claim, and what it does not: A study of this size is good at surfacing a
   problem shared by most of a screened group; it is not built to rank two slightly different ways of saving
-  a filter set against each other.
+  a filter set against each other. The sessions covered only the small set of report types these analysts
+  happened to use, so nothing here shows the finding holds for every report type Acme ships.
 - One line on anything that ran differently from the plan: Nothing. Sessions ran exactly as the plan
   described, including the pilot.
 
@@ -85,11 +87,10 @@ source_template_version: 0.1.0
 
 | Finding | Participants (fraction) | Evidence | Positive, problem, or participant suggestion |
 |---|---|---|---|
-| Re-filtering was the single most frequent repeated action in the dashboard across every session, ahead of both exporting a view and sharing one. | 12 of 12 | Logged by the note taker in every session, as the action an analyst returned to before anything else they did that day. | Problem |
-| 9 of 12 analysts described rebuilding their filters by hand several times in a single day. | 9 of 12 | "I rebuild the same four filters most mornings before I can even look at anything." | Problem |
-| 3 of 12 already kept a personal text file listing "the filters I always use," so they would not have to rebuild from memory. | 3 of 12 | Each of the three showed the moderator the file on their own screen partway through the walkthrough. | Participant suggestion |
-| Once an analyst located Acme's existing filter controls, picking the right field and operator gave nobody any trouble. | 12 of 12 | Every participant who adjusted a filter during the walkthrough picked the right field and operator on the first try. | Positive |
-| 2 of 12, without being asked, said they wanted their whole team looking at the same filtered slice, rather than each person rebuilding their own. | 2 of 12 | "I don't want my teammate explaining a different number than mine because he filtered it differently." | Participant suggestion |
+| Re-filtering was the single most frequent repeated action in the dashboard, ahead of export and share. | All 12 sessions, counted together | The note taker's log of repeated actions, totalled across the twelve sessions, as the plan set out. | Problem |
+| 9 of 12 analysts described manually rebuilding filters several times a day. | 9 of 12 | "Every time it resets I'm building the same filters again, and every so often I get one wrong and don't notice until the numbers look off." | Problem |
+| 3 of 12 already kept a personal text file listing "the filters I always use," so they would not have to rebuild from memory. These files were the only saved setups in the study, and no teammate could reach them. | 3 of 12 | Each of the three showed the moderator the file on their own screen partway through the walkthrough. | Problem |
+| Analysts found and used Acme's existing filter controls without help; the trouble was remembering which filters to set, not setting them. | 12 of 12 | No participant asked the moderator how to apply a filter during the walkthrough. | Positive |
 
 ## Task Results
 
@@ -108,15 +109,15 @@ N/A.
 
 | Recommendation | Tied to finding(s) | Why |
 |---|---|---|
-| Fund work that lets an analyst save their current filters, date range, and visible columns under a name, and reopen that same setup on a later visit. | Re-filtering is the most frequent repeated action in the dashboard; 9 of 12 rebuild it by hand several times a day; 3 of 12 already keep a personal file to avoid it. | Removes the one step every analyst in this study repeated before they could do anything else, and removes the chance that a filter set rebuilt from memory leaves out a field and shows the wrong slice of data. |
-| Let a saved setup be handed to a teammate, not only kept for its owner. | 2 of 12 wanted their team looking at one agreed slice rather than each person's own rebuild. | A teammate who opens a shared setup starts from the same numbers, instead of rebuilding a close but not identical version from memory. |
+| Fund work next quarter so that an analyst no longer rebuilds the same filters on every visit. Leave how to the design work that follows. | Re-filtering is the most frequent repeated action in the dashboard; 9 of 12 rebuild filters by hand several times a day; 3 of 12 already keep a personal text file to avoid it. | Removes the repeated action the study logged most often, and the risk that a filter set from memory is wrong and shows the wrong slice of data. |
+| Weigh, in that same work, whether a teammate should be able to start from the filters someone else set up. | The only saved setups in the study were personal text files no teammate could reach; some participants who lead a team raised the same want (Open Questions). | Each analyst today rebuilds their own version of a shared slice, so two people can read different numbers for what they believe is the same view. |
 
 ## Open Questions
 
 | Question the study raised | Why it stayed unanswered | What would answer it |
 |---|---|---|
 | Does re-filtering cost an analyst who opens the dashboard several times a week more time than it costs one who opens it about once a week? | Recruiting screened every participant only for the Recurring Analyst's minimum weekly cadence, not for this finer split, so the twelve sessions cannot be reliably divided along that line. | A follow-up study that screens and recruits specifically on opening frequency, rather than on the broader Recurring Analyst definition. |
-| How many analysts, beyond the two who raised it unprompted, would actually use a filtered view that a teammate set up and shared? | Only two of the twelve volunteered this without being asked, and none of the plan's own questions asked about team-level sharing directly, so the sessions cannot say how common the want is. | A future study that asks every participant directly whether they would use a view someone else set up for them. |
+| How many team leads want their team looking at one agreed view, rather than each person's own reconstruction of it? | Some participants who lead a team raised this unprompted, but none of the plan's questions asked about it, so the sessions cannot say how common the want is. | A future study that asks team leads directly whether they would hand their team one agreed view. |
 
 ## Appendix
 
