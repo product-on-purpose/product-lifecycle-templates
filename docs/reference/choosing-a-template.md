@@ -172,11 +172,11 @@ included here for readers who want the complete picture rather than a situationa
 | `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/), [`experiment-readout`](../../templates/experiment-readout/) |
 | `research-docs` | Plans one study of the people a product serves, and later reports it | [`user-research-plan`](../../templates/user-research-plan/) |
 
-<!-- counts: bundles=51 -->
-That is 51 bundles across every family the library currently ships. Ten of the eleven families are
+<!-- counts: bundles=52 -->
+That is 52 bundles across every family the library currently ships. All eleven families are
 complete. `experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
-`experiment-readout`, and `research-docs` has one of its two, `user-research-plan`, with
-`user-research-report` still to build. No bundle in the list above is a partially built stub. See
+`experiment-readout`, and `research-docs` now has both of its two, `user-research-plan` and
+`user-research-report`. No bundle in the list above is a partially built stub. See
 [`README.md`](../../README.md#what-is-in-the-library-today) for what "complete" means here, and
 what it does not mean.
 

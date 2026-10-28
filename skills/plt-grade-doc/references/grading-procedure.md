@@ -26,6 +26,7 @@ work back.
 | `risk-register` and `raid-log` | Does it track risks only, or also assumptions, issues and dependencies? |
 | `user-stories` and `acceptance-criteria` | Is the unit a story with a value clause, or a testable condition? |
 | `user-research-plan` and `test-plan` | Does it plan a study of how people use a product, or the verification of a build against its specification? A usability test's plan is the first |
+| `user-research-report` and `test-summary-report` | Does it report what a study learned about how people use a product, or whether a build passed its tests? A usability test's report is the first |
 
 **No match at all is a result, not a failure.** The catalog holds 210 types, and most of them
 are not built. Record the miss: what the document appeared to be, and what the reader called it. That is demand

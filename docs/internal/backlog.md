@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-26.** The issue counts in section 2 were
-read from GitHub on 2026-10-26, at the v0.22.0 release, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-27.** The issue counts in section 2 were
+read from GitHub on 2026-10-27, at the user research report's landing, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -29,25 +29,27 @@ maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-
 the issue opens. The `messaging-framework` issue still says "an admission sweep" is next, but sweep 6 has since
 run and its label now reads `status:parked`.
 
-## 2. The working backlog: 7 open candidates
+## 2. The working backlog: the open candidates
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#317](https://github.com/product-on-purpose/product-lifecycle-templates/issues/317) | `user-research-report` | Queued 2026-10-24, with the plan; admitted and opened 2026-10-23 | P2 | 2 | `research-docs` at `discover`, by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) | Specced 2026-10-23 in two sizes, with the maintainer's rulings of 2026-10-24 ([spec](tier2-specs.md#research-docs-founding-members-the-user-research-plan-and-the-user-research-report)). The plan it reports against was built on 2026-10-24, so its build is next of the pair, and it needs its own go |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
+| [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
+| [#330](https://github.com/product-on-purpose/product-lifecycle-templates/issues/330) | `lean-ux-canvas` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
+| [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned; labelled `phase:discover` | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
 | [#264](https://github.com/product-on-purpose/product-lifecycle-templates/issues/264) | `concept-test-validation-brief` | Parked by the maintainer 2026-10-06 | P4 | 2 | Unassigned; `discovery-docs` admits it as written | None while parked |
 
 | Count by | Result |
 |---|---|
-| Status | 2 candidates, 1 queued, 4 parked |
-| Priority | P2: 1, P3: 5, P4: 1 |
-| Tier | Tier 2: 6, Tier 3: 1 |
+| Status | 5 candidates, 4 parked |
+| Priority | P3: 8, P4: 1 |
+| Tier | Tier 2: 5, Tier 3: 1, no catalog row: 3 |
 
-Fifty-nine candidate issues are closed: 51 built and 8 declined. Two of the declined types,
+Sixty candidate issues are closed once this landing closes #317 (user-research-report): 52 built and 8 declined. Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
@@ -66,17 +68,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=51, statecandidate=157, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=52, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 210 types. Its `state` field reads 51 built, 157 candidate and 2 out of scope. Four of the
-157 were declined by record, so 153 types are still open.
+The catalog holds 210 types. Its `state` field reads 52 built, 156 candidate and 2 out of scope. Four of the
+156 were declined by record, so 152 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 156 | 26 | 4, declined by record (below) | **126** |
+| 2 | 156 | 27 | 4, declined by record (below) | **125** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **210** | **51** | **6** | **153** |
+| **All** | **210** | **52** | **6** | **152** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -207,6 +209,9 @@ ADR 0077 keeps in `deliver`.
 - **2026-10-24, at landing.** `user-research-plan` was built through the `build-bundle` workflow as the 51st
   bundle and the first `research-docs` member, at `discover`. Its landing closes #316, and the define count
   stays at two.
+- **2026-10-27, at landing.** `user-research-report` was built through the `build-bundle` workflow as the
+  52nd bundle and the second `research-docs` member, at `discover`, which completes the family's founding pair.
+  Its landing closes #317, and the define count stays at two.
 
 ## 6. What comes next, in order
 
@@ -218,8 +223,7 @@ ADR 0077 keeps in `deliver`.
 
 Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
-ruled on 2026-10-24. The plan was built the same day, so the report (#317) is the one still queued, and its
-build needs its own go.
+ruled on 2026-10-24. Both members are now built: the plan on 2026-10-24 and the report on 2026-10-27.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the

@@ -92,6 +92,7 @@ tree without the gate noticing.
 **`research-docs`**
 
 - [`user-research-plan/`](user-research-plan/) - User Research Plan. Axis phase discover; ships lean/full. The first `research-docs` member ([ADR 0081](../docs/internal/decisions/0081-adopt-research-docs-family-contract.md)): the plan for one study of the people a product serves, written before it runs, with the tasks and the measures when the study is a usability test.
+- [`user-research-report/`](user-research-report/) - User Research Report. Axis phase discover; ships lean/full. The second `research-docs` member, which completes the family: the report of one study, written after it ends, answering each question the plan set and recommending without recording the decision, with the tasks' results when the study is a usability test.
 
 **`standing-standards`**
 

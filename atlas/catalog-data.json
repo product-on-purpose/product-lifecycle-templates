@@ -511,12 +511,12 @@
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
         "Personas",
         "PRD"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {

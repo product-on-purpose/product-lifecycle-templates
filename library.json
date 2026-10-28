@@ -1,7 +1,7 @@
 {
   "name": "product-lifecycle-templates",
   "version": "0.22.0",
-  "description": "51 researched document-template bundles covering the complete Tier-1 floor of a 210-type product-artifact catalog. Each bundle ships a lean template and, for 45 of the 51, a full one, plus a worked example, an operator guide with a self-grade rubric, a companion, and the research log every claim traces to.",
+  "description": "52 researched document-template bundles covering the complete Tier-1 floor of a 210-type product-artifact catalog. Each bundle ships a lean template and, for 46 of the 52, a full one, plus a worked example, an operator guide with a self-grade rubric, a companion, and the research log every claim traces to.",
   "standard": "0.12",
   "tier": "advanced",
   "prefix": "plt-",

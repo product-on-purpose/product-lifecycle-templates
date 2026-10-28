@@ -12,6 +12,32 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **`user-research-report`, the 52nd bundle and the second `research-docs` member, which completes the family.**
+  The report of one study of the people a product serves, written after it ends: what the study found, how that
+  answers each question the plan set, and what to do about it, without recording the decision. For a usability
+  test it also carries the tasks' results. Lean and full, default lean, at `phase: discover`, catalog entry 18,
+  closing issue #317 (bundle: user-research-report). Its research log holds 52 sources, two of them read by hand
+  by the maintainer under the terms rule. Its example is the readout of the 2026-05 Reporting friction study, and
+  it carries the PRD example's citation as its title. It pairs with `discover-interview-synthesis`, which joins
+  `tools/known-skills.txt`.
+
+### Changed
+
+- **The `research-docs` contract records the report as built** and gains two dated notes: Gilad's own qualifier
+  on his test-and-experiment line, and Nielsen Norman Group's allowance for a plan covering several studies. The
+  maintainer chose both notes on 2026-10-25.
+- **Both skills trigger on a user research report**, beside the plan.
+- **`user-research-plan`** drops its `future:` prefix for the report, and its example's opening note gains a dated
+  correction. Its research log's line citations into the contract move with the contract's new notes.
+- **`spike-report`'s guide** gains a dated note routing user research to the new bundle.
+
+### Fixed
+
+- **The plugin's description said efficacy had been measured four times.** It now says five, in the wording
+  `AGENTS.md` has carried since the fifth run was published (#326).
+
 ## [0.22.0] - 2026-10-26
 
 A minor release with one new bundle, `user-research-plan`, the 51st, and one new family, `research-docs`. It

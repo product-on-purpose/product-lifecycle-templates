@@ -1689,6 +1689,39 @@
     },
     {
       "aliases": [
+        "UX research report",
+        "research readout",
+        "usability study report",
+        "usability test report"
+      ],
+      "approx_tokens": {
+        "full": 6600,
+        "lean": 4650
+      },
+      "default_size": "lean",
+      "doc_type": "user-research-report",
+      "family": "research-docs",
+      "id": "user-research-report",
+      "phase": "discover",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Summary, Research Questions and Answers, What We Did, Key Findings, Task Results, and Recommendations) when the decision these findings inform is already clear from the summary, every research question the plan set gets a clean status, and nobody downstream needs the raw materials linked from the report itself. Use full when the decision needs restating with its own context for a reader who never saw the plan, a question the study raised and could not answer needs its own place rather than a single status column, or the session list and materials used are worth pointing to in their own section: it adds Background and Objectives, Open Questions, and Appendix in that order.",
+      "status": "beta",
+      "summary": "The document written after one study of the people a product serves: what the study found, how it answers the questions the plan set out to ask, and what to do about it. For a usability test it also carries the tasks' results against the measures the plan set, which is why practitioners sometimes call it a usability test report.",
+      "tags": [
+        "discover",
+        "research-docs",
+        "user-research",
+        "research-report",
+        "usability-testing",
+        "findings"
+      ],
+      "title": "User Research Report"
+    },
+    {
+      "aliases": [
         "story",
         "story card",
         "user story",
@@ -1722,5 +1755,5 @@
       "title": "User Story"
     }
   ],
-  "count": 51
+  "count": 52
 }

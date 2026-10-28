@@ -13032,6 +13032,289 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "user-research-report",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "author"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "plan_link"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "study_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "summary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_and_owner",
+                "headline_summary"
+              ],
+              "title": "Summary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "research-questions-and-answers",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "confirms_hypothesis",
+                "question_status",
+                "research_answer",
+                "research_question"
+              ],
+              "title": "Research Questions and Answers"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "what-we-did",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "method_used",
+                "participant_summary",
+                "plan_deviation_note",
+                "sample_limits",
+                "session_dates"
+              ],
+              "title": "What We Did"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "key-findings",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "finding",
+                "finding_count",
+                "finding_evidence",
+                "finding_type"
+              ],
+              "title": "Key Findings"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "task-results",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "not_usability_test_note",
+                "questionnaire_scores",
+                "task_completion",
+                "task_errors",
+                "task_name",
+                "task_notes",
+                "task_time"
+              ],
+              "title": "Task Results"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "recommendations",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "recommendation",
+                "recommendation_rationale",
+                "tied_finding"
+              ],
+              "title": "Recommendations"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "background-and-objectives",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "decision_informed_detail",
+                "plan_link_detail",
+                "shipped_product_note",
+                "why_study_ran"
+              ],
+              "title": "Background and Objectives"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "open-questions",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "open_question",
+                "what_would_answer_it",
+                "why_unanswered"
+              ],
+              "title": "Open Questions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "appendix",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "materials_used_link",
+                "raw_notes_location",
+                "session_list_link"
+              ],
+              "title": "Appendix"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "user-stories",
       "default_format": "default",
       "formats": {
@@ -13227,7 +13510,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 51,
-  "frontmatter_count": 318,
-  "section_count": 429
+  "count": 52,
+  "frontmatter_count": 323,
+  "section_count": 438
 }
