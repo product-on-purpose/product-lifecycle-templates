@@ -111,6 +111,9 @@ exists and whether a second person, not the author, could find it.
 this card does: it sends you to `develop-adr` for the architecture decision the spike informs, and to
 `discover-interview-synthesis` when the exploration was user research rather than technical feasibility. That
 agreement is worth noticing, because it is one edge two independently built artifacts describe the same way.
+*(Added 2026-10-27: for user research, this library's document is
+[`user-research-report`](../user-research-report/user-research-report_guide.md), which pairs with
+`discover-interview-synthesis`.)*
 
 **Be aware that the two shapes differ.** The skill's description names the four things it captures - the
 original question, the approach, evidence-backed findings, and a proceed-or-not recommendation - and this

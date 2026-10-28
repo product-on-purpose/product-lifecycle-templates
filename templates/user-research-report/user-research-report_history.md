@@ -13,9 +13,11 @@ gap-fill pass. [`user-research-report_research-log.md`](user-research-report_res
 **52 sources, all 52 fetched-and-verified**, with no not-retrieved entry and nothing quarantined. By
 tier they are 22 vendor, 20 practitioner, 6 primary and 4 standards. Every quotation was checked against
 the source's raw text rather than against a retrieval tool's summary: of 381 quotations the recheck
-read, 312 passed strict, 10 passed as extraction artifacts, and 59 failed and were corrected before this
-release, the large majority of them traced to a corrupted stored copy (the Employee Express `.docx`,
-re-extracted as paragraph text) or a table-reading artifact (Ethnio's stored copy, re-fetched).
+read, 312 passed strict, 10 passed as extraction artifacts, and 59 failed. Nine of the failures came from
+a corrupted stored copy of the Employee Express `.docx`, re-extracted as paragraph text, and five from
+Ethnio's table markers. Failed spans were split into parts that pass, re-quoted, or dropped, and every
+Quotable line in the log passed a check against raw text: the stored page, or for the two hand reads,
+the maintainer's own copy.
 
 ### The second of the two founding `research-docs` members
 
@@ -35,9 +37,10 @@ Catalog entry 18 is unchanged from the master catalog; this release is its first
 
 ### The friction study's readout, closing a chain four shipped examples opened
 
-The PRD, design brief, epic and internal-announcement examples each cite "Discovery readout: Reporting
-friction study, 2026-05" as a document that exists, and until the plan's 2026-10-24 release only the
-plan showed any part of that study. Per the contract's section 4 shared-scenario rule,
+The PRD, design brief, epic and internal-announcement examples each cite the 2026-05 Reporting friction
+study as having run, and the PRD cites its readout as "Discovery readout: Reporting friction study,
+2026-05", the title this example carries. Until the plan landed on 2026-10-24, no example showed any
+part of that study. Per the contract's section 4 shared-scenario rule,
 [`user-research-report_example.md`](user-research-report_example.md) chains onto the same study: it is
 the report for the 2026-05 Reporting friction study that
 [the plan](../user-research-plan/user-research-plan_example.md) set out on 2026-04-20, dated 2026-05-27,
@@ -84,10 +87,12 @@ present at `skills/discover-interview-synthesis/SKILL.md` in `product-on-purpose
 
 ### `related_templates` carries no `future:` reference
 
-`[user-research-plan, prd, design-brief, epic, announcement-internal-comms, user-persona]`. Every
-target already exists on disk. `user-research-plan`'s own `related_templates` is corrected in this same
-release, dropping its `future:user-research-report` prefix now that this bundle exists, per the spec's
-own closing note (`docs/internal/tier2-specs.md:7372`) and the maintainer's ruling 10; see
+`[user-research-plan, user-persona, problem-statement, design-brief, test-summary-report,
+experiment-readout]`, the spec's list (`docs/internal/tier2-specs.md:7295`): the other member, the three
+documents that use the findings, and the two near-miss neighbours. Every target already exists on disk.
+The aliases are the catalog's four. `user-research-plan`'s own `related_templates` drops its
+`future:user-research-report` prefix in the same pull request, as the spec's list for the report's
+landing says (`docs/internal/tier2-specs.md:7372-7374`); see
 [`user-research-plan_history.md`](../user-research-plan/user-research-plan_history.md).
 
 ### `methodology-agnostic`, matching the plan
@@ -97,9 +102,8 @@ heavier UX-research and usability-testing lineage, matching `problem-statement` 
 family's nearest `discovery-docs` neighbours, rather than naming one research methodology this report
 requires.
 
-### Still open at this landing
+### Landing edits outside this bundle
 
-[`spike-report_guide.md`](../spike-report/spike-report_guide.md) names `discover-interview-synthesis`
-in its own pairing section but does not yet carry the dated note routing user research to this bundle
-that the spec calls for at the report's landing (`docs/internal/tier2-specs.md:7366`). That edit is
-outside this bundle's own two files and is left for the landing PR that carries this release.
+[`spike-report_guide.md`](../spike-report/spike-report_guide.md) gains a dated note routing user
+research to this bundle, beside the pm-skills skill it already names, as the spec's list for the
+report's landing says (`docs/internal/tier2-specs.md:7367`).

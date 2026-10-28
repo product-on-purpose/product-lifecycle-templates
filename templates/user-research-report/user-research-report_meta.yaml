@@ -22,13 +22,12 @@ tags:
   - research-report
   - usability-testing
   - findings
-related_templates: [user-research-plan, prd, design-brief, epic, announcement-internal-comms, user-persona]
+related_templates: [user-research-plan, user-persona, problem-statement, design-brief, test-summary-report, experiment-readout]
 aliases:
   - UX research report
-  - research report
-  - usability test report
   - research readout
-  - findings report
+  - usability study report
+  - usability test report
 catalog_ref: 18
 maintainer: "product-on-purpose"
 last_reviewed: 2026-10-27
