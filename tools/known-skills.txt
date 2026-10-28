@@ -95,3 +95,14 @@ deliver-launch-checklist
 # communicating up to leadership," and its own "When NOT to Use" list routes to deliver-prd, develop-
 # solution-brief, define-jtbd-canvas and define-hypothesis, each a boundary the bundle also draws.
 define-problem-statement
+
+# Added 2026-10-27 for the `user-research-report` bundle (research-docs, phase: discover). Verified
+# present at skills/discover-interview-synthesis/SKILL.md in product-on-purpose/pm-skills with the
+# command in this file's header, at pm-skills commit 4100cb88b (local clone tip, two commits behind
+# origin/main at f943d9589 but this file untouched between them), skill version 2.3.0, `phase: discover`,
+# 5,466 bytes. Its own description reads "Synthesizes user research interviews into actionable insights,
+# patterns, and recommendations. Use after conducting user interviews, customer calls, or usability
+# sessions to extract and communicate findings across participants," which names this bundle's own job -
+# writing up what a study found, after it ran - directly. The user-research-plan bundle's history
+# records the maintainer's ruling that this skill pairs with the report, not the plan.
+discover-interview-synthesis
