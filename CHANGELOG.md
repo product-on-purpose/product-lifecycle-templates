@@ -32,6 +32,8 @@ people who want every change, release notes are for people who want to know what
 - **`user-research-plan`** drops its `future:` prefix for the report, and its example's opening note gains a dated
   correction. Its research log's line citations into the contract move with the contract's new notes.
 - **`spike-report`'s guide** gains a dated note routing user research to the new bundle.
+- **Catalog entry 18** moves from size S/M/L to S/M, matching the two shipped sizes, and its relationships gain the
+  user research plan, as the spec's catalog corrections list.
 
 ### Fixed
 
