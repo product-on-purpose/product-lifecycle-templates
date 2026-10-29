@@ -12,6 +12,22 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **`library.json` now pins Standard 0.17**, up from 0.12. agent-skills-toolkit v1.20.0 (Standard 0.17) promoted
+  G1 (hook documentation), G2 (self-hosting CI) and G8 (folder READMEs) from warn to error at Gold; this plugin
+  already satisfied all three (it declares no hooks, its CI already clones the toolkit and runs its
+  `scripts/check.mjs` directly in the "Standard conformance gate" job of `.github/workflows/ci.yml`, and its
+  allowlisted folders already carry `README.md` files with current inventories), so the only generated-file
+  change was `INDEX.md`, regenerated to pick up the corrected self-validation line (`npx agent-skills-toolkit .`
+  rather than the vendored-gate form the pre-v1.13.0 generator had emitted). The toolkit grades this plugin Gold
+  (tier `advanced`) at 0.17 with 0 errors and 0 warnings.
+- **The CI "Standard conformance gate" job now clones agent-skills-toolkit `v1.22.0`**, up from `v1.10.0`.
+  v1.10.0 predates Standard 0.17, so it could not grade the new pin. v1.22.0 is also the first release
+  carrying the toolkit's E90 fix: its `check-readme-version.mjs` no longer compares this plugin's own
+  description of its bundle gate against the toolkit's 35-check spine, a comparison that reported a false
+  disagreement here.
+
 ## [0.22.0] - 2026-10-26
 
 A minor release with one new bundle, `user-research-plan`, the 51st, and one new family, `research-docs`. It

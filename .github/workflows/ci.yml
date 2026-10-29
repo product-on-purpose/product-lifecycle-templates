@@ -370,7 +370,7 @@ jobs:
       # repository stopped meeting the tier it claims, which is exactly when it should go red.
       - name: Standard conformance gate (G2, self-hosting)
         env:
-          TOOLKIT_REF: v1.10.0
+          TOOLKIT_REF: v1.22.0
         run: |
           set -euo pipefail
           git clone --depth 1 --branch "$TOOLKIT_REF" --filter=blob:none --sparse \
