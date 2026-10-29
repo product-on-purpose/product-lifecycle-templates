@@ -6,7 +6,7 @@
 
 A curated library of product-management and software-lifecycle document templates. Anyone can publish a folder of Markdown files. What makes this one different is that every template ships as a **governed bundle**: a blank shape you fill in, a researched explainer of why it is shaped that way, a fast operator card, a fully worked example, and machine-readable metadata. Coverage is not the product; correct-by-construction reuse is.
 
-[**Quick start**](#quick-start) &nbsp;·&nbsp; [**What a bundle is**](#what-makes-a-bundle-best-in-class) &nbsp;·&nbsp; [**The claim**](#the-claim-and-what-it-is-worth) &nbsp;·&nbsp; [**Library**](#what-is-in-the-library-today) &nbsp;·&nbsp; [**Quality gate**](#quality-gate) &nbsp;·&nbsp; [**Status**](#project-status)
+[**Quick start**](#quick-start) &nbsp;·&nbsp; [**What a bundle is**](#what-makes-a-bundle-best-in-class) &nbsp;·&nbsp; [**The claim**](#the-claim-and-what-it-is-worth) &nbsp;·&nbsp; [**Library**](#what-is-in-the-library-today) &nbsp;·&nbsp; [**Quality gate**](#quality-gate) &nbsp;·&nbsp; [**Status**](#status)
 
 <p>
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
@@ -33,7 +33,7 @@ The north star is simple and demanding: be the indisputable best-in-class refere
 - [Anatomy of a bundle](#anatomy-of-a-bundle)
 - [How this fits with pm-skills](#how-this-fits-with-pm-skills)
 - [Quality gate](#quality-gate)
-- [Project status](#project-status)
+- [Status](#status)
   - [At a glance](#at-a-glance) · [Repository layout](#repository-layout) · [Design and roadmap](#design-and-roadmap)
 - [Conventions](#conventions)
 - [License](#license)
@@ -354,9 +354,11 @@ All fifty-one bundles currently pass. GitHub Actions runs these on every push to
 
 ---
 
-## Project status
+## Status
 
 `v0.22.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, twenty-six Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+
+- **Tier**: Advanced (Gold), pinned to Standard `0.17`.
 
 ### At a glance
 
