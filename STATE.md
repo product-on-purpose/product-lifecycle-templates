@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=51, tier1=25, tier1remaining=2, statebuilt=51, statecandidate=157, stateoutofscope=2, commoncandidates=50, adrs=81, cisteps=32, checkk=154, checkformats=130, checklogs=113, logsgated=45, sourcesgated=1869 -->
 
-**Last updated:** 2026-10-26 (**`v0.22.0` ships `user-research-plan`, the 51st bundle**, as a minor release the
+**Last updated:** 2026-10-29 (**`v0.22.1` pins Standard 0.17**, as a patch release the maintainer directed on
+2026-10-29. `library.json` moves from Standard 0.12 to 0.17, `INDEX.md` is regenerated, and the CI conformance
+gate clones agent-skills-toolkit v1.22.0 instead of v1.10.0. The toolkit grades this plugin Gold at 0.17 with 0
+errors and 0 warnings. No bundle changed.)
+The previous entry read: **`v0.22.0` ships `user-research-plan`, the 51st bundle**, as a minor release the
 maintainer directed on 2026-10-26. It also carries the `research-docs` family (ADR 0081), catalog entry 210, and
 the skills' trigger lists naming a design brief and a user research plan. Three changes merged on 2026-10-26 ship
 with it. The fifth efficacy run is published: void on discrimination, with a matched held-out gap of -0.30

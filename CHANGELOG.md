@@ -12,6 +12,12 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.22.1] - 2026-10-29
+
+A patch release: this plugin now pins Standard 0.17, and its CI grades it with agent-skills-toolkit v1.22.0.
+No bundle, template, MCP tool or install route changed. Release note:
+[`docs/releases/v0.22.1.md`](docs/releases/v0.22.1.md).
+
 ### Changed
 
 - **`library.json` now pins Standard 0.17**, up from 0.12. agent-skills-toolkit v1.20.0 (Standard 0.17) promoted
@@ -3311,7 +3317,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...HEAD
+[0.22.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...v0.22.1
 [0.22.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...v0.22.0
 [0.21.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...v0.20.1

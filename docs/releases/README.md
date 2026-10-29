@@ -23,6 +23,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 
 **Newest first**, matching [`RELEASE-NOTES.md`](../../RELEASE-NOTES.md). Stated because it was not: entries through `v0.7.0` were appended in ascending order and everything from `v0.8.0` was inserted at the top, so the list disagreed with itself for four releases.
 
+- [`v0.22.1.md`](v0.22.1.md) - a patch: the library pins Standard 0.17, and its CI grades it with agent-skills-toolkit v1.22.0; no bundle changed
 - [`v0.22.0.md`](v0.22.0.md) - one bundle: a user research plan, the 51st and the first `research-docs` member; eight bundles take sourced fixes, and the fifth efficacy run is published
 - [`v0.21.0.md`](v0.21.0.md) - one bundle: a design brief, the 50th and the second at `define`, for handing a chosen problem and concept to the people who will design it
 - [`v0.20.1.md`](v0.20.1.md) - a patch with no new bundle: `problem-statement`'s aliases corrected, the design brief specced, and a fifth admission check that asks who writes a document
