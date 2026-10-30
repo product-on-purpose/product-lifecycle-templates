@@ -152,6 +152,10 @@ design-brief 11,563,997, $25.38, for 16, the usual 15 plus an Opus head writer (
 Agent tool, without which it reads $16.49, its two-template drafting $6.66;
 user-research-plan 14,890,444, $32.47, for 16, the usual 15 plus an Opus head writer ($8.99) run through
 the Agent tool, without which it reads $23.48, its two-template drafting $15.21, $9.86 of it the companion;
+user-research-report 19,270,748, $38.54, for 23, all Sonnet: a research run of two passes, with all six
+dimensions in both, then the usual draft and review, plus a research agent ($2.99) and a fact checker ($1.10)
+run through the Agent tool, without which it reads $34.45, its two-template drafting $18.54, $9.24 of it the
+companion;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.
