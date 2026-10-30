@@ -649,11 +649,11 @@ and each is maintainer-vetoable. A decision record gets a dated note, not a sile
 
 From `dim1.md`, with lines re-checked:
 
-- `README.md:239`, the heading `(complete, six bundles)`; `:241`, `All six members`; `:243`, the `foundation` list,
+- `README.md:239` (as of `240ea40b`), the heading `(complete, six bundles)`; `:241`, `All six members`; `:243`, the `foundation` list,
   which names two bundles; and `:245-252`, the six-row table.
-- `templates/README.md:91-97`, the standing-standards list. It also lacks `business-continuity-plan`, which is filed
+- `templates/README.md:91-97` (as of `240ea40b`), the standing-standards list. It also lacks `business-continuity-plan`, which is filed
   at `:106` under strategy-docs, a defect that predates this bundle.
-- `STATE.md:278`, the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
+- `STATE.md:278` (as of `c16e58a0`), the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
 - `docs/internal/contracts/standing-standards.md:17-19`, the Members line's `not yet built`. This bookkeeping edit
   stops for the maintainer's read (`docs/internal/tier2-specs.md:6140-6144`).
 - `templates/test-plan/test-plan_guide.md:36`, the routing row, which may gain a link as a build decision
@@ -665,7 +665,7 @@ From `dim1.md`, with lines re-checked:
 - `AGENTS.md:61-62`: 28 bundles carry a `phase` and the other 19 a `classification`. A `foundation` member makes
   the second number 20.
 - `library.json:4`: `for 43 of the 47, a full one`. A single-size bundle changes the total, not the 43.
-- The bundle count is retyped across live files, among them `README.md:15`, `:146`, `:158` and `:357`,
+- The bundle count is retyped across live files, among them `README.md:15` (as of `240ea40b`), `:146`, `:158` and `:357`,
   `AGENTS.md:27` and `:75`, `docs/how-to/installing.md:20`, `docs/reference/choosing-a-template.md:14`,
   `.claude-plugin/plugin.json:4` and `site/src/content/docs/index.mdx:6`. The landing number depends on whether
   `positioning-statement` lands first. `STATE.md` and `tools/check-counts.py` are the authority, and the landing

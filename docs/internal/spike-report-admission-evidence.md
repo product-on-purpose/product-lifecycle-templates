@@ -5,6 +5,12 @@ pass found when it applied [ADR 0030](decisions/0030-templating-scope-markdown-d
 to `spike-report`, and it stops there, because **whether a type is in scope at all is a maintainer decision**
 and this evidence does not settle itself.
 
+*(Corrected 2026-10-29: the decision was made on 2026-09-12.
+[ADR 0048](decisions/0048-one-named-source-clears-the-admission-test.md) admits `spike-report`, and the bundle
+shipped the same day at [`templates/spike-report/`](../../templates/spike-report/spike-report_guide.md). This page
+stays as the evidence that decision rested on, and the two sentences above and below that call it undecided and
+unbuilt are kept as written.)*
+
 It is written in the same format a research log uses, following
 [`prototype-brief-admission-evidence.md`](prototype-brief-admission-evidence.md), so the question can be
 reopened without re-fetching. The bundle is not built, so there is no `templates/spike-report/`.

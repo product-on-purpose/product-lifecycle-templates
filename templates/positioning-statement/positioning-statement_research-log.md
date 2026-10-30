@@ -616,8 +616,8 @@ lean template (`product-vision_template-lean.md:42-44`), the guide's row 8 (`pro
 companion note above. `README.md`, `AGENTS.md` and `skills/` carry no mention of positioning (checked by grep for
 "position").
 
-**Count and family sentences stale on landing.** `README.md:214` reads "complete, five bundles" and its table lacks
-a row. `templates/README.md:100-106` lists the family without this bundle. `STATE.md:278` says the family is
+**Count and family sentences stale on landing.** `README.md:214` (as of `4f1bea43`) reads "complete, five bundles" and its table lacks
+a row. `templates/README.md:100-106` (as of `4f1bea43`) lists the family without this bundle. `STATE.md:278` (as of `c16e58a0`) says the family is
 "complete at five members". The contract's Members line says "not yet built" (`strategy-docs.md:6`).
 
 **The catalog row still carries the uncorrected values** (`docs/internal/catalog.md:43`): the alias "positioning

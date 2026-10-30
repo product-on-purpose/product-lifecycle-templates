@@ -12,6 +12,16 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Fixed
+
+- **The `spike-report` admission evidence still called its decision unmade and the bundle unbuilt.** ADR 0048
+  admitted it on 2026-09-12, and it shipped that day. A dated correction now says so, and the original
+  sentences stay as written.
+- **Thirteen line citations into `README.md`, `STATE.md` and `templates/README.md` pointed at moved lines.**
+  They sit in dated notes in the internal spec page and two research logs, and describe those files as they
+  were at an earlier landing. Each now names the commit whose tree it describes, so it reads correctly again. No
+  line moved, so no other citation shifted.
+
 ## [0.23.0] - 2026-10-29
 
 A minor release with one new bundle, `user-research-report`, the 52nd. It completes the `research-docs` family,
