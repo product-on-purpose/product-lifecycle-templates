@@ -88,7 +88,7 @@ Each must travel with the span it qualifies.
   own account. The contract already states its version as the library's POSITION (`research-docs.md:37-38`).
   Confidence: high.
 - **NN/g's one-study line.** The contract quotes "Typically, a research plan is constructed for each study." [7]
-  for its axis call (`research-docs.md:87-88`). The same article allows that "sometimes, a research plan could
+  for its axis call (`research-docs.md:90-91`). The same article allows that "sometimes, a research plan could
   include numerous studies or phases of research" [7], and its example pairs "interviews and a diary study" [7].
   The one-study membership test (`research-docs.md:12-15`) is therefore the library's POSITION against a minority
   practice the source names. Confidence: high.
@@ -271,7 +271,7 @@ exclusion of the request (`:7122-7123`) holds in Dovetail's sense. Confidence: h
 **The strategy and the standing service plan.** Maze: "While your UX research plan should be based on strategy,
 it's not the same thing." [10]. GOV.UK: "You can only plan specific rounds of research when you’ve created a
 research plan for your service." [4]. GOV.UK's round plan is this bundle's analogue; its service plan is the
-standing document the contract excludes (`research-docs.md:50-54`). Anderson's research roadmap [26] is a second
+standing document the contract excludes (`research-docs.md:53-57`). Anderson's research roadmap [26] is a second
 standing document of the same kind. The spec's exclusion holds (`:7119-7121`). Confidence: high.
 
 **The session script: most sources put it in the plan.** Inside the plan:
@@ -430,7 +430,7 @@ signal that we were over-indexing evaluative research and not leaving enough tim
 **Studies of shipped products are ordinary.** GOV.UK's Design System: "Your service might be in the alpha or beta
 phases, or you might be iterating the service after going live." [20]. DHS says usability testing is "most
 useful" [6], first "Before you start redesigning something" [6]. The contract already cites the Design System
-line for the cost it states (`research-docs.md:97-103`). DHS adds a second source for that cost; it does not
+line for the cost it states (`research-docs.md:103-109`). DHS adds a second source for that cost; it does not
 change the axis. See Finding 8.
 
 ### 6. The software-audience check (ADR 0080)
@@ -457,7 +457,7 @@ The name-versus-job question in ADR 0080 (`0080-...:134-145`) does not arise, be
 ### 7. Lineage: what the plan borrows from government digital services
 
 Contract section 3.6 (citations, with the family's lineage trap) requires a member that borrows a structure from a
-government form to say so (`research-docs.md:126-130`). **This plan borrows section structure from US and UK
+government form to say so (`research-docs.md:132-136`). **This plan borrows section structure from US and UK
 government digital services.**
 
 - **18F** (US): the template [1] and the UX Guide [2]. The guide is "Archived as of January 20, 2025" [2].
@@ -480,7 +480,7 @@ from a standard.
 
 The friction study studies a dashboard customers already use (`tier2-specs.md:7267-7269`). Contract section 2
 requires a member that serves such a study to declare `discover` anyway, with its companion saying why
-(`research-docs.md:101`). What this research gives the companion:
+(`research-docs.md:107`). What this research gives the companion:
 
 - **The sources treat studies of live products as ordinary research work** [20], [6]. That is the cost the
   contract names, now with DHS's line [6] behind it as well.
@@ -489,7 +489,7 @@ requires a member that serves such a study to declare `discover` anyway, with it
   evaluative research does [24]. On this log's reading, that is the companion's best reason: the study looks for
   an opportunity in a shipped product before any concept exists. The design brief, dated after the study, picks
   the concept. Confidence: medium, because the reason remains the library's POSITION, as the contract labels it
-  (`research-docs.md:101-103`).
+  (`research-docs.md:107-109`).
 - **What the companion must not say:** that any source calls a study of a shipped product discovery work. None
   does.
 
@@ -557,7 +557,7 @@ source, that source carries it.
     [14]; GOV.UK [4]. **Route:** an ASK in What Happens to the Findings, on how the data will be analysed against
     the questions. Time for analysis goes in Schedule and Logistics. unitQ's "build, iterate, keep exploring, or drop"
     [34] is a recommendation, which is the report's job. Logging the decision is a decision document's job
-    (`research-docs.md:44-46`). Both stay out of the plan.
+    (`research-docs.md:47-49`). Both stay out of the plan.
 
 Candidates the other dimensions surfaced, routed the same way:
 
@@ -629,7 +629,7 @@ These are candidates for a dated note in the spec, not a silent rewrite. Each is
   (Finding 3). The ruling stands; the spec's own reasoning, catalog entry 25, carries it, not the sources.
 - `:7024` and `:7109-7110`, digital.gov's twelve sections. The stored copy names eleven [3].
 - `:7183-7186` and `research-docs.md:35-36`, Gilad's line quoted without his qualifier [19].
-- `research-docs.md:87-88`, NN/g's one-study line quoted without its "sometimes" [7].
+- `research-docs.md:90-91`, NN/g's one-study line quoted without its "sometimes" [7].
 - `:7194-7196`, the project-brief boundary, which rests on NSW alone [5].
 - `:7231-7234`, the facts older than the plan. Each is right, but two carry a trap the spec does not name. The
   strategy's goal sentence goes on to name the PRD's and the KPI dashboard's versions of the goal

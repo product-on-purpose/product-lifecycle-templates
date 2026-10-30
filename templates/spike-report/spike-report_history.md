@@ -2,6 +2,12 @@
 
 Per-bundle changelog, by `template_version`. Newest first.
 
+## 0.1.0, reviewed 2026-10-27 - route user research to `user-research-report`
+
+**No template change, so `template_version` stays 0.1.0.** The guide's pairing section already sent user
+research to `discover-interview-synthesis`. It now gains a dated note naming `user-research-report`, the
+library's own document for that job, which landed with that bundle (`docs/internal/tier2-specs.md:7367`).
+
 ## 0.1.0 - 2026-09-12
 
 - Initial spike-report bundle. Fourth bundle in the `decision-docs` family, joining `adr`, `rfc` and

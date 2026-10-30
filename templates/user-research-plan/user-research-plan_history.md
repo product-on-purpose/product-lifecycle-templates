@@ -3,6 +3,23 @@
 Change log for the `user-research-plan` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, reviewed 2026-10-27 - drop the `future:` prefix now that the report is built
+
+**No template change, so `template_version` stays 0.1.0.** `related_templates` named
+`future:user-research-report` because the sibling report had not been built. The report (catalog entry
+18, issue #317) lands in the same pull request as this entry, so the id exists on disk and the prefix is
+dropped, as the spec's list for the report's landing says (`docs/internal/tier2-specs.md:7372-7374`).
+`related_templates` now reads `[user-research-report, user-persona, problem-statement, design-brief,
+test-plan, experiment-design-doc]`. `tools/check-bundles.py` check I would otherwise raise its
+stale-`future:` failure, since the prefix fails once its target is built.
+
+**The example's opening note gains a dated correction.** It called the report "not yet built in this
+library", which this landing makes false. The body is unchanged.
+
+**The research log's eight line citations into the family contract move.** The same pull request adds two dated
+notes to `docs/internal/contracts/research-docs.md`, which shifts every later line, so each citation now points at
+the line it named before.
+
 ## 0.1.0 - 2026-10-24
 
 **Initial release, the first founding member of `research-docs` to land.** Researched 2026-10-24 across

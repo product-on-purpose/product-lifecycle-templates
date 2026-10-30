@@ -2,10 +2,10 @@
 
 Status: adopted 2026-10-23 ([ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)); proposed the same day and adopted after a maintainer read, per [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)
 Applies to: every bundle declaring `family: research-docs` in its meta
-Members at adoption: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317). `user-research-plan` was built on 2026-10-24; `user-research-report` is not yet built
+Members at adoption: none built yet (the catalog candidates `user-research-plan`, entry 210, and `user-research-report`, entry 18, are the planned members, tracked as issues #316 and #317). `user-research-plan` was built on 2026-10-24, and `user-research-report` on 2026-10-27
 Modeled on: the experimentation-docs and qa-docs family contracts, the two existing families that pair a plan with a report
 Axis: `phase` (`discover`); see section 2 for the axis call and its stated cost
-Version: 0.1.0 (changes to this contract require a decision record; see the change note at the end)
+Version: 0.1.1 (changes to this contract require a decision record; see the change note at the end)
 
 ## 1. Membership
 
@@ -35,7 +35,10 @@ also state its position against these neighbours:
   hypothesis about the effect of a change to a product or its market". Itamar Gilad draws the line this family
   relies on: "Per this definition an A/B test is an experiment, but a usability test is not." This library holds,
   as its POSITION, that a study which allocates participants between variants and applies a decision rule is an
-  experiment, whatever it is called.
+  experiment, whatever it is called. *(Note 2026-10-27: Gilad qualifies his own line in the next sentence: "I
+  realize that this is not the common definition used in the industry". The boundary rests on his stricter
+  definition, by his own account, which is why this paragraph states its version as a POSITION. Source:
+  `user-research-plan_research-log.md` [19].)*
 - **The QA pair** `test-plan` and `test-summary-report` (`qa-docs`). They report "the verification of a product
   increment" against a specification. A usability study asks how people use a product, and its report records
   observations, not a verdict against a specification. The shared words "test plan" are the collision, which is why
@@ -87,7 +90,10 @@ no source read argues for a family boundary at this phase. The reasons are these
 - **Neither member is a standing instrument.** Nielsen Norman Group: "Typically, a research plan is constructed for
   each study." A report covers the one study it reports. Each document is produced at a stage and finished, which
   is the definition of a `phase` artifact, the reasoning
-  [ADR 0026](../decisions/0026-adopt-qa-docs-family-contract.md) applied to `qa-docs`.
+  [ADR 0026](../decisions/0026-adopt-qa-docs-family-contract.md) applied to `qa-docs`. *(Note 2026-10-27: the
+  same article allows that "sometimes, a research plan could include numerous studies or phases of research", so
+  section 1's one-study membership test is this library's POSITION against a practice the source names. Source:
+  `user-research-plan_research-log.md` [7].)*
 - **The catalog agrees on coherence.** Both planned members carry the catalog `stage` `discovery`, and so do the
   named candidates 25 and 28.
 - **A family could hold several phase values, but that buys nothing here.** Each bundle declares exactly one phase
@@ -171,6 +177,14 @@ are likewise review obligations at authoring time and audit obligations thereaft
 is not "in the family with issues"; it is out of the family until green, and the catalog count reflects that.
 
 ## Change note
+
+**0.1.1 (2026-10-27), per
+[procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world):** the Members
+line records `user-research-report` as built on 2026-10-27, so both planned members are now built. Two dated notes,
+in sections 1 and 2, quote Gilad's and the Nielsen Norman Group's own qualifiers on lines the contract quotes, so the
+experimentation-docs boundary and the one-study membership test read as this library's POSITION. The maintainer
+chose both qualifiers on 2026-10-25 and accepted this entry, in place of a new decision record, on 2026-10-29,
+following the dated in-place corrections in the strategy-docs and delivery-docs change notes. No obligation changed.
 
 **0.1.0 (2026-10-23, [ADR 0081](../decisions/0081-adopt-research-docs-family-contract.md)):** proposed and adopted
 2026-10-23 after a maintainer read, enforced by gate check K, the eleventh family contract. Drafted contract-first, before any member is built, so

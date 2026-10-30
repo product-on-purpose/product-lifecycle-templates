@@ -21,7 +21,8 @@ source_template_version: 0.1.0
 > around 2026-05-27, and well before the design brief of 2026-06-01 that later frames the concept this
 > study's findings feed. Nothing in the body below names a concept, a feature, or a finding, because the
 > study has not run yet, and nothing below cites a document dated after 2026-04-20 as already existing,
-> because none of them did yet when this was written.
+> because none of them did yet when this was written. *(Corrected 2026-10-27: the report is now built;
+> see [the readout](../user-research-report/user-research-report_example.md).)*
 >
 > All figures are illustrative. They are internally consistent with the other examples in this library and
 > are not drawn from a real company.
