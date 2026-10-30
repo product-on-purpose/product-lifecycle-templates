@@ -6,12 +6,12 @@
 
 A curated library of product-management and software-lifecycle document templates. Anyone can publish a folder of Markdown files. What makes this one different is that every template ships as a **governed bundle**: a blank shape you fill in, a researched explainer of why it is shaped that way, a fast operator card, a fully worked example, and machine-readable metadata. Coverage is not the product; correct-by-construction reuse is.
 
-[**Quick start**](#quick-start) &nbsp;·&nbsp; [**What a bundle is**](#what-makes-a-bundle-best-in-class) &nbsp;·&nbsp; [**The claim**](#the-claim-and-what-it-is-worth) &nbsp;·&nbsp; [**Library**](#what-is-in-the-library-today) &nbsp;·&nbsp; [**Quality gate**](#quality-gate) &nbsp;·&nbsp; [**Status**](#project-status)
+[**Quick start**](#quick-start) &nbsp;·&nbsp; [**What a bundle is**](#what-makes-a-bundle-best-in-class) &nbsp;·&nbsp; [**The claim**](#the-claim-and-what-it-is-worth) &nbsp;·&nbsp; [**Library**](#what-is-in-the-library-today) &nbsp;·&nbsp; [**Quality gate**](#quality-gate) &nbsp;·&nbsp; [**Status**](#status)
 
 <p>
   <img src="https://img.shields.io/badge/status-experimental-yellow?style=flat-square" alt="Status: experimental">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" alt="License: Apache-2.0"></a>
-  <img src="https://img.shields.io/badge/version-0.22.0-blue?style=flat-square" alt="Version 0.22.0">
+  <img src="https://img.shields.io/badge/version-0.22.1-blue?style=flat-square" alt="Version 0.22.1">
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/bundles-52-brightgreen?style=flat-square" alt="Bundles: 52"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/Tier--1%20floor-25%20%2F%2025-brightgreen?style=flat-square" alt="Tier-1 floor: 25 of 25 templatable, complete"></a>
   <a href="#what-is-in-the-library-today"><img src="https://img.shields.io/badge/families-11-brightgreen?style=flat-square" alt="Families: 11"></a>
@@ -33,7 +33,7 @@ The north star is simple and demanding: be the indisputable best-in-class refere
 - [Anatomy of a bundle](#anatomy-of-a-bundle)
 - [How this fits with pm-skills](#how-this-fits-with-pm-skills)
 - [Quality gate](#quality-gate)
-- [Project status](#project-status)
+- [Status](#status)
   - [At a glance](#at-a-glance) · [Repository layout](#repository-layout) · [Design and roadmap](#design-and-roadmap)
 - [Conventions](#conventions)
 - [License](#license)
@@ -355,9 +355,11 @@ All fifty-two bundles currently pass. GitHub Actions runs these on every push to
 
 ---
 
-## Project status
+## Status
 
-`v0.22.0` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, twenty-seven Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+`v0.22.1` - **public, with the Tier-1 floor complete at 25 of 25 templatable types, twenty-seven Tier-2 types built, an MCP server with a uniform envelope, and measured per-bundle build-cost reports.** Build order is set by maintainer preference rather than by a plan ([ADR 0041](docs/internal/decisions/0041-maintainer-preference-sets-the-build-order.md)); how a request for an unbuilt type is weighed is stated at [`docs/reference/pull-queue.md`](docs/reference/pull-queue.md). [`STATE.md`](STATE.md) is the single source of truth and outranks every plan and this README.
+
+- **Tier**: Advanced (Gold), pinned to Standard `0.17`.
 
 ### At a glance
 
@@ -365,9 +367,9 @@ All fifty-two bundles currently pass. GitHub Actions runs these on every push to
 
 |  |  |
 |---|---|
-| **Current version** | [v0.22.0](CHANGELOG.md) |
+| **Current version** | [v0.22.1](CHANGELOG.md) |
 | **Bundles** | 52, across 11 families, all complete (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs, experimentation-docs, research-docs) |
-| **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other twenty-six bundles are Tier-2 types, and [`STATE.md`](STATE.md)'s Bundles row names them. *(Corrected 2026-10-15: this cell said "the other ten" and named ten, which was true at `change-request`'s landing on 2026-09-25 and stale from `change-log` onward. Corrected again 2026-10-20: this cell said "the other twenty", stale from `trade-study`'s landing, then "the other twenty-three", stale from `test-strategy`'s landing.)* |
+| **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other twenty-seven bundles are Tier-2 types, and [`STATE.md`](STATE.md)'s Bundles row names them. *(Corrected 2026-10-15: this cell said "the other ten" and named ten, which was true at `change-request`'s landing on 2026-09-25 and stale from `change-log` onward. Corrected again 2026-10-20: this cell said "the other twenty", stale from `trade-study`'s landing, then "the other twenty-three", stale from `test-strategy`'s landing.)* |
 | **Catalog** | 210 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 103 template variants addressable |

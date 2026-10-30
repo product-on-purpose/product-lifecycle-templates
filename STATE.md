@@ -7,12 +7,17 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=52, tier1=25, tier1remaining=2, statebuilt=52, statecandidate=156, stateoutofscope=2, commoncandidates=49, adrs=81, cisteps=32, checkk=156, checkformats=132, checklogs=114, logsgated=46, sourcesgated=1921 -->
 
-**Last updated:** 2026-10-27 (**`user-research-report` lands as the 52nd bundle and the second `research-docs`
+**Last updated:** 2026-10-29 (**`user-research-report` lands as the 52nd bundle and the second `research-docs`
 member**, at `phase: discover`, built through the `build-bundle` workflow on the maintainer's go of 2026-10-27.
 It ships lean and full, carries catalog entry 18, and closes issue #317 (bundle: user-research-report). Both
-founding members of `research-docs` are now built, so all eleven families are complete. The family contract's
-Members line records the report, and two dated notes give Gilad's and NN/g's qualifiers on lines the contract
-quotes. The spec section gains dated notes on ten places the build's research weakens. Not in any release yet.)
+founding members of `research-docs` are now built, so all eleven families are complete. The family contract moves
+to 0.1.1: its Members line records the report, and two dated notes give Gilad's and NN/g's qualifiers on lines the
+contract quotes. The spec section gains dated notes on ten places the build's research weakens. Not in any release
+yet.)
+The previous entry read: **`v0.22.1` pins Standard 0.17**, as a patch release the maintainer directed on
+2026-10-29. `library.json` moves from Standard 0.12 to 0.17, `INDEX.md` is regenerated, and the CI conformance
+gate clones agent-skills-toolkit v1.22.0 instead of v1.10.0. The toolkit grades this plugin Gold at 0.17 with 0
+errors and 0 warnings. No bundle changed.
 The previous entry read: **`v0.22.0` ships `user-research-plan`, the 51st bundle**, as a minor release the
 maintainer directed on 2026-10-26. It also carries the `research-docs` family (ADR 0081), catalog entry 210, and
 the skills' trigger lists naming a design brief and a user research plan. Three changes merged on 2026-10-26 ship

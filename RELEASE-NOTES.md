@@ -8,6 +8,15 @@ Newest first.
 
 ---
 
+## v0.22.1
+
+**This library now declares Standard 0.17 of the Advanced Skill Library Standard**, the edition every plugin in
+the Product on Purpose marketplace is moving to. It still grades Gold, with no errors and no warnings. Its CI now
+runs that grade with agent-skills-toolkit v1.22.0 instead of v1.10.0. Nothing in any bundle, template, MCP tool
+or install route changed.
+
+---
+
 ## v0.22.0
 
 **One new bundle: a user research plan, the library's 51st.** It plans one study of the people a product

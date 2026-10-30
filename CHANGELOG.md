@@ -27,7 +27,8 @@ people who want every change, release notes are for people who want to know what
 
 - **The `research-docs` contract records the report as built** and gains two dated notes: Gilad's own qualifier
   on his test-and-experiment line, and Nielsen Norman Group's allowance for a plan covering several studies. The
-  maintainer chose both notes on 2026-10-25.
+  maintainer chose both notes on 2026-10-25. The contract moves to 0.1.1, with a change-note entry under decision
+  procedure 11 rather than a new decision record, as the maintainer ruled on 2026-10-29.
 - **Both skills trigger on a user research report**, beside the plan.
 - **`user-research-plan`** drops its `future:` prefix for the report, and its example's opening note gains a dated
   correction. Its research log's line citations into the contract move with the contract's new notes.
@@ -39,6 +40,28 @@ people who want every change, release notes are for people who want to know what
 
 - **The plugin's description said efficacy had been measured four times.** It now says five, in the wording
   `AGENTS.md` has carried since the fifth run was published (#326).
+
+## [0.22.1] - 2026-10-29
+
+A patch release: this plugin now pins Standard 0.17, and its CI grades it with agent-skills-toolkit v1.22.0.
+No bundle, template, MCP tool or install route changed. Release note:
+[`docs/releases/v0.22.1.md`](docs/releases/v0.22.1.md).
+
+### Changed
+
+- **`library.json` now pins Standard 0.17**, up from 0.12. agent-skills-toolkit v1.20.0 (Standard 0.17) promoted
+  G1 (hook documentation), G2 (self-hosting CI) and G8 (folder READMEs) from warn to error at Gold; this plugin
+  already satisfied all three (it declares no hooks, its CI already clones the toolkit and runs its
+  `scripts/check.mjs` directly in the "Standard conformance gate" job of `.github/workflows/ci.yml`, and its
+  allowlisted folders already carry `README.md` files with current inventories), so the only generated-file
+  change was `INDEX.md`, regenerated to pick up the corrected self-validation line (`npx agent-skills-toolkit .`
+  rather than the vendored-gate form the pre-v1.13.0 generator had emitted). The toolkit grades this plugin Gold
+  (tier `advanced`) at 0.17 with 0 errors and 0 warnings.
+- **The CI "Standard conformance gate" job now clones agent-skills-toolkit `v1.22.0`**, up from `v1.10.0`.
+  v1.10.0 predates Standard 0.17, so it could not grade the new pin. v1.22.0 is also the first release
+  carrying the toolkit's E90 fix: its `check-readme-version.mjs` no longer compares this plugin's own
+  description of its bundle gate against the toolkit's 35-check spine, a comparison that reported a false
+  disagreement here.
 
 ## [0.22.0] - 2026-10-26
 
@@ -3323,7 +3346,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...HEAD
+[0.22.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...v0.22.1
 [0.22.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...v0.22.0
 [0.21.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.0...v0.20.1
