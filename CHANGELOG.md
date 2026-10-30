@@ -14,12 +14,12 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
-- **Two canvases are specced and proposed for the library, at the maintainer's request.** Jeff Gothelf's Lean
+- **Two canvases are specced and admitted to the library, at the maintainer's request.** Jeff Gothelf's Lean
   UX Canvas, issue #330, would join `discovery-docs` at `phase: discover` by
   [ADR 0082](docs/internal/decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md). Ash Maurya's Lean
   Canvas, issue #337, would join `strategy-docs` at `classification: utility` by
-  [ADR 0083](docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md). Both records
-  are proposed, and each amends a family contract, so neither takes effect before the maintainer's read. Both
+  [ADR 0083](docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md). Each record
+  amends a family contract, and the maintainer accepted both after reading the contract diffs. Both
   specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`.
 
 ### Fixed

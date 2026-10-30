@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-30
 decision-makers: [jprisant]
 consulted: [claude]
@@ -30,9 +30,9 @@ consulted: [claude]
 - **What this does not admit.** It does not admit Osterwalder's Business Model Canvas, catalog entry 4, or Jeff
   Gothelf's Lean Strategy Canvas. Gothelf's Lean UX Canvas is placed separately, by
   [ADR 0082](0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) (lean-ux-canvas joins discovery-docs).
-- **Status:** proposed 2026-10-30. This record amends a family contract, so it stops for the maintainer's own
-  read, under [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer). Nothing
-  in it takes effect before that read.
+- **Status:** proposed 2026-10-30, **accepted 2026-10-30 after the maintainer's read** of this record and its
+  contract diff. The spec's choices D1 to D7 are still open, among them the classification (D2) and the chain
+  position (D3). A ruling that differs from this record's recommendation amends the contract by a dated note.
 
 ## Context and Problem Statement
 

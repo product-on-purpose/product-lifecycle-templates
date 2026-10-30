@@ -1,12 +1,12 @@
 # Family Contract: strategy-docs
 
-Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amendment proposed 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md))
+Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amended 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
 Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.4.0, proposed (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+Version: 0.4.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
 claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
 see the change note at the end)
 
@@ -18,7 +18,7 @@ any single deliverable**. Its members answer, in order, seven questions a produc
 - a **product vision** says where we are trying to get to, and why it is worth getting to;
 - a **Lean Canvas** says which business model could get us there, as beliefs to test: whose problems, what
   value, how we reach and earn from them, what it costs, and how we will know it works (added 2026-10-30,
-  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), proposed);
+  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md));
 - a **product strategy** says which problems we will solve to get there, and which we will not;
 - a **positioning statement** says how we stand against a named alternative, for which customer, now
   (added 2026-10-19, [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md));
@@ -41,7 +41,7 @@ library's POSITION: no source read states this failure as documented practice ei
 the chain, between the strategy and the North Star metric, is argued from what positioning depends on, not
 sourced; Devika Nair's framing of positioning "as part of the vision" (ADR 0076) pulls toward an earlier place
 instead. **This library also holds that** a strategy whose segments and problems contradict the current Lean
-Canvas has drifted from the business model it depends on (added 2026-10-30, ADR 0083, proposed). That link is
+Canvas has drifted from the business model it depends on (added 2026-10-30, ADR 0083). That link is
 the library's POSITION too, and so is the canvas's place second in the chain, between the vision and the
 strategy. No source states that sequence; a reader who sees the canvas as the strategy's business model, kept
 current beside the roadmap, would place it after the strategy. Each member must state its position against the other members in its companion's Relationships
@@ -89,7 +89,7 @@ This one cannot, and forcing it to would misdescribe at least two of its members
   cadence, and their value comes precisely from being kept current. A roadmap nobody has updated in six
   months is not a stale foundation, it is a broken instrument. **`lean-canvas` is `utility` too,
   recommended** (added 2026-10-30,
-  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), proposed). Ash Maurya
+  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md)). Ash Maurya
   calls a canvas "a snapshot" and says "you start with the best guess and iterate from there". Its revisions
   follow test results rather than a calendar, and no originator page read states an interval. `foundation`
   is the considered alternative.
@@ -155,7 +155,7 @@ and contradicts neither sibling (added 2026-10-19,
 [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md); its spec sets
 the constraints). The Lean Canvas's example models the embedded-analytics OEM line that the product strategy
 example names as a non-target needing "a different product", and contradicts no sibling (added 2026-10-30,
-[ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), proposed; its spec sets
+[ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md); its spec sets
 the constraints). **When this family completes,
 the library will hold one continuous worked thread from a product vision down to a bug report**, which is a
 demonstration no single bundle can make. A member whose example invents an unrelated company forfeits that and
@@ -191,8 +191,8 @@ reviewed against.
 ## Change note
 
 **0.4.0, 2026-10-30, [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md):
-a seventh member, and the third widening of this family's list of questions.** *(Proposed; it takes effect on
-the maintainer's read.)* `lean-canvas` joins at `classification: utility` (recommended), placed second in the
+a seventh member, and the third widening of this family's list of questions.** *(Accepted 2026-10-30
+after the maintainer's read.)* `lean-canvas` joins at `classification: utility` (recommended), placed second in the
 chain, between the product vision and the product strategy. That place is argued rather than sourced, and
 ADR 0083 records the alternative, after the strategy. The membership sentence admitted the type as written.
 What blocked it was the closed list, so section 1's "six questions" becomes "seven questions" and gains a second

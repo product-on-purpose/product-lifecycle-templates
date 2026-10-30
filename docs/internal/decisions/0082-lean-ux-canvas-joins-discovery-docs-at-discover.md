@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-10-30
 decision-makers: [jprisant]
 consulted: [claude]
@@ -24,9 +24,10 @@ consulted: [claude]
   does not admit Gothelf's Lean Strategy Canvas, Jeff Patton's Opportunity Canvas or Ash Maurya's Lean Canvas.
   [ADR 0083](0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) (lean-canvas joins strategy-docs)
   places Maurya's canvas separately.
-- **Status:** proposed 2026-10-30. This record amends a family contract, so it stops for the maintainer's own
-  read, under [decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer). Nothing
-  in it takes effect before that read.
+- **Status:** proposed 2026-10-30, **accepted 2026-10-30 after the maintainer's read** of this record and its
+  contract diff. The maintainer added a reading of the cadence clause: it states "the spirit of the tools and
+  resource", not "a hard-lined law". This record's exception is written in that spirit, bounded by the end the
+  sources describe. The spec's choices C1 to C7 are still open.
 
 ## Context and Problem Statement
 

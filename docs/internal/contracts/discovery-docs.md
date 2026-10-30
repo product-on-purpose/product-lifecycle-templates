@@ -288,7 +288,7 @@ shape. No built member changes phase or family. ADR 0079 records the costs, amon
 inside the family, since a `define` member may follow the `discover`-phase project brief.
 
 **0.6.0, 2026-10-30, [ADR 0082](../decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md): a sixth
-member, and a second cadence exception.** *(Proposed; it takes effect on the maintainer's read.)*
+member, and a second cadence exception.** *(Accepted 2026-10-30 after the maintainer's read.)*
 `lean-ux-canvas` joins at `phase: discover`. Section 1's membership sentence admits it as written, because the
 canvas decides what to learn before anyone commits to building. Section 1's member list gains a bullet. Its
 cadence clause gains a second bounded exception, for a `discover` member that frames one initiative's
