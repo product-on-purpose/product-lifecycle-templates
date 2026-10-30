@@ -7800,10 +7800,12 @@ named source. It is not needed.
 **The contract's test is "argued-and-durable versus maintained-and-periodic".** Maurya describes a canvas kept
 current. "Unlike a business plan, the goal with a Lean Canvas isn’t to achieve perfection but to take a
 snapshot." "Like everything on the canvas, you start with the best guess and iterate from there." His canvas guide
-says "Your canvas is versioned automatically."
+says "Your canvas is versioned automatically." Maurya's 2011 walkthrough, "How to Create Your Lean Canvas", says so outright: "The canvas is meant to be an
+organic document that evolves over time". It calls the canvas a format for "tracking ongoing learning". The maintainer supplied that PDF on
+2026-10-30, and both quotations were checked against its text.
 
-**Recommended: `utility`.** Confidence: medium. No originator page read states a calendar interval, so the
-revisions follow test results. **The alternative is `foundation`**, for a reader who treats the canvas as a
+**Recommended: `utility`.** Confidence: medium-high. No originator source read states a calendar interval, so
+the revisions follow test results. **The alternative is `foundation`**, for a reader who treats the canvas as a
 founder's argued thesis.
 
 #### The family: `strategy-docs`, by amendment (ADR 0083)
@@ -7961,6 +7963,19 @@ the existing revenue base, which the strategy holds rather than explores.
 **Sites the research may not read.** Atlassian, Miro, Substack, ProductPlan, Product School and the other sites in
 the runbook's table. Many Lean Canvas templates live on them. Any page needed from them goes to the maintainer's
 hand-read list.
+
+**Maintainer-supplied sources** *(added 2026-10-30)*. Both are copyrighted and stay on the maintainer's machine.
+Quotations are checked against a local text copy, and nothing from them is committed except short attributed
+quotations.
+
+- **Ash Maurya, "How to Create Your Lean Canvas" (2011)**, a 40-page PDF whose pages carry the running head
+  "Running Lean". It is the `structure` and `origins` dimensions' primary source. It teaches the customer-first fill
+  order, sketching "a Lean Canvas for each customer segment", and the canvas as "an organic document that evolves
+  over time". Its own case study is Maurya's canvas for the Lean Canvas software itself, which serves check 5.
+- **Ash Maurya, Running Lean Workshop (Udemy, 2014)**, 30 video lessons. Among them are "Sketching A Lean Canvas",
+  one per box, and "Iteration Meta Pattern On The Lean Canvas". No transcript exists, and an agent cannot watch
+  video. The maintainer may watch the iteration lesson and note what it says about revising the canvas. Nothing
+  in the spec rests on it.
 
 #### The maintainer's choices
 

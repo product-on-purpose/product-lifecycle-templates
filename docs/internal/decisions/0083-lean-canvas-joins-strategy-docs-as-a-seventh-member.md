@@ -121,9 +121,12 @@ comes precisely from being kept current". Maurya describes a canvas kept current
   you get there."
 - His canvas guide says "Your canvas is versioned automatically" and "Variants are alternative versions of your
   business model."
+- His 2011 walkthrough, "How to Create Your Lean Canvas", says it outright: "The canvas is meant to be an organic
+  document that evolves over time". It calls the canvas a format for "tracking ongoing learning". The maintainer
+  supplied the PDF on 2026-10-30, and both quotations were checked against its text.
 
-**No originator page read states a calendar interval.** The revisions are event-driven: a test result, a
-changed problem, a new stage. `utility` is the closer reading, at medium confidence. `foundation` is the
+**No originator source read states a calendar interval.** The revisions are event-driven: a test result, a
+changed problem, a new stage. `utility` is the closer reading, at medium-high confidence. `foundation` is the
 considered alternative. A reader who treats the canvas as a founder's argued thesis would choose it.
 
 ### Where it sits in the chain, and why
