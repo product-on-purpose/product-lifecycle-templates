@@ -5,8 +5,7 @@ in its own heading. That floor is complete, and this file is where a Tier-2 type
 instead.
 
 It exists because the build runbook has a hole. [`bundle-pipeline.md`](bundle-pipeline.md) and the
-`build-bundle` command both name "the type's spec in `buildout-specs.md`" as required reading before a
-build starts, and for a Tier-2 type there is no such entry and never was. The first Tier-2 build would
+`build-bundle` command both name "the type's spec in `buildout-specs.md`" as required reading before a build starts, and for a Tier-2 type there is no such entry and never was. The first Tier-2 build would
 otherwise have been exactly what `buildout-specs.md`'s preamble says a spec sheet prevents: "an open-ended
 design task" rather than "a spec-driven execution".
 
@@ -44,7 +43,7 @@ design task" rather than "a spec-driven execution".
 | `concept-test-validation-brief` | `concept-test-validation-brief` | none assigned; `discovery-docs` admits it as written | **Researched 2026-10-05**; no spec written | **Not now.** Parked by the maintainer on 2026-10-06. Its admission rests on one vendor template whose body the main loop could not check against raw text, and the new `experimentation-docs` contract excludes a test run before anything is built |
 | `problem-statement` | `problem-statement` | `discovery-docs` | **Written 2026-10-11**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fourth-member-at-define-the-problem-statement-the-librarys-first-define-bundle) | **Built 2026-10-11**, shipped in `v0.16.0`. The library's first `phase: define` bundle. The phase's meaning is set by [ADR 0068](decisions/0068-define-means-problem-framing.md) (the define phase means problem framing), and the family by [ADR 0069](decisions/0069-problem-statement-joins-discovery-docs.md) (problem-statement joins discovery-docs), which gives the contract a second phase value. Two sizes by the maintainer's ruling, against the sweep's lean-only finding. A gap-fill pass after drafting added nine sources (43 in all) and routes constraints to `project-brief`; [build report](../../bundle-builds/reports/problem-statement_v0.1.0.md) |
 | `shape-up-pitch` | `shape-up-pitch` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** It clears admission on Basecamp's own Shape Up glossary, but it carries a chosen solution: "A problem without a solution is unshaped work" (chapter 6). Most of its content already ships in `prd`, and its one distinct element is a fixed appetite. Placing it would be its own family decision. Evidence held locally |
-| `lean-canvas` | `lean-canvas` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not now, and not a Define candidate.** Its admission rests on one vendor page, Atlassian's Confluence template. Its Solution block sits beside its Problem block from the first draft (Ash Maurya, on fill order: "There is none"), and it is revisited rather than finished, which fails `discovery-docs`' cadence clause. No contract admits it cleanly. Evidence held locally |
+| `lean-canvas` | `lean-canvas` | `strategy-docs`, by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) | **Researched 2026-10-11** in the Define admission sweep. **Written 2026-10-30**; admission re-established [the same day](#strategy-docs-seventh-member-by-amendment-the-lean-canvas) on Ash Maurya's own page | **Not yet built.** Priority P2 by the maintainer's choice of 2026-10-30, issue #337 (bundle: lean-canvas). *(2026-10-30: this row read "Not now, and not a Define candidate", with admission resting on Atlassian's Confluence template and "No contract admits it cleanly". That verdict answered the `define` question only. Atlassian's site is now treated as barred under the terms rule, and ADR 0083 proposes the canvas for `strategy-docs` at `classification: utility`, accepted after the maintainer's read the same day.)* |
 | `opportunity-solution-tree` | `opportunity-solution-tree` | none assigned | **Researched 2026-10-11** in the Define admission sweep; no spec written | **Not admitted, and no record written.** No named source publishes it as a written document: Teresa Torres links Miro, Mural and FigJam boards, and the vendors ship boards, the shape of [ADR 0035](decisions/0035-prototype-brief-fails-the-admission-test.md). A decline record waits until someone proposes building it. Evidence held locally |
 | `business-continuity-plan` | `disaster-recovery-business-continuity-plan` | `standing-standards` | **Written 2026-10-13**; admission sources [retrieved and raw-checked 2026-10-12](#standing-standards-sixth-member-the-business-continuity-plan-with-disaster-recovery-inside-it), with a gap-fill the same day on whether disaster recovery is a separate document | **Built 2026-10-14**, shipped in `v0.17.0`, lean and full, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/business-continuity-plan_v0.1.0.md) covers the whole build: 10,284,679 weighted, $20.57, 15 agents. Family and classification (`tool`) by [ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business-continuity-plan joins standing-standards as a tool), accepted 2026-10-13 when the maintainer approved the spec PR's merge. One bundle, with the business continuity plan primary and disaster recovery as a section inside it. The bundle id is the maintainer's ruling of 2026-10-13, and the catalog id is unchanged |
 | `trade-study` | `trade-study-options-analysis` | `decision-docs` | **Written 2026-10-15**; admission sources [retrieved and raw-checked 2026-10-12](#decision-docs-fifth-member-the-trade-study-in-the-technical-sense-the-business-case-guide-already-names) in the five-candidate admission sweep | **Built 2026-10-15**, shipped in `v0.19.0`, lean and full, third in the build order the maintainer set that day, with the catalog corrections applied to both catalog files. Its [build report](../../bundle-builds/reports/trade-study_v0.1.0.md) covers the whole build: 10,479,257 weighted, $20.96, 16 agents. Admitted with no contract change, under [ADR 0022](decisions/0022-adopt-decision-docs-family-contract.md)'s consequence for a further member that keeps the family's phase and size shape. Build order is the maintainer's own preference ([ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md)) |
@@ -55,6 +54,7 @@ design task" rather than "a spec-driven execution".
 | `design-brief` | `design-brief` (entry 209, added at landing on 2026-10-22) | `discovery-docs` | **Written 2026-10-22**; admission sources [retrieved and raw-checked the same day](#discovery-docs-fifth-member-at-define-the-design-brief-in-the-design-councils-sense), after the 2026-10-16 Define sweeps and the 2026-10-20 re-score | **Built 2026-10-22**, lean and full. Its [build report](../../bundle-builds/reports/design-brief_v0.1.0.md) covers the whole build: 11,563,997 weighted, $25.38, 16 agents. Family by [ADR 0079](decisions/0079-design-brief-joins-discovery-docs-at-define.md) (design-brief joins discovery-docs at define), accepted 2026-10-22 on the maintainer's delegation and confirmed by the maintainer the same day. It builds the Design Council's concept-handoff sense: the chosen problem and one concept chosen for design, handed to the people who will design it, never a specification. It ships in two sizes, lean and full, by the maintainer's ruling of 2026-10-22. The Shape Up pitch stays out at medium-low confidence, on a line the spec states. The catalog row is entry 209, not the 207 that issue #294 (bundle: design-brief) still names, because PR #305 (the opportunity statement becomes catalog entry 207) took 207 and Cagan's Product Opportunity Assessment took 208 on 2026-10-22 |
 | `user-research-plan` | `user-research-plan` (entry 210, added 2026-10-23 by PR #315) | `research-docs` | **Written 2026-10-23**, and the maintainer took all ten of its recommendations on 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | **Built 2026-10-24**, lean and full, default lean, the first `research-docs` member. Its [build report](../../bundle-builds/reports/user-research-plan_v0.1.0.md) covers the whole build: 14,890,444 weighted, $32.47, 16 agents. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) (adopt the research-docs family contract), accepted 2026-10-23 with no member built. It was built first, by the maintainer's ruling, so that the report's example reports against its plan. Its example plans the 2026-05 Reporting friction study that four shipped examples cite. Catalog entry 210's size moved from S to S/M at landing. The build's research weakens six sentences in this section, recorded in [dated notes](#notes-from-the-plans-build-2026-10-24) rather than rewritten |
 | `user-research-report` | `user-research-report` (entry 18) | `research-docs` | **Written 2026-10-23**, in the same section, with the same rulings of 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | **Built 2026-10-27**, lean and full, default lean, the second `research-docs` member, which completes the family's founding pair. Its [build report](../../bundle-builds/reports/user-research-report_v0.1.0.md) covers the whole build: 19,270,748 weighted, $38.54, 23 agents. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md). It was built second, by the maintainer's ruling. Its example is the friction study's readout, titled with the PRD example's citation, "Discovery readout: Reporting friction study, 2026-05". Catalog entry 18's size moved from S/M/L to S/M at landing, and its relationships gained the plan. The build's research weakens ten places in this section, recorded in [dated notes](#notes-from-the-reports-build-2026-10-27) rather than rewritten |
+| `lean-ux-canvas` | none; entry 211 is added when the bundle lands | `discovery-docs`, by [ADR 0082](decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) | **Researched 2026-10-29** in admission sweep 7. **Written 2026-10-30**; cadence and placement evidence [retrieved and raw-checked the same day](#discovery-docs-sixth-member-at-discover-the-lean-ux-canvas) | **Not yet built.** Priority P2 by the maintainer's choice of 2026-10-30, issue #330 (bundle: lean-ux-canvas). Sweep 7 recommended a decline at medium confidence; the maintainer chose to include the type, and ADR 0082 answers the sweep's two grounds, accepted after the maintainer's read the same day |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -7470,3 +7470,538 @@ Three further notes from the build:
 - **The example's title is the PRD's citation**, "Discovery readout: Reporting friction study, 2026-05", so that a
   reader following the PRD finds it. Only the PRD cites the readout by that name; the other three examples cite
   the study.
+
+
+### discovery-docs (sixth member, at `discover`): the Lean UX Canvas
+
+**`lean-ux-canvas`** - `discovery-docs`, **`phase: discover`**, size **`[lean]`** (recommended), methodology
+**`Lean UX`**, no catalog row until the build lands (entry 211), alias **"Lean Product Canvas"** (recommended).
+Issue #330 (bundle: lean-ux-canvas), priority P2. The family decision is
+[ADR 0082](decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) (lean-ux-canvas joins
+discovery-docs at discover), **accepted 2026-10-30 after the maintainer's read** of it and its contract diff. The
+choices at this section's end are not ruled yet, and they wait for one answer line.
+
+#### The recommendation, and how sure it is
+
+**Build Jeff Gothelf's Lean UX Canvas as the sixth `discovery-docs` member, at `phase: discover`, in one size.**
+Confidence: medium.
+
+The canvas frames one initiative on one page. It links a business problem, the outcomes the business wants, the
+users, the outcomes those users want, and the candidate solutions. It turns those links into hypotheses. It then
+names the most important thing to learn first and the least work that would learn it. All of that comes before
+anyone commits to building.
+
+**What holds the confidence at medium.** Admission is not in doubt. Two things are argued rather than sourced.
+The duplication answer rests on the document's job, and admission sweep 7 read the box map the other way. The
+cadence exception is the second one this family has taken.
+
+#### Demand: an issue, a sweep, and the maintainer's choice
+
+- Issue #330 opened on 2026-10-27, from the PM resources run of 2026-10-23.
+- Admission sweep 7 ran on 2026-10-29 and recommended a decline at medium confidence. Its digest is held locally,
+  at `_local/research/2026-10-29_admission-sweep-7/digest.md`.
+- On 2026-10-30 the maintainer chose to include the canvas and set its priority to P2. Under
+  [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md) (maintainer preference sets the build
+  order), that choice is the reason to build. The sections below make sure the build is sound.
+
+#### Admission: settled on the originator's own pages
+
+Every quotation in this section passed a raw-text check on 2026-10-30, after each site's terms were read. The
+check is held locally, at `_local/research/2026-10-30_canvases-placement/recheck-out.json`.
+
+- **Check 1, a named source publishes the written form.** Gothelf's
+  [Lean UX Canvas V2](https://jeffgothelf.com/blog/leanuxcanvas-v2/) (2019-09-09) gives each of the eight boxes
+  a heading, a rationale and a worked example. Under
+  [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)
+  (canvases are templatable through their written form), that is the written form. Dean Peters's
+  [`template.md`](https://raw.githubusercontent.com/deanpeters/Product-Manager-Skills/main/skills/lean-ux-canvas/template.md)
+  already renders it as Markdown: "Use this template to capture the eight Lean UX Canvas boxes."
+- **Check 2, phase fit.** The canvas fits `discover`, not `define`. The argument is in ADR 0082's "Why
+  `discover`, not `define`".
+- **Check 3, the written form of a canvas.** ADR 0078 admits it.
+- **Check 4, no built bundle does its job.** Argued in ADR 0082's duplication section, labelled the library's
+  POSITION.
+- **Check 5, a software audience.** Gothelf wrote in 2024: "These aren’t prompts specific to UX designers,
+  product managers or software engineers." An Atomic Object post says the canvas "can be leveraged at the
+  beginning of new software products to help align the team around the problem".
+
+**The terms rule.** jeffgothelf.com has no terms page that a probe of four common paths could find, and its home
+page carries no terms link. GitHub's terms permit reading public repositories. Atomic Object's terms were read in
+sweep 7 and carry no bar.
+
+#### The name: the canvas has been renamed
+
+**Gothelf renamed the canvas on 2024-11-04.** "The canvas is now called the Lean Product Canvas." He kept its
+structure: "fundamentally there was nothing wrong with the canvas in its current state rather its positioning
+and prompts had to shift to reflect a broader scope". The same post changed three prompts, by his account.
+Box 2 gained the language of his OKR book, Box 4 gained "jobs to be done" language, and Box 7 now points to his
+Hypothesis Prioritization Canvas.
+
+**Recommended: id `lean-ux-canvas`, title "Lean UX Canvas", alias "Lean Product Canvas".** Confidence: medium.
+The older name is the one issue #330, the third edition of the Lean UX book and every secondary source read use.
+The new name must be an alias, so a reader who searches for it finds the bundle. **The alternative** is id
+`lean-product-canvas`, which follows the originator's current name and would need issue #330 retitled.
+
+**The build's research must read the 2024 PDF.** Gothelf's post links a download of the Lean Product Canvas. This
+spec did not open it. The build should take each box's wording from that PDF where it differs from the 2019
+version, and record both in the companion.
+
+#### Phase and family: `discovery-docs`, at `discover`, by a small amendment (ADR 0082)
+
+**The membership sentence admits it as written.** A `discovery-docs` member exists "to decide whether to build
+something, or which concept to design, before anyone commits to building it." The canvas ends on Box 7, "What’s
+the most important thing we need to learn first?", and Box 8, "What’s the least amount of work to learn the next
+most important thing?"
+
+**It is written as an initiative starts.** Gothelf: "We designed these two canvases to help teams have the right
+conversations as they set out on new initiatives together."
+
+**It is revised while its experiments run, which needs the second cadence exception.** Gothelf's how-to page
+closes the loop after Box 8: "If we should, then we ask the questions again in box number 7." The Atomic Object
+post reports that "there came a point where the canvas had enough definition that it was essentially abandoned
+in favor of other tools". The exception is bounded the same way: revised while one initiative's experiments run,
+finished when the team commits, changes course or stops.
+
+**Not `experimentation-docs`.** That contract admits a document that "plans or reports on one discrete test of a
+hypothesis". The canvas frames many hypotheses and plans no test in detail. Gothelf says experiment design
+"can’t really be boiled down into a box on a canvas". That contract also excludes "a test run before anything
+is built, to decide whether to build it".
+
+#### Where it sits in the chain (POSITION)
+
+**Before `experiment-design-doc`, and before `design-brief` or the PRD.** Box 8 names the least work that would
+test the riskiest assumption. When that work is a real experiment, `experiment-design-doc` plans it. When the
+team commits to a concept, `design-brief` hands it to designers, or the PRD specifies it. No source states this
+sequence, so it is the library's POSITION.
+
+**`problem-statement` may come first, or not at all.** A team that framed its problem in a problem statement can
+copy it into Box 1. A team that did not can start from the canvas. Gothelf's how-to page starts there: "We’ll
+start off with the business problem statement."
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `problem-statement` | A problem statement frames one problem "before anyone names a solution". The canvas names candidate solutions in Box 5 and links them to outcomes in Box 6 |
+| `experiment-design-doc` | It plans one test of one hypothesis, with variants, allocation, metrics and a decision rule. The canvas picks which hypothesis to test and sketches the least work in one box |
+| `design-brief` | It hands one chosen concept to designers. The canvas has not chosen a concept |
+| `product-vision` | Its default `canvas` format states a whole product's direction for years. The Lean UX Canvas frames one initiative for weeks |
+| `user-persona` | It is a researched portrait. Box 3 names the users in a line and may point to a persona |
+| `lean-canvas` (ADR 0083) | Ash Maurya's canvas models a whole business: channels, revenue, costs. Gothelf's frames one initiative's hypotheses and asks nothing about revenue or cost |
+| Jeff Patton's Opportunity Canvas | Not built and not admitted here. Patton's page calls it "the right abstraction level for discussing a new feature idea for an existing product", which overlaps this canvas. The companion should name it and say the library ships one of the two |
+| Gothelf's Lean Strategy Canvas | Not admitted here. Gothelf calls it a tool "designed to set up better work using the Lean Product Canvas". It would be its own candidate |
+| Product Opportunity Assessment (#312) | Marty Cagan's go or no-go assessment of one opportunity, still a candidate. Its boundary with this canvas is untested |
+
+#### Sizes: one, recommended
+
+**`[lean]`, one size.** Confidence: medium-high. Gothelf publishes one shape, and no source read splits a short
+canvas from a long one. **What would change the recommendation:** a source that publishes a short and a long
+form of the canvas as one type.
+
+#### Section design (proposed, for the build's research to test)
+
+The eight boxes, in Gothelf's numbering, then one section this library adds.
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Business Problem | What changed in the world, and why it is a problem for the business now | Gothelf, Box 1 |
+| 2 | Business Outcomes | The change in someone's behaviour the business wants, measurable | Gothelf, Box 2; the 2024 prompt adds OKR language |
+| 3 | Users | Who the team is solving for, including admins and buyers, not only end users | Gothelf, Box 3 |
+| 4 | User Outcomes and Benefits | What the users want to achieve, and how they will feel; the 2024 prompt adds jobs to be done | Gothelf, Box 4 |
+| 5 | Solutions | Candidate solutions, "big, small, innovative and perhaps a bit “weird.”" | Gothelf, Box 5 |
+| 6 | Hypotheses | A table, one row per hypothesis, in Gothelf's grammar: business outcome, user, benefit, solution | Gothelf, Box 6 |
+| 7 | What We Need to Learn First | The riskiest assumption among the hypotheses, chosen for right now | Gothelf, Box 7 |
+| 8 | The Least Work to Learn It | The smallest experiment or research that would test it | Gothelf, Box 8 |
+| 9 | Revisions and What Takes Over | A dated row per pass through Boxes 7 and 8: what was learned and which boxes changed. Then the document that takes over when the canvas is finished | The library's POSITION, from the cadence exception and the family's successor obligation |
+
+**What stays out.** A test plan with variants, allocation or a decision rule belongs in `experiment-design-doc`.
+A specification of how a solution works belongs in the PRD. A revenue or cost model belongs in `lean-canvas`.
+
+**Section 9 is the library's addition.** No source read gives the canvas a revision log. The cadence exception
+needs one, because a canvas revised without a record cannot show what the team learned. The maintainer may
+strike it (choice C5).
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `lean-ux-canvas` |
+| `title` | Lean UX Canvas |
+| `family` | `discovery-docs` |
+| `phase` | `discover` |
+| `sizes_available`, `default_size` | `[lean]`, `lean` |
+| `methodology` | Lean UX |
+| `aliases` | Lean Product Canvas |
+| `pairs_with` | `[]`; no skill in `tools/known-skills.txt` addresses the canvas, checked 2026-10-30 |
+| `catalog_ref` | entry 211, added when the bundle lands |
+
+#### The catalog row the build PR adds
+
+Entry 211, **Lean UX Canvas**, alias Lean Product Canvas, category Research / Discovery, owner Product team
+(cross-functional), size S. The row's `owner`, `formality`, `rarity` and `category` are this spec's judgment, not
+sourced facts, and the row must say so, as entries 208 to 210 do.
+
+#### The licence
+
+Sweep 7 found no Creative Commons licence on Gothelf's pages. The bundle may name the eight boxes and quote
+Gothelf briefly with attribution. Every guidance comment must be the library's own words, and no box's prompt
+text may be copied whole.
+
+#### The example: collaborative analysis, recommended
+
+**Recommended: a canvas for the roadmap's "Collaborative analysis" item.** Confidence: medium-low. The FY26
+roadmap (`product-roadmap_example.md:69-70`) holds it in the Later lane: "Analysts who answer a question get asked
+the same question again by someone else. Nobody has shaped it, and it may belong to the support team rather than
+to this product." That is an unshaped initiative with no investment behind it, which is the canvas's ground.
+Gothelf's Box 5 invites "non-technical solutions", so the support-team option belongs in it.
+
+**Facts the example must carry, with no contradiction.**
+
+- It is dated after the roadmap (February 2026) and cites no later document. The roadmap's Review Trigger
+  (`product-roadmap_example.md:112`) sets a review on 15 October 2026, so a date in September 2026 fits.
+- Box 2's outcome ladders to the strategy's measure: "the share of new accounts that build a second view within 14
+  days, from a 31 percent baseline to 50 percent" (`product-roadmap_example.md:39-40`), or states why it does not.
+- Box 3 uses the Recurring Analyst, by that name, as the strategy requires (`product-strategy_example.md:43-47`).
+- Its Hypotheses table must not name Saved Views sharing as a new solution. The internal announcement already
+  tells the Reporting squad it can "share a saved view with a teammate today"
+  (`announcement-internal-comms_example.md:74`).
+
+**The alternative** is the per-vertical modelling defaults, which the strategy lists as an untested assumption
+(`product-strategy_example.md:125`). It was rejected because the 2026-01-20 business case already funds
+"Question-First Entry and Modelling Defaults", so a canvas would come after the investment decision.
+
+#### Risks for the build and the review
+
+- **The duplication argument could leak into the guide as a sourced claim.** It is the library's POSITION, and
+  the guide must say so.
+- **The 2024 prompt changes rest on Gothelf's summary.** The build must read the PDF before it uses them.
+- **Example reuse.** The templates agent has reused the worked example's scenario in GOOD and WEAK text before.
+  Grep the template for "collaborative", "Recurring Analyst" and "support team" before review.
+- **The canvas is a facilitation tool.** Gothelf calls it one, and the efficacy record says a session's value
+  stays mostly in the room. The companion must not claim the filled canvas is the value.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #330 closes, relabelled `status:built`.
+- The catalog gains entry 211, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) sections 2 and 3 move with the counts.
+- `discovery-docs`' header Members line changes "not yet built" to the build date.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has read ADR 0082 and its contract diff, and accepted or amended them. *(Done 2026-10-30:
+   accepted.)*
+2. The maintainer has answered the choices below.
+3. Issue #330 carries `status:queued`.
+4. The maintainer has asked for the build in their own words, such as "use the workflow". The build runs
+   through the `build-bundle` workflow, and a workflow needs that opt-in.
+
+**Build order: `lean-ux-canvas` first, then `lean-canvas`.** Confidence: medium. Its admission was settled by a
+full sweep, and its family amendment is the smaller one. The two bundles share no example facts, so either order
+works.
+
+**The run.** One PR per bundle, the usual 15 agents on Sonnet: six research dimensions, the drafting stages and
+four review lenses. Measured builds cost $12 to $41 each ([`bundle-builds/INDEX.md`](../../bundle-builds/INDEX.md)),
+and a single-size bundle is not reliably cheaper.
+
+**The six research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | The canvas's history: version 1, version 2 of 2019, the Lean Product Canvas of 2024, and the Lean UX book's three editions. Read the 2024 PDF |
+| `structure` | Each box's wording and hints in both editions, the hypothesis grammar, and how Box 7 uses the Hypothesis Prioritization Canvas |
+| `practice` | How software teams fill and revise it: who is in the room, how long it takes, when it is abandoned. Atomic Object is the one read so far |
+| `debates` | Box 2 against Box 4, which Gothelf calls the most confused part; the canvas as a facilitation tool or a document; the renaming |
+| `relationships` | Patton's Opportunity Canvas, the Lean Strategy Canvas, Maurya's Lean Canvas, experiment design and OKRs |
+| `gap` | The standing gap question, per the runbook |
+
+**Sites the research may not read.** Miro hosts many Lean UX Canvas boards, and miro.com bars automated reading.
+So do Substack, ProductPlan, Atlassian and the other sites in the runbook's table. Any page needed from them goes
+to the maintainer's hand-read list.
+
+**Maintainer-supplied sources** *(added 2026-10-30)*. Both are copyrighted books and stay on the maintainer's
+machine. Quotations are checked against a local text copy, and nothing from them is committed except short
+attributed quotations.
+
+- **Jeff Gothelf and Josh Seiden, *Lean UX*, third edition (O'Reilly, 2021).** The book is "structured around the
+  Lean UX Canvas", as Gothelf's how-to page says, and it is every dimension's primary source. It settles when the
+  canvas is written: "We think that the canvas is a great way to start an initiative." It also says "the canvas
+  is a great structure to use for your kickoff meeting", and "we believe that all team members should participate
+  in the work on the canvas". The `structure` dimension takes each box's chapter from it, and the `practice`
+  dimension takes its account of revising the canvas.
+- **Jeff Gothelf, *Lean UX*, first edition (O'Reilly, 2013).** It predates the canvas and never names it. It
+  serves the `origins` dimension only, for the method the canvas later packaged.
+
+#### The maintainer's choices
+
+Answer in one line, such as "C1 A, C2 A, the rest as recommended".
+
+| # | Choice | Recommended | Alternative |
+|---|---|---|---|
+| C1 | Admit and place the canvas | **A:** `discovery-docs`, `phase: discover`, with the second cadence exception (ADR 0082) | B: decline, as sweep 7 recommended |
+| C2 | Id and name | **A:** id `lean-ux-canvas`, title "Lean UX Canvas", alias "Lean Product Canvas" | B: id `lean-product-canvas`, with issue #330 retitled |
+| C3 | Box wording | **A:** the 2019 headings, with the 2024 PDF's wording wherever it differs, both recorded in the companion | B: the 2019 version only |
+| C4 | Sizes | **A:** `[lean]` | B: `[lean, full]` |
+| C5 | Section 9, Revisions and What Takes Over | **A:** keep it, labelled POSITION | B: the eight boxes only |
+| C6 | The example | **A:** collaborative analysis, roadmap Later item 6 | B: per-vertical modelling defaults |
+| C7 | Build order | **A:** this bundle first, then `lean-canvas` | B: `lean-canvas` first |
+
+### strategy-docs (seventh member, by amendment): the Lean Canvas
+
+**`lean-canvas`** - `strategy-docs`, **`classification: utility`** (recommended), size **`[lean]`**
+(recommended), methodology **`Lean Startup`**, catalog **entry 5**, Tier 2. Issue #337 (bundle: lean-canvas),
+priority P2. The family decision is
+[ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) (lean-canvas joins
+strategy-docs as a seventh member), **accepted 2026-10-30 after the maintainer's read** of it and its contract
+diff. The choices at this section's end are not ruled yet.
+
+#### The recommendation, and how sure it is
+
+**Build Ash Maurya's Lean Canvas as the seventh `strategy-docs` member, at `classification: utility`, in one
+size.** Confidence: medium.
+
+The canvas states a product's business model on one page: its customers and early adopters, their problems and
+how they solve them today, the unique value proposition, the solution, the channels, the revenue streams, the
+cost structure, the key metrics and the unfair advantage. Maurya says it "helps you deconstruct an idea into key
+assumptions or beliefs." It is revised as those beliefs are tested.
+
+**What holds the confidence at medium.** Admission is settled on the originator's own page. Three calls are
+argued rather than sourced: `utility` over `foundation`, second place in the chain, and the answer to the
+duplication finding.
+
+#### Demand: a catalog row, a re-score, and the maintainer's choice
+
+- Catalog entry 5 has carried the type since the catalog was built, under "Strategy / Vision".
+- The 2026-10-11 Define sweep and the 2026-10-20 re-score both kept it out of `define`. Neither tested another
+  family. Their digests are held locally.
+- On 2026-10-30 the maintainer chose to include the canvas, set its priority to P2, and opened issue #337.
+
+#### Admission: re-established on Maurya's own page
+
+**The earlier admission no longer holds.** The 2026-10-11 sweep admitted the canvas on Atlassian's Confluence
+template alone, because its two research dimensions disagreed about the form of Maurya's own site. Sweep 7
+reported Atlassian's site barred under the terms rule on 2026-10-29. That clause has not yet been checked against
+the raw terms page, but no agent reads the site while the report stands.
+
+**Maurya's own page carries admission now.** Every quotation below passed a raw-text check on 2026-10-30.
+leanspark.ai's terms page was read first the same day, and it carries no bar on automated reading.
+
+- **Check 1, the written form.** [What is a Lean Canvas?](https://leanspark.ai/learn/what-is-lean-canvas),
+  bylined Ash Maurya and dated 2024-09-07, teaches each box in prose. It states the origin: "Lean Canvas was created
+  by me, Ash Maurya, and is an adaptation of Alexander Osterwalder’s Business Model Canvas - optimized for the Lean
+  Startup methodology." The 2026-10-11 "document or board" dispute was argued under the test that ADR 0078 (canvases are templatable through
+  their written form) retired.
+- **Check 2, phase fit.** Not applicable: the canvas takes a `classification`.
+- **Check 3, the written form of a canvas.** ADR 0078 admits it.
+- **Check 4, no built bundle does its job.** Argued in ADR 0083's duplication section, labelled the library's
+  POSITION.
+- **Check 5, a software audience.** The page lists "Typical SaaS metrics" as examples for the Key Metrics box.
+
+**The block count is settled.** Maurya's [product page](https://leanspark.ai/leancanvas) lists "The 12 blocks of
+a Lean Canvas". They are the nine boxes plus three sub-blocks. The page glosses "Existing Alternatives" as "How customers solve
+these problems today", "Early Adopters" as "The specific subset of customers you target first", and "High-Level
+Concept" as "The X for Y analogy that makes your idea instantly understandable". The teaching page treats each
+inside its parent box.
+
+**Pages for the maintainer to read by hand, if wanted.** Atlassian's
+[Lean Canvas template](https://www.atlassian.com/software/confluence/templates/lean-canvas) would add a second
+named source. It is not needed.
+
+#### Classification: `utility`, recommended
+
+**The contract's test is "argued-and-durable versus maintained-and-periodic".** Maurya describes a canvas kept
+current. "Unlike a business plan, the goal with a Lean Canvas isn’t to achieve perfection but to take a
+snapshot." "Like everything on the canvas, you start with the best guess and iterate from there." His canvas guide
+says "Your canvas is versioned automatically." Maurya's 2011 walkthrough, "How to Create Your Lean Canvas", says so outright: "The canvas is meant to be an
+organic document that evolves over time". It calls the canvas a format for "tracking ongoing learning". The maintainer supplied that PDF on
+2026-10-30, and both quotations were checked against its text.
+
+**Recommended: `utility`.** Confidence: medium-high. No originator source read states a calendar interval, so
+the revisions follow test results. **The alternative is `foundation`**, for a reader who treats the canvas as a
+founder's argued thesis.
+
+#### The family: `strategy-docs`, by amendment (ADR 0083)
+
+**The membership sentence admits it as written.** A member "sets or tracks product direction above the level of
+any single deliverable". A business model sits above every deliverable.
+
+**`discovery-docs` cannot take it.** That contract requires each member to be "written once for a decision", and
+it sends "a standing instrument revised on a cadence" to a `classification` family.
+
+**A format of a built bundle does not fit either.** `business-case` is written once for one investment.
+`product-strategy` is `foundation`, changed on a timescale of years. Either format would break its host's class.
+
+**The `pairs_with` fact is not a placement argument.** The contract's metadata row names a pm-skills
+`foundation-lean-canvas` skill. Placement rests on the membership sentence and the axis test alone.
+
+#### Where it sits in the chain (POSITION)
+
+**Second, between the product vision and the product strategy.** Confidence: medium-low. The vision says where
+the product is going. The canvas states the business model that could get it there, as beliefs to test. The
+strategy commits to the problems and segments those beliefs support. **The alternative** places the canvas after
+the strategy, as the strategy's business model kept current beside the roadmap. No source states either sequence.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `business-case` | It justifies one investment and is then finished. The canvas models the whole business and is revised as its beliefs are tested |
+| `product-vision` | Its Why Us section asks the unfair-advantage question once, for years. The canvas asks it again whenever the model changes. Pichler names the Lean Canvas as a tool in the same space (`product-vision_companion.md:46-48`) |
+| `product-strategy` | It chooses problems and segments and names no revenue stream, channel or cost structure |
+| `positioning-statement` | It states how the product stands against a named alternative. The canvas's Existing Alternatives sub-block lists how customers solve the problem today, which may include no product at all |
+| `north-star-metrics` | It names one measure of customer value. The canvas lists three to five key metrics that show whether the business model is working |
+| `user-persona` | A researched portrait. The canvas names a segment and its early adopters in a line |
+| Business Model Canvas, catalog entry 4 | Not built. Maurya names the four boxes he replaced: "key partnerships, key resources, key activities, and customer relationships" |
+| `lean-ux-canvas` (ADR 0082) | Frames one initiative's hypotheses and asks nothing about revenue or cost |
+
+#### Sizes: one, recommended
+
+**`[lean]`, one size.** Confidence: medium-high. Maurya publishes one page and says "Embrace a 1-page
+constraint". No source read splits a short canvas from a long one.
+
+#### Section design (proposed, for the build's research to test)
+
+Maurya's teaching page takes the boxes in this order, starting from customers. The Markdown template follows it,
+because a linear document cannot keep the canvas's grid.
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Customer Segments | Who has the problem and who pays, with a line for **Early Adopters** | Maurya's teaching page |
+| 2 | Problem | The top one to three problems, with a line for **Existing Alternatives** | Maurya's teaching page |
+| 3 | Unique Value Proposition | Why the product is different and worth attention, with a line for the **High-Level Concept** | Maurya's teaching page |
+| 4 | Solution | The simplest thing that addresses each problem; Maurya: "Bind a solution to your problem as late as possible." | Maurya's teaching page |
+| 5 | Channels | The path to customers, now and at scale | Maurya's teaching page |
+| 6 | Revenue Streams | How the product makes money, priced now rather than later | Maurya's teaching page |
+| 7 | Cost Structure | What it costs to reach the next milestone, three to six months out | Maurya's teaching page |
+| 8 | Key Metrics | Three to five outcome metrics, leading where possible | Maurya's teaching page |
+| 9 | Unfair Advantage | What cannot be easily copied or bought | Maurya's product page |
+| 10 | Riskiest Beliefs and Next Tests | The beliefs on this canvas to test next, and how | Maurya: "what are the next hypotheses you need to test to move your product forward?" The section itself is the library's POSITION |
+| 11 | Versions | A dated row per revision: what changed and why | The library's POSITION, from the `utility` class; Maurya's tool versions canvases automatically |
+
+**What stays out.** A financial model belongs in `business-case`. A strategy's diagnosis and guiding policy belong
+in `product-strategy`. One initiative's hypotheses belong in `lean-ux-canvas`.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `lean-canvas` |
+| `title` | Lean Canvas |
+| `family` | `strategy-docs` |
+| `classification` | `utility` (recommended) |
+| `sizes_available`, `default_size` | `[lean]`, `lean` |
+| `methodology` | Lean Startup |
+| `aliases` | none recommended; the catalog's "(Maurya adaptation of BMC)" is a note, not a name |
+| `pairs_with` | `[foundation-lean-canvas]`, pinned in `tools/known-skills.txt`; `product-strategy` claims it too, and both claims can stand |
+| `catalog_ref` | entry 5 |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The alias.** "(Maurya adaptation of BMC)" moves to the row's notes.
+- **The purpose.** "Problem-focused one-pager for startups" understates the solution and business-model content,
+  as the 2026-10-11 sweep found. Proposed: "One-page business model, stated as beliefs to test".
+- **The stage.** `ideation` is free text, not a phase, and stays as the catalog's older stage word.
+
+#### The licence
+
+A Creative Commons licence appears only on third-party mirrors, and Maurya's own pages state none. The bundle may
+name the boxes and quote Maurya briefly with attribution. Every guidance comment must be the library's own words.
+
+#### The example: Acme's embedded-analytics line, recommended
+
+**Recommended: a Lean Canvas for an embedded-analytics OEM line of business.** Confidence: medium-low. The FY26
+strategy (`product-strategy_example.md:56-57`) names it a non-target: "Two deals last year, both delivered by the
+services team, both requiring a different product than the one above." A different product with different
+customers is the canvas's ground. Maurya built the canvas "for startups operating under conditions of extreme
+uncertainty", and a new line inside Acme is the closest honest fit to that.
+
+**Facts the example must carry, with no contradiction.**
+
+- It is dated inside FY26, which runs "February 2026 to January 2027" (`product-strategy_example.md:5`), and it
+  models the line as a candidate for FY27, never as FY26 work.
+- Its Customer Segments are software vendors, because "Embedded-analytics vendors ... sell to the software vendor
+  rather than to the operator" (`product-vision_example.md:83-84`).
+- It contradicts no sibling. It must not say the strategy has changed, and the positioning statement's
+  non-targets (`positioning-statement_research-log.md:567`) stay non-targets.
+- Its Versions table shows at least two dated revisions, so the `utility` class is visible.
+
+**The alternatives.** A canvas for Acme's core product would show the format on familiar facts, but Maurya built
+it for uncertainty, not for an established line. A canvas for the enterprise data-governance segment would model
+the existing revenue base, which the strategy holds rather than explores.
+
+#### Risks for the build and the review
+
+- **The name collides inside the library.** `product-vision_guide.md:69` says "the lean canvas" for that bundle's
+  lean-size `canvas` format. The landing PR adds a dated clarification there.
+- **Misattribution is this family's named citation hazard.** Many pages repeat the canvas under Maurya's name, and
+  some describe a "Leaner Canvas" that the 2026-10-11 sweep could not confirm. Quote Maurya only from his own
+  pages or book.
+- **The `utility` call could be over-read.** No source states a calendar interval, and the guide must not invent
+  one.
+- **Example reuse.** Grep the template for "OEM", "embedded" and "software vendor" before review.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #337 closes, relabelled `status:built`.
+- Catalog entry 5's `state` becomes `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) sections 2, 3 and 4 move with the counts.
+- `strategy-docs`' header Members line changes "not yet built" to the build date.
+- `product-vision_guide.md:69` gains its dated clarification.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has read ADR 0083 and its contract diff, and accepted or amended them. *(Done 2026-10-30:
+   accepted.)*
+2. The maintainer has answered the choices below.
+3. Issue #337 carries `status:queued`.
+4. The maintainer has asked for the build in their own words, such as "use the workflow".
+
+**Build order:** second, after `lean-ux-canvas`, as recommended in that section's choice C7.
+
+**The run.** One PR, the usual 15 agents on Sonnet, $12 to $41 by the measured range.
+
+**The six research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Maurya's original blog post, the editions of *Running Lean*, and the move from leanstack.com to leanspark.ai |
+| `structure` | Each box and sub-block in Maurya's words, his fill order, and the 20-minute and 1-page rules |
+| `practice` | How software teams and founders revise a canvas, and how often, from named sources only |
+| `debates` | Startup against established company; canvas against business plan; the solution-first trap Maurya warns about; the unconfirmed "Leaner Canvas" |
+| `relationships` | The Business Model Canvas, the Lean UX Canvas, the Product Vision Board, the business case and the North Star |
+| `gap` | The standing gap question, per the runbook |
+
+**Sites the research may not read.** Atlassian, Miro, Substack, ProductPlan, Product School and the other sites in
+the runbook's table. Many Lean Canvas templates live on them. Any page needed from them goes to the maintainer's
+hand-read list.
+
+**Maintainer-supplied sources** *(added 2026-10-30)*. Both are copyrighted and stay on the maintainer's machine.
+Quotations are checked against a local text copy, and nothing from them is committed except short attributed
+quotations.
+
+- **Ash Maurya, "How to Create Your Lean Canvas" (2011)**, a 40-page PDF whose pages carry the running head
+  "Running Lean". It is the `structure` and `origins` dimensions' primary source. It teaches the customer-first fill
+  order, sketching "a Lean Canvas for each customer segment", and the canvas as "an organic document that evolves
+  over time". Its own case study is Maurya's canvas for the Lean Canvas software itself, which serves check 5.
+- **Ash Maurya, Running Lean Workshop (Udemy, 2014)**, 30 video lessons. Among them are "Sketching A Lean Canvas",
+  one per box, and "Iteration Meta Pattern On The Lean Canvas". No transcript exists, and an agent cannot watch
+  video. The maintainer may watch the iteration lesson and note what it says about revising the canvas. Nothing
+  in the spec rests on it.
+
+#### The maintainer's choices
+
+Answer in one line, such as "D1 A, D2 B, the rest as recommended".
+
+| # | Choice | Recommended | Alternative |
+|---|---|---|---|
+| D1 | Admit and place the canvas | **A:** `strategy-docs`, seventh member (ADR 0083) | B: leave it out |
+| D2 | Classification | **A:** `utility` | B: `foundation` |
+| D3 | Chain position | **A:** second, between the vision and the strategy | B: after the strategy, beside the roadmap |
+| D4 | Sizes | **A:** `[lean]` | B: `[lean, full]` |
+| D5 | Sections 10 and 11, Riskiest Beliefs and Versions | **A:** keep both, labelled POSITION | B: the nine boxes only |
+| D6 | The example | **A:** the embedded-analytics OEM line | B: Acme's core product; C: the enterprise segment |
+| D7 | `pairs_with` | **A:** `[foundation-lean-canvas]` | B: `[]` |

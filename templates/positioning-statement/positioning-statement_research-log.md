@@ -480,7 +480,7 @@ Marketing Alliance's "Update this section regularly" is a battlecard's pricing s
 quarterly refresh" line is about battlecards maintained by AI tools [48].
 
 **What this means for the classification, laid out and not resolved.** The contract's test is "argued-and-durable
-versus maintained-and-periodic" (`docs/internal/contracts/strategy-docs.md:85`). Its `foundation` members "change
+versus maintained-and-periodic" (`docs/internal/contracts/strategy-docs.md:85` as of `3f3a56ec`). Its `foundation` members "change
 on a timescale of years" (`:71-72`). Its `utility` members are "revised on a cadence", and "A roadmap nobody has
 updated in six months is not a stale foundation, it is a broken instrument." (`:81-83`). The sources split on that
 test. A six-month or annual check-in [26], [30], [52] and Dunford's stage-by-stage change [11] read as maintained
@@ -558,7 +558,7 @@ cite sources for both a check-in interval and named triggers.
 
 **The worked example.** The contract requires an Acme Analytics example that "states Acme's positioning against a
 named alternative, for the segment the product strategy example already chose, and contradicts neither sibling"
-(`docs/internal/contracts/strategy-docs.md:140-142`). An example that invents another company is out of contract
+(`docs/internal/contracts/strategy-docs.md:140-142` as of `3f3a56ec`). An example that invents another company is out of contract
 (`:146-147`). What the siblings fix:
 
 - **Target.** The strategy's target is "the unaccompanied analyst", whom downstream documents call the "Recurring
@@ -590,16 +590,16 @@ decision and a dated correction to the spec's window, not a quiet choice. Whatev
 cite the North Star example, which postdates it.
 
 **Third place leaves live sentences in `north-star-metrics` stale.** The amended contract already puts the North
-Star fourth (`strategy-docs.md:180-182`). Its example says "this type sits third in the
+Star fourth (`strategy-docs.md:180-182` as of `3f3a56ec`). Its example says "this type sits third in the
 `strategy-docs` chain" (`templates/north-star-metrics/north-star-metrics_example.md:15`). Its companion says
 "This library places it third, between the strategy and the roadmap" (`north-star-metrics_companion.md:26-27`),
 and again at `:249-250`. The history line at `north-star-metrics_history.md:26` is a record and stays. The spec
 says no existing member's companion changes beyond the vision note (`docs/internal/tier2-specs.md:6514-6515`), and
-the contract's change note says the North Star companion gains no line (`strategy-docs.md:189-190`). **Whether
+the contract's change note says the North Star companion gains no line (`strategy-docs.md:189-190` as of `3f3a56ec`). **Whether
 these are dated factual corrections, outside that rule, is a maintainer call.**
 
 **The no-cadence sentence lives in five places.** The spec at `docs/internal/tier2-specs.md:6288-6289`, its
-section-design row at `:6407`, and its risk 5 at `:6468-6471`; the contract at `strategy-docs.md:78`; and ADR 0076
+section-design row at `:6407`, and its risk 5 at `:6468-6471`; the contract at `strategy-docs.md:78` (as of `3f3a56ec`); and ADR 0076
 at `0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md:142`. Each is contradicted by [26], [30],
 [52] and [8]. The contract allows a dated in-place correction of an unsourced claim under procedure 11
 (`strategy-docs.md:9-11`).

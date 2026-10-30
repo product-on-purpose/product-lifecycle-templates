@@ -1,21 +1,24 @@
 # Family Contract: strategy-docs
 
-Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md))
+Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amended 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
-Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); not yet built)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.3.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+Version: 0.4.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
 claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
 see the change note at the end)
 
 ## 1. Membership
 
 A bundle belongs to this family when its document type **sets or tracks product direction above the level of
-any single deliverable**. Its members answer, in order, six questions a product organization cannot avoid:
+any single deliverable**. Its members answer, in order, seven questions a product organization cannot avoid:
 
 - a **product vision** says where we are trying to get to, and why it is worth getting to;
+- a **Lean Canvas** says which business model could get us there, as beliefs to test: whose problems, what
+  value, how we reach and earn from them, what it costs, and how we will know it works (added 2026-10-30,
+  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md));
 - a **product strategy** says which problems we will solve to get there, and which we will not;
 - a **positioning statement** says how we stand against a named alternative, for which customer, now
   (added 2026-10-19, [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md));
@@ -30,14 +33,18 @@ drift, a roadmap that does not implement the strategy is a wishlist, and OKRs th
 against the roadmap are a reporting exercise. **This library holds that** a North Star that does not measure
 the strategy is a vanity metric, and that a roadmap that cannot say which input it moves has lost its link to
 the North Star. That link is the library's POSITION: no source read states either failure as documented
-practice. Its place fourth in the chain is inferred from four publishers who describe the North Star as
+practice. Its place in the chain, after the strategy, is inferred from four publishers who describe the North Star as
 measuring the current strategy. No source states that sequence, and Tim Herbig orders the two the other way
 (ADR 0070). **This library also holds that** a positioning statement that does not match the segment and
 the problems the strategy has already chosen is drift the strategy already paid for. That link is also the
-library's POSITION: no source read states this failure as documented practice either. Its place third in
+library's POSITION: no source read states this failure as documented practice either. Its place in
 the chain, between the strategy and the North Star metric, is argued from what positioning depends on, not
-sourced; Devika Nair's framing of positioning "as part of the vision" (ADR 0076) pulls toward second place
-instead. Each member must state its position against the other members in its companion's Relationships
+sourced; Devika Nair's framing of positioning "as part of the vision" (ADR 0076) pulls toward an earlier place
+instead. **This library also holds that** a strategy whose segments and problems contradict the current Lean
+Canvas has drifted from the business model it depends on (added 2026-10-30, ADR 0083). That link is
+the library's POSITION too, and so is the canvas's place second in the chain, between the vision and the
+strategy. No source states that sequence; a reader who sees the canvas as the strategy's business model, kept
+current beside the roadmap, would place it after the strategy. Each member must state its position against the other members in its companion's Relationships
 section. That requirement is this library's own reasoning, not received practice (corrected 2026-08-07; see the
 change note): no source read across any of the first four members' research logs documents teams producing all
 four and having them contradict each other as a real-world failure mode, only named authors and sources
@@ -59,8 +66,8 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `strategy-docs` |
-| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `product-strategy`, `positioning-statement` and `north-star-metrics`; `utility` for `product-roadmap` and `okrs`. See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
-| methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method), and so is `north-star-metrics` (the artifact is the North Star Framework's own written output; added 2026-10-12), while the vision, the strategy, the positioning statement and the roadmap are methodology-agnostic. A single required value would force at least one member to lie about itself. |
+| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `product-strategy`, `positioning-statement` and `north-star-metrics`; `utility` for `product-roadmap`, `okrs` and `lean-canvas` (recommended; added 2026-10-30, ADR 0083, proposed). See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
+| methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method), and so is `north-star-metrics` (the artifact is the North Star Framework's own written output; added 2026-10-12), and so is `lean-canvas` (the artifact is Ash Maurya's adaptation of the Business Model Canvas, "optimized for the Lean Startup methodology"; added 2026-10-30, ADR 0083, proposed), while the vision, the strategy, the positioning statement and the roadmap are methodology-agnostic. A single required value would force at least one member to lie about itself. |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`); two qa-docs members have already departed from them on evidence. |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
 | pairs_with | the pm-skills skill ID(s) this template serves, or `[]`; every value must resolve against the pinned skill-ID list. **Unlike `qa-docs`, this family has real pairings**: `foundation-okr-writer` and `measure-okr-grader` both exist and both address `okrs` directly, and `foundation-lean-canvas` describes itself as serving strategy framing and stress-testing. Each member claims only what is true of that member. |
@@ -80,10 +87,15 @@ This one cannot, and forcing it to would misdescribe at least two of its members
   in this bullet. *(2026-10-20, a dated correction of an unsourced claim under procedure 11: the build found three sources that state an interval. April Dunford describes a positioning check-in "every six months" and, elsewhere, "a couple of times a year"; Abinanti says to audit the statement "every 12 months". CLIMB says a positioning statement "isn't permanent, but it shouldn't change often". The `foundation` reading stands on that durability and on the check-in's job, which is to decide whether an adjustment is needed; the maintainer ruled out `utility` on 2026-10-20. See [`positioning-statement_research-log.md`](../../../templates/positioning-statement/positioning-statement_research-log.md).)*
 - **`product-roadmap` and `okrs` are `utility`.** They are standing operational instruments, revised on a
   cadence, and their value comes precisely from being kept current. A roadmap nobody has updated in six
-  months is not a stale foundation, it is a broken instrument.
+  months is not a stale foundation, it is a broken instrument. **`lean-canvas` is `utility` too,
+  recommended** (added 2026-10-30,
+  [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md)). Ash Maurya
+  calls a canvas "a snapshot" and says "you start with the best guess and iterate from there". Its revisions
+  follow test results rather than a calendar, and no originator page read states an interval. `foundation`
+  is the considered alternative.
 
 The distinction that does the work is **argued-and-durable versus maintained-and-periodic**, and it is the
-same distinction `governance-docs` used to claim `utility` for a risk register. All six members are standing
+same distinction `governance-docs` used to claim `utility` for a risk register. All seven members are standing
 artifacts with no single lifecycle phase, which is what makes the family `classification`-axis; they simply
 sit in two different classes within it.
 
@@ -141,6 +153,9 @@ in [`tier2-specs.md`](../tier2-specs.md) sets the constraints). The positioning 
 Acme's positioning against a named alternative, for the segment the product strategy example already chose,
 and contradicts neither sibling (added 2026-10-19,
 [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md); its spec sets
+the constraints). The Lean Canvas's example models the embedded-analytics OEM line that the product strategy
+example names as a non-target needing "a different product", and contradicts no sibling (added 2026-10-30,
+[ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md); its spec sets
 the constraints). **When this family completes,
 the library will hold one continuous worked thread from a product vision down to a bug report**, which is a
 demonstration no single bundle can make. A member whose example invents an unrelated company forfeits that and
@@ -174,6 +189,20 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**0.4.0, 2026-10-30, [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md):
+a seventh member, and the third widening of this family's list of questions.** *(Accepted 2026-10-30
+after the maintainer's read.)* `lean-canvas` joins at `classification: utility` (recommended), placed second in the
+chain, between the product vision and the product strategy. That place is argued rather than sourced, and
+ADR 0083 records the alternative, after the strategy. The membership sentence admitted the type as written.
+What blocked it was the closed list, so section 1's "six questions" becomes "seven questions" and gains a second
+bullet. The chain sentences gain a third POSITION link. Because the list grew at second place, two sentences
+that counted places lose their ordinals: the North Star metric's place is now "after the strategy", and the
+positioning statement's place is "between the strategy and the North Star metric", with Nair's reading pulling
+"toward an earlier place". Section 2's classification row, methodology row and axis note name the new member,
+and the axis note now counts seven members. Section 4's obligation gains its example. **No structural
+obligation changed**, and check K's registry entry needs no edit, because `utility` is already in the set it
+gates, and `[lean]` alone is already an allowed `sizes_available` value.
 
 **0.3.0, 2026-10-19, [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md):
 a sixth member, and the second widening of this family's list of questions.** `positioning-statement` joins

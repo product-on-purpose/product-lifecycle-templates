@@ -235,7 +235,7 @@ that design briefs should not ever be set in stone and should always be able to 
 as there are mechanisms in place to keep all parties updated and involved in the changes" [2]. Wikipedia: "They
 usually change over time and are adjusted as the project scope evolves." [23]. The Design Commission for Wales:
 "Complex projects rarely have all aspects of the brief fully defined at inception." [5]. Jones and Askland's
-validation-tool line [24] makes five. **This supports the contract's cadence exception** (`discovery-docs.md:77-83`)
+validation-tool line [24] makes five. **This supports the contract's cadence exception** (`discovery-docs.md:77-83` as of `3f3a56ec`)
 at high confidence. **No source says when a brief is finished.** The bound, that it ends when the handed-off design
 work is done, is the library's.
 
@@ -349,7 +349,7 @@ timing is the library's POSITION. Confidence: medium.
 
 **Recording approval is not authorizing the project.** The Eleven Lessons report says the sign-off gave "the
 corporate and financial backing to the development of one or more concepts" [14]. That backing is the investment
-decision the define rule excludes (`discovery-docs.md:113`). ADR 0077's table permits a define document to say
+decision the define rule excludes (`discovery-docs.md:113` as of `3f3a56ec`). ADR 0077's table permits a define document to say
 `that design work may begin` (`0077-define-ends-with-a-chosen-concept.md:137`). So The Handoff may record that
 design was approved, by whom and when. It may not be the record that grants the backing. This is the library's
 reading. Confidence: medium.

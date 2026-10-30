@@ -14,7 +14,9 @@ family; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built 202
 ([ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md), assigned 2026-10-11 at
 `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day),
 `design-brief` ([ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md), assigned
-2026-10-22 at `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day).
+2026-10-22 at `phase: define`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); built the same day),
+`lean-ux-canvas` ([ADR 0082](../decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md), assigned
+2026-10-30 at `phase: discover`; specced the same day in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 > **Resolved 2026-08-05, [ADR 0035](../decisions/0035-prototype-brief-fails-the-admission-test.md).**
 > `prototype-brief` was ratified as a **provisional** member, conditional on its own research passing
@@ -55,7 +57,11 @@ that precede every product decision:
   [ADR 0069](../decisions/0069-problem-statement-joins-discovery-docs.md));
 - a **design brief** hands the chosen problem, and the one concept chosen for design, to the people who will
   design it, before anyone specifies how it works (added 2026-10-22,
-  [ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md)).
+  [ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md));
+- a **Lean UX Canvas** frames one initiative's business problem, outcomes, users and candidate solutions as
+  hypotheses, and names what to learn first and the least work that will learn it, before anyone commits to
+  building (added 2026-10-30,
+  [ADR 0082](../decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md)).
 
 Another candidate, `prototype-brief`, would have said what to build cheaply first, in order to find out
 whether the team is right. It was tested and did not ship: no named source publishes it as a written document
@@ -81,6 +87,13 @@ still finished when the design work it hands off is done, and it never becomes a
 on a cadence. `design-brief` is that member (added 2026-10-22,
 [ADR 0079](../decisions/0079-design-brief-joins-discovery-docs-at-define.md)), and no other member takes this
 exception.
+
+**A second exception, added 2026-10-30 by
+[ADR 0082](../decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md).** A `discover` member that
+frames one initiative's hypotheses may be revised while the team's experiments on them run, because its sources
+describe the team returning to it after each experiment. It is finished when the team commits to building,
+changes course or stops the initiative, and it never becomes a standing instrument revised on a cadence.
+`lean-ux-canvas` is that member, and no other member takes this exception.
 
 **On `prototype-brief`: tested 2026-08-05 and not admitted** (kept for the reasoning it records). It was a
 **new type**, added by
@@ -163,7 +176,10 @@ than inventing a new company.
 - the **design brief** hands the Saved Views concept to the people who will design it, dated after the
   2026-05 Reporting friction study and before the Saved Views PRD that specifies it, and describing nothing
   the PRD later decides (added 2026-10-22, ADR 0079; its example is set out in
-  [`tier2-specs.md`](../tier2-specs.md)).
+  [`tier2-specs.md`](../tier2-specs.md));
+- the **Lean UX Canvas** frames the collaborative analysis that the FY26 roadmap's Later lane says "Nobody has
+  shaped", dated after the roadmap and citing no later document (added 2026-10-30, ADR 0082; its example is set
+  out in [`tier2-specs.md`](../tier2-specs.md)).
 
 `prototype-brief`'s bullet, which would have commissioned a cheap test of an unproven assumption, is removed:
 it was tested and did not ship (ADR 0035), and it never had an example to chain.
@@ -270,3 +286,13 @@ shared-scenario bullet, which extends the delivery thread backward from the Save
 obligation changed**: check K still gates `["discover", "define"]`, and `[lean, full]` is already the default size
 shape. No built member changes phase or family. ADR 0079 records the costs, among them a second phase inversion
 inside the family, since a `define` member may follow the `discover`-phase project brief.
+
+**0.6.0, 2026-10-30, [ADR 0082](../decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md): a sixth
+member, and a second cadence exception.** *(Accepted 2026-10-30 after the maintainer's read.)*
+`lean-ux-canvas` joins at `phase: discover`. Section 1's membership sentence admits it as written, because the
+canvas decides what to learn before anyone commits to building. Section 1's member list gains a bullet. Its
+cadence clause gains a second bounded exception, for a `discover` member that frames one initiative's
+hypotheses and is revised while their experiments run. The first exception's words "no other member takes this
+exception" still refer to that first exception only. Section 4 gains the member's shared-scenario bullet.
+**No enforcement obligation changed**: check K still gates `["discover", "define"]`, and `[lean]` is already an
+allowed size shape. No built member changes phase or family.
