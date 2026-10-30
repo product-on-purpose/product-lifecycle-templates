@@ -154,7 +154,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 52 -->
-<!-- counts: bundles=52, tier1=25, adrs=81 -->
+<!-- counts: bundles=52, tier1=25, adrs=83 -->
 **Fifty-two bundles in eleven families, all of them complete.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
 ### `delivery-docs` (ten bundles, the family complete)
@@ -363,7 +363,7 @@ All fifty-two bundles currently pass. GitHub Actions runs these on every push to
 
 ### At a glance
 
-<!-- counts: bundles=52, tier1=25, adrs=81, cisteps=32 -->
+<!-- counts: bundles=52, tier1=25, adrs=83, cisteps=32 -->
 
 |  |  |
 |---|---|
@@ -373,7 +373,7 @@ All fifty-two bundles currently pass. GitHub Actions runs these on every push to
 | **Catalog** | 210 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
 | **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 103 template variants addressable |
-| **Decision records** | 81 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted except [0068](docs/internal/decisions/0068-define-means-problem-framing.md), which [0077](docs/internal/decisions/0077-define-ends-with-a-chosen-concept.md) supersedes |
+| **Decision records** | 83 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted except [0068](docs/internal/decisions/0068-define-means-problem-framing.md), which [0077](docs/internal/decisions/0077-define-ends-with-a-chosen-concept.md) supersedes, and two proposed on 2026-10-30, [0082](docs/internal/decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) and [0083](docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
 | **Real usage** | Not published as a count ([ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)). Coverage is not validation, and no page calls a bundle proven |
 | **License** | [Apache-2.0](LICENSE) |
 

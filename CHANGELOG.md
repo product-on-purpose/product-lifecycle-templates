@@ -12,7 +12,21 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Two canvases are specced and proposed for the library, at the maintainer's request.** Jeff Gothelf's Lean
+  UX Canvas, issue #330, would join `discovery-docs` at `phase: discover` by
+  [ADR 0082](docs/internal/decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md). Ash Maurya's Lean
+  Canvas, issue #337, would join `strategy-docs` at `classification: utility` by
+  [ADR 0083](docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md). Both records
+  are proposed, and each amends a family contract, so neither takes effect before the maintainer's read. Both
+  specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`.
+
 ### Fixed
+
+- **The Define re-score's "stays out" read as a library-wide verdict.** It meant "not a `define` document".
+  The build backlog page now says so, and notes that 18 of the 48 candidates it kept out passed admission and
+  were never tested in another family. The Lean Canvas was one of them.
 
 - **The `spike-report` admission evidence still called its decision unmade and the bundle unbuilt.** ADR 0048
   admitted it on 2026-09-12, and it shipped that day. A dated correction now says so, and the original

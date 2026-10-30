@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29.** The issue counts in section 2 were
-read from GitHub on 2026-10-29, at the v0.23.0 release, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29 and 2026-10-30.** The issue counts in section 2 were
+read from GitHub on 2026-10-30, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -37,7 +37,8 @@ run and its label now reads `status:parked`.
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
-| [#330](https://github.com/product-on-purpose/product-lifecycle-templates/issues/330) | `lean-ux-canvas` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
+| [#330](https://github.com/product-on-purpose/product-lifecycle-templates/issues/330) | `lean-ux-canvas` | Candidate, opened 2026-10-27; raised to P2 by the maintainer on 2026-10-30, who chose to include it after admission sweep 7 recommended a decline | P2 | None; entry 211 arrives with the build | Proposed: `discovery-docs`, `phase: discover`, by [ADR 0082](decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) | The maintainer's read of ADR 0082 and its contract diff, and the spec's choices C1 to C7 in [`tier2-specs.md`](tier2-specs.md#discovery-docs-sixth-member-at-discover-the-lean-ux-canvas) |
+| [#337](https://github.com/product-on-purpose/product-lifecycle-templates/issues/337) | `lean-canvas` | Candidate, opened 2026-10-30 by the maintainer's choice to include it | P2 | 2 | Proposed: `strategy-docs`, `classification: utility`, by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) | The maintainer's read of ADR 0083 and its contract diff, and the spec's choices D1 to D7 in [`tier2-specs.md`](tier2-specs.md#strategy-docs-seventh-member-by-amendment-the-lean-canvas) |
 | [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned; labelled `phase:discover` | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -45,9 +46,9 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 5 candidates, 4 parked |
-| Priority | P3: 8, P4: 1 |
-| Tier | Tier 2: 5, Tier 3: 1, no catalog row: 3 |
+| Status | 6 candidates, 4 parked |
+| Priority | P2: 2, P3: 7, P4: 1 |
+| Tier | Tier 2: 6, Tier 3: 1, no catalog row: 3 |
 
 Sixty candidate issues are closed: 52 built and 8 declined. The last to close was #317 (user-research-report). Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
@@ -112,7 +113,15 @@ three, and the main loop checked the critic's blocking findings against the sour
 | Returns for an admission sweep elsewhere | 4 | `metric-tree` (as a classification, never a phase); design principles (`foundation`); the DMAIC project charter (which points at the unbuilt `project-charter`); GDPR records of processing activities (a standing instrument) |
 | Evidence insufficient: one read would settle it | 7 | NASA's needs, goals and objectives statement with its concept of operations; a platform and device support matrix; the DoD Initial Capabilities Document; the proto-persona; an accessibility conformance target; a regulatory requirements register; the "Target" phase of the Behavioural Insights Team's TEST method |
 | Already decided | 6 | `problem-statement` (built, `define`); `business-case` (stays `discover`); `trade-study` (stays `develop`); the point of view statement (an alias of `problem-statement`, sitting item D6); `user-persona` (stays `discover`); `concept-test-validation-brief` (parked by the maintainer) |
-| Stays out | 48 | Every other candidate, among them `lean-canvas`, `opportunity-solution-tree`, the Shape Up pitch and LEGO's Foundation Document |
+| Stays out of `define` | 48 | Every other candidate, among them `lean-canvas`, `opportunity-solution-tree`, the Shape Up pitch and LEGO's Foundation Document |
+
+**"Stays out" means out of `define`, not out of the library.** *(Added 2026-10-30.)* The re-score tested
+every candidate against the `define` rule only. Its brief offered an "other-admission" outcome for a type that
+passes admission but belongs elsewhere, and four candidates received it. Eighteen of the 48 rows that stay out
+of `define` passed admission and were never tested in another family. They include the competitive analysis, the
+threat model, the data protection impact assessment, the accessibility conformance report, the market
+requirements document and `lean-canvas`. Each keeps `state: candidate` in the catalog. The score files are held
+locally, at `_local/research/2026-10-20_define-rescore/`.
 
 **The design brief returns in the Design Council's sense only, with medium confidence.** The Design Council
 names a design brief as Define's result, one "which clearly defines the challenge", and that document clears
@@ -146,6 +155,11 @@ a fair one.
 canvas's admission rests on one vendor page, it carries its Solution block beside its Problem block from the
 first draft, and it is revisited rather than finished. The opportunity solution tree's sources are boards, and
 ADR 0078 keeps the rule that a vendor's board template is not a named source publishing a written form.
+*(2026-10-30: the lean canvas's grounds answered the `define` question only. Its admission now rests on Ash
+Maurya's own teaching page, because Atlassian's site is treated as barred under the terms rule.
+[ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) proposes it for `strategy-docs`
+at `classification: utility`, where a canvas revised rather than finished fits, and the maintainer gave it
+priority P2 as issue #337.)*
 
 **The catalog's `definition` stage is not a define count.** The catalog files every type under one of 30 older
 stages, which predate the library's six phases. That stage holds three types, among them the PRD, which
