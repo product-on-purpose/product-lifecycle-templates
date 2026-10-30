@@ -68,7 +68,7 @@ canvas, the Lean Strategy Canvas.
 - **A phase value has to mean one thing.** The canvas lists candidate solutions and hypotheses about them, and
   it chooses no concept. `define` excludes that, so the honest phase is `discover`.
 - **A widening must be the smallest honest one.** The cadence exception must be bounded the way
-  [ADR 0077](0077-define-ends-with-a-chosen-concept.md)'s exception for `design-brief` is bounded: revised while
+  [ADR 0077](0077-define-ends-with-a-chosen-concept.md) (define ends with a chosen concept)'s exception for `design-brief` is bounded: revised while
   one piece of work runs, and finished when that work ends.
 - **A new member must carry a job no built member carries.** The duplication ground has to be answered on the
   document's job, not on its boxes.
@@ -211,7 +211,7 @@ shape. The exact text is in the contract diff that accompanies this record.
 - **`pairs_with: []`.** No skill in `tools/known-skills.txt` addresses a Lean UX Canvas, checked on 2026-10-30.
 - **The Lean Strategy Canvas and Patton's Opportunity Canvas stay unadmitted.** Each would be its own candidate,
   tested on its own evidence.
-- **The bundle stays subject to ADR 0030.** This record removes the family objection only.
+- **The bundle stays subject to [ADR 0030](0030-templating-scope-markdown-documents.md) (templating scope).** This record removes the family objection only.
 
 ## More Information
 

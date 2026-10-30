@@ -7512,8 +7512,8 @@ check is held locally, at `_local/research/2026-10-30_canvases-placement/recheck
 - **Check 1, a named source publishes the written form.** Gothelf's
   [Lean UX Canvas V2](https://jeffgothelf.com/blog/leanuxcanvas-v2/) (2019-09-09) gives each of the eight boxes
   a heading, a rationale and a worked example. Under
-  [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md),
-  that is the written form. Dean Peters's
+  [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)
+  (canvases are templatable through their written form), that is the written form. Dean Peters's
   [`template.md`](https://raw.githubusercontent.com/deanpeters/Product-Manager-Skills/main/skills/lean-ux-canvas/template.md)
   already renders it as Markdown: "Use this template to capture the eight Lean UX Canvas boxes."
 - **Check 2, phase fit.** The canvas fits `discover`, not `define`. The argument is in ADR 0082's "Why
@@ -7777,7 +7777,8 @@ leanspark.ai's terms page was read first the same day, and it carries no bar on 
 - **Check 1, the written form.** [What is a Lean Canvas?](https://leanspark.ai/learn/what-is-lean-canvas),
   bylined Ash Maurya and dated 2024-09-07, teaches each box in prose. It states the origin: "Lean Canvas was created
   by me, Ash Maurya, and is an adaptation of Alexander Osterwalder’s Business Model Canvas - optimized for the Lean
-  Startup methodology." The 2026-10-11 "document or board" dispute was argued under the test ADR 0078 retired.
+  Startup methodology." The 2026-10-11 "document or board" dispute was argued under the test that ADR 0078 (canvases are templatable through
+  their written form) retired.
 - **Check 2, phase fit.** Not applicable: the canvas takes a `classification`.
 - **Check 3, the written form of a canvas.** ADR 0078 admits it.
 - **Check 4, no built bundle does its job.** Argued in ADR 0083's duplication section, labelled the library's
@@ -7798,8 +7799,8 @@ named source. It is not needed.
 
 **The contract's test is "argued-and-durable versus maintained-and-periodic".** Maurya describes a canvas kept
 current. "Unlike a business plan, the goal with a Lean Canvas isn’t to achieve perfection but to take a
-snapshot." "Like everything on the canvas, you start with the best guess and iterate from there." His product
-page says "Your canvas is versioned automatically."
+snapshot." "Like everything on the canvas, you start with the best guess and iterate from there." His canvas guide
+says "Your canvas is versioned automatically."
 
 **Recommended: `utility`.** Confidence: medium. No originator page read states a calendar interval, so the
 revisions follow test results. **The alternative is `foundation`**, for a reader who treats the canvas as a

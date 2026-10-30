@@ -24,8 +24,9 @@ consulted: [claude]
   automated reading, and this record does not rely on it.
 - **Why an amendment.** The membership sentence admits the canvas as written. What blocks it is the closed list
   of six questions that follows the sentence. This is the third widening of that list, after
-  [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) and
-  [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md).
+  [ADR 0070](0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md) (north-star-metrics joins strategy-docs)
+  and [ADR 0076](0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins
+  strategy-docs).
 - **What this does not admit.** It does not admit Osterwalder's Business Model Canvas, catalog entry 4, or Jeff
   Gothelf's Lean Strategy Canvas. Gothelf's Lean UX Canvas is placed separately, by
   [ADR 0082](0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) (lean-ux-canvas joins discovery-docs).
@@ -118,7 +119,7 @@ comes precisely from being kept current". Maurya describes a canvas kept current
 - "Like everything on the canvas, you start with the best guess and iterate from there."
 - On costs: "First, model the runway you will need to define, build, and launch your MVP. Then, revise after
   you get there."
-- His product page says "Your canvas is versioned automatically" and "Variants are alternative versions of your
+- His canvas guide says "Your canvas is versioned automatically" and "Variants are alternative versions of your
   business model."
 
 **No originator page read states a calendar interval.** The revisions are event-driven: a test result, a
@@ -210,7 +211,7 @@ The exact text is in the contract diff that accompanies this record.
 - **The Business Model Canvas stays a separate candidate.** Maurya's page names the four boxes he replaced:
   "key partnerships, key resources, key activities, and customer relationships". That list is the boundary the
   companion draws.
-- **The bundle stays subject to ADR 0030.** This record removes the family objection only.
+- **The bundle stays subject to [ADR 0030](0030-templating-scope-markdown-documents.md) (templating scope).** This record removes the family objection only.
 
 ## More Information
 
