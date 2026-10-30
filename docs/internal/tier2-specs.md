@@ -2545,7 +2545,7 @@ family's chronology obligation: the example must precede what it leads to (the b
 decision, and any future initiation documentation) and must not cite either as existing. It sits after the
 [user persona](../../templates/user-persona/user-persona_example.md) (2026-01-05), which itself claims only to sit "ahead
 of even the product vision" (`user-persona_example.md:18`); this brief's later date does not disturb that
-claim. `README.md:224` separately calls the persona "the earliest document in the library", a stronger,
+claim. `README.md:224` (as of `45019c5e`) separately calls the persona "the earliest document in the library", a stronger,
 published claim this date also respects.
 
 **Facts it reads, by file and line, and nothing it must not.** From `business-case_example.md`: the sponsor,
@@ -2582,7 +2582,7 @@ Priya Nair, PM, Reporting (line 6), as this brief's named Project Manager.
    "sits near the start of the shared timeline, ahead of everything except its sibling user persona and the
    product vision it builds on." A brief dated 2026-01-16 makes that sentence false the moment it ships. The
    landing PR must add a one-line dated correction to that callout, the same pattern already used for
-   `README.md:224`'s "earliest document" claim once a still-earlier document exists. *(Done 2026-09-29: the callout,
+   `README.md:224` (as of `45019c5e`)'s "earliest document" claim once a still-earlier document exists. *(Done 2026-09-29: the callout,
    now `business-case_example.md:16-20`, carries that correction.)*
 
 **Decision requested, closing the loop honestly.** The brief asks Dana Okoro, as executive, to authorize
@@ -3745,7 +3745,7 @@ named external source, and the sections above stand on their own citations.
 4. **`tools/known-skills.txt` gains `define-problem-statement`.**
 5. **The catalog row**, the 205-to-206 catalog count sweep, and the 41-to-42 bundle count sweep. The phase
    axis then holds 26 bundles and the classification axis 16, and `define` holds its first.
-6. **`README.md`'s `discovery-docs` paragraph** (`README.md:224`) says the family's members "answer whether
+6. **`README.md`'s `discovery-docs` paragraph** (`README.md:224` as of `f6f0b648`) says the family's members "answer whether
    the investment is worth making and who it is for". It gains which problem is worth solving.
 7. **This page's Progress table.**
 
@@ -3757,7 +3757,7 @@ answer**, dated **2026-01-09** and written by Priya Nair, PM, Reporting. That is
 [product vision](../../templates/product-vision/product-vision_example.md) (2026-01-14), seven days before the
 [project brief](../../templates/project-brief/project-brief_example.md) (2026-01-16) and eleven days before
 the [business case](../../templates/business-case/business-case_example.md) (2026-01-20). It extends the
-family's thread backward, as contract section 4 requires. It does not disturb `README.md:224`'s claim that
+family's thread backward, as contract section 4 requires. It does not disturb `README.md:224` (as of `f6f0b648`)'s claim that
 the persona is the library's earliest document.
 
 **Facts it may read, all of them Acme's own and older than the statement.** From
@@ -4010,8 +4010,8 @@ Star framework", which names the method rather than the document. `built` and `s
 #### What landing this bundle closes elsewhere
 
 1. **The contract's Members line** changes from "not yet built" to the build date.
-2. **`README.md`'s `strategy-docs` heading** (`README.md:211`) reads "complete, four bundles". It becomes five, and the
-   family paragraph gains the North Star metric. `README.md:158`'s "ten complete families" is false from this spec's
+2. **`README.md`'s `strategy-docs` heading** (`README.md:211` as of `c531d737`) reads "complete, four bundles". It becomes five, and the
+   family paragraph gains the North Star metric. `README.md:158` (as of `c531d737`)'s "ten complete families" is false from this spec's
    merge until the build lands, as it was for `discovery-docs`.
 3. **The bundle count sweep from 42 to 43.** The classification axis then holds 17 bundles.
 4. **The catalog row's corrections**, above.
