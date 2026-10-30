@@ -8,6 +8,18 @@ Newest first.
 
 ---
 
+## v0.23.0
+
+**One new bundle: a user research report, the library's 52nd.** It reads out one study of the people a product
+serves: what the study found, how that answers each question the plan set, and what to do about it. It ships
+lean and full, and its worked example reads out the study the user research plan's example plans.
+
+It completes the `research-docs` family, so every one of the library's eleven families now has all its founding
+members built. Both skills now recognize a request for a user research report. Nothing in any MCP tool or install
+route changed.
+
+---
+
 ## v0.22.1
 
 **This library now declares Standard 0.17 of the Advanced Skill Library Standard**, the edition every plugin in

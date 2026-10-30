@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-27.** The issue counts in section 2 were
-read from GitHub on 2026-10-27, at the user research report's landing, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29.** The issue counts in section 2 were
+read from GitHub on 2026-10-29, at the v0.23.0 release, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -49,7 +49,7 @@ run and its label now reads `status:parked`.
 | Priority | P3: 8, P4: 1 |
 | Tier | Tier 2: 5, Tier 3: 1, no catalog row: 3 |
 
-Sixty candidate issues are closed once this landing closes #317 (user-research-report): 52 built and 8 declined. Two of the declined types,
+Sixty candidate issues are closed: 52 built and 8 declined. The last to close was #317 (user-research-report). Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23

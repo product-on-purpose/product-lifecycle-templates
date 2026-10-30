@@ -12,6 +12,12 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-10-29
+
+A minor release with one new bundle, `user-research-report`, the 52nd. It completes the `research-docs` family,
+so all eleven families now have every founding member built. No MCP tool or install route changed. Release note:
+[`docs/releases/v0.23.0.md`](docs/releases/v0.23.0.md).
+
 ### Added
 
 - **`user-research-report`, the 52nd bundle and the second `research-docs` member, which completes the family.**
@@ -3346,7 +3352,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...HEAD
+[0.23.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...v0.23.0
 [0.22.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...v0.22.1
 [0.22.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...v0.22.0
 [0.21.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.20.1...v0.21.0

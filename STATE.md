@@ -7,7 +7,12 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=52, tier1=25, tier1remaining=2, statebuilt=52, statecandidate=156, stateoutofscope=2, commoncandidates=49, adrs=81, cisteps=32, checkk=156, checkformats=132, checklogs=114, logsgated=46, sourcesgated=1921 -->
 
-**Last updated:** 2026-10-29 (**`user-research-report` lands as the 52nd bundle and the second `research-docs`
+**Last updated:** 2026-10-29 (**`v0.23.0` ships `user-research-report`, the 52nd bundle**, as a minor release
+the maintainer directed on 2026-10-29. It completes `research-docs`, so every one of the eleven families has all
+its founding members built. The release also carries the family contract at 0.1.1, the skills' trigger lists
+naming a user research report, and the bundle's build-cost report: $38.54 at API list rates for 23 agents, all on
+Sonnet. The MCP server now addresses 103 template variants. No MCP tool or install route changed.)
+The previous entry read: **`user-research-report` lands as the 52nd bundle and the second `research-docs`
 member**, at `phase: discover`, built through the `build-bundle` workflow on the maintainer's go of 2026-10-27.
 It ships lean and full, carries catalog entry 18, and closes issue #317 (bundle: user-research-report). Both
 founding members of `research-docs` are now built, so all eleven families are complete. The family contract moves
