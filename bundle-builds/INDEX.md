@@ -6,6 +6,7 @@ What each build of a bundle actually cost, measured from the harness transcripts
 
 | Bundle | Version | Weighted | List USD | Agents | Runs | Scope | Confidence | Report |
 |---|---|---:|---:|---:|---:|---|---|---|
+| `user-research-report` | 0.1.0 | 19,270,748 | $38.54 | 23 | 3 | whole build | medium | [report](reports/user-research-report_v0.1.0.md) |
 | `test-strategy` | 0.1.0 | 16,344,533 | $35.11 | 18 | 3 | whole build | medium | [report](reports/test-strategy_v0.1.0.md) |
 | `user-research-plan` | 0.1.0 | 14,890,444 | $32.47 | 16 | 3 | whole build | medium | [report](reports/user-research-plan_v0.1.0.md) |
 | `positioning-statement` | 0.1.0 | 13,476,852 | $30.25 | 18 | 3 | whole build | medium | [report](reports/positioning-statement_v0.1.0.md) |
@@ -50,8 +51,8 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `bug-report` | 0.1.0 | 893,739 | $2.68 | 5 | 1 | **floor** | medium | [report](reports/bug-report_v0.1.0.md) |
 | `prd` | 0.1.0 | 765,636 | $1.53 | 9 | 1 | **floor** | mixed | [report](reports/prd_v0.1.0.md) |
 
-<!-- build-reports: count=43 high=19 weighted=272836330 -->
+<!-- build-reports: count=44 high=19 weighted=292107078 -->
 
-**43 reports, 19 of them at high attribution confidence, 272,836,330 weighted token-equivalents and $615.70 at API list rates in total.**
+**44 reports, 19 of them at high attribution confidence, 292,107,078 weighted token-equivalents and $654.24 at API list rates in total.**
 
 Weighted applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0 to the raw counts. List USD prices each response at its own model's API list rate as of 2026-09-22; it is a yardstick, not a bill.
