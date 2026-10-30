@@ -20,7 +20,8 @@ people who want every change, release notes are for people who want to know what
   Canvas, issue #337, would join `strategy-docs` at `classification: utility` by
   [ADR 0083](docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md). Each record
   amends a family contract, and the maintainer accepted both after reading the contract diffs. Both
-  specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`.
+  specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`, and the maintainer ruled
+  every choice as recommended, so both types are queued to build.
 
 ### Fixed
 

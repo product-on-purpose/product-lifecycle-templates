@@ -32,7 +32,7 @@ consulted: [claude]
   [ADR 0082](0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) (lean-ux-canvas joins discovery-docs).
 - **Status:** proposed 2026-10-30, **accepted 2026-10-30 after the maintainer's read** of this record and its
   contract diff. The spec's choices D1 to D7 are still open, among them the classification (D2) and the chain
-  position (D3). A ruling that differs from this record's recommendation amends the contract by a dated note.
+  position (D3). A ruling that differs from this record's recommendation amends the contract by a dated note. *(2026-10-30, later: the maintainer ruled all seven as recommended, D2 `utility` and D3 second in the chain included, so no amendment followed.)*
 
 ## Context and Problem Statement
 

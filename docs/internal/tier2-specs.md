@@ -7736,7 +7736,7 @@ attributed quotations.
 
 #### The maintainer's choices
 
-Answer in one line, such as "C1 A, C2 A, the rest as recommended".
+**Ruled 2026-10-30: every choice as recommended (option A).** The maintainer answered "ok to all" in the same reply that approved merging the spec (#338).
 
 | # | Choice | Recommended | Alternative |
 |---|---|---|---|
@@ -7994,7 +7994,7 @@ quotations.
 
 #### The maintainer's choices
 
-Answer in one line, such as "D1 A, D2 B, the rest as recommended".
+**Ruled 2026-10-30: every choice as recommended (option A).** The maintainer answered "ok to all" in the same reply that approved merging the spec (#338), so D2 and D3 stand as ADR 0083 records them and the contract needs no amendment.
 
 | # | Choice | Recommended | Alternative |
 |---|---|---|---|
