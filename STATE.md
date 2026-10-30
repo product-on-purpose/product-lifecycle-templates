@@ -11,7 +11,7 @@
 Gothelf's Lean UX Canvas (#330) would join `discovery-docs` at `phase: discover` by ADR 0082, with a second bounded
 exception to the family's cadence clause. Ash Maurya's Lean Canvas (#337, catalog entry 5) would join
 `strategy-docs` at `classification: utility` by ADR 0083. Both records amend a family contract,
-and the maintainer accepted both after reading the diffs. Both types carry priority P2. No bundle or catalog row was added. Not in
+and the maintainer accepted both after reading the diffs, then ruled every spec choice as recommended. Both types carry priority P2 and are queued to build. No bundle or catalog row was added. Not in
 any release yet.)
 The previous entry read: **`v0.23.0` ships `user-research-report`, the 52nd bundle**, as a minor release
 the maintainer directed on 2026-10-29. It completes `research-docs`, so every one of the eleven families has all
