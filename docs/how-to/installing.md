@@ -10,14 +10,14 @@ tags:
 
 # Installing the library
 
-<!-- counts: bundles=53 -->
+<!-- counts: bundles=54 -->
 
 There are two routes. **They do not give you the same thing**, and the difference is not documented
 anywhere else because it was only discovered on 2026-08-08, by running the install for the first time.
 
 | Route | What you get | Use it when |
 |---|---|---|
-| **Claude Code plugin** | both skills **and** all 53 bundles | you want the library to work. **This is the recommended route** |
+| **Claude Code plugin** | both skills **and** all 54 bundles | you want the library to work. **This is the recommended route** |
 | **`npx skills add`** | the two skills only, about 47 KB | you use a non-Claude agent, or you want them to fetch what they need on demand |
 | **`git clone`** | everything, unmanaged | you are contributing, or you want to read the research |
 
@@ -37,7 +37,7 @@ refers to resolves.
 
 ### Check that it worked
 
-Ask your agent to list the available document types. It should read `manifest.json` and name 53 bundles.
+Ask your agent to list the available document types. It should read `manifest.json` and name 54 bundles.
 If it can read `manifest.json`, everything else in the library is reachable.
 
 ### The MCP server comes with it
@@ -131,7 +131,7 @@ build harness. **Two is now the correct answer**, which is why that sentence nee
 git clone https://github.com/product-on-purpose/product-lifecycle-templates.git
 ```
 
-Everything is present: 53 bundles, the research logs behind every claim, the gate, the evals. Nothing
+Everything is present: 54 bundles, the research logs behind every claim, the gate, the evals. Nothing
 manages updates for you.
 
 This is the right route if you want to **read** rather than **use**. The research logs are the part of

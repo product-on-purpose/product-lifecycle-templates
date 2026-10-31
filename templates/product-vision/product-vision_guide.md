@@ -66,7 +66,7 @@ Score each 0, 1 or 2. **Under 17 out of 24 and this will not be cited in an argu
 into an onboarding deck, admired once, and never opened again, which is the documented failure mode for this
 document type.
 
-**Rows 9 and 10 do not apply to the lean canvas**, which omits Horizon and Review and Leaps of Faith by
+**Rows 9 and 10 do not apply to the lean canvas** (this bundle's lean-size `canvas` format; *2026-10-30: not Ash Maurya's Lean Canvas, which is its own bundle,* [`lean-canvas`](../lean-canvas/)), which omits Horizon and Review and Leaps of Faith by
 design. Grade the other ten and score against 14 out of 20.
 
 | # | Criterion | 0 | 1 | 2 |

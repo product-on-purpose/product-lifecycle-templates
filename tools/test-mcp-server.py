@@ -204,7 +204,7 @@ def main():
                                    r["parts"]["template"]["approx_tokens"],
                                    b["approx_tokens"].get(key)))
     check("all %d variants fetch content" % total, not unreachable, unreachable)
-    check("the tree has 104 variants and all 104 are addressable", total == 104, total)
+    check("the tree has 105 variants and all 105 are addressable", total == 105, total)
     check("every reported token count EQUALS manifest.json's approx_tokens (not merely within 10%)",
           not mismatched, mismatched[:4])
 

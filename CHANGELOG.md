@@ -14,6 +14,13 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`lean-canvas`, the 54th bundle and the seventh `strategy-docs` member.** Ash Maurya's one-page record
+  of a product's business model, stated as beliefs to test rather than a finished plan: who has the
+  problem, what value is offered, how it reaches and earns from customers, what it costs, and the riskiest
+  belief to check next. Not a business plan, not a financial model, and not the Business Model Canvas it
+  adapts. It ships one size, at `classification: utility`, second in the chain between `product-vision`
+  and `product-strategy`. The research log records 15 sources, all read in full; 107 quotations passed a
+  raw-text check. Catalog entry 5. Closes issue #337.
 - **`lean-ux-canvas`, the 53rd bundle and the sixth `discovery-docs` member.** Jeff Gothelf's Lean UX
   Canvas, renamed the Lean Product Canvas in 2024, frames one initiative on one page: the business problem,
   the outcomes wanted, the users and their outcomes, candidate solutions, the hypotheses that link them, the
@@ -34,8 +41,21 @@ people who want every change, release notes are for people who want to know what
   specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`, and the maintainer ruled
   every choice as recommended, so both types are queued to build.
 
+### Changed
+
+- **The runbook's barred-sites table gains three more rows**: Strategyzer, Tability and the Wade
+  Institute studio, each with its clause read from the site's own terms page. A `lean-canvas` research
+  agent read one Wade Institute page before the row existed; the entry was withdrawn from the log.
+- **Catalog entry 5's alias and purpose correction.** The Lean Canvas is no longer aliased as "(Maurya
+  adaptation of BMC)"; that fact moves into the relationships field instead, and the purpose now reads
+  "One-page business model, stated as beliefs to test" rather than a list of its blocks.
+
 ### Fixed
 
+- **`lean-ux-canvas`'s meta still named `lean-canvas` as `future:`, unbuilt.** It is built now; the
+  `related_templates` entry drops the prefix.
+- **The `product-vision` guide's "lean canvas" read as Ash Maurya's Lean Canvas.** It names this bundle's
+  own lean-size `canvas` format instead. A dated note points to the now-built `lean-canvas` bundle.
 - **The Lean UX Canvas spec misquoted Gothelf's walkthrough.** It said the book is "structured around" the
   canvas; the page says "organized around", and uses "structured around" for a video class. A dated note
   corrects it in place, and both canvas specs no longer call their rulings pending.

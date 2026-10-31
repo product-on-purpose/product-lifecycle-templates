@@ -1,0 +1,30 @@
+id: lean-canvas
+title: Lean Canvas
+summary: >-
+  The one-page record of a product's business model as beliefs to test, not a finished plan: who has the
+  problem, what value is offered, how it reaches and earns from customers, what it costs, and the riskiest
+  belief to check next. Not a business plan, not a financial model, and not the Business Model Canvas it
+  adapts.
+doc_type: lean-canvas
+classification: utility
+family: strategy-docs
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "This bundle ships one size. Maurya's own teaching caps the artifact at a single page and a single sitting: 'Embrace a 1-page constraint' and 'Sketch a canvas in one sitting.' No source this research read splits a short canvas from a longer one, so there is no second, heavier size to choose instead; a second customer segment gets its own canvas rather than a wider one."
+methodology: lean-startup
+pairs_with: [foundation-lean-canvas]
+status: beta
+template_version: 0.1.0
+tags:
+  - strategy
+  - business-model
+  - lean-startup
+  - canvas
+  - hypothesis
+  - early-stage
+related_templates: [product-vision, product-strategy, positioning-statement, north-star-metrics, business-case, user-persona, lean-ux-canvas]
+aliases: []
+catalog_ref: 5
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-30
+license: Apache-2.0
