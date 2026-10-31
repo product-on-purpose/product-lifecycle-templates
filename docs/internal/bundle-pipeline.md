@@ -156,7 +156,7 @@ governed by its own terms: Mind the Product belongs to Pendo, but its own terms 
 terms bar. A second model fetching the page is the same automated read with one more step. A retired
 government page may be read through the Internet Archive's Wayback Machine.
 
-**The excluded sites, as of 2026-10-26.** Each clause below was checked against the raw text of the site's
+**The excluded sites, as of 2026-10-26, with four rows added 2026-10-30.** Each clause below was checked against the raw text of the site's
 own terms page. A site not on this list is not cleared by its absence; check it before its first read.
 
 | Site | The clause, verbatim | Terms page |
@@ -175,6 +175,10 @@ own terms page. A site not on this list is not cleared by its absence; check it 
 | `entropik.io` | "You agree not to access or attempt to access any content available on the Website by any means other than through the interface that is provided by us." | `https://www.entropik.io/terms-of-use` |
 | `getwhy.io` | "...download Insights or other content from the Services through the use of any engine, software, tool, agent, device or mechanism (including spiders, robots, crawlers, data mining tools or the like)..." | `https://www.getwhy.io/terms-of-service` |
 | `about.gitlab.com` | "Using any process or device (automated or otherwise) to retrieve, index, “data mine”, “scrape”, or in any way reproduce the presentation of this website or its Content, unless otherwise permitted under applicable content licensing permissions." No content licence was found on this site, unlike the handbook and docs. | `https://handbook.gitlab.com/handbook/legal/policies/website-terms-of-use/` |
+| `ideascale.com` | "You shall not use any “deep-link,” “page-scrape,” “robot,” “spider,” or other automatic device, program, algorithm, or methodology, or any similar or equivalent manual process (i) to access, acquire, copy, or monitor any portion of the Services or Our Content;" A `lean-ux-canvas` research agent read one page before this row existed; its entry was withdrawn. | `https://ideascale.com/terms-and-conditions-of-use/` |
+| beehiiv and every newsletter it hosts, including `continuouslearning.beehiiv.com` | "or (vi) engage in or use any data mining, robots, crawling, scraping or data gathering or extraction methods." | `https://www.beehiiv.com/tou` |
+| Tumblr and every blog it hosts, including `engineering.kaptest.com` | "(d) scrape the Services, and particularly scrape Content (as defined below) from the Services;" | `https://www.tumblr.com/policy/en/terms-of-service` |
+| `allo.io` | "using manual or automated software or other means to access, "scrape," "crawl" or "spider" any pages contained in Services" | `https://allo.io/legal/en/terms-of-service` |
 
 **Reading an excluded page by hand.**
 

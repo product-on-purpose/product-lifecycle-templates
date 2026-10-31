@@ -617,6 +617,34 @@
     },
     {
       "aliases": [
+        "Lean Product Canvas"
+      ],
+      "approx_tokens": {
+        "lean": 5200
+      },
+      "default_size": "lean",
+      "doc_type": "lean-ux-canvas",
+      "family": "discovery-docs",
+      "id": "lean-ux-canvas",
+      "phase": "discover",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Use lean, the only size this bundle ships: Gothelf publishes the canvas as a single one-page shape in both the 2019 and 2024 versions, and this research found no source that splits a short form of the canvas from a longer one.",
+      "status": "beta",
+      "summary": "The one-page canvas that frames one initiative's business problem, the outcomes the business wants, the users affected, the outcomes those users want, and candidate solutions, then turns those links into testable hypotheses and names what to learn first and the least work that will learn it, before anyone commits to building.",
+      "tags": [
+        "discovery",
+        "discover",
+        "lean-ux",
+        "lean-ux-canvas",
+        "facilitation",
+        "hypotheses"
+      ],
+      "title": "Lean UX Canvas"
+    },
+    {
+      "aliases": [
         "north star metric",
         "nsm",
         "north star metric definition"
@@ -1755,5 +1783,5 @@
       "title": "User Story"
     }
   ],
-  "count": 52
+  "count": 53
 }

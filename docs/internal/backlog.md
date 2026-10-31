@@ -19,7 +19,7 @@ No single list holds the backlog. Three places hold parts of it, and each one la
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 210 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 211 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
@@ -37,8 +37,7 @@ run and its label now reads `status:parked`.
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
-| [#330](https://github.com/product-on-purpose/product-lifecycle-templates/issues/330) | `lean-ux-canvas` | Queued 2026-10-30, opened 2026-10-27; raised to P2 by the maintainer on 2026-10-30, who chose to include it after admission sweep 7 recommended a decline | P2 | None; entry 211 arrives with the build | `discovery-docs`, `phase: discover`, by [ADR 0082](decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) | ADR 0082 accepted and the [spec](tier2-specs.md#discovery-docs-sixth-member-at-discover-the-lean-ux-canvas)'s choices C1 to C7 ruled as recommended, both 2026-10-30. Next: the build, first of the two, on the maintainer's go |
-| [#337](https://github.com/product-on-purpose/product-lifecycle-templates/issues/337) | `lean-canvas` | Queued 2026-10-30, opened the same day by the maintainer's choice to include it | P2 | 2 | `strategy-docs`, `classification: utility`, by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) | ADR 0083 accepted and the [spec](tier2-specs.md#strategy-docs-seventh-member-by-amendment-the-lean-canvas)'s choices D1 to D7 ruled as recommended, both 2026-10-30. Next: the build, after `lean-ux-canvas`, on the maintainer's go |
+| [#337](https://github.com/product-on-purpose/product-lifecycle-templates/issues/337) | `lean-canvas` | Queued 2026-10-30, opened the same day by the maintainer's choice to include it | P2 | 2 | `strategy-docs`, `classification: utility`, by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) | ADR 0083 accepted and the [spec](tier2-specs.md#strategy-docs-seventh-member-by-amendment-the-lean-canvas)'s choices D1 to D7 ruled as recommended, both 2026-10-30. Next: the build, on the maintainer's go |
 | [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned; labelled `phase:discover` | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -46,11 +45,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 6 candidates, 4 parked |
-| Priority | P2: 2, P3: 7, P4: 1 |
-| Tier | Tier 2: 6, Tier 3: 1, no catalog row: 3 |
+| Status | 5 candidates, 4 parked |
+| Priority | P2: 1, P3: 7, P4: 1 |
+| Tier | Tier 2: 6, Tier 3: 1, no catalog row: 2 |
 
-Sixty candidate issues are closed: 52 built and 8 declined. The last to close was #317 (user-research-report). Two of the declined types,
+Sixty-one candidate issues are closed: 53 built and 8 declined. The last to close was #330 (lean-ux-canvas). Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
@@ -69,17 +68,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=52, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=53, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 210 types. Its `state` field reads 52 built, 156 candidate and 2 out of scope. Four of the
+The catalog holds 211 types. Its `state` field reads 53 built, 156 candidate and 2 out of scope. Four of the
 156 were declined by record, so 152 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 156 | 27 | 4, declined by record (below) | **125** |
+| 2 | 157 | 28 | 4, declined by record (below) | **125** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **210** | **52** | **6** | **152** |
+| **All** | **211** | **53** | **6** | **152** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -231,6 +230,9 @@ ADR 0077 keeps in `deliver`.
   `strategy-docs`. The maintainer accepted both records after reading the contract diffs, then took all
   fourteen of the specs' recommendations in one line. Once the specs merged (#338), both types were queued, so
   #330 and #337 now carry `status:queued`.
+- **2026-10-30, at landing.** `lean-ux-canvas` landed as the 53rd bundle and the sixth `discovery-docs`
+  member, at `discover`, carrying catalog entry 211. Its landing closes #330, and the define count stays at
+  two.
 
 ## 6. What comes next, in order
 

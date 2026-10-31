@@ -5347,6 +5347,33 @@
       ],
       "state": "built",
       "state_note": ""
+    },
+    {
+      "id": "lean-ux-canvas",
+      "name": "Lean UX Canvas",
+      "aliases": [
+        "Lean Product Canvas"
+      ],
+      "category": "Research / Discovery",
+      "stage": "discovery",
+      "owner": "Product team (cross-functional)",
+      "purpose": "Frame one initiative on one page: the business problem, the outcomes wanted, the users and their outcomes, candidate solutions, the hypotheses that link them, and the most important thing to learn first, before anyone commits to building",
+      "methodology": "Lean UX",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": true,
+      "relationships": [
+        "Problem Statement",
+        "Experiment Design doc",
+        "Design Brief",
+        "PRD"
+      ],
+      "state": "built",
+      "state_note": ""
     }
   ]
 }
