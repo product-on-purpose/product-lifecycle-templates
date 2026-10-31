@@ -14,6 +14,17 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **`lean-ux-canvas`, the 53rd bundle and the sixth `discovery-docs` member.** Jeff Gothelf's Lean UX
+  Canvas, renamed the Lean Product Canvas in 2024, frames one initiative on one page: the business problem,
+  the outcomes wanted, the users and their outcomes, candidate solutions, the hypotheses that link them, the
+  most important thing to learn first and the least work that would learn it, before anyone commits to
+  building. It ships one size, with the eight boxes and a ninth section for dated revisions and the
+  document that takes over. The research log records 19 sources, all read in full, among them the 2024
+  canvas PDF and the third edition of the Lean UX book from the maintainer's own copy; all 168 quotations
+  passed a raw-text check. Catalog entry 211. Closes issue #330.
+- **The runbook's barred-sites table gains four rows**: IdeaScale, beehiiv, Tumblr and allo.io, each with
+  its clause read from the site's own terms page. A research agent read one IdeaScale page before the row
+  existed; the entry was withdrawn from the log.
 - **Two canvases are specced and admitted to the library, at the maintainer's request.** Jeff Gothelf's Lean
   UX Canvas, issue #330, would join `discovery-docs` at `phase: discover` by
   [ADR 0082](docs/internal/decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md). Ash Maurya's Lean
@@ -25,6 +36,9 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **The Lean UX Canvas spec misquoted Gothelf's walkthrough.** It said the book is "structured around" the
+  canvas; the page says "organized around", and uses "structured around" for a video class. A dated note
+  corrects it in place, and both canvas specs no longer call their rulings pending.
 - **The Define re-score's "stays out" read as a library-wide verdict.** It meant "not a `define` document".
   The build backlog page now says so, and notes that 18 of the 48 candidates it kept out passed admission and
   were never tested in another family. The Lean Canvas was one of them.

@@ -27,8 +27,9 @@ work back.
 | `user-stories` and `acceptance-criteria` | Is the unit a story with a value clause, or a testable condition? |
 | `user-research-plan` and `test-plan` | Does it plan a study of how people use a product, or the verification of a build against its specification? A usability test's plan is the first |
 | `user-research-report` and `test-summary-report` | Does it report what a study learned about how people use a product, or whether a build passed its tests? A usability test's report is the first |
+| `lean-ux-canvas` and `experiment-design-doc` | Does it frame one initiative's hypotheses and pick which to test first, or plan one test of one hypothesis in detail? A page of eight boxes ending in the least work to learn something is the first |
 
-**No match at all is a result, not a failure.** The catalog holds 210 types, and most of them
+**No match at all is a result, not a failure.** The catalog holds 211 types, and most of them
 are not built. Record the miss: what the document appeared to be, and what the reader called it. That is demand
 evidence for a type nobody has asked for yet in any other way.
 

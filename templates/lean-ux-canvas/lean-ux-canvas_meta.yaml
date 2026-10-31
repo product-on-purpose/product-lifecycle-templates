@@ -1,0 +1,31 @@
+id: lean-ux-canvas
+title: Lean UX Canvas
+summary: >-
+  The one-page canvas that frames one initiative's business problem, the outcomes the business
+  wants, the users affected, the outcomes those users want, and candidate solutions, then turns
+  those links into testable hypotheses and names what to learn first and the least work that will
+  learn it, before anyone commits to building.
+doc_type: lean-ux-canvas
+phase: discover
+family: discovery-docs
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the only size this bundle ships: Gothelf publishes the canvas as a single one-page shape in both the 2019 and 2024 versions, and this research found no source that splits a short form of the canvas from a longer one."
+methodology: Lean UX
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - discovery
+  - discover
+  - lean-ux
+  - lean-ux-canvas
+  - facilitation
+  - hypotheses
+related_templates: [problem-statement, experiment-design-doc, design-brief, product-vision, user-persona, future:lean-canvas]
+aliases:
+  - Lean Product Canvas
+catalog_ref: 211
+maintainer: "product-on-purpose"
+last_reviewed: 2026-10-30
+license: Apache-2.0

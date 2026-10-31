@@ -101,7 +101,7 @@ the 9 Employee Express lines and the 2 relaxed passes. Every line in sources.md 
 raw body.
 
 **The two hand reads add 32 Quotable lines, for 522.** The maintainer pasted each page's text into a gitignored
-folder, as the terms rule's hand-read steps describe (`docs/internal/bundle-pipeline.md:179-191`). The copies
+folder, as the terms rule's hand-read steps describe (`docs/internal/bundle-pipeline.md:179-191` as of `36e21e23`). The copies
 were saved on 2026-10-27, and that is the date the two entries carry. The main loop chose the quotations from
 those copies and tested each one with the generator's own string test, against the copy alone. All 15 from
 Mozilla [51] and all 17 from Koji [52] passed. Neither copy went into the source cache, so neither entry carries a
