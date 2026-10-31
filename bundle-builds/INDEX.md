@@ -12,6 +12,7 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `positioning-statement` | 0.1.0 | 13,476,852 | $30.25 | 18 | 3 | whole build | medium | [report](reports/positioning-statement_v0.1.0.md) |
 | `test-summary-report` | 0.1.0 | 12,123,040 | $41.22 | 15 | 3 | whole build | medium | [report](reports/test-summary-report_v0.1.0.md) |
 | `design-brief` | 0.1.0 | 11,563,997 | $25.38 | 16 | 3 | whole build | medium | [report](reports/design-brief_v0.1.0.md) |
+| `lean-canvas` | 0.1.0 | 11,063,489 | $22.96 | 16 | 3 | whole build | medium | [report](reports/lean-canvas_v0.1.0.md) |
 | `problem-statement` | 0.1.0 | 10,533,753 | $21.07 | 19 | 4 | whole build | medium | [report](reports/problem-statement_v0.1.0.md) |
 | `trade-study` | 0.1.0 | 10,479,257 | $20.96 | 16 | 3 | whole build | high | [report](reports/trade-study_v0.1.0.md) |
 | `business-continuity-plan` | 0.1.0 | 10,284,679 | $20.57 | 15 | 3 | whole build | high | [report](reports/business-continuity-plan_v0.1.0.md) |
@@ -51,8 +52,8 @@ What each build of a bundle actually cost, measured from the harness transcripts
 | `bug-report` | 0.1.0 | 893,739 | $2.68 | 5 | 1 | **floor** | medium | [report](reports/bug-report_v0.1.0.md) |
 | `prd` | 0.1.0 | 765,636 | $1.53 | 9 | 1 | **floor** | mixed | [report](reports/prd_v0.1.0.md) |
 
-<!-- build-reports: count=44 high=19 weighted=292107078 -->
+<!-- build-reports: count=45 high=19 weighted=303170567 -->
 
-**44 reports, 19 of them at high attribution confidence, 292,107,078 weighted token-equivalents and $654.24 at API list rates in total.**
+**45 reports, 19 of them at high attribution confidence, 303,170,567 weighted token-equivalents and $677.20 at API list rates in total.**
 
 Weighted applies input x1.0, cache write x1.25 (x2.0 for a 1-hour write), cache read x0.1, output x5.0 to the raw counts. List USD prices each response at its own model's API list rate as of 2026-09-22; it is a yardstick, not a bill.
