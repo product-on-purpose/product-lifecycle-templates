@@ -29,7 +29,7 @@ done this document's job, whatever it says.
 | We need to plan one test of one hypothesis, with variants, allocation, and a decision rule | [`experiment-design-doc`](../experiment-design-doc/) |
 | Where is the whole product going, over years? | [`product-vision`](../product-vision/) |
 | Who exactly are we building for, researched rather than guessed? | [`user-persona`](../user-persona/) |
-| What does the whole business look like: channels, revenue, cost structure? | Ash Maurya's Lean Canvas. This library plans a `lean-canvas` bundle for that type; it is not yet built, and this canvas asks nothing about revenue or cost |
+| What does the whole business look like: channels, revenue, cost structure? | [`lean-canvas`](../lean-canvas/), Ash Maurya's Lean Canvas; this canvas asks nothing about revenue or cost *(2026-10-30: this cell said the bundle was planned and not yet built; it is built now)* |
 
 ## When NOT to use this document
 

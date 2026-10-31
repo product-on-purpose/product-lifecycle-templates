@@ -6,6 +6,17 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.24.0
+
+**Two new bundles: the Lean UX Canvas and the Lean Canvas, the library's 53rd and 54th.** The Lean UX Canvas,
+Jeff Gothelf's, frames one initiative on one page before anyone commits to building it. The Lean Canvas, Ash
+Maurya's, states a whole product's business model on one page as beliefs to test. Each ships one size.
+
+The Lean UX Canvas joins `discovery-docs`, and the Lean Canvas joins `strategy-docs`. Both skills now recognize a
+request for either canvas. Nothing in any MCP tool or install route changed.
+
+---
+
 ---
 
 ## v0.23.0

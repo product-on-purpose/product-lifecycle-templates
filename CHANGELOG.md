@@ -12,6 +12,11 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.24.0] - 2026-10-30
+
+A minor release with two new bundles: `lean-ux-canvas`, the 53rd, and `lean-canvas`, the 54th. Each ships one
+size. No MCP tool or install route changed. Release note: [`docs/releases/v0.24.0.md`](docs/releases/v0.24.0.md).
+
 ### Added
 
 - **`lean-canvas`, the 54th bundle and the seventh `strategy-docs` member.** Ash Maurya's one-page record
@@ -41,8 +46,14 @@ people who want every change, release notes are for people who want to know what
   specs, with their build plans and choices, are in `docs/internal/tier2-specs.md`, and the maintainer ruled
   every choice as recommended, so both types are queued to build.
 
+- **The Lean Canvas's build cost is published**: $22.96 at API list rates for 16 agents, the usual 15 on
+  Sonnet plus an Opus head writer for its research log. The Lean UX Canvas's report is held back, because the
+  report generator counted an earlier admission sweep into its totals.
+
 ### Changed
 
+- **Both skill descriptions name the Lean Canvas and the Lean UX Canvas.** The surrounding prose was
+  tightened to stay under the 1,024-character cap; no existing trigger was removed.
 - **The runbook's barred-sites table gains three more rows**: Strategyzer, Tability and the Wade
   Institute studio, each with its clause read from the site's own terms page. A `lean-canvas` research
   agent read one Wade Institute page before the row existed; the entry was withdrawn from the log.
@@ -52,6 +63,10 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **The template chooser's family table missed two bundles**, `lean-canvas` and `user-research-report`. It
+  now lists all 54.
+- **The `lean-ux-canvas` guide still called `lean-canvas` unbuilt.** It now links the built bundle, with a
+  dated note.
 - **`lean-ux-canvas`'s meta still named `lean-canvas` as `future:`, unbuilt.** It is built now; the
   `related_templates` entry drops the prefix.
 - **The `product-vision` guide's "lean canvas" read as Ash Maurya's Lean Canvas.** It names this bundle's
@@ -3411,7 +3426,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...HEAD
+[0.24.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...v0.24.0
 [0.23.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...v0.23.0
 [0.22.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...v0.22.1
 [0.22.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.21.0...v0.22.0
