@@ -28,6 +28,7 @@ work back.
 | `user-research-plan` and `test-plan` | Does it plan a study of how people use a product, or the verification of a build against its specification? A usability test's plan is the first |
 | `user-research-report` and `test-summary-report` | Does it report what a study learned about how people use a product, or whether a build passed its tests? A usability test's report is the first |
 | `lean-ux-canvas` and `experiment-design-doc` | Does it frame one initiative's hypotheses and pick which to test first, or plan one test of one hypothesis in detail? A page of eight boxes ending in the least work to learn something is the first |
+| `lean-canvas` and `product-strategy` | Does it state a full business model as beliefs to test, naming a revenue stream, a channel and a cost structure, or choose which problems and segments to pursue without naming any of those three? A one-pager with a Revenue Streams and a Cost Structure box is the first |
 
 **No match at all is a result, not a failure.** The catalog holds 211 types, and most of them
 are not built. Record the miss: what the document appeared to be, and what the reader called it. That is demand

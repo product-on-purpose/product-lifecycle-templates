@@ -37,7 +37,6 @@ run and its label now reads `status:parked`.
 | [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
 | [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
 | [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
-| [#337](https://github.com/product-on-purpose/product-lifecycle-templates/issues/337) | `lean-canvas` | Queued 2026-10-30, opened the same day by the maintainer's choice to include it | P2 | 2 | `strategy-docs`, `classification: utility`, by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) | ADR 0083 accepted and the [spec](tier2-specs.md#strategy-docs-seventh-member-by-amendment-the-lean-canvas)'s choices D1 to D7 ruled as recommended, both 2026-10-30. Next: the build, on the maintainer's go |
 | [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned; labelled `phase:discover` | An admission sweep |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -45,11 +44,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 5 candidates, 4 parked |
-| Priority | P2: 1, P3: 7, P4: 1 |
-| Tier | Tier 2: 6, Tier 3: 1, no catalog row: 2 |
+| Status | 4 candidates, 4 parked |
+| Priority | P3: 7, P4: 1 |
+| Tier | Tier 2: 5, Tier 3: 1, no catalog row: 2 |
 
-Sixty-one candidate issues are closed: 53 built and 8 declined. The last to close was #330 (lean-ux-canvas). Two of the declined types,
+Sixty-two candidate issues are closed: 54 built and 8 declined. The last to close was #337 (lean-canvas). Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
@@ -68,17 +67,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=53, statecandidate=156, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=54, statecandidate=155, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 211 types. Its `state` field reads 53 built, 156 candidate and 2 out of scope. Four of the
-156 were declined by record, so 152 types are still open.
+The catalog holds 211 types. Its `state` field reads 54 built, 155 candidate and 2 out of scope. Four of the
+155 were declined by record, so 151 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 157 | 28 | 4, declined by record (below) | **125** |
+| 2 | 157 | 29 | 4, declined by record (below) | **124** |
 | 3 | 27 | 0 | 0 | **27** |
-| **All** | **211** | **53** | **6** | **152** |
+| **All** | **211** | **54** | **6** | **151** |
 
 The four Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -233,6 +232,9 @@ ADR 0077 keeps in `deliver`.
 - **2026-10-30, at landing.** `lean-ux-canvas` landed as the 53rd bundle and the sixth `discovery-docs`
   member, at `discover`, carrying catalog entry 211. Its landing closes #330, and the define count stays at
   two.
+- **2026-10-30, at landing.** `lean-canvas` landed as the 54th bundle and the seventh `strategy-docs`
+  member, at `classification: utility`, carrying catalog entry 5. Its landing closes #337, and the define
+  count stays at two, since the family sits on the classification axis rather than the phase axis.
 
 ## 6. What comes next, in order
 

@@ -4466,6 +4466,289 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "lean-canvas",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "draft_or_tested"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "who_sketched_this_canvas"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "customer-segments",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "customer_segments",
+                "early_adopters"
+              ],
+              "title": "Customer Segments"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "problem",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "existing_alternatives",
+                "top_problems"
+              ],
+              "title": "Problem"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "unique-value-proposition",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "high_level_concept",
+                "unique_value_proposition"
+              ],
+              "title": "Unique Value Proposition"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "solution",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "solution"
+              ],
+              "title": "Solution"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "channels",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "channels"
+              ],
+              "title": "Channels"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "revenue-streams",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "revenue_streams"
+              ],
+              "title": "Revenue Streams"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "cost-structure",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cost_structure"
+              ],
+              "title": "Cost Structure"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "key-metrics",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "key_metrics"
+              ],
+              "title": "Key Metrics"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "unfair-advantage",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "unfair_advantage"
+              ],
+              "title": "Unfair Advantage"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "riskiest-beliefs-and-next-tests",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "belief",
+                "belief_box",
+                "evidence_so_far",
+                "next_test"
+              ],
+              "title": "Riskiest Beliefs and Next Tests"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "versions",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "version_date",
+                "what_changed",
+                "why_changed"
+              ],
+              "title": "Versions"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "lean-ux-canvas",
       "default_format": "default",
       "formats": {
@@ -13757,7 +14040,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 53,
-  "frontmatter_count": 328,
-  "section_count": 447
+  "count": 54,
+  "frontmatter_count": 332,
+  "section_count": 458
 }

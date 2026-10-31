@@ -21,7 +21,7 @@ reference a future session reads to continue.
 > `buildout-specs.md`" as required reading - which for a Tier-2 type pointed at nothing.
 
 ## Progress
-<!-- counts: bundles=53, tier1=25, tier1remaining=2, checkformats=134 -->
+<!-- counts: bundles=54, tier1=25, tier1remaining=2, checkformats=136 -->
 
 | # | Bundle | Family | Phase/Class | Status | PR |
 |---|---|---|---|---|---|
@@ -55,7 +55,7 @@ reference a future session reads to continue.
 | 27 | definition-of-done | **standing-standards** (reassigned, D-A) | class: foundation | **done** (standing-standards complete; first live use of the foundation+tool set) | #72 |
 | - | sprint-retrospective-notes | process-docs | phase: iterate | **done** (process-docs complete; first spec in five bundles the research confirmed rather than corrected) | #75 |
 
-**Count:** 53 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
+**Count:** 54 bundles done (**delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs,
 discovery-docs, standing-standards and process-docs all complete**, `experimentation-docs` now at two
 members, and `research-docs` at both of its two). Those 26 sum against a 27-type floor
 oddly because
