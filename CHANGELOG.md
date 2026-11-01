@@ -12,6 +12,18 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **The Lean UX Canvas's build cost is published**: $17.52 at API list rates for the usual 15 agents, all
+  on Sonnet, in [`bundle-builds/INDEX.md`](bundle-builds/INDEX.md). `v0.24.0` held the report back.
+
+### Fixed
+
+- **The build-cost report generator billed an admission sweep to the one candidate that became a bundle.**
+  It gave a whole workflow run to the only known bundle among its labels, so admission sweep 7, which
+  judged five candidates with 20 agents, was counted into `lean-ux-canvas` and read $33.78 for 35 agents.
+  A run whose labels name two or more candidates now counts toward no build. No other report changed.
+
 ## [0.24.0] - 2026-10-30
 
 A minor release with two new bundles: `lean-ux-canvas`, the 53rd, and `lean-canvas`, the 54th. Each ships one

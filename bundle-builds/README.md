@@ -77,6 +77,19 @@ research through the Agent tool on 2026-10-11, before the bundle landed, and its
 9,987,114 to 10,533,753 weighted. Every other report re-derived byte-identical. The record is the
 2026-10-21 correction in ADR 0056.
 
+## Runs that judged several candidates
+
+An admission sweep is a workflow run that judges several candidate types at once, labelling each agent
+`<candidate>/<stage>`. It builds none of them. The generator used to give a whole run to the one known
+bundle among its labels, so when one candidate later became a bundle, the sweep was billed to its build.
+Admission sweep 7 judged five candidates with 20 agents on 2026-10-29, and the first `lean-ux-canvas`
+report read $33.78 for 35 agents instead of $17.52 for its 15 build agents.
+
+Since 2026-10-31, **a workflow run whose labels name two or more different prefixes counts toward no
+build**. Prefixes count whether or not they are known bundles, because the candidates a sweep declined
+never become one. The change moved no committed report: the `lean-ux-canvas` report was held back until
+the fix, and every other report re-derived byte-identical.
+
 ## The two words in the index that carry the caveats
 
 **Scope** answers "is this a whole build?"

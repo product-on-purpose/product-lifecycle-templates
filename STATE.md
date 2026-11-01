@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=54, tier1=25, tier1remaining=2, statebuilt=54, statecandidate=155, stateoutofscope=2, commoncandidates=48, adrs=83, cisteps=32, checkk=160, checkformats=136, checklogs=116, logsgated=48, sourcesgated=1955 -->
 
-**Last updated:** 2026-10-30 (**`v0.24.0` ships `lean-ux-canvas` and `lean-canvas`, the 53rd and 54th
+**Last updated:** 2026-10-31 (**The Lean UX Canvas's build-cost report is published**: $17.52 at API list
+rates for the usual 15 agents, all on Sonnet. The report generator had billed admission sweep 7, a run that
+judged five candidates, to `lean-ux-canvas`; a run whose labels name two or more candidates now counts toward
+no build, and no other report changed. No release yet.)
+The previous entry read: **`v0.24.0` ships `lean-ux-canvas` and `lean-canvas`, the 53rd and 54th
 bundles**, as a minor release the maintainer directed on 2026-10-30. Both skills now name both canvases, the
 template chooser lists all 54 bundles, and the Lean Canvas's build-cost report is published: $22.96 at API
 list rates for 16 agents. The Lean UX Canvas's report is held back, because the generator counted an earlier
