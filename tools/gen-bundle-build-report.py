@@ -25,6 +25,8 @@ sweep. It counts toward a bundle only when the same session also ran a workflow 
 bundle, so a re-score or a fact-check that merely names a bundle is never billed to it. Since
 2026-10-22 it must also have started after that build's first workflow agent did, so an admission sweep
 or spec drafted earlier in the same session is not billed to the build either. See AGENT_TOOL_RUN.
+A workflow run that judges several candidates at once, an admission sweep labelled <candidate>/<stage>,
+belongs to no build; since 2026-10-31 it is left out whole. See resolve_runs().
 
 A report's totals count only the agents that BUILT the bundle. Agents labelled <bundle>/sweep:N, which
 sweep the repository's counts when the bundle lands, go into a separate `landing_sweep` block and never
@@ -90,6 +92,9 @@ GREEN, RED, DIM, OFF = "\033[32m", "\033[31m", "\033[2m", "\033[0m"
 #   (2026-10-22, no bump) an Agent-tool subagent that started before its session's first workflow agent
 #         for the same bundle is outside the build. No field changes meaning; it narrows which agents
 #         count. Only design-brief, whose spec and admission sweep ran in its build session, moved.
+#   (2026-10-31, no bump) a workflow run whose labels name two or more <prefix>/ values is a
+#         multi-candidate sweep and is outside every build. It narrows which agents count, as above.
+#         Only lean-ux-canvas, whose admission sweep had been billed to it, moved.
 REPORT_SCHEMA_VERSION = "2.0.0"
 
 # Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every
@@ -554,6 +559,18 @@ def resolve_runs(agents):
         if excluded * 2 >= len(rows):
             for a in rows:
                 a["bundle"], a["run_confidence"] = "", "excluded"
+            continue
+
+        # A run whose labels name two or more different <prefix>/ values judged several candidates
+        # at once, so it built none of them: an admission sweep, most often. Run consensus below
+        # would hand the whole run to the one candidate that later became a bundle. Admission sweep
+        # 7 (wf_b9644628-5f0, 2026-10-30) labelled 20 agents across five candidates and billed all
+        # of them to lean-ux-canvas, nearly doubling its build. Prefixes count whether or not they
+        # are known bundles, because the candidates a sweep turned down never become one.
+        prefixes = {a["label"].split("/", 1)[0] for a in rows if "/" in a["label"]}
+        if len(prefixes) >= 2:
+            for a in rows:
+                a["bundle"], a["run_confidence"] = "", "outside-build"
             continue
 
         reliable = {}

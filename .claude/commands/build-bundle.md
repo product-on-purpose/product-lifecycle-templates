@@ -156,6 +156,7 @@ user-research-report 19,270,748, $38.54, for 23, all Sonnet: a research run of t
 dimensions in both, then the usual draft and review, plus a research agent ($2.99) and a fact checker ($1.10)
 run through the Agent tool, without which it reads $34.45, its two-template drafting $18.54, $9.24 of it the
 companion;
+lean-ux-canvas 8,760,076, $17.52, for the same 15, all Sonnet, its single-template drafting $6.84;
 lean-canvas 11,063,489, $22.96, for 16, the usual 15 on Sonnet plus an Opus head writer ($2.48) run through
 the Agent tool, without which it reads $20.48, its single-template drafting $9.81;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
