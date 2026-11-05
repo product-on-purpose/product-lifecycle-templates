@@ -7593,7 +7593,7 @@ start off with the business problem statement."
 | `lean-canvas` (ADR 0083) | Ash Maurya's canvas models a whole business: channels, revenue, costs. Gothelf's frames one initiative's hypotheses and asks nothing about revenue or cost |
 | Jeff Patton's Opportunity Canvas | Not built and not admitted here. Patton's page calls it "the right abstraction level for discussing a new feature idea for an existing product", which overlaps this canvas. The companion should name it and say the library ships one of the two |
 | Gothelf's Lean Strategy Canvas | Not admitted here. Gothelf calls it a tool "designed to set up better work using the Lean Product Canvas". It would be its own candidate |
-| Product Opportunity Assessment (#312) | Marty Cagan's go or no-go assessment of one opportunity, still a candidate. Its boundary with this canvas is untested |
+| Product Opportunity Assessment (#312) | Marty Cagan's go or no-go assessment of one opportunity, declined 2026-11-05 by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md). Its boundary with this canvas was never tested |
 
 #### Sizes: one, recommended
 
