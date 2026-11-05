@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-11-05
 decision-makers: [jprisant]
 consulted: [claude]
@@ -20,8 +20,8 @@ consulted: [claude]
   whenever its requirements or tests change, so `qa-docs` is the wrong axis, not merely a strained reading.
 - **Who should not use it.** Named practitioners say the matrix rarely repays its upkeep outside regulated
   work. The guide must say so, and the build carries a stop rule if the worked example cannot justify itself.
-- **Status:** proposed 2026-11-05. It amends a family contract, so it takes effect only after the maintainer
-  reads the contract diff
+- **Status:** accepted 2026-11-05. Given a plain-English summary of the choices, the maintainer answered "Build matrix,
+  skip guide". The new contract clause was then put to the maintainer word for word before this record merged
   ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)).
 
 ## Context and Problem Statement
@@ -143,7 +143,7 @@ unregulated team, the build stops and this decision returns to the maintainer wi
 
 ### Confirmation
 
-The maintainer's read of the contract diff confirms this record. Check K then gates the member's values. Its registry
+The maintainer's go on the contract clause confirms this record. Check K then gates the member's values. Its registry
 entry needs no edit, because it gates values and not a member count.
 
 ## More Information

@@ -16,11 +16,12 @@ people who want every change, release notes are for people who want to know what
 
 - **The Lean UX Canvas's build cost is published**: $17.52 at API list rates for the usual 15 agents, all
   on Sonnet, in [`bundle-builds/INDEX.md`](bundle-builds/INDEX.md). `v0.24.0` held the report back.
-- **Two proposed decision records, with specs, for candidates the maintainer has not yet ruled on.**
-  [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md)
-  would place the requirements traceability matrix in `governance-docs`, and
-  [ADR 0085](docs/internal/decisions/0085-manager-user-guide-opens-a-personal-docs-family.md) would open a
-  one-member `personal-docs` family for the manager user guide. Neither is accepted, and no bundle ships.
+- **The requirements traceability matrix is admitted to `governance-docs`**, by
+  [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md).
+  The contract moves to `0.6.0` with one new clause, and the spec is written. The bundle is not built yet.
+- **The manager user guide is declined, for now**, by
+  [ADR 0085](docs/internal/decisions/0085-manager-user-guide-is-declined.md). It clears admission, and the
+  maintainer chose not to open a family for it.
 - **The product opportunity assessment is declined, for now**, by
   [ADR 0086](docs/internal/decisions/0086-product-opportunity-assessment-is-declined.md). The lean business case
   already does its job. The `business-case` guide gains a paragraph naming the questions a new-product case should
