@@ -22,7 +22,7 @@ who work with them.** Its author is its subject, nobody agrees to it, and it is 
 - a **manager user guide** tells a manager's direct reports how that manager works and how to work with them.
 
 **The defining property is that the author is the subject and the only authority.** That is why no other family holds
-it. A document a team agrees belongs in `standing-standards`, whose membership sentence requires agreement. A document
+it. A standard readers are judged against, or an instrument they execute, belongs in `standing-standards`. A document
 that summarises facts held elsewhere for an audience outside the team belongs in `communication-docs`.
 
 **A candidate written by a team about itself is not a member.** On the catalog's descriptions, a team charter (entry 80)

@@ -8050,7 +8050,11 @@ of each vendor's site were checked on 2026-10-29, and they bar no automated read
 - **Check 2, phase fit.** Not applicable: the type takes a `classification`.
 - **Check 3, written-form scope.** A table, the shape `risk-register` and `raid-log` already ship.
 - **Check 4, no built bundle does its job.** Argued in ADR 0084, labelled the library's POSITION.
-- **Check 5, a software audience.** TestDevLab's worked example opens "A development team is building a new application".
+- **Check 5, a software audience: a weak pass.** [InfoQ's 2008 roundup](https://www.infoq.com/news/2008/06/agile-traceability-matrix)
+  opens "A formal traceability matrix often evokes strong response from the Agile community", and it reports software
+  practitioners arguing from their own projects. Jama writes that the matrix "is widely used in regulated product development".
+  No named software team's own matrix was read, and the build's `practice` dimension must look for one. InfoQ's terms were
+  checked on 2026-11-05 by a keyword search of its terms page, which found no clause on automated access.
 
 **Pages for the maintainer to read by hand, if wanted.** PMI's
 [template page](https://www.projectmanagement.com/deliverables/614623/requirements-traceability-matrix-template) sits behind a
@@ -8211,7 +8215,7 @@ at this section's end is open.
 #### The recommendation, and how sure it is
 
 **If the maintainer wants the library to hold a document about one person, build this as the founding member of a new family.**
-Confidence: medium on the placement, and medium-low on the scope question it depends on.
+Confidence: medium-low on the placement, and medium-low on the scope question it depends on.
 
 The guide is written by one manager, about themselves, for the people who report to them. It says how they work, how to
 communicate with them, and how to tell them they are wrong. Amy Shiel's page states the purpose: "This page is intended to help
@@ -8228,10 +8232,11 @@ has no forecast of further members. Declining is a sound alternative, and it is 
 
 #### Admission: re-established on GitLab's handbook
 
-**The issue's admitting source no longer holds.** First Round Review's reproduction of Jay Desai's guide sits under terms that say:
-"You may not “crawl,” “scrape,” or “spider” any portion of the Site (through use of manual or automated means)." The terms define the
-Site to include the site's associated content, and its navigation lists The Review. Agents read the page in the Standard run, in sweep 7
-and again on 2026-11-05, before anyone checked those terms. Nothing here takes evidence from it.
+**The issue's admitting source no longer holds, on this library's reading.** firstround.com's terms say:
+"You may not “crawl,” “scrape,” or “spider” any portion of the Site (through use of manual or automated means)." They define the
+Site as that domain and "its associated services", and its navigation lists The Review. This library reads the clause as covering
+`review.firstround.com`, where Jay Desai's guide is reproduced. D7 lets the maintainer rule otherwise. Agents read the page in the
+Standard run, in sweep 7 and again on 2026-11-05, before anyone checked those terms. Nothing here takes evidence from it.
 
 **GitLab's handbook carries admission.** Its pages carry a Creative Commons licence, so the terms rule allows reading them. Each
 quotation below passed a raw-text check on 2026-11-05.
@@ -8262,9 +8267,11 @@ a guide is revised. Shiel's page was last modified on June 27, 2024.
 
 **`communication-docs` excludes it cleanly:** its audience is "outside the team", and its members own none of their facts.
 
-**`standing-standards` would need redefining.** Its membership sentence, its authorship line, its stated coherence and its classification cut would
-all have to move. The placement would also tell readers that reports are judged against their manager's preferences. Ed Batista warns: "Expecting
-employees to conform to your preferences without making an effort to understand and adapt to theirs isn't management, it's coercion."
+**`standing-standards` fits on cadence and fails on its classification cut.** ADR 0032 calls its membership phrase "closer to a cadence than to a job", so
+one-person authorship is the weaker objection. ADR 0032 also says "The axis question is the substance". A disclosure of working style is not an instrument
+anyone executes, so filing it as `foundation` calls it a standard that reports are judged against. Ed Batista warns: "Expecting employees to conform to your
+preferences without making an effort to understand and adapt to theirs isn't management, it's coercion." **Confidence in the new family is medium-low.**
+If the maintainer accepts the `foundation` reading, amending `standing-standards` is the smaller change.
 
 **The cost of a new family is stated.** It needs a contract, a check K entry and a move in the family counts. A team charter and a working
 agreement would not join it, so it may stay at one member.
@@ -8371,8 +8378,9 @@ contradict no sibling**, and it must show one real correction someone made to it
 | # | Choice | Recommended | Alternative |
 |---|---|---|---|
 | D1 | Should the library hold a document about one person? | **A:** yes, with the placement in D2 | B: no. Decline, with a record stating this scope ground |
-| D2 | Placement, if yes | **A:** new `personal-docs` family (ADR 0085) | B: amend `standing-standards`; C: amend `communication-docs` |
+| D2 | Placement, if yes | **A:** new `personal-docs` family (ADR 0085); the name is open, and it sits near the catalog's "personal-data" rows | B: amend `standing-standards`, at `foundation`; C: amend `communication-docs` |
 | D3 | Scope | **A:** a manager, with the guide naming wider use | B: any person's working-style guide, under a neutral id |
 | D4 | Classification | **A:** `utility` | B: `foundation` |
 | D5 | Sizes | **A:** `[lean]` | B: `[lean, full]` |
 | D6 | Your hand reads of First Round and Atlassian | **A:** read First Round before the build | B: build without either |
+| D7 | Do firstround.com's terms cover First Round Review? | **A:** treat them as covering it, which is the safe default | B: rule that they do not; the page returns as a second admitting source, and the excluded-sites row narrows |

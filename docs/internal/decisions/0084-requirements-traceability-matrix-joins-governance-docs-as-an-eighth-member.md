@@ -68,8 +68,11 @@ Each quotation passed a raw-text check on 2026-11-05.
   maintain traceability".
 - **Check 2, phase fit.** Not applicable: the type takes a `classification`.
 - **Check 3, written-form scope.** The type is a table, the shape `risk-register` and `raid-log` already ship.
-- **Check 5, a software audience.** TestDevLab's worked example opens "A development team is building a new
-  application".
+- **Check 5, a software audience: a weak pass.** InfoQ's 2008 roundup opens "A formal traceability matrix often evokes
+  strong response from the Agile community", and it reports software practitioners arguing from their own projects. Alistair
+  Cockburn, for one, writes from "30 years in the business". Jama writes that the matrix "is widely used in regulated product
+  development". No named software team's own matrix was read. TestDevLab's example of a development team is a hypothetical,
+  and the sweep's claim about Orcanos' development team did not match that page's text.
 
 **Every qualifying source is a vendor**, and three sell the live alternative. PMI's template sits behind a
 membership wall and was not read. The Texas Department of Information Resources ships a standalone template, but
@@ -128,6 +131,8 @@ is produced once and finished.
 - **The named critics may be right for most readers.** Scott Ambler: "traceability matrices are highly overrated".
   Alistair Cockburn: "NEVER seen a traceability matrix pay off". Both quotations come from a 2008 InfoQ roundup. The
   guide states them, with Ambler's own regulated exception.
+- **The relationship obligation grows by one edge per member.** The new companion states its position against all
+  seven existing members, per contract section 1.
 - **The family's shared-scenario rule is a real test.** Acme Analytics is not a regulated company, so the example
   must justify a matrix on other grounds. See the stop rule.
 

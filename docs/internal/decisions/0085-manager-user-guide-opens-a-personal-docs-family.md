@@ -15,11 +15,11 @@ consulted: [claude]
 - **The scope question comes first.** This would be the first bundle about one person rather than about a
   product or its delivery. What the library will template stops for the maintainer, and declining is the
   realistic alternative.
-- **Why no existing family.** `communication-docs` excludes it on two defining clauses. `standing-standards`
-  would have to change its membership sentence, its authorship line, its stated coherence and its
-  classification cut, which is a redefinition and not a widening.
-- **Admission now rests on one readable source.** First Round Review, the source the issue names, has terms that
-  bar crawling. GitLab's handbook carries admission on its own.
+- **Why no existing family.** `communication-docs` excludes it on two defining clauses. `standing-standards` fits
+  on cadence, but its classification cut, which its adopting record calls "the substance", has no place for a
+  disclosure of working style. Calling the guide a standard would tell readers that reports are judged against it.
+- **Admission now rests on one readable source.** The issue names First Round Review. firstround.com's terms bar
+  crawling, and this library reads them as covering The Review. GitLab's handbook carries admission on its own.
 - **Status:** proposed 2026-11-05. A new family contract is "adopted only after a maintainer read"
   ([decision-procedures.md](../decision-procedures.md#what-always-stops-for-the-maintainer)). Check K registers
   the family only on acceptance.
@@ -30,10 +30,12 @@ The maintainer queued the type for an admission sweep on 2026-10-25. Admission s
 2026-10-29 and found that no family fits without a contract change. It listed four options: amend
 `standing-standards`, amend `communication-docs`, open a new family, or decline.
 
-A read on 2026-11-05 tested those options and found two problems with the sweep's account. First, First Round Review's
+A read on 2026-11-05 tested those options and found two problems with the sweep's account. First, firstround.com's
 terms say: "You may not “crawl,” “scrape,” or “spider” any portion of the Site (through use of manual or automated
-means)." So that page cannot carry admission under the terms rule. Second, the sweep's ranking of `standing-standards`
-as the smaller strain counted one clause, and four are affected.
+means)." They define the Site as that domain and "its associated services", and its navigation lists The Review. This
+library reads the clause as covering `review.firstround.com`, so that page cannot carry admission under the terms rule.
+The maintainer may rule otherwise. Second, the sweep's ranking of `standing-standards` as the smaller strain tested
+authorship and left the classification cut untested.
 
 ## Decision Drivers
 
@@ -80,14 +82,18 @@ and a fuller structure. The maintainer may read it by hand, under the terms rule
 
 ### Why not `standing-standards`
 
-The sweep called this the smaller strain. By the reading method above, four things would have to move:
+**Authorship is the weaker ground, and this record does not rest on it.** The sweep's objection was that one person
+writes the guide. But [ADR 0032 (adopt standing-standards)](0032-adopt-standing-standards-family-contract.md) says
+"Agreed once, applied every time" is "closer to a cadence than to a job", and a runbook's authority "comes from being
+correct right now", not from agreement. On cadence alone, the guide fits, and the family's staleness obligation suits it.
+The contract's lines "written when the team decides how it will work" and "written by a team for its own future self"
+would still need editing, but those edits are small.
 
-| Clause | Text | The problem |
-|---|---|---|
-| Membership | "agreed once and applied every time" | Nobody agrees to this guide; one person writes it |
-| Membership | "written when the team decides how it will work" | One person decides, about themselves |
-| Axis cut | "a standard you judge against, or an instrument you execute" | A disclosure of working style is neither |
-| Coherence | "written by a team for its own future self" | It is written by one person for other people |
+**The classification cut is the deciding ground.** ADR 0032 says "The axis question is the substance", and its test is
+whether a document is "a standard you judge against, or an instrument you execute". A disclosure of working style is
+not an instrument anyone executes. Filing it as `foundation` means calling it a standard that its readers are judged
+against. The contract also sends a document "valuable only while current" to a `utility` family, and it does not allow
+`utility` itself. So this option means either the `foundation` reading or a third value on the axis.
 
 **The placement would also teach the wrong thing (POSITION).** `foundation` would tell readers that reports are judged
 against their manager's stated preferences. Ed Batista writes: "Expecting employees to conform to your preferences
@@ -95,7 +101,8 @@ without making an effort to understand and adapt to theirs isn't management, it'
 
 **The family's falsifier is not the deciding ground.** The sweep said a guide read once at onboarding is not "consulted at
 the moment of action". That claim was its critic's inference, and no readable source tests it. This record does not rest
-on it.
+on it. If the maintainer's hand read shows later use, and the maintainer accepts the `foundation` reading, this option
+becomes the smaller change. **That is why the placement sits at medium-low confidence.**
 
 ### Why `utility`
 
@@ -142,7 +149,10 @@ family may stay at one member permanently.
 
 1. **The maintainer rules that a document about one person is out of scope.** The candidate is then declined, and this record
    is rewritten as that decline.
-2. **A hand read of First Round Review shows a different shape or cadence.** Sections and `utility` would be revisited.
+2. **A hand read of First Round Review shows a different shape or cadence.** Sections and `utility` would be revisited,
+   and the `standing-standards` option would strengthen if the guide is shown in use at the moment of action.
+   **The maintainer may also rule that the terms do not cover The Review.** The page then returns as a second admitting
+   source that agents may read.
 3. **A hand read of Atlassian's Working Agreements play contradicts the boundary with a working agreement.**
 
 ### Confirmation
