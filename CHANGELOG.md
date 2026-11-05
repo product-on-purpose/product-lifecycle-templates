@@ -16,6 +16,14 @@ people who want every change, release notes are for people who want to know what
 
 - **The Lean UX Canvas's build cost is published**: $17.52 at API list rates for the usual 15 agents, all
   on Sonnet, in [`bundle-builds/INDEX.md`](bundle-builds/INDEX.md). `v0.24.0` held the report back.
+- **Two proposed decision records, with specs, for candidates the maintainer has not yet ruled on.**
+  [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md)
+  would place the requirements traceability matrix in `governance-docs`, and
+  [ADR 0085](docs/internal/decisions/0085-manager-user-guide-opens-a-personal-docs-family.md) would open a
+  one-member `personal-docs` family for the manager user guide. Neither is accepted, and no bundle ships.
+- **`firstround.com` joins the excluded-sites table** in
+  [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md). Its terms bar crawling, and earlier agent runs had
+  read First Round Review before anyone checked them.
 
 ### Fixed
 

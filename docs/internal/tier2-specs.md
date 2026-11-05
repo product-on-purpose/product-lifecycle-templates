@@ -55,6 +55,8 @@ design task" rather than "a spec-driven execution".
 | `user-research-plan` | `user-research-plan` (entry 210, added 2026-10-23 by PR #315) | `research-docs` | **Written 2026-10-23**, and the maintainer took all ten of its recommendations on 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | **Built 2026-10-24**, lean and full, default lean, the first `research-docs` member. Its [build report](../../bundle-builds/reports/user-research-plan_v0.1.0.md) covers the whole build: 14,890,444 weighted, $32.47, 16 agents. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) (adopt the research-docs family contract), accepted 2026-10-23 with no member built. It was built first, by the maintainer's ruling, so that the report's example reports against its plan. Its example plans the 2026-05 Reporting friction study that four shipped examples cite. Catalog entry 210's size moved from S to S/M at landing. The build's research weakens six sentences in this section, recorded in [dated notes](#notes-from-the-plans-build-2026-10-24) rather than rewritten |
 | `user-research-report` | `user-research-report` (entry 18) | `research-docs` | **Written 2026-10-23**, in the same section, with the same rulings of 2026-10-24; admission sources [retrieved and raw-checked 2026-10-23](#research-docs-founding-members-the-user-research-plan-and-the-user-research-report) | **Built 2026-10-27**, lean and full, default lean, the second `research-docs` member, which completes the family's founding pair. Its [build report](../../bundle-builds/reports/user-research-report_v0.1.0.md) covers the whole build: 19,270,748 weighted, $38.54, 23 agents. Family by [ADR 0081](decisions/0081-adopt-research-docs-family-contract.md). It was built second, by the maintainer's ruling. Its example is the friction study's readout, titled with the PRD example's citation, "Discovery readout: Reporting friction study, 2026-05". Catalog entry 18's size moved from S/M/L to S/M at landing, and its relationships gained the plan. The build's research weakens ten places in this section, recorded in [dated notes](#notes-from-the-reports-build-2026-10-27) rather than rewritten |
 | `lean-ux-canvas` | `lean-ux-canvas` (entry 211, added at landing on 2026-10-30) | `discovery-docs`, by [ADR 0082](decisions/0082-lean-ux-canvas-joins-discovery-docs-at-discover.md) | **Researched 2026-10-29** in admission sweep 7. **Written 2026-10-30**; cadence and placement evidence [retrieved and raw-checked the same day](#discovery-docs-sixth-member-at-discover-the-lean-ux-canvas) | **Built 2026-10-30**, lean only, the sixth `discovery-docs` member and the family's second bounded cadence exception. Priority P2 by the maintainer's choice of 2026-10-30, issue #330 (bundle: lean-ux-canvas), now closed. Sweep 7 recommended a decline at medium confidence; the maintainer chose to include the type, and ADR 0082 answers the sweep's two grounds, accepted after the maintainer's read the same day |
+| `requirements-traceability-matrix` | `requirements-traceability-matrix` (entry 37) | `governance-docs`, by [ADR 0084](decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md), **proposed** | **Researched 2026-10-29** in admission sweep 7. **Written 2026-11-05**; quotations [raw-checked the same day](#governance-docs-eighth-member-by-amendment-the-requirements-traceability-matrix) | **No, and not queued.** It waits on the maintainer's read of the contract diff and on the section's choices |
+| `manager-user-guide` | none yet; a new entry at landing | `personal-docs`, a new family, by [ADR 0085](decisions/0085-manager-user-guide-opens-a-personal-docs-family.md), **proposed** | **Researched 2026-10-29** in admission sweep 7. **Written 2026-11-05**; admission re-established [the same day](#personal-docs-founding-member-the-manager-user-guide) on GitLab's handbook, because First Round's terms bar crawling | **No, and not queued.** It waits on the maintainer's scope ruling and on the read of the new contract |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -8005,3 +8007,372 @@ quotations.
 | D5 | Sections 10 and 11, Riskiest Beliefs and Versions | **A:** keep both, labelled POSITION | B: the nine boxes only |
 | D6 | The example | **A:** the embedded-analytics OEM line | B: Acme's core product; C: the enterprise segment |
 | D7 | `pairs_with` | **A:** `[foundation-lean-canvas]` | B: `[]` |
+
+### governance-docs (eighth member, by amendment): the requirements traceability matrix
+
+**`requirements-traceability-matrix`** - `governance-docs`, **`classification: utility`** (recommended), sizes
+**`[lean, full]`** (recommended), methodology **`generic`** (recommended), catalog **entry 37**, Tier 3. Issue #261
+(bundle: requirements-traceability-matrix), priority P3. The family decision is
+[ADR 0084](decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md)
+(requirements traceability matrix joins governance-docs as an eighth member), **proposed 2026-11-05**. It amends a
+contract, so nothing here stands until the maintainer reads the diff. Every choice at this section's end is open.
+
+#### The recommendation, and how sure it is
+
+**Build the matrix as the eighth `governance-docs` member, at `classification: utility`, in two sizes.** Confidence:
+medium.
+
+The matrix lists a product's requirements and shows, for each one, what implements it, what verifies it and what the
+result was. Its job is to make a requirement with no verification visible.
+
+**What holds the confidence at medium.** Every qualifying source is a vendor. Named practitioners dispute that the
+matrix repays its upkeep outside regulated work. It would be the library's first built Tier 3 bundle, and the shared
+example's company is not regulated.
+
+#### Demand: a catalog row and the maintainer's choice
+
+- Catalog entry 37 has carried the type since the catalog was built, at Tier 3.
+- `user-stories_companion.md`, `prd_companion.md` and `test-case_companion.md` each mention a traceability matrix, and
+  no shipped bundle provides one.
+- On 2026-11-04 the maintainer chose to take this candidate through admission second, after #312 (product opportunity
+  assessment).
+
+#### Admission: cleared on vendor sources
+
+Admission sweep 7 tested the type on 2026-10-29. Every quotation below passed a raw-text check on 2026-11-05. The terms
+of each vendor's site were checked on 2026-10-29, and they bar no automated reading.
+
+- **Check 1, the written form.** [TestDevLab](https://www.testdevlab.com/center-of-excellence/glossary/engineering-terms/traceability-matrix):
+  "A Traceability Matrix is a document that links and maps project requirements to their corresponding test cases."
+  [Jama Software](https://www.jamasoftware.com/?p=11155): "A requirements traceability matrix is a structured information
+  artifact". [Visure Solutions](https://visuresolutions.com/blog/software/traceability-matrix): "a structured document or
+  tool designed to establish and maintain traceability".
+- **Check 2, phase fit.** Not applicable: the type takes a `classification`.
+- **Check 3, written-form scope.** A table, the shape `risk-register` and `raid-log` already ship.
+- **Check 4, no built bundle does its job.** Argued in ADR 0084, labelled the library's POSITION.
+- **Check 5, a software audience.** TestDevLab's worked example opens "A development team is building a new application".
+
+**Pages for the maintainer to read by hand, if wanted.** PMI's
+[template page](https://www.projectmanagement.com/deliverables/614623/requirements-traceability-matrix-template) sits behind a
+membership wall and would add a standards-body source. Asana's template page is treated as barred, pending the raw check of
+its terms. Neither is needed for admission.
+
+**A correction to the sweep.** The digest says three vendors call the static document "traditional". A raw search does not
+support that wording. Jama writes "Systems engineering teams are shifting away from a document-centric approach", and Ketryx
+writes "An RTM is not a static document but rather a living artifact that evolves with the software development process."
+
+#### Classification: `utility`, recommended
+
+**`utility` is the only value the contract allows, and the cadence earns it.** Jama: "A requirements traceability matrix should
+be updated whenever requirements, test cases, or linked lifecycle artifacts change, not just on a calendar schedule."
+
+**The wrinkle.** Jama also calls the matrix "a specific versioned artifact that captures those links at a point in time." This
+library reads that as the standing register snapshotted for an audit. The full size's Baselines section carries that use.
+
+#### The family: `governance-docs`, by amendment (ADR 0084)
+
+**`qa-docs` is the wrong axis.** The sweep offered it as a reading that needs no amendment. Its contract says a member is "produced
+at a stage and finished", and this type is edited throughout. **`governance-docs` fails on one phrase**, its purpose clause, as
+`tracking-plan` and `data-dictionary` did. **ADR 0064 does not control**, because no shipped table holds this content.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `test-case` | Its Identification and Traceability field points one case at one thing. The matrix shows every requirement in one view, including those with no case. The field remains the matrix's input |
+| `test-plan` | It plans verification for one release and names test items. The matrix outlives the release |
+| `test-summary-report` | Its table counts results per area or suite and closes with the cycle. A matrix row is one requirement and stays open |
+| `prd`, `use-case-specification`, `acceptance-criteria` | These state requirements. The matrix states where each one went |
+| `change-request`, `change-log` | Their traceability links a change to its follow-up. A change to a requirement is a reason to update the matrix |
+| `risk-register` | It tracks risks. The full size's Risk Control Trace links a risk to the requirement and test that control it, and it owns no risk scoring |
+| `data-dictionary`, `tracking-plan` | Both are standing registers with a different subject: fields and events, not requirements |
+
+#### Sizes: lean and full, recommended
+
+**`[lean, full]`, default lean.** Confidence: medium-low, because the catalog's `M/L` is a hypothesis and no source read shows a
+template with every link type. **Lean** carries what TestDevLab describes: requirement to test, in both directions. **Full** adds
+the wider links: Visure lists "Development Tasks and Deliverables", and Orcanos names a failure in which "The RTM has no column for
+risk controls".
+
+#### Section design (proposed, for the build's research to test)
+
+| # | Section | Size | What it holds | Source |
+|---|---|---|---|---|
+| 1 | Purpose and Boundary | lean, full | The product and requirement set covered, who keeps it, and whether this file or a tool is the record | The library's POSITION, from Jama's live-view argument |
+| 2 | Trace Conventions | lean, full | The ID schemes, what counts as covered, and the status vocabulary | The library's POSITION |
+| 3 | The Matrix | lean, full | One row per requirement: ID, requirement, source, verified by, status, notes | Visure's "Requirements ID and Description", "Source of Requirements" and "Associated Test Cases" |
+| 4 | Coverage Gaps | lean, full | Requirements with no test, tests with no requirement, and what each gap's owner decided | TestDevLab: "every requirement is covered by at least one test case, and conversely, that every test case is linked to a valid requirement"; Orcanos: "An RTM that only maps forward is incomplete." |
+| 5 | Implementation Trace | full only | Each requirement to its design reference and code or task reference | Visure's "Development Tasks and Deliverables" |
+| 6 | Risk Control Trace | full only | Each risk, the requirement that controls it, and the test that verifies the control | Orcanos' named failure |
+| 7 | Baselines | full only | Dated snapshots: what a release or an audit saw | Jama's "at a point in time" |
+| 8 | Upkeep and Review Trigger | lean, full | The events that require an update, its owner, and the date last reconciled | Jama's update rule; the trigger's form is the library's POSITION |
+
+The lean sizes are a strict ordered subset, so section 8 sits last in both. **What stays out.** Requirement text beyond a short
+label belongs in the source document. Test steps belong in `test-case`, and risk scoring belongs in `risk-register`.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `requirements-traceability-matrix` |
+| `title` | Requirements Traceability Matrix |
+| `family` | `governance-docs` |
+| `classification` | `utility` (recommended) |
+| `sizes_available`, `default_size` | `[lean, full]`, `lean` |
+| `methodology` | `generic`; the catalog's "regulated/Waterfall" reads narrower than the evidence |
+| `aliases` | RTM, trace matrix, traceability matrix (the catalog's three) |
+| `pairs_with` | `[]`; `tools/known-skills.txt` names no matching skill |
+| `catalog_ref` | entry 37 |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The stage disagrees.** `catalog.md` says "throughout, audits", and `atlas/catalog-data.json` says "requirements". The evidence
+  supports the first.
+- **The methodology.** "regulated/Waterfall" is narrower than the sources.
+- **The state.** Entry 37 moves to `built`, and this would be the first built Tier 3 row.
+
+#### The example: Saved Views, with a stop rule
+
+**Recommended: the matrix for Saved Views, on the Reporting Platform Modernization program.** Confidence: medium-low. The family's
+shared-scenario rule requires that program. The `qa-docs` thread supplies real rows.
+
+**Facts the example must carry, with no contradiction.**
+
+- Requirements FR-1 to FR-6 come from `prd_example.md`, with their priorities.
+- FR-6 is shown as deferred, because `test-plan_example.md` puts FR-1 to FR-5 in scope and defers FR-6.
+- `TC-047` appears as a test that traces to risk R-05 and to no acceptance criterion, as `test-case_example.md` states. That row
+  is the backward trace the type exists to show.
+- R-05 matches the risk register and the test plan.
+- No regulation is invented. A grep of the program's PRD, RAID log and change log examples found no regulated context.
+
+**The stop rule.** Acme is not regulated. If the worked example reads as overhead rather than as a real gap caught, the build stops
+and the decision returns to the maintainer, with a decline on the table, as ADR 0084 records.
+
+#### Risks for the build and the review
+
+- **Vendor framing is this type's named citation hazard.** The richest sources sell the replacement. Record each such claim as a
+  vendor's argument.
+- **The standards are not read.** Sweep 7's claims about ISO/IEC/IEEE 29148, 29119-3 and 21 CFR 820.30 are second-hand. Cite a standard
+  for existence, never for content, as [ADR 0050](decisions/0050-qa-docs-admits-a-fourth-member.md) requires.
+- **The guide must state the dispute.** Scott Ambler: "My experience is that traceability matrices are highly overrated". The same
+  passage adds "I'm a firm believer in traceability if you have actual regulatory compliance needs". Alistair Cockburn: "NEVER seen a
+  traceability matrix pay off". InfoQ, reporting Brad Appleton: "Traceability matrix on the other hand is one of the possible
+  implementations of traceability." The roundup dates from 2008, so the build should look for a newer voice.
+- **A live tool may be the right answer.** When-NOT-to-use must send a team whose tracker already holds the links to that tracker.
+- **Example reuse.** Grep the template for "Saved Views", "FR-" and "TC-047" before review.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #261 closes, relabelled `status:built`.
+- Catalog entry 37's `state` becomes `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) sections 2, 3 and 4 move with the counts.
+- `governance-docs`' header Members line changes "not yet built" to the build date.
+- `test-case_companion.md`, `prd_companion.md` and `user-stories_companion.md` may link to the bundle.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has read ADR 0084 and its contract diff, and accepted or amended them.
+2. The maintainer has answered the choices below.
+3. Issue #261 carries `status:queued`.
+4. The maintainer has asked for the build in their own words, such as "use the workflow".
+
+**The six research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Where the matrix comes from, and what standards name it, cited for existence only |
+| `structure` | Column sets across readable templates, and whether one matrix or several is the norm |
+| `practice` | How software teams keep one, including outside regulated work, from named sources only |
+| `debates` | Upkeep cost against audit value; a document against a live tool view; the 2008 critics and any newer ones |
+| `relationships` | Test case, test plan, test report, change log and SRS boundaries |
+| `gap` | The standing gap question, per the runbook |
+
+**Sites the research may not read.** Asana and the other sites in the runbook's table.
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative |
+|---|---|---|---|
+| D1 | Admit and place the matrix | **A:** `governance-docs`, eighth member (ADR 0084) | B: `qa-docs`; C: decline under ADR 0041, because the critics are right for most readers |
+| D2 | Sizes | **A:** `[lean, full]` | B: `[lean]`, with the wider links as optional columns |
+| D3 | The example | **A:** Saved Views, with the stop rule | B: a regulated company outside the Acme thread, which breaks the family's rule |
+| D4 | `methodology` | **A:** `generic` | B: the catalog's "regulated/Waterfall" |
+
+### personal-docs (founding member): the manager user guide
+
+**`manager-user-guide`** - new family `personal-docs`, **`classification: utility`** (recommended), size **`[lean]`**
+(recommended), methodology **`generic`**, no catalog row yet. Issue #329 (bundle: manager-user-guide), priority P3. The family
+decision is [ADR 0085](decisions/0085-manager-user-guide-opens-a-personal-docs-family.md) (manager user guide opens a personal-docs
+family), **proposed 2026-11-05**. A new contract stops for the maintainer's read, so nothing here stands until then. Every choice
+at this section's end is open.
+
+#### The recommendation, and how sure it is
+
+**If the maintainer wants the library to hold a document about one person, build this as the founding member of a new family.**
+Confidence: medium on the placement, and medium-low on the scope question it depends on.
+
+The guide is written by one manager, about themselves, for the people who report to them. It says how they work, how to
+communicate with them, and how to tell them they are wrong. Amy Shiel's page states the purpose: "This page is intended to help
+others understand what it might be like to work with me, especially people who haven't worked with me before."
+
+**What holds the confidence down.** Admission rests on one readable source. All three named critics question the genre. The family
+has no forecast of further members. Declining is a sound alternative, and it is D1's other answer.
+
+#### Demand: the maintainer's own queue
+
+- The 2026-10-23 PM resources Standard run surfaced the type, and the maintainer queued it for a sweep on 2026-10-25.
+- On 2026-11-04 the maintainer chose to take it through admission third.
+- No catalog row and no inbound reference exist.
+
+#### Admission: re-established on GitLab's handbook
+
+**The issue's admitting source no longer holds.** First Round Review's reproduction of Jay Desai's guide sits under terms that say:
+"You may not “crawl,” “scrape,” or “spider” any portion of the Site (through use of manual or automated means)." The terms define the
+Site to include the site's associated content, and its navigation lists The Review. Agents read the page in the Standard run, in sweep 7
+and again on 2026-11-05, before anyone checked those terms. Nothing here takes evidence from it.
+
+**GitLab's handbook carries admission.** Its pages carry a Creative Commons licence, so the terms rule allows reading them. Each
+quotation below passed a raw-text check on 2026-11-05.
+
+- **Check 1, the written form.** [Amy Shiel's README](https://handbook.gitlab.com/handbook/engineering/readmes/amy-shiel) is a sectioned
+  page, "Personal readme page for Amy Shiel, Engineering Manager, GitLab".
+- **Check 2, phase fit.** Not applicable: the type takes a `classification`.
+- **Check 3, written-form scope.** Ordinary prose.
+- **Check 4, no built bundle does its job.** No shipped bundle is written by one person about themselves, and sweep 7's alias scan found
+  no collision.
+- **Check 5, a software audience.** An engineering manager at a software company.
+
+**Pages for the maintainer to read by hand, if wanted.**
+
+- [First Round Review](https://review.firstround.com/the-indispensable-document-for-the-modern-manager). It would add a second source and a
+  fuller structure. Please check three things: whether the author describes returning to the guide when a problem arises, whether the guide
+  is described as revised over time, and whether its twelve headings suit the section design.
+- [Atlassian's Working Agreements play](https://www.atlassian.com/team-playbook/plays/working-agreements). An agent reported that it contrasts a
+  team "Working Agreement" with an individual "User Manual". That report is unverified, and the page would settle the boundary below.
+
+#### Classification: `utility`, recommended
+
+**A guide is useful only while it is true.** Camille Fournier: "your documentation is out of date the minute you write it down". `foundation` implies an
+argued, agreed basis that others are measured against. `tool` implies execution. **Confidence: medium**, because no readable source states how often
+a guide is revised. Shiel's page was last modified on June 27, 2024.
+
+#### The family: a new one, and why (ADR 0085)
+
+**`communication-docs` excludes it cleanly:** its audience is "outside the team", and its members own none of their facts.
+
+**`standing-standards` would need redefining.** Its membership sentence, its authorship line, its stated coherence and its classification cut would
+all have to move. The placement would also tell readers that reports are judged against their manager's preferences. Ed Batista warns: "Expecting
+employees to conform to your preferences without making an effort to understand and adapt to theirs isn't management, it's coercion."
+
+**The cost of a new family is stated.** It needs a contract, a check K entry and a move in the family counts. A team charter and a working
+agreement would not join it, so it may stay at one member.
+
+#### Scope: a manager, recommended
+
+**Confidence: medium.** Diwaker Gupta argues "There's nothing "manager"-specific about them", and that it is a tool "that might work for anyone in a
+collaborative situation". But Fournier's central hazard is authority: "you have a huge power differential to the person who reports to you". A
+generic template would lose the prompts that deal with this. A person who is not a manager can use this template by marking one section not
+applicable, and the guide says so.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| Team charter, catalog entry 80 | Not built. The catalog describes a document that sets a team's purpose, norms and roles, which a team agrees. This guide is one person's |
+| Working agreement, catalog entry 100 | Not built. The catalog describes "agreed team behaviors and norms". This guide binds nobody and states one person's preferences |
+| Onboarding and training guide, catalog entry 195 | Not built. It trains people on a product or process. This guide is about its author |
+| `definition-of-done`, `definition-of-ready` | A team agrees these and judges work against them. Nobody judges work against this guide |
+| `status-report` | It summarises facts held elsewhere, for readers outside the team. This guide originates its own facts, for readers inside the team |
+
+**The weak half.** That a charter or working agreement is collectively written rests on catalog prose, and no named source has been read for it.
+
+#### Sizes: one, recommended
+
+**`[lean]`, one size.** Confidence: medium-low. The readable instance has five sections, and sweep 7 reports that other instances vary widely. Nothing
+read splits a short guide from a long one.
+
+#### Section design (proposed, for the build's research to test)
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Why This Exists | Purpose, and a plain statement that this is one person's view and nobody has agreed to it | Shiel's "Why create a README?"; the claim-of-authority line is section 4 of the proposed contract |
+| 2 | About Me | Role, team, location, relevant background | Shiel's "About me" |
+| 3 | How I Work | Working patterns and style, with a concrete example for each trait | Shiel's "My working style" |
+| 4 | Communicating With Me | Channels, urgency, what a response means | Shiel's inclusion note; the section itself is the library's POSITION |
+| 5 | What I Expect of You | What this manager will ask of reports. It is marked N/A by a reader who is not a manager | The library's POSITION, to be tested against a hand read of First Round |
+| 6 | Telling Me I Am Wrong | How to give feedback, through which channel, and what happens next | Shiel's "How you can help me"; Batista: "A Manager README is no substitute for a feedback-rich culture" |
+| 7 | Where I Get This Wrong | Known blind spots, and what others have corrected | The library's POSITION, answering Fournier's "there is no way to write these and not be self-serving" |
+| 8 | Review Trigger | The event that makes this wrong, who may correct it, and the date last checked | Proposed contract, section 4; Shiel: "Please feel free to contribute to this page by opening a merge request." |
+
+**What stays out.** A team's norms belong in a working agreement, and a role's duties belong in a job description. No performance standard belongs here.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `manager-user-guide` |
+| `title` | Manager User Guide |
+| `family` | `personal-docs` |
+| `classification` | `utility` (recommended) |
+| `sizes_available`, `default_size` | `[lean]`, `lean` |
+| `methodology` | `generic` |
+| `aliases` | manager README, working with me, user manual, personal README |
+| `pairs_with` | `[]`; `tools/known-skills.txt` names no matching skill |
+| `catalog_ref` | new entry, added at landing |
+
+#### The example: an Acme manager, recommended
+
+**Recommended: the guide of a people manager on the Acme Analytics thread.** Confidence: low. The person must be chosen from the examples at build
+time, with a checked fact that they manage people. A generic name would not serve, and no shipped example yet states anyone's direct reports. **It must
+contradict no sibling**, and it must show one real correction someone made to it, so the two-way obligation is visible.
+
+#### Risks for the build and the review
+
+- **The terms rule applies throughout.** First Round, Atlassian, arc.dev and a raw gitlab.com file have been read in error before. Check before the first
+  read. `about.gitlab.com` is barred, and the handbook is readable only under its licence.
+- **An essay is one person's argument.** This family's citation hazard is recording an essay or a single README as general practice.
+- **The critics must be stated, not managed.** The guide's when-NOT-to-use must include a team with no working feedback culture, per Batista.
+- **Pronouns.** The example and all guidance use they/them unless a source states otherwise.
+- **Example reuse.** Grep the template for the example's name and team before review.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #329 closes, relabelled `status:built`.
+- The catalog gains a new entry, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) sections 2, 3 and 4 move with the counts.
+- The README's library table and the family counts change from eleven to twelve.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has made the scope ruling (D1).
+2. The maintainer has read ADR 0085 and the `personal-docs` contract, and accepted or amended them.
+3. `tools/check-bundles.py` registers the family, and its test passes.
+4. The maintainer has answered the choices below.
+5. Issue #329 carries `status:queued`.
+6. The maintainer has asked for the build in their own words, such as "use the workflow".
+
+**The six research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Where the practice comes from, from readable pages and any hand-read pages |
+| `structure` | Sections across readable instances, counted and not assumed |
+| `practice` | How managers use and revise a guide, and how reports respond |
+| `debates` | Fournier, Batista and Gupta, plus any defence that answers them |
+| `relationships` | Team charter, working agreement, one-on-one practice and onboarding |
+| `gap` | The standing gap question, per the runbook |
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative |
+|---|---|---|---|
+| D1 | Should the library hold a document about one person? | **A:** yes, with the placement in D2 | B: no. Decline, with a record stating this scope ground |
+| D2 | Placement, if yes | **A:** new `personal-docs` family (ADR 0085) | B: amend `standing-standards`; C: amend `communication-docs` |
+| D3 | Scope | **A:** a manager, with the guide naming wider use | B: any person's working-style guide, under a neutral id |
+| D4 | Classification | **A:** `utility` | B: `foundation` |
+| D5 | Sizes | **A:** `[lean]` | B: `[lean, full]` |
+| D6 | Your hand reads of First Round and Atlassian | **A:** read First Round before the build | B: build without either |

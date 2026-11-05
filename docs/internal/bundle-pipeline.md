@@ -156,7 +156,7 @@ governed by its own terms: Mind the Product belongs to Pendo, but its own terms 
 terms bar. A second model fetching the page is the same automated read with one more step. A retired
 government page may be read through the Internet Archive's Wayback Machine.
 
-**The excluded sites, as of 2026-10-26, with seven rows added 2026-10-30.** Each clause below was checked against the raw text of the site's
+**The excluded sites, as of 2026-10-26, with seven rows added 2026-10-30 and one added 2026-11-05.** Each clause below was checked against the raw text of the site's
 own terms page. A site not on this list is not cleared by its absence; check it before its first read.
 
 | Site | The clause, verbatim | Terms page |
@@ -182,6 +182,7 @@ own terms page. A site not on this list is not cleared by its absence; check it 
 | `strategyzer.com` | "You agree not to access the Strategyzer AG Services by any means other than through the interface that is provided by Strategyzer AG for use in accessing the Strategyzer AG Services." | `https://www.strategyzer.com/legal/terms-of-service` |
 | `tability.io` | "attempt to access or download content via any mechanism (including spiders, robots, crawlers, data mining tools and the like) other than the Site and/or approved integrations and APIs;" | `https://guides.tability.io/legals/acceptable-use-policy` |
 | `studio.wadeinstitute.org.au` | "Use automated tools to access The Studio at scale without prior written permission" The clause is qualified by "at scale"; a `lean-canvas` research agent read one page before this row existed, and its entry was withdrawn rather than argued. | `https://studio.wadeinstitute.org.au/terms.html` |
+| `firstround.com`, including First Round Review at `review.firstround.com` | "You may not “crawl,” “scrape,” or “spider” any portion of the Site (through use of manual or automated means)." The terms define the Site as firstround.com and "its associated services", and the site's navigation lists The Review, so this library reads the clause as covering the subdomain | `https://www.firstround.com/terms` |
 
 **Reading an excluded page by hand.**
 
