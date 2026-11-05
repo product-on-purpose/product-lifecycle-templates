@@ -21,6 +21,10 @@ people who want every change, release notes are for people who want to know what
   would place the requirements traceability matrix in `governance-docs`, and
   [ADR 0085](docs/internal/decisions/0085-manager-user-guide-opens-a-personal-docs-family.md) would open a
   one-member `personal-docs` family for the manager user guide. Neither is accepted, and no bundle ships.
+- **The product opportunity assessment is declined, for now**, by
+  [ADR 0086](docs/internal/decisions/0086-product-opportunity-assessment-is-declined.md). The lean business case
+  already does its job. The `business-case` guide gains a paragraph naming the questions a new-product case should
+  add.
 - **`firstround.com` joins the excluded-sites table** in
   [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md). Its terms bar crawling, and earlier agent runs had
   read First Round Review before anyone checked them.

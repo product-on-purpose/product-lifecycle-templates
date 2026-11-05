@@ -2,7 +2,7 @@
 
 Researched 2026-08-04 across six parallel dimensions: standards and canonical definition, structure in
 practice, financial appraisal, failure modes and critique, the product-team context, and boundaries and
-lifecycle. **43 sources**, of which **33 fetched-and-verified**, **2 url-confirmed-not-read**, and
+lifecycle. **45 sources**, of which **35 fetched-and-verified**, **2 url-confirmed-not-read**, and
 **8 not-retrieved**. Retrieval status is recorded per source in the three-token vocabulary the library gates
 ([ADR 0029 (the research-log contract gate)](../../docs/internal/decisions/0029-gate-the-research-log-contract-not-its-layout.md)),
 and only `fetched-and-verified` sources are quoted.
@@ -561,6 +561,18 @@ amounting to "a collective failure of professional ethics." **The original was n
 must not be treated as verified or reproduced.**
 
 ---
+
+### Added 2026-11-05, for the guide's paragraph on a new-product case
+
+**[44] Marty Cagan (SVPG). "Assessing Product Opportunities" (2006).** practitioner. **fetched-and-verified.**
+`https://svpg.com/assessing-product-opportunities/`
+Supports: the guide's paragraph on the ten questions, and which of them this bundle's template does not ask.
+Read from the source cache; the site has no terms-of-use page.
+
+**[45] Marty Cagan. *Inspired* (2nd edition, Wiley, 2017), chapter 35, "Opportunity Assessment Technique".** practitioner. **fetched-and-verified, read from the maintainer's own copy.**
+No URL: a copyrighted book, read from a PDF the maintainer supplied from their own library on 2026-11-05; a download link would imply a retrieval that did not happen, and the text is never committed.
+Supports: the guide's paragraph on the four questions.
+Quotable: "a few minutes"
 
 ## Contested register
 
