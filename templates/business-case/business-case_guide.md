@@ -23,6 +23,15 @@ a bigger name.
 **Write nothing at all if** no funding or go/no-go decision is actually on the table. The document exists to
 decide whether an investment is worth making; if nobody is deciding that, there is no case to make.
 
+**A product opportunity assessment is a separate type in the catalog, and it is not built.** On 2026-11-05 the
+maintainer declined it ([ADR 0086](../../docs/internal/decisions/0086-product-opportunity-assessment-is-declined.md)), because the
+lean case already does its job. If your case concerns a new product, add what Marty Cagan's
+[ten questions](https://svpg.com/assessing-product-opportunities/) ask and this template does not: the size of the
+market, the competitive landscape, why your company is best placed, and how the product reaches its market. Put
+them in Problem and Opportunity. Cagan's later *Inspired* (2nd edition, chapter 35) asks four questions before
+discovery work starts: the business objective, the key results, the customer problem and the target market. He
+says preparing them normally takes "a few minutes". That framing asks for no investment, so it needs no case.
+
 **One posture worth adopting before you start writing.** Every standard this library's research could read in
 full treats the business case as revisited as the work proceeds, not filed once at approval and never
 reopened. Write it expecting to reopen it, not expecting to file it.

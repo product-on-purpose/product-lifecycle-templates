@@ -3,6 +3,13 @@
 Change log for the `business-case` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.0, corrected 2026-11-05 - the guide names what a new-product case should add
+
+**A guide change from the maintainer's ruling of 2026-11-05, not a template change**, so the version stays 0.1.0.
+The maintainer declined the product opportunity assessment, by
+[ADR 0086](../../docs/internal/decisions/0086-product-opportunity-assessment-is-declined.md). The guide gains one
+paragraph that points a new-product case at Marty Cagan's questions. The research log gains two sources for it.
+
 ## 0.1.0, corrected 2026-10-11 - a problem statement now comes first
 
 **A routing and chronology correction, not a template change**, so the version stays 0.1.0. The

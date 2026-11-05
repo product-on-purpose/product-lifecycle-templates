@@ -18,7 +18,7 @@
 > - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
 >
 > This file was written 2026-07-10 and last cites **ADR 0020**; there are now **83** decision records, and
-> sixty-three of them (0021 through 0083) postdate it and change
+> sixty-six of them (0021 through 0086) postdate it and change
 > the plan it describes.
 >
 > Recorded as finding **DF-3 (gated documents stay fresh, ungated ones drift)** in STATE.md. This file is
@@ -38,7 +38,7 @@
 > printed on every run, is the thing that found it: do not just edit the marker, re-read the prose
 > around it.
 
-<!-- counts: adrs=83, bundles=54 -->
+<!-- counts: adrs=86, bundles=54 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies
