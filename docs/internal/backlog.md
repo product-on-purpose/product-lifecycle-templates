@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29 and 2026-10-30.** The issue counts in section 2 were
-read from GitHub on 2026-10-30, at the v0.24.0 release, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30 and 2026-11-04.** The issue counts in section 2 were
+read from GitHub on 2026-11-04, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -34,10 +34,10 @@ run and its label now reads `status:parked`.
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
-| [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22 | P3 | 2 | Unassigned; labelled `phase:discover` | An admission sweep; its boundary with `business-case` is untested |
-| [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate | P3 | 3 | Unassigned; `qa-docs` does not cleanly admit it | An admission sweep |
-| [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned | An admission sweep |
-| [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl | P3 | None; no catalog row | Unassigned; labelled `phase:discover` | An admission sweep |
+| [#312](https://github.com/product-on-purpose/product-lifecycle-templates/issues/312) | `product-opportunity-assessment` | Candidate, opened 2026-10-22. Sweep 7 recommends park, medium confidence | P3 | 2 | Unassigned; labelled `phase:discover`. `discovery-docs` admits it as written if it clears | One side-by-side read of Marty Cagan's ten questions against the lean `business-case`, to settle whether it duplicates that bundle |
+| [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | Candidate. Sweep 7 recommends admit, medium confidence, on vendor sources only | P3 | 3 | Unassigned; `qa-docs` fits only on a strained reading, and `governance-docs` needs a purpose-clause amendment | A family ruling, and a check against the duplication reasoning of [ADR 0064](decisions/0064-deployment-plan-is-declined.md) (deployment plan declined) |
+| [#329](https://github.com/product-on-purpose/product-lifecycle-templates/issues/329) | `manager-user-guide` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl. Sweep 7 recommends admit, high confidence | P3 | None; no catalog row | Unassigned; nine contracts exclude it, and `standing-standards` and `communication-docs` fit only with strain | A placement ruling (amend one of those two, open a family, or decline), and a scope ruling (manager only, or any person's working-style guide) |
+| [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl. Sweep 7 recommends park, medium confidence | P3 | None; no catalog row | Unassigned; labelled `phase:discover`. `research-docs` rejects it and `discovery-docs` fits only with strain | A dedicated sweep of *Inspired* (2nd ed.), *Transformed* and Teresa Torres, then rulings on the family and on whether the composite pattern of ADRs 0064 and 0065 controls |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
 | [#264](https://github.com/product-on-purpose/product-lifecycle-templates/issues/264) | `concept-test-validation-brief` | Parked by the maintainer 2026-10-06 | P4 | 2 | Unassigned; `discovery-docs` admits it as written | None while parked |
@@ -50,6 +50,13 @@ run and its label now reads `status:parked`.
 
 Sixty-two candidate issues are closed: 54 built and 8 declined. The last to close was #337 (lean-canvas). Two of the declined types,
 `solution-brief` and `prototype-brief`, never had a catalog row.
+
+**Admission sweep 7 ran on 2026-10-29, so "an admission sweep" is no longer the next action for its candidates.**
+*(Recorded 2026-11-04.)* The sweep judged #312, #261, #329 and #331, plus the Lean UX Canvas (#330), which it
+recommended declining and which the maintainer then asked to have specced and built. Its verdicts are recommendations:
+no candidate has been admitted, and none carries `status:queued`. The maintainer chose on 2026-11-04 to take the four
+through admission in this order: #312, #261, #329, #331. The digest is held locally, at
+`_local/research/2026-10-29_admission-sweep-7/digest.md`, and each issue carries its verdict as a comment.
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
 resource crawl found three documents that fail the distinctness test as new types and would ship instead as
@@ -248,6 +255,9 @@ Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
 ruled on 2026-10-24. Both members are now built: the plan on 2026-10-24 and the report on 2026-10-27.
 
+The maintainer's 2026-11-04 choice puts the four sweep 7 candidates in section 2 ahead of this Define list. A candidate
+goes to a build only after it clears admission and the maintainer gives that build its own go.
+
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
 `problem-statement` change for sitting items D6 and D9, landed on 2026-10-22. A fourth, the opportunity
@@ -262,8 +272,9 @@ landed the same day.
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
-- **By 2026-11-03 if nothing above has happened.** Re-read this page, and ask whether the seven
-  evidence-insufficient reads are still the next piece of Define work.
+- **By 2026-12-04 if nothing above has happened.** Re-read this page, and ask whether the seven
+  evidence-insufficient reads are still the next piece of Define work. *(The 2026-11-03 date passed with two
+  bundles landed and the four sweep 7 candidates chosen ahead of those reads.)*
 
 ## 8. How to refresh the numbers
 
