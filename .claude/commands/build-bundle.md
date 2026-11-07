@@ -157,6 +157,8 @@ dimensions in both, then the usual draft and review, plus a research agent ($2.9
 run through the Agent tool, without which it reads $34.45, its two-template drafting $18.54, $9.24 of it the
 companion;
 lean-ux-canvas 8,760,076, $17.52, for the same 15, all Sonnet, its single-template drafting $6.84;
+requirements-traceability-matrix 6,798,369, $10.92, for the same 15, all on Sonnet 5.5, which reads cache at
+half Sonnet 5's price, its two-template drafting $5.33;
 lean-canvas 11,063,489, $22.96, for 16, the usual 15 on Sonnet plus an Opus head writer ($2.48) run through
 the Agent tool, without which it reads $20.48, its single-template drafting $9.81;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
