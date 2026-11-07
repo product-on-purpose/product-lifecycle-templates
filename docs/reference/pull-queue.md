@@ -75,6 +75,8 @@ conflicting override is a hard error, not a silent loss. That is why the state c
    regulation text must be re-verified at authoring time and on a cadence, forever. Decision D4 closed
    2026-08-14 as a deliberate no on that ground, and neither ADR 0039 nor ADR 0041 unblocks it, because
    both govern how build order is chosen and this tier is closed on a maintenance obligation instead.
+   *(2026-11-06: `requirements-traceability-matrix` is a catalog Tier 3 type and is built. It states no regulation's requirements, so it
+   carries no such obligation. [ADR 0084](../internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md) records that reading.)*
 
 > **One tension, stated rather than hidden.** D4 says Tier 3 "re-opens on a pull from a real regulated
 > team", and a pull is exactly what ADR 0041 says does not govern the order. The reopening condition is
