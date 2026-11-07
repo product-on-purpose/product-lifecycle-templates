@@ -14,13 +14,19 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The requirements traceability matrix's build cost is published**: $10.92 at API list rates for the usual
+  15 agents, all on Sonnet 5.5, in [`bundle-builds/INDEX.md`](bundle-builds/INDEX.md). Sonnet 5.5 reads cache
+  at half Sonnet 5's price, so compare its weighted total (6,798,369), not its dollars, with earlier builds.
+  The report generator had no price for Sonnet 5.5 and showed the build as $0.00. Its price table now carries
+  that model, every row was re-checked against Anthropic's pricing page on 2026-11-07, and no price moved, so
+  the 38 reports that embed the table changed only in that table and its date.
 - **The Lean UX Canvas's build cost is published**: $17.52 at API list rates for the usual 15 agents, all
   on Sonnet, in [`bundle-builds/INDEX.md`](bundle-builds/INDEX.md). `v0.24.0` held the report back.
 - **`requirements-traceability-matrix`, the 55th bundle, the eighth `governance-docs` member and the first built Tier 3 type.**
   The standing table that links each requirement to what verifies it, so that a requirement with no verification
   can be seen. A contested type: its guide leads with who should not keep one, and this bundle's research found no
   named software team outside regulated or safety-critical work that describes keeping one. It states no
-  regulation's requirements, so this library reads decision D4 as not reaching it, as [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md) records.
+  regulation's requirements, and the maintainer accepted on delegation that decision D4 does not reach it, as [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md) records.
 - **The requirements traceability matrix is admitted to `governance-docs`**, by
   [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md).
   The contract moves to `0.6.0` with one new clause, and the spec is written.

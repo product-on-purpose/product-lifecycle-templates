@@ -20,7 +20,7 @@
     "output": 5.0
   },
   "prices": {
-    "as_of": "2026-09-22",
+    "as_of": "2026-11-07",
     "source": "https://platform.claude.com/docs/en/about-claude/pricing",
     "usd_per_mtok": {
       "claude-fable-5-1": {
@@ -57,6 +57,13 @@
         "cache_write_1h": 10.0,
         "cache_read": 0.5,
         "output": 25.0
+      },
+      "claude-sonnet-5-5": {
+        "input": 2.0,
+        "cache_write_5m": 2.5,
+        "cache_write_1h": 4.0,
+        "cache_read": 0.1,
+        "output": 10.0
       },
       "claude-sonnet-5": {
         "input": 2.0,

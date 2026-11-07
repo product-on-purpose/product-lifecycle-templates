@@ -100,7 +100,8 @@ REPORT_SCHEMA_VERSION = "2.0.0"
 # Weights, relative to one fresh input token. The weighted total is a fixed UNIT, the same for every
 # model and every report, so that two reports written months apart stay comparable and a reader can
 # re-weight with their own numbers. It is not money. The ratios are the standard ones and are exact for
-# Sonnet 5 and Opus 5, but NOT for every Claude model: Opus 5.5 reads cache at 0.05x its input price
+# Sonnet 5 and Opus 5, but NOT for every Claude model: Opus 5.5 and Sonnet 5.5 read cache at 0.05x
+# their input price
 # and Fable 5.1 at 0.025x. That is why cost in dollars is computed separately, from PRICES, per model.
 WEIGHTS = {"input": 1.0, "cache_write": 1.25, "cache_write_1h": 2.0, "cache_read": 0.1,
            "output": 5.0}
@@ -108,7 +109,7 @@ WEIGHTS = {"input": 1.0, "cache_write": 1.25, "cache_write_1h": 2.0, "cache_read
 # USD per million tokens at Anthropic API list rates, keyed by undated model id. Checked against the
 # source on the date below; a price change needs a new date, not a silent edit. A model missing from
 # this table is reported as unpriced, never as free.
-PRICES_AS_OF = "2026-09-22"
+PRICES_AS_OF = "2026-11-07"  # every row re-checked; 2026-11-07 added Sonnet 5.5, moved no price
 PRICES_SOURCE = "https://platform.claude.com/docs/en/about-claude/pricing"
 PRICES = {
     #                    input  5m write  1h write  cache read  output
@@ -117,6 +118,7 @@ PRICES = {
     "claude-opus-5-5":   (4.0,  5.00,     8.0,      0.20,       20.0),
     "claude-opus-5":     (5.0,  6.25,     10.0,     0.50,       25.0),
     "claude-opus-4-8":   (5.0,  6.25,     10.0,     0.50,       25.0),
+    "claude-sonnet-5-5": (2.0,  2.50,     4.0,      0.10,       10.0),
     "claude-sonnet-5":   (2.0,  2.50,     4.0,      0.20,       10.0),
     "claude-sonnet-4-6": (3.0,  3.75,     6.0,      0.30,       15.0),
     "claude-haiku-4-5":  (1.0,  1.25,     2.0,      0.10,       5.0),

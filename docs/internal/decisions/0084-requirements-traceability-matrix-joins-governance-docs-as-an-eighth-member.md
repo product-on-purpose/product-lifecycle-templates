@@ -133,7 +133,10 @@ is produced once and finished.
   Neither this record nor the spec named D4 to the maintainer. This library's reading is that D4 does not reach this
   bundle. It states no regulation's requirements, declares `methodology: generic`, cites standards for existence only,
   and its example is unregulated, so it takes on no such duty. The catalog's Tier 3 for this row is also marked
-  `tier_inferred`. A later version that states what a regulation requires would reopen D4.)*
+  `tier_inferred`. A later version that states what a regulation requires would reopen D4.
+  On 2026-11-07 the maintainer accepted that reading on delegation. Both readings had been put to them, and
+  they replied "Continue based on your recommendations". The same reply delegated the read of the example against the stop
+  rule, so no maintainer read of the example is recorded. Neither acceptance has been confirmed yet.)*
 - **The evidence is vendor-only.** The sources that call it a document also sell its replacement.
 - **The named critics may be right for most readers.** Scott Ambler: "traceability matrices are highly overrated".
   Alistair Cockburn: "NEVER seen a traceability matrix pay off". Both quotations come from a 2008 InfoQ roundup. The
