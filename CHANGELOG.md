@@ -54,6 +54,8 @@ type. No MCP tool or install route changed. Release note: [`docs/releases/v0.25.
 
 ### Fixed
 
+- **`STATE.md` said the MCP server addresses 105 template variants.** It addresses
+  107, as `manifest.json` and the server's self-test agree, since the traceability matrix added its two.
 - **The build-cost report generator billed an admission sweep to the one candidate that became a bundle.**
   It gave a whole workflow run to the only known bundle among its labels, so admission sweep 7, which
   judged five candidates with 20 agents, was counted into `lean-ux-canvas` and read $33.78 for 35 agents.
