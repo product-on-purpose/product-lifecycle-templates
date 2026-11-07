@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04 and 2026-11-05.** The issue counts in section 2 were
-read from GitHub on 2026-11-05, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05 and 2026-11-06.** The issue counts in section 2 were
+read from GitHub on 2026-11-06, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -34,7 +34,6 @@ run and its label now reads `status:parked`.
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
-| [#261](https://github.com/product-on-purpose/product-lifecycle-templates/issues/261) | `requirements-traceability-matrix` | **Admitted 2026-11-05** by the maintainer, by [ADR 0084](decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md). Spec written; every choice ruled as recommended | P3 | 3 | `governance-docs`, `classification: utility`, contract `0.6.0` | The build, when the maintainer says "use the workflow" |
 | [#331](https://github.com/product-on-purpose/product-lifecycle-templates/issues/331) | `product-discovery-plan` | Candidate, opened 2026-10-27 from the 2026-10-23 resource crawl. Sweep 7 recommends park, medium confidence | P3 | None; no catalog row | Unassigned; labelled `phase:discover`. `research-docs` rejects it and `discovery-docs` fits only with strain | A read of Teresa Torres, then rulings on the family and on whether the composite pattern of ADRs 0064 and 0065 controls. A read of the Cagan books on 2026-11-05 found no document of this name: *Inspired* says only "discovery planning", for techniques, and *Transformed* and *Empowered* never use the phrase |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -42,11 +41,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 1 queued, 1 candidate, 4 parked |
-| Priority | P3: 5, P4: 1 |
-| Tier | Tier 2: 4, Tier 3: 1, no catalog row: 1 |
+| Status | 1 candidate, 4 parked |
+| Priority | P3: 4, P4: 1 |
+| Tier | Tier 2: 4, no catalog row: 1 |
 
-Sixty-four candidate issues are closed: 54 built and 10 declined. The last to close was #329 (manager-user-guide). Three of the declined types,
+Sixty-five candidate issues are closed: 55 built and 10 declined. The last to close was #261 (requirements-traceability-matrix). Three of the declined types,
 `solution-brief`, `prototype-brief` and `manager-user-guide`, never had a catalog row.
 
 **Admission sweep 7 ran on 2026-10-29, so "an admission sweep" is no longer the next action for its candidates.**
@@ -55,7 +54,7 @@ recommended declining and which the maintainer then asked to have specced and bu
 no candidate has been admitted, and none carries `status:queued`. The maintainer chose on 2026-11-04 to take the four
 through admission in this order: #312, #261, #329, #331. The digest is held locally, at
 `_local/research/2026-10-29_admission-sweep-7/digest.md`, and each issue carries its verdict as a comment.
-*(2026-11-05: the maintainer has since ruled on three of the four. #261 is admitted and queued, #312 and #329 are
+*(2026-11-05: the maintainer has since ruled on three of the four. #261 is admitted and built, #312 and #329 are
 declined and closed, and #331 waits on one more read.)*
 
 **Format candidates for a built bundle's next revision.** *(Recorded 2026-10-26.)* The library's 2026-10-23
@@ -74,17 +73,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=54, statecandidate=155, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=55, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 211 types. Its `state` field reads 54 built, 155 candidate and 2 out of scope. Five of the
-155 were declined by record, so 150 types are still open.
+The catalog holds 211 types. Its `state` field reads 55 built, 154 candidate and 2 out of scope. Five of the
+154 were declined by record, so 149 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
 | 2 | 157 | 29 | 5, declined by record (below) | **123** |
-| 3 | 27 | 0 | 0 | **27** |
-| **All** | **211** | **54** | **7** | **150** |
+| 3 | 27 | 1 | 0 | **26** |
+| **All** | **211** | **55** | **7** | **149** |
 
 The five Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -243,6 +242,9 @@ ADR 0077 keeps in `deliver`.
 - **2026-10-30, at landing.** `lean-canvas` landed as the 54th bundle and the seventh `strategy-docs`
   member, at `classification: utility`, carrying catalog entry 5. Its landing closes #337, and the define
   count stays at two, since the family sits on the classification axis rather than the phase axis.
+- **2026-11-06, at landing.** `requirements-traceability-matrix` landed as the 55th bundle, the eighth `governance-docs`
+  member and the first built Tier 3 type, carrying catalog entry 37. Its landing closes #261, and the define
+  count stays at two, since the family sits on the classification axis.
 
 ## 6. What comes next, in order
 
@@ -256,8 +258,8 @@ Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
 ruled on 2026-10-24. Both members are now built: the plan on 2026-10-24 and the report on 2026-10-27.
 
-The maintainer's 2026-11-04 choice put the four sweep 7 candidates ahead of this Define list. Two of them remain:
-#261 (requirements traceability matrix) and #331 (product discovery plan). A candidate goes to a build only after
+The maintainer's 2026-11-04 choice put the four sweep 7 candidates ahead of this Define list. One of them remains:
+#331 (product discovery plan). A candidate goes to a build only after
 it clears admission and the maintainer gives that build its own go.
 
 Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positioning-statement` landed on

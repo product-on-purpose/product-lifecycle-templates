@@ -1187,6 +1187,39 @@
     },
     {
       "aliases": [
+        "RTM",
+        "trace matrix",
+        "traceability matrix"
+      ],
+      "approx_tokens": {
+        "full": 7050,
+        "lean": 5200
+      },
+      "classification": "utility",
+      "default_size": "lean",
+      "doc_type": "requirements-traceability-matrix",
+      "family": "governance-docs",
+      "id": "requirements-traceability-matrix",
+      "sizes_available": [
+        "lean",
+        "full"
+      ],
+      "sizing_guidance": "Use lean (Purpose and Boundary, Trace Conventions, The Matrix, Coverage Gaps, and Upkeep and Review Trigger) by default: it is the requirement-to-test table read in both directions, with the rules that say what a link and a status mean, and it is enough unless the team owes an answer the table cannot give. Use full when the team owes one of three answers: which design element implements a requirement, which control covers a risk, or what an auditor saw at a given release. It adds Implementation Trace, Risk Control Trace and Baselines, after Coverage Gaps and before Upkeep and Review Trigger. This split is the library's own position, and confidence in it is medium-low.",
+      "status": "beta",
+      "summary": "The standing table that links each requirement to the work that verifies it, read in both directions, so that a requirement with no verification can be seen. A linked test is not a verified requirement, so the matrix defines what its status words mean before it fills a row. Distinct from the traceability field on a single test case and from the dated result of one test cycle. A contested type: keep one only where the team has decided it owes a whole-set answer to which requirement has no verification.",
+      "tags": [
+        "governance",
+        "traceability",
+        "requirements",
+        "verification",
+        "coverage",
+        "register",
+        "qa"
+      ],
+      "title": "Requirements Traceability Matrix"
+    },
+    {
+      "aliases": [
         "RFC",
         "request for comments",
         "design proposal",
@@ -1809,5 +1842,5 @@
       "title": "User Story"
     }
   ],
-  "count": 54
+  "count": 55
 }

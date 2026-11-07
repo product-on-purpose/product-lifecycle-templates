@@ -9335,6 +9335,271 @@
       "template_version": "0.1.1"
     },
     {
+      "bundle": "requirements-traceability-matrix",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "last_reconciled"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "status"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-boundary",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "covered_set",
+                "not_traced",
+                "owner",
+                "reason_for_matrix",
+                "record_of_truth",
+                "stop_condition"
+              ],
+              "title": "Purpose and Boundary"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "trace-conventions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "cardinality_rule",
+                "other_means_rule",
+                "requirement_id_scheme",
+                "scope_rule",
+                "status_meaning",
+                "status_name",
+                "test_id_scheme",
+                "verified_definition"
+              ],
+              "title": "Trace Conventions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "the-matrix",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "requirement_id",
+                "requirement_label",
+                "requirement_notes",
+                "requirement_source",
+                "requirement_status",
+                "verified_by"
+              ],
+              "title": "The Matrix"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "coverage-gaps",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "gap_decision",
+                "gap_id",
+                "gap_kind",
+                "gap_notes",
+                "gap_owner"
+              ],
+              "title": "Coverage Gaps"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "upkeep-and-review-trigger",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "last_reconciled",
+                "owner",
+                "review_points",
+                "update_triggers"
+              ],
+              "title": "Upkeep and Review Trigger"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "implementation-trace",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_reference",
+                "implementation_notes",
+                "requirement_id",
+                "work_reference"
+              ],
+              "title": "Implementation Trace"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "risk-control-trace",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "control_test_id",
+                "controlling_requirement_id",
+                "risk_id",
+                "risk_label",
+                "risk_notes"
+              ],
+              "title": "Risk Control Trace"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "baselines",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "baseline_approved_by",
+                "baseline_date",
+                "baseline_event",
+                "baseline_location",
+                "baseline_version"
+              ],
+              "title": "Baselines"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "rfc",
       "default_format": "default",
       "formats": {
@@ -14040,7 +14305,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 54,
-  "frontmatter_count": 332,
-  "section_count": 458
+  "count": 55,
+  "frontmatter_count": 336,
+  "section_count": 466
 }
