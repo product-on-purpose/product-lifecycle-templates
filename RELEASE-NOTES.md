@@ -6,6 +6,16 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.25.0
+
+**One new bundle: the requirements traceability matrix, the library's 55th.** It is the standing table that
+links each requirement to what verifies it, so a requirement with no verification can be seen. Its guide leads
+with who should not keep one, because the research found no unregulated software team that describes keeping
+one. It joins `governance-docs`. Both skills now recognize a request for it, and nothing in any MCP tool or
+install route changed.
+
+---
+
 ## v0.24.0
 
 **Two new bundles: the Lean UX Canvas and the Lean Canvas, the library's 53rd and 54th.** The Lean UX Canvas,

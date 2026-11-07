@@ -7,7 +7,10 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=55, tier1=25, tier1remaining=2, statebuilt=55, statecandidate=154, stateoutofscope=2, commoncandidates=48, adrs=86, cisteps=32, checkk=162, checkformats=138, checklogs=117, logsgated=49, sourcesgated=1979 -->
 
-**Last updated:** 2026-11-07 (**The requirements traceability matrix's build-cost report is published**:
+**Last updated:** 2026-11-07 (**`v0.25.0` ships `requirements-traceability-matrix`, the 55th bundle**, as a minor
+release the maintainer approved on 2026-11-07. Both skills now name the traceability matrix, with no trigger
+removed. No MCP tool or install route changed.)
+The previous entry read: **The requirements traceability matrix's build-cost report is published**:
 $10.92 at API list rates for the usual 15 agents, all on Sonnet 5.5. Sonnet 5.5 reads cache at half Sonnet 5's
 price, so that dollar figure is not directly comparable with earlier Sonnet builds; the weighted total is. The
 report generator's price table gained Sonnet 5.5, and every row was re-checked against the source that day.
