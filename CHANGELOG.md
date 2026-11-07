@@ -12,6 +12,11 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.25.0] - 2026-11-07
+
+A minor release with one new bundle: `requirements-traceability-matrix`, the 55th and the first built Tier 3
+type. No MCP tool or install route changed. Release note: [`docs/releases/v0.25.0.md`](docs/releases/v0.25.0.md).
+
 ### Added
 
 - **The requirements traceability matrix's build cost is published**: $10.92 at API list rates for the usual
@@ -41,8 +46,16 @@ people who want every change, release notes are for people who want to know what
   [`bundle-pipeline.md`](docs/internal/bundle-pipeline.md). Its terms bar crawling, and earlier agent runs had
   read First Round Review before anyone checked them.
 
+### Changed
+
+- **Both skills now recognize a request for a traceability matrix.** An agent decides whether to load a
+  skill from its description, so a type missing from it may never reach the skill. Both descriptions were
+  tightened to fit the new trigger under the 1,024-character cap, and no existing trigger was removed.
+
 ### Fixed
 
+- **`STATE.md` said the MCP server addresses 105 template variants.** It addresses
+  107, as `manifest.json` and the server's self-test agree, since the traceability matrix added its two.
 - **The build-cost report generator billed an admission sweep to the one candidate that became a bundle.**
   It gave a whole workflow run to the only known bundle among its labels, so admission sweep 7, which
   judged five candidates with 20 agents, was counted into `lean-ux-canvas` and read $33.78 for 35 agents.
@@ -3462,7 +3475,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...HEAD
+[0.25.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...v0.25.0
 [0.24.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...v0.24.0
 [0.23.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...v0.23.0
 [0.22.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.0...v0.22.1
