@@ -127,6 +127,13 @@ is produced once and finished.
 
 - **This would be the library's first built Tier 3 bundle.** The catalog's closing recommendations say to treat
   regulated Tier 3 artifacts as a separate module. No ADR adopted that advice, but this record departs from it.
+  *(Added 2026-11-06, at landing: this record missed a standing ruling. Decision D4 closed on 2026-08-14 as a
+  deliberate no to Tier-3 regulated content, because a regulated template carries a duty to re-verify regulation text
+  on a cadence, and [ADR 0039](0039-maintainer-discretion-replaces-the-pull-gate.md) says it does not unblock that.
+  Neither this record nor the spec named D4 to the maintainer. This library's reading is that D4 does not reach this
+  bundle. It states no regulation's requirements, declares `methodology: generic`, cites standards for existence only,
+  and its example is unregulated, so it takes on no such duty. The catalog's Tier 3 for this row is also marked
+  `tier_inferred`. A later version that states what a regulation requires would reopen D4.)*
 - **The evidence is vendor-only.** The sources that call it a document also sell its replacement.
 - **The named critics may be right for most readers.** Scott Ambler: "traceability matrices are highly overrated".
   Alistair Cockburn: "NEVER seen a traceability matrix pay off". Both quotations come from a 2008 InfoQ roundup. The
