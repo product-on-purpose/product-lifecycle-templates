@@ -20,7 +20,7 @@ people who want every change, release notes are for people who want to know what
   The standing table that links each requirement to what verifies it, so that a requirement with no verification
   can be seen. A contested type: its guide leads with who should not keep one, and this bundle's research found no
   named software team outside regulated or safety-critical work that describes keeping one. It states no
-  regulation's requirements, which is why decision D4 does not reach it, as [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md) records.
+  regulation's requirements, so this library reads decision D4 as not reaching it, as [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md) records.
 - **The requirements traceability matrix is admitted to `governance-docs`**, by
   [ADR 0084](docs/internal/decisions/0084-requirements-traceability-matrix-joins-governance-docs-as-an-eighth-member.md).
   The contract moves to `0.6.0` with one new clause, and the spec is written.
