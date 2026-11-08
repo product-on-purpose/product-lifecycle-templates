@@ -3,6 +3,19 @@
 Change log for the `project-brief` bundle. Each entry records what changed and why, so a reader can tell a
 correction from a preference.
 
+## 0.1.1, corrected 2026-11-07 - the guide names what a brief for a discovery effort should add
+
+**A guide change from the maintainer's ruling of 2026-11-07, not a template change**, so the version stays 0.1.1.
+The maintainer declined the product discovery plan, by
+[ADR 0087](../../docs/internal/decisions/0087-product-discovery-plan-is-declined.md), because its parts already live
+in this bundle, `user-research-plan` and `product-strategy`.
+
+- [`project-brief_guide.md`](project-brief_guide.md) gains a paragraph after "Write nothing at all if". It names
+  what a brief asking for authority to run discovery should add, and where in the template it goes.
+- [`project-brief_research-log.md`](project-brief_research-log.md) records Cagan's 2009 page as source 35 and
+  Torres's *Continuous Discovery Habits* as source 36, both fetched-and-verified. Its opening count now says 36,
+  where it had read 33 since source 34 was added on 2026-10-26.
+
 ## 0.1.1 - 2026-10-26 - the guide names Atlassian's counter-convention
 
 **One sentence, naming a named disagreement rather than changing this bundle's position.** This

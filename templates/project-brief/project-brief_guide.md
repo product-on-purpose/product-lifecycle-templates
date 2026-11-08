@@ -27,6 +27,19 @@ project brief, it has stepped into a different document's job.
 to get a named decision from a named person, and a draft with no real decider to sign it has not done
 its job, whatever else it contains.
 
+**A product discovery plan is a separate candidate, and it is not built.** On 2026-11-07 the maintainer
+declined it ([ADR 0087](../../docs/internal/decisions/0087-product-discovery-plan-is-declined.md)), because its
+parts already live in this brief and two other bundles. If the authority you are asking for is to run a
+discovery effort, add what Marty Cagan's [product discovery plan](https://svpg.com/product-discovery-plan/)
+asks and this template does not name: the core team who must be available for discovery, the people who
+will support them, and the customers you will validate ideas with. Put them in Constraints and Who Should Be
+Involved, with the effort's key risks. Each study the effort runs gets its own
+[`user-research-plan`](../user-research-plan/user-research-plan_guide.md), and a missing vision or set of
+principles belongs in [`product-strategy`](../product-strategy/product-strategy_guide.md). Cagan calls his
+components "a list of tools", not a template. Teresa Torres's *Continuous Discovery Habits* (2021) goes
+further and treats discovery as weekly work rather than a phase at a project's start. So ask for authority
+to start, and let the research be planned as it goes.
+
 **One posture worth adopting before you start writing.** The UK government's own guide, this bundle's
 adaptable source, allows a short, well-defined project that is certain to proceed to skip the brief
 entirely and move straight to the document that follows it. If you already know for certain that this
