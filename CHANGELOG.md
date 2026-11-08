@@ -19,6 +19,12 @@ people who want every change, release notes are for people who want to know what
   research plan and the product strategy, and its one source asks not to be read as a template. The `project-brief`
   guide gains a paragraph naming what a brief for a discovery effort should add, and its research log gains two
   sources. Every candidate admission sweep 7 judged is now ruled on.
+- **The seven Define candidates that one read could settle have had that read.** The proto-persona, NASA's needs,
+  goals and objectives, the accessibility conformance target and the Behavioural Insights Team's Target phase stay
+  out of `define`. The platform and device support matrix returns for an admission sweep outside it. The DoD
+  Initial Capabilities Document and a regulatory requirements register stay short of evidence.
+  [`backlog.md`](docs/internal/backlog.md) section 4 gives the reason for each. No candidate is admitted, and no
+  catalog row changed.
 
 ### Fixed
 

@@ -101,7 +101,7 @@ The analytics plan was declined in its per-feature reading only, and its busines
 |---|---|---|
 | Built bundles with `phase: define` | 2 | `problem-statement`; `design-brief`, built 2026-10-22 (#294) |
 | Open issues labelled `phase:define` | 1 | `opportunity-statement` (#298), parked |
-| Candidates one read could still move | 7 | Listed in the re-score table below |
+| Candidates still short of evidence | 2 | The DoD Initial Capabilities Document and a regulatory requirements register, after the 2026-11-08 reads below |
 
 **The re-score replaced the planning estimate with a count.** This page previously said "roughly 60"
 candidates awaited the re-score. The re-score enumerated 62 from the three Define research sweeps' files by
@@ -119,6 +119,22 @@ three, and the main loop checked the critic's blocking findings against the sour
 | Evidence insufficient: one read would settle it | 7 | NASA's needs, goals and objectives statement with its concept of operations; a platform and device support matrix; the DoD Initial Capabilities Document; the proto-persona; an accessibility conformance target; a regulatory requirements register; the "Target" phase of the Behavioural Insights Team's TEST method |
 | Already decided | 6 | `problem-statement` (built, `define`); `business-case` (stays `discover`); `trade-study` (stays `develop`); the point of view statement (an alias of `problem-statement`, sitting item D6); `user-persona` (stays `discover`); `concept-test-validation-brief` (parked by the maintainer) |
 | Stays out of `define` | 48 | Every other candidate, among them `lean-canvas`, `opportunity-solution-tree`, the Shape Up pitch and LEGO's Foundation Document |
+
+**The seven settling reads ran on 2026-11-08, and five of the seven moved.** Each read was the one its score row
+named, with ADR 0080's audience check applied first. One used the maintainer's own copy of *Lean UX* (2021). The
+web reads checked each site's terms before reading it, and every quotation used was checked against the page's
+raw text. The read record is held locally, at `_local/research/2026-11-08_define-reads/`. No catalog row changed,
+and no candidate is admitted: an admission sweep still needs the maintainer's choice.
+
+| Read outcome, 2026-11-08 | Candidates | Confidence |
+|---|---|---|
+| Stays out of `define` | The proto-persona: *Lean UX* presents it as Box 3 of the Lean UX Canvas, which `lean-ux-canvas` carries, and `user-persona` teaches it as its lightest evidence tier | high |
+| Stays out of `define` | NASA's needs, goals and objectives with its concept of operations: NASA defines a need as the answer to "What problem are we trying to solve?", which is `problem-statement`'s question, and the concept of operations describes a system already envisioned. No software source could be read | medium-high |
+| Stays out of `define` | The accessibility conformance target: no source treats the target as a document. W3C puts the level inside an organisation's accessibility policy, and GOV.UK requires only a statement after release | medium |
+| Stays out of `define` | The "Target" phase of the Behavioural Insights Team's TEST method: its handbook names a target statement and a short list of target behaviours, written on worksheets inside a project. No software or UX use was found | medium |
+| Returns for an admission sweep elsewhere | The platform and device support matrix: GOV.UK publishes both a browser test table and a set of graded support levels. Technology teams write it and revise it as usage changes, which makes it a standing standard rather than a `define` document | medium |
+| Still short of evidence | The DoD Initial Capabilities Document: its only software use found is inside defence acquisition, so ADR 0080 parks it whatever its settling read finds | medium |
+| Still short of evidence | The regulatory requirements register: the only register forms found were vendor pages whose terms could not be checked, and the ISO/IEC 27001 text is paywalled | low |
 
 **"Stays out" means out of `define`, not out of the library.** *(Added 2026-10-30.)* The re-score tested
 every candidate against the `define` rule only. Its brief offered an "other-admission" outcome for a type that
@@ -245,13 +261,19 @@ ADR 0077 keeps in `deliver`.
 - **2026-11-06, at landing.** `requirements-traceability-matrix` landed as the 55th bundle, the eighth `governance-docs`
   member and the first built Tier 3 type, carrying catalog entry 37. Its landing closes #261, and the define
   count stays at two, since the family sits on the classification axis.
+- **2026-11-08.** The seven evidence-insufficient reads ran (section 4). Four candidates stay out of `define`,
+  the device support matrix returns for an admission sweep outside it, and two stay short of evidence. The define
+  count stays at two.
 
 ## 6. What comes next, in order
 
-1. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
-   settle it. ADR 0080 (a fifth admission check, for a software audience), accepted on 2026-10-22, applies to
-   them first.
-2. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+1. **The five candidates that return outside Define, only when the maintainer chooses them.** These are the four
+   from the 2026-10-20 re-score and the device support matrix from the 2026-11-08 reads. None is urgent.
+2. **The two candidates still short of evidence, only if a source turns up.** The DoD Initial Capabilities
+   Document is parked by ADR 0080. The regulatory requirements register needs a source whose terms permit reading
+   and that shows a software team keeping one.
+
+No Define candidate is now waiting on a read the library can run by itself.
 
 Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
@@ -268,19 +290,21 @@ Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positio
 statement's admission sweep, ended on 2026-10-22 with the type parked. A fifth, the design brief's build,
 landed the same day. A sixth, the README change for sitting item D8, landed on 2026-11-08. It rewrote the
 `standing-standards` passage on review triggers against all seven members' research logs, not the six the
-approved draft named, because `test-strategy` had joined the family since.
+approved draft named, because `test-strategy` had joined the family since. A seventh, the seven
+evidence-insufficient reads, ran the same day.
 
 ## 7. When to revisit this page
 
-- **When the next Define candidate moves**: one of the seven evidence-insufficient reads (step 1 above), or
-  the parked opportunity statement. Update sections 2, 4 and 6 from its outcome.
+- **When the next Define candidate moves**: the maintainer chooses one of the candidates in step 1 above, a
+  source turns up for one in step 2, or the parked opportunity statement moves. Update sections 2, 4 and 6 from
+  its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
-- **By 2026-12-04 if nothing above has happened.** Re-read this page, and ask whether the seven
-  evidence-insufficient reads are still the next piece of Define work. *(The 2026-11-03 date passed with two
-  bundles landed and the four sweep 7 candidates chosen ahead of those reads.)*
+- **By 2026-12-04 if nothing above has happened.** Re-read this page, and ask whether any Define work remains
+  that the library can start without the maintainer's choice. *(The 2026-11-03 date passed with two bundles
+  landed and the four sweep 7 candidates chosen ahead of the seven reads, which then ran on 2026-11-08.)*
 
 ## 8. How to refresh the numbers
 
