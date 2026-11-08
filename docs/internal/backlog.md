@@ -1,6 +1,6 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05, 2026-11-06 and 2026-11-07.** The issue counts in section 2 were
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05, 2026-11-06, 2026-11-07 and 2026-11-08.** The issue counts in section 2 were
 read from GitHub on 2026-11-07, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
@@ -248,11 +248,10 @@ ADR 0077 keeps in `deliver`.
 
 ## 6. What comes next, in order
 
-1. **A small README change for sitting item D8** (the "four literatures" passage).
-2. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
+1. **The seven evidence-insufficient reads, cheapest first.** Each one's score row names the read that would
    settle it. ADR 0080 (a fifth admission check, for a software audience), accepted on 2026-10-22, applies to
    them first.
-3. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
+2. **The four candidates that return outside Define, only when the maintainer chooses them.** None is urgent.
 
 Outside this Define list, the `research-docs` contract
 ([ADR 0081](decisions/0081-adopt-research-docs-family-contract.md)) is adopted, and the specs for #316 and #317 were
@@ -267,11 +266,13 @@ Two steps this list carried on 2026-10-20 are done. `test-strategy` and `positio
 2026-10-21, and the maintainer confirmed the five delegated acceptances the same day. A third step, the
 `problem-statement` change for sitting items D6 and D9, landed on 2026-10-22. A fourth, the opportunity
 statement's admission sweep, ended on 2026-10-22 with the type parked. A fifth, the design brief's build,
-landed the same day.
+landed the same day. A sixth, the README change for sitting item D8, landed on 2026-11-08. It rewrote the
+`standing-standards` passage on review triggers against all seven members' research logs, not the six the
+approved draft named, because `test-strategy` had joined the family since.
 
 ## 7. When to revisit this page
 
-- **When the next Define candidate moves**: one of the seven evidence-insufficient reads (step 2 above), or
+- **When the next Define candidate moves**: one of the seven evidence-insufficient reads (step 1 above), or
   the parked opportunity statement. Update sections 2, 4 and 6 from its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.

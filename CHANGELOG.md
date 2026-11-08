@@ -20,6 +20,13 @@ people who want every change, release notes are for people who want to know what
   guide gains a paragraph naming what a brief for a discovery effort should add, and its research log gains two
   sources. Every candidate admission sweep 7 judged is now ruled on.
 
+### Fixed
+
+- **The README's `standing-standards` passage misstated what the research found on review triggers.** It said only
+  the definition of ready's literature supplies one, among four researched. The family has seven members, and the
+  sources for four of them name a condition that should prompt a review: the definition of ready, the test strategy,
+  the production readiness review and the business continuity plan. The passage now names which members those are.
+
 ## [0.25.0] - 2026-11-07
 
 A minor release with one new bundle: `requirements-traceability-matrix`, the 55th and the first built Tier 3
