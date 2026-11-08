@@ -12,6 +12,14 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **The product discovery plan is declined, for now**, by
+  [ADR 0087](docs/internal/decisions/0087-product-discovery-plan-is-declined.md). Its parts already live in the project brief, the user
+  research plan and the product strategy, and its one source asks not to be read as a template. The `project-brief`
+  guide gains a paragraph naming what a brief for a discovery effort should add, and its research log gains two
+  sources. Every candidate admission sweep 7 judged is now ruled on.
+
 ## [0.25.0] - 2026-11-07
 
 A minor release with one new bundle: `requirements-traceability-matrix`, the 55th and the first built Tier 3

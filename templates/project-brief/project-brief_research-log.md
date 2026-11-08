@@ -3,8 +3,8 @@
 Research conducted 2026-09-29, building on an admission sweep run on 2026-09-27 while the spec was written. The
 build's six-dimension fan-out covered the PRINCE2 canon, public-sector sources in both senses of the name, published
 templates counted section by section, the neighbours that share the ground or the name, using the brief (the mandate,
-the approval, what happens to it afterwards, how it fails), and the standing gap question. **33 sources are recorded
-below, all fetched-and-verified.** Only `fetched-and-verified` sources are quoted anywhere in this bundle.
+the approval, what happens to it afterwards, how it fails), and the standing gap question. **36 sources are recorded
+below, all fetched-and-verified**: 33 from the build, one added on 2026-10-26 and two on 2026-11-07. Only `fetched-and-verified` sources are quoted anywhere in this bundle.
 
 **Every quotation in this log was checked against the source's raw text**, not against the summary a retrieval tool
 returns: pages as downloaded and PDFs through a text extractor. Every page first cached during this build was checked a
@@ -769,3 +769,19 @@ The Project Poster's three parts (problem space, validation, ready to make it) r
 exploratory than a project brief's own scope, so the two documents may describe different ground even
 on this one point. The guide's anti-pattern paragraph now names this disagreement and keeps its own
 position.
+
+### ADDED 2026-11-07, FOR THE GUIDE'S PARAGRAPH ON A DISCOVERY EFFORT
+
+**[35] Marty Cagan (SVPG) - "The Product Discovery Plan" (12 October 2009).** practitioner. **fetched-and-verified.**
+`https://svpg.com/product-discovery-plan/`
+Supports: the guide's paragraph on what a brief for a discovery effort should add, and which of the page's ten
+components this template does not name. Read from the source cache; the site has no terms-of-use page.
+Quotable: "spells out what the team believes must be done for this project"
+Quotable: "a list of tools"
+
+**[36] Teresa Torres - *Continuous Discovery Habits* (Product Talk, 2021).** practitioner. **fetched-and-verified, read from the maintainer's own copy.**
+No URL: a copyrighted book, read from a PDF the maintainer supplied from their own library on 2026-11-07; a download
+link would imply a retrieval that did not happen, and the text is never committed.
+Supports: the guide's sentence that Torres treats discovery as weekly work rather than a phase at a project's start
+(chapter 1, the sixth mindset and the working definition of continuous discovery).
+Quotable: "a project mindset to a continuous mindset"
