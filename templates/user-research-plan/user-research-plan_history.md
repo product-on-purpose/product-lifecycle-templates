@@ -8,7 +8,7 @@ tell a correction from a preference.
 **No template change, so `template_version` stays 0.1.0.** `related_templates` named
 `future:user-research-report` because the sibling report had not been built. The report (catalog entry
 18, issue #317) lands in the same pull request as this entry, so the id exists on disk and the prefix is
-dropped, as the spec's list for the report's landing says (`docs/internal/tier2-specs.md:7372-7374`).
+dropped, as the spec's list for the report's landing says (`docs/internal/tier2-specs.md:7373-7375`).
 `related_templates` now reads `[user-research-report, user-persona, problem-statement, design-brief,
 test-plan, experiment-design-doc]`. `tools/check-bundles.py` check I would otherwise raise its
 stale-`future:` failure, since the prefix fails once its target is built.
@@ -43,8 +43,8 @@ own POSITION because no source argues for a family boundary at this phase, and s
 both members serve studies of shipped products too, not only pre-build ones.
 
 This bundle answers the spec written and accepted the day before this release
-(`docs/internal/tier2-specs.md:6963-7397`), closed by the maintainer's ten rulings of 2026-10-24
-("I approve your ten choices," recorded at `tier2-specs.md:7376-7393`). Catalog entry 210 was corrected from "research plan" to this type's own id and name by PR #315 (the user
+(`docs/internal/tier2-specs.md:6964-7398`), closed by the maintainer's ten rulings of 2026-10-24
+("I approve your ten choices," recorded at `tier2-specs.md:7377-7394`). Catalog entry 210 was corrected from "research plan" to this type's own id and name by PR #315 (the user
 research plan becomes catalog entry 210) on 2026-10-23, tracked as issue #316 (bundle: user-research-plan).
 
 ### Four shipped examples cite a study this bundle's own example now shows the plan for
@@ -108,7 +108,7 @@ is not referenced here.
 experiment-design-doc]`, the spec's list. `future:user-research-report` names this bundle's own report
 counterpart, not yet built; `tools/meta.schema.json` permits the prefix for exactly this case. Earlier
 bundles carried `future:` references until their targets were built, among them `adr` and `rfc`, so this
-one is not the first, only the one live today. Per the spec's own closing note (`tier2-specs.md:7372`),
+one is not the first, only the one live today. Per the spec's own closing note (`tier2-specs.md:7373`),
 the report's landing PR drops the prefix with a history line of its own, once `tools/check-bundles.py`
 can resolve the id on disk. The other five follow the spec: three documents that use research findings,
 and `test-plan` and `experiment-design-doc`, the two neighbours whose aliases "test plan" and "A/B test

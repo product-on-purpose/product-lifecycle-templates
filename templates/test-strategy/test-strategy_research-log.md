@@ -2,7 +2,7 @@
 
 Research conducted 2026-10-20. It builds on admission sweep 5 (2026-10-12), the prep research of 2026-10-14, the
 sitting follow-up of 2026-10-15 that settled the scope, and the approved spec
-(`docs/internal/tier2-specs.md:5700-6163`), specced on 2026-10-19 with ADR 0075
+(`docs/internal/tier2-specs.md:5701-6164`), specced on 2026-10-19 with ADR 0075
 (`docs/internal/contracts/standing-standards.md:17-19`). The build's seven-dimension fan-out covered the canon
 (ISTQB's glossary and syllabi, and secondary accounts of ISO/IEC/IEEE 29119); the structure of published program
 and organization test strategies; governance, inheritance and cadence; the debates and failure modes; the
@@ -94,7 +94,7 @@ name pairings and the glossary's term list were checked against the stored raw t
   [27] shows a contrast in kind, not a quoted exchange.
 - **Sources the spec cited that this build did not re-read**: the 2009 academic slide deck, the vendor guide
   asserting organization-wide scope, the HMRC blog claim, and PMI's and APM's definitions
-  (`docs/internal/tier2-specs.md:5800-5824`). They have no entry here, so the companion cannot cite them from this
+  (`docs/internal/tier2-specs.md:5801-5825`). They have no entry here, so the companion cannot cite them from this
   log.
 
 ---
@@ -120,7 +120,7 @@ the same definition under its test strategy and its organizational test strategy
 description of the test levels to be performed and the testing within those levels for an organization or
 programme (one or more projects)." [3]. That is not the current official wording of either term [1]. The spec's
 admission section quoted this mirror as ISTQB's glossary, and it said a build should fetch the official page
-rather than carry the citation forward (`docs/internal/tier2-specs.md:5750-5758`). This build did, and the two
+rather than carry the citation forward (`docs/internal/tier2-specs.md:5751-5759`). This build did, and the two
 texts differ.
 
 **The hierarchy, as ISTQB's syllabi describe it.** The Advanced Test Management syllabus treats the
@@ -157,19 +157,19 @@ stored API body [1]. Wikipedia [6] and both imbus entries [7], [8] still say "Or
 Foundation syllabus's change log renames a neighbouring term, "organizational test policy -> test policy" [5];
 that is the policy, not the strategy. The standard's own text was not retrieved [9]. **Nothing read settles
 whether the current 29119-3 calls the artefact an organizational test strategy, an organizational test practice,
-or both.** One point cuts against the spec's worry (`docs/internal/tier2-specs.md:5786-5791`): ISTQB's current
+or both.** One point cuts against the spec's worry (`docs/internal/tier2-specs.md:5787-5792`): ISTQB's current
 glossary still lists organizational test strategy as its own term [1]. A rename in the standard, if real, has not
 reached ISTQB's glossary. Confidence: high that the question is open; low on which way it resolves.
 
 ### 2. Scope: what the organization-or-program ruling now rests on
 
 **The program half of the 2026-10-15 ruling no longer rests on ISTQB's current glossary text.** The spec read
-ISTQB's text as hedging between organization and program (`docs/internal/tier2-specs.md:5810-5813`). ADR 0075
+ISTQB's text as hedging between organization and program (`docs/internal/tier2-specs.md:5811-5814`). ADR 0075
 calls it `ISTQB's own hedge`
 (`docs/internal/decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md:241-243`). That hedge is
 the mirror's older text [3]. The current official definition says "within an organization" and nothing more [1].
 Three repository records rest on the mirror for the program wording: the spec's admission section
-(`docs/internal/tier2-specs.md:5750-5758`), ADR 0075's admission paragraph (`0075-...:60-62`), and the `test-plan`
+(`docs/internal/tier2-specs.md:5751-5759`), ADR 0075's admission paragraph (`0075-...:60-62`), and the `test-plan`
 companion, which quotes the mirror's definition as ISTQB's and tags the mirror primary
 (`templates/test-plan/test-plan_companion.md:379-382` and `:506`).
 
@@ -202,7 +202,7 @@ inside one named program:
 among the projects it examined for lessons learned (read in raw text; not a Quotable line). Reading that
 abbreviation as DCC's smart metering program is the structure dimension's reading, so [10] and [14] are probably
 related. Second, none of these documents uses the ruling's phrase, `more than one project`
-(`docs/internal/tier2-specs.md:5811`). Each governs several phases, parties, test phases or releases inside one
+(`docs/internal/tier2-specs.md:5812`). Each governs several phases, parties, test phases or releases inside one
 program. Reading that as more than one project is this library's interpretation, the same reading the ruling
 made. ADR 0075 names only Ofgem and TfL as the program evidence (`0075-...:240-241`); DCC [14] and HNG-X [15]
 widen it.
@@ -212,7 +212,7 @@ Horizon IT Inquiry [15]. This log uses it only for its structure and its program
 so wherever it cites it, and must not present it as an example of good testing.
 
 **Portfolio stays out.** No source in this log uses the word. The exclusion rests on the 2026-10-15 follow-up the
-spec records (`docs/internal/tier2-specs.md:5810-5824`), which this build did not re-read and cannot quote.
+spec records (`docs/internal/tier2-specs.md:5811-5825`), which this build did not re-read and cannot quote.
 
 **What this does to the ruling.** The ruling stands, and its ground has moved. ISTQB now supports the organization
 half only. The program half rests on primary program documents rather than on a certification body's wording.
@@ -231,7 +231,7 @@ Dependencies", "7.3 Risks" and "7.4 Constraints". The other headings in its runs
 did not pass.
 
 **All twenty Process Street steps are now Quotable lines** [13], which retires the spec's risk 4
-(`docs/internal/tier2-specs.md:6060-6062`). In order: "Identify objectives of the test strategy document",
+(`docs/internal/tier2-specs.md:6061-6063`). In order: "Identify objectives of the test strategy document",
 "Determine target audience for the document", "Outline scope of the tests", "Identify necessary test levels",
 "Identify types of testing to be performed", "Select test techniques", "Establish test environment and tools
 requirements", "Approval: Test Environment Specifications", "Determine resource requirements", "Define test
@@ -239,7 +239,7 @@ deliverables", "Develop test schedule and estimation", "Identify test entry and 
 and dependencies", "Develop risk mitigation strategy", "Approval: Risk Mitigation Strategy", "Compile all
 information into the test strategy document", "Conduct initial review of test strategy document", "Approval: Test
 Strategy Document", "Revise and finalize test strategy document based on feedback" and "Distribute finalized test
-strategy document to relevant stakeholders". The page states no licence (`docs/internal/tier2-specs.md:5764-5765`),
+strategy document to relevant stakeholders". The page states no licence (`docs/internal/tier2-specs.md:5765-5766`),
 so the steps may inform section naming and may not be copied into a template.
 
 **Ofgem's, DCC's and TfL's contents were read in raw text, not as Quotable lines.** Checked for this log against
@@ -259,7 +259,7 @@ drafts counted once):
   Responsibilities" [15]).
 - **Entry and exit criteria**, in three ([10], [12], [14], all raw text), in the Process Street step "Identify test
   entry and exit criteria" [13], and in QATestLab's account of what a strategy includes [24]. The spec's section
-  table has no home for them (`docs/internal/tier2-specs.md:5968-5976`).
+  table has no home for them (`docs/internal/tier2-specs.md:5969-5977`).
 - **Risks, dependencies or assumptions**, in three: Ofgem's table of key risks with their mitigations [10] and
   DCC's dependencies section [14], both raw text, and HNG-X's "7.0 Assumptions, Dependencies, Risks & Constraints"
   [15]. Two Process Street steps cover risk [13].
@@ -286,7 +286,7 @@ author to "Identify necessary test levels" without naming them [13]. The Foundat
 among a plan's approach contents [5]. Vocke's article gives Cohn's three layers: unit, service and user interface
 tests [29]. Inside the library, `templates/test-plan/test-plan_template-full.md:101-102` names unit, integration,
 system and end-to-end levels. The spec's Test Levels and Types row sources its list to the catalog and to imbus's
-structural listing (`docs/internal/tier2-specs.md:5971`), and that listing is not a Quotable line. imbus's content
+structural listing (`docs/internal/tier2-specs.md:5972`), and that listing is not a Quotable line. imbus's content
 list [7] also sits on the entry that its own first note separates from the organizational artefact.
 
 ### 4. How project plans inherit or deviate, and who approves
@@ -338,7 +338,7 @@ The audience is wider than the owners. Software Testing Help says "Test strategy
 project team" and lists sponsors, business experts, developers, integration partners and release teams [17].
 
 **This moves the catalog's owner value.** The spec says the catalog's `QA Manager` owner is not contradicted
-(`docs/internal/tier2-specs.md:6008-6015`). QATestLab now contradicts it [24], while TestRail [20] and the mirror
+(`docs/internal/tier2-specs.md:6009-6016`). QATestLab now contradicts it [24], while TestRail [20] and the mirror
 [3] support it. The value can stand with the disagreement recorded; the reviewer decides.
 
 ### 5. Living document or stable document
@@ -380,7 +380,7 @@ during annual or semi-annual assessments, incorporating lessons learned, technol
 updates" [21]. Ofgem says "periodically thereafter" [10]. Edana describes one governance model, and no source says
 an annual review is common practice.
 
-**The spec's four candidate conditions, mapped to the research** (`docs/internal/tier2-specs.md:5946-5957`):
+**The spec's four candidate conditions, mapped to the research** (`docs/internal/tier2-specs.md:5947-5958`):
 
 1. **A project's plan records a deviation.** The deviation mechanism is sourced [3], [5], [12], [41]. That a
    recorded deviation should prompt a review of the strategy is the library's synthesis; no source says so.
@@ -424,7 +424,7 @@ with ISTQB as a quoted exchange; the contrast is in what each treats as a test s
 on well-defined terms around testing." [29]. On consistency within a team or organization, Vocke says "that's
 really all you should care about" [29]. The library already holds the boundary as unsettled
 (`templates/test-plan/test-plan_guide.md:41-43`), and spec risk 9 requires this companion to say so
-(`docs/internal/tier2-specs.md:6076-6080`).
+(`docs/internal/tier2-specs.md:6077-6081`).
 
 ### 8. Failure modes
 
@@ -561,7 +561,7 @@ were off by one to five lines; the numbers below are the corrected ones.
   standing standard belongs to a team rather than to a moment in a story (`:154-158`).
 - **Section 5** (`:160-164`): example content never leaks into templates.
 - **Section 2** (`:72`, `:74`): `sizes_available: [lean]` where research shows no second weight; `pairs_with`
-  verified per member. The spec checked it as empty (`docs/internal/tier2-specs.md:6036-6043`), and nothing here
+  verified per member. The spec checked it as empty (`docs/internal/tier2-specs.md:6037-6044`), and nothing here
   changes that.
 - **Section 6** (`:176-180`): example independence is enforced by `tools/check-example-independence.py`; the review
   trigger is a review obligation.
@@ -570,11 +570,11 @@ were off by one to five lines; the numbers below are the corrected ones.
 snippets (`guidance_snippets`, `:56`) with the same bundle's example prose (`example_prose`, `:69`). A shared run
 of 6 words warns and 8 fails (`:45-46`). `test-strategy` cannot enter its `GRANDFATHERED` map (`:174`). It cannot
 catch a fully reworded illustration (`:251`). It does not check the reverse leak, the example's nouns copied into
-guidance; that is the manual grep spec risk 8 names (`docs/internal/tier2-specs.md:6073-6075`).
+guidance; that is the manual grep spec risk 8 names (`docs/internal/tier2-specs.md:6074-6076`).
 
 ### The Acme Analytics names and dates
 
-**Reuse**, as the spec directs (`docs/internal/tier2-specs.md:6092-6113`):
+**Reuse**, as the spec directs (`docs/internal/tier2-specs.md:6093-6114`):
 
 - The program: Reporting Platform Modernization (`templates/kpi-dashboard/kpi-dashboard_example.md:2-3`,
   `templates/risk-register/risk-register_example.md:2-3`, `templates/raid-log/raid-log_example.md:2-3`).
@@ -602,12 +602,12 @@ summary report, test period 2026-07-06 to 2026-07-17 and last updated 2026-07-17
 Done, updated 2026-07-24 (`definition-of-done_example.md:10`; `dim1.md` cites `:9`, which is its 2026-02-02
 created date); and the business continuity plan, 2026-09-15 (`business-continuity-plan_example.md:6`). The spec
 requires a date after 2026-07-06 and, without a stated reason, not before 2026-07-17; the window up to 2026-07-24
-is one coherent placement, not a rule (`docs/internal/tier2-specs.md:6100-6108`). No sibling example mentions a
+is one coherent placement, not a rule (`docs/internal/tier2-specs.md:6101-6109`). No sibling example mentions a
 test strategy, so the example must not claim that any sibling cites it.
 
 **Avoid:** restating any row of the test plan's Risk-Ranked Approach (`test-plan_example.md:58-73`, seven areas)
 or its Test Levels and Types (`:75-86`, eight rows), and any defect row of the summary report
-(`docs/internal/tier2-specs.md:6115-6122`). No shipped example read for this log names a second project inside
+(`docs/internal/tier2-specs.md:6116-6123`). No shipped example read for this log names a second project inside
 the program, so any other project the example names is its own fiction and should be labelled as such.
 
 ### What `test-plan_example.md` already says and names
@@ -615,7 +615,7 @@ the program, so any other project the example names is its own fiction and shoul
 Its only sentence about a standing strategy is the frontmatter field, which says Acme Reporting has no standing
 test strategy document and that the Risk-Ranked Approach is the strategy for this release
 (`templates/test-plan/test-plan_example.md:7`). It stays true at its own date and is not edited
-(`docs/internal/tier2-specs.md:6086-6090`). The guide routes a reader who wants to say how the organization tests
+(`docs/internal/tier2-specs.md:6087-6091`). The guide routes a reader who wants to say how the organization tests
 across projects to a test strategy, marked as standing and rarely changing
 (`templates/test-plan/test-plan_guide.md:36`). The test
 plan names a 500ms view-list budget (`test-plan_example.md:70`), WCAG 2.2 AA (`:72`, `:84`), the CI unit and
@@ -624,7 +624,7 @@ contradicts any of these would retcon the test plan. One that restates them as r
 
 ### Neighbours
 
-The spec's six boundaries stand (`docs/internal/tier2-specs.md:5903-5934`). The research adds one. ISTQB's master
+The spec's six boundaries stand (`docs/internal/tier2-specs.md:5904-5935`). The research adds one. ISTQB's master
 test plan is "A test plan that is used to coordinate multiple test levels or test types." [1]. Ofgem's "programme
 level Testing Management Plan" [11] is that kind of plan, sitting beneath a program strategy. A program-level plan
 is a plan, and this bundle must not absorb it.
@@ -639,11 +639,11 @@ and each is maintainer-vetoable. A decision record gets a dated note, not a sile
 - `templates/test-plan/test-plan_guide.md:41-42` says the certification bodies put strategy at the organization or
   program level. ISTQB's current glossary says "within an organization" [1], and its syllabus applies the generic
   term at any scope [4].
-- `docs/internal/tier2-specs.md:5750-5758` and `:5810-5813`, and ADR 0075 (`0075-...:60-62`, `:241-243`): the
+- `docs/internal/tier2-specs.md:5751-5759` and `:5810-5813`, and ADR 0075 (`0075-...:60-62`, `:241-243`): the
   hedge they attribute to ISTQB is the mirror's text [3].
-- `docs/internal/tier2-specs.md:5961-5963` and `:5972`, and risk 4 (`:6060-6062`): only four Process Street steps
+- `docs/internal/tier2-specs.md:5962-5964` and `:5972`, and risk 4 (`:6060-6062`): only four Process Street steps
   were raw-checked. All twenty now are [13].
-- `docs/internal/tier2-specs.md:6008-6015`: the owner value is `not contradicted`. QATestLab contradicts it [24].
+- `docs/internal/tier2-specs.md:6009-6016`: the owner value is `not contradicted`. QATestLab contradicts it [24].
 
 ### Sentences that go stale at landing
 
@@ -655,9 +655,9 @@ From `dim1.md`, with lines re-checked:
   at `:106` under strategy-docs, a defect that predates this bundle.
 - `STATE.md:278` (as of `c16e58a0`), the Bundles cell: `Forty-seven bundles` and the standing-standards member list.
 - `docs/internal/contracts/standing-standards.md:17-19`, the Members line's `not yet built`. This bookkeeping edit
-  stops for the maintainer's read (`docs/internal/tier2-specs.md:6140-6144`).
+  stops for the maintainer's read (`docs/internal/tier2-specs.md:6141-6145`).
 - `templates/test-plan/test-plan_guide.md:36`, the routing row, which may gain a link as a build decision
-  (`docs/internal/tier2-specs.md:6145-6146`).
+  (`docs/internal/tier2-specs.md:6146-6147`).
 
 **Added for this log; `dim1.md` missed them:**
 
@@ -780,7 +780,7 @@ carry the inheritance section and the Review Trigger, the two sections where thi
    detail out, since "it is not intended to expand this document to define the detailed testing coverage and
    methods required" [15].
 6. **Stable, and changed on a named event** (Finding 5's third camp), with any periodic review as a floor, as the
-   contract's change note reads it (`docs/internal/contracts/standing-standards.md:202-207`).
+   contract's change note reads it (`docs/internal/contracts/standing-standards.md:218-223`).
 7. **A blank where an obligation sits** is a failure mode a template can prevent by asking [41], [43].
 
 **Section design, as the research moves it.** Every proposed section, field or prompt below is a **candidate**
@@ -811,7 +811,7 @@ admits none. E1 means sourced, E2 labelled as the library's own with a falsifier
 - **Roles and Responsibilities Across Projects** stands, and recurs in all four published documents (Finding 3).
   The guidance should show the owner disagreement (Finding 4) rather than pick a winner.
 - **Review Trigger** is contract-mandated, as a table of condition, owner and action
-  (`docs/internal/tier2-specs.md:5936-5944`). Source each condition as Finding 6 maps it, and label the synthesized
+  (`docs/internal/tier2-specs.md:5937-5945`). Source each condition as Finding 6 maps it, and label the synthesized
   ones. The owner column is the contract's own obligation, since no source names who notices.
 - **Not in the spec's table, and proposed as candidates:** document control (version, approver, effective date and
   review history) in frontmatter, E1 [13], [14], [15], [21], E3 frontmatter, E4 lean; and a short shared glossary,
@@ -827,13 +827,13 @@ sizes. QATestLab's small-project case folds the strategy into the plan [24], whi
 
 **Aliases.** *Add* `organizational test strategy`, ISTQB's own term [1]. *Remove* `test approach` here: ISTQB
 defines it as a separate term [1], CTAL-TM uses it at plan level [4], and DCC puts Test Approach documents beneath
-its strategy [14]. That adds evidence for the spec's correction 3 (`docs/internal/tier2-specs.md:5993-6000`).
+its strategy [14]. That adds evidence for the spec's correction 3 (`docs/internal/tier2-specs.md:5994-6001`).
 `QA strategy` still has no Quotable line. *Never alias* `master test plan`, which ISTQB defines as a plan [1].
 *Candidate alias:* `testing strategy`, the word several sources use [10], [15], [16], [18].
 
 **The example.** A program-level standing strategy for Reporting Platform Modernization, owned by Anjali Rao and
 approved by Marta Reyes or the program steering group, dated in the spec's window
-(`docs/internal/tier2-specs.md:6082-6122`). It may set program defaults from Finding 9: data tests [30], [31],
+(`docs/internal/tier2-specs.md:6083-6123`). It may set program defaults from Finding 9: data tests [30], [31],
 load tests [32], [33], [40], contract tests [35], accessibility at WCAG 2.2 AA [43], an environment ladder
 consistent with the thread's names [37], and a test-data rule [36], [42]. It may point at the summary report as
 the motivating event, by pointer only. Any second project is its own fiction. **It must not assert** the k6
@@ -854,8 +854,8 @@ type names as quotations [32], the contrast criterion's number or level [34], a 
 - Writing the British spelling in the library's own voice, or scoping anything to a portfolio.
 - GOOD and WEAK text that reuses the example's scenario. Before review, grep the drafted template for Reporting
   Platform Modernization, Saved Views, Acme, Anjali Rao, Marta Reyes, dbt, Great Expectations, k6, Pact and the
-  example's own project names (`docs/internal/tier2-specs.md:6073-6075`).
-- Restating `test-plan`'s Test Levels and Types or Risk-Ranked Approach (`docs/internal/tier2-specs.md:6066-6068`).
+  example's own project names (`docs/internal/tier2-specs.md:6074-6076`).
+- Restating `test-plan`'s Test Levels and Types or Risk-Ranked Approach (`docs/internal/tier2-specs.md:6067-6069`).
 
 ## Sources
 

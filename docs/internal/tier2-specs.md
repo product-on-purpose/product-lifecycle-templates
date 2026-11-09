@@ -59,6 +59,7 @@ design task" rather than "a spec-driven execution".
 | `manager-user-guide` | none | none; opening a family for it was declined | **Researched 2026-10-29** in admission sweep 7, and read 2026-11-05; no spec landed | **No, for now.** Declined by [ADR 0085](decisions/0085-manager-user-guide-is-declined.md): it clears admission on GitLab's handbook, and the maintainer chose not to open a family for it |
 | `product-opportunity-assessment` | `product-opportunity-assessment` (entry 208) | none; `discovery-docs` would admit it | **Researched 2026-10-29** in admission sweep 7, and read side by side 2026-11-04; no spec written | **No, for now.** Declined by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md): the lean `business-case` already does its job, and its guide now names the questions a new-product case should add |
 | `product-discovery-plan` | none | none; `research-docs` rejects it and `discovery-docs` fits only with strain | **Researched 2026-10-29** in admission sweep 7, then read 2026-11-05 (Cagan's later books) and 2026-11-07 (Torres's *Continuous Discovery Habits*); no spec written | **No, for now.** Declined by [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md): its parts already live in `project-brief`, `user-research-plan` and `product-strategy`, and its one source calls itself a list of tools, not a template. The `project-brief` guide gains a paragraph |
+| `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Not yet.** Waits for the maintainer's read of the contract change and a build go. Family and classification (`foundation`) proposed by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -1611,7 +1612,7 @@ bodies and two named government bodies each define or ship the type by name, cle
 `rawcheck.py`; the HHS quotations above and below were read from the Internet Archive's `id_` raw copy
 (`https://web.archive.org/web/2025id_/<hhs.gov URL>`), and the research log must cite
 the archived copy actually read, the same convention `change-request`'s own spec already models
-(`tier2-specs.md:1360-1373`). **One sentence in that same HHS folder is usable only as a fragment**:
+(`tier2-specs.md:1361-1374`). **One sentence in that same HHS folder is usable only as a fragment**:
 "A submitter completes a CR Form and sends the completed form to the Change Manager" wraps a table-cell
 break in the `.doc` extraction, and only "A submitter completes a CR Form and sends the" passed the
 raw-text check. Do not quote the full sentence; either use the fragment or use the passing companion
@@ -1854,7 +1855,7 @@ current evidence, **`pairs_with: []`** is the correct value, the same posture `i
    collision on the guide's and companion's first page, the way `change-request_guide.md` already states
    its own `rfc` collision, and add the one routing line `release-notes_guide.md` owes from its own side.
 6. **The templates stage has repeatedly copied the worked example's own scenario into GOOD and WEAK text**,
-   and no lens catches it reliably: `tier2-specs.md:1497-1499` records this exact failure surfacing in
+   and no lens catches it reliably: `tier2-specs.md:1498-1500` records this exact failure surfacing in
    `change-request`'s own build, caught only by the main loop after every automated lens passed. **Every
    GOOD and WEAK illustration in this bundle's templates must use a scenario unrelated to the Reporting
    Platform Modernization program**, independent of the worked example, per the shareable-boundary rule
@@ -1883,7 +1884,7 @@ cross-reference:
 - `templates/launch-coordination-checklist/launch-coordination-checklist_companion.md:464-469` gives the type
   its own subsection ("Launch coordination checklist and production readiness review") and states, without a
   tag to enforce it, "the two documents plausibly govern different moments of the same discipline."
-- `docs/internal/tier2-specs.md:543-546` (the launch-checklist spec) asks its own research pass to "look for a
+- `docs/internal/tier2-specs.md:544-547` (the launch-checklist spec) asks its own research pass to "look for a
   second [source]: a production or operational readiness review published as a document," and says "one source
   suffices; a second would change the teaching." **This sweep found it**: three named sources publish the
   document, and several more describe the review.
@@ -1947,7 +1948,7 @@ that it "spends a majority of its time consulting with development teams." Say n
 
 **The subject-matter distinction fails, and the spec must say so plainly rather than assert cross-functional
 scope by inference.** A gap-fill retrieval in this sweep read Google's own Appendix E, "Launch Coordination
-Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:505-520` already
+Checklist" (`sre.google/sre-book/launch-checklist/`), which `docs/internal/tier2-specs.md:506-521` already
 counted at ten areas and 31 items. Every one of its ten section headings is engineering- or operations-scoped:
 Architecture; Machines and datacenters; Volume estimates, capacity, and performance; System reliability and
 failover; Monitoring and server management; Security; Automation and manual tasks; Growth issues; External
@@ -2512,7 +2513,7 @@ candidates. `pairs_with: []` is the honest declaration.
    this spec does) but must not adapt its wording into template guidance text; BIS, Crown copyright under the
    Open Government Licence, is the adaptable source for anything beyond a short quote.
 5. **The build workflow's templates stage has repeatedly copied the worked example's own scenario into GOOD
-   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1498-1500`
+   and WEAK illustrative text**, a defect no lens currently catches on its own: `tier2-specs.md:1499-1501`
    records that on `change-request`, "the main loop found two more that no lens flagged, the templates' GOOD
    examples reusing the example's scenario and the example repeating the thread's known sharing contradiction."
    This bundle's example uses Acme Analytics' Question-First Entry initiative; the GOOD and WEAK text in every
@@ -8207,3 +8208,258 @@ and the decision returns to the maintainer, with a decline on the table, as ADR 
 | D2 | Sizes | **A:** `[lean, full]` | B: `[lean]`, with the wider links as optional columns |
 | D3 | The example | **A:** Saved Views, with the stop rule | B: a regulated company outside the Acme thread, which breaks the family's rule |
 | D4 | `methodology` | **A:** `generic` | B: the catalog's "regulated/Waterfall" |
+
+### standing-standards (eighth member): the platform and device support matrix
+
+**`platform-device-support-matrix`** - `standing-standards`, **`classification: foundation`** (recommended), sizes
+**`[lean]`** (single size, recommended), methodology **`generic`** (recommended), catalog **entry 212** (new), Tier 2.
+Issue #353 (bundle: platform-device-support-matrix). The family decision is
+[ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md)
+(platform and device support matrix joins standing-standards as a foundation), **proposed 2026-11-09**. The maintainer
+accepted the placement on 2026-11-09 by delegation. The contract read is still pending, and nothing here says the build
+is approved.
+
+#### The recommendation, and how sure it is
+
+**Build the matrix as the eighth `standing-standards` member, at `classification: foundation`, in one size.**
+Confidence: medium on admission and placement, low on the single size.
+
+The matrix says which browsers, operating systems and devices a product supports, at what level, and which of them the
+team tests on. Its job is to let a team answer "does this bug count?" without a meeting.
+
+**What holds the confidence at medium.** Every qualifying source is a government or design-system team. No commercial
+product team's matrix was read under a recorded terms verdict. The `foundation` call rests on the library's own
+inference that nobody applies the matrix under time pressure. The AusDTO column set has no passing quote (see Section design).
+
+#### Demand: two pointers into a document that does not exist
+
+- No catalog row carries the type today. Entry 212 would be new, and the landing PR adds it.
+- `test-case_template-full.md:174-176` says "the accessibility cases cover the browser matrix separately". No bundle holds
+  that matrix.
+- `test-case_companion.md:170` describes the environment field as "The environment, build, browser or device matrix,
+  and configuration this case is valid for."
+- The 2026-11-08 Define reads sent the type out of `define`. They called it a standing standard, not a problem-framing
+  document (`backlog.md:136`, the read row that sent it here).
+
+#### Admission: cleared on four government and design-system sources
+
+The 2026-11-08 sweep tested the type. Every quotation below is one of the 37 that passed `recheck-out.json` on pages whose
+terms verdict is `permits`. The sweep's critic recommended admitting at medium confidence.
+
+- **Check 1, the written form.** The GOV.UK Frontend v5 browser-support page: "Each grade shows the level of support we will
+  provide." The GOV.UK Service Manual page: "Decisions about compatibility cannot be something you specify at the start of
+  your project and then forget about." The YUI wiki: "A-grade browsers are identified, capable, modern and common." The AusDTO
+  UI-Kit file: "We define 'support' as:".
+- **Check 2, phase fit.** Not applicable: the type takes a `classification`, not a `phase`.
+- **Check 3, written-form scope.** A browser table plus a grade list, the shape `risk-register` and `raid-log` already ship.
+- **Check 4, no built bundle does its job.** Argued under Boundaries. Confidence: high, from the sweep's greps and the main loop's reads.
+- **Check 5, a software audience.** Passes: the YUI, AusDTO UI-Kit, GOV.UK Frontend and GDS frontend teams are software teams.
+
+**Corroboration, not needed for check 1.** The GDS Way: "The exact set of browsers you build for will vary by project". The ONS
+service manual: "You should test your service in the browsers shown in the supported browsers table." USWDS: "We officially support
+any browser above 2% usage as observed by analytics.usa.gov." That rule sits in a subsection of a developer page, not a page of its own.
+
+**Sources discarded.** `design.cms.gov` and `microtool.de` were read with no terms page found. Neither is quoted or relied on.
+
+#### Classification: `foundation`, argued against the honest `tool` case
+
+**The matrix is a standard that work is judged against, so `foundation` fits.** Confidence: medium. This follows the marker-by-marker
+method of [ADR 0075](decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md) (test strategy joins
+standing-standards as a foundation), reading the contract at `standing-standards.md:80-85`.
+
+| Marker | `foundation` | `tool` | The support matrix |
+|---|---|---|---|
+| What it is | "a standard you are judged against" | "an instrument you execute" | A statement of what the product promises. A bug is judged against it: GOV.UK Frontend says it will "treat bugs affecting Grade A browsers as high priority" |
+| When and by whom | agreed by a team, changed deliberately and rarely | under time pressure, often by someone who did not write it | Consulted when choosing test browsers, triaging a bug or deciding on a polyfill. Library inference: nobody applies it mid-incident |
+| Where authority comes from | from having been agreed | from being correct right now | From the team's agreed grades and threshold. A row is correct because the team decided it, not because it matches today's traffic |
+
+**The honest `tool` case.** A triager may open the matrix while a customer waits, which resembles execution under pressure. It breaks on
+two points. Triage reads one row and decides nothing about the document. The matrix has no steps a person runs in order. Both points are
+the library's own inference, and no research dimension tested them.
+
+**Why not `governance-docs`.** The sweep's Reading B needs a contract amendment. That family's instruments track "risk, open items, or
+performance". A browser matrix tracks none of these, and a frontend or design-system team keeps it.
+
+**The falsifier, applied.** The contract asks whether a candidate is consulted at the moment of action (`standing-standards.md:108-110`).
+The matrix is. A matrix written for one release and never consulted again is the excluded case, by the analogy at `standing-standards.md:37`.
+
+#### The family: `standing-standards`, the fourth member no forecast named
+
+`standing-standards.md:46` names only a coding-standards or engineering-handbook document as a likely future member.
+The matrix therefore joins on the membership test, as [ADR 0057](decisions/0057-issue-log-joins-governance-docs-as-a-fourth-member.md)
+(issue log joins governance-docs) requires, and the ADR cannot claim a confirmed forecast. The contract moves from 0.6.0 to 0.7.0 as a
+bookkeeping edit to the Members line and a change note. It still stops for the maintainer's read.
+
+**The cadence tension, routed to Review Trigger, not resolved by amendment.** Section 1 says members are "not revised on a calendar"
+(`standing-standards.md:28`). It routes a candidate "revised on a cadence and valuable only while current" away
+(`standing-standards.md:41-43`). The calendar evidence is direct. GOV.UK records "Commitment to update browser list updated to annual."
+The GDS Way records "last reviewed on 13 July 2026" and "needs to be reviewed again on 13 July 2027". Following
+[ADR 0071](decisions/0071-business-continuity-plan-joins-standing-standards-as-a-tool.md) (business continuity plan joins
+standing-standards), the annual figure is a floor on how long the conditions can go unchecked, not a calendar rewrite of the document.
+ADR 0075 made the same move. Confidence: medium, because the sweep marks the "reviewed, no changes" history entries as summarised, not re-checked.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `test-case` | Its environment field and GOOD example point at "the browser matrix". The matrix is the table they point to. A case names the configurations it runs on, and the matrix says which configurations the product supports |
+| `test-plan` | Its Environment, Data, and Ownership section (`test-plan_template-lean.md:119`) asks for environments, versions and data, with no browser wording. The plan names the release's environments. The matrix outlives the release. The plan must not claim the matrix's "test environment" phrase |
+| `test-strategy` | Its Standard Tooling and Environments section (`test-strategy_template-lean.md:132`) covers default tiers. A strategy can say "test the Tested rows of the matrix". It holds no browser rows |
+| `bug-report` | The report records where one bug was seen. The matrix decides whether that environment is supported, so it is an input to triage |
+| `prd` | The PRD templates carry no browser or compatibility wording, by grep. A PRD requirement such as "works on supported browsers" points at the matrix |
+| `definition-of-done` | A done criterion can say "verified on every Grade A row". The matrix owns the rows |
+| catalog entry 34, Non-Functional Requirements doc (unbuilt) | A future seam. A compatibility attribute could name the matrix. Not a duplication today |
+| ISTQB | Neutral. Its syllabus puts "test environment requirements" inside a test plan and has no concept of a browser list or support grades |
+
+**The seam inside the sources.** GOV.UK Frontend joins support and test commitments in one list. The GDS Way separates what a team builds
+for from what it regularly tests. The bundle defines a Grade column (the promise) and a Tested column (the practice) and keeps them separate.
+
+#### Sizes: `[lean]` only, recommended
+
+**One size, at low confidence.** The contract allows `[lean]` alone where a second size is not earned (`standing-standards.md:72`).
+The sources show a grade-definition block and a table. No source publishes a fuller or a shorter variant.
+
+**What evidence would earn a full variant.** A named source that publishes the matrix with per-row evidence columns, such as usage share
+or the date a row was last verified. Another would be a source that adds a polyfill or progressive-enhancement policy as a separate
+section. The build's `structure` dimension should look for both. A single size is exempt from nesting, not from anything else.
+
+#### Section design (proposed, for the build's research to test)
+
+Every section below is proposed. None is a received standard, and the build's research must test each against a source or relabel it
+as the library's POSITION.
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Purpose and Scope | The product covered, who relies on the matrix, and whether this file or a tool is the record | AusDTO: "The UI-Kit team needs to support all of our users, regardless of their device, web browser or other user agent." The scope wording is the library's POSITION |
+| 2 | Support Grades | Each grade with its definition, its test commitment and its bug-fix commitment | GOV.UK Frontend grades A, B, C, X; YUI grades A, C, X. YUI: "C-grade is the base level of support, providing core content and functionality." GOV.UK: "We will not fix bugs affecting these browsers." |
+| 3 | The Matrix | A mobile table and a desktop table. Columns: Browser, Platforms, Minimum version, Grade, Status (Tested or Untested), Notes | The AusDTO file's columns. The main loop read them raw, but no quote of them passed the recheck. Label the column set a POSITION |
+| 4 | Threshold Rule | The usage share at which a browser enters or leaves the matrix, the analytics source, and who decides | USWDS: "We follow the 2% rule". ONS: "at least 2% of your users are using a different browser or version" |
+| 5 | Unsupported Browsers | What a user on an unlisted or Grade X browser gets, and what a bug from one is worth | GOV.UK Service Manual: "Some users may access your service using older or unsupported browsers". The fallback wording is the library's POSITION |
+| 6 | Ownership | The named owner, who may change a grade and who is told | The GDS Way gives a page owner and review dates. Role names are the library's POSITION |
+| 7 | Review Trigger | **Contract-mandated** (section 4). A table of conditions, owners and actions, with the annual floor | See the next subsection |
+
+**Assistive technology is left out.** The sweep says the GDS Way names assistive technology as a testing means. No quote about it passed the
+recheck. The build may add a section only if a permitted, raw-checked source supports it.
+
+**How the contract's structural obligations are met** (`standing-standards.md:121-138`, section 3; the staleness obligation is section 4).
+
+| Obligation | Met by |
+|---|---|
+| 3.1 Eight files (single size ships seven, per `AGENTS.md`) | The build's file set, one template variant |
+| 3.2 Nesting | Exempt, single size |
+| 3.3 Guidance comments | Approach A in all seven sections, with PRIORITY and ROW HINT on sections 2, 3 and 7 (the table sections) |
+| 3.4 Companion skeleton | One Anatomy subsection per section above |
+| 3.5 Guide shape | The guide, with six anti-patterns (see Risks) |
+| 3.6 Citations | Folklore hazard named under Risks |
+| 3.7 Example independence | The example below, checked by `tools/check-example-independence.py` |
+| Section 4 review trigger, named owner and condition | Section 7 (Review Trigger), with section 6 (Ownership) naming the owner |
+
+#### The staleness mechanism: a Review Trigger, with the annual figure as a floor
+
+**Section 7 is a three-column table: Condition, Owner, What They Do About It.** More than one condition is evidenced, as it was for the test strategy.
+
+Candidate conditions, labelled the library's own synthesis unless a source names them:
+
+- Analytics show a browser or version crossing the threshold in either direction. The source is the 2% rule above.
+- A grade changes, or a grade's definition changes.
+- The team adopts a new platform, such as a native wrapper or a tablet layout.
+- A bug is triaged against a browser the matrix does not list. That means the matrix had a gap.
+- A browser vendor ends support for a version a row depends on. USWDS records its own example: "the Design System no longer supports Internet Explorer 11."
+- The annual floor: if none of the above has fired in twelve months, the owner reconfirms every row. GOV.UK and the GDS Way both record an annual review.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `platform-device-support-matrix` |
+| `title` | Platform and Device Support Matrix |
+| `family` | `standing-standards` |
+| `classification` | `foundation` (recommended) |
+| `sizes_available`, `default_size` | `[lean]`, `lean` |
+| `methodology` | `generic`; no source ties the matrix to one method |
+| `aliases` (safe) | browser support policy, graded browser support, supported browsers and devices, platform support matrix |
+| `aliases` (avoid) | a bare "matrix", which collides with `requirements-traceability-matrix` and the trade study's matrix; "test environment", the test plan's phrase; "compatibility testing", a test type in the test plan; "device test matrix" |
+| `pairs_with` | `[]`. `tools/known-skills.txt` holds no browser, device or compatibility skill (checked 2026-11-09) |
+| `catalog_ref` | entry 212 |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The row is new.** Add entry 212 to `docs/internal/catalog.md` and to `atlas/catalog-data.json`, then regenerate the atlas.
+- **Row order and counts.** Landing a catalog row trips the count markers. Read the bundle gate-verification memory before the landing.
+- **The relationships field.** Name the test plan, test case, bug report, test strategy and the PRD as pointers into the matrix.
+
+#### The example: a ferry booking site, with a stop rule
+
+**Recommended: the matrix for Harbourline Bookings, a passenger-ferry booking site run by a small operator.** Confidence: low. The family
+contract weakens the Acme chaining on purpose (`standing-standards.md:154-158`), so a fresh scenario is allowed. A grep of
+`templates/*/*_example.md` and `templates/*/*_template*.md` for "Harbourline", "Ferry", "Imogen Falk", "Rustam" and "Beketov" found no hit.
+The build must repeat the grep with its final names.
+
+**Facts the example must carry, with no contradiction.**
+
+- A mobile table and a desktop table, with Grade, Tested or Untested, and a minimum version on every mobile row.
+- One browser at a grade whose promise is lower than its testing: a row marked Grade B and Untested, with a stated reason.
+- A threshold row that moved: a browser dropped below the 2% line and was demoted, with the analytics date and its owner.
+- A Review Trigger table whose last row fired once during the example's own history, so the trigger is shown working.
+- All figures labelled illustrative. No real operator, brand or traffic number appears.
+
+**The stop rule.** If the filled example reads as a table of browser names with no decision visible in it, the build stops. A matrix whose every
+row is "supported" shows no judgment. The decision returns to the maintainer with a decline on the table, as ADR 0064 and ADR 0074 record.
+
+#### Risks for the build and the review
+
+- **The evidence is government and design-system teams only.** No commercial product team's matrix was read under a recorded terms verdict.
+  The guide must not say "every software team keeps one". State it plainly. Confidence: high.
+- **Folklore hazard, in this family's contract terms.** Section 3.6 names folklore presented as standard. The 98% and 2% figures are each one
+  team's choice. `test-strategy_companion.md:471-476` already cautions that GOV.UK's 98% covers that site's own traffic.
+- **The AusDTO columns.** The main loop read the file raw, but only "We define 'support' as:" and one purpose sentence passed the recheck. Label
+  the column set a POSITION.
+- **Revision driver.** The usage-driven half of the cadence rests on the 98% sentence and a GDS Way line about analytics. The update-history
+  entries "reviewed, no changes" were summarised, not re-checked.
+- **Anti-patterns the guide should name (at least six, proposed).** A matrix with no Tested column. A grade with no commitment attached. A
+  threshold with no named analytics source. Listing a browser nobody tests, the "matrix nobody will run" trap in `test-case_template-full.md:178`.
+  No owner. A review date with no condition.
+- **Example reuse.** Grep the template for the example's product and team names before review, per the templates-agent memory.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #353 closes, relabelled `status:built`.
+- Catalog entry 212 is added in state `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) moves the type from queued to built, and its counts move with it.
+- The `standing-standards` contract's Members line gains the matrix, and the contract moves to 0.7.0. This stops for the maintainer's read.
+- `test-case_template-full.md:174-176` and `test-case_companion.md:170` may link to the bundle. That is a build decision.
+- The test-plan guide's routing row may gain a link. Also a build decision.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has read ADR 0088 and its contract diff, and accepted or amended them. *(Pending.)*
+2. The maintainer has answered the choices below. *(Pending, except the family and classification.)*
+3. Issue #353 carries `status:queued`.
+4. The maintainer has asked for the build in their own words.
+
+**The research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Where graded browser support comes from (YUI's lineage), cited for existence only |
+| `structure` | Column sets across readable matrices, and whether any source shows a fuller variant (this decides the second size) |
+| `practice` | How software teams, and above all commercial product teams, keep a matrix. This is the dimension that tests the weakest claim |
+| `debates` | Threshold rules against judgment; tested against supported; whether a grade list is overhead |
+| `relationships` | Test plan, test case, bug report, test strategy and PRD boundaries |
+| `gap` | The standing gap question, per the runbook, including assistive technology |
+
+**Sites the research may not read.** Every site in the runbook's terms-rule table (`bundle-pipeline.md`, "The terms rule", section starting at
+line 136), including Pendo, Miro, ProductPlan, GitLab's marketing site and First Round. Also `design.cms.gov` and `microtool.de`, discarded. The
+sweep left Launchpad, New York ITS, the NHS App page, Oxford council and several vendor pages unread because their terms were unresolved. Check
+a site's terms before its first read. A site absent from the table is not cleared by its absence.
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative | Status |
+|---|---|---|---|---|
+| D1 | Family and classification | **A:** `standing-standards`, `foundation` (ADR 0088) | B: `standing-standards`, `tool`; C: `governance-docs`, `utility`, by amendment; D: decline | Accepted 2026-11-09 on the maintainer's delegation; the contract read is pending. |
+| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Not yet ruled. |
+| D3 | The example | **A:** Harbourline Bookings, with the stop rule | B: reuse the Acme Analytics thread, which the family weakens on purpose | Not yet ruled. |
+| D4 | The build go | **A:** build after the contract read and the D2 and D3 answers | B: hold; C: decline under ADR 0041 | Not yet ruled. |
