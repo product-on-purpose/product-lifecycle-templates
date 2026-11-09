@@ -7,7 +7,7 @@ between 03:51 and 04:17 UTC on 2026-10-26, which the build notes date 2026-10-25
 gitignored folder under `_local/research/`. It builds on the plan's research log
 (`templates/user-research-plan/user-research-plan_research-log.md`) and on ADR 0081 (adopt the research-docs
 family contract). It builds on the family contract (`docs/internal/contracts/research-docs.md`) and on the
-approved spec (`docs/internal/tier2-specs.md:6963-7425`). The maintainer's ten rulings of 2026-10-24
+approved spec (`docs/internal/tier2-specs.md:6964-7426`). The maintainer's ten rulings of 2026-10-24
 (`:7376-7393`) fix the ids, the sizes, the usability block, the pairing and the example. This bundle is the
 report, catalog entry 18 (the user research report), tracked as issue #317 (bundle: user-research-report). The
 plan, catalog entry 210, was built and merged on 2026-10-24 under issue #316 (bundle: user-research-plan).
@@ -158,13 +158,13 @@ spans below sit in this log's stored copies and survived as no Quotable line. A 
 with the source number, and may not quote it from this log.
 
 - NIST's `vendors demonstrate evidence of usability in their final product`, quoted at `research-docs.md:104-105`,
-  at ADR 0081 `:72` and, as `final product`, at `tier2-specs.md:7189`. The stored copy of NISTIR 7742 holds it.
+  at ADR 0081 `:72` and, as `final product`, at `tier2-specs.md:7190`. The stored copy of NISTIR 7742 holds it.
   NIST's Quotable sentence on summative studies carries the same point.
-- Maze's `Research questions the report is hoping to answer`, quoted at `tier2-specs.md:7152` and
+- Maze's `Research questions the report is hoping to answer`, quoted at `tier2-specs.md:7153` and
   `research-docs.md:28`.
 - Maze's `an ongoing reference point`, quoted at `research-docs.md:17`.
-- Nielsen Norman Group's sentence ending `consumed asynchronously`, quoted at `tier2-specs.md:7171-7172`.
-- Two headings at `tier2-specs.md:7158`. NIST's `APPENDICES` sat in a dropped line, and only its six appendix
+- Nielsen Norman Group's sentence ending `consumed asynchronously`, quoted at `tier2-specs.md:7172-7173`.
+- Two headings at `tier2-specs.md:7159`. NIST's `APPENDICES` sat in a dropped line, and only its six appendix
   titles survive. Maze's `Appendix` survives only in lower case, inside a sentence.
 
 Three further spans belong to the plan's log, not this one: Maze's `Successful task completion` (`:7155`), from
@@ -481,7 +481,7 @@ describes product managers running interviews with "No shared repository, no con
 process." [31]. Mozilla's post shows a product manager and two designers taking part in field research and
 analysis that the team's user researcher led [51]. It does not say who wrote the report. Confidence: high that
 either a researcher or a product person writes it. The catalog's two
-owner values (`tier2-specs.md:7324-7325`) gain a source: GitLab lets a product manager author the report [28].
+owner values (`tier2-specs.md:7325-7326`) gain a source: GitLab lets a product manager author the report [28].
 
 **Who reads it: two audiences at least.** NIST: "The CIF targets two audiences: usability professionals and
 stakeholders in an organization." [2]. UserTesting tailors depth to "executives, designers, product managers, etc."
@@ -525,7 +525,7 @@ Report Template 2 (Word document, 20 KB, 6 pages, May 2014)" [6]. The PowerPoint
 what the team did, the findings, and what it does next. Maze's PAS framework does not. It runs "Problem: State the
 problem you set out to overcome" [13], then "Agitate: Detail the impact or opportunity missed by not meeting the
 problem" [13], then a solution [13]. That is a deck with a structure distinct from the written sections. It
-weakens the spec's sentence that no source shows one (`tier2-specs.md:7171-7173`). The spec's recommendation can
+weakens the spec's sentence that no source shows one (`tier2-specs.md:7172-7174`). The spec's recommendation can
 still hold. PAS opens on a problem and closes on a solution, which edges toward the framed problem and the chosen
 concept the spec keeps out (`:7167-7168`). On this log's reading, the guide may say a deck can carry the same
 sections, and should name PAS as a presenting frame the library does not adopt. Confidence: medium.
@@ -603,7 +603,7 @@ structure from US government templates and from the Common Industry Format.**
 - **NIST's NISTIR 7742** (US) customizes the CIF for health records: "This version of the CIF has been customized
   for use in usability testing of Electronic Health Records (EHRs) by usability administrator(s) and data
   logger(s)." [1]. It is "Version 0.2", dated "15-Nov-10" [1]. The spec's risk 5 requires that sentence beside any
-  NIST heading (`tier2-specs.md:7340-7341`).
+  NIST heading (`tier2-specs.md:7341-7342`).
 - **NIST's CIF page** dates the standard: "The American National Standards Institute (ANSI) approved the CIF
   December 12, 2001 as the standard for reporting usability test results." [2]. Its purpose is "to encourage
   incorporation of usability as an element in decision making for software procurement" [2]. The page says "This
@@ -629,7 +629,7 @@ to the CIF. This log did not trace whether usability.gov's template derives from
 
 ### 10. The shipped-product clause
 
-The friction study studies a dashboard customers already use (`tier2-specs.md:7267-7269`). Contract section 2
+The friction study studies a dashboard customers already use (`tier2-specs.md:7268-7270`). Contract section 2
 requires a member that serves such a study to declare `discover` anyway, with its companion saying why
 (`research-docs.md:107-109`). The plan's example gives its reason in its first section
 (`templates/user-research-plan/user-research-plan_example.md:44-47`). What this research gives the report's
@@ -678,7 +678,7 @@ carries it.
    applicable." [14]; "we need to let our teams know when a question is unanswerable" [27]. Useberry asks, in the
    agreement before the study, for "a line on what happens if findings split or are inconclusive" [37].
    **Route:** Open Questions (full) holds it. In lean, the spec's Research Questions and Answers row already says
-   that a question the study could not answer says so (`tier2-specs.md:7152`). An ASK there covers split results.
+   that a question the study could not answer says so (`tier2-specs.md:7153`). An ASK there covers split results.
 4. **Positive findings. Supported.** E1: [16], [26], [38]. **Route:** an ASK in Key Findings, and a rubric row.
    Not a section.
 5. **Counts with their denominator, and the sample's limits. Supported.** E1: [25], [23], [24], [46]. **Route:**
@@ -736,14 +736,14 @@ carries it.
     tags belong to each insight at publication. E1: "Collected on: the fieldwork date, not the publication date"
     and "Product version / state: what the participants were actually reacting to" [52]. Of usability findings,
     it says "a redesign invalidates them instantly" [52]. **Route:** a review-by date stays out. The fieldwork
-    dates already sit in What We Did (`tier2-specs.md:7153`). The product version tested could enter there as an
+    dates already sit in What We Did (`tier2-specs.md:7154`). The product version tested could enter there as an
     ASK, on one vendor source. GetWhy's pages on the question were not read, and are listed in the closing
     section.
 18. **The coding or analysis method. Unsupported.** No Quotable line asks a report to name one. **Route:** out.
 
 ### 12. The nine proposed sections, against this research
 
-The spec's section table (`docs/internal/tier2-specs.md:7148-7158`) is headed as proposed, for the build's
+The spec's section table (`docs/internal/tier2-specs.md:7149-7159`) is headed as proposed, for the build's
 research to test (`:7146`). The maintainer's rulings of 2026-10-24 close the spec's section (`:6979-6980`), so its
 sections and sizes bind. The table records which sources now support each section and whether confidence moves.
 **Every movement is a candidate for the maintainer; none is applied here.**
@@ -922,7 +922,7 @@ stays out.
 1. **Quoting anything that is not a Quotable line**: the spec's spans this log lacks, the lost parts of the drops,
    and the dimension-file spans, all listed in the checks section.
 2. **Citing NIST's headings without the health-records customization in the same sentence** [1]
-   (`tier2-specs.md:7340-7341`).
+   (`tier2-specs.md:7341-7342`).
 3. **Calling NISTIR 7742 regulatory** on this log's evidence (Finding 9).
 4. **Presenting the no-decision line as what the sources do** (Finding 4).
 5. **Using test report or test results alone where `test-summary-report` collides** (`:7136-7138`).
@@ -935,7 +935,7 @@ stays out.
    (`:7142-7143`).
 
 **The example.** The maintainer ruled the scenario on 2026-10-24 (ruling 7,
-`docs/internal/tier2-specs.md:7389-7390`). The report is the readout of the 2026-05 Reporting friction study,
+`docs/internal/tier2-specs.md:7390-7391`). The report is the readout of the 2026-05 Reporting friction study,
 which four shipped examples cite and none shows. It answers the plan's example
 (`templates/user-research-plan/user-research-plan_example.md`), and it uses the full variant (`:7089-7090`). Priya
 Nair, PM, Reporting, writes it, dated 2026-05-27. Acme's UX Research function ran the sessions; that is a
@@ -956,26 +956,26 @@ marked not applicable in one line. The report must be findable by the PRD's own 
 - **The five questions, each answered** (`:56-65`). Question 5, re-filtering against exporting and sharing, is the
   top finding. Question 3, workarounds, is the text file. Question 2, whether rebuilt filters match intent, is the
   wrong-slice risk (`prd_example.md:46-47`). Question 1 is answered by the top finding, with no minutes-per-day
-  figure (`tier2-specs.md:7279-7281`). No sibling answers question 4, on analysts who open the dashboard several
+  figure (`tier2-specs.md:7280-7282`). No sibling answers question 4, on analysts who open the dashboard several
   times a week against about once a week (`:62-63`). The persona's `3 to 4 times a week`
   (`user-persona_example.md:70`) describes the persona study, not this one. On this log's reading, Open Questions
   is the safer home for question 4, since any answer would add a fact no sibling states.
 - **The hypothesis** (`:66-69`) can be confirmed in the report's terms, with the binding counts and no time
   figure (gap candidate 2).
-- **The binding facts** (`tier2-specs.md:7215-7229`), with each sibling's exact wording, read on 2026-10-26:
+- **The binding facts** (`tier2-specs.md:7216-7230`), with each sibling's exact wording, read on 2026-10-26:
   - **The top finding.** The PRD says re-filtering was
     `the single most frequent repeated action in the dashboard, ahead of export and share`
     (`prd_example.md:35-36`). The design brief says
     `the single most frequent repeated action on the dashboard, ahead of both exporting and` /
     `sharing` (`design-brief_example.md:34-35`). The epic says
     `the single most frequent repeated action inside a dashboard, ahead of both export and share`
-    (`epic_example.md:46`). The spec's row quotes the PRD and cites the epic at `:45-46` (`tier2-specs.md:7219`).
+    (`epic_example.md:46`). The spec's row quotes the PRD and cites the epic at `:45-46` (`tier2-specs.md:7220`).
     The build notes place the epic's phrase at `:45`, but it sits on `:46`. The PRD's citation is how a reader
     finds the report, so the report's sentence should match the PRD's wording.
   - **The sample.** The epic says `across the twelve analysts interviewed` (`epic_example.md:45`), in words. The
     PRD says `9 of 12 interviewed analysts` (`prd_example.md:44`), and the design brief says
     `The friction study interviewed 12 analysts` (`design-brief_example.md:62`). The spec's table gives
-    `12 analysts, interviewed` (`tier2-specs.md:7218`). The forms agree; the report should use the digit, as two
+    `12 analysts, interviewed` (`tier2-specs.md:7219`). The forms agree; the report should use the digit, as two
     of the three siblings do.
   - **The first count.** The PRD: `9 of 12 interviewed analysts described manually rebuilding filters several times a day`
     (`prd_example.md:44`). The design brief: `9 of them described` / `rebuilding filters by hand several times a day`
@@ -983,7 +983,7 @@ marked not applicable in one line. The report must be findable by the PRD's own 
   - **The second count.** The PRD says `3 kept a personal text file of` (`prd_example.md:45`), and the design
     brief says `3 kept a personal text file listing` (`design-brief_example.md:63`). The epic says
     `three kept a personal note of` (`epic_example.md:47`). The spec's table says `a personal text file`
-    (`tier2-specs.md:7221`), as the PRD and the design brief do, and the report should too. The design brief
+    (`tier2-specs.md:7222`), as the PRD and the design brief do, and the report should too. The design brief
     later calls it `a personal list` (`:107`), a looser echo.
   - **The cost:** broken flow, and the wrong slice from a filter set rebuilt from memory
     (`prd_example.md:46-47`; `design-brief_example.md:64-66`).
@@ -993,7 +993,7 @@ marked not applicable in one line. The report must be findable by the PRD's own 
     The report labels its counts illustrative too.
 - **The sharing clause.** The announcement says the pattern found `more often than any other` was an analyst
   rebuilding a setup `because nobody else could reach their saved setup`
-  (`announcement-internal-comms_example.md:66-68`). The spec's reading (`tier2-specs.md:7249-7252`) is that the
+  (`announcement-internal-comms_example.md:66-68`). The spec's reading (`tier2-specs.md:7250-7253`) is that the
   only saved setups were personal notes no teammate could see. That fits the three text files. On this log's
   reading, the report can say the personal text files were the only saved setups, and that no teammate could
   reach them. The review checks the wording against both sentences.
@@ -1011,7 +1011,7 @@ marked not applicable in one line. The report must be findable by the PRD's own 
   provides (`user-research-plan_example.md:159-171`).
 - **Facts older than the plan, which the report may read.** The persona (2026-01-05), the strategy's
   `Time to Insight` goal (2026-01-28) and the roadmap's Saved Views line (2026-02-11), as the spec lists
-  (`tier2-specs.md:7231-7234`). The plan's log found a trap in two of them: the strategy names later documents'
+  (`tier2-specs.md:7232-7235`). The plan's log found a trap in two of them: the strategy names later documents'
   versions of the goal, and the roadmap frames Saved Views as the second-view problem. The report cites neither
   framing.
 - **Trap 1: two 12-person studies.** The persona's study ran in November and December 2025, n=12
@@ -1021,18 +1021,18 @@ marked not applicable in one line. The report must be findable by the PRD's own 
   of `5 to 10 minutes` and its count of 34 tickets (`user-persona_example.md:61`) are the persona's. The report
   may cite the tickets in Background and Objectives as the persona work's, as the plan does
   (`user-research-plan_example.md:76-77`), and never as a finding. It leaves the time range out, since a time
-  figure invites the reconciling the spec warns against (`tier2-specs.md:7279-7281`). The colorblind hub lead came from the persona interviews (`design-brief_example.md:99`),
+  figure invites the reconciling the spec warns against (`tier2-specs.md:7280-7282`). The colorblind hub lead came from the persona interviews (`design-brief_example.md:99`),
   not the friction study. The nine customer accounts are the persona study's (`user-persona_example.md:90-91`).
 - **Two people named Elena Cho.** The persona is Elena Cho (`user-persona_example.md:3`), and the epic names an
   Elena Cho in Design Systems (`epic_example.md:114`). The report names neither, and reports analysts unnamed.
 - **People.** Priya Nair writes. Dana Okoro approved the plan. UX Research moderated and took notes, unnamed
   (`user-research-plan_example.md:151-152`). Priya and a Reporting designer observed two calls apiece (`:153-154`).
-  No new named person is needed (`tier2-specs.md:7258-7260`). The epic's Marcus Bell and Dana Osei are different
+  No new named person is needed (`tier2-specs.md:7259-7261`). The epic's Marcus Bell and Dana Osei are different
   people from Marcus Webb and Dana Okoro (`epic_example.md:112-113`), so a name check covers both pairs.
 - **Not carried.** The per-user preferences storage that shipped in Q1 appears in the PRD and the design brief
   (`prd_example.md:38`, `design-brief_example.md:37`), both dated after the report. It is a data-model fact, not a
   finding, and the report leaves it out.
-- **What it must not contain.** No concept, and no decision (`tier2-specs.md:7271-7282`). No minutes-per-day
+- **What it must not contain.** No concept, and no decision (`tier2-specs.md:7272-7283`). No minutes-per-day
   figure. No document dated after 2026-05-27 cited as existing: not the design brief, the PRD, the epic, the user
   stories, the test plan or the announcement. The opening Worked example blockquote may mention later documents,
   as sibling examples do.

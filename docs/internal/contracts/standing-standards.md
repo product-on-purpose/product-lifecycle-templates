@@ -16,7 +16,7 @@ assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 
 assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14),
 `test-strategy`
 ([ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
-assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20).
+assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), `platform-device-support-matrix` ([ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned and specced 2026-11-09 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -178,6 +178,22 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.7.0, 2026-11-09: an eighth member, and the fourth that no forecast named.** `platform-device-support-matrix`
+joins as `classification: foundation`, by
+[ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), which the
+maintainer accepted on 2026-11-09 after reading this entry and the Members line. Section 1's likely-future-members line
+again names nothing here. So **the membership test and this family's falsifier admit it, not a confirmed forecast**.
+The matrix is consulted at the moment of action: when a team chooses which browsers to test, triages a bug report, or
+decides whether a fix is owed. A list of the browsers one release was tested on is a test plan's environment section,
+so the bundle is the standing matrix. **`foundation` was argued against the honest `tool` case**: people other than
+its authors consult the matrix. But nobody consults it under the time pressure a runbook or a continuity plan is
+executed under, so the timing half of the `tool` marker fails. **The cadence tension is recorded as a consequence, not
+resolved by amendment**, for the third time. GOV.UK commits to an annual update of its browser list, against section
+1's "not revised on a calendar". The bundle's Review Trigger section states the trigger as a condition, such as
+analytics showing a browser crossing the support threshold. It reads the annual figure as a floor, as the `0.5.0` and
+`0.6.0` entries did. ADR 0088 adds one caution: if a fourth candidate needs the same reading, an amendment of section
+1's cadence clause should be weighed instead. No structural obligation, metadata rule or axis value moved.
 
 **0.6.0, 2026-10-19: a seventh member, and the third that no forecast named.** `test-strategy` joins as
 `classification: foundation`, by

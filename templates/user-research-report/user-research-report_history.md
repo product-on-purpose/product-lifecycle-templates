@@ -25,14 +25,14 @@ the maintainer's own copy.
 `research-docs` family contract on 2026-10-23 with no member built. This bundle and its sibling,
 `user-research-plan` (catalog entry 210, built 2026-10-24), are both founding members, specced together
 on 2026-10-23 and ruled on together by the maintainer on 2026-10-24 ("I approve your ten choices,"
-recorded at `docs/internal/tier2-specs.md:7376-7393`). The contract's section 1 states the membership
+recorded at `docs/internal/tier2-specs.md:7377-7394`). The contract's section 1 states the membership
 test this bundle meets: it "reports on ... one study of the people a product serves," after the study
 ends, answering the questions the plan set out before it ran. This bundle was built second, by the
 maintainer's own ruling (ruling 8), so that its example could report against the plan's own example
 rather than against an invented one.
 
 This bundle answers the spec written 2026-10-23
-(`docs/internal/tier2-specs.md:6963-7425`), closed by the maintainer's ten rulings of 2026-10-24.
+(`docs/internal/tier2-specs.md:6964-7426`), closed by the maintainer's ten rulings of 2026-10-24.
 Catalog entry 18 is unchanged from the master catalog; this release is its first bundle.
 
 ### The friction study's readout, closing a chain four shipped examples opened
@@ -88,11 +88,11 @@ present at `skills/discover-interview-synthesis/SKILL.md` in `product-on-purpose
 ### `related_templates` carries no `future:` reference
 
 `[user-research-plan, user-persona, problem-statement, design-brief, test-summary-report,
-experiment-readout]`, the spec's list (`docs/internal/tier2-specs.md:7295`): the other member, the three
+experiment-readout]`, the spec's list (`docs/internal/tier2-specs.md:7296`): the other member, the three
 documents that use the findings, and the two near-miss neighbours. Every target already exists on disk.
 The aliases are the catalog's four. `user-research-plan`'s own `related_templates` drops its
 `future:user-research-report` prefix in the same pull request, as the spec's list for the report's
-landing says (`docs/internal/tier2-specs.md:7372-7374`); see
+landing says (`docs/internal/tier2-specs.md:7373-7375`); see
 [`user-research-plan_history.md`](../user-research-plan/user-research-plan_history.md).
 
 ### `methodology-agnostic`, matching the plan
@@ -106,4 +106,4 @@ requires.
 
 [`spike-report_guide.md`](../spike-report/spike-report_guide.md) gains a dated note routing user
 research to this bundle, beside the pm-skills skill it already names, as the spec's list for the
-report's landing says (`docs/internal/tier2-specs.md:7367`).
+report's landing says (`docs/internal/tier2-specs.md:7368`).

@@ -4,7 +4,7 @@ Research conducted 2026-10-24. The stored copies carry fetch stamps of 2026-10-2
 admission sweeps, and 2026-10-24 UTC for the other 20. The research builds on the two admission sweeps of
 2026-10-23, the plan's and the report's, whose digests sit in gitignored folders under `_local/research/`. It builds
 on ADR 0081 (adopt the research-docs family contract) and on the approved spec
-(`docs/internal/tier2-specs.md:6963-7397`). The maintainer's ten rulings of 2026-10-24 (`:7376-7393`) fix the
+(`docs/internal/tier2-specs.md:6964-7398`). The maintainer's ten rulings of 2026-10-24 (`:7376-7393`) fix the
 sizes, the eleven sections and the example. This bundle is the plan only, catalog entry 210 (the user research
 plan), tracked as issue #316 (bundle: user-research-plan). The report, entry 18, is a later build. The build ran
 six dimensions. Three read published plans: government digital services' long form, vendors' and practitioners'
@@ -51,7 +51,7 @@ sources, were checked against the stored copies only in this build.
   line [34].
 - **Carrying.** `carry_spec_quotes.py` carried 104 quotations from the two admission sweeps, for sources already
   in this log. It carried a heading only where the spec quotes it. The sweeps had checked those lines against raw
-  page text on 2026-10-23 (`tier2-specs.md:7015-7020`); this build re-tested them against the stored copies only.
+  page text on 2026-10-23 (`tier2-specs.md:7016-7021`); this build re-tested them against the stored copies only.
 
 The arithmetic is 344 returned plus 127 extra lines, which makes 471. Taking away the 18 that failed whole and
 adding the 30 surviving parts gives 483. The generator merged 10 duplicates, which leaves 473. `sources-report.txt`
@@ -81,7 +81,7 @@ counts. The stored copy has a title, ten second-level headings and a per-task bl
 Each must travel with the span it qualifies.
 
 - **Gilad's test-and-experiment line.** The contract and spec quote "Per this definition an A/B test is an
-  experiment, but a usability test is not." [19] (`research-docs.md:35-36`, `tier2-specs.md:7183-7184`). Gilad's
+  experiment, but a usability test is not." [19] (`research-docs.md:35-36`, `tier2-specs.md:7184-7185`). Gilad's
   next sentences read: "I realize that this is not the common definition used in the industry - in many cases the
   words test and experiment are used interchangeably. I chose this definition because it’s closer to how scientists
   think of experiments." [19]. The experiment boundary therefore rests on Gilad's own stricter definition, by his
@@ -471,14 +471,14 @@ government digital services.**
 
 **None is a regulatory form.** Each is guidance or a fill-in template that a digital service team published for
 its own and others' use. Defra's mandate binds Defra's own researchers, not product teams in general. No plan
-source in this log cites ISO/IEC 25062; that lineage is the report's (`tier2-specs.md:7028-7031`). The companion's
+source in this log cites ISO/IEC 25062; that lineage is the report's (`tier2-specs.md:7029-7032`). The companion's
 Origins section should name the government lineage and date the two retired sources, 18F's guide and
 usability.gov. Confidence: high on the list. This log did not trace whether the usability.gov template derives
 from a standard.
 
 ### 8. The shipped-product clause
 
-The friction study studies a dashboard customers already use (`tier2-specs.md:7267-7269`). Contract section 2
+The friction study studies a dashboard customers already use (`tier2-specs.md:7268-7270`). Contract section 2
 requires a member that serves such a study to declare `discover` anyway, with its companion saying why
 (`research-docs.md:107`). What this research gives the companion:
 
@@ -587,7 +587,7 @@ Candidates the other dimensions surfaced, routed the same way:
 
 ### 10. The eleven proposed sections, against this research
 
-The spec's section table (`docs/internal/tier2-specs.md:7094-7106`) is headed as proposed, for the build's research
+The spec's section table (`docs/internal/tier2-specs.md:7095-7107`) is headed as proposed, for the build's research
 to test (`:7092`). The maintainer's rulings of 2026-10-24 close the spec's section (`:6979-6980`), so its sections
 and sizes bind. The table below records which sources now support each section and whether confidence moves. **Every movement is
 a candidate for the maintainer; none is applied here.**
@@ -760,7 +760,7 @@ guide.
     (`:7142-7143`).
 
 **The example.** The maintainer ruled the scenario on 2026-10-24 (ruling 7,
-`docs/internal/tier2-specs.md:7389-7390`). The plan plans the 2026-05 Reporting friction study, which four shipped examples cite and none shows. It uses the
+`docs/internal/tier2-specs.md:7390-7391`). The plan plans the 2026-05 Reporting friction study, which four shipped examples cite and none shows. It uses the
 full variant (`:7089-7090`). Priya Nair, PM, Reporting, writes it, dated 2026-04-20. Acme's UX Research function
 runs the sessions. That is a function, not a person. No individual researcher is named anywhere in the thread
 (`dim2.md`). A build that adds one greps every example for the name first (`:7258-7260`). The method is

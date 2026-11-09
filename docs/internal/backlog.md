@@ -1,7 +1,7 @@
 # Build backlog: where it lives, what is outstanding, and what comes next
 
-**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05, 2026-11-06, 2026-11-07 and 2026-11-08.** The issue counts in section 2 were
-read from GitHub on 2026-11-07, and no gate checks them, so they go stale as issues move. The catalog
+**This page is a dated snapshot, taken 2026-10-20 and refreshed 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05, 2026-11-06, 2026-11-07, 2026-11-08 and 2026-11-09.** The issue counts in section 2 were
+read from GitHub on 2026-11-09, and no gate checks them, so they go stale as issues move. The catalog
 counts in section 3 sit under a counts marker that [`tools/check-counts.py`](../../tools/check-counts.py)
 gates, so CI fails when they drift.
 [`STATE.md`](../../STATE.md) outranks this page wherever the two disagree.
@@ -33,6 +33,7 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
+| [#353](https://github.com/product-on-purpose/product-lifecycle-templates/issues/353) | `platform-device-support-matrix` | Queued, admitted 2026-11-09 after the maintainer read the contract change | P2 | 2 | `standing-standards`, `classification: foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) | A build go, with the sizes and example choices in the spec |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -40,9 +41,9 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 4 parked |
-| Priority | P3: 3, P4: 1 |
-| Tier | Tier 2: 4 |
+| Status | 1 queued, 4 parked |
+| Priority | P2: 1, P3: 3, P4: 1 |
+| Tier | Tier 2: 5 |
 
 Sixty-six candidate issues are closed: 55 built and 11 declined. The last to close was #331 (product-discovery-plan). Four of the declined types,
 `solution-brief`, `prototype-brief`, `manager-user-guide` and `product-discovery-plan`, never had a catalog row.
@@ -132,7 +133,7 @@ and no candidate is admitted: an admission sweep still needs the maintainer's ch
 | Stays out of `define` | NASA's needs, goals and objectives with its concept of operations: NASA defines a need as the answer to "What problem are we trying to solve?", which is `problem-statement`'s question, and the concept of operations describes a system already envisioned. No software source could be read | medium-high |
 | Stays out of `define` | The accessibility conformance target: no source treats the target as a document. W3C puts the level inside an organisation's accessibility policy, and GOV.UK requires only a statement after release | medium |
 | Stays out of `define` | The "Target" phase of the Behavioural Insights Team's TEST method: its handbook names a target statement and a short list of target behaviours, written on worksheets inside a project. No software or UX use was found | medium |
-| Returns for an admission sweep elsewhere | The platform and device support matrix: GOV.UK publishes both a browser test table and a set of graded support levels. Technology teams write it and revise it as usage changes, which makes it a standing standard rather than a `define` document | medium |
+| Returns for an admission sweep elsewhere | The platform and device support matrix: GOV.UK publishes both a browser test table and a set of graded support levels. Technology teams write it and revise it as usage changes, which makes it a standing standard rather than a `define` document. *(2026-11-09: its admission sweep ran on 2026-11-08, and it is admitted to `standing-standards` by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), issue #353.)* | medium |
 | Still short of evidence | The DoD Initial Capabilities Document: its only software use found is inside defence acquisition, so ADR 0080 parks it whatever its settling read finds | medium |
 | Still short of evidence | The regulatory requirements register: the only register forms found were vendor pages whose terms could not be checked, and the ISO/IEC 27001 text is paywalled | low |
 
@@ -264,11 +265,16 @@ ADR 0077 keeps in `deliver`.
 - **2026-11-08.** The seven evidence-insufficient reads ran (section 4). Four candidates stay out of `define`,
   the device support matrix returns for an admission sweep outside it, and two stay short of evidence. The define
   count stays at two.
+- **2026-11-09.** The device support matrix's admission sweep (run 2026-11-08) admits it to `standing-standards`
+  as a `foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md),
+  accepted the same day after the maintainer read the contract change. It opens as #353 (bundle: platform-device-support-matrix). The define count stays at
+  two, since the family sits on the classification axis.
 
 ## 6. What comes next, in order
 
 1. **The five candidates that return outside Define, only when the maintainer chooses them.** These are the four
    from the 2026-10-20 re-score and the device support matrix from the 2026-11-08 reads. None is urgent.
+   *(2026-11-09: the device support matrix is admitted and queued as #353, so four remain.)*
 2. **The two candidates still short of evidence, only if a source turns up.** The DoD Initial Capabilities
    Document is parked by ADR 0080. The regulatory requirements register needs a source whose terms permit reading
    and that shows a software team keeping one.
