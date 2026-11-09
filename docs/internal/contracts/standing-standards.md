@@ -16,7 +16,7 @@ assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 
 assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14),
 `test-strategy`
 ([ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
-assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), `platform-device-support-matrix` ([ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), proposed, assigned and specced 2026-11-09 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
+assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), `platform-device-support-matrix` ([ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned and specced 2026-11-09 in [`tier2-specs.md`](../tier2-specs.md); not yet built).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -181,8 +181,8 @@ obligation at authoring time; it is a section-presence rule and could later be g
 
 **0.7.0, 2026-11-09: an eighth member, and the fourth that no forecast named.** `platform-device-support-matrix`
 joins as `classification: foundation`, by
-[ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), which is
-proposed and waits for the maintainer's read of this entry and the Members line. Section 1's likely-future-members line
+[ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), which the
+maintainer accepted on 2026-11-09 after reading this entry and the Members line. Section 1's likely-future-members line
 again names nothing here. So **the membership test and this family's falsifier admit it, not a confirmed forecast**.
 The matrix is consulted at the moment of action: when a team chooses which browsers to test, triages a bug report, or
 decides whether a fix is owed. A list of the browsers one release was tested on is a test plan's environment section,

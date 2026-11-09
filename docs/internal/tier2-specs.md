@@ -59,7 +59,7 @@ design task" rather than "a spec-driven execution".
 | `manager-user-guide` | none | none; opening a family for it was declined | **Researched 2026-10-29** in admission sweep 7, and read 2026-11-05; no spec landed | **No, for now.** Declined by [ADR 0085](decisions/0085-manager-user-guide-is-declined.md): it clears admission on GitLab's handbook, and the maintainer chose not to open a family for it |
 | `product-opportunity-assessment` | `product-opportunity-assessment` (entry 208) | none; `discovery-docs` would admit it | **Researched 2026-10-29** in admission sweep 7, and read side by side 2026-11-04; no spec written | **No, for now.** Declined by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md): the lean `business-case` already does its job, and its guide now names the questions a new-product case should add |
 | `product-discovery-plan` | none | none; `research-docs` rejects it and `discovery-docs` fits only with strain | **Researched 2026-10-29** in admission sweep 7, then read 2026-11-05 (Cagan's later books) and 2026-11-07 (Torres's *Continuous Discovery Habits*); no spec written | **No, for now.** Declined by [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md): its parts already live in `project-brief`, `user-research-plan` and `product-strategy`, and its one source calls itself a list of tools, not a template. The `project-brief` guide gains a paragraph |
-| `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Not yet.** Waits for the maintainer's read of the contract change and a build go. Family and classification (`foundation`) proposed by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) |
+| `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Not yet.** Waits for a build go and the sizes and example choices. Family and classification (`foundation`) set by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted 2026-11-09 |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -8215,8 +8215,8 @@ and the decision returns to the maintainer, with a decline on the table, as ADR 
 **`[lean]`** (single size, recommended), methodology **`generic`** (recommended), catalog **entry 212** (new), Tier 2.
 Issue #353 (bundle: platform-device-support-matrix). The family decision is
 [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md)
-(platform and device support matrix joins standing-standards as a foundation), **proposed 2026-11-09**. The maintainer
-accepted the placement on 2026-11-09 by delegation. The contract read is still pending, and nothing here says the build
+(platform and device support matrix joins standing-standards as a foundation), **accepted 2026-11-09**. The maintainer
+accepted the placement by delegation and read the contract change the same day. Nothing here says the build
 is approved.
 
 #### The recommendation, and how sure it is
@@ -8434,7 +8434,7 @@ row is "supported" shows no judgment. The decision returns to the maintainer wit
 
 **Preconditions, each of which must hold before the build starts:**
 
-1. The maintainer has read ADR 0088 and its contract diff, and accepted or amended them. *(Pending.)*
+1. The maintainer has read ADR 0088 and its contract diff, and accepted or amended them. *(Done 2026-11-09: accepted as written.)*
 2. The maintainer has answered the choices below. *(Pending, except the family and classification.)*
 3. Issue #353 carries `status:queued`.
 4. The maintainer has asked for the build in their own words.
@@ -8459,7 +8459,7 @@ a site's terms before its first read. A site absent from the table is not cleare
 
 | # | Choice | Recommended | Alternative | Status |
 |---|---|---|---|---|
-| D1 | Family and classification | **A:** `standing-standards`, `foundation` (ADR 0088) | B: `standing-standards`, `tool`; C: `governance-docs`, `utility`, by amendment; D: decline | Accepted 2026-11-09 on the maintainer's delegation; the contract read is pending. |
+| D1 | Family and classification | **A:** `standing-standards`, `foundation` (ADR 0088) | B: `standing-standards`, `tool`; C: `governance-docs`, `utility`, by amendment; D: decline | Accepted 2026-11-09; the maintainer read the contract change the same day. |
 | D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Not yet ruled. |
 | D3 | The example | **A:** Harbourline Bookings, with the stop rule | B: reuse the Acme Analytics thread, which the family weakens on purpose | Not yet ruled. |
 | D4 | The build go | **A:** build after the contract read and the D2 and D3 answers | B: hold; C: decline under ADR 0041 | Not yet ruled. |

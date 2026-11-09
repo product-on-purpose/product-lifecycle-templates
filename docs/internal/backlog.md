@@ -33,7 +33,7 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#353](https://github.com/product-on-purpose/product-lifecycle-templates/issues/353) | `platform-device-support-matrix` | Queued, admitted 2026-11-09 on the maintainer's delegation | P2 | 2 | `standing-standards`, `classification: foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) (proposed) | The maintainer's read of the contract change, then a build go |
+| [#353](https://github.com/product-on-purpose/product-lifecycle-templates/issues/353) | `platform-device-support-matrix` | Queued, admitted 2026-11-09 after the maintainer read the contract change | P2 | 2 | `standing-standards`, `classification: foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) | A build go, with the sizes and example choices in the spec |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -267,7 +267,7 @@ ADR 0077 keeps in `deliver`.
   count stays at two.
 - **2026-11-09.** The device support matrix's admission sweep (run 2026-11-08) admits it to `standing-standards`
   as a `foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md),
-  on the maintainer's delegation. It opens as #353 (bundle: platform-device-support-matrix). The define count stays at
+  accepted the same day after the maintainer read the contract change. It opens as #353 (bundle: platform-device-support-matrix). The define count stays at
   two, since the family sits on the classification axis.
 
 ## 6. What comes next, in order

@@ -16,10 +16,10 @@ people who want every change, release notes are for people who want to know what
 
 - **The platform and device support matrix is admitted and specced**, by
   [ADR 0088](docs/internal/decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md)
-  (proposed). It joins `standing-standards` as a `foundation`, the family's eighth member, and the contract moves to
+  (accepted). It joins `standing-standards` as a `foundation`, the family's eighth member, and the contract moves to
   `0.7.0`. Four named sources publish the matrix, led by the GOV.UK Service Manual and GOV.UK Frontend's support
   grades. The spec is in [`tier2-specs.md`](docs/internal/tier2-specs.md), and the build is #353. The maintainer
-  accepted the placement on delegation, and the contract change waits for the maintainer's read. No bundle is built.
+  accepted the placement after reading the contract change. No bundle is built.
 
 ### Changed
 

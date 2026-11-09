@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 date: 2026-11-09
 decision-makers: [jprisant]
 consulted: [claude]
@@ -27,11 +27,11 @@ consulted: [claude]
   are "not revised on a calendar". The strongest admitting source commits to an annual update. This record routes the
   tension to the bundle's Review Trigger section, as ADR 0071 and ADR 0075 did. This is the third time the family has
   met the tension, and the third time the clause stays as written.
-- **Status:** proposed 2026-11-09. The maintainer asked for the admission sweep on 2026-11-08. Given its digest and a
+- **Status:** accepted 2026-11-09. The maintainer asked for the admission sweep on 2026-11-08. Given its digest and a
   recommendation of this family and classification at medium confidence, the maintainer replied "Continue" on
-  2026-11-09. That reply is recorded as **acceptance of the placement on the maintainer's delegation**, not yet
-  confirmed. **The contract diff has not been read.** Under the standing rule that every contract edit is read before
-  it merges, this record and the contract's Members line and change note stop for that read.
+  2026-11-09, which was first recorded as acceptance on delegation. The same day, asked whether to merge after
+  reading the contract's Members line and `0.7.0` change note, the maintainer answered "Read it, merge". **The
+  contract diff was read before it merged**, under the standing rule that every contract edit is read first.
 
 ## Context and Problem Statement
 
@@ -167,7 +167,7 @@ record is where to reopen it.
   the right value, so that stays a review obligation, argued above.
 - At the bundle's landing, the catalog gains entry 212, numbered so that no existing entry number changes, as
   entries 209 and 211 were added at their landings.
-- `tier2-specs.md` records the type as specced. The build waits for the maintainer's read of the contract change and
+- `tier2-specs.md` records the type as specced. The build waits for the sizes and example choices and
   for a build go, under ADR 0041 (maintainer preference sets the build order).
 
 ## More Information
