@@ -23,6 +23,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 
 **Newest first**, matching [`RELEASE-NOTES.md`](../../RELEASE-NOTES.md). Stated because it was not: entries through `v0.7.0` were appended in ascending order and everything from `v0.8.0` was inserted at the top, so the list disagreed with itself for four releases.
 
+- [`v0.26.0.md`](v0.26.0.md) - one bundle: a platform and device support matrix, the 56th and the eighth `standing-standards` member
 - [`v0.25.0.md`](v0.25.0.md) - one bundle: a requirements traceability matrix, the 55th and the first built Tier 3 type
 - [`v0.24.0.md`](v0.24.0.md) - two bundles: the Lean UX Canvas, the 53rd, and the Lean Canvas, the 54th
 - [`v0.23.0.md`](v0.23.0.md) - one bundle: a user research report, the 52nd, which completes the `research-docs` family

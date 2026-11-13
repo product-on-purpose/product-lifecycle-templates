@@ -12,6 +12,11 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.26.0] - 2026-11-13
+
+A minor release with one new bundle: `platform-device-support-matrix`, the 56th and the eighth `standing-standards`
+member. No MCP tool or install route changed. Release note: [`docs/releases/v0.26.0.md`](docs/releases/v0.26.0.md).
+
 ### Added
 
 - **The platform and device support matrix**, the 56th bundle and the eighth `standing-standards` member, a
@@ -43,9 +48,20 @@ people who want every change, release notes are for people who want to know what
   Initial Capabilities Document and a regulatory requirements register stay short of evidence.
   [`backlog.md`](docs/internal/backlog.md) section 4 gives the reason for each. No candidate is admitted, and no
   catalog row changed.
+- **Both skills now recognize a request for a browser or device support matrix.** An agent decides whether to load a
+  skill from its description, so a type missing from it may never reach the skill. To fit the new trigger under the
+  1,024-character cap, the fill skill's closing sentence now says only that most bundles ship lean and full sizes.
+  The grade skill's opening sentence also lost the words "researched" and "quoting it". No existing trigger was
+  removed.
 
 ### Fixed
 
+- **Several counts outside the gated markers had gone stale.** The README's at-a-glance table said the catalog
+  holds 211 types and the MCP server addresses 105 template variants. It holds 212 and addresses 108. Its Tier-1
+  floor cell said the other twenty-nine bundles are Tier-2 types, when they are thirty Tier-2 types and one Tier-3
+  type. The install guide said 103 variants. `STATE.md`'s agent-surface row said 107 variants, and its governance
+  row said the research-log gate checks 48 of 54 logs with a 116-assertion self-test; it checks 50 of 56 with 118.
+  `library.json`'s description said 47 of the 55 bundles ship a full template, when there are 56.
 - **The README's bundle anatomy said every bundle holds eight files.** A single-size bundle ships seven, with no
   full template, as `AGENTS.md` already said. A cold read of the new bundle's documents found the mismatch, and the
   anatomy section now says so.
@@ -3517,7 +3533,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.26.0...HEAD
+[0.26.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...v0.26.0
 [0.25.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...v0.25.0
 [0.24.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...v0.24.0
 [0.23.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.22.1...v0.23.0
