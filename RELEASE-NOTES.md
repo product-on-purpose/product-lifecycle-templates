@@ -6,6 +6,15 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.26.0
+
+**One new bundle: the platform and device support matrix, the library's 56th.** It is the standing page that
+says which browsers, operating systems and devices a product supports, at what grade, and which of them the team
+tests on. It ships one size and joins `standing-standards`. Both skills now recognize a request for it, and
+nothing in any MCP tool or install route changed.
+
+---
+
 ## v0.25.0
 
 **One new bundle: the requirements traceability matrix, the library's 55th.** It is the standing table that

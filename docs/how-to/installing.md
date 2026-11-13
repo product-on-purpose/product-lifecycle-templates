@@ -12,7 +12,7 @@ tags:
 
 <!-- counts: bundles=56 -->
 
-There are two routes. **They do not give you the same thing**, and the difference is not documented
+There are three routes. **They do not give you the same thing**, and the difference is not documented
 anywhere else because it was only discovered on 2026-08-08, by running the install for the first time.
 
 | Route | What you get | Use it when |
@@ -44,7 +44,7 @@ If it can read `manifest.json`, everything else in the library is reachable.
 
 This route also brings an MCP server ([`.mcp.json`](../../.mcp.json), served by
 [`tools/mcp_server.py`](../../tools/mcp_server.py)), which gives an agent five tools: search the catalog,
-fetch any of the 103 template variants, fetch a grading pack, validate a filled document, and strip and
+fetch any of the 108 template variants, fetch a grading pack, validate a filled document, and strip and
 stamp one. Nothing is embedded or duplicated, because this route already put the templates on disk.
 
 > **It also works from a plain `git clone`, and until 2026-09-21 it did not.** `.mcp.json` located the
@@ -93,7 +93,7 @@ still works.
 npx skills add product-on-purpose/product-lifecycle-templates
 ```
 
-**This installs the skills and not the library.** Eight files land, about 47 KB, and none of the 53
+**This installs the skills and not the library.** Eight files land, about 47 KB, and none of the 56
 bundles come with them. That is not a bug in this repository and it is not a bug in the CLI: a skill is a
 directory containing `SKILL.md`, the installer copies that directory, and this library's knowledge lives
 outside it in `templates/`.
