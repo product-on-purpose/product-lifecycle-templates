@@ -5511,6 +5511,231 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "platform-device-support-matrix",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "product_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "assistive_technology_location",
+                "audience_exceptions",
+                "matrix_readers",
+                "product_covered",
+                "record_location"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "support-grades",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "grade_bug_commitment",
+                "grade_name",
+                "grade_test_commitment",
+                "grade_user_gets"
+              ],
+              "title": "Support Grades"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "the-matrix",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "browser_name",
+                "effective_from_date",
+                "grade_name",
+                "minimum_version_or_rule",
+                "platforms",
+                "row_notes",
+                "tested_status"
+              ],
+              "title": "The Matrix"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "threshold-rule",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "analytics_source",
+                "entry_threshold",
+                "exit_rule",
+                "threshold_decider",
+                "threshold_rationale"
+              ],
+              "title": "Threshold Rule"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "unsupported-browsers",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "declining_grounds",
+                "unsupported_bug_triage",
+                "unsupported_user_experience"
+              ],
+              "title": "Unsupported Browsers"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "ownership",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "change_channel",
+                "owner_role_and_person",
+                "who_is_told",
+                "who_may_change"
+              ],
+              "title": "Ownership"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "annual_floor_action",
+                "annual_floor_owner",
+                "crossing_action",
+                "crossing_owner",
+                "new_platform_action",
+                "new_platform_owner",
+                "review_history",
+                "unlisted_bug_action",
+                "unlisted_bug_owner",
+                "vendor_end_action",
+                "vendor_end_owner"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "positioning-statement",
       "default_format": "default",
       "formats": {
@@ -14305,7 +14530,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 55,
-  "frontmatter_count": 336,
-  "section_count": 466
+  "count": 56,
+  "frontmatter_count": 340,
+  "section_count": 473
 }

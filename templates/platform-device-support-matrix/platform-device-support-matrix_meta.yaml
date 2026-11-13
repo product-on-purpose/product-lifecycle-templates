@@ -1,0 +1,34 @@
+id: platform-device-support-matrix
+title: Platform and Device Support Matrix
+summary: >-
+  The standing page that states which browsers, operating systems and devices a product supports, at what
+  level, and which of them the team tests on. It keeps two promises apart, what a user on a given browser
+  gets and what the team actually tests, and it is consulted when a team picks test browsers, triages a bug
+  from an unusual browser, or decides whether a polyfill is owed.
+doc_type: platform-device-support-matrix
+classification: foundation
+family: standing-standards
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the only size, for every product: the research looked for the evidence a heavier size would need, per-row evidence columns such as a usage share or a date last verified and a separate polyfill or progressive-enhancement policy section, found neither in the pages it read, and so ships one short document at medium confidence, to be revisited only if a named matrix publishes either."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - browser-support
+  - device-support
+  - graded-support
+  - compatibility
+  - standing-standards
+  - testing
+related_templates: [test-plan, test-case, bug-report, test-strategy, prd]
+aliases:
+  - browser support policy
+  - graded browser support
+  - supported browsers and devices
+  - platform support matrix
+catalog_ref: 212
+maintainer: "product-on-purpose"
+last_reviewed: 2026-11-12
+license: Apache-2.0

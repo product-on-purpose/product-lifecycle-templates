@@ -31,7 +31,7 @@ work back.
 | `lean-canvas` and `product-strategy` | Does it state a full business model as beliefs to test, naming a revenue stream, a channel and a cost structure, or choose which problems and segments to pursue without naming any of those three? A one-pager with a Revenue Streams and a Cost Structure box is the first |
 | `requirements-traceability-matrix` and `test-case` | Does it show every requirement in one view, including one with no test, or does it record one case and what that case traces to? A table with a row per requirement is the matrix; a single case's steps and its own traceability field are a test case. |
 
-**No match at all is a result, not a failure.** The catalog holds 211 types, and most of them
+**No match at all is a result, not a failure.** The catalog holds 212 types, and most of them
 are not built. Record the miss: what the document appeared to be, and what the reader called it. That is demand
 evidence for a type nobody has asked for yet in any other way.
 
