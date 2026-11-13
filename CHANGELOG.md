@@ -59,7 +59,9 @@ member. No MCP tool or install route changed. Release note: [`docs/releases/v0.2
 - **Several counts outside the gated markers had gone stale.** The README's at-a-glance table said the catalog
   holds 211 types and the MCP server addresses 105 template variants. It holds 212 and addresses 108. Its Tier-1
   floor cell said the other twenty-nine bundles are Tier-2 types, when they are thirty Tier-2 types and one Tier-3
-  type. The install guide said 103 variants. `STATE.md`'s agent-surface row said 107 variants, and its governance
+  type. The install guide said 103 variants, said the skills-only route carries none of "the 53 bundles", and said
+  there are two routes before describing three. The template-choosing guide said the library ships 48 bundles and
+  covers a 210-type catalog; it now states neither count. `STATE.md`'s agent-surface row said 107 variants, and its governance
   row said the research-log gate checks 48 of 54 logs with a 116-assertion self-test; it checks 50 of 56 with 118.
   `library.json`'s description said 47 of the 55 bundles ship a full template, when there are 56.
 - **The README's bundle anatomy said every bundle holds eight files.** A single-size bundle ships seven, with no

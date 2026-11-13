@@ -11,7 +11,7 @@ tags:
 
 # Choosing a template
 
-This library ships 48 governed document bundles, one per document type, organized under
+This library ships one governed document bundle per document type, organized under
 `templates/`. Each bundle is a folder, not a single file: a blank template, a deep companion,
 a short operator guide, a worked example, and machine metadata. See
 [`README.md`](../../README.md) for what a bundle contains and why.
@@ -190,8 +190,8 @@ what it does not mean.
 ## When nothing above fits
 
 Say this plainly, because it is true and it matters more than anything else on this page: **the
-library covers a 210-type catalog of product and software-lifecycle artifacts, researched and
-recorded in [`docs/internal/catalog.md`](../internal/catalog.md), and only a fraction of that
+library covers a researched catalog of product and software-lifecycle artifacts, recorded
+in [`docs/internal/catalog.md`](../internal/catalog.md), and only a fraction of that
 catalog is built.**
 
 <!-- counts: tier1=25 -->

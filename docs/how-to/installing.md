@@ -12,7 +12,7 @@ tags:
 
 <!-- counts: bundles=56 -->
 
-There are two routes. **They do not give you the same thing**, and the difference is not documented
+There are three routes. **They do not give you the same thing**, and the difference is not documented
 anywhere else because it was only discovered on 2026-08-08, by running the install for the first time.
 
 | Route | What you get | Use it when |
@@ -93,7 +93,7 @@ still works.
 npx skills add product-on-purpose/product-lifecycle-templates
 ```
 
-**This installs the skills and not the library.** Eight files land, about 47 KB, and none of the 53
+**This installs the skills and not the library.** Eight files land, about 47 KB, and none of the 56
 bundles come with them. That is not a bug in this repository and it is not a bug in the CLI: a skill is a
 directory containing `SKILL.md`, the installer copies that directory, and this library's knowledge lives
 outside it in `templates/`.
