@@ -20,6 +20,8 @@ people who want every change, release notes are for people who want to know what
   It is the standing page that states which browsers, operating systems and devices a product supports, at what
   grade, and which of them the team tests on. It ships one size, `lean`, with a worked example for a fictional
   ferry-booking site. Its research log holds 36 sources. The catalog gains entry 212 for the type. Closes #353.
+  Its build cost $11.55 at API list rates, for 16 agents, all on Sonnet 5.5; the report is in
+  [`bundle-builds/`](bundle-builds/INDEX.md).
 - **The platform and device support matrix is admitted and specced**, by
   [ADR 0088](docs/internal/decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md)
   (accepted). It joins `standing-standards` as a `foundation`, the family's eighth member, and the contract moves to
@@ -44,6 +46,9 @@ people who want every change, release notes are for people who want to know what
 
 ### Fixed
 
+- **The README's bundle anatomy said every bundle holds eight files.** A single-size bundle ships seven, with no
+  full template, as `AGENTS.md` already said. A cold read of the new bundle's documents found the mismatch, and the
+  anatomy section now says so.
 - **The README's `standing-standards` passage misstated what the research found on review triggers.** It said only
   the definition of ready's literature supplies one, among four researched. The family has seven members, and the
   sources for four of them name a condition that should prompt a review: the definition of ready, the test strategy,

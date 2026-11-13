@@ -310,7 +310,8 @@ Beyond these fifty-six, the library draws on a researched catalog of **212 artif
 
 ## Anatomy of a bundle
 
-A bundle is a folder named by document type (for example `prd/`), containing eight files:
+A bundle is a folder named by document type (for example `prd/`), containing eight files. A single-size bundle
+ships seven, because it has no `_template-full.md`; its `_meta.yaml` lists the sizes it ships.
 
 | File | Role |
 |---|---|

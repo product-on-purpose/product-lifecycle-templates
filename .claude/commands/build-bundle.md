@@ -161,6 +161,8 @@ requirements-traceability-matrix 6,798,369, $10.92, for the same 15, all on Sonn
 half Sonnet 5's price, its two-template drafting $5.33;
 lean-canvas 11,063,489, $22.96, for 16, the usual 15 on Sonnet plus an Opus head writer ($2.48) run through
 the Agent tool, without which it reads $20.48, its single-template drafting $9.81;
+platform-device-support-matrix 7,243,091, $11.55, for 16, the usual 15 plus one agent ($1.03) run through the
+Agent tool, all on Sonnet 5.5, without which it reads $10.52, its single-template drafting $5.27;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.
