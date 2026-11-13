@@ -14,12 +14,19 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **The platform and device support matrix**, the 56th bundle and the eighth `standing-standards` member, a
+  `foundation` by
+  [ADR 0088](docs/internal/decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md).
+  It is the standing page that states which browsers, operating systems and devices a product supports, at what
+  grade, and which of them the team tests on. It ships one size, `lean`, with a worked example for a fictional
+  ferry-booking site. Its research log holds 36 sources. The catalog gains entry 212 for the type. Closes #353.
 - **The platform and device support matrix is admitted and specced**, by
   [ADR 0088](docs/internal/decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md)
   (accepted). It joins `standing-standards` as a `foundation`, the family's eighth member, and the contract moves to
   `0.7.0`. Four named sources publish the matrix, led by the GOV.UK Service Manual and GOV.UK Frontend's support
   grades. The spec is in [`tier2-specs.md`](docs/internal/tier2-specs.md), and the build is #353. The maintainer
-  accepted the placement after reading the contract change. No bundle is built.
+  accepted the placement after reading the contract change. The bundle was built on 2026-11-12, as the entry above
+  records.
 
 ### Changed
 

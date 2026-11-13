@@ -5372,6 +5372,37 @@
       ],
       "state": "built",
       "state_note": ""
+    },
+    {
+      "id": "platform-device-support-matrix",
+      "name": "Platform and Device Support Matrix",
+      "aliases": [
+        "browser support policy",
+        "graded browser support",
+        "supported browsers and devices",
+        "platform support matrix"
+      ],
+      "category": "QA / Test",
+      "stage": "testing",
+      "owner": "Frontend or web lead",
+      "purpose": "State which browsers, operating systems and devices a product supports, at what grade, and which of them the team tests on",
+      "methodology": "generic",
+      "formality": "lightweight",
+      "rarity": "occasional",
+      "size_variant": "S",
+      "tier": 2,
+      "tier_inferred": true,
+      "must_have": false,
+      "built": true,
+      "relationships": [
+        "Test Plan",
+        "Test Case",
+        "Bug Report",
+        "Test Strategy",
+        "PRD"
+      ],
+      "state": "built",
+      "state_note": ""
     }
   ]
 }

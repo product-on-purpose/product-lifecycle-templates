@@ -19,7 +19,7 @@ No single list holds the backlog. Three places hold parts of it, and each one la
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 211 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 212 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
@@ -33,7 +33,6 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#353](https://github.com/product-on-purpose/product-lifecycle-templates/issues/353) | `platform-device-support-matrix` | Queued, admitted 2026-11-09 after the maintainer read the contract change | P2 | 2 | `standing-standards`, `classification: foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md) | A build go, with the sizes and example choices in the spec |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -41,11 +40,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 1 queued, 4 parked |
-| Priority | P2: 1, P3: 3, P4: 1 |
-| Tier | Tier 2: 5 |
+| Status | 4 parked |
+| Priority | P3: 3, P4: 1 |
+| Tier | Tier 2: 4 |
 
-Sixty-six candidate issues are closed: 55 built and 11 declined. The last to close was #331 (product-discovery-plan). Four of the declined types,
+Sixty-seven candidate issues are closed: 56 built and 11 declined. The last to close was #353 (platform-device-support-matrix). Four of the declined types,
 `solution-brief`, `prototype-brief`, `manager-user-guide` and `product-discovery-plan`, never had a catalog row.
 
 **Admission sweep 7 ran on 2026-10-29, so "an admission sweep" is no longer the next action for its candidates.**
@@ -74,17 +73,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=55, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=56, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 211 types. Its `state` field reads 55 built, 154 candidate and 2 out of scope. Five of the
+The catalog holds 212 types. Its `state` field reads 56 built, 154 candidate and 2 out of scope. Five of the
 154 were declined by record, so 149 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 157 | 29 | 5, declined by record (below) | **123** |
+| 2 | 158 | 30 | 5, declined by record (below) | **123** |
 | 3 | 27 | 1 | 0 | **26** |
-| **All** | **211** | **55** | **7** | **149** |
+| **All** | **212** | **56** | **7** | **149** |
 
 The five Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -269,6 +268,9 @@ ADR 0077 keeps in `deliver`.
   as a `foundation`, by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md),
   accepted the same day after the maintainer read the contract change. It opens as #353 (bundle: platform-device-support-matrix). The define count stays at
   two, since the family sits on the classification axis.
+- **2026-11-12, at landing.** `platform-device-support-matrix` landed as the 56th bundle, the eighth
+  `standing-standards` member, carrying catalog entry 212, a new row added at its build. Its landing closes #353,
+  and the define count stays at two.
 
 ## 6. What comes next, in order
 

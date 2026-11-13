@@ -149,6 +149,12 @@ sweep's readers summarised GOV.UK's "reviewed, no changes" history entries, and 
 If those entries show the list rewritten each year whatever usage did, the `utility` reading gets stronger, and this
 record is where to reopen it.
 
+*(Added 2026-11-12, at the build: the bundle's research log quotes the entries raw. The review-only entries date
+from 2020 and 2021, about six months apart, each based on usage figures and each recording no change. Three change
+entries cite usage, and the annual commitment dates from 2024. The list was not rewritten each year whatever usage
+did, so the condition above does not fire. The history shows periodic review and usage-driven change, not a yearly
+cycle, so reading the annual figure as a floor stays this record's inference, at medium confidence.)*
+
 ### The counter-arguments this record keeps
 
 - **No forecast named this type.** It does not change the outcome, for the reason ADR 0057 (issue log joins
