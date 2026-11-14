@@ -12,6 +12,15 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **Researched document types that never reached an issue now have a committed home.** Research runs named more
+  candidate types than the maintainer queued, and the rest sat only in gitignored reports.
+  [`backlog.md`](docs/internal/backlog.md) section 9 lists each one with its named source, the run's confidence,
+  what the run left open, and a proposed next step. It covers the PM-resources Standard run and its pilot, the
+  Define re-score, the 2026-10-04 ranking, and the types shipped guides name without a catalog row. No type is
+  admitted, queued or declined, and no catalog row changed.
+
 ## [0.26.0] - 2026-11-13
 
 A minor release with one new bundle: `platform-device-support-matrix`, the 56th and the eighth `standing-standards`

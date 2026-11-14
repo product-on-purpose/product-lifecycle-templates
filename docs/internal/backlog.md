@@ -14,13 +14,15 @@ reflect it. Its digest is held locally, at `_local/research/2026-10-20_define-re
 
 ## 1. Where the backlog lives
 
-No single list holds the backlog. Three places hold parts of it, and each one lacks something the others have.
+No single list holds the backlog. Four places hold parts of it, and each one lacks something the others have.
+*(The fourth, section 9, was added 2026-11-13.)*
 
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
 | [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 212 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
+| [Section 9](#9-researched-types-with-no-issue-and-no-decision) of this page | Every type a research run named as a candidate that has no issue and no decision, including types with no catalog row | A ruling: each row's next step is a proposal |
 
 **Only the issues carry a priority.** The catalog has tiers, and the build order among unproposed types is the
 maintainer's own preference, by [ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md).
@@ -308,6 +310,8 @@ evidence-insufficient reads, ran the same day.
   its outcome.
 - **At every release.** [`release-process.md`](release-process.md) lists this page among the technical surfaces
   to read. Refresh section 2 from GitHub, and read the prose around section 3's marker.
+- **When a research run ends.** Add every type it recommended that the maintainer did not queue to section 9,
+  so a later session can find it without the run's gitignored report.
 - **When a catalog row is added, or a bundle lands.** `check-counts.py` fails until the marker moves. Move the
   tables and prose with it, because the check reads the marker only.
 - **By 2026-12-04 if nothing above has happened.** Re-read this page, and ask whether any Define work remains
@@ -325,3 +329,182 @@ gh issue list --label build-candidate --state open --limit 200 --json number,tit
 The catalog counts come from the `tier` and `state` fields in `atlas/catalog-data.json`. `check-counts.py`
 computes the gated ones; run it and read any marker it reports as stale. The define counts come from the
 `phase` field in [`manifest.json`](../../manifest.json) and from the issues labelled `phase:define`.
+
+## 9. Researched types with no issue and no decision
+
+*(Added 2026-11-13.)* The library's research runs name more document types than ever reach an issue. A run
+ends with the maintainer queueing its strongest few, and the rest stay in a gitignored report that no later
+session reads. Queueing the strongest few is a decision about those few. It is not a decline of the others, so
+until now the others sat in limbo. This section is their committed home.
+
+**What qualifies.** A type is listed here when a research run named it as a candidate, and it has no
+build-candidate issue, no decision record, no row in the [Progress table](tier2-specs.md#progress), and no
+ruling elsewhere on this page. Types that a run tested and rejected on its own evidence are not listed, and
+the last subsection names where those rejections live.
+
+**Every "Proposed next step" is a proposal.** Nothing in this section admits, queues or declines a type. A
+type still needs an admission sweep and the maintainer's choice, under
+[ADR 0041](decisions/0041-maintainer-preference-sets-the-build-order.md), before it gets an issue. Issue #180
+(the ranking, and what would be refused) still governs when an issue opens: "When a candidate earns a ranking
+basis, it gets an issue." The `_local/` paths below are gitignored and exist only on the maintainer's machine.
+
+### 9.1 New types a run recommended for an admission sweep
+
+None of these has a catalog row. Two runs produced them. The PM-resources Standard run of 2026-10-23
+recommended sixteen types; the maintainer queued its three high-confidence types on 2026-10-25, and all
+three have since been ruled on. Its pilot of 2026-10-22 recommended a research plan, a usability test plan and
+five more types; the maintainer chose to sweep the first two, which became `user-research-plan`. The confidence
+column is the run's own.
+
+| Type | Named source | Run | Confidence | What the run left open | Proposed next step |
+|---|---|---|---|---|---|
+| Product handover document | Mind the Product | Standard | medium | It is written when a role changes hands, so neither a phase nor a classification fits cleanly | Sweep, with a placement read first |
+| Value Proposition Canvas | Strategyzer | Standard | medium | One usable source; a second copy was gated, which is not a contradiction. The run found no catalog type naming both of its sides, the closest being `business-model-canvas` (catalog 4) | Sweep beside `business-model-canvas`; [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md) admits canvases through their written form |
+| LLM-as-judge rubric (critique shadowing record) | Hamel Husain | Standard | medium | Whether it and the error-mode taxonomy are one artifact at two stages | Sweep the two together as one candidate |
+| Error-mode taxonomy (open-coding log) | Hamel Husain | Standard | low | A narrated practice at one company; no published shape was verified | Fold into the rubric's sweep |
+| A/B testing roadmap (experimentation backlog) | CXL | Standard | medium | It plans many tests, so it is distinct from `experiment-design-doc`, which plans one | Sweep against the [`experimentation-docs`](contracts/experimentation-docs.md) contract |
+| Experimentation platform RFP | Statsig | Standard | medium | Most of its verified headings are not the RFP's own, and the filled template was never read | Park until the filled template is read by hand |
+| Debt inventory | ProdPad | Standard | medium | The checklist body sits behind an email gate | Park until the maintainer reads the body by hand |
+| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document | Test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
+| User Story Map | Jeff Patton | Standard | low to medium | The written form is in Patton's book, which was not read | Park until a read of the book |
+| PM skills gap analysis | SVPG | Standard | low to medium | It assesses a person, not a product, so the [ADR 0080](decisions/0080-admission-gains-a-software-audience-check.md) audience check is unclear | Run the audience check before any sweep |
+| Whole-product bill of materials checklist | Rich Mironov | Standard | low to medium | The only evidence is a document title | Park until a source shows the written form |
+| Idea Bank | Itamar Gilad | Standard | low to medium | The template is gated; the same run's delivery-docs report proposed naming it in `product-backlog`'s "When NOT to use" list instead | Weigh the guide line before a sweep |
+| Positioning and messaging rollout checklist | Product Marketing Alliance | Standard | low | The body is paywalled, and its audience is product marketers rather than software teams | Park; the ADR 0080 audience check is the likely blocker |
+| Screener | GOV.UK, dscout, User Interviews | Pilot | medium | Whether it is distinct from `survey-instrument` (catalog 26): the same form, a different job | Sweep with the recruitment brief as one recruiting pair; see the note below the table on placement |
+| Recruitment brief | GOV.UK | Pilot | medium | One source | Sweep with the screener |
+| Participant information sheet | GOV.UK | Pilot | medium | Whether it and the consent form are one bundle with two documents | Sweep with the consent form as one consent pair |
+| Consent form | GOV.UK | Pilot | medium | As for the information sheet | Sweep with the information sheet |
+| Interview snapshot | Product Talk (Teresa Torres) | Pilot; and the Torres book read of 2026-11-07, which ADR 0087 records as a side finding not acted on | medium | Its distinctness from `empathy-map` (catalog 20), which has different fields | Sweep; placement is open, as for the four above |
+
+**Placement is the hard question for the last five.** Each one is used for or during one study. The
+[`research-docs`](contracts/research-docs.md) contract admits only a type that "plans or reports on one study",
+and it names the interview guide and the survey instrument as types it does not admit without an amendment for
+the same reason. So each of these needs either that amendment or another family. `user-research-plan`'s full
+template already asks where the screener lives, which shows the need but admits nothing.
+
+Sources: `_local/resources/product-management-resources/standard-run/standard-report.md`, the seven
+`standard-run/*/w4-candidates.md` files beside it, and
+`_local/resources/product-management-resources/pilot-discovery-research/pilot-report.md`.
+
+### 9.2 Types the Define re-score sent to a sweep outside `define`
+
+The 2026-10-20 re-score (section 4) gave four candidates the "returns for an admission sweep elsewhere"
+outcome. `metric-tree` is issue #257, parked, and none of the other three has an issue.
+
+| Type | Catalog | Proposed next step |
+|---|---|---|
+| Design principles / experience principles | none | Sweep as a `foundation`, together with the product principles document (9.1) |
+| DMAIC project charter | points at `project-charter` (catalog 70), unbuilt | Sweep `project-charter` itself first; the DMAIC charter, and the DMADV charter the re-score found no different, are its variants |
+| GDPR records of processing activities | catalog 176, Tier 3 | Held by decision D4 (no Tier-3 regulated content), which reopens only on a pull from a real regulated team |
+
+### 9.3 Types that passed admission in the re-score and were never tested in another family
+
+The re-score tested every candidate against the `define` rule only, so a pass on admission followed by "stays
+out of `define`" says nothing about any other family (section 4). Three such rows are covered by bundles built
+since: `lean-canvas`, the research synthesis (`user-research-report`) and the Lean UX hypothesis box
+(`lean-ux-canvas`). The rest are below. This list reads the score files' admission verdict directly and keeps
+two rows whose pass was qualified, the technical constraints document and the architecture context, so it does
+not match section 4's count exactly. Source: `_local/research/2026-10-20_define-rescore/score-*.json`.
+
+| Type | Catalog | Proposed next step |
+|---|---|---|
+| Competitive analysis | 11 | Sweep; it is the one row here that the re-score, the 2026-10-04 ranking and the Standard run all reached |
+| Threat model | 155 | Sweep, with placement open |
+| Stakeholder map / register | 181 | Sweep |
+| Assumptions log / tracker | 153 (`assumption-log`) | Sweep beside `raid-log`, which the re-score named as its overlap; the 2026-10-04 ranking called it a standing governance artifact, and the July 2026 expansion plan proposed a strategic assumptions log as a `strategy-docs` member |
+| Market requirements document | 10 | Settle a conflict first: the 2026-10-04 ranking pre-failed it because `prd`'s companion folds the MRD into the PRD, while the Standard run's strategy cluster called its evidence the strongest structural evidence any existing candidate gained there |
+| Accessibility conformance report / VPAT | 179, Tier 3 | Ask whether decision D4 reaches it before any sweep; the catalog's methodology field reads "compliance (WCAG/Section 508)" |
+| Data protection impact assessment | 177, Tier 3 | Held by decision D4; the catalog's methodology field reads "compliance (GDPR)" |
+| Design inputs document | 160, Tier 3 | Held by decision D4; the catalog cites 21 CFR 820.30(c) and ISO 13485 |
+| Creative brief | none | Run the ADR 0080 audience check first. `design-brief`, built two days after the re-score, names it as a separate document that informs a design brief, so it is a named neighbour rather than a duplicate |
+| Hills (IBM Enterprise Design Thinking) | none | Test as a possible alias or section of `product-strategy`, which the re-score named as its overlap |
+| SAFe epic hypothesis statement | none | Test as a duplicate first; the re-score named `business-case` as its overlap, and `epic` is worth checking too |
+| Technical feasibility assessment | none | Test as a duplicate first; the re-score found it not distinct from built content |
+| Technical constraints document | none | As for the feasibility assessment; its admission pass was also never raw-checked |
+| Architecture context / system context statement (arc42) | none | Test as a section of `sdd` before any sweep |
+| DOE mission need statement (DOE G 413.3-17); DoD Software Acquisition Pathway capability needs statement | none | Run the ADR 0080 audience check on each. Both come from government programme guidance, and ADR 0080 already parks the DoD Initial Capabilities Document because its only software use is inside defence acquisition |
+
+### 9.4 Catalog rows an earlier ranking found a family for, with no issue
+
+The 2026-10-04 ranking (`_local/research/2026-10-04_pm-candidates.md`) ranked thirty types. Its first nine
+rows were all built or parked. These later rows had a family fit, or a strong admission prior, and nothing has
+happened to them since.
+
+| Type | Catalog | What the ranking found | Proposed next step |
+|---|---|---|---|
+| Business model canvas | 4 | No family admitted it cleanly, but its admission prior is strong, because `methodology.md` names Osterwalder as Tier 1 | Sweep with the Value Proposition Canvas (9.1); `lean-canvas`, a canvas the same ranking also placed nowhere, has since joined `strategy-docs` by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
+| Empathy map | 20 | No family admits it, and no admission prior was found beyond `user-persona`'s guide treating it as complementary | Re-test under ADR 0078, which postdates the ranking, against the interview snapshot (9.1) |
+| Product operating model / team topology doc | 7 | `standing-standards` admits it by analogy, with an unclear falsifier; admission prior unknown | Sweep |
+| Strategic theme / portfolio vision | 9 | `strategy-docs` admits it by analogy, strained against the four-question chain | Sweep |
+
+**`research-docs` did not exist when that ranking ran.** The ranking found no family for the interview guide
+(catalog 25), the survey instrument (26) and the diary or field study plan (28), because each is written once
+per study. The `research-docs` contract, adopted by
+[ADR 0081](decisions/0081-adopt-research-docs-family-contract.md) on 2026-10-23, names all three. It says its
+membership clause would admit the diary study plan if a sweep finds it distinct from `user-research-plan`. It
+does not admit the interview guide or the survey instrument without an amendment, because each is used during a
+study rather than planning or reporting on one. The diary study plan is therefore the cheapest re-test in this
+subsection.
+
+The ranking also found no family for win-loss analysis (15), pricing and packaging (16), the voice-of-customer
+report (17), cohort retention analysis (145), funnel analysis (146), the model card (149), the customer journey
+map (23), the service blueprint (24) and the TAM/SAM/SOM model (12). None of these has been re-tested since.
+The `research-docs` contract places the voice-of-customer report outside itself, as a standing aggregate.
+
+### 9.5 Types a shipped guide names, with no catalog row
+
+Issue #180's ranking basis puts first "the documents the shipped library already routes readers to and does
+not ship". These types are named in a shipped guide and have no catalog row, so each needs a row before it can
+be proposed. The 2026-09-22 ranking proposal (`_local/backlog/2026-09-22_candidate-backlog-ranking-proposal.md`)
+found them, and a grep of the guides on 2026-11-13 confirmed that each one is still named there. Three of its
+types are left out. The PRINCE2 highlight report is now an alias of the built `status-report`. The guides no
+longer name a coding standards document or engineering handbook in those words. The one "stakeholder update" a
+guide names is a skill in another repository, not a document type.
+
+| Type | Named in | Catalog |
+|---|---|---|
+| Anti-persona | `user-persona_guide.md`, as a separate document written once a positive persona exists | none |
+| Governance stage-gate review | `definition-of-ready_guide.md`, as a neighbour; `product-backlog_guide.md` | none |
+| ITIL problem record | `incident-postmortem_guide.md`, as the record a postmortem feeds | none |
+| Service operations manual | `runbook_guide.md`, as a bigger scope than a runbook | none |
+| Prosci change-management communications plan | `announcement-internal-comms_guide.md`, as a neighbour | possibly `communication-management-plan` (catalog 83), whose aliases include "stakeholder communication plan"; the 2026-09-22 proposal called the match unconfirmed |
+
+The proposed next step for each is the same: decide whether the guide's mention is a routing promise or only a
+boundary. Only a routing promise earns a catalog row and then a sweep.
+
+### 9.6 Catalog rows that only gained evidence
+
+The Standard run tied every verified quotation and heading to its catalog row, and most of the rows it reached
+are unbuilt. The rows are candidates already, so gaining evidence changes no state, and they are not repeated
+here. The full table is `_local/resources/product-management-resources/standard-run/candidate-evidence.csv`.
+Among unbuilt rows, the ones with the most verified headings include the team charter (catalog 80), the runbook,
+knowledge base or SOP row (198, which may belong to the built `runbook` instead), the project management plan
+(72), win-loss analysis (15), the messaging framework (14, issue #258), the FAQ document (185) and the sales
+battlecard (196). Admission sweep 7 named the team charter, the working agreement (100) and the onboarding
+guide (195) as the nearest neighbours of the declined manager user guide.
+
+### 9.7 What this section does not cover
+
+**Already refused or settled, so not listed.** These types are settled in issue #180's refusals (the ADR 0030
+scope rule and the library's written rulings), in section 4's Define reads, in the format candidates of
+section 2, and in the [Progress table](tier2-specs.md#progress). The Standard run's report also lists the
+types it recommended as nothing.
+
+**Resource types, not document types.** The 2026-07-17 expansion research proposes a glossary, a method
+selection guide, an anti-pattern catalog, an artifact relationship map and workshop kits. Those are library
+resources rather than templates. They belong to the expansion plan, not to this backlog.
+
+**Sources read for this section:** the Standard run report and its seven cluster files, the pilot report and
+its candidate file, the re-score's score files, the 2026-09-22 ranking proposal and session brief, the
+2026-09-25 and 2026-10-04 candidate lists, the 2026-07-17 expansion research and phases plan, the digests of
+admission sweeps 2, 3, 4 and 7, the 2026-11-08 Define reads digest, and the read notes on Cagan's books,
+Torres's book, the product opportunity assessment and the manager user guide.
+
+**Sources not read for it:** the two ChatGPT deep-research reports of July 2026, of which the first opens on the
+library's direction and ecosystem and the second concerns a different repository; the digests of admission sweeps 5 and 6, whose outcomes are in the
+Progress table; the raw files of the three Define sweeps, which the re-score enumerated; and the
+`_local/research/hand-reads/` folder. A type missing from this section is not thereby ruled out.
+
+**When to update it.** When a research run ends, add every type it recommended that the maintainer did not
+queue. When a type here gets an issue or a decision, move it out and say where it went.

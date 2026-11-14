@@ -8239,7 +8239,7 @@ inference that nobody applies the matrix under time pressure. The AusDTO column 
 - `test-case_companion.md:170` describes the environment field as "The environment, build, browser or device matrix,
   and configuration this case is valid for."
 - The 2026-11-08 Define reads sent the type out of `define`. They called it a standing standard, not a problem-framing
-  document (`backlog.md:136`, the read row that sent it here).
+  document (`backlog.md:137`, the read row that sent it here).
 
 #### Admission: cleared on four government and design-system sources
 
