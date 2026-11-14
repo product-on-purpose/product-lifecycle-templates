@@ -365,7 +365,7 @@ column is the run's own.
 | A/B testing roadmap (experimentation backlog) | CXL | Standard | medium | It plans many tests, so it is distinct from `experiment-design-doc`, which plans one | Sweep against the [`experimentation-docs`](contracts/experimentation-docs.md) contract |
 | Experimentation platform RFP | Statsig | Standard | medium | Most of its verified headings are not the RFP's own, and the filled template was never read | Park until the filled template is read by hand |
 | Debt inventory | ProdPad | Standard | medium | The checklist body sits behind an email gate | Park until the maintainer reads the body by hand |
-| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document | Sweep together with design principles (9.2), which may be the same type |
+| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document | Test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
 | User Story Map | Jeff Patton | Standard | low to medium | The written form is in Patton's book, which was not read | Park until a read of the book |
 | PM skills gap analysis | SVPG | Standard | low to medium | It assesses a person, not a product, so the [ADR 0080](decisions/0080-admission-gains-a-software-audience-check.md) audience check is unclear | Run the audience check before any sweep |
 | Whole-product bill of materials checklist | Rich Mironov | Standard | low to medium | The only evidence is a document title | Park until a source shows the written form |
@@ -375,7 +375,7 @@ column is the run's own.
 | Recruitment brief | GOV.UK | Pilot | medium | One source | Sweep with the screener |
 | Participant information sheet | GOV.UK | Pilot | medium | Whether it and the consent form are one bundle with two documents | Sweep with the consent form as one consent pair |
 | Consent form | GOV.UK | Pilot | medium | As for the information sheet | Sweep with the information sheet |
-| Interview snapshot | Product Talk (Teresa Torres) | Pilot; and the Torres book read of 2026-11-07 | medium | Its distinctness from `empathy-map` (catalog 20), which has different fields | Sweep; placement is open, as for the four above |
+| Interview snapshot | Product Talk (Teresa Torres) | Pilot; and the Torres book read of 2026-11-07, which ADR 0087 records as a side finding not acted on | medium | Its distinctness from `empathy-map` (catalog 20), which has different fields | Sweep; placement is open, as for the four above |
 
 **Placement is the hard question for the last five.** Each one is used for or during one study. The
 [`research-docs`](contracts/research-docs.md) contract admits only a type that "plans or reports on one study",
@@ -403,7 +403,9 @@ outcome. `metric-tree` is issue #257, parked, and none of the other three has an
 The re-score tested every candidate against the `define` rule only, so a pass on admission followed by "stays
 out of `define`" says nothing about any other family (section 4). Three such rows are covered by bundles built
 since: `lean-canvas`, the research synthesis (`user-research-report`) and the Lean UX hypothesis box
-(`lean-ux-canvas`). The rest are below. Source: `_local/research/2026-10-20_define-rescore/score-*.json`.
+(`lean-ux-canvas`). The rest are below. This list reads the score files' admission verdict directly and keeps
+two rows whose pass was qualified, the technical constraints document and the architecture context, so it does
+not match section 4's count exactly. Source: `_local/research/2026-10-20_define-rescore/score-*.json`.
 
 | Type | Catalog | Proposed next step |
 |---|---|---|
@@ -411,17 +413,17 @@ since: `lean-canvas`, the research synthesis (`user-research-report`) and the Le
 | Threat model | 155 | Sweep, with placement open |
 | Stakeholder map / register | 181 | Sweep |
 | Assumptions log / tracker | 153 (`assumption-log`) | Sweep beside `raid-log`, which the re-score named as its overlap; the 2026-10-04 ranking called it a standing governance artifact, and the July 2026 expansion plan proposed a strategic assumptions log as a `strategy-docs` member |
-| Market requirements document | 10 | Settle a conflict first: the 2026-10-04 ranking pre-failed it because `prd`'s companion folds the MRD into the PRD, while the Standard run found the strongest structural evidence in its cluster for it |
+| Market requirements document | 10 | Settle a conflict first: the 2026-10-04 ranking pre-failed it because `prd`'s companion folds the MRD into the PRD, while the Standard run's strategy cluster called its evidence the strongest structural evidence any existing candidate gained there |
 | Accessibility conformance report / VPAT | 179, Tier 3 | Ask whether decision D4 reaches it before any sweep; the catalog's methodology field reads "compliance (WCAG/Section 508)" |
 | Data protection impact assessment | 177, Tier 3 | Held by decision D4; the catalog's methodology field reads "compliance (GDPR)" |
 | Design inputs document | 160, Tier 3 | Held by decision D4; the catalog cites 21 CFR 820.30(c) and ISO 13485 |
-| Creative brief | none | Run the ADR 0080 audience check first; the re-score found no built bundle it overlaps |
+| Creative brief | none | Run the ADR 0080 audience check first. `design-brief`, built two days after the re-score, names it as a separate document that informs a design brief, so it is a named neighbour rather than a duplicate |
 | Hills (IBM Enterprise Design Thinking) | none | Test as a possible alias or section of `product-strategy`, which the re-score named as its overlap |
 | SAFe epic hypothesis statement | none | Test as a duplicate first; the re-score named `business-case` as its overlap, and `epic` is worth checking too |
 | Technical feasibility assessment | none | Test as a duplicate first; the re-score found it not distinct from built content |
 | Technical constraints document | none | As for the feasibility assessment; its admission pass was also never raw-checked |
 | Architecture context / system context statement (arc42) | none | Test as a section of `sdd` before any sweep |
-| DOE mission need statement; DoD capability needs statement | none | Run the ADR 0080 audience check; ADR 0080 already parks the DoD Initial Capabilities Document for the same defence-acquisition audience |
+| DOE mission need statement (DOE G 413.3-17); DoD Software Acquisition Pathway capability needs statement | none | Run the ADR 0080 audience check on each. Both come from government programme guidance, and ADR 0080 already parks the DoD Initial Capabilities Document because its only software use is inside defence acquisition |
 
 ### 9.4 Catalog rows an earlier ranking found a family for, with no issue
 
@@ -431,9 +433,9 @@ happened to them since.
 
 | Type | Catalog | What the ranking found | Proposed next step |
 |---|---|---|---|
-| Business model canvas | 4 | No family admitted it cleanly, but its admission prior is strong | Sweep with the Value Proposition Canvas (9.1); `lean-canvas`, a canvas the same ranking also placed nowhere, has since joined `strategy-docs` by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
-| Empathy map | 20 | A moderate admission prior; `user-persona`'s guide treats it as complementary | Sweep under ADR 0078, against the interview snapshot (9.1) |
-| Product operating model / team topology doc | 7 | `standing-standards` admits it by analogy, with an unclear falsifier | Sweep |
+| Business model canvas | 4 | No family admitted it cleanly, but its admission prior is strong, because `methodology.md` names Osterwalder as Tier 1 | Sweep with the Value Proposition Canvas (9.1); `lean-canvas`, a canvas the same ranking also placed nowhere, has since joined `strategy-docs` by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
+| Empathy map | 20 | No family admits it, and no admission prior was found beyond `user-persona`'s guide treating it as complementary | Re-test under ADR 0078, which postdates the ranking, against the interview snapshot (9.1) |
+| Product operating model / team topology doc | 7 | `standing-standards` admits it by analogy, with an unclear falsifier; admission prior unknown | Sweep |
 | Strategic theme / portfolio vision | 9 | `strategy-docs` admits it by analogy, strained against the four-question chain | Sweep |
 
 **`research-docs` did not exist when that ranking ran.** The ranking found no family for the interview guide
@@ -455,18 +457,18 @@ The `research-docs` contract places the voice-of-customer report outside itself,
 Issue #180's ranking basis puts first "the documents the shipped library already routes readers to and does
 not ship". These types are named in a shipped guide and have no catalog row, so each needs a row before it can
 be proposed. The 2026-09-22 ranking proposal (`_local/backlog/2026-09-22_candidate-backlog-ranking-proposal.md`)
-found them, and a grep of the guides on 2026-11-13 confirmed that each one is still named there. Two of its
-types are left out. The guides no longer name a coding standards document or engineering handbook in those words,
-and the one "stakeholder update" a guide names is a skill in another repository, not a document type.
+found them, and a grep of the guides on 2026-11-13 confirmed that each one is still named there. Three of its
+types are left out. The PRINCE2 highlight report is now an alias of the built `status-report`. The guides no
+longer name a coding standards document or engineering handbook in those words. The one "stakeholder update" a
+guide names is a skill in another repository, not a document type.
 
-| Type | Named in |
-|---|---|
-| Anti-persona | `user-persona_guide.md` |
-| Governance stage-gate review | `definition-of-ready_guide.md`, `product-backlog_guide.md` |
-| PRINCE2 highlight report | `status-report_guide.md` |
-| ITIL problem record | `incident-postmortem_guide.md` |
-| Service operations manual | `runbook_guide.md` |
-| Prosci change-management communications plan | `announcement-internal-comms_guide.md` |
+| Type | Named in | Catalog |
+|---|---|---|
+| Anti-persona | `user-persona_guide.md`, as a separate document written once a positive persona exists | none |
+| Governance stage-gate review | `definition-of-ready_guide.md`, as a neighbour; `product-backlog_guide.md` | none |
+| ITIL problem record | `incident-postmortem_guide.md`, as the record a postmortem feeds | none |
+| Service operations manual | `runbook_guide.md`, as a bigger scope than a runbook | none |
+| Prosci change-management communications plan | `announcement-internal-comms_guide.md`, as a neighbour | possibly `communication-management-plan` (catalog 83), whose aliases include "stakeholder communication plan"; the 2026-09-22 proposal called the match unconfirmed |
 
 The proposed next step for each is the same: decide whether the guide's mention is a routing promise or only a
 boundary. Only a routing promise earns a catalog row and then a sweep.
@@ -476,8 +478,9 @@ boundary. Only a routing promise earns a catalog row and then a sweep.
 The Standard run tied every verified quotation and heading to its catalog row, and most of the rows it reached
 are unbuilt. The rows are candidates already, so gaining evidence changes no state, and they are not repeated
 here. The full table is `_local/resources/product-management-resources/standard-run/candidate-evidence.csv`.
-The rows with the most verified headings are the team charter (catalog 80), the project management plan (72),
-win-loss analysis (15), the messaging framework (14, issue #258), the FAQ document (185) and the sales
+Among unbuilt rows, the ones with the most verified headings include the team charter (catalog 80), the runbook,
+knowledge base or SOP row (198, which may belong to the built `runbook` instead), the project management plan
+(72), win-loss analysis (15), the messaging framework (14, issue #258), the FAQ document (185) and the sales
 battlecard (196). Admission sweep 7 named the team charter, the working agreement (100) and the onboarding
 guide (195) as the nearest neighbours of the declined manager user guide.
 
