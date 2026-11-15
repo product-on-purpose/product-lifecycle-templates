@@ -152,8 +152,9 @@ return results.filter(Boolean)
 > The rest of this section is kept as the record of the rule, and of which sites it excluded and why. It no longer
 > governs a read.
 
-*The record, as the rule stood from 2026-10-25 to 2026-11-14. None of what follows in this section applies to a
-read today.*
+*The record, as the rule stood from 2026-10-25 to 2026-11-14. Its bar on reading no longer applies. One part
+still does: the steps under "Reading an excluded page by hand" are how a page an agent cannot reach, such as one
+behind a login or a paywall, enters a build when the maintainer chooses to read it.*
 
 **No agent reads a page on a site whose terms of use forbid automated reading.** The ban covers a fetch and
 a read from the source cache alike. The maintainer set this rule on 2026-10-25. The sites stay citable:
