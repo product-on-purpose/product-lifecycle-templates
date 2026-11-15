@@ -16,7 +16,7 @@ assigned and specced 2026-09-27 in [`tier2-specs.md`](../tier2-specs.md); built 
 assigned and specced 2026-10-13 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-14),
 `test-strategy`
 ([ADR 0075](../decisions/0075-test-strategy-joins-standing-standards-as-a-foundation.md),
-assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), `platform-device-support-matrix` ([ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned and specced 2026-11-09 in [`tier2-specs.md`](../tier2-specs.md); built 2026-11-12).
+assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), `platform-device-support-matrix` ([ADR 0088](../decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned and specced 2026-11-09 in [`tier2-specs.md`](../tier2-specs.md); built 2026-11-12), `design-principles` ([ADR 0089](../decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned 2026-11-14), `product-principles` ([ADR 0090](../decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md), accepted after the maintainer's read, assigned 2026-11-14).
 
 Written before any member is built, per the
 [ADR 0020 (delivery-docs family contract)](../decisions/0020-adopt-delivery-docs-family-contract.md) pattern.
@@ -26,7 +26,9 @@ This is the **second** family to gate a set rather than a single axis value, aft
 
 A bundle belongs to this family when its document type is **agreed once and applied every time**. Not written
 per increment, not revised on a calendar, not the output of a phase: written when the team decides how it will
-work, and then consulted repeatedly without being rewritten.
+work, or what every decision about its product must honour, and then consulted repeatedly without being rewritten.
+*(Widened 2026-11-14 by [ADR 0089](../decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md):
+the clause after "how it will work" is new.)*
 
 - a **definition of done** is the standard every increment is judged against, so that "done" stops being an
   opinion;
@@ -178,6 +180,20 @@ member of this family eligible for its grandfather list**. Guidance comments (3.
 obligation at authoring time; it is a section-presence rule and could later be gated if it recurs as a defect.
 
 ## Change note
+
+**0.8.0, 2026-11-14: a ninth and tenth member, and a widened sentence.** `design-principles` joins as
+`classification: foundation` by
+[ADR 0089](../decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), and `product-principles`
+joins the same way by
+[ADR 0090](../decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md). The maintainer accepted
+both at admission sweep 8's batched read, with this sentence quoted verbatim. Section 1's sentence is widened to admit
+a standard the team's product decisions are judged against, not only one for how the team works: "written when the
+team decides how it will work, or what every decision about its product must honour". The cut at section 2 is
+unchanged: principles are a standard judged against, so `foundation`. The falsifier is unchanged: principles are
+consulted at the moment of a design or product decision. Sources: NN/g calls design principles "value statements that
+frame design decisions"; USWDS calls its principles an "evaluative lens for design and implementation decisions";
+Marty Cagan writes "Product principles complement the product vision". The two bundles will have similar skeletons,
+so each guide must state its decision domain. No structural obligation, metadata rule or axis value moved.
 
 **0.7.0, 2026-11-09: an eighth member, and the fourth that no forecast named.** `platform-device-support-matrix`
 joins as `classification: foundation`, by

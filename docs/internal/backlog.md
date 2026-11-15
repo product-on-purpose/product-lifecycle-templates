@@ -35,6 +35,9 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
+| [#359](https://github.com/product-on-purpose/product-lifecycle-templates/issues/359) | `design-principles` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `standing-standards`, `classification: foundation`, [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md) | The spec in `tier2-specs.md`, then a build |
+| [#360](https://github.com/product-on-purpose/product-lifecycle-templates/issues/360) | `product-principles` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `standing-standards`, `classification: foundation`, [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md) | The spec, then a build after `design-principles`, so the two guides are written against each other |
+| [#361](https://github.com/product-on-purpose/product-lifecycle-templates/issues/361) | `competitive-analysis` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `strategy-docs`, `classification: utility`, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) | The spec, then a build |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -42,9 +45,9 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 4 parked |
-| Priority | P3: 3, P4: 1 |
-| Tier | Tier 2: 4 |
+| Status | 3 queued, 4 parked |
+| Priority | P2: 3, P3: 3, P4: 1 |
+| Tier | Tier 2: 7 |
 
 Sixty-seven candidate issues are closed: 56 built and 11 declined. The last to close was #353 (platform-device-support-matrix). Four of the declined types,
 `solution-brief`, `prototype-brief`, `manager-user-guide` and `product-discovery-plan`, never had a catalog row.
@@ -359,13 +362,13 @@ column is the run's own.
 | Type | Named source | Run | Confidence | What the run left open | Proposed next step |
 |---|---|---|---|---|---|
 | Product handover document | Mind the Product | Standard | medium | It is written when a role changes hands, so neither a phase nor a classification fits cleanly | Sweep, with a placement read first |
-| Value Proposition Canvas | Strategyzer | Standard | medium | One usable source; a second copy was gated, which is not a contradiction. The run found no catalog type naming both of its sides, the closest being `business-model-canvas` (catalog 4) | Sweep beside `business-model-canvas`; [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md) admits canvases through their written form |
+| Value Proposition Canvas | Strategyzer | Standard | medium | *(2026-11-14: admission sweep 8 recommended parking it with `business-model-canvas`, because Strategyzer's terms then barred reading. The maintainer lifted the terms rule that day and asked for a fresh read of both canvases with Strategyzer open.)* One usable source; a second copy was gated, which is not a contradiction. The run found no catalog type naming both of its sides, the closest being `business-model-canvas` (catalog 4) | Sweep beside `business-model-canvas`; [ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md) admits canvases through their written form |
 | LLM-as-judge rubric (critique shadowing record) | Hamel Husain | Standard | medium | Whether it and the error-mode taxonomy are one artifact at two stages | Sweep the two together as one candidate |
 | Error-mode taxonomy (open-coding log) | Hamel Husain | Standard | low | A narrated practice at one company; no published shape was verified | Fold into the rubric's sweep |
 | A/B testing roadmap (experimentation backlog) | CXL | Standard | medium | It plans many tests, so it is distinct from `experiment-design-doc`, which plans one | Sweep against the [`experimentation-docs`](contracts/experimentation-docs.md) contract |
 | Experimentation platform RFP | Statsig | Standard | medium | Most of its verified headings are not the RFP's own, and the filled template was never read | Park until the filled template is read by hand |
 | Debt inventory | ProdPad | Standard | medium | The checklist body sits behind an email gate | Park until the maintainer reads the body by hand |
-| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document | Test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
+| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document. *(2026-11-14: out of date. Admission sweep 8 found Cagan's chapters in* Inspired *and* Empowered*, GitLab's handbook, Monzo and SVPG, and the maintainer admitted it as #360, [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md).)* | Done 2026-11-14. Was: test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
 | User Story Map | Jeff Patton | Standard | low to medium | The written form is in Patton's book, which was not read | Park until a read of the book |
 | PM skills gap analysis | SVPG | Standard | low to medium | It assesses a person, not a product, so the [ADR 0080](decisions/0080-admission-gains-a-software-audience-check.md) audience check is unclear | Run the audience check before any sweep |
 | Whole-product bill of materials checklist | Rich Mironov | Standard | low to medium | The only evidence is a document title | Park until a source shows the written form |
@@ -394,7 +397,7 @@ outcome. `metric-tree` is issue #257, parked, and none of the other three has an
 
 | Type | Catalog | Proposed next step |
 |---|---|---|
-| Design principles / experience principles | none | Sweep as a `foundation`, together with the product principles document (9.1) |
+| Design principles / experience principles | none | Done 2026-11-14: admitted at admission sweep 8 as #359, [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md). The 9.2 claim that it had no source is out of date: NN/g, GOV.UK, USWDS, GitLab Pajamas, the NHS service manual, IBM and Microsoft all publish sets |
 | DMAIC project charter | points at `project-charter` (catalog 70), unbuilt | Sweep `project-charter` itself first; the DMAIC charter, and the DMADV charter the re-score found no different, are its variants |
 | GDPR records of processing activities | catalog 176, Tier 3 | Held by decision D4 (no Tier-3 regulated content), which reopens only on a pull from a real regulated team |
 
@@ -409,7 +412,7 @@ not match section 4's count exactly. Source: `_local/research/2026-10-20_define-
 
 | Type | Catalog | Proposed next step |
 |---|---|---|
-| Competitive analysis | 11 | Sweep; it is the one row here that the re-score, the 2026-10-04 ranking and the Standard run all reached |
+| Competitive analysis | 11 | Done 2026-11-14: admitted at admission sweep 8 as #361, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md). It was the one row here that the re-score, the 2026-10-04 ranking and the Standard run all reached |
 | Threat model | 155 | Sweep, with placement open |
 | Stakeholder map / register | 181 | Sweep |
 | Assumptions log / tracker | 153 (`assumption-log`) | Sweep beside `raid-log`, which the re-score named as its overlap; the 2026-10-04 ranking called it a standing governance artifact, and the July 2026 expansion plan proposed a strategic assumptions log as a `strategy-docs` member |
@@ -445,7 +448,9 @@ per study. The `research-docs` contract, adopted by
 membership clause would admit the diary study plan if a sweep finds it distinct from `user-research-plan`. It
 does not admit the interview guide or the survey instrument without an amendment, because each is used during a
 study rather than planning or reporting on one. The diary study plan is therefore the cheapest re-test in this
-subsection.
+subsection. *(2026-11-14: re-tested at admission sweep 8 and declined as a separate type by
+[ADR 0092](decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md). `user-research-plan` gains a
+conditional diary block instead.)*
 
 The ranking also found no family for win-loss analysis (15), pricing and packaging (16), the voice-of-customer
 report (17), cohort retention analysis (145), funnel analysis (146), the model card (149), the customer journey

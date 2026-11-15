@@ -5,7 +5,7 @@
 > Plans and briefs are dated projections. Where they disagree with this file, **this file wins**.
 >
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
-<!-- counts: bundles=56, tier1=25, tier1remaining=2, statebuilt=56, statecandidate=154, stateoutofscope=2, commoncandidates=48, adrs=88, cisteps=32, checkk=164, checkformats=140, checklogs=118, logsgated=50, sourcesgated=2017 -->
+<!-- counts: bundles=56, tier1=25, tier1remaining=2, statebuilt=56, statecandidate=154, stateoutofscope=2, commoncandidates=48, adrs=92, cisteps=32, checkk=164, checkformats=140, checklogs=118, logsgated=50, sourcesgated=2017 -->
 
 **Last updated:** 2026-11-13 (**`v0.26.0` ships `platform-device-support-matrix`, the 56th bundle**, as a minor
 release the maintainer approved on 2026-11-13. Both skills now name a browser or device support matrix, with no
