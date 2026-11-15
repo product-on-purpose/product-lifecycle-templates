@@ -133,7 +133,28 @@ const results = await parallel(DIMENSIONS.map(d => () =>
 return results.filter(Boolean)
 ```
 
-### The terms rule (since 2026-10-25)
+### The terms rule (2026-10-25 to 2026-11-14, lifted)
+
+> **Lifted by the maintainer on 2026-11-14.** Answering admission sweep 8's decision D7, the maintainer wrote: "I
+> don't care about terms for during that is in open web or for books I have purchased... I want to consume and
+> reference it all". From that date, agents may read and cite any publicly reachable page, including pages on the
+> sites listed below and pages already in the source cache. They may also read and cite books the maintainer has
+> bought. **Three limits stay in force:**
+>
+> 1. **No workaround.** No agent gets past a login, a paywall, a bot block or a challenge, by any client or model.
+>    An HTTP 403 to an automated fetch, as Medium returns, still stops the read. A page behind one of these goes in
+>    `not_read_under_terms` and the log's `## Pages not read under the terms rule` section, with the block named in
+>    place of a clause. Both names are kept, so existing logs and the build schema still parse.
+> 2. **Licences still decide what may be copied.** Reading a page is not permission to reproduce its structure or
+>    text in a template. A source's licence governs that, as before.
+> 3. **Quotes stay short and verified.** Every quote is still checked against the raw page or the book.
+>
+> The rest of this section is kept as the record of the rule, and of which sites it excluded and why. It no longer
+> governs a read.
+
+*The record, as the rule stood from 2026-10-25 to 2026-11-14. Its bar on reading no longer applies. One part
+still does: the steps under "Reading an excluded page by hand" are how a page an agent cannot reach, such as one
+behind a login or a paywall, enters a build when the maintainer chooses to read it.*
 
 **No agent reads a page on a site whose terms of use forbid automated reading.** The ban covers a fetch and
 a read from the source cache alike. The maintainer set this rule on 2026-10-25. The sites stay citable:
@@ -286,7 +307,9 @@ link would manufacture the appearance of retrieval. Such an entry states the abs
 URL. See `risk-register` [33] (Hubbard) for the worked form. `No URL.` on its own does not buy the
 exemption; the check requires a stated reason.
 
-**Pages not read under the terms rule.** A page the build wanted on an excluded site, and that the
+**Pages not read under the terms rule.** *(Since 2026-11-14 this section holds pages behind a login, a paywall or
+a bot block, because the terms rule is lifted; see "The terms rule". The heading is kept so existing logs still
+parse.)* A page the build wanted on an excluded site, and that the
 maintainer did not read by hand, goes in a `## Pages not read under the terms rule` section after the
 sources. Write one bullet per page: its URL, the site's clause in a few words, and what the page would have
 supported. No claim rests on it, and it carries no number and no retrieval token. The check parses only

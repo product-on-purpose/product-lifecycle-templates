@@ -1,25 +1,27 @@
 # Family Contract: strategy-docs
 
-Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amended 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md))
+Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amended 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md)); amended 2026-11-14 ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
-Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-30)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-30), competitive-analysis ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted after the maintainer's read, assigned 2026-11-14)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.4.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+Version: 0.5.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
 claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
 see the change note at the end)
 
 ## 1. Membership
 
 A bundle belongs to this family when its document type **sets or tracks product direction above the level of
-any single deliverable**. Its members answer, in order, seven questions a product organization cannot avoid:
+any single deliverable**. Its members answer, in order, eight questions a product organization cannot avoid:
 
 - a **product vision** says where we are trying to get to, and why it is worth getting to;
 - a **Lean Canvas** says which business model could get us there, as beliefs to test: whose problems, what
   value, how we reach and earn from them, what it costs, and how we will know it works (added 2026-10-30,
   [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md));
 - a **product strategy** says which problems we will solve to get there, and which we will not;
+- a **competitive analysis** says who else serves the customers we chose, how they compare on what those customers
+  value, and what that means for our direction (added 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md));
 - a **positioning statement** says how we stand against a named alternative, for which customer, now
   (added 2026-10-19, [ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md));
 - a **North Star metric** says which single measure of customer value shows the strategy is moving us
@@ -44,7 +46,11 @@ instead. **This library also holds that** a strategy whose segments and problems
 Canvas has drifted from the business model it depends on (added 2026-10-30, ADR 0083). That link is
 the library's POSITION too, and so is the canvas's place second in the chain, between the vision and the
 strategy. No source states that sequence; a reader who sees the canvas as the strategy's business model, kept
-current beside the roadmap, would place it after the strategy. Each member must state its position against the other members in its companion's Relationships
+current beside the roadmap, would place it after the strategy. **This library also holds that** a positioning statement built without a
+current competitive analysis names an alternative nobody has compared (added 2026-11-14, ADR 0091). That link is the
+library's POSITION, and so is the analysis's place, immediately before the positioning statement. It rests on
+`positioning-statement`'s guide, which names "the competitive analysis such language would be built on" as upstream
+work; no source states the sequence. Each member must state its position against the other members in its companion's Relationships
 section. That requirement is this library's own reasoning, not received practice (corrected 2026-08-07; see the
 change note): no source read across any of the first four members' research logs documents teams producing all
 four and having them contradict each other as a real-world failure mode, only named authors and sources
@@ -66,7 +72,7 @@ Every member's `<type>_meta.yaml` carries the full field set defined by the
 | Field | Allowed values for this family |
 |---|---|
 | family | `strategy-docs` |
-| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `product-strategy`, `positioning-statement` and `north-star-metrics`; `utility` for `product-roadmap`, `okrs` and `lean-canvas` (recommended; added 2026-10-30, ADR 0083). See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
+| classification | **`foundation` or `utility`** - the first family contract to allow a set on the axis key. `foundation` for `product-vision`, `product-strategy`, `positioning-statement` and `north-star-metrics`; `utility` for `product-roadmap`, `okrs`, `lean-canvas` (recommended; added 2026-10-30, ADR 0083) and `competitive-analysis` (added 2026-11-14, ADR 0091). See the axis note below. A candidate whose honest axis is `phase` belongs in another family. |
 | methodology | **Descriptive, not gated** (the [ADR 0020](../decisions/0020-adopt-delivery-docs-family-contract.md) lesson). This family is the sharpest illustration of why: `okrs` is genuinely **methodology-bound** (the artifact *is* the OKR method), and so is `north-star-metrics` (the artifact is the North Star Framework's own written output; added 2026-10-12), and so is `lean-canvas` (the artifact is Ash Maurya's adaptation of the Business Model Canvas, "optimized for the Lean Startup methodology"; added 2026-10-30, ADR 0083), while the vision, the strategy, the positioning statement and the roadmap are methodology-agnostic. A single required value would force at least one member to lie about itself. |
 | sizes_available | `[lean, full]`, or `[lean]` for a type whose own research shows it does not earn a second weight. The catalog's size calls are hypotheses, not facts (finding EC-2 in `STATE.md`); two qa-docs members have already departed from them on evidence. |
 | status | `beta` until the maintainer judges the bundle settled; then `stable` eligible ([ADR 0055](../decisions/0055-retire-the-zero-fills-disclosure.md)) |
@@ -92,10 +98,13 @@ This one cannot, and forcing it to would misdescribe at least two of its members
   [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md)). Ash Maurya
   calls a canvas "a snapshot" and says "you start with the best guess and iterate from there". Its revisions
   follow test results rather than a calendar, and no originator page read states an interval. `foundation`
-  is the considered alternative.
+  is the considered alternative. **`competitive-analysis` is `utility` too** (added 2026-11-14,
+  [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)). Aha! says "Assign a point person to keep the report updated throughout the year", and the GitLab
+  handbook says the comparison "should be done at least annually". It changes when competitors move, not when the
+  strategy does. `foundation`, read as a dated snapshot refreshed on triggers, is the considered alternative.
 
 The distinction that does the work is **argued-and-durable versus maintained-and-periodic**, and it is the
-same distinction `governance-docs` used to claim `utility` for a risk register. All seven members are standing
+same distinction `governance-docs` used to claim `utility` for a risk register. All eight members are standing
 artifacts with no single lifecycle phase, which is what makes the family `classification`-axis; they simply
 sit in two different classes within it.
 
@@ -189,6 +198,16 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**0.5.0, 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md): an eighth member, and the fourth widening of this family's list of questions.**
+*(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8.)* `competitive-analysis`
+joins at `classification: utility`, placed immediately before the positioning statement. That place is argued, not
+sourced: the G1 draft put it after the positioning statement, and this change moved it before, because the
+positioning guide names the analysis as upstream work. The membership sentence admits the type on a reading of
+"tracks", recorded in ADR 0091. Section 1's "seven questions" becomes "eight questions" and gains a bullet, and the
+chain sentences gain a fourth POSITION link. Section 2's classification row and axis note name the new member, and
+the axis note now counts eight members. **No structural obligation changed**, and check K's registry entry needs
+no edit, because `utility` is already in the set it gates.
 
 **0.4.0, 2026-10-30, [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md):
 a seventh member, and the third widening of this family's list of questions.** *(Accepted 2026-10-30

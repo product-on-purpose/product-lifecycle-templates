@@ -12,7 +12,25 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Three document types are admitted, and one is declined, after admission sweep 8.** Design principles
+  ([ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md)) and
+  product principles ([ADR 0090](docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md))
+  join `standing-standards` as `foundation` members. That contract's membership sentence widens to admit a standard
+  the team's product decisions are judged against. Competitive analysis
+  ([ADR 0091](docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)) joins
+  `strategy-docs` as a `utility` member, by an eighth question. The diary study plan is declined as a separate type
+  ([ADR 0092](docs/internal/decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md)); `user-research-plan`
+  will gain a conditional diary block instead. None of the three admitted bundles is built yet.
+
 ### Changed
+
+- **The terms rule is lifted.** Since 2026-10-25, research agents had not read pages on sites whose terms of use bar
+  automated reading. The maintainer lifted that rule on 2026-11-14 for public pages and for books they own. Agents
+  still never get past a login, a paywall or a bot block, licences still decide what a template may copy, and every
+  quote is still checked. The runbook's [terms rule](docs/internal/bundle-pipeline.md) keeps the old rule and its
+  site list as a record, and the build workflow's research prompt changed to match.
 
 - **Researched document types that never reached an issue now have a committed home.** Research runs named more
   candidate types than the maintainer queued, and the rest sat only in gitignored reports.

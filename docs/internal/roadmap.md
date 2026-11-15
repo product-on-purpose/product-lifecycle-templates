@@ -17,7 +17,7 @@
 > - **Section 4's week-by-week timeline**, which is a historical calendar. It is marked as such in place.
 > - **M2 is complete**, and its exit act was not the `v0.2.0` this file names. See the milestone table.
 >
-> This file was written 2026-07-10 and last cites **ADR 0020**; there are now **88** decision records, and
+> This file was written 2026-07-10 and last cites **ADR 0020**; there are now **92** decision records, and
 > sixty-eight of them (0021 through 0088) postdate it and change
 > the plan it describes.
 >
@@ -38,7 +38,7 @@
 > printed on every run, is the thing that found it: do not just edit the marker, re-read the prose
 > around it.
 
-<!-- counts: adrs=88, bundles=56 -->
+<!-- counts: adrs=92, bundles=56 -->
 
 - **Date:** 2026-07-10
 - **Basis:** `AUDIT_REPORT.md` (49 findings, 19 adversarially verified) and its section 5 roadmap, expanded here into milestones, work packages, acceptance criteria, and dependencies

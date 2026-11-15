@@ -96,7 +96,7 @@ const RESEARCH_SCHEMA = {
     not_found: { type: 'string', description: 'What was searched for and not found. State it; do not fill the gap.' },
     not_read_under_terms: {
       type: 'array',
-      description: 'Pages wanted on a site whose terms bar automated reading. Not opened, not read from the cache.',
+      description: 'Pages wanted but not read because of a login, a paywall or a bot block (the name predates the 2026-11-14 lifting of the terms rule).',
       items: {
         type: 'object',
         required: ['url', 'what_is_needed'],
@@ -153,15 +153,15 @@ will converge on the same canonical sources unless you follow this.
   5. State what you could not find. An honest gap is a finding; a plausible filler is a defect.
 `
 
-// The terms rule, set by the maintainer on 2026-10-25. The runbook section holds the list of excluded
-// sites and their clauses; this text only makes sure every research agent reads it before reading anything.
+// The terms rule, set by the maintainer on 2026-10-25, was lifted on 2026-11-14 (see "The terms rule" in the
+// runbook). What remains is the access rule below: read any public page, never get past a block.
 const TERMS_RULE = `
-THE TERMS RULE. Some sites' terms of use forbid automated reading. Before the first read of any page on a
-site, including a read from the source cache, check that site against "The terms rule" in ${RUNBOOK}. If
-the site is listed there, or its own terms page forbids automated access, crawling, scraping or retrieval,
-do not open the page and do not read it from the cache. List it in not_read_under_terms with what you
-need from it; the maintainer may read it by hand. Reading a site's own terms page is allowed, because that
-is how its status is learned. Never use a proxy, another client or another model to get past a bar.
+THE ACCESS RULE. You may read and cite any publicly reachable page, including from the source cache, whatever
+the site's terms of use say; the maintainer lifted the terms rule on 2026-11-14. Never get past a login, a
+paywall, a bot block or a challenge, and never use a proxy, another client or another model to do so. An HTTP
+403 to an automated fetch stops the read. List a blocked page in not_read_under_terms with the block named and
+what you need from it; the maintainer may read it by hand. Reading a page is not permission to copy its
+structure or text into a template: its licence decides that. Quote short passages only.
 `
 
 if (stage === 'research') {

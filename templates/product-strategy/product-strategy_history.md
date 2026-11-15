@@ -33,7 +33,10 @@ it. A strategy nobody could disagree with has not chosen anything.
 lean, with Target Segments, Principles and What We Are Not Doing added at full. The research put the kernel
 in its place: it is the most-cited structure in the field, it is the one that forces a diagnosis, and its
 three parts are quoted verbatim from Rumelt. The spec's sections survive in the full variant and in the
-one-pager format, where they fit the cascade better than they fit the kernel. Per the spec's own note, the
+one-pager format, where they fit the cascade better than they fit the kernel. *(Corrected 2026-11-14: Principles
+does not survive in the kernel's full variant. Only the one-pager's full variant carries it, as `## Product
+Principles`. Admission sweep 8 found this, and product principles became a type of their own by
+[ADR 0090](../../docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md).)* Per the spec's own note, the
 per-type designs are hypotheses to be tested against a type's research, as `test-case` already demonstrated
 against a catalog size call.
 
