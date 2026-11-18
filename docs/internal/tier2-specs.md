@@ -8515,8 +8515,9 @@ evidence is held locally, at `_local/research/2026-11-14_admission-sweep-8/`.
   [Microsoft](https://learn.microsoft.com/en-us/windows/apps/design/design-principles) each publish a maintained set.
 - **Check 2, phase fit.** Not applicable: the type takes a `classification`.
 - **Check 3, the written form's scope.** A short prose list, which Markdown holds as written.
-- **Check 4, no built bundle does its job.** No shipped bundle, section, alias or id holds design principles. ADR 0089
-  records the grep.
+- **Check 4, no built bundle does its job.** No shipped bundle, section, alias or id holds design principles. A grep of
+  `templates/` and `manifest.json` on 2026-11-17 found the phrase only in its general sense, in four bundles' companions,
+  guides and logs, and no set of principles.
 - **Check 5, a software audience.** GitLab, IBM, Microsoft, USWDS and GOV.UK are software and digital service teams.
 
 #### Classification: `foundation`, as ruled
@@ -8573,7 +8574,7 @@ research must test each against a source or label it the library's POSITION.
 | # | Section | What it holds | Source |
 |---|---|---|---|
 | 1 | Purpose and Scope | The product or service the principles cover, who applies them, and how they relate to the design system | NN/g: "Design principles are specific to the product or service that is being designed." (raw-checked 2026-11-17). The relation to the design system is the library's POSITION, after GitLab's handbook: "design principles are outlined in the Pajamas Design System and guide all product design work" |
-| 2 | The Principles | Three to five principles. Each has a statement, what it means in a design decision, the question a reviewer asks, and what it rules out | Pajamas pairs each principle with a question: "When designing any feature, ask: Does this feel like part of one unified product?" IBM asks "Is it IBM to do? Is it essential? Is it opinionated?" principles.design: "Real principles reveal priorities." The four-part shape is the library's POSITION |
+| 2 | The Principles | Three to five principles. Each has a statement, what it means in a design decision, the question a reviewer asks, and what it rules out | Pajamas pairs a principle with a question: "When designing any feature, ask: Does this feel like part of one unified product?" IBM's "Carefully Considered" principle asks "Is it IBM to do? Is it essential? Is it opinionated?" (raw-checked 2026-11-17). principles.design: "Real principles reveal priorities." The four-part shape is the library's POSITION |
 | 3 | When Principles Conflict | Which principle wins when two pull apart, and in which kind of decision | NN/g's method has a step titled "Identify Any Common Tradeoffs". The sources disagree about conflict, as Risks records |
 | 4 | Using Them in Decisions | Where the principles are applied, such as design critique, design review and pattern proposals, and how a decision cites one | NN/g: "use the principles to explain and justify design decisions" (raw-checked 2026-11-17). The list of places is the library's POSITION |
 | 5 | Ownership and Changes | The named owner, how anyone proposes a change, and who decides | Pajamas: "Everyone is welcome to suggest improvements by opening an issue". Role names are the library's POSITION |
@@ -8850,12 +8851,12 @@ anti-patterns, and section 6 meeting section 4's review trigger with a named own
 
 **Recommended: the product principles for Acme Analytics, owned by Dana Okoro, VP Product.** Confidence: low. Cagan ties the
 principles to the vision and the strategy, and Acme has both as shipped examples. Dana Okoro owns both of them
-(`positioning-statement_example.md:17-18`).
+(`positioning-statement_example.md:18-19`).
 
 **Facts the example must carry, with no contradiction.**
 
 - Its principles are consistent with the FY26 strategy's guiding policy and with what that strategy says it will not do
-  (`product-strategy_example.md:59-104`). They must not restate those choices, because the principles outlive FY26.
+  (`product-strategy_example.md:59-103`). They must not restate those choices, because the principles outlive FY26.
 - It contradicts no sibling. It must not say the strategy has changed.
 - At least one principle rules something out that a stakeholder has asked for.
 - A Review Trigger row names the strategy changing, so the link to `product-strategy` is visible.
@@ -8949,8 +8950,8 @@ says what that means for the product's direction. Aha! frames the questions as "
 the alternatives? And how can we better differentiate what we offer?" (raw-checked 2026-11-17). It is kept current, not
 written once.
 
-**What holds the confidence at medium on the sizes.** Most sources that describe a structure are vendors, and Aha! ships ten
-templates under the name. One document is templated here, and the full size's extra sections rest on SVPG, GitLab and a vendor
+**What holds the confidence at medium on the sizes.** Most sources that describe a structure are vendors, and Aha!'s guide
+offers "10 competitive analysis templates for product teams" (raw-checked 2026-11-17). One document is templated here, and the full size's extra sections rest on SVPG, GitLab and a vendor
 prompt.
 
 #### Demand: a catalog row, three rankings and the maintainer's choice
@@ -8976,8 +8977,8 @@ read in the main loop while this spec was written.
 - **Check 2, phase fit.** Not applicable: the type left `define` in the 2026-10-20 re-score and takes a `classification`.
 - **Check 3, the written form's scope.** A table of competitors by criteria, the shape `trade-study` and
   `platform-device-support-matrix` already ship. A two-axis positioning map stays out.
-- **Check 4, no built bundle does its job.** No shipped bundle holds competitor profiles, a comparison table or a SWOT. Five
-  bundles carry a fragment, listed under Boundaries.
+- **Check 4, no built bundle does its job.** No shipped bundle holds competitor profiles, a comparison table or a SWOT.
+  Several bundles carry a fragment, and the Boundaries table lists each.
 - **Check 5, a software audience.** GitLab: "A Product Manager will lead their quad team". Aha!: the template "is for
   product managers and product marketers".
 
@@ -8998,8 +8999,9 @@ For other categories, GitLab names an event, not an interval. The `utility` call
 dated note from this change.
 
 **The point-in-time reading stays visible.** Aha! also says "Perform a more detailed analysis to inform major strategic
-decisions." Pragmatic Institute describes a market analysis deliverable as "a moment frozen in time". The bundle reconciles
-the two readings with dated versions: each refresh is a snapshot, and the document is the series.
+decisions." Klue, which recommends a quarterly refresh, also says "Competitive landscape analysis is a snapshot" and calls
+competitive intelligence the ongoing practice (raw-checked 2026-11-17). The bundle reconciles the two readings with dated
+versions: each refresh is a snapshot, and the document is the series.
 
 #### The family: `strategy-docs`, by amendment (ADR 0091)
 
@@ -9026,7 +9028,7 @@ to the question of whether to keep that place.)*
 | `product-vision` | It may name the incumbent, as Acme's does. It states no comparison |
 | `trade-study` | It compares options for one of our own decisions. The analysis compares rivals' products, and decides nothing |
 | `user-research-report` | A competitive usability study is research. NN/g: "Competitive testing is not the same as a competitive review." The analysis may cite such a study's findings |
-| Sales battlecard, catalog entry 196 (not built) | Sales-facing responses for live deals. Productboard nests a "Sales Battlecard Summary" in its brief, and Klue says an analysis can "double as top-notch sales battlecards". The bundle links to a battlecard and holds none |
+| Sales battlecard, catalog entry 196 (not built) | Sales-facing responses for live deals. Productboard nests a "Sales Battlecard Summary" in its brief. Klue says "Feature comparison tables double as top-notch sales battlecards" (raw-checked 2026-11-17), which describes a feature table, not this analysis. The bundle links to a battlecard and holds none |
 
 #### Sizes: lean and full, recommended
 
@@ -9043,7 +9045,7 @@ GitLab: "As a Category Maturity Scorecard is based on Jobs to be Done".
 | 2 | The Competitor Set | lean, full | Who is in and why: direct rivals, indirect rivals, and what customers do today without any product | SVPG: "evaluate the top 3-5 players in the space". Including the status quo is the library's POSITION, from the positioning statement's named alternative |
 | 3 | Competitor Profiles | lean, full | One row per competitor: what it offers, its pricing, its strengths, its weaknesses and its differentiators | Aha!'s field list, quoted under Admission. Label the column set a POSITION, because the template's own columns were not read |
 | 4 | Competitor Briefs | full only | A short narrative per main rival: the things it does that customers value, and the needs it leaves unmet | SVPG asks the product leader to find "the three key things that they think the competitor does that provides real value for their customers, and the three major areas where they think the customer's needs are not met" (raw-checked 2026-11-17) |
-| 5 | Comparison on What Customers Value | lean, full | Criteria drawn from what the chosen customers value, each rival rated against them | SVPG: "The key is to constantly drive value for your customers." (raw-checked 2026-11-17). Choosing criteria from the customer's side is the library's POSITION |
+| 5 | Comparison on What Customers Value | lean, full | Criteria drawn from what the chosen customers value, each rival rated against them | Aha!'s scorecard template rates competitors "weighted by the importance of each attribute to your customers" (raw-checked 2026-11-17). SVPG: "The key is to constantly drive value for your customers." (raw-checked 2026-11-17) |
 | 6 | Jobs-Based Scorecard | full only | Each customer job, and how well each rival lets the customer complete it | GitLab's category maturity scorecard, which is based on Jobs to be Done; Aha!'s "Competitor scorecard" |
 | 7 | Implications for Our Direction | lean, full | What the comparison means for the strategy, the positioning and the roadmap | Aha!: "how can we better differentiate what we offer?" The routing to each sibling is the library's POSITION |
 | 8 | Evidence and Sources | lean, full | Where each claim came from, and its date | GitLab: the comparison "should be completely data/evidence driven". Klue: "Don't just rely on CRM data" |
@@ -9053,8 +9055,8 @@ The lean size is a strict ordered subset of full, and section 9 sits last in bot
 
 **What stays out.** A battlecard, which is catalog entry 196. A positioning map, which is a two-axis chart and out of scope
 under ADR 0030. A win-loss analysis, which is unswept. A SWOT of our own company: catalog entry 11 lists "SWOT" among its key
-sections, but a SWOT assesses us, and section 7 already holds what the comparison means for us. Market sizing, which
-Pragmatic Institute places in a market requirements document that "focuses on identifying and prioritizing market problems".
+sections, but a SWOT assesses us, and section 7 already holds what the comparison means for us. Pragmatic Institute writes that, like SWOT analyses, the Six Forces
+model "represents a moment frozen in time" (raw-checked 2026-11-17). Market sizing, which is a separate analysis.
 
 #### Metadata
 

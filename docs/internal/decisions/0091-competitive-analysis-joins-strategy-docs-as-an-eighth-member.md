@@ -30,10 +30,10 @@ consulted: [claude]
   verbatim, and chose this option. Asked whether the type belonged in strategy, foundation or opportunity, the
   maintainer read the recommendation and answered "d5 ok". **One change from what was read:** the G1 draft placed
   the bullet after the positioning statement. This record places it before, for the reason above. The maintainer
-  reads the contract diff in this PR before it merges. *(2026-11-17: PR #362 merged on the maintainer's "Merge and
-  fix the rules", which was recorded as a delegation for this place. The maintainer confirmed it on 2026-11-17: asked
-  whether to keep competitive analysis immediately before the positioning statement, the maintainer answered "Yes
-  continue". The spec is in [`tier2-specs.md`](../tier2-specs.md#strategy-docs-eighth-member-by-amendment-the-competitive-analysis).)*
+  reads the contract diff in this PR before it merges. *(2026-11-17: the maintainer's `/plab-ship` invocation for
+  PR #362 was taken as the go-ahead on both contract amendments, and recorded as a delegation awaiting confirmation.
+  The maintainer confirmed this place on 2026-11-17. Asked whether to keep competitive analysis immediately before
+  the positioning statement and write the three specs, the maintainer answered "Yes continue". The spec is in [`tier2-specs.md`](../tier2-specs.md#strategy-docs-eighth-member-by-amendment-the-competitive-analysis).)*
 
 ## Context and Problem Statement
 

@@ -202,8 +202,8 @@ reviewed against.
 
 **0.5.0, 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md): an eighth member, and the fourth widening of this family's list of questions.**
 *(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8. The place before the
-positioning statement, which the maintainer had not read, was confirmed by the maintainer on 2026-11-17: "Yes
-continue".)* `competitive-analysis`
+positioning statement, accepted on delegation when #362 shipped, was confirmed by the maintainer on 2026-11-17:
+"Yes continue".)* `competitive-analysis`
 joins at `classification: utility`, placed immediately before the positioning statement. That place is argued, not
 sourced: the G1 draft put it after the positioning statement, and this change moved it before, because the
 positioning guide names the analysis as upstream work. The membership sentence admits the type on a reading of
