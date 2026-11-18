@@ -60,6 +60,9 @@ design task" rather than "a spec-driven execution".
 | `product-opportunity-assessment` | `product-opportunity-assessment` (entry 208) | none; `discovery-docs` would admit it | **Researched 2026-10-29** in admission sweep 7, and read side by side 2026-11-04; no spec written | **No, for now.** Declined by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md): the lean `business-case` already does its job, and its guide now names the questions a new-product case should add |
 | `product-discovery-plan` | none | none; `research-docs` rejects it and `discovery-docs` fits only with strain | **Researched 2026-10-29** in admission sweep 7, then read 2026-11-05 (Cagan's later books) and 2026-11-07 (Torres's *Continuous Discovery Habits*); no spec written | **No, for now.** Declined by [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md): its parts already live in `project-brief`, `user-research-plan` and `product-strategy`, and its one source calls itself a list of tools, not a template. The `project-brief` guide gains a paragraph |
 | `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Built 2026-11-12**, issue #353, single size. Family and classification (`foundation`) set by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted 2026-11-09 |
+| `design-principles` | none; entry 213 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-ninth-member-design-principles) in admission sweep 8, and context re-read 2026-11-17 | **No, not yet.** Issue #359. Family and classification (`foundation`) by [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14, which widened the membership sentence. Its sizes, example, aliases and build go wait on the maintainer |
+| `product-principles` | none; entry 214 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-tenth-member-product-principles), with Cagan's chapters read in the maintainer's copies | **No, not yet.** Issue #360, to be built after `design-principles`. A type of its own and `foundation` by [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14. Its sizes, example, strategy pointer and build go wait on the maintainer |
+| `competitive-analysis` | `competitive-analysis` (entry 11) | `strategy-docs` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#strategy-docs-eighth-member-by-amendment-the-competitive-analysis), all 65 passing | **No, not yet.** Issue #361. Family, `utility` and the chain place by [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted 2026-11-14; the place immediately before the positioning statement was confirmed 2026-11-17. Its sizes, example, section 4 sentence, SWOT call and build go wait on the maintainer |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -6251,7 +6254,10 @@ specific target customer, now. It does not admit:
   Catalog corrections.
 - **Go-to-market documents generally.** Sitting decision 7 answered a narrower question than whether the
   library takes on product marketing as a whole: it takes on this one type, as a product-direction
-  artifact, and leaves battlecard, competitive analysis and win-loss analysis unswept.
+  artifact, and leaves battlecard, competitive analysis and win-loss analysis unswept. *(2026-11-17: competitive
+  analysis has since been swept and admitted, by [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md),
+  and is specced [below](#strategy-docs-eighth-member-by-amendment-the-competitive-analysis). Battlecard and win-loss
+  analysis stay unswept.)*
 
 #### Family fit: the membership sentence fits as written; the closed list needed widening
 
@@ -8463,3 +8469,708 @@ a site's terms before its first read. A site absent from the table is not cleare
 | D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Ruled A on 2026-11-12. The research found no fuller shape. |
 | D3 | The example | **A:** Harbourline Bookings, with the stop rule | B: reuse the Acme Analytics thread, which the family weakens on purpose | Ruled A on 2026-11-12. The example passed the stop rule. |
 | D4 | The build go | **A:** build after the contract read and the D2 and D3 answers | B: hold; C: decline under ADR 0041 | Ruled A on 2026-11-12, when the maintainer asked for the build. |
+
+### standing-standards (ninth member): design principles
+
+**`design-principles`** - `standing-standards`, **`classification: foundation`** (ruled), size **`[lean]`** (single size,
+recommended), methodology **`generic`** (recommended), catalog **entry 213** (new, recommended), Tier 2. Issue #359
+(bundle: design-principles), priority P2. The family decision is
+[ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md) (design principles joins
+standing-standards as a foundation), **accepted 2026-11-14 after the maintainer's read** of sweep 8's batched decisions.
+It widened the contract's membership sentence. The family and the classification are settled. The choices at this
+section's end are open, and nothing here says the build is approved.
+
+#### The recommendation, and how sure it is
+
+**Build design principles as the ninth `standing-standards` member, at `classification: foundation`, in one size.**
+Confidence: medium-high on admission, medium on the section design, low on the example.
+
+Design principles are a short list of value statements that a team agrees once. The team then uses them to frame and
+settle decisions about its product's experience. Nielsen Norman Group (NN/g) calls them "value statements that frame
+design decisions". They are not a style guide, and they are not a design system's component rules.
+
+**What holds the confidence at medium on the sections.** Six publishers keep a set, and NN/g gives a method for writing
+one, but none publishes a template. The section design below is assembled from method articles and from published sets, so most of its
+structure is the library's POSITION.
+
+#### Demand: a backlog row and the maintainer's choice
+
+- No catalog row carries the type today. Entry 213 would be new, and the landing PR adds it.
+- Backlog section 9.2 listed design principles as a type that the 2026-10-20 Define re-score sent to a sweep outside
+  `define`.
+- On 2026-11-14 the maintainer admitted the type at admission sweep 8 ("d3 a") and opened issue #359.
+
+#### Admission: cleared on seven publishers
+
+Admission sweep 8 tested the type on 2026-11-14. Every quotation in this section passed a raw-text check in that sweep,
+unless it is marked as raw-checked on 2026-11-17. Those were read in the main loop while this spec was written. The
+evidence is held locally, at `_local/research/2026-11-14_admission-sweep-8/`.
+
+- **Check 1, the written form.** [NN/g](https://www.nngroup.com/articles/design-principles/) defines the type and gives a
+  four-step method for writing a set. It says the principles are "value statements that frame design decisions".
+  [GOV.UK](https://www.gov.uk/guidance/government-design-principles),
+  [USWDS](https://designsystem.digital.gov/design-principles/), [GitLab Pajamas](https://design.gitlab.com/about/principles/),
+  the [NHS service manual](https://service-manual.nhs.uk/design-system/design-principles),
+  [IBM](https://www.ibm.com/design/language/philosophy/principles/) and
+  [Microsoft](https://learn.microsoft.com/en-us/windows/apps/design/design-principles) each publish a maintained set.
+- **Check 2, phase fit.** Not applicable: the type takes a `classification`.
+- **Check 3, the written form's scope.** A short prose list, which Markdown holds as written.
+- **Check 4, no built bundle does its job.** No shipped bundle, section, alias or id holds design principles. ADR 0089
+  records the grep.
+- **Check 5, a software audience.** GitLab, IBM, Microsoft, USWDS and GOV.UK are software and digital service teams.
+
+#### Classification: `foundation`, as ruled
+
+**The contract's cut decides it: "is it a standard you judge against, or an instrument you execute?"** A design review, a
+disputed choice and a proposed pattern are each judged against the principles. USWDS says its principles are meant "to be
+an evaluative lens for design and implementation decisions". Pajamas says "Principles act as a reusable standard for teams
+to measure their work." Nobody executes a principle under time pressure, so the `tool` marker fails.
+
+**No source states a revision interval.** GOV.UK's page reads "Published: 3 April 2012" and "Last updated: 2 April 2025"
+(raw-checked 2026-11-17). The NHS page says "Updated: April 2023". Both show a set kept for years. How often each set
+changed was not read, so "changed deliberately and rarely", the `foundation` description, is an inference. NN/g's article on design guidance lists "Regularly updated" as a trait, but the raw page applies it to team
+charters, not to design principles (raw-checked 2026-11-17). So the cadence tension that ADR 0088 recorded has not arisen.
+ADR 0088's caution still stands for the build: if the research finds a calendar, the classification reopens in ADR 0089.
+
+#### The family: `standing-standards`, by the widened sentence (ADR 0089)
+
+**The widened membership sentence admits it.** Section 1 now reads "written when the team decides how it will work, or
+what every decision about its product must honour". Design principles are a standard every experience decision must
+honour.
+
+**The falsifier holds.** The contract asks whether a candidate is "consulted at the moment of action". Design principles
+are consulted when a designer or a team chooses between two designs. The NHS says to "Use them to get started on a project
+and to help with making decisions."
+
+**No design family exists to take it.** ADR 0030 says "design-docs is therefore never created". `strategy-docs` would need a
+ninth question, and design principles answer none of its eight.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `product-principles` (ADR 0090, its sibling) | Product principles resolve product trade-offs: what to build, for whom, and what to refuse. Design principles frame experience decisions: how the product should feel and behave for its users. Pajamas says "There are two kinds of principles", though its own split is process against output, which is not this line. Each guide must state the line in its first paragraph |
+| `product-strategy` | The one-pager full variant's Product Principles section (`product-strategy_template-one-pager-full.md:157`) holds product rules, not experience rules. The strategy's guiding policy is chosen for a period. The principles are not |
+| `product-vision` | It says where the product is going. NN/g says the values behind a set "may have been captured in vision statements or project briefs" (raw-checked 2026-11-17), so the vision is an input. A principle states how every design decision on the way should lean |
+| `design-brief` | It hands one chosen concept to the people who will design it. The brief may cite the principles. The principles outlive every brief |
+| `definition-of-done` | It judges whether an increment is finished. A done criterion may say "reviewed against the design principles". The principles own the content of that review |
+| A design system or style guide (not admitted) | NN/g: principles "are not directions on how to design specific UI elements (like design patterns or standards)" (raw-checked 2026-11-17). Component rules, tokens and patterns stay out |
+| Usability heuristics (not admitted) | NN/g separates product design principles from "principles of good design, such as usability guidelines, heuristics, or visual-design principles" (raw-checked 2026-11-17). General heuristics are not the team's own set |
+
+#### Sizes: `[lean]` only, recommended
+
+**One size, at medium-high confidence.** NN/g warns that "having 10 or more leads to many being forgotten".
+[principles.design](https://principles.design/articles/why-most-design-principles-fail/) says "The most effective examples
+use 3-5 principles." A set that short does not earn a second weight. No source read publishes a long and a short variant.
+*(ADR 0089 and sweep 8's digest also say published sets run from four to eleven principles. That count has no quotation
+behind it, so this spec does not repeat it.)*
+
+#### Section design (proposed, for the build's research to test)
+
+No source publishes a template for a design principles document. Every section below is therefore proposed, and the build's
+research must test each against a source or label it the library's POSITION.
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Purpose and Scope | The product or service the principles cover, who applies them, and how they relate to the design system | NN/g: "Design principles are specific to the product or service that is being designed." (raw-checked 2026-11-17). The relation to the design system is the library's POSITION, after GitLab's handbook: "design principles are outlined in the Pajamas Design System and guide all product design work" |
+| 2 | The Principles | Three to five principles. Each has a statement, what it means in a design decision, the question a reviewer asks, and what it rules out | Pajamas pairs each principle with a question: "When designing any feature, ask: Does this feel like part of one unified product?" IBM asks "Is it IBM to do? Is it essential? Is it opinionated?" principles.design: "Real principles reveal priorities." The four-part shape is the library's POSITION |
+| 3 | When Principles Conflict | Which principle wins when two pull apart, and in which kind of decision | NN/g's method has a step titled "Identify Any Common Tradeoffs". The sources disagree about conflict, as Risks records |
+| 4 | Using Them in Decisions | Where the principles are applied, such as design critique, design review and pattern proposals, and how a decision cites one | NN/g: "use the principles to explain and justify design decisions" (raw-checked 2026-11-17). The list of places is the library's POSITION |
+| 5 | Ownership and Changes | The named owner, how anyone proposes a change, and who decides | Pajamas: "Everyone is welcome to suggest improvements by opening an issue". Role names are the library's POSITION |
+| 6 | Review Trigger | **Contract-mandated** (section 4). A table of conditions, owners and actions | See the next subsection |
+
+**What stays out.** Component rules, design tokens and pattern guidance belong to a design system. Brand voice belongs to a
+brand or content guide. General usability heuristics are not a team's own set. Product trade-offs belong in
+`product-principles`.
+
+**How the contract's structural obligations are met** (contract sections 3 and 4).
+
+| Obligation | Met by |
+|---|---|
+| 3.1 Eight files (a single size ships seven, per `AGENTS.md`) | The build's file set, with one template variant |
+| 3.2 Nesting | Exempt, single size |
+| 3.3 Guidance comments | Approach A in all six sections, with PRIORITY and ROW HINT on sections 2 and 6 if the build makes them tables |
+| 3.4 Companion skeleton | One Anatomy subsection per section above |
+| 3.5 Guide shape | The guide, with at least six anti-patterns (see Risks) |
+| 3.6 Citations | The folklore hazard, named under Risks |
+| 3.7 Example independence | The example below, checked by `tools/check-example-independence.py` |
+| Section 4, a review trigger with a named owner and a condition | Section 6, with section 5 naming the owner |
+
+#### The staleness mechanism: a Review Trigger with conditions
+
+**Section 6 is a three-column table: Condition, Owner, What They Do About It.** No design principles source names a
+trigger. Every condition below is therefore the library's own synthesis, except where a source is named.
+
+- A design decision goes against a principle, and nobody decides to change the principle. The product principles prompt
+  from Productboard names the same condition for its own type: "consistently violated one without deciding to change it".
+- The same design debate recurs and no principle settles it.
+- The product's audience or its strategy changes.
+- The design system adopts a pattern that a principle would rule out.
+- A new product or surface joins the set's scope.
+
+The contract forbids a calendar reminder as the only trigger. The build may add an interval as a floor only if a source
+states one.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `design-principles` |
+| `title` | Design Principles |
+| `family` | `standing-standards` |
+| `classification` | `foundation` (ruled, ADR 0089) |
+| `sizes_available`, `default_size` | `[lean]`, `lean` (recommended) |
+| `methodology` | `generic`; no source ties the type to one method |
+| `aliases` (safe) | UX design principles (Productboard's prompt title uses "UX design principles"), experience principles |
+| `aliases` (avoid) | "product design principles", NN/g's own longer name, because it collides with `product-principles`; a bare "principles" |
+| `pairs_with` | `[]`. `tools/known-skills.txt` holds no principles skill (checked 2026-11-17) |
+| `catalog_ref` | entry 213 (new) |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The row is new.** Add entry 213 to `docs/internal/catalog.md` and to `atlas/catalog-data.json`, then regenerate the
+  atlas. If `product-principles` lands first, the numbers swap.
+- **Row order and counts.** A new catalog row trips the count markers. Read the bundle gate-verification memory before the
+  landing.
+- **The relationships field.** Name `product-principles`, `product-strategy`, `design-brief` and `definition-of-done`.
+
+#### The example: Acme Analytics' design principles, recommended
+
+**Recommended: the design principles for Acme Analytics' product.** Confidence: low. The contract weakens the Acme chaining
+on purpose (section 4), so a fresh scenario is allowed. The case for Acme is the pair. If both principles bundles use Acme,
+a reader sees an experience principle and a product trade-off for the same product, which is the line each guide must
+draw.
+
+**Facts the example must carry, with no contradiction.**
+
+- Three to five principles, each with a question a reviewer would ask and one thing it rules out.
+- At least one principle that serves the Recurring Analyst, the person the FY26 strategy names by behaviour
+  (`product-strategy_example.md:43-48`). That person "has no data team behind them".
+- One conflict between two principles, resolved in a named kind of decision.
+- A Review Trigger row that fired once in the example's own history.
+- No principle restates a strategy choice for FY26. The principles must outlive that strategy.
+
+**The alternative.** A fresh scenario, as the support matrix used. It costs the paired contrast and gains independence from
+the Acme facts.
+
+**The stop rule.** If the filled example reads as slogans that no design decision could break, the build stops. A set of
+principles that rules nothing out shows no judgment. The decision returns to the maintainer, as ADR 0064 and ADR 0074
+record for that kind of finding.
+
+#### Risks for the build and the review
+
+- **The sources disagree about conflict.** NN/g says principles should "Not conflict with one another" and that "Each
+  principle should be dedicated to one value only" (raw-checked 2026-11-17). principles.design says "Sometimes consistency
+  conflicts with clarity" and calls a useful principle one that helps resolve that (raw-checked 2026-11-17). The guide must
+  state both views. Section 3 takes the second view, which is the library's POSITION.
+- **The name collides.** NN/g uses "product design principles" and "design principles" as one term. The bundle must never
+  use the longer name, and the guide must route a reader who means product trade-offs to `product-principles`.
+- **Folklore hazard, in this family's contract terms.** Many pages repeat lists of famous principles without a source. Quote
+  a set only from its publisher's own page.
+- **Anti-patterns the guide should name (at least six, proposed).** A principle nobody would argue against. A list of ten or
+  more. A principle that names a UI component. Principles nobody cites in a decision. Two principles with no stated order
+  when they conflict. No owner, and no condition that reopens the set.
+- **Example reuse.** Grep the template for the example's principle names, product name and people before review, per the
+  templates-agent memory.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #359 closes, relabelled `status:built`.
+- Catalog entry 213 is added in state `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) moves the type from queued to built, and its counts move with it.
+- The `standing-standards` contract's Members line gains the build date.
+- `product-strategy`'s one-pager guidance may point at `product-principles`, not here. That is the sibling's landing.
+
+#### The build plan
+
+**Preconditions, each of which must hold before the build starts:**
+
+1. The maintainer has read ADR 0089 and its contract diff. *(Done 2026-11-14: accepted at sweep 8's batched read.)*
+2. The maintainer has answered the choices below.
+3. Issue #359 carries `status:queued`.
+4. The maintainer has asked for the build in their own words.
+
+**Build order:** first of the pair, before `product-principles`, as the backlog records. The second build then writes its
+guide against this one.
+
+**The research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Where product-specific design principles come from, as distinct from general principles of good design |
+| `structure` | How published sets shape each principle (statement, question, example, what it rules out), and whether any source publishes a template |
+| `practice` | How teams apply a set in critique and review, and how often a set changes, from named sources only. This tests the `foundation` call |
+| `debates` | Conflict between principles; principles against heuristics; whether a published set is a poster or a working tool |
+| `relationships` | Product principles, the design system, the product vision, the design brief and the definition of done |
+| `gap` | The standing gap question, per the runbook |
+
+**Pages the research cannot read.** The terms rule was lifted on 2026-11-14, so any publicly reachable page may be read. A
+page behind a login, a paywall or a bot block still stops the read, and it goes on the maintainer's hand-read list (see
+`bundle-pipeline.md`, "The terms rule"). Reading a page does not license copying it. The template must describe published
+structures in the library's own words.
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative | Status |
+|---|---|---|---|---|
+| D1 | Family and classification | `standing-standards`, `foundation` (ADR 0089) | none | Ruled 2026-11-14 ("d3 a") |
+| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Open |
+| D3 | The example | **A:** Acme Analytics, paired with `product-principles` | B: a fresh scenario | Open |
+| D4 | Aliases | **A:** "UX design principles" and "experience principles"; avoid "product design principles" | B: no aliases | Open |
+| D5 | The build go | **A:** build first of the pair, after D2 to D4 | B: hold; C: build `product-principles` first | Open |
+
+### standing-standards (tenth member): product principles
+
+**`product-principles`** - `standing-standards`, **`classification: foundation`** (ruled), size **`[lean]`** (single size,
+recommended), methodology **`generic`** (recommended), catalog **entry 214** (new, recommended), Tier 2. Issue #360
+(bundle: product-principles), priority P2. The family decision is
+[ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md) (product principles joins
+standing-standards as a foundation), **accepted 2026-11-14**. The maintainer ruled that the type stands on its own ("d2 a"),
+asked for a family recommendation, and accepted it ("D4 ok"). The family and the classification are settled. The choices at
+this section's end are open.
+
+#### The recommendation, and how sure it is
+
+**Build product principles as the tenth `standing-standards` member, at `classification: foundation`, in one size.**
+Confidence: medium on admission, medium on the section design, low on the example.
+
+Product principles are the short set of beliefs that a product team uses to resolve product trade-offs. Marty Cagan writes
+that they "complement the product vision and product strategy by stating the values and beliefs that are intended to inform
+many of the many product decisions that will need to be made" (SVPG, raw-checked 2026-11-17).
+
+**What holds the confidence at medium.** One sweep critic judged the type already covered by `product-strategy`. The
+maintainer ruled otherwise, so admission is settled, but the boundary with that bundle needs care. The richest source for
+the section structure is a vendor's AI prompt, not a published template.
+
+#### Demand: a backlog row and the maintainer's choice
+
+- No catalog row carries the type today. Entry 214 would be new, and the landing PR adds it.
+- Backlog section 9.1 listed the product principles document with one source, a Productboard AI prompt.
+- [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) (product discovery plan declined) had mapped Cagan's
+  "Product Principles" component to `product-strategy`.
+- On 2026-11-14 the maintainer ruled the type its own and opened issue #360.
+
+#### Admission: cleared on Cagan's books and GitLab's handbook
+
+Every quotation in this section passed a raw-text check in sweep 8, unless it is marked as raw-checked on 2026-11-17.
+Cagan's book quotations were checked against the maintainer's own copies, held at `_local/research/2026-11-05_cagan-books/`.
+
+- **Check 1, the written form.** It passes, at medium confidence. Cagan gives the principles a chapter in *Inspired* (2nd
+  edition, chapter 27). It opens: "I always like to complement the product vision and product strategy with a set of product
+  principles." *Empowered* (chapter 39) says "Product principles complement the product vision". GitLab's handbook keeps a
+  [standalone page](https://handbook.gitlab.com/handbook/product/product-principles/), which says "These are core principles
+  we believe world class product organizations exhibit." Cagan's 2005
+  [PRD guide](https://www.svpg.com/wp-content/uploads/2024/07/How-To-Write-a-Good-PRD.pdf) has a step titled "Step 4: Define
+  your Product Principles". Neither book publishes a template, which is why the confidence stays at medium.
+- **Check 2, phase fit.** Not applicable: the type takes a `classification`.
+- **Check 3, the written form's scope.** A short prose list.
+- **Check 4, no built bundle does its job.** Only `product-strategy_template-one-pager-full.md` (line 157) carries a
+  principles section. The default kernel format has none. The maintainer ruled that one section in one non-default format
+  does not do the job.
+- **Check 5, a software audience.** GitLab's product organisation, [Monzo](https://monzo.com/internal-product) and SVPG.
+
+#### Classification: `foundation`, as ruled
+
+**A trade-off is judged against the principles, and nobody executes them under time pressure.** That is `foundation`.
+Cagan: "Product principles are not a list of features, and they are not tied to any one product release." The shipped
+one-pager's own guidance says principles "let people decide without asking".
+
+**The revision evidence names conditions, not a calendar.** Productboard's prompt says "These principles should be
+revisited when" three things happen: "The company strategy changes significantly", "We've consistently violated one without
+deciding to change it", and "A new principle would have resolved 3+ debates in the last quarter" (raw-checked 2026-11-17).
+Those are review conditions, which is the shape section 4 asks for. They raise no cadence tension.
+
+#### The family: `standing-standards`, with no further amendment
+
+**The widened sentence describes the type.** ADR 0089's clause reads "what every decision about its product must honour",
+which fits product principles almost word for word. **The falsifier holds**: Monzo says its principles "empower everyone to
+make decisions autonomously", which places their use at the moment of a decision.
+
+**Why not `strategy-docs`.** Cagan ties the principles to the vision and the strategy, which pulls toward that family. But its
+list of questions is closed, and admitting the principles there would have been a second widening in the same change as ADR
+0091. The family follows how a document is used, not what it sits beside.
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `design-principles` (ADR 0089, its sibling) | Design principles frame experience decisions. Product principles resolve product trade-offs: what to build, for whom, and what to refuse. Each guide states the line in its first paragraph |
+| `product-strategy` | The one-pager full variant summarises the principles inside a strategy (`product-strategy_template-one-pager-full.md:157`). The strategy's guiding policy is chosen for a period, and Cagan says principles are "not tied to any one product release". At landing, the one-pager's guidance points here for the full set |
+| `product-vision` | It says where the product is going. The principles say how the team will choose on the way. Cagan treats the two as complements |
+| `prd` | Cagan's 2005 PRD step says "These principles will be specific to your domain and your particular project." Principles written for one project belong in that PRD. This bundle is the standing set |
+| `positioning-statement` | It states how the product stands against a named alternative. A principle may rule out chasing that alternative's features, but it names no rival |
+| `definition-of-done` | It judges a finished increment. The principles judge a product choice before the work starts |
+| `trade-study` | It compares options for one decision and records the choice. A principle is the standing rule such a study may cite |
+
+#### Sizes: `[lean]` only, recommended
+
+**One size, at medium confidence.** Productboard's prompt structures five principles. GitLab's page groups more, but each
+group is a short list. No source read publishes a long and a short variant.
+
+#### Section design (proposed, for the build's research to test)
+
+| # | Section | What it holds | Source |
+|---|---|---|---|
+| 1 | Purpose and Scope | The product the principles cover, and how they relate to its vision and strategy | Cagan, *Inspired*: "I always like to complement the product vision and product strategy with a set of product principles." |
+| 2 | The Principles | Three to five principles. Each has a name, a statement, what it means in practice, what it rules out, and the trade-off it accepts | Productboard's prompt asks for each principle's practice, its exclusions and its "TENSION" (raw-checked 2026-11-17). Its structure is described here in the library's own words, because the prompt carries "Copyright © 2026 Productboard, Inc. All rights reserved". GitLab's handbook states principles in an X-over-Y form: "We value quality over velocity" |
+| 3 | When Principles Conflict | The order or the rule that decides between two principles | SVPG: the principles "help to illuminate the values we prioritize when we make these trade-offs" (raw-checked 2026-11-17). Productboard's prompt has a section for the same job |
+| 4 | Using Them in Decisions | Where the principles are applied, such as prioritisation, saying no and onboarding | GitLab's page has a section titled "How we follow our Principles". Monzo: "evaluate new ideas and solutions by clearly putting them in perspective" |
+| 5 | Ownership | The named owner, and who may change a principle | The library's POSITION. Cagan's coaching page says "The product manager needs to understand these principles and the reasoning behind each one" (raw-checked 2026-11-17), which places understanding, not authorship |
+| 6 | Review Trigger | **Contract-mandated** (section 4). A table of conditions, owners and actions | Productboard's three revisit conditions, quoted above, attributed as a vendor's AI prompt |
+
+**What stays out.** Features and release plans belong in the roadmap: Cagan says the principles are "not a list of
+features". Strategy choices for a period belong in `product-strategy`. Experience rules belong in `design-principles`.
+
+**How the contract's structural obligations are met.** As for `design-principles` above: seven files with one template
+variant, exempt from nesting, Approach A guidance in all six sections, one Anatomy subsection per section, at least six
+anti-patterns, and section 6 meeting section 4's review trigger with a named owner.
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `product-principles` |
+| `title` | Product Principles |
+| `family` | `standing-standards` |
+| `classification` | `foundation` (ruled, ADR 0090) |
+| `sizes_available`, `default_size` | `[lean]`, `lean` (recommended) |
+| `methodology` | `generic`; Cagan's framing is SVPG's, but no source ties the type to one method |
+| `aliases` | none recommended. SVPG's examples page names "The Product Manifesto", but no read source shows it is the same document |
+| `pairs_with` | `[]`. `tools/known-skills.txt` holds no principles skill (checked 2026-11-17) |
+| `catalog_ref` | entry 214 (new) |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The row is new.** Add entry 214 to both catalog files, then regenerate the atlas.
+- **Row 2's key sections.** ADR 0090's correction to catalog row 2 ("principles", true of the one-pager only) is already
+  made. Check that it still reads correctly once this bundle exists.
+- **The relationships field.** Name `design-principles`, `product-strategy`, `product-vision` and `prd`.
+
+#### The example: Acme Analytics' product principles, recommended
+
+**Recommended: the product principles for Acme Analytics, owned by Dana Okoro, VP Product.** Confidence: low. Cagan ties the
+principles to the vision and the strategy, and Acme has both as shipped examples. Dana Okoro owns both of them
+(`positioning-statement_example.md:17-18`).
+
+**Facts the example must carry, with no contradiction.**
+
+- Its principles are consistent with the FY26 strategy's guiding policy and with what that strategy says it will not do
+  (`product-strategy_example.md:59-104`). They must not restate those choices, because the principles outlive FY26.
+- It contradicts no sibling. It must not say the strategy has changed.
+- At least one principle rules something out that a stakeholder has asked for.
+- A Review Trigger row names the strategy changing, so the link to `product-strategy` is visible.
+- It reads as a different domain from the `design-principles` example, if D3 places that one at Acme too.
+
+**The alternative.** A fresh scenario. It loses the complement to Acme's vision and strategy, which is the type's stated job.
+
+**The stop rule.** If the filled principles read as values nobody would argue against, the build stops. Productboard's prompt
+names the test: if a principle has no opposite that reasonable people might choose, "it's not a principle" (raw-checked
+2026-11-17).
+
+#### Risks for the build and the review
+
+- **The richest structure source is an AI prompt.** Productboard's page is a prompt for its own product, and it reserves its
+  rights. Record each structural claim as a vendor's prompt, and copy none of its wording into a template.
+- **The overlap with `product-strategy` must be drawn, not assumed.** The one-pager's section and this bundle answer the same
+  question at two sizes. The guide's When NOT to use section must send a team that needs only two or three rules inside its
+  strategy to the one-pager.
+- **Misattribution is a named hazard here.** Many pages quote Cagan on principles. Quote him only from his books or SVPG's
+  own pages.
+- **Anti-patterns the guide should name (at least six, proposed).** A principle nobody would argue against. A principle that is
+  a feature. A principle tied to one release. No stated order when two conflict. Principles nobody cites when saying no. No
+  owner, and no condition that reopens the set.
+- **Example reuse.** The `product-strategy` one-pager's GOOD text uses a "Propose, never impose" principle. The example must not
+  reuse it, and the template must not reuse the example's principles.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #360 closes, relabelled `status:built`.
+- Catalog entry 214 is added in state `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) moves the type to built.
+- `product-strategy_template-one-pager-full.md`'s Product Principles guidance gains a pointer to this bundle, as ADR 0090
+  records.
+- [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) gains a dated note that its mapping now has a dedicated
+  bundle, as ADR 0090 records.
+
+#### The build plan
+
+**Preconditions:**
+
+1. The maintainer has read ADR 0090. *(Done 2026-11-14.)*
+2. The maintainer has answered the choices below.
+3. Issue #360 carries `status:queued`.
+4. The maintainer has asked for the build in their own words.
+
+**Build order:** second of the pair, after `design-principles`, so that its guide is written against the first one.
+
+**The research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Cagan's chapters in *Inspired* and *Empowered*, and his 2005 PRD guide |
+| `structure` | How published sets state a principle, and whether any source besides the Productboard prompt shows a structure |
+| `practice` | How teams use the principles to say no, and how often a set changes, from named sources only |
+| `debates` | Principles against strategy; standing principles against project principles; whether a set is a team asset or a leader's |
+| `relationships` | Design principles, the product strategy, the vision, the PRD and the trade study |
+| `gap` | The standing gap question, per the runbook |
+
+**Maintainer-supplied sources.** Cagan's *Inspired* (2nd edition, 2017) and *Empowered* (2020), the maintainer's own copies.
+They stay on the maintainer's machine. Quotations are checked against the local text, and nothing from them is committed
+except short attributed quotations.
+
+**Pages the research cannot read.** As for `design-principles` above.
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative | Status |
+|---|---|---|---|---|
+| D1 | A type of its own, and its family | `standing-standards`, `foundation` (ADR 0090) | none | Ruled 2026-11-14 ("d2 a", "D4 ok") |
+| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]` | Open |
+| D3 | The example | **A:** Acme Analytics, owned by Dana Okoro | B: a fresh scenario | Open |
+| D4 | The `product-strategy` pointer | **A:** the one-pager's guidance points here at landing | B: no pointer | Open |
+| D5 | The build go | **A:** build second, after `design-principles` | B: hold | Open |
+
+### strategy-docs (eighth member, by amendment): the competitive analysis
+
+**`competitive-analysis`** - `strategy-docs`, **`classification: utility`** (ruled), sizes **`[lean, full]`** (recommended),
+methodology **`generic`** (recommended), catalog **entry 11**, Tier 2. Issue #361 (bundle: competitive-analysis), priority
+P2. The family decision is
+[ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) (competitive analysis joins
+strategy-docs as an eighth member), **accepted 2026-11-14**. Its chain place, immediately before the positioning statement,
+was confirmed by the maintainer on 2026-11-17. The choices at this section's end are open.
+
+#### The recommendation, and how sure it is
+
+**Build the competitive analysis as the eighth `strategy-docs` member, at `classification: utility`, in two sizes.**
+Confidence: medium-high on admission, medium on the sizes, medium-low on the example.
+
+The analysis says who else serves the customers the strategy chose. It compares them on what those customers value, and it
+says what that means for the product's direction. Aha! frames the questions as "How do our products and services compare to
+the alternatives? And how can we better differentiate what we offer?" (raw-checked 2026-11-17). It is kept current, not
+written once.
+
+**What holds the confidence at medium on the sizes.** Most sources that describe a structure are vendors, and Aha! ships ten
+templates under the name. One document is templated here, and the full size's extra sections rest on SVPG, GitLab and a vendor
+prompt.
+
+#### Demand: a catalog row, three rankings and the maintainer's choice
+
+- Catalog entry 11 has carried the type since the catalog was built.
+- The 2026-10-04 ranking, the 2026-10-20 Define re-score and the 2026-10-23 Standard run all reached it.
+- `positioning-statement_guide.md:90` names "the competitive analysis such language would be built on" as upstream work, and
+  no bundle provides it.
+- On 2026-11-14 the maintainer admitted the type at admission sweep 8 and opened issue #361.
+
+#### Admission: cleared on Aha!, SVPG, GitLab and HubSpot
+
+All 65 of sweep 8's quotations for this candidate passed a raw-text check. Quotations marked raw-checked on 2026-11-17 were
+read in the main loop while this spec was written.
+
+- **Check 1, the written form.** It passes, at high confidence. [Aha!](https://www.aha.io/roadmapping/guide/templates/create/competitive-analysis)
+  ships a template that records competitors' "missions, pricing, top features, strengths, weaknesses, and differentiators"
+  (raw-checked 2026-11-17). Its [competitor analysis guide](https://www.aha.io/roadmapping/guide/templates/competitor-analysis)
+  names a "Competitor scorecard". [SVPG](https://www.svpg.com/coaching-tools-the-plan/) asks a
+  product manager to "evaluate the top 3-5 players in the space, and to write up a narrative comparing and contrasting".
+  [GitLab's handbook](https://handbook.gitlab.com/handbook/product/ux/category-maturity/competitor-comparison/) runs a
+  competitor comparison, and [HubSpot](https://blog.hubspot.com/marketing/competitive-analysis-kit) ships a kit.
+- **Check 2, phase fit.** Not applicable: the type left `define` in the 2026-10-20 re-score and takes a `classification`.
+- **Check 3, the written form's scope.** A table of competitors by criteria, the shape `trade-study` and
+  `platform-device-support-matrix` already ship. A two-axis positioning map stays out.
+- **Check 4, no built bundle does its job.** No shipped bundle holds competitor profiles, a comparison table or a SWOT. Five
+  bundles carry a fragment, listed under Boundaries.
+- **Check 5, a software audience.** GitLab: "A Product Manager will lead their quad team". Aha!: the template "is for
+  product managers and product marketers".
+
+#### Classification: `utility`, as ruled, and one correction
+
+**The sources describe a maintained document.** Aha! says "Assign a point person to keep the report updated throughout the
+year." Productboard says competitor analysis "isn't a one-time project". HubSpot names "A one-and-done exercise" as what it
+is not. The contract's cut is "argued-and-durable versus maintained-and-periodic", and this type is maintained.
+
+**The intervals differ by source.** Klue says "Quarterly is a solid default." Aha!'s blog says to "revisit and refresh your
+competitive analysis biannually". Dovetail describes "A comprehensive annual review of your competition". Nearly every
+cadence source sells tooling or monitoring, as ADR 0091 records, so the build should look for a practitioner's interval.
+
+**A correction to ADR 0091 and the contract.** Both quote GitLab's "should be done at least annually" as a general cadence.
+The raw page reads "should be done at least annually if you're at Complete", followed by "Otherwise, when you intend to make
+a category shift" (raw-checked 2026-11-17). GitLab's annual interval applies to a product category at its most mature level.
+For other categories, GitLab names an event, not an interval. The `utility` call does not depend on it, and both files carry a
+dated note from this change.
+
+**The point-in-time reading stays visible.** Aha! also says "Perform a more detailed analysis to inform major strategic
+decisions." Pragmatic Institute describes a market analysis deliverable as "a moment frozen in time". The bundle reconciles
+the two readings with dated versions: each refresh is a snapshot, and the document is the series.
+
+#### The family: `strategy-docs`, by amendment (ADR 0091)
+
+**The membership sentence admits it on a reading of "tracks".** A member "sets or tracks product direction above the level
+of any single deliverable". The analysis tracks the market the direction answers to, and its last section states what that
+means for the direction. ADR 0091 records that reading.
+
+**The chain place: immediately before the positioning statement.** The analysis needs the strategy's chosen customers, so it
+follows the strategy. The positioning statement needs a compared alternative, so it follows the analysis. That place is the
+library's POSITION, and no source states the sequence. *(Confirmed by the maintainer on 2026-11-17, answering "Yes continue"
+to the question of whether to keep that place.)*
+
+**`discovery-docs` cannot take it.** Its members are "written once for a decision", and ADR 0081 rejected widening its
+"decide" to "inform".
+
+#### Boundaries with each named neighbour
+
+| Neighbour | The line |
+|---|---|
+| `positioning-statement` | It takes one named alternative for one customer. The analysis maps many alternatives, the status quo among them. Its guide names the analysis as upstream work (`positioning-statement_guide.md:90`) |
+| `product-strategy` | It chooses the segments and the problems. The analysis compares the rivals for those segments. The Acme strategy says a competitor announcement is "explicitly *not* a trigger" for itself (`product-strategy_example.md:141`). A competitor's move refreshes the analysis instead |
+| `lean-canvas` | Its Existing Alternatives sub-block lists how customers solve the problem today, in a line. The analysis profiles and compares those alternatives |
+| `business-case` | Its guide tells a new-product case to add "the competitive landscape" inside Problem and Opportunity (`business-case_guide.md:28-31`). That is a fragment, written once for one investment |
+| `product-vision` | It may name the incumbent, as Acme's does. It states no comparison |
+| `trade-study` | It compares options for one of our own decisions. The analysis compares rivals' products, and decides nothing |
+| `user-research-report` | A competitive usability study is research. NN/g: "Competitive testing is not the same as a competitive review." The analysis may cite such a study's findings |
+| Sales battlecard, catalog entry 196 (not built) | Sales-facing responses for live deals. Productboard nests a "Sales Battlecard Summary" in its brief, and Klue says an analysis can "double as top-notch sales battlecards". The bundle links to a battlecard and holds none |
+
+#### Sizes: lean and full, recommended
+
+**`[lean, full]`, default lean.** Confidence: medium. **Lean** carries the competitor set, one profile row per competitor, a
+comparison on what customers value, the implications, the evidence and the refresh trigger. **Full** adds a narrative brief
+per main rival, after SVPG's "narrative comparing and contrasting", and a scorecard rated against customers' jobs, after
+GitLab: "As a Category Maturity Scorecard is based on Jobs to be Done".
+
+#### Section design (proposed, for the build's research to test)
+
+| # | Section | Size | What it holds | Source |
+|---|---|---|---|---|
+| 1 | Purpose and Scope | lean, full | The customers covered, taken from the strategy's chosen segment, and the decisions the analysis informs | Aha!'s two questions, quoted above. The tie to the strategy's segment is the library's POSITION |
+| 2 | The Competitor Set | lean, full | Who is in and why: direct rivals, indirect rivals, and what customers do today without any product | SVPG: "evaluate the top 3-5 players in the space". Including the status quo is the library's POSITION, from the positioning statement's named alternative |
+| 3 | Competitor Profiles | lean, full | One row per competitor: what it offers, its pricing, its strengths, its weaknesses and its differentiators | Aha!'s field list, quoted under Admission. Label the column set a POSITION, because the template's own columns were not read |
+| 4 | Competitor Briefs | full only | A short narrative per main rival: the things it does that customers value, and the needs it leaves unmet | SVPG asks the product leader to find "the three key things that they think the competitor does that provides real value for their customers, and the three major areas where they think the customer's needs are not met" (raw-checked 2026-11-17) |
+| 5 | Comparison on What Customers Value | lean, full | Criteria drawn from what the chosen customers value, each rival rated against them | SVPG: "The key is to constantly drive value for your customers." (raw-checked 2026-11-17). Choosing criteria from the customer's side is the library's POSITION |
+| 6 | Jobs-Based Scorecard | full only | Each customer job, and how well each rival lets the customer complete it | GitLab's category maturity scorecard, which is based on Jobs to be Done; Aha!'s "Competitor scorecard" |
+| 7 | Implications for Our Direction | lean, full | What the comparison means for the strategy, the positioning and the roadmap | Aha!: "how can we better differentiate what we offer?" The routing to each sibling is the library's POSITION |
+| 8 | Evidence and Sources | lean, full | Where each claim came from, and its date | GitLab: the comparison "should be completely data/evidence driven". Klue: "Don't just rely on CRM data" |
+| 9 | Refresh Trigger and Versions | lean, full | The owner, the events that call for a refresh, an interval floor, and a dated row per version | Aha!'s "point person"; the intervals under Classification; the version rows are the library's POSITION, from the `utility` class |
+
+The lean size is a strict ordered subset of full, and section 9 sits last in both.
+
+**What stays out.** A battlecard, which is catalog entry 196. A positioning map, which is a two-axis chart and out of scope
+under ADR 0030. A win-loss analysis, which is unswept. A SWOT of our own company: catalog entry 11 lists "SWOT" among its key
+sections, but a SWOT assesses us, and section 7 already holds what the comparison means for us. Market sizing, which
+Pragmatic Institute places in a market requirements document that "focuses on identifying and prioritizing market problems".
+
+#### Metadata
+
+| Field | Value |
+|---|---|
+| `id`, `doc_type` | `competitive-analysis` |
+| `title` | Competitive Analysis |
+| `family` | `strategy-docs` |
+| `classification` | `utility` (ruled, ADR 0091) |
+| `sizes_available`, `default_size` | `[lean, full]`, `lean` (recommended) |
+| `methodology` | `generic`; no source ties the type to one method |
+| `aliases` (safe) | competitive landscape (from the catalog), competitor analysis (Aha!'s and Productboard's page titles) |
+| `aliases` (avoid) | "competitor matrix", because a bare matrix collides with `requirements-traceability-matrix` and the support matrix; "benchmarking report", because NN/g uses benchmarking for a UX measurement program: "Benchmarking is often a program rather than a one-time activity" |
+| `pairs_with` | `[]`. `tools/known-skills.txt` holds no competitive analysis skill (checked 2026-11-17) |
+| `catalog_ref` | entry 11 |
+
+#### Catalog corrections the landing PR should check (per decision-procedures.md section 1)
+
+- **The stage.** "market/discovery" is compound, and "market" is not a phase value. It stays as the catalog's older stage
+  word, with a dated note.
+- **The note.** "BABOK technique 10.4" cites a technique, not a published document, and it was never verified. A technique
+  cannot count under ADR 0030.
+- **The aliases.** "competitor matrix" and "benchmarking report" move to the row's notes, for the reasons in Metadata.
+- **The sizes.** "S/M/L" becomes lean and full.
+- **The state.** Entry 11 moves to `built`.
+
+#### The licence
+
+Aha!, Productboard and HubSpot state no reuse licence for their templates, and Productboard's prompt reserves its rights. The
+bundle may describe what their structures contain and quote them briefly with attribution. It copies no table, column order or
+wording. Every guidance comment must be the library's own words.
+
+#### The example: Acme Analytics' analysis for the Recurring Analyst, recommended
+
+**Recommended: Acme Analytics' competitive analysis for the Recurring Analyst segment.** Confidence: medium-low. The family's
+shared-scenario rule requires an Acme example (contract section 4).
+
+**Facts the example must carry, with no contradiction.**
+
+- **Its first version is dated 2026-01-29**, between the FY26 strategy (2026-01-28) and the positioning statement
+  (2026-01-30, `positioning-statement_example.md:7`). So the positioning statement was built on a current analysis, as the
+  contract's chain sentence requires. A later version inside FY26 shows a refresh.
+- **Its segment is the strategy's**: the Recurring Analyst, at a 50-500 person company with no data team
+  (`product-strategy_example.md:43-48`).
+- **Its competitor set matches the positioning statement's alternatives**: the spreadsheet, the shared analytics inbox and
+  the colleague's favour, and general-purpose BI tools (`positioning-statement_example.md:57-62`).
+- **It names no real vendor.** Any named rival is fictional and labelled illustrative. It must also not contradict the
+  positioning statement's finding that "no single alternative recurs often enough to name by brand" in lost deals
+  (`positioning-statement_example.md:110`).
+- **Connector count appears as a criterion on which rivals lead and customers do not stop.** The strategy says "Connector
+  count is the metric our competitors compete on; it is not where our users stop" (`product-strategy_example.md:102-103`).
+- **The strategy's non-targets stay out of the set.** Enterprise data-platform teams and the embedded-analytics OEM channel
+  are non-targets (`product-strategy_example.md:50-57`), so their vendors are named as out of scope.
+- **Its refresh triggers include the positioning statement's own revisit event**: a BI vendor shipping a modeling layer "that
+  a non-analyst can complete alone" (`positioning-statement_example.md:106-107`). The later version records a rival's
+  release that the analysis checked, and that did not meet that bar.
+
+**The alternatives.** An analysis for the enterprise segment would map rivals for a segment the strategy excludes. A fresh
+company would break the family's rule.
+
+#### Risks for the build and the review
+
+- **Vendor framing is this type's citation hazard.** Aha!, Productboard, Klue, HubSpot and Dovetail all sell tooling. Record
+  each cadence or structure claim as a vendor's.
+- **The name covers several documents.** Aha! ships ten templates under it, and HubSpot ten. The guide must say which one
+  this bundle is, and route a reader who wants a battlecard or a feature checklist elsewhere.
+- **A feature checklist is the trap.** A comparison on features the rivals chose, rather than on what customers value, is the
+  failure the strategy example's connector sentence names. The guide should name it.
+- **Anti-patterns the guide should name (at least two, proposed).** A feature checklist. A competitor set with no status quo.
+  An analysis with no dated sources. Implications that change nothing. No owner and no refresh trigger.
+- **Example reuse.** Grep the template for "Recurring Analyst", "spreadsheet", "favour" and any fictional vendor name before
+  review.
+
+#### What landing this bundle closes elsewhere
+
+- Issue #361 closes, relabelled `status:built`.
+- Catalog entry 11's `state` becomes `built`, and `check-counts.py`'s markers move.
+- [`backlog.md`](backlog.md) moves the type to built.
+- `strategy-docs`' Members line gains the build date.
+- The contract's section 4 has no sentence for this member's example, unlike the three earlier widenings. Adding one is a
+  contract edit, so it stops for the maintainer's read (choice D4).
+- `positioning-statement_example.md:16` says the type "sits third in the `strategy-docs` chain". The Lean Canvas and the
+  analysis now sit before it, so that line gains a dated note.
+- `positioning-statement_guide.md:90` may link to the bundle.
+
+#### The build plan
+
+**Preconditions:**
+
+1. The maintainer has read ADR 0091 and its contract diff. *(Done 2026-11-14, and the chain place confirmed 2026-11-17.)*
+2. The maintainer has answered the choices below.
+3. Issue #361 carries `status:queued`.
+4. The maintainer has asked for the build in their own words.
+
+**Build order:** independent of the principles pair.
+
+**The six research dimensions.**
+
+| Key | What it settles |
+|---|---|
+| `origins` | Where competitor analysis comes from in strategy writing, cited for existence only, and whether BABOK's technique is a document |
+| `structure` | Column sets and section sets across readable templates, and which document the name most often means |
+| `practice` | How product teams keep an analysis current, and how often, from named practitioners as well as vendors |
+| `debates` | Living document against dated snapshot; features against customer value; whether to study competitors at all, which SVPG raises |
+| `relationships` | Positioning statement, product strategy, Lean Canvas, battlecard, win-loss analysis and competitive usability testing |
+| `gap` | The standing gap question, per the runbook |
+
+**Pages the research cannot read.** As for `design-principles` above.
+
+#### The maintainer's choices
+
+| # | Choice | Recommended | Alternative | Status |
+|---|---|---|---|---|
+| D1 | Family, classification and chain place | `strategy-docs`, `utility`, immediately before the positioning statement (ADR 0091) | none | Ruled 2026-11-14 ("d5 ok"); chain place confirmed 2026-11-17 ("Yes continue") |
+| D2 | Sizes | **A:** `[lean, full]` | B: `[lean]`, with the briefs and the scorecard as optional parts | Open |
+| D3 | The example | **A:** Acme, the Recurring Analyst segment, first version dated 2026-01-29 | B: Acme, with every rival a category and no fictional name | Open |
+| D4 | The contract's section 4 example sentence | **A:** add it at the build, after the maintainer reads it | B: leave section 4 as it is | Open |
+| D5 | SWOT | **A:** out, as above | B: a full-only SWOT section | Open |
+| D6 | The build go | **A:** build after D2 to D5 | B: hold | Open |

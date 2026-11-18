@@ -3,7 +3,7 @@
 Status: adopted 2026-07-25 ([ADR 0027](../decisions/0027-adopt-strategy-docs-family-contract.md)); amended 2026-10-12 ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md)); amended 2026-10-19 ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md)); amended 2026-10-30 ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md)); amended 2026-11-14 ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md))
 Applies to: every bundle declaring `family: strategy-docs` in its meta
 Members at adoption: none built yet (product-vision, product-strategy, product-roadmap, okrs are the planned members)
-Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-30), competitive-analysis ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted after the maintainer's read, assigned 2026-11-14)
+Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-30), competitive-analysis ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted after the maintainer's read, assigned 2026-11-14; specced 2026-11-17 in [`tier2-specs.md`](../tier2-specs.md))
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
 Version: 0.5.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
@@ -100,8 +100,9 @@ This one cannot, and forcing it to would misdescribe at least two of its members
   follow test results rather than a calendar, and no originator page read states an interval. `foundation`
   is the considered alternative. **`competitive-analysis` is `utility` too** (added 2026-11-14,
   [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)). Aha! says "Assign a point person to keep the report updated throughout the year", and the GitLab
-  handbook says the comparison "should be done at least annually". It changes when competitors move, not when the
-  strategy does. `foundation`, read as a dated snapshot refreshed on triggers, is the considered alternative.
+  handbook says the comparison "should be done at least annually". *(2026-11-17, a dated correction under procedure
+  11: GitLab's sentence continues "if you're at Complete", its most mature category level, so its interval is not
+  general. Aha!'s sentence carries the call.)* It changes when competitors move, not when the strategy does. `foundation`, read as a dated snapshot refreshed on triggers, is the considered alternative.
 
 The distinction that does the work is **argued-and-durable versus maintained-and-periodic**, and it is the
 same distinction `governance-docs` used to claim `utility` for a risk register. All eight members are standing
@@ -200,7 +201,9 @@ reviewed against.
 ## Change note
 
 **0.5.0, 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md): an eighth member, and the fourth widening of this family's list of questions.**
-*(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8.)* `competitive-analysis`
+*(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8. The place before the
+positioning statement, which the maintainer had not read, was confirmed by the maintainer on 2026-11-17: "Yes
+continue".)* `competitive-analysis`
 joins at `classification: utility`, placed immediately before the positioning statement. That place is argued, not
 sourced: the G1 draft put it after the positioning statement, and this change moved it before, because the
 positioning guide names the analysis as upstream work. The membership sentence admits the type on a reading of

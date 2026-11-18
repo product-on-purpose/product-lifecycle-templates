@@ -22,12 +22,18 @@ consulted: [claude]
   be built on" as upstream work.
 - **Why `utility`.** The contract's cut is "argued-and-durable versus maintained-and-periodic". The sources describe a
   maintained document: Aha! says "Assign a point person to keep the report updated throughout the year", and the
-  GitLab handbook says the comparison "should be done at least annually".
+  GitLab handbook says the comparison "should be done at least annually". *(Corrected 2026-11-17: GitLab's sentence
+  continues "if you're at Complete", and for other categories GitLab names an event, "when you intend to make a
+  category shift". Its annual interval applies to a category at its most mature level. Aha!'s sentence carries the
+  `utility` call without it.)*
 - **Status:** accepted 2026-11-14. The maintainer read sweep 8's batched decisions, with the new bullet quoted
   verbatim, and chose this option. Asked whether the type belonged in strategy, foundation or opportunity, the
   maintainer read the recommendation and answered "d5 ok". **One change from what was read:** the G1 draft placed
   the bullet after the positioning statement. This record places it before, for the reason above. The maintainer
-  reads the contract diff in this PR before it merges.
+  reads the contract diff in this PR before it merges. *(2026-11-17: PR #362 merged on the maintainer's "Merge and
+  fix the rules", which was recorded as a delegation for this place. The maintainer confirmed it on 2026-11-17: asked
+  whether to keep competitive analysis immediately before the positioning statement, the maintainer answered "Yes
+  continue". The spec is in [`tier2-specs.md`](../tier2-specs.md#strategy-docs-eighth-member-by-amendment-the-competitive-analysis).)*
 
 ## Context and Problem Statement
 
