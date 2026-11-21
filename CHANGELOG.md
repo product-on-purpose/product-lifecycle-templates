@@ -14,6 +14,12 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **Design principles**, the 57th bundle and the ninth `standing-standards` member, a `foundation` by
+  [ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md). It is the
+  short standing list of value statements a team agrees once and uses to frame and settle decisions about the
+  experience of its product, each with what it rules out, a question a reviewer asks, what it rests on and a
+  decision it settled. It ships one size, `lean`, with a worked example. The catalog gains entry 213 for the type.
+  Closes #359.
 - **Three document types are admitted, and one is declined, after admission sweep 8.** Design principles
   ([ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md)) and
   product principles ([ADR 0090](docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md))
@@ -22,7 +28,7 @@ people who want every change, release notes are for people who want to know what
   ([ADR 0091](docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)) joins
   `strategy-docs` as a `utility` member, by an eighth question. The diary study plan is declined as a separate type
   ([ADR 0092](docs/internal/decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md)); `user-research-plan`
-  will gain a conditional diary block instead. None of the three admitted bundles is built yet.
+  will gain a conditional diary block instead. Design principles was built on 2026-11-20, as the entry above records; the other two admitted bundles are not built yet.
 
 ### Changed
 

@@ -87,6 +87,8 @@ once for an organization or program, that is [`test-strategy`](../../templates/t
 `standing-standards`. If what you need is the standing list of which browsers and devices the product
 supports, at what grade, and which ones the team tests on, that is
 [`platform-device-support-matrix`](../../templates/platform-device-support-matrix/), also in
+`standing-standards`. If what you need is the short standing list of principles a team uses to frame and settle
+decisions about its product's experience, that is [`design-principles`](../../templates/design-principles/), also in
 `standing-standards`. See [the family map](#the-family-map).
 
 ### I am planning a study of the people a product serves
@@ -169,14 +171,14 @@ included here for readers who want the complete picture rather than a situationa
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/), [`change-log`](../../templates/change-log/), [`tracking-plan`](../../templates/tracking-plan/), [`data-dictionary`](../../templates/data-dictionary/), [`requirements-traceability-matrix`](../../templates/requirements-traceability-matrix/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
 | `discovery-docs` | Runs before the decision to build, to settle which problem is worth solving, which concept goes to design, whether an investment is worth making, and who it is for | [`business-case`](../../templates/business-case/), [`user-persona`](../../templates/user-persona/), [`project-brief`](../../templates/project-brief/), [`problem-statement`](../../templates/problem-statement/), [`design-brief`](../../templates/design-brief/), [`lean-ux-canvas`](../../templates/lean-ux-canvas/) |
-| `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/), [`definition-of-ready`](../../templates/definition-of-ready/), [`production-readiness-review`](../../templates/production-readiness-review/), [`business-continuity-plan`](../../templates/business-continuity-plan/), [`test-strategy`](../../templates/test-strategy/), [`platform-device-support-matrix`](../../templates/platform-device-support-matrix/) |
+| `standing-standards` | Agreed once, applied every time, without being rewritten on a calendar | [`definition-of-done`](../../templates/definition-of-done/), [`runbook`](../../templates/runbook/), [`launch-coordination-checklist`](../../templates/launch-coordination-checklist/), [`definition-of-ready`](../../templates/definition-of-ready/), [`production-readiness-review`](../../templates/production-readiness-review/), [`business-continuity-plan`](../../templates/business-continuity-plan/), [`test-strategy`](../../templates/test-strategy/), [`platform-device-support-matrix`](../../templates/platform-device-support-matrix/), [`design-principles`](../../templates/design-principles/) |
 | `process-docs` | Looks back at what happened and commits to what changes next, on a cadence or after one event | [`sprint-retrospective-notes`](../../templates/sprint-retrospective-notes/), [`incident-postmortem`](../../templates/incident-postmortem/), [`project-milestone-retrospective`](../../templates/project-milestone-retrospective/) |
 | `communication-docs` | Reports status to someone else, sourcing every number from elsewhere rather than inventing one | [`status-report`](../../templates/status-report/) |
 | `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/), [`experiment-readout`](../../templates/experiment-readout/) |
 | `research-docs` | Plans one study of the people a product serves, and later reports it | [`user-research-plan`](../../templates/user-research-plan/), [`user-research-report`](../../templates/user-research-report/) |
 
-<!-- counts: bundles=56 -->
-That is 56 bundles across every family the library currently ships. All eleven families are
+<!-- counts: bundles=57 -->
+That is 57 bundles across every family the library currently ships. All eleven families are
 complete. `experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
 `experiment-readout`, and `research-docs` now has both of its two, `user-research-plan` and
 `user-research-report`. No bundle in the list above is a partially built stub. See
