@@ -19,7 +19,9 @@ people who want every change, release notes are for people who want to know what
   short standing list of value statements a team agrees once and uses to frame and settle decisions about the
   experience of its product, each with what it rules out, a question a reviewer asks, what it rests on and a
   decision it settled. It ships one size, `lean`, with a worked example. The catalog gains entry 213 for the type.
-  Closes #359.
+  Closes #359. Its build cost $11.60 at API list rates, for 17 agents, all on Sonnet 5.5; the report is in
+  [`bundle-builds/`](bundle-builds/INDEX.md). That figure includes a landing-sweep agent ($0.80) that the report
+  could not tell apart from the build, so the build alone is $10.80.
 - **Three document types are admitted, and one is declined, after admission sweep 8.** Design principles
   ([ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md)) and
   product principles ([ADR 0090](docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md))

@@ -164,6 +164,9 @@ lean-canvas 11,063,489, $22.96, for 16, the usual 15 on Sonnet plus an Opus head
 the Agent tool, without which it reads $20.48, its single-template drafting $9.81;
 platform-device-support-matrix 7,243,091, $11.55, for 16, the usual 15 plus one agent ($1.03) run through the
 Agent tool, all on Sonnet 5.5, without which it reads $10.52, its single-template drafting $5.27;
+design-principles 7,151,784, $11.60, for 17, the usual 15 plus a fix agent ($1.05) and a landing sweep ($0.80)
+run through the Agent tool, all on Sonnet 5.5; the sweep's prompt lacked the words the report keys on, so it
+sits inside the totals, and without both it reads $9.75, its single-template drafting $4.82;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.
