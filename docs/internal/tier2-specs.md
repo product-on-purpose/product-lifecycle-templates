@@ -60,9 +60,9 @@ design task" rather than "a spec-driven execution".
 | `product-opportunity-assessment` | `product-opportunity-assessment` (entry 208) | none; `discovery-docs` would admit it | **Researched 2026-10-29** in admission sweep 7, and read side by side 2026-11-04; no spec written | **No, for now.** Declined by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md): the lean `business-case` already does its job, and its guide now names the questions a new-product case should add |
 | `product-discovery-plan` | none | none; `research-docs` rejects it and `discovery-docs` fits only with strain | **Researched 2026-10-29** in admission sweep 7, then read 2026-11-05 (Cagan's later books) and 2026-11-07 (Torres's *Continuous Discovery Habits*); no spec written | **No, for now.** Declined by [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md): its parts already live in `project-brief`, `user-research-plan` and `product-strategy`, and its one source calls itself a list of tools, not a template. The `project-brief` guide gains a paragraph |
 | `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Built 2026-11-12**, issue #353, single size. Family and classification (`foundation`) set by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted 2026-11-09 |
-| `design-principles` | none; entry 213 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-ninth-member-design-principles) in admission sweep 8, and context re-read 2026-11-17 | **No, not yet.** Issue #359. Family and classification (`foundation`) by [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14, which widened the membership sentence. Its sizes, example, aliases and build go wait on the maintainer |
-| `product-principles` | none; entry 214 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-tenth-member-product-principles), with Cagan's chapters read in the maintainer's copies | **No, not yet.** Issue #360, to be built after `design-principles`. A type of its own and `foundation` by [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14. Its sizes, example, strategy pointer and build go wait on the maintainer |
-| `competitive-analysis` | `competitive-analysis` (entry 11) | `strategy-docs` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#strategy-docs-eighth-member-by-amendment-the-competitive-analysis), all 65 passing | **No, not yet.** Issue #361. Family, `utility` and the chain place by [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted 2026-11-14; the place immediately before the positioning statement was confirmed 2026-11-17. Its sizes, example, section 4 sentence, SWOT call and build go wait on the maintainer |
+| `design-principles` | none; entry 213 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-ninth-member-design-principles) in admission sweep 8, and context re-read 2026-11-17 | **No, not yet.** Issue #359. Family and classification (`foundation`) by [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14, which widened the membership sentence. Its sizes, example, aliases and build go were ruled 2026-11-20, all as recommended ("ok to all"). It waits for a build request |
+| `product-principles` | none; entry 214 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-tenth-member-product-principles), with Cagan's chapters read in the maintainer's copies | **No, not yet.** Issue #360, to be built after `design-principles`. A type of its own and `foundation` by [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14. Its sizes, example, strategy pointer and build go were ruled 2026-11-20, all as recommended. It waits for a build request, after `design-principles` |
+| `competitive-analysis` | `competitive-analysis` (entry 11) | `strategy-docs` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#strategy-docs-eighth-member-by-amendment-the-competitive-analysis), all 65 passing | **No, not yet.** Issue #361. Family, `utility` and the chain place by [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted 2026-11-14; the place immediately before the positioning statement was confirmed 2026-11-17. Its sizes, example, section 4 sentence, SWOT call and build go were ruled 2026-11-20, all as recommended. It waits for a build request |
 
 **2026-10-14: admission sweep 6, four candidates, and the maintainer's answers the next day.** Two research workflow runs on 2026-10-14 tested `positioning-statement` (#256), `metric-tree` (#257), `messaging-framework` (#258) and `analytics-requirements-measurement-plan` (#262) against ADR 0030's admission test and against the family contracts. Of 243 returned quotations, 236 passed a re-check against raw page text. **None was ready to spec, and the maintainer ruled on all four on 2026-10-15.** The library takes on positioning only, as product direction. `positioning-statement` is specced next, in `strategy-docs` by an amendment that stops for the maintainer's read, in a single size. *(2026-10-19: it is specced [below](#strategy-docs-sixth-member-by-amendment-the-positioning-statement-as-product-direction), by [ADR 0076](decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) (positioning-statement joins strategy-docs as a sixth member), accepted the same day on the maintainer's delegation, which places it third in the chain between the strategy and the North Star metric.)* A follow-up the same day found one practitioner source for its boundary with `product-vision`, and found sources split on whether product management or product marketing owns it, so the spec must state its product-direction placement as this library's own position. `messaging-framework` is held, with its placement flagged under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain). The same follow-up found that neither candidate family admits it as written: one source prescribes a quarterly review, and every source the follow-up read that names an owner names product marketing or brand. `metric-tree` is parked until someone opens AIHR's KPI tree template, which sits behind a download form. The per-feature `analytics-requirements-measurement-plan` is declined by [ADR 0074](decisions/0074-analytics-requirements-measurement-plan-per-feature-is-declined.md) (the per-feature measurement plan does not ship), accepted the same day on the maintainer's delegation. Its business-scope reading clears admission and stays unswept.
 
@@ -8478,7 +8478,7 @@ recommended), methodology **`generic`** (recommended), catalog **entry 213** (ne
 [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md) (design principles joins
 standing-standards as a foundation), **accepted 2026-11-14 after the maintainer's read** of sweep 8's batched decisions.
 It widened the contract's membership sentence. The family and the classification are settled. The choices at this
-section's end are open, and nothing here says the build is approved.
+section's end were ruled on 2026-11-20, all as recommended. Nothing here says the build is approved.
 
 #### The recommendation, and how sure it is
 
@@ -8687,7 +8687,7 @@ record for that kind of finding.
 **Preconditions, each of which must hold before the build starts:**
 
 1. The maintainer has read ADR 0089 and its contract diff. *(Done 2026-11-14: accepted at sweep 8's batched read.)*
-2. The maintainer has answered the choices below.
+2. The maintainer has answered the choices below. *(Done 2026-11-20: all as recommended, "ok to all".)*
 3. Issue #359 carries `status:queued`.
 4. The maintainer has asked for the build in their own words.
 
@@ -8715,10 +8715,10 @@ structures in the library's own words.
 | # | Choice | Recommended | Alternative | Status |
 |---|---|---|---|---|
 | D1 | Family and classification | `standing-standards`, `foundation` (ADR 0089) | none | Ruled 2026-11-14 ("d3 a") |
-| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Open |
-| D3 | The example | **A:** Acme Analytics, paired with `product-principles` | B: a fresh scenario | Open |
-| D4 | Aliases | **A:** "UX design principles" and "experience principles"; avoid "product design principles" | B: no aliases | Open |
-| D5 | The build go | **A:** build first of the pair, after D2 to D4 | B: hold; C: build `product-principles` first | Open |
+| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]`, if the build finds a source for a fuller shape | Ruled 2026-11-20, as recommended ("ok to all") |
+| D3 | The example | **A:** Acme Analytics, paired with `product-principles` | B: a fresh scenario | Ruled 2026-11-20, as recommended ("ok to all") |
+| D4 | Aliases | **A:** "UX design principles" and "experience principles"; avoid "product design principles" | B: no aliases | Ruled 2026-11-20, as recommended ("ok to all") |
+| D5 | The build go | **A:** build first of the pair, after D2 to D4 | B: hold; C: build `product-principles` first | Ruled 2026-11-20, as recommended ("ok to all") |
 
 ### standing-standards (tenth member): product principles
 
@@ -8728,7 +8728,7 @@ recommended), methodology **`generic`** (recommended), catalog **entry 214** (ne
 [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md) (product principles joins
 standing-standards as a foundation), **accepted 2026-11-14**. The maintainer ruled that the type stands on its own ("d2 a"),
 asked for a family recommendation, and accepted it ("D4 ok"). The family and the classification are settled. The choices at
-this section's end are open.
+this section's end were ruled on 2026-11-20, all as recommended.
 
 #### The recommendation, and how sure it is
 
@@ -8898,7 +8898,7 @@ names the test: if a principle has no opposite that reasonable people might choo
 **Preconditions:**
 
 1. The maintainer has read ADR 0090. *(Done 2026-11-14.)*
-2. The maintainer has answered the choices below.
+2. The maintainer has answered the choices below. *(Done 2026-11-20: all as recommended, "ok to all".)*
 3. Issue #360 carries `status:queued`.
 4. The maintainer has asked for the build in their own words.
 
@@ -8926,10 +8926,10 @@ except short attributed quotations.
 | # | Choice | Recommended | Alternative | Status |
 |---|---|---|---|---|
 | D1 | A type of its own, and its family | `standing-standards`, `foundation` (ADR 0090) | none | Ruled 2026-11-14 ("d2 a", "D4 ok") |
-| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]` | Open |
-| D3 | The example | **A:** Acme Analytics, owned by Dana Okoro | B: a fresh scenario | Open |
-| D4 | The `product-strategy` pointer | **A:** the one-pager's guidance points here at landing | B: no pointer | Open |
-| D5 | The build go | **A:** build second, after `design-principles` | B: hold | Open |
+| D2 | Sizes | **A:** `[lean]` | B: `[lean, full]` | Ruled 2026-11-20, as recommended ("ok to all") |
+| D3 | The example | **A:** Acme Analytics, owned by Dana Okoro | B: a fresh scenario | Ruled 2026-11-20, as recommended ("ok to all") |
+| D4 | The `product-strategy` pointer | **A:** the one-pager's guidance points here at landing | B: no pointer | Ruled 2026-11-20, as recommended ("ok to all") |
+| D5 | The build go | **A:** build second, after `design-principles` | B: hold | Ruled 2026-11-20, as recommended ("ok to all") |
 
 ### strategy-docs (eighth member, by amendment): the competitive analysis
 
@@ -8938,7 +8938,8 @@ methodology **`generic`** (recommended), catalog **entry 11**, Tier 2. Issue #36
 P2. The family decision is
 [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) (competitive analysis joins
 strategy-docs as an eighth member), **accepted 2026-11-14**. Its chain place, immediately before the positioning statement,
-was confirmed by the maintainer on 2026-11-17. The choices at this section's end are open.
+was confirmed by the maintainer on 2026-11-17. The choices at this section's end were ruled on 2026-11-20, all as
+recommended.
 
 #### The recommendation, and how sure it is
 
@@ -9147,7 +9148,7 @@ company would break the family's rule.
 **Preconditions:**
 
 1. The maintainer has read ADR 0091 and its contract diff. *(Done 2026-11-14, and the chain place confirmed 2026-11-17.)*
-2. The maintainer has answered the choices below.
+2. The maintainer has answered the choices below. *(Done 2026-11-20: all as recommended, "ok to all".)*
 3. Issue #361 carries `status:queued`.
 4. The maintainer has asked for the build in their own words.
 
@@ -9171,8 +9172,8 @@ company would break the family's rule.
 | # | Choice | Recommended | Alternative | Status |
 |---|---|---|---|---|
 | D1 | Family, classification and chain place | `strategy-docs`, `utility`, immediately before the positioning statement (ADR 0091) | none | Ruled 2026-11-14 ("d5 ok"); chain place confirmed 2026-11-17 ("Yes continue") |
-| D2 | Sizes | **A:** `[lean, full]` | B: `[lean]`, with the briefs and the scorecard as optional parts | Open |
-| D3 | The example | **A:** Acme, the Recurring Analyst segment, first version dated 2026-01-29 | B: Acme, with every rival a category and no fictional name | Open |
-| D4 | The contract's section 4 example sentence | **A:** add it at the build, after the maintainer reads it | B: leave section 4 as it is | Open |
-| D5 | SWOT | **A:** out, as above | B: a full-only SWOT section | Open |
-| D6 | The build go | **A:** build after D2 to D5 | B: hold | Open |
+| D2 | Sizes | **A:** `[lean, full]` | B: `[lean]`, with the briefs and the scorecard as optional parts | Ruled 2026-11-20, as recommended ("ok to all") |
+| D3 | The example | **A:** Acme, the Recurring Analyst segment, first version dated 2026-01-29 | B: Acme, with every rival a category and no fictional name | Ruled 2026-11-20, as recommended ("ok to all") |
+| D4 | The contract's section 4 example sentence | **A:** add it at the build, after the maintainer reads it | B: leave section 4 as it is | Ruled 2026-11-20, as recommended ("ok to all") |
+| D5 | SWOT | **A:** out, as above | B: a full-only SWOT section | Ruled 2026-11-20, as recommended ("ok to all") |
+| D6 | The build go | **A:** build after D2 to D5 | B: hold | Ruled 2026-11-20, as recommended ("ok to all") |
