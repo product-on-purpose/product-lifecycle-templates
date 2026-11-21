@@ -60,7 +60,7 @@ design task" rather than "a spec-driven execution".
 | `product-opportunity-assessment` | `product-opportunity-assessment` (entry 208) | none; `discovery-docs` would admit it | **Researched 2026-10-29** in admission sweep 7, and read side by side 2026-11-04; no spec written | **No, for now.** Declined by [ADR 0086](decisions/0086-product-opportunity-assessment-is-declined.md): the lean `business-case` already does its job, and its guide now names the questions a new-product case should add |
 | `product-discovery-plan` | none | none; `research-docs` rejects it and `discovery-docs` fits only with strain | **Researched 2026-10-29** in admission sweep 7, then read 2026-11-05 (Cagan's later books) and 2026-11-07 (Torres's *Continuous Discovery Habits*); no spec written | **No, for now.** Declined by [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md): its parts already live in `project-brief`, `user-research-plan` and `product-strategy`, and its one source calls itself a list of tools, not a template. The `project-brief` guide gains a paragraph |
 | `platform-device-support-matrix` | `platform-device-support-matrix` | `standing-standards` | **Written 2026-11-09**; admission sources [retrieved and raw-checked 2026-11-08](#standing-standards-eighth-member-the-platform-and-device-support-matrix) | **Built 2026-11-12**, issue #353, single size. Family and classification (`foundation`) set by [ADR 0088](decisions/0088-platform-device-support-matrix-joins-standing-standards-as-a-foundation.md), accepted 2026-11-09 |
-| `design-principles` | none; entry 213 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-ninth-member-design-principles) in admission sweep 8, and context re-read 2026-11-17 | **No, not yet.** Issue #359. Family and classification (`foundation`) by [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14, which widened the membership sentence. Its sizes, example, aliases and build go were ruled 2026-11-20, all as recommended ("ok to all"). It waits for a build request |
+| `design-principles` | entry 213, added at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-ninth-member-design-principles) in admission sweep 8, and context re-read 2026-11-17 | **Built 2026-11-20**, issue #359, single size, catalog entry 213. Family and classification (`foundation`) by [ADR 0089](decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14, which widened the membership sentence. Its sizes, example, aliases and build go were ruled 2026-11-20, all as recommended ("ok to all") |
 | `product-principles` | none; entry 214 is proposed at the build | `standing-standards` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#standing-standards-tenth-member-product-principles), with Cagan's chapters read in the maintainer's copies | **No, not yet.** Issue #360, to be built after `design-principles`. A type of its own and `foundation` by [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md), accepted 2026-11-14. Its sizes, example, strategy pointer and build go were ruled 2026-11-20, all as recommended. It waits for a build request, after `design-principles` |
 | `competitive-analysis` | `competitive-analysis` (entry 11) | `strategy-docs` | **Written 2026-11-17**; admission sources [raw-checked 2026-11-14](#strategy-docs-eighth-member-by-amendment-the-competitive-analysis), all 65 passing | **No, not yet.** Issue #361. Family, `utility` and the chain place by [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted 2026-11-14; the place immediately before the positioning statement was confirmed 2026-11-17. Its sizes, example, section 4 sentence, SWOT call and build go were ruled 2026-11-20, all as recommended. It waits for a build request |
 
@@ -1796,7 +1796,7 @@ spreadsheet. The landing PR gives the companion's sentence a dated correction to
 #### Catalog corrections the landing PR must make
 
 Per [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:224` and `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*, then regenerate the atlas:
+`docs/internal/catalog.md:231` and `atlas/catalog-data.json:3903-3926` *(2026-10-14: the `change-log-governance` entry now sits at 3921-3949, after later landings grew the file.)*, then regenerate the atlas:
 
 - **`methodology: "PMBOK/ITIL"` is contradicted.** No rawchecked source shows ITIL naming or shipping a
   "change log" as such. ITIL's own two rawcheck-passed artifacts are differently-named and narrower: a
@@ -2605,7 +2605,7 @@ business case, arriving four days later: nothing here is invented for the brief 
 **`experiment-design-doc`** (bundle id the same as the catalog id; see Bundle ids) - `experimentation-docs`,
 **phase measure**, sizes `[lean, full]` **provisional**, methodology **`growth/dual-track`** (the
 catalog's own value; descriptive only, not gated, per [the contract](contracts/experimentation-docs.md)
-section 2). Catalog id `experiment-design-doc` (catalog row 142, `docs/internal/catalog.md:209`; verbatim
+section 2). Catalog id `experiment-design-doc` (catalog row 142, `docs/internal/catalog.md:216`; verbatim
 at `atlas/catalog-data.json:3615`). Catalog name "Experiment Design doc". Catalog aliases: `A/B test plan`,
 `experiment brief`, `test design`. Catalog category: Analytics / Measurement. Catalog owner: PM / Data
 Scientist. Catalog purpose: "Define hypothesis, variants, metrics, and analysis for an experiment."
@@ -2616,7 +2616,7 @@ Catalog contents: hypothesis, variants, primary/guardrail metrics, sample size, 
 
 **`experiment-readout`** (shortened from the catalog id; see Bundle ids) - `experimentation-docs`, **phase measure**, sizes `[lean, full]` **provisional**, methodology
 **`growth`** (catalog value; descriptive only). Catalog id `experiment-readout-results-report` (catalog
-row 143, `docs/internal/catalog.md:210`; verbatim at `atlas/catalog-data.json:3641`). Catalog name
+row 143, `docs/internal/catalog.md:217`; verbatim at `atlas/catalog-data.json:3641`). Catalog name
 "Experiment Readout / Results report". Catalog aliases: `A/B test results`, `experiment analysis`.
 Catalog category: Analytics / Measurement. Catalog owner: Data Scientist / PM. Catalog purpose: "Report
 experiment outcomes and decision." Catalog contents: results, significance, learnings, decision, next
@@ -2640,7 +2640,7 @@ The only inbound links on record are three **unbuilt** catalog rows, confirmed a
 
 - `docs/internal/catalog.md:55`, row 22, Opportunity Solution Tree: "feeds Experiment Design."
 - `docs/internal/catalog.md:60`, row 27, Concept Test / Validation Brief: "overlaps Experiment Design."
-- `docs/internal/catalog.md:213`, row 146, Funnel Analysis: "feeds Experiment Design."
+- `docs/internal/catalog.md:220`, row 146, Funnel Analysis: "feeds Experiment Design."
 
 None of `opportunity-solution-tree`, `concept-test-validation-brief`, or `funnel-analysis` is in
 `manifest.json`; all three are themselves `candidate` rows, not shipped bundles. **This matches
@@ -2817,7 +2817,7 @@ not a claim that every team's practice should split in two."*
 | **Key Results: Supporting Metrics** | yes | Eppo's "Key Results: Supporting Metrics", the guardrail/secondary tier. Same table shape |
 | **Validity Checks** | yes | **POSITION, UNSOURCED as a named section.** No template read in this pass labels a validity-checks block; the content (sample ratio mismatch, guardrail breach, novelty effect) is sourced only as scattered practice description - Microsoft ExP's "SRMs typically invalidate the A/B test and make any results and metric movements untrustworthy" and "Measure aspects of the product that we don't want to degrade but won't necessarily improve" (<https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/>), and GrowthBook's "peeking (deciding on an experiment before it's completed)" and "cherry-picking data" (<https://www.growthbook.io/blog/experimentation-program-mistakes-to-avoid>) and "A sample ratio mismatch is a statistically significant gap between the traffic split you configured and the split your experiment produced" (<https://www.growthbook.io/blog/sample-ratio-mismatch>). The library labels this its own POSITION because the practice is well evidenced even though no source structures it as a section |
 | **Deep-Dive** | full only | Eppo's "Deep-Dive". Its companion post reads "Experiment reports discuss the" why, not the what (self-checked fragment, 2026-10-06, against <https://www.geteppo.com/blog/how-to-craft-compelling-impactful-experiment-reports>; the surrounding sentence is this bundle's own paraphrase) |
-| **Decision: Ship, Iterate or Stop** | yes | **The decision requirement is sourced; the exact triad is not.** Sai's template closes with "Next Steps" (self-checked, 2026-10-06). Per the 2026-10-05 research's own reading of that section, not independently re-checked word for word, its content names rollout, iteration, or discontinuation; Fishman pre-commits the same choice earlier, in The Plan. No source uses "ship, iterate or stop" verbatim - that phrasing is [the contract's](contracts/experimentation-docs.md) own section 1 wording, adopted by the maintainer, and is a **POSITION** here too. Note the catalog's own guidance-note column (`docs/internal/catalog.md:210`) independently carries "ship/iterate/kill decision" - a different third word, equally unsourced; see Catalog corrections *(Corrected 2026-10-11, when the bundle was built: the catalog note now reads "ship, iterate or stop decision", labelled as this library's POSITION.)* |
+| **Decision: Ship, Iterate or Stop** | yes | **The decision requirement is sourced; the exact triad is not.** Sai's template closes with "Next Steps" (self-checked, 2026-10-06). Per the 2026-10-05 research's own reading of that section, not independently re-checked word for word, its content names rollout, iteration, or discontinuation; Fishman pre-commits the same choice earlier, in The Plan. No source uses "ship, iterate or stop" verbatim - that phrasing is [the contract's](contracts/experimentation-docs.md) own section 1 wording, adopted by the maintainer, and is a **POSITION** here too. Note the catalog's own guidance-note column (`docs/internal/catalog.md:217`) independently carries "ship/iterate/kill decision" - a different third word, equally unsourced; see Catalog corrections *(Corrected 2026-10-11, when the bundle was built: the catalog note now reads "ship, iterate or stop decision", labelled as this library's POSITION.)* |
 | **Decision Owner** | yes | **POSITION, UNSOURCED.** No source read requires naming who made the call. The spec keeps it in lean because the contract finishes a readout when its decision is recorded, and a recorded decision names who made it, as an ADR names its decision-makers |
 | **Next Steps and Owners** | yes | Eppo's "Next Steps", each action item carrying an explicit owner |
 | **Implementation Details and Analysis Notes** | full only | Eppo's own section of that name; CONSORT's formal separation of Methods from Results |
@@ -3430,7 +3430,7 @@ absent.
 
 The PR that adds this spec edits no catalog field, as ADR 0067 defers these corrections to the build. Per
 [procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), the landing PR edits both
-`docs/internal/catalog.md:207` and `atlas/catalog-data.json`, then regenerates the atlas, for each
+`docs/internal/catalog.md:214` and `atlas/catalog-data.json`, then regenerates the atlas, for each
 correction it accepts:
 
 - **`owner: "PM / Data"` is an open question, not a correction**, the same posture `change-log`'s own
@@ -4090,7 +4090,7 @@ no supporting source; see the catalog corrections below), catalog id `disaster-r
 disruptions". Contents, per the catalog: "RPO/RTO, scenarios, recovery steps, roles, testing". `size_variant:
 M/L`, `rarity: occasional`, `tier_inferred: true`.
 **The catalog's own category field disagrees with itself across the two machine artifacts**:
-`docs/internal/catalog.md:200` reads "operations/governance", and `atlas/catalog-data.json` index 134 reads
+`docs/internal/catalog.md:201` reads "operations/governance", and `atlas/catalog-data.json` index 134 reads
 "Operations / Incident". Neither this spec nor ADR 0071 adjudicates that; the catalog corrections subsection
 below flags it for the landing PR.
 
@@ -4335,7 +4335,7 @@ Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call
    to each, in the display-name form those fields use, rather than replacing either list. This type's own
    `relationships` field, `[]` today, gains "Runbook" and "Production Readiness Review" in return.
 4. **The category discrepancy between the two machine artifacts is flagged, not resolved here.**
-   `docs/internal/catalog.md:200` reads "operations/governance"; `atlas/catalog-data.json` index 134 reads
+   `docs/internal/catalog.md:201` reads "operations/governance"; `atlas/catalog-data.json` index 134 reads
    "Operations / Incident". This spec does not adjudicate which is correct. The landing PR should reconcile
    them, or record why one wins, rather than silently picking one the way the research found it already had
    been.
@@ -5488,7 +5488,7 @@ states a recommendation the build can still reconsider against the family's own 
 #### Catalog corrections the landing PR must make
 
 Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:209` and `atlas/catalog-data.json` (index 140), then regenerate the atlas, for
+`docs/internal/catalog.md:215` and `atlas/catalog-data.json` (index 140), then regenerate the atlas, for
 each correction accepted:
 
 - **Alias "metric definitions" collides exactly, case-insensitively, with `kpi-dashboard`'s own shipped
@@ -5986,7 +5986,7 @@ sense, so the groupings below are this library's own judgment, sourced per row.
 #### Catalog corrections the landing PR must make
 
 Per [decision-procedures.md procedure 1](decision-procedures.md#1-a-catalog-call-loses-to-research), both
-`docs/internal/catalog.md:161` and `atlas/catalog-data.json` (index 102), then regenerate the atlas:
+`docs/internal/catalog.md:167` and `atlas/catalog-data.json` (index 102), then regenerate the atlas:
 
 1. **`size_variant: "M"` becomes a single size, `[lean]`.** Re-checked directly against this sweep's
    research rather than carried forward unread: neither the 2026-10-12 sweep nor the 2026-10-14 follow-up

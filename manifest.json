@@ -386,6 +386,35 @@
     },
     {
       "aliases": [
+        "UX design principles",
+        "experience principles"
+      ],
+      "approx_tokens": {
+        "lean": 6850
+      },
+      "classification": "foundation",
+      "default_size": "lean",
+      "doc_type": "design-principles",
+      "family": "standing-standards",
+      "id": "design-principles",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Use lean, the only size, for every product: the research warns that a set of ten or more leads to many principles being forgotten, found the practitioners it read recommending three to five, and found no published set that comes in a fuller and a shorter version, so the document stays short and the sources that add detail add it per principle and not per document, at medium-high confidence.",
+      "status": "beta",
+      "summary": "The short standing list of value statements a team agrees once and then uses to frame and settle decisions about the experience of its product. Each principle carries a statement, what it rules out, the question a reviewer asks, what it rests on and a decision it settled. It is judged by whether a principle rules anything out, because a principle that rules nothing out is a slogan.",
+      "tags": [
+        "design-principles",
+        "experience",
+        "ux",
+        "design-review",
+        "decision-making",
+        "standing-standards"
+      ],
+      "title": "Design Principles"
+    },
+    {
+      "aliases": [
         "epic",
         "feature epic",
         "portfolio epic"
@@ -1873,5 +1902,5 @@
       "title": "User Story"
     }
   ],
-  "count": 56
+  "count": 57
 }

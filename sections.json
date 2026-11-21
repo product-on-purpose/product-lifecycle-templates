@@ -2707,6 +2707,219 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "design-principles",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "doc_version"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "owner"
+            },
+            {
+              "in_sizes": [
+                "lean"
+              ],
+              "name": "product_name"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "design_system_relation",
+                "out_of_scope_decisions",
+                "product_covered",
+                "set_appliers",
+                "straddling_principles"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "the-principles",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "principle_1_decision_settled",
+                "principle_1_name",
+                "principle_1_rests_on",
+                "principle_1_reviewer_question",
+                "principle_1_rules_out",
+                "principle_1_statement",
+                "principle_2_decision_settled",
+                "principle_2_name",
+                "principle_2_rests_on",
+                "principle_2_reviewer_question",
+                "principle_2_rules_out",
+                "principle_2_statement",
+                "principle_3_decision_settled",
+                "principle_3_name",
+                "principle_3_rests_on",
+                "principle_3_reviewer_question",
+                "principle_3_rules_out",
+                "principle_3_statement"
+              ],
+              "title": "The Principles"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "when-principles-conflict",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "conflict_decision_kind",
+                "conflict_principles",
+                "conflict_reason",
+                "conflict_winner"
+              ],
+              "title": "When Principles Conflict"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "using-them-in-decisions",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "how_decisions_cite",
+                "when_set_aside",
+                "where_applied"
+              ],
+              "title": "Using Them in Decisions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "ownership-and-changes",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "change_date",
+                "change_decider",
+                "change_summary",
+                "change_trigger",
+                "how_to_propose",
+                "owner_role_and_person",
+                "who_decides"
+              ],
+              "title": "Ownership and Changes"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "review-trigger",
+              "in_sizes": [
+                "lean"
+              ],
+              "level": 2,
+              "placeholders": [
+                "audience_change_action",
+                "audience_change_owner",
+                "audit_action",
+                "audit_owner",
+                "concern_action",
+                "concern_owner",
+                "new_scope_action",
+                "new_scope_owner",
+                "recurring_debate_action",
+                "recurring_debate_owner"
+              ],
+              "title": "Review Trigger"
+            }
+          ],
+          "sizes": [
+            "lean"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "epic",
       "default_format": "default",
       "formats": {
@@ -14530,7 +14743,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 56,
-  "frontmatter_count": 340,
-  "section_count": 473
+  "count": 57,
+  "frontmatter_count": 344,
+  "section_count": 479
 }

@@ -1,0 +1,32 @@
+id: design-principles
+title: Design Principles
+summary: >-
+  The short standing list of value statements a team agrees once and then uses to frame and settle
+  decisions about the experience of its product. Each principle carries a statement, what it rules out, the
+  question a reviewer asks, what it rests on and a decision it settled. It is judged by whether a principle
+  rules anything out, because a principle that rules nothing out is a slogan.
+doc_type: design-principles
+classification: foundation
+family: standing-standards
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the only size, for every product: the research warns that a set of ten or more leads to many principles being forgotten, found the practitioners it read recommending three to five, and found no published set that comes in a fuller and a shorter version, so the document stays short and the sources that add detail add it per principle and not per document, at medium-high confidence."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - design-principles
+  - experience
+  - ux
+  - design-review
+  - decision-making
+  - standing-standards
+related_templates: [product-vision, product-strategy, design-brief, definition-of-done, user-persona, future:product-principles]
+aliases:
+  - UX design principles
+  - experience principles
+catalog_ref: 213
+maintainer: "product-on-purpose"
+last_reviewed: 2026-11-20
+license: Apache-2.0
