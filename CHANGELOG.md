@@ -14,6 +14,12 @@ people who want every change, release notes are for people who want to know what
 
 ### Added
 
+- **Product principles**, the 58th bundle and the tenth `standing-standards` member, a `foundation` by
+  [ADR 0090](docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md). It is the
+  short standing set of beliefs a product team agrees once and uses to settle product trade-offs: what to build, for
+  whom, and what to refuse. Each principle carries a statement, why the team holds it, the trade-off it accepts, what it
+  rules out and a decision it settled. It ships one size, `lean`, with a worked example. The catalog gains entry 214
+  for the type. Closes #360.
 - **Design principles**, the 57th bundle and the ninth `standing-standards` member, a `foundation` by
   [ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md). It is the
   short standing list of value statements a team agrees once and uses to frame and settle decisions about the
@@ -30,10 +36,14 @@ people who want every change, release notes are for people who want to know what
   ([ADR 0091](docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)) joins
   `strategy-docs` as a `utility` member, by an eighth question. The diary study plan is declined as a separate type
   ([ADR 0092](docs/internal/decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md)); `user-research-plan`
-  will gain a conditional diary block instead. Design principles was built on 2026-11-20, as the entry above records; the other two admitted bundles are not built yet.
+  will gain a conditional diary block instead. Design principles and product principles were built on 2026-11-20, as the entries above record; competitive analysis is not built yet.
 
 ### Changed
 
+- **The product strategy one-pager's Product Principles guidance now points at the product principles bundle**
+  (`product-strategy` 0.1.1). One guidance comment changes; no section, field or placeholder does. A team that
+  keeps a standing set, with an owner and a review trigger, now writes it with `product-principles` and names its
+  most-used rules in the one-pager.
 - **The terms rule is lifted.** Since 2026-10-25, research agents had not read pages on sites whose terms of use bar
   automated reading. The maintainer lifted that rule on 2026-11-14 for public pages and for books they own. Agents
   still never get past a login, a paywall or a bot block, licences still decide what a template may copy, and every

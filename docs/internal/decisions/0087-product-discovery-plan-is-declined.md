@@ -80,7 +80,7 @@ meant to keep changing rather than to be written once.
 |---|---|
 | Discovery Core Team, Discovery Extended Team, Key Stakeholders | `project-brief`, Constraints and Who Should Be Involved |
 | Customer Development Plan, User Research Tools, User Testing Plan | `user-research-plan`, one study at a time |
-| Product Strategy/Vision, Product Principles | `product-strategy`; and, since 2026-11-14, Product Principles also by the `product-principles` bundle, [ADR 0090](0090-product-principles-joins-standing-standards-as-a-foundation.md) |
+| Product Strategy/Vision, Product Principles | `product-strategy`; and, since 2026-11-14, Product Principles also by the `product-principles` bundle, [ADR 0090](0090-product-principles-joins-standing-standards-as-a-foundation.md). *(2026-11-20: that bundle is built, so Cagan's Product Principles component now has a dedicated bundle; the `product-strategy` one-pager keeps its summary section and points to it.)* |
 | Key Risks | `project-brief` (Constraints) and `risk-register` |
 | Required Level of Supporting Documentation | No template section. It is an agreement inside the team |
 

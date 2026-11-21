@@ -9,7 +9,7 @@ doc_type: product-strategy
 size: full
 format: one-pager
 source_template: product-strategy
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -159,7 +159,10 @@ HOW TO FILL THIS IN
 <!-- WHAT  Two to five rules that resolve recurring trade-offs the same way every time, so the team does not
            relitigate them.
      WHY   Principles are the strategy's delegation mechanism: they let people decide without asking. A
-           principle that never rules anything out is decoration. Deep dive:
+           principle that never rules anything out is decoration. This section
+           summarises the set inside the strategy. A team that keeps a standing set, with an owner and a
+           review trigger, writes it with the product-principles bundle and names its two to five most-used
+           rules here. Deep dive:
            product-strategy_companion.md section 3 (Product Principles).
      ASK   What argument keeps recurring? What does this principle cost us when it bites? Would anyone ever
            argue for the opposite, and if not, is it a principle?

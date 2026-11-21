@@ -165,7 +165,7 @@ the entries for HubSpot, eCornell and Yesware record it [2], [3], [4]. Ries and 
 read, is perceptual and carries no fields: "positioning is not what you do to a product. Positioning is what you do
 to the mind of the prospect." [6]. Dunford dates the practice loosely and names no author: "Since the 1970's we've
 been taught that "Positioning" is critical to our businesses" [13]. **No source in this log attributes the
-formula to Moore.** The attribution's only footholds are the catalog row (`docs/internal/catalog.md:43`) and the
+formula to Moore.** The attribution's only footholds are the catalog row (`docs/internal/catalog.md:44`) and the
 follow-up's blog citation to page 186 of the 3rd edition, which was never verified against the book
 (`docs/internal/tier2-specs.md:6227-6228`). Admission does not lean on him (`:6228-6229`), and this research gives
 no reason to strengthen the attribution.
@@ -620,7 +620,7 @@ companion note above. `README.md`, `AGENTS.md` and `skills/` carry no mention of
 a row. `templates/README.md:100-106` (as of `4f1bea43`) lists the family without this bundle. `STATE.md:278` (as of `c16e58a0`) says the family is
 "complete at five members". The contract's Members line says "not yet built" (`strategy-docs.md:6`).
 
-**The catalog row still carries the uncorrected values** (`docs/internal/catalog.md:43`): the alias "positioning
+**The catalog row still carries the uncorrected values** (`docs/internal/catalog.md:44`): the alias "positioning
 map", the owner "PMM", and "Moore's "for/who/that" template" as the named source. The spec's corrections stand
 (`docs/internal/tier2-specs.md:6414-6443`), and this research adds nothing against them.
 

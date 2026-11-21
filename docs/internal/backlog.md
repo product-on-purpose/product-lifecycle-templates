@@ -20,7 +20,7 @@ No single list holds the backlog. Four places hold parts of it, and each one lac
 | Place | What it holds | What it lacks |
 |---|---|---|
 | [GitHub issues labelled `build-candidate`](https://github.com/product-on-purpose/product-lifecycle-templates/issues?q=is%3Aissue+is%3Aopen+label%3Abuild-candidate) | The working backlog: every type someone has proposed to build, labelled by status, priority, tier, family and axis. Closed issues record the types built or declined | Any type nobody has proposed. Issue #180 (the ranking, and what would be refused) carries the label but is a discussion, not a candidate |
-| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 213 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
+| [`catalog.md`](catalog.md), rendered from `atlas/catalog-data.json` into the atlas | All 214 types the library's research found, each with a tier and a build state | A priority field. It also has no "declined" state, so a type declined by record still reads "candidate" there |
 | The [Progress table](tier2-specs.md#progress) in `tier2-specs.md` | Every type assessed or specced beyond its catalog row, with its status and the record behind it | The types nobody has assessed yet |
 | [Section 9](#9-researched-types-with-no-issue-and-no-decision) of this page | Every type a research run named as a candidate that has no issue and no decision, including types with no catalog row | A ruling: each row's next step is a proposal |
 
@@ -35,7 +35,6 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#360](https://github.com/product-on-purpose/product-lifecycle-templates/issues/360) | `product-principles` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `standing-standards`, `classification: foundation`, [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md) | Specced 2026-11-17; its choices ruled 2026-11-20. A build when the maintainer asks. `design-principles` was built 2026-11-20, so this guide can be written against its guide |
 | [#361](https://github.com/product-on-purpose/product-lifecycle-templates/issues/361) | `competitive-analysis` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `strategy-docs`, `classification: utility`, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) | Specced 2026-11-17; its choices ruled 2026-11-20. A build when the maintainer asks |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
@@ -44,11 +43,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 2 queued, 4 parked |
-| Priority | P2: 2, P3: 3, P4: 1 |
-| Tier | Tier 2: 6 |
+| Status | 1 queued, 4 parked |
+| Priority | P2: 1, P3: 3, P4: 1 |
+| Tier | Tier 2: 5 |
 
-Sixty-eight candidate issues are closed: 57 built and 11 declined. The last to close was #359 (design-principles). Four of the declined types,
+Sixty-nine candidate issues are closed: 58 built and 11 declined. The last to close was #360 (product-principles). Four of the declined types,
 `solution-brief`, `prototype-brief`, `manager-user-guide` and `product-discovery-plan`, never had a catalog row.
 
 **Admission sweep 7 ran on 2026-10-29, so "an admission sweep" is no longer the next action for its candidates.**
@@ -77,17 +76,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=57, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=58, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 213 types. Its `state` field reads 57 built, 154 candidate and 2 out of scope. Five of the
+The catalog holds 214 types. Its `state` field reads 58 built, 154 candidate and 2 out of scope. Five of the
 154 were declined by record, so 149 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 159 | 31 | 5, declined by record (below) | **123** |
+| 2 | 160 | 32 | 5, declined by record (below) | **123** |
 | 3 | 27 | 1 | 0 | **26** |
-| **All** | **213** | **57** | **7** | **149** |
+| **All** | **214** | **58** | **7** | **149** |
 
 The five Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -278,6 +277,10 @@ ADR 0077 keeps in `deliver`.
 - **2026-11-20, at landing.** `design-principles` landed as the 57th bundle, the ninth `standing-standards`
   member, carrying catalog entry 213, a new row added at its build. Its landing closes #359, and the define
   count stays at two.
+- **2026-11-20, at landing.** `product-principles` landed as the 58th bundle, the tenth `standing-standards`
+  member, carrying catalog entry 214, a new row added at its build. Its landing closes #360, and the define
+  count stays at two. The same pull request bumps `product-strategy` to 0.1.1, so its one-pager points at the
+  new bundle.
 
 ## 6. What comes next, in order
 
@@ -370,7 +373,7 @@ column is the run's own.
 | A/B testing roadmap (experimentation backlog) | CXL | Standard | medium | It plans many tests, so it is distinct from `experiment-design-doc`, which plans one | Sweep against the [`experimentation-docs`](contracts/experimentation-docs.md) contract |
 | Experimentation platform RFP | Statsig | Standard | medium | Most of its verified headings are not the RFP's own, and the filled template was never read | Park until the filled template is read by hand |
 | Debt inventory | ProdPad | Standard | medium | The checklist body sits behind an email gate | Park until the maintainer reads the body by hand |
-| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document. *(2026-11-14: out of date. Admission sweep 8 found Cagan's chapters in* Inspired *and* Empowered*, GitLab's handbook, Monzo and SVPG, and the maintainer admitted it as #360, [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md).)* | Done 2026-11-14. Was: test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
+| Product principles document | Productboard | Standard | medium | Its only source is an AI prompt whose output is the document. *(2026-11-14: out of date. Admission sweep 8 found Cagan's chapters in* Inspired *and* Empowered*, GitLab's handbook, Monzo and SVPG, and the maintainer admitted it as #360, [ADR 0090](decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md).)* | Done 2026-11-14. Built 2026-11-20 as #360. Was: test as a duplicate first: [ADR 0087](decisions/0087-product-discovery-plan-is-declined.md) maps Cagan's "Product Principles" component to `product-strategy`. If it survives, sweep it together with design principles (9.2), which may be the same type |
 | User Story Map | Jeff Patton | Standard | low to medium | The written form is in Patton's book, which was not read | Park until a read of the book |
 | PM skills gap analysis | SVPG | Standard | low to medium | It assesses a person, not a product, so the [ADR 0080](decisions/0080-admission-gains-a-software-audience-check.md) audience check is unclear | Run the audience check before any sweep |
 | Whole-product bill of materials checklist | Rich Mironov | Standard | low to medium | The only evidence is a document title | Park until a source shows the written form |
