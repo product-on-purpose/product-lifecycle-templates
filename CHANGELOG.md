@@ -19,7 +19,8 @@ people who want every change, release notes are for people who want to know what
   short standing set of beliefs a product team agrees once and uses to settle product trade-offs: what to build, for
   whom, and what to refuse. Each principle carries a statement, why the team holds it, the trade-off it accepts, what it
   rules out and a decision it settled. It ships one size, `lean`, with a worked example. The catalog gains entry 214
-  for the type. Closes #360.
+  for the type. Closes #360. Its build cost $13.85 at API list rates, for 17 agents, all on Sonnet 5.5; the report
+  is in [`bundle-builds/`](bundle-builds/INDEX.md), and its landing sweep ($1.21) is recorded beside the totals.
 - **Design principles**, the 57th bundle and the ninth `standing-standards` member, a `foundation` by
   [ADR 0089](docs/internal/decisions/0089-design-principles-joins-standing-standards-as-a-foundation.md). It is the
   short standing list of value statements a team agrees once and uses to frame and settle decisions about the
