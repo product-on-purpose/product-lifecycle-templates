@@ -922,6 +922,32 @@
       "title": "Product Backlog"
     },
     {
+      "aliases": [],
+      "approx_tokens": {
+        "lean": 7750
+      },
+      "classification": "foundation",
+      "default_size": "lean",
+      "doc_type": "product-principles",
+      "family": "standing-standards",
+      "id": "product-principles",
+      "sizes_available": [
+        "lean"
+      ],
+      "sizing_guidance": "Use lean, the only size, for every product: no source the research read publishes a fuller and a shorter version of one set, the sources it read advise three to five principles and none cites a measurement, and the sources that add depth add it per principle and not per document, so the template does the same, at medium confidence.",
+      "status": "beta",
+      "summary": "The short standing set of beliefs a product team agrees once and then uses to settle product trade-offs: what to build, for whom, and what to refuse. Each principle carries a statement, why the team holds it, what it costs, what it rules out and a decision it settled. It is judged by whether a reasonable team could choose the opposite, because a principle nobody would reverse cannot settle an argument.",
+      "tags": [
+        "product-principles",
+        "product-decisions",
+        "trade-offs",
+        "prioritisation",
+        "standing-standards",
+        "strategic-context"
+      ],
+      "title": "Product Principles"
+    },
+    {
       "additional_formats": [
         {
           "guidance": "Reach for the GO format when releases are real events in your world, whether shipped versions, regulated milestones or hardware gates, and each one needs to answer what it is for and how you will know it worked. Its five columns (date, name, goal, features, metrics) force a measurable goal per release, which now-next-later deliberately does not. Do not reach for it if nobody can name the next release: a goal grid with invented releases is a timeline roadmap.",
@@ -995,7 +1021,7 @@
       "approx_tokens": {
         "full": 3400,
         "lean": 2700,
-        "one-pager-full": 3050
+        "one-pager-full": 3100
       },
       "classification": "foundation",
       "default_format": "kernel",
@@ -1902,5 +1928,5 @@
       "title": "User Story"
     }
   ],
-  "count": 57
+  "count": 58
 }

@@ -4,6 +4,16 @@ Every change to this bundle's templates, with the reasoning. The version here mu
 `template_version` in [`product-strategy_meta.yaml`](product-strategy_meta.yaml); gate check H enforces
 that.
 
+## 0.1.1 - 2026-11-20 - the one-pager's Product Principles guidance points at the product-principles bundle
+
+**One guidance comment changes; no section, field or placeholder does.** The one-pager full variant's Product
+Principles WHY now says that the section summarises the set inside the strategy, and that a team keeping a
+standing set, with an owner and a review trigger, writes it with the `product-principles` bundle and names its
+most-used rules here. The maintainer ruled this pointer on 2026-11-20 (choice D4 in the `product-principles`
+spec in `docs/internal/tier2-specs.md`), as
+[ADR 0090 (product principles joins standing-standards as a foundation)](../../docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md)
+records. Every variant is stamped 0.1.1. The example was filled from 0.1.0 and keeps that stamp.
+
 ## 0.1.0 - 2026-07-28
 
 First release. Status `beta`: gate-green and cited to raw sources, with no fills by anyone but the author.
