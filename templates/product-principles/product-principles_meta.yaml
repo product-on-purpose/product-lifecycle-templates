@@ -1,0 +1,30 @@
+id: product-principles
+title: Product Principles
+summary: >-
+  The short standing set of beliefs a product team agrees once and then uses to settle product trade-offs:
+  what to build, for whom, and what to refuse. Each principle carries a statement, why the team holds it,
+  what it costs, what it rules out and a decision it settled. It is judged by whether a reasonable team
+  could choose the opposite, because a principle nobody would reverse cannot settle an argument.
+doc_type: product-principles
+classification: foundation
+family: standing-standards
+sizes_available: [lean]
+default_size: lean
+sizing_guidance: "Use lean, the only size, for every product: no source the research read publishes a fuller and a shorter version of one set, the sources it read advise three to five principles and none cites a measurement, and the sources that add depth add it per principle and not per document, so the template does the same, at medium confidence."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - product-principles
+  - product-decisions
+  - trade-offs
+  - prioritisation
+  - standing-standards
+  - strategic-context
+related_templates: [product-vision, product-strategy, design-principles, prd]
+aliases: []
+catalog_ref: 214
+maintainer: "product-on-purpose"
+last_reviewed: 2026-11-20
+license: Apache-2.0

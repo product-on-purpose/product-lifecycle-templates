@@ -114,7 +114,7 @@ exception paths that branch off it. It does **not** admit:
   document. Three independent sources read in this sweep (Fowler, the OMG UML 2.5.1 specification, and a
   2024 conference deck) treat the UML use case diagram as a separate artifact from the written
   specification. The diagram is out of scope under ADR 0030 (templating scope: Markdown documents).
-- **A user flow.** `user-flow-task-flow` (`docs/internal/catalog.md:100`, row 57) states its own purpose as
+- **A user flow.** `user-flow-task-flow` (`docs/internal/catalog.md:106`, row 57) states its own purpose as
   "Map the steps and decisions a user takes through a task", at category "Design / Architecture" and stage
   "design", and its catalog aliases are "flow diagram" and "wireflow". A bare test of "one actor, one goal,
   step by step" would admit this type too. The exclusion therefore rests on what the catalog says a user

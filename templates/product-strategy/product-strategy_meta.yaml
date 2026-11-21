@@ -19,7 +19,7 @@ additional_formats:
 methodology: methodology-agnostic
 pairs_with: [foundation-lean-canvas]
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - strategy
   - direction

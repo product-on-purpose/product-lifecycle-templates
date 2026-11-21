@@ -3,6 +3,15 @@
 Change log for the `design-principles` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, reviewed 2026-11-20 - drop the `future:` prefix now that product principles is built
+
+**No template change, so `template_version` stays 0.1.0.** `related_templates` named
+`future:product-principles` because the sibling bundle had not been built. The product principles bundle (catalog
+entry 214, issue #360) lands in the same pull request as this entry, so the id exists on disk and the prefix is
+dropped. `related_templates` now reads `[product-vision, product-strategy, design-brief, definition-of-done,
+user-persona, product-principles]`. `tools/check-bundles.py` check I would otherwise raise its stale-`future:`
+failure, since the prefix fails once its target is built.
+
 ## 0.1.0 - 2026-11-20
 
 **Initial release.** Admitted by

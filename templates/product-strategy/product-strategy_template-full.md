@@ -9,7 +9,7 @@ doc_type: product-strategy
 size: full
 format: kernel
 source_template: product-strategy
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
