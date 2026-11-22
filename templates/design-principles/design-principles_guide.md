@@ -69,9 +69,12 @@ Three choices remain inside it.
 ## Quality rubric (self-grade)
 
 Score each row 0, 1 or 2. A score under 15 out of 22 means several rows are thin or empty, so the set is
-not yet a standard a designer can lean on. The total does not say which rows failed. Read the rows that
-scored 0 first, because a missing conflict resolution (row 6) or a missing owner (row 8) leaves a
-designer with no way to choose or no one to ask, even in a set that scores well elsewhere. Grade what
+not yet a standard a designer can lean on. The total does not say which rows failed. **A 0 on row 6, row
+8 or row 10 fails the set whatever the total**, because a missing conflict resolution, a missing owner or
+a Review Trigger with no owner leaves a designer with no way to choose, no one to ask, or a set nobody
+reopens. Without that rule, a set scoring 0 on all three rows would still total 16 and pass. The rule,
+like the line at 15, is this library's judgement and is not measured. Read the other rows that scored 0
+next. Grade what
 the author added to the blank template. The template already prints the field labels and the Review
 Trigger conditions, so a row that rewards their presence is satisfied before anyone writes a word.
 
@@ -112,8 +115,12 @@ them, and the disputes among sources, are in the companion's sections 6 and 7.
    system. Test: does it name a component or a pattern? Costs row 11.
 5. **Values mistaken for principles.** Brignell: "Values shape culture. Principles shape decisions." Test:
    what decision does it settle? Costs row 2.
-6. **No stated order when two collide.** Brignell: "If everything is equally important, nothing actually
-   guides the decision." Test: does the table name a winner in a named kind of decision? Costs row 6.
+6. **No stated order when two collide.** The sources hold two views. NN/g says principles should "Not
+   conflict with one another", and in the same passage says that where two matter in different contexts,
+   a team should "clearly specify in which contexts one of these principles is more important than the
+   other". Brignell says "Sometimes consistency conflicts with clarity." and "If everything is equally
+   important, nothing actually guides the decision." Both views end in the same practice, which the
+   template's table follows. Test: does the table name a winner in a named kind of decision? Costs row 6.
 7. **Overlapping principles.** Spotify's audit named "Overlapping concepts" as a defect. Test: do two
    principles settle the same decision? Merge or retire one. Costs rows 5 and 9.
 8. **A set nobody cites.** The library's inference is that a set with no stated moment of use risks being
@@ -124,8 +131,9 @@ them, and the disputes among sources, are in the companion's sections 6 and 7.
    mechanical that it becomes a checkbox has lost that reading. Costs row 7.
 10. **A set that never changes, or changes with no record.** Test: does the log keep the reason for each
     retirement, and does each trigger name an owner? Costs rows 8, 9 and 10.
-11. **Borrowing another team's set.** Only the NHS page read states a reuse licence, and Productboard's
-    prompt reserves its rights. Test: would the opposite test hold for your product? Write the team's own
+11. **Borrowing another team's set.** Two pages read state a reuse licence, the NHS and GOV.UK pages,
+    each under the Open Government Licence v3.0 "except where otherwise stated". Productboard's prompt
+    reserves its rights. Test: would the opposite test hold for your product? Write the team's own
     words. Costs row 2.
 12. **A set that restates the current strategy.** The library's own caution, not a sourced one. Test:
     would the principle survive a change of strategy while its evidence holds? Costs row 4.

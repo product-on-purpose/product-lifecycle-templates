@@ -24,8 +24,11 @@ confusion with the sibling bundle [`design-principles`](../design-principles/des
   makes a trade-off. One vendor's AI prompt treats three or more debates in a quarter that a new
   principle would have settled as a reason to add one. That is the vendor's figure, not a measured one.
 - A request keeps arriving that the team feels it should decline, and nobody can say why in a sentence.
-  The set can hold the reason. Sources assert that principles are used to say no, and this research found
-  no named company case that shows it, so treat that benefit as unproven.
+  The set can hold the reason. Sources assert that principles are used to say no. The research found
+  teams using a principle to turn down an option of their own: Monzo chose manual work over building
+  automation, and Gazit reports Pay.com's security principle settling how a card's security code is
+  shown. It found no named case of a set used to decline a request from outside the team, so treat that
+  benefit as unproven.
 - Leadership has written a product vision and a strategy and wants the beliefs that sit beside them
   written down. Cagan places principles beside the vision and the strategy, and his 2020 text has product
   leaders preparing the set for every team.
@@ -101,9 +104,12 @@ This bundle ships one size, so all twelve rows apply and no scope table is neede
 or 2. A score under 16 out of 24 means several rows are thin or empty, so the set will not yet settle
 an argument. A product manager facing a trade-off will find principles that can be read either way, or
 that cost nothing, or that nobody owns, and the decision goes back to whoever is in the room. The line
-at 16 is the library's judgement and is not measured. The total does not say which rows failed. Read
-the rows that scored 0 first, because a 0 on row 2 (a principle that cannot be reversed) or on row 7 (no
-way to choose between two principles) leaves a set that cannot decide, even when other rows score well.
+at 16 is the library's judgement and is not measured. The total does not say which rows failed. **A 0 on
+row 7, row 9 or row 11 fails the set whatever the total**, because a set with no way to choose between two
+principles, no owner, or a Review Trigger nobody owns cannot settle an argument or be kept current.
+Without that rule, a set scoring 0 on all three rows would still total 18 and pass. The rule is also the
+library's judgement. Read the other rows that scored 0 next, starting with row 2, because a principle that
+cannot be reversed leaves a set that cannot decide, even when other rows score well.
 Grade what the author added to the blank template. The template already prints the field labels and the
 five conditions in the Review Trigger table, so a row that rewards their presence is satisfied before
 anyone writes a word.

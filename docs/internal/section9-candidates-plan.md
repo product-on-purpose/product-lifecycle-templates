@@ -1,5 +1,24 @@
 # Plan: four section 9 candidates, from sweep to built bundle (2026-11-14)
 
+> **Superseded as an instruction set, 2026-11-21. Read it as a record.** The maintainer's G1 rulings (last section) and
+> the records they produced now govern: ADRs 0089 to 0092, the specs in [`tier2-specs.md`](tier2-specs.md), and issues
+> #359 to #361. A Codex review on 2026-11-21 found that following this plan's pipeline today would repeat landed work.
+> What is still open, and where it lives:
+>
+> - **Built:** `design-principles` and `product-principles`, both on 2026-11-20. Nothing here remains for them.
+> - **Competitive analysis (#361):** specced and ruled, and it waits for a build request in the maintainer's words. Its
+>   spec, not this plan, holds the build's stops, including the maintainer's read of the contract's section 4 sentence.
+> - **The diary block (C1):** [ADR 0092](decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md) ruled that
+>   `user-research-plan` gains a conditional diary block. The block has not been built; it is tracked as issue #368.
+> - **The canvas pair (C4, D6):** not yet re-read. The terms rule this plan's S0 and the "barred" list below rest on was
+>   lifted on 2026-11-14 ([`bundle-pipeline.md`](bundle-pipeline.md), "The terms rule"), so a fresh read starts from
+>   the current access rule, not from this plan's sweep design. Admission stays per candidate
+>   ([ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)), and
+>   the critic should judge the raw-checked evidence, not the readers' returns.
+> - **Merging (D7):** never ruled. In practice the principles PRs (#364 to #367) merged on `merge-check.py`'s
+>   `VERDICT: merge`, which is what [`release-process.md`](release-process.md) says. The "stricter batch review" below
+>   did not hold.
+
 **Status: revision 2, after an adversarial review.** On 2026-11-14 the maintainer asked to plan four candidates
 from section 9 of [`backlog.md`](backlog.md#9-researched-types-with-no-issue-and-no-decision), review the plans
 adversarially, resolve the findings, and then complete the development. This file is the plan. It decides nothing

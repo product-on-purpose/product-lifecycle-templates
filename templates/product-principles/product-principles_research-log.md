@@ -103,7 +103,8 @@ management in general, not this document. It must not be cited for the type.
 | David Pereira [14] | 12, in four layers of three | A name and one sentence |
 | Productboard's prompt [4] | 5, prescribed | A name, a statement, what it means in practice, what it means the team will not do, and a "TENSION" line |
 
-**Four findings follow.** A name and a statement are universal. Reasoning inside the statement is common. An
+**Four findings follow.** A name and a statement appear in all eight published sets tabulated; Langfuse [15], below,
+has lists but no named principles. *(Narrowed 2026-11-21 from "are universal", after a Codex review.)* Reasoning inside the statement is common. An
 examples field appears in two published sets, Slack and Monzo. **A field for what a principle rules out, and a
 separate field for its tension, appear only in Productboard's prompt [4]**, a vendor's AI prompt. Langfuse [15]
 publishes the nearest thing, a list headed "What we don't do", but as one list for the whole set.

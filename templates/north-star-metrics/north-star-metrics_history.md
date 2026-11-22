@@ -3,6 +3,14 @@
 Change log for the `north-star-metrics` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, corrected 2026-11-21 - the North Star now sits fifth in the chain
+
+**A chain-position correction, not a template change**, so the version stays 0.1.0. The `lean-canvas`
+bundle joined `strategy-docs` second in the chain on 2026-10-30, by
+[ADR 0083 (lean-canvas joins strategy-docs as a seventh member)](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md),
+so the North Star moved from fourth to fifth. The 2026-10-20 notes in the example and the companion each
+gain a second dated note. Nothing was rewritten in place.
+
 ## 0.1.0, corrected 2026-10-20 - the North Star now sits fourth in the chain
 
 **A chain-position correction, not a template change**, so the version stays 0.1.0. The

@@ -3,6 +3,30 @@
 Change log for the `product-principles` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.1 - 2026-11-21 - corrections from a Codex review
+
+**Corrections, not preferences.** A read-only Codex review of the bundle, run after it merged, raised
+findings that a Sonnet verifier then checked line by line against the files and the cached sources. The
+ones that held are fixed here. Three guidance comments in the template change, so the template is stamped
+0.1.1. No section, field or placeholder changes. The example was filled from 0.1.0 and keeps that stamp.
+
+- **The rubric gains a floor.** A 0 on row 7 (conflict), row 9 (owner) or row 11 (Review Trigger owners)
+  now fails the set whatever the total. Before this, a set scoring 0 on all three still totalled 18 of
+  24 and passed the line at 16. The floor is the library's judgement, like the line.
+- **Productboard's prompt says more than its heading.** The template and the companion said the research
+  could not say what the prompt's When Principles Conflict section demands. The cached prompt [4] asks for
+  a hierarchy or a process and gives a hypothetical example, now described as a vendor's prompt. The
+  companion also said no source states the strategy-change trigger, though its own trigger table quotes
+  the prompt stating it; that sentence now credits the prompt.
+- **The gap on saying no is narrower.** The guide said the research found no named company case of a set
+  used to say no. Monzo [6] and Gazit's Pay.com account [26] show teams turning down an option of their
+  own. What the research did not find is a set used to decline a request from outside the team, and the
+  guide now says that.
+- **"Every set read" becomes "all eight tabulated".** Langfuse [15], read beside the table, has lists but
+  no named principles. The template's preamble, its section 2 comment and the log's finding are narrowed.
+
+Findings that held only in part and were judged not to need a change are listed in the pull request.
+
 ## 0.1.0 - 2026-11-20
 
 **Initial release.** Admitted by

@@ -13,7 +13,7 @@ source_template_version: 0.1.0
 
 > **Worked example.** A filled `positioning-statement`, lean variant, for the same Acme Analytics product
 > used throughout this library's examples. Per [ADR 0076](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md),
-> this type sits third in the `strategy-docs` chain: it is dated 2026-01-30, two days after the
+> this type sits third in the `strategy-docs` chain *(2026-11-21: fourth since [ADR 0083](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) placed the Lean Canvas second; it still sits between the strategy and the North Star metric)*: it is dated 2026-01-30, two days after the
 > [FY26 product strategy](../product-strategy/product-strategy_example.md) (2026-01-28) whose target
 > segment it carries forward, and it will sit just ahead of the North Star metric still to come. Dana
 > Okoro, VP Product, owns the vision, the strategy, and this document, which is why the three speak in one
