@@ -111,10 +111,14 @@ principle.** USWDS's "Further reading" [6] comes closest.
 condensed forms are a GitLab PDF, "A condensed version of these principles for easy reference." [5], and an NHS poster
 [7]. Neither was opened. **A single size is therefore supported**, as the maintainer ruled.
 
-**Licences.** The NHS page is the only one read that states a reuse licence: "All content is available under the Open
-Government Licence v3.0, except where otherwise stated." [7] Productboard reserves its rights: "Copyright © 2026
-Productboard, Inc. All rights reserved." [11] The others state no licence in the text read, which is not proof that
-none exists. **The bundle describes the structures it found and copies no set's text.**
+**Licences.** Two pages read state a reuse licence. The NHS page says "All content is available under the Open
+Government Licence v3.0, except where otherwise stated." [7] The GOV.UK page carries the same footer, naming the Open
+Government Licence v3.0 "except where otherwise stated" [13]. *(Corrected 2026-11-21: this line first named the NHS
+page alone. A Codex review found the footer in the cached GOV.UK page.)* Productboard reserves its rights: "Copyright © 2026
+Productboard, Inc. All rights reserved." [11] A scan of every cached body on 2026-11-21 found copyright lines or
+rights reservations on several more, among them NN/g [1], [23], Center Centre [4], IBM [8], GitLab [15] and Clearleft
+[26], and no reuse licence other than the two above. A reservation is not a licence, which is not proof that none
+exists elsewhere on those sites. **The bundle describes the structures it found and copies no set's text.**
 
 ### Practice: how a set is applied, owned and changed
 
@@ -151,8 +155,11 @@ that phrase as judgement, not mechanical compliance.
 dedicated to one value only." [1] Brignell says "Real principles reveal priorities." and "Sometimes consistency
 conflicts with clarity." [18] Blackie lists "Non-conflicting:" among his criteria [22]. The two camps may be using
 "conflict" differently: NN/g may mean that two principles should not contradict each other, and Brignell that a useful
-principle exposes a tension. **Section 3 of the template takes Brignell's side: it names which principle wins when two
-pull apart. That is the library's POSITION.**
+principle exposes a tension. NN/g's same passage goes on: "then clearly specify in which contexts one of these principles
+is more important than the other" [1]. **Section 3 of the template names which principle wins in a named kind of
+decision, which NN/g's sentence asks for. Reading Brignell's view as asking for the same thing, and the table form,
+are the library's POSITION.**
+*(Corrected 2026-11-21: this paragraph first said the template takes Brignell's side, and left out NN/g's sentence.)*
 
 **Slogan or decision tool?** Brignell: "A slogan describes intent. A principle guides a choice." [18] Jay Mistry: "Most
 design principles read like motivational posters." [20] No source read defends the poster.
@@ -335,6 +342,7 @@ Quotable: "use the principles to explain and justify design decisions"
 Quotable: "Identify Any Common Tradeoffs"
 Quotable: "Often, product design principles are referred to as"
 Quotable: "Not conflict with one another"
+Quotable: "then clearly specify in which contexts one of these principles is more important than the other"
 Quotable: "Each principle should be dedicated to one value only."
 Quotable: "These important values may have been captured in vision statements or project briefs."
 Quotable: "Publish them in blogs or with your design system"
@@ -401,7 +409,7 @@ Quotable: "These design principles are intended to help teams across government 
 
 **[7] NHS England - NHS digital service manual, Design principles.** primary. **fetched-and-verified.**
 `https://service-manual.nhs.uk/design-system/design-principles`
-Supports: Ten numbered principles, each a short imperative title and one to four sentences, with no reviewer question, example or evidence field. The page states a use (to start a project and to help make decisions), a provenance (the principles are inspired by the NHS Constitution), a poster PDF, a feedback channel on GitHub and an 'Updated: April 2023' date. It is the only set read that states a reuse licence: the Open Government Licence v3.0, except where otherwise stated
+Supports: Ten numbered principles, each a short imperative title and one to four sentences, with no reviewer question, example or evidence field. The page states a use (to start a project and to help make decisions), a provenance (the principles are inspired by the NHS Constitution), a poster PDF, a feedback channel on GitHub and an 'Updated: April 2023' date. It is one of two sets read that state a reuse licence, with GOV.UK [13] (corrected 2026-11-21): the Open Government Licence v3.0, except where otherwise stated
 Quotable: "These principles guide all of our design."
 Quotable: "All content is available under the Open Government Licence v3.0, except where otherwise stated."
 Quotable: "Download design principles poster (PDF, 126KB)"
@@ -445,6 +453,8 @@ Supports: This is an AI prompt, not a published principle set or a document temp
 Quotable: "Great design principles are not brand adjectives"
 Quotable: "generate 4-6 design principles"
 Quotable: "What it rules out:"
+Quotable: "In design reviews"
+Quotable: "Our principles say [X] over [Y] in this case."
 Quotable: "Copyright © 2026 Productboard, Inc. All rights reserved."
 Quotable: "Write UX design principles that give your design team consistent decision-making guidance"
 Quotable: "decision rules"
@@ -464,6 +474,7 @@ Supports: An eleven-principle public set credited to GDS and CDDO. Its update hi
 Quotable: "First published."
 Quotable: "A principle about minimising environmental impact has been added to the Government Design Principles."
 Quotable: "This isn’t a straitjacket or a rule book."
+Quotable: "except where otherwise stated"
 Quotable: "Every circumstance is different."
 Quotable: "Updated illustrative blog posts added."
 Quotable: "This isn't a straitjacket or a rule book."

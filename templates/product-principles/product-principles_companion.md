@@ -244,8 +244,10 @@ that no proposed decision has ever strained. That is the library's inference fro
 **Why it exists.** AWS expects tensions between tenets and says they need judgement
 [[38]](#ref-38). ProductPlan writes "The principles
 should clearly state what is most important." [[22]](#ref-22) Productboard's prompt has a set-level
-section headed "When Principles Conflict" [[4]](#ref-4), though this research cannot say what that
-section demands beyond its heading. A set that never says which one wins leaves the argument to whoever
+section headed "When Principles Conflict" [[4]](#ref-4). It asks the author to explain a hierarchy or a
+process for resolving conflicts, and gives a hypothetical example in which one principle wins for
+user-facing decisions and another for internal tooling. That is a vendor's AI prompt, not a team's
+recorded practice. A set that never says which one wins leaves the argument to whoever
 is in the room. That last sentence is the library's inference, not a sourced claim.
 
 **This section takes a side in a live dispute, and that side is the library's position.** ThoughtSpot
@@ -629,8 +631,8 @@ addressed or implied in the Vision or Strategy" [[21]](#ref-21). In this library
 artifacts are the [product vision](../product-vision/product-vision_guide.md) and the
 [product strategy](../product-strategy/product-strategy_guide.md). The vision says where the product is
 going, and a principle says which way a trade-off leans on the way there. That reading is the library's.
-So is the convention that a significant change to the strategy is an input to the Review Trigger, and
-no source states it.
+A significant change to the strategy is one of the Review Trigger's conditions, and Productboard's AI
+prompt lists it as a reason to revisit the set [[4]](#ref-4).
 
 **The strategy neighbour is a matter of size.** The Product Principles section of the
 [`product-strategy` one-pager, full variant](../product-strategy/product-strategy_template-one-pager-full.md)

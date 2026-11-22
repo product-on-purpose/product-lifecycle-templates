@@ -390,7 +390,7 @@
         "experience principles"
       ],
       "approx_tokens": {
-        "lean": 6850
+        "lean": 6950
       },
       "classification": "foundation",
       "default_size": "lean",
@@ -924,7 +924,7 @@
     {
       "aliases": [],
       "approx_tokens": {
-        "lean": 7750
+        "lean": 7800
       },
       "classification": "foundation",
       "default_size": "lean",

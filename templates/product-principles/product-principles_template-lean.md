@@ -10,7 +10,7 @@ created: "{{date}}"
 updated: "{{date}}"
 related_links: []
 source_template: product-principles
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -34,7 +34,8 @@ product-principles_companion.md section 1 (Orientation) and section 6 (Debates a
 SOME OF THIS STRUCTURE IS THIS LIBRARY'S OWN POSITION, NOT RECEIVED PRACTICE.
 No source the research read publishes a template for this type, other than a vendor's AI prompt
 (Productboard's). So the six sections here are assembled from published sets and method articles. Each
-principle below carries five fields. A name and a statement appear in every set read. Reasoning is common.
+principle below carries five fields. Every one of the eight published sets tabulated gives each principle
+a short headline, and all but PostHog's one-liners add text beneath it. Reasoning is common.
 A trade-off written into the principle is shown by several publishers. A field for what a principle rules
 out appears per principle only in Productboard's prompt. Of the eight published sets tabulated, none
 carries it: Langfuse publishes one set-level list, and Box, as Pendo reports it, a comparable "Versus".
@@ -147,8 +148,8 @@ HOW TO FILL THIS IN
            Slack caps a set at "no more than seven", ThoughtSpot "landed on seven" after debating the
            count, and Intercom holds fourteen in layers. Of the eight published sets tabulated, only
            Slack's and PostHog's fall inside three to five. None of the sources cites a measurement.
-           STATEMENT: every set read carries a name and a statement. WHY WE HOLD IT: Cagan writes "The
-           product team needs to understand these principles and the reasoning behind each one."
+           STATEMENT: every tabulated set gives each principle a short headline. WHY WE HOLD IT: Cagan
+           writes "The product team needs to understand these principles and the reasoning behind each one."
            GitLab and Monzo give a reasoning paragraph. THE TRADE-OFF IT ACCEPTS: GitLab writes three of eight in an "X over Y" form, such
            as "We value quality over velocity". Linear names a sequence in "Simple first, then
            powerful". Box, as Pendo reports it, published a named cost with each principle, such as "The
@@ -228,8 +229,9 @@ HOW TO FILL THIS IN
 <!-- WHAT  A table that says which principle wins when two pull apart, and in which kind of decision.
      WHY   AWS expects tensions between tenets and says they need judgement. ProductPlan writes "The
            principles should clearly state what is most important." Productboard's prompt has a set-level
-           section headed "When Principles Conflict", though the research cannot say what that section
-           demands beyond its heading. A set that never says which one wins leaves the argument to
+           section headed "When Principles Conflict" that asks for a hierarchy or a process, with a
+           hypothetical example in which one principle wins for user-facing decisions and another for
+           internal tooling. That is a vendor's AI prompt, not a team's practice. A set that never says which one wins leaves the argument to
            whoever is in the room. That last sentence is this library's inference, not a sourced claim.
            THIS SECTION TAKES A SIDE IN A LIVE DISPUTE, AND THE SIDE IS THIS LIBRARY'S POSITION.
            ThoughtSpot stack-ranked its candidates "within each category from most to least important",

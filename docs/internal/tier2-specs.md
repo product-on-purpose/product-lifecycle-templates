@@ -9140,7 +9140,10 @@ company would break the family's rule.
 - The contract's section 4 has no sentence for this member's example, unlike the three earlier widenings. Adding one is a
   contract edit, so it stops for the maintainer's read (choice D4).
 - `positioning-statement_example.md:16` says the type "sits third in the `strategy-docs` chain". The Lean Canvas and the
-  analysis now sit before it, so that line gains a dated note.
+  analysis now sit before it, so that line gains a dated note. *(2026-11-21: the Lean Canvas half is done; that line and
+  two companion sentences now carry a "fourth" note. At this landing they gain a "fifth" note, the North Star's example
+  and companion move from fifth to sixth, and the positioning template's chain comment, which still says "third", is
+  rewritten, so `positioning-statement` moves to 0.1.1.)*
 - `positioning-statement_guide.md:90` may link to the bundle.
 
 #### The build plan

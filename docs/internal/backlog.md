@@ -441,7 +441,7 @@ happened to them since.
 
 | Type | Catalog | What the ranking found | Proposed next step |
 |---|---|---|---|
-| Business model canvas | 4 | No family admitted it cleanly, but its admission prior is strong, because `methodology.md` names Osterwalder as Tier 1 | Sweep with the Value Proposition Canvas (9.1); `lean-canvas`, a canvas the same ranking also placed nowhere, has since joined `strategy-docs` by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
+| Business model canvas | 4 | No family admitted it cleanly, but its admission prior is strong, because `methodology.md` names Osterwalder as Tier 1. *(2026-11-14: admission sweep 8 recommended parking it with the Value Proposition Canvas, because Strategyzer's terms then barred reading. The maintainer lifted the terms rule that day and asked for a fresh read of both canvases with Strategyzer open.)* | Sweep with the Value Proposition Canvas (9.1); `lean-canvas`, a canvas the same ranking also placed nowhere, has since joined `strategy-docs` by [ADR 0083](decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) |
 | Empathy map | 20 | No family admits it, and no admission prior was found beyond `user-persona`'s guide treating it as complementary | Re-test under ADR 0078, which postdates the ranking, against the interview snapshot (9.1) |
 | Product operating model / team topology doc | 7 | `standing-standards` admits it by analogy, with an unclear falsifier; admission prior unknown | Sweep |
 | Strategic theme / portfolio vision | 9 | `strategy-docs` admits it by analogy, strained against the four-question chain | Sweep |

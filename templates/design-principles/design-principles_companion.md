@@ -243,8 +243,11 @@ design work" [[15]](#ref-15), and its critique sessions tell designers to "Conne
 business goals instead of personal preference" and to "Review the complete design principles in Pajamas"
 [[16]](#ref-16). Salesforce used its ranked principles in design review, and the practice spread to marketing
 and product management [[24]](#ref-24). Spotify planned a rollout, ran a survey afterwards and reported that
-more examples were needed [[17]](#ref-17). The list of places the template names, and the form a citation
-takes, are the library's position. No source read prescribes either.
+more examples were needed [[17]](#ref-17). Productboard's AI prompt, a vendor's prompt and not a published
+set, names moments of use: "In design reviews", when two designers disagree, when judging outside patterns,
+and when making trade-offs, with the line "Our principles say [X] over [Y] in this case." [[11]](#ref-11)
+The template's list of places draws on these sources. The written line a decision record carries, and what a
+reviewer may do when a principle is set aside, are the library's additions.
 
 **A tension the library resolves by reading.** GOV.UK says "This isn't a straitjacket or a rule book."
 [[13]](#ref-13), and USWDS calls its set "an evaluative lens for design and implementation decisions"
@@ -387,10 +390,14 @@ curates principles.design and sells an audit, a course and a field guide on the 
 **May principles conflict?** NN/g says a principle should "Not conflict with one another" and that "Each
 principle should be dedicated to one value only." [[1]](#ref-1) Brignell says "Real principles reveal
 priorities." and "Sometimes consistency conflicts with clarity." [[18]](#ref-18) Blackie lists "Non-conflicting:"
-among his criteria [[22]](#ref-22). **Recommendation: take Brignell's side, and read the dispute as partly one
-of meaning.** NN/g may mean that two principles should not contradict each other. Brignell means that a
-useful principle exposes a tension. The template names which principle wins in a named kind of decision. That
-is the library's position.
+among his criteria [[22]](#ref-22). **The dispute is narrower than the first quotes suggest.** In the same
+passage, NN/g says that where two principles both matter in different contexts, a team should "clearly
+specify in which contexts one of these principles is more important than the other" [[1]](#ref-1). So NN/g
+asks a team to avoid principles that contradict each other, and to say which wins where both apply. Brignell
+says a useful principle exposes a tension. **Recommendation: name which principle wins in a named kind of
+decision**, which NN/g's sentence asks for directly. Reading Brignell's view as asking for the same thing is the
+library's, at medium-low confidence, and Blackie's "Non-conflicting:" leans the other way. The table the
+template uses to record the winner is the library's form.
 
 **Slogan or decision tool?** Brignell writes "A slogan describes intent. A principle guides a choice."
 [[18]](#ref-18) and "Design principles aren't mission statements." [[18]](#ref-18) Mistry writes "Most design
@@ -442,8 +449,8 @@ dispute any source takes up. This companion does not present it as one.
   smaller [[18]](#ref-18), [[3]](#ref-3), [[20]](#ref-20). Treat the figure as a heuristic.
 - **A UI direction dressed as a principle.** NN/g separates principles from "directions on how to design
   specific UI elements" [[1]](#ref-1). A statement that names a component belongs in the design system.
-- **A principle copied from a published set.** The NHS page states a reuse licence, the Open Government Licence
-  v3.0 [[7]](#ref-7). Productboard reserves its rights [[11]](#ref-11). The other pages read state no licence
+- **A principle copied from a published set.** The NHS and GOV.UK pages state a reuse licence, the Open
+  Government Licence v3.0, except where otherwise stated [[7]](#ref-7)[[13]](#ref-13). Productboard reserves its rights [[11]](#ref-11). The other pages read state no licence
   in the text read, which is not proof that none exists. Write the team's own words.
 - **Values mistaken for principles.** Brignell: "Values shape culture. Principles shape decisions."
   [[18]](#ref-18).
@@ -535,7 +542,7 @@ rest as untested.
   "to help teams across government align on common goals" [[6]](#ref-6), a product organisation's set
   [[5]](#ref-5), and a set Spotify wrote for itself [[17]](#ref-17). Brignell says a set may belong to "an
   organisation, team or project" [[19]](#ref-19). The template's scope section is where that choice is made.
-- **Reusing a published set.** Only the NHS page states a reuse licence [[7]](#ref-7), and Productboard
+- **Reusing a published set.** Only the NHS and GOV.UK pages state a reuse licence [[7]](#ref-7)[[13]](#ref-13), and Productboard
   reserves its rights [[11]](#ref-11). A team that wants to adapt a published set should check its licence and
   should still write its own opposite test, because a set written for another product may not pass it
   [[20]](#ref-20).

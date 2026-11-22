@@ -10,7 +10,7 @@ created: "{{date}}"
 updated: "{{date}}"
 related_links: []
 source_template: design-principles
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -152,9 +152,10 @@ HOW TO FILL THIS IN
            SETTLED: GitLab gives each principle an "Example in practice", GOV.UK links case studies, and
            Spotify reports "The more examples, the better". Asking for one real case on every
            principle, and for the option it turned down, is this library's addition.
-           The wording should be the team's own. The NHS page states a reuse licence, the Open Government
-           Licence v3.0, and Productboard reserves its rights. The other pages read state no licence in
-           the text read, which is not proof that none exists.
+           The wording should be the team's own. The NHS and GOV.UK pages state a reuse licence, the
+           Open Government Licence v3.0, except where otherwise stated, and Productboard reserves its
+           rights. The other pages read state no licence in the text read, which is not proof that none
+           exists.
            Deep dive: design-principles_companion.md section 3 (Anatomy > The Principles) and section 6
            (Debates and contested boundaries).
      ASK   Which decision has the team argued about, which option did this principle choose, and which
@@ -213,10 +214,12 @@ HOW TO FILL THIS IN
            "Sometimes consistency conflicts with clarity." and "If everything is equally important,
            nothing actually guides the decision." THIS SECTION TAKES A SIDE IN A LIVE DISPUTE, AND THE SIDE
            IS THIS LIBRARY'S POSITION. NN/g also says a principle should "Not conflict with one another",
-           and Blackie lists "Non-conflicting:" among his criteria. The two camps may mean different
-           things by conflict: NN/g may mean that two principles should not contradict each other, and
-           Brignell that a useful principle exposes a tension. No source says so, so that reading is at
-           medium-low confidence. This template asks the author to name, for a kind of decision, which
+           and Blackie lists "Non-conflicting:" among his criteria. The dispute is narrower than it
+           looks: in the same passage NN/g says that where two principles matter in different
+           contexts, a team should "clearly specify in which contexts one of these principles is more
+           important than the other". This library reads that sentence and Brignell's as asking for
+           the same thing, a named winner for a kind of decision. No source says so, so that reading
+           is at medium-low confidence. This template asks the author to name, for a kind of decision, which
            principle wins. A resolution can take several forms. Salesforce "stack-ranked" its four
            principles. Keith recommends the form "X, even over Y." Atlassian, as the principles.design
            mirror records it, writes each principle as one thing before another, as in "Trusted
@@ -258,8 +261,11 @@ HOW TO FILL THIS IN
            design review, and the practice spread to marketing and product management. Brignell names
            principles nobody refers to as a failure mode. This library infers that a set with no stated
            place where it is cited risks being read once and not applied, and no source read ties the
-           failure to that cause. The list of places and the form a citation takes are this
-           library's position, and no source read prescribes either. The last field rests on a reading.
+           failure to that cause. Productboard's AI prompt, a vendor's prompt and not a published set,
+           names moments of use, among them design reviews and disagreements between designers, and
+           offers the line "Our principles say [X] over [Y] in this case." The written line a decision
+           record carries, and what a reviewer may do when a principle is set aside, are this library's
+           additions. The last field rests on a reading.
            USWDS calls its set "an evaluative lens for design and implementation decisions" and GitLab
            says "Principles act as a reusable standard for teams to measure their work." The family reads
            judged against as judgement: a decision cites the principle it leaned on and the one it set

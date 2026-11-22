@@ -3,6 +3,18 @@
 Change log for the `positioning-statement` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, corrected 2026-11-21 - positioning now sits fourth among the built members of the chain
+
+**A chain-position correction, not a template change**, so the version stays 0.1.0. The `lean-canvas`
+bundle joined `strategy-docs` second in the chain on 2026-10-30, by
+[ADR 0083 (lean-canvas joins strategy-docs as a seventh member)](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md),
+so positioning became fourth among the built members. The contract's chain also lists competitive
+analysis before it ([ADR 0091](../../docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)),
+which makes it fifth there, but that type is not built yet. The example's opening note and two companion
+sentences still said "third", and each now carries a dated note saying fourth among the built members. A Codex review found the stale ordinal on
+2026-11-21. The template's chain comment still says "third"; it is corrected at the `competitive-analysis`
+landing, which has to rewrite the same comment.
+
 ## 0.1.0 - 2026-10-20
 
 **Initial release.** Researched 2026-10-20, building on admission sweep 6 (2026-10-14) and the sitting

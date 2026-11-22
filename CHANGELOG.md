@@ -58,6 +58,23 @@ people who want every change, release notes are for people who want to know what
   Define re-score, the 2026-10-04 ranking, and the types shipped guides name without a catalog row. No type is
   admitted, queued or declined, and no catalog row changed.
 
+### Fixed
+
+- **Design principles and product principles move to 0.1.1, after a Codex review.** A read-only Codex review of both
+  bundles, checked line by line by a Sonnet verifier, found that each guide's rubric let a set with no owner, no
+  owned review trigger and no conflict resolution pass on its total. A 0 on any of those three rows now fails the set.
+  Five claims that no source said something were wrong, because cached sources the bundles already cite say it:
+  NN/g on naming which principle wins in which context, Productboard's two prompts, Monzo's and Pay.com's declined
+  options, and GOV.UK's reuse licence. Each is corrected, and two wider claims about "every set read" are narrowed to
+  the eight sets tabulated. No section, field or placeholder changes, and both examples keep their 0.1.0 stamp.
+- **The positioning statement and the North Star metric state their current places in the `strategy-docs` chain.**
+  Both still counted from before the Lean Canvas joined second on 2026-10-30. Dated notes now say fourth and fifth
+  among the built members; competitive analysis, specced but not built, sits ahead of both in the contract's chain.
+  Neither version changes.
+- **The section 9 candidates plan is marked superseded.** It now opens with what is built, what is open and where each
+  open item lives, including issue #368 for the diary block that
+  [ADR 0092](docs/internal/decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md) ruled and nobody built.
+
 ## [0.26.0] - 2026-11-13
 
 A minor release with one new bundle: `platform-device-support-matrix`, the 56th and the eighth `standing-standards`

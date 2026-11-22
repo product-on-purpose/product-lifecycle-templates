@@ -103,7 +103,9 @@ management in general, not this document. It must not be cited for the type.
 | David Pereira [14] | 12, in four layers of three | A name and one sentence |
 | Productboard's prompt [4] | 5, prescribed | A name, a statement, what it means in practice, what it means the team will not do, and a "TENSION" line |
 
-**Four findings follow.** A name and a statement are universal. Reasoning inside the statement is common. An
+**Four findings follow.** Every set tabulated gives each principle a short headline, and all but PostHog's one-liners
+add text beneath it; Langfuse [15], below, has lists but no named principles. *(Narrowed 2026-11-21 from "A name and a
+statement are universal", after a Codex review: GitLab's headline is a clause that is both, and PostHog's are one line.)* Reasoning inside the statement is common. An
 examples field appears in two published sets, Slack and Monzo. **A field for what a principle rules out, and a
 separate field for its tension, appear only in Productboard's prompt [4]**, a vendor's AI prompt. Langfuse [15]
 publishes the nearest thing, a list headed "What we don't do", but as one list for the whole set.
@@ -352,7 +354,7 @@ Quotable: "principles of product vision and strategy"
 
 **[4] Productboard, 'Product Principles Document' (Product Management Prompts Library).** vendor. **fetched-and-verified.**
 `https://www.productboard.com/product-management-prompts-library/product-principles-document/`
-Supports: The only blank structure found: a vendor AI prompt prescribing five principles, each with five fields, plus set-level sections. Footer reserves rights ('All rights reserved'); no reuse licence
+Supports: The only blank structure found: a vendor AI prompt prescribing five principles, each with five fields, plus set-level sections. Footer reserves rights ('All rights reserved'); no reuse licence. Its When Principles Conflict section asks the author to explain a hierarchy or a process, with a hypothetical example that splits the winner by kind of decision (added 2026-11-21, after a Codex review found the cached prompt says more than its heading)
 Quotable: "Great principles are specific enough that they could be used to resolve an argument."
 Quotable: "WHAT IT MEANS WE WON'T DO"
 Quotable: "TENSION: [What this principle trades off against"
@@ -364,6 +366,8 @@ Quotable: "it's not a principle"
 Quotable: "TENSION"
 Quotable: "Write product principles that actually guide decisions"
 Quotable: "When Principles Conflict"
+Quotable: "[Explain the hierarchy or the process for resolving conflicts between principles]"
+Quotable: "we default to Principle 1 for user-facing decisions and Principle 3 for internal tooling decisions"
 Quotable: "Copyright © 2026 Productboard, Inc. All rights reserved"
 Quotable: "TENSION TEST: Does each principle capture a real tension or trade-off?"
 Quotable: "consistently violated one without deciding to change it"
@@ -387,8 +391,9 @@ Quotable: "Consider the use of Pajamas components for UI in your MVCs."
 
 **[6] Monzo, 'The Vision and Principles for Our Internal Product'.** practitioner. **fetched-and-verified.**
 `https://monzo.com/internal-product`
-Supports: Six named principles for one internal product (Customer Operations tooling), each a paragraph of reasoning; two are followed by a dated-free case study of a decision it settled; a set-level list of six purposes precedes them. No licence stated
+Supports: Six named principles for one internal product (Customer Operations tooling), each a paragraph of reasoning; two are followed by a dated-free case study of a decision it settled, one of them turning down an automated retry for failed refunds in favour of handling them manually first (case detail added 2026-11-21); a set-level list of six purposes precedes them. No licence stated
 Quotable: "Optimise for learning with simple solutions"
+Quotable: "we decided to do it manually first"
 Quotable: "Prove it"
 Quotable: "Case Study: Refunding customers during the upgrade"
 Quotable: "To make sure we’re consistent in how we approach problems and build our product to achieve our vision, we have a set of principles."
