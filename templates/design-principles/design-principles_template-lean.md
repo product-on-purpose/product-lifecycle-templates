@@ -217,8 +217,9 @@ HOW TO FILL THIS IN
            and Blackie lists "Non-conflicting:" among his criteria. The dispute is narrower than it
            looks: in the same passage NN/g says that where two principles matter in different
            contexts, a team should "clearly specify in which contexts one of these principles is more
-           important than the other". So both camps end in naming a winner for a kind of decision.
-           This template asks the author to name, for a kind of decision, which
+           important than the other". This library reads that sentence and Brignell's as asking for
+           the same thing, a named winner for a kind of decision. No source says so, so that reading
+           is at medium-low confidence. This template asks the author to name, for a kind of decision, which
            principle wins. A resolution can take several forms. Salesforce "stack-ranked" its four
            principles. Keith recommends the form "X, even over Y." Atlassian, as the principles.design
            mirror records it, writes each principle as one thing before another, as in "Trusted

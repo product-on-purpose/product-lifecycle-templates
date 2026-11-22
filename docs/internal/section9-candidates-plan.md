@@ -5,7 +5,7 @@
 > #359 to #361. A Codex review on 2026-11-21 found that following this plan's pipeline today would repeat landed work.
 > What is still open, and where it lives:
 >
-> - **Built:** `design-principles` and `product-principles`, both on 2026-11-20. Nothing here remains for them.
+> - **Built:** `design-principles` and `product-principles` (PRs #364 and #366). Nothing here remains for them.
 > - **Competitive analysis (#361):** specced and ruled, and it waits for a build request in the maintainer's words. Its
 >   spec, not this plan, holds the build's stops, including the maintainer's read of the contract's section 4 sentence.
 > - **The diary block (C1):** [ADR 0092](decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md) ruled that
@@ -15,9 +15,9 @@
 >   the current access rule, not from this plan's sweep design. Admission stays per candidate
 >   ([ADR 0078](decisions/0078-maps-canvases-and-session-records-are-templatable-through-their-written-form.md)), and
 >   the critic should judge the raw-checked evidence, not the readers' returns.
-> - **Merging (D7):** never ruled. In practice the principles PRs (#364 to #367) merged on `merge-check.py`'s
->   `VERDICT: merge`, which is what [`release-process.md`](release-process.md) says. The "stricter batch review" below
->   did not hold.
+> - **Merging (D7):** never ruled. In practice the principles PRs (#364 to #367) each merged once CI was green, as
+>   [`release-process.md`](release-process.md) says: "A green bundle PR merges on its own authority". The "stricter
+>   batch review" below did not hold.
 
 **Status: revision 2, after an adversarial review.** On 2026-11-14 the maintainer asked to plan four candidates
 from section 9 of [`backlog.md`](backlog.md#9-researched-types-with-no-issue-and-no-decision), review the plans

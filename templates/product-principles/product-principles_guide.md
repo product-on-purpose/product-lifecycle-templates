@@ -107,8 +107,9 @@ that cost nothing, or that nobody owns, and the decision goes back to whoever is
 at 16 is the library's judgement and is not measured. The total does not say which rows failed. **A 0 on
 row 7, row 9 or row 11 fails the set whatever the total**, because a set with no way to choose between two
 principles, no owner, or a Review Trigger nobody owns cannot settle an argument or be kept current.
-Without that rule, a set scoring 0 on all three rows would still total 18 and pass. The rule is also the
-library's judgement. Read the other rows that scored 0 next, starting with row 2, because a principle that
+Without that rule, a set scoring 0 on all three rows would still total 18 and pass. An "N/A" with a
+reason, which the template allows where a section does not apply, scores 1 on its row and does not trip
+the rule. The rule is also the library's judgement. Read the other rows that scored 0 next, starting with row 2, because a principle that
 cannot be reversed leaves a set that cannot decide, even when other rows score well.
 Grade what the author added to the blank template. The template already prints the field labels and the
 five conditions in the Review Trigger table, so a row that rewards their presence is satisfied before

@@ -7,18 +7,21 @@ tell a correction from a preference.
 
 **Corrections, not preferences.** A read-only Codex review of the bundle, run after it merged, raised
 findings that a Sonnet verifier then checked line by line against the files and the cached sources. The
-ones that held are fixed here. Two guidance comments in the template change, so the template is stamped
+ones that held are fixed here. Three guidance comments in the template change (The Principles, When
+Principles Conflict and Using Them in Decisions), so the template is stamped
 0.1.1. No section, field or placeholder changes. The example was filled from 0.1.0 and keeps that stamp.
 
 - **The rubric gains a floor.** A 0 on row 6 (conflict), row 8 (owner) or row 10 (Review Trigger owners)
   now fails the set whatever the total. Before this, a set scoring 0 on all three still totalled 16 of
-  22 and passed the line at 15. The floor is the library's judgement, like the line.
+  22 and passed the line at 15. An "N/A" with a reason scores 1 and does not trip it. The floor is the
+  library's judgement, like the line.
 - **NN/g's position on conflict is stated whole.** The companion, the template's When Principles Conflict
   comment and the research log said the template "takes Brignell's side" and that no source supported
   reading the dispute as one of meaning. NN/g's own passage goes on to say that where two principles
   matter in different contexts, a team should "clearly specify in which contexts one of these principles
   is more important than the other". The guide now states both views, as the spec required, and the
-  quotation joins entry [1]'s Quotable lines.
+  quotation joins entry [1]'s Quotable lines. Reading Brignell's view as asking for the same named winner
+  is labelled as the library's, at medium-low confidence.
 - **Productboard's design prompt is credited for moments of use.** The companion and the template said no
   source read prescribes where a set is cited or the form a citation takes. The cached prompt [11] names
   design reviews and disagreements between designers, and offers "Our principles say [X] over [Y] in this

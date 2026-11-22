@@ -72,8 +72,9 @@ Score each row 0, 1 or 2. A score under 15 out of 22 means several rows are thin
 not yet a standard a designer can lean on. The total does not say which rows failed. **A 0 on row 6, row
 8 or row 10 fails the set whatever the total**, because a missing conflict resolution, a missing owner or
 a Review Trigger with no owner leaves a designer with no way to choose, no one to ask, or a set nobody
-reopens. Without that rule, a set scoring 0 on all three rows would still total 16 and pass. The rule,
-like the line at 15, is this library's judgement and is not measured. Read the other rows that scored 0
+reopens. Without that rule, a set scoring 0 on all three rows would still total 16 and pass. An "N/A"
+with a reason, which the template allows where a section does not apply, scores 1 on its row and does
+not trip the rule. The rule, like the line at 15, is this library's judgement and is not measured. Read the other rows that scored 0
 next. Grade what
 the author added to the blank template. The template already prints the field labels and the Review
 Trigger conditions, so a row that rewards their presence is satisfied before anyone writes a word.
@@ -119,8 +120,9 @@ them, and the disputes among sources, are in the companion's sections 6 and 7.
    conflict with one another", and in the same passage says that where two matter in different contexts,
    a team should "clearly specify in which contexts one of these principles is more important than the
    other". Brignell says "Sometimes consistency conflicts with clarity." and "If everything is equally
-   important, nothing actually guides the decision." Both views end in the same practice, which the
-   template's table follows. Test: does the table name a winner in a named kind of decision? Costs row 6.
+   important, nothing actually guides the decision." This library reads both as asking for a named
+   winner in a named kind of decision, and the template's table follows that reading. No source states
+   the reading, and Blackie's "Non-conflicting:" criterion leans the other way. Test: does the table name a winner in a named kind of decision? Costs row 6.
 7. **Overlapping principles.** Spotify's audit named "Overlapping concepts" as a defect. Test: do two
    principles settle the same decision? Merge or retire one. Costs rows 5 and 9.
 8. **A set nobody cites.** The library's inference is that a set with no stated moment of use risks being

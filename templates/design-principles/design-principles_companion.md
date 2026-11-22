@@ -395,8 +395,9 @@ passage, NN/g says that where two principles both matter in different contexts, 
 specify in which contexts one of these principles is more important than the other" [[1]](#ref-1). So NN/g
 asks a team to avoid principles that contradict each other, and to say which wins where both apply. Brignell
 says a useful principle exposes a tension. **Recommendation: name which principle wins in a named kind of
-decision**, which is the practice both views end in, and which NN/g's sentence states. The table the template
-uses to record it is the library's form.
+decision**, which NN/g's sentence asks for directly. Reading Brignell's view as asking for the same thing is the
+library's, at medium-low confidence, and Blackie's "Non-conflicting:" leans the other way. The table the
+template uses to record the winner is the library's form.
 
 **Slogan or decision tool?** Brignell writes "A slogan describes intent. A principle guides a choice."
 [[18]](#ref-18) and "Design principles aren't mission statements." [[18]](#ref-18) Mistry writes "Most design

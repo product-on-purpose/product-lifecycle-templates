@@ -34,8 +34,8 @@ product-principles_companion.md section 1 (Orientation) and section 6 (Debates a
 SOME OF THIS STRUCTURE IS THIS LIBRARY'S OWN POSITION, NOT RECEIVED PRACTICE.
 No source the research read publishes a template for this type, other than a vendor's AI prompt
 (Productboard's). So the six sections here are assembled from published sets and method articles. Each
-principle below carries five fields. A name and a statement appear in all eight published sets tabulated
-(Langfuse's handbook, read beside them, has lists but no named principles). Reasoning is common.
+principle below carries five fields. Every one of the eight published sets tabulated gives each principle
+a short headline, and all but PostHog's one-liners add text beneath it. Reasoning is common.
 A trade-off written into the principle is shown by several publishers. A field for what a principle rules
 out appears per principle only in Productboard's prompt. Of the eight published sets tabulated, none
 carries it: Langfuse publishes one set-level list, and Box, as Pendo reports it, a comparable "Versus".
@@ -148,8 +148,8 @@ HOW TO FILL THIS IN
            Slack caps a set at "no more than seven", ThoughtSpot "landed on seven" after debating the
            count, and Intercom holds fourteen in layers. Of the eight published sets tabulated, only
            Slack's and PostHog's fall inside three to five. None of the sources cites a measurement.
-           STATEMENT: every tabulated set carries a name and a statement. WHY WE HOLD IT: Cagan writes "The
-           product team needs to understand these principles and the reasoning behind each one."
+           STATEMENT: every tabulated set gives each principle a short headline. WHY WE HOLD IT: Cagan
+           writes "The product team needs to understand these principles and the reasoning behind each one."
            GitLab and Monzo give a reasoning paragraph. THE TRADE-OFF IT ACCEPTS: GitLab writes three of eight in an "X over Y" form, such
            as "We value quality over velocity". Linear names a sequence in "Simple first, then
            powerful". Box, as Pendo reports it, published a named cost with each principle, such as "The

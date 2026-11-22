@@ -48,7 +48,7 @@ Then read the type's spec in [`buildout-specs.md`](../../docs/internal/buildout-
 - `main` clean, zero open PRs, `git pull`.
 - The type is on the build backlog and its family contract exists. If the contract does not exist,
   **stop**: contracts are drafted then read by the maintainer, never self-approved.
-- The catalog entry exists, or an accepted admitting ADR reserves one and the spec says the row lands
+- The catalog entry exists, or the type has an accepted admitting ADR and its spec says the row lands
   in the bundle PR, as entries 213 and 214 did. A type with neither has not passed ADR 0030's admission
   test.
 

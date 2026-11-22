@@ -29,7 +29,7 @@ At a glance:
   sources state a cadence and a fourth asks for a dated record precisely so a team can tell when it was
   last reviewed [[8]](#ref-8)[[26]](#ref-26)[[30]](#ref-30)[[52]](#ref-52).
 - **This library places it third** in the `strategy-docs` chain, between the product strategy and the
-  North Star metric, and names that placement a POSITION rather than a finding; see Debates, below. *(2026-11-21: fourth since [ADR 0083](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) placed the Lean Canvas second; it still sits between the strategy and the North Star metric.)*
+  North Star metric, and names that placement a POSITION rather than a finding; see Debates, below. *(2026-11-21: fourth among the built members since [ADR 0083](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) placed the Lean Canvas second; it still sits between the strategy and the North Star metric.)*
 
 ## 2. Origins and evolution
 
@@ -246,7 +246,7 @@ those who refine it.
 ## 6. Debates and contested boundaries
 
 **Where it sits in the chain, against the vision and the strategy.** This library places positioning third
-*(2026-11-21: fourth, since ADR 0083 placed the Lean Canvas second)* in the `strategy-docs` chain, between the product strategy and the North Star metric, and the family
+*(2026-11-21: fourth among the built members, since ADR 0083 placed the Lean Canvas second)* in the `strategy-docs` chain, between the product strategy and the North Star metric, and the family
 contract names that placement a POSITION rather than a finding
 ([`strategy-docs.md`](../../docs/internal/contracts/strategy-docs.md)). No source states this exact
 sequence. The strongest support for an order at all is Dunford's own account that positioning follows the

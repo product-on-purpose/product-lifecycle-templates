@@ -115,8 +115,10 @@ condensed forms are a GitLab PDF, "A condensed version of these principles for e
 Government Licence v3.0, except where otherwise stated." [7] The GOV.UK page carries the same footer, naming the Open
 Government Licence v3.0 "except where otherwise stated" [13]. *(Corrected 2026-11-21: this line first named the NHS
 page alone. A Codex review found the footer in the cached GOV.UK page.)* Productboard reserves its rights: "Copyright © 2026
-Productboard, Inc. All rights reserved." [11] The others state no licence in the text read, which is not proof that
-none exists. **The bundle describes the structures it found and copies no set's text.**
+Productboard, Inc. All rights reserved." [11] A scan of every cached body on 2026-11-21 found copyright lines or
+rights reservations on several more, among them NN/g [1], [23], Center Centre [4], IBM [8], GitLab [15] and Clearleft
+[26], and no reuse licence other than the two above. A reservation is not a licence, which is not proof that none
+exists elsewhere on those sites. **The bundle describes the structures it found and copies no set's text.**
 
 ### Practice: how a set is applied, owned and changed
 
@@ -155,7 +157,8 @@ conflicts with clarity." [18] Blackie lists "Non-conflicting:" among his criteri
 "conflict" differently: NN/g may mean that two principles should not contradict each other, and Brignell that a useful
 principle exposes a tension. NN/g's same passage goes on: "then clearly specify in which contexts one of these principles
 is more important than the other" [1]. **Section 3 of the template names which principle wins in a named kind of
-decision, which NN/g's sentence states and Brignell's view implies. The table form is the library's POSITION.**
+decision, which NN/g's sentence asks for. Reading Brignell's view as asking for the same thing, and the table form,
+are the library's POSITION.**
 *(Corrected 2026-11-21: this paragraph first said the template takes Brignell's side, and left out NN/g's sentence.)*
 
 **Slogan or decision tool?** Brignell: "A slogan describes intent. A principle guides a choice." [18] Jay Mistry: "Most
@@ -406,7 +409,7 @@ Quotable: "These design principles are intended to help teams across government 
 
 **[7] NHS England - NHS digital service manual, Design principles.** primary. **fetched-and-verified.**
 `https://service-manual.nhs.uk/design-system/design-principles`
-Supports: Ten numbered principles, each a short imperative title and one to four sentences, with no reviewer question, example or evidence field. The page states a use (to start a project and to help make decisions), a provenance (the principles are inspired by the NHS Constitution), a poster PDF, a feedback channel on GitHub and an 'Updated: April 2023' date. It is the only set read that states a reuse licence: the Open Government Licence v3.0, except where otherwise stated
+Supports: Ten numbered principles, each a short imperative title and one to four sentences, with no reviewer question, example or evidence field. The page states a use (to start a project and to help make decisions), a provenance (the principles are inspired by the NHS Constitution), a poster PDF, a feedback channel on GitHub and an 'Updated: April 2023' date. It is one of two sets read that state a reuse licence, with GOV.UK [13] (corrected 2026-11-21): the Open Government Licence v3.0, except where otherwise stated
 Quotable: "These principles guide all of our design."
 Quotable: "All content is available under the Open Government Licence v3.0, except where otherwise stated."
 Quotable: "Download design principles poster (PDF, 126KB)"
