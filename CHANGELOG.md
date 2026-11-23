@@ -21,7 +21,9 @@ people who want every change, release notes are for people who want to know what
   full: full adds a short brief per main rival and a scorecard rated against the customers' jobs. Its worked example is
   Acme Analytics' analysis for the Recurring Analyst segment, dated between the FY26 strategy and the positioning
   statement, with fictional rivals. Its research log holds 56 sources. Catalog entry 11 moves to built, and its
-  aliases, named source and sizes are corrected. Closes #361.
+  aliases, named source and sizes are corrected. Closes #361. Its build cost $15.99 at API list rates, for 17
+  agents, 16 on Sonnet 5.5 and an Opus head writer; the report is in [`bundle-builds/`](bundle-builds/INDEX.md),
+  and its landing sweep ($1.03) is recorded beside the totals.
 
 ### Changed
 
