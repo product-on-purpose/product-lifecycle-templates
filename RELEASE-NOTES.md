@@ -6,6 +6,16 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.27.0
+
+**Two new bundles: design principles and product principles, the library's 57th and 58th.** Each is a short
+standing set a team agrees once and uses to settle trade-offs: design principles for the experience of a product,
+product principles for what to build, for whom, and what to refuse. Both ship one size and join
+`standing-standards`. Both skills now recognize a request for them, and nothing in any MCP tool or install route
+changed.
+
+---
+
 ## v0.26.0
 
 **One new bundle: the platform and device support matrix, the library's 56th.** It is the standing page that

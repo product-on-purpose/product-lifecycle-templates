@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=58, tier1=25, tier1remaining=2, statebuilt=58, statecandidate=154, stateoutofscope=2, commoncandidates=48, adrs=92, cisteps=32, checkk=168, checkformats=144, checklogs=120, logsgated=52, sourcesgated=2083 -->
 
-**Last updated:** 2026-11-20 (**`product-principles` lands as the 58th bundle**, the tenth
+**Last updated:** 2026-11-22 (**`v0.27.0` ships `design-principles` and `product-principles`, the 57th and 58th
+bundles**, as a minor release the maintainer approved on 2026-11-22. Both bundles are at 0.1.1 after a Codex
+review's verified findings. Both skills now name design or product principles, with no trigger removed. No MCP
+tool or install route changed.)
+The previous entry read: **`product-principles` lands as the 58th bundle**, the tenth
 `standing-standards` member, by [ADR 0090](docs/internal/decisions/0090-product-principles-joins-standing-standards-as-a-foundation.md).
 It ships one size, `lean`, carries catalog entry 214, and closes issue #360. The same pull request bumps
 `product-strategy` to 0.1.1, because its one-pager's Product Principles guidance now points at the new

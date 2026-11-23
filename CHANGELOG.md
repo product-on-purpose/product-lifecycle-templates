@@ -12,6 +12,12 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.27.0] - 2026-11-22
+
+A minor release with two new bundles: `design-principles`, the 57th, and `product-principles`, the 58th, the
+ninth and tenth `standing-standards` members. No MCP tool or install route changed. Release note:
+[`docs/releases/v0.27.0.md`](docs/releases/v0.27.0.md).
+
 ### Added
 
 - **Product principles**, the 58th bundle and the tenth `standing-standards` member, a `foundation` by
@@ -41,6 +47,10 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Both skills now recognize a request for design or product principles.** An agent decides whether to load a
+  skill from its description, so a type missing from it may never reach the skill. To fit the new trigger under
+  the 1,024-character cap, the fill skill drops its closing sentence that most bundles ship lean and full sizes,
+  and the grade skill's opening no longer says it returns "a report card". No existing trigger was removed.
 - **The product strategy one-pager's Product Principles guidance now points at the product principles bundle**
   (`product-strategy` 0.1.1). One guidance comment changes; no section, field or placeholder does. A team that
   keeps a standing set, with an owner and a review trigger, now writes it with `product-principles` and names its
@@ -74,6 +84,8 @@ people who want every change, release notes are for people who want to know what
 - **The section 9 candidates plan is marked superseded.** It now opens with what is built, what is open and where each
   open item lives, including issue #368 for the diary block that
   [ADR 0092](docs/internal/decisions/0092-diary-study-plan-is-declined-as-a-separate-type.md) ruled and nobody built.
+- **The README's Tier-1 floor row counted thirty Tier-2 types.** It now says thirty-two, after the two principles
+  bundles, and so does the status line.
 
 ## [0.26.0] - 2026-11-13
 
@@ -3598,7 +3610,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.26.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.27.0...HEAD
+[0.27.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.26.0...v0.27.0
 [0.26.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...v0.26.0
 [0.25.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...v0.25.0
 [0.24.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.23.0...v0.24.0
