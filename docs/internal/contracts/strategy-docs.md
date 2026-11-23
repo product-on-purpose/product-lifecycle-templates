@@ -6,7 +6,7 @@ Members at adoption: none built yet (product-vision, product-strategy, product-r
 Members: product-vision, product-strategy, product-roadmap, okrs, north-star-metrics ([ADR 0070](../decisions/0070-north-star-metrics-joins-strategy-docs-as-a-fifth-member.md), assigned and specced 2026-10-12 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-12), positioning-statement ([ADR 0076](../decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md), assigned and specced 2026-10-19 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-20), lean-canvas ([ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md), assigned and specced 2026-10-30 in [`tier2-specs.md`](../tier2-specs.md); built 2026-10-30), competitive-analysis ([ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md), accepted after the maintainer's read, assigned 2026-11-14; specced 2026-11-17 in [`tier2-specs.md`](../tier2-specs.md); built 2026-11-22)
 Modeled on: the governance-docs contract (the first on the `classification` axis), on the delivery-docs and decision-docs contracts, on the pm-skills family-contract pattern
 Axis: `classification`, spanning **two values** (`foundation` and `utility`); this is the first family to use a value **set** rather than a single value (see [ADR 0023](../decisions/0023-resolve-the-tier-1-family-taxonomy.md))
-Version: 0.5.0 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
+Version: 0.5.1 (changes to an obligation require a decision record; a dated in-place correction to an unsourced
 claim does not, per [procedure 11](../decision-procedures.md#11-a-family-contract-asserts-something-about-the-world);
 see the change note at the end)
 
@@ -166,7 +166,11 @@ and contradicts neither sibling (added 2026-10-19,
 the constraints). The Lean Canvas's example models the embedded-analytics OEM line that the product strategy
 example names as a non-target needing "a different product", and contradicts no sibling (added 2026-10-30,
 [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md); its spec sets
-the constraints). **When this family completes,
+the constraints). The competitive analysis's example compares the rivals for the segment the product strategy
+example chose, counts the status quo among the alternatives the positioning statement example names, names no real
+vendor, and contradicts neither sibling (added 2026-11-22,
+[ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) and its spec's choice
+D4; the spec in [`tier2-specs.md`](../tier2-specs.md) sets the constraints). **When this family completes,
 the library will hold one continuous worked thread from a product vision down to a bug report**, which is a
 demonstration no single bundle can make. A member whose example invents an unrelated company forfeits that and
 is out of contract even if every file exists.
@@ -199,6 +203,14 @@ tell you that a *specific* member picked the *right* one: nothing mechanical sto
 reviewed against.
 
 ## Change note
+
+**0.5.1, 2026-11-22: the competitive analysis's example obligation.** *(Pending the maintainer's read.)* ADR 0091
+added the member without a section 4 sentence for its example, unlike the three earlier widenings. The type's spec
+left that sentence to the build, as its choice D4, ruled on 2026-11-20 ("add it at the build, after the maintainer
+reads it"). Section 4 now states it: the example compares the rivals for the segment the product strategy example
+chose, counts the status quo among the positioning statement example's alternatives, names no real vendor, and
+contradicts neither sibling. The bundle's example, landed the same day, already meets it. **No structural
+obligation changed**, and check K's registry entry needs no edit.
 
 **0.5.0, 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md): an eighth member, and the fourth widening of this family's list of questions.**
 *(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8. The place before the
