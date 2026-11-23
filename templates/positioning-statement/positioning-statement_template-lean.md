@@ -8,7 +8,7 @@ last_updated: "{{date}}"
 doc_type: positioning-statement
 size: lean
 source_template: positioning-statement
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -40,11 +40,12 @@ carries whichever answer your own organization gives; do not read a single corre
 See positioning-statement_companion.md section 6 (Who owns the statement) before filling in the
 owner field.
 
-WHERE THIS SITS IN THE CHAIN. This library places positioning third among its strategy-docs
-family, between the product strategy and the North Star metric, and names that placement its own
-POSITION rather than a sourced finding. A considered alternative places it second, between the
-vision and the strategy, on one practitioner's framing of positioning as part of the vision and
-decision making. Nothing in this template depends on which place is correct; it depends only on
+WHERE THIS SITS IN THE CHAIN. This library places positioning immediately after the competitive
+analysis in its strategy-docs family, so after the product strategy and before the North Star metric,
+and names that placement its own POSITION rather than a sourced finding. The competitive analysis
+supplies the alternatives a statement may name; see competitive-analysis_guide.md. A considered
+alternative places it earlier, between the vision and the strategy, on one practitioner's framing
+of positioning as part of the vision and decision making. Nothing in this template depends on which place is correct; it depends only on
 positioning following a strategy that has already named a target segment. See
 positioning-statement_companion.md section 6 (Debates).
 

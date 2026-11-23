@@ -12,6 +12,24 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **Competitive analysis**, the 59th bundle and the eighth `strategy-docs` member, a `utility` by
+  [ADR 0091](docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md). It says who
+  else serves the customers the strategy chose, compares them on what those customers value, and says what that means
+  for the product's direction. It is kept as a series of dated versions, each refresh adding one. It ships lean and
+  full: full adds a short brief per main rival and a scorecard rated against the customers' jobs. Its worked example is
+  Acme Analytics' analysis for the Recurring Analyst segment, dated between the FY26 strategy and the positioning
+  statement, with fictional rivals. Its research log holds 56 sources. Catalog entry 11 moves to built, and its
+  aliases, named source and sizes are corrected. Closes #361.
+
+### Changed
+
+- **The positioning statement's chain comment names its place after the competitive analysis** (`positioning-statement`
+  0.1.1). It said "third", stale since the Lean Canvas joined second. One guidance comment changes; no section, field or
+  placeholder does. Dated notes in the positioning statement and the North Star metric now place them fifth and sixth
+  among the built members.
+
 ## [0.27.0] - 2026-11-22
 
 A minor release with two new bundles: `design-principles`, the 57th, and `product-principles`, the 58th, the

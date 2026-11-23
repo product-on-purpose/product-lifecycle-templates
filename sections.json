@@ -1906,6 +1906,324 @@
       "template_version": "0.1.0"
     },
     {
+      "bundle": "competitive-analysis",
+      "default_format": "default",
+      "formats": {
+        "default": {
+          "frontmatter": [
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "current_version"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "customer_segment_short_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "date"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "draft_or_agreed"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "product_name"
+            },
+            {
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "name": "who_owns_this_analysis"
+            }
+          ],
+          "sections": [
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "purpose-and-scope",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "customers_covered",
+                "decisions_informed",
+                "readers_and_use"
+              ],
+              "title": "Purpose and Scope"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "the-competitor-set",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "competitor_kind",
+                "competitor_name",
+                "competitor_tier",
+                "reason_in_set",
+                "rivals_left_out"
+              ],
+              "title": "The Competitor Set"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "competitor-profiles",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "profile_competitor",
+                "profile_customers_served",
+                "profile_differentiation",
+                "profile_offer",
+                "profile_pricing",
+                "profile_shortfalls",
+                "profile_wins"
+              ],
+              "title": "Competitor Profiles"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "comparison-on-what-customers-value",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "criterion_weight",
+                "rating_rival_a",
+                "rating_rival_b",
+                "rating_scale",
+                "rating_status_quo",
+                "rating_us",
+                "rival_a_name",
+                "rival_b_name",
+                "rival_lead_light_weight",
+                "status_quo_name",
+                "value_criterion",
+                "weight_source"
+              ],
+              "title": "Comparison on What Customers Value"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "implications-for-our-direction",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "finding",
+                "implication_date",
+                "implication_move",
+                "implication_owner",
+                "routes_to"
+              ],
+              "title": "Implications for Our Direction"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "evidence-and-sources",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "evidence_claim",
+                "evidence_date",
+                "evidence_note",
+                "evidence_source",
+                "legal_check"
+              ],
+              "title": "Evidence and Sources"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "refresh-trigger-and-versions",
+              "in_sizes": [
+                "lean",
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "refresh_events",
+                "refresh_interval_floor",
+                "refresh_owner",
+                "version_changes",
+                "version_date",
+                "version_label",
+                "version_prior_location",
+                "version_trigger"
+              ],
+              "title": "Refresh Trigger and Versions"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": false,
+              "has_table": false,
+              "id": "competitor-briefs",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "brief_competitor",
+                "brief_pick_reason",
+                "brief_unmet_needs",
+                "brief_values"
+              ],
+              "title": "Competitor Briefs"
+            },
+            {
+              "guidance_fields": [
+                "WHAT",
+                "WHY",
+                "ASK",
+                "PRIORITY",
+                "ROW HINT",
+                "GOOD",
+                "WEAK",
+                "TRAP"
+              ],
+              "has_row_hint": true,
+              "has_table": true,
+              "id": "jobs-based-scorecard",
+              "in_sizes": [
+                "full"
+              ],
+              "level": 2,
+              "placeholders": [
+                "customer_job",
+                "job_importance",
+                "job_rival_a",
+                "job_rival_b",
+                "job_status_quo",
+                "job_us",
+                "rival_a_name",
+                "rival_b_name",
+                "status_quo_name"
+              ],
+              "title": "Jobs-Based Scorecard"
+            }
+          ],
+          "sizes": [
+            "lean",
+            "full"
+          ]
+        }
+      },
+      "template_version": "0.1.0"
+    },
+    {
       "bundle": "data-dictionary",
       "default_format": "default",
       "formats": {
@@ -6115,7 +6433,7 @@
           ]
         }
       },
-      "template_version": "0.1.0"
+      "template_version": "0.1.1"
     },
     {
       "bundle": "prd",
@@ -14956,7 +15274,7 @@
       "template_version": "0.1.1"
     }
   ],
-  "count": 58,
-  "frontmatter_count": 348,
-  "section_count": 485
+  "count": 59,
+  "frontmatter_count": 354,
+  "section_count": 494
 }

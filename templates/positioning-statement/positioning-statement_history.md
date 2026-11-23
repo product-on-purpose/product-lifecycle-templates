@@ -3,6 +3,18 @@
 Change log for the `positioning-statement` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.1 - 2026-11-22 - positioning sits after the competitive analysis
+
+**One guidance comment changes**, so the version moves to 0.1.1. The `competitive-analysis` bundle was built
+on 2026-11-22 and sits immediately before positioning in the `strategy-docs` chain, by
+[ADR 0091 (competitive analysis joins strategy-docs as an eighth member)](../../docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md).
+The template's "Where this sits in the chain" comment said "third", stale since the Lean Canvas joined second on
+2026-10-30. It now names its place by its neighbours rather than by an ordinal: after the competitive analysis,
+and so after the strategy and before the North Star metric. It also points at the analysis as the source of the
+alternatives a statement may name, and its considered alternative now reads "earlier" rather than "second". No
+section, field or placeholder changes. The example and two companion sentences gain a second dated note saying
+fifth among the built members, and the example keeps its 0.1.0 stamp.
+
 ## 0.1.0, corrected 2026-11-21 - positioning now sits fourth among the built members of the chain
 
 **A chain-position correction, not a template change**, so the version stays 0.1.0. The `lean-canvas`
