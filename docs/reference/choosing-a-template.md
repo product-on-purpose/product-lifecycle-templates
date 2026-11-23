@@ -48,6 +48,9 @@ Two different altitudes live here. Direction comes first, then the specific thin
   create, and what that rules out.
 - [`product-strategy`](../../templates/product-strategy/) - which problems this product will solve
   to get there, and which it will not.
+- [`competitive-analysis`](../../templates/competitive-analysis/) - who else serves the customers
+  the strategy chose, how they compare on what those customers value, and what that means for the
+  product's direction, kept as dated versions.
 - [`positioning-statement`](../../templates/positioning-statement/) - how this product stands
   against a named alternative, for a specific target customer, now.
 - [`prd`](../../templates/prd/) - what to build, for whom, and why, for one initiative.
@@ -169,7 +172,7 @@ included here for readers who want the complete picture rather than a situationa
 | Family | What it is for | Bundles |
 |---|---|---|
 | `delivery-docs` | Turns an idea into shipped work, PRD through release note | [`prd`](../../templates/prd/), [`user-stories`](../../templates/user-stories/), [`epic`](../../templates/epic/), [`product-backlog`](../../templates/product-backlog/), [`sprint-backlog`](../../templates/sprint-backlog/), [`use-case-specification`](../../templates/use-case-specification/), [`acceptance-criteria`](../../templates/acceptance-criteria/), [`change-request`](../../templates/change-request/), [`release-notes`](../../templates/release-notes/), [`announcement-internal-comms`](../../templates/announcement-internal-comms/) |
-| `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`lean-canvas`](../../templates/lean-canvas/), [`product-strategy`](../../templates/product-strategy/), [`positioning-statement`](../../templates/positioning-statement/), [`north-star-metrics`](../../templates/north-star-metrics/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
+| `strategy-docs` | Sets direction: where the product is going, which problems it solves first, and what counts as progress | [`product-vision`](../../templates/product-vision/), [`lean-canvas`](../../templates/lean-canvas/), [`product-strategy`](../../templates/product-strategy/), [`competitive-analysis`](../../templates/competitive-analysis/), [`positioning-statement`](../../templates/positioning-statement/), [`north-star-metrics`](../../templates/north-star-metrics/), [`product-roadmap`](../../templates/product-roadmap/), [`okrs`](../../templates/okrs/) |
 | `decision-docs` | Investigates, evaluates, proposes, records, and designs against a decision, as five separate jobs | [`rfc`](../../templates/rfc/), [`adr`](../../templates/adr/), [`sdd`](../../templates/sdd/), [`spike-report`](../../templates/spike-report/), [`trade-study`](../../templates/trade-study/) |
 | `governance-docs` | Standing instruments a PM maintains across the whole lifecycle: risk, open items, and whether objectives are being met | [`risk-register`](../../templates/risk-register/), [`raid-log`](../../templates/raid-log/), [`kpi-dashboard`](../../templates/kpi-dashboard/), [`issue-log`](../../templates/issue-log/), [`change-log`](../../templates/change-log/), [`tracking-plan`](../../templates/tracking-plan/), [`data-dictionary`](../../templates/data-dictionary/), [`requirements-traceability-matrix`](../../templates/requirements-traceability-matrix/) |
 | `qa-docs` | Verifies the work: what to test, one verification's specification, one confirmed defect, and whether the effort cleared its bar | [`test-plan`](../../templates/test-plan/), [`test-case`](../../templates/test-case/), [`bug-report`](../../templates/bug-report/), [`test-summary-report`](../../templates/test-summary-report/) |
@@ -180,8 +183,8 @@ included here for readers who want the complete picture rather than a situationa
 | `experimentation-docs` | Plans one test of a hypothesis about a change, and later reports it | [`experiment-design-doc`](../../templates/experiment-design-doc/), [`experiment-readout`](../../templates/experiment-readout/) |
 | `research-docs` | Plans one study of the people a product serves, and later reports it | [`user-research-plan`](../../templates/user-research-plan/), [`user-research-report`](../../templates/user-research-report/) |
 
-<!-- counts: bundles=58 -->
-That is 58 bundles across every family the library currently ships. All eleven families are
+<!-- counts: bundles=59 -->
+That is 59 bundles across every family the library currently ships. All eleven families are
 complete. `experimentation-docs` now has both of its two planned members, `experiment-design-doc` and
 `experiment-readout`, and `research-docs` now has both of its two, `user-research-plan` and
 `user-research-report`. No bundle in the list above is a partially built stub. See

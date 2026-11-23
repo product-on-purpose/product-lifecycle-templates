@@ -1,0 +1,32 @@
+id: competitive-analysis
+title: Competitive Analysis
+summary: >-
+  The document that says who else serves the customers a strategy chose, compares them on what those
+  customers value, and says what that means for the product's direction. It is kept as a series of dated
+  versions, each refresh adding one. Not a product strategy, a positioning statement, a sales battlecard,
+  a SWOT of your own company, or a competitive usability study.
+doc_type: competitive-analysis
+classification: utility
+family: strategy-docs
+sizes_available: [lean, full]
+default_size: lean
+sizing_guidance: "Use lean (the competitor set, profiles, a comparison on what the chosen customers value, the implications, the evidence and the refresh rule) when the team shares the context and one comparison can settle the decision; it is the whole artifact and the default. Move to full when a major choice rests on how a few main rivals differ, or when the lean comparison keeps ending in an argument about which criteria the customers truly care about; it adds Competitor Briefs (a short narrative on each main rival) and a Jobs-Based Scorecard. Both signals are this library's reading, not a measured one."
+methodology: generic
+pairs_with: []
+status: beta
+template_version: 0.1.0
+tags:
+  - strategy
+  - competitive
+  - competitors
+  - market
+  - differentiation
+  - product-marketing
+related_templates: [product-strategy, positioning-statement, product-vision, lean-canvas, product-roadmap, user-persona]
+aliases:
+  - competitive landscape
+  - competitor analysis
+catalog_ref: 11
+maintainer: "product-on-purpose"
+last_reviewed: 2026-11-22
+license: Apache-2.0

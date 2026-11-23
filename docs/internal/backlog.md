@@ -35,7 +35,6 @@ run and its label now reads `status:parked`.
 
 | Issue | Type | Status | Priority | Tier | Family and axis | Next action |
 |---|---|---|---|---|---|---|
-| [#361](https://github.com/product-on-purpose/product-lifecycle-templates/issues/361) | `competitive-analysis` | Queued 2026-11-14, admitted at admission sweep 8 | P2 | 2 | `strategy-docs`, `classification: utility`, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) | Specced 2026-11-17; its choices ruled 2026-11-20. A build when the maintainer asks |
 | [#298](https://github.com/product-on-purpose/product-lifecycle-templates/issues/298) | `opportunity-statement` | Parked by the maintainer 2026-10-22, after its admission sweep | P3 | 2 | Unassigned; labelled `phase:define` | None while parked. The sweep found it distinct only in Jeff Gothelf's net-new sense, on one formula, and `problem-statement`'s guide now covers that case. A template with sections for it would reopen the question |
 | [#257](https://github.com/product-on-purpose/product-lifecycle-templates/issues/257) | `metric-tree` | Parked | P3 | 2 | Unassigned; a classification, never a phase, by the re-score | An admission re-test under ADR 0078 (see section 4) |
 | [#258](https://github.com/product-on-purpose/product-lifecycle-templates/issues/258) | `messaging-framework` | Parked | P3 | 2 | Unassigned; neither candidate family admits it as written | None while its placement is held under [decision procedure 10](decision-procedures.md#10-a-family-or-axis-assignment-is-uncertain) |
@@ -43,11 +42,11 @@ run and its label now reads `status:parked`.
 
 | Count by | Result |
 |---|---|
-| Status | 1 queued, 4 parked |
-| Priority | P2: 1, P3: 3, P4: 1 |
-| Tier | Tier 2: 5 |
+| Status | 0 queued, 4 parked |
+| Priority | P3: 3, P4: 1 |
+| Tier | Tier 2: 4 |
 
-Sixty-nine candidate issues are closed: 58 built and 11 declined. The last to close was #360 (product-principles). Four of the declined types,
+Seventy candidate issues are closed: 59 built and 11 declined. The last to close was #361 (competitive-analysis). Four of the declined types,
 `solution-brief`, `prototype-brief`, `manager-user-guide` and `product-discovery-plan`, never had a catalog row.
 
 **Admission sweep 7 ran on 2026-10-29, so "an admission sweep" is no longer the next action for its candidates.**
@@ -76,17 +75,17 @@ is in circulation.
 
 ## 3. The catalog by tier
 
-<!-- counts: statebuilt=58, statecandidate=154, stateoutofscope=2, tier1=25, tier1remaining=2 -->
+<!-- counts: statebuilt=59, statecandidate=153, stateoutofscope=2, tier1=25, tier1remaining=2 -->
 
-The catalog holds 214 types. Its `state` field reads 58 built, 154 candidate and 2 out of scope. Five of the
-154 were declined by record, so 149 types are still open.
+The catalog holds 214 types. Its `state` field reads 59 built, 153 candidate and 2 out of scope. Five of the
+153 were declined by record, so 148 types are still open.
 
 | Tier | Types | Built | Declined or out of scope | Still open |
 |---|---|---|---|---|
 | 1 | 27 | 25 | 2: `wireframe` and `interactive-prototype`, out of scope by [ADR 0030](decisions/0030-templating-scope-markdown-documents.md) | **0** |
-| 2 | 160 | 32 | 5, declined by record (below) | **123** |
+| 2 | 160 | 33 | 5, declined by record (below) | **122** |
 | 3 | 27 | 1 | 0 | **26** |
-| **All** | **214** | **58** | **7** | **149** |
+| **All** | **214** | **59** | **7** | **148** |
 
 The five Tier 2 types declined by record are `pi-release-retrospective`
 ([ADR 0049](decisions/0049-pi-release-retrospective-fails-the-admission-test.md)), `deployment-plan`
@@ -281,6 +280,10 @@ ADR 0077 keeps in `deliver`.
   member, carrying catalog entry 214, a new row added at its build. Its landing closes #360, and the define
   count stays at two. The same pull request bumps `product-strategy` to 0.1.1, so its one-pager points at the
   new bundle.
+- **2026-11-22, at landing.** `competitive-analysis` landed as the 59th bundle, the eighth `strategy-docs`
+  member, carrying catalog entry 11. Its landing closes #361, and the define count stays at two. The same pull
+  request bumps `positioning-statement` to 0.1.1, because its chain comment now names its place after the
+  analysis. No candidate is queued now.
 
 ## 6. What comes next, in order
 
@@ -417,7 +420,7 @@ not match section 4's count exactly. Source: `_local/research/2026-10-20_define-
 
 | Type | Catalog | Proposed next step |
 |---|---|---|
-| Competitive analysis | 11 | Done 2026-11-14: admitted at admission sweep 8 as #361, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md). It was the one row here that the re-score, the 2026-10-04 ranking and the Standard run all reached |
+| Competitive analysis | 11 | Done 2026-11-14, and built 2026-11-22: admitted at admission sweep 8 as #361, [ADR 0091](decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md). It was the one row here that the re-score, the 2026-10-04 ranking and the Standard run all reached |
 | Threat model | 155 | Sweep, with placement open |
 | Stakeholder map / register | 181 | Sweep |
 | Assumptions log / tracker | 153 (`assumption-log`) | Sweep beside `raid-log`, which the re-score named as its overlap; the 2026-10-04 ranking called it a standing governance artifact, and the July 2026 expansion plan proposed a strategic assumptions log as a `strategy-docs` member |

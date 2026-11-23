@@ -24,7 +24,7 @@ At a glance:
   Amplitude's two framework documents mentions him. Whether Amplitude invented the practice is not settled by
   anything this research read firsthand. See Origins, below.
 - Where it sits relative to the product strategy and OKRs is contested. This library places it third,
-  between the strategy and the roadmap, and names that placement a POSITION rather than a finding. *(2026-10-20: fourth since [ADR 0076](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) placed the positioning statement third; it still sits between the strategy and the roadmap.)* *(2026-11-21: fifth among the built members since [ADR 0083](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) placed the Lean Canvas second.)*
+  between the strategy and the roadmap, and names that placement a POSITION rather than a finding. *(2026-10-20: fourth since [ADR 0076](../../docs/internal/decisions/0076-positioning-statement-joins-strategy-docs-as-a-sixth-member.md) placed the positioning statement third; it still sits between the strategy and the roadmap.)* *(2026-11-21: fifth among the built members since [ADR 0083](../../docs/internal/decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md) placed the Lean Canvas second.)* *(2026-11-22: sixth among the built members, now that the competitive analysis ([ADR 0091](../../docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md)) is built ahead of the positioning statement.)*
 
 ## 2. Origins and evolution
 

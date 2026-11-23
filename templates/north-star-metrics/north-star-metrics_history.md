@@ -3,6 +3,14 @@
 Change log for the `north-star-metrics` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.0, corrected 2026-11-22 - the North Star now sits sixth among the built members of the chain
+
+**A chain-position correction, not a template change**, so the version stays 0.1.0. The `competitive-analysis`
+bundle was built on 2026-11-22, ahead of the positioning statement, by
+[ADR 0091 (competitive analysis joins strategy-docs as an eighth member)](../../docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md),
+so the North Star moves from fifth to sixth among the built members, which is also its place in the contract's
+chain. The 2026-11-21 notes in the example and the companion each gain a dated note. Nothing was rewritten in place.
+
 ## 0.1.0, corrected 2026-11-21 - the North Star now sits fifth among the built members of the chain
 
 **A chain-position correction, not a template change**, so the version stays 0.1.0. The `lean-canvas`

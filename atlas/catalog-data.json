@@ -314,8 +314,7 @@
       "name": "Competitive Analysis",
       "aliases": [
         "competitive landscape",
-        "competitor matrix",
-        "benchmarking report"
+        "competitor analysis"
       ],
       "category": "Market / Competitive",
       "stage": "market",
@@ -324,16 +323,16 @@
       "methodology": "methodology-agnostic",
       "formality": "standard",
       "rarity": "common",
-      "size_variant": "S/M/L",
+      "size_variant": "lean, full",
       "tier": 2,
       "tier_inferred": true,
       "must_have": false,
-      "built": false,
+      "built": true,
       "relationships": [
         "Positioning",
         "Battlecard"
       ],
-      "state": "candidate",
+      "state": "built",
       "state_note": ""
     },
     {
