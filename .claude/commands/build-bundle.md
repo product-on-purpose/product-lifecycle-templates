@@ -172,6 +172,9 @@ sits inside the totals, and without both it reads $9.75, its single-template dra
 product-principles 8,609,453, $13.85, for 17, the usual 15 plus a fix agent ($1.40) and a template trim ($0.68)
 run through the Agent tool, all on Sonnet 5.5, without which it reads $11.77, its single-template drafting $5.79,
 with its landing sweep ($1.21) filed outside the totals;
+competitive-analysis 9,243,418, $15.99, for 17, the usual 15 on Sonnet 5.5 plus an Opus head writer ($2.69) and a
+fix agent ($1.03) run through the Agent tool, without which it reads $12.27, its two-template drafting $6.45,
+with its landing sweep ($1.03) filed outside the totals;
 test-summary-report 12,123,040, $41.22, and spike-report 9,881,764, $33.21,
 both drafted on Opus by per-bundle scripts that pinned no model; weighted means input x1.0, cache write
 x1.25, cache read x0.1, output x5.0). Subagents only: the orchestrator's own spend is not measured.

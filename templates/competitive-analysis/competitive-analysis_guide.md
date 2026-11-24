@@ -34,6 +34,7 @@ statement, and no source states that sequence (companion section 8).
 | a **SWOT of your own company** | the subject is you. SWOT recurs across vendors' templates, and this library keeps it out because a SWOT assesses us and this document is about the others. That reason is this library's, not any source's |
 | a **competitive usability study** | you want to learn why design elements work, with users or with an expert review. NN/g writes "Competitive testing is not the same as a competitive review." A study is research, and this analysis may cite its findings |
 | **market trend analysis, market sizing or win/loss analysis** | the question is about the market's direction, its size, or why recent buyers chose or declined. Pragmatic Institute separates these from the competitive landscape and says of trend analysis that "they answer different questions". No source read says whether sizing belongs inside a competitive analysis, so this library keeps it out |
+| a **trade study** | you are choosing among options for one of your own decisions, such as which vendor to buy or which technical approach to take. A trade study weighs your options against criteria and picks one. This document compares rivals' products and decides nothing; a decision it informs is written elsewhere. That boundary is this library's own, drawn between its two bundles |
 | a **benchmarking report** | you want a recurring measurement. NN/g uses the word for a recurring UX measurement: "Benchmarking is often a program rather than a one-time activity." This bundle does not use it as an alias |
 
 **Write nothing at all if** you only want a spreadsheet of rivals' features to feel informed. That is
@@ -43,7 +44,7 @@ the feature checklist, the failure this document is built around (see the first 
 
 **Lean is the default.** It carries the seven sections that name the set, profile it, compare it on what
 the chosen customers value, draw the implications, record the evidence and say when to refresh. Start
-here, and use it when the team shares the context and one comparison can settle the decision.
+here, and use it when the team shares the context and one comparison can inform the decision.
 
 **Full adds two sections.** Competitor Briefs, a short narrative on each main rival, sits after the
 profiles. Jobs-Based Scorecard, which rates each rival on how well it helps the customers get a job
@@ -130,6 +131,13 @@ strategy's owner has the same problem as on full**: the comparison cannot be use
 because the set, the criteria or the weights did not come from the chosen customers. Rows 9 and 10 do
 not apply to lean on purpose and not by oversight. Choosing the default variant must never cost points
 for sections it does not ship.
+
+**A 0 on row 6 or row 8 fails the document whatever the total.** Row 6 is what makes the analysis part
+of the strategy chain: without a move, an owner and a date, nothing downstream changes. Row 8 is what
+keeps a standing document current: without an owner and an event that fires, it goes stale unnoticed.
+Without this rule, a document scoring 0 on both rows and 2 on every other row would total 12 of 16 on
+lean and 16 of 20 on full, and pass. The rule, like the thresholds, is this library's judgement and is
+not measured.
 
 **How to score honestly.** For each row, find the sentence or cell that earns the score and point at it.
 If you cannot, score the lower number. Ask someone who did not write the document to re-rate one cell

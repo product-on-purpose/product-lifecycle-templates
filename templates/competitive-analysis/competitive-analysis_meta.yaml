@@ -14,7 +14,7 @@ sizing_guidance: "Use lean (the competitor set, profiles, a comparison on what t
 methodology: generic
 pairs_with: []
 status: beta
-template_version: 0.1.0
+template_version: 0.1.1
 tags:
   - strategy
   - competitive

@@ -9,7 +9,7 @@ last_updated: "{{date}}"
 doc_type: competitive-analysis
 size: full
 source_template: competitive-analysis
-source_template_version: 0.1.0
+source_template_version: 0.1.1
 ---
 
 <!--
@@ -112,7 +112,7 @@ HOW TO FILL THIS IN
            customer do if your offering didn't exist?", says "Not Every Competitor is an
            Alternative", and calls rivals that prospects never consider "phantom competitors",
            left out of positioning but watched by the product team. The status quo is named by
-           four sources: Dunford ("the first competitive alternative we need to beat is the status
+           at least four sources, among them Dunford ("the first competitive alternative we need to beat is the status
            quo"), Pragmatic Institute's competitive landscape ("What else could buyers use
            instead, including doing nothing?"), Customer Impact ("The status quo is your largest
            competitor. Most teams forget it.") and Calven ("Start from competitive alternatives,
@@ -156,8 +156,8 @@ HOW TO FILL THIS IN
            charges, where it wins, where it falls short, and how it differentiates itself.
      WHY   The nearest published column set is Aha!'s, which records competitors' "mission
            statements, pricing, top features, strengths, weaknesses, and differentiators". No two
-           vendors share a field set, and no vendor page read shows the full column set of its
-           download, because the downloads sit behind sign-ups and forms. The column set here is
+           vendors share a field set, and no vendor's downloadable template was opened,
+           because the downloads sit behind sign-ups and forms. The column set here is
            this library's own POSITION. GitLab names websites, documentation, demo videos,
            customers and competitors as inputs to accuracy, so a row can rest on more than one kind
            of input. Deep dive: competitive-analysis_companion.md section 3 (Competitor Profiles).
@@ -361,8 +361,11 @@ HOW TO FILL THIS IN
            research" or has no date.
      GOOD  | Northgate Booking charges per clinician each month | Its public price page | Read on
            the date of this version | Plans may differ by region; one region checked |
-           | Whether Northgate Booking offers billing | unknown | | No source found; asked in no
-           interview |
+           | Northgate Booking has no billing | Its features and price pages, neither of which
+           lists billing | Read on the date of this version | Absent from its pages, and not tested
+           in the product |
+           | Whether Northgate Booking's reminders cut missed appointments | unknown | | Only the
+           vendor's own claim found; asked in no interview |
      WEAK  | Northgate Booking is cheaper | Online research | | |
            (no source anyone could open, no date, and a comparison with nothing to compare)
      TRAP  A guessed cell. A cell with an invented figure reads like knowledge, and the next reader

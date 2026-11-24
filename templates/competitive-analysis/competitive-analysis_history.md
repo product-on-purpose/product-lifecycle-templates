@@ -3,6 +3,39 @@
 Change log for the `competitive-analysis` bundle. Each entry records what changed and why, so a reader can
 tell a correction from a preference.
 
+## 0.1.1 - 2026-11-23 - corrections from a Codex review
+
+A read-only Codex review raised 13 findings. The main loop and a Sonnet verifier checked each one against
+the cited lines and the cached source pages: 8 held, 5 held in part, and none failed. Every fix below is a
+correction.
+
+- **The rubric gains a floor.** A 0 on row 6 (findings ending in moves) or row 8 (refresh that can fire)
+  now fails the document whatever the total. Before, a document scoring 0 on both still passed, at 12 of 16
+  on lean and 16 of 20 on full.
+- **The templates' GOOD texts agree with each other.** The profile said Northgate Booking has no billing, and
+  the evidence row marked the same fact "unknown". The evidence row now sources it, and the unknown moves
+  to a claim no GOOD text acts on.
+- **The example routes the modelling claim instead of waving it through.** Its last implication said no row
+  contradicts the positioning statement. Yet Plumline needs no modelling step for a one-file question, and
+  the positioning statement says a general-purpose BI tool does. The statement's "unlike" clause still
+  stands, on copying the data out; the modelling sentence goes to its owner as a note.
+- **Source readings corrected.** Klue's "Continuous" cadence is for a one-rival analysis for sales reps; its
+  broad analysis for product teams says "Quarterly or bi-annually", so Klue leaves the living camp. Blank
+  opposes feature lists without customer evidence, not feature charts. The status quo is named by at least
+  six publishers, four of them vendors, not by four. Aha!'s and Calven's pages do print field sets; what was
+  not opened is the downloads.
+- **Counts and dates.** The research log held 199 Quotable lines, not 197, and now holds 203, after four
+  raw-checked additions. The example's two versions sit across the start of FY26, not inside one fiscal
+  year.
+- **Smaller fixes.** The example's connector row no longer claims "every system", and Plumline's jobs cell
+  names one task. The guide gains a trade-study row and says a comparison informs a decision rather than
+  settles it.
+- **One deviation, recorded rather than changed.** ADR 0091's sizing evidence says the frontmatter carries a
+  review trigger. The spec is silent, and both templates carry the trigger in the body section Refresh
+  Trigger and Versions, beside the owner and the version table. That stays as built.
+
+No section, field or placeholder changes. The example was filled from 0.1.0 and keeps that stamp.
+
 ## 0.1.0 - 2026-11-22
 
 **Initial release.** Researched 2026-11-22, building on admission sweep 8 of 2026-11-14 and on

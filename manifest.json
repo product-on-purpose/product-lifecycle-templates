@@ -271,8 +271,8 @@
         "competitor analysis"
       ],
       "approx_tokens": {
-        "full": 7800,
-        "lean": 7150
+        "full": 7900,
+        "lean": 7250
       },
       "classification": "utility",
       "default_size": "lean",
