@@ -167,8 +167,10 @@ the constraints). The Lean Canvas's example models the embedded-analytics OEM li
 example names as a non-target needing "a different product", and contradicts no sibling (added 2026-10-30,
 [ADR 0083](../decisions/0083-lean-canvas-joins-strategy-docs-as-a-seventh-member.md); its spec sets
 the constraints). The competitive analysis's example compares the rivals for the segment the product strategy
-example chose, counts the status quo among the alternatives the positioning statement example names, names no real
-vendor, and contradicts neither sibling (added 2026-11-22,
+example chose, counts the status quo among the alternatives the positioning statement example names, and names no
+real vendor. Its findings may show that a sibling's claim is too broad, because a comparison is where that shows.
+When one does, the example names the claim and sends the change to that sibling's owner as an implication; it never
+leaves the contradiction unstated (added 2026-11-22, reworded 2026-11-24;
 [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md) and its spec's choice
 D4; the spec in [`tier2-specs.md`](../tier2-specs.md) sets the constraints). **When this family completes,
 the library will hold one continuous worked thread from a product vision down to a bug report**, which is a
@@ -208,9 +210,16 @@ reviewed against.
 added the member without a section 4 sentence for its example, unlike the three earlier widenings. The type's spec
 left that sentence to the build, as its choice D4, ruled on 2026-11-20 ("add it at the build, after the maintainer
 reads it"). Section 4 now states it: the example compares the rivals for the segment the product strategy example
-chose, counts the status quo among the positioning statement example's alternatives, names no real vendor, and
-contradicts neither sibling. The bundle's example, landed the same day, already meets it. **No structural
-obligation changed**, and check K's registry entry needs no edit.
+chose, counts the status quo among the positioning statement example's alternatives, and names no real vendor. Where
+its findings show a sibling's claim is too broad, it names the claim and routes the change to that sibling's owner.
+**No structural obligation changed**, and check K's registry entry needs no edit.
+
+*Reworded 2026-11-24, before the read.* The first draft said the example "contradicts neither sibling", as the
+positioning statement's and Lean Canvas's sentences do. A Codex review then found that the example contradicts one
+supporting claim. The positioning statement example says a general-purpose BI tool requires a modelling step, and
+the example's lighter rival, Plumline, needs none for a one-file question. Competitive analysis 0.1.1 (#374) makes
+the example name that claim and send its owner a note, so the sentence now describes what the example does. A
+comparison that could never narrow a sibling's claim would add little to the thread.
 
 **0.5.0, 2026-11-14, [ADR 0091](../decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md): an eighth member, and the fourth widening of this family's list of questions.**
 *(Accepted 2026-11-14 after the maintainer's read of the new bullet at admission sweep 8. The place before the
