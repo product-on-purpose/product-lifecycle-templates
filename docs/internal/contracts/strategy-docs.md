@@ -206,7 +206,7 @@ reviewed against.
 
 ## Change note
 
-**0.5.1, 2026-11-22: the competitive analysis's example obligation.** *(Pending the maintainer's read.)* ADR 0091
+**0.5.1, 2026-11-22: the competitive analysis's example obligation.** *(Accepted 2026-11-24 after the maintainer's read.)* ADR 0091
 added the member without a section 4 sentence for its example, unlike the three earlier widenings. The type's spec
 left that sentence to the build, as its choice D4, ruled on 2026-11-20 ("add it at the build, after the maintainer
 reads it"). Section 4 now states it: the example compares the rivals for the segment the product strategy example
