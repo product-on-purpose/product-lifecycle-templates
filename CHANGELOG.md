@@ -27,6 +27,12 @@ people who want every change, release notes are for people who want to know what
 
 ### Changed
 
+- **Competitive analysis moves to 0.1.1, after a Codex review.** A read-only Codex review raised 13 findings, and
+  every one was checked against its source before it was applied; none failed. The guide's rubric gains a floor: a 0
+  on the implications row or the refresh row fails the document whatever the total. The templates' GOOD texts stop
+  contradicting each other on a fact marked unknown, and the example routes a positioning claim it had waved through.
+  Readings of Klue, Blank and the status-quo sources are corrected, and the research log's quotation count is now
+  203. No section, field or placeholder changes, and the example keeps its 0.1.0 stamp.
 - **The positioning statement's chain comment names its place after the competitive analysis** (`positioning-statement`
   0.1.1). It said "third", stale since the Lean Canvas joined second. One guidance comment changes; no section, field or
   placeholder does. Dated notes in the positioning statement and the North Star metric now place them fifth and sixth

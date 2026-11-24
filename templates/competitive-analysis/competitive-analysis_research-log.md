@@ -18,9 +18,12 @@ The working files are numbered by return order: `dim1.md` holds the gap question
 practice, `dim4.md` debates, `dim5.md` relationships and `dim6.md` structure.
 
 **56 sources are recorded below, and all 56 are fetched-and-verified.** By tier they are 25 practitioner, 23
-vendor, 5 reference, 2 standards and 1 primary. **The entries carry 197 quotations, and every one was tested
+vendor, 5 reference, 2 standards and 1 primary. **The entries carry 203 quotations, and every one was tested
 against the cached raw text of its page.** The 153 quotations that this build's research agents returned all passed
-a strict raw check. The rest were carried from admission sweep 8 and from the spec's reads of 2026-11-17.
+a strict raw check. The rest were carried from admission sweep 8 and from the spec's reads of 2026-11-17, except
+four added in 0.1.1 (to [11], [38], [51] and [55]), each raw-checked against its cached page on 2026-11-23. One
+string, "10.4 Benchmarking and Market Analysis", is recorded under both [2] and [3]. *(Corrected 2026-11-23: 0.1.0
+said 197; the entries then held 199.)*
 
 ## What the checks caught, and what was not read
 
@@ -141,7 +144,8 @@ Confidence: high on what each page says; medium on the grouping below, which is 
 **Even one vendor's set moved over time.** Aha!'s 2018 post lists nine approaches with a "Value proposition
 analysis" [17], and its current guide lists ten without one [9].
 
-**No vendor page read exposes the full column set of its download.** Five publishers in the table sell software: Aha!,
+**No vendor's downloadable template was opened.** Some pages print a field set (Aha!'s six columns [8], Calven's
+12 profile fields [51]), and those are read as published structures. Five publishers in the table sell software: Aha!,
 HubSpot, Productboard, Atlassian and Miro. Their field lists are vendors' structures. The structure dimension recorded that null for
 Aha!, HubSpot, Product Marketing Alliance and Dscout [8], [10], [16], [15]. Only field names, as short quotes, are
 recorded here.
@@ -263,14 +267,16 @@ Pragmatic's third positioning pillar is "meaningful differentiation relative to 
 inference, at medium confidence: the analysis may cover the wider field, and positioning takes the narrower set of
 real alternatives from it.
 
-**The status quo belongs among the alternatives, on four sources.** Dunford: "the first competitive alternative we
+**The status quo belongs among the alternatives, on at least six sources.** Dunford: "the first competitive alternative we
 need to beat is the status quo" [43]. Pragmatic's competitive landscape asks "What else could buyers use instead,
 including doing nothing?" [46], and its positioning page compares against alternatives "including the option of
 doing nothing" [48]. Two competitive-analysis guides say it of this document directly. Customer Impact: "The status
 quo is your largest competitor. Most teams forget it." [52] Calven: "Start from competitive alternatives, meaning
-what the buyer would use if you didn't exist." [51] Both sell services or software in this area. Placing the status
-quo in this bundle's competitor set is the library's POSITION, taken from the positioning statement's named
-alternative. Confidence: high that the sources say it; medium on its weight, since two of the four are interested.
+what the buyer would use if you didn't exist." [51] Both sell services or software in this area, as do Productboard
+("manual processes, spreadsheets, or internal tools" [11]) and Product School ("a manual process, or simply doing
+nothing at all" [38]). Placing the status quo in this bundle's competitor set is the library's POSITION, taken from
+the positioning statement's named alternative. Confidence: high that the sources say it; medium on its weight, since
+four of the six are vendors.
 
 **Product strategy.** Pragmatic says competitors "shouldn’t define your product strategy" [45]. Cagan lists "the
 competitive landscape" among the insights a strategy draws on [30]. The boundary as stated: the analysis is an input
@@ -336,7 +342,8 @@ Calven's quarter [51].
   a vendor.
 - **Living or snapshot.** Vendors argue for a living process [37], [38], [11]. Klue calls the analysis a snapshot
   that needs refreshes [54]. Cagan's exercise is a single narrative [29].
-- **Features or value.** Blank, Strategyn and THRV oppose feature matrices [34], [35], [36]. Product School treats
+- **Features or value.** Blank, Strategyn and THRV oppose feature comparisons chosen without customer evidence
+  [34], [35], [36]; Blank still asks for a chart of differentiating features grounded in customer needs. Product School treats
   them as one framework among several [38].
 - **Whether to study rivals.** Cagan says to stop chasing them [28]. Patil says ignoring them hurt his work [33].
 - **The owner's function.** The product manager at GitLab [19], marketing in Crayon's survey [23].
@@ -392,8 +399,8 @@ Versions) is the `utility` obligation.
 
 - **A feature checklist is the trap.** A comparison on the features rivals chose, rather than on what the chosen
   customers value, is the failure Blank, Strategyn and THRV name [34], [35], [36].
-- **The status quo belongs in the competitor set.** Dunford, Pragmatic Institute, Customer Impact and Calven all put
-  it among the alternatives [43], [46], [52], [51]. Its place in this document is the library's POSITION.
+- **The status quo belongs in the competitor set.** Dunford, Pragmatic Institute, Customer Impact, Calven,
+  Productboard and Product School all put it among the alternatives [43], [46], [52], [51], [11], [38]. Its place in this document is the library's POSITION.
 - **Each refresh is a dated snapshot, and the document is the series.** That reconciles the living camp [37], [11]
   with Klue's snapshot [54]. It is the library's reading.
 - **The analysis informs the strategy and does not set it** [45].
@@ -539,6 +546,7 @@ Quotable: "partially supported"
 Quotable: "not available"
 Quotable: "Positioning Map"
 Quotable: "isn't a one-time project"
+Quotable: "manual processes, spreadsheets, or internal tools"
 Quotable: "Lightweight monitoring"
 Quotable: "the ongoing practice of researching and evaluating competing products, companies, and market alternatives"
 
@@ -743,6 +751,7 @@ Quotable: "the difference between a photograph and a live feed"
 Supports: Calls competitive analysis living and continuous, yet recommends feature matrices, SWOT and positioning maps and says framework choice depends on the goal
 Quotable: "It should be a living part of product culture"
 Quotable: "Which framework you choose depends on your goal"
+Quotable: "another tool, a manual process, or simply doing nothing at all"
 
 ### Relationships: positioning, battlecards, win-loss and competitive testing
 
@@ -842,6 +851,7 @@ Quotable: "Define the decision it serves."
 Quotable: "Start from competitive alternatives, meaning what the buyer would use if you didn't exist."
 Quotable: "That tiered set of alternatives, status quo included, is your competitive landscape."
 Quotable: "A profile built once is usually wrong within a quarter."
+Quotable: "per-competitor profile (12 fields)"
 
 **[52] Tanguy De Keyzer (Customer Impact), B2B Competitive Analysis: Step-by-Step (updated 20 Oct 2026).** vendor. **fetched-and-verified.**
 `https://www.customerimpact.be/en/blog/how-to-do-b2b-competitive-analysis/`
@@ -868,8 +878,9 @@ Quotable: "Feature comparison tables double as top-notch sales battlecards"
 
 **[55] Klue - How to Conduct a Competitive Analysis on Top Rivals.** vendor. **fetched-and-verified.**
 `https://klue.com/topics/do-a-competitive-analysis`
-Supports: The same vendor describes competitive analysis for sales enablement as continuous and driven by live deal feedback. Read and raw-checked in admission sweep 8 (2026-11-14)
+Supports: The same vendor contrasts a competitor analysis of one rival, for sales reps, updated "Continuous, driven by live deal feedback", with the broad competitive analysis, for leadership and product teams, updated "Quarterly or bi-annually". Read and raw-checked in admission sweep 8 (2026-11-14); the second column was added 2026-11-23
 Quotable: "Continuous, driven by live deal feedback"
+Quotable: "Quarterly or bi-annually"
 Quotable: "Skip the website fluff"
 
 **[56] Nielsen Norman Group - 7 Steps to Benchmark Your Product's UX.** practitioner. **fetched-and-verified.**
