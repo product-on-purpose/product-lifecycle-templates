@@ -45,9 +45,9 @@ At a glance:
 - **It informs the strategy and does not set it.** Pragmatic Institute says competitors "shouldn’t
   define your product strategy." [[45]](#ref-45) This library places the analysis immediately before
   the positioning statement, and names that placement a POSITION; see section 8.
-- **The competitor set follows the buyer's alternatives, and the status quo is one of them.** Four
-  publishers say so, and two of the four are interested parties
-  [[43]](#ref-43)[[46]](#ref-46)[[48]](#ref-48)[[52]](#ref-52)[[51]](#ref-51).
+- **The competitor set follows the buyer's alternatives, and the status quo is one of them.** At
+  least six publishers say so, and four of the six are vendors
+  [[43]](#ref-43)[[46]](#ref-46)[[48]](#ref-48)[[52]](#ref-52)[[51]](#ref-51)[[11]](#ref-11)[[38]](#ref-38).
 - **The trap is a comparison on features the rivals chose.** Blank and the jobs-to-be-done camp,
   which this research reads as one voice from Strategyn and THRV, argue the comparison should rest
   on what customers value, and the log records no measurement of the harm
@@ -146,10 +146,13 @@ positioning page compares against alternatives "including the option of doing no
 status quo is your largest competitor. Most teams forget it." [[52]](#ref-52) Calven writes "Start
 from competitive alternatives, meaning what the buyer would use if you didn't exist.", and "That
 tiered set of alternatives, status quo included, is your competitive landscape." [[51]](#ref-51)
-Both sell services or software in this area. Placing the status quo inside this
-bundle's competitor set is this library's POSITION, taken from the positioning statement's named
-alternative. Confidence: high that the sources say it; medium on its weight, because two of the four
-publishers are interested.
+Both sell services or software in this area. Two more vendors make the same point:
+Productboard counts "manual processes, spreadsheets, or internal tools" among the alternatives
+[[11]](#ref-11), and Product School says users compare a product to "another tool, a manual process,
+or simply doing nothing at all" [[38]](#ref-38). Placing the status quo inside this bundle's
+competitor set is this library's POSITION, taken from the positioning statement's named alternative.
+Confidence: high that the sources say it; medium on its weight, because four of the six publishers
+sell software or services in this area.
 
 **Tiering is guidance from several publishers, and the log records no measurement of it.** Calven
 says to tier competitors so effort follows tier [[51]](#ref-51). HubSpot's practice, relayed by
@@ -175,10 +178,12 @@ mission, strengths and weaknesses [[17]](#ref-17).  Atlassian's one-page templat
 table, and Productboard's single-competitor brief has a company overview
 [[13]](#ref-13)[[12]](#ref-12).
 
-**No two vendors share a field set, and no vendor page read shows the full column set of its
-download.** Aha!'s whiteboard body needs a trial sign-up, and HubSpot's templates sit behind a
-download form [[8]](#ref-8)[[10]](#ref-10). The bundle's own column set is therefore this library's
-POSITION. It describes what these structures contain and copies no table, column order or wording.
+**No two vendors share a field set, and no vendor's downloadable template was opened.** Some
+pages print a field set: Aha!'s lists its six columns, quoted above, and Calven's page sets out a
+"per-competitor profile (12 fields)" and a comparison matrix [[8]](#ref-8)[[51]](#ref-51). The
+downloads themselves were not opened: Aha!'s whiteboard body needs a trial sign-up, and HubSpot's
+templates sit behind a download form [[8]](#ref-8)[[10]](#ref-10). The bundle's own column set is
+therefore this library's POSITION. It describes what these structures contain and copies no table, column order or wording.
 
 *Expert note.* The modal artifact in the vendor material is a competitor-by-attribute grid, with
 pricing, features, strengths, weaknesses and differentiators per competitor
@@ -381,9 +386,7 @@ Octopus Intelligence says a battle card fails when it is "built as a project rat
 as a programme", and writes "A battle card is a document. Competitive intelligence is a process."
 [[37]](#ref-37) Product School says competitive analysis "should be a living part of product
 culture" [[38]](#ref-38). Productboard says it "isn't a one-time project" [[11]](#ref-11). HubSpot
-names "A one-and-done exercise" as what competitive analysis is not [[10]](#ref-10). Klue's sales
-guide describes competitive analysis for sales enablement as "Continuous, driven by live deal
-feedback" [[55]](#ref-55). Each of
+names "A one-and-done exercise" as what competitive analysis is not [[10]](#ref-10). Each of
 these sells software, training or services, so confidence is high on the words and low on their
 independence. GitLab's marketing side also edits continuously, as a practice rather than an argument
 [[21]](#ref-21).
@@ -397,12 +400,20 @@ argues for a one-off snapshot as a principle. Cagan's exercise is a single narra
 maintenance rule [[29]](#ref-29), which shows a default by omission, not a position. His line
 "product strategy is never static" is about strategy, not competitor documents [[30]](#ref-30).
 
+Klue's sales guide is not in the living camp, though it is easy to read that way. It gives
+"Continuous, driven by live deal feedback" for a competitor analysis of one rival, written for sales
+reps. For the broad competitive analysis, written for leadership and product teams, the same table
+says "Quarterly or bi-annually" [[55]](#ref-55), which agrees with Klue's quarterly default
+[[54]](#ref-54).
+
 **This library reconciles the two with dated versions.** Each refresh is a dated snapshot, and the
 document is the series. The reconciliation is this library's POSITION. Because a vendor voice sits
 on both sides of the question, it is offered as a reading and not as a resolution.
 
-**Features or customer value.** Blank, Strategyn and THRV oppose the feature matrix [[34]](#ref-34)
-[[35]](#ref-35)[[36]](#ref-36). Product School presents it as one framework among several
+**Features or customer value.** Blank, Strategyn and THRV oppose feature comparisons chosen without
+customer evidence [[34]](#ref-34)[[35]](#ref-35)[[36]](#ref-36). Blank does not reject a feature chart:
+he asks for one that shows the features that differentiate a product on customers' needs, and
+writes "No feature lists without facts". Product School presents it as one framework among several
 [[38]](#ref-38), and Productboard lists a feature comparison matrix among its five frameworks
 [[11]](#ref-11). Cagan's prescription sits between the camps: "take the holistic view when
 evaluating competitors" [[28]](#ref-28). This library takes the customer-value side for the
@@ -602,7 +613,7 @@ The research read little that bears on adaptation, so this section records only 
 Acme Analytics thread. It is Acme's competitive analysis for the segment the product strategy
 example chose, someone at a 50-500 person company with no data team. Its first version is dated
 2026-01-29, between the FY26 strategy and the positioning statement, so the positioning statement is
-built on a current analysis. A later dated version inside the same fiscal year shows a refresh. Its
+built on a current analysis. A later dated version, inside FY26, shows a refresh. Its
 competitor set matches the positioning statement's alternatives, and it names no real vendor.
 
 ## References
