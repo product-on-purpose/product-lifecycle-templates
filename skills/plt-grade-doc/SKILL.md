@@ -3,7 +3,7 @@ name: plt-grade-doc
 description: Grades a product document on its type's rubric, with three fixes worth an hour. Use for a review, critique, second opinion or score of a PRD, epic, user stories, use case, acceptance criteria, product or sprint backlog, change request, release notes, internal announcement, risk register, RAID log, issue log, change log, KPI dashboard, tracking plan, data dictionary, test plan, test case, traceability matrix, browser or device support matrix, bug report, test summary report, ADR, RFC, software design document, spike report, trade study, product vision, strategy or roadmap, Lean Canvas or Lean UX Canvas, positioning statement, competitive analysis, OKRs, North Star metric, problem statement, design brief, user research plan or report, project brief, business case, persona, experiment design or readout, definition of done or ready, design or product principles, test strategy, runbook, launch checklist, production readiness review, business continuity plan, incident postmortem, retrospective, or status report.
 license: Apache-2.0
 metadata:
-  version: "0.28.0"
+  version: "0.28.1"
   updated: 2026-11-25
   category: documentation
   author: product-on-purpose

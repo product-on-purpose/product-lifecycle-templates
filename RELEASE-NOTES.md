@@ -6,6 +6,15 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.28.1
+
+**A patch: both skills now load for a competitive analysis.** In v0.28.0 neither skill's description named the new
+bundle, so a request worded only as "competitive analysis" could miss both skills. Both descriptions now name it.
+To fit the 1,024-character cap, three names shorten, and a trigger test checked each shortened name first. No
+bundle, template, MCP tool or install route changed.
+
+---
+
 ## v0.28.0
 
 **One new bundle: the competitive analysis, the library's 59th.** It says who else serves the customers a strategy
