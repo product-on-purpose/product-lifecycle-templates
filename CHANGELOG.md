@@ -12,6 +12,11 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.28.0] - 2026-11-25
+
+A minor release with one new bundle: `competitive-analysis`, the 59th and the eighth `strategy-docs` member. No MCP
+tool or install route changed. Release note: [`docs/releases/v0.28.0.md`](docs/releases/v0.28.0.md).
+
 ### Added
 
 - **Competitive analysis**, the 59th bundle and the eighth `strategy-docs` member, a `utility` by
@@ -37,6 +42,11 @@ people who want every change, release notes are for people who want to know what
   0.1.1). It said "third", stale since the Lean Canvas joined second. One guidance comment changes; no section, field or
   placeholder does. Dated notes in the positioning statement and the North Star metric now place them fifth and sixth
   among the built members.
+- **The strategy-docs contract states what the competitive analysis's example owes the family** (0.5.1). It
+  compares the rivals for the segment the product strategy chose, counts the status quo among the positioning
+  statement's alternatives, and names no real vendor. Where a finding shows that a sibling's claim is too broad, the
+  example names the claim and routes it to that sibling's owner. The maintainer read and accepted it on 2026-11-24.
+  No structural obligation changed.
 
 ## [0.27.0] - 2026-11-22
 
@@ -3636,7 +3646,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.27.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.28.0...HEAD
+[0.28.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.27.0...v0.28.0
 [0.27.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.26.0...v0.27.0
 [0.26.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...v0.26.0
 [0.25.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.24.0...v0.25.0
