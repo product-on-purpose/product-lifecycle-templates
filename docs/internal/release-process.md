@@ -74,6 +74,11 @@ agent decides whether to load the skill from that list, so a type missing from i
 *(Added 2026-10-15: both skill descriptions named the 25 Tier-1 types and `rfc`, and none of the 18
 other Tier-2 types. The fill skill also said every bundle has a full variant, while 40 of 44 did. The README
 and STATE said the MCP server served 85 variants when it served 89.)*
+*(Measured 2026-11-25. A `claude plugin eval` trigger test on Sonnet compared description wordings. A skill loaded
+for the types its description names and missed the ones it left out. A short category-plus-examples description
+reached 89 of 110 runs, and the full list reached 101. Shortening a name can break its trigger as well. "Test plan,
+case" stopped matching a test-case request, and "readiness review" matched one of five production-readiness
+requests. Before shortening a name to make room, run the test against that name.)*
 
 ### 2. Read the downstream contract BEFORE choosing the version
 

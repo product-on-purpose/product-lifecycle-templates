@@ -7,15 +7,14 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=59, tier1=25, tier1remaining=2, statebuilt=59, statecandidate=153, stateoutofscope=2, commoncandidates=47, adrs=92, cisteps=32, checkk=170, checkformats=146, checklogs=121, logsgated=53, sourcesgated=2139 -->
 
-**Last updated:** 2026-11-25 (**`v0.28.0` ships `competitive-analysis`, the 59th bundle**, as a minor release
+**Last updated:** 2026-11-25 (**both skill descriptions now name competitive analysis**, after a trigger test
+the maintainer approved on 2026-11-25. Three names shorten to fit the cap, and the descriptions measure 1,013 and
+1,021 characters, so the next bundle meets the cap again. Not released yet.)
+The previous entry read: **`v0.28.0` ships `competitive-analysis`, the 59th bundle**, as a minor release
 the maintainer approved on 2026-11-25. The bundle is at 0.1.1 after a Codex review's verified findings, and the
 `strategy-docs` contract is at 0.5.1, which the maintainer accepted on 2026-11-24. Neither skill's description
 names competitive analysis yet, because both sit at the 1,024-character cap and which trigger or phrase gives way
 is the maintainer's call. No MCP tool or install route changed.)
-The previous entry read: **`competitive-analysis` lands as the 59th bundle**, the eighth `strategy-docs`
-member, by [ADR 0091](docs/internal/decisions/0091-competitive-analysis-joins-strategy-docs-as-an-eighth-member.md).
-It ships two sizes, `lean` and `full`, carries catalog entry 11, and closes issue #361. The same pull request
-bumps `positioning-statement` to 0.1.1, because its chain comment now names the new bundle. No release yet.)
 The previous entry read: **`v0.27.0` ships `design-principles` and `product-principles`, the 57th and 58th
 bundles**, as a minor release the maintainer approved on 2026-11-22. Both bundles are at 0.1.1 after a Codex
 review's verified findings. Both skills now name design or product principles, with no trigger removed. No MCP
