@@ -305,7 +305,7 @@ Beyond these fifty-nine, the library draws on a researched catalog of **214 arti
 
 ### The map: Product Artifact Atlas
 
-[`atlas/atlas.html`](atlas/atlas.html) is a self-contained, interactive map of all 211 catalog types. Group them by category or lifecycle phase; filter by tier and by state; open any type to see its purpose, owner, methodology, and relationships. It doubles as a scoping tool: seeing the whole territory makes choosing what to build next a deliberate act rather than a guess. Open the file in any browser.
+[`atlas/atlas.html`](atlas/atlas.html) is a self-contained, interactive map of every catalog type. Group them by category or lifecycle phase; filter by tier and by state; open any type to see its purpose, owner, methodology, and relationships. It doubles as a scoping tool: seeing the whole territory makes choosing what to build next a deliberate act rather than a guess. Open the file in any browser.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -416,7 +416,7 @@ tools/
   gen-bundle-build-report.py  Measured build cost per bundle, from harness transcripts
   known-skills.txt          Pinned skill IDs that pairs_with may name
 atlas/
-  atlas.html                Interactive map of all 211 catalog types
+  atlas.html                Interactive map of every catalog type
   catalog-data.json         The atlas dataset
 bundle-builds/               Measured build-cost reports, from harness transcripts; holds INDEX.md and reports/
 docs/
