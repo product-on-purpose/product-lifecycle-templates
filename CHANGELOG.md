@@ -12,6 +12,16 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Changed
+
+- **Both skill descriptions now name competitive analysis**, so a request worded only as "competitive analysis"
+  reaches the skills. To fit the 1,024-character cap, three names shorten: "use case specification" to "use case",
+  "retrospective notes" to "retrospective", and "user persona" to "persona". The descriptions measure 1,013 and
+  1,021 characters. A trigger test chose this wording with `claude plugin eval` on Sonnet, over 33 requests at 5
+  runs each. The change loaded the right skill on 163 of 165 runs, and the previous wording on 156. Two rewrites
+  that shortened more names did worse. A short category-plus-examples description reached 89 of 110 runs, and a
+  grouped list reached 150 of 165, because "test case" compressed into "test plan, case" stopped triggering.
+
 ## [0.28.0] - 2026-11-25
 
 A minor release with one new bundle: `competitive-analysis`, the 59th and the eighth `strategy-docs` member. No MCP
