@@ -1,5 +1,6 @@
 id: experiment-readout
 title: Experiment Readout
+trigger_name: "experiment design or readout"
 summary: >-
   The document a team writes after a product experiment ends, once the result is known, to report what ran, the
   results with their uncertainty, whether the validity checks hold, and the decision those results drove, ship,

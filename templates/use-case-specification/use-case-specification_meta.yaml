@@ -1,5 +1,6 @@
 id: use-case-specification
 title: Use Case Specification
+trigger_name: "use case"
 summary: >-
   Writes down, for one named primary actor and one goal, what the actor and the system do step by step
   when everything goes right, plus the alternative and exception paths that branch off at each point

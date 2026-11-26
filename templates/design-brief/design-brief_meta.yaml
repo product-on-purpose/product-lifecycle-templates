@@ -1,5 +1,6 @@
 id: design-brief
 title: Design Brief
+trigger_name: "design brief"
 summary: >-
   The document that hands the chosen problem and the one concept chosen for design to the people who
   will design it, before anyone specifies how that concept works. Lean carries the challenge, who it

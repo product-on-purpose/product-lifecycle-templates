@@ -1,5 +1,6 @@
 id: product-strategy
 title: Product Strategy
+trigger_name: "strategy or roadmap"
 summary: >-
   The document that says which problems this product will solve to reach its vision, and which it will not.
   It is judged by whether a competitor's name could be swapped in without the document becoming false: a

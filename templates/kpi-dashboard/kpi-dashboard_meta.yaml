@@ -1,5 +1,6 @@
 id: kpi-dashboard
 title: KPI Dashboard
+trigger_name: "KPI dashboard"
 summary: >-
   The defined set of key performance indicators an organization watches to know whether it is making
   progress toward its objectives, plus the specification of how each is measured, targeted, owned, and

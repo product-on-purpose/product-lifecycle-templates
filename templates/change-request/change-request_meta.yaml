@@ -1,5 +1,6 @@
 id: change-request
 title: Change Request
+trigger_name: "change request"
 summary: >-
   The record that gets a documented decision, made by one named person or body, about whether an
   already-agreed baseline, its scope, requirements, a deliverable, or the schedule and cost attached to

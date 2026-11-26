@@ -1,5 +1,6 @@
 id: business-continuity-plan
 title: Business Continuity Plan
+trigger_name: "business continuity plan"
 summary: >-
   How an organization keeps its critical business processes going through a significant disruption and
   recovers them afterward: the team and activation authority, each critical process with its recovery

@@ -1,5 +1,6 @@
 id: requirements-traceability-matrix
 title: Requirements Traceability Matrix
+trigger_name: "traceability matrix"
 summary: >-
   The standing table that links each requirement to the work that verifies it, read in both directions, so
   that a requirement with no verification can be seen. A linked test is not a verified requirement, so the

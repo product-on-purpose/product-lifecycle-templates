@@ -1,5 +1,6 @@
 id: epic
 title: Epic
+trigger_name: "epic"
 summary: >-
   A named body of work large enough to need splitting into stories, written to carry what a tracker's own
   epic record cannot: why the work exists, who it serves, what is deliberately left out, and what larger

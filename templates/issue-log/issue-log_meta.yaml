@@ -1,5 +1,6 @@
 id: issue-log
 title: Issue Log
+trigger_name: "issue log"
 summary: >-
   The living, owned record of problems that have already happened on a project or program and need
   someone above the day-to-day work to act on them: what the problem is, who owns getting it fixed,

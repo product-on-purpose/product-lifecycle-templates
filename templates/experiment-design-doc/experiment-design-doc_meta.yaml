@@ -1,5 +1,6 @@
 id: experiment-design-doc
 title: Experiment Design Doc
+trigger_name: "experiment design or readout"
 summary: >-
   The document a team writes before a product experiment launches, while nobody has seen any data, to fix
   the hypothesis, the variants and allocation, the primary and guardrail metrics, the minimum detectable

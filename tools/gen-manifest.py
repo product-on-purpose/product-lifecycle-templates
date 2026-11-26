@@ -17,7 +17,8 @@ roadmap, which also names this script. ADR 0018 records the reconciliation.
 
 Selectable subset per RFC-0001's Detailed Design, extended by WP-23: id, doc_type, title, summary,
 family, the taxonomy axis (phase XOR classification, whichever the meta declares), sizes_available,
-default_size, sizing_guidance, status, tags, aliases. Plus a generated approx_tokens map (per size
+default_size, sizing_guidance, status, tags, aliases, and trigger_name (ADR 0093: the phrase both skill
+descriptions list the type under, which tools/gen-skill-descriptions.py reads). Plus a generated approx_tokens map (per size
 variant) so an agent can budget context before fetching; see ADR 0019. Provenance fields
 (template_version, last_reviewed, catalog_ref, maintainer, license) are deliberately omitted: they are
 not selection inputs.
@@ -51,6 +52,7 @@ SELECT_FIELDS = [
     "id",
     "doc_type",
     "title",
+    "trigger_name",
     "summary",
     "family",
     "phase",

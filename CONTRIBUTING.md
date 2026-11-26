@@ -87,7 +87,7 @@ is no output line saying everything passed, because the defect it exists to prev
 summary over a partial run.
 
 **Why it exists.** Before 2026-09-05 the way to check this repository was to loop over
-`tools/check-*.py` and `tools/test-*.py`. That is 22 scripts; CI runs 32 steps. The difference was
+`tools/check-*.py` and `tools/test-*.py`. That is 23 scripts; CI runs 34 steps. The difference was
 invisible until it cost a red build on the em-dash check, which is an inline heredoc in the workflow
 rather than a script under `tools/`, so no glob over that directory could ever have found it.
 
@@ -99,6 +99,8 @@ python tools/check-bundles.py          # the structural bundle gate (files, dash
 python tools/check-links.py            # every relative link and in-page anchor resolves
 python tools/gen-manifest.py --check   # manifest.json and the README bundle-count marker are fresh
 python tools/gen-atlas.py --check      # the atlas's built flags match the bundles on disk
+python tools/gen-skill-descriptions.py --check  # both skill descriptions match each bundle's
+                                        # trigger_name, every bundle is named, and none passes the cap
 python tools/check-adr-index.py        # the decision-record index lists every ADR
 python tools/check-changelog.py        # every decision record since the last release is in CHANGELOG.md
 python tools/check-research-logs.py    # every research log meets the source-record contract
@@ -107,9 +109,9 @@ python tools/gen-bundle-build-report.py --check  # bundle-builds/INDEX.md matche
                                         # build-cost reports
 ```
 
-<!-- counts: cisteps=32 -->
+<!-- counts: cisteps=34 -->
 The full list runs in CI on every push and every pull request
-([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 32 steps in total, of which four are checkout,
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), 34 steps in total, of which four are checkout,
 runtime setup and dependency installation, and `main` is branch-protected on the result: a change that
 fails any step cannot merge. The last step is the only one whose rules live outside this repository: it
 runs the Advanced Skill Library Standard's conformance gate from a pinned checkout of

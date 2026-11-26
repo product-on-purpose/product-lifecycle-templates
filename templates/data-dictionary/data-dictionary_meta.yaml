@@ -1,5 +1,6 @@
 id: data-dictionary
 title: Data Dictionary
+trigger_name: "data dictionary"
 summary: >-
   The standing reference that documents what the fields of a dataset or table mean - each one's name,
   type, allowed values, and unit - so that different teams compute the same number from them. Distinct

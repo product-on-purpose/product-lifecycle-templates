@@ -1,5 +1,6 @@
 id: trade-study
 title: Trade Study
+trigger_name: "trade study"
 summary: >-
   Compares a named set of technical alternatives against weighted criteria and records the
   recommendation that comparison supports, for a problem the organization has already decided to

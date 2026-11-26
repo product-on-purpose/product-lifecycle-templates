@@ -154,7 +154,7 @@ If that reads harsher than a README usually does, that is the point: [`STATE.md`
 ## What is in the library today
 
 <!-- bundle-count: 59 -->
-<!-- counts: bundles=59, tier1=25, adrs=92 -->
+<!-- counts: bundles=59, tier1=25, adrs=93 -->
 **Fifty-nine bundles in eleven families, all of them complete.** Status `beta`: every one is gate-green and researched, and none is claimed to be more than that.
 
 ### `delivery-docs` (ten bundles, the family complete)
@@ -371,7 +371,7 @@ All fifty-nine bundles currently pass. GitHub Actions runs these on every push t
 
 ### At a glance
 
-<!-- counts: bundles=59, tier1=25, adrs=92, cisteps=32 -->
+<!-- counts: bundles=59, tier1=25, adrs=93, cisteps=34 -->
 
 |  |  |
 |---|---|
@@ -379,9 +379,9 @@ All fifty-nine bundles currently pass. GitHub Actions runs these on every push t
 | **Bundles** | 59, across 11 families, all complete (delivery-docs, decision-docs, governance-docs, qa-docs, strategy-docs, discovery-docs, standing-standards, process-docs, communication-docs, experimentation-docs, research-docs) |
 | **Tier-1 floor** | **Complete: 25 of 25 templatable.** The catalog names 27 "must-have" types ([ADR 0021](docs/internal/decisions/0021-complete-the-tier-1-floor.md)); two of them, `wireframe` and `interactive-prototype`, are artifacts this library does not template and are named out of scope with reasons ([ADR 0030](docs/internal/decisions/0030-templating-scope-markdown-documents.md)). So the reachable floor is 25, and all 25 are built. The other thirty-four bundles are thirty-three Tier-2 types and one Tier-3 type, and [`STATE.md`](STATE.md)'s Bundles row names them. *(Corrected 2026-11-22: after `competitive-analysis` landed, this cell said "the other thirty-three bundles are thirty-two Tier-2 types".)* *(Corrected 2026-11-22: this cell said "the other thirty-one bundles are thirty Tier-2 types", stale from the two principles bundles' landings on 2026-11-20.)* *(Corrected 2026-11-13: this cell said "the other twenty-nine bundles are Tier-2 types", stale from `requirements-traceability-matrix`'s landing, which was Tier 3, and from `platform-device-support-matrix`'s, which raised the Tier-2 count to thirty.)* *(Corrected 2026-10-15: this cell said "the other ten" and named ten, which was true at `change-request`'s landing on 2026-09-25 and stale from `change-log` onward. Corrected again 2026-10-20: this cell said "the other twenty", stale from `trade-study`'s landing, then "the other twenty-three", stale from `test-strategy`'s landing.)* |
 | **Catalog** | 214 researched artifact types across 19 categories ([`docs/internal/catalog.md`](docs/internal/catalog.md)) |
-| **Gate** | 32 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **nine self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
+| **Gate** | 34 CI steps: 11 bundle checks in one step, plus link, manifest / atlas / section-schema / skill-description / build-report-index freshness, ADR-index, changelog, research-log-contract, self-reported-counts, example independence and chronology, rubric scope, workflow prompt strings, eval arm parity, published skill surface, version agreement, a repo-wide dash check, **ten self-tests** (including the MCP server's), and the Advanced Skill Library Standard's own conformance gate; four more are checkout, runtime setup and dependency install. `main` branch-protected. Run them all with `python tools/run-gate.py` |
 | **Agent surface** | 2 skills, 3 generated artifacts (`manifest.json`, `sections.json`, `bundle-builds/INDEX.md`), and an MCP server with 5 tools ([ADR 0045](docs/internal/decisions/0045-the-mcp-server-is-python-and-lives-in-this-repository.md)); 112 template variants addressable |
-| **Decision records** | 92 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted except [0068](docs/internal/decisions/0068-define-means-problem-framing.md), which [0077](docs/internal/decisions/0077-define-ends-with-a-chosen-concept.md) supersedes |
+| **Decision records** | 93 ADRs in [MADR v4](https://github.com/adr/madr) ([`docs/internal/decisions/`](docs/internal/decisions/)), all accepted except [0068](docs/internal/decisions/0068-define-means-problem-framing.md), which [0077](docs/internal/decisions/0077-define-ends-with-a-chosen-concept.md) supersedes, and [0093](docs/internal/decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md), which is proposed |
 | **Real usage** | Not published as a count ([ADR 0055](docs/internal/decisions/0055-retire-the-zero-fills-disclosure.md)). Coverage is not validation, and no page calls a bundle proven |
 | **License** | [Apache-2.0](LICENSE) |
 

@@ -1,5 +1,6 @@
 id: production-readiness-review
 title: Production Readiness Review
+trigger_name: "production readiness review"
 summary: >-
   The standing checklist a reviewing team consults, and a service's own team fills in, before
   responsibility for that service's production behavior changes hands, or at a periodic re-check of a

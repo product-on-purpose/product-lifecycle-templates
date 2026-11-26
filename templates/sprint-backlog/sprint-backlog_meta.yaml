@@ -1,5 +1,6 @@
 id: sprint-backlog
 title: Sprint Backlog
+trigger_name: "product or sprint backlog"
 summary: >-
   The Developers' living plan for a single Sprint: the Sprint Goal (why), the Product Backlog items
   selected for it (what), and the plan for delivering them (how). A forecast, not a contract; the one thing

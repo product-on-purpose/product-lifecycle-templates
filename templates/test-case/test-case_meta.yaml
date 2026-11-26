@@ -1,5 +1,6 @@
 id: test-case
 title: Test Case
+trigger_name: "test case"
 summary: >-
   The specification of one verification: what must be true before it runs, what is done, and what must happen
   as a result, written so that someone who is not its author can ask the same question tomorrow and get the

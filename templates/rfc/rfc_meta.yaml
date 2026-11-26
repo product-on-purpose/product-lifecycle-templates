@@ -1,5 +1,6 @@
 id: rfc
 title: Request for Comments
+trigger_name: "RFC"
 summary: >-
   Proposes a change and gathers input before the decision is made: the motivation, the proposal,
   the alternatives, the trade-offs, the open questions, and a place to record the outcome. The

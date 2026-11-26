@@ -1,5 +1,6 @@
 id: north-star-metrics
 title: North Star Metric
+trigger_name: "North Star metric"
 summary: >-
   The document that names the one metric showing customers get the value the strategy promises, says why
   that metric, and names the input metrics a team can move. Not the vision's north star statement; the

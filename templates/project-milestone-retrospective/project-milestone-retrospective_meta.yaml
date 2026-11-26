@@ -1,5 +1,6 @@
 id: project-milestone-retrospective
 title: Project Milestone Retrospective
+trigger_name: "retrospective"
 summary: >-
   The document a team writes when a bounded piece of work has ended, for readers who may not have been
   there: what was in scope and who reads it, the factual record, what worked, what did not, what a stranger

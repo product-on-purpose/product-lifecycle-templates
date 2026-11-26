@@ -38,7 +38,7 @@ python tools/run-gate.py               # every step CI runs, and a named reason 
 ```
 
 **Run the whole gate, not a list of scripts.** This document named four of them until 2026-09-06, and CI
-runs **32 steps**. Three of those are not files under `tools/` at all - one is an inline heredoc in
+runs **34 steps**. Three of those are not files under `tools/` at all - one is an inline heredoc in
 `ci.yml` - so no list anyone maintains by hand, and no glob over a directory, can be complete.
 `run-gate.py` derives its list from `.github/workflows/ci.yml` and prints every step it skipped with the
 reason, which is why it has no output line that says everything passed. Read the skip list before calling
@@ -79,6 +79,11 @@ for the types its description names and missed the ones it left out. A short cat
 reached 89 of 110 runs, and the full list reached 101. Shortening a name can break its trigger as well. "Test plan,
 case" stopped matching a test-case request, and "readiness review" matched one of five production-readiness
 requests. Before shortening a name to make room, run the test against that name.)*
+**Since 2026-11-26 the two descriptions are generated, so do not edit them by hand.** Each bundle's
+`trigger_name` holds its phrase, and the `ORDER` table in `tools/gen-skill-descriptions.py` holds the list's
+order. Run `python tools/gen-skill-descriptions.py` to write them, and CI's `--check` fails if either drifts or a
+bundle is missing. Any change to a phrase or to the order is a trigger change, so it needs the trigger test above
+([ADR 0093 (generated skill descriptions)](decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md)).
 
 ### 2. Read the downstream contract BEFORE choosing the version
 

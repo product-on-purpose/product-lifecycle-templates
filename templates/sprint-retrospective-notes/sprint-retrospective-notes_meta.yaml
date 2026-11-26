@@ -1,5 +1,6 @@
 id: sprint-retrospective-notes
 title: Sprint Retrospective Notes
+trigger_name: "retrospective"
 summary: >-
   The written record of a Sprint Retrospective: what the team says went well, what it says needs to
   improve, and which of those improvements someone actually owns. The Scrum Guide names only an event, never

@@ -1,5 +1,6 @@
 id: tracking-plan
 title: Tracking Plan
+trigger_name: "tracking plan"
 summary: >-
   The standing catalog of the analytics events a product records, the properties and traits each one
   carries, and why each is collected, where it comes from, who owns it, and whether it is still live.

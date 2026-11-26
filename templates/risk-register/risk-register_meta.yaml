@@ -1,5 +1,6 @@
 id: risk-register
 title: Risk Register
+trigger_name: "risk register"
 summary: >-
   The single, maintained record of the risks to an objective: what could happen, how likely and how
   damaging, who owns it, the response, and whether that response is working. A standing governance

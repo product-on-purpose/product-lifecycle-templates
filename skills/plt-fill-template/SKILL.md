@@ -166,15 +166,15 @@ empty prose under every heading, which is what step 5 and a reader are for.
 Stated plainly, because a template library claiming more than it has earned is worth less than one that
 does not.
 
-**Enforced by CI, on every push and pull request:** 32 steps, including an 11-check gate per bundle - all
+**Enforced by CI, on every push and pull request:** 34 steps, including an 11-check gate per bundle - all
 files present, no em-dash or en-dash, lean nests strictly inside full, no unfilled placeholder in any
 example, every citation anchored and none padded, metadata valid against a schema, and conformance to the
 bundle's family contract. Separately: every relative link resolves, every research log carries a
 per-source retrieval status, no worked example cites a sibling dated later than itself, and no example
 reuses its own template's guidance text.
 
-<!-- counts: cisteps=32, logsgated=53, sourcesgated=2139 -->
-32 CI steps; 53 research logs gated, covering 2,139 sources.
+<!-- counts: cisteps=34, logsgated=53, sourcesgated=2139 -->
+34 CI steps; 53 research logs gated, covering 2,139 sources.
 
 **Not proved by anything:**
 

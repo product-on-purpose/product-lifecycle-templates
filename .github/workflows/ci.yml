@@ -113,6 +113,19 @@ jobs:
       - name: Section parser self-test
         run: python tools/test-gen-sections.py
 
+      # The skill descriptions (ADR 0093). Each description is the trigger list an agent reads to
+      # decide whether to load the skill, and each bundle's trigger_name meta field holds the phrase
+      # it is listed under. This regenerates both descriptions from manifest.json and fails if either
+      # SKILL.md differs, if a bundle is missing from the list's order table, or if a description
+      # would pass the 1,024-character cap. The cap failure is the signal to split the skills.
+      - name: Skill description freshness
+        run: python tools/gen-skill-descriptions.py --check
+
+      # The generator's rules only fire on a broken tree, which today's is not, so fixtures prove
+      # each one fires: a bundle missing from the order, a shared phrase split apart, the cap.
+      - name: Skill description generator self-test
+        run: python tools/test-gen-skill-descriptions.py
+
       # Build-cost reports (bundle-builds/). What a bundle actually cost to build, measured from the
       # harness transcripts rather than estimated. This step checks ONLY that INDEX.md matches the
       # committed reports. It deliberately cannot check the reports themselves: they are derived from

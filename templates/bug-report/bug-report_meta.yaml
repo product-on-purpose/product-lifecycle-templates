@@ -1,5 +1,6 @@
 id: bug-report
 title: Bug Report
+trigger_name: "bug report"
 summary: >-
   The document that gets one defect fixed by someone who was not there: what you did, what you expected, what
   happened instead, and where. Written as an anomaly report rather than a diagnosis, because at the moment of

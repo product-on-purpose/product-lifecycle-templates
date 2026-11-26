@@ -2,6 +2,7 @@
 # Never travels into a filled document.
 id: release-notes
 title: Release Notes
+trigger_name: "release notes"
 summary: Communicates what changed in a release to users and stakeholders, so people know what is new, what to do, and what to watch for.
 doc_type: release-notes
 phase: deliver

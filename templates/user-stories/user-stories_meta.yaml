@@ -2,6 +2,7 @@
 # Never travels into a filled document.
 id: user-stories
 title: User Story
+trigger_name: "user stories"
 summary: Describes a unit of work from the user's perspective ("as a [user], I want [goal], so that [benefit]") so a team can build and verify the right thing.
 doc_type: user-stories
 phase: deliver

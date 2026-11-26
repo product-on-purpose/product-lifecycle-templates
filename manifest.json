@@ -32,7 +32,8 @@
         "testing",
         "quality"
       ],
-      "title": "Acceptance Criteria"
+      "title": "Acceptance Criteria",
+      "trigger_name": "acceptance criteria"
     },
     {
       "aliases": [
@@ -66,7 +67,8 @@
         "governance",
         "engineering"
       ],
-      "title": "Architecture Decision Record"
+      "title": "Architecture Decision Record",
+      "trigger_name": "ADR"
     },
     {
       "aliases": [
@@ -95,7 +97,8 @@
         "change-announcement",
         "employee-communication"
       ],
-      "title": "Announcement / Internal Comms"
+      "title": "Announcement / Internal Comms",
+      "trigger_name": "internal announcement"
     },
     {
       "aliases": [
@@ -128,7 +131,8 @@
         "severity",
         "quality"
       ],
-      "title": "Bug Report"
+      "title": "Bug Report",
+      "trigger_name": "bug report"
     },
     {
       "aliases": [
@@ -162,7 +166,8 @@
         "options",
         "financials"
       ],
-      "title": "Business Case"
+      "title": "Business Case",
+      "trigger_name": "business case"
     },
     {
       "aliases": [
@@ -199,7 +204,8 @@
         "bcp",
         "risk-management"
       ],
-      "title": "Business Continuity Plan"
+      "title": "Business Continuity Plan",
+      "trigger_name": "business continuity plan"
     },
     {
       "aliases": [
@@ -232,7 +238,8 @@
         "baseline",
         "pmbok"
       ],
-      "title": "Change Log"
+      "title": "Change Log",
+      "trigger_name": "change log"
     },
     {
       "aliases": [
@@ -263,7 +270,8 @@
         "governance",
         "decision"
       ],
-      "title": "Change Request"
+      "title": "Change Request",
+      "trigger_name": "change request"
     },
     {
       "aliases": [
@@ -294,7 +302,8 @@
         "differentiation",
         "product-marketing"
       ],
-      "title": "Competitive Analysis"
+      "title": "Competitive Analysis",
+      "trigger_name": "competitive analysis"
     },
     {
       "aliases": [
@@ -324,7 +333,8 @@
         "schema",
         "data-quality"
       ],
-      "title": "Data Dictionary"
+      "title": "Data Dictionary",
+      "trigger_name": "data dictionary"
     },
     {
       "aliases": [
@@ -356,7 +366,8 @@
         "done-criteria",
         "increment"
       ],
-      "title": "Definition of Done"
+      "title": "Definition of Done",
+      "trigger_name": "definition of done or ready"
     },
     {
       "aliases": [
@@ -385,7 +396,8 @@
         "backlog-refinement",
         "sprint-planning"
       ],
-      "title": "Definition of Ready"
+      "title": "Definition of Ready",
+      "trigger_name": "definition of done or ready"
     },
     {
       "aliases": [],
@@ -413,7 +425,8 @@
         "concept-handoff",
         "ux-discovery"
       ],
-      "title": "Design Brief"
+      "title": "Design Brief",
+      "trigger_name": "design brief"
     },
     {
       "aliases": [
@@ -442,7 +455,8 @@
         "decision-making",
         "standing-standards"
       ],
-      "title": "Design Principles"
+      "title": "Design Principles",
+      "trigger_name": "design or product principles"
     },
     {
       "aliases": [
@@ -474,7 +488,8 @@
         "roadmapping",
         "planning"
       ],
-      "title": "Epic"
+      "title": "Epic",
+      "trigger_name": "epic"
     },
     {
       "aliases": [
@@ -507,7 +522,8 @@
         "metrics",
         "decision rule"
       ],
-      "title": "Experiment Design Doc"
+      "title": "Experiment Design Doc",
+      "trigger_name": "experiment design or readout"
     },
     {
       "aliases": [
@@ -539,7 +555,8 @@
         "decision rule",
         "validity checks"
       ],
-      "title": "Experiment Readout"
+      "title": "Experiment Readout",
+      "trigger_name": "experiment design or readout"
     },
     {
       "aliases": [
@@ -574,7 +591,8 @@
         "blameless",
         "reliability"
       ],
-      "title": "Incident Postmortem"
+      "title": "Incident Postmortem",
+      "trigger_name": "incident postmortem"
     },
     {
       "aliases": [
@@ -604,7 +622,8 @@
         "escalation",
         "pmbok"
       ],
-      "title": "Issue Log"
+      "title": "Issue Log",
+      "trigger_name": "issue log"
     },
     {
       "aliases": [
@@ -637,7 +656,8 @@
         "measurement",
         "reporting"
       ],
-      "title": "KPI Dashboard"
+      "title": "KPI Dashboard",
+      "trigger_name": "KPI dashboard"
     },
     {
       "aliases": [
@@ -673,7 +693,8 @@
         "rollback",
         "standing-standards"
       ],
-      "title": "Launch Coordination Checklist"
+      "title": "Launch Coordination Checklist",
+      "trigger_name": "launch checklist"
     },
     {
       "aliases": [],
@@ -699,7 +720,8 @@
         "hypothesis",
         "early-stage"
       ],
-      "title": "Lean Canvas"
+      "title": "Lean Canvas",
+      "trigger_name": "Lean Canvas or Lean UX Canvas"
     },
     {
       "aliases": [
@@ -727,7 +749,8 @@
         "facilitation",
         "hypotheses"
       ],
-      "title": "Lean UX Canvas"
+      "title": "Lean UX Canvas",
+      "trigger_name": "Lean Canvas or Lean UX Canvas"
     },
     {
       "aliases": [
@@ -759,7 +782,8 @@
         "customer-value",
         "measurement"
       ],
-      "title": "North Star Metric"
+      "title": "North Star Metric",
+      "trigger_name": "North Star metric"
     },
     {
       "aliases": [
@@ -793,7 +817,8 @@
         "alignment",
         "accountability"
       ],
-      "title": "OKRs"
+      "title": "OKRs",
+      "trigger_name": "OKRs"
     },
     {
       "aliases": [
@@ -824,7 +849,8 @@
         "standing-standards",
         "testing"
       ],
-      "title": "Platform and Device Support Matrix"
+      "title": "Platform and Device Support Matrix",
+      "trigger_name": "browser or device support matrix"
     },
     {
       "aliases": [
@@ -854,7 +880,8 @@
         "differentiation",
         "product-marketing"
       ],
-      "title": "Positioning Statement"
+      "title": "Positioning Statement",
+      "trigger_name": "positioning statement"
     },
     {
       "aliases": [
@@ -886,7 +913,8 @@
         "prd",
         "specification"
       ],
-      "title": "Product Requirements Document"
+      "title": "Product Requirements Document",
+      "trigger_name": "PRD"
     },
     {
       "aliases": [
@@ -917,7 +945,8 @@
         "evidence",
         "ux-discovery"
       ],
-      "title": "Problem Statement"
+      "title": "Problem Statement",
+      "trigger_name": "problem statement"
     },
     {
       "aliases": [
@@ -950,7 +979,8 @@
         "planning",
         "delivery"
       ],
-      "title": "Product Backlog"
+      "title": "Product Backlog",
+      "trigger_name": "product or sprint backlog"
     },
     {
       "aliases": [],
@@ -976,7 +1006,8 @@
         "standing-standards",
         "strategic-context"
       ],
-      "title": "Product Principles"
+      "title": "Product Principles",
+      "trigger_name": "design or product principles"
     },
     {
       "additional_formats": [
@@ -1030,7 +1061,8 @@
         "communication",
         "uncertainty"
       ],
-      "title": "Product Roadmap"
+      "title": "Product Roadmap",
+      "trigger_name": "strategy or roadmap"
     },
     {
       "additional_formats": [
@@ -1076,7 +1108,8 @@
         "foundation",
         "decision-making"
       ],
-      "title": "Product Strategy"
+      "title": "Product Strategy",
+      "trigger_name": "strategy or roadmap"
     },
     {
       "additional_formats": [
@@ -1130,7 +1163,8 @@
         "foundation",
         "prioritisation"
       ],
-      "title": "Product Vision"
+      "title": "Product Vision",
+      "trigger_name": "product vision"
     },
     {
       "aliases": [
@@ -1168,7 +1202,8 @@
         "handoff",
         "checklist"
       ],
-      "title": "Production Readiness Review"
+      "title": "Production Readiness Review",
+      "trigger_name": "production readiness review"
     },
     {
       "aliases": [
@@ -1199,7 +1234,8 @@
         "authorization",
         "prince2"
       ],
-      "title": "Project Brief"
+      "title": "Project Brief",
+      "trigger_name": "project brief"
     },
     {
       "aliases": [
@@ -1235,7 +1271,8 @@
         "action items",
         "knowledge transfer"
       ],
-      "title": "Project Milestone Retrospective"
+      "title": "Project Milestone Retrospective",
+      "trigger_name": "retrospective"
     },
     {
       "aliases": [
@@ -1268,7 +1305,8 @@
         "dependencies",
         "assumptions"
       ],
-      "title": "RAID Log"
+      "title": "RAID Log",
+      "trigger_name": "RAID log"
     },
     {
       "aliases": [
@@ -1300,7 +1338,8 @@
         "changelog",
         "devops"
       ],
-      "title": "Release Notes"
+      "title": "Release Notes",
+      "trigger_name": "release notes"
     },
     {
       "aliases": [
@@ -1333,7 +1372,8 @@
         "register",
         "qa"
       ],
-      "title": "Requirements Traceability Matrix"
+      "title": "Requirements Traceability Matrix",
+      "trigger_name": "traceability matrix"
     },
     {
       "aliases": [
@@ -1368,7 +1408,8 @@
         "collaboration",
         "governance"
       ],
-      "title": "Request for Comments"
+      "title": "Request for Comments",
+      "trigger_name": "RFC"
     },
     {
       "aliases": [
@@ -1400,7 +1441,8 @@
         "assurance",
         "pmbok"
       ],
-      "title": "Risk Register"
+      "title": "Risk Register",
+      "trigger_name": "risk register"
     },
     {
       "aliases": [
@@ -1435,7 +1477,8 @@
         "procedure",
         "standing-standards"
       ],
-      "title": "Runbook"
+      "title": "Runbook",
+      "trigger_name": "runbook"
     },
     {
       "aliases": [
@@ -1471,7 +1514,8 @@
         "technical-design",
         "specification"
       ],
-      "title": "Software Design Document"
+      "title": "Software Design Document",
+      "trigger_name": "software design document"
     },
     {
       "aliases": [
@@ -1504,7 +1548,8 @@
         "agile",
         "engineering"
       ],
-      "title": "Spike Report"
+      "title": "Spike Report",
+      "trigger_name": "spike report"
     },
     {
       "aliases": [
@@ -1536,7 +1581,8 @@
         "delivery",
         "forecast"
       ],
-      "title": "Sprint Backlog"
+      "title": "Sprint Backlog",
+      "trigger_name": "product or sprint backlog"
     },
     {
       "aliases": [
@@ -1567,7 +1613,8 @@
         "action items",
         "continuous improvement"
       ],
-      "title": "Sprint Retrospective Notes"
+      "title": "Sprint Retrospective Notes",
+      "trigger_name": "retrospective"
     },
     {
       "aliases": [
@@ -1601,7 +1648,8 @@
         "stakeholder-update",
         "governance"
       ],
-      "title": "Status Report"
+      "title": "Status Report",
+      "trigger_name": "status report"
     },
     {
       "aliases": [
@@ -1633,7 +1681,8 @@
         "traceability",
         "quality"
       ],
-      "title": "Test Case"
+      "title": "Test Case",
+      "trigger_name": "test case"
     },
     {
       "aliases": [
@@ -1666,7 +1715,8 @@
         "verification",
         "quality"
       ],
-      "title": "Test Plan"
+      "title": "Test Plan",
+      "trigger_name": "test plan"
     },
     {
       "aliases": [
@@ -1694,7 +1744,8 @@
         "qa",
         "test-management"
       ],
-      "title": "Test Strategy"
+      "title": "Test Strategy",
+      "trigger_name": "test strategy"
     },
     {
       "aliases": [
@@ -1728,7 +1779,8 @@
         "residual-risk",
         "quality"
       ],
-      "title": "Test Summary Report"
+      "title": "Test Summary Report",
+      "trigger_name": "test summary report"
     },
     {
       "aliases": [
@@ -1760,7 +1812,8 @@
         "tracking",
         "data-governance"
       ],
-      "title": "Tracking Plan"
+      "title": "Tracking Plan",
+      "trigger_name": "tracking plan"
     },
     {
       "aliases": [
@@ -1794,7 +1847,8 @@
         "evaluation",
         "engineering"
       ],
-      "title": "Trade Study"
+      "title": "Trade Study",
+      "trigger_name": "trade study"
     },
     {
       "aliases": [
@@ -1824,7 +1878,8 @@
         "delivery",
         "scenarios"
       ],
-      "title": "Use Case Specification"
+      "title": "Use Case Specification",
+      "trigger_name": "use case"
     },
     {
       "aliases": [
@@ -1857,7 +1912,8 @@
         "user-experience",
         "design"
       ],
-      "title": "User Persona"
+      "title": "User Persona",
+      "trigger_name": "persona"
     },
     {
       "aliases": [
@@ -1889,7 +1945,8 @@
         "research-plan",
         "usability-testing"
       ],
-      "title": "User Research Plan"
+      "title": "User Research Plan",
+      "trigger_name": "user research plan or report"
     },
     {
       "aliases": [
@@ -1922,7 +1979,8 @@
         "usability-testing",
         "findings"
       ],
-      "title": "User Research Report"
+      "title": "User Research Report",
+      "trigger_name": "user research plan or report"
     },
     {
       "aliases": [
@@ -1956,7 +2014,8 @@
         "scrum",
         "backlog"
       ],
-      "title": "User Story"
+      "title": "User Story",
+      "trigger_name": "user stories"
     }
   ],
   "count": 59
