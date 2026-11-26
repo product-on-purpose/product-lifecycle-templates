@@ -6,6 +6,15 @@ library's own `release-notes` template, read [`docs/releases/`](docs/releases/).
 
 Newest first.
 
+## v0.28.0
+
+**One new bundle: the competitive analysis, the library's 59th.** It says who else serves the customers a strategy
+chose, compares them on what those customers value, and says what that means for the product's direction. It is
+kept as a series of dated versions, ships lean and full, and joins `strategy-docs`. Neither skill's description
+names it yet, and nothing in any MCP tool or install route changed.
+
+---
+
 ## v0.27.0
 
 **Two new bundles: design principles and product principles, the library's 57th and 58th.** Each is a short
