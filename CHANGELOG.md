@@ -12,6 +12,11 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+## [0.28.1] - 2026-11-26
+
+A patch: both skill descriptions now name competitive analysis. No bundle, template, MCP tool or install
+route changed. Release note: [`docs/releases/v0.28.1.md`](docs/releases/v0.28.1.md).
+
 ### Changed
 
 - **Both skill descriptions now name competitive analysis**, so a request worded only as "competitive analysis"
@@ -3656,7 +3661,8 @@ Named here because the release is `beta` and the gaps are the reason:
 - **The gate cannot check citation truth.** It proves a citation resolves, never that the source
   supports the claim. The 28 defects above were all invisible to it.
 
-[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.28.0...HEAD
+[Unreleased]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.28.1...HEAD
+[0.28.1]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.28.0...v0.28.1
 [0.28.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.27.0...v0.28.0
 [0.27.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.26.0...v0.27.0
 [0.26.0]: https://github.com/product-on-purpose/product-lifecycle-templates/compare/v0.25.0...v0.26.0

@@ -23,6 +23,7 @@ The process that produces them is [`release-process.md`](../internal/release-pro
 
 **Newest first**, matching [`RELEASE-NOTES.md`](../../RELEASE-NOTES.md). Stated because it was not: entries through `v0.7.0` were appended in ascending order and everything from `v0.8.0` was inserted at the top, so the list disagreed with itself for four releases.
 
+- [`v0.28.1.md`](v0.28.1.md) - a patch: both skill descriptions now name competitive analysis
 - [`v0.28.0.md`](v0.28.0.md) - one bundle: a competitive analysis, the 59th and the eighth `strategy-docs` member
 - [`v0.27.0.md`](v0.27.0.md) - two bundles: design principles, the 57th, and product principles, the 58th, both `standing-standards` members
 - [`v0.26.0.md`](v0.26.0.md) - one bundle: a platform and device support matrix, the 56th and the eighth `standing-standards` member
