@@ -91,6 +91,14 @@ def main():
         if db.get("partial") or dn.get("partial"):
             print("FAIL  a fragile run is partial, so the rule cannot be applied")
             status = 1
+        # A filter that selected nothing must not read as a pass: every fragile case must be in both files.
+        with open(os.path.join(HERE, "cases.json"), encoding="utf-8") as f:
+            fragile = {c["name"] for c in json.load(f)["cases"] if "fragile" in c["tags"]}
+        for label, got in (("--base", base), ("--new", new)):
+            missing = sorted(fragile - set(got))
+            if missing:
+                print(f"FAIL  {label} is missing fragile case(s) {', '.join(missing)}, so the rule cannot be applied")
+                status = 1
         for name in sorted(set(base) & set(new)):
             b, n = base[name], new[name]
             if b["runs"] != 15 or n["runs"] != 15:
