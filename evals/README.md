@@ -65,6 +65,9 @@ it is the evidence that the authors attacked their own number first.
   date, scores and five answers, **never the document**. Separate from `results/` on purpose, and a
   usefulness average from it is not an efficacy number. The first file here is the roadmap's M3 exit
   criterion
+- [`skill-triggers/`](skill-triggers/README.md) - **not an efficacy eval.** It checks whether a fresh agent loads
+  the right skill for 53 short requests, which is what a skill description change can break. It runs at a release
+  that changes a description, and none of its numbers says anything about document quality
 
 ## Running it
 

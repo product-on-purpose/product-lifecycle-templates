@@ -1,0 +1,273 @@
+{
+  "wording": "v0.28.1",
+  "model": "sonnet",
+  "harness": "claude plugin eval 2.1.329, --ablation none",
+  "note": "Pass counts for the shipped wording, read from the 2026-11-25 and 2026-11-26 trial runs. The fragile pair is the 15-run round-5 result. A baseline ages: the data-dictionary case has ranged from 4 to 14 of 15 under identical wording, so a fragile case is always rerun on both wordings in one session rather than compared with this file.",
+  "cases": {
+    "announcement": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "competitive-analysis": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "continuity-plan": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "data-dictionary": {
+      "passed": 14,
+      "runs": 15,
+      "source": "round 5, 2026-11-26"
+    },
+    "definition-of-ready": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "device-matrix": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "g2-competitive": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-data-dictionary": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-okrs": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-postmortem": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-prd": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-roadmap": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-runbook": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g2-user-stories": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "g3-bug-report": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-change-request": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-dod": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-lean-canvas": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-persona": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-raid-log": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-release-notes": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-status-report": {
+      "passed": 0,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-test-summary": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "g3-trade-study": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 5, 2026-11-26"
+    },
+    "grade-adr": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "grade-readout": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "grade-risk-register": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "grade-test-plan": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "lean-canvas": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "neg-code-review": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "neg-cover-letter": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 4, 2026-11-26"
+    },
+    "neg-poem": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "neg-python": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "postmortem": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "prd": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "raid-log": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "runbook": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "s2-backlog": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "s2-retro": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "s2-test-case": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "s2-test-summary": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "s2-use-case": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-design-doc": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-persona": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-positioning": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-product-vision": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-readiness-review": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "sn-research-plan": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "spike-report": {
+      "passed": 14,
+      "runs": 15,
+      "source": "round 5, 2026-11-26"
+    },
+    "traceability-matrix": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "tracking-plan": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "trade-study": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    },
+    "user-stories": {
+      "passed": 5,
+      "runs": 5,
+      "source": "round 3, 2026-11-25"
+    }
+  }
+}

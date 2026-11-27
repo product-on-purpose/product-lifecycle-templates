@@ -1,0 +1,430 @@
+{
+  "cases": [
+    {
+      "name": "announcement",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Write an internal announcement telling engineering that on-call moves to a four-day rotation next month."
+    },
+    {
+      "name": "competitive-analysis",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Write a competitive analysis of meal-kit delivery services for our product team."
+    },
+    {
+      "name": "continuity-plan",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Write a business continuity plan for our support team in case our ticketing vendor goes down."
+    },
+    {
+      "name": "data-dictionary",
+      "expect": "fill",
+      "tags": [
+        "rare",
+        "fragile"
+      ],
+      "prompt": "Can you put together a data dictionary for our orders and customers tables?"
+    },
+    {
+      "name": "definition-of-ready",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Help my team write a definition of ready for backlog items."
+    },
+    {
+      "name": "device-matrix",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Make a platform and device support matrix for our mobile banking app."
+    },
+    {
+      "name": "g2-competitive",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Give me feedback on this competitive analysis:\n\nCompetitive analysis - meal kits\nRivals: BoxCo, FreshCrate. BoxCo is cheaper. FreshCrate has more recipes. We are better because our food is tastier."
+    },
+    {
+      "name": "g2-data-dictionary",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Grade this data dictionary:\n\n| column | type |\n|---|---|\n| id | int |\n| amt | float |\n| st | varchar |"
+    },
+    {
+      "name": "g2-okrs",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Rate these OKRs out of 10:\n\nObjective: Be the best analytics product\nKR1: Launch dashboards v2\nKR2: Improve NPS\nKR3: Ship 10 features"
+    },
+    {
+      "name": "g2-postmortem",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Tear apart this postmortem before I send it to leadership:\n\nPostmortem - checkout outage 3 Nov\nWhat happened: checkout was down for 40 minutes.\nRoot cause: human error.\nAction items: be more careful."
+    },
+    {
+      "name": "g2-prd",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Is this PRD any good?\n\nPRD: Saved searches\nProblem: users want to save searches.\nSolution: add a save button.\nSuccess: people use it."
+    },
+    {
+      "name": "g2-roadmap",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Critique our roadmap:\n\n2027 roadmap\nQ1: dark mode, SSO, exports\nQ2: AI assistant, mobile app\nQ3: everything else\nQ4: polish"
+    },
+    {
+      "name": "g2-runbook",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "What would you fix in this runbook?\n\nRunbook: payment queue\nIf the queue backs up, restart the workers. Ask in #ops if unsure."
+    },
+    {
+      "name": "g2-user-stories",
+      "expect": "grade",
+      "tags": [
+        "grade2"
+      ],
+      "prompt": "Check these user stories before sprint planning:\n\n- As a user, I want search so that I can search.\n- As an admin, I want a settings page.\n- The system should be fast."
+    },
+    {
+      "name": "g3-bug-report",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Is this bug report good enough to hand to engineering?\n\nTitle: login broken\nSteps: try to log in\nExpected: works\nActual: doesn't"
+    },
+    {
+      "name": "g3-change-request",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Review this change request:\n\nChange: add CSV export to reports. Reason: customer asked. Impact: small."
+    },
+    {
+      "name": "g3-dod",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Score our definition of done:\n\n- Code written\n- Someone looked at it\n- Works on my machine"
+    },
+    {
+      "name": "g3-lean-canvas",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Rate this lean canvas:\n\nProblem: dogs need walks. Solution: an app. Customers: dog owners. Revenue: ads. Unfair advantage: we love dogs."
+    },
+    {
+      "name": "g3-persona",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Give me a second opinion on this persona:\n\nMaria, 34, likes coffee. Uses our app sometimes. Wants it to be easy."
+    },
+    {
+      "name": "g3-raid-log",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Critique our RAID log:\n\n| Type | Item | Owner |\n|---|---|---|\n| Risk | vendor slips | ? |\n| Issue | no test env | Dana |\n| Dependency | SSO team | |"
+    },
+    {
+      "name": "g3-release-notes",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Check these release notes before we publish them:\n\nv2.3\n- Bug fixes\n- Performance improvements\n- Misc updates"
+    },
+    {
+      "name": "g3-status-report",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "What's weak about this status report?\n\nProject Atlas - week 12\nStatus: green\nAll good, on track, no issues."
+    },
+    {
+      "name": "g3-test-summary",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Critique this test summary report:\n\nRelease 4.2 testing done. Most tests passed. A few failed but they're probably fine. Ready to ship."
+    },
+    {
+      "name": "g3-trade-study",
+      "expect": "grade",
+      "tags": [
+        "grade3"
+      ],
+      "prompt": "Review this trade study:\n\nTrade study: queue choice\nOptions: Kafka, SQS. Kafka is faster. We pick Kafka."
+    },
+    {
+      "name": "grade-adr",
+      "expect": "grade",
+      "tags": [
+        "common"
+      ],
+      "prompt": "Review this ADR and tell me what's weak about it:\n\n# ADR 7: Use Kafka for order events\nStatus: accepted\nWe will use Kafka for order events because it is fast and everyone knows it."
+    },
+    {
+      "name": "grade-readout",
+      "expect": "grade",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Give me a second opinion on this experiment readout:\n\nExperiment readout: green buy button\nWe ran it for 3 days. Conversion went from 2.1% to 2.3%. Ship it!"
+    },
+    {
+      "name": "grade-risk-register",
+      "expect": "grade",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Critique my risk register:\n\n| Risk | Owner |\n|---|---|\n| Vendor late | Sam |\n| Scope creep | team |\n| Budget | ? |"
+    },
+    {
+      "name": "grade-test-plan",
+      "expect": "grade",
+      "tags": [
+        "common"
+      ],
+      "prompt": "Score this test plan:\n\nTest plan - checkout v2\nScope: checkout. We will test it manually before release. QA owns it. Done when QA says ok."
+    },
+    {
+      "name": "lean-canvas",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Fill out a lean canvas for a dog-walking marketplace idea."
+    },
+    {
+      "name": "neg-code-review",
+      "expect": "none",
+      "tags": [
+        "negative2"
+      ],
+      "prompt": "Review this pull request diff and tell me if it's safe to merge:\n\ndiff --git a/cart.py b/cart.py\n-    total = sum(i.price for i in items)\n+    total = sum(i.price * i.qty for i in items)"
+    },
+    {
+      "name": "neg-cover-letter",
+      "expect": "none",
+      "tags": [
+        "negative2"
+      ],
+      "prompt": "Give me feedback on my cover letter:\n\nDear hiring manager, I am a hard-working team player with a passion for excellence. I would love to work at your company because it is great."
+    },
+    {
+      "name": "neg-poem",
+      "expect": "none",
+      "tags": [
+        "negative"
+      ],
+      "prompt": "Write a haiku about autumn."
+    },
+    {
+      "name": "neg-python",
+      "expect": "none",
+      "tags": [
+        "negative"
+      ],
+      "prompt": "Fix the off-by-one error in this Python function:\n\ndef last(xs):\n    return xs[len(xs)]"
+    },
+    {
+      "name": "postmortem",
+      "expect": "fill",
+      "tags": [
+        "common"
+      ],
+      "prompt": "Draft a postmortem for yesterday's 40-minute checkout outage, which an expired TLS certificate caused."
+    },
+    {
+      "name": "prd",
+      "expect": "fill",
+      "tags": [
+        "common"
+      ],
+      "prompt": "Write a PRD for adding saved searches to our job-board app."
+    },
+    {
+      "name": "raid-log",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Set up a RAID log for our CRM migration project."
+    },
+    {
+      "name": "runbook",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "We need a runbook for restarting the payment-queue workers when they back up."
+    },
+    {
+      "name": "s2-backlog",
+      "expect": "fill",
+      "tags": [
+        "shortname2"
+      ],
+      "prompt": "Put together a product backlog for the first quarter of our new expense-reporting app."
+    },
+    {
+      "name": "s2-retro",
+      "expect": "fill",
+      "tags": [
+        "shortname2"
+      ],
+      "prompt": "Write up retrospective notes from our sprint 14 retro, where the main themes were flaky tests and late design handoffs."
+    },
+    {
+      "name": "s2-test-case",
+      "expect": "fill",
+      "tags": [
+        "shortname2"
+      ],
+      "prompt": "Write test cases for the coupon-code field at checkout."
+    },
+    {
+      "name": "s2-test-summary",
+      "expect": "fill",
+      "tags": [
+        "shortname2"
+      ],
+      "prompt": "Write a test summary report for the release-candidate testing of our mobile app version 4.2."
+    },
+    {
+      "name": "s2-use-case",
+      "expect": "fill",
+      "tags": [
+        "shortname2"
+      ],
+      "prompt": "Write a use case specification for a customer resetting their password through our support portal."
+    },
+    {
+      "name": "sn-design-doc",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Write a software design document for our new rate-limiting service."
+    },
+    {
+      "name": "sn-persona",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Create a user persona for the warehouse managers who use our inventory tool."
+    },
+    {
+      "name": "sn-positioning",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Draft a positioning statement for our new budgeting app aimed at freelancers."
+    },
+    {
+      "name": "sn-product-vision",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Write a product vision for our small-business invoicing app."
+    },
+    {
+      "name": "sn-readiness-review",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Run a production readiness review for our new search service before it launches."
+    },
+    {
+      "name": "sn-research-plan",
+      "expect": "fill",
+      "tags": [
+        "shortname"
+      ],
+      "prompt": "Write a user research plan for interviewing customers who cancelled their subscription."
+    },
+    {
+      "name": "spike-report",
+      "expect": "fill",
+      "tags": [
+        "rare",
+        "fragile"
+      ],
+      "prompt": "Write up the results of our two-day spike on using WebSockets for live notifications."
+    },
+    {
+      "name": "traceability-matrix",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "I need a requirements traceability matrix that links our 12 login requirements to their test cases."
+    },
+    {
+      "name": "tracking-plan",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Create an analytics tracking plan for our new onboarding funnel."
+    },
+    {
+      "name": "trade-study",
+      "expect": "fill",
+      "tags": [
+        "rare"
+      ],
+      "prompt": "Do a trade study comparing Postgres, DynamoDB and MongoDB for our event store."
+    },
+    {
+      "name": "user-stories",
+      "expect": "fill",
+      "tags": [
+        "common"
+      ],
+      "prompt": "Turn this feature idea into user stories: shoppers can split one payment across two cards."
+    }
+  ]
+}

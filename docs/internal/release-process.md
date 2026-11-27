@@ -84,6 +84,9 @@ requests. Before shortening a name to make room, run the test against that name.
 order. Run `python tools/gen-skill-descriptions.py` to write them, and CI's `--check` fails if either drifts or a
 bundle is missing. Any change to a phrase or to the order is a trigger change, so it needs the trigger test above
 ([ADR 0093 (generated skill descriptions)](decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md)).
+That test lives at [`evals/skill-triggers/`](../../evals/skill-triggers/README.md) since 2026-11-27. Run
+`python evals/skill-triggers/run.py --go`, at about USD 12 to 14, and put its result in the release note. A
+`BLOCK` line from it stops the release until the maintainer reads the result.
 
 ### 2. Read the downstream contract BEFORE choosing the version
 

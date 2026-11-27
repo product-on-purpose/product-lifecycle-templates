@@ -193,7 +193,12 @@ They shipped with this record, which stays proposed.
   shipped list merges eight pairs into shared phrases, and its order is hand-chosen. So the generator gained the
   shared-phrase rule and the order table in part 2 above.
 
-Part 3, the trigger suite in the repository, is not built yet.
+Part 3, the trigger suite in the repository, was built on 2026-11-27, at
+[`evals/skill-triggers/`](../../../evals/skill-triggers/README.md). It holds the 53 cases, a builder that takes the
+skills from the working tree or a git ref, a runner for the release procedure, and a scorer that applies the
+two-part rule. Replayed on the round-5 result files, the scorer blocks the real data-dictionary regression and
+passes the spike report. A one-request smoke run through the runner cost USD 0.05 and loaded the right skill.
+Graders match a skill-name prefix, so shape 7b needs none changed, and shape 7c would.
 
 ### What this record does not settle
 
