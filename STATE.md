@@ -7,7 +7,11 @@
 > This file exists because of audit finding G-01: the implementation plan's progress table said "Not started" for all seven phases while two of them were demonstrably complete, and it went stale within a week of being written. A plan that lies about the tree is worse than no plan. The fix is not "remember to update the plan"; it is to have one short file that is cheap to keep honest and that outranks everything else.
 <!-- counts: bundles=59, tier1=25, tier1remaining=2, statebuilt=59, statecandidate=153, stateoutofscope=2, commoncandidates=47, adrs=93, cisteps=34, checkk=170, checkformats=146, checklogs=121, logsgated=53, sourcesgated=2139 -->
 
-**Last updated:** 2026-11-26 (**both skill descriptions are now generated from the manifest.** Each bundle's
+**Last updated:** 2026-11-27 (**the skill-trigger suite is in the repository**, at `evals/skill-triggers/`.
+One command runs the test a description change needs, and its scorer blocks a release when a fragile request
+drops 3 or more runs in 15. That completes the parts of ADR 0093 that hold whatever the split shape. The shape
+still waits on its confirming test. Unreleased.)
+The previous entry read: **both skill descriptions are now generated from the manifest.** Each bundle's
 meta carries a required `trigger_name`, and `tools/gen-skill-descriptions.py` writes both descriptions from it and a
 hand-chosen order table. The output matches the v0.28.1 text character for character, so no trigger moved. Two CI
 steps check it, making 34. ADR 0093 records the design and stays proposed until a confirming test picks the split

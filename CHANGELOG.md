@@ -22,6 +22,11 @@ people who want every change, release notes are for people who want to know what
   description would pass the 1,024-character cap, which is the signal to split the skills. Decision record:
   [ADR 0093 (generated skill descriptions, split by family group)](docs/internal/decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md),
   proposed, with the split shape waiting on one confirming trigger test.
+- **The skill-trigger suite moves into the repository**, at `evals/skill-triggers/`. Its 53 requests check which
+  skill a fresh agent loads. `run.py --go` runs the procedure a description change needs: every request at 5 runs
+  on the new wording, and the two fragile requests at 15 runs on both the new wording and the latest release. Its
+  scorer blocks the release when a fragile request drops 3 or more runs in 15. It costs about USD 12 to 14, and
+  `--smoke` proves the harness starts for USD 0.05.
 
 ## [0.28.1] - 2026-11-26
 
