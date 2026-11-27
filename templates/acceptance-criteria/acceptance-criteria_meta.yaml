@@ -2,6 +2,7 @@
 # Never travels into a filled document.
 id: acceptance-criteria
 title: Acceptance Criteria
+trigger_name: "acceptance criteria"
 summary: Defines the conditions a user story must satisfy to be accepted, so "done" is verifiable and shared rather than left to interpretation.
 doc_type: acceptance-criteria
 phase: deliver

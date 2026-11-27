@@ -1,5 +1,6 @@
 id: problem-statement
 title: Problem Statement
+trigger_name: "problem statement"
 summary: >-
   The document that frames which problem is worth solving, who has it, and the evidence that it is
   real, before anyone names a solution. Lean carries the statement, background, who is affected,

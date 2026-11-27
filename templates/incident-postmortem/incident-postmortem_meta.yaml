@@ -1,5 +1,6 @@
 id: incident-postmortem
 title: Incident Postmortem
+trigger_name: "incident postmortem"
 summary: >-
   The document a team writes after an incident to explain why it happened and what will change so it does
   not happen the same way again, triggered by an agreed-in-advance criterion rather than improvised after

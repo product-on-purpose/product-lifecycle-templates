@@ -9,6 +9,7 @@
     "id",
     "doc_type",
     "title",
+    "trigger_name",
     "summary",
     "family",
     "sizes_available",
@@ -57,6 +58,12 @@
       "minLength": 1,
       "pattern": "\\S",
       "description": "Human-readable name of the document type, e.g. 'Product Requirements Document'. Must contain a non-whitespace character."
+    },
+    "trigger_name": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^,\\s](?:[^,]*[^,\\s])?$",
+      "description": "The phrase both skill descriptions list this type under, in the words a requester uses, e.g. 'PRD' or 'browser or device support matrix'. tools/gen-skill-descriptions.py writes the descriptions from it, so this phrase is the type's trigger. Bundles that share one phrase in the list carry the same value, e.g. 'product or sprint backlog'. No commas, because the list is comma-separated. Prefer the full name: tests on 2026-11-25 found shortened and merged names lose triggers. See ADR 0093."
     },
     "summary": {
       "type": "string",

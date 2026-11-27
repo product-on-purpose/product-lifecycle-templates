@@ -1,5 +1,6 @@
 id: sdd
 title: Software Design Document
+trigger_name: "software design document"
 summary: >-
   Describes how a system will be built: the technical design, its structure, the alternatives weighed,
   and the cross-cutting concerns, so the design can be reviewed before the code exists. Describes an

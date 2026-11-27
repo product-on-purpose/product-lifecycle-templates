@@ -1,5 +1,6 @@
 id: design-principles
 title: Design Principles
+trigger_name: "design or product principles"
 summary: >-
   The short standing list of value statements a team agrees once and then uses to frame and settle
   decisions about the experience of its product. Each principle carries a statement, what it rules out, the

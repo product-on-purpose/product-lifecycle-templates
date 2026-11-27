@@ -1,5 +1,6 @@
 id: okrs
 title: OKRs
+trigger_name: "OKRs"
 summary: >-
   The document that states what measurable change a team expects in this period and whether it got it. One
   qualitative Objective plus a small set of Key Results that are outcomes rather than activities. It is

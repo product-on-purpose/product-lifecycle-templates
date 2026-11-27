@@ -1,5 +1,6 @@
 id: definition-of-ready
 title: Definition of Ready
+trigger_name: "definition of done or ready"
 summary: >-
   The agreement a team makes about how complete a backlog item has to be before it can be pulled into a
   sprint: a gate on entry, the mirror image of a Definition of Done's gate on exit. Optional in both the

@@ -1,5 +1,6 @@
 id: test-strategy
 title: Test Strategy
+trigger_name: "test strategy"
 summary: >-
   The standing document that sets the default testing approach for every project inside one organization or
   program: which levels, types, tools and environments apply by default, and the rule by which each

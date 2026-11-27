@@ -1,5 +1,6 @@
 id: product-roadmap
 title: Product Roadmap
+trigger_name: "strategy or roadmap"
 summary: >-
   The document that says in what order this product intends to solve the problems its strategy chose, and how
   certain it is at each horizon. It is judged by whether the uncertainty in it is visible: a roadmap that

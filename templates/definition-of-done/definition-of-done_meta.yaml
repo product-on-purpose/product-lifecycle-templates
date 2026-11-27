@@ -1,5 +1,6 @@
 id: definition-of-done
 title: Definition of Done
+trigger_name: "definition of done or ready"
 summary: >-
   The standard every increment is judged against, agreed once by a team and then consulted repeatedly
   rather than rewritten per occasion. A commitment attached to the Increment, not an artifact of its own,

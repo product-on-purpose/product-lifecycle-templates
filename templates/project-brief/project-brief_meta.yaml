@@ -1,5 +1,6 @@
 id: project-brief
 title: Project Brief
+trigger_name: "project brief"
 summary: >-
   The document that asks a named approver for authority to start finding out whether and how to proceed,
   before anyone commits to building anything. Lean states the mandate, objectives, exclusions, an outline

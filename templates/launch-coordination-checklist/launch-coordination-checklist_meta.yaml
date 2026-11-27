@@ -1,5 +1,6 @@
 id: launch-coordination-checklist
 title: Launch Coordination Checklist
+trigger_name: "launch checklist"
 summary: >-
   The standing list a team consults before it ships an externally visible change, so that readiness does
   not depend on who happens to be asking the questions. Grouped checks paired with an owner and a

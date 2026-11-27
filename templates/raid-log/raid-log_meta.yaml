@@ -1,5 +1,6 @@
 id: raid-log
 title: RAID Log
+trigger_name: "RAID log"
 summary: >-
   One working document that tracks the four kinds of open item on a project: Risks (might happen),
   Assumptions (believed true without proof), Issues (have happened), and Dependencies (structural

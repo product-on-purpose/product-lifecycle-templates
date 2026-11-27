@@ -71,6 +71,13 @@ by itself, most of them opened by a real defect that shipped past a green gate f
 - **Manifest and atlas freshness** (`tools/gen-manifest.py --check`, `tools/gen-atlas.py --check`).
   [`manifest.json`](../../manifest.json) and the atlas dataset are generated from the bundle metas and
   committed; these steps regenerate both in memory and fail if the committed copy has drifted.
+- **Skill description freshness** (`tools/gen-skill-descriptions.py --check`, plus its own self-test).
+  Each skill's description is the list of type names an agent reads to decide whether to load it, so a
+  type missing from it may never trigger the skill. Both descriptions are generated from each bundle's
+  `trigger_name` and a hand-chosen order table, and this step fails if a description has drifted, if a
+  bundle is missing from the order, or if a description would pass the 1,024-character cap. It proves
+  every bundle is named, not that the name triggers: that takes a paid model run
+  ([ADR 0093](../internal/decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md)).
 - **Build-report index freshness** (`tools/gen-bundle-build-report.py --check`). `bundle-builds/INDEX.md`
   is generated from the committed per-bundle build-cost reports under `bundle-builds/reports/`; this step
   regenerates it in memory and fails if the committed copy has drifted. It deliberately cannot check a
@@ -126,13 +133,13 @@ by itself, most of them opened by a real defect that shipped past a green gate f
   `agent-skills-toolkit`, which also supplies the README version-badge guard `check-readme-version.mjs`
   run in the same step). See below: it is the only step whose rules were written elsewhere.
 
-<!-- counts: cisteps=32 -->
-Thirty-two CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
-runtime setup and dependency installation, and prove nothing at all. **Twenty-seven** prove the tree is
+<!-- counts: cisteps=34 -->
+Thirty-four CI steps run in total, and they are not all the same kind of thing. **Four** are checkout,
+runtime setup and dependency installation, and prove nothing at all. **Twenty-nine** prove the tree is
 *structurally* consistent with itself: files exist, links resolve, generated artifacts match their
 source, a marker matches a count.
 
-**The thirty-second is the only one that can surprise anybody**, because it is the only one whose rules
+**The thirty-fourth is the only one that can surprise anybody**, because it is the only one whose rules
 this repository did not write. It runs the Advanced Skill Library Standard's conformance gate, and the
 toolkit's README version-badge guard, from a pinned checkout of a separate repository, so it can report
 that this library has stopped meeting a published external standard. Every other step can only report

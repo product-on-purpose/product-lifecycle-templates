@@ -1,5 +1,6 @@
 id: announcement-internal-comms
 title: Announcement / Internal Comms
+trigger_name: "internal announcement"
 summary: >-
   The message that tells the people in an organization who did not do the work that something is launching
   or changing: what is changing, why it matters to this reader, what they must do and by when, and where the

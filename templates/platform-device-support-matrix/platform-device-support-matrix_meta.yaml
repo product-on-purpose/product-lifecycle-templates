@@ -1,5 +1,6 @@
 id: platform-device-support-matrix
 title: Platform and Device Support Matrix
+trigger_name: "browser or device support matrix"
 summary: >-
   The standing page that states which browsers, operating systems and devices a product supports, at what
   level, and which of them the team tests on. It keeps two promises apart, what a user on a given browser

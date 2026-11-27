@@ -393,6 +393,12 @@ recent sibling meta such as templates/okrs/okrs_meta.yaml.
 The family contract's section 2 constrains the values: family "${family}", its axis value, status beta,
 and a legal size shape. Declare exactly the variants that exist on disk.
 
+trigger_name is required, and it goes on the line after title. It is the phrase both skill descriptions will
+list this type under, so it is the type's trigger: write the type's full name in the words a requester uses,
+in lower case unless it is a proper name or an acronym, with no comma. Do not shorten or merge it to save room,
+because tests found that shortened and merged names lose triggers. The orchestrator places the id in the
+skill-description order table at landing; that is not part of this stage.
+
 pairs_with must resolve against tools/known-skills.txt. VERIFY EACH ONE and claim only what is true of
 this type. Do not assume a pairing exists; an empty list is a legitimate answer and a wrong pairing is a
 gate failure.

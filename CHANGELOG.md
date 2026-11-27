@@ -12,6 +12,17 @@ people who want every change, release notes are for people who want to know what
 
 ## [Unreleased]
 
+### Added
+
+- **The skill descriptions are generated from the manifest.** Each bundle's meta gains a required `trigger_name`,
+  the phrase both skill descriptions list it under, and `manifest.json` carries it. A new generator,
+  `tools/gen-skill-descriptions.py`, writes both descriptions from those phrases and a hand-chosen order table, and
+  its output matches the v0.28.1 descriptions character for character, so no trigger moved. Two new CI steps run it
+  with `--check` and run its fixture self-test. They fail when a bundle is missing from the list, and when a
+  description would pass the 1,024-character cap, which is the signal to split the skills. Decision record:
+  [ADR 0093 (generated skill descriptions, split by family group)](docs/internal/decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md),
+  proposed, with the split shape waiting on one confirming trigger test.
+
 ## [0.28.1] - 2026-11-26
 
 A patch: both skill descriptions now name competitive analysis. No bundle, template, MCP tool or install

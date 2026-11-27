@@ -1,5 +1,6 @@
 id: product-vision
 title: Product Vision
+trigger_name: "product vision"
 summary: >-
   The document that says what future this product is trying to create, for whom, and why this team is the one
   to build it. It is judged not by how it reads but by whether it can be used to refuse something: a vision

@@ -1,5 +1,6 @@
 id: test-summary-report
 title: Test Summary Report
+trigger_name: "test summary report"
 summary: >-
   The retrospective document that closes a testing effort: what was tested and on which build, what the
   testing found, what was deliberately or accidentally not tested, and whether the result clears the bar the

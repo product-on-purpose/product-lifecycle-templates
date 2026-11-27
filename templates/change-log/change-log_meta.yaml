@@ -1,5 +1,6 @@
 id: change-log
 title: Change Log
+trigger_name: "change log"
 summary: >-
   The standing register of every change requested against an agreed baseline and what was decided about
   each one: one row per request, never deleted, with status kept apart from decision. Distinct from the

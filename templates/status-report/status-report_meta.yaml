@@ -1,5 +1,6 @@
 id: status-report
 title: Status Report
+trigger_name: "status report"
 summary: >-
   The periodic document that tells people who are not doing the work where a piece of work stands: what
   changed, what is at risk, and what is needed from the reader. It owns none of its own facts; every number

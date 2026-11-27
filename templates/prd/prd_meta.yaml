@@ -2,6 +2,7 @@
 # Never travels into a filled document (that is what instance frontmatter is for).
 id: prd
 title: Product Requirements Document
+trigger_name: "PRD"
 summary: Defines what to build, for whom, and why, with scope and success criteria, so a team can design and build the right thing.
 doc_type: prd
 phase: deliver

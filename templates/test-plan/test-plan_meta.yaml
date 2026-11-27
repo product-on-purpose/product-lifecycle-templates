@@ -1,5 +1,6 @@
 id: test-plan
 title: Test Plan
+trigger_name: "test plan"
 summary: >-
   The prospective document that scopes and prioritizes a testing effort: what is being tested and what is
   explicitly not, which areas carry the most product risk and therefore earn the deepest coverage, the

@@ -1,5 +1,6 @@
 id: competitive-analysis
 title: Competitive Analysis
+trigger_name: "competitive analysis"
 summary: >-
   The document that says who else serves the customers a strategy chose, compares them on what those
   customers value, and says what that means for the product's direction. It is kept as a series of dated

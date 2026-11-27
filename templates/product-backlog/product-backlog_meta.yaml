@@ -1,5 +1,6 @@
 id: product-backlog
 title: Product Backlog
+trigger_name: "product or sprint backlog"
 summary: >-
   The single, ordered, emergent list of work for a product, in service of a Product Goal: what the team
   might do next, sequenced so the most valuable and most informative work sits at the top. The tactical,

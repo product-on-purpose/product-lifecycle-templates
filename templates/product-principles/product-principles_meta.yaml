@@ -1,5 +1,6 @@
 id: product-principles
 title: Product Principles
+trigger_name: "design or product principles"
 summary: >-
   The short standing set of beliefs a product team agrees once and then uses to settle product trade-offs:
   what to build, for whom, and what to refuse. Each principle carries a statement, why the team holds it,

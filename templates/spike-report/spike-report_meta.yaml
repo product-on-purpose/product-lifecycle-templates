@@ -1,5 +1,6 @@
 id: spike-report
 title: Spike Report
+trigger_name: "spike report"
 summary: >-
   The written output of a time-boxed technical investigation: the uncertainty being reduced, what was
   actually tried, what was actually found, a proceed-or-not recommendation, and the edge of what that

@@ -1,5 +1,6 @@
 id: adr
 title: Architecture Decision Record
+trigger_name: "ADR"
 summary: >-
   Records one architecturally significant decision: the forces that made it necessary, the options
   genuinely considered, the option chosen, and the consequences accepted. Immutable once accepted;

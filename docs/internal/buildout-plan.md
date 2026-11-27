@@ -41,7 +41,7 @@ Research first, then draft, then gate (methodology section 8):
 1. Research the type across source tiers; build the research log (every source: URL, tier, retrieval status).
 2. Draft the two template variants (full is a strict superset of lean).
 3. Write the companion (11 sections), then derive the guide from it.
-4. Work the example (fully filled, no placeholders), fill the meta (20 fields) and history.
+4. Work the example (fully filled, no placeholders), fill the meta (21 fields) and history.
 5. Run `check-bundles.py`; fix to green; regenerate the manifest; open the PR.
 
 Each new bundle must pass all 11 gate checks + the link and dash gates, and validate against the schema and its family contract.

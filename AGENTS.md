@@ -50,6 +50,7 @@ checked fresh in CI) and it is the whole selection surface. Each entry carries:
 | `approx_tokens` | An estimated token count **per size variant**, keyed by size (and by format, for the few bundles that ship more than one format; see below). Budget context before loading anything. |
 | `status` | Maturity. Every bundle in this library is currently `beta`: offered for use, not yet settled. |
 | `tags`, `aliases` | Match these against the job you were asked to do. `aliases` covers what practitioners actually call the type ("decision record" for `adr`, "cost-benefit analysis" for `business-case`). |
+| `trigger_name` | The phrase both skill descriptions list the type under. Two bundles can share one phrase, such as "product or sprint backlog", so it is not an identifier. Use `id` for that. |
 
 ### If you have the MCP server, you can skip the file reads
 

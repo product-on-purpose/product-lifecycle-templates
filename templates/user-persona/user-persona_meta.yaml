@@ -1,5 +1,6 @@
 id: user-persona
 title: User Persona
+trigger_name: "persona"
 summary: >-
   The document that says who a product is being built for, grounded in user research rather than in
   invention. Lean names a specific person's identity, goals and pains; full adds how they behave in context,

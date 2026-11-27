@@ -1,5 +1,6 @@
 id: runbook
 title: Runbook
+trigger_name: "runbook"
 summary: >-
   The document a responder opens when a known alert fires, so that the response does not depend on who is
   awake. Scoped to one situation rather than one service: the trigger that invokes it, the steps that

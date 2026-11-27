@@ -342,8 +342,11 @@ job, and the check says so in its own output on every run.
 4. **example**: one fully worked instance, no placeholders, illustrative figures labeled, provenance
    frontmatter. For delivery-docs, chain on the shared "Saved Views for Dashboards" scenario and link the
    upstream/downstream siblings with `../<type>/` paths.
-5. **meta.yaml**: the 20 fields; `related_templates` as an **inline** list (see gotcha 2); catalog_ref from
-   the spec.
+5. **meta.yaml**: the 21 fields; `related_templates` as an **inline** list (see gotcha 2); catalog_ref from
+   the spec. `trigger_name` is the phrase both skill descriptions will list the type under, at its full name
+   in a requester's words, such as "competitive analysis". Do not shorten or merge it to save room: the
+   2026-11-25 tests found that shortened and merged names lose triggers
+   ([ADR 0093](decisions/0093-skill-triggers-split-by-family-group-and-generated-from-the-manifest.md)).
 6. **history.md**: open at 0.1.0 with the research date.
 
 ## Phase 3.5: Machine pre-read
@@ -407,9 +410,16 @@ git add templates/<type>                          # BEFORE the link gate (gotcha
 python tools/check-bundles.py <type>              # all 11 checks
 python tools/gen-manifest.py                       # regenerate manifest.json
 python tools/gen-manifest.py --check               # freshness + README marker
+python tools/gen-skill-descriptions.py             # write both skill descriptions (place the id in ORDER first)
 python tools/check-links.py                        # all relative links resolve
 python tools/gen-bundle-build-report.py --ingest       # measured build cost -> bundle-builds/
 ```
+
+Before the skill-description step, place the new id in the `ORDER` table at the top of
+`tools/gen-skill-descriptions.py`, next to the types a requester would think of with it. That generator fails
+until the id is placed, and it also fails when a description would pass 1,024 characters. After v0.28.1 the
+descriptions have 11 and 3 characters to spare, so the 60th bundle will hit that failure. When it does, stop: the
+remedy is the split ADR 0093 leaves to a confirming test, and it is the maintainer's call.
 
 Then: bump the README `<!-- bundle-count: N -->` marker and prose count, add the bundle to the README
 family table and the layout tree; update STATE.md (bundle count, family membership) and
